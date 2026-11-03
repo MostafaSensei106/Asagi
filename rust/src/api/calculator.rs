@@ -1,28 +1,4 @@
-use serde::{Deserialize, Serialize};
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct InputMetadata {
-    pub duration_secs: f64,
-    pub width: u32,
-    pub height: u32,
-    pub rotation: u32,
-    pub bitrate_bps: u32,
-    pub file_size_bytes: u64,
-    pub has_audio: bool,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct CalculationPlan {
-    pub target_video_bitrate_bps: u32,
-    pub target_audio_bitrate_bps: u32,
-    pub target_width: u32,
-    pub target_height: u32,
-    pub hard_limit_bytes: u64,
-    pub safety_margin: f64,
-    pub max_attempts: u8,
-    pub is_infeasible: bool,
-    pub warning_message: Option<String>,
-}
+use crate::domain::models::{CalculationPlan, InputMetadata};
 
 pub fn calculate_compression_plan(
     info: InputMetadata,
@@ -39,7 +15,9 @@ pub fn calculate_compression_plan(
     crate::domain::TargetSizePolicy.plan(
         &info,
         (target_size_mb * 1_000_000.0) as u64,
-        custom_k_factor.map(f64::from).unwrap_or(0.93),
+        custom_k_factor
+            .map(|k| (f64::from(k) * 1_000_000.0).round() / 1_000_000.0)
+            .unwrap_or(0.93),
     )
 }
 
@@ -51,7 +29,14 @@ pub fn verify_attempt(
     plan: CalculationPlan,
     attempt: u8,
 ) -> Result<u32, String> {
-    if actual_bytes == 0 || !duration_secs.is_finite() || duration_secs <= 0.0 || attempt == 0 {
+    if !(0.90..=0.95).contains(&plan.safety_margin)
+        || !(1..=2).contains(&plan.max_attempts)
+        || plan.hard_limit_bytes == 0
+        || actual_bytes == 0
+        || !duration_secs.is_finite()
+        || duration_secs <= 0.0
+        || attempt == 0
+    {
         return Err("E_INVALID_OUTPUT".into());
     }
     if actual_bytes <= plan.hard_limit_bytes {

@@ -69,7 +69,7 @@ fn wire__crate__api__calculator__calculate_compression_plan_impl(
             };
             let mut deserializer =
                 flutter_rust_bridge::for_generated::SseDeserializer::new(message);
-            let api_info = <crate::api::calculator::InputMetadata>::sse_decode(&mut deserializer);
+            let api_info = <crate::domain::models::InputMetadata>::sse_decode(&mut deserializer);
             let api_target_size_mb = <f64>::sse_decode(&mut deserializer);
             let api_custom_k_factor = <Option<f32>>::sse_decode(&mut deserializer);
             deserializer.end();
@@ -110,7 +110,7 @@ fn wire__crate__api__calculator__verify_attempt_impl(
                 flutter_rust_bridge::for_generated::SseDeserializer::new(message);
             let api_actual_bytes = <u64>::sse_decode(&mut deserializer);
             let api_duration_secs = <f64>::sse_decode(&mut deserializer);
-            let api_plan = <crate::api::calculator::CalculationPlan>::sse_decode(&mut deserializer);
+            let api_plan = <crate::domain::models::CalculationPlan>::sse_decode(&mut deserializer);
             let api_attempt = <u8>::sse_decode(&mut deserializer);
             deserializer.end();
             move |context| {
@@ -145,7 +145,7 @@ impl SseDecode for bool {
     }
 }
 
-impl SseDecode for crate::api::calculator::CalculationPlan {
+impl SseDecode for crate::domain::models::CalculationPlan {
     // Codec=Sse (Serialization based), see doc to use other codecs
     fn sse_decode(deserializer: &mut flutter_rust_bridge::for_generated::SseDeserializer) -> Self {
         let mut var_targetVideoBitrateBps = <u32>::sse_decode(deserializer);
@@ -157,7 +157,7 @@ impl SseDecode for crate::api::calculator::CalculationPlan {
         let mut var_maxAttempts = <u8>::sse_decode(deserializer);
         let mut var_isInfeasible = <bool>::sse_decode(deserializer);
         let mut var_warningMessage = <Option<String>>::sse_decode(deserializer);
-        return crate::api::calculator::CalculationPlan {
+        return crate::domain::models::CalculationPlan {
             target_video_bitrate_bps: var_targetVideoBitrateBps,
             target_audio_bitrate_bps: var_targetAudioBitrateBps,
             target_width: var_targetWidth,
@@ -185,7 +185,7 @@ impl SseDecode for f64 {
     }
 }
 
-impl SseDecode for crate::api::calculator::InputMetadata {
+impl SseDecode for crate::domain::models::InputMetadata {
     // Codec=Sse (Serialization based), see doc to use other codecs
     fn sse_decode(deserializer: &mut flutter_rust_bridge::for_generated::SseDeserializer) -> Self {
         let mut var_durationSecs = <f64>::sse_decode(deserializer);
@@ -195,7 +195,7 @@ impl SseDecode for crate::api::calculator::InputMetadata {
         let mut var_bitrateBps = <u32>::sse_decode(deserializer);
         let mut var_fileSizeBytes = <u64>::sse_decode(deserializer);
         let mut var_hasAudio = <bool>::sse_decode(deserializer);
-        return crate::api::calculator::InputMetadata {
+        return crate::domain::models::InputMetadata {
             duration_secs: var_durationSecs,
             width: var_width,
             height: var_height,
@@ -304,7 +304,7 @@ fn pde_ffi_dispatcher_sync_impl(
 // Section: rust2dart
 
 // Codec=Dco (DartCObject based), see doc to use other codecs
-impl flutter_rust_bridge::IntoDart for crate::api::calculator::CalculationPlan {
+impl flutter_rust_bridge::IntoDart for crate::domain::models::CalculationPlan {
     fn into_dart(self) -> flutter_rust_bridge::for_generated::DartAbi {
         [
             self.target_video_bitrate_bps.into_into_dart().into_dart(),
@@ -321,18 +321,18 @@ impl flutter_rust_bridge::IntoDart for crate::api::calculator::CalculationPlan {
     }
 }
 impl flutter_rust_bridge::for_generated::IntoDartExceptPrimitive
-    for crate::api::calculator::CalculationPlan
+    for crate::domain::models::CalculationPlan
 {
 }
-impl flutter_rust_bridge::IntoIntoDart<crate::api::calculator::CalculationPlan>
-    for crate::api::calculator::CalculationPlan
+impl flutter_rust_bridge::IntoIntoDart<crate::domain::models::CalculationPlan>
+    for crate::domain::models::CalculationPlan
 {
-    fn into_into_dart(self) -> crate::api::calculator::CalculationPlan {
+    fn into_into_dart(self) -> crate::domain::models::CalculationPlan {
         self
     }
 }
 // Codec=Dco (DartCObject based), see doc to use other codecs
-impl flutter_rust_bridge::IntoDart for crate::api::calculator::InputMetadata {
+impl flutter_rust_bridge::IntoDart for crate::domain::models::InputMetadata {
     fn into_dart(self) -> flutter_rust_bridge::for_generated::DartAbi {
         [
             self.duration_secs.into_into_dart().into_dart(),
@@ -347,13 +347,13 @@ impl flutter_rust_bridge::IntoDart for crate::api::calculator::InputMetadata {
     }
 }
 impl flutter_rust_bridge::for_generated::IntoDartExceptPrimitive
-    for crate::api::calculator::InputMetadata
+    for crate::domain::models::InputMetadata
 {
 }
-impl flutter_rust_bridge::IntoIntoDart<crate::api::calculator::InputMetadata>
-    for crate::api::calculator::InputMetadata
+impl flutter_rust_bridge::IntoIntoDart<crate::domain::models::InputMetadata>
+    for crate::domain::models::InputMetadata
 {
-    fn into_into_dart(self) -> crate::api::calculator::InputMetadata {
+    fn into_into_dart(self) -> crate::domain::models::InputMetadata {
         self
     }
 }
@@ -372,7 +372,7 @@ impl SseEncode for bool {
     }
 }
 
-impl SseEncode for crate::api::calculator::CalculationPlan {
+impl SseEncode for crate::domain::models::CalculationPlan {
     // Codec=Sse (Serialization based), see doc to use other codecs
     fn sse_encode(self, serializer: &mut flutter_rust_bridge::for_generated::SseSerializer) {
         <u32>::sse_encode(self.target_video_bitrate_bps, serializer);
@@ -401,7 +401,7 @@ impl SseEncode for f64 {
     }
 }
 
-impl SseEncode for crate::api::calculator::InputMetadata {
+impl SseEncode for crate::domain::models::InputMetadata {
     // Codec=Sse (Serialization based), see doc to use other codecs
     fn sse_encode(self, serializer: &mut flutter_rust_bridge::for_generated::SseSerializer) {
         <f64>::sse_encode(self.duration_secs, serializer);

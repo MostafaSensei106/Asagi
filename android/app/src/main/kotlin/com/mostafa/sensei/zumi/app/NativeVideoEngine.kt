@@ -37,22 +37,34 @@ class NativeVideoEngine(private val context: Context) : NativeMediaApi, EventCha
         val source = requireNotNull(request.inputPath)
         val output = requireNotNull(request.outputPath)
         require(source != output && !java.io.File(output).exists()) { "E_INVALID_OUTPUT" }
+        require((request.targetWidth ?: 0) >= 2 && (request.targetHeight ?: 0) >= 2 &&
+            (request.targetVideoBitrateBps ?: 0) > 0 && (request.frameRate ?: 30.0) in 1.0..30.0) { "E_INVALID_INPUT" }
+        val metadata = withContext(Dispatchers.IO) { MetadataExtractor.retrieve(context, source) }
+        check(transformer == null) { "E_BUSY" }
+        val required = (((request.targetVideoBitrateBps ?: 0) + (request.targetAudioBitrateBps ?: 0)).toDouble() *
+            (metadata.durationSeconds ?: 0.0) / 8 * 1.2 + 50_000_000).toLong()
+        val parent = requireNotNull(java.io.File(output).parentFile)
+        check(android.os.StatFs(parent.path).availableBytes >= required) { "E_NO_SPACE" }
         suspendCancellableCoroutine { continuation ->
             pending = continuation
             try {
                 val factory = DefaultEncoderFactory.Builder(context)
                     .setRequestedVideoEncoderSettings(VideoEncoderSettings.Builder()
-                        .setBitrate(requireNotNull(request.targetVideoBitrateBps).toInt()).build())
+                        .setBitrate(requireNotNull(request.targetVideoBitrateBps).toInt()).setiFrameIntervalSeconds(2f).build())
                     .setRequestedAudioEncoderSettings(AudioEncoderSettings.Builder()
                         .setBitrate(requireNotNull(request.targetAudioBitrateBps).coerceAtLeast(48000).toInt()).build())
                     .build()
+                val forcedFactory = object : Codec.EncoderFactory by factory {
+                    override fun audioNeedsEncoding() = true
+                    override fun videoNeedsEncoding() = true
+                }
                 val item = EditedMediaItem.Builder(MediaItem.fromUri(if (source.startsWith("content://")) Uri.parse(source) else Uri.fromFile(java.io.File(source))))
                     .setRemoveAudio(request.targetAudioBitrateBps == 0L)
                     .setEffects(Effects(emptyList(), listOf(
                         Presentation.createForWidthAndHeight(requireNotNull(request.targetWidth).toInt(), requireNotNull(request.targetHeight).toInt(), Presentation.LAYOUT_SCALE_TO_FIT),
                         FrameDropEffect.createDefaultFrameDropEffect((request.frameRate ?: 30.0).toFloat())
                     ))).build()
-                transformer = Transformer.Builder(context).setEncoderFactory(factory)
+                transformer = Transformer.Builder(context).setEncoderFactory(forcedFactory)
                     .setVideoMimeType(MimeTypes.VIDEO_H264).setAudioMimeType(MimeTypes.AUDIO_AAC)
                     .addListener(object : Transformer.Listener {
                         override fun onCompleted(composition: Composition, exportResult: ExportResult) {
@@ -65,7 +77,9 @@ class NativeVideoEngine(private val context: Context) : NativeMediaApi, EventCha
                         }
                     }).build()
                 continuation.invokeOnCancellation { android.os.Handler(android.os.Looper.getMainLooper()).post { transformer?.cancel(); handler.removeCallbacks(progress); transformer = null; pending = null } }
-                transformer!!.start(item, output)
+                val composition = Composition.Builder(EditedMediaItemSequence(item))
+                    .setHdrMode(Composition.HDR_MODE_TONE_MAP_HDR_TO_SDR_USING_OPEN_GL).build()
+                transformer!!.start(composition, output)
                 handler.post(progress)
             } catch (error: Exception) {
                 transformer?.cancel(); handler.removeCallbacks(progress); transformer = null; pending = null

@@ -3,11 +3,10 @@
 
 // ignore_for_file: invalid_use_of_internal_member, unused_import, unnecessary_import
 
+import '../domain/models.dart';
 import '../frb_generated.dart';
 
 import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
-
-// These function are ignored because they are on traits that is not defined in current crate (put an empty `#[frb]` on it to unignore): `clone`, `clone`, `fmt`, `fmt`
 
 Future<CalculationPlan> calculateCompressionPlan({
   required InputMetadata info,
@@ -32,97 +31,3 @@ Future<int> verifyAttempt({
   plan: plan,
   attempt: attempt,
 );
-
-class CalculationPlan {
-  final int targetVideoBitrateBps;
-  final int targetAudioBitrateBps;
-  final int targetWidth;
-  final int targetHeight;
-  final BigInt hardLimitBytes;
-  final double safetyMargin;
-  final int maxAttempts;
-  final bool isInfeasible;
-  final String? warningMessage;
-
-  const CalculationPlan({
-    required this.targetVideoBitrateBps,
-    required this.targetAudioBitrateBps,
-    required this.targetWidth,
-    required this.targetHeight,
-    required this.hardLimitBytes,
-    required this.safetyMargin,
-    required this.maxAttempts,
-    required this.isInfeasible,
-    this.warningMessage,
-  });
-
-  @override
-  int get hashCode =>
-      targetVideoBitrateBps.hashCode ^
-      targetAudioBitrateBps.hashCode ^
-      targetWidth.hashCode ^
-      targetHeight.hashCode ^
-      hardLimitBytes.hashCode ^
-      safetyMargin.hashCode ^
-      maxAttempts.hashCode ^
-      isInfeasible.hashCode ^
-      warningMessage.hashCode;
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is CalculationPlan &&
-          runtimeType == other.runtimeType &&
-          targetVideoBitrateBps == other.targetVideoBitrateBps &&
-          targetAudioBitrateBps == other.targetAudioBitrateBps &&
-          targetWidth == other.targetWidth &&
-          targetHeight == other.targetHeight &&
-          hardLimitBytes == other.hardLimitBytes &&
-          safetyMargin == other.safetyMargin &&
-          maxAttempts == other.maxAttempts &&
-          isInfeasible == other.isInfeasible &&
-          warningMessage == other.warningMessage;
-}
-
-class InputMetadata {
-  final double durationSecs;
-  final int width;
-  final int height;
-  final int rotation;
-  final int bitrateBps;
-  final BigInt fileSizeBytes;
-  final bool hasAudio;
-
-  const InputMetadata({
-    required this.durationSecs,
-    required this.width,
-    required this.height,
-    required this.rotation,
-    required this.bitrateBps,
-    required this.fileSizeBytes,
-    required this.hasAudio,
-  });
-
-  @override
-  int get hashCode =>
-      durationSecs.hashCode ^
-      width.hashCode ^
-      height.hashCode ^
-      rotation.hashCode ^
-      bitrateBps.hashCode ^
-      fileSizeBytes.hashCode ^
-      hasAudio.hashCode;
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is InputMetadata &&
-          runtimeType == other.runtimeType &&
-          durationSecs == other.durationSecs &&
-          width == other.width &&
-          height == other.height &&
-          rotation == other.rotation &&
-          bitrateBps == other.bitrateBps &&
-          fileSizeBytes == other.fileSizeBytes &&
-          hasAudio == other.hasAudio;
-}

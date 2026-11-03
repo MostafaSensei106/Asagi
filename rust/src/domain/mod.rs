@@ -1,5 +1,6 @@
 //! Pure compression policy: no platform, filesystem or Flutter dependencies.
-use crate::api::calculator::{CalculationPlan, InputMetadata};
+pub mod models;
+use models::{CalculationPlan, InputMetadata};
 pub trait CompressionPolicy {
     fn plan(
         &self,
@@ -130,5 +131,22 @@ mod tests {
         assert!(TargetSizePolicy
             .plan(&input(f64::NAN), 16000000, 0.93)
             .is_err());
+    }
+}
+
+#[cfg(test)]
+mod properties {
+    use super::*;
+    use proptest::prelude::*;
+    proptest! {
+        #[test]
+        fn never_upscales_or_emits_odd_dimensions(width in 2u32..8192, height in 2u32..8192, duration in 1.0f64..3600.0, limit in 1u64..100_000_000) {
+            let i = InputMetadata { duration_secs: duration, width, height, rotation: 0, bitrate_bps: 10_000_000, file_size_bytes: 200_000_000, has_audio: false };
+            let p = TargetSizePolicy.plan(&i, limit, 0.93).unwrap();
+            prop_assert!(p.target_width <= width && p.target_height <= height);
+            prop_assert_eq!(p.target_width % 2, 0);
+            prop_assert_eq!(p.target_height % 2, 0);
+            prop_assert!(p.target_video_bitrate_bps <= 9_000_000);
+        }
     }
 }

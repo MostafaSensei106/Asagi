@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 
 import '../core/native/pigeon_messages.g.dart';
 import '../core/native/rust/api/calculator.dart' as rust;
+import '../core/native/rust/domain/models.dart' as rust;
 
 abstract interface class CompressionPlanner {
   Future<rust.CalculationPlan> plan(rust.InputMetadata info, double targetMb);
@@ -170,8 +171,13 @@ final class CompressionEngine {
       }
       throw StateError('E_TARGET_EXCEEDED');
     } finally {
-      if (job != null && await job.exists()) await job.delete(recursive: true);
-      _busy = false;
+      try {
+        if (job != null && await job.exists()) {
+          await job.delete(recursive: true);
+        }
+      } finally {
+        _busy = false;
+      }
     }
   }
 }
@@ -190,12 +196,14 @@ Future<int> cleanupInterruptedCompressions(
         !entry.uri.pathSegments
             .where((s) => s.isNotEmpty)
             .last
-            .startsWith('zumi-'))
+            .startsWith('zumi-')) {
       continue;
+    }
     final marker = File('${entry.path}/.inprogress');
     if (await FileSystemEntity.type(marker.path, followLinks: false) !=
-        FileSystemEntityType.file)
+        FileSystemEntityType.file) {
       continue;
+    }
     if ((await marker.stat()).modified.isBefore(cutoff)) {
       await entry.delete(recursive: true);
       removed++;

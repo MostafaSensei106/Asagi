@@ -11,6 +11,7 @@ import 'api/calculator.dart';
 import 'dart:async';
 import 'dart:convert';
 
+import 'domain/models.dart';
 import 'frb_generated.dart';
 
 import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated_web.dart';

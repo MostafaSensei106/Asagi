@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:zumi/compression/compression_engine.dart';
 import 'package:zumi/core/native/pigeon_messages.g.dart';
-import 'package:zumi/core/native/rust/api/calculator.dart';
+import 'package:zumi/core/native/rust/domain/models.dart';
 
 class Planner implements CompressionPlanner {
   @override
@@ -90,4 +90,26 @@ void main() {
     );
     expect(await directory.list().length, 0);
   });
+  test(
+    'stale cleanup leaves unmarked directories and source files alone',
+    () async {
+      final stale = await Directory('${directory.path}/zumi-stale').create();
+      final marker = await File('${stale.path}/.inprogress')
+          .writeAsString('{}');
+      await marker.setLastModified(
+        DateTime.now().subtract(const Duration(days: 1)),
+      );
+      await Directory('${directory.path}/zumi-unmarked').create();
+      await File('${directory.path}/source.mp4').writeAsString('original');
+      expect(await cleanupInterruptedCompressions(directory), 1);
+      expect(
+        await Directory('${directory.path}/zumi-unmarked').exists(),
+        isTrue,
+      );
+      expect(
+        await File('${directory.path}/source.mp4').readAsString(),
+        'original',
+      );
+    },
+  );
 }

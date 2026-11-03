@@ -42,6 +42,13 @@ final class NativeVideoEngine: NSObject, NativeMediaApi, FlutterStreamHandler {
             let bitrate = request.targetVideoBitrateBps else { throw self.failure("E_INVALID_INPUT") }
           let asset = AVURLAsset(url: URL(fileURLWithPath: source))
           guard let track = asset.tracks(withMediaType: .video).first else { throw self.failure("E_NO_VIDEO") }
+          guard width >= 2, height >= 2, bitrate > 0,
+            (request.frameRate ?? 30).isFinite, (1...30).contains(request.frameRate ?? 30),
+            asset.duration.seconds.isFinite, asset.duration.seconds > 0 else { throw self.failure("E_INVALID_INPUT") }
+          let parent = URL(fileURLWithPath: destination).deletingLastPathComponent()
+          let available = try parent.resourceValues(forKeys: [.volumeAvailableCapacityForImportantUsageKey]).volumeAvailableCapacityForImportantUsage ?? 0
+          let required = Double(bitrate + (request.targetAudioBitrateBps ?? 0)) * asset.duration.seconds / 8 * 1.2 + 50_000_000
+          guard Double(available) >= required else { throw self.failure("E_NO_SPACE") }
           let reader = try AVAssetReader(asset: asset)
           let writer = try AVAssetWriter(outputURL: URL(fileURLWithPath: destination), fileType: .mp4)
           writer.shouldOptimizeForNetworkUse = true

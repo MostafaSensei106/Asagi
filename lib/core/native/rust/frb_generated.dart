@@ -8,6 +8,7 @@ import 'api/calculator.dart';
 import 'dart:async';
 import 'dart:convert';
 
+import 'domain/models.dart';
 import 'frb_generated.dart';
 import 'frb_generated.io.dart'
     if (dart.library.js_interop) 'frb_generated.web.dart';
