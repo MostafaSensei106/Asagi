@@ -12,11 +12,13 @@ void main() {
       targetWidth: 720,
       targetHeight: 1280,
       frameRate: 30,
+      hdrMode: NativeHdrMode.preserve,
     );
     final decoded = NativeCompressRequest.decode(request.encode());
     expect(decoded.targetVideoBitrateBps, 1836160);
     expect(decoded.targetHeight, 1280);
     expect(decoded.frameRate, 30);
+    expect(decoded.hdrMode, NativeHdrMode.preserve);
     expect(RustCompressionPlanner(), isA<CompressionPlanner>());
   });
 }

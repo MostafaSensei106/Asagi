@@ -11,14 +11,14 @@ class ControlledEncoder implements VideoEncoder {
   final completion = Completer<void>();
   Completer<void>? metadataGate;
   int pauses = 0, resumes = 0, cancels = 0;
-  bool hdr = false, mismatch = false;
+  bool hdr = false, mismatch = false, dropHdr = false;
   int sourceBytes = 1000;
   EncodeRequest? request;
   @override
   Future<VideoMetadata> inspect(String path) async {
     if (path == 'input') await metadataGate?.future;
     final input = path == 'input';
-    final outputHdr = mismatch || request?.hdrMode == HdrMode.preserve;
+    final outputHdr = !dropHdr && (mismatch || request?.hdrMode == HdrMode.preserve);
     return VideoMetadata(
       durationSecs: 60,
       width: 1920,
@@ -53,8 +53,9 @@ class ControlledEncoder implements VideoEncoder {
   @override
   Future<void> cancel() async {
     cancels++;
-    if (!completion.isCompleted)
+    if (!completion.isCompleted) {
       completion.completeError(StateError('E_CANCELLED'));
+    }
   }
 }
 
@@ -168,4 +169,15 @@ void main() {
     await failure;
     expect(await directory.list().length, 0);
   });
+  test('preserve rejects an encoder that silently downgrades HDR to SDR', () async {
+    encoder.hdr = true;
+    encoder.dropHdr = true;
+    final result = run(mode: HdrMode.preserve);
+    final failure = expectLater(result, throwsStateError);
+    await encoder.started.future;
+    encoder.completion.complete();
+    await failure;
+    expect(await directory.list().length, 0);
+  });
+
 }

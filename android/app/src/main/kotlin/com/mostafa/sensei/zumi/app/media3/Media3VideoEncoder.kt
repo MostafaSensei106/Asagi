@@ -1,14 +1,8 @@
 package com.mostafa.sensei.zumi.app.media3
 
 import android.content.Context
-import android.net.Uri
-import android.media.MediaCodecList
-import android.media.MediaCodecInfo
-import androidx.media3.common.MediaItem
 import androidx.media3.common.MimeTypes
 import androidx.media3.common.util.UnstableApi
-import androidx.media3.effect.Presentation
-import androidx.media3.effect.FrameDropEffect
 import androidx.media3.transformer.*
 import com.mostafa.sensei.zumi.app.contracts.*
 import kotlinx.coroutines.*
@@ -39,6 +33,7 @@ class Media3VideoEncoder(
     private var activeOutput: String? = null
     private val checkpoints = mutableListOf<String>()
     private var canResume = false
+    private var requiredFreeBytes = 0L
     private fun clearOperation() {
         handler.removeCallbacks(progress)
         checkpoints.forEach { java.io.File(it).delete() }
@@ -50,11 +45,12 @@ class Media3VideoEncoder(
     private var pending: CancellableContinuation<Boolean>? = null
     override suspend fun encode(request: EncodeConfiguration): Boolean = withContext(Dispatchers.Main) {
         check(transformer == null && !preparing) { "E_BUSY" }
-        val source = requireNotNull(request.inputPath)
-        val output = requireNotNull(request.outputPath)
+        paused = false
+        val source = request.inputPath
+        val output = request.outputPath
         require(source != output && !java.io.File(output).exists()) { "E_INVALID_OUTPUT" }
-        require((request.targetWidth ?: 0) >= 2 && (request.targetHeight ?: 0) >= 2 &&
-            (request.targetVideoBitrateBps ?: 0) > 0 && (request.frameRate ?: 30.0) in 1.0..30.0) { "E_INVALID_INPUT" }
+        require(request.targetWidth >= 2 && request.targetHeight >= 2 &&
+            request.targetVideoBitrateBps > 0 && request.frameRate in 1.0..30.0) { "E_INVALID_INPUT" }
         val operation = ++generation
         preparing = true
         val metadata = try {
@@ -63,8 +59,9 @@ class Media3VideoEncoder(
         preparing = false
         check(operation == generation) { "E_CANCELLED" }
         check(transformer == null) { "E_BUSY" }
-        val required = (((request.targetVideoBitrateBps ?: 0) + (request.targetAudioBitrateBps ?: 0)).toDouble() *
-            (metadata.durationSeconds ?: 0.0) / 8 * 1.2 + 50_000_000).toLong()
+        val required = ((request.targetVideoBitrateBps + request.targetAudioBitrateBps).toDouble() *
+            metadata.durationSeconds / 8 * 1.2 + 50_000_000).toLong()
+        requiredFreeBytes = required
         val parent = requireNotNull(java.io.File(output).parentFile)
         check(android.os.StatFs(parent.path).availableBytes >= required) { "E_NO_SPACE" }
         val preserve = hdrPolicy.preserve(request, metadata)
@@ -123,6 +120,7 @@ class Media3VideoEncoder(
             val previous = activeOutput
             if (engine != null && planned != null && previous != null) {
                 try {
+                    check(android.os.StatFs(requireNotNull(java.io.File(previous).parent)).availableBytes >= requiredFreeBytes) { "E_NO_SPACE" }
                     val next = "${requireNotNull(destination)}.resume-${java.util.UUID.randomUUID()}.mp4"
                     checkpoints.add(previous)
                     activeOutput = next
