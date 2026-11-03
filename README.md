@@ -182,7 +182,7 @@ next_video_bitrate = current_video_bitrate × factor
 | 600 s → 16 MB | 198,400 bps | 64k | 132,416 | Infeasible (below 240p floor) |
 | 30 s 4K → 16 MB | 3,968,000 bps | 128k | 3,800,320 | 1080p @ 30 fps, tone-mapped if HDR |
 
-The 180 s / 8 MB case intentionally selects **360p with a quality warning**. This documented example takes precedence over the otherwise-comfortable 240p rule; the test suite locks that behavior in.
+The 180 s / 8 MB case lands on **360p with a quality warning** because the comfortable pass only considers 1080p/720p/480p. On the minimum pass, 360p is the highest rung whose 250 kbps floor fits the 263,360 bps video budget. The test suite locks that behavior in.
 
 ---
 
@@ -285,6 +285,8 @@ Only the encoder knows whether the export actually completed. Android Media3 and
 
 ### Job state
 
+Conceptual lifecycle (not a persisted state machine):
+
 ```
 IDLE → PLANNING → ENCODING → VERIFYING → ACCEPTED
                       │           │
@@ -356,7 +358,7 @@ cd zumi
 flutter pub get
 ```
 
-`rust_builder/` is a local Cargokit package. It builds the Rust crate per target architecture automatically during a Flutter build  you do not run `cargo build` for app builds.
+`rust_builder/` is a local Cargokit package. It builds the Rust crate per target architecture automatically during a Flutter build; you do not run `cargo build` for app builds.
 
 ### 3. Generate bindings (only after changing contracts)
 
@@ -684,7 +686,7 @@ cargo test --manifest-path rust/Cargo.toml
 | `test/compression_controls_test.dart` | Pause/resume reach the encoder, are idempotent, block publication, cancel fails cleanly |
 | `test/compression_controls_test.dart` | HDR mode reaches the encoder; failed preservation/conversion cannot publish; explicit SDR conversion runs even when the source fits |
 | `test/compression_architecture_test.dart` | `domain/` and `application/` never import `infrastructure/`, `core/native`, packages, or `dart:io` |
-| `test/widget_test.dart` | Pigeon codec round-trips all compression parameters |
+| `test/widget_test.dart` | Pigeon codec round-trips a native compress request (video bitrate, height, frame rate, HDR mode) |
 | `rust/src/domain/planning.rs` | Budget math, audio tiers, ladder selection, rotation swap, 180 s/8 MB warning case |
 | `rust/src/domain/verification.rs` | Accept/retry/fail decisions, clamp range, 150 kbps floor |
 
@@ -886,8 +888,8 @@ Update `version:` in `pubspec.yaml` (`1.0.0+1` → `1.0.1+2`) before a release. 
 
 - **No network.** Media, metadata, and results never leave the device. No upload, no cloud compression.
 - **No analytics by default.** The spec allows opt-in crash reporting only; local logs are the default.
-- **No location in outputs.** Location metadata is stripped by default.
-- **Minimal permissions.** File access is scoped to the picked source and the app workspace.
+- **Location metadata is not explicitly stripped yet.** The v1.1 spec proposes a `strip_location` option defaulting to `true`, but no such control exists in the current engine. Do not claim location removal until it is implemented and tested.
+- **No permissions are declared yet.** The engine operates on explicit file paths supplied by the caller. When the app shell lands, scope permissions to the picked source and the app workspace.
 - **Temporary files are scoped.** Jobs live under `zumi-*` with an `.inprogress` marker and are swept explicitly.
 - **No FFmpeg GPL surface.** Only platform codecs are used in v1.
 
@@ -899,7 +901,7 @@ If you add crash reporting, it must be opt-in, disclosed, and off by default. Do
 
 ### Implemented
 
-- [x] Byte-exact target ceiling with post-encode verification
+- [x] Hard target ceiling with post-encode verification
 - [x] One-shot bitrate correction with clamp and feasibility floor
 - [x] Audio-before-resolution budget policy
 - [x] Rotation-aware, no-upscale, even-dimension planning
