@@ -1,0 +1,9 @@
+{
+  "name": "rust_lib_zumi",
+  "version": "0.1.0",
+  "files": [
+    "rust_lib_zumi_bg.wasm",
+    "rust_lib_zumi.js"
+  ],
+  "browser": "rust_lib_zumi.js"
+}
