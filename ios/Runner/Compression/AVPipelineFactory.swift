@@ -29,7 +29,7 @@ struct AVPipelineFactory: EncodingPipelineFactory {
     let composition = makeComposition(track: track, asset: asset, request: request, colors: hdr.colors)
     let video = AVAssetReaderVideoCompositionOutput(videoTracks: [track], videoSettings: [
       kCVPixelBufferPixelFormatTypeKey as String: hdr.pixelFormat,
-      AVVideoColorPropertiesKey: hdr.colors])
+      AVVideoAllowWideColorKey: hdr.codec == .hevc])
     video.videoComposition = composition; video.alwaysCopiesSampleData = false
     let settings: [String: Any] = [AVVideoCodecKey: hdr.codec, AVVideoWidthKey: request.targetWidth,
       AVVideoHeightKey: request.targetHeight, AVVideoColorPropertiesKey: hdr.colors,

@@ -72,7 +72,8 @@ final class _FileWorkspace implements CompressionWorkspace {
 
   @override
   Future<void> dispose() async {
-    if (!_committed && await directory.exists())
+    if (!_committed && await directory.exists()) {
       await directory.delete(recursive: true);
+    }
   }
 }

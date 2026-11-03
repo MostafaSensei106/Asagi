@@ -65,8 +65,9 @@ final class CompressionEngine {
           _control.encoding = false;
         }
         await _control.checkpoint();
-        if (info.isHdr)
+        if (info.isHdr) {
           hdrPolicy.verify(info, await encoder.inspect(path), hdrMode);
+        }
         final bytes = await job.measure(path);
         final next = await planner.verify(
           bytes,

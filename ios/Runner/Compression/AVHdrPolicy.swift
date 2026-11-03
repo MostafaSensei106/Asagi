@@ -18,7 +18,18 @@ struct AVHdrPolicy: HdrConfigurationPolicy {
     if preserve && transfer == "dolbyVision" { throw videoFailure("E_HDR_DYNAMIC_METADATA_UNSUPPORTED") }
     if preserve && !VTIsHardwareEncodeSupported(kCMVideoCodecType_HEVC) { throw videoFailure("E_HDR_UNSUPPORTED") }
     var properties: [String: Any] = [AVVideoAverageBitRateKey: bitrate, AVVideoMaxKeyFrameIntervalDurationKey: 2]
-    if preserve { properties[AVVideoProfileLevelKey] = kVTProfileLevel_HEVC_Main10_AutoLevel }
+    if preserve {
+      properties[AVVideoProfileLevelKey] = kVTProfileLevel_HEVC_Main10_AutoLevel
+      if let raw = track.formatDescriptions.first {
+        let format = raw as! CMFormatDescription
+        if let mastering = CMFormatDescriptionGetExtension(format, extensionKey: kCMFormatDescriptionExtension_MasteringDisplayColorVolume) {
+          properties[kVTCompressionPropertyKey_MasteringDisplayColorVolume as String] = mastering
+        }
+        if let light = CMFormatDescriptionGetExtension(format, extensionKey: kCMFormatDescriptionExtension_ContentLightLevelInfo) {
+          properties[kVTCompressionPropertyKey_ContentLightLevelInfo as String] = light
+        }
+      }
+    }
     return AVHdrConfiguration(codec: preserve ? .hevc : .h264,
       pixelFormat: preserve ? kCVPixelFormatType_420YpCbCr10BiPlanarVideoRange : kCVPixelFormatType_32BGRA,
       colors: [AVVideoColorPrimariesKey: preserve ? AVVideoColorPrimaries_ITU_R_2020 : AVVideoColorPrimaries_ITU_R_709_2,

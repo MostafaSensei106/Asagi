@@ -5,6 +5,7 @@ final class AVEncodingSession {
   private let pipeline: AVEncodingPipeline, queue: DispatchQueue
   private let onProgress: (Double) -> Void, onComplete: (Result<Bool, Error>) -> Void
   private var pumps: [AVTrackPump] = []
+  private var paused = false
   private var finished = false, remaining = 0, lastProgress = -1
   init(pipeline: AVEncodingPipeline, queue: DispatchQueue,
        onProgress: @escaping (Double) -> Void, onComplete: @escaping (Result<Bool, Error>) -> Void) {
@@ -29,8 +30,8 @@ final class AVEncodingSession {
       pumps.append(pump); pump.start()
     }
   }
-  func pause() { guard !finished else { return }; pumps.forEach { $0.pause() } }
-  func resume() { guard !finished else { return }; pumps.forEach { $0.start() } }
+  func pause() { guard !finished && !paused else { return }; paused = true; pumps.forEach { $0.pause() } }
+  func resume() { guard !finished && paused else { return }; paused = false; pumps.forEach { $0.start() } }
   func cancel() {
     guard !finished else { return }
     pipeline.reader.cancelReading(); pipeline.writer.cancelWriting()
