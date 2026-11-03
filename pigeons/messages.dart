@@ -2,7 +2,7 @@ import 'package:pigeon/pigeon.dart';
 
 @ConfigurePigeon(
   PigeonOptions(
-    dartOut: 'lib/src/native/pigeon_messages.g.dart',
+    dartOut: 'lib/core/native/pigeon_messages.g.dart',
     kotlinOut: 'android/app/src/main/kotlin/com/mostafa/sensei/zumi/Native/PigeonMessages.g.kt',
     kotlinOptions: KotlinOptions(package: 'com.mostafa.sensei.zumi'),
     swiftOut: 'ios/Runner/Native/PigeonMessages.g.swift',
