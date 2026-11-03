@@ -67,7 +67,7 @@ class RustLib extends BaseEntrypoint<RustLibApi, RustLibApiImpl, RustLibWire> {
   String get codegenVersion => '2.13.0';
 
   @override
-  int get rustContentHash => -304440223;
+  int get rustContentHash => 2025474785;
 
   static const kDefaultExternalLibraryLoaderConfig =
       ExternalLibraryLoaderConfig(
@@ -85,9 +85,12 @@ abstract class RustLibApi extends BaseApi {
     double? customKFactor,
   });
 
-  Future<String> crateApiCalculatorGreet({required String apiName});
-
-  Future<void> crateApiCalculatorInitApp();
+  Future<int> crateApiCalculatorVerifyAttempt({
+    required BigInt actualBytes,
+    required double durationSecs,
+    required CalculationPlan plan,
+    required int attempt,
+  });
 }
 
 class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
@@ -120,7 +123,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
         },
         codec: SseCodec(
           decodeSuccessData: sse_decode_calculation_plan,
-          decodeErrorData: null,
+          decodeErrorData: sse_decode_String,
         ),
         constMeta: kCrateApiCalculatorCalculateCompressionPlanConstMeta,
         argValues: [info, targetSizeMb, customKFactor],
@@ -136,12 +139,20 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       );
 
   @override
-  Future<String> crateApiCalculatorGreet({required String apiName}) {
+  Future<int> crateApiCalculatorVerifyAttempt({
+    required BigInt actualBytes,
+    required double durationSecs,
+    required CalculationPlan plan,
+    required int attempt,
+  }) {
     return handler.executeNormal(
       NormalTask(
         callFfi: (port_) {
           final serializer = SseSerializer(generalizedFrbRustBinding);
-          sse_encode_String(apiName, serializer);
+          sse_encode_u_64(actualBytes, serializer);
+          sse_encode_f_64(durationSecs, serializer);
+          sse_encode_box_autoadd_calculation_plan(plan, serializer);
+          sse_encode_u_8(attempt, serializer);
           pdeCallFfi(
             generalizedFrbRustBinding,
             serializer,
@@ -150,45 +161,21 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           );
         },
         codec: SseCodec(
-          decodeSuccessData: sse_decode_String,
-          decodeErrorData: null,
+          decodeSuccessData: sse_decode_u_32,
+          decodeErrorData: sse_decode_String,
         ),
-        constMeta: kCrateApiCalculatorGreetConstMeta,
-        argValues: [apiName],
+        constMeta: kCrateApiCalculatorVerifyAttemptConstMeta,
+        argValues: [actualBytes, durationSecs, plan, attempt],
         apiImpl: this,
       ),
     );
   }
 
-  TaskConstMeta get kCrateApiCalculatorGreetConstMeta =>
-      const TaskConstMeta(debugName: "greet", argNames: ["apiName"]);
-
-  @override
-  Future<void> crateApiCalculatorInitApp() {
-    return handler.executeNormal(
-      NormalTask(
-        callFfi: (port_) {
-          final serializer = SseSerializer(generalizedFrbRustBinding);
-          pdeCallFfi(
-            generalizedFrbRustBinding,
-            serializer,
-            funcId: 3,
-            port: port_,
-          );
-        },
-        codec: SseCodec(
-          decodeSuccessData: sse_decode_unit,
-          decodeErrorData: null,
-        ),
-        constMeta: kCrateApiCalculatorInitAppConstMeta,
-        argValues: [],
-        apiImpl: this,
-      ),
-    );
-  }
-
-  TaskConstMeta get kCrateApiCalculatorInitAppConstMeta =>
-      const TaskConstMeta(debugName: "init_app", argNames: []);
+  TaskConstMeta get kCrateApiCalculatorVerifyAttemptConstMeta =>
+      const TaskConstMeta(
+        debugName: "verify_attempt",
+        argNames: ["actualBytes", "durationSecs", "plan", "attempt"],
+      );
 
   @protected
   String dco_decode_String(dynamic raw) {
@@ -200,6 +187,12 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   bool dco_decode_bool(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return raw as bool;
+  }
+
+  @protected
+  CalculationPlan dco_decode_box_autoadd_calculation_plan(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return dco_decode_calculation_plan(raw);
   }
 
   @protected
@@ -297,12 +290,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
-  void dco_decode_unit(dynamic raw) {
-    // Codec=Dco (DartCObject based), see doc to use other codecs
-    return;
-  }
-
-  @protected
   String sse_decode_String(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     var inner = sse_decode_list_prim_u_8_strict(deserializer);
@@ -313,6 +300,14 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   bool sse_decode_bool(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     return deserializer.buffer.getUint8() != 0;
+  }
+
+  @protected
+  CalculationPlan sse_decode_box_autoadd_calculation_plan(
+    SseDeserializer deserializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return (sse_decode_calculation_plan(deserializer));
   }
 
   @protected
@@ -431,11 +426,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
-  void sse_decode_unit(SseDeserializer deserializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-  }
-
-  @protected
   int sse_decode_i_32(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     return deserializer.buffer.getInt32();
@@ -451,6 +441,15 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   void sse_encode_bool(bool self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     serializer.buffer.putUint8(self ? 1 : 0);
+  }
+
+  @protected
+  void sse_encode_box_autoadd_calculation_plan(
+    CalculationPlan self,
+    SseSerializer serializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_calculation_plan(self, serializer);
   }
 
   @protected
@@ -553,11 +552,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   void sse_encode_u_8(int self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     serializer.buffer.putUint8(self);
-  }
-
-  @protected
-  void sse_encode_unit(void self, SseSerializer serializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
   }
 
   @protected

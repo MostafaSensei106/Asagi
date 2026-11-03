@@ -22,95 +22,77 @@ pub struct CalculationPlan {
     pub warning_message: Option<String>,
 }
 
-pub fn greet(api_name: String) -> String {
-    format!("Hello, {api_name}!")
-}
-
-pub fn init_app() {}
-
 pub fn calculate_compression_plan(
     info: InputMetadata,
     target_size_mb: f64,
     custom_k_factor: Option<f32>,
-) -> CalculationPlan {
-    let hard_limit_bytes = (target_size_mb * 1_000_000.0) as u64;
-
-    if info.file_size_bytes <= hard_limit_bytes {
-        return CalculationPlan {
-            target_video_bitrate_bps: info.bitrate_bps,
-            target_audio_bitrate_bps: 128_000,
-            target_width: info.width,
-            target_height: info.height,
-            hard_limit_bytes,
-            is_infeasible: false,
-            warning_message: Some("Erro: Orignal file size is less than target.".into()),
-        };
+) -> Result<CalculationPlan, String> {
+    use crate::domain::CompressionPolicy;
+    if !target_size_mb.is_finite()
+        || target_size_mb <= 0.0
+        || target_size_mb * 1_000_000.0 > u64::MAX as f64
+    {
+        return Err("E_INVALID_TARGET".into());
     }
-
-    let k = custom_k_factor.unwrap_or(0.93);
-    let total_budget_bits = hard_limit_bytes as f64 * k as f64 * 8.0;
-    let total_bitrate_bps = (total_budget_bits / info.duration_secs) as u32;
-    let audio_bitrate_bps = if !info.has_audio {
-        0
-    } else if total_bitrate_bps > 1_000_000 {
-        128_000
-    } else {
-        64_000
-    };
-
-    let container_overhead_bps = (total_bitrate_bps as f64 * 0.01) as u32;
-
-    let available_video_bitrate = total_bitrate_bps
-        .saturating_sub(audio_bitrate_bps)
-        .saturating_sub(container_overhead_bps);
-
-    let (target_w, target_h, warning) = match available_video_bitrate {
-        b if b >= 2_500_000 => (info.width, info.height, None),
-        b if b >= 1_500_000 => {
-            let (w, h) = scale_dimensions(info.width, info.height, 720);
-            (w, h, None)
-        }
-        b if b >= 800_000 => {
-            let (w, h) = scale_dimensions(info.width, info.height, 480);
-            (w, h, None)
-        }
-        b if b >= 250_000 => {
-            let (w, h) = scale_dimensions(info.width, info.height, 360);
-            (
-                w,
-                h,
-                Some("Quality will be low because the video is long for this file size.".into()),
-            )
-        }
-        b if b >= 150_000 => {
-            let (w, h) = scale_dimensions(info.width, info.height, 240);
-            (
-                w,
-                h,
-                Some("Very low quality (at the minimum acceptable viewing level).".into()),
-            )
-        }
-        _ => (0, 0, None),
-    };
-
-    CalculationPlan {
-        target_video_bitrate_bps: available_video_bitrate,
-        target_audio_bitrate_bps: audio_bitrate_bps,
-        target_width: target_w,
-        target_height: target_h,
-        hard_limit_bytes,
-        is_infeasible: available_video_bitrate < 150_000,
-        warning_message: warning,
-    }
+    crate::domain::TargetSizePolicy.plan(
+        &info,
+        (target_size_mb * 1_000_000.0) as u64,
+        custom_k_factor.map(f64::from).unwrap_or(0.93),
+    )
 }
 
-fn scale_dimensions(w: u32, h: u32, target_height: u32) -> (u32, u32) {
-    if h <= target_height {
-        return (w, h);
-    };
+/// Zero means accept. A positive bitrate requests another attempt. Errors never
+/// permit an oversized artifact to be returned as a successful result.
+pub fn verify_attempt(
+    actual_bytes: u64,
+    duration_secs: f64,
+    plan: CalculationPlan,
+    attempt: u8,
+) -> Result<u32, String> {
+    if actual_bytes == 0 || !duration_secs.is_finite() || duration_secs <= 0.0 || attempt == 0 {
+        return Err("E_INVALID_OUTPUT".into());
+    }
+    if actual_bytes <= plan.hard_limit_bytes {
+        return Ok(0);
+    }
+    if attempt >= 2 {
+        return Err("E_TARGET_EXCEEDED".into());
+    }
+    let audio = plan.target_audio_bitrate_bps as f64 * duration_secs / 8.0;
+    let container = (plan.hard_limit_bytes as f64 * 0.93 * 0.01).max(32768.0);
+    let actual_video = (actual_bytes as f64 - audio - container).max(1.0);
+    let goal = (plan.hard_limit_bytes as f64 * 0.93 - audio - container).max(0.0);
+    let bitrate =
+        (plan.target_video_bitrate_bps as f64 * (goal / actual_video).clamp(0.5, 0.98)) as u32;
+    if bitrate < 150000 {
+        return Err("E_TARGET_INFEASIBLE".into());
+    }
+    Ok(bitrate)
+}
 
-    let aspect = w as f64 / h as f64;
-    let mut new_w = (target_height as f64 * aspect) as u32;
-    new_w &= !1;
-    return (new_w, target_height);
+#[cfg(test)]
+mod verification_tests {
+    use super::*;
+    fn plan() -> CalculationPlan {
+        CalculationPlan {
+            target_video_bitrate_bps: 1_836_160,
+            target_audio_bitrate_bps: 128_000,
+            target_width: 720,
+            target_height: 1280,
+            hard_limit_bytes: 16_000_000,
+            is_infeasible: false,
+            warning_message: None,
+        }
+    }
+    #[test]
+    fn accepts_only_nonempty_within_limit() {
+        assert_eq!(verify_attempt(16_000_000, 60.0, plan(), 1).unwrap(), 0);
+        assert!(verify_attempt(0, 60.0, plan(), 1).is_err());
+        assert!(verify_attempt(16_000_001, 60.0, plan(), 2).is_err());
+    }
+    #[test]
+    fn overshoot_reduces_video_budget() {
+        let retry = verify_attempt(18_000_000, 60.0, plan(), 1).unwrap();
+        assert!(retry > 0 && retry < plan().target_video_bitrate_bps);
+    }
 }

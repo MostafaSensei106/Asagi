@@ -7,13 +7,7 @@ import '../frb_generated.dart';
 
 import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
 
-// These functions are ignored because they are not marked as `pub`: `scale_dimensions`
 // These function are ignored because they are on traits that is not defined in current crate (put an empty `#[frb]` on it to unignore): `clone`, `clone`, `fmt`, `fmt`
-
-Future<String> greet({required String apiName}) =>
-    RustLib.instance.api.crateApiCalculatorGreet(apiName: apiName);
-
-Future<void> initApp() => RustLib.instance.api.crateApiCalculatorInitApp();
 
 Future<CalculationPlan> calculateCompressionPlan({
   required InputMetadata info,
@@ -23,6 +17,20 @@ Future<CalculationPlan> calculateCompressionPlan({
   info: info,
   targetSizeMb: targetSizeMb,
   customKFactor: customKFactor,
+);
+
+/// Zero means accept. A positive bitrate requests another attempt. Errors never
+/// permit an oversized artifact to be returned as a successful result.
+Future<int> verifyAttempt({
+  required BigInt actualBytes,
+  required double durationSecs,
+  required CalculationPlan plan,
+  required int attempt,
+}) => RustLib.instance.api.crateApiCalculatorVerifyAttempt(
+  actualBytes: actualBytes,
+  durationSecs: durationSecs,
+  plan: plan,
+  attempt: attempt,
 );
 
 class CalculationPlan {

@@ -107,6 +107,7 @@ class NativeVideoMetadata {
     this.bitrateBps,
     this.frameRate,
     this.hasAudio,
+    this.fileSizeBytes,
   });
 
   String? path;
@@ -125,6 +126,8 @@ class NativeVideoMetadata {
 
   bool? hasAudio;
 
+  int? fileSizeBytes;
+
   List<Object?> _toList() {
     return <Object?>[
       path,
@@ -135,6 +138,7 @@ class NativeVideoMetadata {
       bitrateBps,
       frameRate,
       hasAudio,
+      fileSizeBytes,
     ];
   }
 
@@ -152,6 +156,7 @@ class NativeVideoMetadata {
       bitrateBps: result[5] as int?,
       frameRate: result[6] as double?,
       hasAudio: result[7] as bool?,
+      fileSizeBytes: result[8] as int?,
     );
   }
 
@@ -164,7 +169,7 @@ class NativeVideoMetadata {
     if (identical(this, other)) {
       return true;
     }
-    return _deepEquals(path, other.path) && _deepEquals(durationSeconds, other.durationSeconds) && _deepEquals(width, other.width) && _deepEquals(height, other.height) && _deepEquals(rotation, other.rotation) && _deepEquals(bitrateBps, other.bitrateBps) && _deepEquals(frameRate, other.frameRate) && _deepEquals(hasAudio, other.hasAudio);
+    return _deepEquals(path, other.path) && _deepEquals(durationSeconds, other.durationSeconds) && _deepEquals(width, other.width) && _deepEquals(height, other.height) && _deepEquals(rotation, other.rotation) && _deepEquals(bitrateBps, other.bitrateBps) && _deepEquals(frameRate, other.frameRate) && _deepEquals(hasAudio, other.hasAudio) && _deepEquals(fileSizeBytes, other.fileSizeBytes);
   }
 
   @override
@@ -173,7 +178,7 @@ class NativeVideoMetadata {
 
   @override
   String toString() {
-    return 'NativeVideoMetadata(path: $path, durationSeconds: $durationSeconds, width: $width, height: $height, rotation: $rotation, bitrateBps: $bitrateBps, frameRate: $frameRate, hasAudio: $hasAudio)';
+    return 'NativeVideoMetadata(path: $path, durationSeconds: $durationSeconds, width: $width, height: $height, rotation: $rotation, bitrateBps: $bitrateBps, frameRate: $frameRate, hasAudio: $hasAudio, fileSizeBytes: $fileSizeBytes)';
   }
 }
 
@@ -185,6 +190,7 @@ class NativeCompressRequest {
     this.targetAudioBitrateBps,
     this.targetWidth,
     this.targetHeight,
+    this.frameRate,
   });
 
   String? inputPath;
@@ -199,6 +205,8 @@ class NativeCompressRequest {
 
   int? targetHeight;
 
+  double? frameRate;
+
   List<Object?> _toList() {
     return <Object?>[
       inputPath,
@@ -207,6 +215,7 @@ class NativeCompressRequest {
       targetAudioBitrateBps,
       targetWidth,
       targetHeight,
+      frameRate,
     ];
   }
 
@@ -222,6 +231,7 @@ class NativeCompressRequest {
       targetAudioBitrateBps: result[3] as int?,
       targetWidth: result[4] as int?,
       targetHeight: result[5] as int?,
+      frameRate: result[6] as double?,
     );
   }
 
@@ -234,7 +244,7 @@ class NativeCompressRequest {
     if (identical(this, other)) {
       return true;
     }
-    return _deepEquals(inputPath, other.inputPath) && _deepEquals(outputPath, other.outputPath) && _deepEquals(targetVideoBitrateBps, other.targetVideoBitrateBps) && _deepEquals(targetAudioBitrateBps, other.targetAudioBitrateBps) && _deepEquals(targetWidth, other.targetWidth) && _deepEquals(targetHeight, other.targetHeight);
+    return _deepEquals(inputPath, other.inputPath) && _deepEquals(outputPath, other.outputPath) && _deepEquals(targetVideoBitrateBps, other.targetVideoBitrateBps) && _deepEquals(targetAudioBitrateBps, other.targetAudioBitrateBps) && _deepEquals(targetWidth, other.targetWidth) && _deepEquals(targetHeight, other.targetHeight) && _deepEquals(frameRate, other.frameRate);
   }
 
   @override
@@ -243,7 +253,7 @@ class NativeCompressRequest {
 
   @override
   String toString() {
-    return 'NativeCompressRequest(inputPath: $inputPath, outputPath: $outputPath, targetVideoBitrateBps: $targetVideoBitrateBps, targetAudioBitrateBps: $targetAudioBitrateBps, targetWidth: $targetWidth, targetHeight: $targetHeight)';
+    return 'NativeCompressRequest(inputPath: $inputPath, outputPath: $outputPath, targetVideoBitrateBps: $targetVideoBitrateBps, targetAudioBitrateBps: $targetAudioBitrateBps, targetWidth: $targetWidth, targetHeight: $targetHeight, frameRate: $frameRate)';
   }
 }
 
@@ -313,6 +323,24 @@ class NativeMediaApi {
     )
     ;
     return pigeonVar_replyValue! as NativeVideoMetadata;
+  }
+
+  Future<void> cancelEncoding() async {
+    final pigeonVar_channelName = 'dev.flutter.pigeon.zumi.NativeMediaApi.cancelEncoding$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channel = BasicMessageChannel<Object?>(
+      pigeonVar_channelName,
+      pigeonChannelCodec,
+      binaryMessenger: pigeonVar_binaryMessenger,
+    );
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(null);
+    final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
+
+    _extractReplyValueOrThrow(
+        pigeonVar_replyList,
+        pigeonVar_channelName,
+        isNullValid: true,
+    )
+    ;
   }
 
   Future<bool> startHardwareEncoding(NativeCompressRequest request) async {

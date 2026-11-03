@@ -1,30 +1,22 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:zumi/main.dart';
+import 'package:zumi/compression/compression_engine.dart';
+import 'package:zumi/core/native/pigeon_messages.g.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
-
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+  test('native request preserves compression parameters through codec', () {
+    final request = NativeCompressRequest(
+      inputPath: '/source.mp4',
+      outputPath: '/output.mp4',
+      targetVideoBitrateBps: 1836160,
+      targetAudioBitrateBps: 128000,
+      targetWidth: 720,
+      targetHeight: 1280,
+      frameRate: 30,
+    );
+    final decoded = NativeCompressRequest.decode(request.encode());
+    expect(decoded.targetVideoBitrateBps, 1836160);
+    expect(decoded.targetHeight, 1280);
+    expect(decoded.frameRate, 30);
+    expect(RustCompressionPlanner(), isA<CompressionPlanner>());
   });
 }

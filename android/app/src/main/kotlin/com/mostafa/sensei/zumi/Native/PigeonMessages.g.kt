@@ -207,7 +207,8 @@ data class NativeVideoMetadata (
   val rotation: Long? = null,
   val bitrateBps: Long? = null,
   val frameRate: Double? = null,
-  val hasAudio: Boolean? = null
+  val hasAudio: Boolean? = null,
+  val fileSizeBytes: Long? = null
 )
  {
   companion object {
@@ -220,7 +221,8 @@ data class NativeVideoMetadata (
       val bitrateBps = pigeonVar_list[5] as Long?
       val frameRate = pigeonVar_list[6] as Double?
       val hasAudio = pigeonVar_list[7] as Boolean?
-      return NativeVideoMetadata(path, durationSeconds, width, height, rotation, bitrateBps, frameRate, hasAudio)
+      val fileSizeBytes = pigeonVar_list[8] as Long?
+      return NativeVideoMetadata(path, durationSeconds, width, height, rotation, bitrateBps, frameRate, hasAudio, fileSizeBytes)
     }
   }
   fun toList(): List<Any?> {
@@ -233,6 +235,7 @@ data class NativeVideoMetadata (
       bitrateBps,
       frameRate,
       hasAudio,
+      fileSizeBytes,
     )
   }
   override fun equals(other: Any?): Boolean {
@@ -243,7 +246,7 @@ data class NativeVideoMetadata (
       return true
     }
     val other = other as NativeVideoMetadata
-    return PigeonMessagesPigeonUtils.deepEquals(this.path, other.path) && PigeonMessagesPigeonUtils.deepEquals(this.durationSeconds, other.durationSeconds) && PigeonMessagesPigeonUtils.deepEquals(this.width, other.width) && PigeonMessagesPigeonUtils.deepEquals(this.height, other.height) && PigeonMessagesPigeonUtils.deepEquals(this.rotation, other.rotation) && PigeonMessagesPigeonUtils.deepEquals(this.bitrateBps, other.bitrateBps) && PigeonMessagesPigeonUtils.deepEquals(this.frameRate, other.frameRate) && PigeonMessagesPigeonUtils.deepEquals(this.hasAudio, other.hasAudio)
+    return PigeonMessagesPigeonUtils.deepEquals(this.path, other.path) && PigeonMessagesPigeonUtils.deepEquals(this.durationSeconds, other.durationSeconds) && PigeonMessagesPigeonUtils.deepEquals(this.width, other.width) && PigeonMessagesPigeonUtils.deepEquals(this.height, other.height) && PigeonMessagesPigeonUtils.deepEquals(this.rotation, other.rotation) && PigeonMessagesPigeonUtils.deepEquals(this.bitrateBps, other.bitrateBps) && PigeonMessagesPigeonUtils.deepEquals(this.frameRate, other.frameRate) && PigeonMessagesPigeonUtils.deepEquals(this.hasAudio, other.hasAudio) && PigeonMessagesPigeonUtils.deepEquals(this.fileSizeBytes, other.fileSizeBytes)
   }
 
   override fun hashCode(): Int {
@@ -256,10 +259,11 @@ data class NativeVideoMetadata (
     result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.bitrateBps)
     result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.frameRate)
     result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.hasAudio)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.fileSizeBytes)
     return result
   }
   override fun toString(): String {
-    return "NativeVideoMetadata(path=$path, durationSeconds=$durationSeconds, width=$width, height=$height, rotation=$rotation, bitrateBps=$bitrateBps, frameRate=$frameRate, hasAudio=$hasAudio)"
+    return "NativeVideoMetadata(path=$path, durationSeconds=$durationSeconds, width=$width, height=$height, rotation=$rotation, bitrateBps=$bitrateBps, frameRate=$frameRate, hasAudio=$hasAudio, fileSizeBytes=$fileSizeBytes)"
   }
 }
 
@@ -270,7 +274,8 @@ data class NativeCompressRequest (
   val targetVideoBitrateBps: Long? = null,
   val targetAudioBitrateBps: Long? = null,
   val targetWidth: Long? = null,
-  val targetHeight: Long? = null
+  val targetHeight: Long? = null,
+  val frameRate: Double? = null
 )
  {
   companion object {
@@ -281,7 +286,8 @@ data class NativeCompressRequest (
       val targetAudioBitrateBps = pigeonVar_list[3] as Long?
       val targetWidth = pigeonVar_list[4] as Long?
       val targetHeight = pigeonVar_list[5] as Long?
-      return NativeCompressRequest(inputPath, outputPath, targetVideoBitrateBps, targetAudioBitrateBps, targetWidth, targetHeight)
+      val frameRate = pigeonVar_list[6] as Double?
+      return NativeCompressRequest(inputPath, outputPath, targetVideoBitrateBps, targetAudioBitrateBps, targetWidth, targetHeight, frameRate)
     }
   }
   fun toList(): List<Any?> {
@@ -292,6 +298,7 @@ data class NativeCompressRequest (
       targetAudioBitrateBps,
       targetWidth,
       targetHeight,
+      frameRate,
     )
   }
   override fun equals(other: Any?): Boolean {
@@ -302,7 +309,7 @@ data class NativeCompressRequest (
       return true
     }
     val other = other as NativeCompressRequest
-    return PigeonMessagesPigeonUtils.deepEquals(this.inputPath, other.inputPath) && PigeonMessagesPigeonUtils.deepEquals(this.outputPath, other.outputPath) && PigeonMessagesPigeonUtils.deepEquals(this.targetVideoBitrateBps, other.targetVideoBitrateBps) && PigeonMessagesPigeonUtils.deepEquals(this.targetAudioBitrateBps, other.targetAudioBitrateBps) && PigeonMessagesPigeonUtils.deepEquals(this.targetWidth, other.targetWidth) && PigeonMessagesPigeonUtils.deepEquals(this.targetHeight, other.targetHeight)
+    return PigeonMessagesPigeonUtils.deepEquals(this.inputPath, other.inputPath) && PigeonMessagesPigeonUtils.deepEquals(this.outputPath, other.outputPath) && PigeonMessagesPigeonUtils.deepEquals(this.targetVideoBitrateBps, other.targetVideoBitrateBps) && PigeonMessagesPigeonUtils.deepEquals(this.targetAudioBitrateBps, other.targetAudioBitrateBps) && PigeonMessagesPigeonUtils.deepEquals(this.targetWidth, other.targetWidth) && PigeonMessagesPigeonUtils.deepEquals(this.targetHeight, other.targetHeight) && PigeonMessagesPigeonUtils.deepEquals(this.frameRate, other.frameRate)
   }
 
   override fun hashCode(): Int {
@@ -313,10 +320,11 @@ data class NativeCompressRequest (
     result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.targetAudioBitrateBps)
     result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.targetWidth)
     result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.targetHeight)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.frameRate)
     return result
   }
   override fun toString(): String {
-    return "NativeCompressRequest(inputPath=$inputPath, outputPath=$outputPath, targetVideoBitrateBps=$targetVideoBitrateBps, targetAudioBitrateBps=$targetAudioBitrateBps, targetWidth=$targetWidth, targetHeight=$targetHeight)"
+    return "NativeCompressRequest(inputPath=$inputPath, outputPath=$outputPath, targetVideoBitrateBps=$targetVideoBitrateBps, targetAudioBitrateBps=$targetAudioBitrateBps, targetWidth=$targetWidth, targetHeight=$targetHeight, frameRate=$frameRate)"
   }
 }
 private open class PigeonMessagesPigeonCodec : StandardMessageCodec() {
@@ -354,6 +362,7 @@ private open class PigeonMessagesPigeonCodec : StandardMessageCodec() {
 /** Generated interface from Pigeon that represents a handler of messages from Flutter. */
 interface NativeMediaApi {
   suspend fun extractVideoMetadata(inputPath: String): NativeVideoMetadata
+  suspend fun cancelEncoding()
   suspend fun startHardwareEncoding(request: NativeCompressRequest): Boolean
 
   companion object {
@@ -374,6 +383,24 @@ interface NativeMediaApi {
             CoroutineScope(Dispatchers.Main).launch {
               val wrapped: List<Any?> = try {
                 listOf(api.extractVideoMetadata(inputPathArg))
+              } catch (exception: Throwable) {
+                PigeonMessagesPigeonUtils.wrapError(exception)
+              }
+              reply.reply(wrapped)
+            }
+          }
+        } else {
+          channel.setMessageHandler(null)
+        }
+      }
+      run {
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.zumi.NativeMediaApi.cancelEncoding$separatedMessageChannelSuffix", codec)
+        if (api != null) {
+          channel.setMessageHandler { _, reply ->
+            CoroutineScope(Dispatchers.Main).launch {
+              val wrapped: List<Any?> = try {
+                api.cancelEncoding()
+                listOf(null)
               } catch (exception: Throwable) {
                 PigeonMessagesPigeonUtils.wrapError(exception)
               }

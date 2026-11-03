@@ -17,6 +17,7 @@ final class NativeVideoMetadata {
   int? bitrateBps;
   double? frameRate;
   bool? hasAudio;
+  int? fileSizeBytes;
 }
 
 final class NativeCompressRequest {
@@ -26,12 +27,16 @@ final class NativeCompressRequest {
   int? targetAudioBitrateBps;
   int? targetWidth;
   int? targetHeight;
+  double? frameRate;
 }
 
 @HostApi()
 abstract class NativeMediaApi {
   @async
   NativeVideoMetadata extractVideoMetadata(String inputPath);
+
+  @async
+  void cancelEncoding();
 
   @async
   bool startHardwareEncoding(NativeCompressRequest request);

@@ -194,6 +194,7 @@ struct NativeVideoMetadata: Hashable, CustomStringConvertible {
   var bitrateBps: Int64? = nil
   var frameRate: Double? = nil
   var hasAudio: Bool? = nil
+  var fileSizeBytes: Int64? = nil
 
 
   // swift-format-ignore: AlwaysUseLowerCamelCase
@@ -206,6 +207,7 @@ struct NativeVideoMetadata: Hashable, CustomStringConvertible {
     let bitrateBps: Int64? = nilOrValue(pigeonVar_list[5])
     let frameRate: Double? = nilOrValue(pigeonVar_list[6])
     let hasAudio: Bool? = nilOrValue(pigeonVar_list[7])
+    let fileSizeBytes: Int64? = nilOrValue(pigeonVar_list[8])
 
     return NativeVideoMetadata(
       path: path,
@@ -215,7 +217,8 @@ struct NativeVideoMetadata: Hashable, CustomStringConvertible {
       rotation: rotation,
       bitrateBps: bitrateBps,
       frameRate: frameRate,
-      hasAudio: hasAudio
+      hasAudio: hasAudio,
+      fileSizeBytes: fileSizeBytes
     )
   }
   func toList() -> [Any?] {
@@ -228,13 +231,14 @@ struct NativeVideoMetadata: Hashable, CustomStringConvertible {
       bitrateBps,
       frameRate,
       hasAudio,
+      fileSizeBytes,
     ]
   }
   static func == (lhs: NativeVideoMetadata, rhs: NativeVideoMetadata) -> Bool {
     if Swift.type(of: lhs) != Swift.type(of: rhs) {
       return false
     }
-    return PigeonMessagesPigeonInternal.deepEquals(lhs.path, rhs.path) && PigeonMessagesPigeonInternal.deepEquals(lhs.durationSeconds, rhs.durationSeconds) && PigeonMessagesPigeonInternal.deepEquals(lhs.width, rhs.width) && PigeonMessagesPigeonInternal.deepEquals(lhs.height, rhs.height) && PigeonMessagesPigeonInternal.deepEquals(lhs.rotation, rhs.rotation) && PigeonMessagesPigeonInternal.deepEquals(lhs.bitrateBps, rhs.bitrateBps) && PigeonMessagesPigeonInternal.deepEquals(lhs.frameRate, rhs.frameRate) && PigeonMessagesPigeonInternal.deepEquals(lhs.hasAudio, rhs.hasAudio)
+    return PigeonMessagesPigeonInternal.deepEquals(lhs.path, rhs.path) && PigeonMessagesPigeonInternal.deepEquals(lhs.durationSeconds, rhs.durationSeconds) && PigeonMessagesPigeonInternal.deepEquals(lhs.width, rhs.width) && PigeonMessagesPigeonInternal.deepEquals(lhs.height, rhs.height) && PigeonMessagesPigeonInternal.deepEquals(lhs.rotation, rhs.rotation) && PigeonMessagesPigeonInternal.deepEquals(lhs.bitrateBps, rhs.bitrateBps) && PigeonMessagesPigeonInternal.deepEquals(lhs.frameRate, rhs.frameRate) && PigeonMessagesPigeonInternal.deepEquals(lhs.hasAudio, rhs.hasAudio) && PigeonMessagesPigeonInternal.deepEquals(lhs.fileSizeBytes, rhs.fileSizeBytes)
   }
 
   func hash(into hasher: inout Hasher) {
@@ -247,10 +251,11 @@ struct NativeVideoMetadata: Hashable, CustomStringConvertible {
     PigeonMessagesPigeonInternal.deepHash(value: bitrateBps, hasher: &hasher)
     PigeonMessagesPigeonInternal.deepHash(value: frameRate, hasher: &hasher)
     PigeonMessagesPigeonInternal.deepHash(value: hasAudio, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: fileSizeBytes, hasher: &hasher)
   }
 
   public var description: String {
-    return "NativeVideoMetadata(path: \(String(describing: path)), durationSeconds: \(String(describing: durationSeconds)), width: \(String(describing: width)), height: \(String(describing: height)), rotation: \(String(describing: rotation)), bitrateBps: \(String(describing: bitrateBps)), frameRate: \(String(describing: frameRate)), hasAudio: \(String(describing: hasAudio)))"
+    return "NativeVideoMetadata(path: \(String(describing: path)), durationSeconds: \(String(describing: durationSeconds)), width: \(String(describing: width)), height: \(String(describing: height)), rotation: \(String(describing: rotation)), bitrateBps: \(String(describing: bitrateBps)), frameRate: \(String(describing: frameRate)), hasAudio: \(String(describing: hasAudio)), fileSizeBytes: \(String(describing: fileSizeBytes)))"
   }
 }
 
@@ -262,6 +267,7 @@ struct NativeCompressRequest: Hashable, CustomStringConvertible {
   var targetAudioBitrateBps: Int64? = nil
   var targetWidth: Int64? = nil
   var targetHeight: Int64? = nil
+  var frameRate: Double? = nil
 
 
   // swift-format-ignore: AlwaysUseLowerCamelCase
@@ -272,6 +278,7 @@ struct NativeCompressRequest: Hashable, CustomStringConvertible {
     let targetAudioBitrateBps: Int64? = nilOrValue(pigeonVar_list[3])
     let targetWidth: Int64? = nilOrValue(pigeonVar_list[4])
     let targetHeight: Int64? = nilOrValue(pigeonVar_list[5])
+    let frameRate: Double? = nilOrValue(pigeonVar_list[6])
 
     return NativeCompressRequest(
       inputPath: inputPath,
@@ -279,7 +286,8 @@ struct NativeCompressRequest: Hashable, CustomStringConvertible {
       targetVideoBitrateBps: targetVideoBitrateBps,
       targetAudioBitrateBps: targetAudioBitrateBps,
       targetWidth: targetWidth,
-      targetHeight: targetHeight
+      targetHeight: targetHeight,
+      frameRate: frameRate
     )
   }
   func toList() -> [Any?] {
@@ -290,13 +298,14 @@ struct NativeCompressRequest: Hashable, CustomStringConvertible {
       targetAudioBitrateBps,
       targetWidth,
       targetHeight,
+      frameRate,
     ]
   }
   static func == (lhs: NativeCompressRequest, rhs: NativeCompressRequest) -> Bool {
     if Swift.type(of: lhs) != Swift.type(of: rhs) {
       return false
     }
-    return PigeonMessagesPigeonInternal.deepEquals(lhs.inputPath, rhs.inputPath) && PigeonMessagesPigeonInternal.deepEquals(lhs.outputPath, rhs.outputPath) && PigeonMessagesPigeonInternal.deepEquals(lhs.targetVideoBitrateBps, rhs.targetVideoBitrateBps) && PigeonMessagesPigeonInternal.deepEquals(lhs.targetAudioBitrateBps, rhs.targetAudioBitrateBps) && PigeonMessagesPigeonInternal.deepEquals(lhs.targetWidth, rhs.targetWidth) && PigeonMessagesPigeonInternal.deepEquals(lhs.targetHeight, rhs.targetHeight)
+    return PigeonMessagesPigeonInternal.deepEquals(lhs.inputPath, rhs.inputPath) && PigeonMessagesPigeonInternal.deepEquals(lhs.outputPath, rhs.outputPath) && PigeonMessagesPigeonInternal.deepEquals(lhs.targetVideoBitrateBps, rhs.targetVideoBitrateBps) && PigeonMessagesPigeonInternal.deepEquals(lhs.targetAudioBitrateBps, rhs.targetAudioBitrateBps) && PigeonMessagesPigeonInternal.deepEquals(lhs.targetWidth, rhs.targetWidth) && PigeonMessagesPigeonInternal.deepEquals(lhs.targetHeight, rhs.targetHeight) && PigeonMessagesPigeonInternal.deepEquals(lhs.frameRate, rhs.frameRate)
   }
 
   func hash(into hasher: inout Hasher) {
@@ -307,10 +316,11 @@ struct NativeCompressRequest: Hashable, CustomStringConvertible {
     PigeonMessagesPigeonInternal.deepHash(value: targetAudioBitrateBps, hasher: &hasher)
     PigeonMessagesPigeonInternal.deepHash(value: targetWidth, hasher: &hasher)
     PigeonMessagesPigeonInternal.deepHash(value: targetHeight, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: frameRate, hasher: &hasher)
   }
 
   public var description: String {
-    return "NativeCompressRequest(inputPath: \(String(describing: inputPath)), outputPath: \(String(describing: outputPath)), targetVideoBitrateBps: \(String(describing: targetVideoBitrateBps)), targetAudioBitrateBps: \(String(describing: targetAudioBitrateBps)), targetWidth: \(String(describing: targetWidth)), targetHeight: \(String(describing: targetHeight)))"
+    return "NativeCompressRequest(inputPath: \(String(describing: inputPath)), outputPath: \(String(describing: outputPath)), targetVideoBitrateBps: \(String(describing: targetVideoBitrateBps)), targetAudioBitrateBps: \(String(describing: targetAudioBitrateBps)), targetWidth: \(String(describing: targetWidth)), targetHeight: \(String(describing: targetHeight)), frameRate: \(String(describing: frameRate)))"
   }
 }
 
@@ -359,6 +369,7 @@ class PigeonMessagesPigeonCodec: FlutterStandardMessageCodec, @unchecked Sendabl
 /// Generated protocol from Pigeon that represents a handler of messages from Flutter.
 protocol NativeMediaApi {
   func extractVideoMetadata(inputPath: String) async throws -> NativeVideoMetadata
+  func cancelEncoding() async throws
   func startHardwareEncoding(request: NativeCompressRequest) async throws -> Bool
 }
 
@@ -384,6 +395,21 @@ class NativeMediaApiSetup {
       }
     } else {
       extractVideoMetadataChannel.setMessageHandler(nil)
+    }
+    let cancelEncodingChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.zumi.NativeMediaApi.cancelEncoding\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
+    if let api = api {
+      cancelEncodingChannel.setMessageHandler { _, reply in
+        Task { @MainActor in
+          do {
+            try await api.cancelEncoding()
+            reply(wrapResult(nil))
+          } catch {
+            reply(wrapError(error))
+          }
+        }
+      }
+    } else {
+      cancelEncodingChannel.setMessageHandler(nil)
     }
     let startHardwareEncodingChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.zumi.NativeMediaApi.startHardwareEncoding\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
     if let api = api {
