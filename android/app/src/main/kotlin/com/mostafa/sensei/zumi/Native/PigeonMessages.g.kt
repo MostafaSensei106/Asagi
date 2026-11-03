@@ -198,6 +198,17 @@ class FlutterError (
   val details: Any? = null
 ) : RuntimeException()
 
+enum class NativeHdrMode(val raw: Int) {
+  PRESERVE(0),
+  TONE_MAP_TO_SDR(1);
+
+  companion object {
+    fun ofRaw(raw: Int): NativeHdrMode? {
+      return values().firstOrNull { it.raw == raw }
+    }
+  }
+}
+
 /** Generated class from Pigeon that represents data sent in messages. */
 data class NativeVideoMetadata (
   val path: String? = null,
@@ -208,7 +219,9 @@ data class NativeVideoMetadata (
   val bitrateBps: Long? = null,
   val frameRate: Double? = null,
   val hasAudio: Boolean? = null,
-  val fileSizeBytes: Long? = null
+  val fileSizeBytes: Long? = null,
+  val isHdr: Boolean? = null,
+  val colorTransfer: String? = null
 )
  {
   companion object {
@@ -222,7 +235,9 @@ data class NativeVideoMetadata (
       val frameRate = pigeonVar_list[6] as Double?
       val hasAudio = pigeonVar_list[7] as Boolean?
       val fileSizeBytes = pigeonVar_list[8] as Long?
-      return NativeVideoMetadata(path, durationSeconds, width, height, rotation, bitrateBps, frameRate, hasAudio, fileSizeBytes)
+      val isHdr = pigeonVar_list[9] as Boolean?
+      val colorTransfer = pigeonVar_list[10] as String?
+      return NativeVideoMetadata(path, durationSeconds, width, height, rotation, bitrateBps, frameRate, hasAudio, fileSizeBytes, isHdr, colorTransfer)
     }
   }
   fun toList(): List<Any?> {
@@ -236,6 +251,8 @@ data class NativeVideoMetadata (
       frameRate,
       hasAudio,
       fileSizeBytes,
+      isHdr,
+      colorTransfer,
     )
   }
   override fun equals(other: Any?): Boolean {
@@ -246,7 +263,7 @@ data class NativeVideoMetadata (
       return true
     }
     val other = other as NativeVideoMetadata
-    return PigeonMessagesPigeonUtils.deepEquals(this.path, other.path) && PigeonMessagesPigeonUtils.deepEquals(this.durationSeconds, other.durationSeconds) && PigeonMessagesPigeonUtils.deepEquals(this.width, other.width) && PigeonMessagesPigeonUtils.deepEquals(this.height, other.height) && PigeonMessagesPigeonUtils.deepEquals(this.rotation, other.rotation) && PigeonMessagesPigeonUtils.deepEquals(this.bitrateBps, other.bitrateBps) && PigeonMessagesPigeonUtils.deepEquals(this.frameRate, other.frameRate) && PigeonMessagesPigeonUtils.deepEquals(this.hasAudio, other.hasAudio) && PigeonMessagesPigeonUtils.deepEquals(this.fileSizeBytes, other.fileSizeBytes)
+    return PigeonMessagesPigeonUtils.deepEquals(this.path, other.path) && PigeonMessagesPigeonUtils.deepEquals(this.durationSeconds, other.durationSeconds) && PigeonMessagesPigeonUtils.deepEquals(this.width, other.width) && PigeonMessagesPigeonUtils.deepEquals(this.height, other.height) && PigeonMessagesPigeonUtils.deepEquals(this.rotation, other.rotation) && PigeonMessagesPigeonUtils.deepEquals(this.bitrateBps, other.bitrateBps) && PigeonMessagesPigeonUtils.deepEquals(this.frameRate, other.frameRate) && PigeonMessagesPigeonUtils.deepEquals(this.hasAudio, other.hasAudio) && PigeonMessagesPigeonUtils.deepEquals(this.fileSizeBytes, other.fileSizeBytes) && PigeonMessagesPigeonUtils.deepEquals(this.isHdr, other.isHdr) && PigeonMessagesPigeonUtils.deepEquals(this.colorTransfer, other.colorTransfer)
   }
 
   override fun hashCode(): Int {
@@ -260,10 +277,12 @@ data class NativeVideoMetadata (
     result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.frameRate)
     result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.hasAudio)
     result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.fileSizeBytes)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.isHdr)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.colorTransfer)
     return result
   }
   override fun toString(): String {
-    return "NativeVideoMetadata(path=$path, durationSeconds=$durationSeconds, width=$width, height=$height, rotation=$rotation, bitrateBps=$bitrateBps, frameRate=$frameRate, hasAudio=$hasAudio, fileSizeBytes=$fileSizeBytes)"
+    return "NativeVideoMetadata(path=$path, durationSeconds=$durationSeconds, width=$width, height=$height, rotation=$rotation, bitrateBps=$bitrateBps, frameRate=$frameRate, hasAudio=$hasAudio, fileSizeBytes=$fileSizeBytes, isHdr=$isHdr, colorTransfer=$colorTransfer)"
   }
 }
 
@@ -275,7 +294,8 @@ data class NativeCompressRequest (
   val targetAudioBitrateBps: Long? = null,
   val targetWidth: Long? = null,
   val targetHeight: Long? = null,
-  val frameRate: Double? = null
+  val frameRate: Double? = null,
+  val hdrMode: NativeHdrMode? = null
 )
  {
   companion object {
@@ -287,7 +307,8 @@ data class NativeCompressRequest (
       val targetWidth = pigeonVar_list[4] as Long?
       val targetHeight = pigeonVar_list[5] as Long?
       val frameRate = pigeonVar_list[6] as Double?
-      return NativeCompressRequest(inputPath, outputPath, targetVideoBitrateBps, targetAudioBitrateBps, targetWidth, targetHeight, frameRate)
+      val hdrMode = pigeonVar_list[7] as NativeHdrMode?
+      return NativeCompressRequest(inputPath, outputPath, targetVideoBitrateBps, targetAudioBitrateBps, targetWidth, targetHeight, frameRate, hdrMode)
     }
   }
   fun toList(): List<Any?> {
@@ -299,6 +320,7 @@ data class NativeCompressRequest (
       targetWidth,
       targetHeight,
       frameRate,
+      hdrMode,
     )
   }
   override fun equals(other: Any?): Boolean {
@@ -309,7 +331,7 @@ data class NativeCompressRequest (
       return true
     }
     val other = other as NativeCompressRequest
-    return PigeonMessagesPigeonUtils.deepEquals(this.inputPath, other.inputPath) && PigeonMessagesPigeonUtils.deepEquals(this.outputPath, other.outputPath) && PigeonMessagesPigeonUtils.deepEquals(this.targetVideoBitrateBps, other.targetVideoBitrateBps) && PigeonMessagesPigeonUtils.deepEquals(this.targetAudioBitrateBps, other.targetAudioBitrateBps) && PigeonMessagesPigeonUtils.deepEquals(this.targetWidth, other.targetWidth) && PigeonMessagesPigeonUtils.deepEquals(this.targetHeight, other.targetHeight) && PigeonMessagesPigeonUtils.deepEquals(this.frameRate, other.frameRate)
+    return PigeonMessagesPigeonUtils.deepEquals(this.inputPath, other.inputPath) && PigeonMessagesPigeonUtils.deepEquals(this.outputPath, other.outputPath) && PigeonMessagesPigeonUtils.deepEquals(this.targetVideoBitrateBps, other.targetVideoBitrateBps) && PigeonMessagesPigeonUtils.deepEquals(this.targetAudioBitrateBps, other.targetAudioBitrateBps) && PigeonMessagesPigeonUtils.deepEquals(this.targetWidth, other.targetWidth) && PigeonMessagesPigeonUtils.deepEquals(this.targetHeight, other.targetHeight) && PigeonMessagesPigeonUtils.deepEquals(this.frameRate, other.frameRate) && PigeonMessagesPigeonUtils.deepEquals(this.hdrMode, other.hdrMode)
   }
 
   override fun hashCode(): Int {
@@ -321,21 +343,27 @@ data class NativeCompressRequest (
     result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.targetWidth)
     result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.targetHeight)
     result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.frameRate)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.hdrMode)
     return result
   }
   override fun toString(): String {
-    return "NativeCompressRequest(inputPath=$inputPath, outputPath=$outputPath, targetVideoBitrateBps=$targetVideoBitrateBps, targetAudioBitrateBps=$targetAudioBitrateBps, targetWidth=$targetWidth, targetHeight=$targetHeight, frameRate=$frameRate)"
+    return "NativeCompressRequest(inputPath=$inputPath, outputPath=$outputPath, targetVideoBitrateBps=$targetVideoBitrateBps, targetAudioBitrateBps=$targetAudioBitrateBps, targetWidth=$targetWidth, targetHeight=$targetHeight, frameRate=$frameRate, hdrMode=$hdrMode)"
   }
 }
 private open class PigeonMessagesPigeonCodec : StandardMessageCodec() {
   override fun readValueOfType(type: Byte, buffer: ByteBuffer): Any? {
     return when (type) {
       129.toByte() -> {
+        (readValue(buffer) as Long?)?.let {
+          NativeHdrMode.ofRaw(it.toInt())
+        }
+      }
+      130.toByte() -> {
         (readValue(buffer) as? List<Any?>)?.let {
           NativeVideoMetadata.fromList(it)
         }
       }
-      130.toByte() -> {
+      131.toByte() -> {
         (readValue(buffer) as? List<Any?>)?.let {
           NativeCompressRequest.fromList(it)
         }
@@ -345,12 +373,16 @@ private open class PigeonMessagesPigeonCodec : StandardMessageCodec() {
   }
   override fun writeValue(stream: ByteArrayOutputStream, value: Any?)   {
     when (value) {
-      is NativeVideoMetadata -> {
+      is NativeHdrMode -> {
         stream.write(129)
+        writeValue(stream, value.raw.toLong())
+      }
+      is NativeVideoMetadata -> {
+        stream.write(130)
         writeValue(stream, value.toList())
       }
       is NativeCompressRequest -> {
-        stream.write(130)
+        stream.write(131)
         writeValue(stream, value.toList())
       }
       else -> super.writeValue(stream, value)
@@ -363,6 +395,8 @@ private open class PigeonMessagesPigeonCodec : StandardMessageCodec() {
 interface NativeMediaApi {
   suspend fun extractVideoMetadata(inputPath: String): NativeVideoMetadata
   suspend fun cancelEncoding()
+  suspend fun pauseEncoding()
+  suspend fun resumeEncoding()
   suspend fun startHardwareEncoding(request: NativeCompressRequest): Boolean
 
   companion object {
@@ -400,6 +434,42 @@ interface NativeMediaApi {
             CoroutineScope(Dispatchers.Main).launch {
               val wrapped: List<Any?> = try {
                 api.cancelEncoding()
+                listOf(null)
+              } catch (exception: Throwable) {
+                PigeonMessagesPigeonUtils.wrapError(exception)
+              }
+              reply.reply(wrapped)
+            }
+          }
+        } else {
+          channel.setMessageHandler(null)
+        }
+      }
+      run {
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.zumi.NativeMediaApi.pauseEncoding$separatedMessageChannelSuffix", codec)
+        if (api != null) {
+          channel.setMessageHandler { _, reply ->
+            CoroutineScope(Dispatchers.Main).launch {
+              val wrapped: List<Any?> = try {
+                api.pauseEncoding()
+                listOf(null)
+              } catch (exception: Throwable) {
+                PigeonMessagesPigeonUtils.wrapError(exception)
+              }
+              reply.reply(wrapped)
+            }
+          }
+        } else {
+          channel.setMessageHandler(null)
+        }
+      }
+      run {
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.zumi.NativeMediaApi.resumeEncoding$separatedMessageChannelSuffix", codec)
+        if (api != null) {
+          channel.setMessageHandler { _, reply ->
+            CoroutineScope(Dispatchers.Main).launch {
+              val wrapped: List<Any?> = try {
+                api.resumeEncoding()
                 listOf(null)
               } catch (exception: Throwable) {
                 PigeonMessagesPigeonUtils.wrapError(exception)

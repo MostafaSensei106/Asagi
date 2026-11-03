@@ -1,0 +1,60 @@
+import 'package:flutter/services.dart';
+
+import '../../../core/native/pigeon_messages.g.dart' as wire;
+import '../../domain/contracts/video_encoder.dart';
+import '../../domain/models/encode_request.dart';
+import '../../domain/models/video_metadata.dart';
+
+final class PlatformVideoEncoder
+    implements VideoEncoder, EncodingProgressSource {
+  PlatformVideoEncoder(this.api);
+  final wire.NativeMediaApi api;
+  @override
+  late final Stream<double> progress = const EventChannel(
+    'zumi/encoding_progress',
+  ).receiveBroadcastStream().map((value) => (value as num).toDouble());
+  @override
+  Future<VideoMetadata> inspect(String path) async {
+    final m = await api.extractVideoMetadata(path);
+    return VideoMetadata(
+      durationSecs: m.durationSeconds ?? 0,
+      width: m.width ?? 0,
+      height: m.height ?? 0,
+      rotation: m.rotation ?? 0,
+      bitrateBps: m.bitrateBps ?? 0,
+      fileSizeBytes: m.fileSizeBytes ?? 0,
+      hasAudio: m.hasAudio ?? false,
+      frameRate: m.frameRate ?? 30,
+      isHdr: m.isHdr ?? false,
+      colorTransfer: m.colorTransfer ?? 'unknown',
+    );
+  }
+
+  @override
+  Future<void> encode(EncodeRequest request) async {
+    final p = request.plan;
+    final success = await api.startHardwareEncoding(
+      wire.NativeCompressRequest(
+        inputPath: request.inputPath,
+        outputPath: request.outputPath,
+        targetVideoBitrateBps: p.targetVideoBitrateBps,
+        targetAudioBitrateBps: p.targetAudioBitrateBps,
+        targetWidth: p.targetWidth,
+        targetHeight: p.targetHeight,
+        frameRate: request.frameRate,
+        hdrMode: switch (request.hdrMode) {
+          HdrMode.preserve => wire.NativeHdrMode.preserve,
+          HdrMode.toneMapToSdr => wire.NativeHdrMode.toneMapToSdr,
+        },
+      ),
+    );
+    if (!success) throw StateError('E_ENCODING');
+  }
+
+  @override
+  Future<void> cancel() => api.cancelEncoding();
+  @override
+  Future<void> pause() => api.pauseEncoding();
+  @override
+  Future<void> resume() => api.resumeEncoding();
+}

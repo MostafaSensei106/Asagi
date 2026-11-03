@@ -97,6 +97,11 @@ int _deepHash(Object? value) {
 }
 
 
+enum NativeHdrMode {
+  preserve,
+  toneMapToSdr;
+}
+
 class NativeVideoMetadata {
   NativeVideoMetadata({
     this.path,
@@ -108,6 +113,8 @@ class NativeVideoMetadata {
     this.frameRate,
     this.hasAudio,
     this.fileSizeBytes,
+    this.isHdr,
+    this.colorTransfer,
   });
 
   String? path;
@@ -128,6 +135,10 @@ class NativeVideoMetadata {
 
   int? fileSizeBytes;
 
+  bool? isHdr;
+
+  String? colorTransfer;
+
   List<Object?> _toList() {
     return <Object?>[
       path,
@@ -139,6 +150,8 @@ class NativeVideoMetadata {
       frameRate,
       hasAudio,
       fileSizeBytes,
+      isHdr,
+      colorTransfer,
     ];
   }
 
@@ -157,6 +170,8 @@ class NativeVideoMetadata {
       frameRate: result[6] as double?,
       hasAudio: result[7] as bool?,
       fileSizeBytes: result[8] as int?,
+      isHdr: result[9] as bool?,
+      colorTransfer: result[10] as String?,
     );
   }
 
@@ -169,7 +184,7 @@ class NativeVideoMetadata {
     if (identical(this, other)) {
       return true;
     }
-    return _deepEquals(path, other.path) && _deepEquals(durationSeconds, other.durationSeconds) && _deepEquals(width, other.width) && _deepEquals(height, other.height) && _deepEquals(rotation, other.rotation) && _deepEquals(bitrateBps, other.bitrateBps) && _deepEquals(frameRate, other.frameRate) && _deepEquals(hasAudio, other.hasAudio) && _deepEquals(fileSizeBytes, other.fileSizeBytes);
+    return _deepEquals(path, other.path) && _deepEquals(durationSeconds, other.durationSeconds) && _deepEquals(width, other.width) && _deepEquals(height, other.height) && _deepEquals(rotation, other.rotation) && _deepEquals(bitrateBps, other.bitrateBps) && _deepEquals(frameRate, other.frameRate) && _deepEquals(hasAudio, other.hasAudio) && _deepEquals(fileSizeBytes, other.fileSizeBytes) && _deepEquals(isHdr, other.isHdr) && _deepEquals(colorTransfer, other.colorTransfer);
   }
 
   @override
@@ -178,7 +193,7 @@ class NativeVideoMetadata {
 
   @override
   String toString() {
-    return 'NativeVideoMetadata(path: $path, durationSeconds: $durationSeconds, width: $width, height: $height, rotation: $rotation, bitrateBps: $bitrateBps, frameRate: $frameRate, hasAudio: $hasAudio, fileSizeBytes: $fileSizeBytes)';
+    return 'NativeVideoMetadata(path: $path, durationSeconds: $durationSeconds, width: $width, height: $height, rotation: $rotation, bitrateBps: $bitrateBps, frameRate: $frameRate, hasAudio: $hasAudio, fileSizeBytes: $fileSizeBytes, isHdr: $isHdr, colorTransfer: $colorTransfer)';
   }
 }
 
@@ -191,6 +206,7 @@ class NativeCompressRequest {
     this.targetWidth,
     this.targetHeight,
     this.frameRate,
+    this.hdrMode,
   });
 
   String? inputPath;
@@ -207,6 +223,8 @@ class NativeCompressRequest {
 
   double? frameRate;
 
+  NativeHdrMode? hdrMode;
+
   List<Object?> _toList() {
     return <Object?>[
       inputPath,
@@ -216,6 +234,7 @@ class NativeCompressRequest {
       targetWidth,
       targetHeight,
       frameRate,
+      hdrMode,
     ];
   }
 
@@ -232,6 +251,7 @@ class NativeCompressRequest {
       targetWidth: result[4] as int?,
       targetHeight: result[5] as int?,
       frameRate: result[6] as double?,
+      hdrMode: result[7] as NativeHdrMode?,
     );
   }
 
@@ -244,7 +264,7 @@ class NativeCompressRequest {
     if (identical(this, other)) {
       return true;
     }
-    return _deepEquals(inputPath, other.inputPath) && _deepEquals(outputPath, other.outputPath) && _deepEquals(targetVideoBitrateBps, other.targetVideoBitrateBps) && _deepEquals(targetAudioBitrateBps, other.targetAudioBitrateBps) && _deepEquals(targetWidth, other.targetWidth) && _deepEquals(targetHeight, other.targetHeight) && _deepEquals(frameRate, other.frameRate);
+    return _deepEquals(inputPath, other.inputPath) && _deepEquals(outputPath, other.outputPath) && _deepEquals(targetVideoBitrateBps, other.targetVideoBitrateBps) && _deepEquals(targetAudioBitrateBps, other.targetAudioBitrateBps) && _deepEquals(targetWidth, other.targetWidth) && _deepEquals(targetHeight, other.targetHeight) && _deepEquals(frameRate, other.frameRate) && _deepEquals(hdrMode, other.hdrMode);
   }
 
   @override
@@ -253,7 +273,7 @@ class NativeCompressRequest {
 
   @override
   String toString() {
-    return 'NativeCompressRequest(inputPath: $inputPath, outputPath: $outputPath, targetVideoBitrateBps: $targetVideoBitrateBps, targetAudioBitrateBps: $targetAudioBitrateBps, targetWidth: $targetWidth, targetHeight: $targetHeight, frameRate: $frameRate)';
+    return 'NativeCompressRequest(inputPath: $inputPath, outputPath: $outputPath, targetVideoBitrateBps: $targetVideoBitrateBps, targetAudioBitrateBps: $targetAudioBitrateBps, targetWidth: $targetWidth, targetHeight: $targetHeight, frameRate: $frameRate, hdrMode: $hdrMode)';
   }
 }
 
@@ -265,11 +285,14 @@ class _PigeonCodec extends StandardMessageCodec {
     if (value is int) {
       buffer.putUint8(4);
       buffer.putInt64(value);
-    }    else if (value is NativeVideoMetadata) {
+    }    else if (value is NativeHdrMode) {
       buffer.putUint8(129);
+      writeValue(buffer, value.index);
+    }    else if (value is NativeVideoMetadata) {
+      buffer.putUint8(130);
       writeValue(buffer, value.encode());
     }    else if (value is NativeCompressRequest) {
-      buffer.putUint8(130);
+      buffer.putUint8(131);
       writeValue(buffer, value.encode());
     } else {
       super.writeValue(buffer, value);
@@ -280,8 +303,11 @@ class _PigeonCodec extends StandardMessageCodec {
   Object? readValueOfType(int type, ReadBuffer buffer) {
     switch (type) {
       case 129:
-        return NativeVideoMetadata.decode(readValue(buffer)!);
+        final value = readValue(buffer) as int?;
+        return value == null ? null : NativeHdrMode.values[value];
       case 130:
+        return NativeVideoMetadata.decode(readValue(buffer)!);
+      case 131:
         return NativeCompressRequest.decode(readValue(buffer)!);
       default:
         return super.readValueOfType(type, buffer);
@@ -327,6 +353,42 @@ class NativeMediaApi {
 
   Future<void> cancelEncoding() async {
     final pigeonVar_channelName = 'dev.flutter.pigeon.zumi.NativeMediaApi.cancelEncoding$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channel = BasicMessageChannel<Object?>(
+      pigeonVar_channelName,
+      pigeonChannelCodec,
+      binaryMessenger: pigeonVar_binaryMessenger,
+    );
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(null);
+    final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
+
+    _extractReplyValueOrThrow(
+        pigeonVar_replyList,
+        pigeonVar_channelName,
+        isNullValid: true,
+    )
+    ;
+  }
+
+  Future<void> pauseEncoding() async {
+    final pigeonVar_channelName = 'dev.flutter.pigeon.zumi.NativeMediaApi.pauseEncoding$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channel = BasicMessageChannel<Object?>(
+      pigeonVar_channelName,
+      pigeonChannelCodec,
+      binaryMessenger: pigeonVar_binaryMessenger,
+    );
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(null);
+    final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
+
+    _extractReplyValueOrThrow(
+        pigeonVar_replyList,
+        pigeonVar_channelName,
+        isNullValid: true,
+    )
+    ;
+  }
+
+  Future<void> resumeEncoding() async {
+    final pigeonVar_channelName = 'dev.flutter.pigeon.zumi.NativeMediaApi.resumeEncoding$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,

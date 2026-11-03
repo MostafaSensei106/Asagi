@@ -8,6 +8,8 @@ import 'package:pigeon/pigeon.dart';
     swiftOut: 'ios/Runner/Native/PigeonMessages.g.swift',
   ),
 )
+enum NativeHdrMode { preserve, toneMapToSdr }
+
 final class NativeVideoMetadata {
   String? path;
   double? durationSeconds;
@@ -18,6 +20,8 @@ final class NativeVideoMetadata {
   double? frameRate;
   bool? hasAudio;
   int? fileSizeBytes;
+  bool? isHdr;
+  String? colorTransfer;
 }
 
 final class NativeCompressRequest {
@@ -28,6 +32,7 @@ final class NativeCompressRequest {
   int? targetWidth;
   int? targetHeight;
   double? frameRate;
+  NativeHdrMode? hdrMode;
 }
 
 @HostApi()
@@ -37,6 +42,12 @@ abstract class NativeMediaApi {
 
   @async
   void cancelEncoding();
+
+  @async
+  void pauseEncoding();
+
+  @async
+  void resumeEncoding();
 
   @async
   bool startHardwareEncoding(NativeCompressRequest request);
