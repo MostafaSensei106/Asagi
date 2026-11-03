@@ -76,6 +76,8 @@ impl CompressionPolicy for TargetSizePolicy {
             target_width: w,
             target_height: h,
             hard_limit_bytes: limit,
+            safety_margin: safety,
+            max_attempts: 2,
             is_infeasible: !skip && chosen.is_none(),
             warning_message: if skip {
                 Some("ALREADY_WITHIN_LIMIT".into())

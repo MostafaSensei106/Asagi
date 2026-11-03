@@ -39,6 +39,8 @@ class CalculationPlan {
   final int targetWidth;
   final int targetHeight;
   final BigInt hardLimitBytes;
+  final double safetyMargin;
+  final int maxAttempts;
   final bool isInfeasible;
   final String? warningMessage;
 
@@ -48,6 +50,8 @@ class CalculationPlan {
     required this.targetWidth,
     required this.targetHeight,
     required this.hardLimitBytes,
+    required this.safetyMargin,
+    required this.maxAttempts,
     required this.isInfeasible,
     this.warningMessage,
   });
@@ -59,6 +63,8 @@ class CalculationPlan {
       targetWidth.hashCode ^
       targetHeight.hashCode ^
       hardLimitBytes.hashCode ^
+      safetyMargin.hashCode ^
+      maxAttempts.hashCode ^
       isInfeasible.hashCode ^
       warningMessage.hashCode;
 
@@ -72,6 +78,8 @@ class CalculationPlan {
           targetWidth == other.targetWidth &&
           targetHeight == other.targetHeight &&
           hardLimitBytes == other.hardLimitBytes &&
+          safetyMargin == other.safetyMargin &&
+          maxAttempts == other.maxAttempts &&
           isInfeasible == other.isInfeasible &&
           warningMessage == other.warningMessage;
 }

@@ -18,6 +18,8 @@ pub struct CalculationPlan {
     pub target_width: u32,
     pub target_height: u32,
     pub hard_limit_bytes: u64,
+    pub safety_margin: f64,
+    pub max_attempts: u8,
     pub is_infeasible: bool,
     pub warning_message: Option<String>,
 }
@@ -55,13 +57,13 @@ pub fn verify_attempt(
     if actual_bytes <= plan.hard_limit_bytes {
         return Ok(0);
     }
-    if attempt >= 2 {
+    if attempt >= plan.max_attempts {
         return Err("E_TARGET_EXCEEDED".into());
     }
     let audio = plan.target_audio_bitrate_bps as f64 * duration_secs / 8.0;
-    let container = (plan.hard_limit_bytes as f64 * 0.93 * 0.01).max(32768.0);
+    let container = (plan.hard_limit_bytes as f64 * plan.safety_margin * 0.01).max(32768.0);
     let actual_video = (actual_bytes as f64 - audio - container).max(1.0);
-    let goal = (plan.hard_limit_bytes as f64 * 0.93 - audio - container).max(0.0);
+    let goal = (plan.hard_limit_bytes as f64 * plan.safety_margin - audio - container).max(0.0);
     let bitrate =
         (plan.target_video_bitrate_bps as f64 * (goal / actual_video).clamp(0.5, 0.98)) as u32;
     if bitrate < 150000 {
@@ -80,6 +82,8 @@ mod verification_tests {
             target_width: 720,
             target_height: 1280,
             hard_limit_bytes: 16_000_000,
+            safety_margin: 0.93,
+            max_attempts: 2,
             is_infeasible: false,
             warning_message: None,
         }

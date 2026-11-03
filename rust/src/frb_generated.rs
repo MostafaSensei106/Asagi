@@ -153,6 +153,8 @@ impl SseDecode for crate::api::calculator::CalculationPlan {
         let mut var_targetWidth = <u32>::sse_decode(deserializer);
         let mut var_targetHeight = <u32>::sse_decode(deserializer);
         let mut var_hardLimitBytes = <u64>::sse_decode(deserializer);
+        let mut var_safetyMargin = <f64>::sse_decode(deserializer);
+        let mut var_maxAttempts = <u8>::sse_decode(deserializer);
         let mut var_isInfeasible = <bool>::sse_decode(deserializer);
         let mut var_warningMessage = <Option<String>>::sse_decode(deserializer);
         return crate::api::calculator::CalculationPlan {
@@ -161,6 +163,8 @@ impl SseDecode for crate::api::calculator::CalculationPlan {
             target_width: var_targetWidth,
             target_height: var_targetHeight,
             hard_limit_bytes: var_hardLimitBytes,
+            safety_margin: var_safetyMargin,
+            max_attempts: var_maxAttempts,
             is_infeasible: var_isInfeasible,
             warning_message: var_warningMessage,
         };
@@ -308,6 +312,8 @@ impl flutter_rust_bridge::IntoDart for crate::api::calculator::CalculationPlan {
             self.target_width.into_into_dart().into_dart(),
             self.target_height.into_into_dart().into_dart(),
             self.hard_limit_bytes.into_into_dart().into_dart(),
+            self.safety_margin.into_into_dart().into_dart(),
+            self.max_attempts.into_into_dart().into_dart(),
             self.is_infeasible.into_into_dart().into_dart(),
             self.warning_message.into_into_dart().into_dart(),
         ]
@@ -374,6 +380,8 @@ impl SseEncode for crate::api::calculator::CalculationPlan {
         <u32>::sse_encode(self.target_width, serializer);
         <u32>::sse_encode(self.target_height, serializer);
         <u64>::sse_encode(self.hard_limit_bytes, serializer);
+        <f64>::sse_encode(self.safety_margin, serializer);
+        <u8>::sse_encode(self.max_attempts, serializer);
         <bool>::sse_encode(self.is_infeasible, serializer);
         <Option<String>>::sse_encode(self.warning_message, serializer);
     }

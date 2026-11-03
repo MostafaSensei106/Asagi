@@ -211,16 +211,18 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   CalculationPlan dco_decode_calculation_plan(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     final arr = raw as List<dynamic>;
-    if (arr.length != 7)
-      throw Exception('unexpected arr length: expect 7 but see ${arr.length}');
+    if (arr.length != 9)
+      throw Exception('unexpected arr length: expect 9 but see ${arr.length}');
     return CalculationPlan(
       targetVideoBitrateBps: dco_decode_u_32(arr[0]),
       targetAudioBitrateBps: dco_decode_u_32(arr[1]),
       targetWidth: dco_decode_u_32(arr[2]),
       targetHeight: dco_decode_u_32(arr[3]),
       hardLimitBytes: dco_decode_u_64(arr[4]),
-      isInfeasible: dco_decode_bool(arr[5]),
-      warningMessage: dco_decode_opt_String(arr[6]),
+      safetyMargin: dco_decode_f_64(arr[5]),
+      maxAttempts: dco_decode_u_8(arr[6]),
+      isInfeasible: dco_decode_bool(arr[7]),
+      warningMessage: dco_decode_opt_String(arr[8]),
     );
   }
 
@@ -332,6 +334,8 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
     var var_targetWidth = sse_decode_u_32(deserializer);
     var var_targetHeight = sse_decode_u_32(deserializer);
     var var_hardLimitBytes = sse_decode_u_64(deserializer);
+    var var_safetyMargin = sse_decode_f_64(deserializer);
+    var var_maxAttempts = sse_decode_u_8(deserializer);
     var var_isInfeasible = sse_decode_bool(deserializer);
     var var_warningMessage = sse_decode_opt_String(deserializer);
     return CalculationPlan(
@@ -340,6 +344,8 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       targetWidth: var_targetWidth,
       targetHeight: var_targetHeight,
       hardLimitBytes: var_hardLimitBytes,
+      safetyMargin: var_safetyMargin,
+      maxAttempts: var_maxAttempts,
       isInfeasible: var_isInfeasible,
       warningMessage: var_warningMessage,
     );
@@ -478,6 +484,8 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
     sse_encode_u_32(self.targetWidth, serializer);
     sse_encode_u_32(self.targetHeight, serializer);
     sse_encode_u_64(self.hardLimitBytes, serializer);
+    sse_encode_f_64(self.safetyMargin, serializer);
+    sse_encode_u_8(self.maxAttempts, serializer);
     sse_encode_bool(self.isInfeasible, serializer);
     sse_encode_opt_String(self.warningMessage, serializer);
   }

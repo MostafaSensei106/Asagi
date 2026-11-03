@@ -14,6 +14,8 @@ class Planner implements CompressionPlanner {
         targetWidth: 640,
         targetHeight: 360,
         hardLimitBytes: BigInt.from(100),
+        safetyMargin: 0.93,
+        maxAttempts: 2,
         isInfeasible: false,
       );
   @override

@@ -1,4 +1,6 @@
 import 'dart:io';
+import 'dart:convert';
+
 import 'package:flutter/services.dart';
 
 import '../core/native/pigeon_messages.g.dart';
@@ -41,10 +43,12 @@ abstract interface class VideoEncoder {
 final class PlatformVideoEncoder implements VideoEncoder {
   PlatformVideoEncoder(this.api);
   final NativeMediaApi api;
+
   /// Presentation-time progress for the current attempt, resets on retry.
-  Stream<double> get progress => const EventChannel(
-    'zumi/encoding_progress',
-  ).receiveBroadcastStream().map((value) => (value as num).toDouble());
+  Stream<double> get progress =>
+      const EventChannel('zumi/encoding_progress')
+          .receiveBroadcastStream()
+          .map((value) => (value as num).toDouble());
   @override
   Future<NativeVideoMetadata> inspect(String path) =>
       api.extractVideoMetadata(path);
@@ -113,7 +117,12 @@ final class CompressionEngine {
       if (plan.isInfeasible) throw StateError('E_TARGET_INFEASIBLE');
       await workspace.create(recursive: true);
       job = await workspace.createTemp('zumi-');
-      for (var attempt = 1; attempt <= 2; attempt++) {
+      final marker = File('${job.path}/.inprogress');
+      await marker.writeAsString(
+        jsonEncode({'createdAt': DateTime.now().toUtc().toIso8601String()}),
+        flush: true,
+      );
+      for (var attempt = 1; attempt <= plan.maxAttempts; attempt++) {
         if (_cancelled) throw StateError('E_CANCELLED');
         final output = File('${job!.path}/attempt-$attempt.mp4');
         await encoder.encode(
@@ -137,6 +146,7 @@ final class CompressionEngine {
         );
         if (next == 0) {
           // Caller owns the verified output and must move/delete it when finished.
+          await marker.delete();
           job = null;
           return CompressionOutput(
             output.path,
@@ -152,6 +162,8 @@ final class CompressionEngine {
           targetWidth: plan.targetWidth,
           targetHeight: plan.targetHeight,
           hardLimitBytes: plan.hardLimitBytes,
+          safetyMargin: plan.safetyMargin,
+          maxAttempts: plan.maxAttempts,
           isInfeasible: false,
           warningMessage: plan.warningMessage,
         );
@@ -162,4 +174,32 @@ final class CompressionEngine {
       _busy = false;
     }
   }
+}
+
+/// Removes only marked Zumi directories, never follows symbolic links.
+Future<int> cleanupInterruptedCompressions(
+  Directory workspace, {
+  Duration olderThan = const Duration(hours: 12),
+}) async {
+  if (olderThan.isNegative) throw ArgumentError.value(olderThan);
+  if (!await workspace.exists()) return 0;
+  final cutoff = DateTime.now().subtract(olderThan);
+  var removed = 0;
+  await for (final entry in workspace.list(followLinks: false)) {
+    if (entry is! Directory ||
+        !entry.uri.pathSegments
+            .where((s) => s.isNotEmpty)
+            .last
+            .startsWith('zumi-'))
+      continue;
+    final marker = File('${entry.path}/.inprogress');
+    if (await FileSystemEntity.type(marker.path, followLinks: false) !=
+        FileSystemEntityType.file)
+      continue;
+    if ((await marker.stat()).modified.isBefore(cutoff)) {
+      await entry.delete(recursive: true);
+      removed++;
+    }
+  }
+  return removed;
 }
