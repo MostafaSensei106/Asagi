@@ -13,7 +13,9 @@ import UIKit
   func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
     GeneratedPluginRegistrant.register(with: engineBridge.pluginRegistry)
     if let registrar = engineBridge.pluginRegistry.registrar(forPlugin: "ZumiNativeVideo") {
-      NativeMediaApiSetup.setUp(binaryMessenger: registrar.messenger(), api: NativeVideoEngine())
+      let native = NativeVideoEngine()
+      NativeMediaApiSetup.setUp(binaryMessenger: registrar.messenger(), api: native)
+      FlutterEventChannel(name: "zumi/encoding_progress", binaryMessenger: registrar.messenger()).setStreamHandler(native)
     }
   }
 }

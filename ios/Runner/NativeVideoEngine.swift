@@ -2,7 +2,11 @@ import AVFoundation
 import Flutter
 
 /// Bounded-memory reader/writer pipeline. The caller owns output cleanup.
-final class NativeVideoEngine: NativeMediaApi {
+final class NativeVideoEngine: NSObject, NativeMediaApi, FlutterStreamHandler {
+  private var events: FlutterEventSink?
+  private var cancelOperation: (() -> Void)?
+  func onListen(withArguments arguments: Any?, eventSink events: @escaping FlutterEventSink) -> FlutterError? { self.events = events; return nil }
+  func onCancel(withArguments arguments: Any?) -> FlutterError? { events = nil; return nil }
   private let queue = DispatchQueue(label: "zumi.encoding")
   private var reader: AVAssetReader?
   private var writer: AVAssetWriter?
@@ -23,7 +27,7 @@ final class NativeVideoEngine: NativeMediaApi {
 
   func cancelEncoding() async throws {
     await withCheckedContinuation { (done: CheckedContinuation<Void, Never>) in
-      queue.async { self.reader?.cancelReading(); self.writer?.cancelWriting(); done.resume() }
+      queue.async { self.cancelOperation?(); done.resume() }
     }
   }
 
@@ -74,27 +78,48 @@ final class NativeVideoEngine: NativeMediaApi {
           guard writer.startWriting(), reader.startReading() else { throw reader.error ?? writer.error ?? self.failure("E_ENCODING") }
           writer.startSession(atSourceTime: .zero)
           self.reader = reader; self.writer = writer
+          var finished = false
+          let complete: (Result<Bool, Error>) -> Void = { result in
+            guard !finished else { return }
+            finished = true
+            self.reader = nil; self.writer = nil; self.cancelOperation = nil
+            done.resume(with: result)
+          }
+          self.cancelOperation = {
+            reader.cancelReading(); writer.cancelWriting()
+            complete(.failure(self.failure("E_CANCELLED")))
+          }
+          var lastProgress = -1
           var remaining = pairs.count
           for (output, input) in pairs {
             var ended = false
             input.requestMediaDataWhenReady(on: self.queue) {
-              guard !ended else { return }
+              guard !ended && !finished else { return }
               while input.isReadyForMoreMediaData {
                 if reader.status == .reading, let sample = output.copyNextSampleBuffer() {
-                  if input.append(sample) { continue }
+                  if input.append(sample) {
+                    if output === video {
+                      let fraction = CMSampleBufferGetPresentationTimeStamp(sample).seconds / asset.duration.seconds
+                      let percent = Int(max(0, min(1, fraction)) * 100)
+                      if percent > lastProgress {
+                        lastProgress = percent
+                        DispatchQueue.main.async { self.events?(Double(percent) / 100) }
+                      }
+                    }
+                    continue
+                  }
                   reader.cancelReading()
                 }
                 ended = true; input.markAsFinished(); remaining -= 1
                 if remaining == 0 {
                   if reader.status == .failed || reader.status == .cancelled || writer.status == .failed || writer.status == .cancelled {
-                    writer.cancelWriting(); self.reader = nil; self.writer = nil
-                    done.resume(throwing: reader.error ?? writer.error ?? self.failure("E_CANCELLED"))
+                    writer.cancelWriting()
+                    complete(.failure(reader.error ?? writer.error ?? self.failure("E_CANCELLED")))
                   } else {
                     writer.finishWriting {
                       self.queue.async {
-                        self.reader = nil; self.writer = nil
-                        if writer.status == .completed { done.resume(returning: true) }
-                        else { done.resume(throwing: writer.error ?? self.failure("E_ENCODING")) }
+                        if writer.status == .completed { complete(.success(true)) }
+                        else { complete(.failure(writer.error ?? self.failure("E_ENCODING"))) }
                       }
                     }
                   }

@@ -2,6 +2,7 @@ package com.mostafa.sensei.zumi.app
 
 import android.content.Context
 import android.net.Uri
+import io.flutter.plugin.common.EventChannel
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MimeTypes
 import androidx.media3.common.util.UnstableApi
@@ -14,7 +15,19 @@ import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 
 @UnstableApi
-class NativeVideoEngine(private val context: Context) : NativeMediaApi {
+class NativeVideoEngine(private val context: Context) : NativeMediaApi, EventChannel.StreamHandler {
+    private var events: EventChannel.EventSink? = null
+    private val handler = android.os.Handler(android.os.Looper.getMainLooper())
+    private val progress = object : Runnable {
+        override fun run() {
+            val active = transformer ?: return
+            val holder = ProgressHolder()
+            if (active.getProgress(holder) == Transformer.PROGRESS_STATE_AVAILABLE) events?.success(holder.progress / 100.0)
+            handler.postDelayed(this, 250)
+        }
+    }
+    override fun onListen(arguments: Any?, sink: EventChannel.EventSink) { events = sink }
+    override fun onCancel(arguments: Any?) { events = null }
     private var transformer: Transformer? = null
     private var pending: CancellableContinuation<Boolean>? = null
     override suspend fun extractVideoMetadata(inputPath: String): NativeVideoMetadata =
@@ -43,24 +56,25 @@ class NativeVideoEngine(private val context: Context) : NativeMediaApi {
                     .setVideoMimeType(MimeTypes.VIDEO_H264).setAudioMimeType(MimeTypes.AUDIO_AAC)
                     .addListener(object : Transformer.Listener {
                         override fun onCompleted(composition: Composition, exportResult: ExportResult) {
-                            transformer = null; pending = null
+                            handler.removeCallbacks(progress); transformer = null; pending = null
                             if (continuation.isActive) continuation.resume(true)
                         }
                         override fun onError(composition: Composition, exportResult: ExportResult, exportException: ExportException) {
-                            transformer = null; pending = null
+                            handler.removeCallbacks(progress); transformer = null; pending = null
                             if (continuation.isActive) continuation.resumeWithException(exportException)
                         }
                     }).build()
-                continuation.invokeOnCancellation { android.os.Handler(android.os.Looper.getMainLooper()).post { transformer?.cancel(); transformer = null; pending = null } }
+                continuation.invokeOnCancellation { android.os.Handler(android.os.Looper.getMainLooper()).post { transformer?.cancel(); handler.removeCallbacks(progress); transformer = null; pending = null } }
                 transformer!!.start(item, output)
+                handler.post(progress)
             } catch (error: Exception) {
-                transformer?.cancel(); transformer = null; pending = null
+                transformer?.cancel(); handler.removeCallbacks(progress); transformer = null; pending = null
                 if (continuation.isActive) continuation.resumeWithException(error)
             }
         }
     }
     override suspend fun cancelEncoding() = withContext(Dispatchers.Main) {
-        transformer?.cancel(); transformer = null
+        transformer?.cancel(); handler.removeCallbacks(progress); transformer = null
         pending?.let { if (it.isActive) it.resumeWithException(IllegalStateException("E_CANCELLED")) }; pending = null
         Unit
     }

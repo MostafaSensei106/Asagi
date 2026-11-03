@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/services.dart';
 
 import '../core/native/pigeon_messages.g.dart';
 import '../core/native/rust/api/calculator.dart' as rust;
@@ -40,6 +41,10 @@ abstract interface class VideoEncoder {
 final class PlatformVideoEncoder implements VideoEncoder {
   PlatformVideoEncoder(this.api);
   final NativeMediaApi api;
+  /// Presentation-time progress for the current attempt, resets on retry.
+  Stream<double> get progress => const EventChannel(
+    'zumi/encoding_progress',
+  ).receiveBroadcastStream().map((value) => (value as num).toDouble());
   @override
   Future<NativeVideoMetadata> inspect(String path) =>
       api.extractVideoMetadata(path);

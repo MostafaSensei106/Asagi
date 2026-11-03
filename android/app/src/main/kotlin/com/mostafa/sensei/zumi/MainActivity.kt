@@ -8,6 +8,8 @@ import com.mostafa.sensei.zumi.app.NativeVideoEngine
 class MainActivity : FlutterActivity() {
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
-        NativeMediaApi.setUp(flutterEngine.dartExecutor.binaryMessenger, NativeVideoEngine(applicationContext))
+        val native = NativeVideoEngine(applicationContext)
+        NativeMediaApi.setUp(flutterEngine.dartExecutor.binaryMessenger, native)
+        io.flutter.plugin.common.EventChannel(flutterEngine.dartExecutor.binaryMessenger, "zumi/encoding_progress").setStreamHandler(native)
     }
 }
