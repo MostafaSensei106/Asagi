@@ -28,8 +28,17 @@ dependencies:
   formz: ^0.8.1
   meta: ^1.19.0
   kaisel: ^1.1.0
-  connectivity_plus: ^4.0.1
-  flutter_secure_storage: ^9.0.0
+  connectivity_plus: ^7.3.2
+  bloc_signals: ^1.7.0
+  cryptography: ^2.9.0
+  dio: ^5.11.1
+  gal: ^2.3.3
+  intl: any
+  open_filex: ^5.0.0
+  package_info_plus: ^10.2.2
+  permission_handler: ^13.0.2
+  pinput: ^7.0.0
+  flutter_secure_storage: ^11.2.0
   flutter_animate: ^4.5.2
   get_it: ^9.3.0
   rive: ^0.14.11

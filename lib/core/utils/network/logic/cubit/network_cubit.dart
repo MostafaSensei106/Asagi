@@ -4,20 +4,19 @@ import 'package:bloc_signals/bloc_signals.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../../networking/network_info/interface/base_network_info.dart';
 import 'network_state.dart';
 
 @lazySingleton
 class NetworkCubit extends CubitSignal<NetworkState> {
   NetworkCubit(this.networkInfo)
     : super(initialState: const NetworkState.initial()) {
-    _subscription = networkInfo.connectivityChanged.listen(
+    _subscription = networkInfo.onConnectivityChanged.listen(
       _onConnectivityEvent,
     );
     unawaited(_checkInitialConnectivity());
   }
 
-  final BaseNetworkInfo networkInfo;
+  final Connectivity networkInfo;
   late final StreamSubscription _subscription;
 
   /// Debounce timer to prevent rapid state flickering (e.g. in elevators).
@@ -30,7 +29,9 @@ class NetworkCubit extends CubitSignal<NetworkState> {
 
   Future<void> _checkInitialConnectivity() async {
     try {
-      final isConnected = await networkInfo.isConnected;
+      final results = await networkInfo.checkConnectivity();
+      final isConnected =
+          results.isNotEmpty && results.first != ConnectivityResult.none;
       if (!isClosed && state.value == const NetworkState.initial()) {
         _emitIfChanged(isConnected);
       }
