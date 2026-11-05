@@ -2,7 +2,12 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:zumi/compression/compression_engine.dart';
+import 'package:zumi/core/compression/application/compression_engine.dart';
+import 'package:zumi/core/compression/domain/contracts/video_encoder.dart';
+import 'package:zumi/core/compression/domain/models/compression_output.dart';
+import 'package:zumi/core/compression/domain/models/encode_request.dart';
+import 'package:zumi/core/compression/domain/models/video_metadata.dart';
+import 'package:zumi/core/compression/infrastructure/storage/file_artifact_store.dart';
 
 import 'compression_engine_test.dart' show Planner;
 
@@ -18,7 +23,8 @@ class ControlledEncoder implements VideoEncoder {
   Future<VideoMetadata> inspect(String path) async {
     if (path == 'input') await metadataGate?.future;
     final input = path == 'input';
-    final outputHdr = !dropHdr && (mismatch || request?.hdrMode == HdrMode.preserve);
+    final outputHdr =
+        !dropHdr && (mismatch || request?.hdrMode == HdrMode.preserve);
     return VideoMetadata(
       durationSecs: 60,
       width: 1920,
@@ -169,15 +175,17 @@ void main() {
     await failure;
     expect(await directory.list().length, 0);
   });
-  test('preserve rejects an encoder that silently downgrades HDR to SDR', () async {
-    encoder.hdr = true;
-    encoder.dropHdr = true;
-    final result = run(mode: HdrMode.preserve);
-    final failure = expectLater(result, throwsStateError);
-    await encoder.started.future;
-    encoder.completion.complete();
-    await failure;
-    expect(await directory.list().length, 0);
-  });
-
+  test(
+    'preserve rejects an encoder that silently downgrades HDR to SDR',
+    () async {
+      encoder.hdr = true;
+      encoder.dropHdr = true;
+      final result = run(mode: HdrMode.preserve);
+      final failure = expectLater(result, throwsStateError);
+      await encoder.started.future;
+      encoder.completion.complete();
+      await failure;
+      expect(await directory.list().length, 0);
+    },
+  );
 }

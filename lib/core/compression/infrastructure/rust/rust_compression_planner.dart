@@ -1,6 +1,9 @@
-import '../../../core/native/rust/api/calculator.dart' as rust;
-import '../../../core/native/rust/domain/models.dart' as wire;
+import 'package:zumi/core/native/rust/domain/models.dart' as wire;
+
 import '../../domain/contracts/compression_planner.dart';
+
+import 'package:zumi/core/native/rust/api/calculator.dart' as rust;
+
 import '../../domain/models/compression_plan.dart';
 import '../../domain/models/video_metadata.dart';
 

@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:zumi/compression/compression_engine.dart';
+import 'package:zumi/core/compression/domain/contracts/compression_planner.dart';
+import 'package:zumi/core/compression/infrastructure/rust/rust_compression_planner.dart';
 import 'package:zumi/core/native/pigeon_messages.g.dart';
 
 void main() {

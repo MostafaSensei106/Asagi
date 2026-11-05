@@ -1,7 +1,13 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:zumi/compression/compression_engine.dart';
+import 'package:zumi/core/compression/application/compression_engine.dart';
+import 'package:zumi/core/compression/domain/contracts/compression_planner.dart';
+import 'package:zumi/core/compression/domain/contracts/video_encoder.dart';
+import 'package:zumi/core/compression/domain/models/compression_plan.dart';
+import 'package:zumi/core/compression/domain/models/encode_request.dart';
+import 'package:zumi/core/compression/domain/models/video_metadata.dart';
+import 'package:zumi/core/compression/infrastructure/storage/file_artifact_store.dart';
 
 class Planner implements CompressionPlanner {
   @override
