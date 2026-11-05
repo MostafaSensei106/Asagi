@@ -6,7 +6,6 @@ import 'package:bloc_signals_hydrate/secure_storage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:path_provider/path_provider.dart';
 
 import '../../di/di.dart' as di;
 import '../bloc/bloc_observer.dart';
@@ -35,22 +34,9 @@ final class SysInit {
     // Web has no filesystem: `path_provider` throws there. The Hive HTTP
     // cache store accepts a null directory on web and transparently falls
     // back to IndexedDB, so we pass an empty path through DI instead.
-    final appDocPath = kIsWeb
-        ? null
-        : (await getApplicationDocumentsDirectory()).path;
-
     HydratedStorage.storage = await _buildHydratedStorage();
 
-    var cacheStoragePath = '';
-    if (appDocPath != null) {
-      final dioCacheDir = Directory('$appDocPath/dio_cache');
-      if (!await dioCacheDir.exists()) {
-        await dioCacheDir.create(recursive: true);
-      }
-      cacheStoragePath = dioCacheDir.path;
-    }
-
-    await di.configureDependencies(cacheStoragePath: cacheStoragePath);
+    await di.configureDependencies();
 
     //  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 

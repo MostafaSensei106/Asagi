@@ -7,8 +7,8 @@ void main() {
     'domain and application depend only on core contracts and Dart SDK',
     () async {
       for (final root in [
-        'lib/compression/domain',
-        'lib/compression/application',
+        'lib/core/compression/domain',
+        'lib/core/compression/application',
       ]) {
         await for (final file in Directory(root).list(recursive: true)) {
           if (file is! File || !file.path.endsWith('.dart')) continue;
