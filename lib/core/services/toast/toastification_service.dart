@@ -1,6 +1,6 @@
-import 'package:material_ui/material_ui.dart';
 import 'package:injectable/injectable.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:toastification/toastification.dart';
 
 import '../../constants/app_config.dart';
@@ -134,11 +134,6 @@ class ToastificationService implements BaseToastService {
                 borderRadius: BorderRadius.circular(AppConfig.outBorderRadius),
               ),
         child: Icon(config.icon, size: AppConfig.iconSize),
-      ),
-      progressBarTheme: ProgressIndicatorThemeData(
-        // ignore: deprecated_member_use
-        year2023: false,
-        borderRadius: BorderRadius.circular(AppConfig.outBorderRadius),
       ),
     );
   }
