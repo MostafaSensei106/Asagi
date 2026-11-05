@@ -1,0 +1,68 @@
+[
+  {
+    "id": "welcome",
+    "path": "welcome.png",
+    "width": 1024,
+    "height": 1024,
+    "background": "transparent",
+    "recommendedLogicalSize": 192,
+    "minimumRecommendedLogicalSize": 96,
+    "use": "Onboarding / first launch",
+    "suggestedArabicLabel": "أهلًا بيك في Zumi"
+  },
+  {
+    "id": "empty",
+    "path": "empty.png",
+    "width": 1024,
+    "height": 1024,
+    "background": "transparent",
+    "recommendedLogicalSize": 192,
+    "minimumRecommendedLogicalSize": 96,
+    "use": "No selected or saved videos",
+    "suggestedArabicLabel": "اختار أول فيديو"
+  },
+  {
+    "id": "analyzing",
+    "path": "analyzing.png",
+    "width": 1024,
+    "height": 1024,
+    "background": "transparent",
+    "recommendedLogicalSize": 192,
+    "minimumRecommendedLogicalSize": 96,
+    "use": "Inspecting video metadata / planning",
+    "suggestedArabicLabel": "بنفحص الفيديو"
+  },
+  {
+    "id": "paused",
+    "path": "paused.png",
+    "width": 1024,
+    "height": 1024,
+    "background": "transparent",
+    "recommendedLogicalSize": 192,
+    "minimumRecommendedLogicalSize": 96,
+    "use": "User paused a resumable operation",
+    "suggestedArabicLabel": "الضغط متوقف مؤقتًا"
+  },
+  {
+    "id": "error",
+    "path": "error.png",
+    "width": 1024,
+    "height": 1024,
+    "background": "transparent",
+    "recommendedLogicalSize": 192,
+    "minimumRecommendedLogicalSize": 96,
+    "use": "Recoverable error / infeasible size",
+    "suggestedArabicLabel": "جرّب حجم أكبر أو فيديو تاني"
+  },
+  {
+    "id": "share",
+    "path": "share.png",
+    "width": 1024,
+    "height": 1024,
+    "background": "transparent",
+    "recommendedLogicalSize": 192,
+    "minimumRecommendedLogicalSize": 96,
+    "use": "Verified output available to share",
+    "suggestedArabicLabel": "الفيديو جاهز للمشاركة"
+  }
+]
