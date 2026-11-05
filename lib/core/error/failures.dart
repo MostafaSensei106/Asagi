@@ -1,6 +1,3 @@
-import '../networking/api_error_model/api_error_model.dart';
-import '../networking/error_type.dart';
-
 sealed class Failures {
   const Failures(this.message);
   final String message;
@@ -36,22 +33,4 @@ class OfflineFailure extends Failures {
 
 class LocalStorageFailure extends Failures {
   const LocalStorageFailure(super.message);
-}
-
-class ApiFailure extends Failures {
-  ApiFailure(
-    this.apiErrorModel, {
-    required this.errorType,
-    this.statusCode,
-    this.originalError,
-    this.stackTrace,
-  }) : super(apiErrorModel.message);
-
-  final ApiErrorModel apiErrorModel;
-  final ErrorType errorType;
-
-  /// The HTTP status code from the server response, if available.
-  final int? statusCode;
-  final Object? originalError;
-  final StackTrace? stackTrace;
 }

@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import '../networking/network_timeouts.dart';
 import 'app_metadata.dart';
 import 'design_system/tokens/tokens.dart';
 
@@ -60,7 +59,6 @@ final class AppConfig {
 
   // Durations & Timeouts
   static const int toastDurationInSec = 4;
-  static const Duration dioTimeOut = NetworkTimeouts.receive;
   static const Duration animation = Duration(milliseconds: 300);
   static const Duration debounce = Duration(milliseconds: 500);
 
