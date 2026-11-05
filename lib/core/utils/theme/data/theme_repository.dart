@@ -1,5 +1,5 @@
-import 'package:material_ui/material_ui.dart';
 import 'package:injectable/injectable.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../constants/pref_keys.dart';
 import '../../../services/shared_prefs/base_pref_storage_service.dart';
