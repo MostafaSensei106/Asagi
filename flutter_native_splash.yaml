@@ -19,11 +19,11 @@ flutter_native_splash:
   # Android 12 and later specific configuration
   android_12:
     # Set the background color for Android 12+
-    color: "#1B487C"
+    color: "#ffffff"
     image: assets/icons/ic_launcher_foreground.png
 
   # Dark mode support
-  color_dark: "#1B487C"
+  color_dark: "#ffffff"
   # branding_dark: assets/images/MHlogo.png
 
   # Disable splash screen generation for iOS and web
