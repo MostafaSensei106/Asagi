@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:kaisel/kaisel.dart';
 
 import 'observers/app_navigator_observer.dart';

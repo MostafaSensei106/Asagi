@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_positional_boolean_parameters
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 final class SwitchComponent extends StatelessWidget {
   const SwitchComponent({

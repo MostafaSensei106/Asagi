@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc_signals_flutter/bloc_signals_flutter.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 

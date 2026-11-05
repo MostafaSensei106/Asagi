@@ -19,6 +19,7 @@ dependencies:
   lucide_icons_flutter: ^4.0.0
   smooth_page_indicator: ^3.0.0
   toastification: ^3.2.1
+  material_ui: ^1.10.0
   freezed_annotation: ^3.1.0
   flutter_hooks: ^0.21.3+1
   url_launcher: ^6.3.3
@@ -49,6 +50,7 @@ dependencies:
   wakelock_plus: ^1.8.2
   device_info_plus: ^13.3.0
 
+  cupertino_ui: any
 dev_dependencies:
   flutter_test:
     sdk: flutter

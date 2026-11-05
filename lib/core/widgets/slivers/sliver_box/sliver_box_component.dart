@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class SliverBoxComponent extends StatelessWidget {
   const SliverBoxComponent({required this.child, super.key});

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// Gives first-page error/empty indicators near-viewport height so their
 /// internal [Center] actually centers them on screen.

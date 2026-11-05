@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// A custom app bar widget with a transparent background and a centered title.
 class AppBarComponent extends StatelessWidget implements PreferredSizeWidget {

@@ -1,6 +1,6 @@
 // ignore_for_file: curly_braces_in_flow_control_structures
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:formz/formz.dart';
 
 import '../../../../constants/validation_regex.dart';
