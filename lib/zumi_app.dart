@@ -3,6 +3,7 @@ import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:toastification/toastification.dart';
 import 'package:zumi/core/constants/app_metadata.dart';
+import 'package:zumi/core/di/di.dart';
 import 'package:zumi/core/utils/localization/logic/cubit/localization_cubit.dart';
 import 'package:zumi/core/utils/theme/app_theme.dart';
 import 'package:zumi/core/utils/theme/logic/cubit/theme_cubit.dart';
@@ -15,7 +16,10 @@ class ZumiApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ToastificationWrapper(
       child: MultiBlocSignalProvider(
-        providers: [],
+        providers: [
+          BlocSignalProvider(create: (_) => getIt<LocalizationCubit>()),
+          BlocSignalProvider(create: (_) => getIt<ThemeCubit>()),
+        ],
         child: Builder(
           builder: (context) {
             final locale = context.select(
