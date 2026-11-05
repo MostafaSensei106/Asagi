@@ -1,5 +1,5 @@
-import 'package:material_ui/material_ui.dart';
 import 'package:formz/formz.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../extensions/extensions.dart';
 import '../base/validation_pipeline.dart';

@@ -12,7 +12,7 @@ import 'package:zumi/core/compression/infrastructure/storage/file_artifact_store
 class Planner implements CompressionPlanner {
   @override
   Future<CompressionPlan> plan(VideoMetadata info, double targetMb) async =>
-      CompressionPlan(
+      const CompressionPlan(
         targetVideoBitrateBps: 1000000,
         targetAudioBitrateBps: 0,
         targetWidth: 640,
@@ -40,7 +40,7 @@ class Encoder implements VideoEncoder {
   final List<int> sizes;
   int calls = 0;
   @override
-  Future<VideoMetadata> inspect(String path) async => VideoMetadata(
+  Future<VideoMetadata> inspect(String path) async => const VideoMetadata(
     durationSecs: 60,
     width: 1920,
     height: 1080,

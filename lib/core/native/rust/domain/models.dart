@@ -3,21 +3,11 @@
 
 // ignore_for_file: invalid_use_of_internal_member, unused_import, unnecessary_import
 
-import '../frb_generated.dart';
-
 import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
 
-class CalculationPlan {
-  final int targetVideoBitrateBps;
-  final int targetAudioBitrateBps;
-  final int targetWidth;
-  final int targetHeight;
-  final BigInt hardLimitBytes;
-  final double safetyMargin;
-  final int maxAttempts;
-  final bool isInfeasible;
-  final String? warningMessage;
+import '../frb_generated.dart';
 
+class CalculationPlan {
   const CalculationPlan({
     required this.targetVideoBitrateBps,
     required this.targetAudioBitrateBps,
@@ -29,6 +19,15 @@ class CalculationPlan {
     required this.isInfeasible,
     this.warningMessage,
   });
+  final int targetVideoBitrateBps;
+  final int targetAudioBitrateBps;
+  final int targetWidth;
+  final int targetHeight;
+  final BigInt hardLimitBytes;
+  final double safetyMargin;
+  final int maxAttempts;
+  final bool isInfeasible;
+  final String? warningMessage;
 
   @override
   int get hashCode =>
@@ -59,14 +58,6 @@ class CalculationPlan {
 }
 
 class InputMetadata {
-  final double durationSecs;
-  final int width;
-  final int height;
-  final int rotation;
-  final int bitrateBps;
-  final BigInt fileSizeBytes;
-  final bool hasAudio;
-
   const InputMetadata({
     required this.durationSecs,
     required this.width,
@@ -76,6 +67,13 @@ class InputMetadata {
     required this.fileSizeBytes,
     required this.hasAudio,
   });
+  final double durationSecs;
+  final int width;
+  final int height;
+  final int rotation;
+  final int bitrateBps;
+  final BigInt fileSizeBytes;
+  final bool hasAudio;
 
   @override
   int get hashCode =>

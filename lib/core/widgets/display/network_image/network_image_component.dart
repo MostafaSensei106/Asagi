@@ -1,6 +1,6 @@
 import 'package:cached_network_image_ce/cached_network_image.dart';
-import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../constants/app_config.dart';
 

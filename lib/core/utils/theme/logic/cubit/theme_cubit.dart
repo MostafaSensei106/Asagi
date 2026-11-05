@@ -26,6 +26,6 @@ class ThemeCubit extends HydratedCubitSignal<ThemeState> {
   Future<void> changeTheme(ThemeMode newMode) async {
     if (state.value.themeMode == newMode) return;
     emit(state.value.copyWith(themeMode: newMode));
-    _repo.cacheThemeMode(newMode);
+    await _repo.cacheThemeMode(newMode);
   }
 }

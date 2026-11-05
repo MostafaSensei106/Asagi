@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
-import 'package:zumi/core/native/pigeon_messages.g.dart' as wire;
 
+import '../../../native/pigeon_messages.g.dart' as wire;
 import '../../domain/contracts/video_encoder.dart';
 import '../../domain/models/encode_request.dart';
 import '../../domain/models/video_metadata.dart';

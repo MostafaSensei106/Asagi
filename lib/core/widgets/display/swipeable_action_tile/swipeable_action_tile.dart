@@ -1,8 +1,8 @@
 // ignore_for_file: discarded_futures
 
-import 'package:material_ui/material_ui.dart';
 import 'package:flutter/physics.dart';
 import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'models/swipe_action.dart';
 import 'models/swipeable_action_tile_style.dart';

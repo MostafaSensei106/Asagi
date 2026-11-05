@@ -3,24 +3,22 @@
 
 // ignore_for_file: unused_import, unused_element, unnecessary_import, duplicate_ignore, invalid_use_of_internal_member, annotate_overrides, non_constant_identifier_names, curly_braces_in_flow_control_structures, prefer_const_literals_to_create_immutables, unused_field
 
-import 'api/calculator.dart';
-
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
+
+import 'api/calculator.dart';
 import 'domain/models.dart';
 import 'frb_generated.dart';
 import 'frb_generated.io.dart'
     if (dart.library.js_interop) 'frb_generated.web.dart';
 
-import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
-
 /// Main entrypoint of the Rust API
 class RustLib extends BaseEntrypoint<RustLibApi, RustLibApiImpl, RustLibWire> {
+  RustLib._();
   @internal
   static final instance = RustLib._();
-
-  RustLib._();
 
   /// Initialize flutter_rust_bridge
   static Future<void> init({
@@ -75,7 +73,6 @@ class RustLib extends BaseEntrypoint<RustLibApi, RustLibApiImpl, RustLibWire> {
         stem: 'rust_lib_zumi',
         ioDirectory: 'rust/target/release/',
         webPrefix: 'pkg/',
-        wasmBindgenName: 'wasm_bindgen',
       );
 }
 
@@ -135,8 +132,8 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
 
   TaskConstMeta get kCrateApiCalculatorCalculateCompressionPlanConstMeta =>
       const TaskConstMeta(
-        debugName: "calculate_compression_plan",
-        argNames: ["info", "targetSizeMb", "customKFactor"],
+        debugName: 'calculate_compression_plan',
+        argNames: ['info', 'targetSizeMb', 'customKFactor'],
       );
 
   @override
@@ -174,8 +171,8 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
 
   TaskConstMeta get kCrateApiCalculatorVerifyAttemptConstMeta =>
       const TaskConstMeta(
-        debugName: "verify_attempt",
-        argNames: ["actualBytes", "durationSecs", "plan", "attempt"],
+        debugName: 'verify_attempt',
+        argNames: ['actualBytes', 'durationSecs', 'plan', 'attempt'],
       );
 
   @protected
@@ -295,7 +292,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   @protected
   String sse_decode_String(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
-    var inner = sse_decode_list_prim_u_8_strict(deserializer);
+    final inner = sse_decode_list_prim_u_8_strict(deserializer);
     return utf8.decoder.convert(inner);
   }
 
@@ -330,15 +327,15 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   @protected
   CalculationPlan sse_decode_calculation_plan(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
-    var var_targetVideoBitrateBps = sse_decode_u_32(deserializer);
-    var var_targetAudioBitrateBps = sse_decode_u_32(deserializer);
-    var var_targetWidth = sse_decode_u_32(deserializer);
-    var var_targetHeight = sse_decode_u_32(deserializer);
-    var var_hardLimitBytes = sse_decode_u_64(deserializer);
-    var var_safetyMargin = sse_decode_f_64(deserializer);
-    var var_maxAttempts = sse_decode_u_8(deserializer);
-    var var_isInfeasible = sse_decode_bool(deserializer);
-    var var_warningMessage = sse_decode_opt_String(deserializer);
+    final var_targetVideoBitrateBps = sse_decode_u_32(deserializer);
+    final var_targetAudioBitrateBps = sse_decode_u_32(deserializer);
+    final var_targetWidth = sse_decode_u_32(deserializer);
+    final var_targetHeight = sse_decode_u_32(deserializer);
+    final var_hardLimitBytes = sse_decode_u_64(deserializer);
+    final var_safetyMargin = sse_decode_f_64(deserializer);
+    final var_maxAttempts = sse_decode_u_8(deserializer);
+    final var_isInfeasible = sse_decode_bool(deserializer);
+    final var_warningMessage = sse_decode_opt_String(deserializer);
     return CalculationPlan(
       targetVideoBitrateBps: var_targetVideoBitrateBps,
       targetAudioBitrateBps: var_targetAudioBitrateBps,
@@ -367,13 +364,13 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   @protected
   InputMetadata sse_decode_input_metadata(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
-    var var_durationSecs = sse_decode_f_64(deserializer);
-    var var_width = sse_decode_u_32(deserializer);
-    var var_height = sse_decode_u_32(deserializer);
-    var var_rotation = sse_decode_u_32(deserializer);
-    var var_bitrateBps = sse_decode_u_32(deserializer);
-    var var_fileSizeBytes = sse_decode_u_64(deserializer);
-    var var_hasAudio = sse_decode_bool(deserializer);
+    final var_durationSecs = sse_decode_f_64(deserializer);
+    final var_width = sse_decode_u_32(deserializer);
+    final var_height = sse_decode_u_32(deserializer);
+    final var_rotation = sse_decode_u_32(deserializer);
+    final var_bitrateBps = sse_decode_u_32(deserializer);
+    final var_fileSizeBytes = sse_decode_u_64(deserializer);
+    final var_hasAudio = sse_decode_bool(deserializer);
     return InputMetadata(
       durationSecs: var_durationSecs,
       width: var_width,
@@ -388,7 +385,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   @protected
   Uint8List sse_decode_list_prim_u_8_strict(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
-    var len_ = sse_decode_i_32(deserializer);
+    final len_ = sse_decode_i_32(deserializer);
     return deserializer.buffer.getUint8List(len_);
   }
 

@@ -8,10 +8,3 @@ final class LoginRoute extends AppRoute {
   @override
   List<Object?> get props => [redirectTarget];
 }
-
-final class ResetPasswordRoute extends AppRoute {
-  const ResetPasswordRoute();
-
-  @override
-  List<Object?> get props => [];
-}

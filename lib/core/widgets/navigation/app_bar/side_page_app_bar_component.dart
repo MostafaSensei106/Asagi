@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart' show HapticFeedback;
 import 'package:lucide_icons_flutter/lucide_icons.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../constants/app_config.dart';
 import '../../../extensions/extensions.dart';

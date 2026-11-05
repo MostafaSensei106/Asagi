@@ -1,5 +1,5 @@
-import 'package:material_ui/material_ui.dart';
 import 'package:kaisel/kaisel.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'observers/app_navigator_observer.dart';
 import 'routes/redirect.dart';
@@ -29,7 +29,6 @@ final class AppRouter {
     guards: [authGuard],
     builder: (context, route) => switch (route) {
       LoginRoute() => const _RoutePlaceholder(label: 'Login'),
-      ResetPasswordRoute() => const _RoutePlaceholder(label: 'Reset Password'),
       MainRouteEntry() => const _RoutePlaceholder(label: 'Home'),
     },
   );
