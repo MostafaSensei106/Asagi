@@ -34,7 +34,7 @@ dependencies:
   cryptography: ^2.9.0
   dio: ^5.11.1
   gal: ^2.3.3
-  intl: any
+  intl: ^0.20.3
   open_filex: ^5.0.0
   package_info_plus: ^10.2.2
   permission_handler: ^13.0.2
@@ -49,8 +49,8 @@ dependencies:
   share_plus: ^13.3.1
   wakelock_plus: ^1.8.2
   device_info_plus: ^13.3.0
+  cupertino_ui: ^1.1.6
 
-  cupertino_ui: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
