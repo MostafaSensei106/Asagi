@@ -2,8 +2,6 @@ import 'package:bloc_signals_hydrate/bloc_signals_hydrate.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
-import 'di.config.dart';
-
 final GetIt getIt = GetIt.instance;
 
 @InjectableInit(generateAccessors: true)

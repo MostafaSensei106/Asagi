@@ -1,11 +1,6 @@
-import 'package:bloc_signals_flutter/bloc_signals_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:kaisel/kaisel.dart';
 
-import '../../modules/login/logic/cubit/login_cubit.dart';
-import '../../modules/login/ui/page/login_page.dart';
-import '../../modules/main/main_page.dart';
-import '../di/di.dart';
 import 'observers/app_navigator_observer.dart';
 import 'routes/redirect.dart';
 
@@ -33,12 +28,9 @@ final class AppRouter {
     observers: () => [AppNavigatorObserver()],
     guards: [authGuard],
     builder: (context, route) => switch (route) {
-      LoginRoute() => BlocSignalProvider(
-        create: (context) => getIt<LoginCubit>(),
-        child: const LoginPage(),
-      ),
+      LoginRoute() => const _RoutePlaceholder(label: 'Login'),
       ResetPasswordRoute() => const _RoutePlaceholder(label: 'Reset Password'),
-      MainRouteEntry() => const MainPage(),
+      MainRouteEntry() => const _RoutePlaceholder(label: 'Home'),
     },
   );
 }
