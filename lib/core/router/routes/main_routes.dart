@@ -1,16 +1,27 @@
 part of '../app_router.dart';
 
-sealed class MainRoute extends AppRoute {
-  const MainRoute();
-}
-
-final class MainRouteEntry extends MainRoute {
+/// Root destination of the signed-in app.
+final class MainRouteEntry extends AppRoute {
   const MainRouteEntry();
 
   @override
-  List<Object?> get props => [];
+  AppRouteMetadata get metadata => const AppRouteMetadata(
+    name: 'home',
+    path: '/',
+    section: AppRouteSection.core,
+    icon: ZumiIcons.home,
+  );
 }
 
-sealed class Home extends KaiselRoute {
-  const Home();
+/// First-run introduction to Zumi's compression workflow and privacy model.
+final class OnboardingRoute extends AppRoute {
+  const OnboardingRoute();
+
+  @override
+  AppRouteMetadata get metadata => const AppRouteMetadata(
+    name: 'onboarding',
+    path: '/onboarding',
+    section: AppRouteSection.core,
+    icon: ZumiIcons.onboarding,
+  );
 }
