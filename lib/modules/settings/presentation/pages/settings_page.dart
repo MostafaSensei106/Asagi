@@ -174,34 +174,31 @@ final class SettingsPage extends StatelessWidget {
         _ => route.metadata.name,
       };
 
-  String _sectionTitle(BuildContext context, AppRouteSection section) =>
-      switch (section) {
-        AppRouteSection.appearance =>
-          context.localeKeys.settingsGroupAppearance,
-        AppRouteSection.compression =>
-          context.localeKeys.settingsGroupCompression,
-        AppRouteSection.privacy => context.localeKeys.settingsGroupPrivacy,
-        AppRouteSection.plans => context.localeKeys.settingsGroupPlans,
-        AppRouteSection.about => context.localeKeys.settingsGroupAbout,
-        AppRouteSection.legal => context.localeKeys.settingsGroupLegal,
-        AppRouteSection.help => context.localeKeys.settingsGroupHelp,
-        AppRouteSection.account => context.localeKeys.settingsGroupAccount,
-        AppRouteSection.core => context.localeKeys.settingsTitle,
-      };
-
   Widget _SectionHeader({required AppRouteSection section}) =>
-      _SettingsSectionHeader(title: _sectionTitle(context, section));
+      _SettingsSectionHeader(section: section);
 }
 
 /// Small wrapper that keeps section labels in one place while keeping the
 /// hub's build method focused on structure.
 final class _SettingsSectionHeader extends StatelessWidget {
-  const _SettingsSectionHeader({required this.title});
+  const _SettingsSectionHeader({required this.section});
 
-  final String title;
+  final AppRouteSection section;
 
   @override
   Widget build(BuildContext context) {
-    return SectionHeaderComponent(title: title);
+    return SectionHeaderComponent(title: _titleFor(context));
   }
+
+  String _titleFor(BuildContext context) => switch (section) {
+    AppRouteSection.appearance => context.localeKeys.settingsGroupAppearance,
+    AppRouteSection.compression => context.localeKeys.settingsGroupCompression,
+    AppRouteSection.privacy => context.localeKeys.settingsGroupPrivacy,
+    AppRouteSection.plans => context.localeKeys.settingsGroupPlans,
+    AppRouteSection.about => context.localeKeys.settingsGroupAbout,
+    AppRouteSection.legal => context.localeKeys.settingsGroupLegal,
+    AppRouteSection.help => context.localeKeys.settingsGroupHelp,
+    AppRouteSection.account => context.localeKeys.settingsGroupAccount,
+    AppRouteSection.core => context.localeKeys.settingsTitle,
+  };
 }
