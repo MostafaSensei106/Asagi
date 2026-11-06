@@ -9,15 +9,13 @@ import '../../../../core/router/app_router.dart';
 import '../../../../core/widgets/buttons/filled_button/filled_button_component.dart';
 import '../../../../core/widgets/buttons/icon_button/icon_button_component.dart';
 import '../../../../core/widgets/design_system/tokens/tokens.dart';
-import '../../../../core/widgets/display/list_tile/list_tile_icon_component.dart';
-import '../../../../core/widgets/display/section_header/section_header_component.dart';
 import '../../../../core/widgets/layout/spacing/spacing_component.dart';
 
-/// Primary hub and compressor surface of the Zumi application.
+/// Primary compressor surface of the Zumi application.
 ///
-/// Focused exclusively on video compression, history, and pro plans.
-/// Settings are kept cleanly in their dedicated destination reachable from
-/// the top app bar action.
+/// Kept strictly focused on video selection and compression.
+/// All preferences, history, plans, and legal information live exclusively
+/// inside the settings hub reachable from the app bar action.
 final class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -25,12 +23,6 @@ final class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorScheme = context.colorScheme;
     final textTheme = context.textTheme;
-
-    final trailingIcon = Icon(
-      context.isArabic ? ZumiIcons.chevronBack : ZumiIcons.chevronForward,
-      size: AppIconSizes.small,
-      color: colorScheme.onSurfaceVariant,
-    );
 
     return Scaffold(
       appBar: AppBar(
@@ -48,20 +40,20 @@ final class HomePage extends StatelessWidget {
         ],
       ),
       body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.all(AppSpacing.large),
-          children: [
-            // Hero Card: Choose video and compress.
-            Container(
-              padding: const EdgeInsets.all(AppSpacing.xLarge),
+        child: Center(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(AppSpacing.large),
+            child: Container(
+              padding: const EdgeInsets.all(AppSpacing.xxLarge),
               decoration: BoxDecoration(
                 color: colorScheme.primaryContainer,
                 borderRadius: BorderRadius.circular(AppRadii.xLarge),
               ),
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Container(
-                    padding: const EdgeInsets.all(AppSpacing.medium),
+                    padding: const EdgeInsets.all(AppSpacing.large),
                     decoration: BoxDecoration(
                       color: colorScheme.primary,
                       shape: BoxShape.circle,
@@ -72,7 +64,7 @@ final class HomePage extends StatelessWidget {
                       color: colorScheme.onPrimary,
                     ),
                   ),
-                  const SpacingComponent.vertical(AppSpacing.medium),
+                  const SpacingComponent.vertical(AppSpacing.large),
                   Text(
                     context.localeKeys.homeTitle,
                     textAlign: TextAlign.center,
@@ -81,7 +73,7 @@ final class HomePage extends StatelessWidget {
                       color: colorScheme.onPrimaryContainer,
                     ),
                   ),
-                  const SpacingComponent.vertical(AppSpacing.xSmall),
+                  const SpacingComponent.vertical(AppSpacing.small),
                   Text(
                     context.localeKeys.homeDescription,
                     textAlign: TextAlign.center,
@@ -91,7 +83,7 @@ final class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SpacingComponent.vertical(AppSpacing.large),
+                  const SpacingComponent.vertical(AppSpacing.xLarge),
                   FilledButtonComponent.icon(
                     icon: ZumiIcons.videoSelect,
                     label: context.localeKeys.videoSelectTitle,
@@ -102,50 +94,7 @@ final class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-
-            const SpacingComponent.vertical(AppSpacing.xLarge),
-
-            // History section.
-            SectionHeaderComponent(
-              title: context.localeKeys.compressionHistoryTitle,
-            ),
-            const SpacingComponent.vertical(AppSpacing.small),
-            ListTileIconComponent(
-              title: context.localeKeys.compressionHistoryTitle,
-              subtitle: context.localeKeys.compressionHistoryDescription,
-              leading: ZumiIcons.compressionHistory,
-              trailing: trailingIcon,
-              onTap: () => unawaited(
-                context.push(const CompressionHistoryRoute()),
-              ),
-            ),
-
-            const SpacingComponent.vertical(AppSpacing.large),
-
-            // Plans section.
-            SectionHeaderComponent(
-              title: context.localeKeys.settingsGroupPlans,
-            ),
-            const SpacingComponent.vertical(AppSpacing.small),
-            ListTileIconComponent.top(
-              title: context.localeKeys.plansTitle,
-              subtitle: context.localeKeys.plansDescription,
-              leading: ZumiIcons.plans,
-              trailing: trailingIcon,
-              onTap: () => unawaited(context.push(const PlansRoute())),
-            ),
-            ListTileIconComponent.bottom(
-              title: context.localeKeys.plansMethodsTitle,
-              subtitle: context.localeKeys.plansMethodsDescription,
-              leading: ZumiIcons.purchaseMethods,
-              trailing: trailingIcon,
-              onTap: () => unawaited(
-                context.push(const PurchaseMethodsRoute()),
-              ),
-            ),
-
-            const SpacingComponent.vertical(AppSpacing.large),
-          ],
+          ),
         ),
       ),
     );
