@@ -2,7 +2,6 @@ import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../modules/about/about.dart';
-import '../../modules/auth/auth.dart';
 import '../../modules/compression/compression.dart';
 import '../../modules/growth/growth.dart';
 import '../../modules/help/help.dart';
@@ -17,7 +16,6 @@ import 'observers/app_navigator_observer.dart';
 import 'route_metadata.dart';
 import 'routes/redirect.dart';
 
-part 'routes/auth_routes.dart';
 part 'routes/compression_routes.dart';
 part 'routes/main_routes.dart';
 part 'routes/settings_info_routes.dart';
@@ -46,7 +44,7 @@ final class AppRouter {
 
   static final navigatorKey = GlobalKey<NavigatorState>();
 
-  static AppRoute _initialRoute = const LoginRoute();
+  static AppRoute _initialRoute = const MainRouteEntry();
 
   static void setInitialRoute(AppRoute route) {
     _initialRoute = route;
@@ -56,12 +54,10 @@ final class AppRouter {
     navigatorKey: navigatorKey,
     initial: _initialRoute,
     observers: () => [AppNavigatorObserver()],
-    guards: [authGuard],
     builder: (context, route) => switch (route) {
       // Core.
       MainRouteEntry() => const HomePage(),
       OnboardingRoute() => const OnboardingPage(),
-      LoginRoute() => const LoginPage(),
 
       // Compression.
       VideoSelectRoute() => const VideoSelectPage(),

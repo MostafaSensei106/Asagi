@@ -10,7 +10,6 @@ final class VideoSelectRoute extends AppRoute {
     path: '/compression/select',
     section: AppRouteSection.compression,
     icon: ZumiIcons.videoSelect,
-    requiresAuth: true,
   );
 }
 
@@ -30,7 +29,6 @@ final class CompressionSetupRoute extends AppRoute {
     path: '/compression/setup',
     section: AppRouteSection.compression,
     icon: ZumiIcons.compressionSetup,
-    requiresAuth: true,
   );
 }
 
@@ -50,7 +48,6 @@ final class CompressionProgressRoute extends AppRoute {
     path: '/compression/progress',
     section: AppRouteSection.compression,
     icon: ZumiIcons.compressionProgress,
-    requiresAuth: true,
   );
 }
 
@@ -70,7 +67,6 @@ final class CompressionResultRoute extends AppRoute {
     path: '/compression/result',
     section: AppRouteSection.compression,
     icon: ZumiIcons.compressionResult,
-    requiresAuth: true,
   );
 }
 
@@ -84,7 +80,6 @@ final class CompressionHistoryRoute extends AppRoute {
     path: '/compression/history',
     section: AppRouteSection.compression,
     icon: ZumiIcons.compressionHistory,
-    requiresAuth: true,
     showInSettingsHub: true,
   );
 }

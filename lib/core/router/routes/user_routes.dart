@@ -61,7 +61,6 @@ final class RestorePurchasesRoute extends AppRoute {
     path: '/plans/restore',
     section: AppRouteSection.plans,
     icon: ZumiIcons.restorePurchases,
-    requiresAuth: true,
     showInSettingsHub: true,
   );
 }
@@ -80,7 +79,6 @@ final class ProfileRoute extends AppRoute {
     path: '/profile',
     section: AppRouteSection.account,
     icon: ZumiIcons.profile,
-    requiresAuth: true,
     showInSettingsHub: true,
   );
 }
@@ -95,7 +93,6 @@ final class DeleteAccountRoute extends AppRoute {
     path: '/profile/delete',
     section: AppRouteSection.account,
     icon: ZumiIcons.deleteAccount,
-    requiresAuth: true,
   );
 }
 
