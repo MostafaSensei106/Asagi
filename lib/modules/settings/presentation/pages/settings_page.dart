@@ -30,7 +30,6 @@ final class SettingsPage extends StatelessWidget {
     AppRouteSection.about,
     AppRouteSection.legal,
     AppRouteSection.help,
-    AppRouteSection.account,
   ];
 
   /// Every destination advertised in the hub, in display order.
@@ -55,7 +54,6 @@ final class SettingsPage extends StatelessWidget {
     FaqRoute(),
     SupportRoute(),
     FeedbackRoute(),
-    ProfileRoute(),
   ];
 
   @override
@@ -170,7 +168,6 @@ final class SettingsPage extends StatelessWidget {
         'help_faq' => context.localeKeys.helpFaqTitle,
         'help_support' => context.localeKeys.helpSupportTitle,
         'help_feedback' => context.localeKeys.helpFeedbackTitle,
-        'profile' => context.localeKeys.profileTitle,
         _ => route.metadata.name,
       };
 
@@ -196,7 +193,6 @@ final class _SettingsSectionHeader extends StatelessWidget {
     AppRouteSection.about => context.localeKeys.settingsGroupAbout,
     AppRouteSection.legal => context.localeKeys.settingsGroupLegal,
     AppRouteSection.help => context.localeKeys.settingsGroupHelp,
-    AppRouteSection.account => context.localeKeys.settingsGroupAccount,
     AppRouteSection.core => context.localeKeys.settingsTitle,
   };
 }

@@ -13,10 +13,11 @@ import '../../../../core/widgets/display/list_tile/list_tile_icon_component.dart
 import '../../../../core/widgets/display/section_header/section_header_component.dart';
 import '../../../../core/widgets/layout/spacing/spacing_component.dart';
 
-/// Primary hub and dashboard of the Zumi application.
+/// Primary hub and compressor surface of the Zumi application.
 ///
-/// Provides immediate access to video compression, compression history,
-/// plans, settings, and support without requiring sign-in.
+/// Focused exclusively on video compression, history, and pro plans.
+/// Settings are kept cleanly in their dedicated destination reachable from
+/// the top app bar action.
 final class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -39,12 +40,6 @@ final class HomePage extends StatelessWidget {
         ),
         actions: [
           IconButtonComponent.outlined(
-            icon: ZumiIcons.profile,
-            toolTip: context.localeKeys.profileTitle,
-            onPressed: () => unawaited(context.push(const ProfileRoute())),
-          ),
-          const SpacingComponent.horizontal(AppSpacing.small),
-          IconButtonComponent.outlined(
             icon: ZumiIcons.settings,
             toolTip: context.localeKeys.settingsTitle,
             onPressed: () => unawaited(context.push(const SettingsRoute())),
@@ -56,7 +51,7 @@ final class HomePage extends StatelessWidget {
         child: ListView(
           padding: const EdgeInsets.all(AppSpacing.large),
           children: [
-            // Hero Card: Compression action.
+            // Hero Card: Choose video and compress.
             Container(
               padding: const EdgeInsets.all(AppSpacing.xLarge),
               decoration: BoxDecoration(
@@ -110,27 +105,18 @@ final class HomePage extends StatelessWidget {
 
             const SpacingComponent.vertical(AppSpacing.xLarge),
 
-            // Quick navigation section.
+            // History section.
             SectionHeaderComponent(
-              title: context.localeKeys.settingsGroupCompression,
+              title: context.localeKeys.compressionHistoryTitle,
             ),
             const SpacingComponent.vertical(AppSpacing.small),
-            ListTileIconComponent.top(
+            ListTileIconComponent(
               title: context.localeKeys.compressionHistoryTitle,
               subtitle: context.localeKeys.compressionHistoryDescription,
               leading: ZumiIcons.compressionHistory,
               trailing: trailingIcon,
               onTap: () => unawaited(
                 context.push(const CompressionHistoryRoute()),
-              ),
-            ),
-            ListTileIconComponent.bottom(
-              title: context.localeKeys.settingsCompressionTitle,
-              subtitle: context.localeKeys.settingsCompressionDescription,
-              leading: ZumiIcons.compressionDefaults,
-              trailing: trailingIcon,
-              onTap: () => unawaited(
-                context.push(const CompressionDefaultsRoute()),
               ),
             ),
 
@@ -156,35 +142,6 @@ final class HomePage extends StatelessWidget {
               onTap: () => unawaited(
                 context.push(const PurchaseMethodsRoute()),
               ),
-            ),
-
-            const SpacingComponent.vertical(AppSpacing.large),
-
-            // Settings & Info section.
-            SectionHeaderComponent(
-              title: context.localeKeys.settingsTitle,
-            ),
-            const SpacingComponent.vertical(AppSpacing.small),
-            ListTileIconComponent.top(
-              title: context.localeKeys.settingsTitle,
-              subtitle: context.localeKeys.settingsAppearanceDescription,
-              leading: ZumiIcons.settings,
-              trailing: trailingIcon,
-              onTap: () => unawaited(context.push(const SettingsRoute())),
-            ),
-            ListTileIconComponent.middle(
-              title: context.localeKeys.aboutAppTitle,
-              subtitle: context.localeKeys.aboutAppDescription,
-              leading: ZumiIcons.appInfo,
-              trailing: trailingIcon,
-              onTap: () => unawaited(context.push(const AppInfoRoute())),
-            ),
-            ListTileIconComponent.bottom(
-              title: context.localeKeys.aboutDeveloperTitle,
-              subtitle: context.localeKeys.aboutDeveloperDescription,
-              leading: ZumiIcons.developer,
-              trailing: trailingIcon,
-              onTap: () => unawaited(context.push(const DeveloperRoute())),
             ),
 
             const SpacingComponent.vertical(AppSpacing.large),

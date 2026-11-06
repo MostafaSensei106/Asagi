@@ -9,7 +9,6 @@ import '../../modules/home/home.dart';
 import '../../modules/legal/legal.dart';
 import '../../modules/onboarding/onboarding.dart';
 import '../../modules/plans/plans.dart';
-import '../../modules/profile/profile.dart';
 import '../../modules/settings/settings.dart';
 import '../constants/zumi_icons.dart';
 import 'observers/app_navigator_observer.dart';
@@ -95,10 +94,6 @@ final class AppRouter {
       PlanDetailsRoute() => const PlanDetailsPage(),
       PurchaseMethodsRoute() => const PurchaseMethodsPage(),
       RestorePurchasesRoute() => const RestorePurchasesPage(),
-
-      // Account.
-      ProfileRoute() => const ProfilePage(),
-      DeleteAccountRoute() => const DeleteAccountPage(),
 
       // Growth.
       RateAppRoute() => const RateAppPage(),
