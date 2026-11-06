@@ -13,8 +13,8 @@ import '../../modules/plans/plans.dart';
 import '../../modules/profile/profile.dart';
 import '../../modules/settings/settings.dart';
 import '../constants/zumi_icons.dart';
-import '../route_metadata.dart';
 import 'observers/app_navigator_observer.dart';
+import 'route_metadata.dart';
 import 'routes/redirect.dart';
 
 part 'routes/auth_routes.dart';

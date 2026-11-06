@@ -1,3 +1,3 @@
-export 'faq_page.dart';
-export 'feedback_page.dart';
-export 'support_page.dart';
+export 'pages/faq_page.dart';
+export 'pages/feedback_page.dart';
+export 'pages/support_page.dart';

@@ -386,6 +386,450 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'OK'**
   String get ok;
+
+  /// Home page title
+  ///
+  /// In en, this message translates to:
+  /// **'Zumi'**
+  String get homeTitle;
+
+  /// Home page description
+  ///
+  /// In en, this message translates to:
+  /// **'Compress videos privately, on your device.'**
+  String get homeDescription;
+
+  /// Onboarding page title
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to Zumi'**
+  String get onboardingTitle;
+
+  /// Onboarding page description
+  ///
+  /// In en, this message translates to:
+  /// **'Learn how Zumi compresses your videos without ever leaving your phone.'**
+  String get onboardingDescription;
+
+  /// Login page title
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in'**
+  String get loginTitle;
+
+  /// Login page description
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to sync your plan and keep your purchases available on every device.'**
+  String get loginDescription;
+
+  /// Video picker page title
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a video'**
+  String get videoSelectTitle;
+
+  /// Video picker page description
+  ///
+  /// In en, this message translates to:
+  /// **'Pick a video from your gallery to start compressing.'**
+  String get videoSelectDescription;
+
+  /// Compression setup page title
+  ///
+  /// In en, this message translates to:
+  /// **'Compression setup'**
+  String get compressionSetupTitle;
+
+  /// Compression setup page description
+  ///
+  /// In en, this message translates to:
+  /// **'Choose resolution, bitrate, and output format before you start.'**
+  String get compressionSetupDescription;
+
+  /// Compression progress page title
+  ///
+  /// In en, this message translates to:
+  /// **'Compressing'**
+  String get compressionProgressTitle;
+
+  /// Compression progress page description
+  ///
+  /// In en, this message translates to:
+  /// **'Follow the live progress of your compression job.'**
+  String get compressionProgressDescription;
+
+  /// Compression result page title
+  ///
+  /// In en, this message translates to:
+  /// **'Compression result'**
+  String get compressionResultTitle;
+
+  /// Compression result page description
+  ///
+  /// In en, this message translates to:
+  /// **'Compare the before and after size, then save or share the result.'**
+  String get compressionResultDescription;
+
+  /// Compression history page title
+  ///
+  /// In en, this message translates to:
+  /// **'Compression history'**
+  String get compressionHistoryTitle;
+
+  /// Compression history page description
+  ///
+  /// In en, this message translates to:
+  /// **'Review the videos you have compressed on this device.'**
+  String get compressionHistoryDescription;
+
+  /// Settings hub page title
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settingsTitle;
+
+  /// Appearance settings page title
+  ///
+  /// In en, this message translates to:
+  /// **'Appearance'**
+  String get settingsAppearanceTitle;
+
+  /// Appearance settings page description
+  ///
+  /// In en, this message translates to:
+  /// **'Theme, color scheme, and motion preferences.'**
+  String get settingsAppearanceDescription;
+
+  /// Language settings page title
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get settingsLanguageTitle;
+
+  /// Language settings page description
+  ///
+  /// In en, this message translates to:
+  /// **'App language and text direction.'**
+  String get settingsLanguageDescription;
+
+  /// Compression defaults page title
+  ///
+  /// In en, this message translates to:
+  /// **'Compression defaults'**
+  String get settingsCompressionTitle;
+
+  /// Compression defaults page description
+  ///
+  /// In en, this message translates to:
+  /// **'Default resolution, bitrate, and output format.'**
+  String get settingsCompressionDescription;
+
+  /// Storage settings page title
+  ///
+  /// In en, this message translates to:
+  /// **'Storage & cleanup'**
+  String get settingsStorageTitle;
+
+  /// Storage settings page description
+  ///
+  /// In en, this message translates to:
+  /// **'Storage usage, cache size, and temporary-file cleanup.'**
+  String get settingsStorageDescription;
+
+  /// Notifications settings page title
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get settingsNotificationsTitle;
+
+  /// Notifications settings page description
+  ///
+  /// In en, this message translates to:
+  /// **'Job completion and product update notifications.'**
+  String get settingsNotificationsDescription;
+
+  /// Privacy settings page title
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy'**
+  String get settingsPrivacyTitle;
+
+  /// Privacy settings page description
+  ///
+  /// In en, this message translates to:
+  /// **'On-device processing, local logs, and optional crash reports.'**
+  String get settingsPrivacyDescription;
+
+  /// App info page title
+  ///
+  /// In en, this message translates to:
+  /// **'About Zumi'**
+  String get aboutAppTitle;
+
+  /// App info page description
+  ///
+  /// In en, this message translates to:
+  /// **'Version, build number, and application details.'**
+  String get aboutAppDescription;
+
+  /// Developer page title
+  ///
+  /// In en, this message translates to:
+  /// **'About the developer'**
+  String get aboutDeveloperTitle;
+
+  /// Developer page description
+  ///
+  /// In en, this message translates to:
+  /// **'The people and tools behind Zumi.'**
+  String get aboutDeveloperDescription;
+
+  /// Licenses page title
+  ///
+  /// In en, this message translates to:
+  /// **'Open-source licenses'**
+  String get aboutLicensesTitle;
+
+  /// Licenses page description
+  ///
+  /// In en, this message translates to:
+  /// **'Open-source packages bundled with Zumi.'**
+  String get aboutLicensesDescription;
+
+  /// Privacy policy page title
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy policy'**
+  String get legalPrivacyTitle;
+
+  /// Privacy policy page description
+  ///
+  /// In en, this message translates to:
+  /// **'How Zumi handles your videos and data.'**
+  String get legalPrivacyDescription;
+
+  /// Terms page title
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of service'**
+  String get legalTermsTitle;
+
+  /// Terms page description
+  ///
+  /// In en, this message translates to:
+  /// **'The terms that apply to Zumi and its purchases.'**
+  String get legalTermsDescription;
+
+  /// Data safety page title
+  ///
+  /// In en, this message translates to:
+  /// **'Data safety'**
+  String get legalDataSafetyTitle;
+
+  /// Data safety page description
+  ///
+  /// In en, this message translates to:
+  /// **'Summary of the data Zumi collects and why.'**
+  String get legalDataSafetyDescription;
+
+  /// Permissions page title
+  ///
+  /// In en, this message translates to:
+  /// **'Permissions'**
+  String get legalPermissionsTitle;
+
+  /// Permissions page description
+  ///
+  /// In en, this message translates to:
+  /// **'Runtime permissions Zumi requests and why each is needed.'**
+  String get legalPermissionsDescription;
+
+  /// FAQ page title
+  ///
+  /// In en, this message translates to:
+  /// **'FAQ'**
+  String get helpFaqTitle;
+
+  /// FAQ page description
+  ///
+  /// In en, this message translates to:
+  /// **'Answers to common questions about compression and billing.'**
+  String get helpFaqDescription;
+
+  /// Support page title
+  ///
+  /// In en, this message translates to:
+  /// **'Support'**
+  String get helpSupportTitle;
+
+  /// Support page description
+  ///
+  /// In en, this message translates to:
+  /// **'Get help with your account or a purchase.'**
+  String get helpSupportDescription;
+
+  /// Feedback page title
+  ///
+  /// In en, this message translates to:
+  /// **'Send feedback'**
+  String get helpFeedbackTitle;
+
+  /// Feedback page description
+  ///
+  /// In en, this message translates to:
+  /// **'Report a problem or suggest an improvement.'**
+  String get helpFeedbackDescription;
+
+  /// Plans page title
+  ///
+  /// In en, this message translates to:
+  /// **'Plans'**
+  String get plansTitle;
+
+  /// Plans page description
+  ///
+  /// In en, this message translates to:
+  /// **'Compare plans and see what each one unlocks.'**
+  String get plansDescription;
+
+  /// Plan details page title
+  ///
+  /// In en, this message translates to:
+  /// **'Plan details'**
+  String get plansDetailsTitle;
+
+  /// Plan details page description
+  ///
+  /// In en, this message translates to:
+  /// **'Benefits, limits, and pricing for this plan.'**
+  String get plansDetailsDescription;
+
+  /// Purchase methods page title
+  ///
+  /// In en, this message translates to:
+  /// **'Payment methods'**
+  String get plansMethodsTitle;
+
+  /// Purchase methods page description
+  ///
+  /// In en, this message translates to:
+  /// **'Supported ways to pay, including store billing.'**
+  String get plansMethodsDescription;
+
+  /// Restore purchases page title
+  ///
+  /// In en, this message translates to:
+  /// **'Restore purchases'**
+  String get plansRestoreTitle;
+
+  /// Restore purchases page description
+  ///
+  /// In en, this message translates to:
+  /// **'Re-apply a purchase made on another device.'**
+  String get plansRestoreDescription;
+
+  /// Profile page title
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profileTitle;
+
+  /// Profile page description
+  ///
+  /// In en, this message translates to:
+  /// **'Your identity, plan status, and account preferences.'**
+  String get profileDescription;
+
+  /// Delete account page title
+  ///
+  /// In en, this message translates to:
+  /// **'Delete account'**
+  String get profileDeleteTitle;
+
+  /// Delete account page description
+  ///
+  /// In en, this message translates to:
+  /// **'Permanently remove your account and its server-side data.'**
+  String get profileDeleteDescription;
+
+  /// Rate app page title
+  ///
+  /// In en, this message translates to:
+  /// **'Rate Zumi'**
+  String get rateAppTitle;
+
+  /// Rate app page description
+  ///
+  /// In en, this message translates to:
+  /// **'Tell others how Zumi worked for you on the store.'**
+  String get rateAppDescription;
+
+  /// Share app page title
+  ///
+  /// In en, this message translates to:
+  /// **'Share Zumi'**
+  String get shareAppTitle;
+
+  /// Share app page description
+  ///
+  /// In en, this message translates to:
+  /// **'Recommend Zumi to a friend.'**
+  String get shareAppDescription;
+
+  /// Settings hub section label
+  ///
+  /// In en, this message translates to:
+  /// **'Appearance & language'**
+  String get settingsGroupAppearance;
+
+  /// Settings hub section label
+  ///
+  /// In en, this message translates to:
+  /// **'Compression'**
+  String get settingsGroupCompression;
+
+  /// Settings hub section label
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications & privacy'**
+  String get settingsGroupPrivacy;
+
+  /// Settings hub section label
+  ///
+  /// In en, this message translates to:
+  /// **'Plans & purchases'**
+  String get settingsGroupPlans;
+
+  /// Settings hub section label
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get settingsGroupAbout;
+
+  /// Settings hub section label
+  ///
+  /// In en, this message translates to:
+  /// **'Legal'**
+  String get settingsGroupLegal;
+
+  /// Settings hub section label
+  ///
+  /// In en, this message translates to:
+  /// **'Help & feedback'**
+  String get settingsGroupHelp;
+
+  /// Settings hub section label
+  ///
+  /// In en, this message translates to:
+  /// **'Account'**
+  String get settingsGroupAccount;
+
+  /// Badge shown on placeholder pages
+  ///
+  /// In en, this message translates to:
+  /// **'Coming soon'**
+  String get comingSoon;
 }
 
 class _AppLocalizationsDelegate

@@ -169,4 +169,253 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get ok => 'OK';
+
+  @override
+  String get homeTitle => 'Zumi';
+
+  @override
+  String get homeDescription => 'Compress videos privately, on your device.';
+
+  @override
+  String get onboardingTitle => 'Welcome to Zumi';
+
+  @override
+  String get onboardingDescription =>
+      'Learn how Zumi compresses your videos without ever leaving your phone.';
+
+  @override
+  String get loginTitle => 'Sign in';
+
+  @override
+  String get loginDescription =>
+      'Sign in to sync your plan and keep your purchases available on every device.';
+
+  @override
+  String get videoSelectTitle => 'Choose a video';
+
+  @override
+  String get videoSelectDescription =>
+      'Pick a video from your gallery to start compressing.';
+
+  @override
+  String get compressionSetupTitle => 'Compression setup';
+
+  @override
+  String get compressionSetupDescription =>
+      'Choose resolution, bitrate, and output format before you start.';
+
+  @override
+  String get compressionProgressTitle => 'Compressing';
+
+  @override
+  String get compressionProgressDescription =>
+      'Follow the live progress of your compression job.';
+
+  @override
+  String get compressionResultTitle => 'Compression result';
+
+  @override
+  String get compressionResultDescription =>
+      'Compare the before and after size, then save or share the result.';
+
+  @override
+  String get compressionHistoryTitle => 'Compression history';
+
+  @override
+  String get compressionHistoryDescription =>
+      'Review the videos you have compressed on this device.';
+
+  @override
+  String get settingsTitle => 'Settings';
+
+  @override
+  String get settingsAppearanceTitle => 'Appearance';
+
+  @override
+  String get settingsAppearanceDescription =>
+      'Theme, color scheme, and motion preferences.';
+
+  @override
+  String get settingsLanguageTitle => 'Language';
+
+  @override
+  String get settingsLanguageDescription => 'App language and text direction.';
+
+  @override
+  String get settingsCompressionTitle => 'Compression defaults';
+
+  @override
+  String get settingsCompressionDescription =>
+      'Default resolution, bitrate, and output format.';
+
+  @override
+  String get settingsStorageTitle => 'Storage & cleanup';
+
+  @override
+  String get settingsStorageDescription =>
+      'Storage usage, cache size, and temporary-file cleanup.';
+
+  @override
+  String get settingsNotificationsTitle => 'Notifications';
+
+  @override
+  String get settingsNotificationsDescription =>
+      'Job completion and product update notifications.';
+
+  @override
+  String get settingsPrivacyTitle => 'Privacy';
+
+  @override
+  String get settingsPrivacyDescription =>
+      'On-device processing, local logs, and optional crash reports.';
+
+  @override
+  String get aboutAppTitle => 'About Zumi';
+
+  @override
+  String get aboutAppDescription =>
+      'Version, build number, and application details.';
+
+  @override
+  String get aboutDeveloperTitle => 'About the developer';
+
+  @override
+  String get aboutDeveloperDescription => 'The people and tools behind Zumi.';
+
+  @override
+  String get aboutLicensesTitle => 'Open-source licenses';
+
+  @override
+  String get aboutLicensesDescription =>
+      'Open-source packages bundled with Zumi.';
+
+  @override
+  String get legalPrivacyTitle => 'Privacy policy';
+
+  @override
+  String get legalPrivacyDescription =>
+      'How Zumi handles your videos and data.';
+
+  @override
+  String get legalTermsTitle => 'Terms of service';
+
+  @override
+  String get legalTermsDescription =>
+      'The terms that apply to Zumi and its purchases.';
+
+  @override
+  String get legalDataSafetyTitle => 'Data safety';
+
+  @override
+  String get legalDataSafetyDescription =>
+      'Summary of the data Zumi collects and why.';
+
+  @override
+  String get legalPermissionsTitle => 'Permissions';
+
+  @override
+  String get legalPermissionsDescription =>
+      'Runtime permissions Zumi requests and why each is needed.';
+
+  @override
+  String get helpFaqTitle => 'FAQ';
+
+  @override
+  String get helpFaqDescription =>
+      'Answers to common questions about compression and billing.';
+
+  @override
+  String get helpSupportTitle => 'Support';
+
+  @override
+  String get helpSupportDescription =>
+      'Get help with your account or a purchase.';
+
+  @override
+  String get helpFeedbackTitle => 'Send feedback';
+
+  @override
+  String get helpFeedbackDescription =>
+      'Report a problem or suggest an improvement.';
+
+  @override
+  String get plansTitle => 'Plans';
+
+  @override
+  String get plansDescription => 'Compare plans and see what each one unlocks.';
+
+  @override
+  String get plansDetailsTitle => 'Plan details';
+
+  @override
+  String get plansDetailsDescription =>
+      'Benefits, limits, and pricing for this plan.';
+
+  @override
+  String get plansMethodsTitle => 'Payment methods';
+
+  @override
+  String get plansMethodsDescription =>
+      'Supported ways to pay, including store billing.';
+
+  @override
+  String get plansRestoreTitle => 'Restore purchases';
+
+  @override
+  String get plansRestoreDescription =>
+      'Re-apply a purchase made on another device.';
+
+  @override
+  String get profileTitle => 'Profile';
+
+  @override
+  String get profileDescription =>
+      'Your identity, plan status, and account preferences.';
+
+  @override
+  String get profileDeleteTitle => 'Delete account';
+
+  @override
+  String get profileDeleteDescription =>
+      'Permanently remove your account and its server-side data.';
+
+  @override
+  String get rateAppTitle => 'Rate Zumi';
+
+  @override
+  String get rateAppDescription =>
+      'Tell others how Zumi worked for you on the store.';
+
+  @override
+  String get shareAppTitle => 'Share Zumi';
+
+  @override
+  String get shareAppDescription => 'Recommend Zumi to a friend.';
+
+  @override
+  String get settingsGroupAppearance => 'Appearance & language';
+
+  @override
+  String get settingsGroupCompression => 'Compression';
+
+  @override
+  String get settingsGroupPrivacy => 'Notifications & privacy';
+
+  @override
+  String get settingsGroupPlans => 'Plans & purchases';
+
+  @override
+  String get settingsGroupAbout => 'About';
+
+  @override
+  String get settingsGroupLegal => 'Legal';
+
+  @override
+  String get settingsGroupHelp => 'Help & feedback';
+
+  @override
+  String get settingsGroupAccount => 'Account';
+
+  @override
+  String get comingSoon => 'Coming soon';
 }

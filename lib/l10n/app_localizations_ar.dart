@@ -179,4 +179,245 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get ok => 'حسناً';
+
+  @override
+  String get homeTitle => 'زومي';
+
+  @override
+  String get homeDescription =>
+      'ضغط الفيديوهات بخصوصية تامة، مباشرة على جهازك.';
+
+  @override
+  String get onboardingTitle => 'مرحباً بك في زومي';
+
+  @override
+  String get onboardingDescription =>
+      'تعرف على كيفية قيام زومي بضغط فيديوهاتك دون أن تغادر هاتفك أبداً.';
+
+  @override
+  String get loginTitle => 'تسجيل الدخول';
+
+  @override
+  String get loginDescription =>
+      'سجّل الدخول لمزامنة خطتك والحفاظ على مشترياتك على كل أجهزتك.';
+
+  @override
+  String get videoSelectTitle => 'اختر فيديو';
+
+  @override
+  String get videoSelectDescription => 'اختر فيديو من المعرض لبدء الضغط.';
+
+  @override
+  String get compressionSetupTitle => 'إعدادات الضغط';
+
+  @override
+  String get compressionSetupDescription =>
+      'اختر الدقة ومعدل البت والصيغة قبل البدء.';
+
+  @override
+  String get compressionProgressTitle => 'جارٍ الضغط';
+
+  @override
+  String get compressionProgressDescription =>
+      'تابع التقدم المباشر لعملية ضغط الفيديو.';
+
+  @override
+  String get compressionResultTitle => 'نتيجة الضغط';
+
+  @override
+  String get compressionResultDescription =>
+      'قارن الحجم قبل وبعد، ثم احفظ أو شارك النتيجة.';
+
+  @override
+  String get compressionHistoryTitle => 'سجل الضغط';
+
+  @override
+  String get compressionHistoryDescription =>
+      'استعرض الفيديوهات التي قمت بضغطها على هذا الجهاز.';
+
+  @override
+  String get settingsTitle => 'الإعدادات';
+
+  @override
+  String get settingsAppearanceTitle => 'المظهر';
+
+  @override
+  String get settingsAppearanceDescription => 'السمة والألوان وتفضيلات الحركة.';
+
+  @override
+  String get settingsLanguageTitle => 'اللغة';
+
+  @override
+  String get settingsLanguageDescription => 'لغة التطبيق واتجاه النص.';
+
+  @override
+  String get settingsCompressionTitle => 'إعدادات الضغط الافتراضية';
+
+  @override
+  String get settingsCompressionDescription =>
+      'الدقة الافتراضية ومعدل البت وصيغة الإخراج.';
+
+  @override
+  String get settingsStorageTitle => 'التخزين والتنظيف';
+
+  @override
+  String get settingsStorageDescription =>
+      'مساحة التخزين وحجم الذاكرة المؤقتة وتنظيف الملفات المؤقتة.';
+
+  @override
+  String get settingsNotificationsTitle => 'الإشعارات';
+
+  @override
+  String get settingsNotificationsDescription =>
+      'إشعارات اكتمال الضغط وتحديثات المنتج.';
+
+  @override
+  String get settingsPrivacyTitle => 'الخصوصية';
+
+  @override
+  String get settingsPrivacyDescription =>
+      'المعالجة المحلية، السجلات، وتقارير الأعطال الاختيارية.';
+
+  @override
+  String get aboutAppTitle => 'عن زومي';
+
+  @override
+  String get aboutAppDescription => 'رقم الإصدار وتفاصيل التطبيق.';
+
+  @override
+  String get aboutDeveloperTitle => 'عن المطور';
+
+  @override
+  String get aboutDeveloperDescription =>
+      'فريق العمل والأدوات المستخدمة في بناء زومي.';
+
+  @override
+  String get aboutLicensesTitle => 'تراخيص مفتوحة المصدر';
+
+  @override
+  String get aboutLicensesDescription =>
+      'حزم البرمجيات مفتوحة المصدر المستخدمة في زومي.';
+
+  @override
+  String get legalPrivacyTitle => 'سياسة الخصوصية';
+
+  @override
+  String get legalPrivacyDescription =>
+      'كيف يتعامل زومي مع فيديوهاتك وبياناتك.';
+
+  @override
+  String get legalTermsTitle => 'شروط الخدمة';
+
+  @override
+  String get legalTermsDescription => 'الشروط التي تنطبق على زومي ومشترياته.';
+
+  @override
+  String get legalDataSafetyTitle => 'أمان البيانات';
+
+  @override
+  String get legalDataSafetyDescription =>
+      'ملخص البيانات التي يجمعها زومي ولماذا.';
+
+  @override
+  String get legalPermissionsTitle => 'الأذونات';
+
+  @override
+  String get legalPermissionsDescription =>
+      'الأذونات التي يطلبها زومي وسبب طلب كل منها.';
+
+  @override
+  String get helpFaqTitle => 'الأسئلة الشائعة';
+
+  @override
+  String get helpFaqDescription =>
+      'إجابات عن الأسئلة الشائعة حول الضغط والاشتراكات.';
+
+  @override
+  String get helpSupportTitle => 'الدعم الفني';
+
+  @override
+  String get helpSupportDescription =>
+      'احصل على مساعدة بشأن حسابك أو مشترياتك.';
+
+  @override
+  String get helpFeedbackTitle => 'إرسال ملاحظات';
+
+  @override
+  String get helpFeedbackDescription => 'أبلغ عن مشكلة أو اقترح تحسينات.';
+
+  @override
+  String get plansTitle => 'الخطط والترقيات';
+
+  @override
+  String get plansDescription => 'قارن بين الخطط واكتشف الميزات المتاحة.';
+
+  @override
+  String get plansDetailsTitle => 'تفاصيل الخطة';
+
+  @override
+  String get plansDetailsDescription => 'الميزات والحدود والأسعار لهذه الخطة.';
+
+  @override
+  String get plansMethodsTitle => 'طرق الشراء والدفع';
+
+  @override
+  String get plansMethodsDescription =>
+      'طرق الدفع المعتمدة بما فيها متجر جوجل بلاي وطرق أخرى.';
+
+  @override
+  String get plansRestoreTitle => 'استعادة المشتريات';
+
+  @override
+  String get plansRestoreDescription => 'استعادة مشتريات سابقة على جهاز آخر.';
+
+  @override
+  String get profileTitle => 'الملف الشخصي';
+
+  @override
+  String get profileDescription => 'بياناتك، حالة اشتراكك، وتفضيلات الحساب.';
+
+  @override
+  String get profileDeleteTitle => 'حذف الحساب';
+
+  @override
+  String get profileDeleteDescription => 'حذف حسابك وبياناتك نهائياً.';
+
+  @override
+  String get rateAppTitle => 'تقييم التطبيق';
+
+  @override
+  String get rateAppDescription => 'شارك رأيك في زومي على المتجر لمساعدتنا.';
+
+  @override
+  String get shareAppTitle => 'مشاركة التطبيق';
+
+  @override
+  String get shareAppDescription => 'رشّح زومي لأصدقائك وزملائك.';
+
+  @override
+  String get settingsGroupAppearance => 'المظهر واللغة';
+
+  @override
+  String get settingsGroupCompression => 'الضغط والتخزين';
+
+  @override
+  String get settingsGroupPrivacy => 'الإشعارات والخصوصية';
+
+  @override
+  String get settingsGroupPlans => 'الخطط والمشتريات';
+
+  @override
+  String get settingsGroupAbout => 'حول التطبيق';
+
+  @override
+  String get settingsGroupLegal => 'قانوني وسياسات';
+
+  @override
+  String get settingsGroupHelp => 'المساعدة والملاحظات';
+
+  @override
+  String get settingsGroupAccount => 'الحساب';
+
+  @override
+  String get comingSoon => 'قريباً';
 }

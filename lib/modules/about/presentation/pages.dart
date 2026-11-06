@@ -1,3 +1,3 @@
-export 'app_info_page.dart';
-export 'developer_page.dart';
-export 'licenses_page.dart';
+export 'pages/app_info_page.dart';
+export 'pages/developer_page.dart';
+export 'pages/licenses_page.dart';

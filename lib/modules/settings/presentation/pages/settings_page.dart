@@ -67,7 +67,7 @@ final class SettingsPage extends StatelessWidget {
           padding: const EdgeInsets.all(AppSpacing.large),
           children: [
             for (final section in _sections) ...[
-              _SectionHeader(section: section),
+              _SettingsSectionHeader(section: section),
               const SpacingComponent.vertical(AppSpacing.small),
               ..._buildSectionTiles(context, section),
               const SpacingComponent.vertical(AppSpacing.xLarge),
@@ -174,8 +174,6 @@ final class SettingsPage extends StatelessWidget {
         _ => route.metadata.name,
       };
 
-  Widget _SectionHeader({required AppRouteSection section}) =>
-      _SettingsSectionHeader(section: section);
 }
 
 /// Small wrapper that keeps section labels in one place while keeping the
