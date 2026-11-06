@@ -1,14 +1,44 @@
 import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../modules/about/about.dart';
+import '../../modules/auth/auth.dart';
+import '../../modules/compression/compression.dart';
+import '../../modules/growth/growth.dart';
+import '../../modules/help/help.dart';
+import '../../modules/home/home.dart';
+import '../../modules/legal/legal.dart';
+import '../../modules/onboarding/onboarding.dart';
+import '../../modules/plans/plans.dart';
+import '../../modules/profile/profile.dart';
+import '../../modules/settings/settings.dart';
+import '../constants/zumi_icons.dart';
+import '../route_metadata.dart';
 import 'observers/app_navigator_observer.dart';
 import 'routes/redirect.dart';
 
 part 'routes/auth_routes.dart';
+part 'routes/compression_routes.dart';
 part 'routes/main_routes.dart';
+part 'routes/settings_info_routes.dart';
+part 'routes/user_routes.dart';
 
+/// Base type for every destination in the application.
+///
+/// Routes stay thin: they describe *what* a destination is, while
+/// [metadata] carries the stable identifier, canonical path, section, and
+/// icon used by navigation, analytics, and the settings hub.
 sealed class AppRoute extends KaiselRoute {
   const AppRoute();
+
+  /// Rich, presentation-agnostic description of this destination.
+  AppRouteMetadata get metadata;
+
+  @override
+  String get routeName => metadata.name;
+
+  @override
+  String? get restorationId => props.isEmpty ? metadata.name : null;
 }
 
 final class AppRouter {
@@ -28,19 +58,56 @@ final class AppRouter {
     observers: () => [AppNavigatorObserver()],
     guards: [authGuard],
     builder: (context, route) => switch (route) {
-      LoginRoute() => const _RoutePlaceholder(label: 'Login'),
-      MainRouteEntry() => const _RoutePlaceholder(label: 'Home'),
+      // Core.
+      MainRouteEntry() => const HomePage(),
+      OnboardingRoute() => const OnboardingPage(),
+      LoginRoute() => const LoginPage(),
+
+      // Compression.
+      VideoSelectRoute() => const VideoSelectPage(),
+      CompressionSetupRoute() => const CompressionSetupPage(),
+      CompressionProgressRoute() => const CompressionProgressPage(),
+      CompressionResultRoute() => const CompressionResultPage(),
+      CompressionHistoryRoute() => const CompressionHistoryPage(),
+
+      // Settings.
+      SettingsRoute() => const SettingsPage(),
+      AppearanceSettingsRoute() => const AppearanceSettingsPage(),
+      LanguageSettingsRoute() => const LanguageSettingsPage(),
+      CompressionDefaultsRoute() => const CompressionDefaultsPage(),
+      StorageSettingsRoute() => const StorageSettingsPage(),
+      NotificationsSettingsRoute() => const NotificationsSettingsPage(),
+      PrivacySettingsRoute() => const PrivacySettingsPage(),
+
+      // About.
+      AppInfoRoute() => const AppInfoPage(),
+      DeveloperRoute() => const DeveloperPage(),
+      LicensesRoute() => const LicensesPage(),
+
+      // Legal.
+      PrivacyPolicyRoute() => const PrivacyPolicyPage(),
+      TermsRoute() => const TermsPage(),
+      DataSafetyRoute() => const DataSafetyPage(),
+      PermissionsRoute() => const PermissionsPage(),
+
+      // Help.
+      FaqRoute() => const FaqPage(),
+      SupportRoute() => const SupportPage(),
+      FeedbackRoute() => const FeedbackPage(),
+
+      // Plans and purchases.
+      PlansRoute() => const PlansPage(),
+      PlanDetailsRoute() => const PlanDetailsPage(),
+      PurchaseMethodsRoute() => const PurchaseMethodsPage(),
+      RestorePurchasesRoute() => const RestorePurchasesPage(),
+
+      // Account.
+      ProfileRoute() => const ProfilePage(),
+      DeleteAccountRoute() => const DeleteAccountPage(),
+
+      // Growth.
+      RateAppRoute() => const RateAppPage(),
+      ShareAppRoute() => const ShareAppPage(),
     },
   );
-}
-
-final class _RoutePlaceholder extends StatelessWidget {
-  const _RoutePlaceholder({required this.label});
-
-  final String label;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text(label)));
-  }
 }

@@ -1,10 +1,5 @@
 part of '../app_router.dart';
 
-
-
-import '../../constants/zumi_icons.dart';
-import '../route_metadata.dart';
-
 /// Picker for the source video that will be compressed.
 final class VideoSelectRoute extends AppRoute {
   const VideoSelectRoute();
