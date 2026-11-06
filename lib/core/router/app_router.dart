@@ -14,7 +14,6 @@ import '../../modules/settings/settings.dart';
 import '../constants/zumi_icons.dart';
 import 'observers/app_navigator_observer.dart';
 import 'route_metadata.dart';
-import 'routes/redirect.dart';
 
 part 'routes/compression_routes.dart';
 part 'routes/main_routes.dart';

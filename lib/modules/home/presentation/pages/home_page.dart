@@ -6,30 +6,191 @@ import 'package:material_ui/material_ui.dart';
 import '../../../../core/constants/zumi_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/router/app_router.dart';
+import '../../../../core/widgets/buttons/filled_button/filled_button_component.dart';
 import '../../../../core/widgets/buttons/icon_button/icon_button_component.dart';
-import '../../../../core/widgets/display/placeholder/app_placeholder_page.dart';
+import '../../../../core/widgets/design_system/tokens/tokens.dart';
+import '../../../../core/widgets/display/list_tile/list_tile_icon_component.dart';
+import '../../../../core/widgets/display/section_header/section_header_component.dart';
+import '../../../../core/widgets/layout/spacing/spacing_component.dart';
 
-/// Root destination placeholder with a shortcut into settings.
+/// Primary hub and dashboard of the Zumi application.
 ///
-/// The home surface is the only place that opens settings directly, so the
-/// action lives here instead of inside the shared placeholder scaffold.
+/// Provides immediate access to video compression, compression history,
+/// plans, settings, and support without requiring sign-in.
 final class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return AppPlaceholderPage(
-      title: context.localeKeys.homeTitle,
-      description: context.localeKeys.homeDescription,
-      icon: ZumiIcons.home,
-      showBackButton: false,
-      actions: [
-        IconButtonComponent.outlined(
-          icon: ZumiIcons.settings,
-          toolTip: context.localeKeys.settingsTitle,
-          onPressed: () => unawaited(context.push(const SettingsRoute())),
+    final colorScheme = context.colorScheme;
+    final textTheme = context.textTheme;
+
+    final trailingIcon = Icon(
+      context.isArabic ? ZumiIcons.chevronBack : ZumiIcons.chevronForward,
+      size: AppIconSizes.small,
+      color: colorScheme.onSurfaceVariant,
+    );
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          context.localeKeys.appTitle,
+          style: textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
         ),
-      ],
+        actions: [
+          IconButtonComponent.outlined(
+            icon: ZumiIcons.profile,
+            toolTip: context.localeKeys.profileTitle,
+            onPressed: () => unawaited(context.push(const ProfileRoute())),
+          ),
+          const SpacingComponent.horizontal(AppSpacing.small),
+          IconButtonComponent.outlined(
+            icon: ZumiIcons.settings,
+            toolTip: context.localeKeys.settingsTitle,
+            onPressed: () => unawaited(context.push(const SettingsRoute())),
+          ),
+          const SpacingComponent.horizontal(AppSpacing.medium),
+        ],
+      ),
+      body: SafeArea(
+        child: ListView(
+          padding: const EdgeInsets.all(AppSpacing.large),
+          children: [
+            // Hero Card: Compression action.
+            Container(
+              padding: const EdgeInsets.all(AppSpacing.xLarge),
+              decoration: BoxDecoration(
+                color: colorScheme.primaryContainer,
+                borderRadius: BorderRadius.circular(AppRadii.xLarge),
+              ),
+              child: Column(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(AppSpacing.medium),
+                    decoration: BoxDecoration(
+                      color: colorScheme.primary,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(
+                      ZumiIcons.videoSelect,
+                      size: AppIconSizes.large,
+                      color: colorScheme.onPrimary,
+                    ),
+                  ),
+                  const SpacingComponent.vertical(AppSpacing.medium),
+                  Text(
+                    context.localeKeys.homeTitle,
+                    textAlign: TextAlign.center,
+                    style: textTheme.headlineSmall?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: colorScheme.onPrimaryContainer,
+                    ),
+                  ),
+                  const SpacingComponent.vertical(AppSpacing.xSmall),
+                  Text(
+                    context.localeKeys.homeDescription,
+                    textAlign: TextAlign.center,
+                    style: textTheme.bodyMedium?.copyWith(
+                      color: colorScheme.onPrimaryContainer.withValues(
+                        alpha: 0.8,
+                      ),
+                    ),
+                  ),
+                  const SpacingComponent.vertical(AppSpacing.large),
+                  FilledButtonComponent.icon(
+                    icon: ZumiIcons.videoSelect,
+                    label: context.localeKeys.videoSelectTitle,
+                    width: double.infinity,
+                    onPressed: () =>
+                        unawaited(context.push(const VideoSelectRoute())),
+                  ),
+                ],
+              ),
+            ),
+
+            const SpacingComponent.vertical(AppSpacing.xLarge),
+
+            // Quick navigation section.
+            SectionHeaderComponent(
+              title: context.localeKeys.settingsGroupCompression,
+            ),
+            const SpacingComponent.vertical(AppSpacing.small),
+            ListTileIconComponent.top(
+              title: context.localeKeys.compressionHistoryTitle,
+              subtitle: context.localeKeys.compressionHistoryDescription,
+              leading: ZumiIcons.compressionHistory,
+              trailing: trailingIcon,
+              onTap: () => unawaited(
+                context.push(const CompressionHistoryRoute()),
+              ),
+            ),
+            ListTileIconComponent.bottom(
+              title: context.localeKeys.settingsCompressionTitle,
+              subtitle: context.localeKeys.settingsCompressionDescription,
+              leading: ZumiIcons.compressionDefaults,
+              trailing: trailingIcon,
+              onTap: () => unawaited(
+                context.push(const CompressionDefaultsRoute()),
+              ),
+            ),
+
+            const SpacingComponent.vertical(AppSpacing.large),
+
+            // Plans section.
+            SectionHeaderComponent(
+              title: context.localeKeys.settingsGroupPlans,
+            ),
+            const SpacingComponent.vertical(AppSpacing.small),
+            ListTileIconComponent.top(
+              title: context.localeKeys.plansTitle,
+              subtitle: context.localeKeys.plansDescription,
+              leading: ZumiIcons.plans,
+              trailing: trailingIcon,
+              onTap: () => unawaited(context.push(const PlansRoute())),
+            ),
+            ListTileIconComponent.bottom(
+              title: context.localeKeys.plansMethodsTitle,
+              subtitle: context.localeKeys.plansMethodsDescription,
+              leading: ZumiIcons.purchaseMethods,
+              trailing: trailingIcon,
+              onTap: () => unawaited(
+                context.push(const PurchaseMethodsRoute()),
+              ),
+            ),
+
+            const SpacingComponent.vertical(AppSpacing.large),
+
+            // Settings & Info section.
+            SectionHeaderComponent(
+              title: context.localeKeys.settingsTitle,
+            ),
+            const SpacingComponent.vertical(AppSpacing.small),
+            ListTileIconComponent.top(
+              title: context.localeKeys.settingsTitle,
+              subtitle: context.localeKeys.settingsAppearanceDescription,
+              leading: ZumiIcons.settings,
+              trailing: trailingIcon,
+              onTap: () => unawaited(context.push(const SettingsRoute())),
+            ),
+            ListTileIconComponent.middle(
+              title: context.localeKeys.aboutAppTitle,
+              subtitle: context.localeKeys.aboutAppDescription,
+              leading: ZumiIcons.appInfo,
+              trailing: trailingIcon,
+              onTap: () => unawaited(context.push(const AppInfoRoute())),
+            ),
+            ListTileIconComponent.bottom(
+              title: context.localeKeys.aboutDeveloperTitle,
+              subtitle: context.localeKeys.aboutDeveloperDescription,
+              leading: ZumiIcons.developer,
+              trailing: trailingIcon,
+              onTap: () => unawaited(context.push(const DeveloperRoute())),
+            ),
+
+            const SpacingComponent.vertical(AppSpacing.large),
+          ],
+        ),
+      ),
     );
   }
 }
