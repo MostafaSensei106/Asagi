@@ -13,7 +13,6 @@ enum AppRouteSection {
   about,
   legal,
   help,
-  account,
 }
 
 /// Stable, professional metadata attached to every [AppRoute].

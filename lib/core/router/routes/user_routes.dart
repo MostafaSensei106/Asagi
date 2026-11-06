@@ -66,37 +66,6 @@ final class RestorePurchasesRoute extends AppRoute {
 }
 
 // ---------------------------------------------------------------------------
-// Account.
-// ---------------------------------------------------------------------------
-
-/// Signed-in identity, plan status, and account preferences.
-final class ProfileRoute extends AppRoute {
-  const ProfileRoute();
-
-  @override
-  AppRouteMetadata get metadata => const AppRouteMetadata(
-    name: 'profile',
-    path: '/profile',
-    section: AppRouteSection.account,
-    icon: ZumiIcons.profile,
-    showInSettingsHub: true,
-  );
-}
-
-/// Irreversible removal of the account and its server-side data.
-final class DeleteAccountRoute extends AppRoute {
-  const DeleteAccountRoute();
-
-  @override
-  AppRouteMetadata get metadata => const AppRouteMetadata(
-    name: 'profile_delete',
-    path: '/profile/delete',
-    section: AppRouteSection.account,
-    icon: ZumiIcons.deleteAccount,
-  );
-}
-
-// ---------------------------------------------------------------------------
 // Growth.
 // ---------------------------------------------------------------------------
 
