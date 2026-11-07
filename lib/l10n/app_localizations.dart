@@ -936,7 +936,7 @@ abstract class AppLocalizations {
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
-  /// **'Contact the support team'**
+  /// **'Reach the developer directly'**
   String get helpSupportSubtitle;
 
   /// Settings hub row summary

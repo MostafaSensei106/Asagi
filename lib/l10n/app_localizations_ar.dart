@@ -474,7 +474,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get helpFaqSubtitle => 'إجابات لأكثر الأسئلة شيوعاً';
 
   @override
-  String get helpSupportSubtitle => 'تواصل مع فريق الدعم';
+  String get helpSupportSubtitle => 'تواصل مع المطور مباشرة';
 
   @override
   String get helpFeedbackSubtitle => 'أرسل لنا ملاحظاتك الآن';

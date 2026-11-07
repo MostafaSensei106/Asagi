@@ -10,6 +10,7 @@ class ExpressiveSectionHeader extends StatelessWidget {
     required this.title,
     required this.icon,
     this.shape = ExpressiveIconShape.clover,
+    this.badgeSize = 44,
     super.key,
   });
 
@@ -17,11 +18,14 @@ class ExpressiveSectionHeader extends StatelessWidget {
   final IconData icon;
   final ExpressiveIconShape shape;
 
+  /// Edge length of the expressive badge behind [icon].
+  final double badgeSize;
+
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        ExpressiveIcon(icon: icon, shape: shape, size: 36),
+        ExpressiveIcon(icon: icon, shape: shape, size: badgeSize),
         const Gap.horizontal(AppSpacing.medium),
         Expanded(
           child: Text(

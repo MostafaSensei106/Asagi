@@ -472,7 +472,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get helpFaqSubtitle => 'Answers to common questions';
 
   @override
-  String get helpSupportSubtitle => 'Contact the support team';
+  String get helpSupportSubtitle => 'Reach the developer directly';
 
   @override
   String get helpFeedbackSubtitle => 'Send us your feedback';
