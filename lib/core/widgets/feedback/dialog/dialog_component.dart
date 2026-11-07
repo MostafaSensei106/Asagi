@@ -4,7 +4,6 @@ import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:flutter/services.dart';
 
 import '../../../extensions/extensions.dart';
-import '../../../extensions/navigation_extension.dart';
 
 final class DialogComponent extends StatelessWidget {
   const DialogComponent({
