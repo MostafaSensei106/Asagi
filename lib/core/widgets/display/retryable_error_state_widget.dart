@@ -14,7 +14,7 @@ class RetryableErrorStateWidget extends StatelessWidget {
     required this.message,
     required this.onRetry,
     this.title,
-    this.icon = LucideIcons.messageCircleWarning,
+    this.icon = LucideIcons.triangleAlert,
     this.retryButtonText,
     super.key,
   });
@@ -73,7 +73,7 @@ class RetryableErrorStateWidget extends StatelessWidget {
             const SizedBox(height: 16),
             TextButtonComponent.icon(
               onPressed: onRetry,
-              icon: LucideIcons.refreshCcw,
+              icon: LucideIcons.refreshCw,
               label: retryButtonText ?? context.localeKeys.retry,
             ),
           ],

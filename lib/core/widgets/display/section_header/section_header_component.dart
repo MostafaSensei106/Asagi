@@ -15,7 +15,7 @@ final class SectionHeaderComponent extends StatelessWidget {
   Widget build(BuildContext context) => Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
-      Text(title, style: Theme.of(context).textTheme.titleMedium),
+      Text(title, style: Theme.of(context).textTheme.titleLarge),
       if (onActionPressed != null)
         TextButton(
           onPressed: onActionPressed,

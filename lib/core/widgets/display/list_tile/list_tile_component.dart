@@ -1,10 +1,13 @@
+import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../constants/app_config.dart';
 import '../../../extensions/extensions.dart';
+import 'list_tile_group.dart';
 
 enum ListTileGroupType { top, middle, bottom, single }
 
+/// Single-row list item used for settings, lists, and pickers.
 final class ListTileComponent extends StatelessWidget {
   const ListTileComponent({
     required this.title,
@@ -15,6 +18,8 @@ final class ListTileComponent extends StatelessWidget {
     this.trailing,
     this.onTap,
     this.selected,
+    this.showChevron = true,
+    this.contentPadding,
   }) : groupType = ListTileGroupType.single;
 
   const ListTileComponent.top({
@@ -26,6 +31,8 @@ final class ListTileComponent extends StatelessWidget {
     this.trailing,
     this.onTap,
     this.selected,
+    this.showChevron = true,
+    this.contentPadding,
   }) : groupType = ListTileGroupType.top;
 
   const ListTileComponent.middle({
@@ -37,6 +44,8 @@ final class ListTileComponent extends StatelessWidget {
     this.trailing,
     this.onTap,
     this.selected,
+    this.showChevron = true,
+    this.contentPadding,
   }) : groupType = ListTileGroupType.middle;
 
   const ListTileComponent.bottom({
@@ -48,16 +57,23 @@ final class ListTileComponent extends StatelessWidget {
     this.trailing,
     this.onTap,
     this.selected,
+    this.showChevron = true,
+    this.contentPadding,
   }) : groupType = ListTileGroupType.bottom;
 
-  final String title;
+  final Widget title;
   final Widget? leading;
-  final String? subtitle;
+  final Widget? subtitle;
   final Widget? trailing;
   final VoidCallback? onTap;
   final bool? selected;
   final bool useinBorderRadius;
   final ListTileGroupType groupType;
+
+  /// When `true` (the default) a trailing chevron is shown for tappable rows
+  /// without an explicit [trailing] widget.
+  final bool showChevron;
+  final EdgeInsetsGeometry? contentPadding;
 
   @override
   Widget build(BuildContext context) {
@@ -81,8 +97,22 @@ final class ListTileComponent extends StatelessWidget {
           bottomRight: borderRadius.bottomRight,
         );
       case ListTileGroupType.single:
-        effectiveRadius = borderRadius;
+        effectiveRadius = ListTileGroup.contains(context)
+            ? BorderRadius.zero
+            : borderRadius;
     }
+
+    final effectiveTrailing =
+        trailing ??
+        (showChevron && onTap != null
+            ? Icon(
+                context.isArabic
+                    ? LucideIcons.arrowLeft
+                    : LucideIcons.arrowRight,
+                size: 18,
+                color: context.colorScheme.onSurfaceVariant,
+              )
+            : null);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -94,19 +124,20 @@ final class ListTileComponent extends StatelessWidget {
             borderRadius: effectiveRadius,
             clipBehavior: Clip.antiAlias,
             child: ListTile(
-              title: Text(
-                title,
+              title: DefaultTextStyle.merge(
                 style: Theme.of(context).textTheme.bodyMedium
                     ?.copyWith(fontWeight: FontWeight.w500),
+                child: title,
               ),
               leading: leading,
-              subtitle: subtitle != null ? Text(subtitle!) : null,
-              trailing: trailing,
+              subtitle: subtitle,
+              trailing: effectiveTrailing,
               onTap: onTap,
+              selected: selected ?? false,
               horizontalTitleGap: 10,
-              contentPadding: const EdgeInsets.symmetric(
-                horizontal: AppConfig.paddingHalf,
-              ),
+              contentPadding:
+                  contentPadding ??
+                  const EdgeInsets.symmetric(horizontal: AppConfig.paddingHalf),
             ),
           ),
         ),

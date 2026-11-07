@@ -64,9 +64,9 @@ final class ListTileWidgetComponent extends StatelessWidget {
     switch (groupType) {
       case ListTileGroupType.top:
         return ListTileComponent.top(
-          title: title,
+          title: Text(title),
           leading: leading,
-          subtitle: subtitle,
+          subtitle: subtitle == null ? null : Text(subtitle!),
           trailing: trailing,
           selected: selected,
           useinBorderRadius: useinBorderRadius,
@@ -77,9 +77,9 @@ final class ListTileWidgetComponent extends StatelessWidget {
         );
       case ListTileGroupType.middle:
         return ListTileComponent.middle(
-          title: title,
+          title: Text(title),
           leading: leading,
-          subtitle: subtitle,
+          subtitle: subtitle == null ? null : Text(subtitle!),
           trailing: trailing,
           selected: selected,
           useinBorderRadius: useinBorderRadius,
@@ -90,9 +90,9 @@ final class ListTileWidgetComponent extends StatelessWidget {
         );
       case ListTileGroupType.bottom:
         return ListTileComponent.bottom(
-          title: title,
+          title: Text(title),
           leading: leading,
-          subtitle: subtitle,
+          subtitle: subtitle == null ? null : Text(subtitle!),
           trailing: trailing,
           selected: selected,
           useinBorderRadius: useinBorderRadius,
@@ -103,9 +103,9 @@ final class ListTileWidgetComponent extends StatelessWidget {
         );
       case ListTileGroupType.single:
         return ListTileComponent(
-          title: title,
+          title: Text(title),
           leading: leading,
-          subtitle: subtitle,
+          subtitle: subtitle == null ? null : Text(subtitle!),
           trailing: trailing,
           selected: selected,
           useinBorderRadius: useinBorderRadius,

@@ -4,10 +4,8 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
-import '../../../extensions/extensions.dart';
 import '../../animation/wave_background.dart';
 import '../../buttons/icon_button/icon_button_component.dart';
 
@@ -43,7 +41,7 @@ final class SidePageSliverAppBarWithWavesComponent extends HookWidget {
 
   void leave(BuildContext context) {
     unawaited(HapticFeedback.vibrate());
-    context.pop();
+    Navigator.of(context).pop();
   }
 
   @override
@@ -97,11 +95,12 @@ final class SidePageSliverAppBarWithWavesComponent extends HookWidget {
 
       leading: showBackButton
           ? Center(
-              child: IconButtonComponent.outlined(
+              child: IconButtonComponent(
+                variant: IconButtonVariant.outlined,
                 onPressed: () => leave(context),
                 icon: isRtl
-                    ? LucideIcons.chevronsRight
-                    : LucideIcons.chevronsLeft,
+                    ? Icons.keyboard_double_arrow_right_rounded
+                    : Icons.keyboard_double_arrow_left_rounded,
               ),
             )
           : null,

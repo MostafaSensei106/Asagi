@@ -8,7 +8,7 @@ class ErrorStateWidget extends StatelessWidget {
   const ErrorStateWidget({
     required this.message,
     this.title,
-    this.icon = LucideIcons.alertTriangle,
+    this.icon = LucideIcons.triangleAlert,
     super.key,
   });
 

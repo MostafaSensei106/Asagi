@@ -1,9 +1,9 @@
 import 'package:cached_network_image_ce/cached_network_image.dart';
-import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../constants/app_config.dart';
 
+/// Remote image with a loading placeholder and an error fallback.
 final class NetworkImageComponent extends StatelessWidget {
   const NetworkImageComponent({
     required this.imageUrl,
@@ -12,12 +12,17 @@ final class NetworkImageComponent extends StatelessWidget {
     this.height,
     this.fit = BoxFit.cover,
     this.borderRadius,
+    this.semanticLabel,
   });
+
   final String imageUrl;
   final double? width;
   final double? height;
   final BoxFit? fit;
   final double? borderRadius;
+
+  /// Accessibility description announced by screen readers.
+  final String? semanticLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +34,7 @@ final class NetworkImageComponent extends StatelessWidget {
         ? (height! * devicePixelRatio).round()
         : null;
 
-    return ClipRRect(
+    final image = ClipRRect(
       borderRadius: BorderRadius.circular(
         borderRadius ?? AppConfig.inBorderRadius,
       ),
@@ -49,11 +54,15 @@ final class NetworkImageComponent extends StatelessWidget {
                 Container(
                   color: Theme.of(context).colorScheme.errorContainer,
                   child: Icon(
-                    LucideIcons.imageOff,
+                    Icons.error,
                     color: Theme.of(context).colorScheme.error,
                   ),
                 ),
       ),
     );
+
+    if (semanticLabel == null) return image;
+
+    return Semantics(image: true, label: semanticLabel, child: image);
   }
 }

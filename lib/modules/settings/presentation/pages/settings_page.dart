@@ -10,7 +10,7 @@ import '../../../../core/router/route_metadata.dart';
 import '../../../../core/widgets/design_system/tokens/tokens.dart';
 import '../../../../core/widgets/display/list_tile/list_tile_icon_component.dart';
 import '../../../../core/widgets/display/section_header/section_header_component.dart';
-import '../../../../core/widgets/layout/spacing/spacing_component.dart';
+import '../../../../core/widgets/layout/gap.dart';
 import '../../../../core/widgets/navigation/app_bar/side_page_app_bar_component.dart';
 
 /// Grouped entry point for every preference and informational destination.
@@ -66,9 +66,9 @@ final class SettingsPage extends StatelessWidget {
           children: [
             for (final section in _sections) ...[
               _SettingsSectionHeader(section: section),
-              const SpacingComponent.vertical(AppSpacing.small),
+              const Gap(AppSpacing.small),
               ..._buildSectionTiles(context, section),
-              const SpacingComponent.vertical(AppSpacing.xLarge),
+              const Gap(AppSpacing.xLarge),
             ],
           ],
         ),

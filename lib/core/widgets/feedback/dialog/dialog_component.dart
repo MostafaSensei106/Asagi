@@ -4,6 +4,7 @@ import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:flutter/services.dart';
 
 import '../../../extensions/extensions.dart';
+import '../../../extensions/navigation_extension.dart';
 
 final class DialogComponent extends StatelessWidget {
   const DialogComponent({
@@ -43,7 +44,7 @@ final class DialogComponent extends StatelessWidget {
           CupertinoDialogAction(
             onPressed: () async {
               await HapticFeedback.vibrate();
-              if (context.mounted) context.pop();
+              if (context.mounted) Navigator.of(context).pop();
             },
             child: Text(
               context.localeKeys.cancel,
@@ -56,7 +57,7 @@ final class DialogComponent extends StatelessWidget {
             isDestructiveAction: true,
             onPressed: () async {
               await HapticFeedback.vibrate();
-              if (context.mounted) context.pop();
+              if (context.mounted) Navigator.of(context).pop();
               onConfirm();
             },
             child: Text(
@@ -69,6 +70,59 @@ final class DialogComponent extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  /// Asks the user to confirm an action and resolves to their answer.
+  ///
+  /// Resolves `false` when the dialog is dismissed without a choice, so
+  /// callers can guard with a simple `if (!confirmed) return;`.
+  static Future<bool> confirm({
+    required BuildContext context,
+    required String title,
+    required String message,
+    required String confirmLabel,
+    String? cancelLabel,
+    bool isDestructive = false,
+  }) async {
+    final result = await showCupertinoDialog<bool>(
+      context: context,
+      builder: (dialogContext) => DialogComponent(
+        title: Text(title, style: dialogContext.textTheme.titleMedium),
+        content: Text(message, style: dialogContext.textTheme.bodyMedium),
+        actions: [
+          CupertinoDialogAction(
+            onPressed: () async {
+              await HapticFeedback.vibrate();
+              if (dialogContext.mounted) dialogContext.pop(false);
+            },
+            child: Text(
+              cancelLabel ?? dialogContext.localeKeys.cancel,
+              style: dialogContext.textTheme.bodyMedium?.copyWith(
+                color: dialogContext.colorScheme.primary,
+              ),
+            ),
+          ),
+          CupertinoDialogAction(
+            isDestructiveAction: isDestructive,
+            isDefaultAction: !isDestructive,
+            onPressed: () async {
+              await HapticFeedback.vibrate();
+              if (dialogContext.mounted) dialogContext.pop(true);
+            },
+            child: Text(
+              confirmLabel,
+              style: dialogContext.textTheme.bodyMedium?.copyWith(
+                color: isDestructive
+                    ? dialogContext.colorScheme.error
+                    : dialogContext.colorScheme.primary,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+
+    return result ?? false;
   }
 
   static void showLoading(BuildContext context) {
@@ -108,7 +162,7 @@ final class DialogComponent extends StatelessWidget {
             isDefaultAction: true,
             onPressed: () async {
               await HapticFeedback.vibrate();
-              if (context.mounted) context.pop();
+              if (context.mounted) Navigator.pop(context);
             },
             child: Text(
               context.localeKeys.ok,
@@ -135,7 +189,7 @@ final class DialogComponent extends StatelessWidget {
             isDefaultAction: true,
             onPressed: () async {
               await HapticFeedback.vibrate();
-              if (context.mounted) context.pop();
+              if (context.mounted) Navigator.pop(context);
             },
             child: Text(
               context.localeKeys.ok,

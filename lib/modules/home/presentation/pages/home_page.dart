@@ -9,7 +9,7 @@ import '../../../../core/router/app_router.dart';
 import '../../../../core/widgets/buttons/filled_button/filled_button_component.dart';
 import '../../../../core/widgets/buttons/icon_button/icon_button_component.dart';
 import '../../../../core/widgets/design_system/tokens/tokens.dart';
-import '../../../../core/widgets/layout/spacing/spacing_component.dart';
+import '../../../../core/widgets/layout/gap.dart';
 
 /// Primary compressor surface of the Zumi application.
 ///
@@ -26,18 +26,16 @@ final class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        leading: IconButtonComponent(
+          icon: ZumiIcons.settings,
+          toolTip: context.localeKeys.settingsTitle,
+          variant: IconButtonVariant.filled,
+          onPressed: () => unawaited(context.push(const SettingsRoute())),
+        ),
         title: Text(
           context.localeKeys.appTitle,
           style: textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
         ),
-        actions: [
-          IconButtonComponent.outlined(
-            icon: ZumiIcons.settings,
-            toolTip: context.localeKeys.settingsTitle,
-            onPressed: () => unawaited(context.push(const SettingsRoute())),
-          ),
-          const SpacingComponent.horizontal(AppSpacing.medium),
-        ],
       ),
       body: SafeArea(
         child: Center(
@@ -64,7 +62,7 @@ final class HomePage extends StatelessWidget {
                       color: colorScheme.onPrimary,
                     ),
                   ),
-                  const SpacingComponent.vertical(AppSpacing.large),
+                  const Gap(AppSpacing.large),
                   Text(
                     context.localeKeys.homeTitle,
                     textAlign: TextAlign.center,
@@ -73,7 +71,7 @@ final class HomePage extends StatelessWidget {
                       color: colorScheme.onPrimaryContainer,
                     ),
                   ),
-                  const SpacingComponent.vertical(AppSpacing.small),
+                  const Gap(AppSpacing.small),
                   Text(
                     context.localeKeys.homeDescription,
                     textAlign: TextAlign.center,
@@ -83,7 +81,7 @@ final class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SpacingComponent.vertical(AppSpacing.xLarge),
+                  const Gap(AppSpacing.xLarge),
                   FilledButtonComponent.icon(
                     icon: ZumiIcons.videoSelect,
                     label: context.localeKeys.videoSelectTitle,

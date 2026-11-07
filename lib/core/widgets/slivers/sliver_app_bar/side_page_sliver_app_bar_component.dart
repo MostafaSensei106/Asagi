@@ -1,11 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../constants/app_config.dart';
-import '../../../extensions/extensions.dart';
 import '../../buttons/icon_button/icon_button_component.dart';
 
 final class SidePageSliverAppBarComponent extends StatelessWidget {
@@ -43,7 +41,7 @@ final class SidePageSliverAppBarComponent extends StatelessWidget {
   /// Navigates back to the previous screen with haptic feedback.
   void leave(BuildContext context) {
     unawaited(HapticFeedback.vibrate());
-    context.pop();
+    Navigator.of(context).pop();
   }
 
   /// Checks if the current locale is Arabic.
@@ -61,8 +59,8 @@ final class SidePageSliverAppBarComponent extends StatelessWidget {
     leading: _buildSidePageAppBarIcon(
       context,
       cheakLocation(context)
-          ? LucideIcons.chevronsRight
-          : LucideIcons.chevronsLeft,
+          ? Icons.keyboard_double_arrow_right_rounded
+          : Icons.keyboard_double_arrow_left_rounded,
     ),
     actions: actions,
     pinned: pinned,
@@ -85,7 +83,8 @@ final class SidePageSliverAppBarComponent extends StatelessWidget {
   Widget _buildSidePageAppBarIcon(BuildContext context, IconData icon) =>
       Padding(
         padding: const EdgeInsets.all(AppConfig.paddingHalf),
-        child: IconButtonComponent.outlined(
+        child: IconButtonComponent(
+          variant: IconButtonVariant.outlined,
           onPressed: () => leave(context),
           icon: icon,
         ),

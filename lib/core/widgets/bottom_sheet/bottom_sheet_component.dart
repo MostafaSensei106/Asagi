@@ -1,10 +1,10 @@
 import 'package:material_ui/material_ui.dart';
 
 import '../../constants/app_config.dart';
-import '../../di/di.dart';
-import '../../services/theme/theme_service.dart';
+import '../../extensions/extensions.dart';
 
 extension BottomSheetExtension on BuildContext {
+  // ignore: unused_element
   Future<void> showBottomSheetComponent({
     required Widget child,
     bool isScrollControlled = true,
@@ -16,7 +16,7 @@ extension BottomSheetExtension on BuildContext {
       showDragHandle: true,
       isDismissible: isDismissible,
       enableDrag: enableDrag,
-      backgroundColor: getIt<ThemeService>().get(this).surface,
+      backgroundColor: colorScheme.surface,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
           top: Radius.circular(AppConfig.outBorderRadius),

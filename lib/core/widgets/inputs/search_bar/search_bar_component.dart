@@ -2,6 +2,8 @@ import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../constants/app_config.dart';
+import '../../../constants/design_system/tokens/tokens.dart';
+import '../../../extensions/extensions.dart';
 
 final class SearchBarComponent extends StatelessWidget {
   const SearchBarComponent({
@@ -22,26 +24,44 @@ final class SearchBarComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
+    final colorScheme = context.colorScheme;
 
-    return SearchBar(
+    return TextField(
       controller: controller,
-      leading: const Icon(LucideIcons.search),
-      onTapOutside: (event) => FocusScope.of(context).unfocus(),
-      onTap: onTap,
       enabled: isEnabled,
-      hintText: hintText,
+      onTap: onTap,
+      onTapOutside: (event) => FocusScope.of(context).unfocus(),
       onChanged: onChanged,
-      elevation: const WidgetStatePropertyAll(0),
-      trailing: trailing,
+      textAlignVertical: TextAlignVertical.center,
+      textInputAction: TextInputAction.search,
+      keyboardType: TextInputType.name,
+      style: context.textTheme.bodyLarge,
+      decoration: InputDecoration(
+        hintText: hintText,
+        prefixIcon: const Icon(LucideIcons.search),
+        suffixIcon: trailing == null
+            ? null
+            : Row(mainAxisSize: MainAxisSize.min, children: trailing!.toList()),
+        filled: true,
+        fillColor: colorScheme.surfaceContainerHigh,
 
-      backgroundColor: WidgetStatePropertyAll(colorScheme.surfaceContainer),
-      shape: WidgetStatePropertyAll(
-        RoundedRectangleBorder(
+        contentPadding: const EdgeInsetsDirectional.symmetric(
+          horizontal: AppSpacing.large,
+          vertical: AppSpacing.medium,
+        ),
+        border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppConfig.outBorderRadius),
+          borderSide: BorderSide(color: colorScheme.outlineVariant),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(AppConfig.outBorderRadius),
+          borderSide: BorderSide(color: colorScheme.outlineVariant),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(AppConfig.outBorderRadius),
+          borderSide: BorderSide(color: colorScheme.primary, width: 1.5),
         ),
       ),
-      keyboardType: TextInputType.name,
     );
   }
 }

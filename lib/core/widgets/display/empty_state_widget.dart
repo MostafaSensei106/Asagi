@@ -11,8 +11,9 @@ class EmptyStateWidget extends StatelessWidget {
   const EmptyStateWidget({
     required this.title,
     this.subtitle,
-    this.icon = LucideIcons.search,
+    this.icon = LucideIcons.packageSearch,
     this.action,
+    this.padding,
     super.key,
   });
 
@@ -21,48 +22,55 @@ class EmptyStateWidget extends StatelessWidget {
   final IconData? icon;
   final Widget? action;
 
+  /// Padding around the message block. Defaults to none.
+  final EdgeInsetsGeometry? padding;
+
   @override
   Widget build(BuildContext context) {
     final color = context.colorScheme;
     final theme = Theme.of(context);
 
     return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          if (icon != null) ...[
-            Container(
-              width: 72,
-              height: 72,
-              decoration: BoxDecoration(
-                color: color.primaryContainer.withValues(alpha: 0.4),
-                shape: BoxShape.circle,
+      child: Padding(
+        padding: padding ?? EdgeInsets.zero,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (icon != null) ...[
+              Container(
+                width: 72,
+                height: 72,
+                decoration: BoxDecoration(
+                  color: color.primaryContainer.withValues(alpha: 0.4),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(icon, size: 30, color: color.primary),
               ),
-              child: Icon(icon, size: 30, color: color.primary),
+              const SizedBox(height: 12),
+            ],
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: theme.textTheme.titleMedium?.copyWith(),
             ),
-            const SizedBox(height: 12),
-          ],
-          Text(
-            title,
-            textAlign: TextAlign.center,
-            style: theme.textTheme.titleMedium?.copyWith(),
-          ),
-          if (subtitle != null) ...[
-            const SizedBox(height: 4),
-            ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 300),
-              child: Text(
-                subtitle!,
-                textAlign: TextAlign.center,
-                style: theme.textTheme.bodySmall?.copyWith(
-                  color: color.onSurfaceVariant,
-                  height: 1.5,
+            if (subtitle != null) ...[
+              const SizedBox(height: 4),
+              ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 300),
+                child: Text(
+                  subtitle!,
+                  textAlign: TextAlign.center,
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    color: color.onSurfaceVariant,
+                    height: 1.5,
+                  ),
                 ),
               ),
-            ),
+            ],
+            if (action != null) ...[const SizedBox(height: 16), action!],
           ],
-          if (action != null) ...[const SizedBox(height: 16), action!],
-        ],
+        ),
       ),
     );
   }

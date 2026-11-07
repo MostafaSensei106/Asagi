@@ -1,11 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/services.dart' show HapticFeedback;
-import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../constants/app_config.dart';
-import '../../../extensions/extensions.dart';
 import '../../buttons/icon_button/icon_button_component.dart';
 
 /// An app bar designed for side pages, with an optional back button and actions.
@@ -38,7 +36,7 @@ class SidePageAppBarComponent extends StatelessWidget
   /// Navigates back to the previous screen with haptic feedback.
   void leave(BuildContext context) {
     unawaited(HapticFeedback.vibrate());
-    context.pop();
+    Navigator.of(context).pop();
   }
 
   /// Checks if the current locale is Arabic.
@@ -55,8 +53,8 @@ class SidePageAppBarComponent extends StatelessWidget
     leading: _buildSidePageAppBarIcon(
       context,
       cheakLocation(context)
-          ? LucideIcons.chevronsRight
-          : LucideIcons.chevronsLeft,
+          ? Icons.keyboard_double_arrow_right_rounded
+          : Icons.keyboard_double_arrow_left_rounded,
     ),
     title: Text(title, style: TextStyle(color: foregroundColor)),
     backgroundColor: backgroundColor ?? Theme.of(context).colorScheme.surface,
@@ -69,7 +67,8 @@ class SidePageAppBarComponent extends StatelessWidget
   Widget _buildSidePageAppBarIcon(BuildContext context, IconData icon) =>
       Padding(
         padding: const EdgeInsets.all(AppConfig.paddingHalf),
-        child: IconButtonComponent.outlined(
+        child: IconButtonComponent(
+          variant: IconButtonVariant.outlined,
           onPressed: () => leave(context),
           foregroundColor:
               foregroundColor ?? Theme.of(context).colorScheme.onSurface,

@@ -1,5 +1,10 @@
 import 'package:material_ui/material_ui.dart';
 
+import 'app_nav_item.dart';
+import 'google_nav_bar.dart';
+
+export 'app_nav_item.dart';
+
 class BottomNavBarComponent extends StatelessWidget {
   const BottomNavBarComponent({
     required this.currentIndex,
@@ -7,24 +12,13 @@ class BottomNavBarComponent extends StatelessWidget {
     required this.onTap,
     super.key,
   });
+
   final int currentIndex;
-  final List<BottomNavigationBarItem> items;
+  final List<AppNavItem> items;
   final void Function(int) onTap;
 
   @override
-  Widget build(BuildContext context) => NavigationBar(
-    selectedIndex: currentIndex,
-    onDestinationSelected: onTap,
-    labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
-    backgroundColor: Theme.of(context).colorScheme.surface,
-    destinations: items
-        .map(
-          (item) => NavigationDestination(
-            icon: item.icon,
-            selectedIcon: item.activeIcon,
-            label: item.label ?? '',
-          ),
-        )
-        .toList(),
-  );
+  Widget build(BuildContext context) {
+    return GoogleNavBar(currentIndex: currentIndex, items: items, onTap: onTap);
+  }
 }

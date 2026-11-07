@@ -2,7 +2,7 @@ import 'package:material_ui/material_ui.dart';
 
 import '../../../extensions/extensions.dart';
 import '../../design_system/tokens/tokens.dart';
-import '../../layout/spacing/spacing_component.dart';
+import '../../layout/gap.dart';
 import '../../navigation/app_bar/side_page_app_bar_component.dart';
 
 /// Shared scaffold for placeholder destinations.
@@ -63,7 +63,7 @@ final class AppPlaceholderPage extends StatelessWidget {
                     color: colorScheme.onPrimaryContainer,
                   ),
                 ),
-                const SpacingComponent.vertical(AppSpacing.large),
+                const Gap(AppSpacing.large),
                 Text(
                   title,
                   textAlign: TextAlign.center,
@@ -71,7 +71,7 @@ final class AppPlaceholderPage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SpacingComponent.vertical(AppSpacing.small),
+                const Gap(AppSpacing.small),
                 Text(
                   description,
                   textAlign: TextAlign.center,
@@ -79,7 +79,7 @@ final class AppPlaceholderPage extends StatelessWidget {
                     color: colorScheme.onSurfaceVariant,
                   ),
                 ),
-                const SpacingComponent.vertical(AppSpacing.xLarge),
+                const Gap(AppSpacing.xLarge),
                 Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: AppSpacing.medium,

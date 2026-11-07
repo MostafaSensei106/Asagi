@@ -3,8 +3,7 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
 
-import '../../../constants/app_config.dart';
-import '../../../extensions/extensions.dart';
+import '../expressive_icon.dart';
 import 'list_tile_component.dart';
 
 final class ListTileIconComponent extends StatelessWidget {
@@ -17,6 +16,8 @@ final class ListTileIconComponent extends StatelessWidget {
     this.trailing,
     this.onTap,
     this.selected,
+    this.shape = ExpressiveIconShape.blossom,
+    this.showChevron = true,
   }) : groupType = ListTileGroupType.single;
 
   const ListTileIconComponent.top({
@@ -28,6 +29,8 @@ final class ListTileIconComponent extends StatelessWidget {
     this.trailing,
     this.onTap,
     this.selected,
+    this.shape = ExpressiveIconShape.blossom,
+    this.showChevron = true,
   }) : groupType = ListTileGroupType.top;
 
   const ListTileIconComponent.middle({
@@ -39,6 +42,8 @@ final class ListTileIconComponent extends StatelessWidget {
     this.trailing,
     this.onTap,
     this.selected,
+    this.shape = ExpressiveIconShape.blossom,
+    this.showChevron = true,
   }) : groupType = ListTileGroupType.middle;
 
   const ListTileIconComponent.bottom({
@@ -50,8 +55,12 @@ final class ListTileIconComponent extends StatelessWidget {
     this.trailing,
     this.onTap,
     this.selected,
+    this.shape = ExpressiveIconShape.blossom,
+    this.showChevron = true,
   }) : groupType = ListTileGroupType.bottom;
 
+  final ExpressiveIconShape shape;
+  final bool showChevron;
   final String title;
   final IconData leading;
   final String? subtitle;
@@ -63,72 +72,36 @@ final class ListTileIconComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final iconWidget = Container(
-      padding: const EdgeInsets.all(AppConfig.paddingHalf),
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.primaryContainer,
-        borderRadius: BorderRadius.circular(20),
+    final scheme = Theme.of(context).colorScheme;
+    final tile = switch (groupType) {
+      ListTileGroupType.top => ListTileComponent.top,
+      ListTileGroupType.middle => ListTileComponent.middle,
+      ListTileGroupType.bottom => ListTileComponent.bottom,
+      ListTileGroupType.single => ListTileComponent.new,
+    };
+    return tile(
+      title: Text(title),
+      leading: ExpressiveIcon(
+        icon: leading,
+        shape: shape,
+        backgroundColor: selected == true
+            ? scheme.primary
+            : scheme.secondaryContainer,
+        foregroundColor: selected == true
+            ? scheme.onPrimary
+            : scheme.onSecondaryContainer,
       ),
-      child: Icon(
-        leading,
-        size: AppConfig.iconSize,
-        color: context.colorScheme.onPrimaryContainer,
-      ),
+      subtitle: subtitle == null ? null : Text(subtitle!),
+      trailing: trailing,
+      selected: selected,
+      showChevron: showChevron,
+      useinBorderRadius: useinBorderRadius,
+      onTap: onTap == null
+          ? null
+          : () {
+              unawaited(HapticFeedback.selectionClick());
+              onTap!();
+            },
     );
-
-    switch (groupType) {
-      case ListTileGroupType.top:
-        return ListTileComponent.top(
-          title: title,
-          leading: iconWidget,
-          subtitle: subtitle,
-          trailing: trailing,
-          selected: selected,
-          useinBorderRadius: useinBorderRadius,
-          onTap: () {
-            unawaited(HapticFeedback.vibrate());
-            onTap?.call();
-          },
-        );
-      case ListTileGroupType.middle:
-        return ListTileComponent.middle(
-          title: title,
-          leading: iconWidget,
-          subtitle: subtitle,
-          trailing: trailing,
-          selected: selected,
-          useinBorderRadius: useinBorderRadius,
-          onTap: () {
-            unawaited(HapticFeedback.vibrate());
-            onTap?.call();
-          },
-        );
-      case ListTileGroupType.bottom:
-        return ListTileComponent.bottom(
-          title: title,
-          leading: iconWidget,
-          subtitle: subtitle,
-          trailing: trailing,
-          selected: selected,
-          useinBorderRadius: useinBorderRadius,
-          onTap: () {
-            unawaited(HapticFeedback.vibrate());
-            onTap?.call();
-          },
-        );
-      case ListTileGroupType.single:
-        return ListTileComponent(
-          title: title,
-          leading: iconWidget,
-          subtitle: subtitle,
-          trailing: trailing,
-          selected: selected,
-          useinBorderRadius: useinBorderRadius,
-          onTap: () {
-            unawaited(HapticFeedback.vibrate());
-            onTap?.call();
-          },
-        );
-    }
   }
 }

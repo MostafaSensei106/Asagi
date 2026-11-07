@@ -30,6 +30,11 @@ final class TextFormFieldComponent extends StatelessWidget {
     this.focusNode,
     this.maxLines = 1,
     this.textDirection,
+    this.validator,
+    this.textInputAction,
+    this.autofillHints,
+    this.textCapitalization = TextCapitalization.none,
+    this.onFieldSubmitted,
     super.key,
   });
 
@@ -56,62 +61,67 @@ final class TextFormFieldComponent extends StatelessWidget {
   final VoidCallback? onSuffixIconPressed;
   final TextDirection? textDirection;
 
+  /// Inline validation callback, returning an error message or `null`.
+  final FormFieldValidator<String>? validator;
+
+  final TextInputAction? textInputAction;
+  final Iterable<String>? autofillHints;
+  final TextCapitalization textCapitalization;
+  final ValueChanged<String>? onFieldSubmitted;
+
   @override
-  Widget build(BuildContext context) => TextFormField(
-    focusNode: focusNode,
-    controller: controller,
-    keyboardType: keyboardType,
-    obscureText: obscureText,
-    textAlign: textAlign,
-    inputFormatters: inputFormatters,
-    readOnly: readOnly,
-    onChanged: onChanged,
-    enabled: isEnable,
-    initialValue: initialValue,
-    maxLines: maxLines,
-    onTapOutside: (event) => FocusScope.of(context).unfocus(),
-    textDirection: textDirection,
+  Widget build(BuildContext context) {
+    final radius = BorderRadius.circular(
+      useInBorderRadius ? AppConfig.inBorderRadius : AppConfig.outBorderRadius,
+    );
 
-    onTap: () {
-      unawaited(HapticFeedback.vibrate());
-      onTap?.call();
-    },
-    decoration: InputDecoration(
-      labelText: label,
-      errorText: errorText,
-      filled: true,
-      fillColor: fillColor ?? context.colorScheme.surfaceContainer,
-
-      prefixIcon: prefixIcon != null
-          ? IconButton(
-              onPressed: onPrefixIconPressed,
-              icon: Icon(prefixIcon, color: context.colorScheme.primary),
-            )
-          : null,
-      suffixIcon: onSuffixIconPressed != null
-          ? IconButton(
-              onPressed: onSuffixIconPressed,
-              icon: suffixIcon is IconData
-                  ? Icon(suffixIcon as IconData)
-                  : suffixIcon ?? const SizedBox.shrink(),
-            )
-          : suffixIcon is IconData
-          ? Icon(suffixIcon as IconData)
-          : suffixIcon,
-      hintText: hintText,
-
-      border: OutlineInputBorder(
-        borderRadius: useInBorderRadius
-            ? BorderRadius.circular(AppConfig.inBorderRadius)
-            : BorderRadius.circular(AppConfig.outBorderRadius),
-        borderSide: BorderSide(color: context.colorScheme.outlineVariant),
+    return TextFormField(
+      focusNode: focusNode,
+      controller: controller,
+      keyboardType: keyboardType,
+      obscureText: obscureText,
+      textAlign: textAlign,
+      inputFormatters: inputFormatters,
+      readOnly: readOnly,
+      onChanged: onChanged,
+      enabled: isEnable,
+      initialValue: initialValue,
+      maxLines: maxLines,
+      validator: validator,
+      textInputAction: textInputAction,
+      autofillHints: autofillHints,
+      textCapitalization: textCapitalization,
+      onFieldSubmitted: onFieldSubmitted,
+      onTapOutside: (event) => FocusScope.of(context).unfocus(),
+      textDirection: textDirection,
+      onTap: () {
+        unawaited(HapticFeedback.vibrate());
+        onTap?.call();
+      },
+      decoration: InputDecoration(
+        labelText: label,
+        errorText: errorText,
+        filled: true,
+        fillColor: fillColor ?? context.colorScheme.surfaceContainer,
+        prefixIcon: prefixIcon != null
+            ? IconButton(
+                onPressed: onPrefixIconPressed,
+                icon: Icon(prefixIcon, color: context.colorScheme.primary),
+              )
+            : null,
+        suffixIcon: onSuffixIconPressed != null
+            ? IconButton(
+                onPressed: onSuffixIconPressed,
+                icon: suffixIcon ?? const SizedBox.shrink(),
+              )
+            : suffixIcon,
+        hintText: hintText,
+        border: OutlineInputBorder(borderRadius: radius),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: radius,
+          borderSide: BorderSide.none,
+        ),
       ),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: useInBorderRadius
-            ? BorderRadius.circular(AppConfig.inBorderRadius)
-            : BorderRadius.circular(AppConfig.outBorderRadius),
-        borderSide: BorderSide.none,
-      ),
-    ),
-  );
+    );
+  }
 }
