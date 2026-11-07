@@ -396,48 +396,85 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsGroupAppearance => 'Appearance & language';
 
   @override
-  String get settingsGroupAppearanceSubtitle =>
-      'Theme, language, and text size';
-
-  @override
   String get settingsGroupCompression => 'Compression';
-
-  @override
-  String get settingsGroupCompressionSubtitle =>
-      'Defaults, storage, and history';
 
   @override
   String get settingsGroupPrivacy => 'Notifications & privacy';
 
   @override
-  String get settingsGroupPrivacySubtitle => 'Notifications and data controls';
-
-  @override
   String get settingsGroupPlans => 'Plans & purchases';
-
-  @override
-  String get settingsGroupPlansSubtitle => 'Subscription and purchase options';
 
   @override
   String get settingsGroupAbout => 'About';
 
   @override
-  String get settingsGroupAboutSubtitle => 'App details and credits';
-
-  @override
   String get settingsGroupLegal => 'Legal';
-
-  @override
-  String get settingsGroupLegalSubtitle => 'Policies, terms, and permissions';
 
   @override
   String get settingsGroupHelp => 'Help & feedback';
 
   @override
-  String get settingsGroupHelpSubtitle => 'Answers, support, and feedback';
+  String get settingsGroupAccount => 'Account';
 
   @override
-  String get settingsGroupAccount => 'Account';
+  String get settingsAppearanceSubtitle => 'Theme and app language';
+
+  @override
+  String get settingsLanguageSubtitle => 'App language and direction';
+
+  @override
+  String get settingsCompressionSubtitle => 'Default quality and format';
+
+  @override
+  String get settingsStorageSubtitle => 'Cache and storage usage';
+
+  @override
+  String get compressionHistorySubtitle => 'Your compressed video history';
+
+  @override
+  String get settingsNotificationsSubtitle => 'Completion and update alerts';
+
+  @override
+  String get settingsPrivacySubtitle => 'Your data stays local';
+
+  @override
+  String get plansSubtitle => 'Compare plans and upgrade';
+
+  @override
+  String get plansMethodsSubtitle => 'Payment methods and billing';
+
+  @override
+  String get plansRestoreSubtitle => 'Restore your previous purchase';
+
+  @override
+  String get aboutAppSubtitle => 'Version and build details';
+
+  @override
+  String get aboutDeveloperSubtitle => 'The people behind Zumi';
+
+  @override
+  String get aboutLicensesSubtitle => 'Open source package licenses';
+
+  @override
+  String get legalPrivacySubtitle => 'How data is handled';
+
+  @override
+  String get legalTermsSubtitle => 'Rules for using Zumi';
+
+  @override
+  String get legalDataSafetySubtitle => 'What data we collect';
+
+  @override
+  String get legalPermissionsSubtitle => 'Why we need permissions';
+
+  @override
+  String get helpFaqSubtitle => 'Answers to common questions';
+
+  @override
+  String get helpSupportSubtitle => 'Contact the support team';
+
+  @override
+  String get helpFeedbackSubtitle => 'Send us your feedback';
 
   @override
   String get comingSoon => 'Coming soon';

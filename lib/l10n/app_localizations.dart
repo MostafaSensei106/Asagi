@@ -783,23 +783,11 @@ abstract class AppLocalizations {
   /// **'Appearance & language'**
   String get settingsGroupAppearance;
 
-  /// Settings hub section summary
-  ///
-  /// In en, this message translates to:
-  /// **'Theme, language, and text size'**
-  String get settingsGroupAppearanceSubtitle;
-
   /// Settings hub section label
   ///
   /// In en, this message translates to:
   /// **'Compression'**
   String get settingsGroupCompression;
-
-  /// Settings hub section summary
-  ///
-  /// In en, this message translates to:
-  /// **'Defaults, storage, and history'**
-  String get settingsGroupCompressionSubtitle;
 
   /// Settings hub section label
   ///
@@ -807,23 +795,11 @@ abstract class AppLocalizations {
   /// **'Notifications & privacy'**
   String get settingsGroupPrivacy;
 
-  /// Settings hub section summary
-  ///
-  /// In en, this message translates to:
-  /// **'Notifications and data controls'**
-  String get settingsGroupPrivacySubtitle;
-
   /// Settings hub section label
   ///
   /// In en, this message translates to:
   /// **'Plans & purchases'**
   String get settingsGroupPlans;
-
-  /// Settings hub section summary
-  ///
-  /// In en, this message translates to:
-  /// **'Subscription and purchase options'**
-  String get settingsGroupPlansSubtitle;
 
   /// Settings hub section label
   ///
@@ -831,23 +807,11 @@ abstract class AppLocalizations {
   /// **'About'**
   String get settingsGroupAbout;
 
-  /// Settings hub section summary
-  ///
-  /// In en, this message translates to:
-  /// **'App details and credits'**
-  String get settingsGroupAboutSubtitle;
-
   /// Settings hub section label
   ///
   /// In en, this message translates to:
   /// **'Legal'**
   String get settingsGroupLegal;
-
-  /// Settings hub section summary
-  ///
-  /// In en, this message translates to:
-  /// **'Policies, terms, and permissions'**
-  String get settingsGroupLegalSubtitle;
 
   /// Settings hub section label
   ///
@@ -855,17 +819,131 @@ abstract class AppLocalizations {
   /// **'Help & feedback'**
   String get settingsGroupHelp;
 
-  /// Settings hub section summary
-  ///
-  /// In en, this message translates to:
-  /// **'Answers, support, and feedback'**
-  String get settingsGroupHelpSubtitle;
-
   /// Settings hub section label
   ///
   /// In en, this message translates to:
   /// **'Account'**
   String get settingsGroupAccount;
+
+  /// Settings hub row summary
+  ///
+  /// In en, this message translates to:
+  /// **'Theme and app language'**
+  String get settingsAppearanceSubtitle;
+
+  /// Settings hub row summary
+  ///
+  /// In en, this message translates to:
+  /// **'App language and direction'**
+  String get settingsLanguageSubtitle;
+
+  /// Settings hub row summary
+  ///
+  /// In en, this message translates to:
+  /// **'Default quality and format'**
+  String get settingsCompressionSubtitle;
+
+  /// Settings hub row summary
+  ///
+  /// In en, this message translates to:
+  /// **'Cache and storage usage'**
+  String get settingsStorageSubtitle;
+
+  /// Settings hub row summary
+  ///
+  /// In en, this message translates to:
+  /// **'Your compressed video history'**
+  String get compressionHistorySubtitle;
+
+  /// Settings hub row summary
+  ///
+  /// In en, this message translates to:
+  /// **'Completion and update alerts'**
+  String get settingsNotificationsSubtitle;
+
+  /// Settings hub row summary
+  ///
+  /// In en, this message translates to:
+  /// **'Your data stays local'**
+  String get settingsPrivacySubtitle;
+
+  /// Settings hub row summary
+  ///
+  /// In en, this message translates to:
+  /// **'Compare plans and upgrade'**
+  String get plansSubtitle;
+
+  /// Settings hub row summary
+  ///
+  /// In en, this message translates to:
+  /// **'Payment methods and billing'**
+  String get plansMethodsSubtitle;
+
+  /// Settings hub row summary
+  ///
+  /// In en, this message translates to:
+  /// **'Restore your previous purchase'**
+  String get plansRestoreSubtitle;
+
+  /// Settings hub row summary
+  ///
+  /// In en, this message translates to:
+  /// **'Version and build details'**
+  String get aboutAppSubtitle;
+
+  /// Settings hub row summary
+  ///
+  /// In en, this message translates to:
+  /// **'The people behind Zumi'**
+  String get aboutDeveloperSubtitle;
+
+  /// Settings hub row summary
+  ///
+  /// In en, this message translates to:
+  /// **'Open source package licenses'**
+  String get aboutLicensesSubtitle;
+
+  /// Settings hub row summary
+  ///
+  /// In en, this message translates to:
+  /// **'How data is handled'**
+  String get legalPrivacySubtitle;
+
+  /// Settings hub row summary
+  ///
+  /// In en, this message translates to:
+  /// **'Rules for using Zumi'**
+  String get legalTermsSubtitle;
+
+  /// Settings hub row summary
+  ///
+  /// In en, this message translates to:
+  /// **'What data we collect'**
+  String get legalDataSafetySubtitle;
+
+  /// Settings hub row summary
+  ///
+  /// In en, this message translates to:
+  /// **'Why we need permissions'**
+  String get legalPermissionsSubtitle;
+
+  /// Settings hub row summary
+  ///
+  /// In en, this message translates to:
+  /// **'Answers to common questions'**
+  String get helpFaqSubtitle;
+
+  /// Settings hub row summary
+  ///
+  /// In en, this message translates to:
+  /// **'Contact the support team'**
+  String get helpSupportSubtitle;
+
+  /// Settings hub row summary
+  ///
+  /// In en, this message translates to:
+  /// **'Send us your feedback'**
+  String get helpFeedbackSubtitle;
 
   /// Badge shown on placeholder pages
   ///

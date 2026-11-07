@@ -398,48 +398,86 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsGroupAppearance => 'المظهر واللغة';
 
   @override
-  String get settingsGroupAppearanceSubtitle => 'المظهر واللغة وحجم النص';
-
-  @override
   String get settingsGroupCompression => 'الضغط والتخزين';
-
-  @override
-  String get settingsGroupCompressionSubtitle =>
-      'الإعدادات الافتراضية والتخزين والسجل';
 
   @override
   String get settingsGroupPrivacy => 'الإشعارات والخصوصية';
 
   @override
-  String get settingsGroupPrivacySubtitle =>
-      'الإشعارات وعناصر التحكم بالبيانات';
-
-  @override
   String get settingsGroupPlans => 'الخطط والمشتريات';
-
-  @override
-  String get settingsGroupPlansSubtitle => 'الاشتراك وخيارات الشراء';
 
   @override
   String get settingsGroupAbout => 'حول التطبيق';
 
   @override
-  String get settingsGroupAboutSubtitle => 'تفاصيل التطبيق والحقوق';
-
-  @override
   String get settingsGroupLegal => 'قانوني وسياسات';
-
-  @override
-  String get settingsGroupLegalSubtitle => 'السياسات والشروط والأذونات';
 
   @override
   String get settingsGroupHelp => 'المساعدة والملاحظات';
 
   @override
-  String get settingsGroupHelpSubtitle => 'إجابات ودعم وملاحظات';
+  String get settingsGroupAccount => 'الحساب';
 
   @override
-  String get settingsGroupAccount => 'الحساب';
+  String get settingsAppearanceSubtitle => 'المظهر واللغة وحجم النص';
+
+  @override
+  String get settingsLanguageSubtitle => 'لغة التطبيق واتجاه الكتابة';
+
+  @override
+  String get settingsCompressionSubtitle => 'الجودة الافتراضية وصيغة الملف';
+
+  @override
+  String get settingsStorageSubtitle => 'الذاكرة والتخزين والمساحة المتاحة';
+
+  @override
+  String get compressionHistorySubtitle => 'سجل كل الفيديوهات المضغوطة';
+
+  @override
+  String get settingsNotificationsSubtitle =>
+      'تنبيهات الإكمال والتحديثات الجديدة';
+
+  @override
+  String get settingsPrivacySubtitle => 'بياناتك تبقى على جهازك';
+
+  @override
+  String get plansSubtitle => 'قارن الخطط وارتقِ الآن';
+
+  @override
+  String get plansMethodsSubtitle => 'طرق الدفع وإدارة الفواتير';
+
+  @override
+  String get plansRestoreSubtitle => 'استعد عملية الشراء السابقة';
+
+  @override
+  String get aboutAppSubtitle => 'رقم الإصدار وتفاصيل البناء';
+
+  @override
+  String get aboutDeveloperSubtitle => 'الفريق الذي بنى زومي';
+
+  @override
+  String get aboutLicensesSubtitle => 'تراخيص الحزم مفتوحة المصدر';
+
+  @override
+  String get legalPrivacySubtitle => 'كيف نتعامل مع بياناتك';
+
+  @override
+  String get legalTermsSubtitle => 'قواعد استخدام تطبيق زومي';
+
+  @override
+  String get legalDataSafetySubtitle => 'البيانات التي نجمعها منك';
+
+  @override
+  String get legalPermissionsSubtitle => 'الأذونات ولماذا نحتاج إليها';
+
+  @override
+  String get helpFaqSubtitle => 'إجابات لأكثر الأسئلة شيوعاً';
+
+  @override
+  String get helpSupportSubtitle => 'تواصل مع فريق الدعم';
+
+  @override
+  String get helpFeedbackSubtitle => 'أرسل لنا ملاحظاتك الآن';
 
   @override
   String get comingSoon => 'قريباً';

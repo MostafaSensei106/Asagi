@@ -66,7 +66,6 @@ final class SettingsPage extends StatelessWidget {
                 icon: _iconFor(section),
                 shape: _shapeFor(section),
                 title: _titleFor(context, section),
-                subtitle: _subtitleFor(context, section),
               ),
               const Gap(AppSpacing.medium),
               ..._buildSectionTiles(context, section),
@@ -111,6 +110,7 @@ final class SettingsPage extends StatelessWidget {
     required bool isLast,
   }) {
     final title = _routeTitleFor(context, route);
+    final subtitle = _routeSubtitleFor(context, route);
     final trailing = Icon(
       context.isArabic ? ZumiIcons.chevronBack : ZumiIcons.chevronForward,
       size: AppIconSizes.small,
@@ -122,6 +122,7 @@ final class SettingsPage extends StatelessWidget {
       return ListTileIconComponent(
         shape: shape,
         title: title,
+        subtitle: subtitle,
         leading: route.metadata.icon,
         trailing: trailing,
         onTap: onTap,
@@ -131,6 +132,7 @@ final class SettingsPage extends StatelessWidget {
       return ListTileIconComponent.top(
         shape: shape,
         title: title,
+        subtitle: subtitle,
         leading: route.metadata.icon,
         trailing: trailing,
         onTap: onTap,
@@ -140,6 +142,7 @@ final class SettingsPage extends StatelessWidget {
       return ListTileIconComponent.bottom(
         shape: shape,
         title: title,
+        subtitle: subtitle,
         leading: route.metadata.icon,
         trailing: trailing,
         onTap: onTap,
@@ -148,6 +151,7 @@ final class SettingsPage extends StatelessWidget {
     return ListTileIconComponent.middle(
       shape: shape,
       title: title,
+      subtitle: subtitle,
       leading: route.metadata.icon,
       trailing: trailing,
       onTap: onTap,
@@ -192,19 +196,31 @@ final class SettingsPage extends StatelessWidget {
     AppRouteSection.core => context.localeKeys.settingsTitle,
   };
 
-  String _subtitleFor(BuildContext context, AppRouteSection section) =>
-      switch (section) {
-        AppRouteSection.appearance =>
-          context.localeKeys.settingsGroupAppearanceSubtitle,
-        AppRouteSection.compression =>
-          context.localeKeys.settingsGroupCompressionSubtitle,
-        AppRouteSection.privacy =>
-          context.localeKeys.settingsGroupPrivacySubtitle,
-        AppRouteSection.plans => context.localeKeys.settingsGroupPlansSubtitle,
-        AppRouteSection.about => context.localeKeys.settingsGroupAboutSubtitle,
-        AppRouteSection.legal => context.localeKeys.settingsGroupLegalSubtitle,
-        AppRouteSection.help => context.localeKeys.settingsGroupHelpSubtitle,
-        AppRouteSection.core => context.localeKeys.settingsTitle,
+  String _routeSubtitleFor(BuildContext context, AppRoute route) =>
+      switch (route.metadata.name) {
+        'settings_appearance' => context.localeKeys.settingsAppearanceSubtitle,
+        'settings_language' => context.localeKeys.settingsLanguageSubtitle,
+        'settings_compression' =>
+          context.localeKeys.settingsCompressionSubtitle,
+        'settings_storage' => context.localeKeys.settingsStorageSubtitle,
+        'compression_history' => context.localeKeys.compressionHistorySubtitle,
+        'settings_notifications' =>
+          context.localeKeys.settingsNotificationsSubtitle,
+        'settings_privacy' => context.localeKeys.settingsPrivacySubtitle,
+        'plans' => context.localeKeys.plansSubtitle,
+        'plans_methods' => context.localeKeys.plansMethodsSubtitle,
+        'plans_restore' => context.localeKeys.plansRestoreSubtitle,
+        'about_app' => context.localeKeys.aboutAppSubtitle,
+        'about_developer' => context.localeKeys.aboutDeveloperSubtitle,
+        'about_licenses' => context.localeKeys.aboutLicensesSubtitle,
+        'legal_privacy_policy' => context.localeKeys.legalPrivacySubtitle,
+        'legal_terms' => context.localeKeys.legalTermsSubtitle,
+        'legal_data_safety' => context.localeKeys.legalDataSafetySubtitle,
+        'legal_permissions' => context.localeKeys.legalPermissionsSubtitle,
+        'help_faq' => context.localeKeys.helpFaqSubtitle,
+        'help_support' => context.localeKeys.helpSupportSubtitle,
+        'help_feedback' => context.localeKeys.helpFeedbackSubtitle,
+        _ => '',
       };
 
   String _routeTitleFor(BuildContext context, AppRoute route) =>
