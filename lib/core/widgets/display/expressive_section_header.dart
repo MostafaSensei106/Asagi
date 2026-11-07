@@ -26,13 +26,9 @@ class ExpressiveSectionHeader extends StatelessWidget {
     return Row(
       children: [
         ExpressiveIcon(icon: icon, shape: shape, size: badgeSize),
-        const Gap.horizontal(AppSpacing.medium),
+        const Gap.horizontal(AppSpacing.small),
         Expanded(
-          child: Text(
-            title,
-            style: Theme.of(context).textTheme.titleMedium
-                ?.copyWith(fontWeight: FontWeight.w700),
-          ),
+          child: Text(title, style: Theme.of(context).textTheme.titleMedium),
         ),
       ],
     );
