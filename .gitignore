@@ -46,4 +46,4 @@ app.*.map.json
 
 # Widget Preview related
 .widget_preview/
-Zumi – Video Compression Engine.md
+docs.md

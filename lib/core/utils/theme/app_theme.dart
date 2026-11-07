@@ -9,7 +9,7 @@ final class AppTheme {
 
     fontFamily: 'Rubik',
 
-    // colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightGreenAccent),
+    colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
     appBarTheme: const AppBarTheme(
       elevation: 0,
       scrolledUnderElevation: 0,
@@ -38,7 +38,7 @@ final class AppTheme {
 
     fontFamily: 'Rubik',
 
-    // colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightGreenAccent),
+    colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
     appBarTheme: const AppBarTheme(
       elevation: 0,
       scrolledUnderElevation: 0,
