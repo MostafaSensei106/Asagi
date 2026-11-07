@@ -26,11 +26,14 @@ final class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        leading: IconButtonComponent(
-          icon: ZumiIcons.settings,
-          toolTip: context.localeKeys.settingsTitle,
-          variant: IconButtonVariant.filled,
-          onPressed: () => unawaited(context.push(const SettingsRoute())),
+        leading: Padding(
+          padding: const EdgeInsets.all(4),
+          child: IconButtonComponent(
+            icon: ZumiIcons.settings,
+            toolTip: context.localeKeys.settingsTitle,
+            variant: IconButtonVariant.filled,
+            onPressed: () => unawaited(context.push(const SettingsRoute())),
+          ),
         ),
         title: Text(
           context.localeKeys.appTitle,

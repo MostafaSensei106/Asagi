@@ -32,7 +32,6 @@ final class IconButtonComponent extends StatelessWidget {
   final VoidCallback? onPressed;
   final IconButtonVariant variant;
 
-  /// Icon rendered instead of [icon] while [isSelected] is `true`.
   final IconData? selectedIcon;
   final bool isSelected;
   final bool useInBorderRadius;
@@ -79,7 +78,6 @@ final class IconButtonComponent extends StatelessWidget {
             backgroundColor: backgroundColor ?? colorScheme.primaryContainer,
             foregroundColor: foregroundColor ?? colorScheme.onPrimaryContainer,
           ),
-          padding: EdgeInsets.all(padding ?? AppConfig.paddingHalf),
         );
       case IconButtonVariant.tonal:
         return IconButton.filledTonal(
@@ -92,7 +90,6 @@ final class IconButtonComponent extends StatelessWidget {
             foregroundColor:
                 foregroundColor ?? colorScheme.onSecondaryContainer,
           ),
-          padding: EdgeInsets.all(padding ?? AppConfig.paddingHalf),
         );
       case IconButtonVariant.outlined:
         return IconButton.outlined(
@@ -106,7 +103,6 @@ final class IconButtonComponent extends StatelessWidget {
             ),
             foregroundColor: foregroundColor ?? colorScheme.primary,
           ),
-          padding: EdgeInsets.all(padding ?? AppConfig.paddingHalf),
         );
     }
   }

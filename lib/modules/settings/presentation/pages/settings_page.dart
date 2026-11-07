@@ -8,10 +8,7 @@ import '../../../../core/extensions/extensions.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../../core/router/route_metadata.dart';
 import '../../../../core/widgets/design_system/tokens/tokens.dart';
-import '../../../../core/widgets/display/list_tile/list_tile_icon_component.dart';
-import '../../../../core/widgets/display/section_header/section_header_component.dart';
-import '../../../../core/widgets/layout/gap.dart';
-import '../../../../core/widgets/navigation/app_bar/side_page_app_bar_component.dart';
+import '../../../../core/widgets/widgets.dart';
 
 /// Grouped entry point for every preference and informational destination.
 ///
@@ -115,6 +112,7 @@ final class SettingsPage extends StatelessWidget {
 
     if (isFirst && isLast) {
       return ListTileIconComponent(
+        shape: ExpressiveIconShape.sunny,
         title: title,
         leading: route.metadata.icon,
         trailing: trailing,
