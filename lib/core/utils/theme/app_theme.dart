@@ -38,7 +38,10 @@ final class AppTheme {
 
     fontFamily: 'Rubik',
 
-    colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: Colors.purple,
+      brightness: Brightness.dark,
+    ),
     appBarTheme: const AppBarTheme(
       elevation: 0,
       scrolledUnderElevation: 0,
