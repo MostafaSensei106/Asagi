@@ -3,25 +3,10 @@ import 'package:material_ui/material_ui.dart';
 
 import '../../constants/app_config.dart';
 
-/// Google Sans typography for the app.
-///
-/// Two families are registered in `pubspec.yaml`:
-/// * [fontFamily] — static instances (400/500/600/700, upright and italic).
-///   It is the default family for every text style.
-/// * [variableFontFamily] — the variable font with `wght` (400–700) and
-///   `GRAD` (-50–200) axes. Display and headline styles use it so weights are
-///   set precisely, and [variableTextStyle] exposes it for in-between weights
-///   such as 550.
 final class AppTheme {
   static const String fontFamily = 'GoogleSans';
   static const String variableFontFamily = 'GoogleSansVariable';
 
-  /// Creates a [TextStyle] backed by the Google Sans variable font.
-  ///
-  /// [weight] is written to the `wght` axis, so values between the static
-  /// steps (450, 550, 650…) render correctly. [grade] adjusts the `GRAD` axis,
-  /// which changes apparent weight without changing metrics; pass a negative
-  /// value for light text on dark backgrounds.
   static TextStyle variableTextStyle({
     double weight = 400,
     double grade = 0,
@@ -37,15 +22,9 @@ final class AppTheme {
     );
   }
 
-  /// Rounds a numeric weight to the closest [FontWeight] so fallback fonts and
-  /// widget tests still see a sensible value.
   static FontWeight _fontWeightFor(double weight) =>
       FontWeight.values[((weight / 100).round() - 1).clamp(0, 8)];
 
-  /// Display, headline and large title styles rendered with the variable font.
-  ///
-  /// Sizes, letter spacing and colors are inherited from the Material 3
-  /// typography that [ThemeData] merges underneath these styles.
   static TextTheme _textTheme() => TextTheme(
     displayLarge: variableTextStyle(),
     displayMedium: variableTextStyle(),
@@ -61,8 +40,6 @@ final class AppTheme {
     brightness: .light,
 
     fontFamily: fontFamily,
-    // The variable font covers the same glyphs as the static family, so it is
-    // only used as a fallback when a static face is missing on a platform.
     fontFamilyFallback: const [variableFontFamily],
     textTheme: _textTheme(),
 
