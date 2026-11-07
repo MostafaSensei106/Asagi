@@ -170,7 +170,6 @@ final class SettingsPage extends StatelessWidget {
         'help_feedback' => context.localeKeys.helpFeedbackTitle,
         _ => route.metadata.name,
       };
-
 }
 
 /// Small wrapper that keeps section labels in one place while keeping the
