@@ -335,7 +335,7 @@
   "@aboutDeveloperTitle": {
     "description": "Developer page title"
   },
-  "aboutDeveloperDescription": "The people and tools behind Zumi.",
+  "aboutDeveloperDescription": "The developer and tools behind Zumi.",
   "@aboutDeveloperDescription": {
     "description": "Developer page description"
   },
@@ -543,7 +543,7 @@
   "@aboutAppSubtitle": {
     "description": "Settings hub row summary"
   },
-  "aboutDeveloperSubtitle": "The people behind Zumi",
+  "aboutDeveloperSubtitle": "The developer behind Zumi",
   "@aboutDeveloperSubtitle": {
     "description": "Settings hub row summary"
   },
@@ -571,7 +571,7 @@
   "@helpFaqSubtitle": {
     "description": "Settings hub row summary"
   },
-  "helpSupportSubtitle": "Contact the support team",
+  "helpSupportSubtitle": "Reach the developer directly",
   "@helpSupportSubtitle": {
     "description": "Settings hub row summary"
   },

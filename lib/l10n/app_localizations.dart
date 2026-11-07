@@ -582,7 +582,7 @@ abstract class AppLocalizations {
   /// Developer page description
   ///
   /// In en, this message translates to:
-  /// **'The people and tools behind Zumi.'**
+  /// **'The developer and tools behind Zumi.'**
   String get aboutDeveloperDescription;
 
   /// Licenses page title
@@ -894,7 +894,7 @@ abstract class AppLocalizations {
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
-  /// **'The people behind Zumi'**
+  /// **'The developer behind Zumi'**
   String get aboutDeveloperSubtitle;
 
   /// Settings hub row summary

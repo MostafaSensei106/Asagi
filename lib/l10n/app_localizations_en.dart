@@ -280,7 +280,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutDeveloperTitle => 'About the developer';
 
   @override
-  String get aboutDeveloperDescription => 'The people and tools behind Zumi.';
+  String get aboutDeveloperDescription =>
+      'The developer and tools behind Zumi.';
 
   @override
   String get aboutLicensesTitle => 'Open-source licenses';
@@ -450,7 +451,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutAppSubtitle => 'Version and build details';
 
   @override
-  String get aboutDeveloperSubtitle => 'The people behind Zumi';
+  String get aboutDeveloperSubtitle => 'The developer behind Zumi';
 
   @override
   String get aboutLicensesSubtitle => 'Open source package licenses';

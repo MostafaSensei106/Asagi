@@ -289,7 +289,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get aboutDeveloperDescription =>
-      'فريق العمل والأدوات المستخدمة في بناء زومي.';
+      'المطور والأدوات المستخدمة في بناء زومي.';
 
   @override
   String get aboutLicensesTitle => 'تراخيص مفتوحة المصدر';
@@ -453,7 +453,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get aboutAppSubtitle => 'رقم الإصدار وتفاصيل البناء';
 
   @override
-  String get aboutDeveloperSubtitle => 'الفريق الذي بنى زومي';
+  String get aboutDeveloperSubtitle => 'المطور الذي بنى زومي';
 
   @override
   String get aboutLicensesSubtitle => 'تراخيص الحزم مفتوحة المصدر';
