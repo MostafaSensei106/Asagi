@@ -396,22 +396,45 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsGroupAppearance => 'Appearance & language';
 
   @override
+  String get settingsGroupAppearanceSubtitle =>
+      'Theme, language, and text size';
+
+  @override
   String get settingsGroupCompression => 'Compression';
+
+  @override
+  String get settingsGroupCompressionSubtitle =>
+      'Defaults, storage, and history';
 
   @override
   String get settingsGroupPrivacy => 'Notifications & privacy';
 
   @override
+  String get settingsGroupPrivacySubtitle => 'Notifications and data controls';
+
+  @override
   String get settingsGroupPlans => 'Plans & purchases';
+
+  @override
+  String get settingsGroupPlansSubtitle => 'Subscription and purchase options';
 
   @override
   String get settingsGroupAbout => 'About';
 
   @override
+  String get settingsGroupAboutSubtitle => 'App details and credits';
+
+  @override
   String get settingsGroupLegal => 'Legal';
 
   @override
+  String get settingsGroupLegalSubtitle => 'Policies, terms, and permissions';
+
+  @override
   String get settingsGroupHelp => 'Help & feedback';
+
+  @override
+  String get settingsGroupHelpSubtitle => 'Answers, support, and feedback';
 
   @override
   String get settingsGroupAccount => 'Account';

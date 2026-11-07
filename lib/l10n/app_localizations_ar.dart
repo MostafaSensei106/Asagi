@@ -398,22 +398,45 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsGroupAppearance => 'المظهر واللغة';
 
   @override
+  String get settingsGroupAppearanceSubtitle => 'المظهر واللغة وحجم النص';
+
+  @override
   String get settingsGroupCompression => 'الضغط والتخزين';
+
+  @override
+  String get settingsGroupCompressionSubtitle =>
+      'الإعدادات الافتراضية والتخزين والسجل';
 
   @override
   String get settingsGroupPrivacy => 'الإشعارات والخصوصية';
 
   @override
+  String get settingsGroupPrivacySubtitle =>
+      'الإشعارات وعناصر التحكم بالبيانات';
+
+  @override
   String get settingsGroupPlans => 'الخطط والمشتريات';
+
+  @override
+  String get settingsGroupPlansSubtitle => 'الاشتراك وخيارات الشراء';
 
   @override
   String get settingsGroupAbout => 'حول التطبيق';
 
   @override
+  String get settingsGroupAboutSubtitle => 'تفاصيل التطبيق والحقوق';
+
+  @override
   String get settingsGroupLegal => 'قانوني وسياسات';
 
   @override
+  String get settingsGroupLegalSubtitle => 'السياسات والشروط والأذونات';
+
+  @override
   String get settingsGroupHelp => 'المساعدة والملاحظات';
+
+  @override
+  String get settingsGroupHelpSubtitle => 'إجابات ودعم وملاحظات';
 
   @override
   String get settingsGroupAccount => 'الحساب';

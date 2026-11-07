@@ -62,8 +62,13 @@ final class SettingsPage extends StatelessWidget {
           padding: const EdgeInsets.all(AppSpacing.large),
           children: [
             for (final section in _sections) ...[
-              _SettingsSectionHeader(section: section),
-              const Gap(AppSpacing.small),
+              ExpressiveSectionHeader(
+                icon: _iconFor(section),
+                shape: _shapeFor(section),
+                title: _titleFor(context, section),
+                subtitle: _subtitleFor(context, section),
+              ),
+              const Gap(AppSpacing.medium),
               ..._buildSectionTiles(context, section),
               const Gap(AppSpacing.xLarge),
             ],
@@ -84,12 +89,14 @@ final class SettingsPage extends StatelessWidget {
               route.metadata.showInSettingsHub,
         )
         .toList(growable: false);
+    final shape = _shapeFor(section);
 
     return [
       for (var index = 0; index < routes.length; index++)
         _buildTile(
           context,
           routes[index],
+          shape: shape,
           isFirst: index == 0,
           isLast: index == routes.length - 1,
         ),
@@ -99,10 +106,11 @@ final class SettingsPage extends StatelessWidget {
   Widget _buildTile(
     BuildContext context,
     AppRoute route, {
+    required ExpressiveIconShape shape,
     required bool isFirst,
     required bool isLast,
   }) {
-    final title = _titleFor(context, route);
+    final title = _routeTitleFor(context, route);
     final trailing = Icon(
       context.isArabic ? ZumiIcons.chevronBack : ZumiIcons.chevronForward,
       size: AppIconSizes.small,
@@ -112,7 +120,7 @@ final class SettingsPage extends StatelessWidget {
 
     if (isFirst && isLast) {
       return ListTileIconComponent(
-        shape: ExpressiveIconShape.sunny,
+        shape: shape,
         title: title,
         leading: route.metadata.icon,
         trailing: trailing,
@@ -121,6 +129,7 @@ final class SettingsPage extends StatelessWidget {
     }
     if (isFirst) {
       return ListTileIconComponent.top(
+        shape: shape,
         title: title,
         leading: route.metadata.icon,
         trailing: trailing,
@@ -129,6 +138,7 @@ final class SettingsPage extends StatelessWidget {
     }
     if (isLast) {
       return ListTileIconComponent.bottom(
+        shape: shape,
         title: title,
         leading: route.metadata.icon,
         trailing: trailing,
@@ -136,6 +146,7 @@ final class SettingsPage extends StatelessWidget {
       );
     }
     return ListTileIconComponent.middle(
+      shape: shape,
       title: title,
       leading: route.metadata.icon,
       trailing: trailing,
@@ -143,7 +154,60 @@ final class SettingsPage extends StatelessWidget {
     );
   }
 
-  String _titleFor(BuildContext context, AppRoute route) =>
+  /// Icon of the section's first advertised destination.
+  IconData _iconFor(AppRouteSection section) {
+    for (final route in _routes) {
+      if (route.metadata.section == section &&
+          route.metadata.showInSettingsHub) {
+        return route.metadata.icon;
+      }
+    }
+    return ZumiIcons.settings;
+  }
+
+  /// Each section gets its own shape treatment so the hub reads as a set of
+  /// distinct, expressive groups rather than a flat list.
+  ExpressiveIconShape _shapeFor(AppRouteSection section) => switch (section) {
+    AppRouteSection.appearance => ExpressiveIconShape.blossom,
+    AppRouteSection.compression => ExpressiveIconShape.gem,
+    AppRouteSection.privacy => ExpressiveIconShape.clover,
+    AppRouteSection.plans => ExpressiveIconShape.diamond,
+    AppRouteSection.about => ExpressiveIconShape.sunny,
+    AppRouteSection.legal => ExpressiveIconShape.pentagon,
+    AppRouteSection.help => ExpressiveIconShape.softBurst,
+    AppRouteSection.core => ExpressiveIconShape.blossom,
+  };
+
+  String _titleFor(
+    BuildContext context,
+    AppRouteSection section,
+  ) => switch (section) {
+    AppRouteSection.appearance => context.localeKeys.settingsGroupAppearance,
+    AppRouteSection.compression => context.localeKeys.settingsGroupCompression,
+    AppRouteSection.privacy => context.localeKeys.settingsGroupPrivacy,
+    AppRouteSection.plans => context.localeKeys.settingsGroupPlans,
+    AppRouteSection.about => context.localeKeys.settingsGroupAbout,
+    AppRouteSection.legal => context.localeKeys.settingsGroupLegal,
+    AppRouteSection.help => context.localeKeys.settingsGroupHelp,
+    AppRouteSection.core => context.localeKeys.settingsTitle,
+  };
+
+  String _subtitleFor(BuildContext context, AppRouteSection section) =>
+      switch (section) {
+        AppRouteSection.appearance =>
+          context.localeKeys.settingsGroupAppearanceSubtitle,
+        AppRouteSection.compression =>
+          context.localeKeys.settingsGroupCompressionSubtitle,
+        AppRouteSection.privacy =>
+          context.localeKeys.settingsGroupPrivacySubtitle,
+        AppRouteSection.plans => context.localeKeys.settingsGroupPlansSubtitle,
+        AppRouteSection.about => context.localeKeys.settingsGroupAboutSubtitle,
+        AppRouteSection.legal => context.localeKeys.settingsGroupLegalSubtitle,
+        AppRouteSection.help => context.localeKeys.settingsGroupHelpSubtitle,
+        AppRouteSection.core => context.localeKeys.settingsTitle,
+      };
+
+  String _routeTitleFor(BuildContext context, AppRoute route) =>
       switch (route.metadata.name) {
         'settings_appearance' => context.localeKeys.settingsAppearanceTitle,
         'settings_language' => context.localeKeys.settingsLanguageTitle,
@@ -168,28 +232,4 @@ final class SettingsPage extends StatelessWidget {
         'help_feedback' => context.localeKeys.helpFeedbackTitle,
         _ => route.metadata.name,
       };
-}
-
-/// Small wrapper that keeps section labels in one place while keeping the
-/// hub's build method focused on structure.
-final class _SettingsSectionHeader extends StatelessWidget {
-  const _SettingsSectionHeader({required this.section});
-
-  final AppRouteSection section;
-
-  @override
-  Widget build(BuildContext context) {
-    return SectionHeaderComponent(title: _titleFor(context));
-  }
-
-  String _titleFor(BuildContext context) => switch (section) {
-    AppRouteSection.appearance => context.localeKeys.settingsGroupAppearance,
-    AppRouteSection.compression => context.localeKeys.settingsGroupCompression,
-    AppRouteSection.privacy => context.localeKeys.settingsGroupPrivacy,
-    AppRouteSection.plans => context.localeKeys.settingsGroupPlans,
-    AppRouteSection.about => context.localeKeys.settingsGroupAbout,
-    AppRouteSection.legal => context.localeKeys.settingsGroupLegal,
-    AppRouteSection.help => context.localeKeys.settingsGroupHelp,
-    AppRouteSection.core => context.localeKeys.settingsTitle,
-  };
 }

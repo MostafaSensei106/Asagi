@@ -783,11 +783,23 @@ abstract class AppLocalizations {
   /// **'Appearance & language'**
   String get settingsGroupAppearance;
 
+  /// Settings hub section summary
+  ///
+  /// In en, this message translates to:
+  /// **'Theme, language, and text size'**
+  String get settingsGroupAppearanceSubtitle;
+
   /// Settings hub section label
   ///
   /// In en, this message translates to:
   /// **'Compression'**
   String get settingsGroupCompression;
+
+  /// Settings hub section summary
+  ///
+  /// In en, this message translates to:
+  /// **'Defaults, storage, and history'**
+  String get settingsGroupCompressionSubtitle;
 
   /// Settings hub section label
   ///
@@ -795,11 +807,23 @@ abstract class AppLocalizations {
   /// **'Notifications & privacy'**
   String get settingsGroupPrivacy;
 
+  /// Settings hub section summary
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications and data controls'**
+  String get settingsGroupPrivacySubtitle;
+
   /// Settings hub section label
   ///
   /// In en, this message translates to:
   /// **'Plans & purchases'**
   String get settingsGroupPlans;
+
+  /// Settings hub section summary
+  ///
+  /// In en, this message translates to:
+  /// **'Subscription and purchase options'**
+  String get settingsGroupPlansSubtitle;
 
   /// Settings hub section label
   ///
@@ -807,17 +831,35 @@ abstract class AppLocalizations {
   /// **'About'**
   String get settingsGroupAbout;
 
+  /// Settings hub section summary
+  ///
+  /// In en, this message translates to:
+  /// **'App details and credits'**
+  String get settingsGroupAboutSubtitle;
+
   /// Settings hub section label
   ///
   /// In en, this message translates to:
   /// **'Legal'**
   String get settingsGroupLegal;
 
+  /// Settings hub section summary
+  ///
+  /// In en, this message translates to:
+  /// **'Policies, terms, and permissions'**
+  String get settingsGroupLegalSubtitle;
+
   /// Settings hub section label
   ///
   /// In en, this message translates to:
   /// **'Help & feedback'**
   String get settingsGroupHelp;
+
+  /// Settings hub section summary
+  ///
+  /// In en, this message translates to:
+  /// **'Answers, support, and feedback'**
+  String get settingsGroupHelpSubtitle;
 
   /// Settings hub section label
   ///

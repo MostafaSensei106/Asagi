@@ -471,29 +471,57 @@
   "@settingsGroupAppearance": {
     "description": "Settings hub section label"
   },
+  "settingsGroupAppearanceSubtitle": "Theme, language, and text size",
+  "@settingsGroupAppearanceSubtitle": {
+    "description": "Settings hub section summary"
+  },
   "settingsGroupCompression": "Compression",
   "@settingsGroupCompression": {
     "description": "Settings hub section label"
+  },
+  "settingsGroupCompressionSubtitle": "Defaults, storage, and history",
+  "@settingsGroupCompressionSubtitle": {
+    "description": "Settings hub section summary"
   },
   "settingsGroupPrivacy": "Notifications & privacy",
   "@settingsGroupPrivacy": {
     "description": "Settings hub section label"
   },
+  "settingsGroupPrivacySubtitle": "Notifications and data controls",
+  "@settingsGroupPrivacySubtitle": {
+    "description": "Settings hub section summary"
+  },
   "settingsGroupPlans": "Plans & purchases",
   "@settingsGroupPlans": {
     "description": "Settings hub section label"
+  },
+  "settingsGroupPlansSubtitle": "Subscription and purchase options",
+  "@settingsGroupPlansSubtitle": {
+    "description": "Settings hub section summary"
   },
   "settingsGroupAbout": "About",
   "@settingsGroupAbout": {
     "description": "Settings hub section label"
   },
+  "settingsGroupAboutSubtitle": "App details and credits",
+  "@settingsGroupAboutSubtitle": {
+    "description": "Settings hub section summary"
+  },
   "settingsGroupLegal": "Legal",
   "@settingsGroupLegal": {
     "description": "Settings hub section label"
   },
+  "settingsGroupLegalSubtitle": "Policies, terms, and permissions",
+  "@settingsGroupLegalSubtitle": {
+    "description": "Settings hub section summary"
+  },
   "settingsGroupHelp": "Help & feedback",
   "@settingsGroupHelp": {
     "description": "Settings hub section label"
+  },
+  "settingsGroupHelpSubtitle": "Answers, support, and feedback",
+  "@settingsGroupHelpSubtitle": {
+    "description": "Settings hub section summary"
   },
   "settingsGroupAccount": "Account",
   "@settingsGroupAccount": {
