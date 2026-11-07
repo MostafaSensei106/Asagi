@@ -10,6 +10,7 @@ import '../../../../core/widgets/buttons/filled_button/filled_button_component.d
 import '../../../../core/widgets/buttons/icon_button/icon_button_component.dart';
 import '../../../../core/widgets/design_system/tokens/tokens.dart';
 import '../../../../core/widgets/layout/gap.dart';
+import '../../../../core/widgets/navigation/app_bar/app_bar_component.dart';
 
 /// Primary compressor surface of the Zumi application.
 ///
@@ -25,9 +26,9 @@ final class HomePage extends StatelessWidget {
     final textTheme = context.textTheme;
 
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBarComponent(
         leading: Padding(
-          padding: const EdgeInsets.all(4),
+          padding: const EdgeInsets.all(6),
           child: IconButtonComponent(
             icon: ZumiIcons.settings,
             toolTip: context.localeKeys.settingsTitle,
@@ -35,10 +36,7 @@ final class HomePage extends StatelessWidget {
             onPressed: () => unawaited(context.push(const SettingsRoute())),
           ),
         ),
-        title: Text(
-          context.localeKeys.appTitle,
-          style: textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
-        ),
+        title: context.localeKeys.appTitle,
       ),
       body: SafeArea(
         child: Center(

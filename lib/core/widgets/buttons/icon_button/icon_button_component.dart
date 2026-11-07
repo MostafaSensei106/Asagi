@@ -89,6 +89,7 @@ final class IconButtonComponent extends StatelessWidget {
             backgroundColor: backgroundColor ?? colorScheme.secondaryContainer,
             foregroundColor:
                 foregroundColor ?? colorScheme.onSecondaryContainer,
+            padding: EdgeInsets.all(padding ?? 4),
           ),
         );
       case IconButtonVariant.outlined:
@@ -98,6 +99,7 @@ final class IconButtonComponent extends StatelessWidget {
           tooltip: toolTip,
           style: IconButton.styleFrom(
             shape: RoundedRectangleBorder(borderRadius: radius),
+            padding: EdgeInsets.all(padding ?? 4),
             side: BorderSide(
               color: backgroundColor ?? colorScheme.outlineVariant,
             ),
