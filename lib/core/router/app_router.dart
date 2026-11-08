@@ -1,8 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart' show CupertinoPage;
 import 'package:flutter/foundation.dart' show ValueListenable, ValueNotifier;
-import 'package:flutter/rendering.dart' show ScrollDirection;
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:kaisel/kaisel.dart';
@@ -73,7 +71,7 @@ final class AppRouter {
 
   static Page<Object?> _cupertinoPage(
     KaiselPageWrapperContext<AppRoute> context,
-  ) => CupertinoPage<Object?>(
+  ) => MaterialPage<Object?>(
     key: context.key,
     name: context.route.routeName,
     arguments: context.route,

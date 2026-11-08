@@ -35,9 +35,9 @@ final class _ShellChrome extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final controller = usePageController(initialPage: activeBranch);
-    final navVisible = useMemoized(() => ValueNotifier<bool>(true));
+    final navMotion = useMemoized(_NavigationMotion.new);
     final selectedTab = useMemoized(() => ValueNotifier<int>(activeBranch));
-    useEffect(() => navVisible.dispose, [navVisible]);
+    useEffect(() => navMotion.dispose, [navMotion]);
     useEffect(() => selectedTab.dispose, [selectedTab]);
     final isRootPage = context.shell().current.stack.length == 1;
     final isWide = MediaQuery.sizeOf(context).width >= 840;
@@ -56,7 +56,7 @@ final class _ShellChrome extends HookWidget {
     void goToBranch(int index) {
       if (!controller.hasClients) return;
       selectedTab.value = index;
-      navVisible.value = true;
+      navMotion.show();
       unawaited(
         controller.animateToPage(
           index,
@@ -73,17 +73,8 @@ final class _ShellChrome extends HookWidget {
             notification is ScrollEndNotification) {
           final settledPage = controller.page?.round();
           if (settledPage != null && settledPage != activeBranch) {
-            navVisible.value = true;
+            navMotion.show();
             switchBranch(settledPage);
-          }
-        }
-        if (isRootPage &&
-            notification.metrics.axis == Axis.vertical &&
-            notification is UserScrollNotification) {
-          if (notification.direction == ScrollDirection.reverse) {
-            navVisible.value = false;
-          } else if (notification.direction == ScrollDirection.forward) {
-            navVisible.value = true;
           }
         }
         return false;
@@ -93,15 +84,32 @@ final class _ShellChrome extends HookWidget {
         allowImplicitScrolling: true,
         onPageChanged: (index) {
           selectedTab.value = index;
-          navVisible.value = true;
+          navMotion.show();
         },
         physics: isRootPage
             ? const PageScrollPhysics()
             : const NeverScrollableScrollPhysics(),
         childrenDelegate: SliverChildListDelegate(
           [
-            for (final page in pages)
-              KeepAlive(keepAlive: true, child: RepaintBoundary(child: page)),
+            for (var index = 0; index < pages.length; index++)
+              KeepAlive(
+                keepAlive: true,
+                child: RepaintBoundary(
+                  child: NotificationListener<ScrollNotification>(
+                    onNotification: (notification) {
+                      if (isRootPage && index == selectedTab.value) {
+                        navMotion.handle(
+                          notification,
+                          travelExtent:
+                              72 + MediaQuery.paddingOf(context).bottom,
+                        );
+                      }
+                      return false;
+                    },
+                    child: pages[index],
+                  ),
+                ),
+              ),
           ],
           addAutomaticKeepAlives: false,
           addRepaintBoundaries: false,
@@ -131,7 +139,7 @@ final class _ShellChrome extends HookWidget {
       body: content,
       bottomNavigationBar: isRootPage
           ? _ScrollAwareBottomBar(
-              visibility: navVisible,
+              motion: navMotion,
               selectedTab: selectedTab,
               items: items,
               onTap: goToBranch,
@@ -139,6 +147,39 @@ final class _ShellChrome extends HookWidget {
           : null,
     );
   }
+}
+
+/// Scroll directly controls the bar while dragging; flutter_animate completes
+/// the remaining distance when the gesture ends.
+final class _NavigationMotion extends ValueNotifier<_NavigationMotionState> {
+  _NavigationMotion() : super(const _NavigationMotionState(0, false));
+
+  void show() => value = const _NavigationMotionState(0, false);
+
+  void handle(ScrollNotification notification, {required double travelExtent}) {
+    if (notification.metrics.axis != Axis.vertical) return;
+    if (notification is ScrollEndNotification) {
+      value = _NavigationMotionState(value.progress >= 0.5 ? 1 : 0, false);
+      return;
+    }
+    if (notification is! ScrollUpdateNotification ||
+        notification.dragDetails == null) {
+      return;
+    }
+    final metrics = notification.metrics;
+    if (metrics.maxScrollExtent <= 0 || metrics.outOfRange) return;
+    final delta = notification.scrollDelta;
+    if (delta == null || delta == 0) return;
+    final progress = (value.progress + delta / travelExtent).clamp(0.0, 1.0);
+    value = _NavigationMotionState(progress, true);
+  }
+}
+
+final class _NavigationMotionState {
+  const _NavigationMotionState(this.progress, this.direct);
+
+  final double progress;
+  final bool direct;
 }
 
 final class _ShellRail extends HookWidget {
@@ -169,25 +210,27 @@ final class _ShellRail extends HookWidget {
 
 final class _ScrollAwareBottomBar extends HookWidget {
   const _ScrollAwareBottomBar({
-    required this.visibility,
+    required this.motion,
     required this.selectedTab,
     required this.items,
     required this.onTap,
   });
 
-  final ValueListenable<bool> visibility;
+  final ValueListenable<_NavigationMotionState> motion;
   final ValueListenable<int> selectedTab;
   final List<AppNavItem> items;
   final ValueChanged<int> onTap;
 
   @override
   Widget build(BuildContext context) {
-    final isVisible = useValueListenable(visibility);
+    final motionState = useValueListenable(motion);
     final currentIndex = useValueListenable(selectedTab);
     return IgnorePointer(
-      ignoring: !isVisible,
+      ignoring: motionState.progress == 1,
       child: Animate(
-        target: isVisible ? 0 : 1,
+        autoPlay: false,
+        value: motionState.direct ? motionState.progress : null,
+        target: motionState.direct ? null : motionState.progress,
         effects: [
           CustomEffect(
             duration: 250.ms,

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../constants/app_config.dart';
@@ -64,13 +63,6 @@ final class AppTheme {
         ),
       ),
     ),
-
-    pageTransitionsTheme: const PageTransitionsTheme(
-      builders: {
-        TargetPlatform.android: CupertinoPageTransitionsBuilder(),
-        TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-      },
-    ),
   );
 
   static ThemeData dark = ThemeData(
@@ -104,13 +96,6 @@ final class AppTheme {
           Radius.circular(AppConfig.outBorderRadius),
         ),
       ),
-    ),
-
-    pageTransitionsTheme: const PageTransitionsTheme(
-      builders: {
-        TargetPlatform.android: CupertinoPageTransitionsBuilder(),
-        TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-      },
     ),
   );
 }
