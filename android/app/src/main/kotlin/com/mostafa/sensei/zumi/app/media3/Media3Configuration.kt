@@ -30,7 +30,7 @@ object Media3Configuration {
                 Presentation.createForWidthAndHeight(request.targetWidth.toInt(), request.targetHeight.toInt(), Presentation.LAYOUT_SCALE_TO_FIT),
                 FrameDropEffect.createDefaultFrameDropEffect(request.frameRate.toFloat())
             ))).build()
-        return Composition.Builder(EditedMediaItemSequence(item))
+        return Composition.Builder(EditedMediaItemSequence.Builder(item).build())
             .setHdrMode(if (preserve) Composition.HDR_MODE_KEEP_HDR else Composition.HDR_MODE_TONE_MAP_HDR_TO_SDR_USING_OPEN_GL).build()
     }
 }

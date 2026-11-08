@@ -72,7 +72,9 @@ final class CompressionEngine {
         final bytes = await job.measure(path);
         // A stricter planning target can be used to compensate for hardware
         // bitrate overshoot while retaining the user's original hard limit.
-        if (acceptedMaxBytes != null && bytes > 0 && bytes <= acceptedMaxBytes) {
+        if (acceptedMaxBytes != null &&
+            bytes > 0 &&
+            bytes <= acceptedMaxBytes) {
           await _control.checkpoint();
           await job.commit();
           return CompressionOutput(path, bytes, attempt, plan.warningMessage);

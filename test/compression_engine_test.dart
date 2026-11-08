@@ -105,23 +105,26 @@ void main() {
     );
     expect(await directory.list().length, 0);
   });
-  test('accepts hardware overshoot within the original requested limit', () async {
-    final encoder = Encoder([110]);
-    final engine = CompressionEngine(
-      artifacts: const FileArtifactStore(),
-      planner: Planner(),
-      encoder: encoder,
-    );
-    final result = await engine.compress(
-      source: 'input',
-      targetMb: 1,
-      acceptedMaxBytes: 120,
-      workspacePath: directory.path,
-    );
-    expect(result.bytes, 110);
-    expect(result.attempts, 1);
-    expect(encoder.calls, 1);
-  });
+  test(
+    'accepts hardware overshoot within the original requested limit',
+    () async {
+      final encoder = Encoder([110]);
+      final engine = CompressionEngine(
+        artifacts: const FileArtifactStore(),
+        planner: Planner(),
+        encoder: encoder,
+      );
+      final result = await engine.compress(
+        source: 'input',
+        targetMb: 1,
+        acceptedMaxBytes: 120,
+        workspacePath: directory.path,
+      );
+      expect(result.bytes, 110);
+      expect(result.attempts, 1);
+      expect(encoder.calls, 1);
+    },
+  );
   test(
     'stale cleanup leaves unmarked directories and source files alone',
     () async {
