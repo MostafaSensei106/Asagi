@@ -5,12 +5,26 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:video_player/video_player.dart';
+import 'package:video_player_platform_interface/video_player_platform_interface.dart';
 
 import '../../../../core/extensions/extensions.dart';
 
 /// Owns one video controller and releases it when the source changes or leaves.
 final class VideoPreview extends HookWidget {
   const VideoPreview({required this.path, required this.title, super.key});
+
+  // video_player invokes this without awaiting it on first use. Preflight the
+  // native channel so an older APK without the plugin cannot throw uncaught.
+  static Future<bool>? _nativePlayerReady;
+
+  static Future<bool> _checkNativePlayer() async {
+    try {
+      await VideoPlayerPlatform.instance.init();
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
 
   final String path;
   final String title;
@@ -27,9 +41,15 @@ final class VideoPreview extends HookWidget {
     final failed = useState(false);
     useEffect(() {
       var active = true;
+      var initialized = false;
       Future<void> initialize() async {
         try {
+          if (!await (_nativePlayerReady ??= _checkNativePlayer())) {
+            if (active) failed.value = true;
+            return;
+          }
           await controller.initialize();
+          initialized = true;
         } catch (_) {
           if (active) failed.value = true;
         }
@@ -38,7 +58,7 @@ final class VideoPreview extends HookWidget {
       unawaited(initialize());
       return () {
         active = false;
-        unawaited(controller.dispose());
+        if (initialized) unawaited(controller.dispose());
       };
     }, [controller]);
 
