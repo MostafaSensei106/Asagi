@@ -17,6 +17,7 @@ final class CompressionHistoryPage extends StatelessWidget {
       title: context.localeKeys.compressionHistoryTitle,
       description: context.localeKeys.compressionHistoryDescription,
       icon: ZumiIcons.compressionHistory,
+      showBackButton: false,
     );
   }
 }

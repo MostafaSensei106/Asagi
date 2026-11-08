@@ -3,7 +3,9 @@ import 'package:material_ui/material_ui.dart';
 import '../../../extensions/extensions.dart';
 import '../../design_system/tokens/tokens.dart';
 import '../../layout/gap.dart';
-import '../../navigation/app_bar/side_page_app_bar_component.dart';
+import '../../slivers/sliver_app_bar/side_page_sliver_app_bar_component.dart';
+import '../../slivers/sliver_app_bar/sliver_app_bar_component.dart';
+import '../../slivers/sliver_fill_remaining/sliver_fill_remaining_component.dart';
 
 /// Shared scaffold for placeholder destinations.
 ///
@@ -35,71 +37,84 @@ final class AppPlaceholderPage extends StatelessWidget {
     final textTheme = context.textTheme;
 
     return Scaffold(
-      appBar: showAppBar
-          ? showBackButton
-                ? SidePageAppBarComponent(title: title, actions: actions)
-                : AppBar(
-                    title: Text(title),
-                    centerTitle: true,
-                    actions: actions,
-                  )
-          : null,
-      body: SafeArea(
-        child: Center(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.all(AppSpacing.xLarge),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(AppSpacing.large),
-                  decoration: BoxDecoration(
-                    color: colorScheme.primaryContainer,
-                    borderRadius: BorderRadius.circular(AppRadii.xLarge),
-                  ),
-                  child: Icon(
-                    icon,
-                    size: AppIconSizes.large,
-                    color: colorScheme.onPrimaryContainer,
+      body: CustomScrollView(
+        slivers: [
+          if (showAppBar)
+            if (showBackButton)
+              SidePageSliverAppBarComponent(
+                title: Text(title),
+                actions: actions,
+                pinned: true,
+              )
+            else
+              SliverAppBarComponent(
+                title: Text(title),
+                actions: actions,
+                pinned: true,
+                leading: const SizedBox.shrink(),
+              ),
+          SliverFillRemainingComponent(
+            hasScrollBody: false,
+            child: SafeArea(
+              top: !showAppBar,
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(AppSpacing.xLarge),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(AppSpacing.large),
+                        decoration: BoxDecoration(
+                          color: colorScheme.primaryContainer,
+                          borderRadius: BorderRadius.circular(AppRadii.xLarge),
+                        ),
+                        child: Icon(
+                          icon,
+                          size: AppIconSizes.large,
+                          color: colorScheme.onPrimaryContainer,
+                        ),
+                      ),
+                      const Gap(AppSpacing.large),
+                      Text(
+                        title,
+                        textAlign: TextAlign.center,
+                        style: textTheme.headlineSmall?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const Gap(AppSpacing.small),
+                      Text(
+                        description,
+                        textAlign: TextAlign.center,
+                        style: textTheme.bodyMedium?.copyWith(
+                          color: colorScheme.onSurfaceVariant,
+                        ),
+                      ),
+                      const Gap(AppSpacing.xLarge),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: AppSpacing.medium,
+                          vertical: AppSpacing.small,
+                        ),
+                        decoration: BoxDecoration(
+                          color: colorScheme.surfaceContainerHighest,
+                          borderRadius: BorderRadius.circular(AppRadii.pill),
+                        ),
+                        child: Text(
+                          context.localeKeys.comingSoon,
+                          style: textTheme.labelMedium?.copyWith(
+                            color: colorScheme.onSurfaceVariant,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                const Gap(AppSpacing.large),
-                Text(
-                  title,
-                  textAlign: TextAlign.center,
-                  style: textTheme.headlineSmall?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const Gap(AppSpacing.small),
-                Text(
-                  description,
-                  textAlign: TextAlign.center,
-                  style: textTheme.bodyMedium?.copyWith(
-                    color: colorScheme.onSurfaceVariant,
-                  ),
-                ),
-                const Gap(AppSpacing.xLarge),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: AppSpacing.medium,
-                    vertical: AppSpacing.small,
-                  ),
-                  decoration: BoxDecoration(
-                    color: colorScheme.surfaceContainerHighest,
-                    borderRadius: BorderRadius.circular(AppRadii.pill),
-                  ),
-                  child: Text(
-                    context.localeKeys.comingSoon,
-                    style: textTheme.labelMedium?.copyWith(
-                      color: colorScheme.onSurfaceVariant,
-                    ),
-                  ),
-                ),
-              ],
+              ),
             ),
           ),
-        ),
+        ],
       ),
     );
   }

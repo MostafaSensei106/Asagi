@@ -35,7 +35,6 @@ final class SettingsPage extends StatelessWidget {
     LanguageSettingsRoute(),
     CompressionDefaultsRoute(),
     StorageSettingsRoute(),
-    CompressionHistoryRoute(),
     NotificationsSettingsRoute(),
     PrivacySettingsRoute(),
     PlansRoute(),
@@ -56,21 +55,27 @@ final class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SidePageAppBarComponent(title: context.localeKeys.settingsTitle),
+      appBar: AppBarComponent(title: context.localeKeys.settingsTitle),
       body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.all(AppSpacing.large),
-          children: [
-            for (final section in _sections) ...[
-              ExpressiveSectionHeader(
-                icon: _iconFor(section),
-                shape: _shapeFor(section),
-                title: _titleFor(context, section),
+        child: CustomScrollView(
+          slivers: [
+            SliverPadding(
+              padding: const EdgeInsets.all(AppSpacing.large),
+              sliver: SliverList.list(
+                children: [
+                  for (final section in _sections) ...[
+                    ExpressiveSectionHeader(
+                      icon: _iconFor(section),
+                      shape: _shapeFor(section),
+                      title: _titleFor(context, section),
+                    ),
+                    const Gap(AppSpacing.small),
+                    ..._buildSectionTiles(context, section),
+                    const Gap(AppSpacing.large),
+                  ],
+                ],
               ),
-              const Gap(AppSpacing.small),
-              ..._buildSectionTiles(context, section),
-              const Gap(AppSpacing.large),
-            ],
+            ),
           ],
         ),
       ),

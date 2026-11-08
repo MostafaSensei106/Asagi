@@ -80,6 +80,5 @@ final class CompressionHistoryRoute extends AppRoute {
     path: '/compression/history',
     section: AppRouteSection.compression,
     icon: ZumiIcons.compressionHistory,
-    showInSettingsHub: true,
   );
 }
