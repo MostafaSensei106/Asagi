@@ -5,31 +5,34 @@ final class _MainShell extends StatelessWidget {
   const _MainShell();
 
   @override
-  Widget build(BuildContext context) => KaiselBranchedShell.specs(
-    branches: const [
-      KaiselBranchSpec<AppRoute>(
-        initial: HomeTabRoute(),
-        builder: AppRouter._buildPage,
-        pageWrapper: AppRouter._cupertinoPage,
-      ),
-      KaiselBranchSpec<AppRoute>(
-        initial: CompressionHistoryRoute(),
-        builder: AppRouter._buildPage,
-        pageWrapper: AppRouter._cupertinoPage,
-      ),
-      KaiselBranchSpec<AppRoute>(
-        initial: SettingsRoute(),
-        builder: AppRouter._buildPage,
-        pageWrapper: AppRouter._cupertinoPage,
-      ),
-    ],
-    branchContentBuilder: (context, activeBranch, branches, switchBranch) =>
-        _ShellChrome(
-          activeBranch: activeBranch,
-          branches: branches,
-          switchBranch: switchBranch,
+  Widget build(BuildContext context) => BlocSignalProvider<CompressionCubit>(
+    create: (_) => CompressionCubit(DeviceVideoCompressionRepository()),
+    child: KaiselBranchedShell.specs(
+      branches: const [
+        KaiselBranchSpec<AppRoute>(
+          initial: HomeTabRoute(),
+          builder: AppRouter._buildPage,
+          pageWrapper: AppRouter._cupertinoPage,
         ),
-    chromeBuilder: (context, activeBranch, content, switchBranch) => content,
+        KaiselBranchSpec<AppRoute>(
+          initial: CompressionHistoryRoute(),
+          builder: AppRouter._buildPage,
+          pageWrapper: AppRouter._cupertinoPage,
+        ),
+        KaiselBranchSpec<AppRoute>(
+          initial: SettingsRoute(),
+          builder: AppRouter._buildPage,
+          pageWrapper: AppRouter._cupertinoPage,
+        ),
+      ],
+      branchContentBuilder: (context, activeBranch, branches, switchBranch) =>
+          _ShellChrome(
+            activeBranch: activeBranch,
+            branches: branches,
+            switchBranch: switchBranch,
+          ),
+      chromeBuilder: (context, activeBranch, content, switchBranch) => content,
+    ),
   );
 }
 

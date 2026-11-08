@@ -579,6 +579,27 @@
   "@helpFeedbackSubtitle": {
     "description": "Settings hub row summary"
   },
+  "compressionPickVideo": "Pick video",
+  "compressionTargetMb": "Target size (MB)",
+  "compressionStart": "Start compression",
+  "compressionPause": "Pause",
+  "compressionResume": "Resume",
+  "compressionViewResult": "View result",
+  "compressionSaveGallery": "Save to gallery",
+  "compressionShare": "Share video",
+  "compressionOriginalSize": "Original size",
+  "compressionOutputSize": "Output size",
+  "compressionEmptyHistory": "No compressed videos yet",
+  "compressionSavedGallery": "Saved to gallery",
+  "compressionInvalidTarget": "Enter a target size greater than zero",
+  "compressionCancelled": "Compression cancelled",
+  "compressionTargetExceeded": "This video could not reach the selected size. Try a larger target size.",
+  "compressionTargetInfeasible": "The selected size is too small for this video. Choose a larger size.",
+  "compressionPreviewBefore": "Original preview",
+  "compressionPreviewAfter": "Compressed preview",
+  "compressionPreset": "Target preset",
+  "compressionCustom": "Custom size",
+  "compressionPreviewUnavailable": "Preview unavailable",
   "comingSoon": "Coming soon",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"

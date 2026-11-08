@@ -1,0 +1,197 @@
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:gal/gal.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../../../core/compression/compression_engine.dart';
+import '../../../../core/native/pigeon_messages.g.dart';
+import '../../../../core/native/rust/frb_generated.dart';
+import '../../domain/models/compression_record.dart';
+import '../../domain/models/selected_video.dart';
+import '../../domain/repositories/video_compression_repository.dart';
+
+final class DeviceVideoCompressionRepository
+    implements VideoCompressionRepository {
+  DeviceVideoCompressionRepository({ImagePicker? picker})
+    : _picker = picker ?? ImagePicker(),
+      _encoder = PlatformVideoEncoder(NativeMediaApi()) {
+    _engine = CompressionEngine(
+      planner: RustCompressionPlanner(),
+      encoder: _encoder,
+      artifacts: const FileArtifactStore(),
+    );
+  }
+
+  static const _historyKey = 'compression_history_v1';
+  static const _defaultTargetKey = 'compression_default_target_mb_v1';
+  final ImagePicker _picker;
+  final PlatformVideoEncoder _encoder;
+  late final CompressionEngine _engine;
+  Future<void>? _rustReady;
+
+  @override
+  Stream<double> get progress => _encoder.progress;
+
+  Future<void> _ensureRust() => _rustReady ??= RustLib.init();
+
+  @override
+  Future<SelectedVideo?> pickVideo() async {
+    final file = await _picker.pickVideo(source: ImageSource.gallery);
+    if (file == null) return null;
+    final metadata = await _encoder.inspect(file.path);
+    if (metadata.durationSecs <= 0 || metadata.fileSizeBytes <= 0) {
+      throw StateError('E_INVALID_VIDEO');
+    }
+    return SelectedVideo(path: file.path, name: file.name, metadata: metadata);
+  }
+
+  @override
+  Future<CompressionOutput> compress(
+    SelectedVideo video,
+    double targetMb,
+  ) async {
+    if (!targetMb.isFinite || targetMb <= 0) {
+      throw ArgumentError.value(targetMb, 'targetMb');
+    }
+    await _ensureRust();
+    final cache = await getTemporaryDirectory();
+    final workspacePath = '${cache.path}/compression';
+    await const FileArtifactStore().cleanupInterrupted(
+      workspacePath,
+      const Duration(hours: 12),
+    );
+    // Some hardware encoders exceed their requested bitrate. Re-plan with a
+    // smaller budget before reporting that the requested file size is impossible.
+    CompressionOutput? output;
+    for (final factor in const [1.0, 0.8, 0.65]) {
+      try {
+        output = await _engine.compress(
+          source: video.path,
+          targetMb: targetMb * factor,
+          workspacePath: workspacePath,
+        );
+        break;
+      } catch (error) {
+        final exceeded = '$error'.contains('E_TARGET_EXCEEDED');
+        final reducedTargetIsInfeasible =
+            factor < 1 && '$error'.contains('E_TARGET_INFEASIBLE');
+        if (!exceeded && !reducedTargetIsInfeasible) rethrow;
+        if (factor == 0.65 || reducedTargetIsInfeasible) {
+          throw StateError('E_TARGET_EXCEEDED');
+        }
+      }
+    }
+    final verifiedOutput = output!;
+
+    try {
+      final documents = await getApplicationDocumentsDirectory();
+      final savedDirectory = await Directory(
+        '${documents.path}/compressed_videos',
+      ).create(recursive: true);
+      final sourceExtension = video.path.split('.').last.toLowerCase();
+      final extension =
+          verifiedOutput.attempts == 0 &&
+              RegExp(r'^[a-z0-9]{1,5}$').hasMatch(sourceExtension)
+          ? sourceExtension
+          : 'mp4';
+      final savedPath =
+          '${savedDirectory.path}/zumi_${DateTime.now().microsecondsSinceEpoch}.$extension';
+      late final File saved;
+      try {
+        saved = await File(verifiedOutput.path).copy(savedPath);
+      } catch (_) {
+        final partial = File(savedPath);
+        if (await partial.exists()) await partial.delete();
+        rethrow;
+      }
+      final record = CompressionRecord(
+        path: saved.path,
+        sourceName: video.name,
+        bytes: await saved.length(),
+        createdAt: DateTime.now(),
+      );
+      try {
+        await _appendHistory(record);
+      } catch (_) {
+        // The verified video remains usable even when history storage fails.
+      }
+      return CompressionOutput(
+        saved.path,
+        record.bytes,
+        verifiedOutput.attempts,
+        verifiedOutput.warning,
+      );
+    } finally {
+      if (verifiedOutput.attempts > 0) {
+        final jobDirectory = Directory(File(verifiedOutput.path).parent.path);
+        if (await jobDirectory.exists()) {
+          await jobDirectory.delete(recursive: true);
+        }
+      }
+    }
+  }
+
+  Future<void> _appendHistory(CompressionRecord record) async {
+    final prefs = await SharedPreferences.getInstance();
+    final entries = prefs.getStringList(_historyKey) ?? <String>[];
+    entries.insert(
+      0,
+      jsonEncode({
+        'path': record.path,
+        'sourceName': record.sourceName,
+        'bytes': record.bytes,
+        'createdAt': record.createdAt.toIso8601String(),
+      }),
+    );
+    await prefs.setStringList(_historyKey, entries);
+  }
+
+  @override
+  Future<List<CompressionRecord>> history() async {
+    final prefs = await SharedPreferences.getInstance();
+    final entries = prefs.getStringList(_historyKey) ?? <String>[];
+    final records = <CompressionRecord>[];
+    for (final entry in entries) {
+      try {
+        final data = jsonDecode(entry) as Map<String, dynamic>;
+        final path = data['path'] as String;
+        if (!await File(path).exists()) continue;
+        records.add(
+          CompressionRecord(
+            path: path,
+            sourceName: data['sourceName'] as String,
+            bytes: data['bytes'] as int,
+            createdAt: DateTime.parse(data['createdAt'] as String),
+          ),
+        );
+      } catch (_) {
+        // Ignore a damaged local history entry; keep valid results visible.
+      }
+    }
+    return records;
+  }
+
+  @override
+  Future<double> defaultTargetMb() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getDouble(_defaultTargetKey) ?? 16;
+  }
+
+  @override
+  Future<void> setDefaultTargetMb(double targetMb) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setDouble(_defaultTargetKey, targetMb);
+  }
+
+  @override
+  Future<void> pause() => _engine.pause();
+  @override
+  Future<void> resume() => _engine.resume();
+  @override
+  Future<void> cancel() => _engine.cancel();
+  @override
+  Future<void> saveToGallery(String path) => Gal.putVideo(path);
+}

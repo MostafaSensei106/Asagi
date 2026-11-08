@@ -1,22 +1,60 @@
+import 'package:bloc_signals_flutter/bloc_signals_flutter.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:material_ui/material_ui.dart';
 
-import '../../../../core/constants/zumi_icons.dart';
 import '../../../../core/extensions/extensions.dart';
-import '../../../../core/widgets/display/placeholder/app_placeholder_page.dart';
+import '../../../../core/widgets/navigation/app_bar/app_bar_component.dart';
+import '../cubit/compression_cubit.dart';
 
-/// Placeholder for the CompressionDefaults destination.
-///
-/// The navigation contract is final; the real screen lands in a later
-/// milestone without changing this route or its public constructor.
-final class CompressionDefaultsPage extends StatelessWidget {
+final class CompressionDefaultsPage extends HookWidget {
   const CompressionDefaultsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return AppPlaceholderPage(
-      title: context.localeKeys.settingsCompressionTitle,
-      description: context.localeKeys.settingsCompressionDescription,
-      icon: ZumiIcons.compressionDefaults,
+    final cubit = BlocSignalProvider.of<CompressionCubit>(context);
+    final controller = useTextEditingController(
+      text: '${cubit.stateValue.targetMb}',
+    );
+    final valid = useState(true);
+    return Scaffold(
+      appBar: AppBarComponent(
+        title: context.localeKeys.settingsCompressionTitle,
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(24),
+        children: [
+          Text(context.localeKeys.settingsCompressionDescription),
+          const SizedBox(height: 24),
+          TextField(
+            controller: controller,
+            keyboardType: const TextInputType.numberWithOptions(decimal: true),
+            decoration: InputDecoration(
+              labelText: context.localeKeys.compressionTargetMb,
+              errorText: valid.value
+                  ? null
+                  : context.localeKeys.compressionInvalidTarget,
+              border: const OutlineInputBorder(),
+            ),
+            onChanged: (text) {
+              final value = double.tryParse(text.replaceAll(',', '.'));
+              valid.value = value != null && value.isFinite && value > 0;
+            },
+          ),
+          const SizedBox(height: 24),
+          FilledButton(
+            onPressed: valid.value
+                ? () async {
+                    final value = double.parse(
+                      controller.text.replaceAll(',', '.'),
+                    );
+                    await cubit.saveDefaultTarget(value);
+                    if (context.mounted) Navigator.of(context).pop();
+                  }
+                : null,
+            child: Text(context.localeKeys.confirm),
+          ),
+        ],
+      ),
     );
   }
 }

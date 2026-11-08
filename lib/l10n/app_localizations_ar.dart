@@ -480,5 +480,62 @@ class AppLocalizationsAr extends AppLocalizations {
   String get helpFeedbackSubtitle => 'أرسل لنا ملاحظاتك الآن';
 
   @override
+  String get compressionPickVideo => 'اختر فيديو';
+
+  @override
+  String get compressionTargetMb => 'الحجم المطلوب (ميجابايت)';
+
+  @override
+  String get compressionStart => 'ابدأ الضغط';
+
+  @override
+  String get compressionPause => 'إيقاف مؤقت';
+
+  @override
+  String get compressionResume => 'استئناف';
+
+  @override
+  String get compressionViewResult => 'عرض النتيجة';
+
+  @override
+  String get compressionSaveGallery => 'حفظ في المعرض';
+
+  @override
+  String get compressionShare => 'مشاركة الفيديو';
+
+  @override
+  String get compressionOriginalSize => 'الحجم الأصلي';
+
+  @override
+  String get compressionOutputSize => 'حجم الناتج';
+
+  @override
+  String get compressionEmptyHistory => 'لا توجد فيديوهات مضغوطة بعد';
+
+  @override
+  String get compressionSavedGallery => 'تم الحفظ في المعرض';
+
+  @override
+  String get compressionInvalidTarget => 'أدخل حجماً أكبر من صفر';
+
+  @override
+  String get compressionCancelled => 'تم إلغاء الضغط';
+
+  @override
+  String get compressionPreviewBefore => 'معاينة الفيديو الأصلي';
+
+  @override
+  String get compressionPreviewAfter => 'معاينة الفيديو المضغوط';
+
+  @override
+  String get compressionPreset => 'حجم جاهز';
+
+  @override
+  String get compressionCustom => 'حجم مخصص';
+
+  @override
+  String get compressionPreviewUnavailable => 'المعاينة غير متاحة';
+
+  @override
   String get comingSoon => 'قريباً';
 }

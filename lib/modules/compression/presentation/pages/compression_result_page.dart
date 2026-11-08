@@ -1,22 +1,130 @@
+import 'package:bloc_signals_flutter/bloc_signals_flutter.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:material_ui/material_ui.dart';
+import 'package:share_plus/share_plus.dart';
 
-import '../../../../core/constants/zumi_icons.dart';
+import '../../../../core/di/di.dart';
 import '../../../../core/extensions/extensions.dart';
-import '../../../../core/widgets/display/placeholder/app_placeholder_page.dart';
+import '../../../../core/services/share/base_share_service.dart';
+import '../../../../core/widgets/navigation/app_bar/app_bar_component.dart';
+import '../cubit/compression_cubit.dart';
+import '../cubit/compression_state.dart';
+import '../widgets/video_preview.dart';
 
-/// Placeholder for the CompressionResult destination.
-///
-/// The navigation contract is final; the real screen lands in a later
-/// milestone without changing this route or its public constructor.
-final class CompressionResultPage extends StatelessWidget {
+final class CompressionResultPage extends HookWidget {
   const CompressionResultPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return AppPlaceholderPage(
-      title: context.localeKeys.compressionResultTitle,
-      description: context.localeKeys.compressionResultDescription,
-      icon: ZumiIcons.compressionResult,
+    final showAfter = useState(true);
+    return Scaffold(
+      appBar: AppBarComponent(title: context.localeKeys.compressionResultTitle),
+      body: BlocSignalBuilder<CompressionCubit, CompressionState>(
+        builder: (context, state) {
+          final output = state.output;
+          if (output == null) {
+            return Center(
+              child: Text(context.localeKeys.compressionResultDescription),
+            );
+          }
+          return ListView(
+            padding: const EdgeInsets.all(24),
+            children: [
+              const Icon(Icons.check_circle_outline, size: 72),
+              const SizedBox(height: 16),
+              Text(
+                state.video?.name ?? '',
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+              const SizedBox(height: 24),
+              SegmentedButton<bool>(
+                segments: [
+                  ButtonSegment(
+                    value: false,
+                    label: Text(context.localeKeys.compressionPreviewBefore),
+                  ),
+                  ButtonSegment(
+                    value: true,
+                    label: Text(context.localeKeys.compressionPreviewAfter),
+                  ),
+                ],
+                selected: {showAfter.value},
+                onSelectionChanged: (value) => showAfter.value = value.first,
+              ),
+              const SizedBox(height: 12),
+              VideoPreview(
+                key: ValueKey(
+                  showAfter.value
+                      ? output.path
+                      : state.video?.path ?? output.path,
+                ),
+                path: showAfter.value
+                    ? output.path
+                    : state.video?.path ?? output.path,
+                title: showAfter.value
+                    ? context.localeKeys.compressionPreviewAfter
+                    : context.localeKeys.compressionPreviewBefore,
+              ),
+              const SizedBox(height: 24),
+              ListTile(
+                title: Text(context.localeKeys.compressionOriginalSize),
+                trailing: Text(
+                  '${((state.video?.metadata.fileSizeBytes ?? 0) / 1000000).toStringAsFixed(1)} MB',
+                ),
+              ),
+              ListTile(
+                title: Text(context.localeKeys.compressionOutputSize),
+                trailing: Text(
+                  '${(output.bytes / 1000000).toStringAsFixed(1)} MB',
+                ),
+              ),
+              if (output.warning != null) Text(output.warning!),
+              const SizedBox(height: 24),
+              FilledButton.icon(
+                onPressed: () async {
+                  try {
+                    await BlocSignalProvider.of<CompressionCubit>(context)
+                        .saveToGallery();
+                    if (context.mounted) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            context.localeKeys.compressionSavedGallery,
+                          ),
+                        ),
+                      );
+                    }
+                  } catch (error) {
+                    if (context.mounted) {
+                      ScaffoldMessenger.of(context)
+                          .showSnackBar(SnackBar(content: Text('$error')));
+                    }
+                  }
+                },
+                icon: const Icon(Icons.save_alt),
+                label: Text(context.localeKeys.compressionSaveGallery),
+              ),
+              TextButton.icon(
+                onPressed: () async {
+                  try {
+                    await getIt<BaseShareService>().shareFile(
+                      file: XFile(output.path),
+                    );
+                  } catch (error) {
+                    if (context.mounted) {
+                      ScaffoldMessenger.of(context)
+                          .showSnackBar(SnackBar(content: Text('$error')));
+                    }
+                  }
+                },
+                icon: const Icon(Icons.share_outlined),
+                label: Text(context.localeKeys.compressionShare),
+              ),
+            ],
+          );
+        },
+      ),
     );
   }
 }

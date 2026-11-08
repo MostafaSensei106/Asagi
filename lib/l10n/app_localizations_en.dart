@@ -478,5 +478,63 @@ class AppLocalizationsEn extends AppLocalizations {
   String get helpFeedbackSubtitle => 'Send us your feedback';
 
   @override
+  String get compressionPickVideo => 'Pick video';
+
+  @override
+  String get compressionTargetMb => 'Target size (MB)';
+
+  @override
+  String get compressionStart => 'Start compression';
+
+  @override
+  String get compressionPause => 'Pause';
+
+  @override
+  String get compressionResume => 'Resume';
+
+  @override
+  String get compressionViewResult => 'View result';
+
+  @override
+  String get compressionSaveGallery => 'Save to gallery';
+
+  @override
+  String get compressionShare => 'Share video';
+
+  @override
+  String get compressionOriginalSize => 'Original size';
+
+  @override
+  String get compressionOutputSize => 'Output size';
+
+  @override
+  String get compressionEmptyHistory => 'No compressed videos yet';
+
+  @override
+  String get compressionSavedGallery => 'Saved to gallery';
+
+  @override
+  String get compressionInvalidTarget =>
+      'Enter a target size greater than zero';
+
+  @override
+  String get compressionCancelled => 'Compression cancelled';
+
+  @override
+  String get compressionPreviewBefore => 'Original preview';
+
+  @override
+  String get compressionPreviewAfter => 'Compressed preview';
+
+  @override
+  String get compressionPreset => 'Target preset';
+
+  @override
+  String get compressionCustom => 'Custom size';
+
+  @override
+  String get compressionPreviewUnavailable => 'Preview unavailable';
+
+  @override
   String get comingSoon => 'Coming soon';
 }

@@ -945,6 +945,120 @@ abstract class AppLocalizations {
   /// **'Send us your feedback'**
   String get helpFeedbackSubtitle;
 
+  /// No description provided for @compressionPickVideo.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick video'**
+  String get compressionPickVideo;
+
+  /// No description provided for @compressionTargetMb.
+  ///
+  /// In en, this message translates to:
+  /// **'Target size (MB)'**
+  String get compressionTargetMb;
+
+  /// No description provided for @compressionStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Start compression'**
+  String get compressionStart;
+
+  /// No description provided for @compressionPause.
+  ///
+  /// In en, this message translates to:
+  /// **'Pause'**
+  String get compressionPause;
+
+  /// No description provided for @compressionResume.
+  ///
+  /// In en, this message translates to:
+  /// **'Resume'**
+  String get compressionResume;
+
+  /// No description provided for @compressionViewResult.
+  ///
+  /// In en, this message translates to:
+  /// **'View result'**
+  String get compressionViewResult;
+
+  /// No description provided for @compressionSaveGallery.
+  ///
+  /// In en, this message translates to:
+  /// **'Save to gallery'**
+  String get compressionSaveGallery;
+
+  /// No description provided for @compressionShare.
+  ///
+  /// In en, this message translates to:
+  /// **'Share video'**
+  String get compressionShare;
+
+  /// No description provided for @compressionOriginalSize.
+  ///
+  /// In en, this message translates to:
+  /// **'Original size'**
+  String get compressionOriginalSize;
+
+  /// No description provided for @compressionOutputSize.
+  ///
+  /// In en, this message translates to:
+  /// **'Output size'**
+  String get compressionOutputSize;
+
+  /// No description provided for @compressionEmptyHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'No compressed videos yet'**
+  String get compressionEmptyHistory;
+
+  /// No description provided for @compressionSavedGallery.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved to gallery'**
+  String get compressionSavedGallery;
+
+  /// No description provided for @compressionInvalidTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a target size greater than zero'**
+  String get compressionInvalidTarget;
+
+  /// No description provided for @compressionCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Compression cancelled'**
+  String get compressionCancelled;
+
+  /// No description provided for @compressionPreviewBefore.
+  ///
+  /// In en, this message translates to:
+  /// **'Original preview'**
+  String get compressionPreviewBefore;
+
+  /// No description provided for @compressionPreviewAfter.
+  ///
+  /// In en, this message translates to:
+  /// **'Compressed preview'**
+  String get compressionPreviewAfter;
+
+  /// No description provided for @compressionPreset.
+  ///
+  /// In en, this message translates to:
+  /// **'Target preset'**
+  String get compressionPreset;
+
+  /// No description provided for @compressionCustom.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom size'**
+  String get compressionCustom;
+
+  /// No description provided for @compressionPreviewUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview unavailable'**
+  String get compressionPreviewUnavailable;
+
   /// Badge shown on placeholder pages
   ///
   /// In en, this message translates to:
