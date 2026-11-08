@@ -12,6 +12,7 @@ final class _MainShell extends StatelessWidget {
       SettingsRoute(),
     ],
     pageBuilder: AppRouter._buildPage,
+    pageWrapper: AppRouter._cupertinoPage,
     chromeBuilder: (context, branch, content, switchBranch) => _ShellChrome(
       activeBranch: branch,
       branchContent: content,

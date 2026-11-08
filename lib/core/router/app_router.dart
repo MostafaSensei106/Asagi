@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart' show CupertinoPage;
 import 'package:flutter/foundation.dart' show ValueListenable, ValueNotifier;
 import 'package:flutter/rendering.dart' show ScrollDirection;
 import 'package:flutter_animate/flutter_animate.dart';
@@ -67,6 +68,17 @@ final class AppRouter {
     initial: _initialRoute,
     observers: () => [AppNavigatorObserver()],
     builder: _buildPage,
+    pageWrapper: _cupertinoPage,
+  );
+
+  static Page<Object?> _cupertinoPage(
+    KaiselPageWrapperContext<AppRoute> context,
+  ) => CupertinoPage<Object?>(
+    key: context.key,
+    name: context.route.routeName,
+    arguments: context.route,
+    restorationId: context.route.restorationId,
+    child: context.child,
   );
 
   static Widget _buildPage(BuildContext context, AppRoute route) =>
