@@ -38,6 +38,7 @@ final class AppPlaceholderPage extends StatelessWidget {
 
     return Scaffold(
       body: CustomScrollView(
+        physics: const AlwaysScrollableScrollPhysics(),
         slivers: [
           if (showAppBar)
             if (showBackButton)

@@ -1,3 +1,6 @@
+import 'package:flutter/rendering.dart' show ScrollDirection;
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -21,6 +24,7 @@ import '../widgets/navigation/bottom_nav_bar/bottom_nav_bar_component.dart';
 import 'observers/app_navigator_observer.dart';
 import 'route_metadata.dart';
 
+part 'main_shell.dart';
 part 'routes/compression_routes.dart';
 part 'routes/main_routes.dart';
 part 'routes/settings_info_routes.dart';
@@ -111,165 +115,4 @@ final class AppRouter {
         RateAppRoute() => const RateAppPage(),
         ShareAppRoute() => const ShareAppPage(),
       };
-}
-
-final class _MainShell extends StatelessWidget {
-  const _MainShell();
-
-  @override
-  Widget build(BuildContext context) {
-    return KaiselShell<AppRoute>(
-      branchInitials: const [
-        HomeTabRoute(),
-        CompressionHistoryRoute(),
-        SettingsRoute(),
-      ],
-      pageBuilder: AppRouter._buildPage,
-      chromeBuilder: (context, activeBranch, branchContent, switchBranch) {
-        final items = [
-          AppNavItem(
-            label: context.localeKeys.homeTitle,
-            icon: ZumiIcons.home,
-            iosSystemImage: 'house',
-          ),
-          AppNavItem(
-            label: context.localeKeys.compressionHistoryTitle,
-            icon: ZumiIcons.compressionHistory,
-            iosSystemImage: 'clock.arrow.circlepath',
-          ),
-          AppNavItem(
-            label: context.localeKeys.settingsTitle,
-            icon: ZumiIcons.settings,
-            iosSystemImage: 'gearshape',
-          ),
-        ];
-        final isRootPage = context.shell().current.stack.length == 1;
-        final isWide = MediaQuery.sizeOf(context).width >= 840;
-        final content = isRootPage
-            ? _SwipeableBranch(
-                activeBranch: activeBranch,
-                branchCount: items.length,
-                onSwitch: switchBranch,
-                child: branchContent,
-              )
-            : branchContent;
-        if (isWide) {
-          return Scaffold(
-            body: Row(
-              children: [
-                if (isRootPage)
-                  NavigationRail(
-                    selectedIndex: activeBranch,
-                    onDestinationSelected: switchBranch,
-                    labelType: NavigationRailLabelType.all,
-                    destinations: [
-                      for (final item in items)
-                        NavigationRailDestination(
-                          icon: Icon(item.icon),
-                          selectedIcon: Icon(item.activeIcon ?? item.icon),
-                          label: Text(item.label),
-                        ),
-                    ],
-                  ),
-                Expanded(child: content),
-              ],
-            ),
-          );
-        }
-        return Scaffold(
-          body: content,
-          bottomNavigationBar: isRootPage
-              ? BottomNavBarComponent(
-                  currentIndex: activeBranch,
-                  items: items,
-                  onTap: switchBranch,
-                )
-              : null,
-        );
-      },
-    );
-  }
-}
-
-/// Switches root tabs after a deliberate horizontal gesture without rebuilding
-/// their independent navigation stacks.
-final class _SwipeableBranch extends StatefulWidget {
-  const _SwipeableBranch({
-    required this.activeBranch,
-    required this.branchCount,
-    required this.onSwitch,
-    required this.child,
-  });
-
-  final int activeBranch;
-  final int branchCount;
-  final ValueChanged<int> onSwitch;
-  final Widget child;
-
-  @override
-  State<_SwipeableBranch> createState() => _SwipeableBranchState();
-}
-
-final class _SwipeableBranchState extends State<_SwipeableBranch>
-    with SingleTickerProviderStateMixin {
-  double _distance = 0;
-  late final AnimationController _slide = AnimationController(
-    vsync: this,
-    duration: const Duration(milliseconds: 260),
-    value: 1,
-  );
-  double _enterFrom = 0;
-
-  @override
-  void didUpdateWidget(_SwipeableBranch oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (oldWidget.activeBranch == widget.activeBranch) return;
-    final isRtl = Directionality.of(context) == TextDirection.rtl;
-    _enterFrom = widget.activeBranch > oldWidget.activeBranch ? 1 : -1;
-    if (isRtl) _enterFrom = -_enterFrom;
-    _slide.forward(from: 0);
-  }
-
-  @override
-  void dispose() {
-    _slide.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onHorizontalDragStart: (_) => _distance = 0,
-      onHorizontalDragUpdate: (details) => _distance += details.delta.dx,
-      onHorizontalDragCancel: () => _distance = 0,
-      onHorizontalDragEnd: (details) {
-        final velocity = details.primaryVelocity ?? 0;
-        final direction = _distance.abs() >= 64
-            ? _distance.sign
-            : velocity.abs() >= 350
-            ? velocity.sign
-            : 0;
-        _distance = 0;
-        if (direction == 0) return;
-
-        final isRtl = Directionality.of(context) == TextDirection.rtl;
-        final step = direction > 0 ? (isRtl ? 1 : -1) : (isRtl ? -1 : 1);
-        final next = widget.activeBranch + step;
-        if (next >= 0 && next < widget.branchCount) widget.onSwitch(next);
-      },
-      child: ClipRect(
-        child: AnimatedBuilder(
-          animation: _slide,
-          child: widget.child,
-          builder: (context, child) => FractionalTranslation(
-            translation: Offset(
-              _enterFrom * (1 - Curves.easeOutCubic.transform(_slide.value)),
-              0,
-            ),
-            child: child,
-          ),
-        ),
-      ),
-    );
-  }
 }

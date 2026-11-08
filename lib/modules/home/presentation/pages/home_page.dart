@@ -28,6 +28,7 @@ final class HomePage extends StatelessWidget {
       appBar: AppBarComponent(title: context.localeKeys.appTitle),
       body: SafeArea(
         child: CustomScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
           slivers: [
             SliverFillRemainingComponent(
               hasScrollBody: false,
