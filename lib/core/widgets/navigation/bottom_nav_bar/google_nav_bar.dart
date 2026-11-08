@@ -36,7 +36,7 @@ class GoogleNavBar extends StatelessWidget {
             color: scheme.onSurfaceVariant,
             activeColor: scheme.onSecondaryContainer,
             tabBackgroundColor: scheme.secondaryContainer,
-            duration: const Duration(milliseconds: 300),
+            duration: const Duration(milliseconds: 250),
             padding: const EdgeInsets.all(AppSpacing.medium),
             tabs: [
               for (var index = 0; index < items.length; index++)

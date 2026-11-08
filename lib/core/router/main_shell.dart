@@ -34,7 +34,10 @@ final class _ShellChrome extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final controller = usePageController(initialPage: activeBranch);
-    final navVisible = useState(true);
+    final navVisible = useMemoized(() => ValueNotifier<bool>(true));
+    final selectedTab = useMemoized(() => ValueNotifier<int>(activeBranch));
+    useEffect(() => navVisible.dispose, [navVisible]);
+    useEffect(() => selectedTab.dispose, [selectedTab]);
     final isRootPage = context.shell().current.stack.length == 1;
     final isWide = MediaQuery.sizeOf(context).width >= 840;
     final items = [
@@ -50,39 +53,59 @@ final class _ShellChrome extends HookWidget {
     ];
 
     void goToBranch(int index) {
-      if (index == activeBranch || !controller.hasClients) return;
-      controller.animateToPage(
-        index,
-        duration: 280.ms,
-        curve: Curves.easeOutCubic,
+      if (!controller.hasClients) return;
+      selectedTab.value = index;
+      navVisible.value = true;
+      unawaited(
+        controller.animateToPage(
+          index,
+          duration: 250.ms,
+          curve: Curves.easeOutCubic,
+        ),
       );
     }
 
     final pages = (branchContent as IndexedStack).children;
-    final content = NotificationListener<UserScrollNotification>(
+    final content = NotificationListener<ScrollNotification>(
       onNotification: (notification) {
-        if (!isRootPage || notification.metrics.axis != Axis.vertical) {
-          return false;
+        if (notification.metrics.axis == Axis.horizontal &&
+            notification is ScrollEndNotification) {
+          final settledPage = controller.page?.round();
+          if (settledPage != null && settledPage != activeBranch) {
+            navVisible.value = true;
+            switchBranch(settledPage);
+          }
         }
-        if (notification.direction == ScrollDirection.reverse) {
-          navVisible.value = false;
-        } else if (notification.direction == ScrollDirection.forward) {
-          navVisible.value = true;
+        if (isRootPage &&
+            notification.metrics.axis == Axis.vertical &&
+            notification is UserScrollNotification) {
+          if (notification.direction == ScrollDirection.reverse) {
+            navVisible.value = false;
+          } else if (notification.direction == ScrollDirection.forward) {
+            navVisible.value = true;
+          }
         }
         return false;
       },
       child: PageView.custom(
         controller: controller,
+        allowImplicitScrolling: true,
+        onPageChanged: (index) {
+          selectedTab.value = index;
+          navVisible.value = true;
+        },
         physics: isRootPage
             ? const PageScrollPhysics()
             : const NeverScrollableScrollPhysics(),
-        onPageChanged: (index) {
-          navVisible.value = true;
-          switchBranch(index);
-        },
-        childrenDelegate: SliverChildListDelegate([
-          for (final page in pages) KeepAlive(keepAlive: true, child: page),
-        ], addAutomaticKeepAlives: false),
+        childrenDelegate: SliverChildListDelegate(
+          [
+            for (final page in pages)
+              KeepAlive(keepAlive: true, child: RepaintBoundary(child: page)),
+          ],
+          addAutomaticKeepAlives: false,
+          addRepaintBoundaries: false,
+          addSemanticIndexes: false,
+        ),
       ),
     );
 
@@ -91,17 +114,10 @@ final class _ShellChrome extends HookWidget {
         body: Row(
           children: [
             if (isRootPage)
-              NavigationRail(
-                selectedIndex: activeBranch,
-                onDestinationSelected: goToBranch,
-                labelType: NavigationRailLabelType.all,
-                destinations: [
-                  for (final item in items)
-                    NavigationRailDestination(
-                      icon: Icon(item.icon),
-                      label: Text(item.label),
-                    ),
-                ],
+              _ShellRail(
+                selectedTab: selectedTab,
+                items: items,
+                onTap: goToBranch,
               ),
             Expanded(child: content),
           ],
@@ -113,27 +129,90 @@ final class _ShellChrome extends HookWidget {
       extendBody: true,
       body: content,
       bottomNavigationBar: isRootPage
-          ? IgnorePointer(
-              ignoring: !navVisible.value,
-              child: Animate(
-                target: navVisible.value ? 0 : 1,
-                effects: [
-                  SlideEffect(
-                    begin: Offset.zero,
-                    end: const Offset(0, 1),
-                    duration: 220.ms,
-                    curve: Curves.easeOutCubic,
-                  ),
-                  FadeEffect(begin: 1, end: 0, duration: 220.ms),
-                ],
-                child: BottomNavBarComponent(
-                  currentIndex: activeBranch,
-                  items: items,
-                  onTap: goToBranch,
-                ),
-              ),
+          ? _ScrollAwareBottomBar(
+              visibility: navVisible,
+              selectedTab: selectedTab,
+              items: items,
+              onTap: goToBranch,
             )
           : null,
+    );
+  }
+}
+
+final class _ShellRail extends HookWidget {
+  const _ShellRail({
+    required this.selectedTab,
+    required this.items,
+    required this.onTap,
+  });
+
+  final ValueListenable<int> selectedTab;
+  final List<AppNavItem> items;
+  final ValueChanged<int> onTap;
+
+  @override
+  Widget build(BuildContext context) => NavigationRail(
+    selectedIndex: useValueListenable(selectedTab),
+    onDestinationSelected: onTap,
+    labelType: NavigationRailLabelType.all,
+    destinations: [
+      for (final item in items)
+        NavigationRailDestination(
+          icon: Icon(item.icon),
+          label: Text(item.label),
+        ),
+    ],
+  );
+}
+
+final class _ScrollAwareBottomBar extends HookWidget {
+  const _ScrollAwareBottomBar({
+    required this.visibility,
+    required this.selectedTab,
+    required this.items,
+    required this.onTap,
+  });
+
+  final ValueListenable<bool> visibility;
+  final ValueListenable<int> selectedTab;
+  final List<AppNavItem> items;
+  final ValueChanged<int> onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final isVisible = useValueListenable(visibility);
+    final currentIndex = useValueListenable(selectedTab);
+    return IgnorePointer(
+      ignoring: !isVisible,
+      child: Animate(
+        target: isVisible ? 0 : 1,
+        effects: [
+          CustomEffect(
+            duration: 250.ms,
+            curve: Curves.easeOutCubic,
+            builder: (context, value, child) => ClipRect(
+              child: Align(
+                heightFactor: 1 - value,
+                alignment: Alignment.bottomCenter,
+                child: child,
+              ),
+            ),
+          ),
+          SlideEffect(
+            begin: Offset.zero,
+            end: const Offset(0, 1),
+            duration: 250.ms,
+            curve: Curves.easeOutCubic,
+          ),
+          FadeEffect(begin: 1, end: 0, duration: 250.ms),
+        ],
+        child: BottomNavBarComponent(
+          currentIndex: currentIndex,
+          items: items,
+          onTap: onTap,
+        ),
+      ),
     );
   }
 }
