@@ -29,11 +29,13 @@ final class HomePage extends HookWidget {
       if (dialogOpen.value) return;
       dialogOpen.value = true;
       unawaited(
-        context.dialog.showDialog<void>(
-          title: Text(context.localeKeys.compressionProgressTitle),
-          content: _CompressionRunningDialog(cubit: cubit),
-          actions: const [],
-        ).whenComplete(() => dialogOpen.value = false),
+        context.dialog
+            .showDialog<void>(
+              title: Text(context.localeKeys.compressionProgressTitle),
+              content: _CompressionRunningDialog(cubit: cubit),
+              actions: const [],
+            )
+            .whenComplete(() => dialogOpen.value = false),
       );
     }
 

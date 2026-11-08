@@ -66,12 +66,14 @@ final class DeviceVideoCompressionRepository
     // Some hardware encoders exceed their requested bitrate. Re-plan with a
     // smaller budget before reporting that the requested file size is impossible.
     CompressionOutput? output;
+    final acceptedMaxBytes = (targetMb * 1000000).floor();
     for (final factor in const [1.0, 0.8, 0.65]) {
       try {
         output = await _engine.compress(
           source: video.path,
           targetMb: targetMb * factor,
           workspacePath: workspacePath,
+          acceptedMaxBytes: acceptedMaxBytes,
         );
         break;
       } catch (error) {

@@ -28,6 +28,7 @@ final class CompressionEngine {
     required String source,
     required double targetMb,
     required String workspacePath,
+    int? acceptedMaxBytes,
     HdrMode hdrMode = HdrMode.toneMapToSdr,
   }) async {
     _control.begin();
@@ -69,6 +70,13 @@ final class CompressionEngine {
           hdrPolicy.verify(info, await encoder.inspect(path), hdrMode);
         }
         final bytes = await job.measure(path);
+        // A stricter planning target can be used to compensate for hardware
+        // bitrate overshoot while retaining the user's original hard limit.
+        if (acceptedMaxBytes != null && bytes > 0 && bytes <= acceptedMaxBytes) {
+          await _control.checkpoint();
+          await job.commit();
+          return CompressionOutput(path, bytes, attempt, plan.warningMessage);
+        }
         final next = await planner.verify(
           bytes,
           info.durationSecs,
