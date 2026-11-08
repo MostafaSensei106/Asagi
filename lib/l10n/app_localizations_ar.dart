@@ -522,6 +522,14 @@ class AppLocalizationsAr extends AppLocalizations {
   String get compressionCancelled => 'تم إلغاء الضغط';
 
   @override
+  String get compressionTargetExceeded =>
+      'تعذر وصول الفيديو للحجم المحدد. جرّب حجمًا أكبر.';
+
+  @override
+  String get compressionTargetInfeasible =>
+      'الحجم المحدد صغير جدًا لهذا الفيديو. اختر حجمًا أكبر.';
+
+  @override
   String get compressionPreviewBefore => 'معاينة الفيديو الأصلي';
 
   @override

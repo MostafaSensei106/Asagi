@@ -23,23 +23,35 @@ final class HomePage extends HookWidget {
     final targetController = useTextEditingController();
     final validTarget = useState(true);
     final showAfter = useState(true);
+    final dialogOpen = useRef(false);
 
     void start() {
-      unawaited(context.dialog.showDialog<void>(
-        title: Text(context.localeKeys.compressionProgressTitle),
-        content: _CompressionRunningDialog(cubit: cubit),
-        actions: const [],
-      ));
+      if (dialogOpen.value) return;
+      dialogOpen.value = true;
+      unawaited(
+        context.dialog.showDialog<void>(
+          title: Text(context.localeKeys.compressionProgressTitle),
+          content: _CompressionRunningDialog(cubit: cubit),
+          actions: const [],
+        ).whenComplete(() => dialogOpen.value = false),
+      );
     }
 
     return Scaffold(
       appBar: AppBarComponent(title: context.localeKeys.appTitle),
       body: BlocSignalBuilder<CompressionCubit, CompressionState>(
         bloc: cubit,
+        buildWhen: (previous, current) =>
+            previous.phase != current.phase ||
+            previous.video != current.video ||
+            previous.targetMb != current.targetMb ||
+            previous.output != current.output ||
+            previous.error != current.error,
         builder: (context, state) {
           final video = state.video;
           final output = state.output;
-          final completed = state.phase == CompressionPhase.completed && output != null;
+          final completed =
+              state.phase == CompressionPhase.completed && output != null;
           return SafeArea(
             child: CustomScrollView(
               physics: const AlwaysScrollableScrollPhysics(),
@@ -54,63 +66,102 @@ final class HomePage extends HookWidget {
                           const SizedBox(height: 80),
                           const Icon(Icons.video_library_outlined, size: 72),
                           const SizedBox(height: 16),
-                          Text(context.localeKeys.homeDescription,
-                              textAlign: TextAlign.center,
-                              style: Theme.of(context).textTheme.titleMedium),
+                          Text(
+                            context.localeKeys.homeDescription,
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.titleMedium,
+                          ),
                         ] else ...[
-                          Text(video.name, style: Theme.of(context).textTheme.titleLarge),
+                          Text(
+                            video.name,
+                            style: Theme.of(context).textTheme.titleLarge,
+                          ),
                           const SizedBox(height: 16),
                           if (completed) ...[
-                            Text(context.localeKeys.compressionResultTitle,
-                                style: Theme.of(context).textTheme.headlineSmall),
+                            Text(
+                              context.localeKeys.compressionResultTitle,
+                              style: Theme.of(context).textTheme.headlineSmall,
+                            ),
                             const SizedBox(height: 12),
                             SegmentedButton<bool>(
                               segments: [
-                                ButtonSegment(value: false,
-                                    label: Text(context.localeKeys.compressionPreviewBefore)),
-                                ButtonSegment(value: true,
-                                    label: Text(context.localeKeys.compressionPreviewAfter)),
+                                ButtonSegment(
+                                  value: false,
+                                  label: Text(
+                                    context.localeKeys.compressionPreviewBefore,
+                                  ),
+                                ),
+                                ButtonSegment(
+                                  value: true,
+                                  label: Text(
+                                    context.localeKeys.compressionPreviewAfter,
+                                  ),
+                                ),
                               ],
                               selected: {showAfter.value},
-                              onSelectionChanged: (selection) => showAfter.value = selection.first,
+                              onSelectionChanged: (selection) =>
+                                  showAfter.value = selection.first,
                             ),
                             const SizedBox(height: 12),
                           ],
                           VideoPreview(
-                            key: ValueKey(completed && showAfter.value ? output.path : video.path),
-                            path: completed && showAfter.value ? output.path : video.path,
+                            key: ValueKey(
+                              completed && showAfter.value
+                                  ? output.path
+                                  : video.path,
+                            ),
+                            path: completed && showAfter.value
+                                ? output.path
+                                : video.path,
                             title: completed && showAfter.value
                                 ? context.localeKeys.compressionPreviewAfter
                                 : context.localeKeys.compressionPreviewBefore,
                           ),
                           const SizedBox(height: 16),
-                          Text('${context.localeKeys.compressionOriginalSize}: '
-                              '${(video.metadata.fileSizeBytes / 1000000).toStringAsFixed(1)} MB'),
+                          Text(
+                            '${context.localeKeys.compressionOriginalSize}: '
+                            '${(video.metadata.fileSizeBytes / 1000000).toStringAsFixed(1)} MB',
+                          ),
                           if (completed) ...[
-                            Text('${context.localeKeys.compressionOutputSize}: '
-                                '${(output.bytes / 1000000).toStringAsFixed(1)} MB'),
+                            Text(
+                              '${context.localeKeys.compressionOutputSize}: '
+                              '${(output.bytes / 1000000).toStringAsFixed(1)} MB',
+                            ),
                             if (output.warning != null) Text(output.warning!),
                             const SizedBox(height: 24),
                             FilledButton.icon(
                               onPressed: () async {
                                 try {
                                   await cubit.saveToGallery();
-                                  if (context.mounted) _notice(context,
-                                      context.localeKeys.compressionSavedGallery);
+                                  if (context.mounted) {
+                                    _notice(
+                                      context,
+                                      context
+                                          .localeKeys
+                                          .compressionSavedGallery,
+                                    );
+                                  }
                                 } catch (error) {
-                                  if (context.mounted) _notice(context, '$error');
+                                  if (context.mounted) {
+                                    _notice(context, '$error');
+                                  }
                                 }
                               },
                               icon: const Icon(Icons.save_alt),
-                              label: Text(context.localeKeys.compressionSaveGallery),
+                              label: Text(
+                                context.localeKeys.compressionSaveGallery,
+                              ),
                             ),
                             TextButton.icon(
                               onPressed: () async {
                                 try {
                                   await getIt<BaseShareService>().shareFile(
-                                      file: XFile(output.path));
+                                    file: XFile(output.path),
+                                  );
                                 } catch (error) {
-                                  if (context.mounted) _notice(context, '$error');
+                                  if (context.mounted) {
+                                    _notice(context, '$error');
+                                  }
                                 }
                               },
                               icon: const Icon(Icons.share_outlined),
@@ -118,36 +169,56 @@ final class HomePage extends HookWidget {
                             ),
                           ] else ...[
                             const SizedBox(height: 24),
-                            Text(context.localeKeys.compressionPreset,
-                                style: Theme.of(context).textTheme.titleMedium),
+                            Text(
+                              context.localeKeys.compressionPreset,
+                              style: Theme.of(context).textTheme.titleMedium,
+                            ),
                             const SizedBox(height: 8),
-                            Wrap(spacing: 8, children: [
-                              for (final preset in const [8.0, 16.0, 25.0])
-                                ChoiceChip(
-                                  label: Text('${preset.toInt()} MB'),
-                                  selected: state.targetMb == preset,
-                                  onSelected: (_) {
-                                    targetController.text = '${preset.toInt()}';
-                                    validTarget.value = true;
-                                    cubit.setTargetMb(preset);
-                                  },
-                                ),
-                            ]),
+                            Wrap(
+                              spacing: 8,
+                              children: [
+                                for (final preset in const [8.0, 16.0, 25.0])
+                                  ChoiceChip(
+                                    label: Text('${preset.toInt()} MB'),
+                                    selected: state.targetMb == preset,
+                                    onSelected: (_) {
+                                      targetController.text =
+                                          '${preset.toInt()}';
+                                      validTarget.value = true;
+                                      cubit.setTargetMb(preset);
+                                    },
+                                  ),
+                              ],
+                            ),
                             const SizedBox(height: 12),
                             TextField(
                               controller: targetController,
-                              keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                              keyboardType:
+                                  const TextInputType.numberWithOptions(
+                                    decimal: true,
+                                  ),
                               decoration: InputDecoration(
-                                labelText: context.localeKeys.compressionTargetMb,
+                                labelText:
+                                    context.localeKeys.compressionTargetMb,
                                 hintText: '${state.targetMb}',
-                                errorText: validTarget.value ? null
-                                    : context.localeKeys.compressionInvalidTarget,
+                                errorText: validTarget.value
+                                    ? null
+                                    : context
+                                          .localeKeys
+                                          .compressionInvalidTarget,
                                 border: const OutlineInputBorder(),
                               ),
                               onChanged: (text) {
-                                final value = double.tryParse(text.replaceAll(',', '.'));
-                                validTarget.value = value != null && value.isFinite && value > 0;
-                                if (validTarget.value) cubit.setTargetMb(value!);
+                                final value = double.tryParse(
+                                  text.replaceAll(',', '.'),
+                                );
+                                validTarget.value =
+                                    value != null &&
+                                    value.isFinite &&
+                                    value > 0;
+                                if (validTarget.value) {
+                                  cubit.setTargetMb(value!);
+                                }
                               },
                             ),
                             if (state.phase == CompressionPhase.failure)
@@ -164,16 +235,21 @@ final class HomePage extends HookWidget {
                         ],
                         const SizedBox(height: 20),
                         FilledButton.icon(
-                          onPressed: state.phase == CompressionPhase.picking ||
+                          onPressed:
+                              state.phase == CompressionPhase.picking ||
                                   state.phase == CompressionPhase.running ||
                                   state.phase == CompressionPhase.paused
-                              ? null : () => unawaited(cubit.pickVideo()),
+                              ? null
+                              : () => unawaited(cubit.pickVideo()),
                           icon: const Icon(Icons.video_file_outlined),
-                          label: Text(state.phase == CompressionPhase.picking
-                              ? context.localeKeys.pleaseWait
-                              : context.localeKeys.compressionPickVideo),
+                          label: Text(
+                            state.phase == CompressionPhase.picking
+                                ? context.localeKeys.pleaseWait
+                                : context.localeKeys.compressionPickVideo,
+                          ),
                         ),
-                        if (video == null && state.phase == CompressionPhase.failure)
+                        if (video == null &&
+                            state.phase == CompressionPhase.failure)
                           _CompressionError(error: state.error),
                       ],
                     ),
@@ -202,43 +278,53 @@ final class _CompressionRunningDialog extends HookWidget {
     }, [cubit]);
 
     return BlocSignalListener<CompressionCubit, CompressionState>(
+      bloc: cubit,
+      listenWhen: (previous, current) =>
+          previous.phase != current.phase &&
+          (current.phase == CompressionPhase.completed ||
+              current.phase == CompressionPhase.failure ||
+              current.phase == CompressionPhase.cancelled),
+      listener: (context, state) =>
+          Navigator.of(context, rootNavigator: true).pop(),
+      child: BlocSignalBuilder<CompressionCubit, CompressionState>(
         bloc: cubit,
-        listenWhen: (previous, current) => previous.phase != current.phase &&
-            (current.phase == CompressionPhase.completed ||
-                current.phase == CompressionPhase.failure ||
-                current.phase == CompressionPhase.cancelled),
-        listener: (context, state) => Navigator.of(context, rootNavigator: true).pop(),
-        child: BlocSignalBuilder<CompressionCubit, CompressionState>(
-          bloc: cubit,
-          builder: (context, state) => Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const SizedBox(height: 16),
-              LinearProgressIndicator(value: state.progress),
-              const SizedBox(height: 12),
-              Text('${(state.progress * 100).round()}%'),
-              const SizedBox(height: 12),
-              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+        builder: (context, state) => Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const SizedBox(height: 16),
+            LinearProgressIndicator(value: state.progress),
+            const SizedBox(height: 12),
+            Text('${(state.progress * 100).round()}%'),
+            const SizedBox(height: 12),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
                 TextButton(
                   onPressed: state.phase == CompressionPhase.running
                       ? () => unawaited(cubit.pause())
                       : state.phase == CompressionPhase.paused
-                          ? () => unawaited(cubit.resume()) : null,
-                  child: Text(state.phase == CompressionPhase.paused
-                      ? context.localeKeys.compressionResume
-                      : context.localeKeys.compressionPause),
+                      ? () => unawaited(cubit.resume())
+                      : null,
+                  child: Text(
+                    state.phase == CompressionPhase.paused
+                        ? context.localeKeys.compressionResume
+                        : context.localeKeys.compressionPause,
+                  ),
                 ),
                 TextButton(
-                  onPressed: state.phase == CompressionPhase.running ||
+                  onPressed:
+                      state.phase == CompressionPhase.running ||
                           state.phase == CompressionPhase.paused
-                      ? () => unawaited(cubit.cancel()) : null,
+                      ? () => unawaited(cubit.cancel())
+                      : null,
                   child: Text(context.localeKeys.cancel),
                 ),
-              ]),
-            ],
-          ),
+              ],
+            ),
+          ],
         ),
-      );
+      ),
+    );
   }
 }
 
@@ -251,11 +337,14 @@ final class _CompressionError extends StatelessWidget {
     final message = error?.contains('E_TARGET_EXCEEDED') == true
         ? context.localeKeys.compressionTargetExceeded
         : error?.contains('E_TARGET_INFEASIBLE') == true
-            ? context.localeKeys.compressionTargetInfeasible
-            : error ?? context.localeKeys.error;
+        ? context.localeKeys.compressionTargetInfeasible
+        : error ?? context.localeKeys.error;
     return Padding(
       padding: const EdgeInsets.only(top: 16),
-      child: Text(message, style: TextStyle(color: Theme.of(context).colorScheme.error)),
+      child: Text(
+        message,
+        style: TextStyle(color: Theme.of(context).colorScheme.error),
+      ),
     );
   }
 }

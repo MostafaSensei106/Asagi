@@ -1029,6 +1029,18 @@ abstract class AppLocalizations {
   /// **'Compression cancelled'**
   String get compressionCancelled;
 
+  /// No description provided for @compressionTargetExceeded.
+  ///
+  /// In en, this message translates to:
+  /// **'This video could not reach the selected size. Try a larger target size.'**
+  String get compressionTargetExceeded;
+
+  /// No description provided for @compressionTargetInfeasible.
+  ///
+  /// In en, this message translates to:
+  /// **'The selected size is too small for this video. Choose a larger size.'**
+  String get compressionTargetInfeasible;
+
   /// No description provided for @compressionPreviewBefore.
   ///
   /// In en, this message translates to:

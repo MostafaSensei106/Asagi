@@ -521,6 +521,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get compressionCancelled => 'Compression cancelled';
 
   @override
+  String get compressionTargetExceeded =>
+      'This video could not reach the selected size. Try a larger target size.';
+
+  @override
+  String get compressionTargetInfeasible =>
+      'The selected size is too small for this video. Choose a larger size.';
+
+  @override
   String get compressionPreviewBefore => 'Original preview';
 
   @override
