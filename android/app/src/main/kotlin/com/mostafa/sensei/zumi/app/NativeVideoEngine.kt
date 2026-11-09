@@ -7,6 +7,8 @@ import com.mostafa.sensei.zumi.app.contracts.*
 import com.mostafa.sensei.zumi.app.media3.*
 import io.flutter.plugin.common.EventChannel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 /** Channel adapter. Media3 and Flutter wire models are isolated behind contracts. */
@@ -14,11 +16,12 @@ import kotlinx.coroutines.withContext
 class NativeVideoEngine private constructor(
     private val metadata: VideoMetadataReader,
     private val backend: VideoEncodingBackend,
-    private val progress: ProgressRelay
+    private val progress: ProgressRelay,
+    private val appContext: Context,
 ) : NativeMediaApi, EventChannel.StreamHandler {
     constructor(context: Context) : this(MetadataExtractor(context), ProgressRelay(), context)
     private constructor(metadata: VideoMetadataReader, progress: ProgressRelay, context: Context) :
-        this(metadata, Media3VideoEncoder(context, metadata, AndroidHdrPolicy(), progress::emit), progress)
+        this(metadata, Media3VideoEncoder(context, metadata, AndroidHdrPolicy(), progress::emit), progress, context.applicationContext)
     override suspend fun extractVideoMetadata(inputPath: String): NativeVideoMetadata = withContext(Dispatchers.IO) {
         val m = metadata.read(inputPath)
         NativeVideoMetadata(path = inputPath, durationSeconds = m.durationSeconds,
@@ -26,11 +29,26 @@ class NativeVideoEngine private constructor(
             frameRate = m.frameRate, hasAudio = m.hasAudio, fileSizeBytes = m.fileSizeBytes,
             isHdr = m.isHdr, colorTransfer = m.colorTransfer)
     }
-    override suspend fun startHardwareEncoding(request: NativeCompressRequest): Boolean = backend.encode(
-        EncodeConfiguration(requireNotNull(request.inputPath), requireNotNull(request.outputPath),
+    override suspend fun startHardwareEncoding(request: NativeCompressRequest): Boolean {
+        val context = appContext
+        val configuration = EncodeConfiguration(
+            requireNotNull(request.inputPath), requireNotNull(request.outputPath),
             requireNotNull(request.targetVideoBitrateBps), requireNotNull(request.targetAudioBitrateBps),
             requireNotNull(request.targetWidth), requireNotNull(request.targetHeight), request.frameRate ?: 30.0,
-            if (request.hdrMode == NativeHdrMode.PRESERVE) HdrMode.PRESERVE else HdrMode.TONE_MAP_TO_SDR))
+            if (request.hdrMode == NativeHdrMode.PRESERVE) HdrMode.PRESERVE else HdrMode.TONE_MAP_TO_SDR,
+        )
+        withContext(Dispatchers.Main) {
+            MediaProcessingService.onTimeout = {
+                CoroutineScope(Dispatchers.Main).launch { backend.cancel() }
+            }
+            MediaProcessingService.start(context)
+        }
+        return try {
+            backend.encode(configuration)
+        } finally {
+            withContext(Dispatchers.Main) { MediaProcessingService.stop(context) }
+        }
+    }
     override suspend fun pauseEncoding() = backend.pause()
     override suspend fun resumeEncoding() = backend.resume()
     override suspend fun cancelEncoding() = backend.cancel()
@@ -40,5 +58,8 @@ class NativeVideoEngine private constructor(
 
 private class ProgressRelay {
     var sink: EventChannel.EventSink? = null
-    fun emit(fraction: Double) { sink?.success(fraction) }
+    fun emit(fraction: Double) {
+        sink?.success(fraction)
+        MediaProcessingService.updateProgress(fraction)
+    }
 }
