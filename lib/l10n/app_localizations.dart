@@ -1203,6 +1203,48 @@ abstract class AppLocalizations {
   /// **'Video position'**
   String get compressionSeek;
 
+  /// No description provided for @compressionInterrupted.
+  ///
+  /// In en, this message translates to:
+  /// **'A previous compression was interrupted. Its temporary files were cleaned up; you can select the video and try again.'**
+  String get compressionInterrupted;
+
+  /// No description provided for @compressionDismiss.
+  ///
+  /// In en, this message translates to:
+  /// **'Dismiss'**
+  String get compressionDismiss;
+
+  /// No description provided for @compressionClearHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear history'**
+  String get compressionClearHistory;
+
+  /// No description provided for @compressionClearHistoryConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove all history entries? Saved videos will remain on your device.'**
+  String get compressionClearHistoryConfirm;
+
+  /// No description provided for @compressionAttempts.
+  ///
+  /// In en, this message translates to:
+  /// **'Attempts'**
+  String get compressionAttempts;
+
+  /// No description provided for @compressionTargetSize.
+  ///
+  /// In en, this message translates to:
+  /// **'Target size'**
+  String get compressionTargetSize;
+
+  /// No description provided for @compressionOutputResolution.
+  ///
+  /// In en, this message translates to:
+  /// **'Output resolution'**
+  String get compressionOutputResolution;
+
   /// Badge shown on placeholder pages
   ///
   /// In en, this message translates to:

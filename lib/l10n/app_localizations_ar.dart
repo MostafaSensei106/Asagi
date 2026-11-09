@@ -617,5 +617,28 @@ class AppLocalizationsAr extends AppLocalizations {
   String get compressionSeek => 'موضع الفيديو';
 
   @override
+  String get compressionInterrupted =>
+      'انقطعت عملية ضغط سابقة. حُذفت ملفاتها المؤقتة؛ يمكنك اختيار الفيديو وإعادة المحاولة.';
+
+  @override
+  String get compressionDismiss => 'إخفاء';
+
+  @override
+  String get compressionClearHistory => 'مسح السجل';
+
+  @override
+  String get compressionClearHistoryConfirm =>
+      'هل تريد حذف كل عناصر السجل؟ ستبقى الفيديوهات المحفوظة على جهازك.';
+
+  @override
+  String get compressionAttempts => 'عدد المحاولات';
+
+  @override
+  String get compressionTargetSize => 'الحجم المطلوب';
+
+  @override
+  String get compressionOutputResolution => 'دقة الناتج';
+
+  @override
   String get comingSoon => 'قريباً';
 }

@@ -615,5 +615,28 @@ class AppLocalizationsEn extends AppLocalizations {
   String get compressionSeek => 'Video position';
 
   @override
+  String get compressionInterrupted =>
+      'A previous compression was interrupted. Its temporary files were cleaned up; you can select the video and try again.';
+
+  @override
+  String get compressionDismiss => 'Dismiss';
+
+  @override
+  String get compressionClearHistory => 'Clear history';
+
+  @override
+  String get compressionClearHistoryConfirm =>
+      'Remove all history entries? Saved videos will remain on your device.';
+
+  @override
+  String get compressionAttempts => 'Attempts';
+
+  @override
+  String get compressionTargetSize => 'Target size';
+
+  @override
+  String get compressionOutputResolution => 'Output resolution';
+
+  @override
   String get comingSoon => 'Coming soon';
 }

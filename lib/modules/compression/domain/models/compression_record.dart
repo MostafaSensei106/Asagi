@@ -1,13 +1,18 @@
-final class CompressionRecord {
-  const CompressionRecord({
-    required this.path,
-    required this.sourceName,
-    required this.bytes,
-    required this.createdAt,
-  });
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  final String path;
-  final String sourceName;
-  final int bytes;
-  final DateTime createdAt;
+part 'compression_record.freezed.dart';
+
+@freezed
+sealed class CompressionRecord with _$CompressionRecord {
+  const factory CompressionRecord({
+    required String path,
+    required String sourceName,
+    required int bytes,
+    required DateTime createdAt,
+    @Default(0) int originalBytes,
+    @Default(0) double targetMb,
+    @Default(0) int width,
+    @Default(0) int height,
+    @Default(0) int attempts,
+  }) = _CompressionRecord;
 }

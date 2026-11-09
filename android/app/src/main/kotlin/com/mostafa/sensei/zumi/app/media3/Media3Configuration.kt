@@ -13,7 +13,7 @@ import com.mostafa.sensei.zumi.app.contracts.EncodeConfiguration
 object Media3Configuration {
     fun encoderFactory(context: Context, request: EncodeConfiguration): Codec.EncoderFactory {
         val factory = DefaultEncoderFactory.Builder(context)
-            .setEnableFormatFallback(false)
+            .setEnableFallback(false)
             .setRequestedVideoEncoderSettings(VideoEncoderSettings.Builder()
                 .setBitrate(request.targetVideoBitrateBps.toInt()).setiFrameIntervalSeconds(2f).build())
             .setRequestedAudioEncoderSettings(AudioEncoderSettings.Builder()

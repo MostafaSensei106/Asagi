@@ -157,4 +157,10 @@ void main() {
       );
     },
   );
+  test('recovery keeps work owned by the current process', () async {
+    final store = const FileArtifactStore();
+    final job = await store.create(directory.path);
+    expect(await store.cleanupInterrupted(directory.path, Duration.zero), 0);
+    await job.dispose();
+  });
 }

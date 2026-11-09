@@ -11,6 +11,7 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
     : super(initialState: const CompressionState()) {
     unawaited(loadDefaultTarget());
     unawaited(loadPreferences());
+    unawaited(recoverInterrupted());
   }
 
   final VideoCompressionRepository repository;
@@ -39,6 +40,7 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
           preferences: stateValue.preferences,
           phase: CompressionPhase.ready,
           history: stateValue.history,
+          interruptedJobs: stateValue.interruptedJobs,
         ),
       );
       unawaited(refreshPlan());
@@ -194,6 +196,22 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
     } catch (_) {
       // History storage must not turn a completed compression into a failure.
     }
+  }
+
+  Future<void> clearHistory() async {
+    await repository.clearHistory();
+    if (!isClosed) emit(stateValue.copyWith(history: const []));
+  }
+
+  Future<void> recoverInterrupted() async {
+    final count = await repository.recoverInterrupted();
+    if (!isClosed && count > 0) {
+      emit(stateValue.copyWith(interruptedJobs: count));
+    }
+  }
+
+  void dismissInterruptedNotice() {
+    emit(stateValue.copyWith(interruptedJobs: 0));
   }
 
   Future<void> saveToGallery() async {

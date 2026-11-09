@@ -21,6 +21,8 @@ abstract interface class VideoCompressionRepository {
   Future<CompressionPreferences> loadPreferences();
   Future<void> savePreferences(CompressionPreferences preferences);
   Future<List<CompressionRecord>> history();
+  Future<void> clearHistory();
+  Future<int> recoverInterrupted();
   Future<double> defaultTargetMb();
   Future<void> setDefaultTargetMb(double targetMb);
   Future<void> pause();

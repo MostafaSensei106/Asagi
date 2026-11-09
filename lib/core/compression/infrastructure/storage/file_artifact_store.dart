@@ -11,7 +11,10 @@ final class FileArtifactStore implements ArtifactStore {
     final job = await root.createTemp('zumi-');
     try {
       await File('${job.path}/.inprogress').writeAsString(
-        jsonEncode({'createdAt': DateTime.now().toUtc().toIso8601String()}),
+        jsonEncode({
+          'createdAt': DateTime.now().toUtc().toIso8601String(),
+          'pid': pid,
+        }),
         flush: true,
       );
       return _FileWorkspace(job);
@@ -43,6 +46,12 @@ final class FileArtifactStore implements ArtifactStore {
       if (await FileSystemEntity.type(marker.path, followLinks: false) !=
           FileSystemEntityType.file) {
         continue;
+      }
+      try {
+        final data = jsonDecode(await marker.readAsString()) as Map<String, dynamic>;
+        if (data['pid'] == pid) continue;
+      } catch (_) {
+        // Damaged markers are treated as interrupted jobs once old enough.
       }
       if ((await marker.stat()).modified.isBefore(cutoff)) {
         await entry.delete(recursive: true);

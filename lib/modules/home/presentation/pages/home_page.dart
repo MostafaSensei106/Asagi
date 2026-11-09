@@ -54,7 +54,8 @@ final class HomePage extends HookWidget {
             previous.error != current.error ||
             previous.preferences != current.preferences ||
             previous.previewPlan != current.previewPlan ||
-            previous.planning != current.planning,
+            previous.planning != current.planning ||
+            previous.interruptedJobs != current.interruptedJobs,
         builder: (context, state) {
           final video = state.video;
           final output = state.output;
@@ -70,6 +71,25 @@ final class HomePage extends HookWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
+                        if (state.interruptedJobs > 0)
+                          Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(16),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(context.localeKeys.compressionInterrupted),
+                                  Align(
+                                    alignment: AlignmentDirectional.centerEnd,
+                                    child: TextButton(
+                                      onPressed: cubit.dismissInterruptedNotice,
+                                      child: Text(context.localeKeys.compressionDismiss),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
                         if (video == null) ...[
                           const SizedBox(height: 80),
                           const Icon(Icons.video_library_outlined, size: 72),

@@ -117,9 +117,22 @@ final class DeviceVideoCompressionRepository
         sourceName: video.name,
         bytes: await saved.length(),
         createdAt: DateTime.now(),
+        originalBytes: video.metadata.fileSizeBytes,
+        targetMb: targetMb,
+        attempts: verifiedOutput.attempts,
       );
+      var completeRecord = record;
       try {
-        await _appendHistory(record);
+        final savedMetadata = await _encoder.inspect(saved.path);
+        completeRecord = record.copyWith(
+          width: savedMetadata.width,
+          height: savedMetadata.height,
+        );
+      } catch (_) {
+        // A saved result must remain usable even if detail extraction fails.
+      }
+      try {
+        await _appendHistory(completeRecord);
       } catch (_) {
         // The verified video remains usable even when history storage fails.
       }
@@ -203,6 +216,11 @@ final class DeviceVideoCompressionRepository
         'sourceName': record.sourceName,
         'bytes': record.bytes,
         'createdAt': record.createdAt.toIso8601String(),
+        'originalBytes': record.originalBytes,
+        'targetMb': record.targetMb,
+        'width': record.width,
+        'height': record.height,
+        'attempts': record.attempts,
       }),
     );
     await prefs.setStringList(_historyKey, entries);
@@ -224,6 +242,11 @@ final class DeviceVideoCompressionRepository
             sourceName: data['sourceName'] as String,
             bytes: data['bytes'] as int,
             createdAt: DateTime.parse(data['createdAt'] as String),
+            originalBytes: data['originalBytes'] as int? ?? 0,
+            targetMb: (data['targetMb'] as num?)?.toDouble() ?? 0,
+            width: data['width'] as int? ?? 0,
+            height: data['height'] as int? ?? 0,
+            attempts: data['attempts'] as int? ?? 0,
           ),
         );
       } catch (_) {
@@ -231,6 +254,21 @@ final class DeviceVideoCompressionRepository
       }
     }
     return records;
+  }
+
+  @override
+  Future<void> clearHistory() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove(_historyKey);
+  }
+
+  @override
+  Future<int> recoverInterrupted() async {
+    final cache = await getTemporaryDirectory();
+    return const FileArtifactStore().cleanupInterrupted(
+      '${cache.path}/compression',
+      Duration.zero,
+    );
   }
 
   @override

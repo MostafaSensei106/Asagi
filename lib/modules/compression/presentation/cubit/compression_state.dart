@@ -32,5 +32,6 @@ sealed class CompressionState with _$CompressionState {
     CompressionOutput? output,
     String? error,
     @Default(<CompressionRecord>[]) List<CompressionRecord> history,
+    @Default(0) int interruptedJobs,
   }) = _CompressionState;
 }

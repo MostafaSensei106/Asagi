@@ -184,5 +184,12 @@
   "compressionInvalidBitrate": "أدخل 150 كيلوبت/ث على الأقل، أو اتركه فارغًا للاختيار التلقائي",
   "compressionInvalidResolution": "أدخل دقة زوجية من 240 إلى 16384، أو اتركها فارغة للاختيار التلقائي",
   "compressionSeek": "موضع الفيديو",
+  "compressionInterrupted": "انقطعت عملية ضغط سابقة. حُذفت ملفاتها المؤقتة؛ يمكنك اختيار الفيديو وإعادة المحاولة.",
+  "compressionDismiss": "إخفاء",
+  "compressionClearHistory": "مسح السجل",
+  "compressionClearHistoryConfirm": "هل تريد حذف كل عناصر السجل؟ ستبقى الفيديوهات المحفوظة على جهازك.",
+  "compressionAttempts": "عدد المحاولات",
+  "compressionTargetSize": "الحجم المطلوب",
+  "compressionOutputResolution": "دقة الناتج",
   "comingSoon": "قريباً"
 }
