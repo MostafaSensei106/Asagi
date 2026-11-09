@@ -3,6 +3,7 @@ import '../domain/contracts/compression_planner.dart';
 import '../domain/contracts/video_encoder.dart';
 import '../domain/models/compression_output.dart';
 import '../domain/models/encode_request.dart';
+import '../domain/models/compression_preferences.dart';
 import '../domain/policies/hdr_policy.dart';
 import 'encoding_control.dart';
 
@@ -30,12 +31,14 @@ final class CompressionEngine {
     required String workspacePath,
     int? acceptedMaxBytes,
     HdrMode hdrMode = HdrMode.toneMapToSdr,
+    CompressionPreferences preferences = const CompressionPreferences(),
   }) async {
+    preferences.validate();
     _control.begin();
     CompressionWorkspace? job;
     try {
       final info = await encoder.inspect(source);
-      var plan = await planner.plan(info, targetMb);
+      var plan = await planner.plan(info, targetMb, preferences: preferences);
       await _control.checkpoint();
       if (info.fileSizeBytes <= plan.hardLimitBytes &&
           !hdrPolicy.requiresConversion(info, hdrMode)) {
@@ -58,8 +61,10 @@ final class CompressionEngine {
               inputPath: source,
               outputPath: path,
               plan: plan,
-              frameRate: info.frameRate.clamp(1, 30).toDouble(),
-              hdrMode: hdrMode,
+              frameRate: info.frameRate.clamp(1, preferences.maxFrameRate).toDouble(),
+              hdrMode: preferences.hdrMode == HdrMode.toneMapToSdr
+                  ? hdrMode
+                  : preferences.hdrMode,
             ),
           );
         } finally {

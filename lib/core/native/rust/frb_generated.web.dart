@@ -39,6 +39,9 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   InputMetadata dco_decode_box_autoadd_input_metadata(dynamic raw);
 
   @protected
+  PlanningPreferences dco_decode_box_autoadd_planning_preferences(dynamic raw);
+
+  @protected
   CalculationPlan dco_decode_calculation_plan(dynamic raw);
 
   @protected
@@ -46,6 +49,9 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   double dco_decode_f_64(dynamic raw);
+
+  @protected
+  int dco_decode_i_32(dynamic raw);
 
   @protected
   InputMetadata dco_decode_input_metadata(dynamic raw);
@@ -58,6 +64,9 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   double? dco_decode_opt_box_autoadd_f_32(dynamic raw);
+
+  @protected
+  PlanningPreferences dco_decode_planning_preferences(dynamic raw);
 
   @protected
   int dco_decode_u_32(dynamic raw);
@@ -88,6 +97,11 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   );
 
   @protected
+  PlanningPreferences sse_decode_box_autoadd_planning_preferences(
+    SseDeserializer deserializer,
+  );
+
+  @protected
   CalculationPlan sse_decode_calculation_plan(SseDeserializer deserializer);
 
   @protected
@@ -95,6 +109,9 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   double sse_decode_f_64(SseDeserializer deserializer);
+
+  @protected
+  int sse_decode_i_32(SseDeserializer deserializer);
 
   @protected
   InputMetadata sse_decode_input_metadata(SseDeserializer deserializer);
@@ -109,6 +126,11 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   double? sse_decode_opt_box_autoadd_f_32(SseDeserializer deserializer);
 
   @protected
+  PlanningPreferences sse_decode_planning_preferences(
+    SseDeserializer deserializer,
+  );
+
+  @protected
   int sse_decode_u_32(SseDeserializer deserializer);
 
   @protected
@@ -116,9 +138,6 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   int sse_decode_u_8(SseDeserializer deserializer);
-
-  @protected
-  int sse_decode_i_32(SseDeserializer deserializer);
 
   @protected
   void sse_encode_String(String self, SseSerializer serializer);
@@ -142,6 +161,12 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   );
 
   @protected
+  void sse_encode_box_autoadd_planning_preferences(
+    PlanningPreferences self,
+    SseSerializer serializer,
+  );
+
+  @protected
   void sse_encode_calculation_plan(
     CalculationPlan self,
     SseSerializer serializer,
@@ -152,6 +177,9 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   void sse_encode_f_64(double self, SseSerializer serializer);
+
+  @protected
+  void sse_encode_i_32(int self, SseSerializer serializer);
 
   @protected
   void sse_encode_input_metadata(InputMetadata self, SseSerializer serializer);
@@ -169,6 +197,12 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   void sse_encode_opt_box_autoadd_f_32(double? self, SseSerializer serializer);
 
   @protected
+  void sse_encode_planning_preferences(
+    PlanningPreferences self,
+    SseSerializer serializer,
+  );
+
+  @protected
   void sse_encode_u_32(int self, SseSerializer serializer);
 
   @protected
@@ -176,9 +210,6 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   void sse_encode_u_8(int self, SseSerializer serializer);
-
-  @protected
-  void sse_encode_i_32(int self, SseSerializer serializer);
 }
 
 // Section: wire_class

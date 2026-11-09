@@ -50,7 +50,7 @@ class Media3VideoEncoder(
         val output = request.outputPath
         require(source != output && !java.io.File(output).exists()) { "E_INVALID_OUTPUT" }
         require(request.targetWidth >= 2 && request.targetHeight >= 2 &&
-            request.targetVideoBitrateBps > 0 && request.frameRate in 1.0..30.0) { "E_INVALID_INPUT" }
+            request.targetVideoBitrateBps > 0 && request.frameRate in 1.0..120.0) { "E_INVALID_INPUT" }
         val operation = ++generation
         preparing = true
         val metadata = try {

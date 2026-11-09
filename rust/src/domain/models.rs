@@ -23,3 +23,13 @@ pub struct CalculationPlan {
     pub is_infeasible: bool,
     pub warning_message: Option<String>,
 }
+
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
+pub struct PlanningPreferences {
+    /// Zero selects the resolution automatically.
+    pub max_short_edge: u32,
+    /// -1 selects audio automatically; zero removes it.
+    pub audio_bitrate_bps: i32,
+    /// Zero selects the bitrate automatically.
+    pub video_bitrate_ceiling_bps: u32,
+}

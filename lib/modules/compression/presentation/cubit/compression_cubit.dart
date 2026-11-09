@@ -9,10 +9,12 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
   CompressionCubit(this.repository)
     : super(initialState: const CompressionState()) {
     unawaited(loadDefaultTarget());
+    unawaited(loadPreferences());
   }
 
   final VideoCompressionRepository repository;
   StreamSubscription<double>? _progressSubscription;
+  int _planVersion = 0;
 
   Future<bool> pickVideo() async {
     if (stateValue.phase == CompressionPhase.running ||
@@ -32,10 +34,12 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
         CompressionState(
           video: video,
           targetMb: stateValue.targetMb,
+          preferences: stateValue.preferences,
           phase: CompressionPhase.ready,
           history: stateValue.history,
         ),
       );
+      unawaited(refreshPlan());
       return true;
     } catch (error) {
       if (!isClosed) {
@@ -50,12 +54,56 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
   void setTargetMb(double value) {
     if (!value.isFinite || value <= 0) return;
     emit(stateValue.copyWith(targetMb: value));
+    unawaited(refreshPlan());
+  }
+
+  Future<void> loadPreferences() async {
+    final preferences = await repository.loadPreferences();
+    if (!isClosed) {
+      emit(stateValue.copyWith(preferences: preferences));
+      await refreshPlan();
+    }
+  }
+
+  Future<void> setPreferences(CompressionPreferences preferences) async {
+    preferences.validate();
+    await repository.savePreferences(preferences);
+    if (!isClosed) {
+      emit(stateValue.copyWith(preferences: preferences));
+      await refreshPlan();
+    }
+  }
+
+  Future<void> refreshPlan() async {
+    final video = stateValue.video;
+    if (video == null || stateValue.targetMb <= 0) return;
+    final version = ++_planVersion;
+    emit(stateValue.copyWith(planning: true, previewPlan: null));
+    try {
+      final plan = await repository.previewPlan(
+        video,
+        stateValue.targetMb,
+        stateValue.preferences,
+      );
+      if (!isClosed && version == _planVersion) {
+        emit(stateValue.copyWith(planning: false, previewPlan: plan));
+      }
+    } catch (error) {
+      if (!isClosed && version == _planVersion) {
+        emit(stateValue.copyWith(
+          planning: false,
+          previewPlan: null,
+          error: '$error',
+        ));
+      }
+    }
   }
 
   Future<void> loadDefaultTarget() async {
     final target = await repository.defaultTargetMb();
     if (!isClosed && stateValue.video == null) {
       emit(stateValue.copyWith(targetMb: target));
+      await refreshPlan();
     }
   }
 
@@ -77,7 +125,11 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
       emit(stateValue.copyWith(progress: value.clamp(0.0, 0.95)));
     });
     try {
-      final output = await repository.compress(video, current.targetMb);
+      final output = await repository.compress(
+        video,
+        current.targetMb,
+        current.preferences,
+      );
       if (isClosed || stateValue.phase == CompressionPhase.cancelled) return;
       emit(
         stateValue.copyWith(

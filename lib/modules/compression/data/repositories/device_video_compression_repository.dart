@@ -27,6 +27,7 @@ final class DeviceVideoCompressionRepository
 
   static const _historyKey = 'compression_history_v1';
   static const _defaultTargetKey = 'compression_default_target_mb_v1';
+  static const _preferencesKey = 'compression_preferences_v1';
   final ImagePicker _picker;
   final PlatformVideoEncoder _encoder;
   late final CompressionEngine _engine;
@@ -52,6 +53,7 @@ final class DeviceVideoCompressionRepository
   Future<CompressionOutput> compress(
     SelectedVideo video,
     double targetMb,
+    CompressionPreferences preferences,
   ) async {
     if (!targetMb.isFinite || targetMb <= 0) {
       throw ArgumentError.value(targetMb, 'targetMb');
@@ -74,6 +76,7 @@ final class DeviceVideoCompressionRepository
           targetMb: targetMb * factor,
           workspacePath: workspacePath,
           acceptedMaxBytes: acceptedMaxBytes,
+          preferences: preferences,
         );
         break;
       } catch (error) {
@@ -134,6 +137,60 @@ final class DeviceVideoCompressionRepository
         }
       }
     }
+  }
+
+  @override
+  Future<CompressionPlan> previewPlan(
+    SelectedVideo video,
+    double targetMb,
+    CompressionPreferences preferences,
+  ) async {
+    preferences.validate();
+    await _ensureRust();
+    return RustCompressionPlanner().plan(
+      video.metadata,
+      targetMb,
+      preferences: preferences,
+    );
+  }
+
+  @override
+  Future<CompressionPreferences> loadPreferences() async {
+    final prefs = await SharedPreferences.getInstance();
+    final raw = prefs.getString(_preferencesKey);
+    if (raw == null) return const CompressionPreferences();
+    try {
+      final json = jsonDecode(raw) as Map<String, dynamic>;
+      final result = CompressionPreferences(
+        maxShortEdge: json['maxShortEdge'] as int?,
+        maxFrameRate: json['maxFrameRate'] as int? ?? 30,
+        audioBitrateKbps: json['audioBitrateKbps'] as int?,
+        videoBitrateCeilingKbps: json['videoBitrateCeilingKbps'] as int?,
+        hdrMode: json['hdrMode'] == 'preserve'
+            ? HdrMode.preserve
+            : HdrMode.toneMapToSdr,
+      );
+      result.validate();
+      return result;
+    } catch (_) {
+      return const CompressionPreferences();
+    }
+  }
+
+  @override
+  Future<void> savePreferences(CompressionPreferences preferences) async {
+    preferences.validate();
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(
+      _preferencesKey,
+      jsonEncode({
+        'maxShortEdge': preferences.maxShortEdge,
+        'maxFrameRate': preferences.maxFrameRate,
+        'audioBitrateKbps': preferences.audioBitrateKbps,
+        'videoBitrateCeilingKbps': preferences.videoBitrateCeilingKbps,
+        'hdrMode': preferences.hdrMode.name,
+      }),
+    );
   }
 
   Future<void> _appendHistory(CompressionRecord record) async {

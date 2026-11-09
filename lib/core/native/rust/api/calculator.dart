@@ -18,6 +18,18 @@ Future<CalculationPlan> calculateCompressionPlan({
   customKFactor: customKFactor,
 );
 
+Future<CalculationPlan> calculateCustomCompressionPlan({
+  required InputMetadata info,
+  required double targetSizeMb,
+  required PlanningPreferences preferences,
+  double? customKFactor,
+}) => RustLib.instance.api.crateApiCalculatorCalculateCustomCompressionPlan(
+  info: info,
+  targetSizeMb: targetSizeMb,
+  customKFactor: customKFactor,
+  preferences: preferences,
+);
+
 /// Zero means accept. A positive bitrate requests another attempt. Errors never
 /// permit an oversized artifact to be returned as a successful result.
 Future<int> verifyAttempt({

@@ -98,3 +98,35 @@ class InputMetadata {
           fileSizeBytes == other.fileSizeBytes &&
           hasAudio == other.hasAudio;
 }
+
+class PlanningPreferences {
+  const PlanningPreferences({
+    required this.maxShortEdge,
+    required this.audioBitrateBps,
+    required this.videoBitrateCeilingBps,
+  });
+
+  /// Zero selects the resolution automatically.
+  final int maxShortEdge;
+
+  /// -1 selects audio automatically; zero removes it.
+  final int audioBitrateBps;
+
+  /// Zero selects the bitrate automatically.
+  final int videoBitrateCeilingBps;
+
+  @override
+  int get hashCode =>
+      maxShortEdge.hashCode ^
+      audioBitrateBps.hashCode ^
+      videoBitrateCeilingBps.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is PlanningPreferences &&
+          runtimeType == other.runtimeType &&
+          maxShortEdge == other.maxShortEdge &&
+          audioBitrateBps == other.audioBitrateBps &&
+          videoBitrateCeilingBps == other.videoBitrateCeilingBps;
+}

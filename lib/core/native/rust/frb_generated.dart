@@ -66,7 +66,7 @@ class RustLib extends BaseEntrypoint<RustLibApi, RustLibApiImpl, RustLibWire> {
   String get codegenVersion => '2.13.0';
 
   @override
-  int get rustContentHash => 2025474785;
+  int get rustContentHash => -503754515;
 
   static const kDefaultExternalLibraryLoaderConfig =
       ExternalLibraryLoaderConfig(
@@ -80,6 +80,13 @@ abstract class RustLibApi extends BaseApi {
   Future<CalculationPlan> crateApiCalculatorCalculateCompressionPlan({
     required InputMetadata info,
     required double targetSizeMb,
+    double? customKFactor,
+  });
+
+  Future<CalculationPlan> crateApiCalculatorCalculateCustomCompressionPlan({
+    required InputMetadata info,
+    required double targetSizeMb,
+    required PlanningPreferences preferences,
     double? customKFactor,
   });
 
@@ -137,6 +144,46 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       );
 
   @override
+  Future<CalculationPlan> crateApiCalculatorCalculateCustomCompressionPlan({
+    required InputMetadata info,
+    required double targetSizeMb,
+    required PlanningPreferences preferences,
+    double? customKFactor,
+  }) {
+    return handler.executeNormal(
+      NormalTask(
+        callFfi: (port_) {
+          final serializer = SseSerializer(generalizedFrbRustBinding);
+          sse_encode_box_autoadd_input_metadata(info, serializer);
+          sse_encode_f_64(targetSizeMb, serializer);
+          sse_encode_opt_box_autoadd_f_32(customKFactor, serializer);
+          sse_encode_box_autoadd_planning_preferences(preferences, serializer);
+          pdeCallFfi(
+            generalizedFrbRustBinding,
+            serializer,
+            funcId: 2,
+            port: port_,
+          );
+        },
+        codec: SseCodec(
+          decodeSuccessData: sse_decode_calculation_plan,
+          decodeErrorData: sse_decode_String,
+        ),
+        constMeta: kCrateApiCalculatorCalculateCustomCompressionPlanConstMeta,
+        argValues: [info, targetSizeMb, customKFactor, preferences],
+        apiImpl: this,
+      ),
+    );
+  }
+
+  TaskConstMeta
+  get kCrateApiCalculatorCalculateCustomCompressionPlanConstMeta =>
+      const TaskConstMeta(
+        debugName: 'calculate_custom_compression_plan',
+        argNames: ['info', 'targetSizeMb', 'customKFactor', 'preferences'],
+      );
+
+  @override
   Future<int> crateApiCalculatorVerifyAttempt({
     required BigInt actualBytes,
     required double durationSecs,
@@ -154,7 +201,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           pdeCallFfi(
             generalizedFrbRustBinding,
             serializer,
-            funcId: 2,
+            funcId: 3,
             port: port_,
           );
         },
@@ -206,6 +253,12 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  PlanningPreferences dco_decode_box_autoadd_planning_preferences(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return dco_decode_planning_preferences(raw);
+  }
+
+  @protected
   CalculationPlan dco_decode_calculation_plan(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     final arr = raw as List<dynamic>;
@@ -234,6 +287,12 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   double dco_decode_f_64(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return raw as double;
+  }
+
+  @protected
+  int dco_decode_i_32(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return raw as int;
   }
 
   @protected
@@ -269,6 +328,19 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   double? dco_decode_opt_box_autoadd_f_32(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return raw == null ? null : dco_decode_box_autoadd_f_32(raw);
+  }
+
+  @protected
+  PlanningPreferences dco_decode_planning_preferences(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    final arr = raw as List<dynamic>;
+    if (arr.length != 3)
+      throw Exception('unexpected arr length: expect 3 but see ${arr.length}');
+    return PlanningPreferences(
+      maxShortEdge: dco_decode_u_32(arr[0]),
+      audioBitrateBps: dco_decode_i_32(arr[1]),
+      videoBitrateCeilingBps: dco_decode_u_32(arr[2]),
+    );
   }
 
   @protected
@@ -325,6 +397,14 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  PlanningPreferences sse_decode_box_autoadd_planning_preferences(
+    SseDeserializer deserializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return (sse_decode_planning_preferences(deserializer));
+  }
+
+  @protected
   CalculationPlan sse_decode_calculation_plan(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     final var_targetVideoBitrateBps = sse_decode_u_32(deserializer);
@@ -359,6 +439,12 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   double sse_decode_f_64(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     return deserializer.buffer.getFloat64();
+  }
+
+  @protected
+  int sse_decode_i_32(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    return deserializer.buffer.getInt32();
   }
 
   @protected
@@ -412,6 +498,21 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  PlanningPreferences sse_decode_planning_preferences(
+    SseDeserializer deserializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    final var_maxShortEdge = sse_decode_u_32(deserializer);
+    final var_audioBitrateBps = sse_decode_i_32(deserializer);
+    final var_videoBitrateCeilingBps = sse_decode_u_32(deserializer);
+    return PlanningPreferences(
+      maxShortEdge: var_maxShortEdge,
+      audioBitrateBps: var_audioBitrateBps,
+      videoBitrateCeilingBps: var_videoBitrateCeilingBps,
+    );
+  }
+
+  @protected
   int sse_decode_u_32(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     return deserializer.buffer.getUint32();
@@ -427,12 +528,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   int sse_decode_u_8(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     return deserializer.buffer.getUint8();
-  }
-
-  @protected
-  int sse_decode_i_32(SseDeserializer deserializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    return deserializer.buffer.getInt32();
   }
 
   @protected
@@ -472,6 +567,15 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  void sse_encode_box_autoadd_planning_preferences(
+    PlanningPreferences self,
+    SseSerializer serializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_planning_preferences(self, serializer);
+  }
+
+  @protected
   void sse_encode_calculation_plan(
     CalculationPlan self,
     SseSerializer serializer,
@@ -498,6 +602,12 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   void sse_encode_f_64(double self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     serializer.buffer.putFloat64(self);
+  }
+
+  @protected
+  void sse_encode_i_32(int self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    serializer.buffer.putInt32(self);
   }
 
   @protected
@@ -543,6 +653,17 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  void sse_encode_planning_preferences(
+    PlanningPreferences self,
+    SseSerializer serializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_u_32(self.maxShortEdge, serializer);
+    sse_encode_i_32(self.audioBitrateBps, serializer);
+    sse_encode_u_32(self.videoBitrateCeilingBps, serializer);
+  }
+
+  @protected
   void sse_encode_u_32(int self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     serializer.buffer.putUint32(self);
@@ -558,11 +679,5 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   void sse_encode_u_8(int self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     serializer.buffer.putUint8(self);
-  }
-
-  @protected
-  void sse_encode_i_32(int self, SseSerializer serializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    serializer.buffer.putInt32(self);
   }
 }

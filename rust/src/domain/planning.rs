@@ -1,9 +1,35 @@
 use super::contracts::CompressionPolicy;
-use super::models::{CalculationPlan, InputMetadata};
+use super::models::{CalculationPlan, InputMetadata, PlanningPreferences};
 
 pub struct TargetSizePolicy;
-impl CompressionPolicy for TargetSizePolicy {
-    fn plan(&self, i: &InputMetadata, limit: u64, safety: f64) -> Result<CalculationPlan, String> {
+impl TargetSizePolicy {
+    pub fn plan_with_preferences(
+        &self,
+        i: &InputMetadata,
+        limit: u64,
+        safety: f64,
+        preferences: &PlanningPreferences,
+    ) -> Result<CalculationPlan, String> {
+        if preferences.max_short_edge != 0
+            && (preferences.max_short_edge < 240
+                || preferences.max_short_edge > 16384
+                || preferences.max_short_edge % 2 != 0)
+            || ![-1, 0, 48000, 64000, 96000, 128000].contains(&preferences.audio_bitrate_bps)
+            || preferences.video_bitrate_ceiling_bps != 0
+                && preferences.video_bitrate_ceiling_bps < 150000
+        {
+            return Err("E_INVALID_PREFERENCES".into());
+        }
+        self.plan_internal(i, limit, safety, preferences)
+    }
+
+    fn plan_internal(
+        &self,
+        i: &InputMetadata,
+        limit: u64,
+        safety: f64,
+        preferences: &PlanningPreferences,
+    ) -> Result<CalculationPlan, String> {
         if !i.duration_secs.is_finite()
             || i.duration_secs <= 0.0
             || i.width < 2
@@ -18,8 +44,10 @@ impl CompressionPolicy for TargetSizePolicy {
         let skip = i.file_size_bytes <= limit;
         let total = limit as f64 * safety * 8.0 / i.duration_secs;
         let overhead = (total * 0.01).max(32768.0 * 8.0 / i.duration_secs);
-        let audio = if !i.has_audio {
+        let audio = if !i.has_audio || preferences.audio_bitrate_bps == 0 {
             0
+        } else if preferences.audio_bitrate_bps > 0 {
+            preferences.audio_bitrate_bps as u32
         } else if total - overhead - 128000.0 > 1000000.0 {
             128000
         } else if total - overhead - 96000.0 >= 400000.0 {
@@ -33,18 +61,39 @@ impl CompressionPolicy for TargetSizePolicy {
         if i.bitrate_bps > 0 {
             video = video.min((i.bitrate_bps as f64 * 0.9) as u32);
         }
-        let ladder = [
-            (1080, 1200000, 2500000),
-            (720, 700000, 1500000),
-            (480, 400000, 800000),
-            (360, 250000, 500000),
-            (240, 150000, 250000),
-        ];
+        if preferences.video_bitrate_ceiling_bps > 0 {
+            video = video.min(preferences.video_bitrate_ceiling_bps);
+        }
+        let source_short = i.width.min(i.height) & !1;
+        let mut heights = vec![source_short, 4320, 2880, 2160, 1440, 1080, 720, 480, 360, 240];
+        heights.retain(|h| *h >= 2 && *h <= source_short);
+        heights.sort_unstable_by(|a, b| b.cmp(a));
+        heights.dedup();
+        let ladder: Vec<(u32, u32, u32)> = heights
+            .into_iter()
+            .map(|h| {
+                let (minimum, comfortable) = match h {
+                    240 => (150000, 250000),
+                    360 => (250000, 500000),
+                    480 => (400000, 800000),
+                    720 => (700000, 1500000),
+                    1080 => (1200000, 2500000),
+                    _ => {
+                        let scale = (h as f64 / 1080.0).powi(2);
+                        ((1200000.0 * scale) as u32, (2500000.0 * scale) as u32)
+                    }
+                };
+                (h, minimum, comfortable)
+            })
+            .collect();
+        let allowed = |r: &&(u32, u32, u32)| {
+            preferences.max_short_edge == 0 || r.0 <= preferences.max_short_edge
+        };
         let chosen = ladder
             .iter()
-            .take(3)
+            .filter(allowed)
             .find(|r| video >= r.2)
-            .or_else(|| ladder.iter().find(|r| video >= r.1));
+            .or_else(|| ladder.iter().filter(allowed).find(|r| video >= r.1));
         let low = chosen.is_some_and(|r| video < r.2);
         let (w, h) = if skip {
             (i.width, i.height)
@@ -57,7 +106,6 @@ impl CompressionPolicy for TargetSizePolicy {
         } else {
             (0, 0)
         };
-        // Dimensions refer to displayed pixels; native must apply the source transform once.
         let (w, h) = if i.rotation == 90 || i.rotation == 270 {
             (h, w)
         } else {
@@ -79,6 +127,14 @@ impl CompressionPolicy for TargetSizePolicy {
             } else {
                 None
             },
+        })
+    }
+}
+impl CompressionPolicy for TargetSizePolicy {
+    fn plan(&self, i: &InputMetadata, limit: u64, safety: f64) -> Result<CalculationPlan, String> {
+        self.plan_internal(i, limit, safety, &PlanningPreferences {
+            audio_bitrate_bps: -1,
+            ..Default::default()
         })
     }
 }
