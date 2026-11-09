@@ -36,7 +36,8 @@ final class VideoSelectPage extends StatelessWidget {
                   style: TextStyle(color: Theme.of(context).colorScheme.error),
                 ),
               FilledButton.icon(
-                onPressed: state.phase == CompressionPhase.picking ||
+                onPressed:
+                    state.phase == CompressionPhase.picking ||
                         state.phase == CompressionPhase.running ||
                         state.phase == CompressionPhase.paused
                     ? null

@@ -7,6 +7,7 @@ export 'domain/contracts/compression_planner.dart';
 export 'domain/contracts/video_encoder.dart';
 export 'domain/models/compression_output.dart';
 export 'domain/models/compression_plan.dart';
+export 'domain/models/compression_preferences.dart';
 export 'domain/models/encode_request.dart';
 export 'domain/models/video_metadata.dart';
 export 'domain/policies/hdr_policy.dart';

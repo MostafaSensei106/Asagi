@@ -1,6 +1,7 @@
 package com.mostafa.sensei.zumi.app.media3
 
 import android.content.Context
+import android.media.MediaCodecList
 import androidx.media3.common.MimeTypes
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.transformer.*
@@ -65,13 +66,28 @@ class Media3VideoEncoder(
         val parent = requireNotNull(java.io.File(output).parentFile)
         check(android.os.StatFs(parent.path).availableBytes >= required) { "E_NO_SPACE" }
         val preserve = hdrPolicy.preserve(request, metadata)
+        val mimeType = if (preserve) MimeTypes.VIDEO_H265 else MimeTypes.VIDEO_H264
+        val supported = MediaCodecList(MediaCodecList.REGULAR_CODECS).codecInfos.any { codec ->
+            if (!codec.isEncoder || !codec.supportedTypes.any { it.equals(mimeType, ignoreCase = true) }) {
+                false
+            } else {
+                runCatching {
+                    val capabilities = codec.getCapabilitiesForType(mimeType).videoCapabilities
+                    capabilities != null &&
+                        capabilities.areSizeAndRateSupported(
+                            request.targetWidth.toInt(), request.targetHeight.toInt(), request.frameRate
+                        ) && capabilities.bitrateRange.contains(request.targetVideoBitrateBps.toInt())
+                }.getOrDefault(false)
+            }
+        }
+        check(supported) { "E_ENCODER_UNSUPPORTED" }
         suspendCancellableCoroutine { continuation ->
             pending = continuation
             try {
                 val factory = Media3Configuration.encoderFactory(context, request)
                 val planned = Media3Configuration.composition(request, preserve)
                 transformer = Transformer.Builder(context).setEncoderFactory(factory)
-                    .setVideoMimeType(if (preserve) MimeTypes.VIDEO_H265 else MimeTypes.VIDEO_H264).setAudioMimeType(MimeTypes.AUDIO_AAC)
+                    .setVideoMimeType(mimeType).setAudioMimeType(MimeTypes.AUDIO_AAC)
                     .addListener(object : Transformer.Listener {
                         override fun onCompleted(composition: Composition, exportResult: ExportResult) {
                             try {

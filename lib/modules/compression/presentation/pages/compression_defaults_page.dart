@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:io';
+
 import 'package:bloc_signals_flutter/bloc_signals_flutter.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:material_ui/material_ui.dart';
@@ -5,6 +8,8 @@ import 'package:material_ui/material_ui.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/widgets/navigation/app_bar/app_bar_component.dart';
 import '../cubit/compression_cubit.dart';
+import '../cubit/compression_state.dart';
+import '../widgets/compression_advanced_controls.dart';
 
 final class CompressionDefaultsPage extends HookWidget {
   const CompressionDefaultsPage({super.key});
@@ -41,6 +46,14 @@ final class CompressionDefaultsPage extends HookWidget {
             },
           ),
           const SizedBox(height: 24),
+          if (Platform.isAndroid)
+            BlocSignalBuilder<CompressionCubit, CompressionState>(
+              builder: (context, state) => CompressionAdvancedControls(
+                preferences: state.preferences,
+                sourceShortEdge: 16384,
+                onChanged: (value) => unawaited(cubit.setPreferences(value)),
+              ),
+            ),
           FilledButton(
             onPressed: valid.value
                 ? () async {

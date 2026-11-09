@@ -1071,6 +1071,138 @@ abstract class AppLocalizations {
   /// **'Preview unavailable'**
   String get compressionPreviewUnavailable;
 
+  /// No description provided for @compressionAdvanced.
+  ///
+  /// In en, this message translates to:
+  /// **'Advanced controls'**
+  String get compressionAdvanced;
+
+  /// No description provided for @compressionAutomatic.
+  ///
+  /// In en, this message translates to:
+  /// **'Automatic'**
+  String get compressionAutomatic;
+
+  /// No description provided for @compressionResolutionLimit.
+  ///
+  /// In en, this message translates to:
+  /// **'Maximum resolution'**
+  String get compressionResolutionLimit;
+
+  /// No description provided for @compressionSourceResolution.
+  ///
+  /// In en, this message translates to:
+  /// **'Original resolution'**
+  String get compressionSourceResolution;
+
+  /// No description provided for @compressionFrameRateLimit.
+  ///
+  /// In en, this message translates to:
+  /// **'Maximum frame rate'**
+  String get compressionFrameRateLimit;
+
+  /// No description provided for @compressionAudioQuality.
+  ///
+  /// In en, this message translates to:
+  /// **'Audio bitrate'**
+  String get compressionAudioQuality;
+
+  /// No description provided for @compressionRemoveAudio.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove audio'**
+  String get compressionRemoveAudio;
+
+  /// No description provided for @compressionVideoBitrateLimit.
+  ///
+  /// In en, this message translates to:
+  /// **'Video bitrate ceiling (kbps)'**
+  String get compressionVideoBitrateLimit;
+
+  /// No description provided for @compressionHdrPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'HDR handling'**
+  String get compressionHdrPolicy;
+
+  /// No description provided for @compressionHdrConvert.
+  ///
+  /// In en, this message translates to:
+  /// **'Convert to SDR'**
+  String get compressionHdrConvert;
+
+  /// No description provided for @compressionHdrPreserve.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep HDR when supported'**
+  String get compressionHdrPreserve;
+
+  /// No description provided for @compressionPlanPreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Before you start'**
+  String get compressionPlanPreview;
+
+  /// No description provided for @compressionPlanLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Calculating compression plan…'**
+  String get compressionPlanLoading;
+
+  /// No description provided for @compressionPlanResolution.
+  ///
+  /// In en, this message translates to:
+  /// **'Planned resolution'**
+  String get compressionPlanResolution;
+
+  /// No description provided for @compressionPlanVideoBitrate.
+  ///
+  /// In en, this message translates to:
+  /// **'Planned video bitrate'**
+  String get compressionPlanVideoBitrate;
+
+  /// No description provided for @compressionPlanAudioBitrate.
+  ///
+  /// In en, this message translates to:
+  /// **'Planned audio bitrate'**
+  String get compressionPlanAudioBitrate;
+
+  /// No description provided for @compressionPlanTooSmall.
+  ///
+  /// In en, this message translates to:
+  /// **'This target is too small for a usable video. Increase the size or lower other limits.'**
+  String get compressionPlanTooSmall;
+
+  /// No description provided for @compressionPlanLowQuality.
+  ///
+  /// In en, this message translates to:
+  /// **'The selected target may reduce video quality.'**
+  String get compressionPlanLowQuality;
+
+  /// No description provided for @compressionPlanAlreadyWithinLimit.
+  ///
+  /// In en, this message translates to:
+  /// **'The source is already within the size limit.'**
+  String get compressionPlanAlreadyWithinLimit;
+
+  /// No description provided for @compressionInvalidBitrate.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a bitrate of at least 150 kbps, or leave blank for automatic'**
+  String get compressionInvalidBitrate;
+
+  /// No description provided for @compressionInvalidResolution.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter an even resolution from 240 to 16384, or leave blank for automatic'**
+  String get compressionInvalidResolution;
+
+  /// No description provided for @compressionSeek.
+  ///
+  /// In en, this message translates to:
+  /// **'Video position'**
+  String get compressionSeek;
+
   /// Badge shown on placeholder pages
   ///
   /// In en, this message translates to:

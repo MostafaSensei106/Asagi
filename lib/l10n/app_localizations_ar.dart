@@ -545,5 +545,77 @@ class AppLocalizationsAr extends AppLocalizations {
   String get compressionPreviewUnavailable => 'المعاينة غير متاحة';
 
   @override
+  String get compressionAdvanced => 'إعدادات متقدمة';
+
+  @override
+  String get compressionAutomatic => 'تلقائي';
+
+  @override
+  String get compressionResolutionLimit => 'أقصى دقة';
+
+  @override
+  String get compressionSourceResolution => 'الدقة الأصلية';
+
+  @override
+  String get compressionFrameRateLimit => 'أقصى معدل إطارات';
+
+  @override
+  String get compressionAudioQuality => 'معدل بيانات الصوت';
+
+  @override
+  String get compressionRemoveAudio => 'حذف الصوت';
+
+  @override
+  String get compressionVideoBitrateLimit =>
+      'الحد الأقصى لمعدل بيانات الفيديو (كيلوبت/ث)';
+
+  @override
+  String get compressionHdrPolicy => 'معالجة HDR';
+
+  @override
+  String get compressionHdrConvert => 'التحويل إلى SDR';
+
+  @override
+  String get compressionHdrPreserve => 'الاحتفاظ بـ HDR عند دعم الجهاز';
+
+  @override
+  String get compressionPlanPreview => 'قبل البدء';
+
+  @override
+  String get compressionPlanLoading => 'جارٍ حساب خطة الضغط…';
+
+  @override
+  String get compressionPlanResolution => 'الدقة المخططة';
+
+  @override
+  String get compressionPlanVideoBitrate => 'معدل بيانات الفيديو المخطط';
+
+  @override
+  String get compressionPlanAudioBitrate => 'معدل بيانات الصوت المخطط';
+
+  @override
+  String get compressionPlanTooSmall =>
+      'الحجم صغير جدًا لفيديو صالح. زوّد الحجم أو خفّض الحدود الأخرى.';
+
+  @override
+  String get compressionPlanLowQuality =>
+      'قد يؤدي الحجم المحدد إلى خفض جودة الفيديو.';
+
+  @override
+  String get compressionPlanAlreadyWithinLimit =>
+      'الفيديو الأصلي أصغر بالفعل من الحجم المحدد.';
+
+  @override
+  String get compressionInvalidBitrate =>
+      'أدخل 150 كيلوبت/ث على الأقل، أو اتركه فارغًا للاختيار التلقائي';
+
+  @override
+  String get compressionInvalidResolution =>
+      'أدخل دقة زوجية من 240 إلى 16384، أو اتركها فارغة للاختيار التلقائي';
+
+  @override
+  String get compressionSeek => 'موضع الفيديو';
+
+  @override
   String get comingSoon => 'قريباً';
 }

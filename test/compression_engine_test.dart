@@ -5,23 +5,27 @@ import 'package:zumi/core/compression/application/compression_engine.dart';
 import 'package:zumi/core/compression/domain/contracts/compression_planner.dart';
 import 'package:zumi/core/compression/domain/contracts/video_encoder.dart';
 import 'package:zumi/core/compression/domain/models/compression_plan.dart';
+import 'package:zumi/core/compression/domain/models/compression_preferences.dart';
 import 'package:zumi/core/compression/domain/models/encode_request.dart';
 import 'package:zumi/core/compression/domain/models/video_metadata.dart';
 import 'package:zumi/core/compression/infrastructure/storage/file_artifact_store.dart';
 
 class Planner implements CompressionPlanner {
   @override
-  Future<CompressionPlan> plan(VideoMetadata info, double targetMb) async =>
-      const CompressionPlan(
-        targetVideoBitrateBps: 1000000,
-        targetAudioBitrateBps: 0,
-        targetWidth: 640,
-        targetHeight: 360,
-        hardLimitBytes: 100,
-        safetyMargin: 0.93,
-        maxAttempts: 2,
-        isInfeasible: false,
-      );
+  Future<CompressionPlan> plan(
+    VideoMetadata info,
+    double targetMb, {
+    CompressionPreferences preferences = const CompressionPreferences(),
+  }) async => const CompressionPlan(
+    targetVideoBitrateBps: 1000000,
+    targetAudioBitrateBps: 0,
+    targetWidth: 640,
+    targetHeight: 360,
+    hardLimitBytes: 100,
+    safetyMargin: 0.93,
+    maxAttempts: 2,
+    isInfeasible: false,
+  );
   @override
   Future<int> verify(
     int bytes,

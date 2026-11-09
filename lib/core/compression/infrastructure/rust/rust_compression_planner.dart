@@ -2,12 +2,18 @@ import '../../../native/rust/api/calculator.dart' as rust;
 import '../../../native/rust/domain/models.dart' as wire;
 import '../../domain/contracts/compression_planner.dart';
 import '../../domain/models/compression_plan.dart';
+import '../../domain/models/compression_preferences.dart';
 import '../../domain/models/video_metadata.dart';
 
 final class RustCompressionPlanner implements CompressionPlanner {
   @override
-  Future<CompressionPlan> plan(VideoMetadata info, double targetMb) async {
-    final p = await rust.calculateCompressionPlan(
+  Future<CompressionPlan> plan(
+    VideoMetadata info,
+    double targetMb, {
+    CompressionPreferences preferences = const CompressionPreferences(),
+  }) async {
+    preferences.validate();
+    final p = await rust.calculateCustomCompressionPlan(
       info: wire.InputMetadata(
         durationSecs: info.durationSecs,
         width: info.width,
@@ -18,6 +24,14 @@ final class RustCompressionPlanner implements CompressionPlanner {
         hasAudio: info.hasAudio,
       ),
       targetSizeMb: targetMb,
+      preferences: wire.PlanningPreferences(
+        maxShortEdge: preferences.maxShortEdge ?? 0,
+        audioBitrateBps: preferences.audioBitrateKbps == null
+            ? -1
+            : preferences.audioBitrateKbps! * 1000,
+        videoBitrateCeilingBps:
+            (preferences.videoBitrateCeilingKbps ?? 0) * 1000,
+      ),
     );
     return CompressionPlan(
       targetVideoBitrateBps: p.targetVideoBitrateBps,

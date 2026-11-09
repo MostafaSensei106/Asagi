@@ -65,7 +65,18 @@ impl TargetSizePolicy {
             video = video.min(preferences.video_bitrate_ceiling_bps);
         }
         let source_short = i.width.min(i.height) & !1;
-        let mut heights = vec![source_short, 4320, 2880, 2160, 1440, 1080, 720, 480, 360, 240];
+        let mut heights = vec![
+            source_short,
+            4320,
+            2880,
+            2160,
+            1440,
+            1080,
+            720,
+            480,
+            360,
+            240,
+        ];
         heights.retain(|h| *h >= 2 && *h <= source_short);
         heights.sort_unstable_by(|a, b| b.cmp(a));
         heights.dedup();
@@ -91,6 +102,7 @@ impl TargetSizePolicy {
         };
         let chosen = ladder
             .iter()
+            .filter(|r| r.0 >= 480)
             .filter(allowed)
             .find(|r| video >= r.2)
             .or_else(|| ladder.iter().filter(allowed).find(|r| video >= r.1));
@@ -132,10 +144,15 @@ impl TargetSizePolicy {
 }
 impl CompressionPolicy for TargetSizePolicy {
     fn plan(&self, i: &InputMetadata, limit: u64, safety: f64) -> Result<CalculationPlan, String> {
-        self.plan_internal(i, limit, safety, &PlanningPreferences {
-            audio_bitrate_bps: -1,
-            ..Default::default()
-        })
+        self.plan_internal(
+            i,
+            limit,
+            safety,
+            &PlanningPreferences {
+                audio_bitrate_bps: -1,
+                ..Default::default()
+            },
+        )
     }
 }
 #[cfg(test)]

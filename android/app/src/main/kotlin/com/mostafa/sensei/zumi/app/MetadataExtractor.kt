@@ -21,6 +21,7 @@ class MetadataExtractor(private val context: Context) : VideoMetadataReader {
             } else File(path).length()
             val extractor = MediaExtractor()
             var transfer = "sdr"
+            var trackFrameRate: Double? = null
             try {
                 if (path.startsWith("content://")) extractor.setDataSource(context, Uri.parse(path), null)
                 else extractor.setDataSource(path)
@@ -28,6 +29,9 @@ class MetadataExtractor(private val context: Context) : VideoMetadataReader {
                     val format = extractor.getTrackFormat(index)
                     val mime = format.getString(MediaFormat.KEY_MIME) ?: ""
                     if (!mime.startsWith("video/")) continue
+                    if (format.containsKey(MediaFormat.KEY_FRAME_RATE)) {
+                        trackFrameRate = format.getInteger(MediaFormat.KEY_FRAME_RATE).toDouble()
+                    }
                     val color = if (format.containsKey(MediaFormat.KEY_COLOR_TRANSFER)) format.getInteger(MediaFormat.KEY_COLOR_TRANSFER) else 0
                     transfer = when {
                         mime == "video/dolby-vision" -> "dolbyVision"
@@ -44,7 +48,7 @@ class MetadataExtractor(private val context: Context) : VideoMetadataReader {
                 height = value(MediaMetadataRetriever.METADATA_KEY_VIDEO_HEIGHT)?.toLongOrNull(),
                 rotation = value(MediaMetadataRetriever.METADATA_KEY_VIDEO_ROTATION)?.toLongOrNull() ?: 0,
                 bitrateBps = value(MediaMetadataRetriever.METADATA_KEY_BITRATE)?.toLongOrNull() ?: 0,
-                frameRate = value(MediaMetadataRetriever.METADATA_KEY_CAPTURE_FRAMERATE)?.toDoubleOrNull() ?: 30.0,
+                frameRate = trackFrameRate ?: value(MediaMetadataRetriever.METADATA_KEY_CAPTURE_FRAMERATE)?.toDoubleOrNull() ?: 30.0,
                 hasAudio = value(MediaMetadataRetriever.METADATA_KEY_HAS_AUDIO) == "yes",
                 fileSizeBytes = size, isHdr = transfer != "sdr", colorTransfer = transfer)
         } finally { reader.release() }

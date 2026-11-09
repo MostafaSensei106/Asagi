@@ -544,5 +544,76 @@ class AppLocalizationsEn extends AppLocalizations {
   String get compressionPreviewUnavailable => 'Preview unavailable';
 
   @override
+  String get compressionAdvanced => 'Advanced controls';
+
+  @override
+  String get compressionAutomatic => 'Automatic';
+
+  @override
+  String get compressionResolutionLimit => 'Maximum resolution';
+
+  @override
+  String get compressionSourceResolution => 'Original resolution';
+
+  @override
+  String get compressionFrameRateLimit => 'Maximum frame rate';
+
+  @override
+  String get compressionAudioQuality => 'Audio bitrate';
+
+  @override
+  String get compressionRemoveAudio => 'Remove audio';
+
+  @override
+  String get compressionVideoBitrateLimit => 'Video bitrate ceiling (kbps)';
+
+  @override
+  String get compressionHdrPolicy => 'HDR handling';
+
+  @override
+  String get compressionHdrConvert => 'Convert to SDR';
+
+  @override
+  String get compressionHdrPreserve => 'Keep HDR when supported';
+
+  @override
+  String get compressionPlanPreview => 'Before you start';
+
+  @override
+  String get compressionPlanLoading => 'Calculating compression plan…';
+
+  @override
+  String get compressionPlanResolution => 'Planned resolution';
+
+  @override
+  String get compressionPlanVideoBitrate => 'Planned video bitrate';
+
+  @override
+  String get compressionPlanAudioBitrate => 'Planned audio bitrate';
+
+  @override
+  String get compressionPlanTooSmall =>
+      'This target is too small for a usable video. Increase the size or lower other limits.';
+
+  @override
+  String get compressionPlanLowQuality =>
+      'The selected target may reduce video quality.';
+
+  @override
+  String get compressionPlanAlreadyWithinLimit =>
+      'The source is already within the size limit.';
+
+  @override
+  String get compressionInvalidBitrate =>
+      'Enter a bitrate of at least 150 kbps, or leave blank for automatic';
+
+  @override
+  String get compressionInvalidResolution =>
+      'Enter an even resolution from 240 to 16384, or leave blank for automatic';
+
+  @override
+  String get compressionSeek => 'Video position';
+
+  @override
   String get comingSoon => 'Coming soon';
 }

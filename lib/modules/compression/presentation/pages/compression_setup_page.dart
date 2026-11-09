@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:bloc_signals_flutter/bloc_signals_flutter.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -10,6 +11,8 @@ import '../../../../core/router/app_router.dart';
 import '../../../../core/widgets/navigation/app_bar/app_bar_component.dart';
 import '../cubit/compression_cubit.dart';
 import '../cubit/compression_state.dart';
+import '../widgets/compression_advanced_controls.dart';
+import '../widgets/compression_plan_summary.dart';
 import '../widgets/video_preview.dart';
 
 final class CompressionSetupPage extends HookWidget {
@@ -88,8 +91,25 @@ final class CompressionSetupPage extends HookWidget {
                 },
               ),
               const SizedBox(height: 24),
+              if (Platform.isAndroid)
+                CompressionAdvancedControls(
+                  preferences: state.preferences,
+                  sourceShortEdge: video.metadata.width < video.metadata.height
+                      ? video.metadata.width
+                      : video.metadata.height,
+                  onChanged: (value) => unawaited(cubit.setPreferences(value)),
+                ),
+              CompressionPlanSummary(
+                plan: state.previewPlan,
+                isLoading: state.planning,
+              ),
+              const SizedBox(height: 16),
               FilledButton.icon(
-                onPressed: !valid.value
+                onPressed:
+                    !valid.value ||
+                        state.planning ||
+                        state.previewPlan == null ||
+                        state.previewPlan!.isInfeasible
                     ? null
                     : () {
                         unawaited(cubit.start());

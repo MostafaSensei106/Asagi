@@ -39,9 +39,9 @@ final class VideoPreview extends HookWidget {
       [path],
     );
     final failed = useState(false);
+    final draggingPosition = useState<Duration?>(null);
     useEffect(() {
       var active = true;
-      var initialized = false;
       Future<void> initialize() async {
         try {
           if (!await (_nativePlayerReady ??= _checkNativePlayer())) {
@@ -49,7 +49,6 @@ final class VideoPreview extends HookWidget {
             return;
           }
           await controller.initialize();
-          initialized = true;
         } catch (_) {
           if (active) failed.value = true;
         }
@@ -58,7 +57,7 @@ final class VideoPreview extends HookWidget {
       unawaited(initialize());
       return () {
         active = false;
-        if (initialized) unawaited(controller.dispose());
+        unawaited(controller.dispose());
       };
     }, [controller]);
 
@@ -67,12 +66,12 @@ final class VideoPreview extends HookWidget {
       children: [
         Text(title, style: Theme.of(context).textTheme.titleMedium),
         const SizedBox(height: 8),
-        AspectRatio(
-          aspectRatio: 16 / 9,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(16),
-            child: ColoredBox(
-              color: Colors.black,
+        ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: ColoredBox(
+            color: Colors.black,
+            child: AspectRatio(
+              aspectRatio: 16 / 9,
               child: failed.value
                   ? Center(
                       child: Text(
@@ -115,9 +114,61 @@ final class VideoPreview extends HookWidget {
             ),
           ),
         ),
+        if (!failed.value)
+          AnimatedBuilder(
+            animation: controller,
+            builder: (context, _) {
+              if (!controller.value.isInitialized) {
+                return const SizedBox.shrink();
+              }
+              final duration = controller.value.duration;
+              final totalMs = duration.inMilliseconds;
+              if (totalMs <= 0) return const SizedBox.shrink();
+              final position =
+                  draggingPosition.value ?? controller.value.position;
+              final positionMs = position.inMilliseconds.clamp(0, totalMs);
+              return Column(
+                children: [
+                  Semantics(
+                    label: context.localeKeys.compressionSeek,
+                    child: Slider(
+                      value: positionMs.toDouble(),
+                      max: totalMs.toDouble(),
+                      onChanged: (value) => draggingPosition.value = Duration(
+                        milliseconds: value.round(),
+                      ),
+                      onChangeEnd: (value) {
+                        unawaited(
+                          controller.seekTo(
+                            Duration(milliseconds: value.round()),
+                          ).whenComplete(() {
+                            if (context.mounted) draggingPosition.value = null;
+                          }),
+                        );
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [Text(_time(position)), Text(_time(duration))],
+                    ),
+                  ),
+                ],
+              );
+            },
+          ),
       ],
     );
   }
+}
+
+String _time(Duration value) {
+  final hours = value.inHours;
+  final minutes = value.inMinutes.remainder(60).toString().padLeft(2, '0');
+  final seconds = value.inSeconds.remainder(60).toString().padLeft(2, '0');
+  return hours > 0 ? '$hours:$minutes:$seconds' : '$minutes:$seconds';
 }
 
 final class _UnavailablePreview extends StatelessWidget {

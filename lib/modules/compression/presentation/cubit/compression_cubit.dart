@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc_signals/bloc_signals.dart';
 
+import '../../../../core/compression/domain/models/compression_preferences.dart';
 import '../../domain/repositories/video_compression_repository.dart';
 import 'compression_state.dart';
 
@@ -15,6 +16,7 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
   final VideoCompressionRepository repository;
   StreamSubscription<double>? _progressSubscription;
   int _planVersion = 0;
+  Future<void> _preferencesSave = Future<void>.value();
 
   Future<bool> pickVideo() async {
     if (stateValue.phase == CompressionPhase.running ||
@@ -67,11 +69,13 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
 
   Future<void> setPreferences(CompressionPreferences preferences) async {
     preferences.validate();
-    await repository.savePreferences(preferences);
-    if (!isClosed) {
-      emit(stateValue.copyWith(preferences: preferences));
-      await refreshPlan();
-    }
+    if (isClosed) return;
+    emit(stateValue.copyWith(preferences: preferences));
+    _preferencesSave = _preferencesSave.then(
+      (_) => repository.savePreferences(preferences),
+    );
+    unawaited(refreshPlan());
+    await _preferencesSave;
   }
 
   Future<void> refreshPlan() async {
@@ -90,11 +94,13 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
       }
     } catch (error) {
       if (!isClosed && version == _planVersion) {
-        emit(stateValue.copyWith(
-          planning: false,
-          previewPlan: null,
-          error: '$error',
-        ));
+        emit(
+          stateValue.copyWith(
+            planning: false,
+            previewPlan: null,
+            error: '$error',
+          ),
+        );
       }
     }
   }
@@ -117,6 +123,16 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
     final current = stateValue;
     final video = current.video;
     if (video == null || current.phase == CompressionPhase.running) return;
+    if (current.planning || current.previewPlan == null) return;
+    if (current.previewPlan!.isInfeasible) {
+      emit(
+        current.copyWith(
+          phase: CompressionPhase.failure,
+          error: 'E_TARGET_INFEASIBLE',
+        ),
+      );
+      return;
+    }
     await _progressSubscription?.cancel();
     emit(current.copyWith(phase: CompressionPhase.running, progress: 0));
     _progressSubscription = repository.progress.listen((value) {

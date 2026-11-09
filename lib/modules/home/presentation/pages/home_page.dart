@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:bloc_signals_flutter/bloc_signals_flutter.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -11,6 +12,8 @@ import '../../../../core/services/share/base_share_service.dart';
 import '../../../../core/widgets/navigation/app_bar/app_bar_component.dart';
 import '../../../compression/presentation/cubit/compression_cubit.dart';
 import '../../../compression/presentation/cubit/compression_state.dart';
+import '../../../compression/presentation/widgets/compression_advanced_controls.dart';
+import '../../../compression/presentation/widgets/compression_plan_summary.dart';
 import '../../../compression/presentation/widgets/video_preview.dart';
 
 /// Select, configure, and preview a compression job on the home tab.
@@ -48,7 +51,10 @@ final class HomePage extends HookWidget {
             previous.video != current.video ||
             previous.targetMb != current.targetMb ||
             previous.output != current.output ||
-            previous.error != current.error,
+            previous.error != current.error ||
+            previous.preferences != current.preferences ||
+            previous.previewPlan != current.previewPlan ||
+            previous.planning != current.planning,
         builder: (context, state) {
           final video = state.video;
           final output = state.output;
@@ -227,9 +233,29 @@ final class HomePage extends HookWidget {
                               _CompressionError(error: state.error),
                             if (state.phase == CompressionPhase.cancelled)
                               Text(context.localeKeys.compressionCancelled),
+                            if (Platform.isAndroid)
+                              CompressionAdvancedControls(
+                                preferences: state.preferences,
+                                sourceShortEdge:
+                                    video.metadata.width < video.metadata.height
+                                    ? video.metadata.width
+                                    : video.metadata.height,
+                                onChanged: (value) =>
+                                    unawaited(cubit.setPreferences(value)),
+                              ),
+                            CompressionPlanSummary(
+                              plan: state.previewPlan,
+                              isLoading: state.planning,
+                            ),
                             const SizedBox(height: 24),
                             FilledButton.icon(
-                              onPressed: validTarget.value ? start : null,
+                              onPressed:
+                                  validTarget.value &&
+                                      !state.planning &&
+                                      state.previewPlan != null &&
+                                      !state.previewPlan!.isInfeasible
+                                  ? start
+                                  : null,
                               icon: const Icon(Icons.compress),
                               label: Text(context.localeKeys.compressionStart),
                             ),
