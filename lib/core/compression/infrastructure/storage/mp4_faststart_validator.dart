@@ -10,6 +10,7 @@ final class Mp4FaststartValidator {
       final length = await file.length();
       var offset = 0;
       var sawFileType = false;
+      var sawMovie = false;
       while (offset + 8 <= length) {
         await file.setPosition(offset);
         final header = await file.read(16);
@@ -25,8 +26,8 @@ final class Mp4FaststartValidator {
         };
         if (size < headerSize || size > length - offset) return false;
         if (type == 'ftyp') sawFileType = true;
-        if (type == 'moov') return sawFileType;
-        if (type == 'mdat') return false;
+        if (type == 'moov') sawMovie = true;
+        if (type == 'mdat') return sawFileType && sawMovie;
         offset += size;
       }
       return false;

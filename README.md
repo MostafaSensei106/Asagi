@@ -933,11 +933,11 @@ If you add crash reporting, it must be opt-in, disclosed, and off by default. Do
 - [x] App UI: picker, target selector, progress, result, share, and history
 - [x] User-triggered gallery save
 - [x] Android media-processing foreground service during export
-- [ ] Device validation matrix: HDR color, A/V sync, orientation, thermals
-- [ ] Encoder calibration store (learn overshoot per device, offline)
-- [ ] Android software-codec fallback for unsupported hardware
+- [ ] Run the [device validation matrix](docs/device_validation_matrix.md): HDR color, A/V sync, orientation, thermals
+- [x] Offline encoder overshoot calibration by Android device, HDR mode, and resolution bucket
+- [x] Android software-codec selection when no hardware encoder supports the requested format
 - [ ] SAR/VFR detection and full audio-timeline normalization
-- [ ] Faststart validation on Android
+- [x] Faststart validation on Android encoded MP4 output
 - [ ] Persistent resume across process death
 - [ ] Optional spatial-audio passthrough/encoding, subject to container, device, and licensing support
 - [ ] VMAF-calibrated "comfortable" thresholds

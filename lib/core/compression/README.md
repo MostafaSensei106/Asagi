@@ -101,9 +101,12 @@ comfortable-240p rule: 360p is selected with a quality warning.
 Still requires device validation for HDR color accuracy, encoder
 support, A/V sync and orientation. Android uses a media-processing foreground
 service while encoding, but persistent resume after process death is not supported.
-Encoder quirks/calibration/software fallback, SAR/VFR detection, complete audio
-timeline normalization, Android faststart validation and gallery saving remain
-outside this implementation. Swift compilation requires macOS/Xcode.
+Android selects a system software encoder when no hardware encoder accepts the
+requested dimensions/rate, and verifies MP4 faststart before saving encoded
+output. Offline encoder overshoot calibration is stored per Android device and
+format bucket. SAR/VFR detection, complete audio-timeline normalization and
+persistent resume remain pending. Gallery saving is available
+in the app flow. Swift compilation requires macOS/Xcode.
 
 Regenerate contracts after changing them:
 

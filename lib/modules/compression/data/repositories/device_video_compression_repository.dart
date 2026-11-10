@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:gal/gal.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
@@ -13,6 +14,7 @@ import '../../../../core/native/rust/frb_generated.dart';
 import '../../domain/models/compression_record.dart';
 import '../../domain/models/selected_video.dart';
 import '../../domain/repositories/video_compression_repository.dart';
+import 'encoder_calibration_store.dart';
 
 final class DeviceVideoCompressionRepository
     implements VideoCompressionRepository {
@@ -66,11 +68,56 @@ final class DeviceVideoCompressionRepository
       workspacePath,
       const Duration(hours: 12),
     );
+    EncoderCalibrationStore? calibration;
+    String? calibrationProfile;
+    if (Platform.isAndroid) {
+      try {
+        calibration = EncoderCalibrationStore(
+          await SharedPreferences.getInstance(),
+        );
+        final device = await DeviceInfoPlugin().androidInfo;
+        final shortEdge = video.metadata.width < video.metadata.height
+            ? video.metadata.width
+            : video.metadata.height;
+        final resolutionBucket = shortEdge <= 480
+            ? 480
+            : shortEdge <= 720
+            ? 720
+            : shortEdge <= 1080
+            ? 1080
+            : 2160;
+        calibrationProfile =
+            '${device.manufacturer}_${device.model}_${device.version.sdkInt}_'
+            '${preferences.hdrMode.name}_$resolutionBucket';
+      } catch (_) {
+        // Calibration is optional; encoding still uses the normal budget.
+      }
+    }
+    final acceptedMaxBytes = (targetMb * 1000000).floor();
+    var learnedFactor =
+        calibrationProfile == null ||
+            video.metadata.fileSizeBytes <= acceptedMaxBytes
+        ? 1.0
+        : calibration!.recommendedFactor(calibrationProfile);
+    if (learnedFactor < 0.99) {
+      final learnedPlan = await RustCompressionPlanner().plan(
+        video.metadata,
+        targetMb * learnedFactor,
+        preferences: preferences,
+      );
+      if (learnedPlan.isInfeasible) learnedFactor = 1.0;
+    }
+    final factors = <double>[
+      if (learnedFactor < 0.99) learnedFactor,
+      if (learnedFactor == 1.0) 1.0,
+      if (learnedFactor > 0.8) 0.8,
+      if (learnedFactor > 0.65) 0.65,
+    ];
     // Some hardware encoders exceed their requested bitrate. Re-plan with a
     // smaller budget before reporting that the requested file size is impossible.
     CompressionOutput? output;
-    final acceptedMaxBytes = (targetMb * 1000000).floor();
-    for (final factor in const [1.0, 0.8, 0.65]) {
+    for (var index = 0; index < factors.length; index++) {
+      final factor = factors[index];
       try {
         output = await _engine.compress(
           source: video.path,
@@ -78,14 +125,21 @@ final class DeviceVideoCompressionRepository
           workspacePath: workspacePath,
           acceptedMaxBytes: acceptedMaxBytes,
           preferences: preferences,
+          onAttemptMeasured: calibrationProfile == null
+              ? null
+              : (plan, source, bytes) => calibration!.observe(
+                  calibrationProfile!,
+                  plan,
+                  source.durationSecs,
+                  bytes,
+                ),
         );
         break;
       } catch (error) {
         final exceeded = '$error'.contains('E_TARGET_EXCEEDED');
-        final reducedTargetIsInfeasible =
-            factor < 1 && '$error'.contains('E_TARGET_INFEASIBLE');
-        if (!exceeded && !reducedTargetIsInfeasible) rethrow;
-        if (factor == 0.65 || reducedTargetIsInfeasible) {
+        final infeasible = '$error'.contains('E_TARGET_INFEASIBLE');
+        if (!exceeded && !infeasible) rethrow;
+        if (index == factors.length - 1 || infeasible) {
           throw StateError('E_TARGET_EXCEEDED');
         }
       }

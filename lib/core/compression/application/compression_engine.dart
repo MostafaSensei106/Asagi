@@ -2,8 +2,10 @@ import '../domain/contracts/artifact_store.dart';
 import '../domain/contracts/compression_planner.dart';
 import '../domain/contracts/video_encoder.dart';
 import '../domain/models/compression_output.dart';
+import '../domain/models/compression_plan.dart';
 import '../domain/models/compression_preferences.dart';
 import '../domain/models/encode_request.dart';
+import '../domain/models/video_metadata.dart';
 import '../domain/policies/hdr_policy.dart';
 import 'encoding_control.dart';
 
@@ -30,6 +32,8 @@ final class CompressionEngine {
     required double targetMb,
     required String workspacePath,
     int? acceptedMaxBytes,
+    Future<void> Function(CompressionPlan, VideoMetadata, int)?
+    onAttemptMeasured,
     HdrMode? hdrMode,
     CompressionPreferences preferences = const CompressionPreferences(),
   }) async {
@@ -102,6 +106,13 @@ final class CompressionEngine {
           hdrPolicy.verify(info, encoded, effectiveHdrMode);
         }
         final bytes = await job.measure(path);
+        if (onAttemptMeasured != null) {
+          try {
+            await onAttemptMeasured(plan, info, bytes);
+          } catch (_) {
+            // Calibration is best-effort; a verified encode remains valid.
+          }
+        }
         // A stricter planning target can be used to compensate for hardware
         // bitrate overshoot while retaining the user's original hard limit.
         if (acceptedMaxBytes != null &&

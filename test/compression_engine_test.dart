@@ -94,6 +94,28 @@ void main() {
       1,
     );
   });
+  test(
+    'reports measured attempts without letting calibration fail the job',
+    () async {
+      final measurements = <int>[];
+      final engine = CompressionEngine(
+        planner: Planner(),
+        encoder: Encoder([120, 90]),
+        artifacts: const FileArtifactStore(),
+      );
+      final result = await engine.compress(
+        source: 'input',
+        targetMb: 1,
+        workspacePath: directory.path,
+        onAttemptMeasured: (plan, source, bytes) async {
+          measurements.add(bytes);
+          if (bytes == 120) throw StateError('calibration storage unavailable');
+        },
+      );
+      expect(result.bytes, 90);
+      expect(measurements, [120, 90]);
+    },
+  );
   test('exhausted retries remove partial output', () async {
     final engine = CompressionEngine(
       artifacts: const FileArtifactStore(),

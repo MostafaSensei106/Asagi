@@ -46,6 +46,12 @@ void main() {
         await const Mp4FaststartValidator().isStreamable(file.path),
         isFalse,
       );
+
+      await file.writeAsBytes([...box('ftyp'), ...box('moov')]);
+      expect(
+        await const Mp4FaststartValidator().isStreamable(file.path),
+        isFalse,
+      );
     } finally {
       await directory.delete(recursive: true);
     }
