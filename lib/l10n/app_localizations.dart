@@ -1281,6 +1281,12 @@ abstract class AppLocalizations {
   /// **'This device cannot decode this video format or profile for compression. Choose another source or device.'**
   String get compressionVideoDecoderUnsupported;
 
+  /// No description provided for @compressionMp4NotStreamable.
+  ///
+  /// In en, this message translates to:
+  /// **'The exported MP4 is not ready for streaming. Try another video or device.'**
+  String get compressionMp4NotStreamable;
+
   /// No description provided for @compressionNoSpace.
   ///
   /// In en, this message translates to:

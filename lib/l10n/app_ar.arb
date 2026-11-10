@@ -197,6 +197,7 @@
   "compressionEncoderUnsupported": "الجهاز لا يدعم ترميز الدقة أو معدل الإطارات المحدد. خفّض الإعداد وأعد المحاولة.",
   "compressionAudioDecoderUnsupported": "الجهاز لا يستطيع فك صيغة الصوت هذه لضغط الفيديو. احذف الصوت أو استخدم مصدرًا مدعومًا.",
   "compressionVideoDecoderUnsupported": "الجهاز لا يستطيع فك صيغة الفيديو أو نسختها لضغطها. اختر ملفًا أو جهازًا آخر.",
+  "compressionMp4NotStreamable": "ملف MP4 الناتج غير مهيأ للتشغيل أثناء التحميل. جرّب فيديو أو جهازًا آخر.",
   "compressionNoSpace": "لا توجد مساحة تخزين كافية لضغط هذا الفيديو.",
   "compressionHdrUnsupported": "الجهاز لا يدعم وضع HDR المحدد. جرّب التحويل إلى SDR.",
   "compressionGeneralFailure": "تعذر إكمال الضغط. جرّب إعدادًا أو فيديو آخر.",

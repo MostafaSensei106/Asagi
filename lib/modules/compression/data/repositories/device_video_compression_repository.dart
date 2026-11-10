@@ -7,6 +7,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../core/compression/compression_engine.dart';
+import '../../../../core/compression/infrastructure/storage/mp4_faststart_validator.dart';
 import '../../../../core/native/pigeon_messages.g.dart';
 import '../../../../core/native/rust/frb_generated.dart';
 import '../../domain/models/compression_record.dart';
@@ -92,6 +93,13 @@ final class DeviceVideoCompressionRepository
     final verifiedOutput = output!;
 
     try {
+      if (Platform.isAndroid &&
+          verifiedOutput.attempts > 0 &&
+          !await const Mp4FaststartValidator().isStreamable(
+            verifiedOutput.path,
+          )) {
+        throw StateError('E_MP4_NOT_STREAMABLE');
+      }
       final documents = await getApplicationDocumentsDirectory();
       final savedDirectory = await Directory(
         '${documents.path}/compressed_videos',

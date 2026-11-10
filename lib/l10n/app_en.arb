@@ -635,6 +635,7 @@
   "compressionEncoderUnsupported": "This device cannot encode the selected resolution or frame rate. Lower that setting and try again.",
   "compressionAudioDecoderUnsupported": "This device cannot decode this audio format for compression. Remove audio or use a supported source.",
   "compressionVideoDecoderUnsupported": "This device cannot decode this video format or profile for compression. Choose another source or device.",
+  "compressionMp4NotStreamable": "The exported MP4 is not ready for streaming. Try another video or device.",
   "compressionNoSpace": "There is not enough free storage to compress this video.",
   "compressionHdrUnsupported": "This device cannot process the selected HDR mode. Try converting to SDR.",
   "compressionGeneralFailure": "Compression could not be completed. Try another setting or video.",

@@ -29,6 +29,9 @@ String compressionErrorText(BuildContext context, String? error) {
   if (error.contains('E_VIDEO_DECODER_UNSUPPORTED')) {
     return l10n.compressionVideoDecoderUnsupported;
   }
+  if (error.contains('E_MP4_NOT_STREAMABLE')) {
+    return l10n.compressionMp4NotStreamable;
+  }
   if (error.contains('E_NO_SPACE')) {
     return l10n.compressionNoSpace;
   }

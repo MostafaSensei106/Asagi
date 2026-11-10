@@ -7,17 +7,24 @@ import androidx.media3.common.util.UnstableApi
 import androidx.media3.effect.Presentation
 import androidx.media3.effect.FrameDropEffect
 import androidx.media3.transformer.*
+import com.google.common.collect.ImmutableList
 import com.mostafa.sensei.zumi.app.contracts.EncodeConfiguration
 
 @UnstableApi
 object Media3Configuration {
-    fun encoderFactory(context: Context, request: EncodeConfiguration): Codec.EncoderFactory {
-        val factory = DefaultEncoderFactory.Builder(context)
+    fun encoderFactory(context: Context, request: EncodeConfiguration, encoderNames: Set<String>): Codec.EncoderFactory {
+        val builder = DefaultEncoderFactory.Builder(context)
             .setEnableFallback(false)
             .setRequestedVideoEncoderSettings(VideoEncoderSettings.Builder()
                 .setBitrate(request.targetVideoBitrateBps.toInt()).setiFrameIntervalSeconds(2f).build())
             .setRequestedAudioEncoderSettings(AudioEncoderSettings.Builder()
-                .setBitrate(request.targetAudioBitrateBps.coerceAtLeast(48000).toInt()).build()).build()
+                .setBitrate(request.targetAudioBitrateBps.coerceAtLeast(48000).toInt()).build())
+        builder.setVideoEncoderSelector { mimeType ->
+            ImmutableList.copyOf(EncoderUtil.getSupportedEncoders(mimeType).filter {
+                it.name in encoderNames
+            })
+        }
+        val factory = builder.build()
         return object : Codec.EncoderFactory by factory {
             override fun audioNeedsEncoding() = true
             override fun videoNeedsEncoding() = true

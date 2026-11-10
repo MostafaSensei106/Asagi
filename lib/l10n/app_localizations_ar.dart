@@ -664,6 +664,10 @@ class AppLocalizationsAr extends AppLocalizations {
       'الجهاز لا يستطيع فك صيغة الفيديو أو نسختها لضغطها. اختر ملفًا أو جهازًا آخر.';
 
   @override
+  String get compressionMp4NotStreamable =>
+      'ملف MP4 الناتج غير مهيأ للتشغيل أثناء التحميل. جرّب فيديو أو جهازًا آخر.';
+
+  @override
   String get compressionNoSpace =>
       'لا توجد مساحة تخزين كافية لضغط هذا الفيديو.';
 

@@ -662,6 +662,10 @@ class AppLocalizationsEn extends AppLocalizations {
       'This device cannot decode this video format or profile for compression. Choose another source or device.';
 
   @override
+  String get compressionMp4NotStreamable =>
+      'The exported MP4 is not ready for streaming. Try another video or device.';
+
+  @override
   String get compressionNoSpace =>
       'There is not enough free storage to compress this video.';
 

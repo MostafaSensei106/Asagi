@@ -73,7 +73,7 @@ class Media3VideoEncoder(
         check(android.os.StatFs(parent.path).availableBytes >= required) { "E_NO_SPACE" }
         val preserve = hdrPolicy.preserve(request, metadata)
         val mimeType = if (preserve) MimeTypes.VIDEO_H265 else MimeTypes.VIDEO_H264
-        val supported = MediaCodecList(MediaCodecList.REGULAR_CODECS).codecInfos.any { codec ->
+        val eligible = MediaCodecList(MediaCodecList.REGULAR_CODECS).codecInfos.filter { codec ->
             if (!codec.isEncoder || !codec.supportedTypes.any { it.equals(mimeType, ignoreCase = true) }) {
                 false
             } else {
@@ -86,11 +86,13 @@ class Media3VideoEncoder(
                 }.getOrDefault(false)
             }
         }
-        check(supported) { "E_ENCODER_UNSUPPORTED" }
+        check(eligible.isNotEmpty()) { "E_ENCODER_UNSUPPORTED" }
+        val hardware = eligible.filter { EncoderUtil.isHardwareAccelerated(it, mimeType) }
+        val encoderNames = (hardware.ifEmpty { eligible }).map { it.name }.toSet()
         suspendCancellableCoroutine { continuation ->
             pending = continuation
             try {
-                val factory = Media3Configuration.encoderFactory(context, request)
+                val factory = Media3Configuration.encoderFactory(context, request, encoderNames)
                 val planned = Media3Configuration.composition(request, preserve)
                 transformer = Transformer.Builder(context).setEncoderFactory(factory)
                     .setVideoMimeType(mimeType).setAudioMimeType(MimeTypes.AUDIO_AAC)
