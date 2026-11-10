@@ -81,6 +81,7 @@ final class _AboutContent extends StatelessWidget {
               AboutSection(
                 title: l10n.aboutIdentitySection,
                 icon: ZumiIcons.appInfo,
+                shape: ExpressiveIconShape.blossom,
                 children: [
                   AboutRow(
                     title: l10n.aboutAppName,
@@ -108,11 +109,16 @@ final class _AboutContent extends StatelessWidget {
               AboutSection(
                 title: l10n.aboutEnvironmentSection,
                 icon: ZumiIcons.device,
+                shape: ExpressiveIconShape.gem,
                 children: [
                   AboutRow(
                     title: l10n.aboutOperatingSystem,
                     subtitle: info.operatingSystemName,
-                    icon: ZumiIcons.device,
+                    icon: switch (info.operatingSystemName.toLowerCase()) {
+                      'android' => ZumiIcons.android,
+                      'ios' => ZumiIcons.ios,
+                      _ => ZumiIcons.device,
+                    },
                   ),
                   AboutRow(
                     title: l10n.aboutOsVersion,
@@ -132,6 +138,7 @@ final class _AboutContent extends StatelessWidget {
               AboutSection(
                 title: l10n.aboutToolchainSection,
                 icon: ZumiIcons.developer,
+                shape: ExpressiveIconShape.clover,
                 children: [
                   AboutRow(
                     title: 'Dart',
@@ -149,6 +156,7 @@ final class _AboutContent extends StatelessWidget {
               AboutSection(
                 title: l10n.aboutInstallationSection,
                 icon: ZumiIcons.storage,
+                shape: ExpressiveIconShape.diamond,
                 children: [
                   AboutRow(
                     title: l10n.aboutInstaller,
@@ -174,6 +182,7 @@ final class _AboutContent extends StatelessWidget {
               AboutSection(
                 title: l10n.aboutProjectSection,
                 icon: ZumiIcons.repository,
+                shape: ExpressiveIconShape.sunny,
                 children: [
                   AboutRow(
                     title: l10n.aboutRepository,
@@ -215,6 +224,7 @@ final class _AboutContent extends StatelessWidget {
               AboutSection(
                 title: l10n.aboutLicensesTitle,
                 icon: ZumiIcons.licenses,
+                shape: ExpressiveIconShape.pentagon,
                 children: [
                   AboutRow(
                     title: l10n.aboutLicensesTitle,

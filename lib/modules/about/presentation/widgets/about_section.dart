@@ -21,23 +21,21 @@ final class AboutSection extends StatelessWidget {
   const AboutSection({
     required this.title,
     required this.icon,
+    required this.shape,
     required this.children,
     super.key,
   });
 
   final String title;
   final IconData icon;
+  final ExpressiveIconShape shape;
   final List<AboutRow> children;
 
   @override
   Widget build(BuildContext context) => Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      ExpressiveSectionHeader(
-        icon: icon,
-        shape: ExpressiveIconShape.sunny,
-        title: title,
-      ),
+      ExpressiveSectionHeader(icon: icon, shape: shape, title: title),
       const Gap(AppSpacing.small),
       for (var index = 0; index < children.length; index++)
         _tile(children[index], index),
@@ -52,7 +50,7 @@ final class AboutSection extends StatelessWidget {
         title: row.title,
         subtitle: row.subtitle,
         leading: row.icon,
-        shape: ExpressiveIconShape.sunny,
+        shape: shape,
         showChevron: row.onTap != null,
         onTap: row.onTap,
       );
@@ -62,7 +60,7 @@ final class AboutSection extends StatelessWidget {
         title: row.title,
         subtitle: row.subtitle,
         leading: row.icon,
-        shape: ExpressiveIconShape.sunny,
+        shape: shape,
         showChevron: row.onTap != null,
         onTap: row.onTap,
       );
@@ -72,7 +70,7 @@ final class AboutSection extends StatelessWidget {
         title: row.title,
         subtitle: row.subtitle,
         leading: row.icon,
-        shape: ExpressiveIconShape.sunny,
+        shape: shape,
         showChevron: row.onTap != null,
         onTap: row.onTap,
       );
@@ -81,7 +79,7 @@ final class AboutSection extends StatelessWidget {
       title: row.title,
       subtitle: row.subtitle,
       leading: row.icon,
-      shape: ExpressiveIconShape.sunny,
+      shape: shape,
       showChevron: row.onTap != null,
       onTap: row.onTap,
     );

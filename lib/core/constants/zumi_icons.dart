@@ -35,6 +35,8 @@ abstract final class ZumiIcons {
   static const IconData version = LucideIcons.tag;
   static const IconData build = LucideIcons.binary;
   static const IconData device = LucideIcons.smartphone;
+  static const IconData android = Icons.android;
+  static const IconData ios = Icons.apple;
   static const IconData calendar = LucideIcons.calendarDays;
   static const IconData repository = LucideIcons.bookOpen;
   static const IconData issues = LucideIcons.bug;

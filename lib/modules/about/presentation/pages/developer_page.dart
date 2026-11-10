@@ -25,6 +25,7 @@ final class DeveloperPage extends StatelessWidget {
             AboutSection(
               title: l10n.aboutDeveloperSection,
               icon: ZumiIcons.developer,
+              shape: ExpressiveIconShape.softBurst,
               children: [
                 AboutRow(
                   title: l10n.aboutDeveloperName,
