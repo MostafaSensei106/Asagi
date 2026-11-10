@@ -594,6 +594,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get compressionPlanAudioBitrate => 'معدل بيانات الصوت المخطط';
 
   @override
+  String get compressionAudioConversionNote =>
+      'إعادة الترميز تحوّل الصوت إلى AAC ستيريو، ولا تحتفظ بالصوت المكاني Dolby Atmos أو DTS.';
+
+  @override
   String get compressionPlanTooSmall =>
       'الحجم صغير جدًا لفيديو صالح. زوّد الحجم أو خفّض الحدود الأخرى.';
 
@@ -650,6 +654,14 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get compressionEncoderUnsupported =>
       'الجهاز لا يدعم ترميز الدقة أو معدل الإطارات المحدد. خفّض الإعداد وأعد المحاولة.';
+
+  @override
+  String get compressionAudioDecoderUnsupported =>
+      'الجهاز لا يستطيع فك صيغة الصوت هذه لضغط الفيديو. احذف الصوت أو استخدم مصدرًا مدعومًا.';
+
+  @override
+  String get compressionVideoDecoderUnsupported =>
+      'الجهاز لا يستطيع فك صيغة الفيديو أو نسختها لضغطها. اختر ملفًا أو جهازًا آخر.';
 
   @override
   String get compressionNoSpace =>

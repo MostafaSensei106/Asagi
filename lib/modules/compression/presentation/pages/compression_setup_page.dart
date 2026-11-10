@@ -102,6 +102,7 @@ final class CompressionSetupPage extends HookWidget {
               CompressionPlanSummary(
                 plan: state.previewPlan,
                 isLoading: state.planning,
+                hasAudio: video.metadata.hasAudio,
               ),
               const SizedBox(height: 16),
               FilledButton.icon(

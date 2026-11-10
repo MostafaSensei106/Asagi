@@ -592,6 +592,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get compressionPlanAudioBitrate => 'Planned audio bitrate';
 
   @override
+  String get compressionAudioConversionNote =>
+      'Re-encoding converts audio to AAC stereo. Dolby Atmos and DTS spatial audio will not be preserved.';
+
+  @override
   String get compressionPlanTooSmall =>
       'This target is too small for a usable video. Increase the size or lower other limits.';
 
@@ -648,6 +652,14 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get compressionEncoderUnsupported =>
       'This device cannot encode the selected resolution or frame rate. Lower that setting and try again.';
+
+  @override
+  String get compressionAudioDecoderUnsupported =>
+      'This device cannot decode this audio format for compression. Remove audio or use a supported source.';
+
+  @override
+  String get compressionVideoDecoderUnsupported =>
+      'This device cannot decode this video format or profile for compression. Choose another source or device.';
 
   @override
   String get compressionNoSpace =>

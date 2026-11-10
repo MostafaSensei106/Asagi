@@ -281,6 +281,7 @@ final class HomePage extends HookWidget {
                             CompressionPlanSummary(
                               plan: state.previewPlan,
                               isLoading: state.planning,
+                              hasAudio: video.metadata.hasAudio,
                             ),
                             const SizedBox(height: 24),
                             FilledButton.icon(

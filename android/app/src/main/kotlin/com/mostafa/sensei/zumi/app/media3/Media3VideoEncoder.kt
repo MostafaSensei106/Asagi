@@ -55,7 +55,13 @@ class Media3VideoEncoder(
         val operation = ++generation
         preparing = true
         val metadata = try {
-            withContext(Dispatchers.IO) { metadataReader.read(source) }
+            withContext(Dispatchers.IO) {
+                val sourceMetadata = metadataReader.read(source)
+                SourceDecodeSupport.requireDecoders(
+                    context, source, request.targetAudioBitrateBps > 0 && sourceMetadata.hasAudio
+                )
+                sourceMetadata
+            }
         } catch (error: Exception) { preparing = false; paused = false; throw error }
         preparing = false
         check(operation == generation) { "E_CANCELLED" }

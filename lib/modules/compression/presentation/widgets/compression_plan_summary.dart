@@ -10,11 +10,13 @@ final class CompressionPlanSummary extends StatelessWidget {
   const CompressionPlanSummary({
     required this.plan,
     required this.isLoading,
+    required this.hasAudio,
     super.key,
   });
 
   final CompressionPlan? plan;
   final bool isLoading;
+  final bool hasAudio;
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +52,17 @@ final class CompressionPlanSummary extends StatelessWidget {
                 context.localeKeys.compressionPlanAudioBitrate,
                 '${(current.targetAudioBitrateBps / 1000).round()} kbps',
               ),
+              if (hasAudio &&
+                  current.targetAudioBitrateBps > 0 &&
+                  !current.isInfeasible &&
+                  current.warningMessage != 'ALREADY_WITHIN_LIMIT')
+                Padding(
+                  padding: const EdgeInsets.only(top: AppSpacing.small),
+                  child: Text(
+                    context.localeKeys.compressionAudioConversionNote,
+                    style: TextStyle(color: scheme.onSurfaceVariant),
+                  ),
+                ),
               if (current.isInfeasible || current.warningMessage != null)
                 Padding(
                   padding: const EdgeInsets.only(top: AppSpacing.small),

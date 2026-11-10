@@ -23,6 +23,12 @@ String compressionErrorText(BuildContext context, String? error) {
   if (error.contains('E_ENCODER_UNSUPPORTED')) {
     return l10n.compressionEncoderUnsupported;
   }
+  if (error.contains('E_AUDIO_DECODER_UNSUPPORTED')) {
+    return l10n.compressionAudioDecoderUnsupported;
+  }
+  if (error.contains('E_VIDEO_DECODER_UNSUPPORTED')) {
+    return l10n.compressionVideoDecoderUnsupported;
+  }
   if (error.contains('E_NO_SPACE')) {
     return l10n.compressionNoSpace;
   }

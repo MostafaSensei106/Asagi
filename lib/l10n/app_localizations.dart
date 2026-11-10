@@ -1167,6 +1167,12 @@ abstract class AppLocalizations {
   /// **'Planned audio bitrate'**
   String get compressionPlanAudioBitrate;
 
+  /// No description provided for @compressionAudioConversionNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Re-encoding converts audio to AAC stereo. Dolby Atmos and DTS spatial audio will not be preserved.'**
+  String get compressionAudioConversionNote;
+
   /// No description provided for @compressionPlanTooSmall.
   ///
   /// In en, this message translates to:
@@ -1262,6 +1268,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This device cannot encode the selected resolution or frame rate. Lower that setting and try again.'**
   String get compressionEncoderUnsupported;
+
+  /// No description provided for @compressionAudioDecoderUnsupported.
+  ///
+  /// In en, this message translates to:
+  /// **'This device cannot decode this audio format for compression. Remove audio or use a supported source.'**
+  String get compressionAudioDecoderUnsupported;
+
+  /// No description provided for @compressionVideoDecoderUnsupported.
+  ///
+  /// In en, this message translates to:
+  /// **'This device cannot decode this video format or profile for compression. Choose another source or device.'**
+  String get compressionVideoDecoderUnsupported;
 
   /// No description provided for @compressionNoSpace.
   ///

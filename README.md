@@ -76,7 +76,7 @@ Video buffers never cross the Dart or Rust boundary. Dart orchestrates; Rust dec
 | **Target size** | Decimal MB ceilings, 90–95% safety margin (default 93%), measured verification |
 | **Quality** | Picks the highest resolution whose comfortable bitrate fits the budget |
 | **Resolution ladder** | 1080p → 720p → 480p → 360p → 240p, with minimum and comfortable thresholds |
-| **Audio policy** | 128 / 96 / 64 kbps AAC-LC, tightened before dropping video resolution |
+| **Audio policy** | 128 / 96 / 64 kbps AAC output; source audio is decoded by the device when re-encoding |
 | **Codecs** | H.264 High + AAC-LC in MP4; HEVC Main10 only for HDR preservation |
 | **Orientation** | Rotation-aware planning; dimensions are displayed pixels, applied once |
 | **Frame rate** | Clamped to 1–30 fps; 60/120/240 fps sources are reduced to 30 |
@@ -92,7 +92,7 @@ Video buffers never cross the Dart or Rust boundary. Dart orchestrates; Rust dec
 
 ## 📦 Project status
 
-This repository contains the **compression engine and both native pipelines**. It does **not** yet contain the production app shell. That distinction matters, so it is stated plainly:
+This repository contains the **Flutter app, compression engine, and Android/iOS native pipelines**. Device-specific media behavior still needs validation on representative hardware.
 
 | Component | Status | Notes |
 | --- | --- | --- |
@@ -102,12 +102,12 @@ This repository contains the **compression engine and both native pipelines**. I
 | iOS AVFoundation pipeline | ✅ Implemented | Reader/writer graph, HDR policy, controls |
 | Pigeon + FRB contracts | ✅ Generated | `pigeons/messages.dart`, `rust/src/api` |
 | Engine/unit test suite | ✅ Passing | `flutter test` |
-| UI, navigation, file picker | ⛔ Not built | `lib/main.dart` only initializes `RustLib` |
-| Gallery save / share sheet | ⛔ Not built | Output ownership is left to the caller |
-| Foreground service / background job | ⛔ Not built | Android lifecycle work remains |
+| UI, navigation, file picker | ✅ Implemented | Home, setup, progress, result, history, settings; gallery picker |
+| Gallery save / share sheet | ✅ Implemented | User-triggered save and share from the result screen |
+| Android foreground service | ✅ Implemented | Media processing notification while encoding; durable resume across process death is pending |
 | On-device validation matrix | ⚠️ Pending | HDR color, A/V sync, encoder quirks |
 
-If you are looking for screenshots of an app, there is no app UI to screenshot yet. The engine is usable today by wiring the contracts yourself (see [Usage](#-usage)).
+The app starts from `lib/main.dart`; the compression engine can also be used through injected contracts (see [Usage](#-usage)).
 
 ---
 
@@ -192,8 +192,10 @@ The 180 s / 8 MB case lands on **360p with a quality warning** because the comfo
 
 ```
 lib/
-├── main.dart                      # Host entry point: RustLib.init()
-├── compression/                   # Feature module
+├── main.dart                      # Initializes services and launches ZumiApp
+├── zumi_app.dart                  # Themes, localization, routing
+├── modules/compression/          # App flow, Cubit, repository, screens
+├── core/compression/             # Shared compression engine
 │   ├── compression_engine.dart    # Public export barrel
 │   ├── application/
 │   │   ├── compression_engine.dart # Orchestration: inspect → plan → encode → verify
@@ -227,6 +229,7 @@ android/app/src/main/kotlin/com/mostafa/sensei/zumi/
 └── media3/
     ├── AndroidHdrPolicy.kt        # HDR capability checks
     ├── Media3Configuration.kt     # Codec, scaling, tone mapping
+    ├── SourceDecodeSupport.kt     # Source audio/video decoder preflight
     └── Media3VideoEncoder.kt      # Export lifetime + controls
 
 ios/Runner/Compression/
@@ -304,7 +307,7 @@ Pause and cancel are **process-local**. They are not durable across process deat
 | | Android | iOS |
 | --- | --- | --- |
 | Minimum OS | **8.0 / API 26** (`minSdk = maxOf(26, …)`) | **15.0** |
-| Encode stack | Media3 Transformer **1.5.1** | AVAssetReader / AVAssetWriter |
+| Encode stack | Media3 Transformer **1.9.2** | AVAssetReader / AVAssetWriter |
 | Default codec | H.264 High + AAC-LC | H.264 High + AAC-LC |
 | HDR preserve | HEVC Main10, **API 33+** required | Hardware HEVC, 10-bit buffers |
 | HDR → SDR | Media3 OpenGL tone mapping | AVFoundation composition to BT.709 |
@@ -313,6 +316,19 @@ Pause and cancel are **process-local**. They are not durable across process deat
 | Dolby Vision preserve | ❌ Explicit failure | ❌ Explicit failure |
 
 **Not supported in v1:** cloud compression, editing (trim/merge/text), non-mobile platforms, corrupt-file repair, Dolby Vision dynamic metadata preservation, and FFmpeg/x264/x265 software encoding.
+
+### Advanced media and spatial audio
+
+Android decodes source tracks through codecs installed on the device. When compression is needed, its output is H.264 SDR (or HEVC Main10 for supported HDR preservation) with AAC stereo audio in MP4. Before export, the native pipeline checks that the device has decoders for every track it will process. Missing support fails early with `E_AUDIO_DECODER_UNSUPPORTED` or `E_VIDEO_DECODER_UNSUPPORTED`. Choosing **Remove audio** skips the audio check. Decoder presence does not guarantee that every profile or container will work; test actual media on the target device. If the original file is already under the size limit and no transform is requested, Zumi copies it unchanged, so its original tracks remain intact.
+
+| Source track | Formats that the Android pipeline can import when the device provides a decoder |
+| --- | --- |
+| Audio | AAC, Opus, Vorbis, FLAC, AC-3, E-AC-3 / E-AC-3 JOC (Dolby Atmos), AC-4, DTS / DTS-HD, TrueHD |
+| Video | H.264/AVC, H.265/HEVC, VP8, VP9, AV1, MPEG-4 Part 2, Dolby Vision when the device and Media3 can decode/tone-map its profile |
+
+An encoded output **does not preserve Dolby Atmos objects, DTS spatial metadata, surround channels, or the original audio codec**. It is AAC stereo. Zumi does not bundle Dolby/DTS decoders or encoders, and support for importing these sources depends on the installed platform decoder and container extractor. Advanced video sources such as HEVC, VP9, and AV1 are likewise device-dependent; the current output is H.264 SDR or HEVC Main10 for supported HDR preservation. Dolby Vision dynamic metadata is not preserved.
+
+See [Android supported media formats](https://developer.android.com/media/platform/supported-formats), [Media3 Transformer supported formats](https://developer.android.com/media/media3/transformer/supported-formats), and [Media3 sample-format limitations](https://developer.android.com/media/media3/exoplayer/supported-formats).
 
 ---
 
@@ -391,7 +407,7 @@ cd ios && pod install && cd ..
 flutter run -d <ios-device-id>
 ```
 
-> `lib/main.dart` currently only calls `RustLib.init()`. A `flutter run` with the current entry point initializes the engine and shows nothing else. Mount your own UI, or use the engine from a test/host integration.
+`flutter run` launches the app UI. Choose a video on the home screen, set a size target, review the compression plan, and start the job. The result screen supports saving and sharing.
 
 ---
 
@@ -401,7 +417,7 @@ flutter run -d <ios-device-id>
 
 ```dart
 import 'package:path_provider/path_provider.dart';
-import 'package:zumi/compression/compression_engine.dart';
+import 'package:zumi/core/compression/compression_engine.dart';
 import 'package:zumi/core/native/pigeon_messages.g.dart';
 import 'package:zumi/core/native/rust/frb_generated.dart';
 
@@ -464,7 +480,7 @@ try {
 }
 ```
 
-Progress is optional: implementations expose it through `EncodingProgressSource`. Non-streaming encoders only need `VideoEncoder`. Resumed progress may be unavailable on Media3 1.5.1 until completion.
+Progress is optional: implementations expose it through `EncodingProgressSource`. Non-streaming encoders only need `VideoEncoder`. Verify resumed progress on target Android devices.
 
 ### Pause, resume, cancel
 
@@ -655,6 +671,8 @@ Errors surface as `StateError` whose message is a stable code. Catch and map the
 | `E_OUTPUT_MOVE` | Android | Output could not be moved into place |
 | `E_HDR_UNSUPPORTED` | Both | Device cannot preserve the requested HDR format |
 | `E_HDR_DYNAMIC_METADATA_UNSUPPORTED` | Both | Dolby Vision dynamic metadata cannot be preserved |
+| `E_AUDIO_DECODER_UNSUPPORTED` | Android | No installed decoder for a source audio track such as E-AC-3 JOC or DTS |
+| `E_VIDEO_DECODER_UNSUPPORTED` | Android | No installed decoder for the source video codec/profile |
 | `E_ENCODING` | Both | Encoder start/run failure |
 
 ### Names reserved by the UI contract
@@ -708,7 +726,7 @@ Native HDR color accuracy, encoder support differences, A/V sync, orientation on
 | Dart SDK | `^3.13.7` |
 | `flutter_rust_bridge` | `2.13.0` |
 | `pigeon` (dev) | `29.1.0` |
-| Media3 | `1.5.1` |
+| Media3 | `1.9.2` |
 | Android `minSdk` | `maxOf(26, flutter.minSdkVersion)` |
 | iOS deployment target | `15.0` |
 
@@ -808,7 +826,7 @@ Media3 may need additional output-sized space for resume checkpoints. Free stora
 <details>
 <summary><strong>Pause does not appear to stop progress immediately</strong></summary>
 
-Commands run between bounded batches, so pause takes effect at the next sample boundary. On Media3 1.5.1, resumed progress may not update until completion. This is a platform limitation, not a hang.
+Commands run between bounded batches, so pause takes effect at the next sample boundary. Resumed progress may depend on the device and Media3 export state.
 </details>
 
 <details>
@@ -849,10 +867,10 @@ flutter build apk --release --split-per-abi
 Checklist:
 
 - `minSdk` is at least 26 (already enforced).
-- Media3 dependencies resolve to the pinned `1.5.1`.
+- Media3 dependencies resolve to the pinned `1.9.2`.
 - Release signing is configured in `android/key.properties` (not committed).
 - Test H.264 encode on a low-end device and HEVC/HDR on an API 33+ device.
-- If you add gallery saving or a foreground service, declare the permissions and service type explicitly (Android 14/15 require it).
+- Check gallery saving and foreground-service permissions and service types on each supported Android release.
 
 ### iOS
 
@@ -877,7 +895,7 @@ Update `version:` in `pubspec.yaml` (`1.0.0+1` → `1.0.1+2`) before a release. 
 | Concern | Reality |
 | --- | --- |
 | App killed mid-encode | No resume; sweep stale jobs on next launch |
-| Background encode | Not implemented; Android needs a foreground service, iOS expects foreground |
+| Background encode | Android foreground service runs during an active export; process-death resume is not implemented |
 | Thermal throttling | Not handled; long 4K jobs may slow down |
 | Storage | Needs source + output + temporary checkpoints |
 | Concurrent jobs | One engine/job at a time; `E_BUSY` protects the encoder |
@@ -889,7 +907,7 @@ Update `version:` in `pubspec.yaml` (`1.0.0+1` → `1.0.1+2`) before a release. 
 - **No network.** Media, metadata, and results never leave the device. No upload, no cloud compression.
 - **No analytics by default.** The spec allows opt-in crash reporting only; local logs are the default.
 - **Location metadata is not explicitly stripped yet.** The v1.1 spec proposes a `strip_location` option defaulting to `true`, but no such control exists in the current engine. Do not claim location removal until it is implemented and tested.
-- **No permissions are declared yet.** The engine operates on explicit file paths supplied by the caller. When the app shell lands, scope permissions to the picked source and the app workspace.
+- **Android service permissions are declared.** Gallery access is mediated by the picker; media-processing foreground-service permissions are declared in the manifest.
 - **Temporary files are scoped.** Jobs live under `zumi-*` with an `.inprogress` marker and are swept explicitly.
 - **No FFmpeg GPL surface.** Only platform codecs are used in v1.
 
@@ -912,16 +930,20 @@ If you add crash reporting, it must be opt-in, disclosed, and off by default. Do
 
 ### Next
 
-- [ ] Production UI: picker, target selector, progress, result, share
-- [ ] Gallery save (MediaStore / Photos) with explicit permissions
-- [ ] Android foreground service and lifecycle handling
+- [x] App UI: picker, target selector, progress, result, share, and history
+- [x] User-triggered gallery save
+- [x] Android media-processing foreground service during export
 - [ ] Device validation matrix: HDR color, A/V sync, orientation, thermals
 - [ ] Encoder calibration store (learn overshoot per device, offline)
 - [ ] Android software-codec fallback for unsupported hardware
 - [ ] SAR/VFR detection and full audio-timeline normalization
 - [ ] Faststart validation on Android
 - [ ] Persistent resume across process death
+- [ ] Optional spatial-audio passthrough/encoding, subject to container, device, and licensing support
 - [ ] VMAF-calibrated "comfortable" thresholds
+- Dolby Vision dynamic metadata preservation
+
+
 
 ### Explicitly out of scope for v1
 
@@ -929,7 +951,6 @@ If you add crash reporting, it must be opt-in, disclosed, and off by default. Do
 - Video editing (trim, merge, captions)
 - Web, desktop, or server targets
 - Corrupt-file repair
-- Dolby Vision dynamic metadata preservation
 - FFmpeg / x264 / x265
 
 ---
