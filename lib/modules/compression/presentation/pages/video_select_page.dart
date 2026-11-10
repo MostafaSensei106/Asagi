@@ -9,6 +9,7 @@ import '../../../../core/router/app_router.dart';
 import '../../../../core/widgets/navigation/app_bar/app_bar_component.dart';
 import '../cubit/compression_cubit.dart';
 import '../cubit/compression_state.dart';
+import '../widgets/compression_error_text.dart';
 
 final class VideoSelectPage extends StatelessWidget {
   const VideoSelectPage({super.key});
@@ -32,7 +33,7 @@ final class VideoSelectPage extends StatelessWidget {
               const SizedBox(height: 24),
               if (state.phase == CompressionPhase.failure)
                 Text(
-                  state.error ?? context.localeKeys.error,
+                  compressionErrorText(context, state.error),
                   style: TextStyle(color: Theme.of(context).colorScheme.error),
                 ),
               FilledButton.icon(

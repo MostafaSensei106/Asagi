@@ -629,6 +629,12 @@
   "compressionAttempts": "Attempts",
   "compressionTargetSize": "Target size",
   "compressionOutputResolution": "Output resolution",
+  "compressionInvalidVideo": "This video could not be read. Choose another file.",
+  "compressionInvalidOutput": "The encoded video failed verification. Your original video was not changed.",
+  "compressionEncoderUnsupported": "This device cannot encode the selected resolution or frame rate. Lower that setting and try again.",
+  "compressionNoSpace": "There is not enough free storage to compress this video.",
+  "compressionHdrUnsupported": "This device cannot process the selected HDR mode. Try converting to SDR.",
+  "compressionGeneralFailure": "Compression could not be completed. Try another setting or video.",
   "comingSoon": "Coming soon",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"

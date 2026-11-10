@@ -640,5 +640,29 @@ class AppLocalizationsAr extends AppLocalizations {
   String get compressionOutputResolution => 'دقة الناتج';
 
   @override
+  String get compressionInvalidVideo =>
+      'تعذرت قراءة هذا الفيديو. اختر ملفًا آخر.';
+
+  @override
+  String get compressionInvalidOutput =>
+      'فشل التحقق من الفيديو الناتج. لم يتغير الفيديو الأصلي.';
+
+  @override
+  String get compressionEncoderUnsupported =>
+      'الجهاز لا يدعم ترميز الدقة أو معدل الإطارات المحدد. خفّض الإعداد وأعد المحاولة.';
+
+  @override
+  String get compressionNoSpace =>
+      'لا توجد مساحة تخزين كافية لضغط هذا الفيديو.';
+
+  @override
+  String get compressionHdrUnsupported =>
+      'الجهاز لا يدعم وضع HDR المحدد. جرّب التحويل إلى SDR.';
+
+  @override
+  String get compressionGeneralFailure =>
+      'تعذر إكمال الضغط. جرّب إعدادًا أو فيديو آخر.';
+
+  @override
   String get comingSoon => 'قريباً';
 }

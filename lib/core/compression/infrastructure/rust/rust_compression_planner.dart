@@ -3,6 +3,7 @@ import '../../../native/rust/domain/models.dart' as wire;
 import '../../domain/contracts/compression_planner.dart';
 import '../../domain/models/compression_plan.dart';
 import '../../domain/models/compression_preferences.dart';
+import '../../domain/models/encode_request.dart';
 import '../../domain/models/video_metadata.dart';
 
 final class RustCompressionPlanner implements CompressionPlanner {
@@ -31,6 +32,7 @@ final class RustCompressionPlanner implements CompressionPlanner {
                 sourceShortEdge > preferences.maxShortEdge!) ||
             preferences.audioBitrateKbps != null ||
             preferences.videoBitrateCeilingKbps != null ||
+            (info.isHdr && preferences.hdrMode == HdrMode.toneMapToSdr) ||
             (preferences.maxFrameRate != 30 &&
                 info.frameRate > preferences.maxFrameRate),
         maxShortEdge: preferences.maxShortEdge ?? 0,

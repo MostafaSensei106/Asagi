@@ -191,5 +191,11 @@
   "compressionAttempts": "عدد المحاولات",
   "compressionTargetSize": "الحجم المطلوب",
   "compressionOutputResolution": "دقة الناتج",
+  "compressionInvalidVideo": "تعذرت قراءة هذا الفيديو. اختر ملفًا آخر.",
+  "compressionInvalidOutput": "فشل التحقق من الفيديو الناتج. لم يتغير الفيديو الأصلي.",
+  "compressionEncoderUnsupported": "الجهاز لا يدعم ترميز الدقة أو معدل الإطارات المحدد. خفّض الإعداد وأعد المحاولة.",
+  "compressionNoSpace": "لا توجد مساحة تخزين كافية لضغط هذا الفيديو.",
+  "compressionHdrUnsupported": "الجهاز لا يدعم وضع HDR المحدد. جرّب التحويل إلى SDR.",
+  "compressionGeneralFailure": "تعذر إكمال الضغط. جرّب إعدادًا أو فيديو آخر.",
   "comingSoon": "قريباً"
 }

@@ -638,5 +638,29 @@ class AppLocalizationsEn extends AppLocalizations {
   String get compressionOutputResolution => 'Output resolution';
 
   @override
+  String get compressionInvalidVideo =>
+      'This video could not be read. Choose another file.';
+
+  @override
+  String get compressionInvalidOutput =>
+      'The encoded video failed verification. Your original video was not changed.';
+
+  @override
+  String get compressionEncoderUnsupported =>
+      'This device cannot encode the selected resolution or frame rate. Lower that setting and try again.';
+
+  @override
+  String get compressionNoSpace =>
+      'There is not enough free storage to compress this video.';
+
+  @override
+  String get compressionHdrUnsupported =>
+      'This device cannot process the selected HDR mode. Try converting to SDR.';
+
+  @override
+  String get compressionGeneralFailure =>
+      'Compression could not be completed. Try another setting or video.';
+
+  @override
   String get comingSoon => 'Coming soon';
 }

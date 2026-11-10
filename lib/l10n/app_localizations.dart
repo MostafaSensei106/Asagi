@@ -1245,6 +1245,42 @@ abstract class AppLocalizations {
   /// **'Output resolution'**
   String get compressionOutputResolution;
 
+  /// No description provided for @compressionInvalidVideo.
+  ///
+  /// In en, this message translates to:
+  /// **'This video could not be read. Choose another file.'**
+  String get compressionInvalidVideo;
+
+  /// No description provided for @compressionInvalidOutput.
+  ///
+  /// In en, this message translates to:
+  /// **'The encoded video failed verification. Your original video was not changed.'**
+  String get compressionInvalidOutput;
+
+  /// No description provided for @compressionEncoderUnsupported.
+  ///
+  /// In en, this message translates to:
+  /// **'This device cannot encode the selected resolution or frame rate. Lower that setting and try again.'**
+  String get compressionEncoderUnsupported;
+
+  /// No description provided for @compressionNoSpace.
+  ///
+  /// In en, this message translates to:
+  /// **'There is not enough free storage to compress this video.'**
+  String get compressionNoSpace;
+
+  /// No description provided for @compressionHdrUnsupported.
+  ///
+  /// In en, this message translates to:
+  /// **'This device cannot process the selected HDR mode. Try converting to SDR.'**
+  String get compressionHdrUnsupported;
+
+  /// No description provided for @compressionGeneralFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Compression could not be completed. Try another setting or video.'**
+  String get compressionGeneralFailure;
+
   /// Badge shown on placeholder pages
   ///
   /// In en, this message translates to:

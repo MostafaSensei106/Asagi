@@ -19,10 +19,38 @@ final class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
 
   /// Section order shown in the hub.
-  static const _sections = <AppRouteSection>[AppRouteSection.compression];
+  static const _sections = <AppRouteSection>[
+    AppRouteSection.appearance,
+    AppRouteSection.compression,
+    AppRouteSection.privacy,
+    AppRouteSection.plans,
+    AppRouteSection.about,
+    AppRouteSection.legal,
+    AppRouteSection.help,
+  ];
 
   /// Every destination advertised in the hub, in display order.
-  static const _routes = <AppRoute>[CompressionDefaultsRoute()];
+  static const _routes = <AppRoute>[
+    AppearanceSettingsRoute(),
+    LanguageSettingsRoute(),
+    CompressionDefaultsRoute(),
+    StorageSettingsRoute(),
+    NotificationsSettingsRoute(),
+    PrivacySettingsRoute(),
+    PlansRoute(),
+    PurchaseMethodsRoute(),
+    RestorePurchasesRoute(),
+    AppInfoRoute(),
+    DeveloperRoute(),
+    LicensesRoute(),
+    PrivacyPolicyRoute(),
+    TermsRoute(),
+    DataSafetyRoute(),
+    PermissionsRoute(),
+    FaqRoute(),
+    SupportRoute(),
+    FeedbackRoute(),
+  ];
 
   @override
   Widget build(BuildContext context) {

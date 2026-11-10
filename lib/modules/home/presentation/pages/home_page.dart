@@ -13,6 +13,7 @@ import '../../../../core/widgets/navigation/app_bar/app_bar_component.dart';
 import '../../../compression/presentation/cubit/compression_cubit.dart';
 import '../../../compression/presentation/cubit/compression_state.dart';
 import '../../../compression/presentation/widgets/compression_advanced_controls.dart';
+import '../../../compression/presentation/widgets/compression_error_text.dart';
 import '../../../compression/presentation/widgets/compression_plan_summary.dart';
 import '../../../compression/presentation/widgets/video_preview.dart';
 
@@ -173,9 +174,14 @@ final class HomePage extends HookWidget {
                                           .compressionSavedGallery,
                                     );
                                   }
-                                } catch (error) {
+                                } catch (_) {
                                   if (context.mounted) {
-                                    _notice(context, '$error');
+                                    _notice(
+                                      context,
+                                      context
+                                          .localeKeys
+                                          .compressionGeneralFailure,
+                                    );
                                   }
                                 }
                               },
@@ -190,9 +196,14 @@ final class HomePage extends HookWidget {
                                   await getIt<BaseShareService>().shareFile(
                                     file: XFile(output.path),
                                   );
-                                } catch (error) {
+                                } catch (_) {
                                   if (context.mounted) {
-                                    _notice(context, '$error');
+                                    _notice(
+                                      context,
+                                      context
+                                          .localeKeys
+                                          .compressionGeneralFailure,
+                                    );
                                   }
                                 }
                               },
@@ -386,11 +397,7 @@ final class _CompressionError extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final message = error?.contains('E_TARGET_EXCEEDED') == true
-        ? context.localeKeys.compressionTargetExceeded
-        : error?.contains('E_TARGET_INFEASIBLE') == true
-        ? context.localeKeys.compressionTargetInfeasible
-        : error ?? context.localeKeys.error;
+    final message = compressionErrorText(context, error);
     return Padding(
       padding: const EdgeInsets.only(top: 16),
       child: Text(

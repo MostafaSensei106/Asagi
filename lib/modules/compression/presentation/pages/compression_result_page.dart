@@ -95,10 +95,15 @@ final class CompressionResultPage extends HookWidget {
                         ),
                       );
                     }
-                  } catch (error) {
+                  } catch (_) {
                     if (context.mounted) {
-                      ScaffoldMessenger.of(context)
-                          .showSnackBar(SnackBar(content: Text('$error')));
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            context.localeKeys.compressionGeneralFailure,
+                          ),
+                        ),
+                      );
                     }
                   }
                 },
@@ -111,10 +116,15 @@ final class CompressionResultPage extends HookWidget {
                     await getIt<BaseShareService>().shareFile(
                       file: XFile(output.path),
                     );
-                  } catch (error) {
+                  } catch (_) {
                     if (context.mounted) {
-                      ScaffoldMessenger.of(context)
-                          .showSnackBar(SnackBar(content: Text('$error')));
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            context.localeKeys.compressionGeneralFailure,
+                          ),
+                        ),
+                      );
                     }
                   }
                 },

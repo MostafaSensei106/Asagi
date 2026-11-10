@@ -93,7 +93,8 @@ final class CompressionEngine {
             encoded.height < 2 ||
             (encoded.durationSecs - info.durationSecs).abs() >
                 durationTolerance ||
-            (info.hasAudio && plan.targetAudioBitrateBps > 0 &&
+            (info.hasAudio &&
+                plan.targetAudioBitrateBps > 0 &&
                 !encoded.hasAudio)) {
           throw StateError('E_INVALID_OUTPUT');
         }
