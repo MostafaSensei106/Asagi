@@ -13,6 +13,7 @@ final class RustCompressionPlanner implements CompressionPlanner {
     CompressionPreferences preferences = const CompressionPreferences(),
   }) async {
     preferences.validate();
+    final sourceShortEdge = info.width < info.height ? info.width : info.height;
     final p = await rust.calculateCustomCompressionPlan(
       info: wire.InputMetadata(
         durationSecs: info.durationSecs,
@@ -25,6 +26,13 @@ final class RustCompressionPlanner implements CompressionPlanner {
       ),
       targetSizeMb: targetMb,
       preferences: wire.PlanningPreferences(
+        forceEncode:
+            (preferences.maxShortEdge != null &&
+                sourceShortEdge > preferences.maxShortEdge!) ||
+            preferences.audioBitrateKbps != null ||
+            preferences.videoBitrateCeilingKbps != null ||
+            (preferences.maxFrameRate != 30 &&
+                info.frameRate > preferences.maxFrameRate),
         maxShortEdge: preferences.maxShortEdge ?? 0,
         audioBitrateBps: preferences.audioBitrateKbps == null
             ? -1

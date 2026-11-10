@@ -101,10 +101,14 @@ class InputMetadata {
 
 class PlanningPreferences {
   const PlanningPreferences({
+    required this.forceEncode,
     required this.maxShortEdge,
     required this.audioBitrateBps,
     required this.videoBitrateCeilingBps,
   });
+
+  /// Apply selected transforms even when the source is already under the cap.
+  final bool forceEncode;
 
   /// Zero selects the resolution automatically.
   final int maxShortEdge;
@@ -117,6 +121,7 @@ class PlanningPreferences {
 
   @override
   int get hashCode =>
+      forceEncode.hashCode ^
       maxShortEdge.hashCode ^
       audioBitrateBps.hashCode ^
       videoBitrateCeilingBps.hashCode;
@@ -126,6 +131,7 @@ class PlanningPreferences {
       identical(this, other) ||
       other is PlanningPreferences &&
           runtimeType == other.runtimeType &&
+          forceEncode == other.forceEncode &&
           maxShortEdge == other.maxShortEdge &&
           audioBitrateBps == other.audioBitrateBps &&
           videoBitrateCeilingBps == other.videoBitrateCeilingBps;

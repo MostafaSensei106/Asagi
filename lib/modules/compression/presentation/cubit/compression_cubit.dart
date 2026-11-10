@@ -18,6 +18,8 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
   StreamSubscription<double>? _progressSubscription;
   int _planVersion = 0;
   Future<void> _preferencesSave = Future<void>.value();
+  bool _preferencesModified = false;
+  bool _targetModified = false;
 
   Future<bool> pickVideo() async {
     if (stateValue.phase == CompressionPhase.running ||
@@ -57,25 +59,42 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
 
   void setTargetMb(double value) {
     if (!value.isFinite || value <= 0) return;
+    _targetModified = true;
     emit(stateValue.copyWith(targetMb: value));
     unawaited(refreshPlan());
   }
 
   Future<void> loadPreferences() async {
-    final preferences = await repository.loadPreferences();
-    if (!isClosed) {
-      emit(stateValue.copyWith(preferences: preferences));
-      await refreshPlan();
+    try {
+      final preferences = await repository.loadPreferences();
+      if (!isClosed && !_preferencesModified) {
+        emit(stateValue.copyWith(preferences: preferences));
+        await refreshPlan();
+      }
+    } catch (_) {
+      // The defaults remain usable if local preference storage is unavailable.
     }
   }
 
   Future<void> setPreferences(CompressionPreferences preferences) async {
     preferences.validate();
     if (isClosed) return;
+    _preferencesModified = true;
     emit(stateValue.copyWith(preferences: preferences));
-    _preferencesSave = _preferencesSave.then(
-      (_) => repository.savePreferences(preferences),
-    );
+    _preferencesSave = _preferencesSave.then((_) async {
+      try {
+        await repository.savePreferences(preferences);
+      } catch (error) {
+        if (!isClosed) {
+          emit(
+            stateValue.copyWith(
+              phase: CompressionPhase.failure,
+              error: '$error',
+            ),
+          );
+        }
+      }
+    });
     unawaited(refreshPlan());
     await _preferencesSave;
   }
@@ -109,7 +128,7 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
 
   Future<void> loadDefaultTarget() async {
     final target = await repository.defaultTargetMb();
-    if (!isClosed && stateValue.video == null) {
+    if (!isClosed && !_targetModified && stateValue.video == null) {
       emit(stateValue.copyWith(targetMb: target));
       await refreshPlan();
     }
@@ -204,9 +223,13 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
   }
 
   Future<void> recoverInterrupted() async {
-    final count = await repository.recoverInterrupted();
-    if (!isClosed && count > 0) {
-      emit(stateValue.copyWith(interruptedJobs: count));
+    try {
+      final count = await repository.recoverInterrupted();
+      if (!isClosed && count > 0) {
+        emit(stateValue.copyWith(interruptedJobs: count));
+      }
+    } catch (_) {
+      // Failed cleanup is retried on the next app launch.
     }
   }
 

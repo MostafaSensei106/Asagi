@@ -26,6 +26,8 @@ pub struct CalculationPlan {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct PlanningPreferences {
+    /// Apply selected transforms even when the source is already under the cap.
+    pub force_encode: bool,
     /// Zero selects the resolution automatically.
     pub max_short_edge: u32,
     /// -1 selects audio automatically; zero removes it.

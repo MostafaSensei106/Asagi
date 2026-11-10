@@ -334,12 +334,13 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   PlanningPreferences dco_decode_planning_preferences(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     final arr = raw as List<dynamic>;
-    if (arr.length != 3)
-      throw Exception('unexpected arr length: expect 3 but see ${arr.length}');
+    if (arr.length != 4)
+      throw Exception('unexpected arr length: expect 4 but see ${arr.length}');
     return PlanningPreferences(
-      maxShortEdge: dco_decode_u_32(arr[0]),
-      audioBitrateBps: dco_decode_i_32(arr[1]),
-      videoBitrateCeilingBps: dco_decode_u_32(arr[2]),
+      forceEncode: dco_decode_bool(arr[0]),
+      maxShortEdge: dco_decode_u_32(arr[1]),
+      audioBitrateBps: dco_decode_i_32(arr[2]),
+      videoBitrateCeilingBps: dco_decode_u_32(arr[3]),
     );
   }
 
@@ -502,10 +503,12 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
     SseDeserializer deserializer,
   ) {
     // Codec=Sse (Serialization based), see doc to use other codecs
+    final var_forceEncode = sse_decode_bool(deserializer);
     final var_maxShortEdge = sse_decode_u_32(deserializer);
     final var_audioBitrateBps = sse_decode_i_32(deserializer);
     final var_videoBitrateCeilingBps = sse_decode_u_32(deserializer);
     return PlanningPreferences(
+      forceEncode: var_forceEncode,
       maxShortEdge: var_maxShortEdge,
       audioBitrateBps: var_audioBitrateBps,
       videoBitrateCeilingBps: var_videoBitrateCeilingBps,
@@ -658,6 +661,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
     SseSerializer serializer,
   ) {
     // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_bool(self.forceEncode, serializer);
     sse_encode_u_32(self.maxShortEdge, serializer);
     sse_encode_i_32(self.audioBitrateBps, serializer);
     sse_encode_u_32(self.videoBitrateCeilingBps, serializer);

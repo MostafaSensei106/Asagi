@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:zumi/core/compression/application/compression_engine.dart';
 import 'package:zumi/core/compression/domain/contracts/video_encoder.dart';
 import 'package:zumi/core/compression/domain/models/compression_output.dart';
+import 'package:zumi/core/compression/domain/models/compression_preferences.dart';
 import 'package:zumi/core/compression/domain/models/encode_request.dart';
 import 'package:zumi/core/compression/domain/models/video_metadata.dart';
 import 'package:zumi/core/compression/infrastructure/storage/file_artifact_store.dart';
@@ -81,13 +82,28 @@ void main() {
   tearDown(() async {
     await directory.delete(recursive: true);
   });
-  Future<CompressionOutput> run({HdrMode mode = HdrMode.toneMapToSdr}) =>
-      engine.compress(
-        source: 'input',
-        targetMb: 1,
-        workspacePath: directory.path,
-        hdrMode: mode,
+  Future<CompressionOutput> run({
+    HdrMode mode = HdrMode.toneMapToSdr,
+    CompressionPreferences preferences = const CompressionPreferences(),
+  }) => engine.compress(
+    source: 'input',
+    targetMb: 1,
+    workspacePath: directory.path,
+    hdrMode: mode,
+    preferences: preferences,
+  );
+  test(
+    'manual audio choice encodes even when the source fits the size limit',
+    () async {
+      encoder.sourceBytes = 50;
+      final result = run(
+        preferences: const CompressionPreferences(audioBitrateKbps: 0),
       );
+      await encoder.started.future;
+      encoder.completion.complete();
+      expect((await result).attempts, 1);
+    },
+  );
   test(
     'pause blocks result publication; resume preserves the attempt',
     () async {

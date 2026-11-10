@@ -32,10 +32,11 @@ final class CompressionPlanSummary extends StatelessWidget {
             if (isLoading)
               Text(context.localeKeys.compressionPlanLoading)
             else if (current != null) ...[
-              _line(
-                context.localeKeys.compressionPlanResolution,
-                '${current.targetWidth} × ${current.targetHeight}',
-              ),
+              if (!current.isInfeasible)
+                _line(
+                  context.localeKeys.compressionPlanResolution,
+                  '${current.targetWidth} × ${current.targetHeight}',
+                ),
               _line(
                 context.localeKeys.compressionPlanVideoBitrate,
                 '${(current.targetVideoBitrateBps / 1000).round()} kbps',

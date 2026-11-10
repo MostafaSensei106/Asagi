@@ -41,7 +41,7 @@ impl TargetSizePolicy {
         {
             return Err("E_INVALID_INPUT".into());
         }
-        let skip = i.file_size_bytes <= limit;
+        let skip = i.file_size_bytes <= limit && !preferences.force_encode;
         let total = limit as f64 * safety * 8.0 / i.duration_secs;
         let overhead = (total * 0.01).max(32768.0 * 8.0 / i.duration_secs);
         let audio = if !i.has_audio || preferences.audio_bitrate_bps == 0 {
@@ -196,6 +196,52 @@ mod tests {
         assert!(TargetSizePolicy
             .plan(&input(f64::NAN), 16000000, 0.93)
             .is_err());
+    }
+    #[test]
+    fn high_resolution_is_available_when_budget_allows() {
+        let mut source = input(60.0);
+        source.width = 3840;
+        source.height = 2160;
+        source.rotation = 0;
+        source.bitrate_bps = 100_000_000;
+        source.file_size_bytes = 2_000_000_000;
+        let options = PlanningPreferences {
+            audio_bitrate_bps: -1,
+            ..Default::default()
+        };
+        let four_k = TargetSizePolicy
+            .plan_with_preferences(&source, 100_000_000, 0.93, &options)
+            .unwrap();
+        assert_eq!((four_k.target_width, four_k.target_height), (3840, 2160));
+
+        source.width = 7680;
+        source.height = 4320;
+        let eight_k = TargetSizePolicy
+            .plan_with_preferences(&source, 400_000_000, 0.93, &options)
+            .unwrap();
+        assert_eq!((eight_k.target_width, eight_k.target_height), (7680, 4320));
+    }
+
+    #[test]
+    fn manual_limits_are_applied_before_resolution_selection() {
+        let mut source = input(60.0);
+        source.width = 3840;
+        source.height = 2160;
+        source.rotation = 0;
+        source.bitrate_bps = 100_000_000;
+        source.file_size_bytes = 2_000_000_000;
+        let options = PlanningPreferences {
+            max_short_edge: 1440,
+            audio_bitrate_bps: 0,
+            video_bitrate_ceiling_bps: 6_000_000,
+            force_encode: true,
+        };
+        let plan = TargetSizePolicy
+            .plan_with_preferences(&source, 100_000_000, 0.93, &options)
+            .unwrap();
+        assert!(plan.target_height <= 1440);
+        assert_eq!(plan.target_audio_bitrate_bps, 0);
+        assert_eq!(plan.target_video_bitrate_bps, 6_000_000);
     }
 }
 

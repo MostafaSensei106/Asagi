@@ -30,18 +30,30 @@ final class CompressionEngine {
     required double targetMb,
     required String workspacePath,
     int? acceptedMaxBytes,
-    HdrMode hdrMode = HdrMode.toneMapToSdr,
+    HdrMode? hdrMode,
     CompressionPreferences preferences = const CompressionPreferences(),
   }) async {
     preferences.validate();
+    final effectiveHdrMode = hdrMode ?? preferences.hdrMode;
     _control.begin();
     CompressionWorkspace? job;
     try {
       final info = await encoder.inspect(source);
+      final sourceShortEdge = info.width < info.height
+          ? info.width
+          : info.height;
       var plan = await planner.plan(info, targetMb, preferences: preferences);
       await _control.checkpoint();
+      final requiresUserTransform =
+          (preferences.maxShortEdge != null &&
+              sourceShortEdge > preferences.maxShortEdge!) ||
+          preferences.audioBitrateKbps != null ||
+          preferences.videoBitrateCeilingKbps != null ||
+          (preferences.maxFrameRate != 30 &&
+              info.frameRate > preferences.maxFrameRate);
       if (info.fileSizeBytes <= plan.hardLimitBytes &&
-          !hdrPolicy.requiresConversion(info, hdrMode)) {
+          !requiresUserTransform &&
+          !hdrPolicy.requiresConversion(info, effectiveHdrMode)) {
         return CompressionOutput(
           source,
           info.fileSizeBytes,
@@ -64,17 +76,29 @@ final class CompressionEngine {
               frameRate: info.frameRate
                   .clamp(1, preferences.maxFrameRate)
                   .toDouble(),
-              hdrMode: preferences.hdrMode == HdrMode.toneMapToSdr
-                  ? hdrMode
-                  : preferences.hdrMode,
+              hdrMode: effectiveHdrMode,
             ),
           );
         } finally {
           _control.encoding = false;
         }
         await _control.checkpoint();
+        final encoded = await encoder.inspect(path);
+        final durationTolerance = info.durationSecs * 0.05 > 1
+            ? info.durationSecs * 0.05
+            : 1.0;
+        if (!encoded.durationSecs.isFinite ||
+            encoded.durationSecs <= 0 ||
+            encoded.width < 2 ||
+            encoded.height < 2 ||
+            (encoded.durationSecs - info.durationSecs).abs() >
+                durationTolerance ||
+            (info.hasAudio && plan.targetAudioBitrateBps > 0 &&
+                !encoded.hasAudio)) {
+          throw StateError('E_INVALID_OUTPUT');
+        }
         if (info.isHdr) {
-          hdrPolicy.verify(info, await encoder.inspect(path), hdrMode);
+          hdrPolicy.verify(info, encoded, effectiveHdrMode);
         }
         final bytes = await job.measure(path);
         // A stricter planning target can be used to compensate for hardware

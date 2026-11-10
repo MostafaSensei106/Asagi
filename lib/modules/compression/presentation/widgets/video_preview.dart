@@ -139,11 +139,13 @@ final class VideoPreview extends HookWidget {
                       ),
                       onChangeEnd: (value) {
                         unawaited(
-                          controller.seekTo(
-                            Duration(milliseconds: value.round()),
-                          ).whenComplete(() {
-                            if (context.mounted) draggingPosition.value = null;
-                          }),
+                          controller
+                              .seekTo(Duration(milliseconds: value.round()))
+                              .whenComplete(() {
+                                if (context.mounted) {
+                                  draggingPosition.value = null;
+                                }
+                              }),
                         );
                       },
                     ),

@@ -40,12 +40,13 @@ class Planner implements CompressionPlanner {
 }
 
 class Encoder implements VideoEncoder {
-  Encoder(this.sizes);
+  Encoder(this.sizes, {this.invalidOutput = false});
   final List<int> sizes;
+  final bool invalidOutput;
   int calls = 0;
   @override
-  Future<VideoMetadata> inspect(String path) async => const VideoMetadata(
-    durationSecs: 60,
+  Future<VideoMetadata> inspect(String path) async => VideoMetadata(
+    durationSecs: invalidOutput && path != 'input' ? 0 : 60,
     width: 1920,
     height: 1080,
     rotation: 0,
@@ -109,6 +110,22 @@ void main() {
     );
     expect(await directory.list().length, 0);
   });
+  test('invalid encoded media is never published as a result', () async {
+    final engine = CompressionEngine(
+      artifacts: const FileArtifactStore(),
+      planner: Planner(),
+      encoder: Encoder([90], invalidOutput: true),
+    );
+    await expectLater(
+      engine.compress(
+        source: 'input',
+        targetMb: 1,
+        workspacePath: directory.path,
+      ),
+      throwsStateError,
+    );
+    expect(await directory.list().length, 0);
+  });
   test(
     'accepts hardware overshoot within the original requested limit',
     () async {
@@ -158,7 +175,7 @@ void main() {
     },
   );
   test('recovery keeps work owned by the current process', () async {
-    final store = const FileArtifactStore();
+    const store = FileArtifactStore();
     final job = await store.create(directory.path);
     expect(await store.cleanupInterrupted(directory.path, Duration.zero), 0);
     await job.dispose();

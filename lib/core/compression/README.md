@@ -92,14 +92,16 @@ and delegates to domain traits. Video buffers never pass through Dart/Rust.
 ## Verification and remaining platform work
 
 Rust handles decimal MB budgets, safety margin, audio/container reserve, source
-bitrate caps, resolution and bounded size retries. Dart tests cover retries,
+bitrate caps, source-aware resolution selection (including 4K/8K when the budget
+and encoder permit), manual ceilings and bounded size retries. Dart tests cover retries,
 cleanup, pause/resume/cancel and HDR policy failures through substituted contracts.
 The documented 180-second/8MB example takes priority over the conflicting
 comfortable-240p rule: 360p is selected with a quality warning.
 
-Still requires native build/device validation for HDR color accuracy, encoder
-support, A/V sync and orientation. Background service/lifecycle, persistent resume,
-encoder quirks/calibration/software fallback, SAR/VFR detection, complete audio
+Still requires device validation for HDR color accuracy, encoder
+support, A/V sync and orientation. Android uses a media-processing foreground
+service while encoding, but persistent resume after process death is not supported.
+Encoder quirks/calibration/software fallback, SAR/VFR detection, complete audio
 timeline normalization, Android faststart validation and gallery saving remain
 outside this implementation. Swift compilation requires macOS/Xcode.
 

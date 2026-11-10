@@ -293,10 +293,12 @@ impl SseDecode for Option<f32> {
 impl SseDecode for crate::domain::models::PlanningPreferences {
     // Codec=Sse (Serialization based), see doc to use other codecs
     fn sse_decode(deserializer: &mut flutter_rust_bridge::for_generated::SseDeserializer) -> Self {
+        let mut var_forceEncode = <bool>::sse_decode(deserializer);
         let mut var_maxShortEdge = <u32>::sse_decode(deserializer);
         let mut var_audioBitrateBps = <i32>::sse_decode(deserializer);
         let mut var_videoBitrateCeilingBps = <u32>::sse_decode(deserializer);
         return crate::domain::models::PlanningPreferences {
+            force_encode: var_forceEncode,
             max_short_edge: var_maxShortEdge,
             audio_bitrate_bps: var_audioBitrateBps,
             video_bitrate_ceiling_bps: var_videoBitrateCeilingBps,
@@ -423,6 +425,7 @@ impl flutter_rust_bridge::IntoIntoDart<crate::domain::models::InputMetadata>
 impl flutter_rust_bridge::IntoDart for crate::domain::models::PlanningPreferences {
     fn into_dart(self) -> flutter_rust_bridge::for_generated::DartAbi {
         [
+            self.force_encode.into_into_dart().into_dart(),
             self.max_short_edge.into_into_dart().into_dart(),
             self.audio_bitrate_bps.into_into_dart().into_dart(),
             self.video_bitrate_ceiling_bps.into_into_dart().into_dart(),
@@ -538,6 +541,7 @@ impl SseEncode for Option<f32> {
 impl SseEncode for crate::domain::models::PlanningPreferences {
     // Codec=Sse (Serialization based), see doc to use other codecs
     fn sse_encode(self, serializer: &mut flutter_rust_bridge::for_generated::SseSerializer) {
+        <bool>::sse_encode(self.force_encode, serializer);
         <u32>::sse_encode(self.max_short_edge, serializer);
         <i32>::sse_encode(self.audio_bitrate_bps, serializer);
         <u32>::sse_encode(self.video_bitrate_ceiling_bps, serializer);

@@ -55,7 +55,7 @@ final class CompressionPreferences {
       throw ArgumentError.value(audioBitrateKbps, 'audioBitrateKbps');
     }
     if (videoBitrateCeilingKbps != null &&
-        (videoBitrateCeilingKbps! < 150 || videoBitrateCeilingKbps! > 50000)) {
+        (videoBitrateCeilingKbps! < 150 || videoBitrateCeilingKbps! > 500000)) {
       throw ArgumentError.value(
         videoBitrateCeilingKbps,
         'videoBitrateCeilingKbps',

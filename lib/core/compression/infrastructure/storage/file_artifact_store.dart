@@ -48,7 +48,8 @@ final class FileArtifactStore implements ArtifactStore {
         continue;
       }
       try {
-        final data = jsonDecode(await marker.readAsString()) as Map<String, dynamic>;
+        final data =
+            jsonDecode(await marker.readAsString()) as Map<String, dynamic>;
         if (data['pid'] == pid) continue;
       } catch (_) {
         // Damaged markers are treated as interrupted jobs once old enough.

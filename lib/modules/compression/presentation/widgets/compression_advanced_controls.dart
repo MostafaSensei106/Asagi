@@ -80,7 +80,7 @@ final class _CompressionAdvancedControlsState
     final value = int.tryParse(_videoBitrate.text.trim());
     final valid =
         _videoBitrate.text.trim().isEmpty ||
-        (value != null && value >= 150 && value <= 50000);
+        (value != null && value >= 150 && value <= 500000);
     setState(() => _invalidBitrate = !valid);
     if (!valid) return;
     widget.onChanged(

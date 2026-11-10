@@ -78,12 +78,16 @@ final class HomePage extends HookWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(context.localeKeys.compressionInterrupted),
+                                  Text(
+                                    context.localeKeys.compressionInterrupted,
+                                  ),
                                   Align(
                                     alignment: AlignmentDirectional.centerEnd,
                                     child: TextButton(
                                       onPressed: cubit.dismissInterruptedNotice,
-                                      child: Text(context.localeKeys.compressionDismiss),
+                                      child: Text(
+                                        context.localeKeys.compressionDismiss,
+                                      ),
                                     ),
                                   ),
                                 ],
