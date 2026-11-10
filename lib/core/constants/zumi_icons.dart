@@ -31,6 +31,15 @@ abstract final class ZumiIcons {
   static const IconData appInfo = LucideIcons.info;
   static const IconData developer = LucideIcons.codeXml;
   static const IconData licenses = LucideIcons.scale;
+  static const IconData package = LucideIcons.package;
+  static const IconData version = LucideIcons.tag;
+  static const IconData build = LucideIcons.binary;
+  static const IconData device = LucideIcons.smartphone;
+  static const IconData calendar = LucideIcons.calendarDays;
+  static const IconData repository = LucideIcons.bookOpen;
+  static const IconData issues = LucideIcons.bug;
+  static const IconData release = LucideIcons.rocket;
+  static const IconData donate = LucideIcons.heartHandshake;
 
   // Legal.
   static const IconData privacyPolicy = LucideIcons.fileText;

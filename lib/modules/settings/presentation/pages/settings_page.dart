@@ -42,7 +42,6 @@ final class SettingsPage extends StatelessWidget {
     RestorePurchasesRoute(),
     AppInfoRoute(),
     DeveloperRoute(),
-    LicensesRoute(),
     PrivacyPolicyRoute(),
     TermsRoute(),
     DataSafetyRoute(),

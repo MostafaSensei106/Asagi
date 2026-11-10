@@ -1281,6 +1281,216 @@ abstract class AppLocalizations {
   /// **'Compression could not be completed. Try another setting or video.'**
   String get compressionGeneralFailure;
 
+  /// No description provided for @aboutIdentitySection.
+  ///
+  /// In en, this message translates to:
+  /// **'App identity'**
+  String get aboutIdentitySection;
+
+  /// No description provided for @aboutAppName.
+  ///
+  /// In en, this message translates to:
+  /// **'App name'**
+  String get aboutAppName;
+
+  /// No description provided for @aboutPackageName.
+  ///
+  /// In en, this message translates to:
+  /// **'Package name'**
+  String get aboutPackageName;
+
+  /// No description provided for @aboutVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'Version'**
+  String get aboutVersion;
+
+  /// No description provided for @aboutBuildNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Build number'**
+  String get aboutBuildNumber;
+
+  /// No description provided for @aboutEnvironmentSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Device and build'**
+  String get aboutEnvironmentSection;
+
+  /// No description provided for @aboutOperatingSystem.
+  ///
+  /// In en, this message translates to:
+  /// **'Operating system'**
+  String get aboutOperatingSystem;
+
+  /// No description provided for @aboutOsVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'OS version'**
+  String get aboutOsVersion;
+
+  /// No description provided for @aboutBuildMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Build mode'**
+  String get aboutBuildMode;
+
+  /// No description provided for @aboutDebug.
+  ///
+  /// In en, this message translates to:
+  /// **'Debug'**
+  String get aboutDebug;
+
+  /// No description provided for @aboutRelease.
+  ///
+  /// In en, this message translates to:
+  /// **'Release'**
+  String get aboutRelease;
+
+  /// No description provided for @aboutToolchainSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Built with'**
+  String get aboutToolchainSection;
+
+  /// No description provided for @aboutInstallationSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Installation'**
+  String get aboutInstallationSection;
+
+  /// No description provided for @aboutInstaller.
+  ///
+  /// In en, this message translates to:
+  /// **'Installed from'**
+  String get aboutInstaller;
+
+  /// No description provided for @aboutInstalledOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Installed on'**
+  String get aboutInstalledOn;
+
+  /// No description provided for @aboutUpdatedOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Updated on'**
+  String get aboutUpdatedOn;
+
+  /// No description provided for @aboutUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Unavailable'**
+  String get aboutUnavailable;
+
+  /// No description provided for @aboutProjectSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Project and support'**
+  String get aboutProjectSection;
+
+  /// No description provided for @aboutRepository.
+  ///
+  /// In en, this message translates to:
+  /// **'GitHub repository'**
+  String get aboutRepository;
+
+  /// No description provided for @aboutRepositorySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'View Zumi source code'**
+  String get aboutRepositorySubtitle;
+
+  /// No description provided for @aboutReadme.
+  ///
+  /// In en, this message translates to:
+  /// **'Read the README'**
+  String get aboutReadme;
+
+  /// No description provided for @aboutReadmeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn about Zumi on GitHub'**
+  String get aboutReadmeSubtitle;
+
+  /// No description provided for @aboutIssues.
+  ///
+  /// In en, this message translates to:
+  /// **'Report an issue'**
+  String get aboutIssues;
+
+  /// No description provided for @aboutIssuesSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'View and create GitHub issues'**
+  String get aboutIssuesSubtitle;
+
+  /// No description provided for @aboutLatestRelease.
+  ///
+  /// In en, this message translates to:
+  /// **'Latest release'**
+  String get aboutLatestRelease;
+
+  /// No description provided for @aboutLatestReleaseSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'View releases and downloads'**
+  String get aboutLatestReleaseSubtitle;
+
+  /// No description provided for @aboutDonate.
+  ///
+  /// In en, this message translates to:
+  /// **'Support Zumi'**
+  String get aboutDonate;
+
+  /// No description provided for @aboutDonateSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Open the official donation page'**
+  String get aboutDonateSubtitle;
+
+  /// No description provided for @aboutLinkError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not open the link. Please try again.'**
+  String get aboutLinkError;
+
+  /// No description provided for @aboutDeveloperSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Developer'**
+  String get aboutDeveloperSection;
+
+  /// No description provided for @aboutDeveloperName.
+  ///
+  /// In en, this message translates to:
+  /// **'Mostafa Sensei'**
+  String get aboutDeveloperName;
+
+  /// No description provided for @aboutDeveloperProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'GitHub profile'**
+  String get aboutDeveloperProfile;
+
+  /// No description provided for @aboutDeveloperProfileSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'See projects and contact details'**
+  String get aboutDeveloperProfileSubtitle;
+
+  /// No description provided for @maintenanceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintenance in progress'**
+  String get maintenanceTitle;
+
+  /// No description provided for @maintenanceMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Zumi is temporarily unavailable. Please try again later.'**
+  String get maintenanceMessage;
+
   /// Badge shown on placeholder pages
   ///
   /// In en, this message translates to:

@@ -143,7 +143,6 @@ final class LicensesRoute extends AppRoute {
     path: '/about/licenses',
     section: AppRouteSection.about,
     icon: ZumiIcons.licenses,
-    showInSettingsHub: true,
   );
 }
 

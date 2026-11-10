@@ -664,5 +664,111 @@ class AppLocalizationsAr extends AppLocalizations {
       'تعذر إكمال الضغط. جرّب إعدادًا أو فيديو آخر.';
 
   @override
+  String get aboutIdentitySection => 'هوية التطبيق';
+
+  @override
+  String get aboutAppName => 'اسم التطبيق';
+
+  @override
+  String get aboutPackageName => 'اسم الحزمة';
+
+  @override
+  String get aboutVersion => 'الإصدار';
+
+  @override
+  String get aboutBuildNumber => 'رقم البناء';
+
+  @override
+  String get aboutEnvironmentSection => 'الجهاز والبناء';
+
+  @override
+  String get aboutOperatingSystem => 'نظام التشغيل';
+
+  @override
+  String get aboutOsVersion => 'إصدار النظام';
+
+  @override
+  String get aboutBuildMode => 'وضع البناء';
+
+  @override
+  String get aboutDebug => 'تجريبي';
+
+  @override
+  String get aboutRelease => 'إصدار نهائي';
+
+  @override
+  String get aboutToolchainSection => 'بُني باستخدام';
+
+  @override
+  String get aboutInstallationSection => 'التثبيت';
+
+  @override
+  String get aboutInstaller => 'مصدر التثبيت';
+
+  @override
+  String get aboutInstalledOn => 'تاريخ التثبيت';
+
+  @override
+  String get aboutUpdatedOn => 'تاريخ التحديث';
+
+  @override
+  String get aboutUnavailable => 'غير متاح';
+
+  @override
+  String get aboutProjectSection => 'المشروع والدعم';
+
+  @override
+  String get aboutRepository => 'مستودع GitHub';
+
+  @override
+  String get aboutRepositorySubtitle => 'استعرض كود زومي';
+
+  @override
+  String get aboutReadme => 'اقرأ ملف README';
+
+  @override
+  String get aboutReadmeSubtitle => 'تعرف على زومي في GitHub';
+
+  @override
+  String get aboutIssues => 'الإبلاغ عن مشكلة';
+
+  @override
+  String get aboutIssuesSubtitle => 'عرض مشكلات GitHub وإنشاء بلاغ';
+
+  @override
+  String get aboutLatestRelease => 'آخر إصدار';
+
+  @override
+  String get aboutLatestReleaseSubtitle => 'استعرض الإصدارات والتنزيلات';
+
+  @override
+  String get aboutDonate => 'ادعم زومي';
+
+  @override
+  String get aboutDonateSubtitle => 'افتح صفحة التبرعات الرسمية';
+
+  @override
+  String get aboutLinkError => 'تعذر فتح الرابط. حاول مرة أخرى.';
+
+  @override
+  String get aboutDeveloperSection => 'المطوّر';
+
+  @override
+  String get aboutDeveloperName => 'مصطفى سينسي';
+
+  @override
+  String get aboutDeveloperProfile => 'حساب GitHub';
+
+  @override
+  String get aboutDeveloperProfileSubtitle => 'المشاريع وبيانات التواصل';
+
+  @override
+  String get maintenanceTitle => 'التطبيق قيد الصيانة';
+
+  @override
+  String get maintenanceMessage =>
+      'زومي غير متاح مؤقتًا. حاول مرة أخرى لاحقًا.';
+
+  @override
   String get comingSoon => 'قريباً';
 }

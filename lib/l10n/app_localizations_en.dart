@@ -662,5 +662,112 @@ class AppLocalizationsEn extends AppLocalizations {
       'Compression could not be completed. Try another setting or video.';
 
   @override
+  String get aboutIdentitySection => 'App identity';
+
+  @override
+  String get aboutAppName => 'App name';
+
+  @override
+  String get aboutPackageName => 'Package name';
+
+  @override
+  String get aboutVersion => 'Version';
+
+  @override
+  String get aboutBuildNumber => 'Build number';
+
+  @override
+  String get aboutEnvironmentSection => 'Device and build';
+
+  @override
+  String get aboutOperatingSystem => 'Operating system';
+
+  @override
+  String get aboutOsVersion => 'OS version';
+
+  @override
+  String get aboutBuildMode => 'Build mode';
+
+  @override
+  String get aboutDebug => 'Debug';
+
+  @override
+  String get aboutRelease => 'Release';
+
+  @override
+  String get aboutToolchainSection => 'Built with';
+
+  @override
+  String get aboutInstallationSection => 'Installation';
+
+  @override
+  String get aboutInstaller => 'Installed from';
+
+  @override
+  String get aboutInstalledOn => 'Installed on';
+
+  @override
+  String get aboutUpdatedOn => 'Updated on';
+
+  @override
+  String get aboutUnavailable => 'Unavailable';
+
+  @override
+  String get aboutProjectSection => 'Project and support';
+
+  @override
+  String get aboutRepository => 'GitHub repository';
+
+  @override
+  String get aboutRepositorySubtitle => 'View Zumi source code';
+
+  @override
+  String get aboutReadme => 'Read the README';
+
+  @override
+  String get aboutReadmeSubtitle => 'Learn about Zumi on GitHub';
+
+  @override
+  String get aboutIssues => 'Report an issue';
+
+  @override
+  String get aboutIssuesSubtitle => 'View and create GitHub issues';
+
+  @override
+  String get aboutLatestRelease => 'Latest release';
+
+  @override
+  String get aboutLatestReleaseSubtitle => 'View releases and downloads';
+
+  @override
+  String get aboutDonate => 'Support Zumi';
+
+  @override
+  String get aboutDonateSubtitle => 'Open the official donation page';
+
+  @override
+  String get aboutLinkError => 'Could not open the link. Please try again.';
+
+  @override
+  String get aboutDeveloperSection => 'Developer';
+
+  @override
+  String get aboutDeveloperName => 'Mostafa Sensei';
+
+  @override
+  String get aboutDeveloperProfile => 'GitHub profile';
+
+  @override
+  String get aboutDeveloperProfileSubtitle =>
+      'See projects and contact details';
+
+  @override
+  String get maintenanceTitle => 'Maintenance in progress';
+
+  @override
+  String get maintenanceMessage =>
+      'Zumi is temporarily unavailable. Please try again later.';
+
+  @override
   String get comingSoon => 'Coming soon';
 }

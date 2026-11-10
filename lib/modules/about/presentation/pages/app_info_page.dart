@@ -1,22 +1,19 @@
+import 'package:bloc_signals_flutter/bloc_signals_flutter.dart';
 import 'package:material_ui/material_ui.dart';
 
-import '../../../../core/constants/zumi_icons.dart';
-import '../../../../core/extensions/extensions.dart';
-import '../../../../core/widgets/display/placeholder/app_placeholder_page.dart';
+import '../../../../core/di/di.dart';
+import '../../../../core/services/app_info/interface/base_app_info_service.dart';
+import '../../data/about_app_repsitory.dart';
+import '../../logic/cubit/about_app_cubit.dart';
+import 'about_app_page.dart';
 
-/// Placeholder for the AppInfo destination.
-///
-/// The navigation contract is final; the real screen lands in a later
-/// milestone without changing this route or its public constructor.
 final class AppInfoPage extends StatelessWidget {
   const AppInfoPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return AppPlaceholderPage(
-      title: context.localeKeys.aboutAppTitle,
-      description: context.localeKeys.aboutAppDescription,
-      icon: ZumiIcons.appInfo,
-    );
-  }
+  Widget build(BuildContext context) => BlocSignalProvider<AboutAppCubit>(
+    create: (_) =>
+        AboutAppCubit(AboutAppRepsitory(getIt<BaseAppInfoService>())),
+    child: const AboutAppPage(),
+  );
 }
