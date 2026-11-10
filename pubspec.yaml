@@ -32,7 +32,6 @@ dependencies:
   connectivity_plus: ^7.3.2
   bloc_signals: ^1.7.0
   cryptography: ^2.9.0
-  dio: ^5.11.1
   gal: ^2.3.3
   intl: ^0.20.3
   open_filex: ^5.0.0

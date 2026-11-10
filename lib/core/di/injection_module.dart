@@ -1,5 +1,4 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:injectable/injectable.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -32,7 +31,4 @@ abstract class InjectionModule {
   @lazySingleton
   StorageFacade storageFacade(BasePrefStorageService service) =>
       service as StorageFacade;
-
-  @lazySingleton
-  Dio get dio => Dio();
 }

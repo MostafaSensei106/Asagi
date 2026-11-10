@@ -11,7 +11,6 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 
 import 'package:connectivity_plus/connectivity_plus.dart' as _i895;
-import 'package:dio/dio.dart' as _i361;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as _i558;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
@@ -26,14 +25,6 @@ import 'package:zumi/core/services/app_info/interface/base_package_info_adapter.
     as _i283;
 import 'package:zumi/core/services/app_info/package_info_plus_adapter.dart'
     as _i647;
-import 'package:zumi/core/services/attachment_handler/attachment_handler_service.dart'
-    as _i626;
-import 'package:zumi/core/services/attachment_handler/base_attachment_handler_service.dart'
-    as _i160;
-import 'package:zumi/core/services/file_manager_facade/base_file_manager_facade.dart'
-    as _i529;
-import 'package:zumi/core/services/file_manager_facade/file_manager_facade.dart'
-    as _i823;
 import 'package:zumi/core/services/file_opener/base_file_opener_service.dart'
     as _i255;
 import 'package:zumi/core/services/file_opener/url_file_opener_service.dart'
@@ -79,6 +70,10 @@ import 'package:zumi/core/utils/network/logic/cubit/network_cubit.dart'
 import 'package:zumi/core/utils/theme/data/base_theme_repository.dart' as _i882;
 import 'package:zumi/core/utils/theme/data/theme_repository.dart' as _i538;
 import 'package:zumi/core/utils/theme/logic/cubit/theme_cubit.dart' as _i839;
+import 'package:zumi/modules/about/data/about_app_repsitory.dart' as _i529;
+import 'package:zumi/modules/about/data/base_about_app_repository.dart'
+    as _i374;
+import 'package:zumi/modules/about/logic/cubit/about_app_cubit.dart' as _i811;
 
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -101,7 +96,6 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i998.SharePlus>(() => injectionModule.sharePlus);
     gh.lazySingleton<_i895.Connectivity>(() => injectionModule.connectivity);
-    gh.lazySingleton<_i361.Dio>(() => injectionModule.dio);
     gh.lazySingleton<_i664.L10nService>(() => _i664.L10nService());
     gh.lazySingleton<_i813.ThemeService>(() => _i813.ThemeService());
     gh.lazySingleton<_i613.CacheManager>(() => _i613.CacheManager());
@@ -111,9 +105,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i459.BaseAuditLogger>(() => const _i603.AppAuditLogger());
     gh.lazySingleton<_i43.BasePermissionService>(
       () => const _i358.PermissionHandlerService(),
-    );
-    gh.factory<_i160.BaseAttachmentHandlerService>(
-      () => _i626.AttachmentHandlerService(gh<_i361.Dio>()),
     );
     gh.lazySingleton<_i666.BaseToastService>(
       () => _i524.ToastificationService(gh<_i813.ThemeService>()),
@@ -145,9 +136,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i91.BaseUrlLauncherServices>(
       () => _i704.UrlLauncherService(gh<_i459.BaseAuditLogger>()),
     );
-    gh.factory<_i529.BaseFileManagerFacade>(
-      () => _i823.FileManagerFacade(gh<_i160.BaseAttachmentHandlerService>()),
-    );
     gh.lazySingleton<_i248.BaseAppInfoService>(
       () => _i481.AppInfoService(gh<_i283.BasePackageInfoAdapter>()),
     );
@@ -163,6 +151,9 @@ extension GetItInjectableX on _i174.GetIt {
         secureStorageService: gh<_i606.SecureStorageService>(),
       ),
     );
+    gh.lazySingleton<_i374.BaseAboutAppRepository>(
+      () => _i529.AboutAppRepsitory(gh<_i248.BaseAppInfoService>()),
+    );
     gh.lazySingleton<_i699.BaseLocalizationRepository>(
       () => _i875.LocalizationRepository(
         storage: gh<_i969.BasePrefStorageService>(),
@@ -171,6 +162,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i882.BaseThemeRepository>(
       () => _i538.ThemeRepository(gh<_i969.BasePrefStorageService>()),
+    );
+    gh.factory<_i811.AboutAppCubit>(
+      () => _i811.AboutAppCubit(gh<_i374.BaseAboutAppRepository>()),
     );
     gh.lazySingleton<_i887.StorageFacade>(
       () => injectionModule.storageFacade(gh<_i969.BasePrefStorageService>()),
@@ -198,9 +192,6 @@ extension GetItInjectableX on _i174.GetIt {
   _i358.PermissionHandlerService get permissionHandlerService =>
       get<_i358.PermissionHandlerService>();
 
-  _i626.AttachmentHandlerService get attachmentHandlerService =>
-      get<_i626.AttachmentHandlerService>();
-
   _i524.ToastificationService get toastificationService =>
       get<_i524.ToastificationService>();
 
@@ -226,9 +217,6 @@ extension GetItInjectableX on _i174.GetIt {
   _i704.UrlLauncherService get urlLauncherService =>
       get<_i704.UrlLauncherService>();
 
-  _i823.FileManagerFacade get fileManagerFacade =>
-      get<_i823.FileManagerFacade>();
-
   _i481.AppInfoService get appInfoService => get<_i481.AppInfoService>();
 
   _i385.UrlFileOpenerService get urlFileOpenerService =>
@@ -236,10 +224,15 @@ extension GetItInjectableX on _i174.GetIt {
 
   _i887.StorageFacade get storageFacade => get<_i887.StorageFacade>();
 
+  _i529.AboutAppRepsitory get aboutAppRepsitory =>
+      get<_i529.AboutAppRepsitory>();
+
   _i875.LocalizationRepository get localizationRepository =>
       get<_i875.LocalizationRepository>();
 
   _i538.ThemeRepository get themeRepository => get<_i538.ThemeRepository>();
+
+  _i811.AboutAppCubit get aboutAppCubit => get<_i811.AboutAppCubit>();
 
   _i1064.UserSessionService get userSessionService =>
       get<_i1064.UserSessionService>();
