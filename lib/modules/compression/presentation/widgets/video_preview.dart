@@ -8,6 +8,7 @@ import 'package:video_player/video_player.dart';
 import 'package:video_player_platform_interface/video_player_platform_interface.dart';
 
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/widgets/design_system/tokens/tokens.dart';
 
 /// Owns one video controller and releases it when the source changes or leaves.
 final class VideoPreview extends HookWidget {
@@ -65,9 +66,9 @@ final class VideoPreview extends HookWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(title, style: Theme.of(context).textTheme.titleMedium),
-        const SizedBox(height: 8),
+        const SizedBox(height: AppSpacing.small),
         ClipRRect(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(AppRadii.xLarge),
           child: ColoredBox(
             color: Colors.black,
             child: AspectRatio(
@@ -151,7 +152,9 @@ final class VideoPreview extends HookWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppSpacing.large,
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [Text(_time(position)), Text(_time(duration))],
