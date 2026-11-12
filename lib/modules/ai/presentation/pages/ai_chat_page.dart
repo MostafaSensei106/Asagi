@@ -1,7 +1,11 @@
+import 'dart:async';
+
+import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/zumi_icons.dart';
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/router/app_router.dart';
 import '../../../../core/widgets/display/placeholder/app_placeholder_page.dart';
 
 /// Assistant tab. Conversation controls appear when a local runtime is ready.
@@ -14,5 +18,12 @@ final class AiChatPage extends StatelessWidget {
     description: context.localeKeys.aiChatDescription,
     icon: ZumiIcons.ai,
     showBackButton: false,
+    actions: [
+      IconButton(
+        tooltip: context.localeKeys.settingsAiTitle,
+        onPressed: () => unawaited(context.push(const AiSettingsRoute())),
+        icon: const Icon(ZumiIcons.settings),
+      ),
+    ],
   );
 }

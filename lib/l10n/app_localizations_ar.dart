@@ -491,6 +491,58 @@ class AppLocalizationsAr extends AppLocalizations {
       'تحكم في طريقة المعالجة وحدود الموارد للنماذج المدعومة.';
 
   @override
+  String get aiChatSettingsTitle => 'إعدادات المحادثة';
+
+  @override
+  String get aiChatSettingsSubtitle => 'البث المباشر والتفكير وطول الرد';
+
+  @override
+  String get aiChatSettingsDescription =>
+      'اضبط طريقة رد المساعد، بما فيها البث المباشر ووضع التفكير وأسلوب التوليد وحدود الرد.';
+
+  @override
+  String get aiMediaTitle => 'الصور والصوت';
+
+  @override
+  String get aiMediaSubtitle => 'التحكم في المدخلات متعددة الوسائط';
+
+  @override
+  String get aiMediaDescription =>
+      'حدد ما إذا كان النموذج المتوافق يمكنه تحليل الصور والصوت المختارين من فيديوهاتك.';
+
+  @override
+  String get aiSearchTitle => 'البحث الدلالي';
+
+  @override
+  String get aiSearchSubtitle => 'التمثيلات والفهرسة المحلية';
+
+  @override
+  String get aiSearchDescription =>
+      'أدر نموذج التمثيلات وفهرس البحث المحلي للعثور على الفيديوهات واللحظات بالمعنى.';
+
+  @override
+  String get aiToolsTitle => 'الأدوات والمخرجات المنظمة';
+
+  @override
+  String get aiToolsSubtitle => 'الإجراءات والقوالب والتأكيد';
+
+  @override
+  String get aiToolsDescription =>
+      'أدر إجراءات المساعد المدعومة والردود المنظمة. أي إجراء يغيّر الملفات سيتطلب تأكيدك.';
+
+  @override
+  String get aiGroupModels => 'النماذج';
+
+  @override
+  String get aiGroupExperience => 'تجربة المساعد';
+
+  @override
+  String get aiGroupCapabilities => 'الميزات الذكية';
+
+  @override
+  String get aiGroupPerformance => 'الأداء';
+
+  @override
   String get compressionHistorySubtitle => 'سجل كل الفيديوهات المضغوطة';
 
   @override

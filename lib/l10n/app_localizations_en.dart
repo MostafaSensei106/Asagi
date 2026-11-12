@@ -490,6 +490,59 @@ class AppLocalizationsEn extends AppLocalizations {
       'Control the processing backend and resource limits for supported models.';
 
   @override
+  String get aiChatSettingsTitle => 'Conversation settings';
+
+  @override
+  String get aiChatSettingsSubtitle =>
+      'Streaming, thinking, and response length';
+
+  @override
+  String get aiChatSettingsDescription =>
+      'Configure how the assistant responds, including streaming, thinking mode, sampling, and response limits.';
+
+  @override
+  String get aiMediaTitle => 'Images and audio';
+
+  @override
+  String get aiMediaSubtitle => 'Control multimodal inputs';
+
+  @override
+  String get aiMediaDescription =>
+      'Choose whether compatible models can analyze selected images and audio from your videos.';
+
+  @override
+  String get aiSearchTitle => 'Semantic search';
+
+  @override
+  String get aiSearchSubtitle => 'Embeddings and local indexing';
+
+  @override
+  String get aiSearchDescription =>
+      'Manage the local embedding model and search index for finding videos and moments by meaning.';
+
+  @override
+  String get aiToolsTitle => 'Tools and structured output';
+
+  @override
+  String get aiToolsSubtitle => 'Actions, schemas, and confirmations';
+
+  @override
+  String get aiToolsDescription =>
+      'Manage supported assistant actions and structured responses. Actions that affect files will require your confirmation.';
+
+  @override
+  String get aiGroupModels => 'Models';
+
+  @override
+  String get aiGroupExperience => 'Assistant experience';
+
+  @override
+  String get aiGroupCapabilities => 'Smart capabilities';
+
+  @override
+  String get aiGroupPerformance => 'Performance';
+
+  @override
   String get compressionHistorySubtitle => 'Your compressed video history';
 
   @override

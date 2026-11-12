@@ -957,6 +957,102 @@ abstract class AppLocalizations {
   /// **'Control the processing backend and resource limits for supported models.'**
   String get aiRuntimeDescription;
 
+  /// No description provided for @aiChatSettingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Conversation settings'**
+  String get aiChatSettingsTitle;
+
+  /// No description provided for @aiChatSettingsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Streaming, thinking, and response length'**
+  String get aiChatSettingsSubtitle;
+
+  /// No description provided for @aiChatSettingsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Configure how the assistant responds, including streaming, thinking mode, sampling, and response limits.'**
+  String get aiChatSettingsDescription;
+
+  /// No description provided for @aiMediaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Images and audio'**
+  String get aiMediaTitle;
+
+  /// No description provided for @aiMediaSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Control multimodal inputs'**
+  String get aiMediaSubtitle;
+
+  /// No description provided for @aiMediaDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose whether compatible models can analyze selected images and audio from your videos.'**
+  String get aiMediaDescription;
+
+  /// No description provided for @aiSearchTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Semantic search'**
+  String get aiSearchTitle;
+
+  /// No description provided for @aiSearchSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Embeddings and local indexing'**
+  String get aiSearchSubtitle;
+
+  /// No description provided for @aiSearchDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage the local embedding model and search index for finding videos and moments by meaning.'**
+  String get aiSearchDescription;
+
+  /// No description provided for @aiToolsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tools and structured output'**
+  String get aiToolsTitle;
+
+  /// No description provided for @aiToolsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Actions, schemas, and confirmations'**
+  String get aiToolsSubtitle;
+
+  /// No description provided for @aiToolsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage supported assistant actions and structured responses. Actions that affect files will require your confirmation.'**
+  String get aiToolsDescription;
+
+  /// No description provided for @aiGroupModels.
+  ///
+  /// In en, this message translates to:
+  /// **'Models'**
+  String get aiGroupModels;
+
+  /// No description provided for @aiGroupExperience.
+  ///
+  /// In en, this message translates to:
+  /// **'Assistant experience'**
+  String get aiGroupExperience;
+
+  /// No description provided for @aiGroupCapabilities.
+  ///
+  /// In en, this message translates to:
+  /// **'Smart capabilities'**
+  String get aiGroupCapabilities;
+
+  /// No description provided for @aiGroupPerformance.
+  ///
+  /// In en, this message translates to:
+  /// **'Performance'**
+  String get aiGroupPerformance;
+
   /// Settings hub row summary
   ///
   /// In en, this message translates to:

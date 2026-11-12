@@ -47,3 +47,47 @@ final class AiRuntimePage extends StatelessWidget {
     icon: ZumiIcons.aiRuntime,
   );
 }
+
+final class AiChatSettingsPage extends StatelessWidget {
+  const AiChatSettingsPage({super.key});
+
+  @override
+  Widget build(BuildContext context) => AppPlaceholderPage(
+    title: context.localeKeys.aiChatSettingsTitle,
+    description: context.localeKeys.aiChatSettingsDescription,
+    icon: ZumiIcons.aiChatSettings,
+  );
+}
+
+final class AiMediaPage extends StatelessWidget {
+  const AiMediaPage({super.key});
+
+  @override
+  Widget build(BuildContext context) => AppPlaceholderPage(
+    title: context.localeKeys.aiMediaTitle,
+    description: context.localeKeys.aiMediaDescription,
+    icon: ZumiIcons.aiMedia,
+  );
+}
+
+final class AiSearchPage extends StatelessWidget {
+  const AiSearchPage({super.key});
+
+  @override
+  Widget build(BuildContext context) => AppPlaceholderPage(
+    title: context.localeKeys.aiSearchTitle,
+    description: context.localeKeys.aiSearchDescription,
+    icon: ZumiIcons.aiSearch,
+  );
+}
+
+final class AiToolsPage extends StatelessWidget {
+  const AiToolsPage({super.key});
+
+  @override
+  Widget build(BuildContext context) => AppPlaceholderPage(
+    title: context.localeKeys.aiToolsTitle,
+    description: context.localeKeys.aiToolsDescription,
+    icon: ZumiIcons.aiTools,
+  );
+}

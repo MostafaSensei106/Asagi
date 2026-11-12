@@ -62,7 +62,7 @@ Video buffers never cross the Dart or Rust boundary. Dart orchestrates; Rust dec
 | HDR → SDR tone mapping | ✅ Android + iOS | ⚠️ Build-dependent | ❌ |
 | HDR preservation (HEVC Main10) | ✅ With capability checks | ⚠️ Build-dependent | ❌ |
 | Licensing exposure | ✅ Platform codecs only | ❌ GPL builds (x264/x265) | ✅ |
-| Offline / no network permission | ✅ | ✅ | ✅ |
+| On-device video processing | ✅ | ✅ | ✅ |
 | Hard size guarantee | ✅ `actual <= limit` or error | ❌ | ❌ |
 
 **The core promise:** if Zumi returns a path, that file is at or under the requested ceiling. If it cannot get there honestly, it throws instead of shipping an oversized file.
@@ -86,7 +86,7 @@ Video buffers never cross the Dart or Rust boundary. Dart orchestrates; Rust dec
 | **Controls** | Process-local `pause()`, `resume()`, `cancel()` with serialized commands |
 | **Cleanup** | Marked job directories, stale-job sweep, no orphaned temp files |
 | **Architecture** | Pure Dart domain, injected contracts, tests enforce dependency direction |
-| **Privacy** | On-device only; no upload, no telemetry, no network permission |
+| **Privacy** | Video processing stays on device; optional AI model downloads use Internet permission |
 
 ---
 
@@ -106,6 +106,7 @@ This repository contains the **Flutter app, compression engine, and Android/iOS 
 | Gallery save / share sheet | ✅ Implemented | User-triggered save and share from the result screen |
 | Android foreground service | ✅ Implemented | Media processing notification while encoding; durable resume across process death is pending |
 | On-device validation matrix | ⚠️ Pending | HDR color, A/V sync, encoder quirks |
+| On-device AI | 🚧 Scaffolded | LiteRT-LM service adapter and assistant/settings routes; model and chat screens are placeholders |
 
 The app starts from `lib/main.dart`; the compression engine can also be used through injected contracts (see [Usage](#-usage)).
 
@@ -306,7 +307,7 @@ Pause and cancel are **process-local**. They are not durable across process deat
 
 | | Android | iOS |
 | --- | --- | --- |
-| Minimum OS | **8.0 / API 26** (`minSdk = maxOf(26, …)`) | **15.0** |
+| Minimum OS | **11 / API 30** (`minSdk = maxOf(30, …)`) | **15.0** |
 | Encode stack | Media3 Transformer **1.9.2** | AVAssetReader / AVAssetWriter |
 | Default codec | H.264 High + AAC-LC | H.264 High + AAC-LC |
 | HDR preserve | HEVC Main10, **API 33+** required | Hardware HEVC, 10-bit buffers |
@@ -343,7 +344,7 @@ See [Android supported media formats](https://developer.android.com/media/platfo
 | Rust toolchain | Stable, 2021 edition | `rust_lib_zumi` |
 | `flutter_rust_bridge_codegen` | **2.13.0** | Regenerating FRB bindings |
 | Xcode | 15+ (deployment target 15.0) | iOS build (macOS only) |
-| Android SDK + NDK | API 26+, current NDK | Android native build |
+| Android SDK + NDK | API 30+, current NDK | Android native build and LiteRT-LM runtime |
 | CocoaPods | Current | iOS dependency install |
 
 Install the Rust bridge generator once:
@@ -727,7 +728,7 @@ Native HDR color accuracy, encoder support differences, A/V sync, orientation on
 | `flutter_rust_bridge` | `2.13.0` |
 | `pigeon` (dev) | `29.1.0` |
 | Media3 | `1.9.2` |
-| Android `minSdk` | `maxOf(26, flutter.minSdkVersion)` |
+| Android `minSdk` | `maxOf(30, flutter.minSdkVersion)` |
 | iOS deployment target | `15.0` |
 
 ### Tuning knobs
@@ -866,7 +867,7 @@ flutter build apk --release --split-per-abi
 
 Checklist:
 
-- `minSdk` is at least 26 (already enforced).
+- `minSdk` is at least 30 for the optional LiteRT-LM runtime (already enforced).
 - Media3 dependencies resolve to the pinned `1.9.2`.
 - Release signing is configured in `android/key.properties` (not committed).
 - Test H.264 encode on a low-end device and HEVC/HDR on an API 33+ device.
@@ -904,7 +905,7 @@ Update `version:` in `pubspec.yaml` (`1.0.0+1` → `1.0.1+2`) before a release. 
 
 ## 🔒 Privacy and security
 
-- **No network.** Media, metadata, and results never leave the device. No upload, no cloud compression.
+- **On-device processing.** Media, metadata, and compression results remain on the device. The optional AI model catalog requires network access to download model files; local model imports do not. No media upload or cloud compression is implemented.
 - **No analytics by default.** The spec allows opt-in crash reporting only; local logs are the default.
 - **Location metadata is not explicitly stripped yet.** The v1.1 spec proposes a `strip_location` option defaulting to `true`, but no such control exists in the current engine. Do not claim location removal until it is implemented and tested.
 - **Android service permissions are declared.** Gallery access is mediated by the picker; media-processing foreground-service permissions are declared in the manifest.

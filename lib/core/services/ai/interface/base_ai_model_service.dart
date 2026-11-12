@@ -1,23 +1,65 @@
-/// Model lifecycle boundary for the on-device AI feature.
+import 'package:flutter_edge_ai/flutter_edge_ai.dart';
+
+/// Lazy gateway to the LiteRT-LM model lifecycle.
 ///
-/// A future LiteRT-LM adapter can implement this without exposing package
-/// types to settings pages or the rest of the app.
+/// Returning SDK handles preserves access to multimodal chat, streaming,
+/// tools, thinking, structured output, sessions, and embeddings.
 abstract interface class BaseAiModelService {
-  /// Whether this build currently has a usable inference engine.
-  bool get isAvailable;
+  Future<void> initialize();
 
-  /// Models already stored on this device.
+  Future<ModelCatalog> catalog();
   Future<List<String>> installedModelIds();
+  Future<bool> isModelInstalled(String modelId);
 
-  /// Install a model from the supported in-app catalog.
-  Future<void> installCatalogModel(String modelId);
+  /// Supports files, assets, downloads, Hugging Face, LoRA, and cancellation.
+  Future<InferenceInstallationBuilder> modelInstaller(ModelType modelType);
+  Future<EmbeddingInstallationBuilder> embeddingInstaller();
 
-  /// Copy and validate a user-selected local model file.
-  Future<void> importLocalModel(String filePath);
+  Future<InferenceInstallation> installCatalogModel(
+    InferenceVariant variant, {
+    void Function(int progress)? onProgress,
+    CancelToken? cancelToken,
+    bool activate = true,
+  });
 
-  /// Choose one installed model for the next AI operation.
-  Future<void> activateModel(String modelId);
+  Future<InferenceInstallation> importLocalModel(
+    String filePath, {
+    required ModelType modelType,
+    bool activate = true,
+  });
 
-  /// Release model memory without removing its installed file.
+  Future<InferenceModel> activeModel({
+    int? maxTokens,
+    PreferredBackend? preferredBackend,
+    PreferredBackend? preferredVisionBackend,
+    PreferredBackend? preferredAudioBackend,
+    bool? supportImage,
+    bool? supportAudio,
+    int? maxNumImages,
+    MultimodalOrder? multimodalOrder,
+    bool? enableSpeculativeDecoding,
+    ActivationDataType? activationDataType,
+    int? maxConcurrentSessions,
+  });
+
+  Future<InferenceModel> openModel(
+    InferenceModelSpec spec, {
+    int? maxTokens,
+    PreferredBackend? preferredBackend,
+    bool? supportImage,
+    bool? supportAudio,
+  });
+
+  Future<EmbeddingModel> activeEmbedder({
+    PreferredBackend? preferredBackend,
+    bool supportImage = false,
+    bool supportAudio = false,
+  });
+
   Future<void> unloadActiveModel();
+  Future<void> uninstallModel(String modelId);
+  Future<void> uninstallEmbedder();
+  Future<StorageStats> storageInfo();
+  Future<int> cleanupStorage();
+  Future<void> dispose();
 }

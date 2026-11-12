@@ -15,26 +15,74 @@ final class AiSettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final destinations = <({AppRoute route, String title, String subtitle})>[
+    final groups = [
       (
-        route: const AiModelsRoute(),
-        title: context.localeKeys.aiModelsTitle,
-        subtitle: context.localeKeys.aiModelsSubtitle,
+        title: context.localeKeys.aiGroupModels,
+        icon: ZumiIcons.aiModels,
+        shape: ExpressiveIconShape.gem,
+        destinations: <({AppRoute route, String title, String subtitle})>[
+          (
+            route: const AiModelsRoute(),
+            title: context.localeKeys.aiModelsTitle,
+            subtitle: context.localeKeys.aiModelsSubtitle,
+          ),
+          (
+            route: const AiImportModelRoute(),
+            title: context.localeKeys.aiImportTitle,
+            subtitle: context.localeKeys.aiImportSubtitle,
+          ),
+        ],
       ),
       (
-        route: const AiImportModelRoute(),
-        title: context.localeKeys.aiImportTitle,
-        subtitle: context.localeKeys.aiImportSubtitle,
+        title: context.localeKeys.aiGroupExperience,
+        icon: ZumiIcons.aiChatSettings,
+        shape: ExpressiveIconShape.blossom,
+        destinations: <({AppRoute route, String title, String subtitle})>[
+          (
+            route: const AiChatSettingsRoute(),
+            title: context.localeKeys.aiChatSettingsTitle,
+            subtitle: context.localeKeys.aiChatSettingsSubtitle,
+          ),
+          (
+            route: const AiMediaRoute(),
+            title: context.localeKeys.aiMediaTitle,
+            subtitle: context.localeKeys.aiMediaSubtitle,
+          ),
+        ],
       ),
       (
-        route: const AiFeaturesRoute(),
-        title: context.localeKeys.aiFeaturesTitle,
-        subtitle: context.localeKeys.aiFeaturesSubtitle,
+        title: context.localeKeys.aiGroupCapabilities,
+        icon: ZumiIcons.aiFeatures,
+        shape: ExpressiveIconShape.clover,
+        destinations: <({AppRoute route, String title, String subtitle})>[
+          (
+            route: const AiFeaturesRoute(),
+            title: context.localeKeys.aiFeaturesTitle,
+            subtitle: context.localeKeys.aiFeaturesSubtitle,
+          ),
+          (
+            route: const AiSearchRoute(),
+            title: context.localeKeys.aiSearchTitle,
+            subtitle: context.localeKeys.aiSearchSubtitle,
+          ),
+          (
+            route: const AiToolsRoute(),
+            title: context.localeKeys.aiToolsTitle,
+            subtitle: context.localeKeys.aiToolsSubtitle,
+          ),
+        ],
       ),
       (
-        route: const AiRuntimeRoute(),
-        title: context.localeKeys.aiRuntimeTitle,
-        subtitle: context.localeKeys.aiRuntimeSubtitle,
+        title: context.localeKeys.aiGroupPerformance,
+        icon: ZumiIcons.aiRuntime,
+        shape: ExpressiveIconShape.diamond,
+        destinations: <({AppRoute route, String title, String subtitle})>[
+          (
+            route: const AiRuntimeRoute(),
+            title: context.localeKeys.aiRuntimeTitle,
+            subtitle: context.localeKeys.aiRuntimeSubtitle,
+          ),
+        ],
       ),
     ];
     final trailing = Icon(
@@ -54,14 +102,24 @@ final class AiSettingsPage extends StatelessWidget {
               style: context.textTheme.bodyMedium,
             ),
             const Gap(AppSpacing.large),
-            for (var index = 0; index < destinations.length; index++)
-              _destinationTile(
-                context,
-                destinations[index],
-                trailing: trailing,
-                index: index,
-                count: destinations.length,
+            for (final group in groups) ...[
+              ExpressiveSectionHeader(
+                icon: group.icon,
+                shape: group.shape,
+                title: group.title,
               ),
+              const Gap(AppSpacing.small),
+              for (var index = 0; index < group.destinations.length; index++)
+                _destinationTile(
+                  context,
+                  group.destinations[index],
+                  trailing: trailing,
+                  index: index,
+                  count: group.destinations.length,
+                  shape: group.shape,
+                ),
+              const Gap(AppSpacing.large),
+            ],
           ],
         ),
       ),
@@ -74,9 +132,19 @@ final class AiSettingsPage extends StatelessWidget {
     required Widget trailing,
     required int index,
     required int count,
+    required ExpressiveIconShape shape,
   }) {
     void onTap() => unawaited(context.push(destination.route));
-    const shape = ExpressiveIconShape.softBurst;
+    if (count == 1) {
+      return ListTileIconComponent(
+        shape: shape,
+        title: destination.title,
+        subtitle: destination.subtitle,
+        leading: destination.route.metadata.icon,
+        trailing: trailing,
+        onTap: onTap,
+      );
+    }
     if (index == 0) {
       return ListTileIconComponent.top(
         shape: shape,

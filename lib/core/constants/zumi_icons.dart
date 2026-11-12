@@ -29,6 +29,10 @@ abstract final class ZumiIcons {
   static const IconData aiImport = LucideIcons.fileUp;
   static const IconData aiFeatures = LucideIcons.wandSparkles;
   static const IconData aiRuntime = LucideIcons.cpu;
+  static const IconData aiChatSettings = LucideIcons.messageCircle;
+  static const IconData aiMedia = LucideIcons.images;
+  static const IconData aiSearch = LucideIcons.scanSearch;
+  static const IconData aiTools = LucideIcons.workflow;
   static const IconData notifications = LucideIcons.bell;
   static const IconData privacy = LucideIcons.shieldCheck;
 

@@ -66,6 +66,58 @@ final class AiFeaturesRoute extends AppRoute {
   );
 }
 
+/// Conversation, thinking, and generation preferences.
+final class AiChatSettingsRoute extends AppRoute {
+  const AiChatSettingsRoute();
+
+  @override
+  AppRouteMetadata get metadata => const AppRouteMetadata(
+    name: 'settings_ai_chat',
+    path: '/settings/ai/chat',
+    section: AppRouteSection.ai,
+    icon: ZumiIcons.aiChatSettings,
+  );
+}
+
+/// Image and audio input preferences.
+final class AiMediaRoute extends AppRoute {
+  const AiMediaRoute();
+
+  @override
+  AppRouteMetadata get metadata => const AppRouteMetadata(
+    name: 'settings_ai_media',
+    path: '/settings/ai/media',
+    section: AppRouteSection.ai,
+    icon: ZumiIcons.aiMedia,
+  );
+}
+
+/// Local embeddings and semantic search.
+final class AiSearchRoute extends AppRoute {
+  const AiSearchRoute();
+
+  @override
+  AppRouteMetadata get metadata => const AppRouteMetadata(
+    name: 'settings_ai_search',
+    path: '/settings/ai/search',
+    section: AppRouteSection.ai,
+    icon: ZumiIcons.aiSearch,
+  );
+}
+
+/// Function calling and structured responses.
+final class AiToolsRoute extends AppRoute {
+  const AiToolsRoute();
+
+  @override
+  AppRouteMetadata get metadata => const AppRouteMetadata(
+    name: 'settings_ai_tools',
+    path: '/settings/ai/tools',
+    section: AppRouteSection.ai,
+    icon: ZumiIcons.aiTools,
+  );
+}
+
 /// Inference backend and resource preferences.
 final class AiRuntimeRoute extends AppRoute {
   const AiRuntimeRoute();
