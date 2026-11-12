@@ -32,7 +32,7 @@ dependencies:
   connectivity_plus: ^7.3.2
   bloc_signals: ^1.7.0
   cryptography: ^2.9.0
-  gal: ^2.3.3
+  gal: ^3.0.0
   intl: ^0.20.3
   open_filex: ^5.0.0
   package_info_plus: ^10.2.2
@@ -72,7 +72,7 @@ dev_dependencies:
   bloc_test: ^10.0.0
   dartproptest: ^0.2.1
   kaisel_lint: ^0.5.1
-  pigeon: ^29.1.0
+  pigeon: ^30.0.2
 
 flutter:
   generate: true
