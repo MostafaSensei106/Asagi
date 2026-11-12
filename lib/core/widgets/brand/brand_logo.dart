@@ -1,6 +1,8 @@
 import 'package:material_ui/material_ui.dart';
 
 import '../../constants/app_metadata.dart';
+import '../../constants/assets_images.dart';
+import '../../constants/design_system/tokens/radii.dart';
 import '../../extensions/extensions.dart';
 
 /// The community's launcher icon, rendered as the in-app brand mark.
@@ -25,10 +27,10 @@ final class BrandLogo extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
         color: scheme.surface,
-        borderRadius: BorderRadius.circular(size * 0.26),
+        borderRadius: BorderRadius.circular(AppRadii.large),
       ),
       child: Image.asset(
-        'assets/icons/icon-512.png',
+        AssetsImages.applogo,
         fit: BoxFit.cover,
         semanticLabel: AppMetadata.name,
       ),
