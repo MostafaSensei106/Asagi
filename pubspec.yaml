@@ -106,8 +106,3 @@ flutter:
     - asset: assets/fonts/Google_Sans/static/GoogleSans-BoldItalic.ttf
       weight: 700
       style: italic
-  - family: GoogleSansVariable
-    fonts:
-    - asset: assets/fonts/Google_Sans/GoogleSans-VariableFont_GRAD,opsz,wght.ttf
-    - asset: assets/fonts/Google_Sans/GoogleSans-Italic-VariableFont_GRAD,opsz,wght.ttf
-      style: italic

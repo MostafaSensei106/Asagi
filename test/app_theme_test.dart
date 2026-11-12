@@ -26,7 +26,6 @@ void main() {
       test('$name theme uses the variable Google Sans family for headings', () {
         final display = theme.textTheme.displayLarge;
 
-        expect(display?.fontFamily, AppTheme.variableFontFamily);
         expect(
           display?.fontVariations,
           contains(const FontVariation('wght', 400)),
@@ -37,7 +36,6 @@ void main() {
     test('variableTextStyle writes arbitrary weights to the wght axis', () {
       final style = AppTheme.variableTextStyle(weight: 550, grade: -25);
 
-      expect(style.fontFamily, AppTheme.variableFontFamily);
       expect(style.fontWeight, FontWeight.w600);
       expect(style.fontVariations, [
         const FontVariation('wght', 550),

@@ -4,7 +4,6 @@ import '../../constants/app_config.dart';
 
 final class AppTheme {
   static const String fontFamily = 'GoogleSans';
-  static const String variableFontFamily = 'GoogleSansVariable';
 
   static TextStyle variableTextStyle({
     double weight = 400,
@@ -12,7 +11,6 @@ final class AppTheme {
     TextStyle? base,
   }) {
     return (base ?? const TextStyle()).copyWith(
-      fontFamily: variableFontFamily,
       fontWeight: _fontWeightFor(weight),
       fontVariations: [
         FontVariation('wght', weight),
@@ -39,7 +37,6 @@ final class AppTheme {
     brightness: .light,
 
     fontFamily: fontFamily,
-    fontFamilyFallback: const [variableFontFamily],
     textTheme: _textTheme(),
 
     colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
@@ -70,7 +67,6 @@ final class AppTheme {
     brightness: .dark,
 
     fontFamily: fontFamily,
-    fontFamilyFallback: const [variableFontFamily],
     textTheme: _textTheme(),
 
     colorScheme: ColorScheme.fromSeed(
