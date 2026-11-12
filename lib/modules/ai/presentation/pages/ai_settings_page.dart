@@ -75,8 +75,8 @@ final class AiSettingsPage extends StatelessWidget {
     required int index,
     required int count,
   }) {
-    final onTap = () => unawaited(context.push(destination.route));
-    final shape = ExpressiveIconShape.softBurst;
+    void onTap() => unawaited(context.push(destination.route));
+    const shape = ExpressiveIconShape.softBurst;
     if (index == 0) {
       return ListTileIconComponent.top(
         shape: shape,
