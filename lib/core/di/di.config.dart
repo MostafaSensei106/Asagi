@@ -18,6 +18,9 @@ import 'package:package_info_plus/package_info_plus.dart' as _i655;
 import 'package:share_plus/share_plus.dart' as _i998;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
 import 'package:zumi/core/di/injection_module.dart' as _i837;
+import 'package:zumi/core/services/ai/ai_model_service.dart' as _i111;
+import 'package:zumi/core/services/ai/interface/base_ai_model_service.dart'
+    as _i320;
 import 'package:zumi/core/services/app_info/app_info_service.dart' as _i481;
 import 'package:zumi/core/services/app_info/interface/base_app_info_service.dart'
     as _i248;
@@ -106,6 +109,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i43.BasePermissionService>(
       () => const _i358.PermissionHandlerService(),
     );
+    gh.lazySingleton<_i320.BaseAiModelService>(() => _i111.AiModelService());
     gh.lazySingleton<_i666.BaseToastService>(
       () => _i524.ToastificationService(gh<_i813.ThemeService>()),
     );
@@ -191,6 +195,8 @@ extension GetItInjectableX on _i174.GetIt {
 
   _i358.PermissionHandlerService get permissionHandlerService =>
       get<_i358.PermissionHandlerService>();
+
+  _i111.AiModelService get aiModelService => get<_i111.AiModelService>();
 
   _i524.ToastificationService get toastificationService =>
       get<_i524.ToastificationService>();

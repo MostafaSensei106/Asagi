@@ -401,6 +401,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsGroupCompression => 'الضغط والتخزين';
 
   @override
+  String get settingsGroupAi => 'الذكاء الاصطناعي';
+
+  @override
   String get settingsGroupPrivacy => 'الإشعارات والخصوصية';
 
   @override
@@ -429,6 +432,63 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get settingsStorageSubtitle => 'الذاكرة والتخزين والمساحة المتاحة';
+
+  @override
+  String get settingsAiTitle => 'الذكاء الاصطناعي';
+
+  @override
+  String get aiChatTitle => 'مساعد Zumi';
+
+  @override
+  String get aiChatDescription =>
+      'مساعد خاص لفيديوهاتك قادم قريبًا. ستتمكن من السؤال عن الضغط والتنظيم والفيديوهات المحفوظة هنا.';
+
+  @override
+  String get settingsAiSubtitle => 'نماذج محلية وأدوات ذكية';
+
+  @override
+  String get settingsAiDescription =>
+      'تعرّف على النماذج المحلية والأدوات الذكية القادمة. هذه الخيارات غير مفعّلة بعد.';
+
+  @override
+  String get aiModelsTitle => 'النماذج المحلية';
+
+  @override
+  String get aiModelsSubtitle => 'تصفح النماذج المدعومة وتنزيلها';
+
+  @override
+  String get aiModelsDescription =>
+      'اختر نموذجًا مدعومًا، ونزّله على جهازك، وأدر النماذج المثبّتة من هنا.';
+
+  @override
+  String get aiImportTitle => 'استيراد نموذج';
+
+  @override
+  String get aiImportSubtitle => 'استخدم نموذجًا متوافقًا من ملفاتك';
+
+  @override
+  String get aiImportDescription =>
+      'اختر ملف نموذج محليًا متوافقًا وراجع متطلباته قبل استخدامه.';
+
+  @override
+  String get aiFeaturesTitle => 'الميزات الذكية';
+
+  @override
+  String get aiFeaturesSubtitle => 'الضغط والتنظيم والبحث';
+
+  @override
+  String get aiFeaturesDescription =>
+      'اختر اقتراحات الذكاء الاصطناعي المحلية للضغط والتنظيم والتسمية والبحث في الفيديوهات.';
+
+  @override
+  String get aiRuntimeTitle => 'أداء النموذج';
+
+  @override
+  String get aiRuntimeSubtitle => 'تفضيلات المعالجة والموارد';
+
+  @override
+  String get aiRuntimeDescription =>
+      'تحكم في طريقة المعالجة وحدود الموارد للنماذج المدعومة.';
 
   @override
   String get compressionHistorySubtitle => 'سجل كل الفيديوهات المضغوطة';

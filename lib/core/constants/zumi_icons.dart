@@ -24,6 +24,11 @@ abstract final class ZumiIcons {
   static const IconData language = LucideIcons.languages;
   static const IconData compressionDefaults = LucideIcons.settings2;
   static const IconData storage = LucideIcons.hardDrive;
+  static const IconData ai = LucideIcons.sparkles;
+  static const IconData aiModels = LucideIcons.boxes;
+  static const IconData aiImport = LucideIcons.fileUp;
+  static const IconData aiFeatures = LucideIcons.wandSparkles;
+  static const IconData aiRuntime = LucideIcons.cpu;
   static const IconData notifications = LucideIcons.bell;
   static const IconData privacy = LucideIcons.shieldCheck;
 

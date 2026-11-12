@@ -17,7 +17,7 @@ android {
 
     defaultConfig {
         applicationId = "com.mostafa.sensei.zumi"
-        minSdk = maxOf(26, flutter.minSdkVersion)
+        minSdk = maxOf(30, flutter.minSdkVersion)
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName

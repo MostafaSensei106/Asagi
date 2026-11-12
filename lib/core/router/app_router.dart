@@ -5,6 +5,7 @@ import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../modules/about/about.dart';
+import '../../modules/ai/ai.dart';
 import '../../modules/appearance/appearance.dart';
 import '../../modules/compression/compression.dart';
 import '../../modules/growth/growth.dart';
@@ -26,6 +27,7 @@ import 'route_metadata.dart';
 
 part 'main_shell.dart';
 part 'routes/compression_routes.dart';
+part 'routes/ai_routes.dart';
 part 'routes/main_routes.dart';
 part 'routes/settings_info_routes.dart';
 part 'routes/user_routes.dart';
@@ -90,6 +92,7 @@ final class AppRouter {
         CompressionProgressRoute() => const CompressionProgressPage(),
         CompressionResultRoute() => const CompressionResultPage(),
         CompressionHistoryRoute() => const CompressionHistoryPage(),
+        AiChatRoute() => const AiChatPage(),
 
         // Settings.
         SettingsRoute() => const SettingsPage(),
@@ -97,6 +100,11 @@ final class AppRouter {
         LanguageSettingsRoute() => const LanguageSettingsPage(),
         CompressionDefaultsRoute() => const CompressionDefaultsPage(),
         StorageSettingsRoute() => const StorageSettingsPage(),
+        AiSettingsRoute() => const AiSettingsPage(),
+        AiModelsRoute() => const AiModelsPage(),
+        AiImportModelRoute() => const AiImportModelPage(),
+        AiFeaturesRoute() => const AiFeaturesPage(),
+        AiRuntimeRoute() => const AiRuntimePage(),
         NotificationsSettingsRoute() => const NotificationsSettingsPage(),
         PrivacySettingsRoute() => const PrivacySettingsPage(),
 

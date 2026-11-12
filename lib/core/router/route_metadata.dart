@@ -8,6 +8,7 @@ enum AppRouteSection {
   core,
   appearance,
   compression,
+  ai,
   privacy,
   plans,
   about,

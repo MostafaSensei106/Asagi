@@ -792,6 +792,12 @@ abstract class AppLocalizations {
   /// Settings hub section label
   ///
   /// In en, this message translates to:
+  /// **'On-device AI'**
+  String get settingsGroupAi;
+
+  /// Settings hub section label
+  ///
+  /// In en, this message translates to:
   /// **'Notifications & privacy'**
   String get settingsGroupPrivacy;
 
@@ -848,6 +854,108 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cache and storage usage'**
   String get settingsStorageSubtitle;
+
+  /// No description provided for @settingsAiTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'AI settings'**
+  String get settingsAiTitle;
+
+  /// No description provided for @aiChatTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Zumi Assistant'**
+  String get aiChatTitle;
+
+  /// No description provided for @aiChatDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'A private assistant for your videos is coming soon. You will be able to ask about compression, organization, and saved videos here.'**
+  String get aiChatDescription;
+
+  /// No description provided for @settingsAiSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Local models and smart tools'**
+  String get settingsAiSubtitle;
+
+  /// No description provided for @settingsAiDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore local models and future AI tools. These options are not active yet.'**
+  String get settingsAiDescription;
+
+  /// No description provided for @aiModelsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Local models'**
+  String get aiModelsTitle;
+
+  /// No description provided for @aiModelsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse and download supported models'**
+  String get aiModelsSubtitle;
+
+  /// No description provided for @aiModelsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a supported model, download it to this device, and manage installed models here.'**
+  String get aiModelsDescription;
+
+  /// No description provided for @aiImportTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Import a model'**
+  String get aiImportTitle;
+
+  /// No description provided for @aiImportSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Use a compatible model from your files'**
+  String get aiImportSubtitle;
+
+  /// No description provided for @aiImportDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a compatible local model file and review its requirements before using it.'**
+  String get aiImportDescription;
+
+  /// No description provided for @aiFeaturesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Smart features'**
+  String get aiFeaturesTitle;
+
+  /// No description provided for @aiFeaturesSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Compression, organization, and search'**
+  String get aiFeaturesSubtitle;
+
+  /// No description provided for @aiFeaturesDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose which local AI suggestions to use for video compression, organization, naming, and search.'**
+  String get aiFeaturesDescription;
+
+  /// No description provided for @aiRuntimeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Model performance'**
+  String get aiRuntimeTitle;
+
+  /// No description provided for @aiRuntimeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Processing and resource preferences'**
+  String get aiRuntimeSubtitle;
+
+  /// No description provided for @aiRuntimeDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Control the processing backend and resource limits for supported models.'**
+  String get aiRuntimeDescription;
 
   /// Settings hub row summary
   ///

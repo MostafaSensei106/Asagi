@@ -22,6 +22,7 @@ final class SettingsPage extends StatelessWidget {
   static const _sections = <AppRouteSection>[
     AppRouteSection.appearance,
     AppRouteSection.compression,
+    AppRouteSection.ai,
     AppRouteSection.privacy,
     AppRouteSection.plans,
     AppRouteSection.about,
@@ -35,6 +36,7 @@ final class SettingsPage extends StatelessWidget {
     LanguageSettingsRoute(),
     CompressionDefaultsRoute(),
     StorageSettingsRoute(),
+    AiSettingsRoute(),
     NotificationsSettingsRoute(),
     PrivacySettingsRoute(),
     PlansRoute(),
@@ -178,6 +180,7 @@ final class SettingsPage extends StatelessWidget {
   ExpressiveIconShape _shapeFor(AppRouteSection section) => switch (section) {
     AppRouteSection.appearance => ExpressiveIconShape.blossom,
     AppRouteSection.compression => ExpressiveIconShape.gem,
+    AppRouteSection.ai => ExpressiveIconShape.softBurst,
     AppRouteSection.privacy => ExpressiveIconShape.clover,
     AppRouteSection.plans => ExpressiveIconShape.diamond,
     AppRouteSection.about => ExpressiveIconShape.sunny,
@@ -192,6 +195,7 @@ final class SettingsPage extends StatelessWidget {
   ) => switch (section) {
     AppRouteSection.appearance => context.localeKeys.settingsGroupAppearance,
     AppRouteSection.compression => context.localeKeys.settingsGroupCompression,
+    AppRouteSection.ai => context.localeKeys.settingsGroupAi,
     AppRouteSection.privacy => context.localeKeys.settingsGroupPrivacy,
     AppRouteSection.plans => context.localeKeys.settingsGroupPlans,
     AppRouteSection.about => context.localeKeys.settingsGroupAbout,
@@ -207,6 +211,7 @@ final class SettingsPage extends StatelessWidget {
         'settings_compression' =>
           context.localeKeys.settingsCompressionSubtitle,
         'settings_storage' => context.localeKeys.settingsStorageSubtitle,
+        'settings_ai' => context.localeKeys.settingsAiSubtitle,
         'compression_history' => context.localeKeys.compressionHistorySubtitle,
         'settings_notifications' =>
           context.localeKeys.settingsNotificationsSubtitle,
@@ -233,6 +238,7 @@ final class SettingsPage extends StatelessWidget {
         'settings_language' => context.localeKeys.settingsLanguageTitle,
         'settings_compression' => context.localeKeys.settingsCompressionTitle,
         'settings_storage' => context.localeKeys.settingsStorageTitle,
+        'settings_ai' => context.localeKeys.settingsAiTitle,
         'compression_history' => context.localeKeys.compressionHistoryTitle,
         'settings_notifications' =>
           context.localeKeys.settingsNotificationsTitle,

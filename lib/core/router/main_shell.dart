@@ -20,6 +20,11 @@ final class _MainShell extends StatelessWidget {
           pageWrapper: AppRouter._cupertinoPage,
         ),
         KaiselBranchSpec<AppRoute>(
+          initial: AiChatRoute(),
+          builder: AppRouter._buildPage,
+          pageWrapper: AppRouter._cupertinoPage,
+        ),
+        KaiselBranchSpec<AppRoute>(
           initial: SettingsRoute(),
           builder: AppRouter._buildPage,
           pageWrapper: AppRouter._cupertinoPage,
@@ -69,6 +74,7 @@ final class _ShellChrome extends HookWidget {
         label: context.localeKeys.compressionHistoryTitle,
         icon: ZumiIcons.compressionHistory,
       ),
+      AppNavItem(label: context.localeKeys.aiChatTitle, icon: ZumiIcons.ai),
       AppNavItem(
         label: context.localeKeys.settingsTitle,
         icon: ZumiIcons.settings,

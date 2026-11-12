@@ -400,6 +400,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsGroupCompression => 'Compression';
 
   @override
+  String get settingsGroupAi => 'On-device AI';
+
+  @override
   String get settingsGroupPrivacy => 'Notifications & privacy';
 
   @override
@@ -428,6 +431,63 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsStorageSubtitle => 'Cache and storage usage';
+
+  @override
+  String get settingsAiTitle => 'AI settings';
+
+  @override
+  String get aiChatTitle => 'Zumi Assistant';
+
+  @override
+  String get aiChatDescription =>
+      'A private assistant for your videos is coming soon. You will be able to ask about compression, organization, and saved videos here.';
+
+  @override
+  String get settingsAiSubtitle => 'Local models and smart tools';
+
+  @override
+  String get settingsAiDescription =>
+      'Explore local models and future AI tools. These options are not active yet.';
+
+  @override
+  String get aiModelsTitle => 'Local models';
+
+  @override
+  String get aiModelsSubtitle => 'Browse and download supported models';
+
+  @override
+  String get aiModelsDescription =>
+      'Choose a supported model, download it to this device, and manage installed models here.';
+
+  @override
+  String get aiImportTitle => 'Import a model';
+
+  @override
+  String get aiImportSubtitle => 'Use a compatible model from your files';
+
+  @override
+  String get aiImportDescription =>
+      'Select a compatible local model file and review its requirements before using it.';
+
+  @override
+  String get aiFeaturesTitle => 'Smart features';
+
+  @override
+  String get aiFeaturesSubtitle => 'Compression, organization, and search';
+
+  @override
+  String get aiFeaturesDescription =>
+      'Choose which local AI suggestions to use for video compression, organization, naming, and search.';
+
+  @override
+  String get aiRuntimeTitle => 'Model performance';
+
+  @override
+  String get aiRuntimeSubtitle => 'Processing and resource preferences';
+
+  @override
+  String get aiRuntimeDescription =>
+      'Control the processing backend and resource limits for supported models.';
 
   @override
   String get compressionHistorySubtitle => 'Your compressed video history';

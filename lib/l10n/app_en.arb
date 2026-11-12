@@ -475,6 +475,10 @@
   "@settingsGroupCompression": {
     "description": "Settings hub section label"
   },
+  "settingsGroupAi": "On-device AI",
+  "@settingsGroupAi": {
+    "description": "Settings hub section label"
+  },
   "settingsGroupPrivacy": "Notifications & privacy",
   "@settingsGroupPrivacy": {
     "description": "Settings hub section label"
@@ -515,6 +519,23 @@
   "@settingsStorageSubtitle": {
     "description": "Settings hub row summary"
   },
+  "settingsAiTitle": "AI settings",
+  "aiChatTitle": "Zumi Assistant",
+  "aiChatDescription": "A private assistant for your videos is coming soon. You will be able to ask about compression, organization, and saved videos here.",
+  "settingsAiSubtitle": "Local models and smart tools",
+  "settingsAiDescription": "Explore local models and future AI tools. These options are not active yet.",
+  "aiModelsTitle": "Local models",
+  "aiModelsSubtitle": "Browse and download supported models",
+  "aiModelsDescription": "Choose a supported model, download it to this device, and manage installed models here.",
+  "aiImportTitle": "Import a model",
+  "aiImportSubtitle": "Use a compatible model from your files",
+  "aiImportDescription": "Select a compatible local model file and review its requirements before using it.",
+  "aiFeaturesTitle": "Smart features",
+  "aiFeaturesSubtitle": "Compression, organization, and search",
+  "aiFeaturesDescription": "Choose which local AI suggestions to use for video compression, organization, naming, and search.",
+  "aiRuntimeTitle": "Model performance",
+  "aiRuntimeSubtitle": "Processing and resource preferences",
+  "aiRuntimeDescription": "Control the processing backend and resource limits for supported models.",
   "compressionHistorySubtitle": "Your compressed video history",
   "@compressionHistorySubtitle": {
     "description": "Settings hub row summary"
