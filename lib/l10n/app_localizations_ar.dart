@@ -10,7 +10,7 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
-  String get appTitle => 'زومي';
+  String get appTitle => 'Zumi';
 
   @override
   String get downloadFile => 'تحميل الملف';
@@ -181,18 +181,18 @@ class AppLocalizationsAr extends AppLocalizations {
   String get ok => 'حسناً';
 
   @override
-  String get homeTitle => 'زومي';
+  String get homeTitle => 'Zumi';
 
   @override
   String get homeDescription =>
       'ضغط الفيديوهات بخصوصية تامة، مباشرة على جهازك.';
 
   @override
-  String get onboardingTitle => 'مرحباً بك في زومي';
+  String get onboardingTitle => 'مرحباً بك في Zumi';
 
   @override
   String get onboardingDescription =>
-      'تعرف على كيفية قيام زومي بضغط فيديوهاتك دون أن تغادر هاتفك أبداً.';
+      'تعرف على كيفية قيام Zumi بضغط فيديوهاتك دون أن تغادر هاتفك أبداً.';
 
   @override
   String get loginTitle => 'تسجيل الدخول';
@@ -279,7 +279,7 @@ class AppLocalizationsAr extends AppLocalizations {
       'المعالجة المحلية، السجلات، وتقارير الأعطال الاختيارية.';
 
   @override
-  String get aboutAppTitle => 'عن زومي';
+  String get aboutAppTitle => 'عن Zumi';
 
   @override
   String get aboutAppDescription => 'رقم الإصدار وتفاصيل التطبيق.';
@@ -289,41 +289,41 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get aboutDeveloperDescription =>
-      'المطور والأدوات المستخدمة في بناء زومي.';
+      'المطور والأدوات المستخدمة في بناء Zumi.';
 
   @override
   String get aboutLicensesTitle => 'تراخيص مفتوحة المصدر';
 
   @override
   String get aboutLicensesDescription =>
-      'حزم البرمجيات مفتوحة المصدر المستخدمة في زومي.';
+      'حزم البرمجيات مفتوحة المصدر المستخدمة في Zumi.';
 
   @override
   String get legalPrivacyTitle => 'سياسة الخصوصية';
 
   @override
   String get legalPrivacyDescription =>
-      'كيف يتعامل زومي مع فيديوهاتك وبياناتك.';
+      'كيف يتعامل Zumi مع فيديوهاتك وبياناتك.';
 
   @override
   String get legalTermsTitle => 'شروط الخدمة';
 
   @override
-  String get legalTermsDescription => 'الشروط التي تنطبق على زومي ومشترياته.';
+  String get legalTermsDescription => 'الشروط التي تنطبق على Zumi ومشترياته.';
 
   @override
   String get legalDataSafetyTitle => 'أمان البيانات';
 
   @override
   String get legalDataSafetyDescription =>
-      'ملخص البيانات التي يجمعها زومي ولماذا.';
+      'ملخص البيانات التي يجمعها Zumi ولماذا.';
 
   @override
   String get legalPermissionsTitle => 'الأذونات';
 
   @override
   String get legalPermissionsDescription =>
-      'الأذونات التي يطلبها زومي وسبب طلب كل منها.';
+      'الأذونات التي يطلبها Zumi وسبب طلب كل منها.';
 
   @override
   String get helpFaqTitle => 'الأسئلة الشائعة';
@@ -386,13 +386,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get rateAppTitle => 'تقييم التطبيق';
 
   @override
-  String get rateAppDescription => 'شارك رأيك في زومي على المتجر لمساعدتنا.';
+  String get rateAppDescription => 'شارك رأيك في Zumi على المتجر لمساعدتنا.';
 
   @override
   String get shareAppTitle => 'مشاركة التطبيق';
 
   @override
-  String get shareAppDescription => 'رشّح زومي لأصدقائك وزملائك.';
+  String get shareAppDescription => 'رشّح Zumi لأصدقائك وزملائك.';
 
   @override
   String get settingsGroupAppearance => 'المظهر واللغة';
@@ -453,7 +453,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get aboutAppSubtitle => 'رقم الإصدار وتفاصيل البناء';
 
   @override
-  String get aboutDeveloperSubtitle => 'المطور الذي بنى زومي';
+  String get aboutDeveloperSubtitle => 'المطور الذي بنى Zumi';
 
   @override
   String get aboutLicensesSubtitle => 'تراخيص الحزم مفتوحة المصدر';
@@ -462,7 +462,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get legalPrivacySubtitle => 'كيف نتعامل مع بياناتك';
 
   @override
-  String get legalTermsSubtitle => 'قواعد استخدام تطبيق زومي';
+  String get legalTermsSubtitle => 'قواعد استخدام تطبيق Zumi';
 
   @override
   String get legalDataSafetySubtitle => 'البيانات التي نجمعها منك';
@@ -737,13 +737,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get aboutRepository => 'مستودع GitHub';
 
   @override
-  String get aboutRepositorySubtitle => 'استعرض كود زومي';
+  String get aboutRepositorySubtitle => 'استعرض كود Zumi';
 
   @override
   String get aboutReadme => 'اقرأ ملف README';
 
   @override
-  String get aboutReadmeSubtitle => 'تعرف على زومي في GitHub';
+  String get aboutReadmeSubtitle => 'تعرف على Zumi في GitHub';
 
   @override
   String get aboutIssues => 'الإبلاغ عن مشكلة';
@@ -758,7 +758,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get aboutLatestReleaseSubtitle => 'استعرض الإصدارات والتنزيلات';
 
   @override
-  String get aboutDonate => 'ادعم زومي';
+  String get aboutDonate => 'ادعم Zumi';
 
   @override
   String get aboutDonateSubtitle => 'افتح صفحة التبرعات الرسمية';
@@ -783,7 +783,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get maintenanceMessage =>
-      'زومي غير متاح مؤقتًا. حاول مرة أخرى لاحقًا.';
+      'Zumi غير متاح مؤقتًا. حاول مرة أخرى لاحقًا.';
 
   @override
   String get comingSoon => 'قريباً';
