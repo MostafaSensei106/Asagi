@@ -43,7 +43,6 @@ dependencies:
   flutter_secure_storage: ^11.2.0
   flutter_animate: ^4.5.2
   get_it: ^9.3.0
-  rive: ^0.14.11
   flutter_svg: ^2.3.2
   cached_network_image_ce: ^4.13.2
   path_provider: ^2.1.6
