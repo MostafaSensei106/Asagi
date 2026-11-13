@@ -54,6 +54,7 @@ final class LanguageSettingsPage extends StatelessWidget {
                     final langCode = locale.languageCode;
                     final localeData = lookupAppLocalizations(locale);
                     final title = localeData.languageName;
+
                     final subtitle = localeData.languageSubtitle;
                     final countryCode = localeData.countryCode;
                     final isFirst = index == 0;
@@ -62,15 +63,7 @@ final class LanguageSettingsPage extends StatelessWidget {
                     final isSingle =
                         AppLocalizations.supportedLocales.length == 1;
 
-                    final radioWidget = Radio<String>(
-                      value: langCode,
-                      groupValue: currentLangCode,
-                      onChanged: (value) async {
-                        if (value != null && value != currentLangCode) {
-                          await changeLang(value);
-                        }
-                      },
-                    );
+                    final radioWidget = Radio<String>(value: langCode);
                     final flagWidget = CountryFlag.fromCountryCode(countryCode);
 
                     void handleTap() {
