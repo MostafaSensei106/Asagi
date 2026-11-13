@@ -103,11 +103,7 @@ final class AiSettingsPage extends StatelessWidget {
             ),
             const Gap(AppSpacing.large),
             for (final group in groups) ...[
-              ExpressiveSectionHeader(
-                icon: group.icon,
-                shape: group.shape,
-                title: group.title,
-              ),
+              ExpressiveSectionHeader(title: group.title),
               const Gap(AppSpacing.small),
               for (var index = 0; index < group.destinations.length; index++)
                 _destinationTile(

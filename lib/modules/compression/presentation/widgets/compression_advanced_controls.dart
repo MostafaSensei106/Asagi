@@ -4,7 +4,6 @@ import '../../../../core/compression/domain/models/compression_preferences.dart'
 import '../../../../core/compression/domain/models/encode_request.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/widgets/design_system/tokens/tokens.dart';
-import '../../../../core/widgets/display/expressive_icon.dart';
 import '../../../../core/widgets/display/expressive_section_header.dart';
 
 /// Controls that the Android compression pipeline can actually honor.
@@ -108,8 +107,6 @@ final class _CompressionAdvancedControlsState
     return ExpansionTile(
       title: ExpressiveSectionHeader(
         title: context.localeKeys.compressionAdvanced,
-        icon: Icons.tune,
-        shape: ExpressiveIconShape.gem,
       ),
       childrenPadding: const EdgeInsets.all(AppSpacing.large),
       expandedCrossAxisAlignment: CrossAxisAlignment.start,

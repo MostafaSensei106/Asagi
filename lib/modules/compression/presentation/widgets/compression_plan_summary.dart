@@ -3,7 +3,6 @@ import 'package:material_ui/material_ui.dart';
 import '../../../../core/compression/domain/models/compression_plan.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/widgets/design_system/tokens/tokens.dart';
-import '../../../../core/widgets/display/expressive_icon.dart';
 import '../../../../core/widgets/display/expressive_section_header.dart';
 
 final class CompressionPlanSummary extends StatelessWidget {
@@ -30,8 +29,6 @@ final class CompressionPlanSummary extends StatelessWidget {
           children: [
             ExpressiveSectionHeader(
               title: context.localeKeys.compressionPlanPreview,
-              icon: Icons.auto_awesome,
-              shape: ExpressiveIconShape.sunny,
             ),
             const SizedBox(height: AppSpacing.small),
             if (isLoading)

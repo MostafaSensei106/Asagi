@@ -61,15 +61,14 @@ final class SettingsPage extends StatelessWidget {
         child: CustomScrollView(
           slivers: [
             SliverPadding(
-              padding: const EdgeInsets.all(AppSpacing.large),
+              padding: const EdgeInsets.symmetric(
+                horizontal: AppSpacing.large,
+                vertical: AppSpacing.medium,
+              ),
               sliver: SliverList.list(
                 children: [
                   for (final section in _sections) ...[
-                    ExpressiveSectionHeader(
-                      icon: _iconFor(section),
-                      shape: _shapeFor(section),
-                      title: _titleFor(context, section),
-                    ),
+                    ExpressiveSectionHeader(title: _titleFor(context, section)),
                     const Gap(AppSpacing.small),
                     ..._buildSectionTiles(context, section),
                     const Gap(AppSpacing.large),
@@ -162,17 +161,6 @@ final class SettingsPage extends StatelessWidget {
       trailing: trailing,
       onTap: onTap,
     );
-  }
-
-  /// Icon of the section's first advertised destination.
-  IconData _iconFor(AppRouteSection section) {
-    for (final route in _routes) {
-      if (route.metadata.section == section &&
-          route.metadata.showInSettingsHub) {
-        return route.metadata.icon;
-      }
-    }
-    return ZumiIcons.settings;
   }
 
   /// Each section gets its own shape treatment so the hub reads as a set of

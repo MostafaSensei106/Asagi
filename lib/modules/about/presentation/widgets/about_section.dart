@@ -35,7 +35,7 @@ final class AboutSection extends StatelessWidget {
   Widget build(BuildContext context) => Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      ExpressiveSectionHeader(icon: icon, shape: shape, title: title),
+      ExpressiveSectionHeader(title: title),
       const Gap(AppSpacing.small),
       for (var index = 0; index < children.length; index++)
         _tile(children[index], index),
