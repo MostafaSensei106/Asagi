@@ -16,7 +16,7 @@ final class VideoSelectPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBarComponent(title: context.localeKeys.videoSelectTitle),
+    appBar: AppBarComponent(title: context.localeKeys.chooseAVideo),
     body: BlocSignalBuilder<CompressionCubit, CompressionState>(
       builder: (context, state) => Center(
         child: Padding(
@@ -27,7 +27,7 @@ final class VideoSelectPage extends StatelessWidget {
               const Icon(Icons.video_library_outlined, size: 64),
               const SizedBox(height: 16),
               Text(
-                context.localeKeys.videoSelectDescription,
+                context.localeKeys.pickAVideoFromYourGalleryToStartCompressing,
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 24),

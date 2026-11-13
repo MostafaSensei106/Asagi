@@ -14,8 +14,8 @@ final class SupportPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppPlaceholderPage(
-      title: context.localeKeys.helpSupportTitle,
-      description: context.localeKeys.helpSupportDescription,
+      title: context.localeKeys.support,
+      description: context.localeKeys.getHelpWithYourAccountOrAPurchase,
       icon: ZumiIcons.support,
     );
   }

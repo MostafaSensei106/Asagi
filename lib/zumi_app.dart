@@ -6,6 +6,7 @@ import 'package:toastification/toastification.dart';
 import 'core/constants/app_metadata.dart';
 import 'core/di/di.dart';
 import 'core/router/app_router.dart';
+import 'core/utils/localization/app_supported_locales.dart';
 import 'core/utils/localization/logic/cubit/localization_cubit.dart';
 import 'core/utils/theme/app_theme.dart';
 import 'core/utils/theme/logic/cubit/theme_cubit.dart';
@@ -35,7 +36,10 @@ class ZumiApp extends StatelessWidget {
               theme: AppTheme.light,
               darkTheme: AppTheme.dark,
               themeMode: themeMode,
-              locale: Locale(locale),
+              locale: AppSupportedLocales.values.firstWhere(
+                (supportedLocale) => supportedLocale.toString() == locale,
+                orElse: () => AppSupportedLocales.values.first,
+              ),
               scrollBehavior: const CupertinoScrollBehavior(),
               restorationScopeId: '${AppMetadata.name}-restoration',
               localizationsDelegates: const [
@@ -43,7 +47,7 @@ class ZumiApp extends StatelessWidget {
                 GlobalCupertinoLocalizations.delegate,
                 ...AppLocalizations.localizationsDelegates,
               ],
-              supportedLocales: AppLocalizations.supportedLocales,
+              supportedLocales: AppSupportedLocales.values,
               routerConfig: AppRouter.config,
               builder: (context, child) => child!,
             );

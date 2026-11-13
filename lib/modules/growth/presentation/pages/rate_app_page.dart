@@ -14,8 +14,8 @@ final class RateAppPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppPlaceholderPage(
-      title: context.localeKeys.rateAppTitle,
-      description: context.localeKeys.rateAppDescription,
+      title: context.localeKeys.rateZumi,
+      description: context.localeKeys.tellOthersHowZumiWorkedForYouOnTheStore,
       icon: ZumiIcons.rateApp,
     );
   }

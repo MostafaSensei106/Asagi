@@ -14,8 +14,8 @@ final class OnboardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppPlaceholderPage(
-      title: context.localeKeys.onboardingTitle,
-      description: context.localeKeys.onboardingDescription,
+      title: context.localeKeys.welcomeToZumi,
+      description: context.localeKeys.learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone,
       icon: ZumiIcons.onboarding,
       showAppBar: false,
     );

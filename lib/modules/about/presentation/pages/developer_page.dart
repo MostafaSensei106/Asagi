@@ -17,7 +17,7 @@ final class DeveloperPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.localeKeys;
     return Scaffold(
-      appBar: SidePageAppBarComponent(title: l10n.aboutDeveloperTitle),
+      appBar: SidePageAppBarComponent(title: l10n.aboutTheDeveloper),
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.all(AppSpacing.large),
@@ -29,7 +29,7 @@ final class DeveloperPage extends StatelessWidget {
               children: [
                 AboutRow(
                   title: l10n.aboutDeveloperName,
-                  subtitle: l10n.aboutDeveloperDescription,
+                  subtitle: l10n.theDeveloperAndToolsBehindZumi,
                   icon: ZumiIcons.developer,
                 ),
                 AboutRow(

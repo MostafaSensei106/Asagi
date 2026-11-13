@@ -14,8 +14,8 @@ final class AppearanceSettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppPlaceholderPage(
-      title: context.localeKeys.settingsAppearanceTitle,
-      description: context.localeKeys.settingsAppearanceDescription,
+      title: context.localeKeys.appearance,
+      description: context.localeKeys.themeColorSchemeAndMotionPreferences,
       icon: ZumiIcons.appearance,
     );
   }

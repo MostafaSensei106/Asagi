@@ -14,8 +14,8 @@ final class PlansPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppPlaceholderPage(
-      title: context.localeKeys.plansTitle,
-      description: context.localeKeys.plansDescription,
+      title: context.localeKeys.plans,
+      description: context.localeKeys.comparePlansAndSeeWhatEachOneUnlocks,
       icon: ZumiIcons.plans,
     );
   }

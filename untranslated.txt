@@ -1,13 +1,1 @@
-{
-  "ar": [
-    "languageName",
-    "languageSubtitle",
-    "countryCode"
-  ],
-
-  "en": [
-    "languageName",
-    "languageSubtitle",
-    "countryCode"
-  ]
-}
+{}

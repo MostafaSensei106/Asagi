@@ -22,7 +22,7 @@ final class CompressionHistoryPage extends HookWidget {
     }, [cubit]);
     return Scaffold(
       appBar: AppBarComponent(
-        title: context.localeKeys.compressionHistoryTitle,
+        title: context.localeKeys.compressionHistory,
       ),
       body: BlocSignalBuilder<CompressionCubit, CompressionState>(
         builder: (context, state) => state.history.isEmpty

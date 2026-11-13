@@ -35,7 +35,7 @@ final class HomePage extends HookWidget {
       unawaited(
         context.dialog
             .showDialog<void>(
-              title: Text(context.localeKeys.compressionProgressTitle),
+              title: Text(context.localeKeys.compressing),
               content: _CompressionRunningDialog(cubit: cubit),
               actions: const [],
             )
@@ -44,7 +44,7 @@ final class HomePage extends HookWidget {
     }
 
     return Scaffold(
-      appBar: AppBarComponent(title: context.localeKeys.appTitle),
+      appBar: AppBarComponent(title: context.localeKeys.zumi),
       body: BlocSignalBuilder<CompressionCubit, CompressionState>(
         bloc: cubit,
         buildWhen: (previous, current) =>
@@ -100,7 +100,7 @@ final class HomePage extends HookWidget {
                           const Icon(Icons.video_library_outlined, size: 72),
                           const SizedBox(height: 16),
                           Text(
-                            context.localeKeys.homeDescription,
+                            context.localeKeys.compressVideosPrivatelyOnYourDevice,
                             textAlign: TextAlign.center,
                             style: Theme.of(context).textTheme.titleMedium,
                           ),
@@ -112,7 +112,7 @@ final class HomePage extends HookWidget {
                           const SizedBox(height: 16),
                           if (completed) ...[
                             Text(
-                              context.localeKeys.compressionResultTitle,
+                              context.localeKeys.compressionResult,
                               style: Theme.of(context).textTheme.headlineSmall,
                             ),
                             const SizedBox(height: 12),

@@ -1,0 +1,10 @@
+{
+  "@@locale": "ar_MA",
+  "languageName": "العربية المغربية",
+  "countryCode": "MA",
+  "compressVideosPrivatelyOnYourDevice": "اضغط فيديوهاتك بخصوصية على تليفونك.",
+  "retry": "عاود حاول",
+  "pleaseWait": "تسنى شوية...",
+  "chooseAVideo": "اختار فيديو",
+  "compressionStart": "ابدأ الضغط"
+}

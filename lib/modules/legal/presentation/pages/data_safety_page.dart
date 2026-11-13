@@ -14,8 +14,8 @@ final class DataSafetyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppPlaceholderPage(
-      title: context.localeKeys.legalDataSafetyTitle,
-      description: context.localeKeys.legalDataSafetyDescription,
+      title: context.localeKeys.dataSafety,
+      description: context.localeKeys.summaryOfTheDataZumiCollectsAndWhy,
       icon: ZumiIcons.dataSafety,
     );
   }

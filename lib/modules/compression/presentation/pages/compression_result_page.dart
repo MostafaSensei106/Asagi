@@ -18,13 +18,13 @@ final class CompressionResultPage extends HookWidget {
   Widget build(BuildContext context) {
     final showAfter = useState(true);
     return Scaffold(
-      appBar: AppBarComponent(title: context.localeKeys.compressionResultTitle),
+      appBar: AppBarComponent(title: context.localeKeys.compressionResult),
       body: BlocSignalBuilder<CompressionCubit, CompressionState>(
         builder: (context, state) {
           final output = state.output;
           if (output == null) {
             return Center(
-              child: Text(context.localeKeys.compressionResultDescription),
+              child: Text(context.localeKeys.compareTheBeforeAndAfterSizeThenSaveOrShareTheResult),
             );
           }
           return ListView(

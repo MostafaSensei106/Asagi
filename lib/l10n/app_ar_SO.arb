@@ -1,0 +1,10 @@
+{
+  "@@locale": "ar_SO",
+  "languageName": "العربية الصومالية",
+  "countryCode": "SO",
+  "compressVideosPrivatelyOnYourDevice": "اضغط فيديوهاتك بخصوصية على هاتفك.",
+  "retry": "حاول مرة أخرى",
+  "pleaseWait": "انتظر قليلًا...",
+  "chooseAVideo": "اختر فيديو",
+  "compressionStart": "ابدأ الضغط"
+}

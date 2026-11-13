@@ -6,6 +6,39 @@
 		<true/>
 		<key>CFBundleDevelopmentRegion</key>
 		<string>$(DEVELOPMENT_LANGUAGE)</string>
+		<key>CFBundleLocalizations</key>
+		<array>
+			<string>ar-AE</string>
+			<string>ar-BH</string>
+			<string>ar-DJ</string>
+			<string>ar-DZ</string>
+			<string>ar-EG</string>
+			<string>ar-IQ</string>
+			<string>ar-JO</string>
+			<string>ar-KM</string>
+			<string>ar-KW</string>
+			<string>ar-LB</string>
+			<string>ar-LY</string>
+			<string>ar-MA</string>
+			<string>ar-MR</string>
+			<string>ar-OM</string>
+			<string>ar-PS</string>
+			<string>ar-QA</string>
+			<string>ar-SA</string>
+			<string>ar-SD</string>
+			<string>ar-SO</string>
+			<string>ar-SY</string>
+			<string>ar-TN</string>
+			<string>ar-YE</string>
+			<string>de-DE</string>
+			<string>en-GB</string>
+			<string>en-US</string>
+			<string>es-ES</string>
+			<string>fr-FR</string>
+			<string>ja-JP</string>
+			<string>nl-NL</string>
+			<string>tr-TR</string>
+		</array>
 		<key>CFBundleDisplayName</key>
 		<string>Zumi</string>
 		<key>CFBundleExecutable</key>

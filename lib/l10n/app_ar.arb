@@ -1,180 +1,617 @@
 {
   "@@locale": "ar",
-  "appTitle": "Zumi",
+  "zumi": "Zumi",
+  "@zumi": {
+    "description": "Application name shown in the app and on the home page"
+  },
   "downloadFile": "تحميل الملف",
+  "@downloadFile": {
+    "description": "Title for download file dialog"
+  },
   "fileOpenedInBrowser": "تم فتح الملف في المتصفح: {fileName}",
+  "@fileOpenedInBrowser": {
+    "description": "Message shown when file is opened in browser",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
   "fileSavedToDcim": "تم حفظ الملف في المعرض: {fileName}",
+  "@fileSavedToDcim": {
+    "description": "Message shown when file is saved to gallery",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
   "fileSavedToDocuments": "تم حفظ الملف في المستندات: {fileName}",
+  "@fileSavedToDocuments": {
+    "description": "Message shown when file is saved to documents",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
   "fileAlreadySaved": "الملف محفوظ بالفعل",
+  "@fileAlreadySaved": {
+    "description": "Message shown when file already exists"
+  },
   "error": "خطأ",
+  "@error": {
+    "description": "Generic error title"
+  },
   "info": "معلومات",
+  "@info": {
+    "description": "Generic info title"
+  },
   "success": "نجاح",
+  "@success": {
+    "description": "Generic success title"
+  },
   "warning": "تحذير",
+  "@warning": {
+    "description": "Generic warning title"
+  },
   "paid": "مدفوع",
+  "@paid": {
+    "description": "Payment status paid"
+  },
   "unpaid": "غير مدفوع",
+  "@unpaid": {
+    "description": "Payment status unpaid"
+  },
   "partial": "مدفوع جزئياً",
+  "@partial": {
+    "description": "Payment status partial"
+  },
   "error_address_line_cant_be_empty": "لا يمكن أن يكون سطر العنوان فارغاً",
+  "@error_address_line_cant_be_empty": {
+    "description": "Address line empty error"
+  },
   "error_address_line_too_long": "سطر العنوان طويل جداً",
+  "@error_address_line_too_long": {
+    "description": "Address line too long error"
+  },
   "error_address_invalid_special_characters": "الرموز الخاصة غير مسموح بها",
+  "@error_address_invalid_special_characters": {
+    "description": "Address special characters error"
+  },
   "error_address_emoji_not_allowed": "الرموز التعبيرية غير مسموح بها",
+  "@error_address_emoji_not_allowed": {
+    "description": "Address emoji not allowed error"
+  },
   "error_city_cant_be_empty": "لا يمكن أن تكون المدينة فارغة",
+  "@error_city_cant_be_empty": {
+    "description": "City empty error"
+  },
   "error_city_too_long": "اسم المدينة طويل جداً",
+  "@error_city_too_long": {
+    "description": "City too long error"
+  },
   "error_city_invalid_special_characters": "تحتوي المدينة على رموز خاصة غير صالحة",
+  "@error_city_invalid_special_characters": {
+    "description": "City special characters error"
+  },
   "error_address_label_cant_be_empty": "لا يمكن أن يكون تصنيف العنوان فارغاً",
+  "@error_address_label_cant_be_empty": {
+    "description": "Address label empty error"
+  },
   "error_address_label_too_long": "تصنيف العنوان طويل جداً",
+  "@error_address_label_too_long": {
+    "description": "Address label too long error"
+  },
   "error_email_cant_be_empty": "لا يمكن أن يكون البريد الإلكتروني فارغاً",
+  "@error_email_cant_be_empty": {
+    "description": "Email empty error"
+  },
   "error_email_not_invalid_format": "صيغة البريد الإلكتروني غير صالحة",
+  "@error_email_not_invalid_format": {
+    "description": "Email invalid format error"
+  },
   "error_email_contains_invalid_characters": "البريد الإلكتروني يحتوي على رموز غير صالحة",
+  "@error_email_contains_invalid_characters": {
+    "description": "Email invalid characters error"
+  },
   "error_email_must_contain_at_symbol": "يجب أن يحتوي البريد الإلكتروني على علامة @",
+  "@error_email_must_contain_at_symbol": {
+    "description": "Email missing @ error"
+  },
   "error_email_must_be_in_lowercase": "يجب أن يكون البريد الإلكتروني بأحرف صغيرة",
+  "@error_email_must_be_in_lowercase": {
+    "description": "Email not in lowercase error"
+  },
   "error_arabic_not_allowed": "الأحرف العربية غير مسموح بها",
+  "@error_arabic_not_allowed": {
+    "description": "Arabic characters not allowed error"
+  },
   "error_email_emoji_not_allowed": "الرموز التعبيرية غير مسموح بها في البريد الإلكتروني",
+  "@error_email_emoji_not_allowed": {
+    "description": "Email emoji not allowed error"
+  },
   "error_phone_number_cant_be_empty": "لا يمكن أن يكون رقم الهاتف فارغاً",
+  "@error_phone_number_cant_be_empty": {
+    "description": "Phone number empty error"
+  },
   "error_phone_number_invalid": "رقم الهاتف غير صالح",
+  "@error_phone_number_invalid": {
+    "description": "Phone number invalid error"
+  },
   "error_phone_number_min_length": "يجب أن يتكون رقم الهاتف من 11 رقماً على الأقل",
+  "@error_phone_number_min_length": {
+    "description": "Phone number min length error"
+  },
   "error_name_cant_be_empty": "لا يمكن أن يكون الاسم فارغاً",
+  "@error_name_cant_be_empty": {
+    "description": "Name empty error"
+  },
   "error_name_invalid": "الاسم غير صالح",
+  "@error_name_invalid": {
+    "description": "Name invalid error"
+  },
   "error_name_too_short_at_least_3_characters": "يجب ألا يقل الاسم عن 3 أحرف",
+  "@error_name_too_short_at_least_3_characters": {
+    "description": "Name too short error"
+  },
   "error_name_too_long_maximum_20_characters": "يجب ألا يزيد الاسم عن 20 حرفاً",
+  "@error_name_too_long_maximum_20_characters": {
+    "description": "Name too long error"
+  },
   "error_name_invalid_special_characters": "يحتوي الاسم على رموز خاصة غير صالحة",
+  "@error_name_invalid_special_characters": {
+    "description": "Name special characters error"
+  },
   "error_name_emoji_not_allowed": "الرموز التعبيرية غير مسموح بها في الاسم",
+  "@error_name_emoji_not_allowed": {
+    "description": "Name emoji not allowed error"
+  },
   "error_password_cant_be_empty": "لا يمكن أن تكون كلمة المرور فارغة",
+  "@error_password_cant_be_empty": {
+    "description": "Password empty error"
+  },
   "error_password_must_contain_uppercase_lowercase_number_and_special_character": "يجب أن تحتوي كلمة المرور على أحرف كبيرة وصغيرة وأرقام ورموز خاصة",
+  "@error_password_must_contain_uppercase_lowercase_number_and_special_character": {
+    "description": "Password complex requirements error"
+  },
   "error_password_must_be_at_least_8_characters_long": "يجب ألا تقل كلمة المرور عن 8 أحرف",
+  "@error_password_must_be_at_least_8_characters_long": {
+    "description": "Password min length error"
+  },
   "noInternetConnection": "لا يوجد اتصال بالإنترنت",
+  "@noInternetConnection": {
+    "description": "No internet connection message"
+  },
   "internetConnectionRestored": "تمت استعادة الاتصال بالإنترنت",
+  "@internetConnectionRestored": {
+    "description": "Internet connection restored message"
+  },
   "retry": "إعادة المحاولة",
+  "@retry": {
+    "description": "Retry button text"
+  },
   "cancel": "إلغاء",
+  "@cancel": {
+    "description": "Cancel button text"
+  },
   "confirm": "تأكيد",
+  "@confirm": {
+    "description": "Confirm button text"
+  },
   "pleaseWait": "يرجى الانتظار...",
+  "@pleaseWait": {
+    "description": "Please wait dialog text"
+  },
   "ok": "حسناً",
-  "homeTitle": "Zumi",
-  "homeDescription": "ضغط الفيديوهات بخصوصية تامة، مباشرة على جهازك.",
-  "onboardingTitle": "مرحباً بك في Zumi",
-  "onboardingDescription": "تعرف على كيفية قيام Zumi بضغط فيديوهاتك دون أن تغادر هاتفك أبداً.",
-  "loginTitle": "تسجيل الدخول",
-  "loginDescription": "سجّل الدخول لمزامنة خطتك والحفاظ على مشترياتك على كل أجهزتك.",
-  "videoSelectTitle": "اختر فيديو",
-  "videoSelectDescription": "اختر فيديو من المعرض لبدء الضغط.",
-  "compressionSetupTitle": "إعدادات الضغط",
-  "compressionSetupDescription": "اختر الدقة ومعدل البت والصيغة قبل البدء.",
-  "compressionProgressTitle": "جارٍ الضغط",
-  "compressionProgressDescription": "تابع التقدم المباشر لعملية ضغط الفيديو.",
-  "compressionResultTitle": "نتيجة الضغط",
-  "compressionResultDescription": "قارن الحجم قبل وبعد، ثم احفظ أو شارك النتيجة.",
-  "compressionHistoryTitle": "سجل الضغط",
-  "compressionHistoryDescription": "استعرض الفيديوهات التي قمت بضغطها على هذا الجهاز.",
-  "settingsTitle": "الإعدادات",
-  "settingsAppearanceTitle": "المظهر",
-  "settingsAppearanceDescription": "السمة والألوان وتفضيلات الحركة.",
-  "settingsLanguageTitle": "اللغة",
-  "settingsLanguageDescription": "لغة التطبيق واتجاه النص.",
-  "settingsCompressionTitle": "إعدادات الضغط الافتراضية",
-  "settingsCompressionDescription": "الدقة الافتراضية ومعدل البت وصيغة الإخراج.",
-  "settingsStorageTitle": "التخزين والتنظيف",
-  "settingsStorageDescription": "مساحة التخزين وحجم الذاكرة المؤقتة وتنظيف الملفات المؤقتة.",
-  "settingsNotificationsTitle": "الإشعارات",
-  "settingsNotificationsDescription": "إشعارات اكتمال الضغط وتحديثات المنتج.",
-  "settingsPrivacyTitle": "الخصوصية",
-  "settingsPrivacyDescription": "المعالجة المحلية، السجلات، وتقارير الأعطال الاختيارية.",
-  "aboutAppTitle": "عن Zumi",
-  "aboutAppDescription": "رقم الإصدار وتفاصيل التطبيق.",
-  "aboutDeveloperTitle": "عن المطور",
-  "aboutDeveloperDescription": "المطور والأدوات المستخدمة في بناء Zumi.",
-  "aboutLicensesTitle": "تراخيص مفتوحة المصدر",
-  "aboutLicensesDescription": "حزم البرمجيات مفتوحة المصدر المستخدمة في Zumi.",
-  "legalPrivacyTitle": "سياسة الخصوصية",
-  "legalPrivacyDescription": "كيف يتعامل Zumi مع فيديوهاتك وبياناتك.",
-  "legalTermsTitle": "شروط الخدمة",
-  "legalTermsDescription": "الشروط التي تنطبق على Zumi ومشترياته.",
-  "legalDataSafetyTitle": "أمان البيانات",
-  "legalDataSafetyDescription": "ملخص البيانات التي يجمعها Zumi ولماذا.",
-  "legalPermissionsTitle": "الأذونات",
-  "legalPermissionsDescription": "الأذونات التي يطلبها Zumi وسبب طلب كل منها.",
-  "helpFaqTitle": "الأسئلة الشائعة",
-  "helpFaqDescription": "إجابات عن الأسئلة الشائعة حول الضغط والاشتراكات.",
-  "helpSupportTitle": "الدعم الفني",
-  "helpSupportDescription": "احصل على مساعدة بشأن حسابك أو مشترياتك.",
-  "helpFeedbackTitle": "إرسال ملاحظات",
-  "helpFeedbackDescription": "أبلغ عن مشكلة أو اقترح تحسينات.",
-  "plansTitle": "الخطط والترقيات",
-  "plansDescription": "قارن بين الخطط واكتشف الميزات المتاحة.",
-  "plansDetailsTitle": "تفاصيل الخطة",
-  "plansDetailsDescription": "الميزات والحدود والأسعار لهذه الخطة.",
-  "plansMethodsTitle": "طرق الشراء والدفع",
-  "plansMethodsDescription": "طرق الدفع المعتمدة بما فيها متجر جوجل بلاي وطرق أخرى.",
-  "plansRestoreTitle": "استعادة المشتريات",
-  "plansRestoreDescription": "استعادة مشتريات سابقة على جهاز آخر.",
-  "profileTitle": "الملف الشخصي",
-  "profileDescription": "بياناتك، حالة اشتراكك، وتفضيلات الحساب.",
-  "profileDeleteTitle": "حذف الحساب",
-  "profileDeleteDescription": "حذف حسابك وبياناتك نهائياً.",
-  "rateAppTitle": "تقييم التطبيق",
-  "rateAppDescription": "شارك رأيك في Zumi على المتجر لمساعدتنا.",
-  "shareAppTitle": "مشاركة التطبيق",
-  "shareAppDescription": "رشّح Zumi لأصدقائك وزملائك.",
+  "@ok": {
+    "description": "OK button text"
+  },
+  "compressVideosPrivatelyOnYourDevice": "ضغط الفيديوهات بخصوصية تامة، مباشرة على جهازك.",
+  "@compressVideosPrivatelyOnYourDevice": {
+    "description": "Home page description"
+  },
+  "welcomeToZumi": "مرحباً بك في Zumi",
+  "@welcomeToZumi": {
+    "description": "Onboarding page title"
+  },
+  "learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": "تعرف على كيفية قيام Zumi بضغط فيديوهاتك دون أن تغادر هاتفك أبداً.",
+  "@learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": {
+    "description": "Onboarding page description"
+  },
+  "signIn": "تسجيل الدخول",
+  "@signIn": {
+    "description": "Login page title"
+  },
+  "signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": "سجّل الدخول لمزامنة خطتك والحفاظ على مشترياتك على كل أجهزتك.",
+  "@signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": {
+    "description": "Login page description"
+  },
+  "chooseAVideo": "اختر فيديو",
+  "@chooseAVideo": {
+    "description": "Video picker page title"
+  },
+  "pickAVideoFromYourGalleryToStartCompressing": "اختر فيديو من المعرض لبدء الضغط.",
+  "@pickAVideoFromYourGalleryToStartCompressing": {
+    "description": "Video picker page description"
+  },
+  "compressionSetup": "إعدادات الضغط",
+  "@compressionSetup": {
+    "description": "Compression setup page title"
+  },
+  "chooseResolutionBitrateAndOutputFormatBeforeYouStart": "اختر الدقة ومعدل البت والصيغة قبل البدء.",
+  "@chooseResolutionBitrateAndOutputFormatBeforeYouStart": {
+    "description": "Compression setup page description"
+  },
+  "compressing": "جارٍ الضغط",
+  "@compressing": {
+    "description": "Compression progress page title"
+  },
+  "followTheLiveProgressOfYourCompressionJob": "تابع التقدم المباشر لعملية ضغط الفيديو.",
+  "@followTheLiveProgressOfYourCompressionJob": {
+    "description": "Compression progress page description"
+  },
+  "compressionResult": "نتيجة الضغط",
+  "@compressionResult": {
+    "description": "Compression result page title"
+  },
+  "compareTheBeforeAndAfterSizeThenSaveOrShareTheResult": "قارن الحجم قبل وبعد، ثم احفظ أو شارك النتيجة.",
+  "@compareTheBeforeAndAfterSizeThenSaveOrShareTheResult": {
+    "description": "Compression result page description"
+  },
+  "compressionHistory": "سجل الضغط",
+  "@compressionHistory": {
+    "description": "Compression history page title"
+  },
+  "reviewTheVideosYouHaveCompressedOnThisDevice": "استعرض الفيديوهات التي قمت بضغطها على هذا الجهاز.",
+  "@reviewTheVideosYouHaveCompressedOnThisDevice": {
+    "description": "Compression history page description"
+  },
+  "settings": "الإعدادات",
+  "@settings": {
+    "description": "Settings hub page title"
+  },
+  "appearance": "المظهر",
+  "@appearance": {
+    "description": "Appearance settings page title"
+  },
+  "themeColorSchemeAndMotionPreferences": "السمة والألوان وتفضيلات الحركة.",
+  "@themeColorSchemeAndMotionPreferences": {
+    "description": "Appearance settings page description"
+  },
+  "language": "اللغة",
+  "@language": {
+    "description": "Language settings page title"
+  },
+  "appLanguageAndTextDirection": "لغة التطبيق واتجاه النص.",
+  "@appLanguageAndTextDirection": {
+    "description": "Language settings page description"
+  },
+  "compressionDefaults": "إعدادات الضغط الافتراضية",
+  "@compressionDefaults": {
+    "description": "Compression defaults page title"
+  },
+  "defaultResolutionBitrateAndOutputFormat": "الدقة الافتراضية ومعدل البت وصيغة الإخراج.",
+  "@defaultResolutionBitrateAndOutputFormat": {
+    "description": "Compression defaults page description"
+  },
+  "storageCleanup": "التخزين والتنظيف",
+  "@storageCleanup": {
+    "description": "Storage settings page title"
+  },
+  "storageUsageCacheSizeAndTemporaryFileCleanup": "مساحة التخزين وحجم الذاكرة المؤقتة وتنظيف الملفات المؤقتة.",
+  "@storageUsageCacheSizeAndTemporaryFileCleanup": {
+    "description": "Storage settings page description"
+  },
+  "notifications": "الإشعارات",
+  "@notifications": {
+    "description": "Notifications settings page title"
+  },
+  "jobCompletionAndProductUpdateNotifications": "إشعارات اكتمال الضغط وتحديثات المنتج.",
+  "@jobCompletionAndProductUpdateNotifications": {
+    "description": "Notifications settings page description"
+  },
+  "privacy": "الخصوصية",
+  "@privacy": {
+    "description": "Privacy settings page title"
+  },
+  "onDeviceProcessingLocalLogsAndOptionalCrashReports": "المعالجة المحلية، السجلات، وتقارير الأعطال الاختيارية.",
+  "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
+    "description": "Privacy settings page description"
+  },
+  "aboutZumi": "عن Zumi",
+  "@aboutZumi": {
+    "description": "App info page title"
+  },
+  "versionBuildNumberAndApplicationDetails": "رقم الإصدار وتفاصيل التطبيق.",
+  "@versionBuildNumberAndApplicationDetails": {
+    "description": "App info page description"
+  },
+  "aboutTheDeveloper": "عن المطور",
+  "@aboutTheDeveloper": {
+    "description": "Developer page title"
+  },
+  "theDeveloperAndToolsBehindZumi": "المطور والأدوات المستخدمة في بناء Zumi.",
+  "@theDeveloperAndToolsBehindZumi": {
+    "description": "Developer page description"
+  },
+  "openSourceLicenses": "تراخيص مفتوحة المصدر",
+  "@openSourceLicenses": {
+    "description": "Licenses page title"
+  },
+  "openSourcePackagesBundledWithZumi": "حزم البرمجيات مفتوحة المصدر المستخدمة في Zumi.",
+  "@openSourcePackagesBundledWithZumi": {
+    "description": "Licenses page description"
+  },
+  "privacyPolicy": "سياسة الخصوصية",
+  "@privacyPolicy": {
+    "description": "Privacy policy page title"
+  },
+  "howZumiHandlesYourVideosAndData": "كيف يتعامل Zumi مع فيديوهاتك وبياناتك.",
+  "@howZumiHandlesYourVideosAndData": {
+    "description": "Privacy policy page description"
+  },
+  "termsOfService": "شروط الخدمة",
+  "@termsOfService": {
+    "description": "Terms page title"
+  },
+  "theTermsThatApplyToZumiAndItsPurchases": "الشروط التي تنطبق على Zumi ومشترياته.",
+  "@theTermsThatApplyToZumiAndItsPurchases": {
+    "description": "Terms page description"
+  },
+  "dataSafety": "أمان البيانات",
+  "@dataSafety": {
+    "description": "Data safety page title"
+  },
+  "summaryOfTheDataZumiCollectsAndWhy": "ملخص البيانات التي يجمعها Zumi ولماذا.",
+  "@summaryOfTheDataZumiCollectsAndWhy": {
+    "description": "Data safety page description"
+  },
+  "permissions": "الأذونات",
+  "@permissions": {
+    "description": "Permissions page title"
+  },
+  "runtimePermissionsZumiRequestsAndWhyEachIsNeeded": "الأذونات التي يطلبها Zumi وسبب طلب كل منها.",
+  "@runtimePermissionsZumiRequestsAndWhyEachIsNeeded": {
+    "description": "Permissions page description"
+  },
+  "faq": "الأسئلة الشائعة",
+  "@faq": {
+    "description": "FAQ page title"
+  },
+  "answersToCommonQuestionsAboutCompressionAndBilling": "إجابات عن الأسئلة الشائعة حول الضغط والاشتراكات.",
+  "@answersToCommonQuestionsAboutCompressionAndBilling": {
+    "description": "FAQ page description"
+  },
+  "support": "الدعم الفني",
+  "@support": {
+    "description": "Support page title"
+  },
+  "getHelpWithYourAccountOrAPurchase": "احصل على مساعدة بشأن حسابك أو مشترياتك.",
+  "@getHelpWithYourAccountOrAPurchase": {
+    "description": "Support page description"
+  },
+  "sendFeedback": "إرسال ملاحظات",
+  "@sendFeedback": {
+    "description": "Feedback page title"
+  },
+  "reportAProblemOrSuggestAnImprovement": "أبلغ عن مشكلة أو اقترح تحسينات.",
+  "@reportAProblemOrSuggestAnImprovement": {
+    "description": "Feedback page description"
+  },
+  "plans": "الخطط والترقيات",
+  "@plans": {
+    "description": "Plans page title"
+  },
+  "comparePlansAndSeeWhatEachOneUnlocks": "قارن بين الخطط واكتشف الميزات المتاحة.",
+  "@comparePlansAndSeeWhatEachOneUnlocks": {
+    "description": "Plans page description"
+  },
+  "planDetails": "تفاصيل الخطة",
+  "@planDetails": {
+    "description": "Plan details page title"
+  },
+  "benefitsLimitsAndPricingForThisPlan": "الميزات والحدود والأسعار لهذه الخطة.",
+  "@benefitsLimitsAndPricingForThisPlan": {
+    "description": "Plan details page description"
+  },
+  "paymentMethods": "طرق الشراء والدفع",
+  "@paymentMethods": {
+    "description": "Purchase methods page title"
+  },
+  "supportedWaysToPayIncludingStoreBilling": "طرق الدفع المعتمدة بما فيها متجر جوجل بلاي وطرق أخرى.",
+  "@supportedWaysToPayIncludingStoreBilling": {
+    "description": "Purchase methods page description"
+  },
+  "restorePurchases": "استعادة المشتريات",
+  "@restorePurchases": {
+    "description": "Restore purchases page title"
+  },
+  "reApplyAPurchaseMadeOnAnotherDevice": "استعادة مشتريات سابقة على جهاز آخر.",
+  "@reApplyAPurchaseMadeOnAnotherDevice": {
+    "description": "Restore purchases page description"
+  },
+  "profile": "الملف الشخصي",
+  "@profile": {
+    "description": "Profile page title"
+  },
+  "yourIdentityPlanStatusAndAccountPreferences": "بياناتك، حالة اشتراكك، وتفضيلات الحساب.",
+  "@yourIdentityPlanStatusAndAccountPreferences": {
+    "description": "Profile page description"
+  },
+  "deleteAccount": "حذف الحساب",
+  "@deleteAccount": {
+    "description": "Delete account page title"
+  },
+  "permanentlyRemoveYourAccountAndItsServerSideData": "حذف حسابك وبياناتك نهائياً.",
+  "@permanentlyRemoveYourAccountAndItsServerSideData": {
+    "description": "Delete account page description"
+  },
+  "rateZumi": "تقييم التطبيق",
+  "@rateZumi": {
+    "description": "Rate app page title"
+  },
+  "tellOthersHowZumiWorkedForYouOnTheStore": "شارك رأيك في Zumi على المتجر لمساعدتنا.",
+  "@tellOthersHowZumiWorkedForYouOnTheStore": {
+    "description": "Rate app page description"
+  },
+  "shareZumi": "مشاركة التطبيق",
+  "@shareZumi": {
+    "description": "Share app page title"
+  },
+  "recommendZumiToAFriend": "رشّح Zumi لأصدقائك وزملائك.",
+  "@recommendZumiToAFriend": {
+    "description": "Share app page description"
+  },
   "settingsGroupAppearance": "المظهر و الالوان",
+  "@settingsGroupAppearance": {
+    "description": "Settings hub section label"
+  },
   "settingsGroupCompression": "الضغط والتخزين",
+  "@settingsGroupCompression": {
+    "description": "Settings hub section label"
+  },
   "settingsGroupAi": "الذكاء الاصطناعي",
+  "@settingsGroupAi": {
+    "description": "Settings hub section label"
+  },
   "settingsGroupPrivacy": "الإشعارات والخصوصية",
+  "@settingsGroupPrivacy": {
+    "description": "Settings hub section label"
+  },
   "settingsGroupPlans": "الخطط والمشتريات",
+  "@settingsGroupPlans": {
+    "description": "Settings hub section label"
+  },
   "settingsGroupAbout": "حول التطبيق",
+  "@settingsGroupAbout": {
+    "description": "Settings hub section label"
+  },
   "settingsGroupLegal": "قانوني وسياسات",
+  "@settingsGroupLegal": {
+    "description": "Settings hub section label"
+  },
   "settingsGroupHelp": "المساعدة والملاحظات",
+  "@settingsGroupHelp": {
+    "description": "Settings hub section label"
+  },
   "settingsGroupAccount": "الحساب",
+  "@settingsGroupAccount": {
+    "description": "Settings hub section label"
+  },
   "settingsAppearanceSubtitle": "المظهر، اللغة، وحجم النص",
+  "@settingsAppearanceSubtitle": {
+    "description": "Settings hub row summary"
+  },
   "settingsLanguageSubtitle": "لغة التطبيق واتجاه النص",
+  "@settingsLanguageSubtitle": {
+    "description": "Settings hub row summary"
+  },
   "settingsCompressionSubtitle": "الجودة الافتراضية وصيغة الملف",
+  "@settingsCompressionSubtitle": {
+    "description": "Settings hub row summary"
+  },
   "settingsStorageSubtitle": "الذاكرة والتخزين والمساحة المتاحة",
-  "settingsAiTitle": "الذكاء الاصطناعي",
-  "aiChatTitle": "مساعد Zumi",
-  "aiChatDescription": "مساعد خاص لفيديوهاتك قادم قريبًا. ستتمكن من السؤال عن الضغط والتنظيم والفيديوهات المحفوظة هنا.",
+  "@settingsStorageSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aiSettings": "الذكاء الاصطناعي",
+  "zumiAssistant": "مساعد Zumi",
+  "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "مساعد خاص لفيديوهاتك قادم قريبًا. ستتمكن من السؤال عن الضغط والتنظيم والفيديوهات المحفوظة هنا.",
   "settingsAiSubtitle": "نماذج محلية وأدوات ذكية",
-  "settingsAiDescription": "تعرّف على النماذج المحلية والأدوات الذكية القادمة. هذه الخيارات غير مفعّلة بعد.",
-  "aiModelsTitle": "النماذج المحلية",
+  "exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet": "تعرّف على النماذج المحلية والأدوات الذكية القادمة. هذه الخيارات غير مفعّلة بعد.",
+  "localModels": "النماذج المحلية",
   "aiModelsSubtitle": "تصفح النماذج المدعومة وتنزيلها",
-  "aiModelsDescription": "اختر نموذجًا مدعومًا، ونزّله على جهازك، وأدر النماذج المثبّتة من هنا.",
-  "aiImportTitle": "استيراد نموذج",
+  "chooseASupportedModelDownloadItToThisDeviceAndManageInstalledModelsHere": "اختر نموذجًا مدعومًا، ونزّله على جهازك، وأدر النماذج المثبّتة من هنا.",
+  "importAModel": "استيراد نموذج",
   "aiImportSubtitle": "استخدم نموذجًا متوافقًا من ملفاتك",
-  "aiImportDescription": "اختر ملف نموذج محليًا متوافقًا وراجع متطلباته قبل استخدامه.",
-  "aiFeaturesTitle": "الميزات الذكية",
+  "selectACompatibleLocalModelFileAndReviewItsRequirementsBeforeUsingIt": "اختر ملف نموذج محليًا متوافقًا وراجع متطلباته قبل استخدامه.",
+  "smartFeatures": "الميزات الذكية",
   "aiFeaturesSubtitle": "الضغط والتنظيم والبحث",
-  "aiFeaturesDescription": "اختر اقتراحات الذكاء الاصطناعي المحلية للضغط والتنظيم والتسمية والبحث في الفيديوهات.",
-  "aiRuntimeTitle": "أداء النموذج",
+  "chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "اختر اقتراحات الذكاء الاصطناعي المحلية للضغط والتنظيم والتسمية والبحث في الفيديوهات.",
+  "modelPerformance": "أداء النموذج",
   "aiRuntimeSubtitle": "تفضيلات المعالجة والموارد",
-  "aiRuntimeDescription": "تحكم في طريقة المعالجة وحدود الموارد للنماذج المدعومة.",
-  "aiChatSettingsTitle": "إعدادات المحادثة",
+  "controlTheProcessingBackendAndResourceLimitsForSupportedModels": "تحكم في طريقة المعالجة وحدود الموارد للنماذج المدعومة.",
+  "conversationSettings": "إعدادات المحادثة",
   "aiChatSettingsSubtitle": "البث المباشر والتفكير وطول الرد",
-  "aiChatSettingsDescription": "اضبط طريقة رد المساعد، بما فيها البث المباشر ووضع التفكير وأسلوب التوليد وحدود الرد.",
-  "aiMediaTitle": "الصور والصوت",
+  "configureHowTheAssistantRespondsIncludingStreamingThinkingModeSamplingAndResponseLimits": "اضبط طريقة رد المساعد، بما فيها البث المباشر ووضع التفكير وأسلوب التوليد وحدود الرد.",
+  "imagesAndAudio": "الصور والصوت",
   "aiMediaSubtitle": "التحكم في المدخلات متعددة الوسائط",
-  "aiMediaDescription": "حدد ما إذا كان النموذج المتوافق يمكنه تحليل الصور والصوت المختارين من فيديوهاتك.",
-  "aiSearchTitle": "البحث الدلالي",
+  "chooseWhetherCompatibleModelsCanAnalyzeSelectedImagesAndAudioFromYourVideos": "حدد ما إذا كان النموذج المتوافق يمكنه تحليل الصور والصوت المختارين من فيديوهاتك.",
+  "semanticSearch": "البحث الدلالي",
   "aiSearchSubtitle": "التمثيلات والفهرسة المحلية",
-  "aiSearchDescription": "أدر نموذج التمثيلات وفهرس البحث المحلي للعثور على الفيديوهات واللحظات بالمعنى.",
-  "aiToolsTitle": "الأدوات والمخرجات المنظمة",
+  "manageTheLocalEmbeddingModelAndSearchIndexForFindingVideosAndMomentsByMeaning": "أدر نموذج التمثيلات وفهرس البحث المحلي للعثور على الفيديوهات واللحظات بالمعنى.",
+  "toolsAndStructuredOutput": "الأدوات والمخرجات المنظمة",
   "aiToolsSubtitle": "الإجراءات والقوالب والتأكيد",
-  "aiToolsDescription": "أدر إجراءات المساعد المدعومة والردود المنظمة. أي إجراء يغيّر الملفات سيتطلب تأكيدك.",
+  "manageSupportedAssistantActionsAndStructuredResponsesActionsThatAffectFilesWillRequireYourConfirmation": "أدر إجراءات المساعد المدعومة والردود المنظمة. أي إجراء يغيّر الملفات سيتطلب تأكيدك.",
   "aiGroupModels": "النماذج",
   "aiGroupExperience": "تجربة المساعد",
   "aiGroupCapabilities": "الميزات الذكية",
   "aiGroupPerformance": "الأداء",
   "compressionHistorySubtitle": "سجل كل الفيديوهات المضغوطة",
+  "@compressionHistorySubtitle": {
+    "description": "Settings hub row summary"
+  },
   "settingsNotificationsSubtitle": "تنبيهات الإكمال والتحديثات الجديدة",
+  "@settingsNotificationsSubtitle": {
+    "description": "Settings hub row summary"
+  },
   "settingsPrivacySubtitle": "بياناتك تبقى على جهازك",
+  "@settingsPrivacySubtitle": {
+    "description": "Settings hub row summary"
+  },
   "plansSubtitle": "قارن الخطط وارتقِ الآن",
+  "@plansSubtitle": {
+    "description": "Settings hub row summary"
+  },
   "plansMethodsSubtitle": "طرق الدفع وإدارة الفواتير",
+  "@plansMethodsSubtitle": {
+    "description": "Settings hub row summary"
+  },
   "plansRestoreSubtitle": "استعد عملية الشراء السابقة",
+  "@plansRestoreSubtitle": {
+    "description": "Settings hub row summary"
+  },
   "aboutAppSubtitle": "رقم الإصدار وتفاصيل البناء",
+  "@aboutAppSubtitle": {
+    "description": "Settings hub row summary"
+  },
   "aboutDeveloperSubtitle": "المطور الذي بنى Zumi",
+  "@aboutDeveloperSubtitle": {
+    "description": "Settings hub row summary"
+  },
   "aboutLicensesSubtitle": "تراخيص الحزم مفتوحة المصدر",
+  "@aboutLicensesSubtitle": {
+    "description": "Settings hub row summary"
+  },
   "legalPrivacySubtitle": "كيف نتعامل مع بياناتك",
+  "@legalPrivacySubtitle": {
+    "description": "Settings hub row summary"
+  },
   "legalTermsSubtitle": "قواعد استخدام تطبيق Zumi",
+  "@legalTermsSubtitle": {
+    "description": "Settings hub row summary"
+  },
   "legalDataSafetySubtitle": "البيانات التي نجمعها منك",
+  "@legalDataSafetySubtitle": {
+    "description": "Settings hub row summary"
+  },
   "legalPermissionsSubtitle": "الأذونات ولماذا نحتاج إليها",
+  "@legalPermissionsSubtitle": {
+    "description": "Settings hub row summary"
+  },
   "helpFaqSubtitle": "إجابات لأكثر الأسئلة شيوعاً",
+  "@helpFaqSubtitle": {
+    "description": "Settings hub row summary"
+  },
   "helpSupportSubtitle": "تواصل مع المطور مباشرة",
+  "@helpSupportSubtitle": {
+    "description": "Settings hub row summary"
+  },
   "helpFeedbackSubtitle": "أرسل لنا ملاحظاتك الآن",
+  "@helpFeedbackSubtitle": {
+    "description": "Settings hub row summary"
+  },
   "compressionPickVideo": "اختر فيديو",
   "compressionTargetMb": "الحجم المطلوب (ميجابايت)",
   "compressionStart": "ابدأ الضغط",
@@ -268,7 +705,13 @@
   "aboutDeveloperName": "مصطفى سينسي",
   "aboutDeveloperProfile": "حساب GitHub",
   "aboutDeveloperProfileSubtitle": "المشاريع وبيانات التواصل",
-  "maintenanceTitle": "التطبيق قيد الصيانة",
+  "maintenanceInProgress": "التطبيق قيد الصيانة",
   "maintenanceMessage": "Zumi غير متاح مؤقتًا. حاول مرة أخرى لاحقًا.",
-  "comingSoon": "قريباً"
+  "comingSoon": "قريباً",
+  "@comingSoon": {
+    "description": "Badge shown on placeholder pages"
+  },
+  "languageName": "العربية",
+  "countryCode": "EG",
+  "countryName": "{countryCode, select, DZ{الجزائر} BH{البحرين} KM{جزر القمر} DJ{جيبوتي} EG{مصر} IQ{العراق} JO{الأردن} KW{الكويت} LB{لبنان} LY{ليبيا} MR{موريتانيا} MA{المغرب} OM{عُمان} PS{الأراضي الفلسطينية} QA{قطر} SA{المملكة العربية السعودية} SO{الصومال} SD{السودان} SY{سوريا} TN{تونس} AE{الإمارات العربية المتحدة} YE{اليمن} US{الولايات المتحدة} GB{المملكة المتحدة} JP{اليابان} FR{فرنسا} DE{ألمانيا} ES{إسبانيا} TR{تركيا} NL{هولندا} other{بلد}}"
 }

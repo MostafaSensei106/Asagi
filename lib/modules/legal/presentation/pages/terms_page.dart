@@ -14,8 +14,8 @@ final class TermsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppPlaceholderPage(
-      title: context.localeKeys.legalTermsTitle,
-      description: context.localeKeys.legalTermsDescription,
+      title: context.localeKeys.termsOfService,
+      description: context.localeKeys.theTermsThatApplyToZumiAndItsPurchases,
       icon: ZumiIcons.terms,
     );
   }

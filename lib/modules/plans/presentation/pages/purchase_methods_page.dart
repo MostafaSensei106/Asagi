@@ -14,8 +14,8 @@ final class PurchaseMethodsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppPlaceholderPage(
-      title: context.localeKeys.plansMethodsTitle,
-      description: context.localeKeys.plansMethodsDescription,
+      title: context.localeKeys.paymentMethods,
+      description: context.localeKeys.supportedWaysToPayIncludingStoreBilling,
       icon: ZumiIcons.purchaseMethods,
     );
   }

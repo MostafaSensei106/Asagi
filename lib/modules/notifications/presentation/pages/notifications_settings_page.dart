@@ -14,8 +14,8 @@ final class NotificationsSettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppPlaceholderPage(
-      title: context.localeKeys.settingsNotificationsTitle,
-      description: context.localeKeys.settingsNotificationsDescription,
+      title: context.localeKeys.notifications,
+      description: context.localeKeys.jobCompletionAndProductUpdateNotifications,
       icon: ZumiIcons.notifications,
     );
   }

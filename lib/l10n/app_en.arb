@@ -1,8 +1,8 @@
 {
   "@@locale": "en",
-  "appTitle": "Zumi",
-  "@appTitle": {
-    "description": "The title of the application"
+  "zumi": "Zumi",
+  "@zumi": {
+    "description": "Application name shown in the app and on the home page"
   },
   "downloadFile": "Download File",
   "@downloadFile": {
@@ -207,264 +207,260 @@
   "@ok": {
     "description": "OK button text"
   },
-  "homeTitle": "Zumi",
-  "@homeTitle": {
-    "description": "Home page title"
-  },
-  "homeDescription": "Compress videos privately, on your device.",
-  "@homeDescription": {
+  "compressVideosPrivatelyOnYourDevice": "Compress videos privately, on your device.",
+  "@compressVideosPrivatelyOnYourDevice": {
     "description": "Home page description"
   },
-  "onboardingTitle": "Welcome to Zumi",
-  "@onboardingTitle": {
+  "welcomeToZumi": "Welcome to Zumi",
+  "@welcomeToZumi": {
     "description": "Onboarding page title"
   },
-  "onboardingDescription": "Learn how Zumi compresses your videos without ever leaving your phone.",
-  "@onboardingDescription": {
+  "learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": "Learn how Zumi compresses your videos without ever leaving your phone.",
+  "@learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": {
     "description": "Onboarding page description"
   },
-  "loginTitle": "Sign in",
-  "@loginTitle": {
+  "signIn": "Sign in",
+  "@signIn": {
     "description": "Login page title"
   },
-  "loginDescription": "Sign in to sync your plan and keep your purchases available on every device.",
-  "@loginDescription": {
+  "signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": "Sign in to sync your plan and keep your purchases available on every device.",
+  "@signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": {
     "description": "Login page description"
   },
-  "videoSelectTitle": "Choose a video",
-  "@videoSelectTitle": {
+  "chooseAVideo": "Choose a video",
+  "@chooseAVideo": {
     "description": "Video picker page title"
   },
-  "videoSelectDescription": "Pick a video from your gallery to start compressing.",
-  "@videoSelectDescription": {
+  "pickAVideoFromYourGalleryToStartCompressing": "Pick a video from your gallery to start compressing.",
+  "@pickAVideoFromYourGalleryToStartCompressing": {
     "description": "Video picker page description"
   },
-  "compressionSetupTitle": "Compression setup",
-  "@compressionSetupTitle": {
+  "compressionSetup": "Compression setup",
+  "@compressionSetup": {
     "description": "Compression setup page title"
   },
-  "compressionSetupDescription": "Choose resolution, bitrate, and output format before you start.",
-  "@compressionSetupDescription": {
+  "chooseResolutionBitrateAndOutputFormatBeforeYouStart": "Choose resolution, bitrate, and output format before you start.",
+  "@chooseResolutionBitrateAndOutputFormatBeforeYouStart": {
     "description": "Compression setup page description"
   },
-  "compressionProgressTitle": "Compressing",
-  "@compressionProgressTitle": {
+  "compressing": "Compressing",
+  "@compressing": {
     "description": "Compression progress page title"
   },
-  "compressionProgressDescription": "Follow the live progress of your compression job.",
-  "@compressionProgressDescription": {
+  "followTheLiveProgressOfYourCompressionJob": "Follow the live progress of your compression job.",
+  "@followTheLiveProgressOfYourCompressionJob": {
     "description": "Compression progress page description"
   },
-  "compressionResultTitle": "Compression result",
-  "@compressionResultTitle": {
+  "compressionResult": "Compression result",
+  "@compressionResult": {
     "description": "Compression result page title"
   },
-  "compressionResultDescription": "Compare the before and after size, then save or share the result.",
-  "@compressionResultDescription": {
+  "compareTheBeforeAndAfterSizeThenSaveOrShareTheResult": "Compare the before and after size, then save or share the result.",
+  "@compareTheBeforeAndAfterSizeThenSaveOrShareTheResult": {
     "description": "Compression result page description"
   },
-  "compressionHistoryTitle": "Compression history",
-  "@compressionHistoryTitle": {
+  "compressionHistory": "Compression history",
+  "@compressionHistory": {
     "description": "Compression history page title"
   },
-  "compressionHistoryDescription": "Review the videos you have compressed on this device.",
-  "@compressionHistoryDescription": {
+  "reviewTheVideosYouHaveCompressedOnThisDevice": "Review the videos you have compressed on this device.",
+  "@reviewTheVideosYouHaveCompressedOnThisDevice": {
     "description": "Compression history page description"
   },
-  "settingsTitle": "Settings",
-  "@settingsTitle": {
+  "settings": "Settings",
+  "@settings": {
     "description": "Settings hub page title"
   },
-  "settingsAppearanceTitle": "Appearance",
-  "@settingsAppearanceTitle": {
+  "appearance": "Appearance",
+  "@appearance": {
     "description": "Appearance settings page title"
   },
-  "settingsAppearanceDescription": "Theme, color scheme, and motion preferences.",
-  "@settingsAppearanceDescription": {
+  "themeColorSchemeAndMotionPreferences": "Theme, color scheme, and motion preferences.",
+  "@themeColorSchemeAndMotionPreferences": {
     "description": "Appearance settings page description"
   },
-  "settingsLanguageTitle": "Language",
-  "@settingsLanguageTitle": {
+  "language": "Language",
+  "@language": {
     "description": "Language settings page title"
   },
-  "settingsLanguageDescription": "App language and text direction.",
-  "@settingsLanguageDescription": {
+  "appLanguageAndTextDirection": "App language and text direction.",
+  "@appLanguageAndTextDirection": {
     "description": "Language settings page description"
   },
-  "settingsCompressionTitle": "Compression defaults",
-  "@settingsCompressionTitle": {
+  "compressionDefaults": "Compression defaults",
+  "@compressionDefaults": {
     "description": "Compression defaults page title"
   },
-  "settingsCompressionDescription": "Default resolution, bitrate, and output format.",
-  "@settingsCompressionDescription": {
+  "defaultResolutionBitrateAndOutputFormat": "Default resolution, bitrate, and output format.",
+  "@defaultResolutionBitrateAndOutputFormat": {
     "description": "Compression defaults page description"
   },
-  "settingsStorageTitle": "Storage & cleanup",
-  "@settingsStorageTitle": {
+  "storageCleanup": "Storage & cleanup",
+  "@storageCleanup": {
     "description": "Storage settings page title"
   },
-  "settingsStorageDescription": "Storage usage, cache size, and temporary-file cleanup.",
-  "@settingsStorageDescription": {
+  "storageUsageCacheSizeAndTemporaryFileCleanup": "Storage usage, cache size, and temporary-file cleanup.",
+  "@storageUsageCacheSizeAndTemporaryFileCleanup": {
     "description": "Storage settings page description"
   },
-  "settingsNotificationsTitle": "Notifications",
-  "@settingsNotificationsTitle": {
+  "notifications": "Notifications",
+  "@notifications": {
     "description": "Notifications settings page title"
   },
-  "settingsNotificationsDescription": "Job completion and product update notifications.",
-  "@settingsNotificationsDescription": {
+  "jobCompletionAndProductUpdateNotifications": "Job completion and product update notifications.",
+  "@jobCompletionAndProductUpdateNotifications": {
     "description": "Notifications settings page description"
   },
-  "settingsPrivacyTitle": "Privacy",
-  "@settingsPrivacyTitle": {
+  "privacy": "Privacy",
+  "@privacy": {
     "description": "Privacy settings page title"
   },
-  "settingsPrivacyDescription": "On-device processing, local logs, and optional crash reports.",
-  "@settingsPrivacyDescription": {
+  "onDeviceProcessingLocalLogsAndOptionalCrashReports": "On-device processing, local logs, and optional crash reports.",
+  "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
     "description": "Privacy settings page description"
   },
-  "aboutAppTitle": "About Zumi",
-  "@aboutAppTitle": {
+  "aboutZumi": "About Zumi",
+  "@aboutZumi": {
     "description": "App info page title"
   },
-  "aboutAppDescription": "Version, build number, and application details.",
-  "@aboutAppDescription": {
+  "versionBuildNumberAndApplicationDetails": "Version, build number, and application details.",
+  "@versionBuildNumberAndApplicationDetails": {
     "description": "App info page description"
   },
-  "aboutDeveloperTitle": "About the developer",
-  "@aboutDeveloperTitle": {
+  "aboutTheDeveloper": "About the developer",
+  "@aboutTheDeveloper": {
     "description": "Developer page title"
   },
-  "aboutDeveloperDescription": "The developer and tools behind Zumi.",
-  "@aboutDeveloperDescription": {
+  "theDeveloperAndToolsBehindZumi": "The developer and tools behind Zumi.",
+  "@theDeveloperAndToolsBehindZumi": {
     "description": "Developer page description"
   },
-  "aboutLicensesTitle": "Open-source licenses",
-  "@aboutLicensesTitle": {
+  "openSourceLicenses": "Open-source licenses",
+  "@openSourceLicenses": {
     "description": "Licenses page title"
   },
-  "aboutLicensesDescription": "Open-source packages bundled with Zumi.",
-  "@aboutLicensesDescription": {
+  "openSourcePackagesBundledWithZumi": "Open-source packages bundled with Zumi.",
+  "@openSourcePackagesBundledWithZumi": {
     "description": "Licenses page description"
   },
-  "legalPrivacyTitle": "Privacy policy",
-  "@legalPrivacyTitle": {
+  "privacyPolicy": "Privacy policy",
+  "@privacyPolicy": {
     "description": "Privacy policy page title"
   },
-  "legalPrivacyDescription": "How Zumi handles your videos and data.",
-  "@legalPrivacyDescription": {
+  "howZumiHandlesYourVideosAndData": "How Zumi handles your videos and data.",
+  "@howZumiHandlesYourVideosAndData": {
     "description": "Privacy policy page description"
   },
-  "legalTermsTitle": "Terms of service",
-  "@legalTermsTitle": {
+  "termsOfService": "Terms of service",
+  "@termsOfService": {
     "description": "Terms page title"
   },
-  "legalTermsDescription": "The terms that apply to Zumi and its purchases.",
-  "@legalTermsDescription": {
+  "theTermsThatApplyToZumiAndItsPurchases": "The terms that apply to Zumi and its purchases.",
+  "@theTermsThatApplyToZumiAndItsPurchases": {
     "description": "Terms page description"
   },
-  "legalDataSafetyTitle": "Data safety",
-  "@legalDataSafetyTitle": {
+  "dataSafety": "Data safety",
+  "@dataSafety": {
     "description": "Data safety page title"
   },
-  "legalDataSafetyDescription": "Summary of the data Zumi collects and why.",
-  "@legalDataSafetyDescription": {
+  "summaryOfTheDataZumiCollectsAndWhy": "Summary of the data Zumi collects and why.",
+  "@summaryOfTheDataZumiCollectsAndWhy": {
     "description": "Data safety page description"
   },
-  "legalPermissionsTitle": "Permissions",
-  "@legalPermissionsTitle": {
+  "permissions": "Permissions",
+  "@permissions": {
     "description": "Permissions page title"
   },
-  "legalPermissionsDescription": "Runtime permissions Zumi requests and why each is needed.",
-  "@legalPermissionsDescription": {
+  "runtimePermissionsZumiRequestsAndWhyEachIsNeeded": "Runtime permissions Zumi requests and why each is needed.",
+  "@runtimePermissionsZumiRequestsAndWhyEachIsNeeded": {
     "description": "Permissions page description"
   },
-  "helpFaqTitle": "FAQ",
-  "@helpFaqTitle": {
+  "faq": "FAQ",
+  "@faq": {
     "description": "FAQ page title"
   },
-  "helpFaqDescription": "Answers to common questions about compression and billing.",
-  "@helpFaqDescription": {
+  "answersToCommonQuestionsAboutCompressionAndBilling": "Answers to common questions about compression and billing.",
+  "@answersToCommonQuestionsAboutCompressionAndBilling": {
     "description": "FAQ page description"
   },
-  "helpSupportTitle": "Support",
-  "@helpSupportTitle": {
+  "support": "Support",
+  "@support": {
     "description": "Support page title"
   },
-  "helpSupportDescription": "Get help with your account or a purchase.",
-  "@helpSupportDescription": {
+  "getHelpWithYourAccountOrAPurchase": "Get help with your account or a purchase.",
+  "@getHelpWithYourAccountOrAPurchase": {
     "description": "Support page description"
   },
-  "helpFeedbackTitle": "Send feedback",
-  "@helpFeedbackTitle": {
+  "sendFeedback": "Send feedback",
+  "@sendFeedback": {
     "description": "Feedback page title"
   },
-  "helpFeedbackDescription": "Report a problem or suggest an improvement.",
-  "@helpFeedbackDescription": {
+  "reportAProblemOrSuggestAnImprovement": "Report a problem or suggest an improvement.",
+  "@reportAProblemOrSuggestAnImprovement": {
     "description": "Feedback page description"
   },
-  "plansTitle": "Plans",
-  "@plansTitle": {
+  "plans": "Plans",
+  "@plans": {
     "description": "Plans page title"
   },
-  "plansDescription": "Compare plans and see what each one unlocks.",
-  "@plansDescription": {
+  "comparePlansAndSeeWhatEachOneUnlocks": "Compare plans and see what each one unlocks.",
+  "@comparePlansAndSeeWhatEachOneUnlocks": {
     "description": "Plans page description"
   },
-  "plansDetailsTitle": "Plan details",
-  "@plansDetailsTitle": {
+  "planDetails": "Plan details",
+  "@planDetails": {
     "description": "Plan details page title"
   },
-  "plansDetailsDescription": "Benefits, limits, and pricing for this plan.",
-  "@plansDetailsDescription": {
+  "benefitsLimitsAndPricingForThisPlan": "Benefits, limits, and pricing for this plan.",
+  "@benefitsLimitsAndPricingForThisPlan": {
     "description": "Plan details page description"
   },
-  "plansMethodsTitle": "Payment methods",
-  "@plansMethodsTitle": {
+  "paymentMethods": "Payment methods",
+  "@paymentMethods": {
     "description": "Purchase methods page title"
   },
-  "plansMethodsDescription": "Supported ways to pay, including store billing.",
-  "@plansMethodsDescription": {
+  "supportedWaysToPayIncludingStoreBilling": "Supported ways to pay, including store billing.",
+  "@supportedWaysToPayIncludingStoreBilling": {
     "description": "Purchase methods page description"
   },
-  "plansRestoreTitle": "Restore purchases",
-  "@plansRestoreTitle": {
+  "restorePurchases": "Restore purchases",
+  "@restorePurchases": {
     "description": "Restore purchases page title"
   },
-  "plansRestoreDescription": "Re-apply a purchase made on another device.",
-  "@plansRestoreDescription": {
+  "reApplyAPurchaseMadeOnAnotherDevice": "Re-apply a purchase made on another device.",
+  "@reApplyAPurchaseMadeOnAnotherDevice": {
     "description": "Restore purchases page description"
   },
-  "profileTitle": "Profile",
-  "@profileTitle": {
+  "profile": "Profile",
+  "@profile": {
     "description": "Profile page title"
   },
-  "profileDescription": "Your identity, plan status, and account preferences.",
-  "@profileDescription": {
+  "yourIdentityPlanStatusAndAccountPreferences": "Your identity, plan status, and account preferences.",
+  "@yourIdentityPlanStatusAndAccountPreferences": {
     "description": "Profile page description"
   },
-  "profileDeleteTitle": "Delete account",
-  "@profileDeleteTitle": {
+  "deleteAccount": "Delete account",
+  "@deleteAccount": {
     "description": "Delete account page title"
   },
-  "profileDeleteDescription": "Permanently remove your account and its server-side data.",
-  "@profileDeleteDescription": {
+  "permanentlyRemoveYourAccountAndItsServerSideData": "Permanently remove your account and its server-side data.",
+  "@permanentlyRemoveYourAccountAndItsServerSideData": {
     "description": "Delete account page description"
   },
-  "rateAppTitle": "Rate Zumi",
-  "@rateAppTitle": {
+  "rateZumi": "Rate Zumi",
+  "@rateZumi": {
     "description": "Rate app page title"
   },
-  "rateAppDescription": "Tell others how Zumi worked for you on the store.",
-  "@rateAppDescription": {
+  "tellOthersHowZumiWorkedForYouOnTheStore": "Tell others how Zumi worked for you on the store.",
+  "@tellOthersHowZumiWorkedForYouOnTheStore": {
     "description": "Rate app page description"
   },
-  "shareAppTitle": "Share Zumi",
-  "@shareAppTitle": {
+  "shareZumi": "Share Zumi",
+  "@shareZumi": {
     "description": "Share app page title"
   },
-  "shareAppDescription": "Recommend Zumi to a friend.",
-  "@shareAppDescription": {
+  "recommendZumiToAFriend": "Recommend Zumi to a friend.",
+  "@recommendZumiToAFriend": {
     "description": "Share app page description"
   },
   "settingsGroupAppearance": "Appearance & language",
@@ -519,35 +515,35 @@
   "@settingsStorageSubtitle": {
     "description": "Settings hub row summary"
   },
-  "settingsAiTitle": "AI settings",
-  "aiChatTitle": "Zumi Assistant",
-  "aiChatDescription": "A private assistant for your videos is coming soon. You will be able to ask about compression, organization, and saved videos here.",
+  "aiSettings": "AI settings",
+  "zumiAssistant": "Zumi Assistant",
+  "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "A private assistant for your videos is coming soon. You will be able to ask about compression, organization, and saved videos here.",
   "settingsAiSubtitle": "Local models and smart tools",
-  "settingsAiDescription": "Explore local models and future AI tools. These options are not active yet.",
-  "aiModelsTitle": "Local models",
+  "exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet": "Explore local models and future AI tools. These options are not active yet.",
+  "localModels": "Local models",
   "aiModelsSubtitle": "Browse and download supported models",
-  "aiModelsDescription": "Choose a supported model, download it to this device, and manage installed models here.",
-  "aiImportTitle": "Import a model",
+  "chooseASupportedModelDownloadItToThisDeviceAndManageInstalledModelsHere": "Choose a supported model, download it to this device, and manage installed models here.",
+  "importAModel": "Import a model",
   "aiImportSubtitle": "Use a compatible model from your files",
-  "aiImportDescription": "Select a compatible local model file and review its requirements before using it.",
-  "aiFeaturesTitle": "Smart features",
+  "selectACompatibleLocalModelFileAndReviewItsRequirementsBeforeUsingIt": "Select a compatible local model file and review its requirements before using it.",
+  "smartFeatures": "Smart features",
   "aiFeaturesSubtitle": "Compression, organization, and search",
-  "aiFeaturesDescription": "Choose which local AI suggestions to use for video compression, organization, naming, and search.",
-  "aiRuntimeTitle": "Model performance",
+  "chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "Choose which local AI suggestions to use for video compression, organization, naming, and search.",
+  "modelPerformance": "Model performance",
   "aiRuntimeSubtitle": "Processing and resource preferences",
-  "aiRuntimeDescription": "Control the processing backend and resource limits for supported models.",
-  "aiChatSettingsTitle": "Conversation settings",
+  "controlTheProcessingBackendAndResourceLimitsForSupportedModels": "Control the processing backend and resource limits for supported models.",
+  "conversationSettings": "Conversation settings",
   "aiChatSettingsSubtitle": "Streaming, thinking, and response length",
-  "aiChatSettingsDescription": "Configure how the assistant responds, including streaming, thinking mode, sampling, and response limits.",
-  "aiMediaTitle": "Images and audio",
+  "configureHowTheAssistantRespondsIncludingStreamingThinkingModeSamplingAndResponseLimits": "Configure how the assistant responds, including streaming, thinking mode, sampling, and response limits.",
+  "imagesAndAudio": "Images and audio",
   "aiMediaSubtitle": "Control multimodal inputs",
-  "aiMediaDescription": "Choose whether compatible models can analyze selected images and audio from your videos.",
-  "aiSearchTitle": "Semantic search",
+  "chooseWhetherCompatibleModelsCanAnalyzeSelectedImagesAndAudioFromYourVideos": "Choose whether compatible models can analyze selected images and audio from your videos.",
+  "semanticSearch": "Semantic search",
   "aiSearchSubtitle": "Embeddings and local indexing",
-  "aiSearchDescription": "Manage the local embedding model and search index for finding videos and moments by meaning.",
-  "aiToolsTitle": "Tools and structured output",
+  "manageTheLocalEmbeddingModelAndSearchIndexForFindingVideosAndMomentsByMeaning": "Manage the local embedding model and search index for finding videos and moments by meaning.",
+  "toolsAndStructuredOutput": "Tools and structured output",
   "aiToolsSubtitle": "Actions, schemas, and confirmations",
-  "aiToolsDescription": "Manage supported assistant actions and structured responses. Actions that affect files will require your confirmation.",
+  "manageSupportedAssistantActionsAndStructuredResponsesActionsThatAffectFilesWillRequireYourConfirmation": "Manage supported assistant actions and structured responses. Actions that affect files will require your confirmation.",
   "aiGroupModels": "Models",
   "aiGroupExperience": "Assistant experience",
   "aiGroupCapabilities": "Smart capabilities",
@@ -709,10 +705,21 @@
   "aboutDeveloperName": "Mostafa Sensei",
   "aboutDeveloperProfile": "GitHub profile",
   "aboutDeveloperProfileSubtitle": "See projects and contact details",
-  "maintenanceTitle": "Maintenance in progress",
+  "maintenanceInProgress": "Maintenance in progress",
   "maintenanceMessage": "Zumi is temporarily unavailable. Please try again later.",
   "comingSoon": "Coming soon",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"
+  },
+  "languageName": "English",
+  "countryCode": "US",
+  "countryName": "{countryCode, select, DZ{Algeria} BH{Bahrain} KM{Comoros} DJ{Djibouti} EG{Egypt} IQ{Iraq} JO{Jordan} KW{Kuwait} LB{Lebanon} LY{Libya} MR{Mauritania} MA{Morocco} OM{Oman} PS{Palestinian Territories} QA{Qatar} SA{Saudi Arabia} SO{Somalia} SD{Sudan} SY{Syria} TN{Tunisia} AE{United Arab Emirates} YE{Yemen} US{United States} GB{United Kingdom} JP{Japan} FR{France} DE{Germany} ES{Spain} TR{Türkiye} NL{Netherlands} other{Country}}",
+  "@countryName": {
+    "description": "Name of a country in the current app language",
+    "placeholders": {
+      "countryCode": {
+        "type": "String"
+      }
+    }
   }
 }

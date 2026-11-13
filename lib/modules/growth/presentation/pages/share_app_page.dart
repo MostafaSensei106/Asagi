@@ -14,8 +14,8 @@ final class ShareAppPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppPlaceholderPage(
-      title: context.localeKeys.shareAppTitle,
-      description: context.localeKeys.shareAppDescription,
+      title: context.localeKeys.shareZumi,
+      description: context.localeKeys.recommendZumiToAFriend,
       icon: ZumiIcons.shareApp,
     );
   }

@@ -1,0 +1,717 @@
+{
+  "@@locale": "tr",
+  "zumi": "Zumi",
+  "@zumi": {
+    "description": "Application name shown in the app and on the home page"
+  },
+  "downloadFile": "Dosyayı İndir",
+  "@downloadFile": {
+    "description": "Title for download file dialog"
+  },
+  "fileOpenedInBrowser": "Dosya tarayıcıda açıldı: {fileName}",
+  "@fileOpenedInBrowser": {
+    "description": "Message shown when file is opened in browser",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "fileSavedToDcim": "Dosya galeriye kaydedildi: {fileName}",
+  "@fileSavedToDcim": {
+    "description": "Message shown when file is saved to gallery",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "fileSavedToDocuments": "Dosya belgeler klasörüne kaydedildi: {fileName}",
+  "@fileSavedToDocuments": {
+    "description": "Message shown when file is saved to documents",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "fileAlreadySaved": "Dosya zaten kaydedilmiş",
+  "@fileAlreadySaved": {
+    "description": "Message shown when file already exists"
+  },
+  "error": "Hata",
+  "@error": {
+    "description": "Generic error title"
+  },
+  "info": "Bilgi",
+  "@info": {
+    "description": "Generic info title"
+  },
+  "success": "Başarı",
+  "@success": {
+    "description": "Generic success title"
+  },
+  "warning": "Uyarı",
+  "@warning": {
+    "description": "Generic warning title"
+  },
+  "paid": "Ücretli",
+  "@paid": {
+    "description": "Payment status paid"
+  },
+  "unpaid": "Ücretsiz",
+  "@unpaid": {
+    "description": "Payment status unpaid"
+  },
+  "partial": "Kısmi",
+  "@partial": {
+    "description": "Payment status partial"
+  },
+  "error_address_line_cant_be_empty": "Adres satırı boş olamaz",
+  "@error_address_line_cant_be_empty": {
+    "description": "Address line empty error"
+  },
+  "error_address_line_too_long": "Adres satırı çok uzun",
+  "@error_address_line_too_long": {
+    "description": "Address line too long error"
+  },
+  "error_address_invalid_special_characters": "Özel karakterlere izin verilmiyor",
+  "@error_address_invalid_special_characters": {
+    "description": "Address special characters error"
+  },
+  "error_address_emoji_not_allowed": "Emojiye izin verilmiyor",
+  "@error_address_emoji_not_allowed": {
+    "description": "Address emoji not allowed error"
+  },
+  "error_city_cant_be_empty": "Şehir boş olamaz",
+  "@error_city_cant_be_empty": {
+    "description": "City empty error"
+  },
+  "error_city_too_long": "Şehir adı çok uzun",
+  "@error_city_too_long": {
+    "description": "City too long error"
+  },
+  "error_city_invalid_special_characters": "Şehir geçersiz özel karakterler içeriyor",
+  "@error_city_invalid_special_characters": {
+    "description": "City special characters error"
+  },
+  "error_address_label_cant_be_empty": "Adres etiketi boş olamaz",
+  "@error_address_label_cant_be_empty": {
+    "description": "Address label empty error"
+  },
+  "error_address_label_too_long": "Adres etiketi çok uzun",
+  "@error_address_label_too_long": {
+    "description": "Address label too long error"
+  },
+  "error_email_cant_be_empty": "Email boş olamaz",
+  "@error_email_cant_be_empty": {
+    "description": "Email empty error"
+  },
+  "error_email_not_invalid_format": "Geçersiz email formatı",
+  "@error_email_not_invalid_format": {
+    "description": "Email invalid format error"
+  },
+  "error_email_contains_invalid_characters": "E-posta geçersiz karakterler içeriyor",
+  "@error_email_contains_invalid_characters": {
+    "description": "Email invalid characters error"
+  },
+  "error_email_must_contain_at_symbol": "E-posta @ içermelidir",
+  "@error_email_must_contain_at_symbol": {
+    "description": "Email missing @ error"
+  },
+  "error_email_must_be_in_lowercase": "E-posta küçük harflerle olmalıdır",
+  "@error_email_must_be_in_lowercase": {
+    "description": "Email not in lowercase error"
+  },
+  "error_arabic_not_allowed": "Arap karakterlerine izin verilmiyor",
+  "@error_arabic_not_allowed": {
+    "description": "Arabic characters not allowed error"
+  },
+  "error_email_emoji_not_allowed": "E-postada emoji kullanımına izin verilmiyor",
+  "@error_email_emoji_not_allowed": {
+    "description": "Email emoji not allowed error"
+  },
+  "error_phone_number_cant_be_empty": "Telefon numarası boş olamaz",
+  "@error_phone_number_cant_be_empty": {
+    "description": "Phone number empty error"
+  },
+  "error_phone_number_invalid": "Geçersiz telefon numarası",
+  "@error_phone_number_invalid": {
+    "description": "Phone number invalid error"
+  },
+  "error_phone_number_min_length": "Telefon numarası en az 11 hane olmalıdır",
+  "@error_phone_number_min_length": {
+    "description": "Phone number min length error"
+  },
+  "error_name_cant_be_empty": "İsim boş olamaz",
+  "@error_name_cant_be_empty": {
+    "description": "Name empty error"
+  },
+  "error_name_invalid": "Geçersiz isim",
+  "@error_name_invalid": {
+    "description": "Name invalid error"
+  },
+  "error_name_too_short_at_least_3_characters": "İsim en az 3 karakter olmalıdır",
+  "@error_name_too_short_at_least_3_characters": {
+    "description": "Name too short error"
+  },
+  "error_name_too_long_maximum_20_characters": "İsim 20 karakteri geçemez",
+  "@error_name_too_long_maximum_20_characters": {
+    "description": "Name too long error"
+  },
+  "error_name_invalid_special_characters": "İsim geçersiz özel karakterler içeriyor",
+  "@error_name_invalid_special_characters": {
+    "description": "Name special characters error"
+  },
+  "error_name_emoji_not_allowed": "İsimde emoji kullanımına izin verilmiyor",
+  "@error_name_emoji_not_allowed": {
+    "description": "Name emoji not allowed error"
+  },
+  "error_password_cant_be_empty": "Şifre boş olamaz",
+  "@error_password_cant_be_empty": {
+    "description": "Password empty error"
+  },
+  "error_password_must_contain_uppercase_lowercase_number_and_special_character": "Şifre büyük harf, küçük harf, rakam ve özel karakter içermelidir",
+  "@error_password_must_contain_uppercase_lowercase_number_and_special_character": {
+    "description": "Password complex requirements error"
+  },
+  "error_password_must_be_at_least_8_characters_long": "Şifre en az 8 karakter uzunluğunda olmalıdır",
+  "@error_password_must_be_at_least_8_characters_long": {
+    "description": "Password min length error"
+  },
+  "noInternetConnection": "İnternet bağlantısı yok",
+  "@noInternetConnection": {
+    "description": "No internet connection message"
+  },
+  "internetConnectionRestored": "İnternet bağlantısı geri yüklendi",
+  "@internetConnectionRestored": {
+    "description": "Internet connection restored message"
+  },
+  "retry": "Tekrar dene",
+  "@retry": {
+    "description": "Retry button text"
+  },
+  "cancel": "İptal",
+  "@cancel": {
+    "description": "Cancel button text"
+  },
+  "confirm": "Onayla",
+  "@confirm": {
+    "description": "Confirm button text"
+  },
+  "pleaseWait": "Lütfen bekleyin...",
+  "@pleaseWait": {
+    "description": "Please wait dialog text"
+  },
+  "ok": "Tamam",
+  "@ok": {
+    "description": "OK button text"
+  },
+  "compressVideosPrivatelyOnYourDevice": "Videolarınızı gizlice, cihazınızda sıkıştırın.",
+  "@compressVideosPrivatelyOnYourDevice": {
+    "description": "Home page description"
+  },
+  "welcomeToZumi": "Zumi'ye hoş geldiniz",
+  "@welcomeToZumi": {
+    "description": "Onboarding page title"
+  },
+  "learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": "Zumi'nin videolarınızı telefonunuzu hiç terk etmeden nasıl sıkıştırdığını öğrenin.",
+  "@learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": {
+    "description": "Onboarding page description"
+  },
+  "signIn": "Giriş yap",
+  "@signIn": {
+    "description": "Login page title"
+  },
+  "signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": "Planınızı senkronize etmek ve satın aldığınız öğeleri her cihazda kullanılabilir tutmak için giriş yapın.",
+  "@signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": {
+    "description": "Login page description"
+  },
+  "chooseAVideo": "Bir video seç",
+  "@chooseAVideo": {
+    "description": "Video picker page title"
+  },
+  "pickAVideoFromYourGalleryToStartCompressing": "Sıkıştırmaya başlamak için galerinizden bir video seçin.",
+  "@pickAVideoFromYourGalleryToStartCompressing": {
+    "description": "Video picker page description"
+  },
+  "compressionSetup": "Sıkıştırma ayarları",
+  "@compressionSetup": {
+    "description": "Compression setup page title"
+  },
+  "chooseResolutionBitrateAndOutputFormatBeforeYouStart": "Başlamadan önce çözünürlüğü, bit hızını ve çıktı formatını seçin.",
+  "@chooseResolutionBitrateAndOutputFormatBeforeYouStart": {
+    "description": "Compression setup page description"
+  },
+  "compressing": "Sıkıştırılıyor",
+  "@compressing": {
+    "description": "Compression progress page title"
+  },
+  "followTheLiveProgressOfYourCompressionJob": "Sıkıştırma işleminizin canlı ilerlemesini takip edin.",
+  "@followTheLiveProgressOfYourCompressionJob": {
+    "description": "Compression progress page description"
+  },
+  "compressionResult": "Sıkıştırma sonucu",
+  "@compressionResult": {
+    "description": "Compression result page title"
+  },
+  "compareTheBeforeAndAfterSizeThenSaveOrShareTheResult": "Önceki ve sonraki boyutu karşılaştırın, ardından sonucu kaydedin veya paylaşın.",
+  "@compareTheBeforeAndAfterSizeThenSaveOrShareTheResult": {
+    "description": "Compression result page description"
+  },
+  "compressionHistory": "Sıkıştırma geçmişi",
+  "@compressionHistory": {
+    "description": "Compression history page title"
+  },
+  "reviewTheVideosYouHaveCompressedOnThisDevice": "Bu cihazda sıkıştırdığınız videoları inceleyin.",
+  "@reviewTheVideosYouHaveCompressedOnThisDevice": {
+    "description": "Compression history page description"
+  },
+  "settings": "Ayarlar",
+  "@settings": {
+    "description": "Settings hub page title"
+  },
+  "appearance": "Görünüm",
+  "@appearance": {
+    "description": "Appearance settings page title"
+  },
+  "themeColorSchemeAndMotionPreferences": "Tema, renk şeması ve hareket tercihleri.",
+  "@themeColorSchemeAndMotionPreferences": {
+    "description": "Appearance settings page description"
+  },
+  "language": "Dil",
+  "@language": {
+    "description": "Language settings page title"
+  },
+  "appLanguageAndTextDirection": "Uygulama dili ve metin yönü.",
+  "@appLanguageAndTextDirection": {
+    "description": "Language settings page description"
+  },
+  "compressionDefaults": "Sıkıştırma varsayılanları",
+  "@compressionDefaults": {
+    "description": "Compression defaults page title"
+  },
+  "defaultResolutionBitrateAndOutputFormat": "Varsayılan çözünürlük, bit hızı ve çıktı formatı.",
+  "@defaultResolutionBitrateAndOutputFormat": {
+    "description": "Compression defaults page description"
+  },
+  "storageCleanup": "Depolama ve temizlik",
+  "@storageCleanup": {
+    "description": "Storage settings page title"
+  },
+  "storageUsageCacheSizeAndTemporaryFileCleanup": "Depolama kullanımı, önbellek boyutu ve geçici dosya temizliği.",
+  "@storageUsageCacheSizeAndTemporaryFileCleanup": {
+    "description": "Storage settings page description"
+  },
+  "notifications": "Bildirimler",
+  "@notifications": {
+    "description": "Notifications settings page title"
+  },
+  "jobCompletionAndProductUpdateNotifications": "İş tamamlanma ve ürün güncelleme bildirimleri.",
+  "@jobCompletionAndProductUpdateNotifications": {
+    "description": "Notifications settings page description"
+  },
+  "privacy": "Gizlilik",
+  "@privacy": {
+    "description": "Privacy settings page title"
+  },
+  "onDeviceProcessingLocalLogsAndOptionalCrashReports": "Cihaz üzerinde işleme, yerel kayıtlar ve isteğe bağlı çökme raporları.",
+  "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
+    "description": "Privacy settings page description"
+  },
+  "aboutZumi": "Zumi Hakkında",
+  "@aboutZumi": {
+    "description": "App info page title"
+  },
+  "versionBuildNumberAndApplicationDetails": "Sürüm, yapı numarası ve uygulama detayları.",
+  "@versionBuildNumberAndApplicationDetails": {
+    "description": "App info page description"
+  },
+  "aboutTheDeveloper": "Geliştirici Hakkında",
+  "@aboutTheDeveloper": {
+    "description": "Developer page title"
+  },
+  "theDeveloperAndToolsBehindZumi": "Zumi'nin arkasındaki geliştirici ve araçlar.",
+  "@theDeveloperAndToolsBehindZumi": {
+    "description": "Developer page description"
+  },
+  "openSourceLicenses": "Açık kaynak lisansları",
+  "@openSourceLicenses": {
+    "description": "Licenses page title"
+  },
+  "openSourcePackagesBundledWithZumi": "Zumi ile birlikte gelen açık kaynak paketler.",
+  "@openSourcePackagesBundledWithZumi": {
+    "description": "Licenses page description"
+  },
+  "privacyPolicy": "Gizlilik politikası",
+  "@privacyPolicy": {
+    "description": "Privacy policy page title"
+  },
+  "howZumiHandlesYourVideosAndData": "Zumi videolarınızı ve verilerinizi nasıl işliyor.",
+  "@howZumiHandlesYourVideosAndData": {
+    "description": "Privacy policy page description"
+  },
+  "termsOfService": "Hizmet şartları",
+  "@termsOfService": {
+    "description": "Terms page title"
+  },
+  "theTermsThatApplyToZumiAndItsPurchases": "Zumi ve satın alımları için geçerli şartlar.",
+  "@theTermsThatApplyToZumiAndItsPurchases": {
+    "description": "Terms page description"
+  },
+  "dataSafety": "Veri güvenliği",
+  "@dataSafety": {
+    "description": "Data safety page title"
+  },
+  "summaryOfTheDataZumiCollectsAndWhy": "Zumi'nin topladığı verilerin özeti ve neden toplandığı.  ",
+  "@summaryOfTheDataZumiCollectsAndWhy": {
+    "description": "Data safety page description"
+  },
+  "permissions": "İzinler  ",
+  "@permissions": {
+    "description": "Permissions page title"
+  },
+  "runtimePermissionsZumiRequestsAndWhyEachIsNeeded": "Zumi'nin istediği çalışma zamanı izinleri ve her birinin neden gerekli olduğu.  ",
+  "@runtimePermissionsZumiRequestsAndWhyEachIsNeeded": {
+    "description": "Permissions page description"
+  },
+  "faq": "SSS  ",
+  "@faq": {
+    "description": "FAQ page title"
+  },
+  "answersToCommonQuestionsAboutCompressionAndBilling": "Sık sorulan sorulara sıkıştırma ve faturalama ile ilgili yanıtlar.  ",
+  "@answersToCommonQuestionsAboutCompressionAndBilling": {
+    "description": "FAQ page description"
+  },
+  "support": "Destek  ",
+  "@support": {
+    "description": "Support page title"
+  },
+  "getHelpWithYourAccountOrAPurchase": "Hesabınız veya bir satın alma ile ilgili yardım alın.  ",
+  "@getHelpWithYourAccountOrAPurchase": {
+    "description": "Support page description"
+  },
+  "sendFeedback": "Geri bildirim gönder  ",
+  "@sendFeedback": {
+    "description": "Feedback page title"
+  },
+  "reportAProblemOrSuggestAnImprovement": "Bir sorunu bildirin veya geliştirme önerin.  ",
+  "@reportAProblemOrSuggestAnImprovement": {
+    "description": "Feedback page description"
+  },
+  "plans": "Planlar  ",
+  "@plans": {
+    "description": "Plans page title"
+  },
+  "comparePlansAndSeeWhatEachOneUnlocks": "Planları karşılaştırın ve her birinin neleri açtığını görün.  ",
+  "@comparePlansAndSeeWhatEachOneUnlocks": {
+    "description": "Plans page description"
+  },
+  "planDetails": "Plan detayları  ",
+  "@planDetails": {
+    "description": "Plan details page title"
+  },
+  "benefitsLimitsAndPricingForThisPlan": "Bu planın faydaları, sınırları ve fiyatlandırması.  ",
+  "@benefitsLimitsAndPricingForThisPlan": {
+    "description": "Plan details page description"
+  },
+  "paymentMethods": "Ödeme yöntemleri  ",
+  "@paymentMethods": {
+    "description": "Purchase methods page title"
+  },
+  "supportedWaysToPayIncludingStoreBilling": "Mağaza faturası dahil olmak üzere desteklenen ödeme yolları.  ",
+  "@supportedWaysToPayIncludingStoreBilling": {
+    "description": "Purchase methods page description"
+  },
+  "restorePurchases": "Satın alımları geri yükle",
+  "@restorePurchases": {
+    "description": "Restore purchases page title"
+  },
+  "reApplyAPurchaseMadeOnAnotherDevice": "Başka bir cihazda yapılan bir satın alımı tekrar uygula.",
+  "@reApplyAPurchaseMadeOnAnotherDevice": {
+    "description": "Restore purchases page description"
+  },
+  "profile": "Profil",
+  "@profile": {
+    "description": "Profile page title"
+  },
+  "yourIdentityPlanStatusAndAccountPreferences": "Kimliğiniz, plan durumu ve hesap tercihlerinizi.",
+  "@yourIdentityPlanStatusAndAccountPreferences": {
+    "description": "Profile page description"
+  },
+  "deleteAccount": "Hesabı sil",
+  "@deleteAccount": {
+    "description": "Delete account page title"
+  },
+  "permanentlyRemoveYourAccountAndItsServerSideData": "Hesabınızı ve sunucu tarafı verilerini kalıcı olarak kaldırın.",
+  "@permanentlyRemoveYourAccountAndItsServerSideData": {
+    "description": "Delete account page description"
+  },
+  "rateZumi": "Zumi'yi değerlendirin",
+  "@rateZumi": {
+    "description": "Rate app page title"
+  },
+  "tellOthersHowZumiWorkedForYouOnTheStore": "Zumi'nin sizde nasıl çalıştığını başkalarına söyleyin.",
+  "@tellOthersHowZumiWorkedForYouOnTheStore": {
+    "description": "Rate app page description"
+  },
+  "shareZumi": "Zumi'yi paylaş",
+  "@shareZumi": {
+    "description": "Share app page title"
+  },
+  "recommendZumiToAFriend": "Zumi'yi bir arkadaşınıza önerin.",
+  "@recommendZumiToAFriend": {
+    "description": "Share app page description"
+  },
+  "settingsGroupAppearance": "Görünüm ve dil",
+  "@settingsGroupAppearance": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupCompression": "Sıkıştırma",
+  "@settingsGroupCompression": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupAi": "Cihazda AI",
+  "@settingsGroupAi": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupPrivacy": "Bildirimler ve gizlilik",
+  "@settingsGroupPrivacy": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupPlans": "Planlar ve satın almalar",
+  "@settingsGroupPlans": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupAbout": "Hakkında",
+  "@settingsGroupAbout": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupLegal": "Hukuki",
+  "@settingsGroupLegal": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupHelp": "Yardım ve geri bildirim",
+  "@settingsGroupHelp": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupAccount": "Hesap",
+  "@settingsGroupAccount": {
+    "description": "Settings hub section label"
+  },
+  "settingsAppearanceSubtitle": "Tema ve uygulama dili",
+  "@settingsAppearanceSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsLanguageSubtitle": "Uygulama dili ve yönü",
+  "@settingsLanguageSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsCompressionSubtitle": "Varsayılan kalite ve format",
+  "@settingsCompressionSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsStorageSubtitle": "Önbellek ve depolama kullanımı",
+  "@settingsStorageSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aiSettings": "AI ayarları",
+  "zumiAssistant": "Zumi Asistan",
+  "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "Videolarınız için özel bir asistan çok yakında geliyor. Buradan sıkıştırma, düzenleme ve kaydedilmiş videolar hakkında sorular sorabileceksiniz.",
+  "settingsAiSubtitle": "Yerel modeller ve akıllı araçlar",
+  "exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet": "Yerel modelleri ve gelecekteki AI araçlarını keşfedin. Bu seçenekler henüz aktif değil.",
+  "localModels": "Yerel modeller",
+  "aiModelsSubtitle": "Desteklenen modelleri göz atın ve indirin",
+  "chooseASupportedModelDownloadItToThisDeviceAndManageInstalledModelsHere": "Desteklenen bir modeli seçin, bu cihaza indirin ve yüklü modelleri burada yönetin.",
+  "importAModel": "Bir model içe aktar",
+  "aiImportSubtitle": "Dosyalarınızdan uyumlu bir modeli kullanın",
+  "selectACompatibleLocalModelFileAndReviewItsRequirementsBeforeUsingIt": "Uyumlu bir yerel model dosyası seçin ve kullanmadan önce gereksinimlerini gözden geçirin. ",
+  "smartFeatures": "Akıllı özellikler ",
+  "aiFeaturesSubtitle": "Sıkıştırma, organizasyon ve arama ",
+  "chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "Video sıkıştırma, organizasyon, adlandırma ve arama için kullanılacak yerel AI önerilerini seçin. ",
+  "modelPerformance": "Model performansı ",
+  "aiRuntimeSubtitle": "İşleme ve kaynak tercihleri ",
+  "controlTheProcessingBackendAndResourceLimitsForSupportedModels": "Desteklenen modeller için işleme arka planını ve kaynak sınırlarını kontrol edin. ",
+  "conversationSettings": "Konuşma ayarları ",
+  "aiChatSettingsSubtitle": "Akış, düşünme ve yanıt uzunluğu",
+  "configureHowTheAssistantRespondsIncludingStreamingThinkingModeSamplingAndResponseLimits": "Asistanın yanıt verme şeklini yapılandırın; akış, düşünme modu, örnekleme ve yanıt sınırları dahil.  ",
+  "imagesAndAudio": "Görseller ve ses  ",
+  "aiMediaSubtitle": "Çok modlu girdileri kontrol edin  ",
+  "chooseWhetherCompatibleModelsCanAnalyzeSelectedImagesAndAudioFromYourVideos": "Uyumlu modellerin videolarınızdaki seçili görselleri ve sesleri analiz edip edemeyeceğini seçin.  ",
+  "semanticSearch": "Semantik arama  ",
+  "aiSearchSubtitle": "Gömümler ve yerel indeksleme  ",
+  "manageTheLocalEmbeddingModelAndSearchIndexForFindingVideosAndMomentsByMeaning": "Videoları ve anları anlamına göre bulmak için yerel gömme modelini ve arama indeksini yönetin.  ",
+  "toolsAndStructuredOutput": "Araçlar ve yapılandırılmış çıktı  ",
+  "aiToolsSubtitle": "Eylemler, şemalar ve onaylar",
+  "manageSupportedAssistantActionsAndStructuredResponsesActionsThatAffectFilesWillRequireYourConfirmation": "Desteklenen asistan eylemlerini ve yapılandırılmış yanıtları yönetin. Dosyaları etkileyen eylemler onayınızı gerektirir.",
+  "aiGroupModels": "Modeller",
+  "aiGroupExperience": "Asistan deneyimi",
+  "aiGroupCapabilities": "Akıllı yetenekler",
+  "aiGroupPerformance": "Performans",
+  "compressionHistorySubtitle": "Sıkıştırılmış video geçmişiniz",
+  "@compressionHistorySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsNotificationsSubtitle": "Tamamlama ve güncelleme bildirimleri",
+  "@settingsNotificationsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsPrivacySubtitle": "Verileriniz yerel olarak kalır",
+  "@settingsPrivacySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "plansSubtitle": "Planları karşılaştırın ve yükseltin",
+  "@plansSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "plansMethodsSubtitle": "Ödeme yöntemleri ve faturalama",
+  "@plansMethodsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "plansRestoreSubtitle": "Önceki satın alımınızı geri yükleyin",
+  "@plansRestoreSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aboutAppSubtitle": "Sürüm ve yapı detayları",
+  "@aboutAppSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aboutDeveloperSubtitle": "Zumi'nin arkasındaki geliştirici",
+  "@aboutDeveloperSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aboutLicensesSubtitle": "Açık kaynak paket lisansları",
+  "@aboutLicensesSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalPrivacySubtitle": "Verilerin nasıl işlendiği",
+  "@legalPrivacySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalTermsSubtitle": "Zumi'yi kullanma kuralları",
+  "@legalTermsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalDataSafetySubtitle": "Hangi verileri topladığımız",
+  "@legalDataSafetySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalPermissionsSubtitle": "Neden izinlere ihtiyacımız var",
+  "@legalPermissionsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "helpFaqSubtitle": "Sıkça sorulan sorulara yanıtlar",
+  "@helpFaqSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "helpSupportSubtitle": "Geliştiriciye doğrudan ulaşın",
+  "@helpSupportSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "helpFeedbackSubtitle": "Görüşlerinizi bize gönderin",
+  "@helpFeedbackSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "compressionPickVideo": "Video seçin",
+  "compressionTargetMb": "Hedef boyut (MB)",
+  "compressionStart": "Sıkıştırmayı başlat",
+  "compressionPause": "Duraklat",
+  "compressionResume": "Devam ettir",
+  "compressionViewResult": "Sonucu görüntüle",
+  "compressionSaveGallery": "Galeriye kaydet",
+  "compressionShare": "Videoyu paylaş",
+  "compressionOriginalSize": "Orijinal boyut",
+  "compressionOutputSize": "Çıkış boyutu",
+  "compressionEmptyHistory": "Henüz sıkıştırılmış video yok",
+  "compressionSavedGallery": "Galeriye kaydedildi",
+  "compressionInvalidTarget": "Sıfırdan büyük bir hedef boyut girin",
+  "compressionCancelled": "Sıkıştırma iptal edildi",
+  "compressionTargetExceeded": "Bu video seçilen boyuta ulaşamadı. Daha büyük bir hedef boyut deneyin.",
+  "compressionTargetInfeasible": "Seçilen boyut bu video için çok küçük. Daha büyük bir boyut seçin.",
+  "compressionPreviewBefore": "Orijinal önizleme",
+  "compressionPreviewAfter": "Sıkıştırılmış önizleme",
+  "compressionPreset": "Hedef ön ayar",
+  "compressionCustom": "Özel boyut",
+  "compressionPreviewUnavailable": "Önizleme mevcut değil",
+  "compressionAdvanced": "Gelişmiş kontroller",
+  "compressionAutomatic": "Otomatik",
+  "compressionResolutionLimit": "Maksimum çözünürlük",
+  "compressionSourceResolution": "Orijinal çözünürlük",
+  "compressionFrameRateLimit": "Maksimum kare hızı",
+  "compressionAudioQuality": "Ses bit hızı",
+  "compressionRemoveAudio": "Sesi kaldır",
+  "compressionVideoBitrateLimit": "Video bit hızı tavanı (kbps)",
+  "compressionHdrPolicy": "HDR işleme",
+  "compressionHdrConvert": "SDR'ye dönüştür",
+  "compressionHdrPreserve": "Destekleniyorsa HDR'yi koru",
+  "compressionPlanPreview": "Başlamadan önce",
+  "compressionPlanLoading": "Sıkıştırma planı hesaplanıyor…",
+  "compressionPlanResolution": "Planlanan çözünürlük",
+  "compressionPlanVideoBitrate": "Planlanan video bit hızı",
+  "compressionPlanAudioBitrate": "Planlanan ses bit hızı",
+  "compressionAudioConversionNote": "Yeniden kodlama sesi AAC stereo'ya dönüştürür. Dolby Atmos ve DTS uzamsal ses korunmayacaktır.",
+  "compressionPlanTooSmall": "Bu hedef kullanılabilir bir video için çok küçük. Boyutu artırın veya diğer sınırlamaları düşürün.",
+  "compressionPlanLowQuality": "Seçilen hedef video kalitesini düşürebilir.",
+  "compressionPlanAlreadyWithinLimit": "Kaynak zaten boyut sınırı içerisinde.",
+  "compressionInvalidBitrate": "En az 150 kbps bir bit hızı girin veya otomatik için boş bırakın.",
+  "compressionInvalidResolution": "240 ile 16384 arasında çift sayı çözünürlük girin veya otomatik için boş bırakın.",
+  "compressionSeek": "Video konumu",
+  "compressionInterrupted": "Önceki sıkıştırma işlemine ara verildi. Geçici dosyalar temizlendi; videoyu seçip tekrar deneyebilirsiniz.",
+  "compressionDismiss": "Kapat",
+  "compressionClearHistory": "Geçmişi temizle",
+  "compressionClearHistoryConfirm": "Tüm geçmiş kayıtları silinsin mi? Kaydedilen videolar cihazınızda kalacaktır. ",
+  "compressionAttempts": "Denemeler ",
+  "compressionTargetSize": "Hedef boyut ",
+  "compressionOutputResolution": "Çıkış çözünürlüğü ",
+  "compressionInvalidVideo": "Bu video okunamadı. Başka bir dosya seçin. ",
+  "compressionInvalidOutput": "Kodlanmış video doğrulamadan geçemedi. Orijinal videonuz değiştirilmedi. ",
+  "compressionEncoderUnsupported": "Bu cihaz seçilen çözünürlüğü veya kare hızını kodlayamaz. Bu ayarı düşürün ve tekrar deneyin. ",
+  "compressionAudioDecoderUnsupported": "Bu cihaz sıkıştırma için bu ses formatını çözümleyemez. Sesi kaldırın veya desteklenen bir kaynak kullanın.",
+  "compressionVideoDecoderUnsupported": "Bu cihaz bu video formatını veya sıkıştırma profilini çözemiyor. Başka bir kaynak veya cihaz seçin.",
+  "compressionMp4NotStreamable": "Dışa aktarılan MP4 akış için hazır değil. Başka bir video veya cihaz deneyin.",
+  "compressionNoSpace": "Bu videoyu sıkıştırmak için yeterli boş depolama alanı yok.",
+  "compressionHdrUnsupported": "Bu cihaz seçilen HDR modunu işleyemiyor. SDR'ye dönüştürmeyi deneyin.",
+  "compressionGeneralFailure": "Sıkıştırma tamamlanamadı. Başka bir ayar veya video deneyin.",
+  "aboutIdentitySection": "Uygulama kimliği",
+  "aboutAppName": "Uygulama adı",
+  "aboutPackageName": "Paket adı",
+  "aboutVersion": "Sürüm",
+  "aboutBuildNumber": "Derleme numarası",
+  "aboutEnvironmentSection": "Cihaz ve derleme",
+  "aboutOperatingSystem": "İşletim sistemi",
+  "aboutOsVersion": "OS sürümü",
+  "aboutBuildMode": "Derleme modu",
+  "aboutDebug": "Hata ayıklama",
+  "aboutRelease": "Yayın",
+  "aboutToolchainSection": "İle inşa edildi",
+  "aboutInstallationSection": "Kurulum",
+  "aboutInstaller": "Şuradan yüklendi",
+  "aboutInstalledOn": "Şu tarihte yüklendi",
+  "aboutUpdatedOn": "Şu tarihte güncellendi",
+  "aboutUnavailable": "Kullanılamıyor",
+  "aboutProjectSection": "Proje ve destek",
+  "aboutRepository": "GitHub deposu",
+  "aboutRepositorySubtitle": "Zumi kaynak kodunu görüntüle",
+  "aboutReadme": "README dosyasını oku",
+  "aboutReadmeSubtitle": "GitHub'da Zumi hakkında bilgi edinin",
+  "aboutIssues": "Bir sorun bildirin",
+  "aboutIssuesSubtitle": "GitHub sorunlarını görüntüle ve oluştur",
+  "aboutLatestRelease": "En son sürüm",
+  "aboutLatestReleaseSubtitle": "Sürümleri ve indirmeleri görüntüle",
+  "aboutDonate": "Zumi'yi destekleyin",
+  "aboutDonateSubtitle": "Resmî bağış sayfasını aç",
+  "aboutLinkError": "Bağlantı açılamadı. Lütfen tekrar deneyin.",
+  "aboutDeveloperSection": "Geliştirici",
+  "aboutDeveloperName": "Mostafa Sensei",
+  "aboutDeveloperProfile": "GitHub profili",
+  "aboutDeveloperProfileSubtitle": "Projeleri ve iletişim bilgilerini gör",
+  "maintenanceInProgress": "Bakım devam ediyor",
+  "maintenanceMessage": "Zumi geçici olarak kullanılamıyor. Lütfen daha sonra tekrar deneyin.",
+  "comingSoon": "Yakında",
+  "@comingSoon": {
+    "description": "Badge shown on placeholder pages"
+  },
+  "languageName": "Türkçe",
+  "countryCode": "TR",
+  "countryName": "{countryCode, select, DZ{Cezayir} BH{Bahreyn} KM{Komorlar} DJ{Cibuti} EG{Mısır} IQ{Irak} JO{Ürdün} KW{Kuveyt} LB{Lübnan} LY{Libya} MR{Moritanya} MA{Fas} OM{Umman} PS{Filistin Bölgeleri} QA{Katar} SA{Suudi Arabistan} SO{Somali} SD{Sudan} SY{Suriye} TN{Tunus} AE{Birleşik Arap Emirlikleri} YE{Yemen} US{Amerika Birleşik Devletleri} GB{Birleşik Krallık} JP{Japonya} FR{Fransa} DE{Almanya} ES{İspanya} TR{Türkiye} NL{Hollanda} other{Ülke}}"
+}

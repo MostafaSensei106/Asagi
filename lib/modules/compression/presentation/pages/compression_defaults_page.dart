@@ -23,12 +23,12 @@ final class CompressionDefaultsPage extends HookWidget {
     final valid = useState(true);
     return Scaffold(
       appBar: SidePageAppBarComponent(
-        title: context.localeKeys.settingsCompressionTitle,
+        title: context.localeKeys.compressionDefaults,
       ),
       body: ListView(
         padding: const EdgeInsets.all(24),
         children: [
-          Text(context.localeKeys.settingsCompressionDescription),
+          Text(context.localeKeys.defaultResolutionBitrateAndOutputFormat),
           const SizedBox(height: 24),
           TextField(
             controller: controller,

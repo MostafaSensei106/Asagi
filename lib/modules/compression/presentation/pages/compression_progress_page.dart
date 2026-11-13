@@ -16,7 +16,7 @@ final class CompressionProgressPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBarComponent(title: context.localeKeys.compressionProgressTitle),
+    appBar: AppBarComponent(title: context.localeKeys.compressing),
     body: BlocSignalBuilder<CompressionCubit, CompressionState>(
       builder: (context, state) {
         final cubit = BlocSignalProvider.of<CompressionCubit>(context);

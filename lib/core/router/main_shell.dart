@@ -69,14 +69,14 @@ final class _ShellChrome extends HookWidget {
     final isWide = MediaQuery.sizeOf(context).width >= 840;
 
     final items = [
-      AppNavItem(label: context.localeKeys.homeTitle, icon: ZumiIcons.home),
-      AppNavItem(label: context.localeKeys.aiChatTitle, icon: ZumiIcons.ai),
+      AppNavItem(label: context.localeKeys.zumi, icon: ZumiIcons.home),
+      AppNavItem(label: context.localeKeys.zumiAssistant, icon: ZumiIcons.ai),
       AppNavItem(
-        label: context.localeKeys.compressionHistoryTitle,
+        label: context.localeKeys.compressionHistory,
         icon: ZumiIcons.compressionHistory,
       ),
       AppNavItem(
-        label: context.localeKeys.settingsTitle,
+        label: context.localeKeys.settings,
         icon: ZumiIcons.settings,
       ),
     ];

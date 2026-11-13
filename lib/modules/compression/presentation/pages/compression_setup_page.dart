@@ -26,13 +26,13 @@ final class CompressionSetupPage extends HookWidget {
     );
     final valid = useState(true);
     return Scaffold(
-      appBar: AppBarComponent(title: context.localeKeys.compressionSetupTitle),
+      appBar: AppBarComponent(title: context.localeKeys.compressionSetup),
       body: BlocSignalBuilder<CompressionCubit, CompressionState>(
         builder: (context, state) {
           final video = state.video;
           if (video == null) {
             return Center(
-              child: Text(context.localeKeys.videoSelectDescription),
+              child: Text(context.localeKeys.pickAVideoFromYourGalleryToStartCompressing),
             );
           }
           return ListView(

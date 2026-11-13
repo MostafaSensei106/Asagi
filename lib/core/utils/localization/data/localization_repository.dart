@@ -5,6 +5,7 @@ import 'package:injectable/injectable.dart';
 import '../../../constants/pref_keys.dart';
 import '../../../services/l10n/l10n_service.dart';
 import '../../../services/shared_prefs/base_pref_storage_service.dart';
+import '../app_supported_locales.dart';
 import 'base_localization_repository.dart';
 
 @LazySingleton(as: BaseLocalizationRepository)
@@ -24,18 +25,20 @@ class LocalizationRepository implements BaseLocalizationRepository {
     final cachedLanguage = await _storage.getData<String>(
       key: PrefKeys.language,
     );
+    final systemLocale = ui.PlatformDispatcher.instance.locale;
     if (cachedLanguage != null) {
-      return cachedLanguage;
+      final cachedLocale = AppSupportedLocales.resolve(
+        cachedLanguage,
+        systemLocale: systemLocale,
+      );
+      if (cachedLocale != null) return cachedLocale.toString();
     }
 
-    final systemLangCode = ui.PlatformDispatcher.instance.locale.languageCode;
-
-    if (_l10nService.supportedLocales
-        .map((e) => e.languageCode)
-        .contains(systemLangCode)) {
-      return systemLangCode;
-    }
-
-    return _l10nService.supportedLocales.first.languageCode;
+    return (AppSupportedLocales.resolve(
+              systemLocale.toString(),
+              systemLocale: systemLocale,
+            ) ??
+            _l10nService.supportedLocales.first)
+        .toString();
   }
 }

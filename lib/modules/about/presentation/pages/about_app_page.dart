@@ -22,7 +22,7 @@ final class AboutAppPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: SidePageAppBarComponent(title: context.localeKeys.aboutAppTitle),
+    appBar: SidePageAppBarComponent(title: context.localeKeys.aboutZumi),
     body: SafeArea(
       child: BlocSignalBuilder<AboutAppCubit, AboutAppState>(
         builder: (context, state) => state.maybeWhen(
@@ -222,12 +222,12 @@ final class _AboutContent extends StatelessWidget {
               ),
               const Gap(AppSpacing.large),
               AboutSection(
-                title: l10n.aboutLicensesTitle,
+                title: l10n.openSourceLicenses,
                 icon: ZumiIcons.licenses,
                 shape: ExpressiveIconShape.pentagon,
                 children: [
                   AboutRow(
-                    title: l10n.aboutLicensesTitle,
+                    title: l10n.openSourceLicenses,
                     subtitle: l10n.aboutLicensesSubtitle,
                     icon: ZumiIcons.licenses,
                     onTap: () => unawaited(context.push(const LicensesRoute())),

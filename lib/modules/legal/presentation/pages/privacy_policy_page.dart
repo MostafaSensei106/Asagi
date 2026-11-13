@@ -14,8 +14,8 @@ final class PrivacyPolicyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppPlaceholderPage(
-      title: context.localeKeys.legalPrivacyTitle,
-      description: context.localeKeys.legalPrivacyDescription,
+      title: context.localeKeys.privacyPolicy,
+      description: context.localeKeys.howZumiHandlesYourVideosAndData,
       icon: ZumiIcons.privacyPolicy,
     );
   }

@@ -17,7 +17,7 @@ class MaintenanceModePage extends StatelessWidget {
               const Icon(Icons.build, size: 80, color: Colors.orange),
               const SizedBox(height: 24),
               Text(
-                context.localeKeys.maintenanceTitle,
+                context.localeKeys.maintenanceInProgress,
                 style: const TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,

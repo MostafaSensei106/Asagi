@@ -6,6 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../../services/l10n/l10n_service.dart';
+import '../../app_supported_locales.dart';
 
 part 'localization_cubit.freezed.dart';
 part 'localization_state.dart';
@@ -19,23 +20,29 @@ class LocalizationCubit extends HydratedCubitSignal<LocalizationState> {
   final L10nService _l10nService;
 
   static LocalizationState _getInitialState(L10nService l10nService) {
-    final systemLangCode = ui.PlatformDispatcher.instance.locale.languageCode;
-    final supportedCodes = l10nService.supportedLocales.map(
-      (e) => e.languageCode,
-    );
-
-    if (supportedCodes.contains(systemLangCode)) {
-      return LocalizationState(langCode: systemLangCode);
-    }
-
+    final systemLocale = ui.PlatformDispatcher.instance.locale;
     return LocalizationState(
-      langCode: l10nService.supportedLocales.first.languageCode,
+      langCode:
+          (AppSupportedLocales.resolve(
+                    systemLocale.toString(),
+                    systemLocale: systemLocale,
+                  ) ??
+                  l10nService.supportedLocales.first)
+              .toString(),
     );
   }
 
-  Future<void> changeLanguage(String langCode) async {
-    if (state.value.langCode == langCode) return;
-    emit(LocalizationState(langCode: langCode));
+  String? _resolveLocaleCode(String code) {
+    return AppSupportedLocales.resolve(
+      code,
+      systemLocale: ui.PlatformDispatcher.instance.locale,
+    )?.toString();
+  }
+
+  Future<void> changeLanguage(String localeCode) async {
+    final resolvedCode = _resolveLocaleCode(localeCode);
+    if (resolvedCode == null || state.value.langCode == resolvedCode) return;
+    emit(LocalizationState(langCode: resolvedCode));
     //    await getIt<CacheManager>().refreshAllCache();
   }
 
@@ -44,10 +51,10 @@ class LocalizationCubit extends HydratedCubitSignal<LocalizationState> {
     if (supportedLocales.isEmpty) return;
 
     final currentIndex = supportedLocales.indexWhere(
-      (locale) => locale.languageCode == state.value.langCode,
+      (locale) => locale.toString() == state.value.langCode,
     );
     final nextIndex = (currentIndex + 1) % supportedLocales.length;
-    await changeLanguage(supportedLocales[nextIndex].languageCode);
+    await changeLanguage(supportedLocales[nextIndex].toString());
   }
 
   @override
@@ -55,7 +62,9 @@ class LocalizationCubit extends HydratedCubitSignal<LocalizationState> {
     if (json is! Map<String, dynamic>) return null;
     final langCode = json['langCode'] as String?;
     if (langCode == null || langCode.isEmpty) return null;
-    return LocalizationState(langCode: langCode);
+    final resolvedCode = _resolveLocaleCode(langCode);
+    if (resolvedCode == null) return null;
+    return LocalizationState(langCode: resolvedCode);
   }
 
   @override

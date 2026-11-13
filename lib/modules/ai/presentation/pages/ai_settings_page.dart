@@ -23,12 +23,12 @@ final class AiSettingsPage extends StatelessWidget {
         destinations: <({AppRoute route, String title, String subtitle})>[
           (
             route: const AiModelsRoute(),
-            title: context.localeKeys.aiModelsTitle,
+            title: context.localeKeys.localModels,
             subtitle: context.localeKeys.aiModelsSubtitle,
           ),
           (
             route: const AiImportModelRoute(),
-            title: context.localeKeys.aiImportTitle,
+            title: context.localeKeys.importAModel,
             subtitle: context.localeKeys.aiImportSubtitle,
           ),
         ],
@@ -40,12 +40,12 @@ final class AiSettingsPage extends StatelessWidget {
         destinations: <({AppRoute route, String title, String subtitle})>[
           (
             route: const AiChatSettingsRoute(),
-            title: context.localeKeys.aiChatSettingsTitle,
+            title: context.localeKeys.conversationSettings,
             subtitle: context.localeKeys.aiChatSettingsSubtitle,
           ),
           (
             route: const AiMediaRoute(),
-            title: context.localeKeys.aiMediaTitle,
+            title: context.localeKeys.imagesAndAudio,
             subtitle: context.localeKeys.aiMediaSubtitle,
           ),
         ],
@@ -57,17 +57,17 @@ final class AiSettingsPage extends StatelessWidget {
         destinations: <({AppRoute route, String title, String subtitle})>[
           (
             route: const AiFeaturesRoute(),
-            title: context.localeKeys.aiFeaturesTitle,
+            title: context.localeKeys.smartFeatures,
             subtitle: context.localeKeys.aiFeaturesSubtitle,
           ),
           (
             route: const AiSearchRoute(),
-            title: context.localeKeys.aiSearchTitle,
+            title: context.localeKeys.semanticSearch,
             subtitle: context.localeKeys.aiSearchSubtitle,
           ),
           (
             route: const AiToolsRoute(),
-            title: context.localeKeys.aiToolsTitle,
+            title: context.localeKeys.toolsAndStructuredOutput,
             subtitle: context.localeKeys.aiToolsSubtitle,
           ),
         ],
@@ -79,7 +79,7 @@ final class AiSettingsPage extends StatelessWidget {
         destinations: <({AppRoute route, String title, String subtitle})>[
           (
             route: const AiRuntimeRoute(),
-            title: context.localeKeys.aiRuntimeTitle,
+            title: context.localeKeys.modelPerformance,
             subtitle: context.localeKeys.aiRuntimeSubtitle,
           ),
         ],
@@ -93,7 +93,7 @@ final class AiSettingsPage extends StatelessWidget {
 
     return Scaffold(
       appBar: SidePageAppBarComponent(
-        title: context.localeKeys.settingsAiTitle,
+        title: context.localeKeys.aiSettings,
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(

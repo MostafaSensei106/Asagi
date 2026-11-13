@@ -9,8 +9,8 @@ final class AiModelsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => AppPlaceholderPage(
-    title: context.localeKeys.aiModelsTitle,
-    description: context.localeKeys.aiModelsDescription,
+    title: context.localeKeys.localModels,
+    description: context.localeKeys.chooseASupportedModelDownloadItToThisDeviceAndManageInstalledModelsHere,
     icon: ZumiIcons.aiModels,
   );
 }
@@ -20,8 +20,8 @@ final class AiImportModelPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => AppPlaceholderPage(
-    title: context.localeKeys.aiImportTitle,
-    description: context.localeKeys.aiImportDescription,
+    title: context.localeKeys.importAModel,
+    description: context.localeKeys.selectACompatibleLocalModelFileAndReviewItsRequirementsBeforeUsingIt,
     icon: ZumiIcons.aiImport,
   );
 }
@@ -31,8 +31,8 @@ final class AiFeaturesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => AppPlaceholderPage(
-    title: context.localeKeys.aiFeaturesTitle,
-    description: context.localeKeys.aiFeaturesDescription,
+    title: context.localeKeys.smartFeatures,
+    description: context.localeKeys.chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch,
     icon: ZumiIcons.aiFeatures,
   );
 }
@@ -42,8 +42,8 @@ final class AiRuntimePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => AppPlaceholderPage(
-    title: context.localeKeys.aiRuntimeTitle,
-    description: context.localeKeys.aiRuntimeDescription,
+    title: context.localeKeys.modelPerformance,
+    description: context.localeKeys.controlTheProcessingBackendAndResourceLimitsForSupportedModels,
     icon: ZumiIcons.aiRuntime,
   );
 }
@@ -53,8 +53,8 @@ final class AiChatSettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => AppPlaceholderPage(
-    title: context.localeKeys.aiChatSettingsTitle,
-    description: context.localeKeys.aiChatSettingsDescription,
+    title: context.localeKeys.conversationSettings,
+    description: context.localeKeys.configureHowTheAssistantRespondsIncludingStreamingThinkingModeSamplingAndResponseLimits,
     icon: ZumiIcons.aiChatSettings,
   );
 }
@@ -64,8 +64,8 @@ final class AiMediaPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => AppPlaceholderPage(
-    title: context.localeKeys.aiMediaTitle,
-    description: context.localeKeys.aiMediaDescription,
+    title: context.localeKeys.imagesAndAudio,
+    description: context.localeKeys.chooseWhetherCompatibleModelsCanAnalyzeSelectedImagesAndAudioFromYourVideos,
     icon: ZumiIcons.aiMedia,
   );
 }
@@ -75,8 +75,8 @@ final class AiSearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => AppPlaceholderPage(
-    title: context.localeKeys.aiSearchTitle,
-    description: context.localeKeys.aiSearchDescription,
+    title: context.localeKeys.semanticSearch,
+    description: context.localeKeys.manageTheLocalEmbeddingModelAndSearchIndexForFindingVideosAndMomentsByMeaning,
     icon: ZumiIcons.aiSearch,
   );
 }
@@ -86,8 +86,8 @@ final class AiToolsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => AppPlaceholderPage(
-    title: context.localeKeys.aiToolsTitle,
-    description: context.localeKeys.aiToolsDescription,
+    title: context.localeKeys.toolsAndStructuredOutput,
+    description: context.localeKeys.manageSupportedAssistantActionsAndStructuredResponsesActionsThatAffectFilesWillRequireYourConfirmation,
     icon: ZumiIcons.aiTools,
   );
 }

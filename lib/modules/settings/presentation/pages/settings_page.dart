@@ -56,7 +56,7 @@ final class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarComponent(title: context.localeKeys.settingsTitle),
+      appBar: AppBarComponent(title: context.localeKeys.settings),
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
@@ -189,7 +189,7 @@ final class SettingsPage extends StatelessWidget {
     AppRouteSection.about => context.localeKeys.settingsGroupAbout,
     AppRouteSection.legal => context.localeKeys.settingsGroupLegal,
     AppRouteSection.help => context.localeKeys.settingsGroupHelp,
-    AppRouteSection.core => context.localeKeys.settingsTitle,
+    AppRouteSection.core => context.localeKeys.settings,
   };
 
   String _routeSubtitleFor(BuildContext context, AppRoute route) =>
@@ -222,28 +222,28 @@ final class SettingsPage extends StatelessWidget {
 
   String _routeTitleFor(BuildContext context, AppRoute route) =>
       switch (route.metadata.name) {
-        'settings_appearance' => context.localeKeys.settingsAppearanceTitle,
-        'settings_language' => context.localeKeys.settingsLanguageTitle,
-        'settings_compression' => context.localeKeys.settingsCompressionTitle,
-        'settings_storage' => context.localeKeys.settingsStorageTitle,
-        'settings_ai' => context.localeKeys.settingsAiTitle,
-        'compression_history' => context.localeKeys.compressionHistoryTitle,
+        'settings_appearance' => context.localeKeys.appearance,
+        'settings_language' => context.localeKeys.language,
+        'settings_compression' => context.localeKeys.compressionDefaults,
+        'settings_storage' => context.localeKeys.storageCleanup,
+        'settings_ai' => context.localeKeys.aiSettings,
+        'compression_history' => context.localeKeys.compressionHistory,
         'settings_notifications' =>
-          context.localeKeys.settingsNotificationsTitle,
-        'settings_privacy' => context.localeKeys.settingsPrivacyTitle,
-        'plans' => context.localeKeys.plansTitle,
-        'plans_methods' => context.localeKeys.plansMethodsTitle,
-        'plans_restore' => context.localeKeys.plansRestoreTitle,
-        'about_app' => context.localeKeys.aboutAppTitle,
-        'about_developer' => context.localeKeys.aboutDeveloperTitle,
-        'about_licenses' => context.localeKeys.aboutLicensesTitle,
-        'legal_privacy_policy' => context.localeKeys.legalPrivacyTitle,
-        'legal_terms' => context.localeKeys.legalTermsTitle,
-        'legal_data_safety' => context.localeKeys.legalDataSafetyTitle,
-        'legal_permissions' => context.localeKeys.legalPermissionsTitle,
-        'help_faq' => context.localeKeys.helpFaqTitle,
-        'help_support' => context.localeKeys.helpSupportTitle,
-        'help_feedback' => context.localeKeys.helpFeedbackTitle,
+          context.localeKeys.notifications,
+        'settings_privacy' => context.localeKeys.privacy,
+        'plans' => context.localeKeys.plans,
+        'plans_methods' => context.localeKeys.paymentMethods,
+        'plans_restore' => context.localeKeys.restorePurchases,
+        'about_app' => context.localeKeys.aboutZumi,
+        'about_developer' => context.localeKeys.aboutTheDeveloper,
+        'about_licenses' => context.localeKeys.openSourceLicenses,
+        'legal_privacy_policy' => context.localeKeys.privacyPolicy,
+        'legal_terms' => context.localeKeys.termsOfService,
+        'legal_data_safety' => context.localeKeys.dataSafety,
+        'legal_permissions' => context.localeKeys.permissions,
+        'help_faq' => context.localeKeys.faq,
+        'help_support' => context.localeKeys.support,
+        'help_feedback' => context.localeKeys.sendFeedback,
         _ => route.metadata.name,
       };
 }

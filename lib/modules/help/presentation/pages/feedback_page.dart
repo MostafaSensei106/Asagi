@@ -14,8 +14,8 @@ final class FeedbackPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppPlaceholderPage(
-      title: context.localeKeys.helpFeedbackTitle,
-      description: context.localeKeys.helpFeedbackDescription,
+      title: context.localeKeys.sendFeedback,
+      description: context.localeKeys.reportAProblemOrSuggestAnImprovement,
       icon: ZumiIcons.feedback,
     );
   }

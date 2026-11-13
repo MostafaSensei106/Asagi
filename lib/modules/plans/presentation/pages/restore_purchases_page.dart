@@ -14,8 +14,8 @@ final class RestorePurchasesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppPlaceholderPage(
-      title: context.localeKeys.plansRestoreTitle,
-      description: context.localeKeys.plansRestoreDescription,
+      title: context.localeKeys.restorePurchases,
+      description: context.localeKeys.reApplyAPurchaseMadeOnAnotherDevice,
       icon: ZumiIcons.restorePurchases,
     );
   }
