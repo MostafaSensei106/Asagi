@@ -84,7 +84,7 @@ final class SidePageSliverAppBarComponent extends StatelessWidget {
       Padding(
         padding: const EdgeInsets.all(AppConfig.paddingHalf),
         child: IconButtonComponent(
-          variant: IconButtonVariant.outlined,
+          variant: IconButtonVariant.filled,
           onPressed: () => leave(context),
           icon: icon,
         ),

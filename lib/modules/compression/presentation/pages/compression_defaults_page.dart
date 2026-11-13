@@ -6,7 +6,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/extensions/extensions.dart';
-import '../../../../core/widgets/navigation/app_bar/app_bar_component.dart';
+import '../../../../core/widgets/navigation/app_bar/side_page_app_bar_component.dart';
 import '../cubit/compression_cubit.dart';
 import '../cubit/compression_state.dart';
 import '../widgets/compression_advanced_controls.dart';
@@ -22,7 +22,7 @@ final class CompressionDefaultsPage extends HookWidget {
     );
     final valid = useState(true);
     return Scaffold(
-      appBar: AppBarComponent(
+      appBar: SidePageAppBarComponent(
         title: context.localeKeys.settingsCompressionTitle,
       ),
       body: ListView(

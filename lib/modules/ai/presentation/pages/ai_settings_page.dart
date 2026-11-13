@@ -92,32 +92,30 @@ final class AiSettingsPage extends StatelessWidget {
     );
 
     return Scaffold(
-      appBar: AppBarComponent(title: context.localeKeys.settingsAiTitle),
-      body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.all(AppSpacing.large),
-          children: [
-            Text(
-              context.localeKeys.settingsAiDescription,
-              style: context.textTheme.bodyMedium,
-            ),
-            const Gap(AppSpacing.large),
-            for (final group in groups) ...[
-              ExpressiveSectionHeader(title: group.title),
-              const Gap(AppSpacing.small),
-              for (var index = 0; index < group.destinations.length; index++)
-                _destinationTile(
-                  context,
-                  group.destinations[index],
-                  trailing: trailing,
-                  index: index,
-                  count: group.destinations.length,
-                  shape: group.shape,
-                ),
-              const Gap(AppSpacing.large),
-            ],
-          ],
+      appBar: SidePageAppBarComponent(
+        title: context.localeKeys.settingsAiTitle,
+      ),
+      body: ListView(
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.large,
+          vertical: AppSpacing.small,
         ),
+        children: [
+          for (final group in groups) ...[
+            ExpressiveSectionHeader(title: group.title),
+            const Gap(AppSpacing.small),
+            for (var index = 0; index < group.destinations.length; index++)
+              _destinationTile(
+                context,
+                group.destinations[index],
+                trailing: trailing,
+                index: index,
+                count: group.destinations.length,
+                shape: group.shape,
+              ),
+            const Gap(AppSpacing.small),
+          ],
+        ],
       ),
     );
   }
