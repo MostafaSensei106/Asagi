@@ -1,0 +1,725 @@
+{
+  "@@locale": "sv_SE",
+  "zumi": "Zumi",
+  "@zumi": {
+    "description": "Application name shown in the app and on the home page"
+  },
+  "downloadFile": "Ladda ner fil",
+  "@downloadFile": {
+    "description": "Title for download file dialog"
+  },
+  "fileOpenedInBrowser": "Fil öppnad i webbläsare: {fileName}",
+  "@fileOpenedInBrowser": {
+    "description": "Message shown when file is opened in browser",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "fileSavedToDcim": "Fil sparad till galleri: {fileName}",
+  "@fileSavedToDcim": {
+    "description": "Message shown when file is saved to gallery",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "fileSavedToDocuments": "Fil sparad till dokument: {fileName}",
+  "@fileSavedToDocuments": {
+    "description": "Message shown when file is saved to documents",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "fileAlreadySaved": "Fil är redan sparad",
+  "@fileAlreadySaved": {
+    "description": "Message shown when file already exists"
+  },
+  "error": "Fel",
+  "@error": {
+    "description": "Generic error title"
+  },
+  "info": "Info",
+  "@info": {
+    "description": "Generic info title"
+  },
+  "success": "Framgång",
+  "@success": {
+    "description": "Generic success title"
+  },
+  "warning": "Varning",
+  "@warning": {
+    "description": "Generic warning title"
+  },
+  "paid": "Betald",
+  "@paid": {
+    "description": "Payment status paid"
+  },
+  "unpaid": "Obetald",
+  "@unpaid": {
+    "description": "Payment status unpaid"
+  },
+  "partial": "Delvis",
+  "@partial": {
+    "description": "Payment status partial"
+  },
+  "error_address_line_cant_be_empty": "Adressrad får inte vara tom",
+  "@error_address_line_cant_be_empty": {
+    "description": "Address line empty error"
+  },
+  "error_address_line_too_long": "Adressrad är för lång",
+  "@error_address_line_too_long": {
+    "description": "Address line too long error"
+  },
+  "error_address_invalid_special_characters": "Specialtecken är inte tillåtna",
+  "@error_address_invalid_special_characters": {
+    "description": "Address special characters error"
+  },
+  "error_address_emoji_not_allowed": "Emojis är inte tillåtna",
+  "@error_address_emoji_not_allowed": {
+    "description": "Address emoji not allowed error"
+  },
+  "error_city_cant_be_empty": "Stad får inte vara tom",
+  "@error_city_cant_be_empty": {
+    "description": "City empty error"
+  },
+  "error_city_too_long": "Stadsnamn är för långt",
+  "@error_city_too_long": {
+    "description": "City too long error"
+  },
+  "error_city_invalid_special_characters": "Staden innehåller ogiltiga specialtecken",
+  "@error_city_invalid_special_characters": {
+    "description": "City special characters error"
+  },
+  "error_address_label_cant_be_empty": "Adressetikett får inte vara tom",
+  "@error_address_label_cant_be_empty": {
+    "description": "Address label empty error"
+  },
+  "error_address_label_too_long": "Adressetikett är för lång",
+  "@error_address_label_too_long": {
+    "description": "Address label too long error"
+  },
+  "error_email_cant_be_empty": "E-post får inte vara tom",
+  "@error_email_cant_be_empty": {
+    "description": "Email empty error"
+  },
+  "error_email_not_invalid_format": "Ogiltigt e-postformat",
+  "@error_email_not_invalid_format": {
+    "description": "Email invalid format error"
+  },
+  "error_email_contains_invalid_characters": "E-post innehåller ogiltiga tecken",
+  "@error_email_contains_invalid_characters": {
+    "description": "Email invalid characters error"
+  },
+  "error_email_must_contain_at_symbol": "E-post måste innehålla @",
+  "@error_email_must_contain_at_symbol": {
+    "description": "Email missing @ error"
+  },
+  "error_email_must_be_in_lowercase": "E-post måste vara i små bokstäver",
+  "@error_email_must_be_in_lowercase": {
+    "description": "Email not in lowercase error"
+  },
+  "error_arabic_not_allowed": "Arabiska tecken är inte tillåtna",
+  "@error_arabic_not_allowed": {
+    "description": "Arabic characters not allowed error"
+  },
+  "error_email_emoji_not_allowed": "Emojis är inte tillåtna i e-post",
+  "@error_email_emoji_not_allowed": {
+    "description": "Email emoji not allowed error"
+  },
+  "error_phone_number_cant_be_empty": "Telefonnummer får inte vara tomt",
+  "@error_phone_number_cant_be_empty": {
+    "description": "Phone number empty error"
+  },
+  "error_phone_number_invalid": "Ogiltigt telefonnummer",
+  "@error_phone_number_invalid": {
+    "description": "Phone number invalid error"
+  },
+  "error_phone_number_min_length": "Telefonnummer måste vara minst 11 siffror",
+  "@error_phone_number_min_length": {
+    "description": "Phone number min length error"
+  },
+  "error_name_cant_be_empty": "Namn får inte vara tomt",
+  "@error_name_cant_be_empty": {
+    "description": "Name empty error"
+  },
+  "error_name_invalid": "Ogiltigt namn",
+  "@error_name_invalid": {
+    "description": "Name invalid error"
+  },
+  "error_name_too_short_at_least_3_characters": "Namn måste vara minst 3 tecken",
+  "@error_name_too_short_at_least_3_characters": {
+    "description": "Name too short error"
+  },
+  "error_name_too_long_maximum_20_characters": "Namn får inte överstiga 20 tecken",
+  "@error_name_too_long_maximum_20_characters": {
+    "description": "Name too long error"
+  },
+  "error_name_invalid_special_characters": "Namn innehåller ogiltiga specialtecken",
+  "@error_name_invalid_special_characters": {
+    "description": "Name special characters error"
+  },
+  "error_name_emoji_not_allowed": "Emojis är inte tillåtna i namn",
+  "@error_name_emoji_not_allowed": {
+    "description": "Name emoji not allowed error"
+  },
+  "error_password_cant_be_empty": "Lösenord får inte vara tomt",
+  "@error_password_cant_be_empty": {
+    "description": "Password empty error"
+  },
+  "error_password_must_contain_uppercase_lowercase_number_and_special_character": "Lösenordet måste innehålla stora bokstäver, små bokstäver, siffror och specialtecken",
+  "@error_password_must_contain_uppercase_lowercase_number_and_special_character": {
+    "description": "Password complex requirements error"
+  },
+  "error_password_must_be_at_least_8_characters_long": "Lösenordet måste vara minst 8 tecken långt",
+  "@error_password_must_be_at_least_8_characters_long": {
+    "description": "Password min length error"
+  },
+  "noInternetConnection": "Ingen internetanslutning",
+  "@noInternetConnection": {
+    "description": "No internet connection message"
+  },
+  "internetConnectionRestored": "Internetanslutning återställd",
+  "@internetConnectionRestored": {
+    "description": "Internet connection restored message"
+  },
+  "retry": "Försök igen",
+  "@retry": {
+    "description": "Retry button text"
+  },
+  "cancel": "Avbryt",
+  "@cancel": {
+    "description": "Cancel button text"
+  },
+  "confirm": "Bekräfta",
+  "@confirm": {
+    "description": "Confirm button text"
+  },
+  "pleaseWait": "Vänligen vänta...",
+  "@pleaseWait": {
+    "description": "Please wait dialog text"
+  },
+  "ok": "OK",
+  "@ok": {
+    "description": "OK button text"
+  },
+  "compressVideosPrivatelyOnYourDevice": "Komprimera videor privat på din enhet.",
+  "@compressVideosPrivatelyOnYourDevice": {
+    "description": "Home page description"
+  },
+  "welcomeToZumi": "Välkommen till Zumi",
+  "@welcomeToZumi": {
+    "description": "Onboarding page title"
+  },
+  "learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": "Lär dig hur Zumi komprimerar dina videor utan att någonsin lämna din telefon.",
+  "@learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": {
+    "description": "Onboarding page description"
+  },
+  "signIn": "Logga in",
+  "@signIn": {
+    "description": "Login page title"
+  },
+  "signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": "Logga in för att synkronisera din plan och hålla dina köp tillgängliga på alla enheter.",
+  "@signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": {
+    "description": "Login page description"
+  },
+  "chooseAVideo": "Välj en video",
+  "@chooseAVideo": {
+    "description": "Video picker page title"
+  },
+  "pickAVideoFromYourGalleryToStartCompressing": "Välj en video från ditt galleri för att börja komprimera.",
+  "@pickAVideoFromYourGalleryToStartCompressing": {
+    "description": "Video picker page description"
+  },
+  "compressionSetup": "Komprimeringsinställning",
+  "@compressionSetup": {
+    "description": "Compression setup page title"
+  },
+  "chooseResolutionBitrateAndOutputFormatBeforeYouStart": "Välj upplösning, bithastighet och utdataformat innan du börjar.",
+  "@chooseResolutionBitrateAndOutputFormatBeforeYouStart": {
+    "description": "Compression setup page description"
+  },
+  "compressing": "Komprimerar",
+  "@compressing": {
+    "description": "Compression progress page title"
+  },
+  "followTheLiveProgressOfYourCompressionJob": "Följ den live framdriften av din komprimeringsuppgift.",
+  "@followTheLiveProgressOfYourCompressionJob": {
+    "description": "Compression progress page description"
+  },
+  "compressionResult": "Komprimeringsresultat",
+  "@compressionResult": {
+    "description": "Compression result page title"
+  },
+  "compareTheBeforeAndAfterSizeThenSaveOrShareTheResult": "Jämför storleken före och efter, och spara eller dela sedan resultatet.",
+  "@compareTheBeforeAndAfterSizeThenSaveOrShareTheResult": {
+    "description": "Compression result page description"
+  },
+  "compressionHistory": "Komprimeringshistorik",
+  "@compressionHistory": {
+    "description": "Compression history page title"
+  },
+  "reviewTheVideosYouHaveCompressedOnThisDevice": "Granska de videor du har komprimerat på denna enhet.",
+  "@reviewTheVideosYouHaveCompressedOnThisDevice": {
+    "description": "Compression history page description"
+  },
+  "settings": "Inställningar",
+  "@settings": {
+    "description": "Settings hub page title"
+  },
+  "appearance": "Utseende",
+  "@appearance": {
+    "description": "Appearance settings page title"
+  },
+  "themeColorSchemeAndMotionPreferences": "Tema, färgschema och rörelseinställningar.",
+  "@themeColorSchemeAndMotionPreferences": {
+    "description": "Appearance settings page description"
+  },
+  "language": "Språk",
+  "@language": {
+    "description": "Language settings page title"
+  },
+  "appLanguageAndTextDirection": "Appens språk och textriktning.",
+  "@appLanguageAndTextDirection": {
+    "description": "Language settings page description"
+  },
+  "compressionDefaults": "Standardinställningar för komprimering",
+  "@compressionDefaults": {
+    "description": "Compression defaults page title"
+  },
+  "defaultResolutionBitrateAndOutputFormat": "Standardupplösning, bithastighet och utdataformat.",
+  "@defaultResolutionBitrateAndOutputFormat": {
+    "description": "Compression defaults page description"
+  },
+  "storageCleanup": "Lagring & rensning",
+  "@storageCleanup": {
+    "description": "Storage settings page title"
+  },
+  "storageUsageCacheSizeAndTemporaryFileCleanup": "Lagringsanvändning, cache-storlek och rengöring av temporära filer.",
+  "@storageUsageCacheSizeAndTemporaryFileCleanup": {
+    "description": "Storage settings page description"
+  },
+  "notifications": "Notifikationer",
+  "@notifications": {
+    "description": "Notifications settings page title"
+  },
+  "jobCompletionAndProductUpdateNotifications": "Notifikationer om slutförda jobb och produktuppdateringar.",
+  "@jobCompletionAndProductUpdateNotifications": {
+    "description": "Notifications settings page description"
+  },
+  "privacy": "Integritet",
+  "@privacy": {
+    "description": "Privacy settings page title"
+  },
+  "onDeviceProcessingLocalLogsAndOptionalCrashReports": "Bearbetning på enheten, lokala loggar och valfria kraschrapporter.",
+  "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
+    "description": "Privacy settings page description"
+  },
+  "aboutZumi": "Om Zumi",
+  "@aboutZumi": {
+    "description": "App info page title"
+  },
+  "versionBuildNumberAndApplicationDetails": "Version, byggnummer och applikationsdetaljer.",
+  "@versionBuildNumberAndApplicationDetails": {
+    "description": "App info page description"
+  },
+  "aboutTheDeveloper": "Om utvecklaren",
+  "@aboutTheDeveloper": {
+    "description": "Developer page title"
+  },
+  "theDeveloperAndToolsBehindZumi": "Utvecklaren och verktygen bakom Zumi.",
+  "@theDeveloperAndToolsBehindZumi": {
+    "description": "Developer page description"
+  },
+  "openSourceLicenses": "Öppen källkod-licenser",
+  "@openSourceLicenses": {
+    "description": "Licenses page title"
+  },
+  "openSourcePackagesBundledWithZumi": "Öppen källkodspaket som ingår i Zumi.",
+  "@openSourcePackagesBundledWithZumi": {
+    "description": "Licenses page description"
+  },
+  "privacyPolicy": "Integritetspolicy",
+  "@privacyPolicy": {
+    "description": "Privacy policy page title"
+  },
+  "howZumiHandlesYourVideosAndData": "Hur Zumi hanterar dina videor och data.",
+  "@howZumiHandlesYourVideosAndData": {
+    "description": "Privacy policy page description"
+  },
+  "termsOfService": "Användarvillkor",
+  "@termsOfService": {
+    "description": "Terms page title"
+  },
+  "theTermsThatApplyToZumiAndItsPurchases": "Villkoren som gäller för Zumi och dess köp.",
+  "@theTermsThatApplyToZumiAndItsPurchases": {
+    "description": "Terms page description"
+  },
+  "dataSafety": "Datasäkerhet",
+  "@dataSafety": {
+    "description": "Data safety page title"
+  },
+  "summaryOfTheDataZumiCollectsAndWhy": "Sammanfattning av de data som Zumi samlar in och varför.",
+  "@summaryOfTheDataZumiCollectsAndWhy": {
+    "description": "Data safety page description"
+  },
+  "permissions": "Behörigheter",
+  "@permissions": {
+    "description": "Permissions page title"
+  },
+  "runtimePermissionsZumiRequestsAndWhyEachIsNeeded": "Körningstillstånd som Zumi begär och varför varje behövs.",
+  "@runtimePermissionsZumiRequestsAndWhyEachIsNeeded": {
+    "description": "Permissions page description"
+  },
+  "faq": "FAQ",
+  "@faq": {
+    "description": "FAQ page title"
+  },
+  "answersToCommonQuestionsAboutCompressionAndBilling": "Svar på vanliga frågor om komprimering och fakturering.",
+  "@answersToCommonQuestionsAboutCompressionAndBilling": {
+    "description": "FAQ page description"
+  },
+  "support": "Support",
+  "@support": {
+    "description": "Support page title"
+  },
+  "getHelpWithYourAccountOrAPurchase": "Få hjälp med ditt konto eller ett köp.",
+  "@getHelpWithYourAccountOrAPurchase": {
+    "description": "Support page description"
+  },
+  "sendFeedback": "Skicka feedback",
+  "@sendFeedback": {
+    "description": "Feedback page title"
+  },
+  "reportAProblemOrSuggestAnImprovement": "Rapportera ett problem eller föreslå en förbättring.",
+  "@reportAProblemOrSuggestAnImprovement": {
+    "description": "Feedback page description"
+  },
+  "plans": "Planer",
+  "@plans": {
+    "description": "Plans page title"
+  },
+  "comparePlansAndSeeWhatEachOneUnlocks": "Jämför planer och se vad varje låser upp.",
+  "@comparePlansAndSeeWhatEachOneUnlocks": {
+    "description": "Plans page description"
+  },
+  "planDetails": "Plandetaljer",
+  "@planDetails": {
+    "description": "Plan details page title"
+  },
+  "benefitsLimitsAndPricingForThisPlan": "Fördelar, begränsningar och prissättning för denna plan.",
+  "@benefitsLimitsAndPricingForThisPlan": {
+    "description": "Plan details page description"
+  },
+  "paymentMethods": "Betalningsmetoder",
+  "@paymentMethods": {
+    "description": "Purchase methods page title"
+  },
+  "supportedWaysToPayIncludingStoreBilling": "Stödda betalningssätt, inklusive butikens fakturering.",
+  "@supportedWaysToPayIncludingStoreBilling": {
+    "description": "Purchase methods page description"
+  },
+  "restorePurchases": "Återställ köp",
+  "@restorePurchases": {
+    "description": "Restore purchases page title"
+  },
+  "reApplyAPurchaseMadeOnAnotherDevice": "Återanvänd ett köp gjort på en annan enhet.",
+  "@reApplyAPurchaseMadeOnAnotherDevice": {
+    "description": "Restore purchases page description"
+  },
+  "profile": "Profil",
+  "@profile": {
+    "description": "Profile page title"
+  },
+  "yourIdentityPlanStatusAndAccountPreferences": "Din identitet, planstatus och kontoinställningar.",
+  "@yourIdentityPlanStatusAndAccountPreferences": {
+    "description": "Profile page description"
+  },
+  "deleteAccount": "Radera konto",
+  "@deleteAccount": {
+    "description": "Delete account page title"
+  },
+  "permanentlyRemoveYourAccountAndItsServerSideData": "Ta permanent bort ditt konto och dess serverdata.",
+  "@permanentlyRemoveYourAccountAndItsServerSideData": {
+    "description": "Delete account page description"
+  },
+  "rateZumi": "Betygsätt Zumi",
+  "@rateZumi": {
+    "description": "Rate app page title"
+  },
+  "tellOthersHowZumiWorkedForYouOnTheStore": "Berätta för andra hur Zumi fungerade för dig i butiken.",
+  "@tellOthersHowZumiWorkedForYouOnTheStore": {
+    "description": "Rate app page description"
+  },
+  "shareZumi": "Dela Zumi",
+  "@shareZumi": {
+    "description": "Share app page title"
+  },
+  "recommendZumiToAFriend": "Rekommendera Zumi till en vän.",
+  "@recommendZumiToAFriend": {
+    "description": "Share app page description"
+  },
+  "settingsGroupAppearance": "Utseende och språk",
+  "@settingsGroupAppearance": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupCompression": "Komprimering",
+  "@settingsGroupCompression": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupAi": "AI på enheten",
+  "@settingsGroupAi": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupPrivacy": "Notiser och integritet",
+  "@settingsGroupPrivacy": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupPlans": "Planer och köp",
+  "@settingsGroupPlans": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupAbout": "Om",
+  "@settingsGroupAbout": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupLegal": "Juridiskt",
+  "@settingsGroupLegal": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupHelp": "Hjälp och feedback",
+  "@settingsGroupHelp": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupAccount": "Konto",
+  "@settingsGroupAccount": {
+    "description": "Settings hub section label"
+  },
+  "settingsAppearanceSubtitle": "Tema och app-språk",
+  "@settingsAppearanceSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsLanguageSubtitle": "App-språk och riktning",
+  "@settingsLanguageSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsCompressionSubtitle": "Standardkvalitet och format",
+  "@settingsCompressionSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsStorageSubtitle": "Cache- och lagringsanvändning",
+  "@settingsStorageSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aiSettings": "AI-inställningar",
+  "zumiAssistant": "Zumi-assistent",
+  "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "En privat assistent för dina videor kommer snart. Du kommer att kunna fråga om komprimering, organisering och sparade videor här.",
+  "settingsAiSubtitle": "Lokala modeller och smarta verktyg",
+  "exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet": "Utforska lokala modeller och framtida AI-verktyg. Dessa alternativ är ännu inte aktiva.",
+  "localModels": "Lokala modeller",
+  "aiModelsSubtitle": "Bläddra och ladda ner stödda modeller",
+  "chooseASupportedModelDownloadItToThisDeviceAndManageInstalledModelsHere": "Välj en stödd modell, ladda ner den till den här enheten och hantera installerade modeller här.",
+  "importAModel": "Importera en modell",
+  "aiImportSubtitle": "Använd en kompatibel modell från dina filer",
+  "selectACompatibleLocalModelFileAndReviewItsRequirementsBeforeUsingIt": "Välj en kompatibel lokal modelfil och granska dess krav innan du använder den.",
+  "smartFeatures": "Smart funktioner",
+  "aiFeaturesSubtitle": "Komprimering, organisering och sökning",
+  "chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "Välj vilka lokala AI-förslag som ska användas för videokomprimering, organisering, namngivning och sökning.",
+  "modelPerformance": "Modellens prestanda",
+  "aiRuntimeSubtitle": "Bearbetnings- och resursinställningar",
+  "controlTheProcessingBackendAndResourceLimitsForSupportedModels": "Kontrollera bearbetningsbakgrunden och resursgränserna för stödjda modeller.",
+  "conversationSettings": "Samtalsinställningar",
+  "aiChatSettingsSubtitle": "Streaming, tänkande och svarslängd",
+  "configureHowTheAssistantRespondsIncludingStreamingThinkingModeSamplingAndResponseLimits": "Konfigurera hur assistenten svarar, inklusive streaming, tänkandemod, urval och svargränser.",
+  "imagesAndAudio": "Bilder och ljud",
+  "aiMediaSubtitle": "Styr multimodala insatser",
+  "chooseWhetherCompatibleModelsCanAnalyzeSelectedImagesAndAudioFromYourVideos": "Välj om kompatibla modeller kan analysera utvalda bilder och ljud från dina videor.",
+  "semanticSearch": "Semantisk sökning",
+  "aiSearchSubtitle": "Inbäddningar och lokal indexering",
+  "manageTheLocalEmbeddingModelAndSearchIndexForFindingVideosAndMomentsByMeaning": "Hantera den lokala inbäddningsmodellen och sökindexet för att hitta videor och ögonblick efter betydelse.",
+  "toolsAndStructuredOutput": "Verktyg och strukturerat utdata",
+  "aiToolsSubtitle": "Åtgärder, scheman och bekräftelser",
+  "manageSupportedAssistantActionsAndStructuredResponsesActionsThatAffectFilesWillRequireYourConfirmation": "Hantera stödda assistentåtgärder och strukturerade svar. Åtgärder som påverkar filer kräver din bekräftelse.",
+  "aiGroupModels": "Modeller",
+  "aiGroupExperience": "Assistentupplevelse",
+  "aiGroupCapabilities": "Smart kapacitet",
+  "aiGroupPerformance": "Prestanda",
+  "compressionHistorySubtitle": "Din komprimerade videohistorik",
+  "@compressionHistorySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsNotificationsSubtitle": "Slutförande- och uppdateringsvarningar",
+  "@settingsNotificationsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsPrivacySubtitle": "Din data stannar lokalt",
+  "@settingsPrivacySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "plansSubtitle": "Jämför planer och uppgradera",
+  "@plansSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "plansMethodsSubtitle": "Betalningsmetoder och fakturering",
+  "@plansMethodsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "plansRestoreSubtitle": "Återställ ditt tidigare köp",
+  "@plansRestoreSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aboutAppSubtitle": "Versions- och byggdetaljer",
+  "@aboutAppSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aboutDeveloperSubtitle": "Utvecklaren bakom Zumi",
+  "@aboutDeveloperSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aboutLicensesSubtitle": "Licenser för öppna källpaket",
+  "@aboutLicensesSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalPrivacySubtitle": "Hur data hanteras",
+  "@legalPrivacySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalTermsSubtitle": "Regler för att använda Zumi",
+  "@legalTermsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalDataSafetySubtitle": "Vilken data vi samlar in",
+  "@legalDataSafetySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalPermissionsSubtitle": "Varför vi behöver behörigheter",
+  "@legalPermissionsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "helpFaqSubtitle": "Svar på vanliga frågor",
+  "@helpFaqSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "helpSupportSubtitle": "Kontakta utvecklaren direkt",
+  "@helpSupportSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "helpFeedbackSubtitle": "Skicka oss din feedback",
+  "@helpFeedbackSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "compressionPickVideo": "Välj video",
+  "compressionTargetMb": "Målstorlek (MB)",
+  "compressionStart": "Starta komprimering",
+  "compressionPause": "Pausa",
+  "compressionResume": "Återuppta",
+  "compressionViewResult": "Visa resultat",
+  "compressionSaveGallery": "Spara till galleri",
+  "compressionShare": "Dela video",
+  "compressionOriginalSize": "Ursprunglig storlek",
+  "compressionOutputSize": "Utdata storlek",
+  "compressionEmptyHistory": "Inga komprimerade videor än",
+  "compressionSavedGallery": "Sparad till galleri",
+  "compressionInvalidTarget": "Ange en målstorlek större än noll",
+  "compressionCancelled": "Komprimering avbruten",
+  "compressionTargetExceeded": "Denna video kunde inte nå den valda storleken. Försök med en större målstorlek.",
+  "compressionTargetInfeasible": "Den valda storleken är för liten för denna video. Välj en större storlek.",
+  "compressionPreviewBefore": "Originalförhandsvisning",
+  "compressionPreviewAfter": "Komprimerad förhandsvisning",
+  "compressionPreset": "Målinställning",
+  "compressionCustom": "Anpassad storlek",
+  "compressionPreviewUnavailable": "Förhandsvisning ej tillgänglig",
+  "compressionAdvanced": "Avancerade kontroller",
+  "compressionAutomatic": "Automatisk",
+  "compressionResolutionLimit": "Maximal upplösning",
+  "compressionSourceResolution": "Ursprunglig upplösning",
+  "compressionFrameRateLimit": "Maximal bildfrekvens",
+  "compressionAudioQuality": "Ljudbitrate",
+  "compressionRemoveAudio": "Ta bort ljud",
+  "compressionVideoBitrateLimit": "Video bitrate-tak (kbps)",
+  "compressionHdrPolicy": "HDR-hantering",
+  "compressionHdrConvert": "Konvertera till SDR",
+  "compressionHdrPreserve": "Behåll HDR när det stöds",
+  "compressionPlanPreview": "Innan du börjar",
+  "compressionPlanLoading": "Beräknar komprimeringsplan…",
+  "compressionPlanResolution": "Planerad upplösning",
+  "compressionPlanVideoBitrate": "Planerad videobitrate",
+  "compressionPlanAudioBitrate": "Planerad ljudbitrate",
+  "compressionAudioConversionNote": "Omkodning konverterar ljud till AAC stereo. Dolby Atmos och DTS rumsljud kommer inte att bevaras.",
+  "compressionPlanTooSmall": "Detta mål är för litet för en användbar video. Öka storleken eller sänk andra begränsningar.",
+  "compressionPlanLowQuality": "Det valda målet kan minska videokvaliteten.",
+  "compressionPlanAlreadyWithinLimit": "Källan är redan inom storleksgränsen.",
+  "compressionInvalidBitrate": "Ange en bithastighet på minst 150 kbps, eller lämna tomt för automatisk inställning.",
+  "compressionInvalidResolution": "Ange en jämn upplösning från 240 till 16384, eller lämna tomt för automatisk inställning.",
+  "compressionSeek": "Videoposition",
+  "compressionInterrupted": "En tidigare komprimering avbröts. Dess temporära filer har rensats; du kan välja videon och försöka igen.",
+  "compressionDismiss": "Avvisa",
+  "compressionClearHistory": "Rensa historik",
+  "compressionClearHistoryConfirm": "Ta bort alla historikposter? Sparade videor kommer att finnas kvar på din enhet.",
+  "compressionAttempts": "Försök",
+  "compressionTargetSize": "Målstorlek",
+  "compressionOutputResolution": "Utdataupplösning",
+  "compressionInvalidVideo": "Den här videon kunde inte läsas. Välj en annan fil.",
+  "compressionInvalidOutput": "Den kodade videon misslyckades med verifiering. Din ursprungliga video ändrades inte.",
+  "compressionEncoderUnsupported": "Den här enheten kan inte koda den valda upplösningen eller bildhastigheten. Sänk den inställningen och försök igen.",
+  "compressionAudioDecoderUnsupported": "Den här enheten kan inte avkoda detta ljudformat för komprimering. Ta bort ljudet eller använd en stödd källa.",
+  "compressionVideoDecoderUnsupported": "Denna enhet kan inte avkoda detta videoformat eller profil för komprimering. Välj en annan källa eller enhet.",
+  "compressionMp4NotStreamable": "Den exporterade MP4-filen är inte redo för strömning. Prova en annan video eller enhet.",
+  "compressionNoSpace": "Det finns inte tillräckligt med ledigt utrymme för att komprimera denna video.",
+  "compressionHdrUnsupported": "Denna enhet kan inte bearbeta det valda HDR-läget. Försök att konvertera till SDR.",
+  "compressionGeneralFailure": "Komprimeringen kunde inte slutföras. Försök med en annan inställning eller video.",
+  "aboutIdentitySection": "Appidentitet",
+  "aboutAppName": "Appnamn",
+  "aboutPackageName": "Paketnamn",
+  "aboutVersion": "Version",
+  "aboutBuildNumber": "Byggnummer",
+  "aboutEnvironmentSection": "Enhet och bygg",
+  "aboutOperatingSystem": "Operativsystem",
+  "aboutOsVersion": "OS-version",
+  "aboutBuildMode": "Byggläge",
+  "aboutDebug": "Felsök",
+  "aboutRelease": "Släpp",
+  "aboutToolchainSection": "Byggd med",
+  "aboutInstallationSection": "Installation",
+  "aboutInstaller": "Installerad från",
+  "aboutInstalledOn": "Installerad på",
+  "aboutUpdatedOn": "Uppdaterad den",
+  "aboutUnavailable": "Inte tillgänglig",
+  "aboutProjectSection": "Projekt och support",
+  "aboutRepository": "GitHub-förråd",
+  "aboutRepositorySubtitle": "Visa Zumi-källkod",
+  "aboutReadme": "Läs README",
+  "aboutReadmeSubtitle": "Läs om Zumi på GitHub",
+  "aboutIssues": "Rapportera ett problem",
+  "aboutIssuesSubtitle": "Visa och skapa GitHub-ärenden",
+  "aboutLatestRelease": "Senaste version",
+  "aboutLatestReleaseSubtitle": "Visa releaser och nedladdningar",
+  "aboutDonate": "Supporta Zumi",
+  "aboutDonateSubtitle": "Öppna den officiella donationssidan",
+  "aboutLinkError": "Kunde inte öppna länken. Försök igen.",
+  "aboutDeveloperSection": "Utvecklare",
+  "aboutDeveloperName": "Mostafa Sensei",
+  "aboutDeveloperProfile": "GitHub-profil",
+  "aboutDeveloperProfileSubtitle": "Se projekt och kontaktinformation",
+  "maintenanceInProgress": "Underhåll pågår",
+  "maintenanceMessage": "Zumi är tillfälligt otillgänglig. Försök igen senare.",
+  "comingSoon": "Kommer snart",
+  "@comingSoon": {
+    "description": "Badge shown on placeholder pages"
+  },
+  "@countryName": {
+    "description": "Name of a country in the current app language",
+    "placeholders": {
+      "countryCode": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Svenska",
+  "countryCode": "SE",
+  "countryName": "{countryCode, select, AE{Förenade Arabemiraten} AT{Österrike} AU{Australien} BE{Belgien} BH{Bahrain} BR{Brasilien} CA{Kanada} CH{Schweiz} CN{Kina} DE{Tyskland} DJ{Djibouti} DZ{Algeriet} EG{Egypten} ES{Spanien} FR{Frankrike} GB{Storbritannien} HK{Hongkong SAR} ID{Indonesien} IQ{Irak} IT{Italien} JO{Jordanien} JP{Japan} KM{Komorerna} KR{Sydkorea} KW{Kuwait} LB{Libanon} LY{Libyen} MA{Marocko} MR{Mauretanien} MX{Mexiko} NL{Nederländerna} OM{Oman} PL{Polen} PS{Palestinska territorierna} PT{Portugal} QA{Qatar} RU{Ryssland} SA{Saudiarabien} SD{Sudan} SE{Sverige} SG{Singapore} SO{Somalia} SY{Syrien} TH{Thailand} TN{Tunisien} TR{Turkiet} TW{Taiwan} US{USA} VN{Vietnam} YE{Jemen} other{Land}}"
+}

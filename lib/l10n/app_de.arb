@@ -713,5 +713,5 @@
   },
   "languageName": "Deutsch",
   "countryCode": "DE",
-  "countryName": "{countryCode, select, DZ{Algerien} BH{Bahrain} KM{Komoren} DJ{Dschibuti} EG{Ägypten} IQ{Irak} JO{Jordanien} KW{Kuwait} LB{Libanon} LY{Libyen} MR{Mauretanien} MA{Marokko} OM{Oman} PS{Palästinensische Autonomiegebiete} QA{Katar} SA{Saudi-Arabien} SO{Somalia} SD{Sudan} SY{Syrien} TN{Tunesien} AE{Vereinigte Arabische Emirate} YE{Jemen} US{Vereinigte Staaten} GB{Vereinigtes Königreich} JP{Japan} FR{Frankreich} DE{Deutschland} ES{Spanien} TR{Türkei} NL{Niederlande} other{Land}}"
+  "countryName": "{countryCode, select, AE{Vereinigte Arabische Emirate} AT{Österreich} AU{Australien} BE{Belgien} BH{Bahrain} BR{Brasilien} CA{Kanada} CH{Schweiz} CN{China} DE{Deutschland} DJ{Dschibuti} DZ{Algerien} EG{Ägypten} ES{Spanien} FR{Frankreich} GB{Vereinigtes Königreich} HK{Sonderverwaltungsregion Hongkong} ID{Indonesien} IQ{Irak} IT{Italien} JO{Jordanien} JP{Japan} KM{Komoren} KR{Südkorea} KW{Kuwait} LB{Libanon} LY{Libyen} MA{Marokko} MR{Mauretanien} MX{Mexiko} NL{Niederlande} OM{Oman} PL{Polen} PS{Palästinensische Autonomiegebiete} PT{Portugal} QA{Katar} RU{Russland} SA{Saudi-Arabien} SD{Sudan} SE{Schweden} SG{Singapur} SO{Somalia} SY{Syrien} TH{Thailand} TN{Tunesien} TR{Türkei} TW{Taiwan} US{Vereinigte Staaten} VN{Vietnam} YE{Jemen} other{Land}}"
 }

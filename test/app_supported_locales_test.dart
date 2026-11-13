@@ -1,13 +1,15 @@
-import 'package:flutter/widgets.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:zumi/core/utils/localization/app_supported_locales.dart';
 import 'package:zumi/l10n/app_localizations.dart';
 
 void main() {
   test('language choices are unique country-specific locales', () {
     final locales = AppSupportedLocales.values;
-    expect(locales.length, 30);
-    expect(locales.map((locale) => locale.toString()).toSet().length, 30);
+    expect(locales.length, 51);
+    expect(locales.map((locale) => locale.toString()).toSet().length, 51);
+    expect(locales.where((locale) => locale.languageCode == 'hi'), isEmpty);
 
     for (final locale in locales) {
       expect(locale.countryCode, isNotNull);
@@ -27,6 +29,14 @@ void main() {
     expect(
       lookupAppLocalizations(const Locale('ar', 'EG')).countryName('JP'),
       'اليابان',
+    );
+    expect(
+      lookupAppLocalizations(const Locale('zh', 'CN')).countryName('US'),
+      '美国',
+    );
+    expect(
+      lookupAppLocalizations(const Locale('zh', 'TW')).countryName('US'),
+      '美國',
     );
   });
 
@@ -55,6 +65,48 @@ void main() {
         const Locale('en', 'US'),
       );
       expect(AppSupportedLocales.resolve('xx'), isNull);
+
+      expect(
+        AppSupportedLocales.resolve(
+          'zh',
+          systemLocale: const Locale('zh', 'TW'),
+        ),
+        const Locale('zh', 'TW'),
+      );
+      expect(
+        AppSupportedLocales.resolve(
+          'zh_Hant_TW',
+          systemLocale: const Locale('en', 'US'),
+        ),
+        const Locale('zh', 'TW'),
+      );
+      expect(
+        AppSupportedLocales.resolve(
+          'pt',
+          systemLocale: const Locale('pt', 'BR'),
+        ),
+        const Locale('pt', 'BR'),
+      );
     },
   );
+
+  testWidgets('MaterialApp loads the selected Chinese region', (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        locale: const Locale('zh', 'TW'),
+        supportedLocales: AppSupportedLocales.values,
+        localizationsDelegates: const [
+          GlobalMaterialLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+          ...AppLocalizations.localizationsDelegates,
+        ],
+        home: Builder(
+          builder: (context) =>
+              Text(AppLocalizations.of(context)!.countryName('US')),
+        ),
+      ),
+    );
+
+    expect(find.text('美國'), findsOneWidget);
+  });
 }

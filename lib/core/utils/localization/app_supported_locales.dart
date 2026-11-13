@@ -25,6 +25,16 @@ abstract final class AppSupportedLocales {
     );
     if (matches.isEmpty) return null;
 
+    final parts = normalizedCode.split('_');
+    final requestedCountry = parts.length > 1 && parts.last.length == 2
+        ? parts.last.toUpperCase()
+        : null;
+    if (requestedCountry != null) {
+      for (final locale in matches) {
+        if (locale.countryCode == requestedCountry) return locale;
+      }
+    }
+
     if (systemLocale?.languageCode == languageCode) {
       for (final locale in matches) {
         if (locale.countryCode == systemLocale?.countryCode) return locale;

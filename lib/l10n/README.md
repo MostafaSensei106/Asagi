@@ -10,6 +10,9 @@
   base language ARB.
 - Arabic region files override local expressions. Messages without an override
   fall back to Modern Standard Arabic in `app_ar.arb`.
+- Chinese for Taiwan and Portuguese for Brazil have complete regional catalogs.
+  Other regional variants start from the closest written standard and override
+  terms that differ locally; review those overrides with native speakers.
 - `key_migration.json` maps the former `Title` and `Description` message keys
   to the descriptive keys used by the generated Dart API.
 

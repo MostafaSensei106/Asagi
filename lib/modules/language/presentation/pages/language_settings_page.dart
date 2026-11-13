@@ -30,81 +30,74 @@ final class LanguageSettingsPage extends StatelessWidget {
             await context.read<LocalizationCubit>().changeLanguage(localeCode);
           }
 
-          return SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(
-              horizontal: AppSpacing.large,
-              vertical: AppSpacing.small,
-            ),
-            child: RadioGroup<String>(
-              groupValue: currentLocaleCode,
-              onChanged: (value) async {
-                if (value != null && value != currentLocaleCode) {
-                  await changeLocale(value);
-                }
-              },
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  ...List.generate(AppSupportedLocales.values.length, (index) {
-                    final locale = AppSupportedLocales.values[index];
-                    final localeCode = locale.toString();
-                    final localeData = lookupAppLocalizations(locale);
-                    final title = localeData.languageName;
-
-                    final countryCode = localeData.countryCode;
-                    final subtitle = context.localeKeys.countryName(
-                      countryCode,
-                    );
-                    final isFirst = index == 0;
-                    final isLast =
-                        index == AppSupportedLocales.values.length - 1;
-                    final isSingle = AppSupportedLocales.values.length == 1;
-
-                    final radioWidget = Radio<String>(value: localeCode);
-                    final flagWidget = CountryFlag.fromCountryCode(countryCode);
-
-                    void handleTap() {
-                      if (localeCode != currentLocaleCode) {
-                        unawaited(changeLocale(localeCode));
-                      }
-                    }
-
-                    final tile = isSingle
-                        ? ListTileWidgetComponent(
-                            title: title,
-                            subtitle: subtitle,
-                            leading: flagWidget,
-                            trailing: radioWidget,
-                            onTap: handleTap,
-                          )
-                        : isFirst
-                        ? ListTileWidgetComponent.top(
-                            title: title,
-                            subtitle: subtitle,
-                            leading: flagWidget,
-                            trailing: radioWidget,
-                            onTap: handleTap,
-                          )
-                        : isLast
-                        ? ListTileWidgetComponent.bottom(
-                            title: title,
-                            subtitle: subtitle,
-                            leading: flagWidget,
-                            trailing: radioWidget,
-                            onTap: handleTap,
-                          )
-                        : ListTileWidgetComponent.middle(
-                            title: title,
-                            subtitle: subtitle,
-                            leading: flagWidget,
-                            trailing: radioWidget,
-                            onTap: handleTap,
-                          );
-
-                    return tile;
-                  }),
-                ],
+          return RadioGroup<String>(
+            groupValue: currentLocaleCode,
+            onChanged: (value) async {
+              if (value != null && value != currentLocaleCode) {
+                await changeLocale(value);
+              }
+            },
+            child: ListView.builder(
+              padding: const EdgeInsets.symmetric(
+                horizontal: AppSpacing.large,
+                vertical: AppSpacing.small,
               ),
+              itemCount: AppSupportedLocales.values.length,
+              itemBuilder: (context, index) {
+                final locale = AppSupportedLocales.values[index];
+                final localeCode = locale.toString();
+                final localeData = lookupAppLocalizations(locale);
+                final title = localeData.languageName;
+
+                final countryCode = localeData.countryCode;
+                final subtitle = context.localeKeys.countryName(countryCode);
+                final isFirst = index == 0;
+                final isLast = index == AppSupportedLocales.values.length - 1;
+                final isSingle = AppSupportedLocales.values.length == 1;
+
+                final radioWidget = Radio<String>(value: localeCode);
+                final flagWidget = CountryFlag.fromCountryCode(countryCode);
+
+                void handleTap() {
+                  if (localeCode != currentLocaleCode) {
+                    unawaited(changeLocale(localeCode));
+                  }
+                }
+
+                final tile = isSingle
+                    ? ListTileWidgetComponent(
+                        title: title,
+                        subtitle: subtitle,
+                        leading: flagWidget,
+                        trailing: radioWidget,
+                        onTap: handleTap,
+                      )
+                    : isFirst
+                    ? ListTileWidgetComponent.top(
+                        title: title,
+                        subtitle: subtitle,
+                        leading: flagWidget,
+                        trailing: radioWidget,
+                        onTap: handleTap,
+                      )
+                    : isLast
+                    ? ListTileWidgetComponent.bottom(
+                        title: title,
+                        subtitle: subtitle,
+                        leading: flagWidget,
+                        trailing: radioWidget,
+                        onTap: handleTap,
+                      )
+                    : ListTileWidgetComponent.middle(
+                        title: title,
+                        subtitle: subtitle,
+                        leading: flagWidget,
+                        trailing: radioWidget,
+                        onTap: handleTap,
+                      );
+
+                return tile;
+              },
             ),
           );
         },

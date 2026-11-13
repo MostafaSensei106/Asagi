@@ -713,5 +713,5 @@
   },
   "languageName": "Español",
   "countryCode": "ES",
-  "countryName": "{countryCode, select, DZ{Argelia} BH{Baréin} KM{Comoras} DJ{Yibuti} EG{Egipto} IQ{Irak} JO{Jordania} KW{Kuwait} LB{Líbano} LY{Libia} MR{Mauritania} MA{Marruecos} OM{Omán} PS{Territorios Palestinos} QA{Catar} SA{Arabia Saudí} SO{Somalia} SD{Sudán} SY{Siria} TN{Túnez} AE{Emiratos Árabes Unidos} YE{Yemen} US{Estados Unidos} GB{Reino Unido} JP{Japón} FR{Francia} DE{Alemania} ES{España} TR{Turquía} NL{Países Bajos} other{País}}"
+  "countryName": "{countryCode, select, AE{Emiratos Árabes Unidos} AT{Austria} AU{Australia} BE{Bélgica} BH{Baréin} BR{Brasil} CA{Canadá} CH{Suiza} CN{China} DE{Alemania} DJ{Yibuti} DZ{Argelia} EG{Egipto} ES{España} FR{Francia} GB{Reino Unido} HK{RAE de Hong Kong (China)} ID{Indonesia} IQ{Irak} IT{Italia} JO{Jordania} JP{Japón} KM{Comoras} KR{Corea del Sur} KW{Kuwait} LB{Líbano} LY{Libia} MA{Marruecos} MR{Mauritania} MX{México} NL{Países Bajos} OM{Omán} PL{Polonia} PS{Territorios Palestinos} PT{Portugal} QA{Catar} RU{Rusia} SA{Arabia Saudí} SD{Sudán} SE{Suecia} SG{Singapur} SO{Somalia} SY{Siria} TH{Tailandia} TN{Túnez} TR{Turquía} TW{Taiwán} US{Estados Unidos} VN{Vietnam} YE{Yemen} other{País}}"
 }

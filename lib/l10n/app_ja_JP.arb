@@ -713,5 +713,5 @@
   },
   "languageName": "日本語",
   "countryCode": "JP",
-  "countryName": "{countryCode, select, DZ{アルジェリア} BH{バーレーン} KM{コモロ} DJ{ジブチ} EG{エジプト} IQ{イラク} JO{ヨルダン} KW{クウェート} LB{レバノン} LY{リビア} MR{モーリタニア} MA{モロッコ} OM{オマーン} PS{パレスチナ自治区} QA{カタール} SA{サウジアラビア} SO{ソマリア} SD{スーダン} SY{シリア} TN{チュニジア} AE{アラブ首長国連邦} YE{イエメン} US{アメリカ合衆国} GB{イギリス} JP{日本} FR{フランス} DE{ドイツ} ES{スペイン} TR{トルコ} NL{オランダ} other{国}}"
+  "countryName": "{countryCode, select, AE{アラブ首長国連邦} AT{オーストリア} AU{オーストラリア} BE{ベルギー} BH{バーレーン} BR{ブラジル} CA{カナダ} CH{スイス} CN{中国} DE{ドイツ} DJ{ジブチ} DZ{アルジェリア} EG{エジプト} ES{スペイン} FR{フランス} GB{イギリス} HK{中華人民共和国香港特別行政区} ID{インドネシア} IQ{イラク} IT{イタリア} JO{ヨルダン} JP{日本} KM{コモロ} KR{韓国} KW{クウェート} LB{レバノン} LY{リビア} MA{モロッコ} MR{モーリタニア} MX{メキシコ} NL{オランダ} OM{オマーン} PL{ポーランド} PS{パレスチナ自治区} PT{ポルトガル} QA{カタール} RU{ロシア} SA{サウジアラビア} SD{スーダン} SE{スウェーデン} SG{シンガポール} SO{ソマリア} SY{シリア} TH{タイ} TN{チュニジア} TR{トルコ} TW{台湾} US{アメリカ合衆国} VN{ベトナム} YE{イエメン} other{国}}"
 }

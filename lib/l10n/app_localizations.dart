@@ -10,9 +10,19 @@ import 'app_localizations_de.dart';
 import 'app_localizations_en.dart';
 import 'app_localizations_es.dart';
 import 'app_localizations_fr.dart';
+import 'app_localizations_id.dart';
+import 'app_localizations_it.dart';
 import 'app_localizations_ja.dart';
+import 'app_localizations_ko.dart';
 import 'app_localizations_nl.dart';
+import 'app_localizations_pl.dart';
+import 'app_localizations_pt.dart';
+import 'app_localizations_ru.dart';
+import 'app_localizations_sv.dart';
+import 'app_localizations_th.dart';
 import 'app_localizations_tr.dart';
+import 'app_localizations_vi.dart';
+import 'app_localizations_zh.dart';
 
 // ignore_for_file: type=lint
 
@@ -124,20 +134,51 @@ abstract class AppLocalizations {
     Locale('ar', 'TN'),
     Locale('ar', 'YE'),
     Locale('de'),
+    Locale('de', 'AT'),
+    Locale('de', 'CH'),
     Locale('de', 'DE'),
     Locale('en'),
+    Locale('en', 'AU'),
+    Locale('en', 'CA'),
     Locale('en', 'GB'),
     Locale('en', 'US'),
     Locale('es'),
     Locale('es', 'ES'),
+    Locale('es', 'MX'),
     Locale('fr'),
+    Locale('fr', 'CA'),
     Locale('fr', 'FR'),
+    Locale('id'),
+    Locale('id', 'ID'),
+    Locale('it'),
+    Locale('it', 'IT'),
     Locale('ja'),
     Locale('ja', 'JP'),
+    Locale('ko'),
+    Locale('ko', 'KR'),
     Locale('nl'),
+    Locale('nl', 'BE'),
     Locale('nl', 'NL'),
+    Locale('pl'),
+    Locale('pl', 'PL'),
+    Locale('pt'),
+    Locale('pt', 'BR'),
+    Locale('pt', 'PT'),
+    Locale('ru'),
+    Locale('ru', 'RU'),
+    Locale('sv'),
+    Locale('sv', 'SE'),
+    Locale('th'),
+    Locale('th', 'TH'),
     Locale('tr'),
     Locale('tr', 'TR'),
+    Locale('vi'),
+    Locale('vi', 'VN'),
+    Locale('zh'),
+    Locale('zh', 'CN'),
+    Locale('zh', 'HK'),
+    Locale('zh', 'SG'),
+    Locale('zh', 'TW'),
   ];
 
   /// Application name shown in the app and on the home page
@@ -1784,7 +1825,7 @@ abstract class AppLocalizations {
   /// Name of a country in the current app language
   ///
   /// In en, this message translates to:
-  /// **'{countryCode, select, DZ{Algeria} BH{Bahrain} KM{Comoros} DJ{Djibouti} EG{Egypt} IQ{Iraq} JO{Jordan} KW{Kuwait} LB{Lebanon} LY{Libya} MR{Mauritania} MA{Morocco} OM{Oman} PS{Palestinian Territories} QA{Qatar} SA{Saudi Arabia} SO{Somalia} SD{Sudan} SY{Syria} TN{Tunisia} AE{United Arab Emirates} YE{Yemen} US{United States} GB{United Kingdom} JP{Japan} FR{France} DE{Germany} ES{Spain} TR{Türkiye} NL{Netherlands} other{Country}}'**
+  /// **'{countryCode, select, AE{United Arab Emirates} AT{Austria} AU{Australia} BE{Belgium} BH{Bahrain} BR{Brazil} CA{Canada} CH{Switzerland} CN{China} DE{Germany} DJ{Djibouti} DZ{Algeria} EG{Egypt} ES{Spain} FR{France} GB{United Kingdom} HK{Hong Kong SAR China} ID{Indonesia} IQ{Iraq} IT{Italy} JO{Jordan} JP{Japan} KM{Comoros} KR{South Korea} KW{Kuwait} LB{Lebanon} LY{Libya} MA{Morocco} MR{Mauritania} MX{Mexico} NL{Netherlands} OM{Oman} PL{Poland} PS{Palestinian Territories} PT{Portugal} QA{Qatar} RU{Russia} SA{Saudi Arabia} SD{Sudan} SE{Sweden} SG{Singapore} SO{Somalia} SY{Syria} TH{Thailand} TN{Tunisia} TR{Türkiye} TW{Taiwan} US{United States} VN{Vietnam} YE{Yemen} other{Country}}'**
   String countryName(String countryCode);
 }
 
@@ -1804,9 +1845,19 @@ class _AppLocalizationsDelegate
     'en',
     'es',
     'fr',
+    'id',
+    'it',
     'ja',
+    'ko',
     'nl',
+    'pl',
+    'pt',
+    'ru',
+    'sv',
+    'th',
     'tr',
+    'vi',
+    'zh',
   ].contains(locale.languageCode);
 
   @override
@@ -1869,6 +1920,10 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
     case 'de':
       {
         switch (locale.countryCode) {
+          case 'AT':
+            return AppLocalizationsDeAt();
+          case 'CH':
+            return AppLocalizationsDeCh();
           case 'DE':
             return AppLocalizationsDeDe();
         }
@@ -1877,6 +1932,10 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
     case 'en':
       {
         switch (locale.countryCode) {
+          case 'AU':
+            return AppLocalizationsEnAu();
+          case 'CA':
+            return AppLocalizationsEnCa();
           case 'GB':
             return AppLocalizationsEnGb();
           case 'US':
@@ -1889,14 +1948,34 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
         switch (locale.countryCode) {
           case 'ES':
             return AppLocalizationsEsEs();
+          case 'MX':
+            return AppLocalizationsEsMx();
         }
         break;
       }
     case 'fr':
       {
         switch (locale.countryCode) {
+          case 'CA':
+            return AppLocalizationsFrCa();
           case 'FR':
             return AppLocalizationsFrFr();
+        }
+        break;
+      }
+    case 'id':
+      {
+        switch (locale.countryCode) {
+          case 'ID':
+            return AppLocalizationsIdId();
+        }
+        break;
+      }
+    case 'it':
+      {
+        switch (locale.countryCode) {
+          case 'IT':
+            return AppLocalizationsItIt();
         }
         break;
       }
@@ -1908,11 +1987,63 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
         }
         break;
       }
+    case 'ko':
+      {
+        switch (locale.countryCode) {
+          case 'KR':
+            return AppLocalizationsKoKr();
+        }
+        break;
+      }
     case 'nl':
       {
         switch (locale.countryCode) {
+          case 'BE':
+            return AppLocalizationsNlBe();
           case 'NL':
             return AppLocalizationsNlNl();
+        }
+        break;
+      }
+    case 'pl':
+      {
+        switch (locale.countryCode) {
+          case 'PL':
+            return AppLocalizationsPlPl();
+        }
+        break;
+      }
+    case 'pt':
+      {
+        switch (locale.countryCode) {
+          case 'BR':
+            return AppLocalizationsPtBr();
+          case 'PT':
+            return AppLocalizationsPtPt();
+        }
+        break;
+      }
+    case 'ru':
+      {
+        switch (locale.countryCode) {
+          case 'RU':
+            return AppLocalizationsRuRu();
+        }
+        break;
+      }
+    case 'sv':
+      {
+        switch (locale.countryCode) {
+          case 'SE':
+            return AppLocalizationsSvSe();
+        }
+        break;
+      }
+    case 'th':
+      {
+        switch (locale.countryCode) {
+          case 'TH':
+            return AppLocalizationsThTh();
         }
         break;
       }
@@ -1921,6 +2052,28 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
         switch (locale.countryCode) {
           case 'TR':
             return AppLocalizationsTrTr();
+        }
+        break;
+      }
+    case 'vi':
+      {
+        switch (locale.countryCode) {
+          case 'VN':
+            return AppLocalizationsViVn();
+        }
+        break;
+      }
+    case 'zh':
+      {
+        switch (locale.countryCode) {
+          case 'CN':
+            return AppLocalizationsZhCn();
+          case 'HK':
+            return AppLocalizationsZhHk();
+          case 'SG':
+            return AppLocalizationsZhSg();
+          case 'TW':
+            return AppLocalizationsZhTw();
         }
         break;
       }
@@ -1938,12 +2091,32 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsEs();
     case 'fr':
       return AppLocalizationsFr();
+    case 'id':
+      return AppLocalizationsId();
+    case 'it':
+      return AppLocalizationsIt();
     case 'ja':
       return AppLocalizationsJa();
+    case 'ko':
+      return AppLocalizationsKo();
     case 'nl':
       return AppLocalizationsNl();
+    case 'pl':
+      return AppLocalizationsPl();
+    case 'pt':
+      return AppLocalizationsPt();
+    case 'ru':
+      return AppLocalizationsRu();
+    case 'sv':
+      return AppLocalizationsSv();
+    case 'th':
+      return AppLocalizationsTh();
     case 'tr':
       return AppLocalizationsTr();
+    case 'vi':
+      return AppLocalizationsVi();
+    case 'zh':
+      return AppLocalizationsZh();
   }
 
   throw FlutterError(

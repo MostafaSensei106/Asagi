@@ -30,14 +30,35 @@
 			<string>ar-SY</string>
 			<string>ar-TN</string>
 			<string>ar-YE</string>
+			<string>de-AT</string>
+			<string>de-CH</string>
 			<string>de-DE</string>
+			<string>en-AU</string>
+			<string>en-CA</string>
 			<string>en-GB</string>
 			<string>en-US</string>
 			<string>es-ES</string>
+			<string>es-MX</string>
+			<string>fr-CA</string>
 			<string>fr-FR</string>
+			<string>id-ID</string>
+			<string>it-IT</string>
 			<string>ja-JP</string>
+			<string>ko-KR</string>
+			<string>nl-BE</string>
 			<string>nl-NL</string>
+			<string>pl-PL</string>
+			<string>pt-BR</string>
+			<string>pt-PT</string>
+			<string>ru-RU</string>
+			<string>sv-SE</string>
+			<string>th-TH</string>
 			<string>tr-TR</string>
+			<string>vi-VN</string>
+			<string>zh-CN</string>
+			<string>zh-HK</string>
+			<string>zh-SG</string>
+			<string>zh-TW</string>
 		</array>
 		<key>CFBundleDisplayName</key>
 		<string>Zumi</string>

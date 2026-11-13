@@ -1,0 +1,725 @@
+{
+  "@@locale": "vi",
+  "zumi": "Zumi",
+  "@zumi": {
+    "description": "Application name shown in the app and on the home page"
+  },
+  "downloadFile": "Tải xuống Tệp",
+  "@downloadFile": {
+    "description": "Title for download file dialog"
+  },
+  "fileOpenedInBrowser": "Tệp đã mở trong trình duyệt: {fileName}",
+  "@fileOpenedInBrowser": {
+    "description": "Message shown when file is opened in browser",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "fileSavedToDcim": "Tệp đã được lưu vào thư viện: {fileName}",
+  "@fileSavedToDcim": {
+    "description": "Message shown when file is saved to gallery",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "fileSavedToDocuments": "Tệp đã được lưu vào tài liệu: {fileName}",
+  "@fileSavedToDocuments": {
+    "description": "Message shown when file is saved to documents",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "fileAlreadySaved": "Tệp đã được lưu",
+  "@fileAlreadySaved": {
+    "description": "Message shown when file already exists"
+  },
+  "error": "Lỗi",
+  "@error": {
+    "description": "Generic error title"
+  },
+  "info": "Thông tin",
+  "@info": {
+    "description": "Generic info title"
+  },
+  "success": "Thành công",
+  "@success": {
+    "description": "Generic success title"
+  },
+  "warning": "Cảnh báo",
+  "@warning": {
+    "description": "Generic warning title"
+  },
+  "paid": "Đã thanh toán",
+  "@paid": {
+    "description": "Payment status paid"
+  },
+  "unpaid": "Chưa thanh toán",
+  "@unpaid": {
+    "description": "Payment status unpaid"
+  },
+  "partial": "Một phần",
+  "@partial": {
+    "description": "Payment status partial"
+  },
+  "error_address_line_cant_be_empty": "Dòng địa chỉ không được để trống",
+  "@error_address_line_cant_be_empty": {
+    "description": "Address line empty error"
+  },
+  "error_address_line_too_long": "Dòng địa chỉ quá dài",
+  "@error_address_line_too_long": {
+    "description": "Address line too long error"
+  },
+  "error_address_invalid_special_characters": "Không được sử dụng ký tự đặc biệt",
+  "@error_address_invalid_special_characters": {
+    "description": "Address special characters error"
+  },
+  "error_address_emoji_not_allowed": "Không được sử dụng biểu tượng cảm xúc",
+  "@error_address_emoji_not_allowed": {
+    "description": "Address emoji not allowed error"
+  },
+  "error_city_cant_be_empty": "Thành phố không được để trống",
+  "@error_city_cant_be_empty": {
+    "description": "City empty error"
+  },
+  "error_city_too_long": "Tên thành phố quá dài",
+  "@error_city_too_long": {
+    "description": "City too long error"
+  },
+  "error_city_invalid_special_characters": "Thành phố chứa ký tự đặc biệt không hợp lệ",
+  "@error_city_invalid_special_characters": {
+    "description": "City special characters error"
+  },
+  "error_address_label_cant_be_empty": "Nhãn địa chỉ không được để trống",
+  "@error_address_label_cant_be_empty": {
+    "description": "Address label empty error"
+  },
+  "error_address_label_too_long": "Nhãn địa chỉ quá dài",
+  "@error_address_label_too_long": {
+    "description": "Address label too long error"
+  },
+  "error_email_cant_be_empty": "Email không được để trống",
+  "@error_email_cant_be_empty": {
+    "description": "Email empty error"
+  },
+  "error_email_not_invalid_format": "Định dạng email không hợp lệ",
+  "@error_email_not_invalid_format": {
+    "description": "Email invalid format error"
+  },
+  "error_email_contains_invalid_characters": "Email chứa ký tự không hợp lệ",
+  "@error_email_contains_invalid_characters": {
+    "description": "Email invalid characters error"
+  },
+  "error_email_must_contain_at_symbol": "Email phải chứa @",
+  "@error_email_must_contain_at_symbol": {
+    "description": "Email missing @ error"
+  },
+  "error_email_must_be_in_lowercase": "Email phải viết thường",
+  "@error_email_must_be_in_lowercase": {
+    "description": "Email not in lowercase error"
+  },
+  "error_arabic_not_allowed": "Không được sử dụng ký tự Ả Rập",
+  "@error_arabic_not_allowed": {
+    "description": "Arabic characters not allowed error"
+  },
+  "error_email_emoji_not_allowed": "Không được sử dụng biểu tượng cảm xúc trong email",
+  "@error_email_emoji_not_allowed": {
+    "description": "Email emoji not allowed error"
+  },
+  "error_phone_number_cant_be_empty": "Số điện thoại không được để trống",
+  "@error_phone_number_cant_be_empty": {
+    "description": "Phone number empty error"
+  },
+  "error_phone_number_invalid": "Số điện thoại không hợp lệ",
+  "@error_phone_number_invalid": {
+    "description": "Phone number invalid error"
+  },
+  "error_phone_number_min_length": "Số điện thoại phải có ít nhất 11 chữ số",
+  "@error_phone_number_min_length": {
+    "description": "Phone number min length error"
+  },
+  "error_name_cant_be_empty": "Tên không được để trống",
+  "@error_name_cant_be_empty": {
+    "description": "Name empty error"
+  },
+  "error_name_invalid": "Tên không hợp lệ",
+  "@error_name_invalid": {
+    "description": "Name invalid error"
+  },
+  "error_name_too_short_at_least_3_characters": "Tên phải có ít nhất 3 ký tự",
+  "@error_name_too_short_at_least_3_characters": {
+    "description": "Name too short error"
+  },
+  "error_name_too_long_maximum_20_characters": "Tên không được vượt quá 20 ký tự",
+  "@error_name_too_long_maximum_20_characters": {
+    "description": "Name too long error"
+  },
+  "error_name_invalid_special_characters": "Tên chứa ký tự đặc biệt không hợp lệ",
+  "@error_name_invalid_special_characters": {
+    "description": "Name special characters error"
+  },
+  "error_name_emoji_not_allowed": "Không được sử dụng biểu tượng cảm xúc trong tên",
+  "@error_name_emoji_not_allowed": {
+    "description": "Name emoji not allowed error"
+  },
+  "error_password_cant_be_empty": "Mật khẩu không được để trống",
+  "@error_password_cant_be_empty": {
+    "description": "Password empty error"
+  },
+  "error_password_must_contain_uppercase_lowercase_number_and_special_character": "Mật khẩu phải chứa chữ hoa, chữ thường, số và ký tự đặc biệt",
+  "@error_password_must_contain_uppercase_lowercase_number_and_special_character": {
+    "description": "Password complex requirements error"
+  },
+  "error_password_must_be_at_least_8_characters_long": "Mật khẩu phải có ít nhất 8 ký tự",
+  "@error_password_must_be_at_least_8_characters_long": {
+    "description": "Password min length error"
+  },
+  "noInternetConnection": "Không có kết nối internet",
+  "@noInternetConnection": {
+    "description": "No internet connection message"
+  },
+  "internetConnectionRestored": "Kết nối internet đã được khôi phục",
+  "@internetConnectionRestored": {
+    "description": "Internet connection restored message"
+  },
+  "retry": "Thử lại",
+  "@retry": {
+    "description": "Retry button text"
+  },
+  "cancel": "Hủy",
+  "@cancel": {
+    "description": "Cancel button text"
+  },
+  "confirm": "Xác nhận",
+  "@confirm": {
+    "description": "Confirm button text"
+  },
+  "pleaseWait": "Vui lòng đợi...",
+  "@pleaseWait": {
+    "description": "Please wait dialog text"
+  },
+  "ok": "OK",
+  "@ok": {
+    "description": "OK button text"
+  },
+  "compressVideosPrivatelyOnYourDevice": "Nén video một cách riêng tư, ngay trên thiết bị của bạn.",
+  "@compressVideosPrivatelyOnYourDevice": {
+    "description": "Home page description"
+  },
+  "welcomeToZumi": "Chào mừng đến với Zumi",
+  "@welcomeToZumi": {
+    "description": "Onboarding page title"
+  },
+  "learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": "Tìm hiểu cách Zumi nén video của bạn mà không cần rời khỏi điện thoại.",
+  "@learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": {
+    "description": "Onboarding page description"
+  },
+  "signIn": "Đăng nhập",
+  "@signIn": {
+    "description": "Login page title"
+  },
+  "signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": "Đăng nhập để đồng bộ kế hoạch của bạn và giữ các giao dịch mua khả dụng trên mọi thiết bị.",
+  "@signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": {
+    "description": "Login page description"
+  },
+  "chooseAVideo": "Chọn video",
+  "@chooseAVideo": {
+    "description": "Video picker page title"
+  },
+  "pickAVideoFromYourGalleryToStartCompressing": "Chọn một video từ thư viện của bạn để bắt đầu nén.",
+  "@pickAVideoFromYourGalleryToStartCompressing": {
+    "description": "Video picker page description"
+  },
+  "compressionSetup": "Cài đặt nén",
+  "@compressionSetup": {
+    "description": "Compression setup page title"
+  },
+  "chooseResolutionBitrateAndOutputFormatBeforeYouStart": "Chọn độ phân giải, tốc độ bit và định dạng đầu ra trước khi bắt đầu.",
+  "@chooseResolutionBitrateAndOutputFormatBeforeYouStart": {
+    "description": "Compression setup page description"
+  },
+  "compressing": "Đang nén",
+  "@compressing": {
+    "description": "Compression progress page title"
+  },
+  "followTheLiveProgressOfYourCompressionJob": "Theo dõi tiến trình trực tiếp của công việc nén.",
+  "@followTheLiveProgressOfYourCompressionJob": {
+    "description": "Compression progress page description"
+  },
+  "compressionResult": "Kết quả nén",
+  "@compressionResult": {
+    "description": "Compression result page title"
+  },
+  "compareTheBeforeAndAfterSizeThenSaveOrShareTheResult": "So sánh kích thước trước và sau, sau đó lưu hoặc chia sẻ kết quả.",
+  "@compareTheBeforeAndAfterSizeThenSaveOrShareTheResult": {
+    "description": "Compression result page description"
+  },
+  "compressionHistory": "Lịch sử nén",
+  "@compressionHistory": {
+    "description": "Compression history page title"
+  },
+  "reviewTheVideosYouHaveCompressedOnThisDevice": "Xem lại các video bạn đã nén trên thiết bị này.",
+  "@reviewTheVideosYouHaveCompressedOnThisDevice": {
+    "description": "Compression history page description"
+  },
+  "settings": "Cài đặt",
+  "@settings": {
+    "description": "Settings hub page title"
+  },
+  "appearance": "Giao diện",
+  "@appearance": {
+    "description": "Appearance settings page title"
+  },
+  "themeColorSchemeAndMotionPreferences": "Chủ đề, bảng màu và tùy chọn chuyển động.",
+  "@themeColorSchemeAndMotionPreferences": {
+    "description": "Appearance settings page description"
+  },
+  "language": "Ngôn ngữ",
+  "@language": {
+    "description": "Language settings page title"
+  },
+  "appLanguageAndTextDirection": "Ngôn ngữ ứng dụng và hướng văn bản.",
+  "@appLanguageAndTextDirection": {
+    "description": "Language settings page description"
+  },
+  "compressionDefaults": "Mặc định nén",
+  "@compressionDefaults": {
+    "description": "Compression defaults page title"
+  },
+  "defaultResolutionBitrateAndOutputFormat": "Độ phân giải, tốc độ bit và định dạng đầu ra mặc định.",
+  "@defaultResolutionBitrateAndOutputFormat": {
+    "description": "Compression defaults page description"
+  },
+  "storageCleanup": "Lưu trữ & dọn dẹp",
+  "@storageCleanup": {
+    "description": "Storage settings page title"
+  },
+  "storageUsageCacheSizeAndTemporaryFileCleanup": "Sử dụng bộ nhớ, kích thước bộ nhớ đệm và dọn dẹp tệp tạm thời.",
+  "@storageUsageCacheSizeAndTemporaryFileCleanup": {
+    "description": "Storage settings page description"
+  },
+  "notifications": "Thông báo",
+  "@notifications": {
+    "description": "Notifications settings page title"
+  },
+  "jobCompletionAndProductUpdateNotifications": "Thông báo hoàn tất công việc và cập nhật sản phẩm.",
+  "@jobCompletionAndProductUpdateNotifications": {
+    "description": "Notifications settings page description"
+  },
+  "privacy": "Quyền riêng tư",
+  "@privacy": {
+    "description": "Privacy settings page title"
+  },
+  "onDeviceProcessingLocalLogsAndOptionalCrashReports": "Xử lý trên thiết bị, nhật ký cục bộ và báo cáo sự cố tùy chọn.",
+  "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
+    "description": "Privacy settings page description"
+  },
+  "aboutZumi": "Về Zumi",
+  "@aboutZumi": {
+    "description": "App info page title"
+  },
+  "versionBuildNumberAndApplicationDetails": "Phiên bản, số bản dựng và chi tiết ứng dụng.",
+  "@versionBuildNumberAndApplicationDetails": {
+    "description": "App info page description"
+  },
+  "aboutTheDeveloper": "Về nhà phát triển",
+  "@aboutTheDeveloper": {
+    "description": "Developer page title"
+  },
+  "theDeveloperAndToolsBehindZumi": "Nhà phát triển và các công cụ phía sau Zumi.",
+  "@theDeveloperAndToolsBehindZumi": {
+    "description": "Developer page description"
+  },
+  "openSourceLicenses": "Giấy phép mã nguồn mở",
+  "@openSourceLicenses": {
+    "description": "Licenses page title"
+  },
+  "openSourcePackagesBundledWithZumi": "Các gói mã nguồn mở đi kèm với Zumi.",
+  "@openSourcePackagesBundledWithZumi": {
+    "description": "Licenses page description"
+  },
+  "privacyPolicy": "Chính sách quyền riêng tư",
+  "@privacyPolicy": {
+    "description": "Privacy policy page title"
+  },
+  "howZumiHandlesYourVideosAndData": "Cách Zumi xử lý video và dữ liệu của bạn.",
+  "@howZumiHandlesYourVideosAndData": {
+    "description": "Privacy policy page description"
+  },
+  "termsOfService": "Điều khoản dịch vụ",
+  "@termsOfService": {
+    "description": "Terms page title"
+  },
+  "theTermsThatApplyToZumiAndItsPurchases": "Các điều khoản áp dụng cho Zumi và các giao dịch mua của nó.",
+  "@theTermsThatApplyToZumiAndItsPurchases": {
+    "description": "Terms page description"
+  },
+  "dataSafety": "An toàn dữ liệu",
+  "@dataSafety": {
+    "description": "Data safety page title"
+  },
+  "summaryOfTheDataZumiCollectsAndWhy": "Tóm tắt dữ liệu Zumi thu thập và lý do.",
+  "@summaryOfTheDataZumiCollectsAndWhy": {
+    "description": "Data safety page description"
+  },
+  "permissions": "Quyền hạn",
+  "@permissions": {
+    "description": "Permissions page title"
+  },
+  "runtimePermissionsZumiRequestsAndWhyEachIsNeeded": "Quyền hạn khi chạy mà Zumi yêu cầu và lý do cần thiết cho từng quyền.",
+  "@runtimePermissionsZumiRequestsAndWhyEachIsNeeded": {
+    "description": "Permissions page description"
+  },
+  "faq": "Câu hỏi thường gặp",
+  "@faq": {
+    "description": "FAQ page title"
+  },
+  "answersToCommonQuestionsAboutCompressionAndBilling": "Câu trả lời cho các câu hỏi phổ biến về nén và thanh toán.",
+  "@answersToCommonQuestionsAboutCompressionAndBilling": {
+    "description": "FAQ page description"
+  },
+  "support": "Hỗ trợ",
+  "@support": {
+    "description": "Support page title"
+  },
+  "getHelpWithYourAccountOrAPurchase": "Nhận trợ giúp về tài khoản hoặc việc mua hàng của bạn.",
+  "@getHelpWithYourAccountOrAPurchase": {
+    "description": "Support page description"
+  },
+  "sendFeedback": "Gửi phản hồi",
+  "@sendFeedback": {
+    "description": "Feedback page title"
+  },
+  "reportAProblemOrSuggestAnImprovement": "Báo cáo sự cố hoặc đề xuất cải tiến.",
+  "@reportAProblemOrSuggestAnImprovement": {
+    "description": "Feedback page description"
+  },
+  "plans": "Các gói",
+  "@plans": {
+    "description": "Plans page title"
+  },
+  "comparePlansAndSeeWhatEachOneUnlocks": "So sánh các gói và xem những gì từng gói mở khóa.",
+  "@comparePlansAndSeeWhatEachOneUnlocks": {
+    "description": "Plans page description"
+  },
+  "planDetails": "Chi tiết gói",
+  "@planDetails": {
+    "description": "Plan details page title"
+  },
+  "benefitsLimitsAndPricingForThisPlan": "Lợi ích, giới hạn và giá cả của gói này.",
+  "@benefitsLimitsAndPricingForThisPlan": {
+    "description": "Plan details page description"
+  },
+  "paymentMethods": "Phương thức thanh toán",
+  "@paymentMethods": {
+    "description": "Purchase methods page title"
+  },
+  "supportedWaysToPayIncludingStoreBilling": "Các cách thanh toán được hỗ trợ, bao gồm cả thanh toán qua cửa hàng.",
+  "@supportedWaysToPayIncludingStoreBilling": {
+    "description": "Purchase methods page description"
+  },
+  "restorePurchases": "Khôi phục mua hàng",
+  "@restorePurchases": {
+    "description": "Restore purchases page title"
+  },
+  "reApplyAPurchaseMadeOnAnotherDevice": "Áp dụng lại một giao dịch mua đã thực hiện trên thiết bị khác.",
+  "@reApplyAPurchaseMadeOnAnotherDevice": {
+    "description": "Restore purchases page description"
+  },
+  "profile": "Hồ sơ",
+  "@profile": {
+    "description": "Profile page title"
+  },
+  "yourIdentityPlanStatusAndAccountPreferences": "Danh tính, trạng thái gói và tùy chọn tài khoản của bạn.",
+  "@yourIdentityPlanStatusAndAccountPreferences": {
+    "description": "Profile page description"
+  },
+  "deleteAccount": "Xóa tài khoản",
+  "@deleteAccount": {
+    "description": "Delete account page title"
+  },
+  "permanentlyRemoveYourAccountAndItsServerSideData": "Xóa vĩnh viễn tài khoản của bạn và dữ liệu phía máy chủ của nó.",
+  "@permanentlyRemoveYourAccountAndItsServerSideData": {
+    "description": "Delete account page description"
+  },
+  "rateZumi": "Đánh giá Zumi",
+  "@rateZumi": {
+    "description": "Rate app page title"
+  },
+  "tellOthersHowZumiWorkedForYouOnTheStore": "Cho người khác biết Zumi đã hoạt động như thế nào với bạn trên cửa hàng.",
+  "@tellOthersHowZumiWorkedForYouOnTheStore": {
+    "description": "Rate app page description"
+  },
+  "shareZumi": "Chia sẻ Zumi",
+  "@shareZumi": {
+    "description": "Share app page title"
+  },
+  "recommendZumiToAFriend": "Đề xuất Zumi cho một người bạn.",
+  "@recommendZumiToAFriend": {
+    "description": "Share app page description"
+  },
+  "settingsGroupAppearance": "Giao diện & ngôn ngữ",
+  "@settingsGroupAppearance": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupCompression": "Nén",
+  "@settingsGroupCompression": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupAi": "AI trên thiết bị",
+  "@settingsGroupAi": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupPrivacy": "Thông báo & quyền riêng tư",
+  "@settingsGroupPrivacy": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupPlans": "Gói & giao dịch mua",
+  "@settingsGroupPlans": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupAbout": "Giới thiệu",
+  "@settingsGroupAbout": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupLegal": "Pháp lý",
+  "@settingsGroupLegal": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupHelp": "Trợ giúp & phản hồi",
+  "@settingsGroupHelp": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupAccount": "Tài khoản",
+  "@settingsGroupAccount": {
+    "description": "Settings hub section label"
+  },
+  "settingsAppearanceSubtitle": "Chủ đề và ngôn ngữ ứng dụng",
+  "@settingsAppearanceSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsLanguageSubtitle": "Ngôn ngữ và hướng của ứng dụng",
+  "@settingsLanguageSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsCompressionSubtitle": "Chất lượng và định dạng mặc định",
+  "@settingsCompressionSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsStorageSubtitle": "Sử dụng bộ nhớ đệm và lưu trữ",
+  "@settingsStorageSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aiSettings": "Cài đặt AI",
+  "zumiAssistant": "Trợ lý Zumi",
+  "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "Một trợ lý cá nhân cho video của bạn sắp ra mắt. Bạn sẽ có thể hỏi về nén, tổ chức và các video đã lưu tại đây.",
+  "settingsAiSubtitle": "Mô hình cục bộ và công cụ thông minh",
+  "exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet": "Khám phá các mô hình cục bộ và công cụ AI tương lai. Những tùy chọn này vẫn chưa được kích hoạt.",
+  "localModels": "Mô hình cục bộ",
+  "aiModelsSubtitle": "Duyệt và tải xuống các mô hình được hỗ trợ",
+  "chooseASupportedModelDownloadItToThisDeviceAndManageInstalledModelsHere": "Chọn một mô hình được hỗ trợ, tải nó xuống thiết bị này và quản lý các mô hình đã cài đặt tại đây.",
+  "importAModel": "Nhập một mô hình",
+  "aiImportSubtitle": "Sử dụng một mô hình tương thích từ các tệp của bạn",
+  "selectACompatibleLocalModelFileAndReviewItsRequirementsBeforeUsingIt": "Chọn một tệp mô hình cục bộ tương thích và xem lại các yêu cầu của nó trước khi sử dụng.",
+  "smartFeatures": "Tính năng thông minh",
+  "aiFeaturesSubtitle": "Nén, tổ chức và tìm kiếm",
+  "chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "Chọn các đề xuất AI cục bộ để sử dụng cho việc nén video, tổ chức, đặt tên và tìm kiếm.",
+  "modelPerformance": "Hiệu suất mô hình",
+  "aiRuntimeSubtitle": "Tùy chọn xử lý và tài nguyên",
+  "controlTheProcessingBackendAndResourceLimitsForSupportedModels": "Kiểm soát hệ thống xử lý và giới hạn tài nguyên cho các mô hình được hỗ trợ.",
+  "conversationSettings": "Cài đặt hội thoại",
+  "aiChatSettingsSubtitle": "Phát trực tuyến, suy nghĩ và độ dài phản hồi",
+  "configureHowTheAssistantRespondsIncludingStreamingThinkingModeSamplingAndResponseLimits": "Cấu hình cách trợ lý phản hồi, bao gồm phát trực tiếp, chế độ suy nghĩ, lấy mẫu và giới hạn phản hồi.",
+  "imagesAndAudio": "Hình ảnh và âm thanh",
+  "aiMediaSubtitle": "Kiểm soát các đầu vào đa phương tiện",
+  "chooseWhetherCompatibleModelsCanAnalyzeSelectedImagesAndAudioFromYourVideos": "Chọn xem các mô hình tương thích có thể phân tích hình ảnh và âm thanh đã chọn từ video của bạn hay không.",
+  "semanticSearch": "Tìm kiếm ngữ nghĩa",
+  "aiSearchSubtitle": "Nhúng và lập chỉ mục cục bộ",
+  "manageTheLocalEmbeddingModelAndSearchIndexForFindingVideosAndMomentsByMeaning": "Quản lý mô hình nhúng cục bộ và chỉ mục tìm kiếm để tìm video và khoảnh khắc theo ý nghĩa.",
+  "toolsAndStructuredOutput": "Công cụ và đầu ra có cấu trúc",
+  "aiToolsSubtitle": "Các hành động, sơ đồ và xác nhận",
+  "manageSupportedAssistantActionsAndStructuredResponsesActionsThatAffectFilesWillRequireYourConfirmation": "Quản lý các hành động trợ lý được hỗ trợ và các phản hồi có cấu trúc. Các hành động ảnh hưởng đến tệp sẽ yêu cầu bạn xác nhận.",
+  "aiGroupModels": "Mô hình",
+  "aiGroupExperience": "Trải nghiệm trợ lý",
+  "aiGroupCapabilities": "Khả năng thông minh",
+  "aiGroupPerformance": "Hiệu suất",
+  "compressionHistorySubtitle": "Lịch sử video nén của bạn",
+  "@compressionHistorySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsNotificationsSubtitle": "Cảnh báo hoàn thành và cập nhật",
+  "@settingsNotificationsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsPrivacySubtitle": "Dữ liệu của bạn vẫn giữ tại chỗ",
+  "@settingsPrivacySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "plansSubtitle": "So sánh các gói và nâng cấp",
+  "@plansSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "plansMethodsSubtitle": "Phương thức thanh toán và hóa đơn",
+  "@plansMethodsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "plansRestoreSubtitle": "Khôi phục mua hàng trước đó của bạn",
+  "@plansRestoreSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aboutAppSubtitle": "Chi tiết phiên bản và bản dựng",
+  "@aboutAppSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aboutDeveloperSubtitle": "Nhà phát triển đứng sau Zumi",
+  "@aboutDeveloperSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aboutLicensesSubtitle": "Giấy phép gói mã nguồn mở",
+  "@aboutLicensesSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalPrivacySubtitle": "Cách dữ liệu được xử lý",
+  "@legalPrivacySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalTermsSubtitle": "Quy tắc sử dụng Zumi",
+  "@legalTermsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalDataSafetySubtitle": "Dữ liệu chúng tôi thu thập",
+  "@legalDataSafetySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalPermissionsSubtitle": "Tại sao chúng ta cần quyền",
+  "@legalPermissionsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "helpFaqSubtitle": "Câu trả lời cho các câu hỏi thường gặp",
+  "@helpFaqSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "helpSupportSubtitle": "Liên hệ trực tiếp với nhà phát triển",
+  "@helpSupportSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "helpFeedbackSubtitle": "Gửi phản hồi của bạn cho chúng tôi",
+  "@helpFeedbackSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "compressionPickVideo": "Chọn video",
+  "compressionTargetMb": "Kích thước mục tiêu (MB)",
+  "compressionStart": "Bắt đầu nén",
+  "compressionPause": "Tạm dừng",
+  "compressionResume": "Tiếp tục",
+  "compressionViewResult": "Xem kết quả",
+  "compressionSaveGallery": "Lưu vào thư viện",
+  "compressionShare": "Chia sẻ video",
+  "compressionOriginalSize": "Kích thước gốc",
+  "compressionOutputSize": "Kích thước xuất",
+  "compressionEmptyHistory": "Chưa có video nào được nén",
+  "compressionSavedGallery": "Đã lưu vào thư viện",
+  "compressionInvalidTarget": "Nhập kích thước mục tiêu lớn hơn không",
+  "compressionCancelled": "Nén đã bị hủy",
+  "compressionTargetExceeded": "Video này không thể đạt kích thước đã chọn. Thử kích thước mục tiêu lớn hơn.",
+  "compressionTargetInfeasible": "Kích thước đã chọn quá nhỏ cho video này. Chọn kích thước lớn hơn.",
+  "compressionPreviewBefore": "Xem trước ban đầu",
+  "compressionPreviewAfter": "Xem trước nén",
+  "compressionPreset": "Cài đặt mục tiêu",
+  "compressionCustom": "Kích thước tùy chỉnh",
+  "compressionPreviewUnavailable": "Xem trước không khả dụng",
+  "compressionAdvanced": "Điều khiển nâng cao",
+  "compressionAutomatic": "Tự động",
+  "compressionResolutionLimit": "Độ phân giải tối đa",
+  "compressionSourceResolution": "Độ phân giải gốc",
+  "compressionFrameRateLimit": "Tốc độ khung hình tối đa",
+  "compressionAudioQuality": "Tốc độ bit âm thanh",
+  "compressionRemoveAudio": "Loại bỏ âm thanh",
+  "compressionVideoBitrateLimit": "Giới hạn tốc độ bit video (kbps)",
+  "compressionHdrPolicy": "Xử lý HDR",
+  "compressionHdrConvert": "Chuyển sang SDR",
+  "compressionHdrPreserve": "Giữ HDR khi được hỗ trợ",
+  "compressionPlanPreview": "Trước khi bạn bắt đầu",
+  "compressionPlanLoading": "Đang tính toán kế hoạch nén…",
+  "compressionPlanResolution": "Độ phân giải dự kiến",
+  "compressionPlanVideoBitrate": "Tốc độ bit video dự kiến",
+  "compressionPlanAudioBitrate": "Tốc độ bit âm thanh dự kiến",
+  "compressionAudioConversionNote": "Việc mã hóa lại sẽ chuyển âm thanh sang AAC stereo. Dolby Atmos và âm thanh không gian DTS sẽ không được giữ lại.",
+  "compressionPlanTooSmall": "Mục tiêu này quá nhỏ để có một video sử dụng được. Tăng kích thước hoặc hạ các giới hạn khác.",
+  "compressionPlanLowQuality": "Mục tiêu đã chọn có thể làm giảm chất lượng video.",
+  "compressionPlanAlreadyWithinLimit": "Nguồn đã nằm trong giới hạn kích thước.",
+  "compressionInvalidBitrate": "Nhập tốc độ bit ít nhất 150 kbps, hoặc để trống để tự động.",
+  "compressionInvalidResolution": "Nhập độ phân giải chẵn từ 240 đến 16384, hoặc để trống để tự động.",
+  "compressionSeek": "Vị trí video",
+  "compressionInterrupted": "Một lần nén trước đã bị gián đoạn. Các tệp tạm thời đã được dọn dẹp; bạn có thể chọn video và thử lại.",
+  "compressionDismiss": "Bỏ qua",
+  "compressionClearHistory": "Xóa lịch sử",
+  "compressionClearHistoryConfirm": "Xóa tất cả các mục lịch sử? Video đã lưu sẽ vẫn còn trên thiết bị của bạn.",
+  "compressionAttempts": "Số lần thử",
+  "compressionTargetSize": "Kích thước mục tiêu",
+  "compressionOutputResolution": "Độ phân giải đầu ra",
+  "compressionInvalidVideo": "Không thể đọc video này. Chọn một tệp khác.",
+  "compressionInvalidOutput": "Video được mã hóa không vượt qua kiểm tra. Video gốc của bạn không bị thay đổi.",
+  "compressionEncoderUnsupported": "Thiết bị này không thể mã hóa độ phân giải hoặc tốc độ khung hình đã chọn. Hạ cài đặt đó và thử lại.",
+  "compressionAudioDecoderUnsupported": "Thiết bị này không thể giải mã định dạng âm thanh này để nén. Xóa âm thanh hoặc sử dụng nguồn được hỗ trợ.",
+  "compressionVideoDecoderUnsupported": "Thiết bị này không thể giải mã định dạng video hoặc hồ sơ nén này. Chọn nguồn hoặc thiết bị khác.",
+  "compressionMp4NotStreamable": "Tệp MP4 xuất ra chưa sẵn sàng để phát trực tuyến. Thử video hoặc thiết bị khác.",
+  "compressionNoSpace": "Không đủ dung lượng lưu trữ để nén video này.",
+  "compressionHdrUnsupported": "Thiết bị này không thể xử lý chế độ HDR đã chọn. Thử chuyển đổi sang SDR.",
+  "compressionGeneralFailure": "Quá trình nén không thể hoàn tất. Thử thiết lập hoặc video khác.",
+  "aboutIdentitySection": "Nhận diện ứng dụng",
+  "aboutAppName": "Tên ứng dụng",
+  "aboutPackageName": "Tên gói",
+  "aboutVersion": "Phiên bản",
+  "aboutBuildNumber": "Số bản dựng",
+  "aboutEnvironmentSection": "Thiết bị và bản dựng",
+  "aboutOperatingSystem": "Hệ điều hành",
+  "aboutOsVersion": "Phiên bản OS",
+  "aboutBuildMode": "Chế độ xây dựng",
+  "aboutDebug": "Gỡ lỗi",
+  "aboutRelease": "Phát hành",
+  "aboutToolchainSection": "Xây dựng với",
+  "aboutInstallationSection": "Cài đặt",
+  "aboutInstaller": "Đã cài đặt từ",
+  "aboutInstalledOn": "Đã cài đặt vào",
+  "aboutUpdatedOn": "Cập nhật vào",
+  "aboutUnavailable": "Không có sẵn",
+  "aboutProjectSection": "Dự án và hỗ trợ",
+  "aboutRepository": "Kho lưu trữ GitHub",
+  "aboutRepositorySubtitle": "Xem mã nguồn Zumi",
+  "aboutReadme": "Đọc README",
+  "aboutReadmeSubtitle": "Tìm hiểu về Zumi trên GitHub",
+  "aboutIssues": "Báo cáo sự cố",
+  "aboutIssuesSubtitle": "Xem và tạo các vấn đề trên GitHub",
+  "aboutLatestRelease": "Phiên bản mới nhất",
+  "aboutLatestReleaseSubtitle": "Xem các bản phát hành và tải xuống",
+  "aboutDonate": "Hỗ trợ Zumi",
+  "aboutDonateSubtitle": "Mở trang quyên góp chính thức",
+  "aboutLinkError": "Không thể mở liên kết. Vui lòng thử lại.",
+  "aboutDeveloperSection": "Nhà phát triển",
+  "aboutDeveloperName": "Mostafa Sensei",
+  "aboutDeveloperProfile": "Hồ sơ GitHub",
+  "aboutDeveloperProfileSubtitle": "Xem dự án và thông tin liên hệ",
+  "maintenanceInProgress": "Đang bảo trì",
+  "maintenanceMessage": "Zumi hiện tạm thời không khả dụng. Vui lòng thử lại sau.",
+  "comingSoon": "Sắp ra mắt",
+  "@comingSoon": {
+    "description": "Badge shown on placeholder pages"
+  },
+  "@countryName": {
+    "description": "Name of a country in the current app language",
+    "placeholders": {
+      "countryCode": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Tiếng Việt",
+  "countryCode": "VN",
+  "countryName": "{countryCode, select, AE{Các Tiểu Vương quốc Ả Rập Thống nhất} AT{Áo} AU{Úc} BE{Bỉ} BH{Bahrain} BR{Brazil} CA{Canada} CH{Thụy Sĩ} CN{Trung Quốc} DE{Đức} DJ{Djibouti} DZ{Algeria} EG{Ai Cập} ES{Tây Ban Nha} FR{Pháp} GB{Vương quốc Anh} HK{Đặc khu Hành chính Hồng Kông, Trung Quốc} ID{Indonesia} IQ{Iraq} IT{Italy} JO{Jordan} JP{Nhật Bản} KM{Comoros} KR{Hàn Quốc} KW{Kuwait} LB{Li-băng} LY{Libya} MA{Ma-rốc} MR{Mauritania} MX{Mexico} NL{Hà Lan} OM{Oman} PL{Ba Lan} PS{Lãnh thổ Palestine} PT{Bồ Đào Nha} QA{Qatar} RU{Nga} SA{Ả Rập Xê-út} SD{Sudan} SE{Thụy Điển} SG{Singapore} SO{Somalia} SY{Syria} TH{Thái Lan} TN{Tunisia} TR{Thổ Nhĩ Kỳ} TW{Đài Loan} US{Hoa Kỳ} VN{Việt Nam} YE{Yemen} other{Quốc gia}}"
+}

@@ -713,5 +713,5 @@
   },
   "languageName": "Türkçe",
   "countryCode": "TR",
-  "countryName": "{countryCode, select, DZ{Cezayir} BH{Bahreyn} KM{Komorlar} DJ{Cibuti} EG{Mısır} IQ{Irak} JO{Ürdün} KW{Kuveyt} LB{Lübnan} LY{Libya} MR{Moritanya} MA{Fas} OM{Umman} PS{Filistin Bölgeleri} QA{Katar} SA{Suudi Arabistan} SO{Somali} SD{Sudan} SY{Suriye} TN{Tunus} AE{Birleşik Arap Emirlikleri} YE{Yemen} US{Amerika Birleşik Devletleri} GB{Birleşik Krallık} JP{Japonya} FR{Fransa} DE{Almanya} ES{İspanya} TR{Türkiye} NL{Hollanda} other{Ülke}}"
+  "countryName": "{countryCode, select, AE{Birleşik Arap Emirlikleri} AT{Avusturya} AU{Avustralya} BE{Belçika} BH{Bahreyn} BR{Brezilya} CA{Kanada} CH{İsviçre} CN{Çin} DE{Almanya} DJ{Cibuti} DZ{Cezayir} EG{Mısır} ES{İspanya} FR{Fransa} GB{Birleşik Krallık} HK{Çin Hong Kong ÖİB} ID{Endonezya} IQ{Irak} IT{İtalya} JO{Ürdün} JP{Japonya} KM{Komorlar} KR{Güney Kore} KW{Kuveyt} LB{Lübnan} LY{Libya} MA{Fas} MR{Moritanya} MX{Meksika} NL{Hollanda} OM{Umman} PL{Polonya} PS{Filistin Bölgeleri} PT{Portekiz} QA{Katar} RU{Rusya} SA{Suudi Arabistan} SD{Sudan} SE{İsveç} SG{Singapur} SO{Somali} SY{Suriye} TH{Tayland} TN{Tunus} TR{Türkiye} TW{Tayvan} US{Amerika Birleşik Devletleri} VN{Vietnam} YE{Yemen} other{Ülke}}"
 }

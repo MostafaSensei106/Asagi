@@ -1,0 +1,725 @@
+{
+  "@@locale": "th_TH",
+  "zumi": "Zumi",
+  "@zumi": {
+    "description": "Application name shown in the app and on the home page"
+  },
+  "downloadFile": "ดาวน์โหลดไฟล์",
+  "@downloadFile": {
+    "description": "Title for download file dialog"
+  },
+  "fileOpenedInBrowser": "ไฟล์ถูกเปิดในเบราว์เซอร์: {fileName}",
+  "@fileOpenedInBrowser": {
+    "description": "Message shown when file is opened in browser",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "fileSavedToDcim": "ไฟล์ถูกบันทึกในแกลเลอรี: {fileName}",
+  "@fileSavedToDcim": {
+    "description": "Message shown when file is saved to gallery",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "fileSavedToDocuments": "ไฟล์ถูกบันทึกในเอกสาร: {fileName}",
+  "@fileSavedToDocuments": {
+    "description": "Message shown when file is saved to documents",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "fileAlreadySaved": "ไฟล์ถูกบันทึกแล้ว",
+  "@fileAlreadySaved": {
+    "description": "Message shown when file already exists"
+  },
+  "error": "ข้อผิดพลาด",
+  "@error": {
+    "description": "Generic error title"
+  },
+  "info": "ข้อมูล",
+  "@info": {
+    "description": "Generic info title"
+  },
+  "success": "สำเร็จ",
+  "@success": {
+    "description": "Generic success title"
+  },
+  "warning": "คำเตือน",
+  "@warning": {
+    "description": "Generic warning title"
+  },
+  "paid": "ชำระเงินแล้ว",
+  "@paid": {
+    "description": "Payment status paid"
+  },
+  "unpaid": "ยังไม่ได้ชำระ",
+  "@unpaid": {
+    "description": "Payment status unpaid"
+  },
+  "partial": "บางส่วน",
+  "@partial": {
+    "description": "Payment status partial"
+  },
+  "error_address_line_cant_be_empty": "บรรทัดที่อยู่ต้องไม่ว่าง",
+  "@error_address_line_cant_be_empty": {
+    "description": "Address line empty error"
+  },
+  "error_address_line_too_long": "บรรทัดที่อยู่นานเกินไป",
+  "@error_address_line_too_long": {
+    "description": "Address line too long error"
+  },
+  "error_address_invalid_special_characters": "ไม่อนุญาตให้ใช้ตัวอักษรพิเศษ",
+  "@error_address_invalid_special_characters": {
+    "description": "Address special characters error"
+  },
+  "error_address_emoji_not_allowed": "ไม่อนุญาตให้ใช้สัญลักษณ์อีโมจิ",
+  "@error_address_emoji_not_allowed": {
+    "description": "Address emoji not allowed error"
+  },
+  "error_city_cant_be_empty": "เมืองต้องไม่ว่าง",
+  "@error_city_cant_be_empty": {
+    "description": "City empty error"
+  },
+  "error_city_too_long": "ชื่อเมืองยาวเกินไป",
+  "@error_city_too_long": {
+    "description": "City too long error"
+  },
+  "error_city_invalid_special_characters": "เมืองมีตัวอักษรพิเศษที่ไม่ถูกต้อง",
+  "@error_city_invalid_special_characters": {
+    "description": "City special characters error"
+  },
+  "error_address_label_cant_be_empty": "ป้ายที่อยู่ต้องไม่ว่าง",
+  "@error_address_label_cant_be_empty": {
+    "description": "Address label empty error"
+  },
+  "error_address_label_too_long": "ป้ายที่อยู่นานเกินไป",
+  "@error_address_label_too_long": {
+    "description": "Address label too long error"
+  },
+  "error_email_cant_be_empty": "อีเมลต้องไม่ว่าง",
+  "@error_email_cant_be_empty": {
+    "description": "Email empty error"
+  },
+  "error_email_not_invalid_format": "รูปแบบอีเมลไม่ถูกต้อง",
+  "@error_email_not_invalid_format": {
+    "description": "Email invalid format error"
+  },
+  "error_email_contains_invalid_characters": "อีเมลมีอักขระที่ไม่ถูกต้อง",
+  "@error_email_contains_invalid_characters": {
+    "description": "Email invalid characters error"
+  },
+  "error_email_must_contain_at_symbol": "อีเมลต้องมี @",
+  "@error_email_must_contain_at_symbol": {
+    "description": "Email missing @ error"
+  },
+  "error_email_must_be_in_lowercase": "อีเมลต้องเป็นตัวพิมพ์เล็ก",
+  "@error_email_must_be_in_lowercase": {
+    "description": "Email not in lowercase error"
+  },
+  "error_arabic_not_allowed": "ไม่อนุญาตให้ใช้ตัวอักษรอาหรับ",
+  "@error_arabic_not_allowed": {
+    "description": "Arabic characters not allowed error"
+  },
+  "error_email_emoji_not_allowed": "ไม่อนุญาตให้ใช้สัญลักษณ์อีโมจิในอีเมล",
+  "@error_email_emoji_not_allowed": {
+    "description": "Email emoji not allowed error"
+  },
+  "error_phone_number_cant_be_empty": "หมายเลขโทรศัพท์ไม่สามารถเว้นว่างได้",
+  "@error_phone_number_cant_be_empty": {
+    "description": "Phone number empty error"
+  },
+  "error_phone_number_invalid": "หมายเลขโทรศัพท์ไม่ถูกต้อง",
+  "@error_phone_number_invalid": {
+    "description": "Phone number invalid error"
+  },
+  "error_phone_number_min_length": "หมายเลขโทรศัพท์ต้องมีอย่างน้อย 11 หลัก",
+  "@error_phone_number_min_length": {
+    "description": "Phone number min length error"
+  },
+  "error_name_cant_be_empty": "ชื่อไม่สามารถเว้นว่างได้",
+  "@error_name_cant_be_empty": {
+    "description": "Name empty error"
+  },
+  "error_name_invalid": "ชื่อไม่ถูกต้อง",
+  "@error_name_invalid": {
+    "description": "Name invalid error"
+  },
+  "error_name_too_short_at_least_3_characters": "ชื่อต้องมีอย่างน้อย 3 ตัวอักษร",
+  "@error_name_too_short_at_least_3_characters": {
+    "description": "Name too short error"
+  },
+  "error_name_too_long_maximum_20_characters": "ชื่อไม่สามารถเกิน 20 ตัวอักษร",
+  "@error_name_too_long_maximum_20_characters": {
+    "description": "Name too long error"
+  },
+  "error_name_invalid_special_characters": "ชื่อมีอักขระพิเศษที่ไม่ถูกต้อง",
+  "@error_name_invalid_special_characters": {
+    "description": "Name special characters error"
+  },
+  "error_name_emoji_not_allowed": "ไม่อนุญาตให้ใช้สัญลักษณ์อีโมจิในชื่อ",
+  "@error_name_emoji_not_allowed": {
+    "description": "Name emoji not allowed error"
+  },
+  "error_password_cant_be_empty": "รหัสผ่านไม่สามารถเว้นว่างได้",
+  "@error_password_cant_be_empty": {
+    "description": "Password empty error"
+  },
+  "error_password_must_contain_uppercase_lowercase_number_and_special_character": "รหัสผ่านต้องประกอบด้วยอักษรตัวใหญ่ ตัวเล็ก ตัวเลข และอักขระพิเศษ",
+  "@error_password_must_contain_uppercase_lowercase_number_and_special_character": {
+    "description": "Password complex requirements error"
+  },
+  "error_password_must_be_at_least_8_characters_long": "รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร",
+  "@error_password_must_be_at_least_8_characters_long": {
+    "description": "Password min length error"
+  },
+  "noInternetConnection": "ไม่มีการเชื่อมต่ออินเทอร์เน็ต",
+  "@noInternetConnection": {
+    "description": "No internet connection message"
+  },
+  "internetConnectionRestored": "การเชื่อมต่ออินเทอร์เน็ตกลับมาแล้ว",
+  "@internetConnectionRestored": {
+    "description": "Internet connection restored message"
+  },
+  "retry": "ลองอีกครั้ง",
+  "@retry": {
+    "description": "Retry button text"
+  },
+  "cancel": "ยกเลิก",
+  "@cancel": {
+    "description": "Cancel button text"
+  },
+  "confirm": "ยืนยัน",
+  "@confirm": {
+    "description": "Confirm button text"
+  },
+  "pleaseWait": "กรุณารอสักครู่...",
+  "@pleaseWait": {
+    "description": "Please wait dialog text"
+  },
+  "ok": "ตกลง",
+  "@ok": {
+    "description": "OK button text"
+  },
+  "compressVideosPrivatelyOnYourDevice": "บีบอัดวิดีโออย่างเป็นส่วนตัวบนอุปกรณ์ของคุณ",
+  "@compressVideosPrivatelyOnYourDevice": {
+    "description": "Home page description"
+  },
+  "welcomeToZumi": "ยินดีต้อนรับสู่ Zumi",
+  "@welcomeToZumi": {
+    "description": "Onboarding page title"
+  },
+  "learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": "เรียนรู้ว่า Zumi บีบอัดวิดีโอของคุณอย่างไรโดยไม่ต้องออกจากโทรศัพท์",
+  "@learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": {
+    "description": "Onboarding page description"
+  },
+  "signIn": "ลงชื่อเข้าใช้",
+  "@signIn": {
+    "description": "Login page title"
+  },
+  "signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": "ลงชื่อเข้าใช้เพื่อซิงค์แผนของคุณและเก็บการซื้อของคุณให้สามารถใช้งานได้บนทุกอุปกรณ์",
+  "@signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": {
+    "description": "Login page description"
+  },
+  "chooseAVideo": "เลือกวิดีโอ",
+  "@chooseAVideo": {
+    "description": "Video picker page title"
+  },
+  "pickAVideoFromYourGalleryToStartCompressing": "เลือกรายการวิดีโอจากคลังของคุณเพื่อเริ่มบีบอัด",
+  "@pickAVideoFromYourGalleryToStartCompressing": {
+    "description": "Video picker page description"
+  },
+  "compressionSetup": "การตั้งค่าการบีบอัด",
+  "@compressionSetup": {
+    "description": "Compression setup page title"
+  },
+  "chooseResolutionBitrateAndOutputFormatBeforeYouStart": "เลือกความละเอียด อัตราบิต และรูปแบบเอาต์พุตก่อนเริ่ม",
+  "@chooseResolutionBitrateAndOutputFormatBeforeYouStart": {
+    "description": "Compression setup page description"
+  },
+  "compressing": "กำลังบีบอัด",
+  "@compressing": {
+    "description": "Compression progress page title"
+  },
+  "followTheLiveProgressOfYourCompressionJob": "ติดตามความคืบหน้าของงานบีบอัดแบบเรียลไทม์",
+  "@followTheLiveProgressOfYourCompressionJob": {
+    "description": "Compression progress page description"
+  },
+  "compressionResult": "ผลลัพธ์การบีบอัด",
+  "@compressionResult": {
+    "description": "Compression result page title"
+  },
+  "compareTheBeforeAndAfterSizeThenSaveOrShareTheResult": "เปรียบเทียบขนาดก่อนและหลัง จากนั้นบันทึกหรือแชร์ผลลัพธ์",
+  "@compareTheBeforeAndAfterSizeThenSaveOrShareTheResult": {
+    "description": "Compression result page description"
+  },
+  "compressionHistory": "ประวัติการบีบอัด",
+  "@compressionHistory": {
+    "description": "Compression history page title"
+  },
+  "reviewTheVideosYouHaveCompressedOnThisDevice": "ตรวจสอบวิดีโอที่คุณได้บีบอัดบนอุปกรณ์นี้",
+  "@reviewTheVideosYouHaveCompressedOnThisDevice": {
+    "description": "Compression history page description"
+  },
+  "settings": "การตั้งค่า",
+  "@settings": {
+    "description": "Settings hub page title"
+  },
+  "appearance": "ลักษณะ",
+  "@appearance": {
+    "description": "Appearance settings page title"
+  },
+  "themeColorSchemeAndMotionPreferences": "ธีม โทนสี และรูปแบบการเคลื่อนไหว",
+  "@themeColorSchemeAndMotionPreferences": {
+    "description": "Appearance settings page description"
+  },
+  "language": "ภาษา",
+  "@language": {
+    "description": "Language settings page title"
+  },
+  "appLanguageAndTextDirection": "ภาษาของแอปและทิศทางข้อความ",
+  "@appLanguageAndTextDirection": {
+    "description": "Language settings page description"
+  },
+  "compressionDefaults": "ค่าพื้นฐานการบีบอัด",
+  "@compressionDefaults": {
+    "description": "Compression defaults page title"
+  },
+  "defaultResolutionBitrateAndOutputFormat": "ความละเอียด อัตราบิต และรูปแบบเอาต์พุตเริ่มต้น",
+  "@defaultResolutionBitrateAndOutputFormat": {
+    "description": "Compression defaults page description"
+  },
+  "storageCleanup": "พื้นที่เก็บข้อมูล & การทำความสะอาด",
+  "@storageCleanup": {
+    "description": "Storage settings page title"
+  },
+  "storageUsageCacheSizeAndTemporaryFileCleanup": "การใช้งานพื้นที่จัดเก็บ ขนาดแคช และการล้างไฟล์ชั่วคราว",
+  "@storageUsageCacheSizeAndTemporaryFileCleanup": {
+    "description": "Storage settings page description"
+  },
+  "notifications": "การแจ้งเตือน",
+  "@notifications": {
+    "description": "Notifications settings page title"
+  },
+  "jobCompletionAndProductUpdateNotifications": "การแจ้งเตือนเมื่อทำงานเสร็จและอัปเดตผลิตภัณฑ์",
+  "@jobCompletionAndProductUpdateNotifications": {
+    "description": "Notifications settings page description"
+  },
+  "privacy": "ความเป็นส่วนตัว",
+  "@privacy": {
+    "description": "Privacy settings page title"
+  },
+  "onDeviceProcessingLocalLogsAndOptionalCrashReports": "การประมวลผลบนอุปกรณ์ บันทึกภายใน และรายงานข้อขัดข้อง (ไม่บังคับ)",
+  "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
+    "description": "Privacy settings page description"
+  },
+  "aboutZumi": "เกี่ยวกับ Zumi",
+  "@aboutZumi": {
+    "description": "App info page title"
+  },
+  "versionBuildNumberAndApplicationDetails": "เวอร์ชัน หมายเลขบิลด์ และรายละเอียดแอปพลิเคชัน",
+  "@versionBuildNumberAndApplicationDetails": {
+    "description": "App info page description"
+  },
+  "aboutTheDeveloper": "เกี่ยวกับผู้พัฒนา",
+  "@aboutTheDeveloper": {
+    "description": "Developer page title"
+  },
+  "theDeveloperAndToolsBehindZumi": "ผู้พัฒนาและเครื่องมือเบื้องหลัง Zumi",
+  "@theDeveloperAndToolsBehindZumi": {
+    "description": "Developer page description"
+  },
+  "openSourceLicenses": "ใบอนุญาตโอเพนซอร์ส",
+  "@openSourceLicenses": {
+    "description": "Licenses page title"
+  },
+  "openSourcePackagesBundledWithZumi": "แพ็กเกจโอเพนซอร์สที่มาพร้อมกับ Zumi",
+  "@openSourcePackagesBundledWithZumi": {
+    "description": "Licenses page description"
+  },
+  "privacyPolicy": "นโยบายความเป็นส่วนตัว",
+  "@privacyPolicy": {
+    "description": "Privacy policy page title"
+  },
+  "howZumiHandlesYourVideosAndData": "วิธีที่ Zumi จัดการวิดีโอและข้อมูลของคุณ",
+  "@howZumiHandlesYourVideosAndData": {
+    "description": "Privacy policy page description"
+  },
+  "termsOfService": "ข้อกำหนดในการให้บริการ",
+  "@termsOfService": {
+    "description": "Terms page title"
+  },
+  "theTermsThatApplyToZumiAndItsPurchases": "ข้อกำหนดที่ใช้กับ Zumi และการซื้อของมัน",
+  "@theTermsThatApplyToZumiAndItsPurchases": {
+    "description": "Terms page description"
+  },
+  "dataSafety": "ความปลอดภัยของข้อมูล",
+  "@dataSafety": {
+    "description": "Data safety page title"
+  },
+  "summaryOfTheDataZumiCollectsAndWhy": "สรุปข้อมูลที่ Zumi รวบรวมและเหตุผล",
+  "@summaryOfTheDataZumiCollectsAndWhy": {
+    "description": "Data safety page description"
+  },
+  "permissions": "สิทธิ์",
+  "@permissions": {
+    "description": "Permissions page title"
+  },
+  "runtimePermissionsZumiRequestsAndWhyEachIsNeeded": "สิทธิ์ในเวลารันไทม์ที่ Zumi ขอและเหตุผลที่ต้องใช้แต่ละอย่าง",
+  "@runtimePermissionsZumiRequestsAndWhyEachIsNeeded": {
+    "description": "Permissions page description"
+  },
+  "faq": "คำถามที่พบบ่อย",
+  "@faq": {
+    "description": "FAQ page title"
+  },
+  "answersToCommonQuestionsAboutCompressionAndBilling": "คำตอบสำหรับคำถามทั่วไปเกี่ยวกับการบีบอัดและการเรียกเก็บเงิน",
+  "@answersToCommonQuestionsAboutCompressionAndBilling": {
+    "description": "FAQ page description"
+  },
+  "support": "สนับสนุน",
+  "@support": {
+    "description": "Support page title"
+  },
+  "getHelpWithYourAccountOrAPurchase": "รับความช่วยเหลือเกี่ยวกับบัญชีหรือการซื้อของคุณ",
+  "@getHelpWithYourAccountOrAPurchase": {
+    "description": "Support page description"
+  },
+  "sendFeedback": "ส่งความคิดเห็น",
+  "@sendFeedback": {
+    "description": "Feedback page title"
+  },
+  "reportAProblemOrSuggestAnImprovement": "รายงานปัญหาหรือเสนอแนะการปรับปรุง",
+  "@reportAProblemOrSuggestAnImprovement": {
+    "description": "Feedback page description"
+  },
+  "plans": "แผน",
+  "@plans": {
+    "description": "Plans page title"
+  },
+  "comparePlansAndSeeWhatEachOneUnlocks": "เปรียบเทียบแผนและดูสิ่งที่แต่ละแผนปลดล็อก",
+  "@comparePlansAndSeeWhatEachOneUnlocks": {
+    "description": "Plans page description"
+  },
+  "planDetails": "รายละเอียดแผน",
+  "@planDetails": {
+    "description": "Plan details page title"
+  },
+  "benefitsLimitsAndPricingForThisPlan": "สิทธิประโยชน์ ขีดจำกัด และราคาของแผนนี้",
+  "@benefitsLimitsAndPricingForThisPlan": {
+    "description": "Plan details page description"
+  },
+  "paymentMethods": "วิธีการชำระเงิน",
+  "@paymentMethods": {
+    "description": "Purchase methods page title"
+  },
+  "supportedWaysToPayIncludingStoreBilling": "วิธีการชำระเงินที่รองรับ รวมถึงการเรียกเก็บเงินจากร้านค้า",
+  "@supportedWaysToPayIncludingStoreBilling": {
+    "description": "Purchase methods page description"
+  },
+  "restorePurchases": "กู้คืนการซื้อ",
+  "@restorePurchases": {
+    "description": "Restore purchases page title"
+  },
+  "reApplyAPurchaseMadeOnAnotherDevice": "สมัครซื้อสินค้าที่ซื้อบนอุปกรณ์อื่นอีกครั้ง",
+  "@reApplyAPurchaseMadeOnAnotherDevice": {
+    "description": "Restore purchases page description"
+  },
+  "profile": "โปรไฟล์",
+  "@profile": {
+    "description": "Profile page title"
+  },
+  "yourIdentityPlanStatusAndAccountPreferences": "ข้อมูลประจำตัวของคุณ สถานะแผน และการตั้งค่าบัญชี",
+  "@yourIdentityPlanStatusAndAccountPreferences": {
+    "description": "Profile page description"
+  },
+  "deleteAccount": "ลบบัญชี",
+  "@deleteAccount": {
+    "description": "Delete account page title"
+  },
+  "permanentlyRemoveYourAccountAndItsServerSideData": "ลบบัญชีของคุณและข้อมูลบนเซิร์ฟเวอร์อย่างถาวร",
+  "@permanentlyRemoveYourAccountAndItsServerSideData": {
+    "description": "Delete account page description"
+  },
+  "rateZumi": "ให้คะแนน Zumi",
+  "@rateZumi": {
+    "description": "Rate app page title"
+  },
+  "tellOthersHowZumiWorkedForYouOnTheStore": "บอกผู้อื่นว่า Zumi ทำงานอย่างไรสำหรับคุณในร้านค้า",
+  "@tellOthersHowZumiWorkedForYouOnTheStore": {
+    "description": "Rate app page description"
+  },
+  "shareZumi": "แชร์ Zumi",
+  "@shareZumi": {
+    "description": "Share app page title"
+  },
+  "recommendZumiToAFriend": "แนะนำ Zumi ให้เพื่อน",
+  "@recommendZumiToAFriend": {
+    "description": "Share app page description"
+  },
+  "settingsGroupAppearance": "ลักษณะและภาษา",
+  "@settingsGroupAppearance": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupCompression": "การบีบอัด",
+  "@settingsGroupCompression": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupAi": "AI บนอุปกรณ์",
+  "@settingsGroupAi": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupPrivacy": "การแจ้งเตือนและความเป็นส่วนตัว",
+  "@settingsGroupPrivacy": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupPlans": "แผนและการซื้อ",
+  "@settingsGroupPlans": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupAbout": "เกี่ยวกับ",
+  "@settingsGroupAbout": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupLegal": "กฎหมาย",
+  "@settingsGroupLegal": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupHelp": "ความช่วยเหลือและข้อเสนอแนะ",
+  "@settingsGroupHelp": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupAccount": "บัญชี",
+  "@settingsGroupAccount": {
+    "description": "Settings hub section label"
+  },
+  "settingsAppearanceSubtitle": "ธีมและภาษาของแอป",
+  "@settingsAppearanceSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsLanguageSubtitle": "ภาษาและทิศทางของแอป",
+  "@settingsLanguageSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsCompressionSubtitle": "คุณภาพและรูปแบบเริ่มต้น",
+  "@settingsCompressionSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsStorageSubtitle": "การใช้งานแคชและพื้นที่จัดเก็บ",
+  "@settingsStorageSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aiSettings": "การตั้งค่า AI",
+  "zumiAssistant": "ผู้ช่วย Zumi",
+  "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "ผู้ช่วยส่วนตัวสำหรับวิดีโอของคุณกำลังจะมาเร็ว ๆ นี้ คุณจะสามารถถามเกี่ยวกับการบีบอัด การจัดระเบียบ และวิดีโอที่บันทึกไว้ที่นี่",
+  "settingsAiSubtitle": "โมเดลท้องถิ่นและเครื่องมืออัจฉริยะ",
+  "exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet": "สำรวจโมเดลท้องถิ่นและเครื่องมือ AI ในอนาคต ตัวเลือกเหล่านี้ยังไม่เปิดใช้งาน",
+  "localModels": "โมเดลท้องถิ่น",
+  "aiModelsSubtitle": "เรียกดูและดาวน์โหลดโมเดลที่รองรับ",
+  "chooseASupportedModelDownloadItToThisDeviceAndManageInstalledModelsHere": "เลือกโมเดลที่รองรับ ดาวน์โหลดไปยังอุปกรณ์นี้ และจัดการโมเดลที่ติดตั้งที่นี่",
+  "importAModel": "นำเข้าโมเดล",
+  "aiImportSubtitle": "ใช้โมเดลที่เข้ากันได้จากไฟล์ของคุณ",
+  "selectACompatibleLocalModelFileAndReviewItsRequirementsBeforeUsingIt": "เลือกไฟล์โมเดลท้องถิ่นที่เข้ากันได้และตรวจสอบข้อกำหนดก่อนใช้งาน",
+  "smartFeatures": "คุณสมบัติอัจฉริยะ",
+  "aiFeaturesSubtitle": "การบีบอัด การจัดระเบียบ และการค้นหา",
+  "chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "เลือกคำแนะนำ AI ท้องถิ่นที่ต้องการใช้สำหรับการบีบอัดวิดีโอ การจัดระเบียบ การตั้งชื่อ และการค้นหา",
+  "modelPerformance": "ประสิทธิภาพของโมเดล",
+  "aiRuntimeSubtitle": "การตั้งค่าการประมวลผลและทรัพยากร",
+  "controlTheProcessingBackendAndResourceLimitsForSupportedModels": "ควบคุมแบ็กเอนด์การประมวลผลและขีดจำกัดทรัพยากรสำหรับโมเดลที่รองรับ",
+  "conversationSettings": "การตั้งค่าการสนทนา",
+  "aiChatSettingsSubtitle": "การสตรีม การคิด และความยาวของการตอบสนอง",
+  "configureHowTheAssistantRespondsIncludingStreamingThinkingModeSamplingAndResponseLimits": "กำหนดค่าการตอบสนองของผู้ช่วย รวมถึงการสตรีม โหมดการคิด การสุ่มตัวอย่าง และข้อจำกัดการตอบสนอง",
+  "imagesAndAudio": "ภาพและเสียง",
+  "aiMediaSubtitle": "ควบคุมอินพุตมัลติโมดอล",
+  "chooseWhetherCompatibleModelsCanAnalyzeSelectedImagesAndAudioFromYourVideos": "เลือกว่ารุ่นที่เข้ากันได้สามารถวิเคราะห์ภาพและเสียงที่เลือกจากวิดีโอของคุณได้หรือไม่",
+  "semanticSearch": "การค้นหาเชิงความหมาย",
+  "aiSearchSubtitle": "การฝังและการจัดทำดัชนีในพื้นที่",
+  "manageTheLocalEmbeddingModelAndSearchIndexForFindingVideosAndMomentsByMeaning": "จัดการโมเดลฝังในเครื่องและดัชนีการค้นหาเพื่อค้นหาวิดีโอและช่วงเวลาโดยความหมาย",
+  "toolsAndStructuredOutput": "เครื่องมือและผลลัพธ์ที่มีโครงสร้าง",
+  "aiToolsSubtitle": "การดำเนินการ โครงร่าง และการยืนยัน",
+  "manageSupportedAssistantActionsAndStructuredResponsesActionsThatAffectFilesWillRequireYourConfirmation": "จัดการการดำเนินการผู้ช่วยที่รองรับและการตอบสนองแบบมีโครงสร้าง การดำเนินการที่ส่งผลต่อไฟล์จะต้องได้รับการยืนยันจากคุณ",
+  "aiGroupModels": "โมเดล",
+  "aiGroupExperience": "ประสบการณ์ผู้ช่วย",
+  "aiGroupCapabilities": "ความสามารถอัจฉริยะ",
+  "aiGroupPerformance": "ประสิทธิภาพ",
+  "compressionHistorySubtitle": "ประวิดีโอที่บีบอัดของคุณ",
+  "@compressionHistorySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsNotificationsSubtitle": "การแจ้งเตือนการทำงานเสร็จสิ้นและอัปเดต",
+  "@settingsNotificationsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsPrivacySubtitle": "ข้อมูลของคุณอยู่ในเครื่อง",
+  "@settingsPrivacySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "plansSubtitle": "เปรียบเทียบแผนและอัปเกรด",
+  "@plansSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "plansMethodsSubtitle": "วิธีการชำระเงินและการเรียกเก็บเงิน",
+  "@plansMethodsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "plansRestoreSubtitle": "กู้คืนการซื้อก่อนหน้าของคุณ",
+  "@plansRestoreSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aboutAppSubtitle": "รายละเอียดเวอร์ชันและบิลด์",
+  "@aboutAppSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aboutDeveloperSubtitle": "นักพัฒนาผู้สร้าง Zumi",
+  "@aboutDeveloperSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aboutLicensesSubtitle": "ใบอนุญาตแพ็กเกจโอเพ่นซอร์ส",
+  "@aboutLicensesSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalPrivacySubtitle": "วิธีการจัดการข้อมูล",
+  "@legalPrivacySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalTermsSubtitle": "กฎสำหรับการใช้ Zumi",
+  "@legalTermsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalDataSafetySubtitle": "ข้อมูลที่เรารวบรวม",
+  "@legalDataSafetySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalPermissionsSubtitle": "ทำไมเราจึงต้องการสิทธิ์",
+  "@legalPermissionsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "helpFaqSubtitle": "คำตอบสำหรับคำถามที่พบบ่อย",
+  "@helpFaqSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "helpSupportSubtitle": "ติดต่อผู้พัฒนาโดยตรง",
+  "@helpSupportSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "helpFeedbackSubtitle": "ส่งความคิดเห็นของคุณให้เรา",
+  "@helpFeedbackSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "compressionPickVideo": "เลือกวิดีโอ",
+  "compressionTargetMb": "ขนาดเป้าหมาย (MB)",
+  "compressionStart": "เริ่มการบีบอัด",
+  "compressionPause": "หยุดชั่วคราว",
+  "compressionResume": "ดำเนินการต่อ",
+  "compressionViewResult": "ดูผลลัพธ์",
+  "compressionSaveGallery": "บันทึกไปที่แกลเลอรี",
+  "compressionShare": "แชร์วิดีโอ",
+  "compressionOriginalSize": "ขนาดต้นฉบับ",
+  "compressionOutputSize": "ขนาดที่ส่งออก",
+  "compressionEmptyHistory": "ยังไม่มีวิดีโอที่บีบอัด",
+  "compressionSavedGallery": "บันทึกไปที่แกลเลอรีแล้ว",
+  "compressionInvalidTarget": "กรอกขนาดเป้าหมายที่มากกว่าศูนย์",
+  "compressionCancelled": "การบีบอัดถูกยกเลิก",
+  "compressionTargetExceeded": "วิดีโอนี้ไม่สามารถถึงขนาดที่เลือก ลองขนาดเป้าหมายที่ใหญ่ขึ้น",
+  "compressionTargetInfeasible": "ขนาดที่เลือกเล็กเกินไปสำหรับวิดีโอนี้ เลือกขนาดที่ใหญ่ขึ้น",
+  "compressionPreviewBefore": "ตัวอย่างต้นฉบับ",
+  "compressionPreviewAfter": "ตัวอย่างที่บีบอัดแล้ว",
+  "compressionPreset": "ค่ากำหนดเป้าหมาย",
+  "compressionCustom": "ขนาดกำหนดเอง",
+  "compressionPreviewUnavailable": "ไม่สามารถดูตัวอย่างได้",
+  "compressionAdvanced": "การควบคุมขั้นสูง",
+  "compressionAutomatic": "อัตโนมัติ",
+  "compressionResolutionLimit": "ความละเอียดสูงสุด",
+  "compressionSourceResolution": "ความละเอียดต้นฉบับ",
+  "compressionFrameRateLimit": "อัตราเฟรมสูงสุด",
+  "compressionAudioQuality": "อัตราบิตเสียง",
+  "compressionRemoveAudio": "ลบเสียง",
+  "compressionVideoBitrateLimit": "เพดานอัตราบิตวิดีโอ (kbps)",
+  "compressionHdrPolicy": "การจัดการ HDR",
+  "compressionHdrConvert": "แปลงเป็น SDR",
+  "compressionHdrPreserve": "เก็บ HDR เมื่อรองรับ",
+  "compressionPlanPreview": "ก่อนที่คุณจะเริ่ม",
+  "compressionPlanLoading": "กำลังคำนวณแผนการบีบอัด…",
+  "compressionPlanResolution": "ความละเอียดที่วางแผนไว้",
+  "compressionPlanVideoBitrate": "อัตราบิตวิดีโอที่วางแผนไว้",
+  "compressionPlanAudioBitrate": "อัตราบิตเสียงที่วางแผนไว้",
+  "compressionAudioConversionNote": "การเข้ารหัสซ้ำจะแปลงเสียงเป็น AAC สเตอริโอ Dolby Atmos และ DTS เสียงแบบสเปเชียลจะไม่ถูกเก็บรักษาไว้",
+  "compressionPlanTooSmall": "เป้าหมายนี้มีขนาดเล็กเกินไปสำหรับวิดีโอที่ใช้งานได้ เพิ่มขนาดหรือปรับขีดจำกัดอื่น ๆ ให้ต่ำลง",
+  "compressionPlanLowQuality": "เป้าหมายที่เลือกอาจลดคุณภาพของวิดีโอ",
+  "compressionPlanAlreadyWithinLimit": "ต้นฉบับอยู่ภายในขีดจำกัดขนาดแล้ว",
+  "compressionInvalidBitrate": "กรอกอัตราบิตอย่างน้อย 150 kbps หรือเว้นว่างเพื่อปรับอัตโนมัติ",
+  "compressionInvalidResolution": "กรอกความละเอียดแบบคู่ตั้งแต่ 240 ถึง 16384 หรือเว้นว่างเพื่อปรับอัตโนมัติ",
+  "compressionSeek": "ตำแหน่งวิดีโอ",
+  "compressionInterrupted": "การบีบอัดก่อนหน้านี้ถูกขัดจังหวะ ไฟล์ชั่วคราวของมันถูกลบแล้ว; คุณสามารถเลือกวิดีโอและลองอีกครั้ง",
+  "compressionDismiss": "ปิด",
+  "compressionClearHistory": "ล้างประวัติ",
+  "compressionClearHistoryConfirm": "ลบประวัติทั้งหมดหรือไม่? วิดีโอที่บันทึกไว้จะยังคงอยู่บนอุปกรณ์ของคุณ",
+  "compressionAttempts": "ความพยายาม",
+  "compressionTargetSize": "ขนาดเป้าหมาย",
+  "compressionOutputResolution": "ความละเอียดเอาต์พุต",
+  "compressionInvalidVideo": "ไม่สามารถอ่านวิดีโอนี้ได้ กรุณาเลือกไฟล์อื่น",
+  "compressionInvalidOutput": "วิดีโอที่เข้ารหัสล้มเหลวในการตรวจสอบ วิดีโอต้นฉบับของคุณไม่ได้ถูกเปลี่ยน",
+  "compressionEncoderUnsupported": "อุปกรณ์นี้ไม่สามารถเข้ารหัสความละเอียดหรืออัตราเฟรมที่เลือกได้ ลดการตั้งค่านั้นแล้วลองอีกครั้ง",
+  "compressionAudioDecoderUnsupported": "อุปกรณ์นี้ไม่สามารถถอดรหัสรูปแบบเสียงนี้สำหรับการบีบอัด ลบเสียงออกหรือใช้แหล่งที่รองรับ",
+  "compressionVideoDecoderUnsupported": "อุปกรณ์นี้ไม่สามารถถอดรหัสรูปแบบวิดีโอนี้หรือโปรไฟล์สำหรับการบีบอัดได้ กรุณาเลือกแหล่งข้อมูลหรืออุปกรณ์อื่น",
+  "compressionMp4NotStreamable": "ไฟล์ MP4 ที่ส่งออกยังไม่พร้อมสำหรับการสตรีม ลองใช้วิดีโอหรืออุปกรณ์อื่น",
+  "compressionNoSpace": "พื้นที่เก็บข้อมูลว่างไม่เพียงพอสำหรับการบีบอัดวิดีโอนี้",
+  "compressionHdrUnsupported": "อุปกรณ์นี้ไม่สามารถประมวลผลโหมด HDR ที่เลือกได้ ลองแปลงเป็น SDR",
+  "compressionGeneralFailure": "ไม่สามารถทำการบีบอัดเสร็จสมบูรณ์ได้ ลองใช้การตั้งค่าหรือวิดีโออื่น",
+  "aboutIdentitySection": "ตัวตนของแอป",
+  "aboutAppName": "ชื่อแอป",
+  "aboutPackageName": "ชื่อแพ็กเกจ",
+  "aboutVersion": "เวอร์ชัน",
+  "aboutBuildNumber": "หมายเลขบิลด์",
+  "aboutEnvironmentSection": "อุปกรณ์และบิลด์",
+  "aboutOperatingSystem": "ระบบปฏิบัติการ",
+  "aboutOsVersion": "เวอร์ชัน OS",
+  "aboutBuildMode": "โหมดบิลด์",
+  "aboutDebug": "ดีบัก",
+  "aboutRelease": "ปล่อย",
+  "aboutToolchainSection": "สร้างด้วย",
+  "aboutInstallationSection": "การติดตั้ง",
+  "aboutInstaller": "ติดตั้งจาก",
+  "aboutInstalledOn": "ติดตั้งเมื่อ",
+  "aboutUpdatedOn": "ปรับปรุงเมื่อ",
+  "aboutUnavailable": "ไม่สามารถใช้งานได้",
+  "aboutProjectSection": "โครงการและการสนับสนุน",
+  "aboutRepository": "คลังเก็บ GitHub",
+  "aboutRepositorySubtitle": "ดูซอร์สโค้ดของ Zumi",
+  "aboutReadme": "อ่าน README",
+  "aboutReadmeSubtitle": "เรียนรู้เกี่ยวกับ Zumi บน GitHub",
+  "aboutIssues": "รายงานปัญหา",
+  "aboutIssuesSubtitle": "ดูและสร้างปัญหาใน GitHub",
+  "aboutLatestRelease": "รุ่นล่าสุด",
+  "aboutLatestReleaseSubtitle": "ดูรุ่นและดาวน์โหลด",
+  "aboutDonate": "สนับสนุน Zumi",
+  "aboutDonateSubtitle": "เปิดหน้าบริจาคอย่างเป็นทางการ",
+  "aboutLinkError": "ไม่สามารถเปิดลิงก์ได้ โปรดลองอีกครั้ง",
+  "aboutDeveloperSection": "นักพัฒนา",
+  "aboutDeveloperName": "Mostafa Sensei",
+  "aboutDeveloperProfile": "โปรไฟล์ GitHub",
+  "aboutDeveloperProfileSubtitle": "ดูโครงการและรายละเอียดการติดต่อ",
+  "maintenanceInProgress": "อยู่ระหว่างการบำรุงรักษา",
+  "maintenanceMessage": "Zumi ไม่สามารถใช้งานได้ชั่วคราว โปรดลองอีกครั้งภายหลัง",
+  "comingSoon": "เร็วๆ นี้",
+  "@comingSoon": {
+    "description": "Badge shown on placeholder pages"
+  },
+  "@countryName": {
+    "description": "Name of a country in the current app language",
+    "placeholders": {
+      "countryCode": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "ไทย",
+  "countryCode": "TH",
+  "countryName": "{countryCode, select, AE{สหรัฐอาหรับเอมิเรตส์} AT{ออสเตรีย} AU{ออสเตรเลีย} BE{เบลเยียม} BH{บาห์เรน} BR{บราซิล} CA{แคนาดา} CH{สวิตเซอร์แลนด์} CN{จีน} DE{เยอรมนี} DJ{จิบูตี} DZ{แอลจีเรีย} EG{อียิปต์} ES{สเปน} FR{ฝรั่งเศส} GB{สหราชอาณาจักร} HK{เขตปกครองพิเศษฮ่องกงแห่งสาธารณรัฐประชาชนจีน} ID{อินโดนีเซีย} IQ{อิรัก} IT{อิตาลี} JO{จอร์แดน} JP{ญี่ปุ่น} KM{คอโมโรส} KR{เกาหลีใต้} KW{คูเวต} LB{เลบานอน} LY{ลิเบีย} MA{โมร็อกโก} MR{มอริเตเนีย} MX{เม็กซิโก} NL{เนเธอร์แลนด์} OM{โอมาน} PL{โปแลนด์} PS{ดินแดนปาเลสไตน์} PT{โปรตุเกส} QA{กาตาร์} RU{รัสเซีย} SA{ซาอุดีอาระเบีย} SD{ซูดาน} SE{สวีเดน} SG{สิงคโปร์} SO{โซมาเลีย} SY{ซีเรีย} TH{ไทย} TN{ตูนิเซีย} TR{ตุรกี} TW{ไต้หวัน} US{สหรัฐอเมริกา} VN{เวียดนาม} YE{เยเมน} other{ประเทศ}}"
+}

@@ -1,0 +1,725 @@
+{
+  "@@locale": "ru_RU",
+  "zumi": "Zumi",
+  "@zumi": {
+    "description": "Application name shown in the app and on the home page"
+  },
+  "downloadFile": "Скачать файл",
+  "@downloadFile": {
+    "description": "Title for download file dialog"
+  },
+  "fileOpenedInBrowser": "Файл открыт в браузере: {fileName}",
+  "@fileOpenedInBrowser": {
+    "description": "Message shown when file is opened in browser",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "fileSavedToDcim": "Файл сохранен в галерею: {fileName}",
+  "@fileSavedToDcim": {
+    "description": "Message shown when file is saved to gallery",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "fileSavedToDocuments": "Файл сохранен в документы: {fileName}",
+  "@fileSavedToDocuments": {
+    "description": "Message shown when file is saved to documents",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "fileAlreadySaved": "Файл уже сохранен",
+  "@fileAlreadySaved": {
+    "description": "Message shown when file already exists"
+  },
+  "error": "Ошибка",
+  "@error": {
+    "description": "Generic error title"
+  },
+  "info": "Информация",
+  "@info": {
+    "description": "Generic info title"
+  },
+  "success": "Успех",
+  "@success": {
+    "description": "Generic success title"
+  },
+  "warning": "Предупреждение",
+  "@warning": {
+    "description": "Generic warning title"
+  },
+  "paid": "Оплачено",
+  "@paid": {
+    "description": "Payment status paid"
+  },
+  "unpaid": "Неоплачено",
+  "@unpaid": {
+    "description": "Payment status unpaid"
+  },
+  "partial": "Частично",
+  "@partial": {
+    "description": "Payment status partial"
+  },
+  "error_address_line_cant_be_empty": "Строка адреса не может быть пустой",
+  "@error_address_line_cant_be_empty": {
+    "description": "Address line empty error"
+  },
+  "error_address_line_too_long": "Строка адреса слишком длинная",
+  "@error_address_line_too_long": {
+    "description": "Address line too long error"
+  },
+  "error_address_invalid_special_characters": "Специальные символы не допускаются",
+  "@error_address_invalid_special_characters": {
+    "description": "Address special characters error"
+  },
+  "error_address_emoji_not_allowed": "Эмодзи не допускаются",
+  "@error_address_emoji_not_allowed": {
+    "description": "Address emoji not allowed error"
+  },
+  "error_city_cant_be_empty": "Город не может быть пустым",
+  "@error_city_cant_be_empty": {
+    "description": "City empty error"
+  },
+  "error_city_too_long": "Название города слишком длинное",
+  "@error_city_too_long": {
+    "description": "City too long error"
+  },
+  "error_city_invalid_special_characters": "Город содержит недопустимые специальные символы",
+  "@error_city_invalid_special_characters": {
+    "description": "City special characters error"
+  },
+  "error_address_label_cant_be_empty": "Метка адреса не может быть пустой",
+  "@error_address_label_cant_be_empty": {
+    "description": "Address label empty error"
+  },
+  "error_address_label_too_long": "Метка адреса слишком длинная",
+  "@error_address_label_too_long": {
+    "description": "Address label too long error"
+  },
+  "error_email_cant_be_empty": "Электронная почта не может быть пустой",
+  "@error_email_cant_be_empty": {
+    "description": "Email empty error"
+  },
+  "error_email_not_invalid_format": "Недопустимый формат электронной почты",
+  "@error_email_not_invalid_format": {
+    "description": "Email invalid format error"
+  },
+  "error_email_contains_invalid_characters": "Электронная почта содержит недопустимые символы",
+  "@error_email_contains_invalid_characters": {
+    "description": "Email invalid characters error"
+  },
+  "error_email_must_contain_at_symbol": "Электронная почта должна содержать @",
+  "@error_email_must_contain_at_symbol": {
+    "description": "Email missing @ error"
+  },
+  "error_email_must_be_in_lowercase": "Электронная почта должна быть в нижнем регистре",
+  "@error_email_must_be_in_lowercase": {
+    "description": "Email not in lowercase error"
+  },
+  "error_arabic_not_allowed": "Арабские символы не допускаются",
+  "@error_arabic_not_allowed": {
+    "description": "Arabic characters not allowed error"
+  },
+  "error_email_emoji_not_allowed": "Эмодзи в электронной почте не допускаются",
+  "@error_email_emoji_not_allowed": {
+    "description": "Email emoji not allowed error"
+  },
+  "error_phone_number_cant_be_empty": "Номер телефона не может быть пустым",
+  "@error_phone_number_cant_be_empty": {
+    "description": "Phone number empty error"
+  },
+  "error_phone_number_invalid": "Неверный номер телефона",
+  "@error_phone_number_invalid": {
+    "description": "Phone number invalid error"
+  },
+  "error_phone_number_min_length": "Номер телефона должен содержать не менее 11 цифр",
+  "@error_phone_number_min_length": {
+    "description": "Phone number min length error"
+  },
+  "error_name_cant_be_empty": "Имя не может быть пустым",
+  "@error_name_cant_be_empty": {
+    "description": "Name empty error"
+  },
+  "error_name_invalid": "Неверное имя",
+  "@error_name_invalid": {
+    "description": "Name invalid error"
+  },
+  "error_name_too_short_at_least_3_characters": "Имя должно содержать не менее 3 символов",
+  "@error_name_too_short_at_least_3_characters": {
+    "description": "Name too short error"
+  },
+  "error_name_too_long_maximum_20_characters": "Имя не может превышать 20 символов",
+  "@error_name_too_long_maximum_20_characters": {
+    "description": "Name too long error"
+  },
+  "error_name_invalid_special_characters": "Имя содержит недопустимые специальные символы",
+  "@error_name_invalid_special_characters": {
+    "description": "Name special characters error"
+  },
+  "error_name_emoji_not_allowed": "Эмодзи в имени не допускаются",
+  "@error_name_emoji_not_allowed": {
+    "description": "Name emoji not allowed error"
+  },
+  "error_password_cant_be_empty": "Пароль не может быть пустым",
+  "@error_password_cant_be_empty": {
+    "description": "Password empty error"
+  },
+  "error_password_must_contain_uppercase_lowercase_number_and_special_character": "Пароль должен содержать заглавные и строчные буквы, цифру и специальный символ",
+  "@error_password_must_contain_uppercase_lowercase_number_and_special_character": {
+    "description": "Password complex requirements error"
+  },
+  "error_password_must_be_at_least_8_characters_long": "Пароль должен содержать не менее 8 символов",
+  "@error_password_must_be_at_least_8_characters_long": {
+    "description": "Password min length error"
+  },
+  "noInternetConnection": "Нет интернет-соединения",
+  "@noInternetConnection": {
+    "description": "No internet connection message"
+  },
+  "internetConnectionRestored": "Интернет-соединение восстановлено",
+  "@internetConnectionRestored": {
+    "description": "Internet connection restored message"
+  },
+  "retry": "Повторить",
+  "@retry": {
+    "description": "Retry button text"
+  },
+  "cancel": "Отмена",
+  "@cancel": {
+    "description": "Cancel button text"
+  },
+  "confirm": "Подтвердить",
+  "@confirm": {
+    "description": "Confirm button text"
+  },
+  "pleaseWait": "Пожалуйста, подождите...",
+  "@pleaseWait": {
+    "description": "Please wait dialog text"
+  },
+  "ok": "ОК",
+  "@ok": {
+    "description": "OK button text"
+  },
+  "compressVideosPrivatelyOnYourDevice": "Сжимайте видео конфиденциально прямо на устройстве.",
+  "@compressVideosPrivatelyOnYourDevice": {
+    "description": "Home page description"
+  },
+  "welcomeToZumi": "Добро пожаловать в Zumi",
+  "@welcomeToZumi": {
+    "description": "Onboarding page title"
+  },
+  "learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": "Узнайте, как Zumi сжимает ваши видео, не покидая ваш телефон.",
+  "@learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": {
+    "description": "Onboarding page description"
+  },
+  "signIn": "Войти",
+  "@signIn": {
+    "description": "Login page title"
+  },
+  "signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": "Войдите, чтобы синхронизировать ваш план и сохранить ваши покупки доступными на всех устройствах.",
+  "@signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": {
+    "description": "Login page description"
+  },
+  "chooseAVideo": "Выберите видео",
+  "@chooseAVideo": {
+    "description": "Video picker page title"
+  },
+  "pickAVideoFromYourGalleryToStartCompressing": "Выберите видео из вашей галереи, чтобы начать сжатие.",
+  "@pickAVideoFromYourGalleryToStartCompressing": {
+    "description": "Video picker page description"
+  },
+  "compressionSetup": "Настройка сжатия",
+  "@compressionSetup": {
+    "description": "Compression setup page title"
+  },
+  "chooseResolutionBitrateAndOutputFormatBeforeYouStart": "Выберите разрешение, битрейт и формат вывода перед началом.",
+  "@chooseResolutionBitrateAndOutputFormatBeforeYouStart": {
+    "description": "Compression setup page description"
+  },
+  "compressing": "Сжатие",
+  "@compressing": {
+    "description": "Compression progress page title"
+  },
+  "followTheLiveProgressOfYourCompressionJob": "Следите за текущим ходом вашей операции сжатия.",
+  "@followTheLiveProgressOfYourCompressionJob": {
+    "description": "Compression progress page description"
+  },
+  "compressionResult": "Результат сжатия",
+  "@compressionResult": {
+    "description": "Compression result page title"
+  },
+  "compareTheBeforeAndAfterSizeThenSaveOrShareTheResult": "Сравните размеры до и после, затем сохраните или поделитесь результатом.",
+  "@compareTheBeforeAndAfterSizeThenSaveOrShareTheResult": {
+    "description": "Compression result page description"
+  },
+  "compressionHistory": "История сжатия",
+  "@compressionHistory": {
+    "description": "Compression history page title"
+  },
+  "reviewTheVideosYouHaveCompressedOnThisDevice": "Просмотрите видео, которые вы сжимали на этом устройстве.",
+  "@reviewTheVideosYouHaveCompressedOnThisDevice": {
+    "description": "Compression history page description"
+  },
+  "settings": "Настройки",
+  "@settings": {
+    "description": "Settings hub page title"
+  },
+  "appearance": "Внешний вид",
+  "@appearance": {
+    "description": "Appearance settings page title"
+  },
+  "themeColorSchemeAndMotionPreferences": "Тема, цветовая схема и предпочтения движения.",
+  "@themeColorSchemeAndMotionPreferences": {
+    "description": "Appearance settings page description"
+  },
+  "language": "Язык",
+  "@language": {
+    "description": "Language settings page title"
+  },
+  "appLanguageAndTextDirection": "Язык приложения и направление текста.",
+  "@appLanguageAndTextDirection": {
+    "description": "Language settings page description"
+  },
+  "compressionDefaults": "Стандартные настройки сжатия",
+  "@compressionDefaults": {
+    "description": "Compression defaults page title"
+  },
+  "defaultResolutionBitrateAndOutputFormat": "Стандартное разрешение, битрейт и формат вывода.",
+  "@defaultResolutionBitrateAndOutputFormat": {
+    "description": "Compression defaults page description"
+  },
+  "storageCleanup": "Хранение и очистка",
+  "@storageCleanup": {
+    "description": "Storage settings page title"
+  },
+  "storageUsageCacheSizeAndTemporaryFileCleanup": "Использование памяти, размер кэша и очистка временных файлов.",
+  "@storageUsageCacheSizeAndTemporaryFileCleanup": {
+    "description": "Storage settings page description"
+  },
+  "notifications": "Уведомления",
+  "@notifications": {
+    "description": "Notifications settings page title"
+  },
+  "jobCompletionAndProductUpdateNotifications": "Уведомления о завершении работы и обновлении продукта.",
+  "@jobCompletionAndProductUpdateNotifications": {
+    "description": "Notifications settings page description"
+  },
+  "privacy": "Конфиденциальность",
+  "@privacy": {
+    "description": "Privacy settings page title"
+  },
+  "onDeviceProcessingLocalLogsAndOptionalCrashReports": "Обработка на устройстве, локальные журналы и необязательные отчёты о сбоях.",
+  "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
+    "description": "Privacy settings page description"
+  },
+  "aboutZumi": "О Zumi",
+  "@aboutZumi": {
+    "description": "App info page title"
+  },
+  "versionBuildNumberAndApplicationDetails": "Версия, номер сборки и информация о приложении.",
+  "@versionBuildNumberAndApplicationDetails": {
+    "description": "App info page description"
+  },
+  "aboutTheDeveloper": "О разработчике",
+  "@aboutTheDeveloper": {
+    "description": "Developer page title"
+  },
+  "theDeveloperAndToolsBehindZumi": "Разработчик и инструменты, использованные для создания Zumi.",
+  "@theDeveloperAndToolsBehindZumi": {
+    "description": "Developer page description"
+  },
+  "openSourceLicenses": "Лицензии с открытым исходным кодом",
+  "@openSourceLicenses": {
+    "description": "Licenses page title"
+  },
+  "openSourcePackagesBundledWithZumi": "Пакеты с открытым исходным кодом, включённые в Zumi.",
+  "@openSourcePackagesBundledWithZumi": {
+    "description": "Licenses page description"
+  },
+  "privacyPolicy": "Политика конфиденциальности",
+  "@privacyPolicy": {
+    "description": "Privacy policy page title"
+  },
+  "howZumiHandlesYourVideosAndData": "Как Zumi обрабатывает ваши видео и данные.",
+  "@howZumiHandlesYourVideosAndData": {
+    "description": "Privacy policy page description"
+  },
+  "termsOfService": "Условия использования",
+  "@termsOfService": {
+    "description": "Terms page title"
+  },
+  "theTermsThatApplyToZumiAndItsPurchases": "Условия, которые применяются к Zumi и его покупкам.",
+  "@theTermsThatApplyToZumiAndItsPurchases": {
+    "description": "Terms page description"
+  },
+  "dataSafety": "Безопасность данных",
+  "@dataSafety": {
+    "description": "Data safety page title"
+  },
+  "summaryOfTheDataZumiCollectsAndWhy": "Сводка собираемых данных Zumi и причины их сбора.",
+  "@summaryOfTheDataZumiCollectsAndWhy": {
+    "description": "Data safety page description"
+  },
+  "permissions": "Разрешения",
+  "@permissions": {
+    "description": "Permissions page title"
+  },
+  "runtimePermissionsZumiRequestsAndWhyEachIsNeeded": "Разрешения во время работы, которые запрашивает Zumi, и зачем нужны каждое из них.",
+  "@runtimePermissionsZumiRequestsAndWhyEachIsNeeded": {
+    "description": "Permissions page description"
+  },
+  "faq": "Часто задаваемые вопросы",
+  "@faq": {
+    "description": "FAQ page title"
+  },
+  "answersToCommonQuestionsAboutCompressionAndBilling": "Ответы на распространенные вопросы о сжатии и оплате.",
+  "@answersToCommonQuestionsAboutCompressionAndBilling": {
+    "description": "FAQ page description"
+  },
+  "support": "Поддержка",
+  "@support": {
+    "description": "Support page title"
+  },
+  "getHelpWithYourAccountOrAPurchase": "Получите помощь с вашим аккаунтом или покупкой.",
+  "@getHelpWithYourAccountOrAPurchase": {
+    "description": "Support page description"
+  },
+  "sendFeedback": "Отправить отзыв",
+  "@sendFeedback": {
+    "description": "Feedback page title"
+  },
+  "reportAProblemOrSuggestAnImprovement": "Сообщить о проблеме или предложить улучшение.",
+  "@reportAProblemOrSuggestAnImprovement": {
+    "description": "Feedback page description"
+  },
+  "plans": "Тарифные планы",
+  "@plans": {
+    "description": "Plans page title"
+  },
+  "comparePlansAndSeeWhatEachOneUnlocks": "Сравните тарифные планы и узнайте, что каждый из них открывает.",
+  "@comparePlansAndSeeWhatEachOneUnlocks": {
+    "description": "Plans page description"
+  },
+  "planDetails": "Детали плана",
+  "@planDetails": {
+    "description": "Plan details page title"
+  },
+  "benefitsLimitsAndPricingForThisPlan": "Преимущества, ограничения и стоимость этого плана.",
+  "@benefitsLimitsAndPricingForThisPlan": {
+    "description": "Plan details page description"
+  },
+  "paymentMethods": "Способы оплаты",
+  "@paymentMethods": {
+    "description": "Purchase methods page title"
+  },
+  "supportedWaysToPayIncludingStoreBilling": "Поддерживаемые способы оплаты, включая оплату через магазин.",
+  "@supportedWaysToPayIncludingStoreBilling": {
+    "description": "Purchase methods page description"
+  },
+  "restorePurchases": "Восстановить покупки",
+  "@restorePurchases": {
+    "description": "Restore purchases page title"
+  },
+  "reApplyAPurchaseMadeOnAnotherDevice": "Повторно применить покупку, сделанную на другом устройстве.",
+  "@reApplyAPurchaseMadeOnAnotherDevice": {
+    "description": "Restore purchases page description"
+  },
+  "profile": "Профиль",
+  "@profile": {
+    "description": "Profile page title"
+  },
+  "yourIdentityPlanStatusAndAccountPreferences": "Ваша личность, статус плана и настройки аккаунта.",
+  "@yourIdentityPlanStatusAndAccountPreferences": {
+    "description": "Profile page description"
+  },
+  "deleteAccount": "Удалить аккаунт",
+  "@deleteAccount": {
+    "description": "Delete account page title"
+  },
+  "permanentlyRemoveYourAccountAndItsServerSideData": "Навсегда удалить ваш аккаунт и данные на сервере.",
+  "@permanentlyRemoveYourAccountAndItsServerSideData": {
+    "description": "Delete account page description"
+  },
+  "rateZumi": "Оценить Zumi",
+  "@rateZumi": {
+    "description": "Rate app page title"
+  },
+  "tellOthersHowZumiWorkedForYouOnTheStore": "Расскажите другим, как Zumi работал для вас в магазине.",
+  "@tellOthersHowZumiWorkedForYouOnTheStore": {
+    "description": "Rate app page description"
+  },
+  "shareZumi": "Поделиться Zumi",
+  "@shareZumi": {
+    "description": "Share app page title"
+  },
+  "recommendZumiToAFriend": "Порекомендуйте Zumi другу.",
+  "@recommendZumiToAFriend": {
+    "description": "Share app page description"
+  },
+  "settingsGroupAppearance": "Внешний вид и язык",
+  "@settingsGroupAppearance": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupCompression": "Сжатие",
+  "@settingsGroupCompression": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupAi": "ИИ на устройстве",
+  "@settingsGroupAi": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupPrivacy": "Уведомления и конфиденциальность",
+  "@settingsGroupPrivacy": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupPlans": "Планы и покупки",
+  "@settingsGroupPlans": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupAbout": "О программе",
+  "@settingsGroupAbout": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupLegal": "Юридическая информация",
+  "@settingsGroupLegal": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupHelp": "Справка и отзывы",
+  "@settingsGroupHelp": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupAccount": "Аккаунт",
+  "@settingsGroupAccount": {
+    "description": "Settings hub section label"
+  },
+  "settingsAppearanceSubtitle": "Тема и язык приложения",
+  "@settingsAppearanceSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsLanguageSubtitle": "Язык приложения и направление текста",
+  "@settingsLanguageSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsCompressionSubtitle": "Качество и формат по умолчанию",
+  "@settingsCompressionSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsStorageSubtitle": "Использование кеша и хранилища",
+  "@settingsStorageSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aiSettings": "Настройки ИИ",
+  "zumiAssistant": "Помощник Zumi",
+  "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "Скоро появится личный помощник для ваших видео. Здесь вы сможете задавать вопросы о сжатии, организации и сохранённых видео.",
+  "settingsAiSubtitle": "Локальные модели и умные инструменты",
+  "exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet": "Изучайте локальные модели и будущие инструменты ИИ. Эти опции пока недоступны.",
+  "localModels": "Локальные модели",
+  "aiModelsSubtitle": "Просматривайте и скачивайте поддерживаемые модели",
+  "chooseASupportedModelDownloadItToThisDeviceAndManageInstalledModelsHere": "Выберите поддерживаемую модель, скачайте её на это устройство и управляйте установленными моделями здесь.",
+  "importAModel": "Импорт модели",
+  "aiImportSubtitle": "Используйте совместимую модель из ваших файлов",
+  "selectACompatibleLocalModelFileAndReviewItsRequirementsBeforeUsingIt": "Выберите совместимый локальный файл модели и ознакомьтесь с его требованиями перед использованием.",
+  "smartFeatures": "Умные функции",
+  "aiFeaturesSubtitle": "Сжатие, организация и поиск",
+  "chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "Выберите, какие локальные AI-предложения использовать для сжатия видео, организации, именования и поиска.",
+  "modelPerformance": "Производительность модели",
+  "aiRuntimeSubtitle": "Настройки обработки и ресурсов",
+  "controlTheProcessingBackendAndResourceLimitsForSupportedModels": "Контролируйте используемую обработку и лимиты ресурсов для поддерживаемых моделей.",
+  "conversationSettings": "Настройки разговора",
+  "aiChatSettingsSubtitle": "Потоковая передача, размышления и длина ответа",
+  "configureHowTheAssistantRespondsIncludingStreamingThinkingModeSamplingAndResponseLimits": "Настройте, как ассистент отвечает, включая потоковую передачу, режим размышления, выборку и ограничения ответов.",
+  "imagesAndAudio": "Изображения и аудио",
+  "aiMediaSubtitle": "Управление мультимодальными входными данными",
+  "chooseWhetherCompatibleModelsCanAnalyzeSelectedImagesAndAudioFromYourVideos": "Выберите, могут ли совместимые модели анализировать выбранные изображения и аудио из ваших видео.",
+  "semanticSearch": "Семантический поиск",
+  "aiSearchSubtitle": "Встраивания и локальная индексация",
+  "manageTheLocalEmbeddingModelAndSearchIndexForFindingVideosAndMomentsByMeaning": "Управляйте локальной моделью встраивания и индексом поиска для нахождения видео и моментов по смыслу.",
+  "toolsAndStructuredOutput": "Инструменты и структурированный вывод",
+  "aiToolsSubtitle": "Действия, схемы и подтверждения",
+  "manageSupportedAssistantActionsAndStructuredResponsesActionsThatAffectFilesWillRequireYourConfirmation": "Управляйте поддерживаемыми действиями помощника и структурированными ответами. Действия, которые влияют на файлы, потребуют вашего подтверждения.",
+  "aiGroupModels": "Модели",
+  "aiGroupExperience": "Опыт работы с помощником",
+  "aiGroupCapabilities": "Умные возможности",
+  "aiGroupPerformance": "Производительность",
+  "compressionHistorySubtitle": "Ваша история сжатых видео",
+  "@compressionHistorySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsNotificationsSubtitle": "Оповещения о завершении и обновлениях",
+  "@settingsNotificationsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsPrivacySubtitle": "Ваши данные остаются локальными",
+  "@settingsPrivacySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "plansSubtitle": "Сравнить тарифные планы и обновить",
+  "@plansSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "plansMethodsSubtitle": "Способы оплаты и выставления счетов",
+  "@plansMethodsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "plansRestoreSubtitle": "Восстановить предыдущую покупку",
+  "@plansRestoreSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aboutAppSubtitle": "Сведения о версии и сборке",
+  "@aboutAppSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aboutDeveloperSubtitle": "Разработчик Zumi",
+  "@aboutDeveloperSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aboutLicensesSubtitle": "Лицензии на пакеты с открытым исходным кодом",
+  "@aboutLicensesSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalPrivacySubtitle": "Как обрабатываются данные",
+  "@legalPrivacySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalTermsSubtitle": "Правила использования Zumi",
+  "@legalTermsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalDataSafetySubtitle": "Какие данные мы собираем",
+  "@legalDataSafetySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalPermissionsSubtitle": "Зачем нам нужны разрешения",
+  "@legalPermissionsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "helpFaqSubtitle": "Ответы на часто задаваемые вопросы",
+  "@helpFaqSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "helpSupportSubtitle": "Связаться с разработчиком напрямую",
+  "@helpSupportSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "helpFeedbackSubtitle": "Отправьте нам свой отзыв",
+  "@helpFeedbackSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "compressionPickVideo": "Выбрать видео",
+  "compressionTargetMb": "Целевой размер (МБ)",
+  "compressionStart": "Начать сжатие",
+  "compressionPause": "Пауза",
+  "compressionResume": "Продолжить",
+  "compressionViewResult": "Просмотр результата",
+  "compressionSaveGallery": "Сохранить в галерею",
+  "compressionShare": "Поделиться видео",
+  "compressionOriginalSize": "Исходный размер",
+  "compressionOutputSize": "Размер после сжатия",
+  "compressionEmptyHistory": "Сжатых видео пока нет",
+  "compressionSavedGallery": "Сохранено в галерею",
+  "compressionInvalidTarget": "Введите целевой размер больше нуля",
+  "compressionCancelled": "Сжатие отменено",
+  "compressionTargetExceeded": "Это видео не достигло выбранного размера. Попробуйте выбрать больший целевой размер.",
+  "compressionTargetInfeasible": "Выбранный размер слишком мал для этого видео. Выберите больший размер.",
+  "compressionPreviewBefore": "Предварительный просмотр оригинала",
+  "compressionPreviewAfter": "Сжатый предварительный просмотр",
+  "compressionPreset": "Целевая предустановка",
+  "compressionCustom": "Пользовательский размер",
+  "compressionPreviewUnavailable": "Предварительный просмотр недоступен",
+  "compressionAdvanced": "Расширенные настройки",
+  "compressionAutomatic": "Автоматически",
+  "compressionResolutionLimit": "Максимальное разрешение",
+  "compressionSourceResolution": "Оригинальное разрешение",
+  "compressionFrameRateLimit": "Максимальная частота кадров",
+  "compressionAudioQuality": "Битрейт аудио",
+  "compressionRemoveAudio": "Удалить аудио",
+  "compressionVideoBitrateLimit": "Потолок битрейта видео (кбит/с)",
+  "compressionHdrPolicy": "Обработка HDR",
+  "compressionHdrConvert": "Преобразовать в SDR",
+  "compressionHdrPreserve": "Сохранять HDR при поддержке",
+  "compressionPlanPreview": "Перед началом",
+  "compressionPlanLoading": "Вычисление плана сжатия…",
+  "compressionPlanResolution": "Планируемое разрешение",
+  "compressionPlanVideoBitrate": "Планируемый битрейт видео",
+  "compressionPlanAudioBitrate": "Планируемый битрейт аудио",
+  "compressionAudioConversionNote": "Пере-кодирование преобразует аудио в AAC стерео. Dolby Atmos и DTS пространственное аудио не будут сохранены.",
+  "compressionPlanTooSmall": "Эта цель слишком мала для пригодного видео. Увеличьте размер или снизьте другие ограничения.",
+  "compressionPlanLowQuality": "Выбранная цель может снизить качество видео.",
+  "compressionPlanAlreadyWithinLimit": "Источник уже находится в пределах допустимого размера.",
+  "compressionInvalidBitrate": "Введите битрейт не менее 150 кбит/с или оставьте поле пустым для автоматического выбора.",
+  "compressionInvalidResolution": "Введите четное разрешение от 240 до 16384, или оставьте поле пустым для автоматического выбора.",
+  "compressionSeek": "Положение видео",
+  "compressionInterrupted": "Предыдущая компрессия была прервана. Временные файлы были удалены; вы можете выбрать видео и попробовать снова.",
+  "compressionDismiss": "Закрыть",
+  "compressionClearHistory": "Очистить историю",
+  "compressionClearHistoryConfirm": "Удалить все записи истории? Сохранённые видео останутся на вашем устройстве.",
+  "compressionAttempts": "Попытки",
+  "compressionTargetSize": "Целевой размер",
+  "compressionOutputResolution": "Разрешение вывода",
+  "compressionInvalidVideo": "Это видео не удалось прочитать. Выберите другой файл.",
+  "compressionInvalidOutput": "Закодированное видео не прошло проверку. Ваш оригинальный видеофайл не был изменён.",
+  "compressionEncoderUnsupported": "Это устройство не может кодировать выбранное разрешение или частоту кадров. Уменьшите эту настройку и попробуйте снова.",
+  "compressionAudioDecoderUnsupported": "Это устройство не может декодировать этот аудиоформат для сжатия. Удалите аудио или используйте поддерживаемый источник.",
+  "compressionVideoDecoderUnsupported": "Это устройство не может декодировать этот видеоформат или профиль сжатия. Выберите другой источник или устройство.",
+  "compressionMp4NotStreamable": "Экспортированный MP4 не готов для стриминга. Попробуйте другое видео или устройство.",
+  "compressionNoSpace": "Недостаточно свободного места для сжатия этого видео.",
+  "compressionHdrUnsupported": "Это устройство не может обработать выбранный режим HDR. Попробуйте конвертировать в SDR.",
+  "compressionGeneralFailure": "Не удалось завершить сжатие. Попробуйте другой параметр или видео.",
+  "aboutIdentitySection": "Идентификатор приложения",
+  "aboutAppName": "Название приложения",
+  "aboutPackageName": "Имя пакета",
+  "aboutVersion": "Версия",
+  "aboutBuildNumber": "Номер сборки",
+  "aboutEnvironmentSection": "Устройство и сборка",
+  "aboutOperatingSystem": "Операционная система",
+  "aboutOsVersion": "Версия ОС",
+  "aboutBuildMode": "Режим сборки",
+  "aboutDebug": "Отладка",
+  "aboutRelease": "Релиз",
+  "aboutToolchainSection": "Создано с помощью",
+  "aboutInstallationSection": "Установка",
+  "aboutInstaller": "Установлено из",
+  "aboutInstalledOn": "Установлено на",
+  "aboutUpdatedOn": "Обновлено",
+  "aboutUnavailable": "Недоступно",
+  "aboutProjectSection": "Проект и поддержка",
+  "aboutRepository": "Репозиторий на GitHub",
+  "aboutRepositorySubtitle": "Просмотреть исходный код Zumi",
+  "aboutReadme": "Прочитать README",
+  "aboutReadmeSubtitle": "Узнать о Zumi на GitHub",
+  "aboutIssues": "Сообщить о проблеме",
+  "aboutIssuesSubtitle": "Просмотреть и создать задачи на GitHub",
+  "aboutLatestRelease": "Последний выпуск",
+  "aboutLatestReleaseSubtitle": "Просмотреть выпуски и загрузки",
+  "aboutDonate": "Поддержать Zumi",
+  "aboutDonateSubtitle": "Открыть официальную страницу пожертвований",
+  "aboutLinkError": "Не удалось открыть ссылку. Пожалуйста, попробуйте еще раз.",
+  "aboutDeveloperSection": "Разработчик",
+  "aboutDeveloperName": "Mostafa Sensei",
+  "aboutDeveloperProfile": "Профиль на GitHub",
+  "aboutDeveloperProfileSubtitle": "Посмотреть проекты и контактные данные",
+  "maintenanceInProgress": "Идёт техническое обслуживание",
+  "maintenanceMessage": "Zumi временно недоступен. Пожалуйста, попробуйте позже.",
+  "comingSoon": "Скоро",
+  "@comingSoon": {
+    "description": "Badge shown on placeholder pages"
+  },
+  "@countryName": {
+    "description": "Name of a country in the current app language",
+    "placeholders": {
+      "countryCode": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "Русский",
+  "countryCode": "RU",
+  "countryName": "{countryCode, select, AE{ОАЭ} AT{Австрия} AU{Австралия} BE{Бельгия} BH{Бахрейн} BR{Бразилия} CA{Канада} CH{Швейцария} CN{Китай} DE{Германия} DJ{Джибути} DZ{Алжир} EG{Египет} ES{Испания} FR{Франция} GB{Великобритания} HK{Гонконг (САР)} ID{Индонезия} IQ{Ирак} IT{Италия} JO{Иордания} JP{Япония} KM{Коморы} KR{Республика Корея} KW{Кувейт} LB{Ливан} LY{Ливия} MA{Марокко} MR{Мавритания} MX{Мексика} NL{Нидерланды} OM{Оман} PL{Польша} PS{Палестинские территории} PT{Португалия} QA{Катар} RU{Россия} SA{Саудовская Аравия} SD{Судан} SE{Швеция} SG{Сингапур} SO{Сомали} SY{Сирия} TH{Таиланд} TN{Тунис} TR{Турция} TW{Тайвань} US{Соединенные Штаты} VN{Вьетнам} YE{Йемен} other{Страна}}"
+}

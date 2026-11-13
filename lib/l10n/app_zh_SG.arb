@@ -1,0 +1,725 @@
+{
+  "@@locale": "zh_SG",
+  "zumi": "Zumi",
+  "@zumi": {
+    "description": "Application name shown in the app and on the home page"
+  },
+  "downloadFile": "下载文件",
+  "@downloadFile": {
+    "description": "Title for download file dialog"
+  },
+  "fileOpenedInBrowser": "文件已在浏览器中打开：{fileName}",
+  "@fileOpenedInBrowser": {
+    "description": "Message shown when file is opened in browser",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "fileSavedToDcim": "文件已保存到图库：{fileName}",
+  "@fileSavedToDcim": {
+    "description": "Message shown when file is saved to gallery",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "fileSavedToDocuments": "文件已保存到文档：{fileName}",
+  "@fileSavedToDocuments": {
+    "description": "Message shown when file is saved to documents",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "fileAlreadySaved": "文件已存在",
+  "@fileAlreadySaved": {
+    "description": "Message shown when file already exists"
+  },
+  "error": "错误",
+  "@error": {
+    "description": "Generic error title"
+  },
+  "info": "信息",
+  "@info": {
+    "description": "Generic info title"
+  },
+  "success": "成功",
+  "@success": {
+    "description": "Generic success title"
+  },
+  "warning": "警告",
+  "@warning": {
+    "description": "Generic warning title"
+  },
+  "paid": "已付款",
+  "@paid": {
+    "description": "Payment status paid"
+  },
+  "unpaid": "未付款",
+  "@unpaid": {
+    "description": "Payment status unpaid"
+  },
+  "partial": "部分",
+  "@partial": {
+    "description": "Payment status partial"
+  },
+  "error_address_line_cant_be_empty": "地址行不能为空",
+  "@error_address_line_cant_be_empty": {
+    "description": "Address line empty error"
+  },
+  "error_address_line_too_long": "地址行太长",
+  "@error_address_line_too_long": {
+    "description": "Address line too long error"
+  },
+  "error_address_invalid_special_characters": "不允许使用特殊字符",
+  "@error_address_invalid_special_characters": {
+    "description": "Address special characters error"
+  },
+  "error_address_emoji_not_allowed": "不允许使用表情符号",
+  "@error_address_emoji_not_allowed": {
+    "description": "Address emoji not allowed error"
+  },
+  "error_city_cant_be_empty": "城市不能为空",
+  "@error_city_cant_be_empty": {
+    "description": "City empty error"
+  },
+  "error_city_too_long": "城市名称太长",
+  "@error_city_too_long": {
+    "description": "City too long error"
+  },
+  "error_city_invalid_special_characters": "城市包含无效的特殊字符",
+  "@error_city_invalid_special_characters": {
+    "description": "City special characters error"
+  },
+  "error_address_label_cant_be_empty": "地址标签不能为空",
+  "@error_address_label_cant_be_empty": {
+    "description": "Address label empty error"
+  },
+  "error_address_label_too_long": "地址标签太长",
+  "@error_address_label_too_long": {
+    "description": "Address label too long error"
+  },
+  "error_email_cant_be_empty": "邮箱不能为空",
+  "@error_email_cant_be_empty": {
+    "description": "Email empty error"
+  },
+  "error_email_not_invalid_format": "邮箱格式无效",
+  "@error_email_not_invalid_format": {
+    "description": "Email invalid format error"
+  },
+  "error_email_contains_invalid_characters": "电子邮件包含无效字符",
+  "@error_email_contains_invalid_characters": {
+    "description": "Email invalid characters error"
+  },
+  "error_email_must_contain_at_symbol": "电子邮件必须包含@",
+  "@error_email_must_contain_at_symbol": {
+    "description": "Email missing @ error"
+  },
+  "error_email_must_be_in_lowercase": "电子邮件必须为小写",
+  "@error_email_must_be_in_lowercase": {
+    "description": "Email not in lowercase error"
+  },
+  "error_arabic_not_allowed": "不允许使用阿拉伯字符",
+  "@error_arabic_not_allowed": {
+    "description": "Arabic characters not allowed error"
+  },
+  "error_email_emoji_not_allowed": "电子邮件中不允许使用表情符号",
+  "@error_email_emoji_not_allowed": {
+    "description": "Email emoji not allowed error"
+  },
+  "error_phone_number_cant_be_empty": "电话号码不能为空",
+  "@error_phone_number_cant_be_empty": {
+    "description": "Phone number empty error"
+  },
+  "error_phone_number_invalid": "无效的电话号码",
+  "@error_phone_number_invalid": {
+    "description": "Phone number invalid error"
+  },
+  "error_phone_number_min_length": "电话号码必须至少包含11位数字",
+  "@error_phone_number_min_length": {
+    "description": "Phone number min length error"
+  },
+  "error_name_cant_be_empty": "姓名不能为空",
+  "@error_name_cant_be_empty": {
+    "description": "Name empty error"
+  },
+  "error_name_invalid": "无效的姓名",
+  "@error_name_invalid": {
+    "description": "Name invalid error"
+  },
+  "error_name_too_short_at_least_3_characters": "姓名必须至少包含3个字符",
+  "@error_name_too_short_at_least_3_characters": {
+    "description": "Name too short error"
+  },
+  "error_name_too_long_maximum_20_characters": "姓名不能超过20个字符",
+  "@error_name_too_long_maximum_20_characters": {
+    "description": "Name too long error"
+  },
+  "error_name_invalid_special_characters": "姓名包含无效的特殊字符",
+  "@error_name_invalid_special_characters": {
+    "description": "Name special characters error"
+  },
+  "error_name_emoji_not_allowed": "姓名中不允许使用表情符号",
+  "@error_name_emoji_not_allowed": {
+    "description": "Name emoji not allowed error"
+  },
+  "error_password_cant_be_empty": "密码不能为空",
+  "@error_password_cant_be_empty": {
+    "description": "Password empty error"
+  },
+  "error_password_must_contain_uppercase_lowercase_number_and_special_character": "密码必须包含大写字母、小写字母、数字和特殊字符",
+  "@error_password_must_contain_uppercase_lowercase_number_and_special_character": {
+    "description": "Password complex requirements error"
+  },
+  "error_password_must_be_at_least_8_characters_long": "密码长度至少为8个字符",
+  "@error_password_must_be_at_least_8_characters_long": {
+    "description": "Password min length error"
+  },
+  "noInternetConnection": "没有网络连接",
+  "@noInternetConnection": {
+    "description": "No internet connection message"
+  },
+  "internetConnectionRestored": "网络连接已恢复",
+  "@internetConnectionRestored": {
+    "description": "Internet connection restored message"
+  },
+  "retry": "重试",
+  "@retry": {
+    "description": "Retry button text"
+  },
+  "cancel": "取消",
+  "@cancel": {
+    "description": "Cancel button text"
+  },
+  "confirm": "确认",
+  "@confirm": {
+    "description": "Confirm button text"
+  },
+  "pleaseWait": "请稍候...",
+  "@pleaseWait": {
+    "description": "Please wait dialog text"
+  },
+  "ok": "确定",
+  "@ok": {
+    "description": "OK button text"
+  },
+  "compressVideosPrivatelyOnYourDevice": "在设备上私密地压缩视频。",
+  "@compressVideosPrivatelyOnYourDevice": {
+    "description": "Home page description"
+  },
+  "welcomeToZumi": "欢迎使用Zumi",
+  "@welcomeToZumi": {
+    "description": "Onboarding page title"
+  },
+  "learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": "了解Zumi如何在不离开手机的情况下压缩您的视频。",
+  "@learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": {
+    "description": "Onboarding page description"
+  },
+  "signIn": "登录",
+  "@signIn": {
+    "description": "Login page title"
+  },
+  "signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": "登录以同步您的计划并让您的购买在每台设备上可用。",
+  "@signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": {
+    "description": "Login page description"
+  },
+  "chooseAVideo": "选择视频",
+  "@chooseAVideo": {
+    "description": "Video picker page title"
+  },
+  "pickAVideoFromYourGalleryToStartCompressing": "从您的图库中选择一个视频开始压缩。",
+  "@pickAVideoFromYourGalleryToStartCompressing": {
+    "description": "Video picker page description"
+  },
+  "compressionSetup": "压缩设置",
+  "@compressionSetup": {
+    "description": "Compression setup page title"
+  },
+  "chooseResolutionBitrateAndOutputFormatBeforeYouStart": "在开始之前选择分辨率、比特率和输出格式。",
+  "@chooseResolutionBitrateAndOutputFormatBeforeYouStart": {
+    "description": "Compression setup page description"
+  },
+  "compressing": "压缩中",
+  "@compressing": {
+    "description": "Compression progress page title"
+  },
+  "followTheLiveProgressOfYourCompressionJob": "关注压缩任务的实时进度。",
+  "@followTheLiveProgressOfYourCompressionJob": {
+    "description": "Compression progress page description"
+  },
+  "compressionResult": "压缩结果",
+  "@compressionResult": {
+    "description": "Compression result page title"
+  },
+  "compareTheBeforeAndAfterSizeThenSaveOrShareTheResult": "比较压缩前后的大小，然后保存或分享结果。",
+  "@compareTheBeforeAndAfterSizeThenSaveOrShareTheResult": {
+    "description": "Compression result page description"
+  },
+  "compressionHistory": "压缩历史",
+  "@compressionHistory": {
+    "description": "Compression history page title"
+  },
+  "reviewTheVideosYouHaveCompressedOnThisDevice": "查看您在此设备上压缩过的视频。",
+  "@reviewTheVideosYouHaveCompressedOnThisDevice": {
+    "description": "Compression history page description"
+  },
+  "settings": "设置",
+  "@settings": {
+    "description": "Settings hub page title"
+  },
+  "appearance": "外观",
+  "@appearance": {
+    "description": "Appearance settings page title"
+  },
+  "themeColorSchemeAndMotionPreferences": "主题、配色方案和动画偏好。",
+  "@themeColorSchemeAndMotionPreferences": {
+    "description": "Appearance settings page description"
+  },
+  "language": "语言",
+  "@language": {
+    "description": "Language settings page title"
+  },
+  "appLanguageAndTextDirection": "应用语言和文字方向。",
+  "@appLanguageAndTextDirection": {
+    "description": "Language settings page description"
+  },
+  "compressionDefaults": "压缩默认值",
+  "@compressionDefaults": {
+    "description": "Compression defaults page title"
+  },
+  "defaultResolutionBitrateAndOutputFormat": "默认分辨率、比特率和输出格式。",
+  "@defaultResolutionBitrateAndOutputFormat": {
+    "description": "Compression defaults page description"
+  },
+  "storageCleanup": "存储与清理",
+  "@storageCleanup": {
+    "description": "Storage settings page title"
+  },
+  "storageUsageCacheSizeAndTemporaryFileCleanup": "存储使用情况、缓存大小和临时文件清理。",
+  "@storageUsageCacheSizeAndTemporaryFileCleanup": {
+    "description": "Storage settings page description"
+  },
+  "notifications": "通知",
+  "@notifications": {
+    "description": "Notifications settings page title"
+  },
+  "jobCompletionAndProductUpdateNotifications": "作业完成和产品更新通知。",
+  "@jobCompletionAndProductUpdateNotifications": {
+    "description": "Notifications settings page description"
+  },
+  "privacy": "隐私",
+  "@privacy": {
+    "description": "Privacy settings page title"
+  },
+  "onDeviceProcessingLocalLogsAndOptionalCrashReports": "设备端处理、本地日志和可选的崩溃报告。",
+  "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
+    "description": "Privacy settings page description"
+  },
+  "aboutZumi": "关于 Zumi",
+  "@aboutZumi": {
+    "description": "App info page title"
+  },
+  "versionBuildNumberAndApplicationDetails": "版本、构建号和应用详情。",
+  "@versionBuildNumberAndApplicationDetails": {
+    "description": "App info page description"
+  },
+  "aboutTheDeveloper": "关于开发者",
+  "@aboutTheDeveloper": {
+    "description": "Developer page title"
+  },
+  "theDeveloperAndToolsBehindZumi": "Zumi 的开发者及工具。",
+  "@theDeveloperAndToolsBehindZumi": {
+    "description": "Developer page description"
+  },
+  "openSourceLicenses": "开源许可",
+  "@openSourceLicenses": {
+    "description": "Licenses page title"
+  },
+  "openSourcePackagesBundledWithZumi": "随 Zumi 打包的开源软件包。",
+  "@openSourcePackagesBundledWithZumi": {
+    "description": "Licenses page description"
+  },
+  "privacyPolicy": "隐私政策",
+  "@privacyPolicy": {
+    "description": "Privacy policy page title"
+  },
+  "howZumiHandlesYourVideosAndData": "Zumi 如何处理您的视频和数据。",
+  "@howZumiHandlesYourVideosAndData": {
+    "description": "Privacy policy page description"
+  },
+  "termsOfService": "服务条款",
+  "@termsOfService": {
+    "description": "Terms page title"
+  },
+  "theTermsThatApplyToZumiAndItsPurchases": "适用于 Zumi 及其购买内容的条款。",
+  "@theTermsThatApplyToZumiAndItsPurchases": {
+    "description": "Terms page description"
+  },
+  "dataSafety": "数据安全",
+  "@dataSafety": {
+    "description": "Data safety page title"
+  },
+  "summaryOfTheDataZumiCollectsAndWhy": "Zumi 收集的数据摘要及原因。",
+  "@summaryOfTheDataZumiCollectsAndWhy": {
+    "description": "Data safety page description"
+  },
+  "permissions": "权限",
+  "@permissions": {
+    "description": "Permissions page title"
+  },
+  "runtimePermissionsZumiRequestsAndWhyEachIsNeeded": "Zumi 请求的运行时权限及每个权限的必要性。",
+  "@runtimePermissionsZumiRequestsAndWhyEachIsNeeded": {
+    "description": "Permissions page description"
+  },
+  "faq": "常见问题",
+  "@faq": {
+    "description": "FAQ page title"
+  },
+  "answersToCommonQuestionsAboutCompressionAndBilling": "关于压缩和计费的常见问题解答。",
+  "@answersToCommonQuestionsAboutCompressionAndBilling": {
+    "description": "FAQ page description"
+  },
+  "support": "支持",
+  "@support": {
+    "description": "Support page title"
+  },
+  "getHelpWithYourAccountOrAPurchase": "获取有关您的账户或购买的帮助。",
+  "@getHelpWithYourAccountOrAPurchase": {
+    "description": "Support page description"
+  },
+  "sendFeedback": "发送反馈",
+  "@sendFeedback": {
+    "description": "Feedback page title"
+  },
+  "reportAProblemOrSuggestAnImprovement": "报告问题或提出改进建议。",
+  "@reportAProblemOrSuggestAnImprovement": {
+    "description": "Feedback page description"
+  },
+  "plans": "计划",
+  "@plans": {
+    "description": "Plans page title"
+  },
+  "comparePlansAndSeeWhatEachOneUnlocks": "比较计划并查看每个计划解锁的内容。",
+  "@comparePlansAndSeeWhatEachOneUnlocks": {
+    "description": "Plans page description"
+  },
+  "planDetails": "计划详情",
+  "@planDetails": {
+    "description": "Plan details page title"
+  },
+  "benefitsLimitsAndPricingForThisPlan": "该计划的福利、限制和定价。",
+  "@benefitsLimitsAndPricingForThisPlan": {
+    "description": "Plan details page description"
+  },
+  "paymentMethods": "支付方式",
+  "@paymentMethods": {
+    "description": "Purchase methods page title"
+  },
+  "supportedWaysToPayIncludingStoreBilling": "支持的支付方式，包括商店账单。",
+  "@supportedWaysToPayIncludingStoreBilling": {
+    "description": "Purchase methods page description"
+  },
+  "restorePurchases": "恢复购买",
+  "@restorePurchases": {
+    "description": "Restore purchases page title"
+  },
+  "reApplyAPurchaseMadeOnAnotherDevice": "重新应用在其他设备上购买的内容。",
+  "@reApplyAPurchaseMadeOnAnotherDevice": {
+    "description": "Restore purchases page description"
+  },
+  "profile": "个人资料",
+  "@profile": {
+    "description": "Profile page title"
+  },
+  "yourIdentityPlanStatusAndAccountPreferences": "您的身份、计划状态和账户偏好。",
+  "@yourIdentityPlanStatusAndAccountPreferences": {
+    "description": "Profile page description"
+  },
+  "deleteAccount": "删除账户",
+  "@deleteAccount": {
+    "description": "Delete account page title"
+  },
+  "permanentlyRemoveYourAccountAndItsServerSideData": "永久删除您的账户及其服务器端数据。",
+  "@permanentlyRemoveYourAccountAndItsServerSideData": {
+    "description": "Delete account page description"
+  },
+  "rateZumi": "评价 Zumi",
+  "@rateZumi": {
+    "description": "Rate app page title"
+  },
+  "tellOthersHowZumiWorkedForYouOnTheStore": "告诉其他人 Zumi 在商店中的使用体验。",
+  "@tellOthersHowZumiWorkedForYouOnTheStore": {
+    "description": "Rate app page description"
+  },
+  "shareZumi": "分享 Zumi",
+  "@shareZumi": {
+    "description": "Share app page title"
+  },
+  "recommendZumiToAFriend": "推荐 Zumi 给朋友。",
+  "@recommendZumiToAFriend": {
+    "description": "Share app page description"
+  },
+  "settingsGroupAppearance": "外观与语言",
+  "@settingsGroupAppearance": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupCompression": "压缩",
+  "@settingsGroupCompression": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupAi": "设备端 AI",
+  "@settingsGroupAi": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupPrivacy": "通知与隐私",
+  "@settingsGroupPrivacy": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupPlans": "计划与购买",
+  "@settingsGroupPlans": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupAbout": "关于",
+  "@settingsGroupAbout": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupLegal": "法律",
+  "@settingsGroupLegal": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupHelp": "帮助与反馈",
+  "@settingsGroupHelp": {
+    "description": "Settings hub section label"
+  },
+  "settingsGroupAccount": "账户",
+  "@settingsGroupAccount": {
+    "description": "Settings hub section label"
+  },
+  "settingsAppearanceSubtitle": "主题和应用语言",
+  "@settingsAppearanceSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsLanguageSubtitle": "应用语言和方向",
+  "@settingsLanguageSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsCompressionSubtitle": "默认质量和格式",
+  "@settingsCompressionSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsStorageSubtitle": "缓存和存储使用情况",
+  "@settingsStorageSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aiSettings": "AI 设置",
+  "zumiAssistant": "Zumi 助手",
+  "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "一个专用于你视频的私人助手即将到来。你将能够在这里询问有关压缩、组织和已保存视频的问题。",
+  "settingsAiSubtitle": "本地模型和智能工具",
+  "exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet": "探索本地模型和未来 AI 工具。这些选项尚未激活。",
+  "localModels": "本地模型",
+  "aiModelsSubtitle": "浏览和下载支持的模型",
+  "chooseASupportedModelDownloadItToThisDeviceAndManageInstalledModelsHere": "选择一个支持的模型，下载到此设备，并在此管理已安装的模型。",
+  "importAModel": "导入模型",
+  "aiImportSubtitle": "使用来自你的文件的兼容模型",
+  "selectACompatibleLocalModelFileAndReviewItsRequirementsBeforeUsingIt": "选择一个兼容的本地模型文件，并在使用前查看其要求。",
+  "smartFeatures": "智能功能",
+  "aiFeaturesSubtitle": "压缩、组织和搜索",
+  "chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "选择用于视频压缩、组织、命名和搜索的本地 AI 建议。",
+  "modelPerformance": "模型性能",
+  "aiRuntimeSubtitle": "处理和资源偏好",
+  "controlTheProcessingBackendAndResourceLimitsForSupportedModels": "控制受支持模型的处理后台和资源限制。",
+  "conversationSettings": "对话设置",
+  "aiChatSettingsSubtitle": "流式处理、思考和响应长度",
+  "configureHowTheAssistantRespondsIncludingStreamingThinkingModeSamplingAndResponseLimits": "配置助手的响应方式，包括流式、思考模式、采样和响应限制。",
+  "imagesAndAudio": "图片和音频",
+  "aiMediaSubtitle": "控制多模态输入",
+  "chooseWhetherCompatibleModelsCanAnalyzeSelectedImagesAndAudioFromYourVideos": "选择兼容模型是否可以分析您视频中选定的图片和音频。",
+  "semanticSearch": "语义搜索",
+  "aiSearchSubtitle": "嵌入和本地索引",
+  "manageTheLocalEmbeddingModelAndSearchIndexForFindingVideosAndMomentsByMeaning": "管理本地嵌入模型和搜索索引，以根据含义查找视频和片段。",
+  "toolsAndStructuredOutput": "工具和结构化输出",
+  "aiToolsSubtitle": "操作、模式和确认",
+  "manageSupportedAssistantActionsAndStructuredResponsesActionsThatAffectFilesWillRequireYourConfirmation": "管理支持的助手操作和结构化响应。影响文件的操作将需要您的确认。",
+  "aiGroupModels": "模型",
+  "aiGroupExperience": "助手体验",
+  "aiGroupCapabilities": "智能功能",
+  "aiGroupPerformance": "性能",
+  "compressionHistorySubtitle": "您的压缩视频历史",
+  "@compressionHistorySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsNotificationsSubtitle": "完成和更新提醒",
+  "@settingsNotificationsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "settingsPrivacySubtitle": "您的数据保持本地",
+  "@settingsPrivacySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "plansSubtitle": "比较计划并升级",
+  "@plansSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "plansMethodsSubtitle": "付款方式和账单",
+  "@plansMethodsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "plansRestoreSubtitle": "恢复您以前的购买",
+  "@plansRestoreSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aboutAppSubtitle": "版本和构建详情",
+  "@aboutAppSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aboutDeveloperSubtitle": "Zumi背后的开发者",
+  "@aboutDeveloperSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "aboutLicensesSubtitle": "开源软件包许可证",
+  "@aboutLicensesSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalPrivacySubtitle": "数据处理方式",
+  "@legalPrivacySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalTermsSubtitle": "使用Zumi的规则",
+  "@legalTermsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalDataSafetySubtitle": "我们收集的数据",
+  "@legalDataSafetySubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "legalPermissionsSubtitle": "为什么我们需要权限",
+  "@legalPermissionsSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "helpFaqSubtitle": "常见问题解答",
+  "@helpFaqSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "helpSupportSubtitle": "直接联系开发者",
+  "@helpSupportSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "helpFeedbackSubtitle": "发送您的反馈",
+  "@helpFeedbackSubtitle": {
+    "description": "Settings hub row summary"
+  },
+  "compressionPickVideo": "选择视频",
+  "compressionTargetMb": "目标大小（MB）",
+  "compressionStart": "开始压缩",
+  "compressionPause": "暂停",
+  "compressionResume": "继续",
+  "compressionViewResult": "查看结果",
+  "compressionSaveGallery": "保存到相册",
+  "compressionShare": "分享视频",
+  "compressionOriginalSize": "原始大小",
+  "compressionOutputSize": "输出大小",
+  "compressionEmptyHistory": "尚无压缩视频",
+  "compressionSavedGallery": "已保存到相册",
+  "compressionInvalidTarget": "请输入大于零的目标大小",
+  "compressionCancelled": "压缩已取消",
+  "compressionTargetExceeded": "此视频无法达到所选大小。请尝试更大的目标大小。",
+  "compressionTargetInfeasible": "所选大小对于此视频过小。请选择更大的大小。",
+  "compressionPreviewBefore": "原始预览",
+  "compressionPreviewAfter": "压缩预览",
+  "compressionPreset": "目标预设",
+  "compressionCustom": "自定义尺寸",
+  "compressionPreviewUnavailable": "预览不可用",
+  "compressionAdvanced": "高级控制",
+  "compressionAutomatic": "自动",
+  "compressionResolutionLimit": "最大分辨率",
+  "compressionSourceResolution": "原始分辨率",
+  "compressionFrameRateLimit": "最高帧率",
+  "compressionAudioQuality": "音频比特率",
+  "compressionRemoveAudio": "移除音频",
+  "compressionVideoBitrateLimit": "视频比特率上限（kbps）",
+  "compressionHdrPolicy": "HDR处理",
+  "compressionHdrConvert": "转换为SDR",
+  "compressionHdrPreserve": "支持时保留HDR",
+  "compressionPlanPreview": "开始前",
+  "compressionPlanLoading": "正在计算压缩计划…",
+  "compressionPlanResolution": "计划分辨率",
+  "compressionPlanVideoBitrate": "计划视频比特率",
+  "compressionPlanAudioBitrate": "计划音频比特率",
+  "compressionAudioConversionNote": "重新编码会将音频转换为AAC立体声。Dolby Atmos和DTS空间音频将无法保留。",
+  "compressionPlanTooSmall": "这个目标对于可用视频来说太小。增大尺寸或降低其他限制。",
+  "compressionPlanLowQuality": "所选目标可能会降低视频质量。",
+  "compressionPlanAlreadyWithinLimit": "源文件已在尺寸限制内。",
+  "compressionInvalidBitrate": "请输入至少 150 kbps 的比特率，或留空以自动设置",
+  "compressionInvalidResolution": "请输入 240 到 16384 之间的偶数分辨率，或留空以自动设置",
+  "compressionSeek": "视频位置",
+  "compressionInterrupted": "之前的压缩被中断。其临时文件已被清理；您可以选择视频并重试。",
+  "compressionDismiss": "关闭",
+  "compressionClearHistory": "清除历史记录",
+  "compressionClearHistoryConfirm": "是否删除所有历史记录条目？已保存的视频将保留在您的设备上。",
+  "compressionAttempts": "尝试",
+  "compressionTargetSize": "目标大小",
+  "compressionOutputResolution": "输出分辨率",
+  "compressionInvalidVideo": "无法读取此视频。请选择其他文件。",
+  "compressionInvalidOutput": "编码后的视频验证失败。您的原始视频未更改。",
+  "compressionEncoderUnsupported": "此设备无法编码所选的分辨率或帧率。请降低该设置后重试。",
+  "compressionAudioDecoderUnsupported": "此设备无法解码此音频格式以进行压缩。请移除音频或使用支持的来源。",
+  "compressionVideoDecoderUnsupported": "此设备无法解码该视频格式或压缩配置文件。请选择其他来源或设备。",
+  "compressionMp4NotStreamable": "导出的 MP4 尚未准备好进行流式传输。尝试使用其他视频或设备。",
+  "compressionNoSpace": "可用存储空间不足，无法压缩此视频。",
+  "compressionHdrUnsupported": "此设备无法处理所选的 HDR 模式。尝试转换为 SDR。",
+  "compressionGeneralFailure": "无法完成压缩。尝试使用其他设置或视频。",
+  "aboutIdentitySection": "应用身份",
+  "aboutAppName": "应用名称",
+  "aboutPackageName": "包名称",
+  "aboutVersion": "版本",
+  "aboutBuildNumber": "构建号",
+  "aboutEnvironmentSection": "设备和构建",
+  "aboutOperatingSystem": "操作系统",
+  "aboutOsVersion": "操作系统版本",
+  "aboutBuildMode": "构建模式",
+  "aboutDebug": "调试",
+  "aboutRelease": "发布",
+  "aboutToolchainSection": "构建于",
+  "aboutInstallationSection": "安装",
+  "aboutInstaller": "安装自",
+  "aboutInstalledOn": "安装于",
+  "aboutUpdatedOn": "更新于",
+  "aboutUnavailable": "不可用",
+  "aboutProjectSection": "项目和支持",
+  "aboutRepository": "GitHub 仓库",
+  "aboutRepositorySubtitle": "查看 Zumi 源代码",
+  "aboutReadme": "阅读 README",
+  "aboutReadmeSubtitle": "在 GitHub 上了解 Zumi",
+  "aboutIssues": "报告问题",
+  "aboutIssuesSubtitle": "查看并创建 GitHub 问题",
+  "aboutLatestRelease": "最新版本",
+  "aboutLatestReleaseSubtitle": "查看版本和下载",
+  "aboutDonate": "支持 Zumi",
+  "aboutDonateSubtitle": "打开官方捐赠页面",
+  "aboutLinkError": "无法打开链接。请重试。",
+  "aboutDeveloperSection": "开发者",
+  "aboutDeveloperName": "Mostafa Sensei",
+  "aboutDeveloperProfile": "GitHub 个人资料",
+  "aboutDeveloperProfileSubtitle": "查看项目和联系方式",
+  "maintenanceInProgress": "维护中",
+  "maintenanceMessage": "Zumi 暂时不可用。请稍后再试。",
+  "comingSoon": "即将到来",
+  "@comingSoon": {
+    "description": "Badge shown on placeholder pages"
+  },
+  "@countryName": {
+    "description": "Name of a country in the current app language",
+    "placeholders": {
+      "countryCode": {
+        "type": "String"
+      }
+    }
+  },
+  "languageName": "简体中文",
+  "countryCode": "SG",
+  "countryName": "{countryCode, select, AE{阿拉伯联合酋长国} AT{奥地利} AU{澳大利亚} BE{比利时} BH{巴林} BR{巴西} CA{加拿大} CH{瑞士} CN{中国} DE{德国} DJ{吉布提} DZ{阿尔及利亚} EG{埃及} ES{西班牙} FR{法国} GB{英国} HK{中国香港特别行政区} ID{印度尼西亚} IQ{伊拉克} IT{意大利} JO{约旦} JP{日本} KM{科摩罗} KR{韩国} KW{科威特} LB{黎巴嫩} LY{利比亚} MA{摩洛哥} MR{毛里塔尼亚} MX{墨西哥} NL{荷兰} OM{阿曼} PL{波兰} PS{巴勒斯坦领土} PT{葡萄牙} QA{卡塔尔} RU{俄罗斯} SA{沙特阿拉伯} SD{苏丹} SE{瑞典} SG{新加坡} SO{索马里} SY{叙利亚} TH{泰国} TN{突尼斯} TR{土耳其} TW{台湾} US{美国} VN{越南} YE{也门} other{国家}}"
+}
