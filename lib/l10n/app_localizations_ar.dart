@@ -395,7 +395,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get shareAppDescription => 'رشّح Zumi لأصدقائك وزملائك.';
 
   @override
-  String get settingsGroupAppearance => 'المظهر واللغة';
+  String get settingsGroupAppearance => 'المظهر و الالوان';
 
   @override
   String get settingsGroupCompression => 'الضغط والتخزين';
@@ -422,10 +422,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsGroupAccount => 'الحساب';
 
   @override
-  String get settingsAppearanceSubtitle => 'المظهر واللغة وحجم النص';
+  String get settingsAppearanceSubtitle => 'المظهر، اللغة، وحجم النص';
 
   @override
-  String get settingsLanguageSubtitle => 'لغة التطبيق واتجاه الكتابة';
+  String get settingsLanguageSubtitle => 'لغة التطبيق واتجاه النص';
 
   @override
   String get settingsCompressionSubtitle => 'الجودة الافتراضية وصيغة الملف';
