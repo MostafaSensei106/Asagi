@@ -21,7 +21,7 @@ final class IconButtonComponent extends StatelessWidget {
     this.selectedIcon,
     this.isSelected = false,
     this.useInBorderRadius = false,
-    this.toolTip,
+    this.tooltip,
     this.backgroundColor,
     this.foregroundColor,
     this.iconSize,
@@ -36,7 +36,7 @@ final class IconButtonComponent extends StatelessWidget {
   final bool isSelected;
   final bool useInBorderRadius;
 
-  final String? toolTip;
+  final String? tooltip;
   final Color? backgroundColor;
   final Color? foregroundColor;
   final double? iconSize;
@@ -65,14 +65,14 @@ final class IconButtonComponent extends StatelessWidget {
         return IconButton(
           icon: widget,
           onPressed: callback,
-          tooltip: toolTip,
+          tooltip: tooltip,
           color: foregroundColor ?? colorScheme.primary,
         );
       case IconButtonVariant.filled:
         return IconButton.filled(
           icon: widget,
           onPressed: callback,
-          tooltip: toolTip,
+          tooltip: tooltip,
           style: IconButton.styleFrom(
             shape: RoundedRectangleBorder(borderRadius: radius),
             backgroundColor: backgroundColor ?? colorScheme.primaryContainer,
@@ -83,7 +83,7 @@ final class IconButtonComponent extends StatelessWidget {
         return IconButton.filledTonal(
           icon: widget,
           onPressed: callback,
-          tooltip: toolTip,
+          tooltip: tooltip,
           style: IconButton.styleFrom(
             shape: RoundedRectangleBorder(borderRadius: radius),
             backgroundColor: backgroundColor ?? colorScheme.secondaryContainer,
@@ -96,7 +96,7 @@ final class IconButtonComponent extends StatelessWidget {
         return IconButton.outlined(
           icon: widget,
           onPressed: callback,
-          tooltip: toolTip,
+          tooltip: tooltip,
           style: IconButton.styleFrom(
             shape: RoundedRectangleBorder(borderRadius: radius),
             padding: EdgeInsets.all(padding ?? 4),
