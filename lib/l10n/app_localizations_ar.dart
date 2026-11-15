@@ -1002,7 +1002,7 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
   String get compressionStart => 'ابدأ الضغط';
 
   @override
-  String get languageName => 'العربية المصرية';
+  String get languageName => 'العربية';
 
   @override
   String get countryCode => 'EG';
