@@ -76,7 +76,7 @@ final class VideoPreview extends HookWidget {
               child: failed.value
                   ? Center(
                       child: Text(
-                        context.localeKeys.compressionPreviewUnavailable,
+                        context.localeKeys.previewUnavailable,
                         style: const TextStyle(color: Colors.white),
                       ),
                     )
@@ -131,7 +131,7 @@ final class VideoPreview extends HookWidget {
               return Column(
                 children: [
                   Semantics(
-                    label: context.localeKeys.compressionSeek,
+                    label: context.localeKeys.videoPosition,
                     child: Slider(
                       value: positionMs.toDouble(),
                       max: totalMs.toDouble(),
@@ -185,7 +185,7 @@ final class _UnavailablePreview extends StatelessWidget {
     children: [
       Text(title),
       const SizedBox(height: 8),
-      Text(context.localeKeys.compressionPreviewUnavailable),
+      Text(context.localeKeys.previewUnavailable),
     ],
   );
 }

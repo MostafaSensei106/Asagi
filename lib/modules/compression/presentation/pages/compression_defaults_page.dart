@@ -34,10 +34,10 @@ final class CompressionDefaultsPage extends HookWidget {
             controller: controller,
             keyboardType: const TextInputType.numberWithOptions(decimal: true),
             decoration: InputDecoration(
-              labelText: context.localeKeys.compressionTargetMb,
+              labelText: context.localeKeys.targetSizeMB,
               errorText: valid.value
                   ? null
-                  : context.localeKeys.compressionInvalidTarget,
+                  : context.localeKeys.enterATargetSizeGreaterThanZero,
               border: const OutlineInputBorder(),
             ),
             onChanged: (text) {

@@ -21,7 +21,7 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
-  String fileSavedToDcim(String fileName) {
+  String fileSavedToGallery(String fileName) {
     return 'File disimpan ke galeri: $fileName';
   }
 
@@ -31,7 +31,7 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
-  String get fileAlreadySaved => 'File sudah disimpan';
+  String get fileIsAlreadySaved => 'File sudah disimpan';
 
   @override
   String get error => 'Kesalahan';
@@ -55,103 +55,99 @@ class AppLocalizationsId extends AppLocalizations {
   String get partial => 'Sebagian';
 
   @override
-  String get error_address_line_cant_be_empty =>
-      'Baris alamat tidak boleh kosong';
+  String get addressLineCannotBeEmpty => 'Baris alamat tidak boleh kosong';
 
   @override
-  String get error_address_line_too_long => 'Baris alamat terlalu panjang';
+  String get addressLineIsTooLong => 'Baris alamat terlalu panjang';
 
   @override
-  String get error_address_invalid_special_characters =>
+  String get specialCharactersAreNotAllowed =>
       'Karakter khusus tidak diperbolehkan';
 
   @override
-  String get error_address_emoji_not_allowed => 'Emoji tidak diperbolehkan';
+  String get emojisAreNotAllowed => 'Emoji tidak diperbolehkan';
 
   @override
-  String get error_city_cant_be_empty => 'Kota tidak boleh kosong';
+  String get cityCannotBeEmpty => 'Kota tidak boleh kosong';
 
   @override
-  String get error_city_too_long => 'Nama kota terlalu panjang';
+  String get cityNameIsTooLong => 'Nama kota terlalu panjang';
 
   @override
-  String get error_city_invalid_special_characters =>
+  String get cityContainsInvalidSpecialCharacters =>
       'Kota mengandung karakter khusus yang tidak valid';
 
   @override
-  String get error_address_label_cant_be_empty =>
-      'Label alamat tidak boleh kosong';
+  String get addressLabelCannotBeEmpty => 'Label alamat tidak boleh kosong';
 
   @override
-  String get error_address_label_too_long => 'Label alamat terlalu panjang';
+  String get addressLabelIsTooLong => 'Label alamat terlalu panjang';
 
   @override
-  String get error_email_cant_be_empty => 'Email tidak boleh kosong';
+  String get emailCannotBeEmpty => 'Email tidak boleh kosong';
 
   @override
-  String get error_email_not_invalid_format => 'Format email tidak valid';
+  String get invalidEmailFormat => 'Format email tidak valid';
 
   @override
-  String get error_email_contains_invalid_characters =>
+  String get emailContainsInvalidCharacters =>
       'Email mengandung karakter tidak valid';
 
   @override
-  String get error_email_must_contain_at_symbol => 'Email harus mengandung @';
+  String get emailMustContain => 'Email harus mengandung @';
 
   @override
-  String get error_email_must_be_in_lowercase =>
-      'Email harus dalam huruf kecil';
+  String get emailMustBeInLowercase => 'Email harus dalam huruf kecil';
 
   @override
-  String get error_arabic_not_allowed => 'Karakter Arab tidak diperbolehkan';
+  String get arabicCharactersAreNotAllowed =>
+      'Karakter Arab tidak diperbolehkan';
 
   @override
-  String get error_email_emoji_not_allowed =>
+  String get emojisAreNotAllowedInEmail =>
       'Emoji tidak diperbolehkan dalam email';
 
   @override
-  String get error_phone_number_cant_be_empty =>
-      'Nomor telepon tidak boleh kosong';
+  String get phoneNumberCannotBeEmpty => 'Nomor telepon tidak boleh kosong';
 
   @override
-  String get error_phone_number_invalid => 'Nomor telepon tidak valid';
+  String get invalidPhoneNumber => 'Nomor telepon tidak valid';
 
   @override
-  String get error_phone_number_min_length =>
+  String get phoneNumberMustBeAtLeast11Digits =>
       'Nomor telepon harus terdiri dari minimal 11 digit';
 
   @override
-  String get error_name_cant_be_empty => 'Nama tidak boleh kosong';
+  String get nameCannotBeEmpty => 'Nama tidak boleh kosong';
 
   @override
-  String get error_name_invalid => 'Nama tidak valid';
+  String get invalidName => 'Nama tidak valid';
 
   @override
-  String get error_name_too_short_at_least_3_characters =>
+  String get nameMustBeAtLeast3Characters =>
       'Nama harus terdiri dari minimal 3 karakter';
 
   @override
-  String get error_name_too_long_maximum_20_characters =>
+  String get nameCannotExceed20Characters =>
       'Nama tidak boleh melebihi 20 karakter';
 
   @override
-  String get error_name_invalid_special_characters =>
+  String get nameContainsInvalidSpecialCharacters =>
       'Nama mengandung karakter khusus yang tidak valid';
 
   @override
-  String get error_name_emoji_not_allowed =>
+  String get emojisAreNotAllowedInName =>
       'Emoji tidak diperbolehkan dalam nama';
 
   @override
-  String get error_password_cant_be_empty => 'Kata sandi tidak boleh kosong';
+  String get passwordCannotBeEmpty => 'Kata sandi tidak boleh kosong';
 
   @override
-  String
-  get error_password_must_contain_uppercase_lowercase_number_and_special_character =>
+  String get passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter =>
       'Kata sandi harus mengandung huruf besar, huruf kecil, angka, dan karakter khusus';
 
   @override
-  String get error_password_must_be_at_least_8_characters_long =>
+  String get passwordMustBeAtLeast8CharactersLong =>
       'Kata sandi harus minimal 8 karakter';
 
   @override
@@ -398,43 +394,43 @@ class AppLocalizationsId extends AppLocalizations {
   String get recommendZumiToAFriend => 'Rekomendasikan Zumi kepada teman.';
 
   @override
-  String get settingsGroupAppearance => 'Tampilan & bahasa';
+  String get appearanceLanguage => 'Tampilan & bahasa';
 
   @override
-  String get settingsGroupCompression => 'Kompresi';
+  String get compression => 'Kompresi';
 
   @override
-  String get settingsGroupAi => 'AI di perangkat';
+  String get onDeviceAI => 'AI di perangkat';
 
   @override
-  String get settingsGroupPrivacy => 'Notifikasi & privasi';
+  String get notificationsPrivacy => 'Notifikasi & privasi';
 
   @override
-  String get settingsGroupPlans => 'Paket & pembelian';
+  String get plansPurchases => 'Paket & pembelian';
 
   @override
-  String get settingsGroupAbout => 'Tentang';
+  String get about => 'Tentang';
 
   @override
-  String get settingsGroupLegal => 'Hukum';
+  String get legal => 'Hukum';
 
   @override
-  String get settingsGroupHelp => 'Bantuan & umpan balik';
+  String get helpFeedback => 'Bantuan & umpan balik';
 
   @override
-  String get settingsGroupAccount => 'Akun';
+  String get account => 'Akun';
 
   @override
-  String get settingsAppearanceSubtitle => 'Tema dan bahasa aplikasi';
+  String get themeAndAppLanguage => 'Tema dan bahasa aplikasi';
 
   @override
-  String get settingsLanguageSubtitle => 'Bahasa dan arah aplikasi';
+  String get appLanguageAndDirection => 'Bahasa dan arah aplikasi';
 
   @override
-  String get settingsCompressionSubtitle => 'Kualitas dan format default';
+  String get defaultQualityAndFormat => 'Kualitas dan format default';
 
   @override
-  String get settingsStorageSubtitle => 'Penggunaan cache dan penyimpanan';
+  String get cacheAndStorageUsage => 'Penggunaan cache dan penyimpanan';
 
   @override
   String get aiSettings => 'Pengaturan AI';
@@ -448,17 +444,18 @@ class AppLocalizationsId extends AppLocalizations {
       'Asisten pribadi untuk video Anda akan segera hadir. Anda akan dapat menanyakan tentang kompresi, organisasi, dan video yang disimpan di sini.';
 
   @override
-  String get settingsAiSubtitle => 'Model lokal dan alat pintar';
+  String get localModelsAndSmartTools => 'Model lokal dan alat pintar';
 
   @override
-  String get exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet =>
+  String get exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet =>
       'Jelajahi model lokal dan alat AI di masa depan. Opsi ini belum aktif.';
 
   @override
   String get localModels => 'Model lokal';
 
   @override
-  String get aiModelsSubtitle => 'Jelajahi dan unduh model yang didukung';
+  String get browseAndDownloadSupportedModels =>
+      'Jelajahi dan unduh model yang didukung';
 
   @override
   String
@@ -469,7 +466,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get importAModel => 'Impor model';
 
   @override
-  String get aiImportSubtitle => 'Gunakan model yang kompatibel dari file Anda';
+  String get useACompatibleModelFromYourFiles =>
+      'Gunakan model yang kompatibel dari file Anda';
 
   @override
   String
@@ -480,18 +478,20 @@ class AppLocalizationsId extends AppLocalizations {
   String get smartFeatures => 'Fitur pintar';
 
   @override
-  String get aiFeaturesSubtitle => 'Kompresi, organisasi, dan pencarian';
+  String get compressionOrganizationAndSearch =>
+      'Kompresi, organisasi, dan pencarian';
 
   @override
   String
-  get chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
+  get chooseWhichLocalAISuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
       'Pilih saran AI lokal mana yang akan digunakan untuk kompresi video, organisasi, penamaan, dan pencarian.';
 
   @override
   String get modelPerformance => 'Kinerja model';
 
   @override
-  String get aiRuntimeSubtitle => 'Preferensi pemrosesan dan sumber daya';
+  String get processingAndResourcePreferences =>
+      'Preferensi pemrosesan dan sumber daya';
 
   @override
   String get controlTheProcessingBackendAndResourceLimitsForSupportedModels =>
@@ -501,7 +501,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get conversationSettings => 'Pengaturan percakapan';
 
   @override
-  String get aiChatSettingsSubtitle =>
+  String get streamingThinkingAndResponseLength =>
       'Streaming, berpikir, dan panjang respons';
 
   @override
@@ -513,7 +513,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get imagesAndAudio => 'Gambar dan audio';
 
   @override
-  String get aiMediaSubtitle => 'Kendalikan input multimodal';
+  String get controlMultimodalInputs => 'Kendalikan input multimodal';
 
   @override
   String
@@ -524,7 +524,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get semanticSearch => 'Pencarian semantik';
 
   @override
-  String get aiSearchSubtitle => 'Embedding dan pengindeksan lokal';
+  String get embeddingsAndLocalIndexing => 'Embedding dan pengindeksan lokal';
 
   @override
   String
@@ -535,7 +535,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get toolsAndStructuredOutput => 'Alat dan output terstruktur';
 
   @override
-  String get aiToolsSubtitle => 'Tindakan, skema, dan konfirmasi';
+  String get actionsSchemasAndConfirmations =>
+      'Tindakan, skema, dan konfirmasi';
 
   @override
   String
@@ -543,370 +544,377 @@ class AppLocalizationsId extends AppLocalizations {
       'Kelola tindakan asisten yang didukung dan respons terstruktur. Tindakan yang memengaruhi file akan memerlukan konfirmasi Anda.';
 
   @override
-  String get aiGroupModels => 'Model';
+  String get models => 'Model';
 
   @override
-  String get aiGroupExperience => 'Pengalaman asisten';
+  String get assistantExperience => 'Pengalaman asisten';
 
   @override
-  String get aiGroupCapabilities => 'Kemampuan cerdas';
+  String get smartCapabilities => 'Kemampuan cerdas';
 
   @override
-  String get aiGroupPerformance => 'Kinerja';
+  String get performance => 'Kinerja';
 
   @override
-  String get compressionHistorySubtitle => 'Riwayat video yang dikompres';
+  String get yourCompressedVideoHistory => 'Riwayat video yang dikompres';
 
   @override
-  String get settingsNotificationsSubtitle =>
+  String get completionAndUpdateAlerts =>
       'Peringatan penyelesaian dan pembaruan';
 
   @override
-  String get settingsPrivacySubtitle => 'Data Anda tetap lokal';
+  String get yourDataStaysLocal => 'Data Anda tetap lokal';
 
   @override
-  String get plansSubtitle => 'Bandingkan paket dan tingkatkan';
+  String get comparePlansAndUpgrade => 'Bandingkan paket dan tingkatkan';
 
   @override
-  String get plansMethodsSubtitle => 'Metode pembayaran dan tagihan';
+  String get paymentMethodsAndBilling => 'Metode pembayaran dan tagihan';
 
   @override
-  String get plansRestoreSubtitle => 'Pulihkan pembelian sebelumnya';
+  String get restoreYourPreviousPurchase => 'Pulihkan pembelian sebelumnya';
 
   @override
-  String get aboutAppSubtitle => 'Detail versi dan build';
+  String get versionAndBuildDetails => 'Detail versi dan build';
 
   @override
-  String get aboutDeveloperSubtitle => 'Pengembang di balik Zumi';
+  String get theDeveloperBehindZumi => 'Pengembang di balik Zumi';
 
   @override
-  String get aboutLicensesSubtitle => 'Lisensi paket sumber terbuka';
+  String get openSourcePackageLicenses => 'Lisensi paket sumber terbuka';
 
   @override
-  String get legalPrivacySubtitle => 'Bagaimana data ditangani';
+  String get howDataIsHandled => 'Bagaimana data ditangani';
 
   @override
-  String get legalTermsSubtitle => 'Aturan penggunaan Zumi';
+  String get rulesForUsingZumi => 'Aturan penggunaan Zumi';
 
   @override
-  String get legalDataSafetySubtitle => 'Data apa yang kami kumpulkan';
+  String get whatDataWeCollect => 'Data apa yang kami kumpulkan';
 
   @override
-  String get legalPermissionsSubtitle => 'Mengapa kami membutuhkan izin';
+  String get whyWeNeedPermissions => 'Mengapa kami membutuhkan izin';
 
   @override
-  String get helpFaqSubtitle => 'Jawaban atas pertanyaan umum';
+  String get answersToCommonQuestions => 'Jawaban atas pertanyaan umum';
 
   @override
-  String get helpSupportSubtitle => 'Hubungi pengembang secara langsung';
+  String get reachTheDeveloperDirectly => 'Hubungi pengembang secara langsung';
 
   @override
-  String get helpFeedbackSubtitle => 'Kirimkan umpan balik Anda';
+  String get sendUsYourFeedback => 'Kirimkan umpan balik Anda';
 
   @override
-  String get compressionPickVideo => 'Pilih video';
+  String get pickVideo => 'Pilih video';
 
   @override
-  String get compressionTargetMb => 'Ukuran target (MB)';
+  String get targetSizeMB => 'Ukuran target (MB)';
 
   @override
-  String get compressionStart => 'Mulai kompresi';
+  String get startCompression => 'Mulai kompresi';
 
   @override
-  String get compressionPause => 'Jeda';
+  String get pause => 'Jeda';
 
   @override
-  String get compressionResume => 'Lanjutkan';
+  String get resume => 'Lanjutkan';
 
   @override
-  String get compressionViewResult => 'Lihat hasil';
+  String get viewResult => 'Lihat hasil';
 
   @override
-  String get compressionSaveGallery => 'Simpan ke galeri';
+  String get saveToGallery => 'Simpan ke galeri';
 
   @override
-  String get compressionShare => 'Bagikan video';
+  String get shareVideo => 'Bagikan video';
 
   @override
-  String get compressionOriginalSize => 'Ukuran asli';
+  String get originalSize => 'Ukuran asli';
 
   @override
-  String get compressionOutputSize => 'Ukuran output';
+  String get outputSize => 'Ukuran output';
 
   @override
-  String get compressionEmptyHistory => 'Belum ada video yang dikompresi';
+  String get noCompressedVideosYet => 'Belum ada video yang dikompresi';
 
   @override
-  String get compressionSavedGallery => 'Disimpan ke galeri';
+  String get savedToGallery => 'Disimpan ke galeri';
 
   @override
-  String get compressionInvalidTarget =>
+  String get enterATargetSizeGreaterThanZero =>
       'Masukkan ukuran target yang lebih besar dari nol';
 
   @override
   String get compressionCancelled => 'Kompresi dibatalkan';
 
   @override
-  String get compressionTargetExceeded =>
+  String get thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize =>
       'Video ini tidak dapat mencapai ukuran yang dipilih. Coba ukuran target yang lebih besar.';
 
   @override
-  String get compressionTargetInfeasible =>
+  String get theSelectedSizeIsTooSmallForThisVideoChooseALargerSize =>
       'Ukuran yang dipilih terlalu kecil untuk video ini. Pilih ukuran yang lebih besar.';
 
   @override
-  String get compressionPreviewBefore => 'Pratinjau asli';
+  String get originalPreview => 'Pratinjau asli';
 
   @override
-  String get compressionPreviewAfter => 'Pratinjau terkompresi';
+  String get compressedPreview => 'Pratinjau terkompresi';
 
   @override
-  String get compressionPreset => 'Preset target';
+  String get targetPreset => 'Preset target';
 
   @override
-  String get compressionCustom => 'Ukuran kustom';
+  String get customSize => 'Ukuran kustom';
 
   @override
-  String get compressionPreviewUnavailable => 'Pratinjau tidak tersedia';
+  String get previewUnavailable => 'Pratinjau tidak tersedia';
 
   @override
-  String get compressionAdvanced => 'Kontrol lanjutan';
+  String get advancedControls => 'Kontrol lanjutan';
 
   @override
-  String get compressionAutomatic => 'Otomatis';
+  String get automatic => 'Otomatis';
 
   @override
-  String get compressionResolutionLimit => 'Resolusi maksimum';
+  String get maximumResolution => 'Resolusi maksimum';
 
   @override
-  String get compressionSourceResolution => 'Resolusi asli';
+  String get originalResolution => 'Resolusi asli';
 
   @override
-  String get compressionFrameRateLimit => 'Kecepatan bingkai maksimum';
+  String get maximumFrameRate => 'Kecepatan bingkai maksimum';
 
   @override
-  String get compressionAudioQuality => 'Bitrate audio';
+  String get audioBitrate => 'Bitrate audio';
 
   @override
-  String get compressionRemoveAudio => 'Hapus audio';
+  String get removeAudio => 'Hapus audio';
 
   @override
-  String get compressionVideoBitrateLimit => 'Batas bitrate video (kbps)';
+  String get videoBitrateCeilingKbps => 'Batas bitrate video (kbps)';
 
   @override
-  String get compressionHdrPolicy => 'Penanganan HDR';
+  String get hdrHandling => 'Penanganan HDR';
 
   @override
-  String get compressionHdrConvert => 'Konversi ke SDR';
+  String get convertToSDR => 'Konversi ke SDR';
 
   @override
-  String get compressionHdrPreserve => 'Pertahankan HDR bila didukung';
+  String get keepHDRWhenSupported => 'Pertahankan HDR bila didukung';
 
   @override
-  String get compressionPlanPreview => 'Sebelum Anda memulai';
+  String get beforeYouStart => 'Sebelum Anda memulai';
 
   @override
-  String get compressionPlanLoading => 'Menghitung rencana kompresi…';
+  String get calculatingCompressionPlan => 'Menghitung rencana kompresi…';
 
   @override
-  String get compressionPlanResolution => 'Resolusi yang direncanakan';
+  String get plannedResolution => 'Resolusi yang direncanakan';
 
   @override
-  String get compressionPlanVideoBitrate => 'Bitrate video yang direncanakan';
+  String get plannedVideoBitrate => 'Bitrate video yang direncanakan';
 
   @override
-  String get compressionPlanAudioBitrate => 'Bitrate audio yang direncanakan';
+  String get plannedAudioBitrate => 'Bitrate audio yang direncanakan';
 
   @override
-  String get compressionAudioConversionNote =>
+  String
+  get reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved =>
       'Pengkodean ulang mengubah audio menjadi AAC stereo. Dolby Atmos dan audio spasial DTS tidak akan dipertahankan.';
 
   @override
-  String get compressionPlanTooSmall =>
+  String
+  get thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits =>
       'Target ini terlalu kecil untuk video yang dapat digunakan. Perbesar ukurannya atau turunkan batas lainnya.';
 
   @override
-  String get compressionPlanLowQuality =>
+  String get theSelectedTargetMayReduceVideoQuality =>
       'Target yang dipilih dapat mengurangi kualitas video.';
 
   @override
-  String get compressionPlanAlreadyWithinLimit =>
+  String get theSourceIsAlreadyWithinTheSizeLimit =>
       'Sumber sudah berada dalam batas ukuran.';
 
   @override
-  String get compressionInvalidBitrate =>
+  String get enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic =>
       'Masukkan bitrate minimal 150 kbps, atau biarkan kosong untuk otomatis';
 
   @override
-  String get compressionInvalidResolution =>
+  String get enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic =>
       'Masukkan resolusi genap dari 240 hingga 16384, atau biarkan kosong untuk otomatis';
 
   @override
-  String get compressionSeek => 'Posisi video';
+  String get videoPosition => 'Posisi video';
 
   @override
-  String get compressionInterrupted =>
+  String
+  get aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain =>
       'Kompresi sebelumnya terhenti. File sementara telah dibersihkan; Anda dapat memilih video dan mencoba lagi.';
 
   @override
-  String get compressionDismiss => 'Tutup';
+  String get dismiss => 'Tutup';
 
   @override
-  String get compressionClearHistory => 'Bersihkan riwayat';
+  String get clearHistory => 'Bersihkan riwayat';
 
   @override
-  String get compressionClearHistoryConfirm =>
+  String get removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice =>
       'Hapus semua riwayat? Video yang disimpan akan tetap ada di perangkat Anda.';
 
   @override
-  String get compressionAttempts => 'Percobaan';
+  String get attempts => 'Percobaan';
 
   @override
-  String get compressionTargetSize => 'Ukuran target';
+  String get targetSize => 'Ukuran target';
 
   @override
-  String get compressionOutputResolution => 'Resolusi keluaran';
+  String get outputResolution => 'Resolusi keluaran';
 
   @override
-  String get compressionInvalidVideo =>
+  String get thisVideoCouldNotBeReadChooseAnotherFile =>
       'Video ini tidak dapat dibaca. Pilih file lain.';
 
   @override
-  String get compressionInvalidOutput =>
+  String get theEncodedVideoFailedVerificationYourOriginalVideoWasNotChanged =>
       'Video yang dikodekan gagal diverifikasi. Video asli Anda tidak berubah.';
 
   @override
-  String get compressionEncoderUnsupported =>
+  String
+  get thisDeviceCannotEncodeTheSelectedResolutionOrFrameRateLowerThatSettingAndTryAgain =>
       'Perangkat ini tidak dapat mengkodekan resolusi atau laju bingkai yang dipilih. Turunkan pengaturan tersebut dan coba lagi.';
 
   @override
-  String get compressionAudioDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisAudioFormatForCompressionRemoveAudioOrUseASupportedSource =>
       'Perangkat ini tidak dapat mendekode format audio ini untuk kompresi. Hapus audio atau gunakan sumber yang didukung.';
 
   @override
-  String get compressionVideoDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisVideoFormatOrProfileForCompressionChooseAnotherSourceOrDevice =>
       'Perangkat ini tidak dapat mendekode format video ini atau profil untuk kompresi. Pilih sumber atau perangkat lain.';
 
   @override
-  String get compressionMp4NotStreamable =>
+  String get theExportedMP4IsNotReadyForStreamingTryAnotherVideoOrDevice =>
       'MP4 yang diekspor belum siap untuk streaming. Coba video atau perangkat lain.';
 
   @override
-  String get compressionNoSpace =>
+  String get thereIsNotEnoughFreeStorageToCompressThisVideo =>
       'Tidak cukup penyimpanan bebas untuk mengompres video ini.';
 
   @override
-  String get compressionHdrUnsupported =>
+  String get thisDeviceCannotProcessTheSelectedHDRModeTryConvertingToSDR =>
       'Perangkat ini tidak dapat memproses mode HDR yang dipilih. Coba konversi ke SDR.';
 
   @override
-  String get compressionGeneralFailure =>
+  String get compressionCouldNotBeCompletedTryAnotherSettingOrVideo =>
       'Kompresi tidak dapat diselesaikan. Coba pengaturan atau video lain.';
 
   @override
-  String get aboutIdentitySection => 'Identitas aplikasi';
+  String get appIdentity => 'Identitas aplikasi';
 
   @override
-  String get aboutAppName => 'Nama aplikasi';
+  String get appName => 'Nama aplikasi';
 
   @override
-  String get aboutPackageName => 'Nama paket';
+  String get packageName => 'Nama paket';
 
   @override
-  String get aboutVersion => 'Versi';
+  String get version => 'Versi';
 
   @override
-  String get aboutBuildNumber => 'Nomor build';
+  String get buildNumber => 'Nomor build';
 
   @override
-  String get aboutEnvironmentSection => 'Perangkat dan build';
+  String get deviceAndBuild => 'Perangkat dan build';
 
   @override
-  String get aboutOperatingSystem => 'Sistem operasi';
+  String get operatingSystem => 'Sistem operasi';
 
   @override
-  String get aboutOsVersion => 'Versi OS';
+  String get osVersion => 'Versi OS';
 
   @override
-  String get aboutBuildMode => 'Mode build';
+  String get buildMode => 'Mode build';
 
   @override
-  String get aboutDebug => 'Debug';
+  String get debug => 'Debug';
 
   @override
-  String get aboutRelease => 'Rilis';
+  String get release => 'Rilis';
 
   @override
-  String get aboutToolchainSection => 'Dibuat dengan';
+  String get builtWith => 'Dibuat dengan';
 
   @override
-  String get aboutInstallationSection => 'Instalasi';
+  String get installation => 'Instalasi';
 
   @override
-  String get aboutInstaller => 'Terpasang dari';
+  String get installedFrom => 'Terpasang dari';
 
   @override
-  String get aboutInstalledOn => 'Terpasang pada';
+  String get installedOn => 'Terpasang pada';
 
   @override
-  String get aboutUpdatedOn => 'Diperbarui pada';
+  String get updatedOn => 'Diperbarui pada';
 
   @override
-  String get aboutUnavailable => 'Tidak tersedia';
+  String get unavailable => 'Tidak tersedia';
 
   @override
-  String get aboutProjectSection => 'Proyek dan dukungan';
+  String get projectAndSupport => 'Proyek dan dukungan';
 
   @override
-  String get aboutRepository => 'Repositori GitHub';
+  String get githubRepository => 'Repositori GitHub';
 
   @override
-  String get aboutRepositorySubtitle => 'Lihat kode sumber Zumi';
+  String get viewZumiSourceCode => 'Lihat kode sumber Zumi';
 
   @override
-  String get aboutReadme => 'Baca README';
+  String get readTheREADME => 'Baca README';
 
   @override
-  String get aboutReadmeSubtitle => 'Pelajari tentang Zumi di GitHub';
+  String get learnAboutZumiOnGitHub => 'Pelajari tentang Zumi di GitHub';
 
   @override
-  String get aboutIssues => 'Laporkan masalah';
+  String get reportAnIssue => 'Laporkan masalah';
 
   @override
-  String get aboutIssuesSubtitle => 'Lihat dan buat masalah di GitHub';
+  String get viewAndCreateGitHubIssues => 'Lihat dan buat masalah di GitHub';
 
   @override
-  String get aboutLatestRelease => 'Rilis terbaru';
+  String get latestRelease => 'Rilis terbaru';
 
   @override
-  String get aboutLatestReleaseSubtitle => 'Lihat rilis dan unduhan';
+  String get viewReleasesAndDownloads => 'Lihat rilis dan unduhan';
 
   @override
-  String get aboutDonate => 'Dukung Zumi';
+  String get supportZumi => 'Dukung Zumi';
 
   @override
-  String get aboutDonateSubtitle => 'Buka halaman donasi resmi';
+  String get openTheOfficialDonationPage => 'Buka halaman donasi resmi';
 
   @override
-  String get aboutLinkError => 'Tidak dapat membuka tautan. Silakan coba lagi.';
+  String get couldNotOpenTheLinkPleaseTryAgain =>
+      'Tidak dapat membuka tautan. Silakan coba lagi.';
 
   @override
-  String get aboutDeveloperSection => 'Pengembang';
+  String get developer => 'Pengembang';
 
   @override
-  String get aboutDeveloperName => 'Mostafa Sensei';
+  String get mostafaSensei => 'Mostafa Sensei';
 
   @override
-  String get aboutDeveloperProfile => 'Profil GitHub';
+  String get githubProfile => 'Profil GitHub';
 
   @override
-  String get aboutDeveloperProfileSubtitle => 'Lihat proyek dan detail kontak';
+  String get seeProjectsAndContactDetails => 'Lihat proyek dan detail kontak';
 
   @override
   String get maintenanceInProgress => 'Pemeliharaan sedang berlangsung';
 
   @override
-  String get maintenanceMessage =>
+  String get zumiIsTemporarilyUnavailablePleaseTryAgainLater =>
       'Zumi sementara tidak tersedia. Silakan coba lagi nanti.';
 
   @override
@@ -993,7 +1001,7 @@ class AppLocalizationsIdId extends AppLocalizationsId {
   }
 
   @override
-  String fileSavedToDcim(String fileName) {
+  String fileSavedToGallery(String fileName) {
     return 'File disimpan ke galeri: $fileName';
   }
 
@@ -1003,7 +1011,7 @@ class AppLocalizationsIdId extends AppLocalizationsId {
   }
 
   @override
-  String get fileAlreadySaved => 'File sudah disimpan';
+  String get fileIsAlreadySaved => 'File sudah disimpan';
 
   @override
   String get error => 'Kesalahan';
@@ -1027,103 +1035,99 @@ class AppLocalizationsIdId extends AppLocalizationsId {
   String get partial => 'Sebagian';
 
   @override
-  String get error_address_line_cant_be_empty =>
-      'Baris alamat tidak boleh kosong';
+  String get addressLineCannotBeEmpty => 'Baris alamat tidak boleh kosong';
 
   @override
-  String get error_address_line_too_long => 'Baris alamat terlalu panjang';
+  String get addressLineIsTooLong => 'Baris alamat terlalu panjang';
 
   @override
-  String get error_address_invalid_special_characters =>
+  String get specialCharactersAreNotAllowed =>
       'Karakter khusus tidak diperbolehkan';
 
   @override
-  String get error_address_emoji_not_allowed => 'Emoji tidak diperbolehkan';
+  String get emojisAreNotAllowed => 'Emoji tidak diperbolehkan';
 
   @override
-  String get error_city_cant_be_empty => 'Kota tidak boleh kosong';
+  String get cityCannotBeEmpty => 'Kota tidak boleh kosong';
 
   @override
-  String get error_city_too_long => 'Nama kota terlalu panjang';
+  String get cityNameIsTooLong => 'Nama kota terlalu panjang';
 
   @override
-  String get error_city_invalid_special_characters =>
+  String get cityContainsInvalidSpecialCharacters =>
       'Kota mengandung karakter khusus yang tidak valid';
 
   @override
-  String get error_address_label_cant_be_empty =>
-      'Label alamat tidak boleh kosong';
+  String get addressLabelCannotBeEmpty => 'Label alamat tidak boleh kosong';
 
   @override
-  String get error_address_label_too_long => 'Label alamat terlalu panjang';
+  String get addressLabelIsTooLong => 'Label alamat terlalu panjang';
 
   @override
-  String get error_email_cant_be_empty => 'Email tidak boleh kosong';
+  String get emailCannotBeEmpty => 'Email tidak boleh kosong';
 
   @override
-  String get error_email_not_invalid_format => 'Format email tidak valid';
+  String get invalidEmailFormat => 'Format email tidak valid';
 
   @override
-  String get error_email_contains_invalid_characters =>
+  String get emailContainsInvalidCharacters =>
       'Email mengandung karakter tidak valid';
 
   @override
-  String get error_email_must_contain_at_symbol => 'Email harus mengandung @';
+  String get emailMustContain => 'Email harus mengandung @';
 
   @override
-  String get error_email_must_be_in_lowercase =>
-      'Email harus dalam huruf kecil';
+  String get emailMustBeInLowercase => 'Email harus dalam huruf kecil';
 
   @override
-  String get error_arabic_not_allowed => 'Karakter Arab tidak diperbolehkan';
+  String get arabicCharactersAreNotAllowed =>
+      'Karakter Arab tidak diperbolehkan';
 
   @override
-  String get error_email_emoji_not_allowed =>
+  String get emojisAreNotAllowedInEmail =>
       'Emoji tidak diperbolehkan dalam email';
 
   @override
-  String get error_phone_number_cant_be_empty =>
-      'Nomor telepon tidak boleh kosong';
+  String get phoneNumberCannotBeEmpty => 'Nomor telepon tidak boleh kosong';
 
   @override
-  String get error_phone_number_invalid => 'Nomor telepon tidak valid';
+  String get invalidPhoneNumber => 'Nomor telepon tidak valid';
 
   @override
-  String get error_phone_number_min_length =>
+  String get phoneNumberMustBeAtLeast11Digits =>
       'Nomor telepon harus terdiri dari minimal 11 digit';
 
   @override
-  String get error_name_cant_be_empty => 'Nama tidak boleh kosong';
+  String get nameCannotBeEmpty => 'Nama tidak boleh kosong';
 
   @override
-  String get error_name_invalid => 'Nama tidak valid';
+  String get invalidName => 'Nama tidak valid';
 
   @override
-  String get error_name_too_short_at_least_3_characters =>
+  String get nameMustBeAtLeast3Characters =>
       'Nama harus terdiri dari minimal 3 karakter';
 
   @override
-  String get error_name_too_long_maximum_20_characters =>
+  String get nameCannotExceed20Characters =>
       'Nama tidak boleh melebihi 20 karakter';
 
   @override
-  String get error_name_invalid_special_characters =>
+  String get nameContainsInvalidSpecialCharacters =>
       'Nama mengandung karakter khusus yang tidak valid';
 
   @override
-  String get error_name_emoji_not_allowed =>
+  String get emojisAreNotAllowedInName =>
       'Emoji tidak diperbolehkan dalam nama';
 
   @override
-  String get error_password_cant_be_empty => 'Kata sandi tidak boleh kosong';
+  String get passwordCannotBeEmpty => 'Kata sandi tidak boleh kosong';
 
   @override
-  String
-  get error_password_must_contain_uppercase_lowercase_number_and_special_character =>
+  String get passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter =>
       'Kata sandi harus mengandung huruf besar, huruf kecil, angka, dan karakter khusus';
 
   @override
-  String get error_password_must_be_at_least_8_characters_long =>
+  String get passwordMustBeAtLeast8CharactersLong =>
       'Kata sandi harus minimal 8 karakter';
 
   @override
@@ -1370,43 +1374,43 @@ class AppLocalizationsIdId extends AppLocalizationsId {
   String get recommendZumiToAFriend => 'Rekomendasikan Zumi kepada teman.';
 
   @override
-  String get settingsGroupAppearance => 'Tampilan & bahasa';
+  String get appearanceLanguage => 'Tampilan & bahasa';
 
   @override
-  String get settingsGroupCompression => 'Kompresi';
+  String get compression => 'Kompresi';
 
   @override
-  String get settingsGroupAi => 'AI di perangkat';
+  String get onDeviceAI => 'AI di perangkat';
 
   @override
-  String get settingsGroupPrivacy => 'Notifikasi & privasi';
+  String get notificationsPrivacy => 'Notifikasi & privasi';
 
   @override
-  String get settingsGroupPlans => 'Paket & pembelian';
+  String get plansPurchases => 'Paket & pembelian';
 
   @override
-  String get settingsGroupAbout => 'Tentang';
+  String get about => 'Tentang';
 
   @override
-  String get settingsGroupLegal => 'Hukum';
+  String get legal => 'Hukum';
 
   @override
-  String get settingsGroupHelp => 'Bantuan & umpan balik';
+  String get helpFeedback => 'Bantuan & umpan balik';
 
   @override
-  String get settingsGroupAccount => 'Akun';
+  String get account => 'Akun';
 
   @override
-  String get settingsAppearanceSubtitle => 'Tema dan bahasa aplikasi';
+  String get themeAndAppLanguage => 'Tema dan bahasa aplikasi';
 
   @override
-  String get settingsLanguageSubtitle => 'Bahasa dan arah aplikasi';
+  String get appLanguageAndDirection => 'Bahasa dan arah aplikasi';
 
   @override
-  String get settingsCompressionSubtitle => 'Kualitas dan format default';
+  String get defaultQualityAndFormat => 'Kualitas dan format default';
 
   @override
-  String get settingsStorageSubtitle => 'Penggunaan cache dan penyimpanan';
+  String get cacheAndStorageUsage => 'Penggunaan cache dan penyimpanan';
 
   @override
   String get aiSettings => 'Pengaturan AI';
@@ -1420,17 +1424,18 @@ class AppLocalizationsIdId extends AppLocalizationsId {
       'Asisten pribadi untuk video Anda akan segera hadir. Anda akan dapat menanyakan tentang kompresi, organisasi, dan video yang disimpan di sini.';
 
   @override
-  String get settingsAiSubtitle => 'Model lokal dan alat pintar';
+  String get localModelsAndSmartTools => 'Model lokal dan alat pintar';
 
   @override
-  String get exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet =>
+  String get exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet =>
       'Jelajahi model lokal dan alat AI di masa depan. Opsi ini belum aktif.';
 
   @override
   String get localModels => 'Model lokal';
 
   @override
-  String get aiModelsSubtitle => 'Jelajahi dan unduh model yang didukung';
+  String get browseAndDownloadSupportedModels =>
+      'Jelajahi dan unduh model yang didukung';
 
   @override
   String
@@ -1441,7 +1446,8 @@ class AppLocalizationsIdId extends AppLocalizationsId {
   String get importAModel => 'Impor model';
 
   @override
-  String get aiImportSubtitle => 'Gunakan model yang kompatibel dari file Anda';
+  String get useACompatibleModelFromYourFiles =>
+      'Gunakan model yang kompatibel dari file Anda';
 
   @override
   String
@@ -1452,18 +1458,20 @@ class AppLocalizationsIdId extends AppLocalizationsId {
   String get smartFeatures => 'Fitur pintar';
 
   @override
-  String get aiFeaturesSubtitle => 'Kompresi, organisasi, dan pencarian';
+  String get compressionOrganizationAndSearch =>
+      'Kompresi, organisasi, dan pencarian';
 
   @override
   String
-  get chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
+  get chooseWhichLocalAISuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
       'Pilih saran AI lokal mana yang akan digunakan untuk kompresi video, organisasi, penamaan, dan pencarian.';
 
   @override
   String get modelPerformance => 'Kinerja model';
 
   @override
-  String get aiRuntimeSubtitle => 'Preferensi pemrosesan dan sumber daya';
+  String get processingAndResourcePreferences =>
+      'Preferensi pemrosesan dan sumber daya';
 
   @override
   String get controlTheProcessingBackendAndResourceLimitsForSupportedModels =>
@@ -1473,7 +1481,7 @@ class AppLocalizationsIdId extends AppLocalizationsId {
   String get conversationSettings => 'Pengaturan percakapan';
 
   @override
-  String get aiChatSettingsSubtitle =>
+  String get streamingThinkingAndResponseLength =>
       'Streaming, berpikir, dan panjang respons';
 
   @override
@@ -1485,7 +1493,7 @@ class AppLocalizationsIdId extends AppLocalizationsId {
   String get imagesAndAudio => 'Gambar dan audio';
 
   @override
-  String get aiMediaSubtitle => 'Kendalikan input multimodal';
+  String get controlMultimodalInputs => 'Kendalikan input multimodal';
 
   @override
   String
@@ -1496,7 +1504,7 @@ class AppLocalizationsIdId extends AppLocalizationsId {
   String get semanticSearch => 'Pencarian semantik';
 
   @override
-  String get aiSearchSubtitle => 'Embedding dan pengindeksan lokal';
+  String get embeddingsAndLocalIndexing => 'Embedding dan pengindeksan lokal';
 
   @override
   String
@@ -1507,7 +1515,8 @@ class AppLocalizationsIdId extends AppLocalizationsId {
   String get toolsAndStructuredOutput => 'Alat dan output terstruktur';
 
   @override
-  String get aiToolsSubtitle => 'Tindakan, skema, dan konfirmasi';
+  String get actionsSchemasAndConfirmations =>
+      'Tindakan, skema, dan konfirmasi';
 
   @override
   String
@@ -1515,370 +1524,377 @@ class AppLocalizationsIdId extends AppLocalizationsId {
       'Kelola tindakan asisten yang didukung dan respons terstruktur. Tindakan yang memengaruhi file akan memerlukan konfirmasi Anda.';
 
   @override
-  String get aiGroupModels => 'Model';
+  String get models => 'Model';
 
   @override
-  String get aiGroupExperience => 'Pengalaman asisten';
+  String get assistantExperience => 'Pengalaman asisten';
 
   @override
-  String get aiGroupCapabilities => 'Kemampuan cerdas';
+  String get smartCapabilities => 'Kemampuan cerdas';
 
   @override
-  String get aiGroupPerformance => 'Kinerja';
+  String get performance => 'Kinerja';
 
   @override
-  String get compressionHistorySubtitle => 'Riwayat video yang dikompres';
+  String get yourCompressedVideoHistory => 'Riwayat video yang dikompres';
 
   @override
-  String get settingsNotificationsSubtitle =>
+  String get completionAndUpdateAlerts =>
       'Peringatan penyelesaian dan pembaruan';
 
   @override
-  String get settingsPrivacySubtitle => 'Data Anda tetap lokal';
+  String get yourDataStaysLocal => 'Data Anda tetap lokal';
 
   @override
-  String get plansSubtitle => 'Bandingkan paket dan tingkatkan';
+  String get comparePlansAndUpgrade => 'Bandingkan paket dan tingkatkan';
 
   @override
-  String get plansMethodsSubtitle => 'Metode pembayaran dan tagihan';
+  String get paymentMethodsAndBilling => 'Metode pembayaran dan tagihan';
 
   @override
-  String get plansRestoreSubtitle => 'Pulihkan pembelian sebelumnya';
+  String get restoreYourPreviousPurchase => 'Pulihkan pembelian sebelumnya';
 
   @override
-  String get aboutAppSubtitle => 'Detail versi dan build';
+  String get versionAndBuildDetails => 'Detail versi dan build';
 
   @override
-  String get aboutDeveloperSubtitle => 'Pengembang di balik Zumi';
+  String get theDeveloperBehindZumi => 'Pengembang di balik Zumi';
 
   @override
-  String get aboutLicensesSubtitle => 'Lisensi paket sumber terbuka';
+  String get openSourcePackageLicenses => 'Lisensi paket sumber terbuka';
 
   @override
-  String get legalPrivacySubtitle => 'Bagaimana data ditangani';
+  String get howDataIsHandled => 'Bagaimana data ditangani';
 
   @override
-  String get legalTermsSubtitle => 'Aturan penggunaan Zumi';
+  String get rulesForUsingZumi => 'Aturan penggunaan Zumi';
 
   @override
-  String get legalDataSafetySubtitle => 'Data apa yang kami kumpulkan';
+  String get whatDataWeCollect => 'Data apa yang kami kumpulkan';
 
   @override
-  String get legalPermissionsSubtitle => 'Mengapa kami membutuhkan izin';
+  String get whyWeNeedPermissions => 'Mengapa kami membutuhkan izin';
 
   @override
-  String get helpFaqSubtitle => 'Jawaban atas pertanyaan umum';
+  String get answersToCommonQuestions => 'Jawaban atas pertanyaan umum';
 
   @override
-  String get helpSupportSubtitle => 'Hubungi pengembang secara langsung';
+  String get reachTheDeveloperDirectly => 'Hubungi pengembang secara langsung';
 
   @override
-  String get helpFeedbackSubtitle => 'Kirimkan umpan balik Anda';
+  String get sendUsYourFeedback => 'Kirimkan umpan balik Anda';
 
   @override
-  String get compressionPickVideo => 'Pilih video';
+  String get pickVideo => 'Pilih video';
 
   @override
-  String get compressionTargetMb => 'Ukuran target (MB)';
+  String get targetSizeMB => 'Ukuran target (MB)';
 
   @override
-  String get compressionStart => 'Mulai kompresi';
+  String get startCompression => 'Mulai kompresi';
 
   @override
-  String get compressionPause => 'Jeda';
+  String get pause => 'Jeda';
 
   @override
-  String get compressionResume => 'Lanjutkan';
+  String get resume => 'Lanjutkan';
 
   @override
-  String get compressionViewResult => 'Lihat hasil';
+  String get viewResult => 'Lihat hasil';
 
   @override
-  String get compressionSaveGallery => 'Simpan ke galeri';
+  String get saveToGallery => 'Simpan ke galeri';
 
   @override
-  String get compressionShare => 'Bagikan video';
+  String get shareVideo => 'Bagikan video';
 
   @override
-  String get compressionOriginalSize => 'Ukuran asli';
+  String get originalSize => 'Ukuran asli';
 
   @override
-  String get compressionOutputSize => 'Ukuran output';
+  String get outputSize => 'Ukuran output';
 
   @override
-  String get compressionEmptyHistory => 'Belum ada video yang dikompresi';
+  String get noCompressedVideosYet => 'Belum ada video yang dikompresi';
 
   @override
-  String get compressionSavedGallery => 'Disimpan ke galeri';
+  String get savedToGallery => 'Disimpan ke galeri';
 
   @override
-  String get compressionInvalidTarget =>
+  String get enterATargetSizeGreaterThanZero =>
       'Masukkan ukuran target yang lebih besar dari nol';
 
   @override
   String get compressionCancelled => 'Kompresi dibatalkan';
 
   @override
-  String get compressionTargetExceeded =>
+  String get thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize =>
       'Video ini tidak dapat mencapai ukuran yang dipilih. Coba ukuran target yang lebih besar.';
 
   @override
-  String get compressionTargetInfeasible =>
+  String get theSelectedSizeIsTooSmallForThisVideoChooseALargerSize =>
       'Ukuran yang dipilih terlalu kecil untuk video ini. Pilih ukuran yang lebih besar.';
 
   @override
-  String get compressionPreviewBefore => 'Pratinjau asli';
+  String get originalPreview => 'Pratinjau asli';
 
   @override
-  String get compressionPreviewAfter => 'Pratinjau terkompresi';
+  String get compressedPreview => 'Pratinjau terkompresi';
 
   @override
-  String get compressionPreset => 'Preset target';
+  String get targetPreset => 'Preset target';
 
   @override
-  String get compressionCustom => 'Ukuran kustom';
+  String get customSize => 'Ukuran kustom';
 
   @override
-  String get compressionPreviewUnavailable => 'Pratinjau tidak tersedia';
+  String get previewUnavailable => 'Pratinjau tidak tersedia';
 
   @override
-  String get compressionAdvanced => 'Kontrol lanjutan';
+  String get advancedControls => 'Kontrol lanjutan';
 
   @override
-  String get compressionAutomatic => 'Otomatis';
+  String get automatic => 'Otomatis';
 
   @override
-  String get compressionResolutionLimit => 'Resolusi maksimum';
+  String get maximumResolution => 'Resolusi maksimum';
 
   @override
-  String get compressionSourceResolution => 'Resolusi asli';
+  String get originalResolution => 'Resolusi asli';
 
   @override
-  String get compressionFrameRateLimit => 'Kecepatan bingkai maksimum';
+  String get maximumFrameRate => 'Kecepatan bingkai maksimum';
 
   @override
-  String get compressionAudioQuality => 'Bitrate audio';
+  String get audioBitrate => 'Bitrate audio';
 
   @override
-  String get compressionRemoveAudio => 'Hapus audio';
+  String get removeAudio => 'Hapus audio';
 
   @override
-  String get compressionVideoBitrateLimit => 'Batas bitrate video (kbps)';
+  String get videoBitrateCeilingKbps => 'Batas bitrate video (kbps)';
 
   @override
-  String get compressionHdrPolicy => 'Penanganan HDR';
+  String get hdrHandling => 'Penanganan HDR';
 
   @override
-  String get compressionHdrConvert => 'Konversi ke SDR';
+  String get convertToSDR => 'Konversi ke SDR';
 
   @override
-  String get compressionHdrPreserve => 'Pertahankan HDR bila didukung';
+  String get keepHDRWhenSupported => 'Pertahankan HDR bila didukung';
 
   @override
-  String get compressionPlanPreview => 'Sebelum Anda memulai';
+  String get beforeYouStart => 'Sebelum Anda memulai';
 
   @override
-  String get compressionPlanLoading => 'Menghitung rencana kompresi…';
+  String get calculatingCompressionPlan => 'Menghitung rencana kompresi…';
 
   @override
-  String get compressionPlanResolution => 'Resolusi yang direncanakan';
+  String get plannedResolution => 'Resolusi yang direncanakan';
 
   @override
-  String get compressionPlanVideoBitrate => 'Bitrate video yang direncanakan';
+  String get plannedVideoBitrate => 'Bitrate video yang direncanakan';
 
   @override
-  String get compressionPlanAudioBitrate => 'Bitrate audio yang direncanakan';
+  String get plannedAudioBitrate => 'Bitrate audio yang direncanakan';
 
   @override
-  String get compressionAudioConversionNote =>
+  String
+  get reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved =>
       'Pengkodean ulang mengubah audio menjadi AAC stereo. Dolby Atmos dan audio spasial DTS tidak akan dipertahankan.';
 
   @override
-  String get compressionPlanTooSmall =>
+  String
+  get thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits =>
       'Target ini terlalu kecil untuk video yang dapat digunakan. Perbesar ukurannya atau turunkan batas lainnya.';
 
   @override
-  String get compressionPlanLowQuality =>
+  String get theSelectedTargetMayReduceVideoQuality =>
       'Target yang dipilih dapat mengurangi kualitas video.';
 
   @override
-  String get compressionPlanAlreadyWithinLimit =>
+  String get theSourceIsAlreadyWithinTheSizeLimit =>
       'Sumber sudah berada dalam batas ukuran.';
 
   @override
-  String get compressionInvalidBitrate =>
+  String get enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic =>
       'Masukkan bitrate minimal 150 kbps, atau biarkan kosong untuk otomatis';
 
   @override
-  String get compressionInvalidResolution =>
+  String get enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic =>
       'Masukkan resolusi genap dari 240 hingga 16384, atau biarkan kosong untuk otomatis';
 
   @override
-  String get compressionSeek => 'Posisi video';
+  String get videoPosition => 'Posisi video';
 
   @override
-  String get compressionInterrupted =>
+  String
+  get aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain =>
       'Kompresi sebelumnya terhenti. File sementara telah dibersihkan; Anda dapat memilih video dan mencoba lagi.';
 
   @override
-  String get compressionDismiss => 'Tutup';
+  String get dismiss => 'Tutup';
 
   @override
-  String get compressionClearHistory => 'Bersihkan riwayat';
+  String get clearHistory => 'Bersihkan riwayat';
 
   @override
-  String get compressionClearHistoryConfirm =>
+  String get removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice =>
       'Hapus semua riwayat? Video yang disimpan akan tetap ada di perangkat Anda.';
 
   @override
-  String get compressionAttempts => 'Percobaan';
+  String get attempts => 'Percobaan';
 
   @override
-  String get compressionTargetSize => 'Ukuran target';
+  String get targetSize => 'Ukuran target';
 
   @override
-  String get compressionOutputResolution => 'Resolusi keluaran';
+  String get outputResolution => 'Resolusi keluaran';
 
   @override
-  String get compressionInvalidVideo =>
+  String get thisVideoCouldNotBeReadChooseAnotherFile =>
       'Video ini tidak dapat dibaca. Pilih file lain.';
 
   @override
-  String get compressionInvalidOutput =>
+  String get theEncodedVideoFailedVerificationYourOriginalVideoWasNotChanged =>
       'Video yang dikodekan gagal diverifikasi. Video asli Anda tidak berubah.';
 
   @override
-  String get compressionEncoderUnsupported =>
+  String
+  get thisDeviceCannotEncodeTheSelectedResolutionOrFrameRateLowerThatSettingAndTryAgain =>
       'Perangkat ini tidak dapat mengkodekan resolusi atau laju bingkai yang dipilih. Turunkan pengaturan tersebut dan coba lagi.';
 
   @override
-  String get compressionAudioDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisAudioFormatForCompressionRemoveAudioOrUseASupportedSource =>
       'Perangkat ini tidak dapat mendekode format audio ini untuk kompresi. Hapus audio atau gunakan sumber yang didukung.';
 
   @override
-  String get compressionVideoDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisVideoFormatOrProfileForCompressionChooseAnotherSourceOrDevice =>
       'Perangkat ini tidak dapat mendekode format video ini atau profil untuk kompresi. Pilih sumber atau perangkat lain.';
 
   @override
-  String get compressionMp4NotStreamable =>
+  String get theExportedMP4IsNotReadyForStreamingTryAnotherVideoOrDevice =>
       'MP4 yang diekspor belum siap untuk streaming. Coba video atau perangkat lain.';
 
   @override
-  String get compressionNoSpace =>
+  String get thereIsNotEnoughFreeStorageToCompressThisVideo =>
       'Tidak cukup penyimpanan bebas untuk mengompres video ini.';
 
   @override
-  String get compressionHdrUnsupported =>
+  String get thisDeviceCannotProcessTheSelectedHDRModeTryConvertingToSDR =>
       'Perangkat ini tidak dapat memproses mode HDR yang dipilih. Coba konversi ke SDR.';
 
   @override
-  String get compressionGeneralFailure =>
+  String get compressionCouldNotBeCompletedTryAnotherSettingOrVideo =>
       'Kompresi tidak dapat diselesaikan. Coba pengaturan atau video lain.';
 
   @override
-  String get aboutIdentitySection => 'Identitas aplikasi';
+  String get appIdentity => 'Identitas aplikasi';
 
   @override
-  String get aboutAppName => 'Nama aplikasi';
+  String get appName => 'Nama aplikasi';
 
   @override
-  String get aboutPackageName => 'Nama paket';
+  String get packageName => 'Nama paket';
 
   @override
-  String get aboutVersion => 'Versi';
+  String get version => 'Versi';
 
   @override
-  String get aboutBuildNumber => 'Nomor build';
+  String get buildNumber => 'Nomor build';
 
   @override
-  String get aboutEnvironmentSection => 'Perangkat dan build';
+  String get deviceAndBuild => 'Perangkat dan build';
 
   @override
-  String get aboutOperatingSystem => 'Sistem operasi';
+  String get operatingSystem => 'Sistem operasi';
 
   @override
-  String get aboutOsVersion => 'Versi OS';
+  String get osVersion => 'Versi OS';
 
   @override
-  String get aboutBuildMode => 'Mode build';
+  String get buildMode => 'Mode build';
 
   @override
-  String get aboutDebug => 'Debug';
+  String get debug => 'Debug';
 
   @override
-  String get aboutRelease => 'Rilis';
+  String get release => 'Rilis';
 
   @override
-  String get aboutToolchainSection => 'Dibuat dengan';
+  String get builtWith => 'Dibuat dengan';
 
   @override
-  String get aboutInstallationSection => 'Instalasi';
+  String get installation => 'Instalasi';
 
   @override
-  String get aboutInstaller => 'Terpasang dari';
+  String get installedFrom => 'Terpasang dari';
 
   @override
-  String get aboutInstalledOn => 'Terpasang pada';
+  String get installedOn => 'Terpasang pada';
 
   @override
-  String get aboutUpdatedOn => 'Diperbarui pada';
+  String get updatedOn => 'Diperbarui pada';
 
   @override
-  String get aboutUnavailable => 'Tidak tersedia';
+  String get unavailable => 'Tidak tersedia';
 
   @override
-  String get aboutProjectSection => 'Proyek dan dukungan';
+  String get projectAndSupport => 'Proyek dan dukungan';
 
   @override
-  String get aboutRepository => 'Repositori GitHub';
+  String get githubRepository => 'Repositori GitHub';
 
   @override
-  String get aboutRepositorySubtitle => 'Lihat kode sumber Zumi';
+  String get viewZumiSourceCode => 'Lihat kode sumber Zumi';
 
   @override
-  String get aboutReadme => 'Baca README';
+  String get readTheREADME => 'Baca README';
 
   @override
-  String get aboutReadmeSubtitle => 'Pelajari tentang Zumi di GitHub';
+  String get learnAboutZumiOnGitHub => 'Pelajari tentang Zumi di GitHub';
 
   @override
-  String get aboutIssues => 'Laporkan masalah';
+  String get reportAnIssue => 'Laporkan masalah';
 
   @override
-  String get aboutIssuesSubtitle => 'Lihat dan buat masalah di GitHub';
+  String get viewAndCreateGitHubIssues => 'Lihat dan buat masalah di GitHub';
 
   @override
-  String get aboutLatestRelease => 'Rilis terbaru';
+  String get latestRelease => 'Rilis terbaru';
 
   @override
-  String get aboutLatestReleaseSubtitle => 'Lihat rilis dan unduhan';
+  String get viewReleasesAndDownloads => 'Lihat rilis dan unduhan';
 
   @override
-  String get aboutDonate => 'Dukung Zumi';
+  String get supportZumi => 'Dukung Zumi';
 
   @override
-  String get aboutDonateSubtitle => 'Buka halaman donasi resmi';
+  String get openTheOfficialDonationPage => 'Buka halaman donasi resmi';
 
   @override
-  String get aboutLinkError => 'Tidak dapat membuka tautan. Silakan coba lagi.';
+  String get couldNotOpenTheLinkPleaseTryAgain =>
+      'Tidak dapat membuka tautan. Silakan coba lagi.';
 
   @override
-  String get aboutDeveloperSection => 'Pengembang';
+  String get developer => 'Pengembang';
 
   @override
-  String get aboutDeveloperName => 'Mostafa Sensei';
+  String get mostafaSensei => 'Mostafa Sensei';
 
   @override
-  String get aboutDeveloperProfile => 'Profil GitHub';
+  String get githubProfile => 'Profil GitHub';
 
   @override
-  String get aboutDeveloperProfileSubtitle => 'Lihat proyek dan detail kontak';
+  String get seeProjectsAndContactDetails => 'Lihat proyek dan detail kontak';
 
   @override
   String get maintenanceInProgress => 'Pemeliharaan sedang berlangsung';
 
   @override
-  String get maintenanceMessage =>
+  String get zumiIsTemporarilyUnavailablePleaseTryAgainLater =>
       'Zumi sementara tidak tersedia. Silakan coba lagi nanti.';
 
   @override

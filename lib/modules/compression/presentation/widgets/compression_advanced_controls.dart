@@ -106,19 +106,19 @@ final class _CompressionAdvancedControlsState
     }.where((value) => value >= 240 && value <= source).toList()..sort();
     return ExpansionTile(
       title: ExpressiveSectionHeader(
-        title: context.localeKeys.compressionAdvanced,
+        title: context.localeKeys.advancedControls,
       ),
       childrenPadding: const EdgeInsets.all(AppSpacing.large),
       expandedCrossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(context.localeKeys.compressionResolutionLimit),
+        Text(context.localeKeys.maximumResolution),
         const SizedBox(height: AppSpacing.small),
         Wrap(
           spacing: AppSpacing.small,
           runSpacing: AppSpacing.small,
           children: [
             ChoiceChip(
-              label: Text(context.localeKeys.compressionAutomatic),
+              label: Text(context.localeKeys.automatic),
               selected: p.maxShortEdge == null,
               onSelected: (_) =>
                   widget.onChanged(p.copyWith(clearMaxShortEdge: true)),
@@ -127,7 +127,7 @@ final class _CompressionAdvancedControlsState
               ChoiceChip(
                 label: Text(
                   value == source
-                      ? '${context.localeKeys.compressionSourceResolution} ($value)'
+                      ? '${context.localeKeys.originalResolution} ($value)'
                       : value == 2160
                       ? '4K'
                       : value == 4320
@@ -145,17 +145,19 @@ final class _CompressionAdvancedControlsState
           controller: _resolution,
           keyboardType: TextInputType.number,
           decoration: InputDecoration(
-            labelText: context.localeKeys.compressionResolutionLimit,
-            hintText: context.localeKeys.compressionAutomatic,
+            labelText: context.localeKeys.maximumResolution,
+            hintText: context.localeKeys.automatic,
             errorText: _invalidResolution
-                ? context.localeKeys.compressionInvalidResolution
+                ? context
+                      .localeKeys
+                      .enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic
                 : null,
           ),
           onSubmitted: (_) => _applyResolution(),
           onEditingComplete: _applyResolution,
         ),
         const SizedBox(height: AppSpacing.xLarge),
-        Text(context.localeKeys.compressionFrameRateLimit),
+        Text(context.localeKeys.maximumFrameRate),
         const SizedBox(height: AppSpacing.small),
         Wrap(
           spacing: AppSpacing.small,
@@ -170,13 +172,13 @@ final class _CompressionAdvancedControlsState
           ],
         ),
         const SizedBox(height: AppSpacing.xLarge),
-        Text(context.localeKeys.compressionAudioQuality),
+        Text(context.localeKeys.audioBitrate),
         const SizedBox(height: AppSpacing.small),
         Wrap(
           spacing: AppSpacing.small,
           children: [
             ChoiceChip(
-              label: Text(context.localeKeys.compressionAutomatic),
+              label: Text(context.localeKeys.automatic),
               selected: p.audioBitrateKbps == null,
               onSelected: (_) =>
                   widget.onChanged(p.copyWith(clearAudioBitrate: true)),
@@ -184,9 +186,7 @@ final class _CompressionAdvancedControlsState
             for (final rate in const [0, 48, 64, 96, 128])
               ChoiceChip(
                 label: Text(
-                  rate == 0
-                      ? context.localeKeys.compressionRemoveAudio
-                      : '$rate kbps',
+                  rate == 0 ? context.localeKeys.removeAudio : '$rate kbps',
                 ),
                 selected: p.audioBitrateKbps == rate,
                 onSelected: (_) =>
@@ -199,27 +199,29 @@ final class _CompressionAdvancedControlsState
           controller: _videoBitrate,
           keyboardType: TextInputType.number,
           decoration: InputDecoration(
-            labelText: context.localeKeys.compressionVideoBitrateLimit,
-            hintText: context.localeKeys.compressionAutomatic,
+            labelText: context.localeKeys.videoBitrateCeilingKbps,
+            hintText: context.localeKeys.automatic,
             errorText: _invalidBitrate
-                ? context.localeKeys.compressionInvalidBitrate
+                ? context
+                      .localeKeys
+                      .enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic
                 : null,
           ),
           onSubmitted: (_) => _applyVideoBitrate(),
           onEditingComplete: _applyVideoBitrate,
         ),
         const SizedBox(height: AppSpacing.xLarge),
-        Text(context.localeKeys.compressionHdrPolicy),
+        Text(context.localeKeys.hdrHandling),
         const SizedBox(height: AppSpacing.small),
         SegmentedButton<HdrMode>(
           segments: [
             ButtonSegment(
               value: HdrMode.toneMapToSdr,
-              label: Text(context.localeKeys.compressionHdrConvert),
+              label: Text(context.localeKeys.convertToSDR),
             ),
             ButtonSegment(
               value: HdrMode.preserve,
-              label: Text(context.localeKeys.compressionHdrPreserve),
+              label: Text(context.localeKeys.keepHDRWhenSupported),
             ),
           ],
           selected: {p.hdrMode},

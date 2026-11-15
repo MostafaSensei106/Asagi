@@ -21,7 +21,7 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String fileSavedToDcim(String fileName) {
+  String fileSavedToGallery(String fileName) {
     return 'Fil sparad till galleri: $fileName';
   }
 
@@ -31,7 +31,7 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get fileAlreadySaved => 'Fil är redan sparad';
+  String get fileIsAlreadySaved => 'Fil är redan sparad';
 
   @override
   String get error => 'Fel';
@@ -55,101 +55,95 @@ class AppLocalizationsSv extends AppLocalizations {
   String get partial => 'Delvis';
 
   @override
-  String get error_address_line_cant_be_empty => 'Adressrad får inte vara tom';
+  String get addressLineCannotBeEmpty => 'Adressrad får inte vara tom';
 
   @override
-  String get error_address_line_too_long => 'Adressrad är för lång';
+  String get addressLineIsTooLong => 'Adressrad är för lång';
 
   @override
-  String get error_address_invalid_special_characters =>
-      'Specialtecken är inte tillåtna';
+  String get specialCharactersAreNotAllowed => 'Specialtecken är inte tillåtna';
 
   @override
-  String get error_address_emoji_not_allowed => 'Emojis är inte tillåtna';
+  String get emojisAreNotAllowed => 'Emojis är inte tillåtna';
 
   @override
-  String get error_city_cant_be_empty => 'Stad får inte vara tom';
+  String get cityCannotBeEmpty => 'Stad får inte vara tom';
 
   @override
-  String get error_city_too_long => 'Stadsnamn är för långt';
+  String get cityNameIsTooLong => 'Stadsnamn är för långt';
 
   @override
-  String get error_city_invalid_special_characters =>
+  String get cityContainsInvalidSpecialCharacters =>
       'Staden innehåller ogiltiga specialtecken';
 
   @override
-  String get error_address_label_cant_be_empty =>
-      'Adressetikett får inte vara tom';
+  String get addressLabelCannotBeEmpty => 'Adressetikett får inte vara tom';
 
   @override
-  String get error_address_label_too_long => 'Adressetikett är för lång';
+  String get addressLabelIsTooLong => 'Adressetikett är för lång';
 
   @override
-  String get error_email_cant_be_empty => 'E-post får inte vara tom';
+  String get emailCannotBeEmpty => 'E-post får inte vara tom';
 
   @override
-  String get error_email_not_invalid_format => 'Ogiltigt e-postformat';
+  String get invalidEmailFormat => 'Ogiltigt e-postformat';
 
   @override
-  String get error_email_contains_invalid_characters =>
+  String get emailContainsInvalidCharacters =>
       'E-post innehåller ogiltiga tecken';
 
   @override
-  String get error_email_must_contain_at_symbol => 'E-post måste innehålla @';
+  String get emailMustContain => 'E-post måste innehålla @';
 
   @override
-  String get error_email_must_be_in_lowercase =>
-      'E-post måste vara i små bokstäver';
+  String get emailMustBeInLowercase => 'E-post måste vara i små bokstäver';
 
   @override
-  String get error_arabic_not_allowed => 'Arabiska tecken är inte tillåtna';
+  String get arabicCharactersAreNotAllowed =>
+      'Arabiska tecken är inte tillåtna';
 
   @override
-  String get error_email_emoji_not_allowed =>
-      'Emojis är inte tillåtna i e-post';
+  String get emojisAreNotAllowedInEmail => 'Emojis är inte tillåtna i e-post';
 
   @override
-  String get error_phone_number_cant_be_empty =>
-      'Telefonnummer får inte vara tomt';
+  String get phoneNumberCannotBeEmpty => 'Telefonnummer får inte vara tomt';
 
   @override
-  String get error_phone_number_invalid => 'Ogiltigt telefonnummer';
+  String get invalidPhoneNumber => 'Ogiltigt telefonnummer';
 
   @override
-  String get error_phone_number_min_length =>
+  String get phoneNumberMustBeAtLeast11Digits =>
       'Telefonnummer måste vara minst 11 siffror';
 
   @override
-  String get error_name_cant_be_empty => 'Namn får inte vara tomt';
+  String get nameCannotBeEmpty => 'Namn får inte vara tomt';
 
   @override
-  String get error_name_invalid => 'Ogiltigt namn';
+  String get invalidName => 'Ogiltigt namn';
 
   @override
-  String get error_name_too_short_at_least_3_characters =>
-      'Namn måste vara minst 3 tecken';
+  String get nameMustBeAtLeast3Characters => 'Namn måste vara minst 3 tecken';
 
   @override
-  String get error_name_too_long_maximum_20_characters =>
+  String get nameCannotExceed20Characters =>
       'Namn får inte överstiga 20 tecken';
 
   @override
-  String get error_name_invalid_special_characters =>
+  String get nameContainsInvalidSpecialCharacters =>
       'Namn innehåller ogiltiga specialtecken';
 
   @override
-  String get error_name_emoji_not_allowed => 'Emojis är inte tillåtna i namn';
+  String get emojisAreNotAllowedInName => 'Emojis är inte tillåtna i namn';
 
   @override
-  String get error_password_cant_be_empty => 'Lösenord får inte vara tomt';
+  String get passwordCannotBeEmpty => 'Lösenord får inte vara tomt';
 
   @override
-  String
-  get error_password_must_contain_uppercase_lowercase_number_and_special_character =>
+  String get passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter =>
       'Lösenordet måste innehålla stora bokstäver, små bokstäver, siffror och specialtecken';
 
   @override
-  String get error_password_must_be_at_least_8_characters_long =>
+  String get passwordMustBeAtLeast8CharactersLong =>
       'Lösenordet måste vara minst 8 tecken långt';
 
   @override
@@ -396,43 +390,43 @@ class AppLocalizationsSv extends AppLocalizations {
   String get recommendZumiToAFriend => 'Rekommendera Zumi till en vän.';
 
   @override
-  String get settingsGroupAppearance => 'Utseende och språk';
+  String get appearanceLanguage => 'Utseende och språk';
 
   @override
-  String get settingsGroupCompression => 'Komprimering';
+  String get compression => 'Komprimering';
 
   @override
-  String get settingsGroupAi => 'AI på enheten';
+  String get onDeviceAI => 'AI på enheten';
 
   @override
-  String get settingsGroupPrivacy => 'Notiser och integritet';
+  String get notificationsPrivacy => 'Notiser och integritet';
 
   @override
-  String get settingsGroupPlans => 'Planer och köp';
+  String get plansPurchases => 'Planer och köp';
 
   @override
-  String get settingsGroupAbout => 'Om';
+  String get about => 'Om';
 
   @override
-  String get settingsGroupLegal => 'Juridiskt';
+  String get legal => 'Juridiskt';
 
   @override
-  String get settingsGroupHelp => 'Hjälp och feedback';
+  String get helpFeedback => 'Hjälp och feedback';
 
   @override
-  String get settingsGroupAccount => 'Konto';
+  String get account => 'Konto';
 
   @override
-  String get settingsAppearanceSubtitle => 'Tema och app-språk';
+  String get themeAndAppLanguage => 'Tema och app-språk';
 
   @override
-  String get settingsLanguageSubtitle => 'App-språk och riktning';
+  String get appLanguageAndDirection => 'App-språk och riktning';
 
   @override
-  String get settingsCompressionSubtitle => 'Standardkvalitet och format';
+  String get defaultQualityAndFormat => 'Standardkvalitet och format';
 
   @override
-  String get settingsStorageSubtitle => 'Cache- och lagringsanvändning';
+  String get cacheAndStorageUsage => 'Cache- och lagringsanvändning';
 
   @override
   String get aiSettings => 'AI-inställningar';
@@ -446,17 +440,18 @@ class AppLocalizationsSv extends AppLocalizations {
       'En privat assistent för dina videor kommer snart. Du kommer att kunna fråga om komprimering, organisering och sparade videor här.';
 
   @override
-  String get settingsAiSubtitle => 'Lokala modeller och smarta verktyg';
+  String get localModelsAndSmartTools => 'Lokala modeller och smarta verktyg';
 
   @override
-  String get exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet =>
+  String get exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet =>
       'Utforska lokala modeller och framtida AI-verktyg. Dessa alternativ är ännu inte aktiva.';
 
   @override
   String get localModels => 'Lokala modeller';
 
   @override
-  String get aiModelsSubtitle => 'Bläddra och ladda ner stödda modeller';
+  String get browseAndDownloadSupportedModels =>
+      'Bläddra och ladda ner stödda modeller';
 
   @override
   String
@@ -467,7 +462,8 @@ class AppLocalizationsSv extends AppLocalizations {
   String get importAModel => 'Importera en modell';
 
   @override
-  String get aiImportSubtitle => 'Använd en kompatibel modell från dina filer';
+  String get useACompatibleModelFromYourFiles =>
+      'Använd en kompatibel modell från dina filer';
 
   @override
   String
@@ -478,18 +474,20 @@ class AppLocalizationsSv extends AppLocalizations {
   String get smartFeatures => 'Smart funktioner';
 
   @override
-  String get aiFeaturesSubtitle => 'Komprimering, organisering och sökning';
+  String get compressionOrganizationAndSearch =>
+      'Komprimering, organisering och sökning';
 
   @override
   String
-  get chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
+  get chooseWhichLocalAISuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
       'Välj vilka lokala AI-förslag som ska användas för videokomprimering, organisering, namngivning och sökning.';
 
   @override
   String get modelPerformance => 'Modellens prestanda';
 
   @override
-  String get aiRuntimeSubtitle => 'Bearbetnings- och resursinställningar';
+  String get processingAndResourcePreferences =>
+      'Bearbetnings- och resursinställningar';
 
   @override
   String get controlTheProcessingBackendAndResourceLimitsForSupportedModels =>
@@ -499,7 +497,8 @@ class AppLocalizationsSv extends AppLocalizations {
   String get conversationSettings => 'Samtalsinställningar';
 
   @override
-  String get aiChatSettingsSubtitle => 'Streaming, tänkande och svarslängd';
+  String get streamingThinkingAndResponseLength =>
+      'Streaming, tänkande och svarslängd';
 
   @override
   String
@@ -510,7 +509,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get imagesAndAudio => 'Bilder och ljud';
 
   @override
-  String get aiMediaSubtitle => 'Styr multimodala insatser';
+  String get controlMultimodalInputs => 'Styr multimodala insatser';
 
   @override
   String
@@ -521,7 +520,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get semanticSearch => 'Semantisk sökning';
 
   @override
-  String get aiSearchSubtitle => 'Inbäddningar och lokal indexering';
+  String get embeddingsAndLocalIndexing => 'Inbäddningar och lokal indexering';
 
   @override
   String
@@ -532,7 +531,8 @@ class AppLocalizationsSv extends AppLocalizations {
   String get toolsAndStructuredOutput => 'Verktyg och strukturerat utdata';
 
   @override
-  String get aiToolsSubtitle => 'Åtgärder, scheman och bekräftelser';
+  String get actionsSchemasAndConfirmations =>
+      'Åtgärder, scheman och bekräftelser';
 
   @override
   String
@@ -540,370 +540,379 @@ class AppLocalizationsSv extends AppLocalizations {
       'Hantera stödda assistentåtgärder och strukturerade svar. Åtgärder som påverkar filer kräver din bekräftelse.';
 
   @override
-  String get aiGroupModels => 'Modeller';
+  String get models => 'Modeller';
 
   @override
-  String get aiGroupExperience => 'Assistentupplevelse';
+  String get assistantExperience => 'Assistentupplevelse';
 
   @override
-  String get aiGroupCapabilities => 'Smart kapacitet';
+  String get smartCapabilities => 'Smart kapacitet';
 
   @override
-  String get aiGroupPerformance => 'Prestanda';
+  String get performance => 'Prestanda';
 
   @override
-  String get compressionHistorySubtitle => 'Din komprimerade videohistorik';
+  String get yourCompressedVideoHistory => 'Din komprimerade videohistorik';
 
   @override
-  String get settingsNotificationsSubtitle =>
+  String get completionAndUpdateAlerts =>
       'Slutförande- och uppdateringsvarningar';
 
   @override
-  String get settingsPrivacySubtitle => 'Din data stannar lokalt';
+  String get yourDataStaysLocal => 'Din data stannar lokalt';
 
   @override
-  String get plansSubtitle => 'Jämför planer och uppgradera';
+  String get comparePlansAndUpgrade => 'Jämför planer och uppgradera';
 
   @override
-  String get plansMethodsSubtitle => 'Betalningsmetoder och fakturering';
+  String get paymentMethodsAndBilling => 'Betalningsmetoder och fakturering';
 
   @override
-  String get plansRestoreSubtitle => 'Återställ ditt tidigare köp';
+  String get restoreYourPreviousPurchase => 'Återställ ditt tidigare köp';
 
   @override
-  String get aboutAppSubtitle => 'Versions- och byggdetaljer';
+  String get versionAndBuildDetails => 'Versions- och byggdetaljer';
 
   @override
-  String get aboutDeveloperSubtitle => 'Utvecklaren bakom Zumi';
+  String get theDeveloperBehindZumi => 'Utvecklaren bakom Zumi';
 
   @override
-  String get aboutLicensesSubtitle => 'Licenser för öppna källpaket';
+  String get openSourcePackageLicenses => 'Licenser för öppna källpaket';
 
   @override
-  String get legalPrivacySubtitle => 'Hur data hanteras';
+  String get howDataIsHandled => 'Hur data hanteras';
 
   @override
-  String get legalTermsSubtitle => 'Regler för att använda Zumi';
+  String get rulesForUsingZumi => 'Regler för att använda Zumi';
 
   @override
-  String get legalDataSafetySubtitle => 'Vilken data vi samlar in';
+  String get whatDataWeCollect => 'Vilken data vi samlar in';
 
   @override
-  String get legalPermissionsSubtitle => 'Varför vi behöver behörigheter';
+  String get whyWeNeedPermissions => 'Varför vi behöver behörigheter';
 
   @override
-  String get helpFaqSubtitle => 'Svar på vanliga frågor';
+  String get answersToCommonQuestions => 'Svar på vanliga frågor';
 
   @override
-  String get helpSupportSubtitle => 'Kontakta utvecklaren direkt';
+  String get reachTheDeveloperDirectly => 'Kontakta utvecklaren direkt';
 
   @override
-  String get helpFeedbackSubtitle => 'Skicka oss din feedback';
+  String get sendUsYourFeedback => 'Skicka oss din feedback';
 
   @override
-  String get compressionPickVideo => 'Välj video';
+  String get pickVideo => 'Välj video';
 
   @override
-  String get compressionTargetMb => 'Målstorlek (MB)';
+  String get targetSizeMB => 'Målstorlek (MB)';
 
   @override
-  String get compressionStart => 'Starta komprimering';
+  String get startCompression => 'Starta komprimering';
 
   @override
-  String get compressionPause => 'Pausa';
+  String get pause => 'Pausa';
 
   @override
-  String get compressionResume => 'Återuppta';
+  String get resume => 'Återuppta';
 
   @override
-  String get compressionViewResult => 'Visa resultat';
+  String get viewResult => 'Visa resultat';
 
   @override
-  String get compressionSaveGallery => 'Spara till galleri';
+  String get saveToGallery => 'Spara till galleri';
 
   @override
-  String get compressionShare => 'Dela video';
+  String get shareVideo => 'Dela video';
 
   @override
-  String get compressionOriginalSize => 'Ursprunglig storlek';
+  String get originalSize => 'Ursprunglig storlek';
 
   @override
-  String get compressionOutputSize => 'Utdata storlek';
+  String get outputSize => 'Utdata storlek';
 
   @override
-  String get compressionEmptyHistory => 'Inga komprimerade videor än';
+  String get noCompressedVideosYet => 'Inga komprimerade videor än';
 
   @override
-  String get compressionSavedGallery => 'Sparad till galleri';
+  String get savedToGallery => 'Sparad till galleri';
 
   @override
-  String get compressionInvalidTarget => 'Ange en målstorlek större än noll';
+  String get enterATargetSizeGreaterThanZero =>
+      'Ange en målstorlek större än noll';
 
   @override
   String get compressionCancelled => 'Komprimering avbruten';
 
   @override
-  String get compressionTargetExceeded =>
+  String get thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize =>
       'Denna video kunde inte nå den valda storleken. Försök med en större målstorlek.';
 
   @override
-  String get compressionTargetInfeasible =>
+  String get theSelectedSizeIsTooSmallForThisVideoChooseALargerSize =>
       'Den valda storleken är för liten för denna video. Välj en större storlek.';
 
   @override
-  String get compressionPreviewBefore => 'Originalförhandsvisning';
+  String get originalPreview => 'Originalförhandsvisning';
 
   @override
-  String get compressionPreviewAfter => 'Komprimerad förhandsvisning';
+  String get compressedPreview => 'Komprimerad förhandsvisning';
 
   @override
-  String get compressionPreset => 'Målinställning';
+  String get targetPreset => 'Målinställning';
 
   @override
-  String get compressionCustom => 'Anpassad storlek';
+  String get customSize => 'Anpassad storlek';
 
   @override
-  String get compressionPreviewUnavailable => 'Förhandsvisning ej tillgänglig';
+  String get previewUnavailable => 'Förhandsvisning ej tillgänglig';
 
   @override
-  String get compressionAdvanced => 'Avancerade kontroller';
+  String get advancedControls => 'Avancerade kontroller';
 
   @override
-  String get compressionAutomatic => 'Automatisk';
+  String get automatic => 'Automatisk';
 
   @override
-  String get compressionResolutionLimit => 'Maximal upplösning';
+  String get maximumResolution => 'Maximal upplösning';
 
   @override
-  String get compressionSourceResolution => 'Ursprunglig upplösning';
+  String get originalResolution => 'Ursprunglig upplösning';
 
   @override
-  String get compressionFrameRateLimit => 'Maximal bildfrekvens';
+  String get maximumFrameRate => 'Maximal bildfrekvens';
 
   @override
-  String get compressionAudioQuality => 'Ljudbitrate';
+  String get audioBitrate => 'Ljudbitrate';
 
   @override
-  String get compressionRemoveAudio => 'Ta bort ljud';
+  String get removeAudio => 'Ta bort ljud';
 
   @override
-  String get compressionVideoBitrateLimit => 'Video bitrate-tak (kbps)';
+  String get videoBitrateCeilingKbps => 'Video bitrate-tak (kbps)';
 
   @override
-  String get compressionHdrPolicy => 'HDR-hantering';
+  String get hdrHandling => 'HDR-hantering';
 
   @override
-  String get compressionHdrConvert => 'Konvertera till SDR';
+  String get convertToSDR => 'Konvertera till SDR';
 
   @override
-  String get compressionHdrPreserve => 'Behåll HDR när det stöds';
+  String get keepHDRWhenSupported => 'Behåll HDR när det stöds';
 
   @override
-  String get compressionPlanPreview => 'Innan du börjar';
+  String get beforeYouStart => 'Innan du börjar';
 
   @override
-  String get compressionPlanLoading => 'Beräknar komprimeringsplan…';
+  String get calculatingCompressionPlan => 'Beräknar komprimeringsplan…';
 
   @override
-  String get compressionPlanResolution => 'Planerad upplösning';
+  String get plannedResolution => 'Planerad upplösning';
 
   @override
-  String get compressionPlanVideoBitrate => 'Planerad videobitrate';
+  String get plannedVideoBitrate => 'Planerad videobitrate';
 
   @override
-  String get compressionPlanAudioBitrate => 'Planerad ljudbitrate';
+  String get plannedAudioBitrate => 'Planerad ljudbitrate';
 
   @override
-  String get compressionAudioConversionNote =>
+  String
+  get reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved =>
       'Omkodning konverterar ljud till AAC stereo. Dolby Atmos och DTS rumsljud kommer inte att bevaras.';
 
   @override
-  String get compressionPlanTooSmall =>
+  String
+  get thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits =>
       'Detta mål är för litet för en användbar video. Öka storleken eller sänk andra begränsningar.';
 
   @override
-  String get compressionPlanLowQuality =>
+  String get theSelectedTargetMayReduceVideoQuality =>
       'Det valda målet kan minska videokvaliteten.';
 
   @override
-  String get compressionPlanAlreadyWithinLimit =>
+  String get theSourceIsAlreadyWithinTheSizeLimit =>
       'Källan är redan inom storleksgränsen.';
 
   @override
-  String get compressionInvalidBitrate =>
+  String get enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic =>
       'Ange en bithastighet på minst 150 kbps, eller lämna tomt för automatisk inställning.';
 
   @override
-  String get compressionInvalidResolution =>
+  String get enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic =>
       'Ange en jämn upplösning från 240 till 16384, eller lämna tomt för automatisk inställning.';
 
   @override
-  String get compressionSeek => 'Videoposition';
+  String get videoPosition => 'Videoposition';
 
   @override
-  String get compressionInterrupted =>
+  String
+  get aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain =>
       'En tidigare komprimering avbröts. Dess temporära filer har rensats; du kan välja videon och försöka igen.';
 
   @override
-  String get compressionDismiss => 'Avvisa';
+  String get dismiss => 'Avvisa';
 
   @override
-  String get compressionClearHistory => 'Rensa historik';
+  String get clearHistory => 'Rensa historik';
 
   @override
-  String get compressionClearHistoryConfirm =>
+  String get removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice =>
       'Ta bort alla historikposter? Sparade videor kommer att finnas kvar på din enhet.';
 
   @override
-  String get compressionAttempts => 'Försök';
+  String get attempts => 'Försök';
 
   @override
-  String get compressionTargetSize => 'Målstorlek';
+  String get targetSize => 'Målstorlek';
 
   @override
-  String get compressionOutputResolution => 'Utdataupplösning';
+  String get outputResolution => 'Utdataupplösning';
 
   @override
-  String get compressionInvalidVideo =>
+  String get thisVideoCouldNotBeReadChooseAnotherFile =>
       'Den här videon kunde inte läsas. Välj en annan fil.';
 
   @override
-  String get compressionInvalidOutput =>
+  String get theEncodedVideoFailedVerificationYourOriginalVideoWasNotChanged =>
       'Den kodade videon misslyckades med verifiering. Din ursprungliga video ändrades inte.';
 
   @override
-  String get compressionEncoderUnsupported =>
+  String
+  get thisDeviceCannotEncodeTheSelectedResolutionOrFrameRateLowerThatSettingAndTryAgain =>
       'Den här enheten kan inte koda den valda upplösningen eller bildhastigheten. Sänk den inställningen och försök igen.';
 
   @override
-  String get compressionAudioDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisAudioFormatForCompressionRemoveAudioOrUseASupportedSource =>
       'Den här enheten kan inte avkoda detta ljudformat för komprimering. Ta bort ljudet eller använd en stödd källa.';
 
   @override
-  String get compressionVideoDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisVideoFormatOrProfileForCompressionChooseAnotherSourceOrDevice =>
       'Denna enhet kan inte avkoda detta videoformat eller profil för komprimering. Välj en annan källa eller enhet.';
 
   @override
-  String get compressionMp4NotStreamable =>
+  String get theExportedMP4IsNotReadyForStreamingTryAnotherVideoOrDevice =>
       'Den exporterade MP4-filen är inte redo för strömning. Prova en annan video eller enhet.';
 
   @override
-  String get compressionNoSpace =>
+  String get thereIsNotEnoughFreeStorageToCompressThisVideo =>
       'Det finns inte tillräckligt med ledigt utrymme för att komprimera denna video.';
 
   @override
-  String get compressionHdrUnsupported =>
+  String get thisDeviceCannotProcessTheSelectedHDRModeTryConvertingToSDR =>
       'Denna enhet kan inte bearbeta det valda HDR-läget. Försök att konvertera till SDR.';
 
   @override
-  String get compressionGeneralFailure =>
+  String get compressionCouldNotBeCompletedTryAnotherSettingOrVideo =>
       'Komprimeringen kunde inte slutföras. Försök med en annan inställning eller video.';
 
   @override
-  String get aboutIdentitySection => 'Appidentitet';
+  String get appIdentity => 'Appidentitet';
 
   @override
-  String get aboutAppName => 'Appnamn';
+  String get appName => 'Appnamn';
 
   @override
-  String get aboutPackageName => 'Paketnamn';
+  String get packageName => 'Paketnamn';
 
   @override
-  String get aboutVersion => 'Version';
+  String get version => 'Version';
 
   @override
-  String get aboutBuildNumber => 'Byggnummer';
+  String get buildNumber => 'Byggnummer';
 
   @override
-  String get aboutEnvironmentSection => 'Enhet och bygg';
+  String get deviceAndBuild => 'Enhet och bygg';
 
   @override
-  String get aboutOperatingSystem => 'Operativsystem';
+  String get operatingSystem => 'Operativsystem';
 
   @override
-  String get aboutOsVersion => 'OS-version';
+  String get osVersion => 'OS-version';
 
   @override
-  String get aboutBuildMode => 'Byggläge';
+  String get buildMode => 'Byggläge';
 
   @override
-  String get aboutDebug => 'Felsök';
+  String get debug => 'Felsök';
 
   @override
-  String get aboutRelease => 'Släpp';
+  String get release => 'Släpp';
 
   @override
-  String get aboutToolchainSection => 'Byggd med';
+  String get builtWith => 'Byggd med';
 
   @override
-  String get aboutInstallationSection => 'Installation';
+  String get installation => 'Installation';
 
   @override
-  String get aboutInstaller => 'Installerad från';
+  String get installedFrom => 'Installerad från';
 
   @override
-  String get aboutInstalledOn => 'Installerad på';
+  String get installedOn => 'Installerad på';
 
   @override
-  String get aboutUpdatedOn => 'Uppdaterad den';
+  String get updatedOn => 'Uppdaterad den';
 
   @override
-  String get aboutUnavailable => 'Inte tillgänglig';
+  String get unavailable => 'Inte tillgänglig';
 
   @override
-  String get aboutProjectSection => 'Projekt och support';
+  String get projectAndSupport => 'Projekt och support';
 
   @override
-  String get aboutRepository => 'GitHub-förråd';
+  String get githubRepository => 'GitHub-förråd';
 
   @override
-  String get aboutRepositorySubtitle => 'Visa Zumi-källkod';
+  String get viewZumiSourceCode => 'Visa Zumi-källkod';
 
   @override
-  String get aboutReadme => 'Läs README';
+  String get readTheREADME => 'Läs README';
 
   @override
-  String get aboutReadmeSubtitle => 'Läs om Zumi på GitHub';
+  String get learnAboutZumiOnGitHub => 'Läs om Zumi på GitHub';
 
   @override
-  String get aboutIssues => 'Rapportera ett problem';
+  String get reportAnIssue => 'Rapportera ett problem';
 
   @override
-  String get aboutIssuesSubtitle => 'Visa och skapa GitHub-ärenden';
+  String get viewAndCreateGitHubIssues => 'Visa och skapa GitHub-ärenden';
 
   @override
-  String get aboutLatestRelease => 'Senaste version';
+  String get latestRelease => 'Senaste version';
 
   @override
-  String get aboutLatestReleaseSubtitle => 'Visa releaser och nedladdningar';
+  String get viewReleasesAndDownloads => 'Visa releaser och nedladdningar';
 
   @override
-  String get aboutDonate => 'Supporta Zumi';
+  String get supportZumi => 'Supporta Zumi';
 
   @override
-  String get aboutDonateSubtitle => 'Öppna den officiella donationssidan';
+  String get openTheOfficialDonationPage =>
+      'Öppna den officiella donationssidan';
 
   @override
-  String get aboutLinkError => 'Kunde inte öppna länken. Försök igen.';
+  String get couldNotOpenTheLinkPleaseTryAgain =>
+      'Kunde inte öppna länken. Försök igen.';
 
   @override
-  String get aboutDeveloperSection => 'Utvecklare';
+  String get developer => 'Utvecklare';
 
   @override
-  String get aboutDeveloperName => 'Mostafa Sensei';
+  String get mostafaSensei => 'Mostafa Sensei';
 
   @override
-  String get aboutDeveloperProfile => 'GitHub-profil';
+  String get githubProfile => 'GitHub-profil';
 
   @override
-  String get aboutDeveloperProfileSubtitle =>
+  String get seeProjectsAndContactDetails =>
       'Se projekt och kontaktinformation';
 
   @override
   String get maintenanceInProgress => 'Underhåll pågår';
 
   @override
-  String get maintenanceMessage =>
+  String get zumiIsTemporarilyUnavailablePleaseTryAgainLater =>
       'Zumi är tillfälligt otillgänglig. Försök igen senare.';
 
   @override
@@ -990,7 +999,7 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   }
 
   @override
-  String fileSavedToDcim(String fileName) {
+  String fileSavedToGallery(String fileName) {
     return 'Fil sparad till galleri: $fileName';
   }
 
@@ -1000,7 +1009,7 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   }
 
   @override
-  String get fileAlreadySaved => 'Fil är redan sparad';
+  String get fileIsAlreadySaved => 'Fil är redan sparad';
 
   @override
   String get error => 'Fel';
@@ -1024,101 +1033,95 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get partial => 'Delvis';
 
   @override
-  String get error_address_line_cant_be_empty => 'Adressrad får inte vara tom';
+  String get addressLineCannotBeEmpty => 'Adressrad får inte vara tom';
 
   @override
-  String get error_address_line_too_long => 'Adressrad är för lång';
+  String get addressLineIsTooLong => 'Adressrad är för lång';
 
   @override
-  String get error_address_invalid_special_characters =>
-      'Specialtecken är inte tillåtna';
+  String get specialCharactersAreNotAllowed => 'Specialtecken är inte tillåtna';
 
   @override
-  String get error_address_emoji_not_allowed => 'Emojis är inte tillåtna';
+  String get emojisAreNotAllowed => 'Emojis är inte tillåtna';
 
   @override
-  String get error_city_cant_be_empty => 'Stad får inte vara tom';
+  String get cityCannotBeEmpty => 'Stad får inte vara tom';
 
   @override
-  String get error_city_too_long => 'Stadsnamn är för långt';
+  String get cityNameIsTooLong => 'Stadsnamn är för långt';
 
   @override
-  String get error_city_invalid_special_characters =>
+  String get cityContainsInvalidSpecialCharacters =>
       'Staden innehåller ogiltiga specialtecken';
 
   @override
-  String get error_address_label_cant_be_empty =>
-      'Adressetikett får inte vara tom';
+  String get addressLabelCannotBeEmpty => 'Adressetikett får inte vara tom';
 
   @override
-  String get error_address_label_too_long => 'Adressetikett är för lång';
+  String get addressLabelIsTooLong => 'Adressetikett är för lång';
 
   @override
-  String get error_email_cant_be_empty => 'E-post får inte vara tom';
+  String get emailCannotBeEmpty => 'E-post får inte vara tom';
 
   @override
-  String get error_email_not_invalid_format => 'Ogiltigt e-postformat';
+  String get invalidEmailFormat => 'Ogiltigt e-postformat';
 
   @override
-  String get error_email_contains_invalid_characters =>
+  String get emailContainsInvalidCharacters =>
       'E-post innehåller ogiltiga tecken';
 
   @override
-  String get error_email_must_contain_at_symbol => 'E-post måste innehålla @';
+  String get emailMustContain => 'E-post måste innehålla @';
 
   @override
-  String get error_email_must_be_in_lowercase =>
-      'E-post måste vara i små bokstäver';
+  String get emailMustBeInLowercase => 'E-post måste vara i små bokstäver';
 
   @override
-  String get error_arabic_not_allowed => 'Arabiska tecken är inte tillåtna';
+  String get arabicCharactersAreNotAllowed =>
+      'Arabiska tecken är inte tillåtna';
 
   @override
-  String get error_email_emoji_not_allowed =>
-      'Emojis är inte tillåtna i e-post';
+  String get emojisAreNotAllowedInEmail => 'Emojis är inte tillåtna i e-post';
 
   @override
-  String get error_phone_number_cant_be_empty =>
-      'Telefonnummer får inte vara tomt';
+  String get phoneNumberCannotBeEmpty => 'Telefonnummer får inte vara tomt';
 
   @override
-  String get error_phone_number_invalid => 'Ogiltigt telefonnummer';
+  String get invalidPhoneNumber => 'Ogiltigt telefonnummer';
 
   @override
-  String get error_phone_number_min_length =>
+  String get phoneNumberMustBeAtLeast11Digits =>
       'Telefonnummer måste vara minst 11 siffror';
 
   @override
-  String get error_name_cant_be_empty => 'Namn får inte vara tomt';
+  String get nameCannotBeEmpty => 'Namn får inte vara tomt';
 
   @override
-  String get error_name_invalid => 'Ogiltigt namn';
+  String get invalidName => 'Ogiltigt namn';
 
   @override
-  String get error_name_too_short_at_least_3_characters =>
-      'Namn måste vara minst 3 tecken';
+  String get nameMustBeAtLeast3Characters => 'Namn måste vara minst 3 tecken';
 
   @override
-  String get error_name_too_long_maximum_20_characters =>
+  String get nameCannotExceed20Characters =>
       'Namn får inte överstiga 20 tecken';
 
   @override
-  String get error_name_invalid_special_characters =>
+  String get nameContainsInvalidSpecialCharacters =>
       'Namn innehåller ogiltiga specialtecken';
 
   @override
-  String get error_name_emoji_not_allowed => 'Emojis är inte tillåtna i namn';
+  String get emojisAreNotAllowedInName => 'Emojis är inte tillåtna i namn';
 
   @override
-  String get error_password_cant_be_empty => 'Lösenord får inte vara tomt';
+  String get passwordCannotBeEmpty => 'Lösenord får inte vara tomt';
 
   @override
-  String
-  get error_password_must_contain_uppercase_lowercase_number_and_special_character =>
+  String get passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter =>
       'Lösenordet måste innehålla stora bokstäver, små bokstäver, siffror och specialtecken';
 
   @override
-  String get error_password_must_be_at_least_8_characters_long =>
+  String get passwordMustBeAtLeast8CharactersLong =>
       'Lösenordet måste vara minst 8 tecken långt';
 
   @override
@@ -1365,43 +1368,43 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get recommendZumiToAFriend => 'Rekommendera Zumi till en vän.';
 
   @override
-  String get settingsGroupAppearance => 'Utseende och språk';
+  String get appearanceLanguage => 'Utseende och språk';
 
   @override
-  String get settingsGroupCompression => 'Komprimering';
+  String get compression => 'Komprimering';
 
   @override
-  String get settingsGroupAi => 'AI på enheten';
+  String get onDeviceAI => 'AI på enheten';
 
   @override
-  String get settingsGroupPrivacy => 'Notiser och integritet';
+  String get notificationsPrivacy => 'Notiser och integritet';
 
   @override
-  String get settingsGroupPlans => 'Planer och köp';
+  String get plansPurchases => 'Planer och köp';
 
   @override
-  String get settingsGroupAbout => 'Om';
+  String get about => 'Om';
 
   @override
-  String get settingsGroupLegal => 'Juridiskt';
+  String get legal => 'Juridiskt';
 
   @override
-  String get settingsGroupHelp => 'Hjälp och feedback';
+  String get helpFeedback => 'Hjälp och feedback';
 
   @override
-  String get settingsGroupAccount => 'Konto';
+  String get account => 'Konto';
 
   @override
-  String get settingsAppearanceSubtitle => 'Tema och app-språk';
+  String get themeAndAppLanguage => 'Tema och app-språk';
 
   @override
-  String get settingsLanguageSubtitle => 'App-språk och riktning';
+  String get appLanguageAndDirection => 'App-språk och riktning';
 
   @override
-  String get settingsCompressionSubtitle => 'Standardkvalitet och format';
+  String get defaultQualityAndFormat => 'Standardkvalitet och format';
 
   @override
-  String get settingsStorageSubtitle => 'Cache- och lagringsanvändning';
+  String get cacheAndStorageUsage => 'Cache- och lagringsanvändning';
 
   @override
   String get aiSettings => 'AI-inställningar';
@@ -1415,17 +1418,18 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
       'En privat assistent för dina videor kommer snart. Du kommer att kunna fråga om komprimering, organisering och sparade videor här.';
 
   @override
-  String get settingsAiSubtitle => 'Lokala modeller och smarta verktyg';
+  String get localModelsAndSmartTools => 'Lokala modeller och smarta verktyg';
 
   @override
-  String get exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet =>
+  String get exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet =>
       'Utforska lokala modeller och framtida AI-verktyg. Dessa alternativ är ännu inte aktiva.';
 
   @override
   String get localModels => 'Lokala modeller';
 
   @override
-  String get aiModelsSubtitle => 'Bläddra och ladda ner stödda modeller';
+  String get browseAndDownloadSupportedModels =>
+      'Bläddra och ladda ner stödda modeller';
 
   @override
   String
@@ -1436,7 +1440,8 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get importAModel => 'Importera en modell';
 
   @override
-  String get aiImportSubtitle => 'Använd en kompatibel modell från dina filer';
+  String get useACompatibleModelFromYourFiles =>
+      'Använd en kompatibel modell från dina filer';
 
   @override
   String
@@ -1447,18 +1452,20 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get smartFeatures => 'Smart funktioner';
 
   @override
-  String get aiFeaturesSubtitle => 'Komprimering, organisering och sökning';
+  String get compressionOrganizationAndSearch =>
+      'Komprimering, organisering och sökning';
 
   @override
   String
-  get chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
+  get chooseWhichLocalAISuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
       'Välj vilka lokala AI-förslag som ska användas för videokomprimering, organisering, namngivning och sökning.';
 
   @override
   String get modelPerformance => 'Modellens prestanda';
 
   @override
-  String get aiRuntimeSubtitle => 'Bearbetnings- och resursinställningar';
+  String get processingAndResourcePreferences =>
+      'Bearbetnings- och resursinställningar';
 
   @override
   String get controlTheProcessingBackendAndResourceLimitsForSupportedModels =>
@@ -1468,7 +1475,8 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get conversationSettings => 'Samtalsinställningar';
 
   @override
-  String get aiChatSettingsSubtitle => 'Streaming, tänkande och svarslängd';
+  String get streamingThinkingAndResponseLength =>
+      'Streaming, tänkande och svarslängd';
 
   @override
   String
@@ -1479,7 +1487,7 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get imagesAndAudio => 'Bilder och ljud';
 
   @override
-  String get aiMediaSubtitle => 'Styr multimodala insatser';
+  String get controlMultimodalInputs => 'Styr multimodala insatser';
 
   @override
   String
@@ -1490,7 +1498,7 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get semanticSearch => 'Semantisk sökning';
 
   @override
-  String get aiSearchSubtitle => 'Inbäddningar och lokal indexering';
+  String get embeddingsAndLocalIndexing => 'Inbäddningar och lokal indexering';
 
   @override
   String
@@ -1501,7 +1509,8 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get toolsAndStructuredOutput => 'Verktyg och strukturerat utdata';
 
   @override
-  String get aiToolsSubtitle => 'Åtgärder, scheman och bekräftelser';
+  String get actionsSchemasAndConfirmations =>
+      'Åtgärder, scheman och bekräftelser';
 
   @override
   String
@@ -1509,370 +1518,379 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
       'Hantera stödda assistentåtgärder och strukturerade svar. Åtgärder som påverkar filer kräver din bekräftelse.';
 
   @override
-  String get aiGroupModels => 'Modeller';
+  String get models => 'Modeller';
 
   @override
-  String get aiGroupExperience => 'Assistentupplevelse';
+  String get assistantExperience => 'Assistentupplevelse';
 
   @override
-  String get aiGroupCapabilities => 'Smart kapacitet';
+  String get smartCapabilities => 'Smart kapacitet';
 
   @override
-  String get aiGroupPerformance => 'Prestanda';
+  String get performance => 'Prestanda';
 
   @override
-  String get compressionHistorySubtitle => 'Din komprimerade videohistorik';
+  String get yourCompressedVideoHistory => 'Din komprimerade videohistorik';
 
   @override
-  String get settingsNotificationsSubtitle =>
+  String get completionAndUpdateAlerts =>
       'Slutförande- och uppdateringsvarningar';
 
   @override
-  String get settingsPrivacySubtitle => 'Din data stannar lokalt';
+  String get yourDataStaysLocal => 'Din data stannar lokalt';
 
   @override
-  String get plansSubtitle => 'Jämför planer och uppgradera';
+  String get comparePlansAndUpgrade => 'Jämför planer och uppgradera';
 
   @override
-  String get plansMethodsSubtitle => 'Betalningsmetoder och fakturering';
+  String get paymentMethodsAndBilling => 'Betalningsmetoder och fakturering';
 
   @override
-  String get plansRestoreSubtitle => 'Återställ ditt tidigare köp';
+  String get restoreYourPreviousPurchase => 'Återställ ditt tidigare köp';
 
   @override
-  String get aboutAppSubtitle => 'Versions- och byggdetaljer';
+  String get versionAndBuildDetails => 'Versions- och byggdetaljer';
 
   @override
-  String get aboutDeveloperSubtitle => 'Utvecklaren bakom Zumi';
+  String get theDeveloperBehindZumi => 'Utvecklaren bakom Zumi';
 
   @override
-  String get aboutLicensesSubtitle => 'Licenser för öppna källpaket';
+  String get openSourcePackageLicenses => 'Licenser för öppna källpaket';
 
   @override
-  String get legalPrivacySubtitle => 'Hur data hanteras';
+  String get howDataIsHandled => 'Hur data hanteras';
 
   @override
-  String get legalTermsSubtitle => 'Regler för att använda Zumi';
+  String get rulesForUsingZumi => 'Regler för att använda Zumi';
 
   @override
-  String get legalDataSafetySubtitle => 'Vilken data vi samlar in';
+  String get whatDataWeCollect => 'Vilken data vi samlar in';
 
   @override
-  String get legalPermissionsSubtitle => 'Varför vi behöver behörigheter';
+  String get whyWeNeedPermissions => 'Varför vi behöver behörigheter';
 
   @override
-  String get helpFaqSubtitle => 'Svar på vanliga frågor';
+  String get answersToCommonQuestions => 'Svar på vanliga frågor';
 
   @override
-  String get helpSupportSubtitle => 'Kontakta utvecklaren direkt';
+  String get reachTheDeveloperDirectly => 'Kontakta utvecklaren direkt';
 
   @override
-  String get helpFeedbackSubtitle => 'Skicka oss din feedback';
+  String get sendUsYourFeedback => 'Skicka oss din feedback';
 
   @override
-  String get compressionPickVideo => 'Välj video';
+  String get pickVideo => 'Välj video';
 
   @override
-  String get compressionTargetMb => 'Målstorlek (MB)';
+  String get targetSizeMB => 'Målstorlek (MB)';
 
   @override
-  String get compressionStart => 'Starta komprimering';
+  String get startCompression => 'Starta komprimering';
 
   @override
-  String get compressionPause => 'Pausa';
+  String get pause => 'Pausa';
 
   @override
-  String get compressionResume => 'Återuppta';
+  String get resume => 'Återuppta';
 
   @override
-  String get compressionViewResult => 'Visa resultat';
+  String get viewResult => 'Visa resultat';
 
   @override
-  String get compressionSaveGallery => 'Spara till galleri';
+  String get saveToGallery => 'Spara till galleri';
 
   @override
-  String get compressionShare => 'Dela video';
+  String get shareVideo => 'Dela video';
 
   @override
-  String get compressionOriginalSize => 'Ursprunglig storlek';
+  String get originalSize => 'Ursprunglig storlek';
 
   @override
-  String get compressionOutputSize => 'Utdata storlek';
+  String get outputSize => 'Utdata storlek';
 
   @override
-  String get compressionEmptyHistory => 'Inga komprimerade videor än';
+  String get noCompressedVideosYet => 'Inga komprimerade videor än';
 
   @override
-  String get compressionSavedGallery => 'Sparad till galleri';
+  String get savedToGallery => 'Sparad till galleri';
 
   @override
-  String get compressionInvalidTarget => 'Ange en målstorlek större än noll';
+  String get enterATargetSizeGreaterThanZero =>
+      'Ange en målstorlek större än noll';
 
   @override
   String get compressionCancelled => 'Komprimering avbruten';
 
   @override
-  String get compressionTargetExceeded =>
+  String get thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize =>
       'Denna video kunde inte nå den valda storleken. Försök med en större målstorlek.';
 
   @override
-  String get compressionTargetInfeasible =>
+  String get theSelectedSizeIsTooSmallForThisVideoChooseALargerSize =>
       'Den valda storleken är för liten för denna video. Välj en större storlek.';
 
   @override
-  String get compressionPreviewBefore => 'Originalförhandsvisning';
+  String get originalPreview => 'Originalförhandsvisning';
 
   @override
-  String get compressionPreviewAfter => 'Komprimerad förhandsvisning';
+  String get compressedPreview => 'Komprimerad förhandsvisning';
 
   @override
-  String get compressionPreset => 'Målinställning';
+  String get targetPreset => 'Målinställning';
 
   @override
-  String get compressionCustom => 'Anpassad storlek';
+  String get customSize => 'Anpassad storlek';
 
   @override
-  String get compressionPreviewUnavailable => 'Förhandsvisning ej tillgänglig';
+  String get previewUnavailable => 'Förhandsvisning ej tillgänglig';
 
   @override
-  String get compressionAdvanced => 'Avancerade kontroller';
+  String get advancedControls => 'Avancerade kontroller';
 
   @override
-  String get compressionAutomatic => 'Automatisk';
+  String get automatic => 'Automatisk';
 
   @override
-  String get compressionResolutionLimit => 'Maximal upplösning';
+  String get maximumResolution => 'Maximal upplösning';
 
   @override
-  String get compressionSourceResolution => 'Ursprunglig upplösning';
+  String get originalResolution => 'Ursprunglig upplösning';
 
   @override
-  String get compressionFrameRateLimit => 'Maximal bildfrekvens';
+  String get maximumFrameRate => 'Maximal bildfrekvens';
 
   @override
-  String get compressionAudioQuality => 'Ljudbitrate';
+  String get audioBitrate => 'Ljudbitrate';
 
   @override
-  String get compressionRemoveAudio => 'Ta bort ljud';
+  String get removeAudio => 'Ta bort ljud';
 
   @override
-  String get compressionVideoBitrateLimit => 'Video bitrate-tak (kbps)';
+  String get videoBitrateCeilingKbps => 'Video bitrate-tak (kbps)';
 
   @override
-  String get compressionHdrPolicy => 'HDR-hantering';
+  String get hdrHandling => 'HDR-hantering';
 
   @override
-  String get compressionHdrConvert => 'Konvertera till SDR';
+  String get convertToSDR => 'Konvertera till SDR';
 
   @override
-  String get compressionHdrPreserve => 'Behåll HDR när det stöds';
+  String get keepHDRWhenSupported => 'Behåll HDR när det stöds';
 
   @override
-  String get compressionPlanPreview => 'Innan du börjar';
+  String get beforeYouStart => 'Innan du börjar';
 
   @override
-  String get compressionPlanLoading => 'Beräknar komprimeringsplan…';
+  String get calculatingCompressionPlan => 'Beräknar komprimeringsplan…';
 
   @override
-  String get compressionPlanResolution => 'Planerad upplösning';
+  String get plannedResolution => 'Planerad upplösning';
 
   @override
-  String get compressionPlanVideoBitrate => 'Planerad videobitrate';
+  String get plannedVideoBitrate => 'Planerad videobitrate';
 
   @override
-  String get compressionPlanAudioBitrate => 'Planerad ljudbitrate';
+  String get plannedAudioBitrate => 'Planerad ljudbitrate';
 
   @override
-  String get compressionAudioConversionNote =>
+  String
+  get reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved =>
       'Omkodning konverterar ljud till AAC stereo. Dolby Atmos och DTS rumsljud kommer inte att bevaras.';
 
   @override
-  String get compressionPlanTooSmall =>
+  String
+  get thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits =>
       'Detta mål är för litet för en användbar video. Öka storleken eller sänk andra begränsningar.';
 
   @override
-  String get compressionPlanLowQuality =>
+  String get theSelectedTargetMayReduceVideoQuality =>
       'Det valda målet kan minska videokvaliteten.';
 
   @override
-  String get compressionPlanAlreadyWithinLimit =>
+  String get theSourceIsAlreadyWithinTheSizeLimit =>
       'Källan är redan inom storleksgränsen.';
 
   @override
-  String get compressionInvalidBitrate =>
+  String get enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic =>
       'Ange en bithastighet på minst 150 kbps, eller lämna tomt för automatisk inställning.';
 
   @override
-  String get compressionInvalidResolution =>
+  String get enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic =>
       'Ange en jämn upplösning från 240 till 16384, eller lämna tomt för automatisk inställning.';
 
   @override
-  String get compressionSeek => 'Videoposition';
+  String get videoPosition => 'Videoposition';
 
   @override
-  String get compressionInterrupted =>
+  String
+  get aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain =>
       'En tidigare komprimering avbröts. Dess temporära filer har rensats; du kan välja videon och försöka igen.';
 
   @override
-  String get compressionDismiss => 'Avvisa';
+  String get dismiss => 'Avvisa';
 
   @override
-  String get compressionClearHistory => 'Rensa historik';
+  String get clearHistory => 'Rensa historik';
 
   @override
-  String get compressionClearHistoryConfirm =>
+  String get removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice =>
       'Ta bort alla historikposter? Sparade videor kommer att finnas kvar på din enhet.';
 
   @override
-  String get compressionAttempts => 'Försök';
+  String get attempts => 'Försök';
 
   @override
-  String get compressionTargetSize => 'Målstorlek';
+  String get targetSize => 'Målstorlek';
 
   @override
-  String get compressionOutputResolution => 'Utdataupplösning';
+  String get outputResolution => 'Utdataupplösning';
 
   @override
-  String get compressionInvalidVideo =>
+  String get thisVideoCouldNotBeReadChooseAnotherFile =>
       'Den här videon kunde inte läsas. Välj en annan fil.';
 
   @override
-  String get compressionInvalidOutput =>
+  String get theEncodedVideoFailedVerificationYourOriginalVideoWasNotChanged =>
       'Den kodade videon misslyckades med verifiering. Din ursprungliga video ändrades inte.';
 
   @override
-  String get compressionEncoderUnsupported =>
+  String
+  get thisDeviceCannotEncodeTheSelectedResolutionOrFrameRateLowerThatSettingAndTryAgain =>
       'Den här enheten kan inte koda den valda upplösningen eller bildhastigheten. Sänk den inställningen och försök igen.';
 
   @override
-  String get compressionAudioDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisAudioFormatForCompressionRemoveAudioOrUseASupportedSource =>
       'Den här enheten kan inte avkoda detta ljudformat för komprimering. Ta bort ljudet eller använd en stödd källa.';
 
   @override
-  String get compressionVideoDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisVideoFormatOrProfileForCompressionChooseAnotherSourceOrDevice =>
       'Denna enhet kan inte avkoda detta videoformat eller profil för komprimering. Välj en annan källa eller enhet.';
 
   @override
-  String get compressionMp4NotStreamable =>
+  String get theExportedMP4IsNotReadyForStreamingTryAnotherVideoOrDevice =>
       'Den exporterade MP4-filen är inte redo för strömning. Prova en annan video eller enhet.';
 
   @override
-  String get compressionNoSpace =>
+  String get thereIsNotEnoughFreeStorageToCompressThisVideo =>
       'Det finns inte tillräckligt med ledigt utrymme för att komprimera denna video.';
 
   @override
-  String get compressionHdrUnsupported =>
+  String get thisDeviceCannotProcessTheSelectedHDRModeTryConvertingToSDR =>
       'Denna enhet kan inte bearbeta det valda HDR-läget. Försök att konvertera till SDR.';
 
   @override
-  String get compressionGeneralFailure =>
+  String get compressionCouldNotBeCompletedTryAnotherSettingOrVideo =>
       'Komprimeringen kunde inte slutföras. Försök med en annan inställning eller video.';
 
   @override
-  String get aboutIdentitySection => 'Appidentitet';
+  String get appIdentity => 'Appidentitet';
 
   @override
-  String get aboutAppName => 'Appnamn';
+  String get appName => 'Appnamn';
 
   @override
-  String get aboutPackageName => 'Paketnamn';
+  String get packageName => 'Paketnamn';
 
   @override
-  String get aboutVersion => 'Version';
+  String get version => 'Version';
 
   @override
-  String get aboutBuildNumber => 'Byggnummer';
+  String get buildNumber => 'Byggnummer';
 
   @override
-  String get aboutEnvironmentSection => 'Enhet och bygg';
+  String get deviceAndBuild => 'Enhet och bygg';
 
   @override
-  String get aboutOperatingSystem => 'Operativsystem';
+  String get operatingSystem => 'Operativsystem';
 
   @override
-  String get aboutOsVersion => 'OS-version';
+  String get osVersion => 'OS-version';
 
   @override
-  String get aboutBuildMode => 'Byggläge';
+  String get buildMode => 'Byggläge';
 
   @override
-  String get aboutDebug => 'Felsök';
+  String get debug => 'Felsök';
 
   @override
-  String get aboutRelease => 'Släpp';
+  String get release => 'Släpp';
 
   @override
-  String get aboutToolchainSection => 'Byggd med';
+  String get builtWith => 'Byggd med';
 
   @override
-  String get aboutInstallationSection => 'Installation';
+  String get installation => 'Installation';
 
   @override
-  String get aboutInstaller => 'Installerad från';
+  String get installedFrom => 'Installerad från';
 
   @override
-  String get aboutInstalledOn => 'Installerad på';
+  String get installedOn => 'Installerad på';
 
   @override
-  String get aboutUpdatedOn => 'Uppdaterad den';
+  String get updatedOn => 'Uppdaterad den';
 
   @override
-  String get aboutUnavailable => 'Inte tillgänglig';
+  String get unavailable => 'Inte tillgänglig';
 
   @override
-  String get aboutProjectSection => 'Projekt och support';
+  String get projectAndSupport => 'Projekt och support';
 
   @override
-  String get aboutRepository => 'GitHub-förråd';
+  String get githubRepository => 'GitHub-förråd';
 
   @override
-  String get aboutRepositorySubtitle => 'Visa Zumi-källkod';
+  String get viewZumiSourceCode => 'Visa Zumi-källkod';
 
   @override
-  String get aboutReadme => 'Läs README';
+  String get readTheREADME => 'Läs README';
 
   @override
-  String get aboutReadmeSubtitle => 'Läs om Zumi på GitHub';
+  String get learnAboutZumiOnGitHub => 'Läs om Zumi på GitHub';
 
   @override
-  String get aboutIssues => 'Rapportera ett problem';
+  String get reportAnIssue => 'Rapportera ett problem';
 
   @override
-  String get aboutIssuesSubtitle => 'Visa och skapa GitHub-ärenden';
+  String get viewAndCreateGitHubIssues => 'Visa och skapa GitHub-ärenden';
 
   @override
-  String get aboutLatestRelease => 'Senaste version';
+  String get latestRelease => 'Senaste version';
 
   @override
-  String get aboutLatestReleaseSubtitle => 'Visa releaser och nedladdningar';
+  String get viewReleasesAndDownloads => 'Visa releaser och nedladdningar';
 
   @override
-  String get aboutDonate => 'Supporta Zumi';
+  String get supportZumi => 'Supporta Zumi';
 
   @override
-  String get aboutDonateSubtitle => 'Öppna den officiella donationssidan';
+  String get openTheOfficialDonationPage =>
+      'Öppna den officiella donationssidan';
 
   @override
-  String get aboutLinkError => 'Kunde inte öppna länken. Försök igen.';
+  String get couldNotOpenTheLinkPleaseTryAgain =>
+      'Kunde inte öppna länken. Försök igen.';
 
   @override
-  String get aboutDeveloperSection => 'Utvecklare';
+  String get developer => 'Utvecklare';
 
   @override
-  String get aboutDeveloperName => 'Mostafa Sensei';
+  String get mostafaSensei => 'Mostafa Sensei';
 
   @override
-  String get aboutDeveloperProfile => 'GitHub-profil';
+  String get githubProfile => 'GitHub-profil';
 
   @override
-  String get aboutDeveloperProfileSubtitle =>
+  String get seeProjectsAndContactDetails =>
       'Se projekt och kontaktinformation';
 
   @override
   String get maintenanceInProgress => 'Underhåll pågår';
 
   @override
-  String get maintenanceMessage =>
+  String get zumiIsTemporarilyUnavailablePleaseTryAgainLater =>
       'Zumi är tillfälligt otillgänglig. Försök igen senare.';
 
   @override

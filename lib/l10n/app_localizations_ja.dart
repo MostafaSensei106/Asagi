@@ -21,7 +21,7 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String fileSavedToDcim(String fileName) {
+  String fileSavedToGallery(String fileName) {
     return 'ギャラリーにファイルを保存しました: $fileName';
   }
 
@@ -31,7 +31,7 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get fileAlreadySaved => 'ファイルは既に保存されています';
+  String get fileIsAlreadySaved => 'ファイルは既に保存されています';
 
   @override
   String get error => 'エラー';
@@ -55,91 +55,89 @@ class AppLocalizationsJa extends AppLocalizations {
   String get partial => '部分的';
 
   @override
-  String get error_address_line_cant_be_empty => '住所行を空にすることはできません';
+  String get addressLineCannotBeEmpty => '住所行を空にすることはできません';
 
   @override
-  String get error_address_line_too_long => '住所行が長すぎます';
+  String get addressLineIsTooLong => '住所行が長すぎます';
 
   @override
-  String get error_address_invalid_special_characters => '特殊文字は使用できません';
+  String get specialCharactersAreNotAllowed => '特殊文字は使用できません';
 
   @override
-  String get error_address_emoji_not_allowed => '絵文字は使用できません';
+  String get emojisAreNotAllowed => '絵文字は使用できません';
 
   @override
-  String get error_city_cant_be_empty => '市区町村を空にすることはできません';
+  String get cityCannotBeEmpty => '市区町村を空にすることはできません';
 
   @override
-  String get error_city_too_long => '市区町村名が長すぎます';
+  String get cityNameIsTooLong => '市区町村名が長すぎます';
 
   @override
-  String get error_city_invalid_special_characters => '市区町村に無効な特殊文字が含まれています';
+  String get cityContainsInvalidSpecialCharacters => '市区町村に無効な特殊文字が含まれています';
 
   @override
-  String get error_address_label_cant_be_empty => '住所ラベルを空にすることはできません';
+  String get addressLabelCannotBeEmpty => '住所ラベルを空にすることはできません';
 
   @override
-  String get error_address_label_too_long => '住所ラベルが長すぎます';
+  String get addressLabelIsTooLong => '住所ラベルが長すぎます';
 
   @override
-  String get error_email_cant_be_empty => 'メールを空にすることはできません';
+  String get emailCannotBeEmpty => 'メールを空にすることはできません';
 
   @override
-  String get error_email_not_invalid_format => '無効なメール形式';
+  String get invalidEmailFormat => '無効なメール形式';
 
   @override
-  String get error_email_contains_invalid_characters => 'メールに無効な文字が含まれています';
+  String get emailContainsInvalidCharacters => 'メールに無効な文字が含まれています';
 
   @override
-  String get error_email_must_contain_at_symbol => 'メールに@を含める必要があります';
+  String get emailMustContain => 'メールに@を含める必要があります';
 
   @override
-  String get error_email_must_be_in_lowercase => 'メールは小文字でなければなりません';
+  String get emailMustBeInLowercase => 'メールは小文字でなければなりません';
 
   @override
-  String get error_arabic_not_allowed => 'アラビア文字は使用できません';
+  String get arabicCharactersAreNotAllowed => 'アラビア文字は使用できません';
 
   @override
-  String get error_email_emoji_not_allowed => 'メールに絵文字は使用できません';
+  String get emojisAreNotAllowedInEmail => 'メールに絵文字は使用できません';
 
   @override
-  String get error_phone_number_cant_be_empty => '電話番号を空にすることはできません';
+  String get phoneNumberCannotBeEmpty => '電話番号を空にすることはできません';
 
   @override
-  String get error_phone_number_invalid => '無効な電話番号';
+  String get invalidPhoneNumber => '無効な電話番号';
 
   @override
-  String get error_phone_number_min_length => '電話番号は少なくとも11桁である必要があります';
+  String get phoneNumberMustBeAtLeast11Digits => '電話番号は少なくとも11桁である必要があります';
 
   @override
-  String get error_name_cant_be_empty => '名前を空にすることはできません';
+  String get nameCannotBeEmpty => '名前を空にすることはできません';
 
   @override
-  String get error_name_invalid => '無効な名前';
+  String get invalidName => '無効な名前';
 
   @override
-  String get error_name_too_short_at_least_3_characters =>
-      '名前は少なくとも3文字である必要があります';
+  String get nameMustBeAtLeast3Characters => '名前は少なくとも3文字である必要があります';
 
   @override
-  String get error_name_too_long_maximum_20_characters => '名前は20文字を超えることはできません';
+  String get nameCannotExceed20Characters => '名前は20文字を超えることはできません';
 
   @override
-  String get error_name_invalid_special_characters => '名前に無効な特殊文字が含まれています';
+  String get nameContainsInvalidSpecialCharacters => '名前に無効な特殊文字が含まれています';
 
   @override
-  String get error_name_emoji_not_allowed => '名前に絵文字は使用できません';
+  String get emojisAreNotAllowedInName => '名前に絵文字は使用できません';
 
   @override
-  String get error_password_cant_be_empty => 'パスワードを空にすることはできません';
+  String get passwordCannotBeEmpty => 'パスワードを空にすることはできません';
 
   @override
-  String
-  get error_password_must_contain_uppercase_lowercase_number_and_special_character =>
+  String get passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter =>
       'パスワードには大文字、小文字、数字、特殊文字を含める必要があります';
 
   @override
-  String get error_password_must_be_at_least_8_characters_long =>
+  String get passwordMustBeAtLeast8CharactersLong =>
       'パスワードは少なくとも8文字以上である必要があります';
 
   @override
@@ -373,43 +371,43 @@ class AppLocalizationsJa extends AppLocalizations {
   String get recommendZumiToAFriend => '友達にZumiをおすすめする。';
 
   @override
-  String get settingsGroupAppearance => '外観と言語';
+  String get appearanceLanguage => '外観と言語';
 
   @override
-  String get settingsGroupCompression => '圧縮';
+  String get compression => '圧縮';
 
   @override
-  String get settingsGroupAi => 'デバイス上のAI';
+  String get onDeviceAI => 'デバイス上のAI';
 
   @override
-  String get settingsGroupPrivacy => '通知とプライバシー';
+  String get notificationsPrivacy => '通知とプライバシー';
 
   @override
-  String get settingsGroupPlans => 'プランと購入';
+  String get plansPurchases => 'プランと購入';
 
   @override
-  String get settingsGroupAbout => '情報';
+  String get about => '情報';
 
   @override
-  String get settingsGroupLegal => '法的情報';
+  String get legal => '法的情報';
 
   @override
-  String get settingsGroupHelp => 'ヘルプとフィードバック';
+  String get helpFeedback => 'ヘルプとフィードバック';
 
   @override
-  String get settingsGroupAccount => 'アカウント';
+  String get account => 'アカウント';
 
   @override
-  String get settingsAppearanceSubtitle => 'テーマとアプリの言語';
+  String get themeAndAppLanguage => 'テーマとアプリの言語';
 
   @override
-  String get settingsLanguageSubtitle => 'アプリの言語と方向';
+  String get appLanguageAndDirection => 'アプリの言語と方向';
 
   @override
-  String get settingsCompressionSubtitle => 'デフォルトの品質とフォーマット';
+  String get defaultQualityAndFormat => 'デフォルトの品質とフォーマット';
 
   @override
-  String get settingsStorageSubtitle => 'キャッシュとストレージの使用状況';
+  String get cacheAndStorageUsage => 'キャッシュとストレージの使用状況';
 
   @override
   String get aiSettings => 'AI設定';
@@ -423,17 +421,17 @@ class AppLocalizationsJa extends AppLocalizations {
       'あなたのビデオのためのプライベートアシスタントがまもなく登場します。ここで圧縮、整理、保存されたビデオについて質問できるようになります。';
 
   @override
-  String get settingsAiSubtitle => 'ローカルモデルとスマートツール';
+  String get localModelsAndSmartTools => 'ローカルモデルとスマートツール';
 
   @override
-  String get exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet =>
+  String get exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet =>
       'ローカルモデルや将来のAIツールを探索してください。これらのオプションはまだ有効ではありません。';
 
   @override
   String get localModels => 'ローカルモデル';
 
   @override
-  String get aiModelsSubtitle => '対応モデルを閲覧してダウンロード';
+  String get browseAndDownloadSupportedModels => '対応モデルを閲覧してダウンロード';
 
   @override
   String
@@ -444,7 +442,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get importAModel => 'モデルをインポート';
 
   @override
-  String get aiImportSubtitle => 'ファイルから互換モデルを使用してください';
+  String get useACompatibleModelFromYourFiles => 'ファイルから互換モデルを使用してください';
 
   @override
   String
@@ -455,18 +453,18 @@ class AppLocalizationsJa extends AppLocalizations {
   String get smartFeatures => 'スマート機能';
 
   @override
-  String get aiFeaturesSubtitle => '圧縮、整理、検索';
+  String get compressionOrganizationAndSearch => '圧縮、整理、検索';
 
   @override
   String
-  get chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
+  get chooseWhichLocalAISuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
       '動画の圧縮、整理、命名、および検索に使用するローカルAIの提案を選択してください。';
 
   @override
   String get modelPerformance => 'モデルのパフォーマンス';
 
   @override
-  String get aiRuntimeSubtitle => '処理およびリソースの設定';
+  String get processingAndResourcePreferences => '処理およびリソースの設定';
 
   @override
   String get controlTheProcessingBackendAndResourceLimitsForSupportedModels =>
@@ -476,7 +474,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get conversationSettings => '会話の設定';
 
   @override
-  String get aiChatSettingsSubtitle => 'ストリーミング、思考、応答の長さ';
+  String get streamingThinkingAndResponseLength => 'ストリーミング、思考、応答の長さ';
 
   @override
   String
@@ -487,7 +485,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get imagesAndAudio => '画像と音声';
 
   @override
-  String get aiMediaSubtitle => 'マルチモーダル入力を制御します。';
+  String get controlMultimodalInputs => 'マルチモーダル入力を制御します。';
 
   @override
   String
@@ -498,7 +496,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get semanticSearch => 'セマンティック検索';
 
   @override
-  String get aiSearchSubtitle => '埋め込みとローカルインデックス';
+  String get embeddingsAndLocalIndexing => '埋め込みとローカルインデックス';
 
   @override
   String
@@ -509,7 +507,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get toolsAndStructuredOutput => 'ツールと構造化出力';
 
   @override
-  String get aiToolsSubtitle => 'アクション、スキーマ、確認';
+  String get actionsSchemasAndConfirmations => 'アクション、スキーマ、確認';
 
   @override
   String
@@ -517,363 +515,374 @@ class AppLocalizationsJa extends AppLocalizations {
       '対応するアシスタントの操作や構造化された応答を管理します。ファイルに影響を与える操作には確認が必要です。';
 
   @override
-  String get aiGroupModels => 'モデル';
+  String get models => 'モデル';
 
   @override
-  String get aiGroupExperience => 'アシスタントの体験';
+  String get assistantExperience => 'アシスタントの体験';
 
   @override
-  String get aiGroupCapabilities => 'スマート機能';
+  String get smartCapabilities => 'スマート機能';
 
   @override
-  String get aiGroupPerformance => 'パフォーマンス';
+  String get performance => 'パフォーマンス';
 
   @override
-  String get compressionHistorySubtitle => '圧縮されたビデオ履歴';
+  String get yourCompressedVideoHistory => '圧縮されたビデオ履歴';
 
   @override
-  String get settingsNotificationsSubtitle => '完了と更新の通知';
+  String get completionAndUpdateAlerts => '完了と更新の通知';
 
   @override
-  String get settingsPrivacySubtitle => 'データはローカルに保存されます';
+  String get yourDataStaysLocal => 'データはローカルに保存されます';
 
   @override
-  String get plansSubtitle => 'プランを比較してアップグレード';
+  String get comparePlansAndUpgrade => 'プランを比較してアップグレード';
 
   @override
-  String get plansMethodsSubtitle => '支払い方法と請求';
+  String get paymentMethodsAndBilling => '支払い方法と請求';
 
   @override
-  String get plansRestoreSubtitle => '以前の購入を復元';
+  String get restoreYourPreviousPurchase => '以前の購入を復元';
 
   @override
-  String get aboutAppSubtitle => 'バージョンとビルドの詳細';
+  String get versionAndBuildDetails => 'バージョンとビルドの詳細';
 
   @override
-  String get aboutDeveloperSubtitle => 'Zumiの開発者';
+  String get theDeveloperBehindZumi => 'Zumiの開発者';
 
   @override
-  String get aboutLicensesSubtitle => 'オープンソースパッケージのライセンス';
+  String get openSourcePackageLicenses => 'オープンソースパッケージのライセンス';
 
   @override
-  String get legalPrivacySubtitle => 'データの取り扱い方法';
+  String get howDataIsHandled => 'データの取り扱い方法';
 
   @override
-  String get legalTermsSubtitle => 'Zumi使用のルール';
+  String get rulesForUsingZumi => 'Zumi使用のルール';
 
   @override
-  String get legalDataSafetySubtitle => '収集するデータ';
+  String get whatDataWeCollect => '収集するデータ';
 
   @override
-  String get legalPermissionsSubtitle => 'なぜ権限が必要か';
+  String get whyWeNeedPermissions => 'なぜ権限が必要か';
 
   @override
-  String get helpFaqSubtitle => 'よくある質問への回答';
+  String get answersToCommonQuestions => 'よくある質問への回答';
 
   @override
-  String get helpSupportSubtitle => '開発者に直接連絡';
+  String get reachTheDeveloperDirectly => '開発者に直接連絡';
 
   @override
-  String get helpFeedbackSubtitle => 'フィードバックを送信';
+  String get sendUsYourFeedback => 'フィードバックを送信';
 
   @override
-  String get compressionPickVideo => 'ビデオを選択';
+  String get pickVideo => 'ビデオを選択';
 
   @override
-  String get compressionTargetMb => '目標サイズ（MB）';
+  String get targetSizeMB => '目標サイズ（MB）';
 
   @override
-  String get compressionStart => '圧縮を開始';
+  String get startCompression => '圧縮を開始';
 
   @override
-  String get compressionPause => '一時停止';
+  String get pause => '一時停止';
 
   @override
-  String get compressionResume => '再開';
+  String get resume => '再開';
 
   @override
-  String get compressionViewResult => '結果を表示';
+  String get viewResult => '結果を表示';
 
   @override
-  String get compressionSaveGallery => 'ギャラリーに保存';
+  String get saveToGallery => 'ギャラリーに保存';
 
   @override
-  String get compressionShare => 'ビデオを共有';
+  String get shareVideo => 'ビデオを共有';
 
   @override
-  String get compressionOriginalSize => '元のサイズ';
+  String get originalSize => '元のサイズ';
 
   @override
-  String get compressionOutputSize => '出力サイズ';
+  String get outputSize => '出力サイズ';
 
   @override
-  String get compressionEmptyHistory => 'まだ圧縮されたビデオはありません';
+  String get noCompressedVideosYet => 'まだ圧縮されたビデオはありません';
 
   @override
-  String get compressionSavedGallery => 'ギャラリーに保存されました';
+  String get savedToGallery => 'ギャラリーに保存されました';
 
   @override
-  String get compressionInvalidTarget => '0より大きい目標サイズを入力してください';
+  String get enterATargetSizeGreaterThanZero => '0より大きい目標サイズを入力してください';
 
   @override
   String get compressionCancelled => '圧縮がキャンセルされました';
 
   @override
-  String get compressionTargetExceeded =>
+  String get thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize =>
       'このビデオは選択したサイズに到達できませんでした。大きい目標サイズを試してください。';
 
   @override
-  String get compressionTargetInfeasible =>
+  String get theSelectedSizeIsTooSmallForThisVideoChooseALargerSize =>
       '選択したサイズはこのビデオには小さすぎます。より大きいサイズを選んでください。';
 
   @override
-  String get compressionPreviewBefore => '元のプレビュー';
+  String get originalPreview => '元のプレビュー';
 
   @override
-  String get compressionPreviewAfter => '圧縮プレビュー';
+  String get compressedPreview => '圧縮プレビュー';
 
   @override
-  String get compressionPreset => 'ターゲットプリセット';
+  String get targetPreset => 'ターゲットプリセット';
 
   @override
-  String get compressionCustom => 'カスタムサイズ';
+  String get customSize => 'カスタムサイズ';
 
   @override
-  String get compressionPreviewUnavailable => 'プレビューは利用できません';
+  String get previewUnavailable => 'プレビューは利用できません';
 
   @override
-  String get compressionAdvanced => '高度なコントロール';
+  String get advancedControls => '高度なコントロール';
 
   @override
-  String get compressionAutomatic => '自動';
+  String get automatic => '自動';
 
   @override
-  String get compressionResolutionLimit => '最大解像度';
+  String get maximumResolution => '最大解像度';
 
   @override
-  String get compressionSourceResolution => '元の解像度';
+  String get originalResolution => '元の解像度';
 
   @override
-  String get compressionFrameRateLimit => '最大フレームレート';
+  String get maximumFrameRate => '最大フレームレート';
 
   @override
-  String get compressionAudioQuality => 'オーディオビットレート';
+  String get audioBitrate => 'オーディオビットレート';
 
   @override
-  String get compressionRemoveAudio => 'オーディオを削除';
+  String get removeAudio => 'オーディオを削除';
 
   @override
-  String get compressionVideoBitrateLimit => 'ビデオビットレート上限（kbps）';
+  String get videoBitrateCeilingKbps => 'ビデオビットレート上限（kbps）';
 
   @override
-  String get compressionHdrPolicy => 'HDRの扱い';
+  String get hdrHandling => 'HDRの扱い';
 
   @override
-  String get compressionHdrConvert => 'SDRに変換';
+  String get convertToSDR => 'SDRに変換';
 
   @override
-  String get compressionHdrPreserve => '対応している場合はHDRを保持';
+  String get keepHDRWhenSupported => '対応している場合はHDRを保持';
 
   @override
-  String get compressionPlanPreview => '開始前に';
+  String get beforeYouStart => '開始前に';
 
   @override
-  String get compressionPlanLoading => '圧縮プランを計算中…';
+  String get calculatingCompressionPlan => '圧縮プランを計算中…';
 
   @override
-  String get compressionPlanResolution => '予定解像度';
+  String get plannedResolution => '予定解像度';
 
   @override
-  String get compressionPlanVideoBitrate => '予定ビデオビットレート';
+  String get plannedVideoBitrate => '予定ビデオビットレート';
 
   @override
-  String get compressionPlanAudioBitrate => '予定オーディオビットレート';
+  String get plannedAudioBitrate => '予定オーディオビットレート';
 
   @override
-  String get compressionAudioConversionNote =>
+  String
+  get reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved =>
       '再エンコードによりオーディオはAACステレオに変換されます。Dolby AtmosやDTS空間オーディオは保持されません。';
 
   @override
-  String get compressionPlanTooSmall =>
+  String
+  get thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits =>
       'このターゲットは、使用可能なビデオには小さすぎます。サイズを大きくするか、他の制限を下げてください。';
 
   @override
-  String get compressionPlanLowQuality => '選択されたターゲットはビデオの品質を下げる可能性があります。';
+  String get theSelectedTargetMayReduceVideoQuality =>
+      '選択されたターゲットはビデオの品質を下げる可能性があります。';
 
   @override
-  String get compressionPlanAlreadyWithinLimit => 'ソースはすでにサイズ制限内です。';
+  String get theSourceIsAlreadyWithinTheSizeLimit => 'ソースはすでにサイズ制限内です。';
 
   @override
-  String get compressionInvalidBitrate =>
+  String get enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic =>
       'ビットレートを少なくとも150 kbpsで入力するか、自動にする場合は空白のままにしてください。';
 
   @override
-  String get compressionInvalidResolution =>
+  String get enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic =>
       '240から16384までの偶数の解像度を入力するか、自動にする場合は空白のままにしてください。';
 
   @override
-  String get compressionSeek => 'ビデオの位置';
+  String get videoPosition => 'ビデオの位置';
 
   @override
-  String get compressionInterrupted =>
+  String
+  get aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain =>
       '以前の圧縮が中断されました。その一時ファイルは削除されました。ビデオを選択してもう一度試すことができます。';
 
   @override
-  String get compressionDismiss => '閉じる';
+  String get dismiss => '閉じる';
 
   @override
-  String get compressionClearHistory => '履歴をクリア';
+  String get clearHistory => '履歴をクリア';
 
   @override
-  String get compressionClearHistoryConfirm =>
+  String get removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice =>
       'すべての履歴を削除しますか？保存されたビデオはデバイスに残ります。';
 
   @override
-  String get compressionAttempts => '試行回数';
+  String get attempts => '試行回数';
 
   @override
-  String get compressionTargetSize => '目標サイズ';
+  String get targetSize => '目標サイズ';
 
   @override
-  String get compressionOutputResolution => '出力解像度';
+  String get outputResolution => '出力解像度';
 
   @override
-  String get compressionInvalidVideo => 'このビデオは読み取れません。他のファイルを選択してください。';
+  String get thisVideoCouldNotBeReadChooseAnotherFile =>
+      'このビデオは読み取れません。他のファイルを選択してください。';
 
   @override
-  String get compressionInvalidOutput =>
+  String get theEncodedVideoFailedVerificationYourOriginalVideoWasNotChanged =>
       'エンコードされたビデオは検証に失敗しました。元のビデオは変更されていません。';
 
   @override
-  String get compressionEncoderUnsupported =>
+  String
+  get thisDeviceCannotEncodeTheSelectedResolutionOrFrameRateLowerThatSettingAndTryAgain =>
       'このデバイスでは選択された解像度やフレームレートをエンコードできません。その設定を下げて再試行してください。';
 
   @override
-  String get compressionAudioDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisAudioFormatForCompressionRemoveAudioOrUseASupportedSource =>
       'このデバイスではこのオーディオ形式を圧縮用にデコードできません。オーディオを削除するか、サポートされているソースを使用してください。';
 
   @override
-  String get compressionVideoDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisVideoFormatOrProfileForCompressionChooseAnotherSourceOrDevice =>
       'このデバイスではこのビデオ形式または圧縮プロファイルをデコードできません。別のソースまたはデバイスを選択してください。';
 
   @override
-  String get compressionMp4NotStreamable =>
+  String get theExportedMP4IsNotReadyForStreamingTryAnotherVideoOrDevice =>
       'エクスポートされたMP4はストリーミングに準備されていません。別のビデオまたはデバイスを試してください。';
 
   @override
-  String get compressionNoSpace => 'このビデオを圧縮するための十分な空きストレージがありません。';
+  String get thereIsNotEnoughFreeStorageToCompressThisVideo =>
+      'このビデオを圧縮するための十分な空きストレージがありません。';
 
   @override
-  String get compressionHdrUnsupported =>
+  String get thisDeviceCannotProcessTheSelectedHDRModeTryConvertingToSDR =>
       'このデバイスでは選択したHDRモードを処理できません。SDRに変換してみてください。';
 
   @override
-  String get compressionGeneralFailure => '圧縮を完了できませんでした。別の設定またはビデオをお試しください。';
+  String get compressionCouldNotBeCompletedTryAnotherSettingOrVideo =>
+      '圧縮を完了できませんでした。別の設定またはビデオをお試しください。';
 
   @override
-  String get aboutIdentitySection => 'アプリの識別情報';
+  String get appIdentity => 'アプリの識別情報';
 
   @override
-  String get aboutAppName => 'アプリ名';
+  String get appName => 'アプリ名';
 
   @override
-  String get aboutPackageName => 'パッケージ名';
+  String get packageName => 'パッケージ名';
 
   @override
-  String get aboutVersion => 'バージョン';
+  String get version => 'バージョン';
 
   @override
-  String get aboutBuildNumber => 'ビルド番号';
+  String get buildNumber => 'ビルド番号';
 
   @override
-  String get aboutEnvironmentSection => 'デバイスとビルド';
+  String get deviceAndBuild => 'デバイスとビルド';
 
   @override
-  String get aboutOperatingSystem => 'オペレーティングシステム';
+  String get operatingSystem => 'オペレーティングシステム';
 
   @override
-  String get aboutOsVersion => 'OSバージョン';
+  String get osVersion => 'OSバージョン';
 
   @override
-  String get aboutBuildMode => 'ビルドモード';
+  String get buildMode => 'ビルドモード';
 
   @override
-  String get aboutDebug => 'デバッグ';
+  String get debug => 'デバッグ';
 
   @override
-  String get aboutRelease => 'リリース';
+  String get release => 'リリース';
 
   @override
-  String get aboutToolchainSection => 'で構築';
+  String get builtWith => 'で構築';
 
   @override
-  String get aboutInstallationSection => 'インストール';
+  String get installation => 'インストール';
 
   @override
-  String get aboutInstaller => 'からインストール済み';
+  String get installedFrom => 'からインストール済み';
 
   @override
-  String get aboutInstalledOn => 'インストール日';
+  String get installedOn => 'インストール日';
 
   @override
-  String get aboutUpdatedOn => '更新日';
+  String get updatedOn => '更新日';
 
   @override
-  String get aboutUnavailable => '利用不可';
+  String get unavailable => '利用不可';
 
   @override
-  String get aboutProjectSection => 'プロジェクトとサポート';
+  String get projectAndSupport => 'プロジェクトとサポート';
 
   @override
-  String get aboutRepository => 'GitHubリポジトリ';
+  String get githubRepository => 'GitHubリポジトリ';
 
   @override
-  String get aboutRepositorySubtitle => 'Zumiのソースコードを見る';
+  String get viewZumiSourceCode => 'Zumiのソースコードを見る';
 
   @override
-  String get aboutReadme => 'READMEを読む';
+  String get readTheREADME => 'READMEを読む';
 
   @override
-  String get aboutReadmeSubtitle => 'GitHubでZumiについて学ぶ';
+  String get learnAboutZumiOnGitHub => 'GitHubでZumiについて学ぶ';
 
   @override
-  String get aboutIssues => '問題を報告する';
+  String get reportAnIssue => '問題を報告する';
 
   @override
-  String get aboutIssuesSubtitle => 'GitHubの問題を表示・作成する';
+  String get viewAndCreateGitHubIssues => 'GitHubの問題を表示・作成する';
 
   @override
-  String get aboutLatestRelease => '最新リリース';
+  String get latestRelease => '最新リリース';
 
   @override
-  String get aboutLatestReleaseSubtitle => 'リリースとダウンロードを見る';
+  String get viewReleasesAndDownloads => 'リリースとダウンロードを見る';
 
   @override
-  String get aboutDonate => 'Zumiをサポートする';
+  String get supportZumi => 'Zumiをサポートする';
 
   @override
-  String get aboutDonateSubtitle => '公式寄付ページを開く';
+  String get openTheOfficialDonationPage => '公式寄付ページを開く';
 
   @override
-  String get aboutLinkError => 'リンクを開けませんでした。もう一度お試しください。';
+  String get couldNotOpenTheLinkPleaseTryAgain => 'リンクを開けませんでした。もう一度お試しください。';
 
   @override
-  String get aboutDeveloperSection => '開発者';
+  String get developer => '開発者';
 
   @override
-  String get aboutDeveloperName => 'Mostafa Sensei';
+  String get mostafaSensei => 'Mostafa Sensei';
 
   @override
-  String get aboutDeveloperProfile => 'GitHubプロフィール';
+  String get githubProfile => 'GitHubプロフィール';
 
   @override
-  String get aboutDeveloperProfileSubtitle => 'プロジェクトと連絡先の詳細を見る';
+  String get seeProjectsAndContactDetails => 'プロジェクトと連絡先の詳細を見る';
 
   @override
   String get maintenanceInProgress => 'メンテナンス中';
 
   @override
-  String get maintenanceMessage => 'Zumiは一時的に利用できません。後でもう一度お試しください。';
+  String get zumiIsTemporarilyUnavailablePleaseTryAgainLater =>
+      'Zumiは一時的に利用できません。後でもう一度お試しください。';
 
   @override
   String get comingSoon => '近日公開';
@@ -959,7 +968,7 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   }
 
   @override
-  String fileSavedToDcim(String fileName) {
+  String fileSavedToGallery(String fileName) {
     return 'ギャラリーにファイルを保存しました: $fileName';
   }
 
@@ -969,7 +978,7 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   }
 
   @override
-  String get fileAlreadySaved => 'ファイルは既に保存されています';
+  String get fileIsAlreadySaved => 'ファイルは既に保存されています';
 
   @override
   String get error => 'エラー';
@@ -993,91 +1002,89 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   String get partial => '部分的';
 
   @override
-  String get error_address_line_cant_be_empty => '住所行を空にすることはできません';
+  String get addressLineCannotBeEmpty => '住所行を空にすることはできません';
 
   @override
-  String get error_address_line_too_long => '住所行が長すぎます';
+  String get addressLineIsTooLong => '住所行が長すぎます';
 
   @override
-  String get error_address_invalid_special_characters => '特殊文字は使用できません';
+  String get specialCharactersAreNotAllowed => '特殊文字は使用できません';
 
   @override
-  String get error_address_emoji_not_allowed => '絵文字は使用できません';
+  String get emojisAreNotAllowed => '絵文字は使用できません';
 
   @override
-  String get error_city_cant_be_empty => '市区町村を空にすることはできません';
+  String get cityCannotBeEmpty => '市区町村を空にすることはできません';
 
   @override
-  String get error_city_too_long => '市区町村名が長すぎます';
+  String get cityNameIsTooLong => '市区町村名が長すぎます';
 
   @override
-  String get error_city_invalid_special_characters => '市区町村に無効な特殊文字が含まれています';
+  String get cityContainsInvalidSpecialCharacters => '市区町村に無効な特殊文字が含まれています';
 
   @override
-  String get error_address_label_cant_be_empty => '住所ラベルを空にすることはできません';
+  String get addressLabelCannotBeEmpty => '住所ラベルを空にすることはできません';
 
   @override
-  String get error_address_label_too_long => '住所ラベルが長すぎます';
+  String get addressLabelIsTooLong => '住所ラベルが長すぎます';
 
   @override
-  String get error_email_cant_be_empty => 'メールを空にすることはできません';
+  String get emailCannotBeEmpty => 'メールを空にすることはできません';
 
   @override
-  String get error_email_not_invalid_format => '無効なメール形式';
+  String get invalidEmailFormat => '無効なメール形式';
 
   @override
-  String get error_email_contains_invalid_characters => 'メールに無効な文字が含まれています';
+  String get emailContainsInvalidCharacters => 'メールに無効な文字が含まれています';
 
   @override
-  String get error_email_must_contain_at_symbol => 'メールに@を含める必要があります';
+  String get emailMustContain => 'メールに@を含める必要があります';
 
   @override
-  String get error_email_must_be_in_lowercase => 'メールは小文字でなければなりません';
+  String get emailMustBeInLowercase => 'メールは小文字でなければなりません';
 
   @override
-  String get error_arabic_not_allowed => 'アラビア文字は使用できません';
+  String get arabicCharactersAreNotAllowed => 'アラビア文字は使用できません';
 
   @override
-  String get error_email_emoji_not_allowed => 'メールに絵文字は使用できません';
+  String get emojisAreNotAllowedInEmail => 'メールに絵文字は使用できません';
 
   @override
-  String get error_phone_number_cant_be_empty => '電話番号を空にすることはできません';
+  String get phoneNumberCannotBeEmpty => '電話番号を空にすることはできません';
 
   @override
-  String get error_phone_number_invalid => '無効な電話番号';
+  String get invalidPhoneNumber => '無効な電話番号';
 
   @override
-  String get error_phone_number_min_length => '電話番号は少なくとも11桁である必要があります';
+  String get phoneNumberMustBeAtLeast11Digits => '電話番号は少なくとも11桁である必要があります';
 
   @override
-  String get error_name_cant_be_empty => '名前を空にすることはできません';
+  String get nameCannotBeEmpty => '名前を空にすることはできません';
 
   @override
-  String get error_name_invalid => '無効な名前';
+  String get invalidName => '無効な名前';
 
   @override
-  String get error_name_too_short_at_least_3_characters =>
-      '名前は少なくとも3文字である必要があります';
+  String get nameMustBeAtLeast3Characters => '名前は少なくとも3文字である必要があります';
 
   @override
-  String get error_name_too_long_maximum_20_characters => '名前は20文字を超えることはできません';
+  String get nameCannotExceed20Characters => '名前は20文字を超えることはできません';
 
   @override
-  String get error_name_invalid_special_characters => '名前に無効な特殊文字が含まれています';
+  String get nameContainsInvalidSpecialCharacters => '名前に無効な特殊文字が含まれています';
 
   @override
-  String get error_name_emoji_not_allowed => '名前に絵文字は使用できません';
+  String get emojisAreNotAllowedInName => '名前に絵文字は使用できません';
 
   @override
-  String get error_password_cant_be_empty => 'パスワードを空にすることはできません';
+  String get passwordCannotBeEmpty => 'パスワードを空にすることはできません';
 
   @override
-  String
-  get error_password_must_contain_uppercase_lowercase_number_and_special_character =>
+  String get passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter =>
       'パスワードには大文字、小文字、数字、特殊文字を含める必要があります';
 
   @override
-  String get error_password_must_be_at_least_8_characters_long =>
+  String get passwordMustBeAtLeast8CharactersLong =>
       'パスワードは少なくとも8文字以上である必要があります';
 
   @override
@@ -1311,43 +1318,43 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   String get recommendZumiToAFriend => '友達にZumiをおすすめする。';
 
   @override
-  String get settingsGroupAppearance => '外観と言語';
+  String get appearanceLanguage => '外観と言語';
 
   @override
-  String get settingsGroupCompression => '圧縮';
+  String get compression => '圧縮';
 
   @override
-  String get settingsGroupAi => 'デバイス上のAI';
+  String get onDeviceAI => 'デバイス上のAI';
 
   @override
-  String get settingsGroupPrivacy => '通知とプライバシー';
+  String get notificationsPrivacy => '通知とプライバシー';
 
   @override
-  String get settingsGroupPlans => 'プランと購入';
+  String get plansPurchases => 'プランと購入';
 
   @override
-  String get settingsGroupAbout => '情報';
+  String get about => '情報';
 
   @override
-  String get settingsGroupLegal => '法的情報';
+  String get legal => '法的情報';
 
   @override
-  String get settingsGroupHelp => 'ヘルプとフィードバック';
+  String get helpFeedback => 'ヘルプとフィードバック';
 
   @override
-  String get settingsGroupAccount => 'アカウント';
+  String get account => 'アカウント';
 
   @override
-  String get settingsAppearanceSubtitle => 'テーマとアプリの言語';
+  String get themeAndAppLanguage => 'テーマとアプリの言語';
 
   @override
-  String get settingsLanguageSubtitle => 'アプリの言語と方向';
+  String get appLanguageAndDirection => 'アプリの言語と方向';
 
   @override
-  String get settingsCompressionSubtitle => 'デフォルトの品質とフォーマット';
+  String get defaultQualityAndFormat => 'デフォルトの品質とフォーマット';
 
   @override
-  String get settingsStorageSubtitle => 'キャッシュとストレージの使用状況';
+  String get cacheAndStorageUsage => 'キャッシュとストレージの使用状況';
 
   @override
   String get aiSettings => 'AI設定';
@@ -1361,17 +1368,17 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
       'あなたのビデオのためのプライベートアシスタントがまもなく登場します。ここで圧縮、整理、保存されたビデオについて質問できるようになります。';
 
   @override
-  String get settingsAiSubtitle => 'ローカルモデルとスマートツール';
+  String get localModelsAndSmartTools => 'ローカルモデルとスマートツール';
 
   @override
-  String get exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet =>
+  String get exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet =>
       'ローカルモデルや将来のAIツールを探索してください。これらのオプションはまだ有効ではありません。';
 
   @override
   String get localModels => 'ローカルモデル';
 
   @override
-  String get aiModelsSubtitle => '対応モデルを閲覧してダウンロード';
+  String get browseAndDownloadSupportedModels => '対応モデルを閲覧してダウンロード';
 
   @override
   String
@@ -1382,7 +1389,7 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   String get importAModel => 'モデルをインポート';
 
   @override
-  String get aiImportSubtitle => 'ファイルから互換モデルを使用してください';
+  String get useACompatibleModelFromYourFiles => 'ファイルから互換モデルを使用してください';
 
   @override
   String
@@ -1393,18 +1400,18 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   String get smartFeatures => 'スマート機能';
 
   @override
-  String get aiFeaturesSubtitle => '圧縮、整理、検索';
+  String get compressionOrganizationAndSearch => '圧縮、整理、検索';
 
   @override
   String
-  get chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
+  get chooseWhichLocalAISuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
       '動画の圧縮、整理、命名、および検索に使用するローカルAIの提案を選択してください。';
 
   @override
   String get modelPerformance => 'モデルのパフォーマンス';
 
   @override
-  String get aiRuntimeSubtitle => '処理およびリソースの設定';
+  String get processingAndResourcePreferences => '処理およびリソースの設定';
 
   @override
   String get controlTheProcessingBackendAndResourceLimitsForSupportedModels =>
@@ -1414,7 +1421,7 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   String get conversationSettings => '会話の設定';
 
   @override
-  String get aiChatSettingsSubtitle => 'ストリーミング、思考、応答の長さ';
+  String get streamingThinkingAndResponseLength => 'ストリーミング、思考、応答の長さ';
 
   @override
   String
@@ -1425,7 +1432,7 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   String get imagesAndAudio => '画像と音声';
 
   @override
-  String get aiMediaSubtitle => 'マルチモーダル入力を制御します。';
+  String get controlMultimodalInputs => 'マルチモーダル入力を制御します。';
 
   @override
   String
@@ -1436,7 +1443,7 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   String get semanticSearch => 'セマンティック検索';
 
   @override
-  String get aiSearchSubtitle => '埋め込みとローカルインデックス';
+  String get embeddingsAndLocalIndexing => '埋め込みとローカルインデックス';
 
   @override
   String
@@ -1447,7 +1454,7 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   String get toolsAndStructuredOutput => 'ツールと構造化出力';
 
   @override
-  String get aiToolsSubtitle => 'アクション、スキーマ、確認';
+  String get actionsSchemasAndConfirmations => 'アクション、スキーマ、確認';
 
   @override
   String
@@ -1455,363 +1462,374 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
       '対応するアシスタントの操作や構造化された応答を管理します。ファイルに影響を与える操作には確認が必要です。';
 
   @override
-  String get aiGroupModels => 'モデル';
+  String get models => 'モデル';
 
   @override
-  String get aiGroupExperience => 'アシスタントの体験';
+  String get assistantExperience => 'アシスタントの体験';
 
   @override
-  String get aiGroupCapabilities => 'スマート機能';
+  String get smartCapabilities => 'スマート機能';
 
   @override
-  String get aiGroupPerformance => 'パフォーマンス';
+  String get performance => 'パフォーマンス';
 
   @override
-  String get compressionHistorySubtitle => '圧縮されたビデオ履歴';
+  String get yourCompressedVideoHistory => '圧縮されたビデオ履歴';
 
   @override
-  String get settingsNotificationsSubtitle => '完了と更新の通知';
+  String get completionAndUpdateAlerts => '完了と更新の通知';
 
   @override
-  String get settingsPrivacySubtitle => 'データはローカルに保存されます';
+  String get yourDataStaysLocal => 'データはローカルに保存されます';
 
   @override
-  String get plansSubtitle => 'プランを比較してアップグレード';
+  String get comparePlansAndUpgrade => 'プランを比較してアップグレード';
 
   @override
-  String get plansMethodsSubtitle => '支払い方法と請求';
+  String get paymentMethodsAndBilling => '支払い方法と請求';
 
   @override
-  String get plansRestoreSubtitle => '以前の購入を復元';
+  String get restoreYourPreviousPurchase => '以前の購入を復元';
 
   @override
-  String get aboutAppSubtitle => 'バージョンとビルドの詳細';
+  String get versionAndBuildDetails => 'バージョンとビルドの詳細';
 
   @override
-  String get aboutDeveloperSubtitle => 'Zumiの開発者';
+  String get theDeveloperBehindZumi => 'Zumiの開発者';
 
   @override
-  String get aboutLicensesSubtitle => 'オープンソースパッケージのライセンス';
+  String get openSourcePackageLicenses => 'オープンソースパッケージのライセンス';
 
   @override
-  String get legalPrivacySubtitle => 'データの取り扱い方法';
+  String get howDataIsHandled => 'データの取り扱い方法';
 
   @override
-  String get legalTermsSubtitle => 'Zumi使用のルール';
+  String get rulesForUsingZumi => 'Zumi使用のルール';
 
   @override
-  String get legalDataSafetySubtitle => '収集するデータ';
+  String get whatDataWeCollect => '収集するデータ';
 
   @override
-  String get legalPermissionsSubtitle => 'なぜ権限が必要か';
+  String get whyWeNeedPermissions => 'なぜ権限が必要か';
 
   @override
-  String get helpFaqSubtitle => 'よくある質問への回答';
+  String get answersToCommonQuestions => 'よくある質問への回答';
 
   @override
-  String get helpSupportSubtitle => '開発者に直接連絡';
+  String get reachTheDeveloperDirectly => '開発者に直接連絡';
 
   @override
-  String get helpFeedbackSubtitle => 'フィードバックを送信';
+  String get sendUsYourFeedback => 'フィードバックを送信';
 
   @override
-  String get compressionPickVideo => 'ビデオを選択';
+  String get pickVideo => 'ビデオを選択';
 
   @override
-  String get compressionTargetMb => '目標サイズ（MB）';
+  String get targetSizeMB => '目標サイズ（MB）';
 
   @override
-  String get compressionStart => '圧縮を開始';
+  String get startCompression => '圧縮を開始';
 
   @override
-  String get compressionPause => '一時停止';
+  String get pause => '一時停止';
 
   @override
-  String get compressionResume => '再開';
+  String get resume => '再開';
 
   @override
-  String get compressionViewResult => '結果を表示';
+  String get viewResult => '結果を表示';
 
   @override
-  String get compressionSaveGallery => 'ギャラリーに保存';
+  String get saveToGallery => 'ギャラリーに保存';
 
   @override
-  String get compressionShare => 'ビデオを共有';
+  String get shareVideo => 'ビデオを共有';
 
   @override
-  String get compressionOriginalSize => '元のサイズ';
+  String get originalSize => '元のサイズ';
 
   @override
-  String get compressionOutputSize => '出力サイズ';
+  String get outputSize => '出力サイズ';
 
   @override
-  String get compressionEmptyHistory => 'まだ圧縮されたビデオはありません';
+  String get noCompressedVideosYet => 'まだ圧縮されたビデオはありません';
 
   @override
-  String get compressionSavedGallery => 'ギャラリーに保存されました';
+  String get savedToGallery => 'ギャラリーに保存されました';
 
   @override
-  String get compressionInvalidTarget => '0より大きい目標サイズを入力してください';
+  String get enterATargetSizeGreaterThanZero => '0より大きい目標サイズを入力してください';
 
   @override
   String get compressionCancelled => '圧縮がキャンセルされました';
 
   @override
-  String get compressionTargetExceeded =>
+  String get thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize =>
       'このビデオは選択したサイズに到達できませんでした。大きい目標サイズを試してください。';
 
   @override
-  String get compressionTargetInfeasible =>
+  String get theSelectedSizeIsTooSmallForThisVideoChooseALargerSize =>
       '選択したサイズはこのビデオには小さすぎます。より大きいサイズを選んでください。';
 
   @override
-  String get compressionPreviewBefore => '元のプレビュー';
+  String get originalPreview => '元のプレビュー';
 
   @override
-  String get compressionPreviewAfter => '圧縮プレビュー';
+  String get compressedPreview => '圧縮プレビュー';
 
   @override
-  String get compressionPreset => 'ターゲットプリセット';
+  String get targetPreset => 'ターゲットプリセット';
 
   @override
-  String get compressionCustom => 'カスタムサイズ';
+  String get customSize => 'カスタムサイズ';
 
   @override
-  String get compressionPreviewUnavailable => 'プレビューは利用できません';
+  String get previewUnavailable => 'プレビューは利用できません';
 
   @override
-  String get compressionAdvanced => '高度なコントロール';
+  String get advancedControls => '高度なコントロール';
 
   @override
-  String get compressionAutomatic => '自動';
+  String get automatic => '自動';
 
   @override
-  String get compressionResolutionLimit => '最大解像度';
+  String get maximumResolution => '最大解像度';
 
   @override
-  String get compressionSourceResolution => '元の解像度';
+  String get originalResolution => '元の解像度';
 
   @override
-  String get compressionFrameRateLimit => '最大フレームレート';
+  String get maximumFrameRate => '最大フレームレート';
 
   @override
-  String get compressionAudioQuality => 'オーディオビットレート';
+  String get audioBitrate => 'オーディオビットレート';
 
   @override
-  String get compressionRemoveAudio => 'オーディオを削除';
+  String get removeAudio => 'オーディオを削除';
 
   @override
-  String get compressionVideoBitrateLimit => 'ビデオビットレート上限（kbps）';
+  String get videoBitrateCeilingKbps => 'ビデオビットレート上限（kbps）';
 
   @override
-  String get compressionHdrPolicy => 'HDRの扱い';
+  String get hdrHandling => 'HDRの扱い';
 
   @override
-  String get compressionHdrConvert => 'SDRに変換';
+  String get convertToSDR => 'SDRに変換';
 
   @override
-  String get compressionHdrPreserve => '対応している場合はHDRを保持';
+  String get keepHDRWhenSupported => '対応している場合はHDRを保持';
 
   @override
-  String get compressionPlanPreview => '開始前に';
+  String get beforeYouStart => '開始前に';
 
   @override
-  String get compressionPlanLoading => '圧縮プランを計算中…';
+  String get calculatingCompressionPlan => '圧縮プランを計算中…';
 
   @override
-  String get compressionPlanResolution => '予定解像度';
+  String get plannedResolution => '予定解像度';
 
   @override
-  String get compressionPlanVideoBitrate => '予定ビデオビットレート';
+  String get plannedVideoBitrate => '予定ビデオビットレート';
 
   @override
-  String get compressionPlanAudioBitrate => '予定オーディオビットレート';
+  String get plannedAudioBitrate => '予定オーディオビットレート';
 
   @override
-  String get compressionAudioConversionNote =>
+  String
+  get reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved =>
       '再エンコードによりオーディオはAACステレオに変換されます。Dolby AtmosやDTS空間オーディオは保持されません。';
 
   @override
-  String get compressionPlanTooSmall =>
+  String
+  get thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits =>
       'このターゲットは、使用可能なビデオには小さすぎます。サイズを大きくするか、他の制限を下げてください。';
 
   @override
-  String get compressionPlanLowQuality => '選択されたターゲットはビデオの品質を下げる可能性があります。';
+  String get theSelectedTargetMayReduceVideoQuality =>
+      '選択されたターゲットはビデオの品質を下げる可能性があります。';
 
   @override
-  String get compressionPlanAlreadyWithinLimit => 'ソースはすでにサイズ制限内です。';
+  String get theSourceIsAlreadyWithinTheSizeLimit => 'ソースはすでにサイズ制限内です。';
 
   @override
-  String get compressionInvalidBitrate =>
+  String get enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic =>
       'ビットレートを少なくとも150 kbpsで入力するか、自動にする場合は空白のままにしてください。';
 
   @override
-  String get compressionInvalidResolution =>
+  String get enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic =>
       '240から16384までの偶数の解像度を入力するか、自動にする場合は空白のままにしてください。';
 
   @override
-  String get compressionSeek => 'ビデオの位置';
+  String get videoPosition => 'ビデオの位置';
 
   @override
-  String get compressionInterrupted =>
+  String
+  get aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain =>
       '以前の圧縮が中断されました。その一時ファイルは削除されました。ビデオを選択してもう一度試すことができます。';
 
   @override
-  String get compressionDismiss => '閉じる';
+  String get dismiss => '閉じる';
 
   @override
-  String get compressionClearHistory => '履歴をクリア';
+  String get clearHistory => '履歴をクリア';
 
   @override
-  String get compressionClearHistoryConfirm =>
+  String get removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice =>
       'すべての履歴を削除しますか？保存されたビデオはデバイスに残ります。';
 
   @override
-  String get compressionAttempts => '試行回数';
+  String get attempts => '試行回数';
 
   @override
-  String get compressionTargetSize => '目標サイズ';
+  String get targetSize => '目標サイズ';
 
   @override
-  String get compressionOutputResolution => '出力解像度';
+  String get outputResolution => '出力解像度';
 
   @override
-  String get compressionInvalidVideo => 'このビデオは読み取れません。他のファイルを選択してください。';
+  String get thisVideoCouldNotBeReadChooseAnotherFile =>
+      'このビデオは読み取れません。他のファイルを選択してください。';
 
   @override
-  String get compressionInvalidOutput =>
+  String get theEncodedVideoFailedVerificationYourOriginalVideoWasNotChanged =>
       'エンコードされたビデオは検証に失敗しました。元のビデオは変更されていません。';
 
   @override
-  String get compressionEncoderUnsupported =>
+  String
+  get thisDeviceCannotEncodeTheSelectedResolutionOrFrameRateLowerThatSettingAndTryAgain =>
       'このデバイスでは選択された解像度やフレームレートをエンコードできません。その設定を下げて再試行してください。';
 
   @override
-  String get compressionAudioDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisAudioFormatForCompressionRemoveAudioOrUseASupportedSource =>
       'このデバイスではこのオーディオ形式を圧縮用にデコードできません。オーディオを削除するか、サポートされているソースを使用してください。';
 
   @override
-  String get compressionVideoDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisVideoFormatOrProfileForCompressionChooseAnotherSourceOrDevice =>
       'このデバイスではこのビデオ形式または圧縮プロファイルをデコードできません。別のソースまたはデバイスを選択してください。';
 
   @override
-  String get compressionMp4NotStreamable =>
+  String get theExportedMP4IsNotReadyForStreamingTryAnotherVideoOrDevice =>
       'エクスポートされたMP4はストリーミングに準備されていません。別のビデオまたはデバイスを試してください。';
 
   @override
-  String get compressionNoSpace => 'このビデオを圧縮するための十分な空きストレージがありません。';
+  String get thereIsNotEnoughFreeStorageToCompressThisVideo =>
+      'このビデオを圧縮するための十分な空きストレージがありません。';
 
   @override
-  String get compressionHdrUnsupported =>
+  String get thisDeviceCannotProcessTheSelectedHDRModeTryConvertingToSDR =>
       'このデバイスでは選択したHDRモードを処理できません。SDRに変換してみてください。';
 
   @override
-  String get compressionGeneralFailure => '圧縮を完了できませんでした。別の設定またはビデオをお試しください。';
+  String get compressionCouldNotBeCompletedTryAnotherSettingOrVideo =>
+      '圧縮を完了できませんでした。別の設定またはビデオをお試しください。';
 
   @override
-  String get aboutIdentitySection => 'アプリの識別情報';
+  String get appIdentity => 'アプリの識別情報';
 
   @override
-  String get aboutAppName => 'アプリ名';
+  String get appName => 'アプリ名';
 
   @override
-  String get aboutPackageName => 'パッケージ名';
+  String get packageName => 'パッケージ名';
 
   @override
-  String get aboutVersion => 'バージョン';
+  String get version => 'バージョン';
 
   @override
-  String get aboutBuildNumber => 'ビルド番号';
+  String get buildNumber => 'ビルド番号';
 
   @override
-  String get aboutEnvironmentSection => 'デバイスとビルド';
+  String get deviceAndBuild => 'デバイスとビルド';
 
   @override
-  String get aboutOperatingSystem => 'オペレーティングシステム';
+  String get operatingSystem => 'オペレーティングシステム';
 
   @override
-  String get aboutOsVersion => 'OSバージョン';
+  String get osVersion => 'OSバージョン';
 
   @override
-  String get aboutBuildMode => 'ビルドモード';
+  String get buildMode => 'ビルドモード';
 
   @override
-  String get aboutDebug => 'デバッグ';
+  String get debug => 'デバッグ';
 
   @override
-  String get aboutRelease => 'リリース';
+  String get release => 'リリース';
 
   @override
-  String get aboutToolchainSection => 'で構築';
+  String get builtWith => 'で構築';
 
   @override
-  String get aboutInstallationSection => 'インストール';
+  String get installation => 'インストール';
 
   @override
-  String get aboutInstaller => 'からインストール済み';
+  String get installedFrom => 'からインストール済み';
 
   @override
-  String get aboutInstalledOn => 'インストール日';
+  String get installedOn => 'インストール日';
 
   @override
-  String get aboutUpdatedOn => '更新日';
+  String get updatedOn => '更新日';
 
   @override
-  String get aboutUnavailable => '利用不可';
+  String get unavailable => '利用不可';
 
   @override
-  String get aboutProjectSection => 'プロジェクトとサポート';
+  String get projectAndSupport => 'プロジェクトとサポート';
 
   @override
-  String get aboutRepository => 'GitHubリポジトリ';
+  String get githubRepository => 'GitHubリポジトリ';
 
   @override
-  String get aboutRepositorySubtitle => 'Zumiのソースコードを見る';
+  String get viewZumiSourceCode => 'Zumiのソースコードを見る';
 
   @override
-  String get aboutReadme => 'READMEを読む';
+  String get readTheREADME => 'READMEを読む';
 
   @override
-  String get aboutReadmeSubtitle => 'GitHubでZumiについて学ぶ';
+  String get learnAboutZumiOnGitHub => 'GitHubでZumiについて学ぶ';
 
   @override
-  String get aboutIssues => '問題を報告する';
+  String get reportAnIssue => '問題を報告する';
 
   @override
-  String get aboutIssuesSubtitle => 'GitHubの問題を表示・作成する';
+  String get viewAndCreateGitHubIssues => 'GitHubの問題を表示・作成する';
 
   @override
-  String get aboutLatestRelease => '最新リリース';
+  String get latestRelease => '最新リリース';
 
   @override
-  String get aboutLatestReleaseSubtitle => 'リリースとダウンロードを見る';
+  String get viewReleasesAndDownloads => 'リリースとダウンロードを見る';
 
   @override
-  String get aboutDonate => 'Zumiをサポートする';
+  String get supportZumi => 'Zumiをサポートする';
 
   @override
-  String get aboutDonateSubtitle => '公式寄付ページを開く';
+  String get openTheOfficialDonationPage => '公式寄付ページを開く';
 
   @override
-  String get aboutLinkError => 'リンクを開けませんでした。もう一度お試しください。';
+  String get couldNotOpenTheLinkPleaseTryAgain => 'リンクを開けませんでした。もう一度お試しください。';
 
   @override
-  String get aboutDeveloperSection => '開発者';
+  String get developer => '開発者';
 
   @override
-  String get aboutDeveloperName => 'Mostafa Sensei';
+  String get mostafaSensei => 'Mostafa Sensei';
 
   @override
-  String get aboutDeveloperProfile => 'GitHubプロフィール';
+  String get githubProfile => 'GitHubプロフィール';
 
   @override
-  String get aboutDeveloperProfileSubtitle => 'プロジェクトと連絡先の詳細を見る';
+  String get seeProjectsAndContactDetails => 'プロジェクトと連絡先の詳細を見る';
 
   @override
   String get maintenanceInProgress => 'メンテナンス中';
 
   @override
-  String get maintenanceMessage => 'Zumiは一時的に利用できません。後でもう一度お試しください。';
+  String get zumiIsTemporarilyUnavailablePleaseTryAgainLater =>
+      'Zumiは一時的に利用できません。後でもう一度お試しください。';
 
   @override
   String get comingSoon => '近日公開';

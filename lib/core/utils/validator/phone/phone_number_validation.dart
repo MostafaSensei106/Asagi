@@ -28,9 +28,9 @@ extension PhoneNumberValidationExtension on PhoneNumberValidation {
   String message(BuildContext context) {
     final l = context.localeKeys;
     return switch (this) {
-      PhoneNumberValidation.empty => l.error_phone_number_cant_be_empty,
-      PhoneNumberValidation.invalid => l.error_phone_number_invalid,
-      PhoneNumberValidation.minLength => l.error_phone_number_min_length,
+      PhoneNumberValidation.empty => l.phoneNumberCannotBeEmpty,
+      PhoneNumberValidation.invalid => l.invalidPhoneNumber,
+      PhoneNumberValidation.minLength => l.phoneNumberMustBeAtLeast11Digits,
     };
   }
 }

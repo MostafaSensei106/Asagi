@@ -21,7 +21,7 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String fileSavedToDcim(String fileName) {
+  String fileSavedToGallery(String fileName) {
     return 'Dosya galeriye kaydedildi: $fileName';
   }
 
@@ -31,7 +31,7 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get fileAlreadySaved => 'Dosya zaten kaydedilmiş';
+  String get fileIsAlreadySaved => 'Dosya zaten kaydedilmiş';
 
   @override
   String get error => 'Hata';
@@ -55,100 +55,97 @@ class AppLocalizationsTr extends AppLocalizations {
   String get partial => 'Kısmi';
 
   @override
-  String get error_address_line_cant_be_empty => 'Adres satırı boş olamaz';
+  String get addressLineCannotBeEmpty => 'Adres satırı boş olamaz';
 
   @override
-  String get error_address_line_too_long => 'Adres satırı çok uzun';
+  String get addressLineIsTooLong => 'Adres satırı çok uzun';
 
   @override
-  String get error_address_invalid_special_characters =>
+  String get specialCharactersAreNotAllowed =>
       'Özel karakterlere izin verilmiyor';
 
   @override
-  String get error_address_emoji_not_allowed => 'Emojiye izin verilmiyor';
+  String get emojisAreNotAllowed => 'Emojiye izin verilmiyor';
 
   @override
-  String get error_city_cant_be_empty => 'Şehir boş olamaz';
+  String get cityCannotBeEmpty => 'Şehir boş olamaz';
 
   @override
-  String get error_city_too_long => 'Şehir adı çok uzun';
+  String get cityNameIsTooLong => 'Şehir adı çok uzun';
 
   @override
-  String get error_city_invalid_special_characters =>
+  String get cityContainsInvalidSpecialCharacters =>
       'Şehir geçersiz özel karakterler içeriyor';
 
   @override
-  String get error_address_label_cant_be_empty => 'Adres etiketi boş olamaz';
+  String get addressLabelCannotBeEmpty => 'Adres etiketi boş olamaz';
 
   @override
-  String get error_address_label_too_long => 'Adres etiketi çok uzun';
+  String get addressLabelIsTooLong => 'Adres etiketi çok uzun';
 
   @override
-  String get error_email_cant_be_empty => 'Email boş olamaz';
+  String get emailCannotBeEmpty => 'Email boş olamaz';
 
   @override
-  String get error_email_not_invalid_format => 'Geçersiz email formatı';
+  String get invalidEmailFormat => 'Geçersiz email formatı';
 
   @override
-  String get error_email_contains_invalid_characters =>
+  String get emailContainsInvalidCharacters =>
       'E-posta geçersiz karakterler içeriyor';
 
   @override
-  String get error_email_must_contain_at_symbol => 'E-posta @ içermelidir';
+  String get emailMustContain => 'E-posta @ içermelidir';
 
   @override
-  String get error_email_must_be_in_lowercase =>
-      'E-posta küçük harflerle olmalıdır';
+  String get emailMustBeInLowercase => 'E-posta küçük harflerle olmalıdır';
 
   @override
-  String get error_arabic_not_allowed => 'Arap karakterlerine izin verilmiyor';
+  String get arabicCharactersAreNotAllowed =>
+      'Arap karakterlerine izin verilmiyor';
 
   @override
-  String get error_email_emoji_not_allowed =>
+  String get emojisAreNotAllowedInEmail =>
       'E-postada emoji kullanımına izin verilmiyor';
 
   @override
-  String get error_phone_number_cant_be_empty => 'Telefon numarası boş olamaz';
+  String get phoneNumberCannotBeEmpty => 'Telefon numarası boş olamaz';
 
   @override
-  String get error_phone_number_invalid => 'Geçersiz telefon numarası';
+  String get invalidPhoneNumber => 'Geçersiz telefon numarası';
 
   @override
-  String get error_phone_number_min_length =>
+  String get phoneNumberMustBeAtLeast11Digits =>
       'Telefon numarası en az 11 hane olmalıdır';
 
   @override
-  String get error_name_cant_be_empty => 'İsim boş olamaz';
+  String get nameCannotBeEmpty => 'İsim boş olamaz';
 
   @override
-  String get error_name_invalid => 'Geçersiz isim';
+  String get invalidName => 'Geçersiz isim';
 
   @override
-  String get error_name_too_short_at_least_3_characters =>
-      'İsim en az 3 karakter olmalıdır';
+  String get nameMustBeAtLeast3Characters => 'İsim en az 3 karakter olmalıdır';
 
   @override
-  String get error_name_too_long_maximum_20_characters =>
-      'İsim 20 karakteri geçemez';
+  String get nameCannotExceed20Characters => 'İsim 20 karakteri geçemez';
 
   @override
-  String get error_name_invalid_special_characters =>
+  String get nameContainsInvalidSpecialCharacters =>
       'İsim geçersiz özel karakterler içeriyor';
 
   @override
-  String get error_name_emoji_not_allowed =>
+  String get emojisAreNotAllowedInName =>
       'İsimde emoji kullanımına izin verilmiyor';
 
   @override
-  String get error_password_cant_be_empty => 'Şifre boş olamaz';
+  String get passwordCannotBeEmpty => 'Şifre boş olamaz';
 
   @override
-  String
-  get error_password_must_contain_uppercase_lowercase_number_and_special_character =>
+  String get passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter =>
       'Şifre büyük harf, küçük harf, rakam ve özel karakter içermelidir';
 
   @override
-  String get error_password_must_be_at_least_8_characters_long =>
+  String get passwordMustBeAtLeast8CharactersLong =>
       'Şifre en az 8 karakter uzunluğunda olmalıdır';
 
   @override
@@ -395,43 +392,43 @@ class AppLocalizationsTr extends AppLocalizations {
   String get recommendZumiToAFriend => 'Zumi\'yi bir arkadaşınıza önerin.';
 
   @override
-  String get settingsGroupAppearance => 'Görünüm ve dil';
+  String get appearanceLanguage => 'Görünüm ve dil';
 
   @override
-  String get settingsGroupCompression => 'Sıkıştırma';
+  String get compression => 'Sıkıştırma';
 
   @override
-  String get settingsGroupAi => 'Cihazda AI';
+  String get onDeviceAI => 'Cihazda AI';
 
   @override
-  String get settingsGroupPrivacy => 'Bildirimler ve gizlilik';
+  String get notificationsPrivacy => 'Bildirimler ve gizlilik';
 
   @override
-  String get settingsGroupPlans => 'Planlar ve satın almalar';
+  String get plansPurchases => 'Planlar ve satın almalar';
 
   @override
-  String get settingsGroupAbout => 'Hakkında';
+  String get about => 'Hakkında';
 
   @override
-  String get settingsGroupLegal => 'Hukuki';
+  String get legal => 'Hukuki';
 
   @override
-  String get settingsGroupHelp => 'Yardım ve geri bildirim';
+  String get helpFeedback => 'Yardım ve geri bildirim';
 
   @override
-  String get settingsGroupAccount => 'Hesap';
+  String get account => 'Hesap';
 
   @override
-  String get settingsAppearanceSubtitle => 'Tema ve uygulama dili';
+  String get themeAndAppLanguage => 'Tema ve uygulama dili';
 
   @override
-  String get settingsLanguageSubtitle => 'Uygulama dili ve yönü';
+  String get appLanguageAndDirection => 'Uygulama dili ve yönü';
 
   @override
-  String get settingsCompressionSubtitle => 'Varsayılan kalite ve format';
+  String get defaultQualityAndFormat => 'Varsayılan kalite ve format';
 
   @override
-  String get settingsStorageSubtitle => 'Önbellek ve depolama kullanımı';
+  String get cacheAndStorageUsage => 'Önbellek ve depolama kullanımı';
 
   @override
   String get aiSettings => 'AI ayarları';
@@ -445,17 +442,18 @@ class AppLocalizationsTr extends AppLocalizations {
       'Videolarınız için özel bir asistan çok yakında geliyor. Buradan sıkıştırma, düzenleme ve kaydedilmiş videolar hakkında sorular sorabileceksiniz.';
 
   @override
-  String get settingsAiSubtitle => 'Yerel modeller ve akıllı araçlar';
+  String get localModelsAndSmartTools => 'Yerel modeller ve akıllı araçlar';
 
   @override
-  String get exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet =>
+  String get exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet =>
       'Yerel modelleri ve gelecekteki AI araçlarını keşfedin. Bu seçenekler henüz aktif değil.';
 
   @override
   String get localModels => 'Yerel modeller';
 
   @override
-  String get aiModelsSubtitle => 'Desteklenen modelleri göz atın ve indirin';
+  String get browseAndDownloadSupportedModels =>
+      'Desteklenen modelleri göz atın ve indirin';
 
   @override
   String
@@ -466,7 +464,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get importAModel => 'Bir model içe aktar';
 
   @override
-  String get aiImportSubtitle => 'Dosyalarınızdan uyumlu bir modeli kullanın';
+  String get useACompatibleModelFromYourFiles =>
+      'Dosyalarınızdan uyumlu bir modeli kullanın';
 
   @override
   String
@@ -477,18 +476,19 @@ class AppLocalizationsTr extends AppLocalizations {
   String get smartFeatures => 'Akıllı özellikler ';
 
   @override
-  String get aiFeaturesSubtitle => 'Sıkıştırma, organizasyon ve arama ';
+  String get compressionOrganizationAndSearch =>
+      'Sıkıştırma, organizasyon ve arama ';
 
   @override
   String
-  get chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
+  get chooseWhichLocalAISuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
       'Video sıkıştırma, organizasyon, adlandırma ve arama için kullanılacak yerel AI önerilerini seçin. ';
 
   @override
   String get modelPerformance => 'Model performansı ';
 
   @override
-  String get aiRuntimeSubtitle => 'İşleme ve kaynak tercihleri ';
+  String get processingAndResourcePreferences => 'İşleme ve kaynak tercihleri ';
 
   @override
   String get controlTheProcessingBackendAndResourceLimitsForSupportedModels =>
@@ -498,7 +498,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get conversationSettings => 'Konuşma ayarları ';
 
   @override
-  String get aiChatSettingsSubtitle => 'Akış, düşünme ve yanıt uzunluğu';
+  String get streamingThinkingAndResponseLength =>
+      'Akış, düşünme ve yanıt uzunluğu';
 
   @override
   String
@@ -509,7 +510,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get imagesAndAudio => 'Görseller ve ses  ';
 
   @override
-  String get aiMediaSubtitle => 'Çok modlu girdileri kontrol edin  ';
+  String get controlMultimodalInputs => 'Çok modlu girdileri kontrol edin  ';
 
   @override
   String
@@ -520,7 +521,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get semanticSearch => 'Semantik arama  ';
 
   @override
-  String get aiSearchSubtitle => 'Gömümler ve yerel indeksleme  ';
+  String get embeddingsAndLocalIndexing => 'Gömümler ve yerel indeksleme  ';
 
   @override
   String
@@ -531,7 +532,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get toolsAndStructuredOutput => 'Araçlar ve yapılandırılmış çıktı  ';
 
   @override
-  String get aiToolsSubtitle => 'Eylemler, şemalar ve onaylar';
+  String get actionsSchemasAndConfirmations => 'Eylemler, şemalar ve onaylar';
 
   @override
   String
@@ -539,370 +540,380 @@ class AppLocalizationsTr extends AppLocalizations {
       'Desteklenen asistan eylemlerini ve yapılandırılmış yanıtları yönetin. Dosyaları etkileyen eylemler onayınızı gerektirir.';
 
   @override
-  String get aiGroupModels => 'Modeller';
+  String get models => 'Modeller';
 
   @override
-  String get aiGroupExperience => 'Asistan deneyimi';
+  String get assistantExperience => 'Asistan deneyimi';
 
   @override
-  String get aiGroupCapabilities => 'Akıllı yetenekler';
+  String get smartCapabilities => 'Akıllı yetenekler';
 
   @override
-  String get aiGroupPerformance => 'Performans';
+  String get performance => 'Performans';
 
   @override
-  String get compressionHistorySubtitle => 'Sıkıştırılmış video geçmişiniz';
+  String get yourCompressedVideoHistory => 'Sıkıştırılmış video geçmişiniz';
 
   @override
-  String get settingsNotificationsSubtitle =>
+  String get completionAndUpdateAlerts =>
       'Tamamlama ve güncelleme bildirimleri';
 
   @override
-  String get settingsPrivacySubtitle => 'Verileriniz yerel olarak kalır';
+  String get yourDataStaysLocal => 'Verileriniz yerel olarak kalır';
 
   @override
-  String get plansSubtitle => 'Planları karşılaştırın ve yükseltin';
+  String get comparePlansAndUpgrade => 'Planları karşılaştırın ve yükseltin';
 
   @override
-  String get plansMethodsSubtitle => 'Ödeme yöntemleri ve faturalama';
+  String get paymentMethodsAndBilling => 'Ödeme yöntemleri ve faturalama';
 
   @override
-  String get plansRestoreSubtitle => 'Önceki satın alımınızı geri yükleyin';
+  String get restoreYourPreviousPurchase =>
+      'Önceki satın alımınızı geri yükleyin';
 
   @override
-  String get aboutAppSubtitle => 'Sürüm ve yapı detayları';
+  String get versionAndBuildDetails => 'Sürüm ve yapı detayları';
 
   @override
-  String get aboutDeveloperSubtitle => 'Zumi\'nin arkasındaki geliştirici';
+  String get theDeveloperBehindZumi => 'Zumi\'nin arkasındaki geliştirici';
 
   @override
-  String get aboutLicensesSubtitle => 'Açık kaynak paket lisansları';
+  String get openSourcePackageLicenses => 'Açık kaynak paket lisansları';
 
   @override
-  String get legalPrivacySubtitle => 'Verilerin nasıl işlendiği';
+  String get howDataIsHandled => 'Verilerin nasıl işlendiği';
 
   @override
-  String get legalTermsSubtitle => 'Zumi\'yi kullanma kuralları';
+  String get rulesForUsingZumi => 'Zumi\'yi kullanma kuralları';
 
   @override
-  String get legalDataSafetySubtitle => 'Hangi verileri topladığımız';
+  String get whatDataWeCollect => 'Hangi verileri topladığımız';
 
   @override
-  String get legalPermissionsSubtitle => 'Neden izinlere ihtiyacımız var';
+  String get whyWeNeedPermissions => 'Neden izinlere ihtiyacımız var';
 
   @override
-  String get helpFaqSubtitle => 'Sıkça sorulan sorulara yanıtlar';
+  String get answersToCommonQuestions => 'Sıkça sorulan sorulara yanıtlar';
 
   @override
-  String get helpSupportSubtitle => 'Geliştiriciye doğrudan ulaşın';
+  String get reachTheDeveloperDirectly => 'Geliştiriciye doğrudan ulaşın';
 
   @override
-  String get helpFeedbackSubtitle => 'Görüşlerinizi bize gönderin';
+  String get sendUsYourFeedback => 'Görüşlerinizi bize gönderin';
 
   @override
-  String get compressionPickVideo => 'Video seçin';
+  String get pickVideo => 'Video seçin';
 
   @override
-  String get compressionTargetMb => 'Hedef boyut (MB)';
+  String get targetSizeMB => 'Hedef boyut (MB)';
 
   @override
-  String get compressionStart => 'Sıkıştırmayı başlat';
+  String get startCompression => 'Sıkıştırmayı başlat';
 
   @override
-  String get compressionPause => 'Duraklat';
+  String get pause => 'Duraklat';
 
   @override
-  String get compressionResume => 'Devam ettir';
+  String get resume => 'Devam ettir';
 
   @override
-  String get compressionViewResult => 'Sonucu görüntüle';
+  String get viewResult => 'Sonucu görüntüle';
 
   @override
-  String get compressionSaveGallery => 'Galeriye kaydet';
+  String get saveToGallery => 'Galeriye kaydet';
 
   @override
-  String get compressionShare => 'Videoyu paylaş';
+  String get shareVideo => 'Videoyu paylaş';
 
   @override
-  String get compressionOriginalSize => 'Orijinal boyut';
+  String get originalSize => 'Orijinal boyut';
 
   @override
-  String get compressionOutputSize => 'Çıkış boyutu';
+  String get outputSize => 'Çıkış boyutu';
 
   @override
-  String get compressionEmptyHistory => 'Henüz sıkıştırılmış video yok';
+  String get noCompressedVideosYet => 'Henüz sıkıştırılmış video yok';
 
   @override
-  String get compressionSavedGallery => 'Galeriye kaydedildi';
+  String get savedToGallery => 'Galeriye kaydedildi';
 
   @override
-  String get compressionInvalidTarget => 'Sıfırdan büyük bir hedef boyut girin';
+  String get enterATargetSizeGreaterThanZero =>
+      'Sıfırdan büyük bir hedef boyut girin';
 
   @override
   String get compressionCancelled => 'Sıkıştırma iptal edildi';
 
   @override
-  String get compressionTargetExceeded =>
+  String get thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize =>
       'Bu video seçilen boyuta ulaşamadı. Daha büyük bir hedef boyut deneyin.';
 
   @override
-  String get compressionTargetInfeasible =>
+  String get theSelectedSizeIsTooSmallForThisVideoChooseALargerSize =>
       'Seçilen boyut bu video için çok küçük. Daha büyük bir boyut seçin.';
 
   @override
-  String get compressionPreviewBefore => 'Orijinal önizleme';
+  String get originalPreview => 'Orijinal önizleme';
 
   @override
-  String get compressionPreviewAfter => 'Sıkıştırılmış önizleme';
+  String get compressedPreview => 'Sıkıştırılmış önizleme';
 
   @override
-  String get compressionPreset => 'Hedef ön ayar';
+  String get targetPreset => 'Hedef ön ayar';
 
   @override
-  String get compressionCustom => 'Özel boyut';
+  String get customSize => 'Özel boyut';
 
   @override
-  String get compressionPreviewUnavailable => 'Önizleme mevcut değil';
+  String get previewUnavailable => 'Önizleme mevcut değil';
 
   @override
-  String get compressionAdvanced => 'Gelişmiş kontroller';
+  String get advancedControls => 'Gelişmiş kontroller';
 
   @override
-  String get compressionAutomatic => 'Otomatik';
+  String get automatic => 'Otomatik';
 
   @override
-  String get compressionResolutionLimit => 'Maksimum çözünürlük';
+  String get maximumResolution => 'Maksimum çözünürlük';
 
   @override
-  String get compressionSourceResolution => 'Orijinal çözünürlük';
+  String get originalResolution => 'Orijinal çözünürlük';
 
   @override
-  String get compressionFrameRateLimit => 'Maksimum kare hızı';
+  String get maximumFrameRate => 'Maksimum kare hızı';
 
   @override
-  String get compressionAudioQuality => 'Ses bit hızı';
+  String get audioBitrate => 'Ses bit hızı';
 
   @override
-  String get compressionRemoveAudio => 'Sesi kaldır';
+  String get removeAudio => 'Sesi kaldır';
 
   @override
-  String get compressionVideoBitrateLimit => 'Video bit hızı tavanı (kbps)';
+  String get videoBitrateCeilingKbps => 'Video bit hızı tavanı (kbps)';
 
   @override
-  String get compressionHdrPolicy => 'HDR işleme';
+  String get hdrHandling => 'HDR işleme';
 
   @override
-  String get compressionHdrConvert => 'SDR\'ye dönüştür';
+  String get convertToSDR => 'SDR\'ye dönüştür';
 
   @override
-  String get compressionHdrPreserve => 'Destekleniyorsa HDR\'yi koru';
+  String get keepHDRWhenSupported => 'Destekleniyorsa HDR\'yi koru';
 
   @override
-  String get compressionPlanPreview => 'Başlamadan önce';
+  String get beforeYouStart => 'Başlamadan önce';
 
   @override
-  String get compressionPlanLoading => 'Sıkıştırma planı hesaplanıyor…';
+  String get calculatingCompressionPlan => 'Sıkıştırma planı hesaplanıyor…';
 
   @override
-  String get compressionPlanResolution => 'Planlanan çözünürlük';
+  String get plannedResolution => 'Planlanan çözünürlük';
 
   @override
-  String get compressionPlanVideoBitrate => 'Planlanan video bit hızı';
+  String get plannedVideoBitrate => 'Planlanan video bit hızı';
 
   @override
-  String get compressionPlanAudioBitrate => 'Planlanan ses bit hızı';
+  String get plannedAudioBitrate => 'Planlanan ses bit hızı';
 
   @override
-  String get compressionAudioConversionNote =>
+  String
+  get reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved =>
       'Yeniden kodlama sesi AAC stereo\'ya dönüştürür. Dolby Atmos ve DTS uzamsal ses korunmayacaktır.';
 
   @override
-  String get compressionPlanTooSmall =>
+  String
+  get thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits =>
       'Bu hedef kullanılabilir bir video için çok küçük. Boyutu artırın veya diğer sınırlamaları düşürün.';
 
   @override
-  String get compressionPlanLowQuality =>
+  String get theSelectedTargetMayReduceVideoQuality =>
       'Seçilen hedef video kalitesini düşürebilir.';
 
   @override
-  String get compressionPlanAlreadyWithinLimit =>
+  String get theSourceIsAlreadyWithinTheSizeLimit =>
       'Kaynak zaten boyut sınırı içerisinde.';
 
   @override
-  String get compressionInvalidBitrate =>
+  String get enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic =>
       'En az 150 kbps bir bit hızı girin veya otomatik için boş bırakın.';
 
   @override
-  String get compressionInvalidResolution =>
+  String get enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic =>
       '240 ile 16384 arasında çift sayı çözünürlük girin veya otomatik için boş bırakın.';
 
   @override
-  String get compressionSeek => 'Video konumu';
+  String get videoPosition => 'Video konumu';
 
   @override
-  String get compressionInterrupted =>
+  String
+  get aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain =>
       'Önceki sıkıştırma işlemine ara verildi. Geçici dosyalar temizlendi; videoyu seçip tekrar deneyebilirsiniz.';
 
   @override
-  String get compressionDismiss => 'Kapat';
+  String get dismiss => 'Kapat';
 
   @override
-  String get compressionClearHistory => 'Geçmişi temizle';
+  String get clearHistory => 'Geçmişi temizle';
 
   @override
-  String get compressionClearHistoryConfirm =>
+  String get removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice =>
       'Tüm geçmiş kayıtları silinsin mi? Kaydedilen videolar cihazınızda kalacaktır. ';
 
   @override
-  String get compressionAttempts => 'Denemeler ';
+  String get attempts => 'Denemeler ';
 
   @override
-  String get compressionTargetSize => 'Hedef boyut ';
+  String get targetSize => 'Hedef boyut ';
 
   @override
-  String get compressionOutputResolution => 'Çıkış çözünürlüğü ';
+  String get outputResolution => 'Çıkış çözünürlüğü ';
 
   @override
-  String get compressionInvalidVideo =>
+  String get thisVideoCouldNotBeReadChooseAnotherFile =>
       'Bu video okunamadı. Başka bir dosya seçin. ';
 
   @override
-  String get compressionInvalidOutput =>
+  String get theEncodedVideoFailedVerificationYourOriginalVideoWasNotChanged =>
       'Kodlanmış video doğrulamadan geçemedi. Orijinal videonuz değiştirilmedi. ';
 
   @override
-  String get compressionEncoderUnsupported =>
+  String
+  get thisDeviceCannotEncodeTheSelectedResolutionOrFrameRateLowerThatSettingAndTryAgain =>
       'Bu cihaz seçilen çözünürlüğü veya kare hızını kodlayamaz. Bu ayarı düşürün ve tekrar deneyin. ';
 
   @override
-  String get compressionAudioDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisAudioFormatForCompressionRemoveAudioOrUseASupportedSource =>
       'Bu cihaz sıkıştırma için bu ses formatını çözümleyemez. Sesi kaldırın veya desteklenen bir kaynak kullanın.';
 
   @override
-  String get compressionVideoDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisVideoFormatOrProfileForCompressionChooseAnotherSourceOrDevice =>
       'Bu cihaz bu video formatını veya sıkıştırma profilini çözemiyor. Başka bir kaynak veya cihaz seçin.';
 
   @override
-  String get compressionMp4NotStreamable =>
+  String get theExportedMP4IsNotReadyForStreamingTryAnotherVideoOrDevice =>
       'Dışa aktarılan MP4 akış için hazır değil. Başka bir video veya cihaz deneyin.';
 
   @override
-  String get compressionNoSpace =>
+  String get thereIsNotEnoughFreeStorageToCompressThisVideo =>
       'Bu videoyu sıkıştırmak için yeterli boş depolama alanı yok.';
 
   @override
-  String get compressionHdrUnsupported =>
+  String get thisDeviceCannotProcessTheSelectedHDRModeTryConvertingToSDR =>
       'Bu cihaz seçilen HDR modunu işleyemiyor. SDR\'ye dönüştürmeyi deneyin.';
 
   @override
-  String get compressionGeneralFailure =>
+  String get compressionCouldNotBeCompletedTryAnotherSettingOrVideo =>
       'Sıkıştırma tamamlanamadı. Başka bir ayar veya video deneyin.';
 
   @override
-  String get aboutIdentitySection => 'Uygulama kimliği';
+  String get appIdentity => 'Uygulama kimliği';
 
   @override
-  String get aboutAppName => 'Uygulama adı';
+  String get appName => 'Uygulama adı';
 
   @override
-  String get aboutPackageName => 'Paket adı';
+  String get packageName => 'Paket adı';
 
   @override
-  String get aboutVersion => 'Sürüm';
+  String get version => 'Sürüm';
 
   @override
-  String get aboutBuildNumber => 'Derleme numarası';
+  String get buildNumber => 'Derleme numarası';
 
   @override
-  String get aboutEnvironmentSection => 'Cihaz ve derleme';
+  String get deviceAndBuild => 'Cihaz ve derleme';
 
   @override
-  String get aboutOperatingSystem => 'İşletim sistemi';
+  String get operatingSystem => 'İşletim sistemi';
 
   @override
-  String get aboutOsVersion => 'OS sürümü';
+  String get osVersion => 'OS sürümü';
 
   @override
-  String get aboutBuildMode => 'Derleme modu';
+  String get buildMode => 'Derleme modu';
 
   @override
-  String get aboutDebug => 'Hata ayıklama';
+  String get debug => 'Hata ayıklama';
 
   @override
-  String get aboutRelease => 'Yayın';
+  String get release => 'Yayın';
 
   @override
-  String get aboutToolchainSection => 'İle inşa edildi';
+  String get builtWith => 'İle inşa edildi';
 
   @override
-  String get aboutInstallationSection => 'Kurulum';
+  String get installation => 'Kurulum';
 
   @override
-  String get aboutInstaller => 'Şuradan yüklendi';
+  String get installedFrom => 'Şuradan yüklendi';
 
   @override
-  String get aboutInstalledOn => 'Şu tarihte yüklendi';
+  String get installedOn => 'Şu tarihte yüklendi';
 
   @override
-  String get aboutUpdatedOn => 'Şu tarihte güncellendi';
+  String get updatedOn => 'Şu tarihte güncellendi';
 
   @override
-  String get aboutUnavailable => 'Kullanılamıyor';
+  String get unavailable => 'Kullanılamıyor';
 
   @override
-  String get aboutProjectSection => 'Proje ve destek';
+  String get projectAndSupport => 'Proje ve destek';
 
   @override
-  String get aboutRepository => 'GitHub deposu';
+  String get githubRepository => 'GitHub deposu';
 
   @override
-  String get aboutRepositorySubtitle => 'Zumi kaynak kodunu görüntüle';
+  String get viewZumiSourceCode => 'Zumi kaynak kodunu görüntüle';
 
   @override
-  String get aboutReadme => 'README dosyasını oku';
+  String get readTheREADME => 'README dosyasını oku';
 
   @override
-  String get aboutReadmeSubtitle => 'GitHub\'da Zumi hakkında bilgi edinin';
+  String get learnAboutZumiOnGitHub => 'GitHub\'da Zumi hakkında bilgi edinin';
 
   @override
-  String get aboutIssues => 'Bir sorun bildirin';
+  String get reportAnIssue => 'Bir sorun bildirin';
 
   @override
-  String get aboutIssuesSubtitle => 'GitHub sorunlarını görüntüle ve oluştur';
+  String get viewAndCreateGitHubIssues =>
+      'GitHub sorunlarını görüntüle ve oluştur';
 
   @override
-  String get aboutLatestRelease => 'En son sürüm';
+  String get latestRelease => 'En son sürüm';
 
   @override
-  String get aboutLatestReleaseSubtitle => 'Sürümleri ve indirmeleri görüntüle';
+  String get viewReleasesAndDownloads => 'Sürümleri ve indirmeleri görüntüle';
 
   @override
-  String get aboutDonate => 'Zumi\'yi destekleyin';
+  String get supportZumi => 'Zumi\'yi destekleyin';
 
   @override
-  String get aboutDonateSubtitle => 'Resmî bağış sayfasını aç';
+  String get openTheOfficialDonationPage => 'Resmî bağış sayfasını aç';
 
   @override
-  String get aboutLinkError => 'Bağlantı açılamadı. Lütfen tekrar deneyin.';
+  String get couldNotOpenTheLinkPleaseTryAgain =>
+      'Bağlantı açılamadı. Lütfen tekrar deneyin.';
 
   @override
-  String get aboutDeveloperSection => 'Geliştirici';
+  String get developer => 'Geliştirici';
 
   @override
-  String get aboutDeveloperName => 'Mostafa Sensei';
+  String get mostafaSensei => 'Mostafa Sensei';
 
   @override
-  String get aboutDeveloperProfile => 'GitHub profili';
+  String get githubProfile => 'GitHub profili';
 
   @override
-  String get aboutDeveloperProfileSubtitle =>
+  String get seeProjectsAndContactDetails =>
       'Projeleri ve iletişim bilgilerini gör';
 
   @override
   String get maintenanceInProgress => 'Bakım devam ediyor';
 
   @override
-  String get maintenanceMessage =>
+  String get zumiIsTemporarilyUnavailablePleaseTryAgainLater =>
       'Zumi geçici olarak kullanılamıyor. Lütfen daha sonra tekrar deneyin.';
 
   @override
@@ -989,7 +1000,7 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   }
 
   @override
-  String fileSavedToDcim(String fileName) {
+  String fileSavedToGallery(String fileName) {
     return 'Dosya galeriye kaydedildi: $fileName';
   }
 
@@ -999,7 +1010,7 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   }
 
   @override
-  String get fileAlreadySaved => 'Dosya zaten kaydedilmiş';
+  String get fileIsAlreadySaved => 'Dosya zaten kaydedilmiş';
 
   @override
   String get error => 'Hata';
@@ -1023,100 +1034,97 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get partial => 'Kısmi';
 
   @override
-  String get error_address_line_cant_be_empty => 'Adres satırı boş olamaz';
+  String get addressLineCannotBeEmpty => 'Adres satırı boş olamaz';
 
   @override
-  String get error_address_line_too_long => 'Adres satırı çok uzun';
+  String get addressLineIsTooLong => 'Adres satırı çok uzun';
 
   @override
-  String get error_address_invalid_special_characters =>
+  String get specialCharactersAreNotAllowed =>
       'Özel karakterlere izin verilmiyor';
 
   @override
-  String get error_address_emoji_not_allowed => 'Emojiye izin verilmiyor';
+  String get emojisAreNotAllowed => 'Emojiye izin verilmiyor';
 
   @override
-  String get error_city_cant_be_empty => 'Şehir boş olamaz';
+  String get cityCannotBeEmpty => 'Şehir boş olamaz';
 
   @override
-  String get error_city_too_long => 'Şehir adı çok uzun';
+  String get cityNameIsTooLong => 'Şehir adı çok uzun';
 
   @override
-  String get error_city_invalid_special_characters =>
+  String get cityContainsInvalidSpecialCharacters =>
       'Şehir geçersiz özel karakterler içeriyor';
 
   @override
-  String get error_address_label_cant_be_empty => 'Adres etiketi boş olamaz';
+  String get addressLabelCannotBeEmpty => 'Adres etiketi boş olamaz';
 
   @override
-  String get error_address_label_too_long => 'Adres etiketi çok uzun';
+  String get addressLabelIsTooLong => 'Adres etiketi çok uzun';
 
   @override
-  String get error_email_cant_be_empty => 'Email boş olamaz';
+  String get emailCannotBeEmpty => 'Email boş olamaz';
 
   @override
-  String get error_email_not_invalid_format => 'Geçersiz email formatı';
+  String get invalidEmailFormat => 'Geçersiz email formatı';
 
   @override
-  String get error_email_contains_invalid_characters =>
+  String get emailContainsInvalidCharacters =>
       'E-posta geçersiz karakterler içeriyor';
 
   @override
-  String get error_email_must_contain_at_symbol => 'E-posta @ içermelidir';
+  String get emailMustContain => 'E-posta @ içermelidir';
 
   @override
-  String get error_email_must_be_in_lowercase =>
-      'E-posta küçük harflerle olmalıdır';
+  String get emailMustBeInLowercase => 'E-posta küçük harflerle olmalıdır';
 
   @override
-  String get error_arabic_not_allowed => 'Arap karakterlerine izin verilmiyor';
+  String get arabicCharactersAreNotAllowed =>
+      'Arap karakterlerine izin verilmiyor';
 
   @override
-  String get error_email_emoji_not_allowed =>
+  String get emojisAreNotAllowedInEmail =>
       'E-postada emoji kullanımına izin verilmiyor';
 
   @override
-  String get error_phone_number_cant_be_empty => 'Telefon numarası boş olamaz';
+  String get phoneNumberCannotBeEmpty => 'Telefon numarası boş olamaz';
 
   @override
-  String get error_phone_number_invalid => 'Geçersiz telefon numarası';
+  String get invalidPhoneNumber => 'Geçersiz telefon numarası';
 
   @override
-  String get error_phone_number_min_length =>
+  String get phoneNumberMustBeAtLeast11Digits =>
       'Telefon numarası en az 11 hane olmalıdır';
 
   @override
-  String get error_name_cant_be_empty => 'İsim boş olamaz';
+  String get nameCannotBeEmpty => 'İsim boş olamaz';
 
   @override
-  String get error_name_invalid => 'Geçersiz isim';
+  String get invalidName => 'Geçersiz isim';
 
   @override
-  String get error_name_too_short_at_least_3_characters =>
-      'İsim en az 3 karakter olmalıdır';
+  String get nameMustBeAtLeast3Characters => 'İsim en az 3 karakter olmalıdır';
 
   @override
-  String get error_name_too_long_maximum_20_characters =>
-      'İsim 20 karakteri geçemez';
+  String get nameCannotExceed20Characters => 'İsim 20 karakteri geçemez';
 
   @override
-  String get error_name_invalid_special_characters =>
+  String get nameContainsInvalidSpecialCharacters =>
       'İsim geçersiz özel karakterler içeriyor';
 
   @override
-  String get error_name_emoji_not_allowed =>
+  String get emojisAreNotAllowedInName =>
       'İsimde emoji kullanımına izin verilmiyor';
 
   @override
-  String get error_password_cant_be_empty => 'Şifre boş olamaz';
+  String get passwordCannotBeEmpty => 'Şifre boş olamaz';
 
   @override
-  String
-  get error_password_must_contain_uppercase_lowercase_number_and_special_character =>
+  String get passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter =>
       'Şifre büyük harf, küçük harf, rakam ve özel karakter içermelidir';
 
   @override
-  String get error_password_must_be_at_least_8_characters_long =>
+  String get passwordMustBeAtLeast8CharactersLong =>
       'Şifre en az 8 karakter uzunluğunda olmalıdır';
 
   @override
@@ -1363,43 +1371,43 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get recommendZumiToAFriend => 'Zumi\'yi bir arkadaşınıza önerin.';
 
   @override
-  String get settingsGroupAppearance => 'Görünüm ve dil';
+  String get appearanceLanguage => 'Görünüm ve dil';
 
   @override
-  String get settingsGroupCompression => 'Sıkıştırma';
+  String get compression => 'Sıkıştırma';
 
   @override
-  String get settingsGroupAi => 'Cihazda AI';
+  String get onDeviceAI => 'Cihazda AI';
 
   @override
-  String get settingsGroupPrivacy => 'Bildirimler ve gizlilik';
+  String get notificationsPrivacy => 'Bildirimler ve gizlilik';
 
   @override
-  String get settingsGroupPlans => 'Planlar ve satın almalar';
+  String get plansPurchases => 'Planlar ve satın almalar';
 
   @override
-  String get settingsGroupAbout => 'Hakkında';
+  String get about => 'Hakkında';
 
   @override
-  String get settingsGroupLegal => 'Hukuki';
+  String get legal => 'Hukuki';
 
   @override
-  String get settingsGroupHelp => 'Yardım ve geri bildirim';
+  String get helpFeedback => 'Yardım ve geri bildirim';
 
   @override
-  String get settingsGroupAccount => 'Hesap';
+  String get account => 'Hesap';
 
   @override
-  String get settingsAppearanceSubtitle => 'Tema ve uygulama dili';
+  String get themeAndAppLanguage => 'Tema ve uygulama dili';
 
   @override
-  String get settingsLanguageSubtitle => 'Uygulama dili ve yönü';
+  String get appLanguageAndDirection => 'Uygulama dili ve yönü';
 
   @override
-  String get settingsCompressionSubtitle => 'Varsayılan kalite ve format';
+  String get defaultQualityAndFormat => 'Varsayılan kalite ve format';
 
   @override
-  String get settingsStorageSubtitle => 'Önbellek ve depolama kullanımı';
+  String get cacheAndStorageUsage => 'Önbellek ve depolama kullanımı';
 
   @override
   String get aiSettings => 'AI ayarları';
@@ -1413,17 +1421,18 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
       'Videolarınız için özel bir asistan çok yakında geliyor. Buradan sıkıştırma, düzenleme ve kaydedilmiş videolar hakkında sorular sorabileceksiniz.';
 
   @override
-  String get settingsAiSubtitle => 'Yerel modeller ve akıllı araçlar';
+  String get localModelsAndSmartTools => 'Yerel modeller ve akıllı araçlar';
 
   @override
-  String get exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet =>
+  String get exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet =>
       'Yerel modelleri ve gelecekteki AI araçlarını keşfedin. Bu seçenekler henüz aktif değil.';
 
   @override
   String get localModels => 'Yerel modeller';
 
   @override
-  String get aiModelsSubtitle => 'Desteklenen modelleri göz atın ve indirin';
+  String get browseAndDownloadSupportedModels =>
+      'Desteklenen modelleri göz atın ve indirin';
 
   @override
   String
@@ -1434,7 +1443,8 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get importAModel => 'Bir model içe aktar';
 
   @override
-  String get aiImportSubtitle => 'Dosyalarınızdan uyumlu bir modeli kullanın';
+  String get useACompatibleModelFromYourFiles =>
+      'Dosyalarınızdan uyumlu bir modeli kullanın';
 
   @override
   String
@@ -1445,18 +1455,19 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get smartFeatures => 'Akıllı özellikler ';
 
   @override
-  String get aiFeaturesSubtitle => 'Sıkıştırma, organizasyon ve arama ';
+  String get compressionOrganizationAndSearch =>
+      'Sıkıştırma, organizasyon ve arama ';
 
   @override
   String
-  get chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
+  get chooseWhichLocalAISuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
       'Video sıkıştırma, organizasyon, adlandırma ve arama için kullanılacak yerel AI önerilerini seçin. ';
 
   @override
   String get modelPerformance => 'Model performansı ';
 
   @override
-  String get aiRuntimeSubtitle => 'İşleme ve kaynak tercihleri ';
+  String get processingAndResourcePreferences => 'İşleme ve kaynak tercihleri ';
 
   @override
   String get controlTheProcessingBackendAndResourceLimitsForSupportedModels =>
@@ -1466,7 +1477,8 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get conversationSettings => 'Konuşma ayarları ';
 
   @override
-  String get aiChatSettingsSubtitle => 'Akış, düşünme ve yanıt uzunluğu';
+  String get streamingThinkingAndResponseLength =>
+      'Akış, düşünme ve yanıt uzunluğu';
 
   @override
   String
@@ -1477,7 +1489,7 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get imagesAndAudio => 'Görseller ve ses  ';
 
   @override
-  String get aiMediaSubtitle => 'Çok modlu girdileri kontrol edin  ';
+  String get controlMultimodalInputs => 'Çok modlu girdileri kontrol edin  ';
 
   @override
   String
@@ -1488,7 +1500,7 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get semanticSearch => 'Semantik arama  ';
 
   @override
-  String get aiSearchSubtitle => 'Gömümler ve yerel indeksleme  ';
+  String get embeddingsAndLocalIndexing => 'Gömümler ve yerel indeksleme  ';
 
   @override
   String
@@ -1499,7 +1511,7 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get toolsAndStructuredOutput => 'Araçlar ve yapılandırılmış çıktı  ';
 
   @override
-  String get aiToolsSubtitle => 'Eylemler, şemalar ve onaylar';
+  String get actionsSchemasAndConfirmations => 'Eylemler, şemalar ve onaylar';
 
   @override
   String
@@ -1507,370 +1519,380 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
       'Desteklenen asistan eylemlerini ve yapılandırılmış yanıtları yönetin. Dosyaları etkileyen eylemler onayınızı gerektirir.';
 
   @override
-  String get aiGroupModels => 'Modeller';
+  String get models => 'Modeller';
 
   @override
-  String get aiGroupExperience => 'Asistan deneyimi';
+  String get assistantExperience => 'Asistan deneyimi';
 
   @override
-  String get aiGroupCapabilities => 'Akıllı yetenekler';
+  String get smartCapabilities => 'Akıllı yetenekler';
 
   @override
-  String get aiGroupPerformance => 'Performans';
+  String get performance => 'Performans';
 
   @override
-  String get compressionHistorySubtitle => 'Sıkıştırılmış video geçmişiniz';
+  String get yourCompressedVideoHistory => 'Sıkıştırılmış video geçmişiniz';
 
   @override
-  String get settingsNotificationsSubtitle =>
+  String get completionAndUpdateAlerts =>
       'Tamamlama ve güncelleme bildirimleri';
 
   @override
-  String get settingsPrivacySubtitle => 'Verileriniz yerel olarak kalır';
+  String get yourDataStaysLocal => 'Verileriniz yerel olarak kalır';
 
   @override
-  String get plansSubtitle => 'Planları karşılaştırın ve yükseltin';
+  String get comparePlansAndUpgrade => 'Planları karşılaştırın ve yükseltin';
 
   @override
-  String get plansMethodsSubtitle => 'Ödeme yöntemleri ve faturalama';
+  String get paymentMethodsAndBilling => 'Ödeme yöntemleri ve faturalama';
 
   @override
-  String get plansRestoreSubtitle => 'Önceki satın alımınızı geri yükleyin';
+  String get restoreYourPreviousPurchase =>
+      'Önceki satın alımınızı geri yükleyin';
 
   @override
-  String get aboutAppSubtitle => 'Sürüm ve yapı detayları';
+  String get versionAndBuildDetails => 'Sürüm ve yapı detayları';
 
   @override
-  String get aboutDeveloperSubtitle => 'Zumi\'nin arkasındaki geliştirici';
+  String get theDeveloperBehindZumi => 'Zumi\'nin arkasındaki geliştirici';
 
   @override
-  String get aboutLicensesSubtitle => 'Açık kaynak paket lisansları';
+  String get openSourcePackageLicenses => 'Açık kaynak paket lisansları';
 
   @override
-  String get legalPrivacySubtitle => 'Verilerin nasıl işlendiği';
+  String get howDataIsHandled => 'Verilerin nasıl işlendiği';
 
   @override
-  String get legalTermsSubtitle => 'Zumi\'yi kullanma kuralları';
+  String get rulesForUsingZumi => 'Zumi\'yi kullanma kuralları';
 
   @override
-  String get legalDataSafetySubtitle => 'Hangi verileri topladığımız';
+  String get whatDataWeCollect => 'Hangi verileri topladığımız';
 
   @override
-  String get legalPermissionsSubtitle => 'Neden izinlere ihtiyacımız var';
+  String get whyWeNeedPermissions => 'Neden izinlere ihtiyacımız var';
 
   @override
-  String get helpFaqSubtitle => 'Sıkça sorulan sorulara yanıtlar';
+  String get answersToCommonQuestions => 'Sıkça sorulan sorulara yanıtlar';
 
   @override
-  String get helpSupportSubtitle => 'Geliştiriciye doğrudan ulaşın';
+  String get reachTheDeveloperDirectly => 'Geliştiriciye doğrudan ulaşın';
 
   @override
-  String get helpFeedbackSubtitle => 'Görüşlerinizi bize gönderin';
+  String get sendUsYourFeedback => 'Görüşlerinizi bize gönderin';
 
   @override
-  String get compressionPickVideo => 'Video seçin';
+  String get pickVideo => 'Video seçin';
 
   @override
-  String get compressionTargetMb => 'Hedef boyut (MB)';
+  String get targetSizeMB => 'Hedef boyut (MB)';
 
   @override
-  String get compressionStart => 'Sıkıştırmayı başlat';
+  String get startCompression => 'Sıkıştırmayı başlat';
 
   @override
-  String get compressionPause => 'Duraklat';
+  String get pause => 'Duraklat';
 
   @override
-  String get compressionResume => 'Devam ettir';
+  String get resume => 'Devam ettir';
 
   @override
-  String get compressionViewResult => 'Sonucu görüntüle';
+  String get viewResult => 'Sonucu görüntüle';
 
   @override
-  String get compressionSaveGallery => 'Galeriye kaydet';
+  String get saveToGallery => 'Galeriye kaydet';
 
   @override
-  String get compressionShare => 'Videoyu paylaş';
+  String get shareVideo => 'Videoyu paylaş';
 
   @override
-  String get compressionOriginalSize => 'Orijinal boyut';
+  String get originalSize => 'Orijinal boyut';
 
   @override
-  String get compressionOutputSize => 'Çıkış boyutu';
+  String get outputSize => 'Çıkış boyutu';
 
   @override
-  String get compressionEmptyHistory => 'Henüz sıkıştırılmış video yok';
+  String get noCompressedVideosYet => 'Henüz sıkıştırılmış video yok';
 
   @override
-  String get compressionSavedGallery => 'Galeriye kaydedildi';
+  String get savedToGallery => 'Galeriye kaydedildi';
 
   @override
-  String get compressionInvalidTarget => 'Sıfırdan büyük bir hedef boyut girin';
+  String get enterATargetSizeGreaterThanZero =>
+      'Sıfırdan büyük bir hedef boyut girin';
 
   @override
   String get compressionCancelled => 'Sıkıştırma iptal edildi';
 
   @override
-  String get compressionTargetExceeded =>
+  String get thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize =>
       'Bu video seçilen boyuta ulaşamadı. Daha büyük bir hedef boyut deneyin.';
 
   @override
-  String get compressionTargetInfeasible =>
+  String get theSelectedSizeIsTooSmallForThisVideoChooseALargerSize =>
       'Seçilen boyut bu video için çok küçük. Daha büyük bir boyut seçin.';
 
   @override
-  String get compressionPreviewBefore => 'Orijinal önizleme';
+  String get originalPreview => 'Orijinal önizleme';
 
   @override
-  String get compressionPreviewAfter => 'Sıkıştırılmış önizleme';
+  String get compressedPreview => 'Sıkıştırılmış önizleme';
 
   @override
-  String get compressionPreset => 'Hedef ön ayar';
+  String get targetPreset => 'Hedef ön ayar';
 
   @override
-  String get compressionCustom => 'Özel boyut';
+  String get customSize => 'Özel boyut';
 
   @override
-  String get compressionPreviewUnavailable => 'Önizleme mevcut değil';
+  String get previewUnavailable => 'Önizleme mevcut değil';
 
   @override
-  String get compressionAdvanced => 'Gelişmiş kontroller';
+  String get advancedControls => 'Gelişmiş kontroller';
 
   @override
-  String get compressionAutomatic => 'Otomatik';
+  String get automatic => 'Otomatik';
 
   @override
-  String get compressionResolutionLimit => 'Maksimum çözünürlük';
+  String get maximumResolution => 'Maksimum çözünürlük';
 
   @override
-  String get compressionSourceResolution => 'Orijinal çözünürlük';
+  String get originalResolution => 'Orijinal çözünürlük';
 
   @override
-  String get compressionFrameRateLimit => 'Maksimum kare hızı';
+  String get maximumFrameRate => 'Maksimum kare hızı';
 
   @override
-  String get compressionAudioQuality => 'Ses bit hızı';
+  String get audioBitrate => 'Ses bit hızı';
 
   @override
-  String get compressionRemoveAudio => 'Sesi kaldır';
+  String get removeAudio => 'Sesi kaldır';
 
   @override
-  String get compressionVideoBitrateLimit => 'Video bit hızı tavanı (kbps)';
+  String get videoBitrateCeilingKbps => 'Video bit hızı tavanı (kbps)';
 
   @override
-  String get compressionHdrPolicy => 'HDR işleme';
+  String get hdrHandling => 'HDR işleme';
 
   @override
-  String get compressionHdrConvert => 'SDR\'ye dönüştür';
+  String get convertToSDR => 'SDR\'ye dönüştür';
 
   @override
-  String get compressionHdrPreserve => 'Destekleniyorsa HDR\'yi koru';
+  String get keepHDRWhenSupported => 'Destekleniyorsa HDR\'yi koru';
 
   @override
-  String get compressionPlanPreview => 'Başlamadan önce';
+  String get beforeYouStart => 'Başlamadan önce';
 
   @override
-  String get compressionPlanLoading => 'Sıkıştırma planı hesaplanıyor…';
+  String get calculatingCompressionPlan => 'Sıkıştırma planı hesaplanıyor…';
 
   @override
-  String get compressionPlanResolution => 'Planlanan çözünürlük';
+  String get plannedResolution => 'Planlanan çözünürlük';
 
   @override
-  String get compressionPlanVideoBitrate => 'Planlanan video bit hızı';
+  String get plannedVideoBitrate => 'Planlanan video bit hızı';
 
   @override
-  String get compressionPlanAudioBitrate => 'Planlanan ses bit hızı';
+  String get plannedAudioBitrate => 'Planlanan ses bit hızı';
 
   @override
-  String get compressionAudioConversionNote =>
+  String
+  get reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved =>
       'Yeniden kodlama sesi AAC stereo\'ya dönüştürür. Dolby Atmos ve DTS uzamsal ses korunmayacaktır.';
 
   @override
-  String get compressionPlanTooSmall =>
+  String
+  get thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits =>
       'Bu hedef kullanılabilir bir video için çok küçük. Boyutu artırın veya diğer sınırlamaları düşürün.';
 
   @override
-  String get compressionPlanLowQuality =>
+  String get theSelectedTargetMayReduceVideoQuality =>
       'Seçilen hedef video kalitesini düşürebilir.';
 
   @override
-  String get compressionPlanAlreadyWithinLimit =>
+  String get theSourceIsAlreadyWithinTheSizeLimit =>
       'Kaynak zaten boyut sınırı içerisinde.';
 
   @override
-  String get compressionInvalidBitrate =>
+  String get enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic =>
       'En az 150 kbps bir bit hızı girin veya otomatik için boş bırakın.';
 
   @override
-  String get compressionInvalidResolution =>
+  String get enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic =>
       '240 ile 16384 arasında çift sayı çözünürlük girin veya otomatik için boş bırakın.';
 
   @override
-  String get compressionSeek => 'Video konumu';
+  String get videoPosition => 'Video konumu';
 
   @override
-  String get compressionInterrupted =>
+  String
+  get aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain =>
       'Önceki sıkıştırma işlemine ara verildi. Geçici dosyalar temizlendi; videoyu seçip tekrar deneyebilirsiniz.';
 
   @override
-  String get compressionDismiss => 'Kapat';
+  String get dismiss => 'Kapat';
 
   @override
-  String get compressionClearHistory => 'Geçmişi temizle';
+  String get clearHistory => 'Geçmişi temizle';
 
   @override
-  String get compressionClearHistoryConfirm =>
+  String get removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice =>
       'Tüm geçmiş kayıtları silinsin mi? Kaydedilen videolar cihazınızda kalacaktır. ';
 
   @override
-  String get compressionAttempts => 'Denemeler ';
+  String get attempts => 'Denemeler ';
 
   @override
-  String get compressionTargetSize => 'Hedef boyut ';
+  String get targetSize => 'Hedef boyut ';
 
   @override
-  String get compressionOutputResolution => 'Çıkış çözünürlüğü ';
+  String get outputResolution => 'Çıkış çözünürlüğü ';
 
   @override
-  String get compressionInvalidVideo =>
+  String get thisVideoCouldNotBeReadChooseAnotherFile =>
       'Bu video okunamadı. Başka bir dosya seçin. ';
 
   @override
-  String get compressionInvalidOutput =>
+  String get theEncodedVideoFailedVerificationYourOriginalVideoWasNotChanged =>
       'Kodlanmış video doğrulamadan geçemedi. Orijinal videonuz değiştirilmedi. ';
 
   @override
-  String get compressionEncoderUnsupported =>
+  String
+  get thisDeviceCannotEncodeTheSelectedResolutionOrFrameRateLowerThatSettingAndTryAgain =>
       'Bu cihaz seçilen çözünürlüğü veya kare hızını kodlayamaz. Bu ayarı düşürün ve tekrar deneyin. ';
 
   @override
-  String get compressionAudioDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisAudioFormatForCompressionRemoveAudioOrUseASupportedSource =>
       'Bu cihaz sıkıştırma için bu ses formatını çözümleyemez. Sesi kaldırın veya desteklenen bir kaynak kullanın.';
 
   @override
-  String get compressionVideoDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisVideoFormatOrProfileForCompressionChooseAnotherSourceOrDevice =>
       'Bu cihaz bu video formatını veya sıkıştırma profilini çözemiyor. Başka bir kaynak veya cihaz seçin.';
 
   @override
-  String get compressionMp4NotStreamable =>
+  String get theExportedMP4IsNotReadyForStreamingTryAnotherVideoOrDevice =>
       'Dışa aktarılan MP4 akış için hazır değil. Başka bir video veya cihaz deneyin.';
 
   @override
-  String get compressionNoSpace =>
+  String get thereIsNotEnoughFreeStorageToCompressThisVideo =>
       'Bu videoyu sıkıştırmak için yeterli boş depolama alanı yok.';
 
   @override
-  String get compressionHdrUnsupported =>
+  String get thisDeviceCannotProcessTheSelectedHDRModeTryConvertingToSDR =>
       'Bu cihaz seçilen HDR modunu işleyemiyor. SDR\'ye dönüştürmeyi deneyin.';
 
   @override
-  String get compressionGeneralFailure =>
+  String get compressionCouldNotBeCompletedTryAnotherSettingOrVideo =>
       'Sıkıştırma tamamlanamadı. Başka bir ayar veya video deneyin.';
 
   @override
-  String get aboutIdentitySection => 'Uygulama kimliği';
+  String get appIdentity => 'Uygulama kimliği';
 
   @override
-  String get aboutAppName => 'Uygulama adı';
+  String get appName => 'Uygulama adı';
 
   @override
-  String get aboutPackageName => 'Paket adı';
+  String get packageName => 'Paket adı';
 
   @override
-  String get aboutVersion => 'Sürüm';
+  String get version => 'Sürüm';
 
   @override
-  String get aboutBuildNumber => 'Derleme numarası';
+  String get buildNumber => 'Derleme numarası';
 
   @override
-  String get aboutEnvironmentSection => 'Cihaz ve derleme';
+  String get deviceAndBuild => 'Cihaz ve derleme';
 
   @override
-  String get aboutOperatingSystem => 'İşletim sistemi';
+  String get operatingSystem => 'İşletim sistemi';
 
   @override
-  String get aboutOsVersion => 'OS sürümü';
+  String get osVersion => 'OS sürümü';
 
   @override
-  String get aboutBuildMode => 'Derleme modu';
+  String get buildMode => 'Derleme modu';
 
   @override
-  String get aboutDebug => 'Hata ayıklama';
+  String get debug => 'Hata ayıklama';
 
   @override
-  String get aboutRelease => 'Yayın';
+  String get release => 'Yayın';
 
   @override
-  String get aboutToolchainSection => 'İle inşa edildi';
+  String get builtWith => 'İle inşa edildi';
 
   @override
-  String get aboutInstallationSection => 'Kurulum';
+  String get installation => 'Kurulum';
 
   @override
-  String get aboutInstaller => 'Şuradan yüklendi';
+  String get installedFrom => 'Şuradan yüklendi';
 
   @override
-  String get aboutInstalledOn => 'Şu tarihte yüklendi';
+  String get installedOn => 'Şu tarihte yüklendi';
 
   @override
-  String get aboutUpdatedOn => 'Şu tarihte güncellendi';
+  String get updatedOn => 'Şu tarihte güncellendi';
 
   @override
-  String get aboutUnavailable => 'Kullanılamıyor';
+  String get unavailable => 'Kullanılamıyor';
 
   @override
-  String get aboutProjectSection => 'Proje ve destek';
+  String get projectAndSupport => 'Proje ve destek';
 
   @override
-  String get aboutRepository => 'GitHub deposu';
+  String get githubRepository => 'GitHub deposu';
 
   @override
-  String get aboutRepositorySubtitle => 'Zumi kaynak kodunu görüntüle';
+  String get viewZumiSourceCode => 'Zumi kaynak kodunu görüntüle';
 
   @override
-  String get aboutReadme => 'README dosyasını oku';
+  String get readTheREADME => 'README dosyasını oku';
 
   @override
-  String get aboutReadmeSubtitle => 'GitHub\'da Zumi hakkında bilgi edinin';
+  String get learnAboutZumiOnGitHub => 'GitHub\'da Zumi hakkında bilgi edinin';
 
   @override
-  String get aboutIssues => 'Bir sorun bildirin';
+  String get reportAnIssue => 'Bir sorun bildirin';
 
   @override
-  String get aboutIssuesSubtitle => 'GitHub sorunlarını görüntüle ve oluştur';
+  String get viewAndCreateGitHubIssues =>
+      'GitHub sorunlarını görüntüle ve oluştur';
 
   @override
-  String get aboutLatestRelease => 'En son sürüm';
+  String get latestRelease => 'En son sürüm';
 
   @override
-  String get aboutLatestReleaseSubtitle => 'Sürümleri ve indirmeleri görüntüle';
+  String get viewReleasesAndDownloads => 'Sürümleri ve indirmeleri görüntüle';
 
   @override
-  String get aboutDonate => 'Zumi\'yi destekleyin';
+  String get supportZumi => 'Zumi\'yi destekleyin';
 
   @override
-  String get aboutDonateSubtitle => 'Resmî bağış sayfasını aç';
+  String get openTheOfficialDonationPage => 'Resmî bağış sayfasını aç';
 
   @override
-  String get aboutLinkError => 'Bağlantı açılamadı. Lütfen tekrar deneyin.';
+  String get couldNotOpenTheLinkPleaseTryAgain =>
+      'Bağlantı açılamadı. Lütfen tekrar deneyin.';
 
   @override
-  String get aboutDeveloperSection => 'Geliştirici';
+  String get developer => 'Geliştirici';
 
   @override
-  String get aboutDeveloperName => 'Mostafa Sensei';
+  String get mostafaSensei => 'Mostafa Sensei';
 
   @override
-  String get aboutDeveloperProfile => 'GitHub profili';
+  String get githubProfile => 'GitHub profili';
 
   @override
-  String get aboutDeveloperProfileSubtitle =>
+  String get seeProjectsAndContactDetails =>
       'Projeleri ve iletişim bilgilerini gör';
 
   @override
   String get maintenanceInProgress => 'Bakım devam ediyor';
 
   @override
-  String get maintenanceMessage =>
+  String get zumiIsTemporarilyUnavailablePleaseTryAgainLater =>
       'Zumi geçici olarak kullanılamıyor. Lütfen daha sonra tekrar deneyin.';
 
   @override

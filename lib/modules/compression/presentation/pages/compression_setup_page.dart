@@ -32,7 +32,9 @@ final class CompressionSetupPage extends HookWidget {
           final video = state.video;
           if (video == null) {
             return Center(
-              child: Text(context.localeKeys.pickAVideoFromYourGalleryToStartCompressing),
+              child: Text(
+                context.localeKeys.pickAVideoFromYourGalleryToStartCompressing,
+              ),
             );
           }
           return ListView(
@@ -42,16 +44,16 @@ final class CompressionSetupPage extends HookWidget {
               const SizedBox(height: 8),
               VideoPreview(
                 path: video.path,
-                title: context.localeKeys.compressionPreviewBefore,
+                title: context.localeKeys.originalPreview,
               ),
               const SizedBox(height: 16),
               Text(
-                '${context.localeKeys.compressionOriginalSize}: '
+                '${context.localeKeys.originalSize}: '
                 '${(video.metadata.fileSizeBytes / 1000000).toStringAsFixed(1)} MB',
               ),
               const SizedBox(height: 24),
               Text(
-                context.localeKeys.compressionPreset,
+                context.localeKeys.targetPreset,
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               const SizedBox(height: 8),
@@ -68,7 +70,7 @@ final class CompressionSetupPage extends HookWidget {
                         cubit.setTargetMb(preset);
                       },
                     ),
-                  Chip(label: Text(context.localeKeys.compressionCustom)),
+                  Chip(label: Text(context.localeKeys.customSize)),
                 ],
               ),
               const SizedBox(height: 16),
@@ -78,10 +80,10 @@ final class CompressionSetupPage extends HookWidget {
                   decimal: true,
                 ),
                 decoration: InputDecoration(
-                  labelText: context.localeKeys.compressionTargetMb,
+                  labelText: context.localeKeys.targetSizeMB,
                   errorText: valid.value
                       ? null
-                      : context.localeKeys.compressionInvalidTarget,
+                      : context.localeKeys.enterATargetSizeGreaterThanZero,
                   border: const OutlineInputBorder(),
                 ),
                 onChanged: (text) {
@@ -119,7 +121,7 @@ final class CompressionSetupPage extends HookWidget {
                         );
                       },
                 icon: const Icon(Icons.compress),
-                label: Text(context.localeKeys.compressionStart),
+                label: Text(context.localeKeys.startCompression),
               ),
             ],
           );

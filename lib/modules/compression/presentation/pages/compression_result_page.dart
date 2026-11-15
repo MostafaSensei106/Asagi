@@ -24,7 +24,11 @@ final class CompressionResultPage extends HookWidget {
           final output = state.output;
           if (output == null) {
             return Center(
-              child: Text(context.localeKeys.compareTheBeforeAndAfterSizeThenSaveOrShareTheResult),
+              child: Text(
+                context
+                    .localeKeys
+                    .compareTheBeforeAndAfterSizeThenSaveOrShareTheResult,
+              ),
             );
           }
           return ListView(
@@ -42,11 +46,11 @@ final class CompressionResultPage extends HookWidget {
                 segments: [
                   ButtonSegment(
                     value: false,
-                    label: Text(context.localeKeys.compressionPreviewBefore),
+                    label: Text(context.localeKeys.originalPreview),
                   ),
                   ButtonSegment(
                     value: true,
-                    label: Text(context.localeKeys.compressionPreviewAfter),
+                    label: Text(context.localeKeys.compressedPreview),
                   ),
                 ],
                 selected: {showAfter.value},
@@ -63,18 +67,18 @@ final class CompressionResultPage extends HookWidget {
                     ? output.path
                     : state.video?.path ?? output.path,
                 title: showAfter.value
-                    ? context.localeKeys.compressionPreviewAfter
-                    : context.localeKeys.compressionPreviewBefore,
+                    ? context.localeKeys.compressedPreview
+                    : context.localeKeys.originalPreview,
               ),
               const SizedBox(height: 24),
               ListTile(
-                title: Text(context.localeKeys.compressionOriginalSize),
+                title: Text(context.localeKeys.originalSize),
                 trailing: Text(
                   '${((state.video?.metadata.fileSizeBytes ?? 0) / 1000000).toStringAsFixed(1)} MB',
                 ),
               ),
               ListTile(
-                title: Text(context.localeKeys.compressionOutputSize),
+                title: Text(context.localeKeys.outputSize),
                 trailing: Text(
                   '${(output.bytes / 1000000).toStringAsFixed(1)} MB',
                 ),
@@ -89,9 +93,7 @@ final class CompressionResultPage extends HookWidget {
                     if (context.mounted) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          content: Text(
-                            context.localeKeys.compressionSavedGallery,
-                          ),
+                          content: Text(context.localeKeys.savedToGallery),
                         ),
                       );
                     }
@@ -100,7 +102,9 @@ final class CompressionResultPage extends HookWidget {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text(
-                            context.localeKeys.compressionGeneralFailure,
+                            context
+                                .localeKeys
+                                .compressionCouldNotBeCompletedTryAnotherSettingOrVideo,
                           ),
                         ),
                       );
@@ -108,7 +112,7 @@ final class CompressionResultPage extends HookWidget {
                   }
                 },
                 icon: const Icon(Icons.save_alt),
-                label: Text(context.localeKeys.compressionSaveGallery),
+                label: Text(context.localeKeys.saveToGallery),
               ),
               TextButton.icon(
                 onPressed: () async {
@@ -121,7 +125,9 @@ final class CompressionResultPage extends HookWidget {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text(
-                            context.localeKeys.compressionGeneralFailure,
+                            context
+                                .localeKeys
+                                .compressionCouldNotBeCompletedTryAnotherSettingOrVideo,
                           ),
                         ),
                       );
@@ -129,7 +135,7 @@ final class CompressionResultPage extends HookWidget {
                   }
                 },
                 icon: const Icon(Icons.share_outlined),
-                label: Text(context.localeKeys.compressionShare),
+                label: Text(context.localeKeys.shareVideo),
               ),
             ],
           );

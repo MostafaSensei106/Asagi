@@ -21,7 +21,7 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String fileSavedToDcim(String fileName) {
+  String fileSavedToGallery(String fileName) {
     return 'Tệp đã được lưu vào thư viện: $fileName';
   }
 
@@ -31,7 +31,7 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get fileAlreadySaved => 'Tệp đã được lưu';
+  String get fileIsAlreadySaved => 'Tệp đã được lưu';
 
   @override
   String get error => 'Lỗi';
@@ -55,103 +55,95 @@ class AppLocalizationsVi extends AppLocalizations {
   String get partial => 'Một phần';
 
   @override
-  String get error_address_line_cant_be_empty =>
-      'Dòng địa chỉ không được để trống';
+  String get addressLineCannotBeEmpty => 'Dòng địa chỉ không được để trống';
 
   @override
-  String get error_address_line_too_long => 'Dòng địa chỉ quá dài';
+  String get addressLineIsTooLong => 'Dòng địa chỉ quá dài';
 
   @override
-  String get error_address_invalid_special_characters =>
+  String get specialCharactersAreNotAllowed =>
       'Không được sử dụng ký tự đặc biệt';
 
   @override
-  String get error_address_emoji_not_allowed =>
-      'Không được sử dụng biểu tượng cảm xúc';
+  String get emojisAreNotAllowed => 'Không được sử dụng biểu tượng cảm xúc';
 
   @override
-  String get error_city_cant_be_empty => 'Thành phố không được để trống';
+  String get cityCannotBeEmpty => 'Thành phố không được để trống';
 
   @override
-  String get error_city_too_long => 'Tên thành phố quá dài';
+  String get cityNameIsTooLong => 'Tên thành phố quá dài';
 
   @override
-  String get error_city_invalid_special_characters =>
+  String get cityContainsInvalidSpecialCharacters =>
       'Thành phố chứa ký tự đặc biệt không hợp lệ';
 
   @override
-  String get error_address_label_cant_be_empty =>
-      'Nhãn địa chỉ không được để trống';
+  String get addressLabelCannotBeEmpty => 'Nhãn địa chỉ không được để trống';
 
   @override
-  String get error_address_label_too_long => 'Nhãn địa chỉ quá dài';
+  String get addressLabelIsTooLong => 'Nhãn địa chỉ quá dài';
 
   @override
-  String get error_email_cant_be_empty => 'Email không được để trống';
+  String get emailCannotBeEmpty => 'Email không được để trống';
 
   @override
-  String get error_email_not_invalid_format => 'Định dạng email không hợp lệ';
+  String get invalidEmailFormat => 'Định dạng email không hợp lệ';
 
   @override
-  String get error_email_contains_invalid_characters =>
-      'Email chứa ký tự không hợp lệ';
+  String get emailContainsInvalidCharacters => 'Email chứa ký tự không hợp lệ';
 
   @override
-  String get error_email_must_contain_at_symbol => 'Email phải chứa @';
+  String get emailMustContain => 'Email phải chứa @';
 
   @override
-  String get error_email_must_be_in_lowercase => 'Email phải viết thường';
+  String get emailMustBeInLowercase => 'Email phải viết thường';
 
   @override
-  String get error_arabic_not_allowed => 'Không được sử dụng ký tự Ả Rập';
+  String get arabicCharactersAreNotAllowed => 'Không được sử dụng ký tự Ả Rập';
 
   @override
-  String get error_email_emoji_not_allowed =>
+  String get emojisAreNotAllowedInEmail =>
       'Không được sử dụng biểu tượng cảm xúc trong email';
 
   @override
-  String get error_phone_number_cant_be_empty =>
-      'Số điện thoại không được để trống';
+  String get phoneNumberCannotBeEmpty => 'Số điện thoại không được để trống';
 
   @override
-  String get error_phone_number_invalid => 'Số điện thoại không hợp lệ';
+  String get invalidPhoneNumber => 'Số điện thoại không hợp lệ';
 
   @override
-  String get error_phone_number_min_length =>
+  String get phoneNumberMustBeAtLeast11Digits =>
       'Số điện thoại phải có ít nhất 11 chữ số';
 
   @override
-  String get error_name_cant_be_empty => 'Tên không được để trống';
+  String get nameCannotBeEmpty => 'Tên không được để trống';
 
   @override
-  String get error_name_invalid => 'Tên không hợp lệ';
+  String get invalidName => 'Tên không hợp lệ';
 
   @override
-  String get error_name_too_short_at_least_3_characters =>
-      'Tên phải có ít nhất 3 ký tự';
+  String get nameMustBeAtLeast3Characters => 'Tên phải có ít nhất 3 ký tự';
 
   @override
-  String get error_name_too_long_maximum_20_characters =>
-      'Tên không được vượt quá 20 ký tự';
+  String get nameCannotExceed20Characters => 'Tên không được vượt quá 20 ký tự';
 
   @override
-  String get error_name_invalid_special_characters =>
+  String get nameContainsInvalidSpecialCharacters =>
       'Tên chứa ký tự đặc biệt không hợp lệ';
 
   @override
-  String get error_name_emoji_not_allowed =>
+  String get emojisAreNotAllowedInName =>
       'Không được sử dụng biểu tượng cảm xúc trong tên';
 
   @override
-  String get error_password_cant_be_empty => 'Mật khẩu không được để trống';
+  String get passwordCannotBeEmpty => 'Mật khẩu không được để trống';
 
   @override
-  String
-  get error_password_must_contain_uppercase_lowercase_number_and_special_character =>
+  String get passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter =>
       'Mật khẩu phải chứa chữ hoa, chữ thường, số và ký tự đặc biệt';
 
   @override
-  String get error_password_must_be_at_least_8_characters_long =>
+  String get passwordMustBeAtLeast8CharactersLong =>
       'Mật khẩu phải có ít nhất 8 ký tự';
 
   @override
@@ -399,43 +391,43 @@ class AppLocalizationsVi extends AppLocalizations {
   String get recommendZumiToAFriend => 'Đề xuất Zumi cho một người bạn.';
 
   @override
-  String get settingsGroupAppearance => 'Giao diện & ngôn ngữ';
+  String get appearanceLanguage => 'Giao diện & ngôn ngữ';
 
   @override
-  String get settingsGroupCompression => 'Nén';
+  String get compression => 'Nén';
 
   @override
-  String get settingsGroupAi => 'AI trên thiết bị';
+  String get onDeviceAI => 'AI trên thiết bị';
 
   @override
-  String get settingsGroupPrivacy => 'Thông báo & quyền riêng tư';
+  String get notificationsPrivacy => 'Thông báo & quyền riêng tư';
 
   @override
-  String get settingsGroupPlans => 'Gói & giao dịch mua';
+  String get plansPurchases => 'Gói & giao dịch mua';
 
   @override
-  String get settingsGroupAbout => 'Giới thiệu';
+  String get about => 'Giới thiệu';
 
   @override
-  String get settingsGroupLegal => 'Pháp lý';
+  String get legal => 'Pháp lý';
 
   @override
-  String get settingsGroupHelp => 'Trợ giúp & phản hồi';
+  String get helpFeedback => 'Trợ giúp & phản hồi';
 
   @override
-  String get settingsGroupAccount => 'Tài khoản';
+  String get account => 'Tài khoản';
 
   @override
-  String get settingsAppearanceSubtitle => 'Chủ đề và ngôn ngữ ứng dụng';
+  String get themeAndAppLanguage => 'Chủ đề và ngôn ngữ ứng dụng';
 
   @override
-  String get settingsLanguageSubtitle => 'Ngôn ngữ và hướng của ứng dụng';
+  String get appLanguageAndDirection => 'Ngôn ngữ và hướng của ứng dụng';
 
   @override
-  String get settingsCompressionSubtitle => 'Chất lượng và định dạng mặc định';
+  String get defaultQualityAndFormat => 'Chất lượng và định dạng mặc định';
 
   @override
-  String get settingsStorageSubtitle => 'Sử dụng bộ nhớ đệm và lưu trữ';
+  String get cacheAndStorageUsage => 'Sử dụng bộ nhớ đệm và lưu trữ';
 
   @override
   String get aiSettings => 'Cài đặt AI';
@@ -449,17 +441,18 @@ class AppLocalizationsVi extends AppLocalizations {
       'Một trợ lý cá nhân cho video của bạn sắp ra mắt. Bạn sẽ có thể hỏi về nén, tổ chức và các video đã lưu tại đây.';
 
   @override
-  String get settingsAiSubtitle => 'Mô hình cục bộ và công cụ thông minh';
+  String get localModelsAndSmartTools => 'Mô hình cục bộ và công cụ thông minh';
 
   @override
-  String get exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet =>
+  String get exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet =>
       'Khám phá các mô hình cục bộ và công cụ AI tương lai. Những tùy chọn này vẫn chưa được kích hoạt.';
 
   @override
   String get localModels => 'Mô hình cục bộ';
 
   @override
-  String get aiModelsSubtitle => 'Duyệt và tải xuống các mô hình được hỗ trợ';
+  String get browseAndDownloadSupportedModels =>
+      'Duyệt và tải xuống các mô hình được hỗ trợ';
 
   @override
   String
@@ -470,7 +463,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get importAModel => 'Nhập một mô hình';
 
   @override
-  String get aiImportSubtitle =>
+  String get useACompatibleModelFromYourFiles =>
       'Sử dụng một mô hình tương thích từ các tệp của bạn';
 
   @override
@@ -482,18 +475,18 @@ class AppLocalizationsVi extends AppLocalizations {
   String get smartFeatures => 'Tính năng thông minh';
 
   @override
-  String get aiFeaturesSubtitle => 'Nén, tổ chức và tìm kiếm';
+  String get compressionOrganizationAndSearch => 'Nén, tổ chức và tìm kiếm';
 
   @override
   String
-  get chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
+  get chooseWhichLocalAISuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
       'Chọn các đề xuất AI cục bộ để sử dụng cho việc nén video, tổ chức, đặt tên và tìm kiếm.';
 
   @override
   String get modelPerformance => 'Hiệu suất mô hình';
 
   @override
-  String get aiRuntimeSubtitle => 'Tùy chọn xử lý và tài nguyên';
+  String get processingAndResourcePreferences => 'Tùy chọn xử lý và tài nguyên';
 
   @override
   String get controlTheProcessingBackendAndResourceLimitsForSupportedModels =>
@@ -503,7 +496,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get conversationSettings => 'Cài đặt hội thoại';
 
   @override
-  String get aiChatSettingsSubtitle =>
+  String get streamingThinkingAndResponseLength =>
       'Phát trực tuyến, suy nghĩ và độ dài phản hồi';
 
   @override
@@ -515,7 +508,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get imagesAndAudio => 'Hình ảnh và âm thanh';
 
   @override
-  String get aiMediaSubtitle => 'Kiểm soát các đầu vào đa phương tiện';
+  String get controlMultimodalInputs => 'Kiểm soát các đầu vào đa phương tiện';
 
   @override
   String
@@ -526,7 +519,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get semanticSearch => 'Tìm kiếm ngữ nghĩa';
 
   @override
-  String get aiSearchSubtitle => 'Nhúng và lập chỉ mục cục bộ';
+  String get embeddingsAndLocalIndexing => 'Nhúng và lập chỉ mục cục bộ';
 
   @override
   String
@@ -537,7 +530,8 @@ class AppLocalizationsVi extends AppLocalizations {
   String get toolsAndStructuredOutput => 'Công cụ và đầu ra có cấu trúc';
 
   @override
-  String get aiToolsSubtitle => 'Các hành động, sơ đồ và xác nhận';
+  String get actionsSchemasAndConfirmations =>
+      'Các hành động, sơ đồ và xác nhận';
 
   @override
   String
@@ -545,369 +539,379 @@ class AppLocalizationsVi extends AppLocalizations {
       'Quản lý các hành động trợ lý được hỗ trợ và các phản hồi có cấu trúc. Các hành động ảnh hưởng đến tệp sẽ yêu cầu bạn xác nhận.';
 
   @override
-  String get aiGroupModels => 'Mô hình';
+  String get models => 'Mô hình';
 
   @override
-  String get aiGroupExperience => 'Trải nghiệm trợ lý';
+  String get assistantExperience => 'Trải nghiệm trợ lý';
 
   @override
-  String get aiGroupCapabilities => 'Khả năng thông minh';
+  String get smartCapabilities => 'Khả năng thông minh';
 
   @override
-  String get aiGroupPerformance => 'Hiệu suất';
+  String get performance => 'Hiệu suất';
 
   @override
-  String get compressionHistorySubtitle => 'Lịch sử video nén của bạn';
+  String get yourCompressedVideoHistory => 'Lịch sử video nén của bạn';
 
   @override
-  String get settingsNotificationsSubtitle => 'Cảnh báo hoàn thành và cập nhật';
+  String get completionAndUpdateAlerts => 'Cảnh báo hoàn thành và cập nhật';
 
   @override
-  String get settingsPrivacySubtitle => 'Dữ liệu của bạn vẫn giữ tại chỗ';
+  String get yourDataStaysLocal => 'Dữ liệu của bạn vẫn giữ tại chỗ';
 
   @override
-  String get plansSubtitle => 'So sánh các gói và nâng cấp';
+  String get comparePlansAndUpgrade => 'So sánh các gói và nâng cấp';
 
   @override
-  String get plansMethodsSubtitle => 'Phương thức thanh toán và hóa đơn';
+  String get paymentMethodsAndBilling => 'Phương thức thanh toán và hóa đơn';
 
   @override
-  String get plansRestoreSubtitle => 'Khôi phục mua hàng trước đó của bạn';
+  String get restoreYourPreviousPurchase =>
+      'Khôi phục mua hàng trước đó của bạn';
 
   @override
-  String get aboutAppSubtitle => 'Chi tiết phiên bản và bản dựng';
+  String get versionAndBuildDetails => 'Chi tiết phiên bản và bản dựng';
 
   @override
-  String get aboutDeveloperSubtitle => 'Nhà phát triển đứng sau Zumi';
+  String get theDeveloperBehindZumi => 'Nhà phát triển đứng sau Zumi';
 
   @override
-  String get aboutLicensesSubtitle => 'Giấy phép gói mã nguồn mở';
+  String get openSourcePackageLicenses => 'Giấy phép gói mã nguồn mở';
 
   @override
-  String get legalPrivacySubtitle => 'Cách dữ liệu được xử lý';
+  String get howDataIsHandled => 'Cách dữ liệu được xử lý';
 
   @override
-  String get legalTermsSubtitle => 'Quy tắc sử dụng Zumi';
+  String get rulesForUsingZumi => 'Quy tắc sử dụng Zumi';
 
   @override
-  String get legalDataSafetySubtitle => 'Dữ liệu chúng tôi thu thập';
+  String get whatDataWeCollect => 'Dữ liệu chúng tôi thu thập';
 
   @override
-  String get legalPermissionsSubtitle => 'Tại sao chúng ta cần quyền';
+  String get whyWeNeedPermissions => 'Tại sao chúng ta cần quyền';
 
   @override
-  String get helpFaqSubtitle => 'Câu trả lời cho các câu hỏi thường gặp';
+  String get answersToCommonQuestions =>
+      'Câu trả lời cho các câu hỏi thường gặp';
 
   @override
-  String get helpSupportSubtitle => 'Liên hệ trực tiếp với nhà phát triển';
+  String get reachTheDeveloperDirectly =>
+      'Liên hệ trực tiếp với nhà phát triển';
 
   @override
-  String get helpFeedbackSubtitle => 'Gửi phản hồi của bạn cho chúng tôi';
+  String get sendUsYourFeedback => 'Gửi phản hồi của bạn cho chúng tôi';
 
   @override
-  String get compressionPickVideo => 'Chọn video';
+  String get pickVideo => 'Chọn video';
 
   @override
-  String get compressionTargetMb => 'Kích thước mục tiêu (MB)';
+  String get targetSizeMB => 'Kích thước mục tiêu (MB)';
 
   @override
-  String get compressionStart => 'Bắt đầu nén';
+  String get startCompression => 'Bắt đầu nén';
 
   @override
-  String get compressionPause => 'Tạm dừng';
+  String get pause => 'Tạm dừng';
 
   @override
-  String get compressionResume => 'Tiếp tục';
+  String get resume => 'Tiếp tục';
 
   @override
-  String get compressionViewResult => 'Xem kết quả';
+  String get viewResult => 'Xem kết quả';
 
   @override
-  String get compressionSaveGallery => 'Lưu vào thư viện';
+  String get saveToGallery => 'Lưu vào thư viện';
 
   @override
-  String get compressionShare => 'Chia sẻ video';
+  String get shareVideo => 'Chia sẻ video';
 
   @override
-  String get compressionOriginalSize => 'Kích thước gốc';
+  String get originalSize => 'Kích thước gốc';
 
   @override
-  String get compressionOutputSize => 'Kích thước xuất';
+  String get outputSize => 'Kích thước xuất';
 
   @override
-  String get compressionEmptyHistory => 'Chưa có video nào được nén';
+  String get noCompressedVideosYet => 'Chưa có video nào được nén';
 
   @override
-  String get compressionSavedGallery => 'Đã lưu vào thư viện';
+  String get savedToGallery => 'Đã lưu vào thư viện';
 
   @override
-  String get compressionInvalidTarget =>
+  String get enterATargetSizeGreaterThanZero =>
       'Nhập kích thước mục tiêu lớn hơn không';
 
   @override
   String get compressionCancelled => 'Nén đã bị hủy';
 
   @override
-  String get compressionTargetExceeded =>
+  String get thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize =>
       'Video này không thể đạt kích thước đã chọn. Thử kích thước mục tiêu lớn hơn.';
 
   @override
-  String get compressionTargetInfeasible =>
+  String get theSelectedSizeIsTooSmallForThisVideoChooseALargerSize =>
       'Kích thước đã chọn quá nhỏ cho video này. Chọn kích thước lớn hơn.';
 
   @override
-  String get compressionPreviewBefore => 'Xem trước ban đầu';
+  String get originalPreview => 'Xem trước ban đầu';
 
   @override
-  String get compressionPreviewAfter => 'Xem trước nén';
+  String get compressedPreview => 'Xem trước nén';
 
   @override
-  String get compressionPreset => 'Cài đặt mục tiêu';
+  String get targetPreset => 'Cài đặt mục tiêu';
 
   @override
-  String get compressionCustom => 'Kích thước tùy chỉnh';
+  String get customSize => 'Kích thước tùy chỉnh';
 
   @override
-  String get compressionPreviewUnavailable => 'Xem trước không khả dụng';
+  String get previewUnavailable => 'Xem trước không khả dụng';
 
   @override
-  String get compressionAdvanced => 'Điều khiển nâng cao';
+  String get advancedControls => 'Điều khiển nâng cao';
 
   @override
-  String get compressionAutomatic => 'Tự động';
+  String get automatic => 'Tự động';
 
   @override
-  String get compressionResolutionLimit => 'Độ phân giải tối đa';
+  String get maximumResolution => 'Độ phân giải tối đa';
 
   @override
-  String get compressionSourceResolution => 'Độ phân giải gốc';
+  String get originalResolution => 'Độ phân giải gốc';
 
   @override
-  String get compressionFrameRateLimit => 'Tốc độ khung hình tối đa';
+  String get maximumFrameRate => 'Tốc độ khung hình tối đa';
 
   @override
-  String get compressionAudioQuality => 'Tốc độ bit âm thanh';
+  String get audioBitrate => 'Tốc độ bit âm thanh';
 
   @override
-  String get compressionRemoveAudio => 'Loại bỏ âm thanh';
+  String get removeAudio => 'Loại bỏ âm thanh';
 
   @override
-  String get compressionVideoBitrateLimit => 'Giới hạn tốc độ bit video (kbps)';
+  String get videoBitrateCeilingKbps => 'Giới hạn tốc độ bit video (kbps)';
 
   @override
-  String get compressionHdrPolicy => 'Xử lý HDR';
+  String get hdrHandling => 'Xử lý HDR';
 
   @override
-  String get compressionHdrConvert => 'Chuyển sang SDR';
+  String get convertToSDR => 'Chuyển sang SDR';
 
   @override
-  String get compressionHdrPreserve => 'Giữ HDR khi được hỗ trợ';
+  String get keepHDRWhenSupported => 'Giữ HDR khi được hỗ trợ';
 
   @override
-  String get compressionPlanPreview => 'Trước khi bạn bắt đầu';
+  String get beforeYouStart => 'Trước khi bạn bắt đầu';
 
   @override
-  String get compressionPlanLoading => 'Đang tính toán kế hoạch nén…';
+  String get calculatingCompressionPlan => 'Đang tính toán kế hoạch nén…';
 
   @override
-  String get compressionPlanResolution => 'Độ phân giải dự kiến';
+  String get plannedResolution => 'Độ phân giải dự kiến';
 
   @override
-  String get compressionPlanVideoBitrate => 'Tốc độ bit video dự kiến';
+  String get plannedVideoBitrate => 'Tốc độ bit video dự kiến';
 
   @override
-  String get compressionPlanAudioBitrate => 'Tốc độ bit âm thanh dự kiến';
+  String get plannedAudioBitrate => 'Tốc độ bit âm thanh dự kiến';
 
   @override
-  String get compressionAudioConversionNote =>
+  String
+  get reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved =>
       'Việc mã hóa lại sẽ chuyển âm thanh sang AAC stereo. Dolby Atmos và âm thanh không gian DTS sẽ không được giữ lại.';
 
   @override
-  String get compressionPlanTooSmall =>
+  String
+  get thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits =>
       'Mục tiêu này quá nhỏ để có một video sử dụng được. Tăng kích thước hoặc hạ các giới hạn khác.';
 
   @override
-  String get compressionPlanLowQuality =>
+  String get theSelectedTargetMayReduceVideoQuality =>
       'Mục tiêu đã chọn có thể làm giảm chất lượng video.';
 
   @override
-  String get compressionPlanAlreadyWithinLimit =>
+  String get theSourceIsAlreadyWithinTheSizeLimit =>
       'Nguồn đã nằm trong giới hạn kích thước.';
 
   @override
-  String get compressionInvalidBitrate =>
+  String get enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic =>
       'Nhập tốc độ bit ít nhất 150 kbps, hoặc để trống để tự động.';
 
   @override
-  String get compressionInvalidResolution =>
+  String get enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic =>
       'Nhập độ phân giải chẵn từ 240 đến 16384, hoặc để trống để tự động.';
 
   @override
-  String get compressionSeek => 'Vị trí video';
+  String get videoPosition => 'Vị trí video';
 
   @override
-  String get compressionInterrupted =>
+  String
+  get aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain =>
       'Một lần nén trước đã bị gián đoạn. Các tệp tạm thời đã được dọn dẹp; bạn có thể chọn video và thử lại.';
 
   @override
-  String get compressionDismiss => 'Bỏ qua';
+  String get dismiss => 'Bỏ qua';
 
   @override
-  String get compressionClearHistory => 'Xóa lịch sử';
+  String get clearHistory => 'Xóa lịch sử';
 
   @override
-  String get compressionClearHistoryConfirm =>
+  String get removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice =>
       'Xóa tất cả các mục lịch sử? Video đã lưu sẽ vẫn còn trên thiết bị của bạn.';
 
   @override
-  String get compressionAttempts => 'Số lần thử';
+  String get attempts => 'Số lần thử';
 
   @override
-  String get compressionTargetSize => 'Kích thước mục tiêu';
+  String get targetSize => 'Kích thước mục tiêu';
 
   @override
-  String get compressionOutputResolution => 'Độ phân giải đầu ra';
+  String get outputResolution => 'Độ phân giải đầu ra';
 
   @override
-  String get compressionInvalidVideo =>
+  String get thisVideoCouldNotBeReadChooseAnotherFile =>
       'Không thể đọc video này. Chọn một tệp khác.';
 
   @override
-  String get compressionInvalidOutput =>
+  String get theEncodedVideoFailedVerificationYourOriginalVideoWasNotChanged =>
       'Video được mã hóa không vượt qua kiểm tra. Video gốc của bạn không bị thay đổi.';
 
   @override
-  String get compressionEncoderUnsupported =>
+  String
+  get thisDeviceCannotEncodeTheSelectedResolutionOrFrameRateLowerThatSettingAndTryAgain =>
       'Thiết bị này không thể mã hóa độ phân giải hoặc tốc độ khung hình đã chọn. Hạ cài đặt đó và thử lại.';
 
   @override
-  String get compressionAudioDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisAudioFormatForCompressionRemoveAudioOrUseASupportedSource =>
       'Thiết bị này không thể giải mã định dạng âm thanh này để nén. Xóa âm thanh hoặc sử dụng nguồn được hỗ trợ.';
 
   @override
-  String get compressionVideoDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisVideoFormatOrProfileForCompressionChooseAnotherSourceOrDevice =>
       'Thiết bị này không thể giải mã định dạng video hoặc hồ sơ nén này. Chọn nguồn hoặc thiết bị khác.';
 
   @override
-  String get compressionMp4NotStreamable =>
+  String get theExportedMP4IsNotReadyForStreamingTryAnotherVideoOrDevice =>
       'Tệp MP4 xuất ra chưa sẵn sàng để phát trực tuyến. Thử video hoặc thiết bị khác.';
 
   @override
-  String get compressionNoSpace =>
+  String get thereIsNotEnoughFreeStorageToCompressThisVideo =>
       'Không đủ dung lượng lưu trữ để nén video này.';
 
   @override
-  String get compressionHdrUnsupported =>
+  String get thisDeviceCannotProcessTheSelectedHDRModeTryConvertingToSDR =>
       'Thiết bị này không thể xử lý chế độ HDR đã chọn. Thử chuyển đổi sang SDR.';
 
   @override
-  String get compressionGeneralFailure =>
+  String get compressionCouldNotBeCompletedTryAnotherSettingOrVideo =>
       'Quá trình nén không thể hoàn tất. Thử thiết lập hoặc video khác.';
 
   @override
-  String get aboutIdentitySection => 'Nhận diện ứng dụng';
+  String get appIdentity => 'Nhận diện ứng dụng';
 
   @override
-  String get aboutAppName => 'Tên ứng dụng';
+  String get appName => 'Tên ứng dụng';
 
   @override
-  String get aboutPackageName => 'Tên gói';
+  String get packageName => 'Tên gói';
 
   @override
-  String get aboutVersion => 'Phiên bản';
+  String get version => 'Phiên bản';
 
   @override
-  String get aboutBuildNumber => 'Số bản dựng';
+  String get buildNumber => 'Số bản dựng';
 
   @override
-  String get aboutEnvironmentSection => 'Thiết bị và bản dựng';
+  String get deviceAndBuild => 'Thiết bị và bản dựng';
 
   @override
-  String get aboutOperatingSystem => 'Hệ điều hành';
+  String get operatingSystem => 'Hệ điều hành';
 
   @override
-  String get aboutOsVersion => 'Phiên bản OS';
+  String get osVersion => 'Phiên bản OS';
 
   @override
-  String get aboutBuildMode => 'Chế độ xây dựng';
+  String get buildMode => 'Chế độ xây dựng';
 
   @override
-  String get aboutDebug => 'Gỡ lỗi';
+  String get debug => 'Gỡ lỗi';
 
   @override
-  String get aboutRelease => 'Phát hành';
+  String get release => 'Phát hành';
 
   @override
-  String get aboutToolchainSection => 'Xây dựng với';
+  String get builtWith => 'Xây dựng với';
 
   @override
-  String get aboutInstallationSection => 'Cài đặt';
+  String get installation => 'Cài đặt';
 
   @override
-  String get aboutInstaller => 'Đã cài đặt từ';
+  String get installedFrom => 'Đã cài đặt từ';
 
   @override
-  String get aboutInstalledOn => 'Đã cài đặt vào';
+  String get installedOn => 'Đã cài đặt vào';
 
   @override
-  String get aboutUpdatedOn => 'Cập nhật vào';
+  String get updatedOn => 'Cập nhật vào';
 
   @override
-  String get aboutUnavailable => 'Không có sẵn';
+  String get unavailable => 'Không có sẵn';
 
   @override
-  String get aboutProjectSection => 'Dự án và hỗ trợ';
+  String get projectAndSupport => 'Dự án và hỗ trợ';
 
   @override
-  String get aboutRepository => 'Kho lưu trữ GitHub';
+  String get githubRepository => 'Kho lưu trữ GitHub';
 
   @override
-  String get aboutRepositorySubtitle => 'Xem mã nguồn Zumi';
+  String get viewZumiSourceCode => 'Xem mã nguồn Zumi';
 
   @override
-  String get aboutReadme => 'Đọc README';
+  String get readTheREADME => 'Đọc README';
 
   @override
-  String get aboutReadmeSubtitle => 'Tìm hiểu về Zumi trên GitHub';
+  String get learnAboutZumiOnGitHub => 'Tìm hiểu về Zumi trên GitHub';
 
   @override
-  String get aboutIssues => 'Báo cáo sự cố';
+  String get reportAnIssue => 'Báo cáo sự cố';
 
   @override
-  String get aboutIssuesSubtitle => 'Xem và tạo các vấn đề trên GitHub';
+  String get viewAndCreateGitHubIssues => 'Xem và tạo các vấn đề trên GitHub';
 
   @override
-  String get aboutLatestRelease => 'Phiên bản mới nhất';
+  String get latestRelease => 'Phiên bản mới nhất';
 
   @override
-  String get aboutLatestReleaseSubtitle => 'Xem các bản phát hành và tải xuống';
+  String get viewReleasesAndDownloads => 'Xem các bản phát hành và tải xuống';
 
   @override
-  String get aboutDonate => 'Hỗ trợ Zumi';
+  String get supportZumi => 'Hỗ trợ Zumi';
 
   @override
-  String get aboutDonateSubtitle => 'Mở trang quyên góp chính thức';
+  String get openTheOfficialDonationPage => 'Mở trang quyên góp chính thức';
 
   @override
-  String get aboutLinkError => 'Không thể mở liên kết. Vui lòng thử lại.';
+  String get couldNotOpenTheLinkPleaseTryAgain =>
+      'Không thể mở liên kết. Vui lòng thử lại.';
 
   @override
-  String get aboutDeveloperSection => 'Nhà phát triển';
+  String get developer => 'Nhà phát triển';
 
   @override
-  String get aboutDeveloperName => 'Mostafa Sensei';
+  String get mostafaSensei => 'Mostafa Sensei';
 
   @override
-  String get aboutDeveloperProfile => 'Hồ sơ GitHub';
+  String get githubProfile => 'Hồ sơ GitHub';
 
   @override
-  String get aboutDeveloperProfileSubtitle => 'Xem dự án và thông tin liên hệ';
+  String get seeProjectsAndContactDetails => 'Xem dự án và thông tin liên hệ';
 
   @override
   String get maintenanceInProgress => 'Đang bảo trì';
 
   @override
-  String get maintenanceMessage =>
+  String get zumiIsTemporarilyUnavailablePleaseTryAgainLater =>
       'Zumi hiện tạm thời không khả dụng. Vui lòng thử lại sau.';
 
   @override

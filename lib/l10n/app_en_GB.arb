@@ -17,8 +17,8 @@
       }
     }
   },
-  "fileSavedToDcim": "File saved to gallery: {fileName}",
-  "@fileSavedToDcim": {
+  "fileSavedToGallery": "File saved to gallery: {fileName}",
+  "@fileSavedToGallery": {
     "description": "Message shown when file is saved to gallery",
     "placeholders": {
       "fileName": {
@@ -35,8 +35,8 @@
       }
     }
   },
-  "fileAlreadySaved": "File is already saved",
-  "@fileAlreadySaved": {
+  "fileIsAlreadySaved": "File is already saved",
+  "@fileIsAlreadySaved": {
     "description": "Message shown when file already exists"
   },
   "error": "Error",
@@ -67,116 +67,116 @@
   "@partial": {
     "description": "Payment status partial"
   },
-  "error_address_line_cant_be_empty": "Address line cannot be empty",
-  "@error_address_line_cant_be_empty": {
+  "addressLineCannotBeEmpty": "Address line cannot be empty",
+  "@addressLineCannotBeEmpty": {
     "description": "Address line empty error"
   },
-  "error_address_line_too_long": "Address line is too long",
-  "@error_address_line_too_long": {
+  "addressLineIsTooLong": "Address line is too long",
+  "@addressLineIsTooLong": {
     "description": "Address line too long error"
   },
-  "error_address_invalid_special_characters": "Special characters are not allowed",
-  "@error_address_invalid_special_characters": {
+  "specialCharactersAreNotAllowed": "Special characters are not allowed",
+  "@specialCharactersAreNotAllowed": {
     "description": "Address special characters error"
   },
-  "error_address_emoji_not_allowed": "Emojis are not allowed",
-  "@error_address_emoji_not_allowed": {
+  "emojisAreNotAllowed": "Emojis are not allowed",
+  "@emojisAreNotAllowed": {
     "description": "Address emoji not allowed error"
   },
-  "error_city_cant_be_empty": "City cannot be empty",
-  "@error_city_cant_be_empty": {
+  "cityCannotBeEmpty": "City cannot be empty",
+  "@cityCannotBeEmpty": {
     "description": "City empty error"
   },
-  "error_city_too_long": "City name is too long",
-  "@error_city_too_long": {
+  "cityNameIsTooLong": "City name is too long",
+  "@cityNameIsTooLong": {
     "description": "City too long error"
   },
-  "error_city_invalid_special_characters": "City contains invalid special characters",
-  "@error_city_invalid_special_characters": {
+  "cityContainsInvalidSpecialCharacters": "City contains invalid special characters",
+  "@cityContainsInvalidSpecialCharacters": {
     "description": "City special characters error"
   },
-  "error_address_label_cant_be_empty": "Address label cannot be empty",
-  "@error_address_label_cant_be_empty": {
+  "addressLabelCannotBeEmpty": "Address label cannot be empty",
+  "@addressLabelCannotBeEmpty": {
     "description": "Address label empty error"
   },
-  "error_address_label_too_long": "Address label is too long",
-  "@error_address_label_too_long": {
+  "addressLabelIsTooLong": "Address label is too long",
+  "@addressLabelIsTooLong": {
     "description": "Address label too long error"
   },
-  "error_email_cant_be_empty": "Email cannot be empty",
-  "@error_email_cant_be_empty": {
+  "emailCannotBeEmpty": "Email cannot be empty",
+  "@emailCannotBeEmpty": {
     "description": "Email empty error"
   },
-  "error_email_not_invalid_format": "Invalid email format",
-  "@error_email_not_invalid_format": {
+  "invalidEmailFormat": "Invalid email format",
+  "@invalidEmailFormat": {
     "description": "Email invalid format error"
   },
-  "error_email_contains_invalid_characters": "Email contains invalid characters",
-  "@error_email_contains_invalid_characters": {
+  "emailContainsInvalidCharacters": "Email contains invalid characters",
+  "@emailContainsInvalidCharacters": {
     "description": "Email invalid characters error"
   },
-  "error_email_must_contain_at_symbol": "Email must contain @",
-  "@error_email_must_contain_at_symbol": {
+  "emailMustContain": "Email must contain @",
+  "@emailMustContain": {
     "description": "Email missing @ error"
   },
-  "error_email_must_be_in_lowercase": "Email must be in lowercase",
-  "@error_email_must_be_in_lowercase": {
+  "emailMustBeInLowercase": "Email must be in lowercase",
+  "@emailMustBeInLowercase": {
     "description": "Email not in lowercase error"
   },
-  "error_arabic_not_allowed": "Arabic characters are not allowed",
-  "@error_arabic_not_allowed": {
+  "arabicCharactersAreNotAllowed": "Arabic characters are not allowed",
+  "@arabicCharactersAreNotAllowed": {
     "description": "Arabic characters not allowed error"
   },
-  "error_email_emoji_not_allowed": "Emojis are not allowed in email",
-  "@error_email_emoji_not_allowed": {
+  "emojisAreNotAllowedInEmail": "Emojis are not allowed in email",
+  "@emojisAreNotAllowedInEmail": {
     "description": "Email emoji not allowed error"
   },
-  "error_phone_number_cant_be_empty": "Phone number cannot be empty",
-  "@error_phone_number_cant_be_empty": {
+  "phoneNumberCannotBeEmpty": "Phone number cannot be empty",
+  "@phoneNumberCannotBeEmpty": {
     "description": "Phone number empty error"
   },
-  "error_phone_number_invalid": "Invalid phone number",
-  "@error_phone_number_invalid": {
+  "invalidPhoneNumber": "Invalid phone number",
+  "@invalidPhoneNumber": {
     "description": "Phone number invalid error"
   },
-  "error_phone_number_min_length": "Phone number must be at least 11 digits",
-  "@error_phone_number_min_length": {
+  "phoneNumberMustBeAtLeast11Digits": "Phone number must be at least 11 digits",
+  "@phoneNumberMustBeAtLeast11Digits": {
     "description": "Phone number min length error"
   },
-  "error_name_cant_be_empty": "Name cannot be empty",
-  "@error_name_cant_be_empty": {
+  "nameCannotBeEmpty": "Name cannot be empty",
+  "@nameCannotBeEmpty": {
     "description": "Name empty error"
   },
-  "error_name_invalid": "Invalid name",
-  "@error_name_invalid": {
+  "invalidName": "Invalid name",
+  "@invalidName": {
     "description": "Name invalid error"
   },
-  "error_name_too_short_at_least_3_characters": "Name must be at least 3 characters",
-  "@error_name_too_short_at_least_3_characters": {
+  "nameMustBeAtLeast3Characters": "Name must be at least 3 characters",
+  "@nameMustBeAtLeast3Characters": {
     "description": "Name too short error"
   },
-  "error_name_too_long_maximum_20_characters": "Name cannot exceed 20 characters",
-  "@error_name_too_long_maximum_20_characters": {
+  "nameCannotExceed20Characters": "Name cannot exceed 20 characters",
+  "@nameCannotExceed20Characters": {
     "description": "Name too long error"
   },
-  "error_name_invalid_special_characters": "Name contains invalid special characters",
-  "@error_name_invalid_special_characters": {
+  "nameContainsInvalidSpecialCharacters": "Name contains invalid special characters",
+  "@nameContainsInvalidSpecialCharacters": {
     "description": "Name special characters error"
   },
-  "error_name_emoji_not_allowed": "Emojis are not allowed in name",
-  "@error_name_emoji_not_allowed": {
+  "emojisAreNotAllowedInName": "Emojis are not allowed in name",
+  "@emojisAreNotAllowedInName": {
     "description": "Name emoji not allowed error"
   },
-  "error_password_cant_be_empty": "Password cannot be empty",
-  "@error_password_cant_be_empty": {
+  "passwordCannotBeEmpty": "Password cannot be empty",
+  "@passwordCannotBeEmpty": {
     "description": "Password empty error"
   },
-  "error_password_must_contain_uppercase_lowercase_number_and_special_character": "Password must contain uppercase, lowercase, number, and special character",
-  "@error_password_must_contain_uppercase_lowercase_number_and_special_character": {
+  "passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter": "Password must contain uppercase, lowercase, number, and special character",
+  "@passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter": {
     "description": "Password complex requirements error"
   },
-  "error_password_must_be_at_least_8_characters_long": "Password must be at least 8 characters long",
-  "@error_password_must_be_at_least_8_characters_long": {
+  "passwordMustBeAtLeast8CharactersLong": "Password must be at least 8 characters long",
+  "@passwordMustBeAtLeast8CharactersLong": {
     "description": "Password min length error"
   },
   "noInternetConnection": "No internet connection",
@@ -463,250 +463,250 @@
   "@recommendZumiToAFriend": {
     "description": "Share app page description"
   },
-  "settingsGroupAppearance": "Appearance & language",
-  "@settingsGroupAppearance": {
+  "appearanceLanguage": "Appearance & language",
+  "@appearanceLanguage": {
     "description": "Settings hub section label"
   },
-  "settingsGroupCompression": "Compression",
-  "@settingsGroupCompression": {
+  "compression": "Compression",
+  "@compression": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAi": "On-device AI",
-  "@settingsGroupAi": {
+  "onDeviceAI": "On-device AI",
+  "@onDeviceAI": {
     "description": "Settings hub section label"
   },
-  "settingsGroupPrivacy": "Notifications & privacy",
-  "@settingsGroupPrivacy": {
+  "notificationsPrivacy": "Notifications & privacy",
+  "@notificationsPrivacy": {
     "description": "Settings hub section label"
   },
-  "settingsGroupPlans": "Plans & purchases",
-  "@settingsGroupPlans": {
+  "plansPurchases": "Plans & purchases",
+  "@plansPurchases": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAbout": "About",
-  "@settingsGroupAbout": {
+  "about": "About",
+  "@about": {
     "description": "Settings hub section label"
   },
-  "settingsGroupLegal": "Legal",
-  "@settingsGroupLegal": {
+  "legal": "Legal",
+  "@legal": {
     "description": "Settings hub section label"
   },
-  "settingsGroupHelp": "Help & feedback",
-  "@settingsGroupHelp": {
+  "helpFeedback": "Help & feedback",
+  "@helpFeedback": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAccount": "Account",
-  "@settingsGroupAccount": {
+  "account": "Account",
+  "@account": {
     "description": "Settings hub section label"
   },
-  "settingsAppearanceSubtitle": "Theme and app language",
-  "@settingsAppearanceSubtitle": {
+  "themeAndAppLanguage": "Theme and app language",
+  "@themeAndAppLanguage": {
     "description": "Settings hub row summary"
   },
-  "settingsLanguageSubtitle": "App language and direction",
-  "@settingsLanguageSubtitle": {
+  "appLanguageAndDirection": "App language and direction",
+  "@appLanguageAndDirection": {
     "description": "Settings hub row summary"
   },
-  "settingsCompressionSubtitle": "Default quality and format",
-  "@settingsCompressionSubtitle": {
+  "defaultQualityAndFormat": "Default quality and format",
+  "@defaultQualityAndFormat": {
     "description": "Settings hub row summary"
   },
-  "settingsStorageSubtitle": "Cache and storage usage",
-  "@settingsStorageSubtitle": {
+  "cacheAndStorageUsage": "Cache and storage usage",
+  "@cacheAndStorageUsage": {
     "description": "Settings hub row summary"
   },
   "aiSettings": "AI settings",
   "zumiAssistant": "Zumi Assistant",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "A private assistant for your videos is coming soon. You will be able to ask about compression, organisation, and saved videos here.",
-  "settingsAiSubtitle": "Local models and smart tools",
-  "exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet": "Explore local models and future AI tools. These options are not active yet.",
+  "localModelsAndSmartTools": "Local models and smart tools",
+  "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "Explore local models and future AI tools. These options are not active yet.",
   "localModels": "Local models",
-  "aiModelsSubtitle": "Browse and download supported models",
+  "browseAndDownloadSupportedModels": "Browse and download supported models",
   "chooseASupportedModelDownloadItToThisDeviceAndManageInstalledModelsHere": "Choose a supported model, download it to this device, and manage installed models here.",
   "importAModel": "Import a model",
-  "aiImportSubtitle": "Use a compatible model from your files",
+  "useACompatibleModelFromYourFiles": "Use a compatible model from your files",
   "selectACompatibleLocalModelFileAndReviewItsRequirementsBeforeUsingIt": "Select a compatible local model file and review its requirements before using it.",
   "smartFeatures": "Smart features",
-  "aiFeaturesSubtitle": "Compression, organisation, and search",
-  "chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "Choose which local AI suggestions to use for video compression, organisation, naming, and search.",
+  "compressionOrganizationAndSearch": "Compression, organisation, and search",
+  "chooseWhichLocalAISuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "Choose which local AI suggestions to use for video compression, organisation, naming, and search.",
   "modelPerformance": "Model performance",
-  "aiRuntimeSubtitle": "Processing and resource preferences",
+  "processingAndResourcePreferences": "Processing and resource preferences",
   "controlTheProcessingBackendAndResourceLimitsForSupportedModels": "Control the processing backend and resource limits for supported models.",
   "conversationSettings": "Conversation settings",
-  "aiChatSettingsSubtitle": "Streaming, thinking, and response length",
+  "streamingThinkingAndResponseLength": "Streaming, thinking, and response length",
   "configureHowTheAssistantRespondsIncludingStreamingThinkingModeSamplingAndResponseLimits": "Configure how the assistant responds, including streaming, thinking mode, sampling, and response limits.",
   "imagesAndAudio": "Images and audio",
-  "aiMediaSubtitle": "Control multimodal inputs",
+  "controlMultimodalInputs": "Control multimodal inputs",
   "chooseWhetherCompatibleModelsCanAnalyzeSelectedImagesAndAudioFromYourVideos": "Choose whether compatible models can analyze selected images and audio from your videos.",
   "semanticSearch": "Semantic search",
-  "aiSearchSubtitle": "Embeddings and local indexing",
+  "embeddingsAndLocalIndexing": "Embeddings and local indexing",
   "manageTheLocalEmbeddingModelAndSearchIndexForFindingVideosAndMomentsByMeaning": "Manage the local embedding model and search index for finding videos and moments by meaning.",
   "toolsAndStructuredOutput": "Tools and structured output",
-  "aiToolsSubtitle": "Actions, schemas, and confirmations",
+  "actionsSchemasAndConfirmations": "Actions, schemas, and confirmations",
   "manageSupportedAssistantActionsAndStructuredResponsesActionsThatAffectFilesWillRequireYourConfirmation": "Manage supported assistant actions and structured responses. Actions that affect files will require your confirmation.",
-  "aiGroupModels": "Models",
-  "aiGroupExperience": "Assistant experience",
-  "aiGroupCapabilities": "Smart capabilities",
-  "aiGroupPerformance": "Performance",
-  "compressionHistorySubtitle": "Your compressed video history",
-  "@compressionHistorySubtitle": {
+  "models": "Models",
+  "assistantExperience": "Assistant experience",
+  "smartCapabilities": "Smart capabilities",
+  "performance": "Performance",
+  "yourCompressedVideoHistory": "Your compressed video history",
+  "@yourCompressedVideoHistory": {
     "description": "Settings hub row summary"
   },
-  "settingsNotificationsSubtitle": "Completion and update alerts",
-  "@settingsNotificationsSubtitle": {
+  "completionAndUpdateAlerts": "Completion and update alerts",
+  "@completionAndUpdateAlerts": {
     "description": "Settings hub row summary"
   },
-  "settingsPrivacySubtitle": "Your data stays local",
-  "@settingsPrivacySubtitle": {
+  "yourDataStaysLocal": "Your data stays local",
+  "@yourDataStaysLocal": {
     "description": "Settings hub row summary"
   },
-  "plansSubtitle": "Compare plans and upgrade",
-  "@plansSubtitle": {
+  "comparePlansAndUpgrade": "Compare plans and upgrade",
+  "@comparePlansAndUpgrade": {
     "description": "Settings hub row summary"
   },
-  "plansMethodsSubtitle": "Payment methods and billing",
-  "@plansMethodsSubtitle": {
+  "paymentMethodsAndBilling": "Payment methods and billing",
+  "@paymentMethodsAndBilling": {
     "description": "Settings hub row summary"
   },
-  "plansRestoreSubtitle": "Restore your previous purchase",
-  "@plansRestoreSubtitle": {
+  "restoreYourPreviousPurchase": "Restore your previous purchase",
+  "@restoreYourPreviousPurchase": {
     "description": "Settings hub row summary"
   },
-  "aboutAppSubtitle": "Version and build details",
-  "@aboutAppSubtitle": {
+  "versionAndBuildDetails": "Version and build details",
+  "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "aboutDeveloperSubtitle": "The developer behind Zumi",
-  "@aboutDeveloperSubtitle": {
+  "theDeveloperBehindZumi": "The developer behind Zumi",
+  "@theDeveloperBehindZumi": {
     "description": "Settings hub row summary"
   },
-  "aboutLicensesSubtitle": "Open source package licenses",
-  "@aboutLicensesSubtitle": {
+  "openSourcePackageLicenses": "Open source package licenses",
+  "@openSourcePackageLicenses": {
     "description": "Settings hub row summary"
   },
-  "legalPrivacySubtitle": "How data is handled",
-  "@legalPrivacySubtitle": {
+  "howDataIsHandled": "How data is handled",
+  "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "legalTermsSubtitle": "Rules for using Zumi",
-  "@legalTermsSubtitle": {
+  "rulesForUsingZumi": "Rules for using Zumi",
+  "@rulesForUsingZumi": {
     "description": "Settings hub row summary"
   },
-  "legalDataSafetySubtitle": "What data we collect",
-  "@legalDataSafetySubtitle": {
+  "whatDataWeCollect": "What data we collect",
+  "@whatDataWeCollect": {
     "description": "Settings hub row summary"
   },
-  "legalPermissionsSubtitle": "Why we need permissions",
-  "@legalPermissionsSubtitle": {
+  "whyWeNeedPermissions": "Why we need permissions",
+  "@whyWeNeedPermissions": {
     "description": "Settings hub row summary"
   },
-  "helpFaqSubtitle": "Answers to common questions",
-  "@helpFaqSubtitle": {
+  "answersToCommonQuestions": "Answers to common questions",
+  "@answersToCommonQuestions": {
     "description": "Settings hub row summary"
   },
-  "helpSupportSubtitle": "Reach the developer directly",
-  "@helpSupportSubtitle": {
+  "reachTheDeveloperDirectly": "Reach the developer directly",
+  "@reachTheDeveloperDirectly": {
     "description": "Settings hub row summary"
   },
-  "helpFeedbackSubtitle": "Send us your feedback",
-  "@helpFeedbackSubtitle": {
+  "sendUsYourFeedback": "Send us your feedback",
+  "@sendUsYourFeedback": {
     "description": "Settings hub row summary"
   },
-  "compressionPickVideo": "Pick video",
-  "compressionTargetMb": "Target size (MB)",
-  "compressionStart": "Start compression",
-  "compressionPause": "Pause",
-  "compressionResume": "Resume",
-  "compressionViewResult": "View result",
-  "compressionSaveGallery": "Save to gallery",
-  "compressionShare": "Share video",
-  "compressionOriginalSize": "Original size",
-  "compressionOutputSize": "Output size",
-  "compressionEmptyHistory": "No compressed videos yet",
-  "compressionSavedGallery": "Saved to gallery",
-  "compressionInvalidTarget": "Enter a target size greater than zero",
+  "pickVideo": "Pick video",
+  "targetSizeMB": "Target size (MB)",
+  "startCompression": "Start compression",
+  "pause": "Pause",
+  "resume": "Resume",
+  "viewResult": "View result",
+  "saveToGallery": "Save to gallery",
+  "shareVideo": "Share video",
+  "originalSize": "Original size",
+  "outputSize": "Output size",
+  "noCompressedVideosYet": "No compressed videos yet",
+  "savedToGallery": "Saved to gallery",
+  "enterATargetSizeGreaterThanZero": "Enter a target size greater than zero",
   "compressionCancelled": "Compression cancelled",
-  "compressionTargetExceeded": "This video could not reach the selected size. Try a larger target size.",
-  "compressionTargetInfeasible": "The selected size is too small for this video. Choose a larger size.",
-  "compressionPreviewBefore": "Original preview",
-  "compressionPreviewAfter": "Compressed preview",
-  "compressionPreset": "Target preset",
-  "compressionCustom": "Custom size",
-  "compressionPreviewUnavailable": "Preview unavailable",
-  "compressionAdvanced": "Advanced controls",
-  "compressionAutomatic": "Automatic",
-  "compressionResolutionLimit": "Maximum resolution",
-  "compressionSourceResolution": "Original resolution",
-  "compressionFrameRateLimit": "Maximum frame rate",
-  "compressionAudioQuality": "Audio bitrate",
-  "compressionRemoveAudio": "Remove audio",
-  "compressionVideoBitrateLimit": "Video bitrate ceiling (kbps)",
-  "compressionHdrPolicy": "HDR handling",
-  "compressionHdrConvert": "Convert to SDR",
-  "compressionHdrPreserve": "Keep HDR when supported",
-  "compressionPlanPreview": "Before you start",
-  "compressionPlanLoading": "Calculating compression plan…",
-  "compressionPlanResolution": "Planned resolution",
-  "compressionPlanVideoBitrate": "Planned video bitrate",
-  "compressionPlanAudioBitrate": "Planned audio bitrate",
-  "compressionAudioConversionNote": "Re-encoding converts audio to AAC stereo. Dolby Atmos and DTS spatial audio will not be preserved.",
-  "compressionPlanTooSmall": "This target is too small for a usable video. Increase the size or lower other limits.",
-  "compressionPlanLowQuality": "The selected target may reduce video quality.",
-  "compressionPlanAlreadyWithinLimit": "The source is already within the size limit.",
-  "compressionInvalidBitrate": "Enter a bitrate of at least 150 kbps, or leave blank for automatic",
-  "compressionInvalidResolution": "Enter an even resolution from 240 to 16384, or leave blank for automatic",
-  "compressionSeek": "Video position",
-  "compressionInterrupted": "A previous compression was interrupted. Its temporary files were cleaned up; you can select the video and try again.",
-  "compressionDismiss": "Dismiss",
-  "compressionClearHistory": "Clear history",
-  "compressionClearHistoryConfirm": "Remove all history entries? Saved videos will remain on your device.",
-  "compressionAttempts": "Attempts",
-  "compressionTargetSize": "Target size",
-  "compressionOutputResolution": "Output resolution",
-  "compressionInvalidVideo": "This video could not be read. Choose another file.",
-  "compressionInvalidOutput": "The encoded video failed verification. Your original video was not changed.",
-  "compressionEncoderUnsupported": "This device cannot encode the selected resolution or frame rate. Lower that setting and try again.",
-  "compressionAudioDecoderUnsupported": "This device cannot decode this audio format for compression. Remove audio or use a supported source.",
-  "compressionVideoDecoderUnsupported": "This device cannot decode this video format or profile for compression. Choose another source or device.",
-  "compressionMp4NotStreamable": "The exported MP4 is not ready for streaming. Try another video or device.",
-  "compressionNoSpace": "There is not enough free storage to compress this video.",
-  "compressionHdrUnsupported": "This device cannot process the selected HDR mode. Try converting to SDR.",
-  "compressionGeneralFailure": "Compression could not be completed. Try another setting or video.",
-  "aboutIdentitySection": "App identity",
-  "aboutAppName": "App name",
-  "aboutPackageName": "Package name",
-  "aboutVersion": "Version",
-  "aboutBuildNumber": "Build number",
-  "aboutEnvironmentSection": "Device and build",
-  "aboutOperatingSystem": "Operating system",
-  "aboutOsVersion": "OS version",
-  "aboutBuildMode": "Build mode",
-  "aboutDebug": "Debug",
-  "aboutRelease": "Release",
-  "aboutToolchainSection": "Built with",
-  "aboutInstallationSection": "Installation",
-  "aboutInstaller": "Installed from",
-  "aboutInstalledOn": "Installed on",
-  "aboutUpdatedOn": "Updated on",
-  "aboutUnavailable": "Unavailable",
-  "aboutProjectSection": "Project and support",
-  "aboutRepository": "GitHub repository",
-  "aboutRepositorySubtitle": "View Zumi source code",
-  "aboutReadme": "Read the README",
-  "aboutReadmeSubtitle": "Learn about Zumi on GitHub",
-  "aboutIssues": "Report an issue",
-  "aboutIssuesSubtitle": "View and create GitHub issues",
-  "aboutLatestRelease": "Latest release",
-  "aboutLatestReleaseSubtitle": "View releases and downloads",
-  "aboutDonate": "Support Zumi",
-  "aboutDonateSubtitle": "Open the official donation page",
-  "aboutLinkError": "Could not open the link. Please try again.",
-  "aboutDeveloperSection": "Developer",
-  "aboutDeveloperName": "Mostafa Sensei",
-  "aboutDeveloperProfile": "GitHub profile",
-  "aboutDeveloperProfileSubtitle": "See projects and contact details",
+  "thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize": "This video could not reach the selected size. Try a larger target size.",
+  "theSelectedSizeIsTooSmallForThisVideoChooseALargerSize": "The selected size is too small for this video. Choose a larger size.",
+  "originalPreview": "Original preview",
+  "compressedPreview": "Compressed preview",
+  "targetPreset": "Target preset",
+  "customSize": "Custom size",
+  "previewUnavailable": "Preview unavailable",
+  "advancedControls": "Advanced controls",
+  "automatic": "Automatic",
+  "maximumResolution": "Maximum resolution",
+  "originalResolution": "Original resolution",
+  "maximumFrameRate": "Maximum frame rate",
+  "audioBitrate": "Audio bitrate",
+  "removeAudio": "Remove audio",
+  "videoBitrateCeilingKbps": "Video bitrate ceiling (kbps)",
+  "hdrHandling": "HDR handling",
+  "convertToSDR": "Convert to SDR",
+  "keepHDRWhenSupported": "Keep HDR when supported",
+  "beforeYouStart": "Before you start",
+  "calculatingCompressionPlan": "Calculating compression plan…",
+  "plannedResolution": "Planned resolution",
+  "plannedVideoBitrate": "Planned video bitrate",
+  "plannedAudioBitrate": "Planned audio bitrate",
+  "reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved": "Re-encoding converts audio to AAC stereo. Dolby Atmos and DTS spatial audio will not be preserved.",
+  "thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits": "This target is too small for a usable video. Increase the size or lower other limits.",
+  "theSelectedTargetMayReduceVideoQuality": "The selected target may reduce video quality.",
+  "theSourceIsAlreadyWithinTheSizeLimit": "The source is already within the size limit.",
+  "enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic": "Enter a bitrate of at least 150 kbps, or leave blank for automatic",
+  "enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic": "Enter an even resolution from 240 to 16384, or leave blank for automatic",
+  "videoPosition": "Video position",
+  "aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain": "A previous compression was interrupted. Its temporary files were cleaned up; you can select the video and try again.",
+  "dismiss": "Dismiss",
+  "clearHistory": "Clear history",
+  "removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice": "Remove all history entries? Saved videos will remain on your device.",
+  "attempts": "Attempts",
+  "targetSize": "Target size",
+  "outputResolution": "Output resolution",
+  "thisVideoCouldNotBeReadChooseAnotherFile": "This video could not be read. Choose another file.",
+  "theEncodedVideoFailedVerificationYourOriginalVideoWasNotChanged": "The encoded video failed verification. Your original video was not changed.",
+  "thisDeviceCannotEncodeTheSelectedResolutionOrFrameRateLowerThatSettingAndTryAgain": "This device cannot encode the selected resolution or frame rate. Lower that setting and try again.",
+  "thisDeviceCannotDecodeThisAudioFormatForCompressionRemoveAudioOrUseASupportedSource": "This device cannot decode this audio format for compression. Remove audio or use a supported source.",
+  "thisDeviceCannotDecodeThisVideoFormatOrProfileForCompressionChooseAnotherSourceOrDevice": "This device cannot decode this video format or profile for compression. Choose another source or device.",
+  "theExportedMP4IsNotReadyForStreamingTryAnotherVideoOrDevice": "The exported MP4 is not ready for streaming. Try another video or device.",
+  "thereIsNotEnoughFreeStorageToCompressThisVideo": "There is not enough free storage to compress this video.",
+  "thisDeviceCannotProcessTheSelectedHDRModeTryConvertingToSDR": "This device cannot process the selected HDR mode. Try converting to SDR.",
+  "compressionCouldNotBeCompletedTryAnotherSettingOrVideo": "Compression could not be completed. Try another setting or video.",
+  "appIdentity": "App identity",
+  "appName": "App name",
+  "packageName": "Package name",
+  "version": "Version",
+  "buildNumber": "Build number",
+  "deviceAndBuild": "Device and build",
+  "operatingSystem": "Operating system",
+  "osVersion": "OS version",
+  "buildMode": "Build mode",
+  "debug": "Debug",
+  "release": "Release",
+  "builtWith": "Built with",
+  "installation": "Installation",
+  "installedFrom": "Installed from",
+  "installedOn": "Installed on",
+  "updatedOn": "Updated on",
+  "unavailable": "Unavailable",
+  "projectAndSupport": "Project and support",
+  "githubRepository": "GitHub repository",
+  "viewZumiSourceCode": "View Zumi source code",
+  "readTheREADME": "Read the README",
+  "learnAboutZumiOnGitHub": "Learn about Zumi on GitHub",
+  "reportAnIssue": "Report an issue",
+  "viewAndCreateGitHubIssues": "View and create GitHub issues",
+  "latestRelease": "Latest release",
+  "viewReleasesAndDownloads": "View releases and downloads",
+  "supportZumi": "Support Zumi",
+  "openTheOfficialDonationPage": "Open the official donation page",
+  "couldNotOpenTheLinkPleaseTryAgain": "Could not open the link. Please try again.",
+  "developer": "Developer",
+  "mostafaSensei": "Mostafa Sensei",
+  "githubProfile": "GitHub profile",
+  "seeProjectsAndContactDetails": "See projects and contact details",
   "maintenanceInProgress": "Maintenance in progress",
-  "maintenanceMessage": "Zumi is temporarily unavailable. Please try again later.",
+  "zumiIsTemporarilyUnavailablePleaseTryAgainLater": "Zumi is temporarily unavailable. Please try again later.",
   "comingSoon": "Coming soon",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"

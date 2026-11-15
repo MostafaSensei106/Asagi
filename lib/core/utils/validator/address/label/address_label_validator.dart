@@ -43,12 +43,11 @@ extension AddressLabelValidatorErrorX on AddressLabelValidatorError {
   String message(BuildContext context) {
     final l = context.localeKeys;
     return switch (this) {
-      AddressLabelValidatorError.empty => l.error_address_label_cant_be_empty,
-      AddressLabelValidatorError.tooLong => l.error_address_label_too_long,
+      AddressLabelValidatorError.empty => l.addressLabelCannotBeEmpty,
+      AddressLabelValidatorError.tooLong => l.addressLabelIsTooLong,
       AddressLabelValidatorError.invalidSpecialChars =>
-        l.error_address_invalid_special_characters,
-      AddressLabelValidatorError.emojiNotAllowed =>
-        l.error_address_emoji_not_allowed,
+        l.specialCharactersAreNotAllowed,
+      AddressLabelValidatorError.emojiNotAllowed => l.emojisAreNotAllowed,
     };
   }
 }

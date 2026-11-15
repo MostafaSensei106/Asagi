@@ -36,7 +36,7 @@ final class CompressionProgressPage extends StatelessWidget {
                     children: [
                       TextButton(
                         onPressed: () => unawaited(cubit.pause()),
-                        child: Text(context.localeKeys.compressionPause),
+                        child: Text(context.localeKeys.pause),
                       ),
                       TextButton(
                         onPressed: () => unawaited(cubit.cancel()),
@@ -50,7 +50,7 @@ final class CompressionProgressPage extends StatelessWidget {
                     children: [
                       TextButton(
                         onPressed: () => unawaited(cubit.resume()),
-                        child: Text(context.localeKeys.compressionResume),
+                        child: Text(context.localeKeys.resume),
                       ),
                       TextButton(
                         onPressed: () => unawaited(cubit.cancel()),
@@ -62,7 +62,7 @@ final class CompressionProgressPage extends StatelessWidget {
                   FilledButton(
                     onPressed: () =>
                         unawaited(context.push(const CompressionResultRoute())),
-                    child: Text(context.localeKeys.compressionViewResult),
+                    child: Text(context.localeKeys.viewResult),
                   ),
                 if (state.phase == CompressionPhase.cancelled)
                   Text(context.localeKeys.compressionCancelled),

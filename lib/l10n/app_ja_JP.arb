@@ -17,8 +17,8 @@
       }
     }
   },
-  "fileSavedToDcim": "ギャラリーにファイルを保存しました: {fileName}",
-  "@fileSavedToDcim": {
+  "fileSavedToGallery": "ギャラリーにファイルを保存しました: {fileName}",
+  "@fileSavedToGallery": {
     "description": "Message shown when file is saved to gallery",
     "placeholders": {
       "fileName": {
@@ -35,8 +35,8 @@
       }
     }
   },
-  "fileAlreadySaved": "ファイルは既に保存されています",
-  "@fileAlreadySaved": {
+  "fileIsAlreadySaved": "ファイルは既に保存されています",
+  "@fileIsAlreadySaved": {
     "description": "Message shown when file already exists"
   },
   "error": "エラー",
@@ -67,116 +67,116 @@
   "@partial": {
     "description": "Payment status partial"
   },
-  "error_address_line_cant_be_empty": "住所行を空にすることはできません",
-  "@error_address_line_cant_be_empty": {
+  "addressLineCannotBeEmpty": "住所行を空にすることはできません",
+  "@addressLineCannotBeEmpty": {
     "description": "Address line empty error"
   },
-  "error_address_line_too_long": "住所行が長すぎます",
-  "@error_address_line_too_long": {
+  "addressLineIsTooLong": "住所行が長すぎます",
+  "@addressLineIsTooLong": {
     "description": "Address line too long error"
   },
-  "error_address_invalid_special_characters": "特殊文字は使用できません",
-  "@error_address_invalid_special_characters": {
+  "specialCharactersAreNotAllowed": "特殊文字は使用できません",
+  "@specialCharactersAreNotAllowed": {
     "description": "Address special characters error"
   },
-  "error_address_emoji_not_allowed": "絵文字は使用できません",
-  "@error_address_emoji_not_allowed": {
+  "emojisAreNotAllowed": "絵文字は使用できません",
+  "@emojisAreNotAllowed": {
     "description": "Address emoji not allowed error"
   },
-  "error_city_cant_be_empty": "市区町村を空にすることはできません",
-  "@error_city_cant_be_empty": {
+  "cityCannotBeEmpty": "市区町村を空にすることはできません",
+  "@cityCannotBeEmpty": {
     "description": "City empty error"
   },
-  "error_city_too_long": "市区町村名が長すぎます",
-  "@error_city_too_long": {
+  "cityNameIsTooLong": "市区町村名が長すぎます",
+  "@cityNameIsTooLong": {
     "description": "City too long error"
   },
-  "error_city_invalid_special_characters": "市区町村に無効な特殊文字が含まれています",
-  "@error_city_invalid_special_characters": {
+  "cityContainsInvalidSpecialCharacters": "市区町村に無効な特殊文字が含まれています",
+  "@cityContainsInvalidSpecialCharacters": {
     "description": "City special characters error"
   },
-  "error_address_label_cant_be_empty": "住所ラベルを空にすることはできません",
-  "@error_address_label_cant_be_empty": {
+  "addressLabelCannotBeEmpty": "住所ラベルを空にすることはできません",
+  "@addressLabelCannotBeEmpty": {
     "description": "Address label empty error"
   },
-  "error_address_label_too_long": "住所ラベルが長すぎます",
-  "@error_address_label_too_long": {
+  "addressLabelIsTooLong": "住所ラベルが長すぎます",
+  "@addressLabelIsTooLong": {
     "description": "Address label too long error"
   },
-  "error_email_cant_be_empty": "メールを空にすることはできません",
-  "@error_email_cant_be_empty": {
+  "emailCannotBeEmpty": "メールを空にすることはできません",
+  "@emailCannotBeEmpty": {
     "description": "Email empty error"
   },
-  "error_email_not_invalid_format": "無効なメール形式",
-  "@error_email_not_invalid_format": {
+  "invalidEmailFormat": "無効なメール形式",
+  "@invalidEmailFormat": {
     "description": "Email invalid format error"
   },
-  "error_email_contains_invalid_characters": "メールに無効な文字が含まれています",
-  "@error_email_contains_invalid_characters": {
+  "emailContainsInvalidCharacters": "メールに無効な文字が含まれています",
+  "@emailContainsInvalidCharacters": {
     "description": "Email invalid characters error"
   },
-  "error_email_must_contain_at_symbol": "メールに@を含める必要があります",
-  "@error_email_must_contain_at_symbol": {
+  "emailMustContain": "メールに@を含める必要があります",
+  "@emailMustContain": {
     "description": "Email missing @ error"
   },
-  "error_email_must_be_in_lowercase": "メールは小文字でなければなりません",
-  "@error_email_must_be_in_lowercase": {
+  "emailMustBeInLowercase": "メールは小文字でなければなりません",
+  "@emailMustBeInLowercase": {
     "description": "Email not in lowercase error"
   },
-  "error_arabic_not_allowed": "アラビア文字は使用できません",
-  "@error_arabic_not_allowed": {
+  "arabicCharactersAreNotAllowed": "アラビア文字は使用できません",
+  "@arabicCharactersAreNotAllowed": {
     "description": "Arabic characters not allowed error"
   },
-  "error_email_emoji_not_allowed": "メールに絵文字は使用できません",
-  "@error_email_emoji_not_allowed": {
+  "emojisAreNotAllowedInEmail": "メールに絵文字は使用できません",
+  "@emojisAreNotAllowedInEmail": {
     "description": "Email emoji not allowed error"
   },
-  "error_phone_number_cant_be_empty": "電話番号を空にすることはできません",
-  "@error_phone_number_cant_be_empty": {
+  "phoneNumberCannotBeEmpty": "電話番号を空にすることはできません",
+  "@phoneNumberCannotBeEmpty": {
     "description": "Phone number empty error"
   },
-  "error_phone_number_invalid": "無効な電話番号",
-  "@error_phone_number_invalid": {
+  "invalidPhoneNumber": "無効な電話番号",
+  "@invalidPhoneNumber": {
     "description": "Phone number invalid error"
   },
-  "error_phone_number_min_length": "電話番号は少なくとも11桁である必要があります",
-  "@error_phone_number_min_length": {
+  "phoneNumberMustBeAtLeast11Digits": "電話番号は少なくとも11桁である必要があります",
+  "@phoneNumberMustBeAtLeast11Digits": {
     "description": "Phone number min length error"
   },
-  "error_name_cant_be_empty": "名前を空にすることはできません",
-  "@error_name_cant_be_empty": {
+  "nameCannotBeEmpty": "名前を空にすることはできません",
+  "@nameCannotBeEmpty": {
     "description": "Name empty error"
   },
-  "error_name_invalid": "無効な名前",
-  "@error_name_invalid": {
+  "invalidName": "無効な名前",
+  "@invalidName": {
     "description": "Name invalid error"
   },
-  "error_name_too_short_at_least_3_characters": "名前は少なくとも3文字である必要があります",
-  "@error_name_too_short_at_least_3_characters": {
+  "nameMustBeAtLeast3Characters": "名前は少なくとも3文字である必要があります",
+  "@nameMustBeAtLeast3Characters": {
     "description": "Name too short error"
   },
-  "error_name_too_long_maximum_20_characters": "名前は20文字を超えることはできません",
-  "@error_name_too_long_maximum_20_characters": {
+  "nameCannotExceed20Characters": "名前は20文字を超えることはできません",
+  "@nameCannotExceed20Characters": {
     "description": "Name too long error"
   },
-  "error_name_invalid_special_characters": "名前に無効な特殊文字が含まれています",
-  "@error_name_invalid_special_characters": {
+  "nameContainsInvalidSpecialCharacters": "名前に無効な特殊文字が含まれています",
+  "@nameContainsInvalidSpecialCharacters": {
     "description": "Name special characters error"
   },
-  "error_name_emoji_not_allowed": "名前に絵文字は使用できません",
-  "@error_name_emoji_not_allowed": {
+  "emojisAreNotAllowedInName": "名前に絵文字は使用できません",
+  "@emojisAreNotAllowedInName": {
     "description": "Name emoji not allowed error"
   },
-  "error_password_cant_be_empty": "パスワードを空にすることはできません",
-  "@error_password_cant_be_empty": {
+  "passwordCannotBeEmpty": "パスワードを空にすることはできません",
+  "@passwordCannotBeEmpty": {
     "description": "Password empty error"
   },
-  "error_password_must_contain_uppercase_lowercase_number_and_special_character": "パスワードには大文字、小文字、数字、特殊文字を含める必要があります",
-  "@error_password_must_contain_uppercase_lowercase_number_and_special_character": {
+  "passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter": "パスワードには大文字、小文字、数字、特殊文字を含める必要があります",
+  "@passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter": {
     "description": "Password complex requirements error"
   },
-  "error_password_must_be_at_least_8_characters_long": "パスワードは少なくとも8文字以上である必要があります",
-  "@error_password_must_be_at_least_8_characters_long": {
+  "passwordMustBeAtLeast8CharactersLong": "パスワードは少なくとも8文字以上である必要があります",
+  "@passwordMustBeAtLeast8CharactersLong": {
     "description": "Password min length error"
   },
   "noInternetConnection": "インターネット接続がありません",
@@ -463,250 +463,250 @@
   "@recommendZumiToAFriend": {
     "description": "Share app page description"
   },
-  "settingsGroupAppearance": "外観と言語",
-  "@settingsGroupAppearance": {
+  "appearanceLanguage": "外観と言語",
+  "@appearanceLanguage": {
     "description": "Settings hub section label"
   },
-  "settingsGroupCompression": "圧縮",
-  "@settingsGroupCompression": {
+  "compression": "圧縮",
+  "@compression": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAi": "デバイス上のAI",
-  "@settingsGroupAi": {
+  "onDeviceAI": "デバイス上のAI",
+  "@onDeviceAI": {
     "description": "Settings hub section label"
   },
-  "settingsGroupPrivacy": "通知とプライバシー",
-  "@settingsGroupPrivacy": {
+  "notificationsPrivacy": "通知とプライバシー",
+  "@notificationsPrivacy": {
     "description": "Settings hub section label"
   },
-  "settingsGroupPlans": "プランと購入",
-  "@settingsGroupPlans": {
+  "plansPurchases": "プランと購入",
+  "@plansPurchases": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAbout": "情報",
-  "@settingsGroupAbout": {
+  "about": "情報",
+  "@about": {
     "description": "Settings hub section label"
   },
-  "settingsGroupLegal": "法的情報",
-  "@settingsGroupLegal": {
+  "legal": "法的情報",
+  "@legal": {
     "description": "Settings hub section label"
   },
-  "settingsGroupHelp": "ヘルプとフィードバック",
-  "@settingsGroupHelp": {
+  "helpFeedback": "ヘルプとフィードバック",
+  "@helpFeedback": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAccount": "アカウント",
-  "@settingsGroupAccount": {
+  "account": "アカウント",
+  "@account": {
     "description": "Settings hub section label"
   },
-  "settingsAppearanceSubtitle": "テーマとアプリの言語",
-  "@settingsAppearanceSubtitle": {
+  "themeAndAppLanguage": "テーマとアプリの言語",
+  "@themeAndAppLanguage": {
     "description": "Settings hub row summary"
   },
-  "settingsLanguageSubtitle": "アプリの言語と方向",
-  "@settingsLanguageSubtitle": {
+  "appLanguageAndDirection": "アプリの言語と方向",
+  "@appLanguageAndDirection": {
     "description": "Settings hub row summary"
   },
-  "settingsCompressionSubtitle": "デフォルトの品質とフォーマット",
-  "@settingsCompressionSubtitle": {
+  "defaultQualityAndFormat": "デフォルトの品質とフォーマット",
+  "@defaultQualityAndFormat": {
     "description": "Settings hub row summary"
   },
-  "settingsStorageSubtitle": "キャッシュとストレージの使用状況",
-  "@settingsStorageSubtitle": {
+  "cacheAndStorageUsage": "キャッシュとストレージの使用状況",
+  "@cacheAndStorageUsage": {
     "description": "Settings hub row summary"
   },
   "aiSettings": "AI設定",
   "zumiAssistant": "Zumiアシスタント",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "あなたのビデオのためのプライベートアシスタントがまもなく登場します。ここで圧縮、整理、保存されたビデオについて質問できるようになります。",
-  "settingsAiSubtitle": "ローカルモデルとスマートツール",
-  "exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet": "ローカルモデルや将来のAIツールを探索してください。これらのオプションはまだ有効ではありません。",
+  "localModelsAndSmartTools": "ローカルモデルとスマートツール",
+  "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "ローカルモデルや将来のAIツールを探索してください。これらのオプションはまだ有効ではありません。",
   "localModels": "ローカルモデル",
-  "aiModelsSubtitle": "対応モデルを閲覧してダウンロード",
+  "browseAndDownloadSupportedModels": "対応モデルを閲覧してダウンロード",
   "chooseASupportedModelDownloadItToThisDeviceAndManageInstalledModelsHere": "対応モデルを選択し、このデバイスにダウンロードして、インストール済みモデルをここで管理してください。",
   "importAModel": "モデルをインポート",
-  "aiImportSubtitle": "ファイルから互換モデルを使用してください",
+  "useACompatibleModelFromYourFiles": "ファイルから互換モデルを使用してください",
   "selectACompatibleLocalModelFileAndReviewItsRequirementsBeforeUsingIt": "互換性のあるローカルモデルファイルを選択し、使用前にその要件を確認してください。",
   "smartFeatures": "スマート機能",
-  "aiFeaturesSubtitle": "圧縮、整理、検索",
-  "chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "動画の圧縮、整理、命名、および検索に使用するローカルAIの提案を選択してください。",
+  "compressionOrganizationAndSearch": "圧縮、整理、検索",
+  "chooseWhichLocalAISuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "動画の圧縮、整理、命名、および検索に使用するローカルAIの提案を選択してください。",
   "modelPerformance": "モデルのパフォーマンス",
-  "aiRuntimeSubtitle": "処理およびリソースの設定",
+  "processingAndResourcePreferences": "処理およびリソースの設定",
   "controlTheProcessingBackendAndResourceLimitsForSupportedModels": "サポートされているモデルの処理バックエンドとリソース制限を制御します。",
   "conversationSettings": "会話の設定",
-  "aiChatSettingsSubtitle": "ストリーミング、思考、応答の長さ",
+  "streamingThinkingAndResponseLength": "ストリーミング、思考、応答の長さ",
   "configureHowTheAssistantRespondsIncludingStreamingThinkingModeSamplingAndResponseLimits": "アシスタントの応答方法を設定します。ストリーミング、思考モード、サンプリング、応答制限を含みます。",
   "imagesAndAudio": "画像と音声",
-  "aiMediaSubtitle": "マルチモーダル入力を制御します。",
+  "controlMultimodalInputs": "マルチモーダル入力を制御します。",
   "chooseWhetherCompatibleModelsCanAnalyzeSelectedImagesAndAudioFromYourVideos": "互換モデルがビデオの選択した画像や音声を分析できるかどうかを選択します。",
   "semanticSearch": "セマンティック検索",
-  "aiSearchSubtitle": "埋め込みとローカルインデックス",
+  "embeddingsAndLocalIndexing": "埋め込みとローカルインデックス",
   "manageTheLocalEmbeddingModelAndSearchIndexForFindingVideosAndMomentsByMeaning": "意味によってビデオや瞬間を見つけるためのローカル埋め込みモデルと検索インデックスを管理します。",
   "toolsAndStructuredOutput": "ツールと構造化出力",
-  "aiToolsSubtitle": "アクション、スキーマ、確認",
+  "actionsSchemasAndConfirmations": "アクション、スキーマ、確認",
   "manageSupportedAssistantActionsAndStructuredResponsesActionsThatAffectFilesWillRequireYourConfirmation": "対応するアシスタントの操作や構造化された応答を管理します。ファイルに影響を与える操作には確認が必要です。",
-  "aiGroupModels": "モデル",
-  "aiGroupExperience": "アシスタントの体験",
-  "aiGroupCapabilities": "スマート機能",
-  "aiGroupPerformance": "パフォーマンス",
-  "compressionHistorySubtitle": "圧縮されたビデオ履歴",
-  "@compressionHistorySubtitle": {
+  "models": "モデル",
+  "assistantExperience": "アシスタントの体験",
+  "smartCapabilities": "スマート機能",
+  "performance": "パフォーマンス",
+  "yourCompressedVideoHistory": "圧縮されたビデオ履歴",
+  "@yourCompressedVideoHistory": {
     "description": "Settings hub row summary"
   },
-  "settingsNotificationsSubtitle": "完了と更新の通知",
-  "@settingsNotificationsSubtitle": {
+  "completionAndUpdateAlerts": "完了と更新の通知",
+  "@completionAndUpdateAlerts": {
     "description": "Settings hub row summary"
   },
-  "settingsPrivacySubtitle": "データはローカルに保存されます",
-  "@settingsPrivacySubtitle": {
+  "yourDataStaysLocal": "データはローカルに保存されます",
+  "@yourDataStaysLocal": {
     "description": "Settings hub row summary"
   },
-  "plansSubtitle": "プランを比較してアップグレード",
-  "@plansSubtitle": {
+  "comparePlansAndUpgrade": "プランを比較してアップグレード",
+  "@comparePlansAndUpgrade": {
     "description": "Settings hub row summary"
   },
-  "plansMethodsSubtitle": "支払い方法と請求",
-  "@plansMethodsSubtitle": {
+  "paymentMethodsAndBilling": "支払い方法と請求",
+  "@paymentMethodsAndBilling": {
     "description": "Settings hub row summary"
   },
-  "plansRestoreSubtitle": "以前の購入を復元",
-  "@plansRestoreSubtitle": {
+  "restoreYourPreviousPurchase": "以前の購入を復元",
+  "@restoreYourPreviousPurchase": {
     "description": "Settings hub row summary"
   },
-  "aboutAppSubtitle": "バージョンとビルドの詳細",
-  "@aboutAppSubtitle": {
+  "versionAndBuildDetails": "バージョンとビルドの詳細",
+  "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "aboutDeveloperSubtitle": "Zumiの開発者",
-  "@aboutDeveloperSubtitle": {
+  "theDeveloperBehindZumi": "Zumiの開発者",
+  "@theDeveloperBehindZumi": {
     "description": "Settings hub row summary"
   },
-  "aboutLicensesSubtitle": "オープンソースパッケージのライセンス",
-  "@aboutLicensesSubtitle": {
+  "openSourcePackageLicenses": "オープンソースパッケージのライセンス",
+  "@openSourcePackageLicenses": {
     "description": "Settings hub row summary"
   },
-  "legalPrivacySubtitle": "データの取り扱い方法",
-  "@legalPrivacySubtitle": {
+  "howDataIsHandled": "データの取り扱い方法",
+  "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "legalTermsSubtitle": "Zumi使用のルール",
-  "@legalTermsSubtitle": {
+  "rulesForUsingZumi": "Zumi使用のルール",
+  "@rulesForUsingZumi": {
     "description": "Settings hub row summary"
   },
-  "legalDataSafetySubtitle": "収集するデータ",
-  "@legalDataSafetySubtitle": {
+  "whatDataWeCollect": "収集するデータ",
+  "@whatDataWeCollect": {
     "description": "Settings hub row summary"
   },
-  "legalPermissionsSubtitle": "なぜ権限が必要か",
-  "@legalPermissionsSubtitle": {
+  "whyWeNeedPermissions": "なぜ権限が必要か",
+  "@whyWeNeedPermissions": {
     "description": "Settings hub row summary"
   },
-  "helpFaqSubtitle": "よくある質問への回答",
-  "@helpFaqSubtitle": {
+  "answersToCommonQuestions": "よくある質問への回答",
+  "@answersToCommonQuestions": {
     "description": "Settings hub row summary"
   },
-  "helpSupportSubtitle": "開発者に直接連絡",
-  "@helpSupportSubtitle": {
+  "reachTheDeveloperDirectly": "開発者に直接連絡",
+  "@reachTheDeveloperDirectly": {
     "description": "Settings hub row summary"
   },
-  "helpFeedbackSubtitle": "フィードバックを送信",
-  "@helpFeedbackSubtitle": {
+  "sendUsYourFeedback": "フィードバックを送信",
+  "@sendUsYourFeedback": {
     "description": "Settings hub row summary"
   },
-  "compressionPickVideo": "ビデオを選択",
-  "compressionTargetMb": "目標サイズ（MB）",
-  "compressionStart": "圧縮を開始",
-  "compressionPause": "一時停止",
-  "compressionResume": "再開",
-  "compressionViewResult": "結果を表示",
-  "compressionSaveGallery": "ギャラリーに保存",
-  "compressionShare": "ビデオを共有",
-  "compressionOriginalSize": "元のサイズ",
-  "compressionOutputSize": "出力サイズ",
-  "compressionEmptyHistory": "まだ圧縮されたビデオはありません",
-  "compressionSavedGallery": "ギャラリーに保存されました",
-  "compressionInvalidTarget": "0より大きい目標サイズを入力してください",
+  "pickVideo": "ビデオを選択",
+  "targetSizeMB": "目標サイズ（MB）",
+  "startCompression": "圧縮を開始",
+  "pause": "一時停止",
+  "resume": "再開",
+  "viewResult": "結果を表示",
+  "saveToGallery": "ギャラリーに保存",
+  "shareVideo": "ビデオを共有",
+  "originalSize": "元のサイズ",
+  "outputSize": "出力サイズ",
+  "noCompressedVideosYet": "まだ圧縮されたビデオはありません",
+  "savedToGallery": "ギャラリーに保存されました",
+  "enterATargetSizeGreaterThanZero": "0より大きい目標サイズを入力してください",
   "compressionCancelled": "圧縮がキャンセルされました",
-  "compressionTargetExceeded": "このビデオは選択したサイズに到達できませんでした。大きい目標サイズを試してください。",
-  "compressionTargetInfeasible": "選択したサイズはこのビデオには小さすぎます。より大きいサイズを選んでください。",
-  "compressionPreviewBefore": "元のプレビュー",
-  "compressionPreviewAfter": "圧縮プレビュー",
-  "compressionPreset": "ターゲットプリセット",
-  "compressionCustom": "カスタムサイズ",
-  "compressionPreviewUnavailable": "プレビューは利用できません",
-  "compressionAdvanced": "高度なコントロール",
-  "compressionAutomatic": "自動",
-  "compressionResolutionLimit": "最大解像度",
-  "compressionSourceResolution": "元の解像度",
-  "compressionFrameRateLimit": "最大フレームレート",
-  "compressionAudioQuality": "オーディオビットレート",
-  "compressionRemoveAudio": "オーディオを削除",
-  "compressionVideoBitrateLimit": "ビデオビットレート上限（kbps）",
-  "compressionHdrPolicy": "HDRの扱い",
-  "compressionHdrConvert": "SDRに変換",
-  "compressionHdrPreserve": "対応している場合はHDRを保持",
-  "compressionPlanPreview": "開始前に",
-  "compressionPlanLoading": "圧縮プランを計算中…",
-  "compressionPlanResolution": "予定解像度",
-  "compressionPlanVideoBitrate": "予定ビデオビットレート",
-  "compressionPlanAudioBitrate": "予定オーディオビットレート",
-  "compressionAudioConversionNote": "再エンコードによりオーディオはAACステレオに変換されます。Dolby AtmosやDTS空間オーディオは保持されません。",
-  "compressionPlanTooSmall": "このターゲットは、使用可能なビデオには小さすぎます。サイズを大きくするか、他の制限を下げてください。",
-  "compressionPlanLowQuality": "選択されたターゲットはビデオの品質を下げる可能性があります。",
-  "compressionPlanAlreadyWithinLimit": "ソースはすでにサイズ制限内です。",
-  "compressionInvalidBitrate": "ビットレートを少なくとも150 kbpsで入力するか、自動にする場合は空白のままにしてください。",
-  "compressionInvalidResolution": "240から16384までの偶数の解像度を入力するか、自動にする場合は空白のままにしてください。",
-  "compressionSeek": "ビデオの位置",
-  "compressionInterrupted": "以前の圧縮が中断されました。その一時ファイルは削除されました。ビデオを選択してもう一度試すことができます。",
-  "compressionDismiss": "閉じる",
-  "compressionClearHistory": "履歴をクリア",
-  "compressionClearHistoryConfirm": "すべての履歴を削除しますか？保存されたビデオはデバイスに残ります。",
-  "compressionAttempts": "試行回数",
-  "compressionTargetSize": "目標サイズ",
-  "compressionOutputResolution": "出力解像度",
-  "compressionInvalidVideo": "このビデオは読み取れません。他のファイルを選択してください。",
-  "compressionInvalidOutput": "エンコードされたビデオは検証に失敗しました。元のビデオは変更されていません。",
-  "compressionEncoderUnsupported": "このデバイスでは選択された解像度やフレームレートをエンコードできません。その設定を下げて再試行してください。",
-  "compressionAudioDecoderUnsupported": "このデバイスではこのオーディオ形式を圧縮用にデコードできません。オーディオを削除するか、サポートされているソースを使用してください。",
-  "compressionVideoDecoderUnsupported": "このデバイスではこのビデオ形式または圧縮プロファイルをデコードできません。別のソースまたはデバイスを選択してください。",
-  "compressionMp4NotStreamable": "エクスポートされたMP4はストリーミングに準備されていません。別のビデオまたはデバイスを試してください。",
-  "compressionNoSpace": "このビデオを圧縮するための十分な空きストレージがありません。",
-  "compressionHdrUnsupported": "このデバイスでは選択したHDRモードを処理できません。SDRに変換してみてください。",
-  "compressionGeneralFailure": "圧縮を完了できませんでした。別の設定またはビデオをお試しください。",
-  "aboutIdentitySection": "アプリの識別情報",
-  "aboutAppName": "アプリ名",
-  "aboutPackageName": "パッケージ名",
-  "aboutVersion": "バージョン",
-  "aboutBuildNumber": "ビルド番号",
-  "aboutEnvironmentSection": "デバイスとビルド",
-  "aboutOperatingSystem": "オペレーティングシステム",
-  "aboutOsVersion": "OSバージョン",
-  "aboutBuildMode": "ビルドモード",
-  "aboutDebug": "デバッグ",
-  "aboutRelease": "リリース",
-  "aboutToolchainSection": "で構築",
-  "aboutInstallationSection": "インストール",
-  "aboutInstaller": "からインストール済み",
-  "aboutInstalledOn": "インストール日",
-  "aboutUpdatedOn": "更新日",
-  "aboutUnavailable": "利用不可",
-  "aboutProjectSection": "プロジェクトとサポート",
-  "aboutRepository": "GitHubリポジトリ",
-  "aboutRepositorySubtitle": "Zumiのソースコードを見る",
-  "aboutReadme": "READMEを読む",
-  "aboutReadmeSubtitle": "GitHubでZumiについて学ぶ",
-  "aboutIssues": "問題を報告する",
-  "aboutIssuesSubtitle": "GitHubの問題を表示・作成する",
-  "aboutLatestRelease": "最新リリース",
-  "aboutLatestReleaseSubtitle": "リリースとダウンロードを見る",
-  "aboutDonate": "Zumiをサポートする",
-  "aboutDonateSubtitle": "公式寄付ページを開く",
-  "aboutLinkError": "リンクを開けませんでした。もう一度お試しください。",
-  "aboutDeveloperSection": "開発者",
-  "aboutDeveloperName": "Mostafa Sensei",
-  "aboutDeveloperProfile": "GitHubプロフィール",
-  "aboutDeveloperProfileSubtitle": "プロジェクトと連絡先の詳細を見る",
+  "thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize": "このビデオは選択したサイズに到達できませんでした。大きい目標サイズを試してください。",
+  "theSelectedSizeIsTooSmallForThisVideoChooseALargerSize": "選択したサイズはこのビデオには小さすぎます。より大きいサイズを選んでください。",
+  "originalPreview": "元のプレビュー",
+  "compressedPreview": "圧縮プレビュー",
+  "targetPreset": "ターゲットプリセット",
+  "customSize": "カスタムサイズ",
+  "previewUnavailable": "プレビューは利用できません",
+  "advancedControls": "高度なコントロール",
+  "automatic": "自動",
+  "maximumResolution": "最大解像度",
+  "originalResolution": "元の解像度",
+  "maximumFrameRate": "最大フレームレート",
+  "audioBitrate": "オーディオビットレート",
+  "removeAudio": "オーディオを削除",
+  "videoBitrateCeilingKbps": "ビデオビットレート上限（kbps）",
+  "hdrHandling": "HDRの扱い",
+  "convertToSDR": "SDRに変換",
+  "keepHDRWhenSupported": "対応している場合はHDRを保持",
+  "beforeYouStart": "開始前に",
+  "calculatingCompressionPlan": "圧縮プランを計算中…",
+  "plannedResolution": "予定解像度",
+  "plannedVideoBitrate": "予定ビデオビットレート",
+  "plannedAudioBitrate": "予定オーディオビットレート",
+  "reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved": "再エンコードによりオーディオはAACステレオに変換されます。Dolby AtmosやDTS空間オーディオは保持されません。",
+  "thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits": "このターゲットは、使用可能なビデオには小さすぎます。サイズを大きくするか、他の制限を下げてください。",
+  "theSelectedTargetMayReduceVideoQuality": "選択されたターゲットはビデオの品質を下げる可能性があります。",
+  "theSourceIsAlreadyWithinTheSizeLimit": "ソースはすでにサイズ制限内です。",
+  "enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic": "ビットレートを少なくとも150 kbpsで入力するか、自動にする場合は空白のままにしてください。",
+  "enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic": "240から16384までの偶数の解像度を入力するか、自動にする場合は空白のままにしてください。",
+  "videoPosition": "ビデオの位置",
+  "aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain": "以前の圧縮が中断されました。その一時ファイルは削除されました。ビデオを選択してもう一度試すことができます。",
+  "dismiss": "閉じる",
+  "clearHistory": "履歴をクリア",
+  "removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice": "すべての履歴を削除しますか？保存されたビデオはデバイスに残ります。",
+  "attempts": "試行回数",
+  "targetSize": "目標サイズ",
+  "outputResolution": "出力解像度",
+  "thisVideoCouldNotBeReadChooseAnotherFile": "このビデオは読み取れません。他のファイルを選択してください。",
+  "theEncodedVideoFailedVerificationYourOriginalVideoWasNotChanged": "エンコードされたビデオは検証に失敗しました。元のビデオは変更されていません。",
+  "thisDeviceCannotEncodeTheSelectedResolutionOrFrameRateLowerThatSettingAndTryAgain": "このデバイスでは選択された解像度やフレームレートをエンコードできません。その設定を下げて再試行してください。",
+  "thisDeviceCannotDecodeThisAudioFormatForCompressionRemoveAudioOrUseASupportedSource": "このデバイスではこのオーディオ形式を圧縮用にデコードできません。オーディオを削除するか、サポートされているソースを使用してください。",
+  "thisDeviceCannotDecodeThisVideoFormatOrProfileForCompressionChooseAnotherSourceOrDevice": "このデバイスではこのビデオ形式または圧縮プロファイルをデコードできません。別のソースまたはデバイスを選択してください。",
+  "theExportedMP4IsNotReadyForStreamingTryAnotherVideoOrDevice": "エクスポートされたMP4はストリーミングに準備されていません。別のビデオまたはデバイスを試してください。",
+  "thereIsNotEnoughFreeStorageToCompressThisVideo": "このビデオを圧縮するための十分な空きストレージがありません。",
+  "thisDeviceCannotProcessTheSelectedHDRModeTryConvertingToSDR": "このデバイスでは選択したHDRモードを処理できません。SDRに変換してみてください。",
+  "compressionCouldNotBeCompletedTryAnotherSettingOrVideo": "圧縮を完了できませんでした。別の設定またはビデオをお試しください。",
+  "appIdentity": "アプリの識別情報",
+  "appName": "アプリ名",
+  "packageName": "パッケージ名",
+  "version": "バージョン",
+  "buildNumber": "ビルド番号",
+  "deviceAndBuild": "デバイスとビルド",
+  "operatingSystem": "オペレーティングシステム",
+  "osVersion": "OSバージョン",
+  "buildMode": "ビルドモード",
+  "debug": "デバッグ",
+  "release": "リリース",
+  "builtWith": "で構築",
+  "installation": "インストール",
+  "installedFrom": "からインストール済み",
+  "installedOn": "インストール日",
+  "updatedOn": "更新日",
+  "unavailable": "利用不可",
+  "projectAndSupport": "プロジェクトとサポート",
+  "githubRepository": "GitHubリポジトリ",
+  "viewZumiSourceCode": "Zumiのソースコードを見る",
+  "readTheREADME": "READMEを読む",
+  "learnAboutZumiOnGitHub": "GitHubでZumiについて学ぶ",
+  "reportAnIssue": "問題を報告する",
+  "viewAndCreateGitHubIssues": "GitHubの問題を表示・作成する",
+  "latestRelease": "最新リリース",
+  "viewReleasesAndDownloads": "リリースとダウンロードを見る",
+  "supportZumi": "Zumiをサポートする",
+  "openTheOfficialDonationPage": "公式寄付ページを開く",
+  "couldNotOpenTheLinkPleaseTryAgain": "リンクを開けませんでした。もう一度お試しください。",
+  "developer": "開発者",
+  "mostafaSensei": "Mostafa Sensei",
+  "githubProfile": "GitHubプロフィール",
+  "seeProjectsAndContactDetails": "プロジェクトと連絡先の詳細を見る",
   "maintenanceInProgress": "メンテナンス中",
-  "maintenanceMessage": "Zumiは一時的に利用できません。後でもう一度お試しください。",
+  "zumiIsTemporarilyUnavailablePleaseTryAgainLater": "Zumiは一時的に利用できません。後でもう一度お試しください。",
   "comingSoon": "近日公開",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"

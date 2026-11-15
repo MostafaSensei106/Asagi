@@ -25,7 +25,9 @@ class MaintenanceModePage extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               Text(
-                context.localeKeys.maintenanceMessage,
+                context
+                    .localeKeys
+                    .zumiIsTemporarilyUnavailablePleaseTryAgainLater,
                 textAlign: TextAlign.center,
                 style: const TextStyle(fontSize: 16),
               ),

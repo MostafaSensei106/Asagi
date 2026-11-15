@@ -21,7 +21,7 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
-  String fileSavedToDcim(String fileName) {
+  String fileSavedToGallery(String fileName) {
     return 'Bestand opgeslagen in galerie: $fileName';
   }
 
@@ -31,7 +31,7 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
-  String get fileAlreadySaved => 'Bestand is al opgeslagen';
+  String get fileIsAlreadySaved => 'Bestand is al opgeslagen';
 
   @override
   String get error => 'Fout';
@@ -55,104 +55,98 @@ class AppLocalizationsNl extends AppLocalizations {
   String get partial => 'Gedeeltelijk';
 
   @override
-  String get error_address_line_cant_be_empty =>
-      'Adresregel mag niet leeg zijn';
+  String get addressLineCannotBeEmpty => 'Adresregel mag niet leeg zijn';
 
   @override
-  String get error_address_line_too_long => 'Adresregel is te lang';
+  String get addressLineIsTooLong => 'Adresregel is te lang';
 
   @override
-  String get error_address_invalid_special_characters =>
+  String get specialCharactersAreNotAllowed =>
       'Speciale tekens zijn niet toegestaan';
 
   @override
-  String get error_address_emoji_not_allowed => 'Emoji\'s zijn niet toegestaan';
+  String get emojisAreNotAllowed => 'Emoji\'s zijn niet toegestaan';
 
   @override
-  String get error_city_cant_be_empty => 'Stad mag niet leeg zijn';
+  String get cityCannotBeEmpty => 'Stad mag niet leeg zijn';
 
   @override
-  String get error_city_too_long => 'Stadsnaam is te lang';
+  String get cityNameIsTooLong => 'Stadsnaam is te lang';
 
   @override
-  String get error_city_invalid_special_characters =>
+  String get cityContainsInvalidSpecialCharacters =>
       'Stad bevat ongeldige speciale tekens';
 
   @override
-  String get error_address_label_cant_be_empty =>
-      'Adreslabel mag niet leeg zijn';
+  String get addressLabelCannotBeEmpty => 'Adreslabel mag niet leeg zijn';
 
   @override
-  String get error_address_label_too_long => 'Adreslabel is te lang';
+  String get addressLabelIsTooLong => 'Adreslabel is te lang';
 
   @override
-  String get error_email_cant_be_empty => 'E-mail mag niet leeg zijn';
+  String get emailCannotBeEmpty => 'E-mail mag niet leeg zijn';
 
   @override
-  String get error_email_not_invalid_format => 'Ongeldig e-mailformaat';
+  String get invalidEmailFormat => 'Ongeldig e-mailformaat';
 
   @override
-  String get error_email_contains_invalid_characters =>
-      'E-mail bevat ongeldige tekens';
+  String get emailContainsInvalidCharacters => 'E-mail bevat ongeldige tekens';
 
   @override
-  String get error_email_must_contain_at_symbol => 'E-mail moet @ bevatten';
+  String get emailMustContain => 'E-mail moet @ bevatten';
 
   @override
-  String get error_email_must_be_in_lowercase =>
-      'E-mail moet in kleine letters zijn';
+  String get emailMustBeInLowercase => 'E-mail moet in kleine letters zijn';
 
   @override
-  String get error_arabic_not_allowed =>
+  String get arabicCharactersAreNotAllowed =>
       'Arabische tekens zijn niet toegestaan';
 
   @override
-  String get error_email_emoji_not_allowed =>
+  String get emojisAreNotAllowedInEmail =>
       'Emoji\'s zijn niet toegestaan in e-mail';
 
   @override
-  String get error_phone_number_cant_be_empty =>
-      'Telefoonnummer mag niet leeg zijn';
+  String get phoneNumberCannotBeEmpty => 'Telefoonnummer mag niet leeg zijn';
 
   @override
-  String get error_phone_number_invalid => 'Ongeldig telefoonnummer';
+  String get invalidPhoneNumber => 'Ongeldig telefoonnummer';
 
   @override
-  String get error_phone_number_min_length =>
+  String get phoneNumberMustBeAtLeast11Digits =>
       'Telefoonnummer moet minimaal 11 cijfers bevatten';
 
   @override
-  String get error_name_cant_be_empty => 'Naam mag niet leeg zijn';
+  String get nameCannotBeEmpty => 'Naam mag niet leeg zijn';
 
   @override
-  String get error_name_invalid => 'Ongeldige naam';
+  String get invalidName => 'Ongeldige naam';
 
   @override
-  String get error_name_too_short_at_least_3_characters =>
+  String get nameMustBeAtLeast3Characters =>
       'Naam moet minimaal 3 tekens bevatten';
 
   @override
-  String get error_name_too_long_maximum_20_characters =>
+  String get nameCannotExceed20Characters =>
       'Naam mag niet meer dan 20 tekens bevatten';
 
   @override
-  String get error_name_invalid_special_characters =>
+  String get nameContainsInvalidSpecialCharacters =>
       'Naam bevat ongeldige speciale tekens';
 
   @override
-  String get error_name_emoji_not_allowed =>
+  String get emojisAreNotAllowedInName =>
       'Emoji\'s zijn niet toegestaan in naam';
 
   @override
-  String get error_password_cant_be_empty => 'Wachtwoord mag niet leeg zijn';
+  String get passwordCannotBeEmpty => 'Wachtwoord mag niet leeg zijn';
 
   @override
-  String
-  get error_password_must_contain_uppercase_lowercase_number_and_special_character =>
+  String get passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter =>
       'Wachtwoord moet hoofdletters, kleine letters, cijfers en een speciaal teken bevatten';
 
   @override
-  String get error_password_must_be_at_least_8_characters_long =>
+  String get passwordMustBeAtLeast8CharactersLong =>
       'Wachtwoord moet minimaal 8 tekens lang zijn';
 
   @override
@@ -399,43 +393,43 @@ class AppLocalizationsNl extends AppLocalizations {
   String get recommendZumiToAFriend => 'Beveel Zumi aan een vriend aan.';
 
   @override
-  String get settingsGroupAppearance => 'Uiterlijk & taal';
+  String get appearanceLanguage => 'Uiterlijk & taal';
 
   @override
-  String get settingsGroupCompression => 'Compressie';
+  String get compression => 'Compressie';
 
   @override
-  String get settingsGroupAi => 'AI op het apparaat';
+  String get onDeviceAI => 'AI op het apparaat';
 
   @override
-  String get settingsGroupPrivacy => 'Meldingen & privacy';
+  String get notificationsPrivacy => 'Meldingen & privacy';
 
   @override
-  String get settingsGroupPlans => 'Plannen & aankopen';
+  String get plansPurchases => 'Plannen & aankopen';
 
   @override
-  String get settingsGroupAbout => 'Over';
+  String get about => 'Over';
 
   @override
-  String get settingsGroupLegal => 'Juridisch';
+  String get legal => 'Juridisch';
 
   @override
-  String get settingsGroupHelp => 'Help & feedback';
+  String get helpFeedback => 'Help & feedback';
 
   @override
-  String get settingsGroupAccount => 'Account';
+  String get account => 'Account';
 
   @override
-  String get settingsAppearanceSubtitle => 'Thema en app-taal';
+  String get themeAndAppLanguage => 'Thema en app-taal';
 
   @override
-  String get settingsLanguageSubtitle => 'App-taal en -richting';
+  String get appLanguageAndDirection => 'App-taal en -richting';
 
   @override
-  String get settingsCompressionSubtitle => 'Standaardkwaliteit en -formaat';
+  String get defaultQualityAndFormat => 'Standaardkwaliteit en -formaat';
 
   @override
-  String get settingsStorageSubtitle => 'Cache- en opslaggebruik';
+  String get cacheAndStorageUsage => 'Cache- en opslaggebruik';
 
   @override
   String get aiSettings => 'AI-instellingen';
@@ -449,17 +443,17 @@ class AppLocalizationsNl extends AppLocalizations {
       'Een privé-assistent voor je video\'s komt binnenkort. Je kunt hier vragen stellen over compressie, organisatie en opgeslagen video\'s.';
 
   @override
-  String get settingsAiSubtitle => 'Lokale modellen en slimme tools';
+  String get localModelsAndSmartTools => 'Lokale modellen en slimme tools';
 
   @override
-  String get exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet =>
+  String get exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet =>
       'Verken lokale modellen en toekomstige AI-tools. Deze opties zijn nog niet actief.';
 
   @override
   String get localModels => 'Lokale modellen';
 
   @override
-  String get aiModelsSubtitle =>
+  String get browseAndDownloadSupportedModels =>
       'Blader door en download ondersteunde modellen';
 
   @override
@@ -471,7 +465,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get importAModel => 'Een model importeren';
 
   @override
-  String get aiImportSubtitle =>
+  String get useACompatibleModelFromYourFiles =>
       'Gebruik een compatibel model uit je bestanden';
 
   @override
@@ -483,18 +477,20 @@ class AppLocalizationsNl extends AppLocalizations {
   String get smartFeatures => 'Slimme functies';
 
   @override
-  String get aiFeaturesSubtitle => 'Compressie, organisatie en zoeken';
+  String get compressionOrganizationAndSearch =>
+      'Compressie, organisatie en zoeken';
 
   @override
   String
-  get chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
+  get chooseWhichLocalAISuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
       'Kies welke lokale AI-suggesties u wilt gebruiken voor videocompressie, organisatie, naamgeving en zoeken.';
 
   @override
   String get modelPerformance => 'Modelprestaties';
 
   @override
-  String get aiRuntimeSubtitle => 'Verwerkings- en resourcevoorkeuren';
+  String get processingAndResourcePreferences =>
+      'Verwerkings- en resourcevoorkeuren';
 
   @override
   String get controlTheProcessingBackendAndResourceLimitsForSupportedModels =>
@@ -504,7 +500,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get conversationSettings => 'Gespreksinstellingen';
 
   @override
-  String get aiChatSettingsSubtitle => 'Streaming, denken en responslengte';
+  String get streamingThinkingAndResponseLength =>
+      'Streaming, denken en responslengte';
 
   @override
   String
@@ -515,7 +512,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get imagesAndAudio => 'Afbeeldingen en audio';
 
   @override
-  String get aiMediaSubtitle => 'Beheer multimodale invoer';
+  String get controlMultimodalInputs => 'Beheer multimodale invoer';
 
   @override
   String
@@ -526,7 +523,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get semanticSearch => 'Semantisch zoeken';
 
   @override
-  String get aiSearchSubtitle => 'Embeddings en lokale indexering';
+  String get embeddingsAndLocalIndexing => 'Embeddings en lokale indexering';
 
   @override
   String
@@ -537,7 +534,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get toolsAndStructuredOutput => 'Tools en gestructureerde output';
 
   @override
-  String get aiToolsSubtitle => 'Acties, schema\'s en bevestigingen';
+  String get actionsSchemasAndConfirmations =>
+      'Acties, schema\'s en bevestigingen';
 
   @override
   String
@@ -545,371 +543,378 @@ class AppLocalizationsNl extends AppLocalizations {
       'Beheer ondersteunde assistentacties en gestructureerde antwoorden. Acties die bestanden beïnvloeden, vereisen uw bevestiging.';
 
   @override
-  String get aiGroupModels => 'Modellen';
+  String get models => 'Modellen';
 
   @override
-  String get aiGroupExperience => 'Assistentervaring';
+  String get assistantExperience => 'Assistentervaring';
 
   @override
-  String get aiGroupCapabilities => 'Slimme mogelijkheden';
+  String get smartCapabilities => 'Slimme mogelijkheden';
 
   @override
-  String get aiGroupPerformance => 'Prestaties';
+  String get performance => 'Prestaties';
 
   @override
-  String get compressionHistorySubtitle => 'Uw gecomprimeerde videohistorie';
+  String get yourCompressedVideoHistory => 'Uw gecomprimeerde videohistorie';
 
   @override
-  String get settingsNotificationsSubtitle => 'Voltooiings- en updatemeldingen';
+  String get completionAndUpdateAlerts => 'Voltooiings- en updatemeldingen';
 
   @override
-  String get settingsPrivacySubtitle => 'Uw gegevens blijven lokaal';
+  String get yourDataStaysLocal => 'Uw gegevens blijven lokaal';
 
   @override
-  String get plansSubtitle => 'Vergelijk plannen en upgrade';
+  String get comparePlansAndUpgrade => 'Vergelijk plannen en upgrade';
 
   @override
-  String get plansMethodsSubtitle => 'Betaalmethoden en facturering';
+  String get paymentMethodsAndBilling => 'Betaalmethoden en facturering';
 
   @override
-  String get plansRestoreSubtitle => 'Herstel uw vorige aankoop';
+  String get restoreYourPreviousPurchase => 'Herstel uw vorige aankoop';
 
   @override
-  String get aboutAppSubtitle => 'Versie- en builddetails';
+  String get versionAndBuildDetails => 'Versie- en builddetails';
 
   @override
-  String get aboutDeveloperSubtitle => 'De ontwikkelaar achter Zumi';
+  String get theDeveloperBehindZumi => 'De ontwikkelaar achter Zumi';
 
   @override
-  String get aboutLicensesSubtitle => 'Open source pakketlicenties';
+  String get openSourcePackageLicenses => 'Open source pakketlicenties';
 
   @override
-  String get legalPrivacySubtitle => 'Hoe gegevens worden behandeld';
+  String get howDataIsHandled => 'Hoe gegevens worden behandeld';
 
   @override
-  String get legalTermsSubtitle => 'Regels voor het gebruik van Zumi';
+  String get rulesForUsingZumi => 'Regels voor het gebruik van Zumi';
 
   @override
-  String get legalDataSafetySubtitle => 'Welke gegevens we verzamelen';
+  String get whatDataWeCollect => 'Welke gegevens we verzamelen';
 
   @override
-  String get legalPermissionsSubtitle => 'Waarom we toestemming nodig hebben';
+  String get whyWeNeedPermissions => 'Waarom we toestemming nodig hebben';
 
   @override
-  String get helpFaqSubtitle => 'Antwoorden op veelgestelde vragen';
+  String get answersToCommonQuestions => 'Antwoorden op veelgestelde vragen';
 
   @override
-  String get helpSupportSubtitle =>
+  String get reachTheDeveloperDirectly =>
       'Neem rechtstreeks contact op met de ontwikkelaar';
 
   @override
-  String get helpFeedbackSubtitle => 'Stuur ons uw feedback';
+  String get sendUsYourFeedback => 'Stuur ons uw feedback';
 
   @override
-  String get compressionPickVideo => 'Kies video';
+  String get pickVideo => 'Kies video';
 
   @override
-  String get compressionTargetMb => 'Doelgrootte (MB)';
+  String get targetSizeMB => 'Doelgrootte (MB)';
 
   @override
-  String get compressionStart => 'Start compressie';
+  String get startCompression => 'Start compressie';
 
   @override
-  String get compressionPause => 'Pauzeer';
+  String get pause => 'Pauzeer';
 
   @override
-  String get compressionResume => 'Hervat';
+  String get resume => 'Hervat';
 
   @override
-  String get compressionViewResult => 'Bekijk resultaat';
+  String get viewResult => 'Bekijk resultaat';
 
   @override
-  String get compressionSaveGallery => 'Opslaan in galerij';
+  String get saveToGallery => 'Opslaan in galerij';
 
   @override
-  String get compressionShare => 'Deel video';
+  String get shareVideo => 'Deel video';
 
   @override
-  String get compressionOriginalSize => 'Oorspronkelijke grootte';
+  String get originalSize => 'Oorspronkelijke grootte';
 
   @override
-  String get compressionOutputSize => 'Uitvoer grootte';
+  String get outputSize => 'Uitvoer grootte';
 
   @override
-  String get compressionEmptyHistory => 'Nog geen gecomprimeerde video\'s';
+  String get noCompressedVideosYet => 'Nog geen gecomprimeerde video\'s';
 
   @override
-  String get compressionSavedGallery => 'Opgeslagen in galerij';
+  String get savedToGallery => 'Opgeslagen in galerij';
 
   @override
-  String get compressionInvalidTarget =>
+  String get enterATargetSizeGreaterThanZero =>
       'Voer een doelgrootte groter dan nul in';
 
   @override
   String get compressionCancelled => 'Compressie geannuleerd';
 
   @override
-  String get compressionTargetExceeded =>
+  String get thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize =>
       'Deze video kon de geselecteerde grootte niet bereiken. Probeer een grotere doelgrootte.';
 
   @override
-  String get compressionTargetInfeasible =>
+  String get theSelectedSizeIsTooSmallForThisVideoChooseALargerSize =>
       'De geselecteerde grootte is te klein voor deze video. Kies een grotere grootte.';
 
   @override
-  String get compressionPreviewBefore => 'Oorspronkelijke voorbeeld';
+  String get originalPreview => 'Oorspronkelijke voorbeeld';
 
   @override
-  String get compressionPreviewAfter => 'Samengeperste preview';
+  String get compressedPreview => 'Samengeperste preview';
 
   @override
-  String get compressionPreset => 'Doelpreset';
+  String get targetPreset => 'Doelpreset';
 
   @override
-  String get compressionCustom => 'Aangepaste grootte';
+  String get customSize => 'Aangepaste grootte';
 
   @override
-  String get compressionPreviewUnavailable => 'Preview niet beschikbaar';
+  String get previewUnavailable => 'Preview niet beschikbaar';
 
   @override
-  String get compressionAdvanced => 'Geavanceerde bedieningselementen';
+  String get advancedControls => 'Geavanceerde bedieningselementen';
 
   @override
-  String get compressionAutomatic => 'Automatisch';
+  String get automatic => 'Automatisch';
 
   @override
-  String get compressionResolutionLimit => 'Maximale resolutie';
+  String get maximumResolution => 'Maximale resolutie';
 
   @override
-  String get compressionSourceResolution => 'Originele resolutie';
+  String get originalResolution => 'Originele resolutie';
 
   @override
-  String get compressionFrameRateLimit => 'Maximale framerate';
+  String get maximumFrameRate => 'Maximale framerate';
 
   @override
-  String get compressionAudioQuality => 'Audiobitrate';
+  String get audioBitrate => 'Audiobitrate';
 
   @override
-  String get compressionRemoveAudio => 'Audio verwijderen';
+  String get removeAudio => 'Audio verwijderen';
 
   @override
-  String get compressionVideoBitrateLimit => 'Maximale videobitrate (kbps)';
+  String get videoBitrateCeilingKbps => 'Maximale videobitrate (kbps)';
 
   @override
-  String get compressionHdrPolicy => 'HDR-hantering';
+  String get hdrHandling => 'HDR-hantering';
 
   @override
-  String get compressionHdrConvert => 'Converteren naar SDR';
+  String get convertToSDR => 'Converteren naar SDR';
 
   @override
-  String get compressionHdrPreserve => 'HDR behouden indien ondersteund';
+  String get keepHDRWhenSupported => 'HDR behouden indien ondersteund';
 
   @override
-  String get compressionPlanPreview => 'Voordat je begint';
+  String get beforeYouStart => 'Voordat je begint';
 
   @override
-  String get compressionPlanLoading => 'Compressieplan wordt berekend…';
+  String get calculatingCompressionPlan => 'Compressieplan wordt berekend…';
 
   @override
-  String get compressionPlanResolution => 'Geplande resolutie';
+  String get plannedResolution => 'Geplande resolutie';
 
   @override
-  String get compressionPlanVideoBitrate => 'Geplande videobitrate';
+  String get plannedVideoBitrate => 'Geplande videobitrate';
 
   @override
-  String get compressionPlanAudioBitrate => 'Geplande audiobitrate';
+  String get plannedAudioBitrate => 'Geplande audiobitrate';
 
   @override
-  String get compressionAudioConversionNote =>
+  String
+  get reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved =>
       'Herverpakking zet audio om naar AAC stereo. Dolby Atmos en DTS ruimtelijke audio worden niet behouden.';
 
   @override
-  String get compressionPlanTooSmall =>
+  String
+  get thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits =>
       'Dit doel is te klein voor een bruikbare video. Vergroot de grootte of verlaag andere limieten.';
 
   @override
-  String get compressionPlanLowQuality =>
+  String get theSelectedTargetMayReduceVideoQuality =>
       'Het geselecteerde doel kan de videokwaliteit verminderen.';
 
   @override
-  String get compressionPlanAlreadyWithinLimit =>
+  String get theSourceIsAlreadyWithinTheSizeLimit =>
       'De bron bevindt zich al binnen de grootte limiet.';
 
   @override
-  String get compressionInvalidBitrate =>
+  String get enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic =>
       'Voer een bitrate van minimaal 150 kbps in, of laat leeg voor automatisch.';
 
   @override
-  String get compressionInvalidResolution =>
+  String get enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic =>
       'Voer een even resolutie in van 240 tot 16384, of laat leeg voor automatisch.';
 
   @override
-  String get compressionSeek => 'Videopositie';
+  String get videoPosition => 'Videopositie';
 
   @override
-  String get compressionInterrupted =>
+  String
+  get aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain =>
       'Een eerdere compressie werd onderbroken. De tijdelijke bestanden zijn verwijderd; u kunt de video selecteren en het opnieuw proberen.';
 
   @override
-  String get compressionDismiss => 'Sluiten';
+  String get dismiss => 'Sluiten';
 
   @override
-  String get compressionClearHistory => 'Geschiedenis wissen';
+  String get clearHistory => 'Geschiedenis wissen';
 
   @override
-  String get compressionClearHistoryConfirm =>
+  String get removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice =>
       'Alle geschiedenisitems verwijderen? Opgeslagen video\'s blijven op uw apparaat.';
 
   @override
-  String get compressionAttempts => 'Pogingen';
+  String get attempts => 'Pogingen';
 
   @override
-  String get compressionTargetSize => 'Doelgrootte';
+  String get targetSize => 'Doelgrootte';
 
   @override
-  String get compressionOutputResolution => 'Uitvoerresolutie';
+  String get outputResolution => 'Uitvoerresolutie';
 
   @override
-  String get compressionInvalidVideo =>
+  String get thisVideoCouldNotBeReadChooseAnotherFile =>
       'Deze video kon niet worden gelezen. Kies een ander bestand.';
 
   @override
-  String get compressionInvalidOutput =>
+  String get theEncodedVideoFailedVerificationYourOriginalVideoWasNotChanged =>
       'De gecodeerde video is mislukt bij verificatie. Uw originele video is niet gewijzigd.';
 
   @override
-  String get compressionEncoderUnsupported =>
+  String
+  get thisDeviceCannotEncodeTheSelectedResolutionOrFrameRateLowerThatSettingAndTryAgain =>
       'Dit apparaat kan de geselecteerde resolutie of beeldsnelheid niet coderen. Verlaag die instelling en probeer opnieuw.';
 
   @override
-  String get compressionAudioDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisAudioFormatForCompressionRemoveAudioOrUseASupportedSource =>
       'Dit apparaat kan dit audioformaat niet decoderen voor compressie. Verwijder audio of gebruik een ondersteunde bron.';
 
   @override
-  String get compressionVideoDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisVideoFormatOrProfileForCompressionChooseAnotherSourceOrDevice =>
       'Dit apparaat kan dit videoformaat of profiel voor compressie niet decoderen. Kies een andere bron of apparaat.';
 
   @override
-  String get compressionMp4NotStreamable =>
+  String get theExportedMP4IsNotReadyForStreamingTryAnotherVideoOrDevice =>
       'De geëxporteerde MP4 is niet klaar voor streaming. Probeer een andere video of apparaat.';
 
   @override
-  String get compressionNoSpace =>
+  String get thereIsNotEnoughFreeStorageToCompressThisVideo =>
       'Er is niet genoeg vrije opslagruimte om deze video te comprimeren.';
 
   @override
-  String get compressionHdrUnsupported =>
+  String get thisDeviceCannotProcessTheSelectedHDRModeTryConvertingToSDR =>
       'Dit apparaat kan de geselecteerde HDR-modus niet verwerken. Probeer te converteren naar SDR.';
 
   @override
-  String get compressionGeneralFailure =>
+  String get compressionCouldNotBeCompletedTryAnotherSettingOrVideo =>
       'Compressie kon niet worden voltooid. Probeer een andere instelling of video.';
 
   @override
-  String get aboutIdentitySection => 'App-identiteit';
+  String get appIdentity => 'App-identiteit';
 
   @override
-  String get aboutAppName => 'App-naam';
+  String get appName => 'App-naam';
 
   @override
-  String get aboutPackageName => 'Pakketnaam';
+  String get packageName => 'Pakketnaam';
 
   @override
-  String get aboutVersion => 'Versie';
+  String get version => 'Versie';
 
   @override
-  String get aboutBuildNumber => 'Bouwnummer';
+  String get buildNumber => 'Bouwnummer';
 
   @override
-  String get aboutEnvironmentSection => 'Apparaat en build';
+  String get deviceAndBuild => 'Apparaat en build';
 
   @override
-  String get aboutOperatingSystem => 'Besturingssysteem';
+  String get operatingSystem => 'Besturingssysteem';
 
   @override
-  String get aboutOsVersion => 'OS-versie';
+  String get osVersion => 'OS-versie';
 
   @override
-  String get aboutBuildMode => 'Build-modus';
+  String get buildMode => 'Build-modus';
 
   @override
-  String get aboutDebug => 'Debug';
+  String get debug => 'Debug';
 
   @override
-  String get aboutRelease => 'Release';
+  String get release => 'Release';
 
   @override
-  String get aboutToolchainSection => 'Gemaakt met';
+  String get builtWith => 'Gemaakt met';
 
   @override
-  String get aboutInstallationSection => 'Installatie';
+  String get installation => 'Installatie';
 
   @override
-  String get aboutInstaller => 'Geïnstalleerd vanaf';
+  String get installedFrom => 'Geïnstalleerd vanaf';
 
   @override
-  String get aboutInstalledOn => 'Geïnstalleerd op';
+  String get installedOn => 'Geïnstalleerd op';
 
   @override
-  String get aboutUpdatedOn => 'Bijgewerkt op';
+  String get updatedOn => 'Bijgewerkt op';
 
   @override
-  String get aboutUnavailable => 'Niet beschikbaar';
+  String get unavailable => 'Niet beschikbaar';
 
   @override
-  String get aboutProjectSection => 'Project en ondersteuning';
+  String get projectAndSupport => 'Project en ondersteuning';
 
   @override
-  String get aboutRepository => 'GitHub-repository';
+  String get githubRepository => 'GitHub-repository';
 
   @override
-  String get aboutRepositorySubtitle => 'Bekijk Zumi-broncode';
+  String get viewZumiSourceCode => 'Bekijk Zumi-broncode';
 
   @override
-  String get aboutReadme => 'Lees de README';
+  String get readTheREADME => 'Lees de README';
 
   @override
-  String get aboutReadmeSubtitle => 'Leer over Zumi op GitHub';
+  String get learnAboutZumiOnGitHub => 'Leer over Zumi op GitHub';
 
   @override
-  String get aboutIssues => 'Meld een probleem';
+  String get reportAnIssue => 'Meld een probleem';
 
   @override
-  String get aboutIssuesSubtitle => 'Bekijk en maak GitHub-issues';
+  String get viewAndCreateGitHubIssues => 'Bekijk en maak GitHub-issues';
 
   @override
-  String get aboutLatestRelease => 'Laatste release';
+  String get latestRelease => 'Laatste release';
 
   @override
-  String get aboutLatestReleaseSubtitle => 'Bekijk releases en downloads';
+  String get viewReleasesAndDownloads => 'Bekijk releases en downloads';
 
   @override
-  String get aboutDonate => 'Ondersteun Zumi';
+  String get supportZumi => 'Ondersteun Zumi';
 
   @override
-  String get aboutDonateSubtitle => 'Open de officiële donatiepagina';
+  String get openTheOfficialDonationPage => 'Open de officiële donatiepagina';
 
   @override
-  String get aboutLinkError => 'Kon de link niet openen. Probeer het opnieuw.';
+  String get couldNotOpenTheLinkPleaseTryAgain =>
+      'Kon de link niet openen. Probeer het opnieuw.';
 
   @override
-  String get aboutDeveloperSection => 'Ontwikkelaar';
+  String get developer => 'Ontwikkelaar';
 
   @override
-  String get aboutDeveloperName => 'Mostafa Sensei';
+  String get mostafaSensei => 'Mostafa Sensei';
 
   @override
-  String get aboutDeveloperProfile => 'GitHub-profiel';
+  String get githubProfile => 'GitHub-profiel';
 
   @override
-  String get aboutDeveloperProfileSubtitle =>
+  String get seeProjectsAndContactDetails =>
       'Bekijk projecten en contactgegevens';
 
   @override
   String get maintenanceInProgress => 'Onderhoud in uitvoering';
 
   @override
-  String get maintenanceMessage =>
+  String get zumiIsTemporarilyUnavailablePleaseTryAgainLater =>
       'Zumi is tijdelijk niet beschikbaar. Probeer het later opnieuw.';
 
   @override
@@ -996,7 +1001,7 @@ class AppLocalizationsNlBe extends AppLocalizationsNl {
   }
 
   @override
-  String fileSavedToDcim(String fileName) {
+  String fileSavedToGallery(String fileName) {
     return 'Bestand opgeslagen in galerie: $fileName';
   }
 
@@ -1006,7 +1011,7 @@ class AppLocalizationsNlBe extends AppLocalizationsNl {
   }
 
   @override
-  String get fileAlreadySaved => 'Bestand is al opgeslagen';
+  String get fileIsAlreadySaved => 'Bestand is al opgeslagen';
 
   @override
   String get error => 'Fout';
@@ -1030,104 +1035,98 @@ class AppLocalizationsNlBe extends AppLocalizationsNl {
   String get partial => 'Gedeeltelijk';
 
   @override
-  String get error_address_line_cant_be_empty =>
-      'Adresregel mag niet leeg zijn';
+  String get addressLineCannotBeEmpty => 'Adresregel mag niet leeg zijn';
 
   @override
-  String get error_address_line_too_long => 'Adresregel is te lang';
+  String get addressLineIsTooLong => 'Adresregel is te lang';
 
   @override
-  String get error_address_invalid_special_characters =>
+  String get specialCharactersAreNotAllowed =>
       'Speciale tekens zijn niet toegestaan';
 
   @override
-  String get error_address_emoji_not_allowed => 'Emoji\'s zijn niet toegestaan';
+  String get emojisAreNotAllowed => 'Emoji\'s zijn niet toegestaan';
 
   @override
-  String get error_city_cant_be_empty => 'Stad mag niet leeg zijn';
+  String get cityCannotBeEmpty => 'Stad mag niet leeg zijn';
 
   @override
-  String get error_city_too_long => 'Stadsnaam is te lang';
+  String get cityNameIsTooLong => 'Stadsnaam is te lang';
 
   @override
-  String get error_city_invalid_special_characters =>
+  String get cityContainsInvalidSpecialCharacters =>
       'Stad bevat ongeldige speciale tekens';
 
   @override
-  String get error_address_label_cant_be_empty =>
-      'Adreslabel mag niet leeg zijn';
+  String get addressLabelCannotBeEmpty => 'Adreslabel mag niet leeg zijn';
 
   @override
-  String get error_address_label_too_long => 'Adreslabel is te lang';
+  String get addressLabelIsTooLong => 'Adreslabel is te lang';
 
   @override
-  String get error_email_cant_be_empty => 'E-mail mag niet leeg zijn';
+  String get emailCannotBeEmpty => 'E-mail mag niet leeg zijn';
 
   @override
-  String get error_email_not_invalid_format => 'Ongeldig e-mailformaat';
+  String get invalidEmailFormat => 'Ongeldig e-mailformaat';
 
   @override
-  String get error_email_contains_invalid_characters =>
-      'E-mail bevat ongeldige tekens';
+  String get emailContainsInvalidCharacters => 'E-mail bevat ongeldige tekens';
 
   @override
-  String get error_email_must_contain_at_symbol => 'E-mail moet @ bevatten';
+  String get emailMustContain => 'E-mail moet @ bevatten';
 
   @override
-  String get error_email_must_be_in_lowercase =>
-      'E-mail moet in kleine letters zijn';
+  String get emailMustBeInLowercase => 'E-mail moet in kleine letters zijn';
 
   @override
-  String get error_arabic_not_allowed =>
+  String get arabicCharactersAreNotAllowed =>
       'Arabische tekens zijn niet toegestaan';
 
   @override
-  String get error_email_emoji_not_allowed =>
+  String get emojisAreNotAllowedInEmail =>
       'Emoji\'s zijn niet toegestaan in e-mail';
 
   @override
-  String get error_phone_number_cant_be_empty =>
-      'Telefoonnummer mag niet leeg zijn';
+  String get phoneNumberCannotBeEmpty => 'Telefoonnummer mag niet leeg zijn';
 
   @override
-  String get error_phone_number_invalid => 'Ongeldig telefoonnummer';
+  String get invalidPhoneNumber => 'Ongeldig telefoonnummer';
 
   @override
-  String get error_phone_number_min_length =>
+  String get phoneNumberMustBeAtLeast11Digits =>
       'Telefoonnummer moet minimaal 11 cijfers bevatten';
 
   @override
-  String get error_name_cant_be_empty => 'Naam mag niet leeg zijn';
+  String get nameCannotBeEmpty => 'Naam mag niet leeg zijn';
 
   @override
-  String get error_name_invalid => 'Ongeldige naam';
+  String get invalidName => 'Ongeldige naam';
 
   @override
-  String get error_name_too_short_at_least_3_characters =>
+  String get nameMustBeAtLeast3Characters =>
       'Naam moet minimaal 3 tekens bevatten';
 
   @override
-  String get error_name_too_long_maximum_20_characters =>
+  String get nameCannotExceed20Characters =>
       'Naam mag niet meer dan 20 tekens bevatten';
 
   @override
-  String get error_name_invalid_special_characters =>
+  String get nameContainsInvalidSpecialCharacters =>
       'Naam bevat ongeldige speciale tekens';
 
   @override
-  String get error_name_emoji_not_allowed =>
+  String get emojisAreNotAllowedInName =>
       'Emoji\'s zijn niet toegestaan in naam';
 
   @override
-  String get error_password_cant_be_empty => 'Wachtwoord mag niet leeg zijn';
+  String get passwordCannotBeEmpty => 'Wachtwoord mag niet leeg zijn';
 
   @override
-  String
-  get error_password_must_contain_uppercase_lowercase_number_and_special_character =>
+  String get passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter =>
       'Wachtwoord moet hoofdletters, kleine letters, cijfers en een speciaal teken bevatten';
 
   @override
-  String get error_password_must_be_at_least_8_characters_long =>
+  String get passwordMustBeAtLeast8CharactersLong =>
       'Wachtwoord moet minimaal 8 tekens lang zijn';
 
   @override
@@ -1374,43 +1373,43 @@ class AppLocalizationsNlBe extends AppLocalizationsNl {
   String get recommendZumiToAFriend => 'Beveel Zumi aan een vriend aan.';
 
   @override
-  String get settingsGroupAppearance => 'Uiterlijk & taal';
+  String get appearanceLanguage => 'Uiterlijk & taal';
 
   @override
-  String get settingsGroupCompression => 'Compressie';
+  String get compression => 'Compressie';
 
   @override
-  String get settingsGroupAi => 'AI op het apparaat';
+  String get onDeviceAI => 'AI op het apparaat';
 
   @override
-  String get settingsGroupPrivacy => 'Meldingen & privacy';
+  String get notificationsPrivacy => 'Meldingen & privacy';
 
   @override
-  String get settingsGroupPlans => 'Plannen & aankopen';
+  String get plansPurchases => 'Plannen & aankopen';
 
   @override
-  String get settingsGroupAbout => 'Over';
+  String get about => 'Over';
 
   @override
-  String get settingsGroupLegal => 'Juridisch';
+  String get legal => 'Juridisch';
 
   @override
-  String get settingsGroupHelp => 'Help & feedback';
+  String get helpFeedback => 'Help & feedback';
 
   @override
-  String get settingsGroupAccount => 'Account';
+  String get account => 'Account';
 
   @override
-  String get settingsAppearanceSubtitle => 'Thema en app-taal';
+  String get themeAndAppLanguage => 'Thema en app-taal';
 
   @override
-  String get settingsLanguageSubtitle => 'App-taal en -richting';
+  String get appLanguageAndDirection => 'App-taal en -richting';
 
   @override
-  String get settingsCompressionSubtitle => 'Standaardkwaliteit en -formaat';
+  String get defaultQualityAndFormat => 'Standaardkwaliteit en -formaat';
 
   @override
-  String get settingsStorageSubtitle => 'Cache- en opslaggebruik';
+  String get cacheAndStorageUsage => 'Cache- en opslaggebruik';
 
   @override
   String get aiSettings => 'AI-instellingen';
@@ -1424,17 +1423,17 @@ class AppLocalizationsNlBe extends AppLocalizationsNl {
       'Een privé-assistent voor je video\'s komt binnenkort. Je kunt hier vragen stellen over compressie, organisatie en opgeslagen video\'s.';
 
   @override
-  String get settingsAiSubtitle => 'Lokale modellen en slimme tools';
+  String get localModelsAndSmartTools => 'Lokale modellen en slimme tools';
 
   @override
-  String get exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet =>
+  String get exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet =>
       'Verken lokale modellen en toekomstige AI-tools. Deze opties zijn nog niet actief.';
 
   @override
   String get localModels => 'Lokale modellen';
 
   @override
-  String get aiModelsSubtitle =>
+  String get browseAndDownloadSupportedModels =>
       'Blader door en download ondersteunde modellen';
 
   @override
@@ -1446,7 +1445,7 @@ class AppLocalizationsNlBe extends AppLocalizationsNl {
   String get importAModel => 'Een model importeren';
 
   @override
-  String get aiImportSubtitle =>
+  String get useACompatibleModelFromYourFiles =>
       'Gebruik een compatibel model uit je bestanden';
 
   @override
@@ -1458,18 +1457,20 @@ class AppLocalizationsNlBe extends AppLocalizationsNl {
   String get smartFeatures => 'Slimme functies';
 
   @override
-  String get aiFeaturesSubtitle => 'Compressie, organisatie en zoeken';
+  String get compressionOrganizationAndSearch =>
+      'Compressie, organisatie en zoeken';
 
   @override
   String
-  get chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
+  get chooseWhichLocalAISuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
       'Kies welke lokale AI-suggesties u wilt gebruiken voor videocompressie, organisatie, naamgeving en zoeken.';
 
   @override
   String get modelPerformance => 'Modelprestaties';
 
   @override
-  String get aiRuntimeSubtitle => 'Verwerkings- en resourcevoorkeuren';
+  String get processingAndResourcePreferences =>
+      'Verwerkings- en resourcevoorkeuren';
 
   @override
   String get controlTheProcessingBackendAndResourceLimitsForSupportedModels =>
@@ -1479,7 +1480,8 @@ class AppLocalizationsNlBe extends AppLocalizationsNl {
   String get conversationSettings => 'Gespreksinstellingen';
 
   @override
-  String get aiChatSettingsSubtitle => 'Streaming, denken en responslengte';
+  String get streamingThinkingAndResponseLength =>
+      'Streaming, denken en responslengte';
 
   @override
   String
@@ -1490,7 +1492,7 @@ class AppLocalizationsNlBe extends AppLocalizationsNl {
   String get imagesAndAudio => 'Afbeeldingen en audio';
 
   @override
-  String get aiMediaSubtitle => 'Beheer multimodale invoer';
+  String get controlMultimodalInputs => 'Beheer multimodale invoer';
 
   @override
   String
@@ -1501,7 +1503,7 @@ class AppLocalizationsNlBe extends AppLocalizationsNl {
   String get semanticSearch => 'Semantisch zoeken';
 
   @override
-  String get aiSearchSubtitle => 'Embeddings en lokale indexering';
+  String get embeddingsAndLocalIndexing => 'Embeddings en lokale indexering';
 
   @override
   String
@@ -1512,7 +1514,8 @@ class AppLocalizationsNlBe extends AppLocalizationsNl {
   String get toolsAndStructuredOutput => 'Tools en gestructureerde output';
 
   @override
-  String get aiToolsSubtitle => 'Acties, schema\'s en bevestigingen';
+  String get actionsSchemasAndConfirmations =>
+      'Acties, schema\'s en bevestigingen';
 
   @override
   String
@@ -1520,371 +1523,378 @@ class AppLocalizationsNlBe extends AppLocalizationsNl {
       'Beheer ondersteunde assistentacties en gestructureerde antwoorden. Acties die bestanden beïnvloeden, vereisen uw bevestiging.';
 
   @override
-  String get aiGroupModels => 'Modellen';
+  String get models => 'Modellen';
 
   @override
-  String get aiGroupExperience => 'Assistentervaring';
+  String get assistantExperience => 'Assistentervaring';
 
   @override
-  String get aiGroupCapabilities => 'Slimme mogelijkheden';
+  String get smartCapabilities => 'Slimme mogelijkheden';
 
   @override
-  String get aiGroupPerformance => 'Prestaties';
+  String get performance => 'Prestaties';
 
   @override
-  String get compressionHistorySubtitle => 'Uw gecomprimeerde videohistorie';
+  String get yourCompressedVideoHistory => 'Uw gecomprimeerde videohistorie';
 
   @override
-  String get settingsNotificationsSubtitle => 'Voltooiings- en updatemeldingen';
+  String get completionAndUpdateAlerts => 'Voltooiings- en updatemeldingen';
 
   @override
-  String get settingsPrivacySubtitle => 'Uw gegevens blijven lokaal';
+  String get yourDataStaysLocal => 'Uw gegevens blijven lokaal';
 
   @override
-  String get plansSubtitle => 'Vergelijk plannen en upgrade';
+  String get comparePlansAndUpgrade => 'Vergelijk plannen en upgrade';
 
   @override
-  String get plansMethodsSubtitle => 'Betaalmethoden en facturering';
+  String get paymentMethodsAndBilling => 'Betaalmethoden en facturering';
 
   @override
-  String get plansRestoreSubtitle => 'Herstel uw vorige aankoop';
+  String get restoreYourPreviousPurchase => 'Herstel uw vorige aankoop';
 
   @override
-  String get aboutAppSubtitle => 'Versie- en builddetails';
+  String get versionAndBuildDetails => 'Versie- en builddetails';
 
   @override
-  String get aboutDeveloperSubtitle => 'De ontwikkelaar achter Zumi';
+  String get theDeveloperBehindZumi => 'De ontwikkelaar achter Zumi';
 
   @override
-  String get aboutLicensesSubtitle => 'Open source pakketlicenties';
+  String get openSourcePackageLicenses => 'Open source pakketlicenties';
 
   @override
-  String get legalPrivacySubtitle => 'Hoe gegevens worden behandeld';
+  String get howDataIsHandled => 'Hoe gegevens worden behandeld';
 
   @override
-  String get legalTermsSubtitle => 'Regels voor het gebruik van Zumi';
+  String get rulesForUsingZumi => 'Regels voor het gebruik van Zumi';
 
   @override
-  String get legalDataSafetySubtitle => 'Welke gegevens we verzamelen';
+  String get whatDataWeCollect => 'Welke gegevens we verzamelen';
 
   @override
-  String get legalPermissionsSubtitle => 'Waarom we toestemming nodig hebben';
+  String get whyWeNeedPermissions => 'Waarom we toestemming nodig hebben';
 
   @override
-  String get helpFaqSubtitle => 'Antwoorden op veelgestelde vragen';
+  String get answersToCommonQuestions => 'Antwoorden op veelgestelde vragen';
 
   @override
-  String get helpSupportSubtitle =>
+  String get reachTheDeveloperDirectly =>
       'Neem rechtstreeks contact op met de ontwikkelaar';
 
   @override
-  String get helpFeedbackSubtitle => 'Stuur ons uw feedback';
+  String get sendUsYourFeedback => 'Stuur ons uw feedback';
 
   @override
-  String get compressionPickVideo => 'Kies video';
+  String get pickVideo => 'Kies video';
 
   @override
-  String get compressionTargetMb => 'Doelgrootte (MB)';
+  String get targetSizeMB => 'Doelgrootte (MB)';
 
   @override
-  String get compressionStart => 'Start compressie';
+  String get startCompression => 'Start compressie';
 
   @override
-  String get compressionPause => 'Pauzeer';
+  String get pause => 'Pauzeer';
 
   @override
-  String get compressionResume => 'Hervat';
+  String get resume => 'Hervat';
 
   @override
-  String get compressionViewResult => 'Bekijk resultaat';
+  String get viewResult => 'Bekijk resultaat';
 
   @override
-  String get compressionSaveGallery => 'Opslaan in galerij';
+  String get saveToGallery => 'Opslaan in galerij';
 
   @override
-  String get compressionShare => 'Deel video';
+  String get shareVideo => 'Deel video';
 
   @override
-  String get compressionOriginalSize => 'Oorspronkelijke grootte';
+  String get originalSize => 'Oorspronkelijke grootte';
 
   @override
-  String get compressionOutputSize => 'Uitvoer grootte';
+  String get outputSize => 'Uitvoer grootte';
 
   @override
-  String get compressionEmptyHistory => 'Nog geen gecomprimeerde video\'s';
+  String get noCompressedVideosYet => 'Nog geen gecomprimeerde video\'s';
 
   @override
-  String get compressionSavedGallery => 'Opgeslagen in galerij';
+  String get savedToGallery => 'Opgeslagen in galerij';
 
   @override
-  String get compressionInvalidTarget =>
+  String get enterATargetSizeGreaterThanZero =>
       'Voer een doelgrootte groter dan nul in';
 
   @override
   String get compressionCancelled => 'Compressie geannuleerd';
 
   @override
-  String get compressionTargetExceeded =>
+  String get thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize =>
       'Deze video kon de geselecteerde grootte niet bereiken. Probeer een grotere doelgrootte.';
 
   @override
-  String get compressionTargetInfeasible =>
+  String get theSelectedSizeIsTooSmallForThisVideoChooseALargerSize =>
       'De geselecteerde grootte is te klein voor deze video. Kies een grotere grootte.';
 
   @override
-  String get compressionPreviewBefore => 'Oorspronkelijke voorbeeld';
+  String get originalPreview => 'Oorspronkelijke voorbeeld';
 
   @override
-  String get compressionPreviewAfter => 'Samengeperste preview';
+  String get compressedPreview => 'Samengeperste preview';
 
   @override
-  String get compressionPreset => 'Doelpreset';
+  String get targetPreset => 'Doelpreset';
 
   @override
-  String get compressionCustom => 'Aangepaste grootte';
+  String get customSize => 'Aangepaste grootte';
 
   @override
-  String get compressionPreviewUnavailable => 'Preview niet beschikbaar';
+  String get previewUnavailable => 'Preview niet beschikbaar';
 
   @override
-  String get compressionAdvanced => 'Geavanceerde bedieningselementen';
+  String get advancedControls => 'Geavanceerde bedieningselementen';
 
   @override
-  String get compressionAutomatic => 'Automatisch';
+  String get automatic => 'Automatisch';
 
   @override
-  String get compressionResolutionLimit => 'Maximale resolutie';
+  String get maximumResolution => 'Maximale resolutie';
 
   @override
-  String get compressionSourceResolution => 'Originele resolutie';
+  String get originalResolution => 'Originele resolutie';
 
   @override
-  String get compressionFrameRateLimit => 'Maximale framerate';
+  String get maximumFrameRate => 'Maximale framerate';
 
   @override
-  String get compressionAudioQuality => 'Audiobitrate';
+  String get audioBitrate => 'Audiobitrate';
 
   @override
-  String get compressionRemoveAudio => 'Audio verwijderen';
+  String get removeAudio => 'Audio verwijderen';
 
   @override
-  String get compressionVideoBitrateLimit => 'Maximale videobitrate (kbps)';
+  String get videoBitrateCeilingKbps => 'Maximale videobitrate (kbps)';
 
   @override
-  String get compressionHdrPolicy => 'HDR-hantering';
+  String get hdrHandling => 'HDR-hantering';
 
   @override
-  String get compressionHdrConvert => 'Converteren naar SDR';
+  String get convertToSDR => 'Converteren naar SDR';
 
   @override
-  String get compressionHdrPreserve => 'HDR behouden indien ondersteund';
+  String get keepHDRWhenSupported => 'HDR behouden indien ondersteund';
 
   @override
-  String get compressionPlanPreview => 'Voordat je begint';
+  String get beforeYouStart => 'Voordat je begint';
 
   @override
-  String get compressionPlanLoading => 'Compressieplan wordt berekend…';
+  String get calculatingCompressionPlan => 'Compressieplan wordt berekend…';
 
   @override
-  String get compressionPlanResolution => 'Geplande resolutie';
+  String get plannedResolution => 'Geplande resolutie';
 
   @override
-  String get compressionPlanVideoBitrate => 'Geplande videobitrate';
+  String get plannedVideoBitrate => 'Geplande videobitrate';
 
   @override
-  String get compressionPlanAudioBitrate => 'Geplande audiobitrate';
+  String get plannedAudioBitrate => 'Geplande audiobitrate';
 
   @override
-  String get compressionAudioConversionNote =>
+  String
+  get reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved =>
       'Herverpakking zet audio om naar AAC stereo. Dolby Atmos en DTS ruimtelijke audio worden niet behouden.';
 
   @override
-  String get compressionPlanTooSmall =>
+  String
+  get thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits =>
       'Dit doel is te klein voor een bruikbare video. Vergroot de grootte of verlaag andere limieten.';
 
   @override
-  String get compressionPlanLowQuality =>
+  String get theSelectedTargetMayReduceVideoQuality =>
       'Het geselecteerde doel kan de videokwaliteit verminderen.';
 
   @override
-  String get compressionPlanAlreadyWithinLimit =>
+  String get theSourceIsAlreadyWithinTheSizeLimit =>
       'De bron bevindt zich al binnen de grootte limiet.';
 
   @override
-  String get compressionInvalidBitrate =>
+  String get enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic =>
       'Voer een bitrate van minimaal 150 kbps in, of laat leeg voor automatisch.';
 
   @override
-  String get compressionInvalidResolution =>
+  String get enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic =>
       'Voer een even resolutie in van 240 tot 16384, of laat leeg voor automatisch.';
 
   @override
-  String get compressionSeek => 'Videopositie';
+  String get videoPosition => 'Videopositie';
 
   @override
-  String get compressionInterrupted =>
+  String
+  get aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain =>
       'Een eerdere compressie werd onderbroken. De tijdelijke bestanden zijn verwijderd; u kunt de video selecteren en het opnieuw proberen.';
 
   @override
-  String get compressionDismiss => 'Sluiten';
+  String get dismiss => 'Sluiten';
 
   @override
-  String get compressionClearHistory => 'Geschiedenis wissen';
+  String get clearHistory => 'Geschiedenis wissen';
 
   @override
-  String get compressionClearHistoryConfirm =>
+  String get removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice =>
       'Alle geschiedenisitems verwijderen? Opgeslagen video\'s blijven op uw apparaat.';
 
   @override
-  String get compressionAttempts => 'Pogingen';
+  String get attempts => 'Pogingen';
 
   @override
-  String get compressionTargetSize => 'Doelgrootte';
+  String get targetSize => 'Doelgrootte';
 
   @override
-  String get compressionOutputResolution => 'Uitvoerresolutie';
+  String get outputResolution => 'Uitvoerresolutie';
 
   @override
-  String get compressionInvalidVideo =>
+  String get thisVideoCouldNotBeReadChooseAnotherFile =>
       'Deze video kon niet worden gelezen. Kies een ander bestand.';
 
   @override
-  String get compressionInvalidOutput =>
+  String get theEncodedVideoFailedVerificationYourOriginalVideoWasNotChanged =>
       'De gecodeerde video is mislukt bij verificatie. Uw originele video is niet gewijzigd.';
 
   @override
-  String get compressionEncoderUnsupported =>
+  String
+  get thisDeviceCannotEncodeTheSelectedResolutionOrFrameRateLowerThatSettingAndTryAgain =>
       'Dit apparaat kan de geselecteerde resolutie of beeldsnelheid niet coderen. Verlaag die instelling en probeer opnieuw.';
 
   @override
-  String get compressionAudioDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisAudioFormatForCompressionRemoveAudioOrUseASupportedSource =>
       'Dit apparaat kan dit audioformaat niet decoderen voor compressie. Verwijder audio of gebruik een ondersteunde bron.';
 
   @override
-  String get compressionVideoDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisVideoFormatOrProfileForCompressionChooseAnotherSourceOrDevice =>
       'Dit apparaat kan dit videoformaat of profiel voor compressie niet decoderen. Kies een andere bron of apparaat.';
 
   @override
-  String get compressionMp4NotStreamable =>
+  String get theExportedMP4IsNotReadyForStreamingTryAnotherVideoOrDevice =>
       'De geëxporteerde MP4 is niet klaar voor streaming. Probeer een andere video of apparaat.';
 
   @override
-  String get compressionNoSpace =>
+  String get thereIsNotEnoughFreeStorageToCompressThisVideo =>
       'Er is niet genoeg vrije opslagruimte om deze video te comprimeren.';
 
   @override
-  String get compressionHdrUnsupported =>
+  String get thisDeviceCannotProcessTheSelectedHDRModeTryConvertingToSDR =>
       'Dit apparaat kan de geselecteerde HDR-modus niet verwerken. Probeer te converteren naar SDR.';
 
   @override
-  String get compressionGeneralFailure =>
+  String get compressionCouldNotBeCompletedTryAnotherSettingOrVideo =>
       'Compressie kon niet worden voltooid. Probeer een andere instelling of video.';
 
   @override
-  String get aboutIdentitySection => 'App-identiteit';
+  String get appIdentity => 'App-identiteit';
 
   @override
-  String get aboutAppName => 'App-naam';
+  String get appName => 'App-naam';
 
   @override
-  String get aboutPackageName => 'Pakketnaam';
+  String get packageName => 'Pakketnaam';
 
   @override
-  String get aboutVersion => 'Versie';
+  String get version => 'Versie';
 
   @override
-  String get aboutBuildNumber => 'Bouwnummer';
+  String get buildNumber => 'Bouwnummer';
 
   @override
-  String get aboutEnvironmentSection => 'Apparaat en build';
+  String get deviceAndBuild => 'Apparaat en build';
 
   @override
-  String get aboutOperatingSystem => 'Besturingssysteem';
+  String get operatingSystem => 'Besturingssysteem';
 
   @override
-  String get aboutOsVersion => 'OS-versie';
+  String get osVersion => 'OS-versie';
 
   @override
-  String get aboutBuildMode => 'Build-modus';
+  String get buildMode => 'Build-modus';
 
   @override
-  String get aboutDebug => 'Debug';
+  String get debug => 'Debug';
 
   @override
-  String get aboutRelease => 'Release';
+  String get release => 'Release';
 
   @override
-  String get aboutToolchainSection => 'Gemaakt met';
+  String get builtWith => 'Gemaakt met';
 
   @override
-  String get aboutInstallationSection => 'Installatie';
+  String get installation => 'Installatie';
 
   @override
-  String get aboutInstaller => 'Geïnstalleerd vanaf';
+  String get installedFrom => 'Geïnstalleerd vanaf';
 
   @override
-  String get aboutInstalledOn => 'Geïnstalleerd op';
+  String get installedOn => 'Geïnstalleerd op';
 
   @override
-  String get aboutUpdatedOn => 'Bijgewerkt op';
+  String get updatedOn => 'Bijgewerkt op';
 
   @override
-  String get aboutUnavailable => 'Niet beschikbaar';
+  String get unavailable => 'Niet beschikbaar';
 
   @override
-  String get aboutProjectSection => 'Project en ondersteuning';
+  String get projectAndSupport => 'Project en ondersteuning';
 
   @override
-  String get aboutRepository => 'GitHub-repository';
+  String get githubRepository => 'GitHub-repository';
 
   @override
-  String get aboutRepositorySubtitle => 'Bekijk Zumi-broncode';
+  String get viewZumiSourceCode => 'Bekijk Zumi-broncode';
 
   @override
-  String get aboutReadme => 'Lees de README';
+  String get readTheREADME => 'Lees de README';
 
   @override
-  String get aboutReadmeSubtitle => 'Leer over Zumi op GitHub';
+  String get learnAboutZumiOnGitHub => 'Leer over Zumi op GitHub';
 
   @override
-  String get aboutIssues => 'Meld een probleem';
+  String get reportAnIssue => 'Meld een probleem';
 
   @override
-  String get aboutIssuesSubtitle => 'Bekijk en maak GitHub-issues';
+  String get viewAndCreateGitHubIssues => 'Bekijk en maak GitHub-issues';
 
   @override
-  String get aboutLatestRelease => 'Laatste release';
+  String get latestRelease => 'Laatste release';
 
   @override
-  String get aboutLatestReleaseSubtitle => 'Bekijk releases en downloads';
+  String get viewReleasesAndDownloads => 'Bekijk releases en downloads';
 
   @override
-  String get aboutDonate => 'Ondersteun Zumi';
+  String get supportZumi => 'Ondersteun Zumi';
 
   @override
-  String get aboutDonateSubtitle => 'Open de officiële donatiepagina';
+  String get openTheOfficialDonationPage => 'Open de officiële donatiepagina';
 
   @override
-  String get aboutLinkError => 'Kon de link niet openen. Probeer het opnieuw.';
+  String get couldNotOpenTheLinkPleaseTryAgain =>
+      'Kon de link niet openen. Probeer het opnieuw.';
 
   @override
-  String get aboutDeveloperSection => 'Ontwikkelaar';
+  String get developer => 'Ontwikkelaar';
 
   @override
-  String get aboutDeveloperName => 'Mostafa Sensei';
+  String get mostafaSensei => 'Mostafa Sensei';
 
   @override
-  String get aboutDeveloperProfile => 'GitHub-profiel';
+  String get githubProfile => 'GitHub-profiel';
 
   @override
-  String get aboutDeveloperProfileSubtitle =>
+  String get seeProjectsAndContactDetails =>
       'Bekijk projecten en contactgegevens';
 
   @override
   String get maintenanceInProgress => 'Onderhoud in uitvoering';
 
   @override
-  String get maintenanceMessage =>
+  String get zumiIsTemporarilyUnavailablePleaseTryAgainLater =>
       'Zumi is tijdelijk niet beschikbaar. Probeer het later opnieuw.';
 
   @override

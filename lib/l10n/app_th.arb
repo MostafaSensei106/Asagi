@@ -17,8 +17,8 @@
       }
     }
   },
-  "fileSavedToDcim": "ไฟล์ถูกบันทึกในแกลเลอรี: {fileName}",
-  "@fileSavedToDcim": {
+  "fileSavedToGallery": "ไฟล์ถูกบันทึกในแกลเลอรี: {fileName}",
+  "@fileSavedToGallery": {
     "description": "Message shown when file is saved to gallery",
     "placeholders": {
       "fileName": {
@@ -35,8 +35,8 @@
       }
     }
   },
-  "fileAlreadySaved": "ไฟล์ถูกบันทึกแล้ว",
-  "@fileAlreadySaved": {
+  "fileIsAlreadySaved": "ไฟล์ถูกบันทึกแล้ว",
+  "@fileIsAlreadySaved": {
     "description": "Message shown when file already exists"
   },
   "error": "ข้อผิดพลาด",
@@ -67,116 +67,116 @@
   "@partial": {
     "description": "Payment status partial"
   },
-  "error_address_line_cant_be_empty": "บรรทัดที่อยู่ต้องไม่ว่าง",
-  "@error_address_line_cant_be_empty": {
+  "addressLineCannotBeEmpty": "บรรทัดที่อยู่ต้องไม่ว่าง",
+  "@addressLineCannotBeEmpty": {
     "description": "Address line empty error"
   },
-  "error_address_line_too_long": "บรรทัดที่อยู่นานเกินไป",
-  "@error_address_line_too_long": {
+  "addressLineIsTooLong": "บรรทัดที่อยู่นานเกินไป",
+  "@addressLineIsTooLong": {
     "description": "Address line too long error"
   },
-  "error_address_invalid_special_characters": "ไม่อนุญาตให้ใช้ตัวอักษรพิเศษ",
-  "@error_address_invalid_special_characters": {
+  "specialCharactersAreNotAllowed": "ไม่อนุญาตให้ใช้ตัวอักษรพิเศษ",
+  "@specialCharactersAreNotAllowed": {
     "description": "Address special characters error"
   },
-  "error_address_emoji_not_allowed": "ไม่อนุญาตให้ใช้สัญลักษณ์อีโมจิ",
-  "@error_address_emoji_not_allowed": {
+  "emojisAreNotAllowed": "ไม่อนุญาตให้ใช้สัญลักษณ์อีโมจิ",
+  "@emojisAreNotAllowed": {
     "description": "Address emoji not allowed error"
   },
-  "error_city_cant_be_empty": "เมืองต้องไม่ว่าง",
-  "@error_city_cant_be_empty": {
+  "cityCannotBeEmpty": "เมืองต้องไม่ว่าง",
+  "@cityCannotBeEmpty": {
     "description": "City empty error"
   },
-  "error_city_too_long": "ชื่อเมืองยาวเกินไป",
-  "@error_city_too_long": {
+  "cityNameIsTooLong": "ชื่อเมืองยาวเกินไป",
+  "@cityNameIsTooLong": {
     "description": "City too long error"
   },
-  "error_city_invalid_special_characters": "เมืองมีตัวอักษรพิเศษที่ไม่ถูกต้อง",
-  "@error_city_invalid_special_characters": {
+  "cityContainsInvalidSpecialCharacters": "เมืองมีตัวอักษรพิเศษที่ไม่ถูกต้อง",
+  "@cityContainsInvalidSpecialCharacters": {
     "description": "City special characters error"
   },
-  "error_address_label_cant_be_empty": "ป้ายที่อยู่ต้องไม่ว่าง",
-  "@error_address_label_cant_be_empty": {
+  "addressLabelCannotBeEmpty": "ป้ายที่อยู่ต้องไม่ว่าง",
+  "@addressLabelCannotBeEmpty": {
     "description": "Address label empty error"
   },
-  "error_address_label_too_long": "ป้ายที่อยู่นานเกินไป",
-  "@error_address_label_too_long": {
+  "addressLabelIsTooLong": "ป้ายที่อยู่นานเกินไป",
+  "@addressLabelIsTooLong": {
     "description": "Address label too long error"
   },
-  "error_email_cant_be_empty": "อีเมลต้องไม่ว่าง",
-  "@error_email_cant_be_empty": {
+  "emailCannotBeEmpty": "อีเมลต้องไม่ว่าง",
+  "@emailCannotBeEmpty": {
     "description": "Email empty error"
   },
-  "error_email_not_invalid_format": "รูปแบบอีเมลไม่ถูกต้อง",
-  "@error_email_not_invalid_format": {
+  "invalidEmailFormat": "รูปแบบอีเมลไม่ถูกต้อง",
+  "@invalidEmailFormat": {
     "description": "Email invalid format error"
   },
-  "error_email_contains_invalid_characters": "อีเมลมีอักขระที่ไม่ถูกต้อง",
-  "@error_email_contains_invalid_characters": {
+  "emailContainsInvalidCharacters": "อีเมลมีอักขระที่ไม่ถูกต้อง",
+  "@emailContainsInvalidCharacters": {
     "description": "Email invalid characters error"
   },
-  "error_email_must_contain_at_symbol": "อีเมลต้องมี @",
-  "@error_email_must_contain_at_symbol": {
+  "emailMustContain": "อีเมลต้องมี @",
+  "@emailMustContain": {
     "description": "Email missing @ error"
   },
-  "error_email_must_be_in_lowercase": "อีเมลต้องเป็นตัวพิมพ์เล็ก",
-  "@error_email_must_be_in_lowercase": {
+  "emailMustBeInLowercase": "อีเมลต้องเป็นตัวพิมพ์เล็ก",
+  "@emailMustBeInLowercase": {
     "description": "Email not in lowercase error"
   },
-  "error_arabic_not_allowed": "ไม่อนุญาตให้ใช้ตัวอักษรอาหรับ",
-  "@error_arabic_not_allowed": {
+  "arabicCharactersAreNotAllowed": "ไม่อนุญาตให้ใช้ตัวอักษรอาหรับ",
+  "@arabicCharactersAreNotAllowed": {
     "description": "Arabic characters not allowed error"
   },
-  "error_email_emoji_not_allowed": "ไม่อนุญาตให้ใช้สัญลักษณ์อีโมจิในอีเมล",
-  "@error_email_emoji_not_allowed": {
+  "emojisAreNotAllowedInEmail": "ไม่อนุญาตให้ใช้สัญลักษณ์อีโมจิในอีเมล",
+  "@emojisAreNotAllowedInEmail": {
     "description": "Email emoji not allowed error"
   },
-  "error_phone_number_cant_be_empty": "หมายเลขโทรศัพท์ไม่สามารถเว้นว่างได้",
-  "@error_phone_number_cant_be_empty": {
+  "phoneNumberCannotBeEmpty": "หมายเลขโทรศัพท์ไม่สามารถเว้นว่างได้",
+  "@phoneNumberCannotBeEmpty": {
     "description": "Phone number empty error"
   },
-  "error_phone_number_invalid": "หมายเลขโทรศัพท์ไม่ถูกต้อง",
-  "@error_phone_number_invalid": {
+  "invalidPhoneNumber": "หมายเลขโทรศัพท์ไม่ถูกต้อง",
+  "@invalidPhoneNumber": {
     "description": "Phone number invalid error"
   },
-  "error_phone_number_min_length": "หมายเลขโทรศัพท์ต้องมีอย่างน้อย 11 หลัก",
-  "@error_phone_number_min_length": {
+  "phoneNumberMustBeAtLeast11Digits": "หมายเลขโทรศัพท์ต้องมีอย่างน้อย 11 หลัก",
+  "@phoneNumberMustBeAtLeast11Digits": {
     "description": "Phone number min length error"
   },
-  "error_name_cant_be_empty": "ชื่อไม่สามารถเว้นว่างได้",
-  "@error_name_cant_be_empty": {
+  "nameCannotBeEmpty": "ชื่อไม่สามารถเว้นว่างได้",
+  "@nameCannotBeEmpty": {
     "description": "Name empty error"
   },
-  "error_name_invalid": "ชื่อไม่ถูกต้อง",
-  "@error_name_invalid": {
+  "invalidName": "ชื่อไม่ถูกต้อง",
+  "@invalidName": {
     "description": "Name invalid error"
   },
-  "error_name_too_short_at_least_3_characters": "ชื่อต้องมีอย่างน้อย 3 ตัวอักษร",
-  "@error_name_too_short_at_least_3_characters": {
+  "nameMustBeAtLeast3Characters": "ชื่อต้องมีอย่างน้อย 3 ตัวอักษร",
+  "@nameMustBeAtLeast3Characters": {
     "description": "Name too short error"
   },
-  "error_name_too_long_maximum_20_characters": "ชื่อไม่สามารถเกิน 20 ตัวอักษร",
-  "@error_name_too_long_maximum_20_characters": {
+  "nameCannotExceed20Characters": "ชื่อไม่สามารถเกิน 20 ตัวอักษร",
+  "@nameCannotExceed20Characters": {
     "description": "Name too long error"
   },
-  "error_name_invalid_special_characters": "ชื่อมีอักขระพิเศษที่ไม่ถูกต้อง",
-  "@error_name_invalid_special_characters": {
+  "nameContainsInvalidSpecialCharacters": "ชื่อมีอักขระพิเศษที่ไม่ถูกต้อง",
+  "@nameContainsInvalidSpecialCharacters": {
     "description": "Name special characters error"
   },
-  "error_name_emoji_not_allowed": "ไม่อนุญาตให้ใช้สัญลักษณ์อีโมจิในชื่อ",
-  "@error_name_emoji_not_allowed": {
+  "emojisAreNotAllowedInName": "ไม่อนุญาตให้ใช้สัญลักษณ์อีโมจิในชื่อ",
+  "@emojisAreNotAllowedInName": {
     "description": "Name emoji not allowed error"
   },
-  "error_password_cant_be_empty": "รหัสผ่านไม่สามารถเว้นว่างได้",
-  "@error_password_cant_be_empty": {
+  "passwordCannotBeEmpty": "รหัสผ่านไม่สามารถเว้นว่างได้",
+  "@passwordCannotBeEmpty": {
     "description": "Password empty error"
   },
-  "error_password_must_contain_uppercase_lowercase_number_and_special_character": "รหัสผ่านต้องประกอบด้วยอักษรตัวใหญ่ ตัวเล็ก ตัวเลข และอักขระพิเศษ",
-  "@error_password_must_contain_uppercase_lowercase_number_and_special_character": {
+  "passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter": "รหัสผ่านต้องประกอบด้วยอักษรตัวใหญ่ ตัวเล็ก ตัวเลข และอักขระพิเศษ",
+  "@passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter": {
     "description": "Password complex requirements error"
   },
-  "error_password_must_be_at_least_8_characters_long": "รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร",
-  "@error_password_must_be_at_least_8_characters_long": {
+  "passwordMustBeAtLeast8CharactersLong": "รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร",
+  "@passwordMustBeAtLeast8CharactersLong": {
     "description": "Password min length error"
   },
   "noInternetConnection": "ไม่มีการเชื่อมต่ออินเทอร์เน็ต",
@@ -463,250 +463,250 @@
   "@recommendZumiToAFriend": {
     "description": "Share app page description"
   },
-  "settingsGroupAppearance": "ลักษณะและภาษา",
-  "@settingsGroupAppearance": {
+  "appearanceLanguage": "ลักษณะและภาษา",
+  "@appearanceLanguage": {
     "description": "Settings hub section label"
   },
-  "settingsGroupCompression": "การบีบอัด",
-  "@settingsGroupCompression": {
+  "compression": "การบีบอัด",
+  "@compression": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAi": "AI บนอุปกรณ์",
-  "@settingsGroupAi": {
+  "onDeviceAI": "AI บนอุปกรณ์",
+  "@onDeviceAI": {
     "description": "Settings hub section label"
   },
-  "settingsGroupPrivacy": "การแจ้งเตือนและความเป็นส่วนตัว",
-  "@settingsGroupPrivacy": {
+  "notificationsPrivacy": "การแจ้งเตือนและความเป็นส่วนตัว",
+  "@notificationsPrivacy": {
     "description": "Settings hub section label"
   },
-  "settingsGroupPlans": "แผนและการซื้อ",
-  "@settingsGroupPlans": {
+  "plansPurchases": "แผนและการซื้อ",
+  "@plansPurchases": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAbout": "เกี่ยวกับ",
-  "@settingsGroupAbout": {
+  "about": "เกี่ยวกับ",
+  "@about": {
     "description": "Settings hub section label"
   },
-  "settingsGroupLegal": "กฎหมาย",
-  "@settingsGroupLegal": {
+  "legal": "กฎหมาย",
+  "@legal": {
     "description": "Settings hub section label"
   },
-  "settingsGroupHelp": "ความช่วยเหลือและข้อเสนอแนะ",
-  "@settingsGroupHelp": {
+  "helpFeedback": "ความช่วยเหลือและข้อเสนอแนะ",
+  "@helpFeedback": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAccount": "บัญชี",
-  "@settingsGroupAccount": {
+  "account": "บัญชี",
+  "@account": {
     "description": "Settings hub section label"
   },
-  "settingsAppearanceSubtitle": "ธีมและภาษาของแอป",
-  "@settingsAppearanceSubtitle": {
+  "themeAndAppLanguage": "ธีมและภาษาของแอป",
+  "@themeAndAppLanguage": {
     "description": "Settings hub row summary"
   },
-  "settingsLanguageSubtitle": "ภาษาและทิศทางของแอป",
-  "@settingsLanguageSubtitle": {
+  "appLanguageAndDirection": "ภาษาและทิศทางของแอป",
+  "@appLanguageAndDirection": {
     "description": "Settings hub row summary"
   },
-  "settingsCompressionSubtitle": "คุณภาพและรูปแบบเริ่มต้น",
-  "@settingsCompressionSubtitle": {
+  "defaultQualityAndFormat": "คุณภาพและรูปแบบเริ่มต้น",
+  "@defaultQualityAndFormat": {
     "description": "Settings hub row summary"
   },
-  "settingsStorageSubtitle": "การใช้งานแคชและพื้นที่จัดเก็บ",
-  "@settingsStorageSubtitle": {
+  "cacheAndStorageUsage": "การใช้งานแคชและพื้นที่จัดเก็บ",
+  "@cacheAndStorageUsage": {
     "description": "Settings hub row summary"
   },
   "aiSettings": "การตั้งค่า AI",
   "zumiAssistant": "ผู้ช่วย Zumi",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "ผู้ช่วยส่วนตัวสำหรับวิดีโอของคุณกำลังจะมาเร็ว ๆ นี้ คุณจะสามารถถามเกี่ยวกับการบีบอัด การจัดระเบียบ และวิดีโอที่บันทึกไว้ที่นี่",
-  "settingsAiSubtitle": "โมเดลท้องถิ่นและเครื่องมืออัจฉริยะ",
-  "exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet": "สำรวจโมเดลท้องถิ่นและเครื่องมือ AI ในอนาคต ตัวเลือกเหล่านี้ยังไม่เปิดใช้งาน",
+  "localModelsAndSmartTools": "โมเดลท้องถิ่นและเครื่องมืออัจฉริยะ",
+  "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "สำรวจโมเดลท้องถิ่นและเครื่องมือ AI ในอนาคต ตัวเลือกเหล่านี้ยังไม่เปิดใช้งาน",
   "localModels": "โมเดลท้องถิ่น",
-  "aiModelsSubtitle": "เรียกดูและดาวน์โหลดโมเดลที่รองรับ",
+  "browseAndDownloadSupportedModels": "เรียกดูและดาวน์โหลดโมเดลที่รองรับ",
   "chooseASupportedModelDownloadItToThisDeviceAndManageInstalledModelsHere": "เลือกโมเดลที่รองรับ ดาวน์โหลดไปยังอุปกรณ์นี้ และจัดการโมเดลที่ติดตั้งที่นี่",
   "importAModel": "นำเข้าโมเดล",
-  "aiImportSubtitle": "ใช้โมเดลที่เข้ากันได้จากไฟล์ของคุณ",
+  "useACompatibleModelFromYourFiles": "ใช้โมเดลที่เข้ากันได้จากไฟล์ของคุณ",
   "selectACompatibleLocalModelFileAndReviewItsRequirementsBeforeUsingIt": "เลือกไฟล์โมเดลท้องถิ่นที่เข้ากันได้และตรวจสอบข้อกำหนดก่อนใช้งาน",
   "smartFeatures": "คุณสมบัติอัจฉริยะ",
-  "aiFeaturesSubtitle": "การบีบอัด การจัดระเบียบ และการค้นหา",
-  "chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "เลือกคำแนะนำ AI ท้องถิ่นที่ต้องการใช้สำหรับการบีบอัดวิดีโอ การจัดระเบียบ การตั้งชื่อ และการค้นหา",
+  "compressionOrganizationAndSearch": "การบีบอัด การจัดระเบียบ และการค้นหา",
+  "chooseWhichLocalAISuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "เลือกคำแนะนำ AI ท้องถิ่นที่ต้องการใช้สำหรับการบีบอัดวิดีโอ การจัดระเบียบ การตั้งชื่อ และการค้นหา",
   "modelPerformance": "ประสิทธิภาพของโมเดล",
-  "aiRuntimeSubtitle": "การตั้งค่าการประมวลผลและทรัพยากร",
+  "processingAndResourcePreferences": "การตั้งค่าการประมวลผลและทรัพยากร",
   "controlTheProcessingBackendAndResourceLimitsForSupportedModels": "ควบคุมแบ็กเอนด์การประมวลผลและขีดจำกัดทรัพยากรสำหรับโมเดลที่รองรับ",
   "conversationSettings": "การตั้งค่าการสนทนา",
-  "aiChatSettingsSubtitle": "การสตรีม การคิด และความยาวของการตอบสนอง",
+  "streamingThinkingAndResponseLength": "การสตรีม การคิด และความยาวของการตอบสนอง",
   "configureHowTheAssistantRespondsIncludingStreamingThinkingModeSamplingAndResponseLimits": "กำหนดค่าการตอบสนองของผู้ช่วย รวมถึงการสตรีม โหมดการคิด การสุ่มตัวอย่าง และข้อจำกัดการตอบสนอง",
   "imagesAndAudio": "ภาพและเสียง",
-  "aiMediaSubtitle": "ควบคุมอินพุตมัลติโมดอล",
+  "controlMultimodalInputs": "ควบคุมอินพุตมัลติโมดอล",
   "chooseWhetherCompatibleModelsCanAnalyzeSelectedImagesAndAudioFromYourVideos": "เลือกว่ารุ่นที่เข้ากันได้สามารถวิเคราะห์ภาพและเสียงที่เลือกจากวิดีโอของคุณได้หรือไม่",
   "semanticSearch": "การค้นหาเชิงความหมาย",
-  "aiSearchSubtitle": "การฝังและการจัดทำดัชนีในพื้นที่",
+  "embeddingsAndLocalIndexing": "การฝังและการจัดทำดัชนีในพื้นที่",
   "manageTheLocalEmbeddingModelAndSearchIndexForFindingVideosAndMomentsByMeaning": "จัดการโมเดลฝังในเครื่องและดัชนีการค้นหาเพื่อค้นหาวิดีโอและช่วงเวลาโดยความหมาย",
   "toolsAndStructuredOutput": "เครื่องมือและผลลัพธ์ที่มีโครงสร้าง",
-  "aiToolsSubtitle": "การดำเนินการ โครงร่าง และการยืนยัน",
+  "actionsSchemasAndConfirmations": "การดำเนินการ โครงร่าง และการยืนยัน",
   "manageSupportedAssistantActionsAndStructuredResponsesActionsThatAffectFilesWillRequireYourConfirmation": "จัดการการดำเนินการผู้ช่วยที่รองรับและการตอบสนองแบบมีโครงสร้าง การดำเนินการที่ส่งผลต่อไฟล์จะต้องได้รับการยืนยันจากคุณ",
-  "aiGroupModels": "โมเดล",
-  "aiGroupExperience": "ประสบการณ์ผู้ช่วย",
-  "aiGroupCapabilities": "ความสามารถอัจฉริยะ",
-  "aiGroupPerformance": "ประสิทธิภาพ",
-  "compressionHistorySubtitle": "ประวิดีโอที่บีบอัดของคุณ",
-  "@compressionHistorySubtitle": {
+  "models": "โมเดล",
+  "assistantExperience": "ประสบการณ์ผู้ช่วย",
+  "smartCapabilities": "ความสามารถอัจฉริยะ",
+  "performance": "ประสิทธิภาพ",
+  "yourCompressedVideoHistory": "ประวิดีโอที่บีบอัดของคุณ",
+  "@yourCompressedVideoHistory": {
     "description": "Settings hub row summary"
   },
-  "settingsNotificationsSubtitle": "การแจ้งเตือนการทำงานเสร็จสิ้นและอัปเดต",
-  "@settingsNotificationsSubtitle": {
+  "completionAndUpdateAlerts": "การแจ้งเตือนการทำงานเสร็จสิ้นและอัปเดต",
+  "@completionAndUpdateAlerts": {
     "description": "Settings hub row summary"
   },
-  "settingsPrivacySubtitle": "ข้อมูลของคุณอยู่ในเครื่อง",
-  "@settingsPrivacySubtitle": {
+  "yourDataStaysLocal": "ข้อมูลของคุณอยู่ในเครื่อง",
+  "@yourDataStaysLocal": {
     "description": "Settings hub row summary"
   },
-  "plansSubtitle": "เปรียบเทียบแผนและอัปเกรด",
-  "@plansSubtitle": {
+  "comparePlansAndUpgrade": "เปรียบเทียบแผนและอัปเกรด",
+  "@comparePlansAndUpgrade": {
     "description": "Settings hub row summary"
   },
-  "plansMethodsSubtitle": "วิธีการชำระเงินและการเรียกเก็บเงิน",
-  "@plansMethodsSubtitle": {
+  "paymentMethodsAndBilling": "วิธีการชำระเงินและการเรียกเก็บเงิน",
+  "@paymentMethodsAndBilling": {
     "description": "Settings hub row summary"
   },
-  "plansRestoreSubtitle": "กู้คืนการซื้อก่อนหน้าของคุณ",
-  "@plansRestoreSubtitle": {
+  "restoreYourPreviousPurchase": "กู้คืนการซื้อก่อนหน้าของคุณ",
+  "@restoreYourPreviousPurchase": {
     "description": "Settings hub row summary"
   },
-  "aboutAppSubtitle": "รายละเอียดเวอร์ชันและบิลด์",
-  "@aboutAppSubtitle": {
+  "versionAndBuildDetails": "รายละเอียดเวอร์ชันและบิลด์",
+  "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "aboutDeveloperSubtitle": "นักพัฒนาผู้สร้าง Zumi",
-  "@aboutDeveloperSubtitle": {
+  "theDeveloperBehindZumi": "นักพัฒนาผู้สร้าง Zumi",
+  "@theDeveloperBehindZumi": {
     "description": "Settings hub row summary"
   },
-  "aboutLicensesSubtitle": "ใบอนุญาตแพ็กเกจโอเพ่นซอร์ส",
-  "@aboutLicensesSubtitle": {
+  "openSourcePackageLicenses": "ใบอนุญาตแพ็กเกจโอเพ่นซอร์ส",
+  "@openSourcePackageLicenses": {
     "description": "Settings hub row summary"
   },
-  "legalPrivacySubtitle": "วิธีการจัดการข้อมูล",
-  "@legalPrivacySubtitle": {
+  "howDataIsHandled": "วิธีการจัดการข้อมูล",
+  "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "legalTermsSubtitle": "กฎสำหรับการใช้ Zumi",
-  "@legalTermsSubtitle": {
+  "rulesForUsingZumi": "กฎสำหรับการใช้ Zumi",
+  "@rulesForUsingZumi": {
     "description": "Settings hub row summary"
   },
-  "legalDataSafetySubtitle": "ข้อมูลที่เรารวบรวม",
-  "@legalDataSafetySubtitle": {
+  "whatDataWeCollect": "ข้อมูลที่เรารวบรวม",
+  "@whatDataWeCollect": {
     "description": "Settings hub row summary"
   },
-  "legalPermissionsSubtitle": "ทำไมเราจึงต้องการสิทธิ์",
-  "@legalPermissionsSubtitle": {
+  "whyWeNeedPermissions": "ทำไมเราจึงต้องการสิทธิ์",
+  "@whyWeNeedPermissions": {
     "description": "Settings hub row summary"
   },
-  "helpFaqSubtitle": "คำตอบสำหรับคำถามที่พบบ่อย",
-  "@helpFaqSubtitle": {
+  "answersToCommonQuestions": "คำตอบสำหรับคำถามที่พบบ่อย",
+  "@answersToCommonQuestions": {
     "description": "Settings hub row summary"
   },
-  "helpSupportSubtitle": "ติดต่อผู้พัฒนาโดยตรง",
-  "@helpSupportSubtitle": {
+  "reachTheDeveloperDirectly": "ติดต่อผู้พัฒนาโดยตรง",
+  "@reachTheDeveloperDirectly": {
     "description": "Settings hub row summary"
   },
-  "helpFeedbackSubtitle": "ส่งความคิดเห็นของคุณให้เรา",
-  "@helpFeedbackSubtitle": {
+  "sendUsYourFeedback": "ส่งความคิดเห็นของคุณให้เรา",
+  "@sendUsYourFeedback": {
     "description": "Settings hub row summary"
   },
-  "compressionPickVideo": "เลือกวิดีโอ",
-  "compressionTargetMb": "ขนาดเป้าหมาย (MB)",
-  "compressionStart": "เริ่มการบีบอัด",
-  "compressionPause": "หยุดชั่วคราว",
-  "compressionResume": "ดำเนินการต่อ",
-  "compressionViewResult": "ดูผลลัพธ์",
-  "compressionSaveGallery": "บันทึกไปที่แกลเลอรี",
-  "compressionShare": "แชร์วิดีโอ",
-  "compressionOriginalSize": "ขนาดต้นฉบับ",
-  "compressionOutputSize": "ขนาดที่ส่งออก",
-  "compressionEmptyHistory": "ยังไม่มีวิดีโอที่บีบอัด",
-  "compressionSavedGallery": "บันทึกไปที่แกลเลอรีแล้ว",
-  "compressionInvalidTarget": "กรอกขนาดเป้าหมายที่มากกว่าศูนย์",
+  "pickVideo": "เลือกวิดีโอ",
+  "targetSizeMB": "ขนาดเป้าหมาย (MB)",
+  "startCompression": "เริ่มการบีบอัด",
+  "pause": "หยุดชั่วคราว",
+  "resume": "ดำเนินการต่อ",
+  "viewResult": "ดูผลลัพธ์",
+  "saveToGallery": "บันทึกไปที่แกลเลอรี",
+  "shareVideo": "แชร์วิดีโอ",
+  "originalSize": "ขนาดต้นฉบับ",
+  "outputSize": "ขนาดที่ส่งออก",
+  "noCompressedVideosYet": "ยังไม่มีวิดีโอที่บีบอัด",
+  "savedToGallery": "บันทึกไปที่แกลเลอรีแล้ว",
+  "enterATargetSizeGreaterThanZero": "กรอกขนาดเป้าหมายที่มากกว่าศูนย์",
   "compressionCancelled": "การบีบอัดถูกยกเลิก",
-  "compressionTargetExceeded": "วิดีโอนี้ไม่สามารถถึงขนาดที่เลือก ลองขนาดเป้าหมายที่ใหญ่ขึ้น",
-  "compressionTargetInfeasible": "ขนาดที่เลือกเล็กเกินไปสำหรับวิดีโอนี้ เลือกขนาดที่ใหญ่ขึ้น",
-  "compressionPreviewBefore": "ตัวอย่างต้นฉบับ",
-  "compressionPreviewAfter": "ตัวอย่างที่บีบอัดแล้ว",
-  "compressionPreset": "ค่ากำหนดเป้าหมาย",
-  "compressionCustom": "ขนาดกำหนดเอง",
-  "compressionPreviewUnavailable": "ไม่สามารถดูตัวอย่างได้",
-  "compressionAdvanced": "การควบคุมขั้นสูง",
-  "compressionAutomatic": "อัตโนมัติ",
-  "compressionResolutionLimit": "ความละเอียดสูงสุด",
-  "compressionSourceResolution": "ความละเอียดต้นฉบับ",
-  "compressionFrameRateLimit": "อัตราเฟรมสูงสุด",
-  "compressionAudioQuality": "อัตราบิตเสียง",
-  "compressionRemoveAudio": "ลบเสียง",
-  "compressionVideoBitrateLimit": "เพดานอัตราบิตวิดีโอ (kbps)",
-  "compressionHdrPolicy": "การจัดการ HDR",
-  "compressionHdrConvert": "แปลงเป็น SDR",
-  "compressionHdrPreserve": "เก็บ HDR เมื่อรองรับ",
-  "compressionPlanPreview": "ก่อนที่คุณจะเริ่ม",
-  "compressionPlanLoading": "กำลังคำนวณแผนการบีบอัด…",
-  "compressionPlanResolution": "ความละเอียดที่วางแผนไว้",
-  "compressionPlanVideoBitrate": "อัตราบิตวิดีโอที่วางแผนไว้",
-  "compressionPlanAudioBitrate": "อัตราบิตเสียงที่วางแผนไว้",
-  "compressionAudioConversionNote": "การเข้ารหัสซ้ำจะแปลงเสียงเป็น AAC สเตอริโอ Dolby Atmos และ DTS เสียงแบบสเปเชียลจะไม่ถูกเก็บรักษาไว้",
-  "compressionPlanTooSmall": "เป้าหมายนี้มีขนาดเล็กเกินไปสำหรับวิดีโอที่ใช้งานได้ เพิ่มขนาดหรือปรับขีดจำกัดอื่น ๆ ให้ต่ำลง",
-  "compressionPlanLowQuality": "เป้าหมายที่เลือกอาจลดคุณภาพของวิดีโอ",
-  "compressionPlanAlreadyWithinLimit": "ต้นฉบับอยู่ภายในขีดจำกัดขนาดแล้ว",
-  "compressionInvalidBitrate": "กรอกอัตราบิตอย่างน้อย 150 kbps หรือเว้นว่างเพื่อปรับอัตโนมัติ",
-  "compressionInvalidResolution": "กรอกความละเอียดแบบคู่ตั้งแต่ 240 ถึง 16384 หรือเว้นว่างเพื่อปรับอัตโนมัติ",
-  "compressionSeek": "ตำแหน่งวิดีโอ",
-  "compressionInterrupted": "การบีบอัดก่อนหน้านี้ถูกขัดจังหวะ ไฟล์ชั่วคราวของมันถูกลบแล้ว; คุณสามารถเลือกวิดีโอและลองอีกครั้ง",
-  "compressionDismiss": "ปิด",
-  "compressionClearHistory": "ล้างประวัติ",
-  "compressionClearHistoryConfirm": "ลบประวัติทั้งหมดหรือไม่? วิดีโอที่บันทึกไว้จะยังคงอยู่บนอุปกรณ์ของคุณ",
-  "compressionAttempts": "ความพยายาม",
-  "compressionTargetSize": "ขนาดเป้าหมาย",
-  "compressionOutputResolution": "ความละเอียดเอาต์พุต",
-  "compressionInvalidVideo": "ไม่สามารถอ่านวิดีโอนี้ได้ กรุณาเลือกไฟล์อื่น",
-  "compressionInvalidOutput": "วิดีโอที่เข้ารหัสล้มเหลวในการตรวจสอบ วิดีโอต้นฉบับของคุณไม่ได้ถูกเปลี่ยน",
-  "compressionEncoderUnsupported": "อุปกรณ์นี้ไม่สามารถเข้ารหัสความละเอียดหรืออัตราเฟรมที่เลือกได้ ลดการตั้งค่านั้นแล้วลองอีกครั้ง",
-  "compressionAudioDecoderUnsupported": "อุปกรณ์นี้ไม่สามารถถอดรหัสรูปแบบเสียงนี้สำหรับการบีบอัด ลบเสียงออกหรือใช้แหล่งที่รองรับ",
-  "compressionVideoDecoderUnsupported": "อุปกรณ์นี้ไม่สามารถถอดรหัสรูปแบบวิดีโอนี้หรือโปรไฟล์สำหรับการบีบอัดได้ กรุณาเลือกแหล่งข้อมูลหรืออุปกรณ์อื่น",
-  "compressionMp4NotStreamable": "ไฟล์ MP4 ที่ส่งออกยังไม่พร้อมสำหรับการสตรีม ลองใช้วิดีโอหรืออุปกรณ์อื่น",
-  "compressionNoSpace": "พื้นที่เก็บข้อมูลว่างไม่เพียงพอสำหรับการบีบอัดวิดีโอนี้",
-  "compressionHdrUnsupported": "อุปกรณ์นี้ไม่สามารถประมวลผลโหมด HDR ที่เลือกได้ ลองแปลงเป็น SDR",
-  "compressionGeneralFailure": "ไม่สามารถทำการบีบอัดเสร็จสมบูรณ์ได้ ลองใช้การตั้งค่าหรือวิดีโออื่น",
-  "aboutIdentitySection": "ตัวตนของแอป",
-  "aboutAppName": "ชื่อแอป",
-  "aboutPackageName": "ชื่อแพ็กเกจ",
-  "aboutVersion": "เวอร์ชัน",
-  "aboutBuildNumber": "หมายเลขบิลด์",
-  "aboutEnvironmentSection": "อุปกรณ์และบิลด์",
-  "aboutOperatingSystem": "ระบบปฏิบัติการ",
-  "aboutOsVersion": "เวอร์ชัน OS",
-  "aboutBuildMode": "โหมดบิลด์",
-  "aboutDebug": "ดีบัก",
-  "aboutRelease": "ปล่อย",
-  "aboutToolchainSection": "สร้างด้วย",
-  "aboutInstallationSection": "การติดตั้ง",
-  "aboutInstaller": "ติดตั้งจาก",
-  "aboutInstalledOn": "ติดตั้งเมื่อ",
-  "aboutUpdatedOn": "ปรับปรุงเมื่อ",
-  "aboutUnavailable": "ไม่สามารถใช้งานได้",
-  "aboutProjectSection": "โครงการและการสนับสนุน",
-  "aboutRepository": "คลังเก็บ GitHub",
-  "aboutRepositorySubtitle": "ดูซอร์สโค้ดของ Zumi",
-  "aboutReadme": "อ่าน README",
-  "aboutReadmeSubtitle": "เรียนรู้เกี่ยวกับ Zumi บน GitHub",
-  "aboutIssues": "รายงานปัญหา",
-  "aboutIssuesSubtitle": "ดูและสร้างปัญหาใน GitHub",
-  "aboutLatestRelease": "รุ่นล่าสุด",
-  "aboutLatestReleaseSubtitle": "ดูรุ่นและดาวน์โหลด",
-  "aboutDonate": "สนับสนุน Zumi",
-  "aboutDonateSubtitle": "เปิดหน้าบริจาคอย่างเป็นทางการ",
-  "aboutLinkError": "ไม่สามารถเปิดลิงก์ได้ โปรดลองอีกครั้ง",
-  "aboutDeveloperSection": "นักพัฒนา",
-  "aboutDeveloperName": "Mostafa Sensei",
-  "aboutDeveloperProfile": "โปรไฟล์ GitHub",
-  "aboutDeveloperProfileSubtitle": "ดูโครงการและรายละเอียดการติดต่อ",
+  "thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize": "วิดีโอนี้ไม่สามารถถึงขนาดที่เลือก ลองขนาดเป้าหมายที่ใหญ่ขึ้น",
+  "theSelectedSizeIsTooSmallForThisVideoChooseALargerSize": "ขนาดที่เลือกเล็กเกินไปสำหรับวิดีโอนี้ เลือกขนาดที่ใหญ่ขึ้น",
+  "originalPreview": "ตัวอย่างต้นฉบับ",
+  "compressedPreview": "ตัวอย่างที่บีบอัดแล้ว",
+  "targetPreset": "ค่ากำหนดเป้าหมาย",
+  "customSize": "ขนาดกำหนดเอง",
+  "previewUnavailable": "ไม่สามารถดูตัวอย่างได้",
+  "advancedControls": "การควบคุมขั้นสูง",
+  "automatic": "อัตโนมัติ",
+  "maximumResolution": "ความละเอียดสูงสุด",
+  "originalResolution": "ความละเอียดต้นฉบับ",
+  "maximumFrameRate": "อัตราเฟรมสูงสุด",
+  "audioBitrate": "อัตราบิตเสียง",
+  "removeAudio": "ลบเสียง",
+  "videoBitrateCeilingKbps": "เพดานอัตราบิตวิดีโอ (kbps)",
+  "hdrHandling": "การจัดการ HDR",
+  "convertToSDR": "แปลงเป็น SDR",
+  "keepHDRWhenSupported": "เก็บ HDR เมื่อรองรับ",
+  "beforeYouStart": "ก่อนที่คุณจะเริ่ม",
+  "calculatingCompressionPlan": "กำลังคำนวณแผนการบีบอัด…",
+  "plannedResolution": "ความละเอียดที่วางแผนไว้",
+  "plannedVideoBitrate": "อัตราบิตวิดีโอที่วางแผนไว้",
+  "plannedAudioBitrate": "อัตราบิตเสียงที่วางแผนไว้",
+  "reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved": "การเข้ารหัสซ้ำจะแปลงเสียงเป็น AAC สเตอริโอ Dolby Atmos และ DTS เสียงแบบสเปเชียลจะไม่ถูกเก็บรักษาไว้",
+  "thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits": "เป้าหมายนี้มีขนาดเล็กเกินไปสำหรับวิดีโอที่ใช้งานได้ เพิ่มขนาดหรือปรับขีดจำกัดอื่น ๆ ให้ต่ำลง",
+  "theSelectedTargetMayReduceVideoQuality": "เป้าหมายที่เลือกอาจลดคุณภาพของวิดีโอ",
+  "theSourceIsAlreadyWithinTheSizeLimit": "ต้นฉบับอยู่ภายในขีดจำกัดขนาดแล้ว",
+  "enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic": "กรอกอัตราบิตอย่างน้อย 150 kbps หรือเว้นว่างเพื่อปรับอัตโนมัติ",
+  "enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic": "กรอกความละเอียดแบบคู่ตั้งแต่ 240 ถึง 16384 หรือเว้นว่างเพื่อปรับอัตโนมัติ",
+  "videoPosition": "ตำแหน่งวิดีโอ",
+  "aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain": "การบีบอัดก่อนหน้านี้ถูกขัดจังหวะ ไฟล์ชั่วคราวของมันถูกลบแล้ว; คุณสามารถเลือกวิดีโอและลองอีกครั้ง",
+  "dismiss": "ปิด",
+  "clearHistory": "ล้างประวัติ",
+  "removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice": "ลบประวัติทั้งหมดหรือไม่? วิดีโอที่บันทึกไว้จะยังคงอยู่บนอุปกรณ์ของคุณ",
+  "attempts": "ความพยายาม",
+  "targetSize": "ขนาดเป้าหมาย",
+  "outputResolution": "ความละเอียดเอาต์พุต",
+  "thisVideoCouldNotBeReadChooseAnotherFile": "ไม่สามารถอ่านวิดีโอนี้ได้ กรุณาเลือกไฟล์อื่น",
+  "theEncodedVideoFailedVerificationYourOriginalVideoWasNotChanged": "วิดีโอที่เข้ารหัสล้มเหลวในการตรวจสอบ วิดีโอต้นฉบับของคุณไม่ได้ถูกเปลี่ยน",
+  "thisDeviceCannotEncodeTheSelectedResolutionOrFrameRateLowerThatSettingAndTryAgain": "อุปกรณ์นี้ไม่สามารถเข้ารหัสความละเอียดหรืออัตราเฟรมที่เลือกได้ ลดการตั้งค่านั้นแล้วลองอีกครั้ง",
+  "thisDeviceCannotDecodeThisAudioFormatForCompressionRemoveAudioOrUseASupportedSource": "อุปกรณ์นี้ไม่สามารถถอดรหัสรูปแบบเสียงนี้สำหรับการบีบอัด ลบเสียงออกหรือใช้แหล่งที่รองรับ",
+  "thisDeviceCannotDecodeThisVideoFormatOrProfileForCompressionChooseAnotherSourceOrDevice": "อุปกรณ์นี้ไม่สามารถถอดรหัสรูปแบบวิดีโอนี้หรือโปรไฟล์สำหรับการบีบอัดได้ กรุณาเลือกแหล่งข้อมูลหรืออุปกรณ์อื่น",
+  "theExportedMP4IsNotReadyForStreamingTryAnotherVideoOrDevice": "ไฟล์ MP4 ที่ส่งออกยังไม่พร้อมสำหรับการสตรีม ลองใช้วิดีโอหรืออุปกรณ์อื่น",
+  "thereIsNotEnoughFreeStorageToCompressThisVideo": "พื้นที่เก็บข้อมูลว่างไม่เพียงพอสำหรับการบีบอัดวิดีโอนี้",
+  "thisDeviceCannotProcessTheSelectedHDRModeTryConvertingToSDR": "อุปกรณ์นี้ไม่สามารถประมวลผลโหมด HDR ที่เลือกได้ ลองแปลงเป็น SDR",
+  "compressionCouldNotBeCompletedTryAnotherSettingOrVideo": "ไม่สามารถทำการบีบอัดเสร็จสมบูรณ์ได้ ลองใช้การตั้งค่าหรือวิดีโออื่น",
+  "appIdentity": "ตัวตนของแอป",
+  "appName": "ชื่อแอป",
+  "packageName": "ชื่อแพ็กเกจ",
+  "version": "เวอร์ชัน",
+  "buildNumber": "หมายเลขบิลด์",
+  "deviceAndBuild": "อุปกรณ์และบิลด์",
+  "operatingSystem": "ระบบปฏิบัติการ",
+  "osVersion": "เวอร์ชัน OS",
+  "buildMode": "โหมดบิลด์",
+  "debug": "ดีบัก",
+  "release": "ปล่อย",
+  "builtWith": "สร้างด้วย",
+  "installation": "การติดตั้ง",
+  "installedFrom": "ติดตั้งจาก",
+  "installedOn": "ติดตั้งเมื่อ",
+  "updatedOn": "ปรับปรุงเมื่อ",
+  "unavailable": "ไม่สามารถใช้งานได้",
+  "projectAndSupport": "โครงการและการสนับสนุน",
+  "githubRepository": "คลังเก็บ GitHub",
+  "viewZumiSourceCode": "ดูซอร์สโค้ดของ Zumi",
+  "readTheREADME": "อ่าน README",
+  "learnAboutZumiOnGitHub": "เรียนรู้เกี่ยวกับ Zumi บน GitHub",
+  "reportAnIssue": "รายงานปัญหา",
+  "viewAndCreateGitHubIssues": "ดูและสร้างปัญหาใน GitHub",
+  "latestRelease": "รุ่นล่าสุด",
+  "viewReleasesAndDownloads": "ดูรุ่นและดาวน์โหลด",
+  "supportZumi": "สนับสนุน Zumi",
+  "openTheOfficialDonationPage": "เปิดหน้าบริจาคอย่างเป็นทางการ",
+  "couldNotOpenTheLinkPleaseTryAgain": "ไม่สามารถเปิดลิงก์ได้ โปรดลองอีกครั้ง",
+  "developer": "นักพัฒนา",
+  "mostafaSensei": "Mostafa Sensei",
+  "githubProfile": "โปรไฟล์ GitHub",
+  "seeProjectsAndContactDetails": "ดูโครงการและรายละเอียดการติดต่อ",
   "maintenanceInProgress": "อยู่ระหว่างการบำรุงรักษา",
-  "maintenanceMessage": "Zumi ไม่สามารถใช้งานได้ชั่วคราว โปรดลองอีกครั้งภายหลัง",
+  "zumiIsTemporarilyUnavailablePleaseTryAgainLater": "Zumi ไม่สามารถใช้งานได้ชั่วคราว โปรดลองอีกครั้งภายหลัง",
   "comingSoon": "เร็วๆ นี้",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"

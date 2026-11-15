@@ -177,46 +177,43 @@ final class SettingsPage extends StatelessWidget {
     AppRouteSection.core => ExpressiveIconShape.blossom,
   };
 
-  String _titleFor(
-    BuildContext context,
-    AppRouteSection section,
-  ) => switch (section) {
-    AppRouteSection.appearance => context.localeKeys.settingsGroupAppearance,
-    AppRouteSection.compression => context.localeKeys.settingsGroupCompression,
-    AppRouteSection.ai => context.localeKeys.settingsGroupAi,
-    AppRouteSection.privacy => context.localeKeys.settingsGroupPrivacy,
-    AppRouteSection.plans => context.localeKeys.settingsGroupPlans,
-    AppRouteSection.about => context.localeKeys.settingsGroupAbout,
-    AppRouteSection.legal => context.localeKeys.settingsGroupLegal,
-    AppRouteSection.help => context.localeKeys.settingsGroupHelp,
-    AppRouteSection.core => context.localeKeys.settings,
-  };
+  String _titleFor(BuildContext context, AppRouteSection section) =>
+      switch (section) {
+        AppRouteSection.appearance => context.localeKeys.appearanceLanguage,
+        AppRouteSection.compression => context.localeKeys.compression,
+        AppRouteSection.ai => context.localeKeys.onDeviceAI,
+        AppRouteSection.privacy => context.localeKeys.notificationsPrivacy,
+        AppRouteSection.plans => context.localeKeys.plansPurchases,
+        AppRouteSection.about => context.localeKeys.about,
+        AppRouteSection.legal => context.localeKeys.legal,
+        AppRouteSection.help => context.localeKeys.helpFeedback,
+        AppRouteSection.core => context.localeKeys.settings,
+      };
 
   String _routeSubtitleFor(BuildContext context, AppRoute route) =>
       switch (route.metadata.name) {
-        'settings_appearance' => context.localeKeys.settingsAppearanceSubtitle,
-        'settings_language' => context.localeKeys.settingsLanguageSubtitle,
-        'settings_compression' =>
-          context.localeKeys.settingsCompressionSubtitle,
-        'settings_storage' => context.localeKeys.settingsStorageSubtitle,
-        'settings_ai' => context.localeKeys.settingsAiSubtitle,
-        'compression_history' => context.localeKeys.compressionHistorySubtitle,
+        'settings_appearance' => context.localeKeys.themeAndAppLanguage,
+        'settings_language' => context.localeKeys.appLanguageAndDirection,
+        'settings_compression' => context.localeKeys.defaultQualityAndFormat,
+        'settings_storage' => context.localeKeys.cacheAndStorageUsage,
+        'settings_ai' => context.localeKeys.localModelsAndSmartTools,
+        'compression_history' => context.localeKeys.yourCompressedVideoHistory,
         'settings_notifications' =>
-          context.localeKeys.settingsNotificationsSubtitle,
-        'settings_privacy' => context.localeKeys.settingsPrivacySubtitle,
-        'plans' => context.localeKeys.plansSubtitle,
-        'plans_methods' => context.localeKeys.plansMethodsSubtitle,
-        'plans_restore' => context.localeKeys.plansRestoreSubtitle,
-        'about_app' => context.localeKeys.aboutAppSubtitle,
-        'about_developer' => context.localeKeys.aboutDeveloperSubtitle,
-        'about_licenses' => context.localeKeys.aboutLicensesSubtitle,
-        'legal_privacy_policy' => context.localeKeys.legalPrivacySubtitle,
-        'legal_terms' => context.localeKeys.legalTermsSubtitle,
-        'legal_data_safety' => context.localeKeys.legalDataSafetySubtitle,
-        'legal_permissions' => context.localeKeys.legalPermissionsSubtitle,
-        'help_faq' => context.localeKeys.helpFaqSubtitle,
-        'help_support' => context.localeKeys.helpSupportSubtitle,
-        'help_feedback' => context.localeKeys.helpFeedbackSubtitle,
+          context.localeKeys.completionAndUpdateAlerts,
+        'settings_privacy' => context.localeKeys.yourDataStaysLocal,
+        'plans' => context.localeKeys.comparePlansAndUpgrade,
+        'plans_methods' => context.localeKeys.paymentMethodsAndBilling,
+        'plans_restore' => context.localeKeys.restoreYourPreviousPurchase,
+        'about_app' => context.localeKeys.versionAndBuildDetails,
+        'about_developer' => context.localeKeys.theDeveloperBehindZumi,
+        'about_licenses' => context.localeKeys.openSourcePackageLicenses,
+        'legal_privacy_policy' => context.localeKeys.howDataIsHandled,
+        'legal_terms' => context.localeKeys.rulesForUsingZumi,
+        'legal_data_safety' => context.localeKeys.whatDataWeCollect,
+        'legal_permissions' => context.localeKeys.whyWeNeedPermissions,
+        'help_faq' => context.localeKeys.answersToCommonQuestions,
+        'help_support' => context.localeKeys.reachTheDeveloperDirectly,
+        'help_feedback' => context.localeKeys.sendUsYourFeedback,
         _ => '',
       };
 
@@ -228,8 +225,7 @@ final class SettingsPage extends StatelessWidget {
         'settings_storage' => context.localeKeys.storageCleanup,
         'settings_ai' => context.localeKeys.aiSettings,
         'compression_history' => context.localeKeys.compressionHistory,
-        'settings_notifications' =>
-          context.localeKeys.notifications,
+        'settings_notifications' => context.localeKeys.notifications,
         'settings_privacy' => context.localeKeys.privacy,
         'plans' => context.localeKeys.plans,
         'plans_methods' => context.localeKeys.paymentMethods,

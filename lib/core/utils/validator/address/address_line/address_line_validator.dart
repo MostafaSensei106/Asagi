@@ -43,12 +43,11 @@ extension AddressLineValidatorErrorX on AddressLineValidatorError {
   String message(BuildContext context) {
     final l = context.localeKeys;
     return switch (this) {
-      AddressLineValidatorError.empty => l.error_address_line_cant_be_empty,
-      AddressLineValidatorError.tooLong => l.error_address_line_too_long,
+      AddressLineValidatorError.empty => l.addressLineCannotBeEmpty,
+      AddressLineValidatorError.tooLong => l.addressLineIsTooLong,
       AddressLineValidatorError.invalidSpecialChars =>
-        l.error_address_invalid_special_characters,
-      AddressLineValidatorError.emojiNotAllowed =>
-        l.error_address_emoji_not_allowed,
+        l.specialCharactersAreNotAllowed,
+      AddressLineValidatorError.emojiNotAllowed => l.emojisAreNotAllowed,
     };
   }
 }

@@ -15,7 +15,8 @@ final class PermissionsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppPlaceholderPage(
       title: context.localeKeys.permissions,
-      description: context.localeKeys.runtimePermissionsZumiRequestsAndWhyEachIsNeeded,
+      description:
+          context.localeKeys.runtimePermissionsZumiRequestsAndWhyEachIsNeeded,
       icon: ZumiIcons.permissions,
     );
   }

@@ -43,14 +43,13 @@ extension NameValidatorErrorExtension on NameValidatorError {
   String message(BuildContext context) {
     final l = context.localeKeys;
     return switch (this) {
-      NameValidatorError.empty => l.error_name_cant_be_empty,
-      NameValidatorError.invalid => l.error_name_invalid,
-      NameValidatorError.tooShort =>
-        l.error_name_too_short_at_least_3_characters,
-      NameValidatorError.tooLong => l.error_name_too_long_maximum_20_characters,
+      NameValidatorError.empty => l.nameCannotBeEmpty,
+      NameValidatorError.invalid => l.invalidName,
+      NameValidatorError.tooShort => l.nameMustBeAtLeast3Characters,
+      NameValidatorError.tooLong => l.nameCannotExceed20Characters,
       NameValidatorError.invalidSpecialChars =>
-        l.error_name_invalid_special_characters,
-      NameValidatorError.emojiNotAllowed => l.error_name_emoji_not_allowed,
+        l.nameContainsInvalidSpecialCharacters,
+      NameValidatorError.emojiNotAllowed => l.emojisAreNotAllowedInName,
     };
   }
 }

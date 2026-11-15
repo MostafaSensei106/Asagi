@@ -30,7 +30,7 @@ extension ConfirmPasswordValidationErrorExtension
   String message(BuildContext context) {
     final l = context.localeKeys;
     return switch (this) {
-      ConfirmPasswordValidationError.empty => l.error_password_cant_be_empty,
+      ConfirmPasswordValidationError.empty => l.passwordCannotBeEmpty,
       ConfirmPasswordValidationError.mismatch =>
         'Passwords do not match', // Add to l10n later if needed
     };

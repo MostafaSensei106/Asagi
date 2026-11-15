@@ -17,8 +17,8 @@
       }
     }
   },
-  "fileSavedToDcim": "갤러리에 파일 저장됨: {fileName}",
-  "@fileSavedToDcim": {
+  "fileSavedToGallery": "갤러리에 파일 저장됨: {fileName}",
+  "@fileSavedToGallery": {
     "description": "Message shown when file is saved to gallery",
     "placeholders": {
       "fileName": {
@@ -35,8 +35,8 @@
       }
     }
   },
-  "fileAlreadySaved": "파일이 이미 저장되어 있습니다",
-  "@fileAlreadySaved": {
+  "fileIsAlreadySaved": "파일이 이미 저장되어 있습니다",
+  "@fileIsAlreadySaved": {
     "description": "Message shown when file already exists"
   },
   "error": "오류",
@@ -67,116 +67,116 @@
   "@partial": {
     "description": "Payment status partial"
   },
-  "error_address_line_cant_be_empty": "주소 줄은 비워둘 수 없습니다",
-  "@error_address_line_cant_be_empty": {
+  "addressLineCannotBeEmpty": "주소 줄은 비워둘 수 없습니다",
+  "@addressLineCannotBeEmpty": {
     "description": "Address line empty error"
   },
-  "error_address_line_too_long": "주소 줄이 너무 깁니다",
-  "@error_address_line_too_long": {
+  "addressLineIsTooLong": "주소 줄이 너무 깁니다",
+  "@addressLineIsTooLong": {
     "description": "Address line too long error"
   },
-  "error_address_invalid_special_characters": "특수 문자는 허용되지 않습니다",
-  "@error_address_invalid_special_characters": {
+  "specialCharactersAreNotAllowed": "특수 문자는 허용되지 않습니다",
+  "@specialCharactersAreNotAllowed": {
     "description": "Address special characters error"
   },
-  "error_address_emoji_not_allowed": "이모지는 허용되지 않습니다",
-  "@error_address_emoji_not_allowed": {
+  "emojisAreNotAllowed": "이모지는 허용되지 않습니다",
+  "@emojisAreNotAllowed": {
     "description": "Address emoji not allowed error"
   },
-  "error_city_cant_be_empty": "도시는 비워둘 수 없습니다",
-  "@error_city_cant_be_empty": {
+  "cityCannotBeEmpty": "도시는 비워둘 수 없습니다",
+  "@cityCannotBeEmpty": {
     "description": "City empty error"
   },
-  "error_city_too_long": "도시 이름이 너무 깁니다",
-  "@error_city_too_long": {
+  "cityNameIsTooLong": "도시 이름이 너무 깁니다",
+  "@cityNameIsTooLong": {
     "description": "City too long error"
   },
-  "error_city_invalid_special_characters": "도시에는 잘못된 특수 문자가 포함되어 있습니다",
-  "@error_city_invalid_special_characters": {
+  "cityContainsInvalidSpecialCharacters": "도시에는 잘못된 특수 문자가 포함되어 있습니다",
+  "@cityContainsInvalidSpecialCharacters": {
     "description": "City special characters error"
   },
-  "error_address_label_cant_be_empty": "주소 라벨은 비워둘 수 없습니다",
-  "@error_address_label_cant_be_empty": {
+  "addressLabelCannotBeEmpty": "주소 라벨은 비워둘 수 없습니다",
+  "@addressLabelCannotBeEmpty": {
     "description": "Address label empty error"
   },
-  "error_address_label_too_long": "주소 라벨이 너무 깁니다",
-  "@error_address_label_too_long": {
+  "addressLabelIsTooLong": "주소 라벨이 너무 깁니다",
+  "@addressLabelIsTooLong": {
     "description": "Address label too long error"
   },
-  "error_email_cant_be_empty": "이메일은 비워둘 수 없습니다",
-  "@error_email_cant_be_empty": {
+  "emailCannotBeEmpty": "이메일은 비워둘 수 없습니다",
+  "@emailCannotBeEmpty": {
     "description": "Email empty error"
   },
-  "error_email_not_invalid_format": "잘못된 이메일 형식",
-  "@error_email_not_invalid_format": {
+  "invalidEmailFormat": "잘못된 이메일 형식",
+  "@invalidEmailFormat": {
     "description": "Email invalid format error"
   },
-  "error_email_contains_invalid_characters": "이메일에 유효하지 않은 문자가 포함되어 있습니다",
-  "@error_email_contains_invalid_characters": {
+  "emailContainsInvalidCharacters": "이메일에 유효하지 않은 문자가 포함되어 있습니다",
+  "@emailContainsInvalidCharacters": {
     "description": "Email invalid characters error"
   },
-  "error_email_must_contain_at_symbol": "이메일에는 @가 포함되어야 합니다",
-  "@error_email_must_contain_at_symbol": {
+  "emailMustContain": "이메일에는 @가 포함되어야 합니다",
+  "@emailMustContain": {
     "description": "Email missing @ error"
   },
-  "error_email_must_be_in_lowercase": "이메일은 소문자여야 합니다",
-  "@error_email_must_be_in_lowercase": {
+  "emailMustBeInLowercase": "이메일은 소문자여야 합니다",
+  "@emailMustBeInLowercase": {
     "description": "Email not in lowercase error"
   },
-  "error_arabic_not_allowed": "아랍어 문자는 허용되지 않습니다",
-  "@error_arabic_not_allowed": {
+  "arabicCharactersAreNotAllowed": "아랍어 문자는 허용되지 않습니다",
+  "@arabicCharactersAreNotAllowed": {
     "description": "Arabic characters not allowed error"
   },
-  "error_email_emoji_not_allowed": "이모지는 이메일에 허용되지 않습니다",
-  "@error_email_emoji_not_allowed": {
+  "emojisAreNotAllowedInEmail": "이모지는 이메일에 허용되지 않습니다",
+  "@emojisAreNotAllowedInEmail": {
     "description": "Email emoji not allowed error"
   },
-  "error_phone_number_cant_be_empty": "전화번호는 비워둘 수 없습니다",
-  "@error_phone_number_cant_be_empty": {
+  "phoneNumberCannotBeEmpty": "전화번호는 비워둘 수 없습니다",
+  "@phoneNumberCannotBeEmpty": {
     "description": "Phone number empty error"
   },
-  "error_phone_number_invalid": "유효하지 않은 전화번호입니다",
-  "@error_phone_number_invalid": {
+  "invalidPhoneNumber": "유효하지 않은 전화번호입니다",
+  "@invalidPhoneNumber": {
     "description": "Phone number invalid error"
   },
-  "error_phone_number_min_length": "전화번호는 최소 11자리여야 합니다",
-  "@error_phone_number_min_length": {
+  "phoneNumberMustBeAtLeast11Digits": "전화번호는 최소 11자리여야 합니다",
+  "@phoneNumberMustBeAtLeast11Digits": {
     "description": "Phone number min length error"
   },
-  "error_name_cant_be_empty": "이름은 비워둘 수 없습니다",
-  "@error_name_cant_be_empty": {
+  "nameCannotBeEmpty": "이름은 비워둘 수 없습니다",
+  "@nameCannotBeEmpty": {
     "description": "Name empty error"
   },
-  "error_name_invalid": "유효하지 않은 이름입니다",
-  "@error_name_invalid": {
+  "invalidName": "유효하지 않은 이름입니다",
+  "@invalidName": {
     "description": "Name invalid error"
   },
-  "error_name_too_short_at_least_3_characters": "이름은 최소 3자여야 합니다",
-  "@error_name_too_short_at_least_3_characters": {
+  "nameMustBeAtLeast3Characters": "이름은 최소 3자여야 합니다",
+  "@nameMustBeAtLeast3Characters": {
     "description": "Name too short error"
   },
-  "error_name_too_long_maximum_20_characters": "이름은 20자를 초과할 수 없습니다",
-  "@error_name_too_long_maximum_20_characters": {
+  "nameCannotExceed20Characters": "이름은 20자를 초과할 수 없습니다",
+  "@nameCannotExceed20Characters": {
     "description": "Name too long error"
   },
-  "error_name_invalid_special_characters": "이름에 유효하지 않은 특수 문자가 포함되어 있습니다",
-  "@error_name_invalid_special_characters": {
+  "nameContainsInvalidSpecialCharacters": "이름에 유효하지 않은 특수 문자가 포함되어 있습니다",
+  "@nameContainsInvalidSpecialCharacters": {
     "description": "Name special characters error"
   },
-  "error_name_emoji_not_allowed": "이모지는 이름에 허용되지 않습니다",
-  "@error_name_emoji_not_allowed": {
+  "emojisAreNotAllowedInName": "이모지는 이름에 허용되지 않습니다",
+  "@emojisAreNotAllowedInName": {
     "description": "Name emoji not allowed error"
   },
-  "error_password_cant_be_empty": "비밀번호는 비워둘 수 없습니다",
-  "@error_password_cant_be_empty": {
+  "passwordCannotBeEmpty": "비밀번호는 비워둘 수 없습니다",
+  "@passwordCannotBeEmpty": {
     "description": "Password empty error"
   },
-  "error_password_must_contain_uppercase_lowercase_number_and_special_character": "비밀번호에는 대문자, 소문자, 숫자 및 특수 문자가 포함되어야 합니다",
-  "@error_password_must_contain_uppercase_lowercase_number_and_special_character": {
+  "passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter": "비밀번호에는 대문자, 소문자, 숫자 및 특수 문자가 포함되어야 합니다",
+  "@passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter": {
     "description": "Password complex requirements error"
   },
-  "error_password_must_be_at_least_8_characters_long": "비밀번호는 최소 8자 이상이어야 합니다",
-  "@error_password_must_be_at_least_8_characters_long": {
+  "passwordMustBeAtLeast8CharactersLong": "비밀번호는 최소 8자 이상이어야 합니다",
+  "@passwordMustBeAtLeast8CharactersLong": {
     "description": "Password min length error"
   },
   "noInternetConnection": "인터넷 연결 없음",
@@ -463,250 +463,250 @@
   "@recommendZumiToAFriend": {
     "description": "Share app page description"
   },
-  "settingsGroupAppearance": "외관 및 언어",
-  "@settingsGroupAppearance": {
+  "appearanceLanguage": "외관 및 언어",
+  "@appearanceLanguage": {
     "description": "Settings hub section label"
   },
-  "settingsGroupCompression": "압축",
-  "@settingsGroupCompression": {
+  "compression": "압축",
+  "@compression": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAi": "기기 내 AI",
-  "@settingsGroupAi": {
+  "onDeviceAI": "기기 내 AI",
+  "@onDeviceAI": {
     "description": "Settings hub section label"
   },
-  "settingsGroupPrivacy": "알림 및 개인정보",
-  "@settingsGroupPrivacy": {
+  "notificationsPrivacy": "알림 및 개인정보",
+  "@notificationsPrivacy": {
     "description": "Settings hub section label"
   },
-  "settingsGroupPlans": "요금제 및 구매",
-  "@settingsGroupPlans": {
+  "plansPurchases": "요금제 및 구매",
+  "@plansPurchases": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAbout": "정보",
-  "@settingsGroupAbout": {
+  "about": "정보",
+  "@about": {
     "description": "Settings hub section label"
   },
-  "settingsGroupLegal": "법적 사항",
-  "@settingsGroupLegal": {
+  "legal": "법적 사항",
+  "@legal": {
     "description": "Settings hub section label"
   },
-  "settingsGroupHelp": "도움말 및 피드백",
-  "@settingsGroupHelp": {
+  "helpFeedback": "도움말 및 피드백",
+  "@helpFeedback": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAccount": "계정",
-  "@settingsGroupAccount": {
+  "account": "계정",
+  "@account": {
     "description": "Settings hub section label"
   },
-  "settingsAppearanceSubtitle": "테마 및 앱 언어",
-  "@settingsAppearanceSubtitle": {
+  "themeAndAppLanguage": "테마 및 앱 언어",
+  "@themeAndAppLanguage": {
     "description": "Settings hub row summary"
   },
-  "settingsLanguageSubtitle": "앱 언어 및 방향",
-  "@settingsLanguageSubtitle": {
+  "appLanguageAndDirection": "앱 언어 및 방향",
+  "@appLanguageAndDirection": {
     "description": "Settings hub row summary"
   },
-  "settingsCompressionSubtitle": "기본 품질 및 형식",
-  "@settingsCompressionSubtitle": {
+  "defaultQualityAndFormat": "기본 품질 및 형식",
+  "@defaultQualityAndFormat": {
     "description": "Settings hub row summary"
   },
-  "settingsStorageSubtitle": "캐시 및 저장소 사용량",
-  "@settingsStorageSubtitle": {
+  "cacheAndStorageUsage": "캐시 및 저장소 사용량",
+  "@cacheAndStorageUsage": {
     "description": "Settings hub row summary"
   },
   "aiSettings": "AI 설정",
   "zumiAssistant": "Zumi 어시스턴트",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "곧 여러분의 동영상을 위한 개인 비서가 제공됩니다. 여기에서 압축, 정리 및 저장된 동영상에 대해 물어볼 수 있습니다.",
-  "settingsAiSubtitle": "로컬 모델 및 스마트 도구",
-  "exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet": "로컬 모델과 미래 AI 도구를 탐험하세요. 이 옵션들은 아직 활성화되어 있지 않습니다.",
+  "localModelsAndSmartTools": "로컬 모델 및 스마트 도구",
+  "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "로컬 모델과 미래 AI 도구를 탐험하세요. 이 옵션들은 아직 활성화되어 있지 않습니다.",
   "localModels": "로컬 모델",
-  "aiModelsSubtitle": "지원되는 모델 찾아보기 및 다운로드",
+  "browseAndDownloadSupportedModels": "지원되는 모델 찾아보기 및 다운로드",
   "chooseASupportedModelDownloadItToThisDeviceAndManageInstalledModelsHere": "지원되는 모델을 선택하고 이 장치에 다운로드한 후 설치된 모델을 관리하세요.",
   "importAModel": "모델 가져오기",
-  "aiImportSubtitle": "파일에서 호환 가능한 모델을 사용하세요",
+  "useACompatibleModelFromYourFiles": "파일에서 호환 가능한 모델을 사용하세요",
   "selectACompatibleLocalModelFileAndReviewItsRequirementsBeforeUsingIt": "호환되는 로컬 모델 파일을 선택하고 사용하기 전에 요구 사항을 검토하십시오.",
   "smartFeatures": "스마트 기능",
-  "aiFeaturesSubtitle": "압축, 조직화 및 검색",
-  "chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "비디오 압축, 조직화, 이름 지정 및 검색을 위해 사용할 로컬 AI 제안을 선택하십시오.",
+  "compressionOrganizationAndSearch": "압축, 조직화 및 검색",
+  "chooseWhichLocalAISuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "비디오 압축, 조직화, 이름 지정 및 검색을 위해 사용할 로컬 AI 제안을 선택하십시오.",
   "modelPerformance": "모델 성능",
-  "aiRuntimeSubtitle": "처리 및 리소스 환경 설정",
+  "processingAndResourcePreferences": "처리 및 리소스 환경 설정",
   "controlTheProcessingBackendAndResourceLimitsForSupportedModels": "지원되는 모델의 처리 백엔드와 리소스 한도를 제어하십시오.",
   "conversationSettings": "대화 설정",
-  "aiChatSettingsSubtitle": "스트리밍, 사고 및 응답 길이",
+  "streamingThinkingAndResponseLength": "스트리밍, 사고 및 응답 길이",
   "configureHowTheAssistantRespondsIncludingStreamingThinkingModeSamplingAndResponseLimits": "조수가 응답하는 방식을 구성합니다. 여기에는 스트리밍, 사고 모드, 샘플링 및 응답 제한이 포함됩니다.",
   "imagesAndAudio": "이미지 및 오디오",
-  "aiMediaSubtitle": "멀티모달 입력 제어",
+  "controlMultimodalInputs": "멀티모달 입력 제어",
   "chooseWhetherCompatibleModelsCanAnalyzeSelectedImagesAndAudioFromYourVideos": "호환되는 모델이 비디오에서 선택한 이미지와 오디오를 분석할 수 있는지 여부를 선택합니다.",
   "semanticSearch": "시맨틱 검색",
-  "aiSearchSubtitle": "임베딩 및 로컬 인덱싱",
+  "embeddingsAndLocalIndexing": "임베딩 및 로컬 인덱싱",
   "manageTheLocalEmbeddingModelAndSearchIndexForFindingVideosAndMomentsByMeaning": "의미에 따라 비디오와 순간을 찾기 위한 로컬 임베딩 모델 및 검색 인덱스를 관리합니다.",
   "toolsAndStructuredOutput": "도구 및 구조화된 출력",
-  "aiToolsSubtitle": "작업, 스키마 및 확인",
+  "actionsSchemasAndConfirmations": "작업, 스키마 및 확인",
   "manageSupportedAssistantActionsAndStructuredResponsesActionsThatAffectFilesWillRequireYourConfirmation": "지원되는 어시스턴트 작업 및 구조화된 응답을 관리합니다. 파일에 영향을 주는 작업은 확인이 필요합니다.",
-  "aiGroupModels": "모델",
-  "aiGroupExperience": "어시스턴트 경험",
-  "aiGroupCapabilities": "스마트 기능",
-  "aiGroupPerformance": "성능",
-  "compressionHistorySubtitle": "압축된 동영상 기록",
-  "@compressionHistorySubtitle": {
+  "models": "모델",
+  "assistantExperience": "어시스턴트 경험",
+  "smartCapabilities": "스마트 기능",
+  "performance": "성능",
+  "yourCompressedVideoHistory": "압축된 동영상 기록",
+  "@yourCompressedVideoHistory": {
     "description": "Settings hub row summary"
   },
-  "settingsNotificationsSubtitle": "완료 및 업데이트 알림",
-  "@settingsNotificationsSubtitle": {
+  "completionAndUpdateAlerts": "완료 및 업데이트 알림",
+  "@completionAndUpdateAlerts": {
     "description": "Settings hub row summary"
   },
-  "settingsPrivacySubtitle": "데이터는 로컬에 저장됩니다",
-  "@settingsPrivacySubtitle": {
+  "yourDataStaysLocal": "데이터는 로컬에 저장됩니다",
+  "@yourDataStaysLocal": {
     "description": "Settings hub row summary"
   },
-  "plansSubtitle": "요금제 비교 및 업그레이드",
-  "@plansSubtitle": {
+  "comparePlansAndUpgrade": "요금제 비교 및 업그레이드",
+  "@comparePlansAndUpgrade": {
     "description": "Settings hub row summary"
   },
-  "plansMethodsSubtitle": "결제 수단 및 청구",
-  "@plansMethodsSubtitle": {
+  "paymentMethodsAndBilling": "결제 수단 및 청구",
+  "@paymentMethodsAndBilling": {
     "description": "Settings hub row summary"
   },
-  "plansRestoreSubtitle": "이전 구매 복원",
-  "@plansRestoreSubtitle": {
+  "restoreYourPreviousPurchase": "이전 구매 복원",
+  "@restoreYourPreviousPurchase": {
     "description": "Settings hub row summary"
   },
-  "aboutAppSubtitle": "버전 및 빌드 정보",
-  "@aboutAppSubtitle": {
+  "versionAndBuildDetails": "버전 및 빌드 정보",
+  "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "aboutDeveloperSubtitle": "Zumi 개발자",
-  "@aboutDeveloperSubtitle": {
+  "theDeveloperBehindZumi": "Zumi 개발자",
+  "@theDeveloperBehindZumi": {
     "description": "Settings hub row summary"
   },
-  "aboutLicensesSubtitle": "오픈 소스 패키지 라이선스",
-  "@aboutLicensesSubtitle": {
+  "openSourcePackageLicenses": "오픈 소스 패키지 라이선스",
+  "@openSourcePackageLicenses": {
     "description": "Settings hub row summary"
   },
-  "legalPrivacySubtitle": "데이터 처리 방식",
-  "@legalPrivacySubtitle": {
+  "howDataIsHandled": "데이터 처리 방식",
+  "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "legalTermsSubtitle": "Zumi 사용 규칙",
-  "@legalTermsSubtitle": {
+  "rulesForUsingZumi": "Zumi 사용 규칙",
+  "@rulesForUsingZumi": {
     "description": "Settings hub row summary"
   },
-  "legalDataSafetySubtitle": "수집하는 데이터",
-  "@legalDataSafetySubtitle": {
+  "whatDataWeCollect": "수집하는 데이터",
+  "@whatDataWeCollect": {
     "description": "Settings hub row summary"
   },
-  "legalPermissionsSubtitle": "왜 권한이 필요한가",
-  "@legalPermissionsSubtitle": {
+  "whyWeNeedPermissions": "왜 권한이 필요한가",
+  "@whyWeNeedPermissions": {
     "description": "Settings hub row summary"
   },
-  "helpFaqSubtitle": "자주 묻는 질문에 대한 답변",
-  "@helpFaqSubtitle": {
+  "answersToCommonQuestions": "자주 묻는 질문에 대한 답변",
+  "@answersToCommonQuestions": {
     "description": "Settings hub row summary"
   },
-  "helpSupportSubtitle": "개발자에게 직접 문의하기",
-  "@helpSupportSubtitle": {
+  "reachTheDeveloperDirectly": "개발자에게 직접 문의하기",
+  "@reachTheDeveloperDirectly": {
     "description": "Settings hub row summary"
   },
-  "helpFeedbackSubtitle": "피드백 보내기",
-  "@helpFeedbackSubtitle": {
+  "sendUsYourFeedback": "피드백 보내기",
+  "@sendUsYourFeedback": {
     "description": "Settings hub row summary"
   },
-  "compressionPickVideo": "비디오 선택",
-  "compressionTargetMb": "목표 크기 (MB)",
-  "compressionStart": "압축 시작",
-  "compressionPause": "일시정지",
-  "compressionResume": "다시 시작",
-  "compressionViewResult": "결과 보기",
-  "compressionSaveGallery": "갤러리에 저장",
-  "compressionShare": "동영상 공유",
-  "compressionOriginalSize": "원본 크기",
-  "compressionOutputSize": "출력 크기",
-  "compressionEmptyHistory": "아직 압축된 동영상 없음",
-  "compressionSavedGallery": "갤러리에 저장됨",
-  "compressionInvalidTarget": "0보다 큰 목표 크기를 입력하세요",
+  "pickVideo": "비디오 선택",
+  "targetSizeMB": "목표 크기 (MB)",
+  "startCompression": "압축 시작",
+  "pause": "일시정지",
+  "resume": "다시 시작",
+  "viewResult": "결과 보기",
+  "saveToGallery": "갤러리에 저장",
+  "shareVideo": "동영상 공유",
+  "originalSize": "원본 크기",
+  "outputSize": "출력 크기",
+  "noCompressedVideosYet": "아직 압축된 동영상 없음",
+  "savedToGallery": "갤러리에 저장됨",
+  "enterATargetSizeGreaterThanZero": "0보다 큰 목표 크기를 입력하세요",
   "compressionCancelled": "압축 취소됨",
-  "compressionTargetExceeded": "이 동영상은 선택한 크기에 도달할 수 없습니다. 더 큰 목표 크기를 시도하세요.",
-  "compressionTargetInfeasible": "선택한 크기는 이 동영상에 너무 작습니다. 더 큰 크기를 선택하세요.",
-  "compressionPreviewBefore": "원본 미리보기",
-  "compressionPreviewAfter": "압축 미리보기",
-  "compressionPreset": "대상 프리셋",
-  "compressionCustom": "사용자 지정 크기",
-  "compressionPreviewUnavailable": "미리보기 사용 불가",
-  "compressionAdvanced": "고급 컨트롤",
-  "compressionAutomatic": "자동",
-  "compressionResolutionLimit": "최대 해상도",
-  "compressionSourceResolution": "원본 해상도",
-  "compressionFrameRateLimit": "최대 프레임 레이트",
-  "compressionAudioQuality": "오디오 비트레이트",
-  "compressionRemoveAudio": "오디오 제거",
-  "compressionVideoBitrateLimit": "비디오 비트레이트 상한(kbps)",
-  "compressionHdrPolicy": "HDR 처리",
-  "compressionHdrConvert": "SDR로 변환",
-  "compressionHdrPreserve": "지원되는 경우 HDR 유지",
-  "compressionPlanPreview": "시작하기 전에",
-  "compressionPlanLoading": "압축 계획 계산 중…",
-  "compressionPlanResolution": "계획된 해상도",
-  "compressionPlanVideoBitrate": "계획된 비디오 비트레이트",
-  "compressionPlanAudioBitrate": "계획된 오디오 비트레이트",
-  "compressionAudioConversionNote": "재인코딩 시 오디오가 AAC 스테레오로 변환됩니다. Dolby Atmos 및 DTS 공간 오디오는 유지되지 않습니다.",
-  "compressionPlanTooSmall": "이 대상은 사용 가능한 비디오로는 너무 작습니다. 크기를 늘리거나 다른 제한을 낮추세요.",
-  "compressionPlanLowQuality": "선택한 대상은 비디오 품질을 낮출 수 있습니다.",
-  "compressionPlanAlreadyWithinLimit": "소스는 이미 크기 제한 내에 있습니다.",
-  "compressionInvalidBitrate": "최소 150 kbps의 비트레이트를 입력하거나 자동으로 두려면 빈칸으로 두세요.",
-  "compressionInvalidResolution": "240에서 16384 사이의 짝수 해상도를 입력하거나 자동으로 두려면 빈칸으로 두세요.",
-  "compressionSeek": "비디오 위치",
-  "compressionInterrupted": "이전 압축이 중단되었습니다. 임시 파일이 정리되었으므로 비디오를 선택하고 다시 시도할 수 있습니다.",
-  "compressionDismiss": "닫기",
-  "compressionClearHistory": "기록 지우기",
-  "compressionClearHistoryConfirm": "모든 기록 항목을 삭제하시겠습니까? 저장된 동영상은 기기에 남아 있습니다.",
-  "compressionAttempts": "시도",
-  "compressionTargetSize": "목표 크기",
-  "compressionOutputResolution": "출력 해상도",
-  "compressionInvalidVideo": "이 동영상을 읽을 수 없습니다. 다른 파일을 선택하세요.",
-  "compressionInvalidOutput": "인코딩된 동영상이 검증에 실패했습니다. 원본 동영상은 변경되지 않았습니다.",
-  "compressionEncoderUnsupported": "이 기기는 선택한 해상도나 프레임 속도를 인코딩할 수 없습니다. 설정을 낮춘 후 다시 시도하세요.",
-  "compressionAudioDecoderUnsupported": "이 기기는 압축을 위해 이 오디오 형식을 디코딩할 수 없습니다. 오디오를 제거하거나 지원되는 소스를 사용하세요.",
-  "compressionVideoDecoderUnsupported": "이 장치는 이 비디오 형식이나 압축 프로필을 디코딩할 수 없습니다. 다른 소스나 장치를 선택하세요.",
-  "compressionMp4NotStreamable": "내보낸 MP4는 스트리밍용으로 준비되지 않았습니다. 다른 비디오나 장치를 시도하세요.",
-  "compressionNoSpace": "이 비디오를 압축할 수 있는 충분한 자유 저장 공간이 없습니다.",
-  "compressionHdrUnsupported": "이 장치는 선택한 HDR 모드를 처리할 수 없습니다. SDR로 변환을 시도하세요.",
-  "compressionGeneralFailure": "압축을 완료할 수 없습니다. 다른 설정이나 비디오를 시도하세요.",
-  "aboutIdentitySection": "앱 정보",
-  "aboutAppName": "앱 이름",
-  "aboutPackageName": "패키지 이름",
-  "aboutVersion": "버전",
-  "aboutBuildNumber": "빌드 번호",
-  "aboutEnvironmentSection": "장치 및 빌드",
-  "aboutOperatingSystem": "운영 체제",
-  "aboutOsVersion": "OS 버전",
-  "aboutBuildMode": "빌드 모드",
-  "aboutDebug": "디버그",
-  "aboutRelease": "릴리스",
-  "aboutToolchainSection": "제작",
-  "aboutInstallationSection": "설치",
-  "aboutInstaller": "에서 설치됨",
-  "aboutInstalledOn": "설치된 날짜",
-  "aboutUpdatedOn": "업데이트된 날짜",
-  "aboutUnavailable": "사용 불가",
-  "aboutProjectSection": "프로젝트 및 지원",
-  "aboutRepository": "GitHub 저장소",
-  "aboutRepositorySubtitle": "Zumi 소스 코드 보기",
-  "aboutReadme": "README 읽기",
-  "aboutReadmeSubtitle": "GitHub에서 Zumi에 대해 알아보기",
-  "aboutIssues": "문제 보고",
-  "aboutIssuesSubtitle": "GitHub 이슈 보기 및 생성",
-  "aboutLatestRelease": "최신 릴리스",
-  "aboutLatestReleaseSubtitle": "릴리스 및 다운로드 보기",
-  "aboutDonate": "Zumi 지원",
-  "aboutDonateSubtitle": "공식 기부 페이지 열기",
-  "aboutLinkError": "링크를 열 수 없습니다. 다시 시도하세요.",
-  "aboutDeveloperSection": "개발자",
-  "aboutDeveloperName": "Mostafa Sensei",
-  "aboutDeveloperProfile": "GitHub 프로필",
-  "aboutDeveloperProfileSubtitle": "프로젝트 및 연락처 정보 보기",
+  "thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize": "이 동영상은 선택한 크기에 도달할 수 없습니다. 더 큰 목표 크기를 시도하세요.",
+  "theSelectedSizeIsTooSmallForThisVideoChooseALargerSize": "선택한 크기는 이 동영상에 너무 작습니다. 더 큰 크기를 선택하세요.",
+  "originalPreview": "원본 미리보기",
+  "compressedPreview": "압축 미리보기",
+  "targetPreset": "대상 프리셋",
+  "customSize": "사용자 지정 크기",
+  "previewUnavailable": "미리보기 사용 불가",
+  "advancedControls": "고급 컨트롤",
+  "automatic": "자동",
+  "maximumResolution": "최대 해상도",
+  "originalResolution": "원본 해상도",
+  "maximumFrameRate": "최대 프레임 레이트",
+  "audioBitrate": "오디오 비트레이트",
+  "removeAudio": "오디오 제거",
+  "videoBitrateCeilingKbps": "비디오 비트레이트 상한(kbps)",
+  "hdrHandling": "HDR 처리",
+  "convertToSDR": "SDR로 변환",
+  "keepHDRWhenSupported": "지원되는 경우 HDR 유지",
+  "beforeYouStart": "시작하기 전에",
+  "calculatingCompressionPlan": "압축 계획 계산 중…",
+  "plannedResolution": "계획된 해상도",
+  "plannedVideoBitrate": "계획된 비디오 비트레이트",
+  "plannedAudioBitrate": "계획된 오디오 비트레이트",
+  "reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved": "재인코딩 시 오디오가 AAC 스테레오로 변환됩니다. Dolby Atmos 및 DTS 공간 오디오는 유지되지 않습니다.",
+  "thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits": "이 대상은 사용 가능한 비디오로는 너무 작습니다. 크기를 늘리거나 다른 제한을 낮추세요.",
+  "theSelectedTargetMayReduceVideoQuality": "선택한 대상은 비디오 품질을 낮출 수 있습니다.",
+  "theSourceIsAlreadyWithinTheSizeLimit": "소스는 이미 크기 제한 내에 있습니다.",
+  "enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic": "최소 150 kbps의 비트레이트를 입력하거나 자동으로 두려면 빈칸으로 두세요.",
+  "enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic": "240에서 16384 사이의 짝수 해상도를 입력하거나 자동으로 두려면 빈칸으로 두세요.",
+  "videoPosition": "비디오 위치",
+  "aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain": "이전 압축이 중단되었습니다. 임시 파일이 정리되었으므로 비디오를 선택하고 다시 시도할 수 있습니다.",
+  "dismiss": "닫기",
+  "clearHistory": "기록 지우기",
+  "removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice": "모든 기록 항목을 삭제하시겠습니까? 저장된 동영상은 기기에 남아 있습니다.",
+  "attempts": "시도",
+  "targetSize": "목표 크기",
+  "outputResolution": "출력 해상도",
+  "thisVideoCouldNotBeReadChooseAnotherFile": "이 동영상을 읽을 수 없습니다. 다른 파일을 선택하세요.",
+  "theEncodedVideoFailedVerificationYourOriginalVideoWasNotChanged": "인코딩된 동영상이 검증에 실패했습니다. 원본 동영상은 변경되지 않았습니다.",
+  "thisDeviceCannotEncodeTheSelectedResolutionOrFrameRateLowerThatSettingAndTryAgain": "이 기기는 선택한 해상도나 프레임 속도를 인코딩할 수 없습니다. 설정을 낮춘 후 다시 시도하세요.",
+  "thisDeviceCannotDecodeThisAudioFormatForCompressionRemoveAudioOrUseASupportedSource": "이 기기는 압축을 위해 이 오디오 형식을 디코딩할 수 없습니다. 오디오를 제거하거나 지원되는 소스를 사용하세요.",
+  "thisDeviceCannotDecodeThisVideoFormatOrProfileForCompressionChooseAnotherSourceOrDevice": "이 장치는 이 비디오 형식이나 압축 프로필을 디코딩할 수 없습니다. 다른 소스나 장치를 선택하세요.",
+  "theExportedMP4IsNotReadyForStreamingTryAnotherVideoOrDevice": "내보낸 MP4는 스트리밍용으로 준비되지 않았습니다. 다른 비디오나 장치를 시도하세요.",
+  "thereIsNotEnoughFreeStorageToCompressThisVideo": "이 비디오를 압축할 수 있는 충분한 자유 저장 공간이 없습니다.",
+  "thisDeviceCannotProcessTheSelectedHDRModeTryConvertingToSDR": "이 장치는 선택한 HDR 모드를 처리할 수 없습니다. SDR로 변환을 시도하세요.",
+  "compressionCouldNotBeCompletedTryAnotherSettingOrVideo": "압축을 완료할 수 없습니다. 다른 설정이나 비디오를 시도하세요.",
+  "appIdentity": "앱 정보",
+  "appName": "앱 이름",
+  "packageName": "패키지 이름",
+  "version": "버전",
+  "buildNumber": "빌드 번호",
+  "deviceAndBuild": "장치 및 빌드",
+  "operatingSystem": "운영 체제",
+  "osVersion": "OS 버전",
+  "buildMode": "빌드 모드",
+  "debug": "디버그",
+  "release": "릴리스",
+  "builtWith": "제작",
+  "installation": "설치",
+  "installedFrom": "에서 설치됨",
+  "installedOn": "설치된 날짜",
+  "updatedOn": "업데이트된 날짜",
+  "unavailable": "사용 불가",
+  "projectAndSupport": "프로젝트 및 지원",
+  "githubRepository": "GitHub 저장소",
+  "viewZumiSourceCode": "Zumi 소스 코드 보기",
+  "readTheREADME": "README 읽기",
+  "learnAboutZumiOnGitHub": "GitHub에서 Zumi에 대해 알아보기",
+  "reportAnIssue": "문제 보고",
+  "viewAndCreateGitHubIssues": "GitHub 이슈 보기 및 생성",
+  "latestRelease": "최신 릴리스",
+  "viewReleasesAndDownloads": "릴리스 및 다운로드 보기",
+  "supportZumi": "Zumi 지원",
+  "openTheOfficialDonationPage": "공식 기부 페이지 열기",
+  "couldNotOpenTheLinkPleaseTryAgain": "링크를 열 수 없습니다. 다시 시도하세요.",
+  "developer": "개발자",
+  "mostafaSensei": "Mostafa Sensei",
+  "githubProfile": "GitHub 프로필",
+  "seeProjectsAndContactDetails": "프로젝트 및 연락처 정보 보기",
   "maintenanceInProgress": "유지보수 진행 중",
-  "maintenanceMessage": "Zumi를 일시적으로 사용할 수 없습니다. 나중에 다시 시도하세요.",
+  "zumiIsTemporarilyUnavailablePleaseTryAgainLater": "Zumi를 일시적으로 사용할 수 없습니다. 나중에 다시 시도하세요.",
   "comingSoon": "곧 출시",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"

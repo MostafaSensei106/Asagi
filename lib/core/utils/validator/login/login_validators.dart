@@ -21,7 +21,7 @@ final class LoginPhoneValidator
 
 extension LoginPhoneValidationErrorExtension on LoginPhoneValidationError {
   String message(BuildContext context) {
-    return context.localeKeys.error_phone_number_cant_be_empty;
+    return context.localeKeys.phoneNumberCannotBeEmpty;
   }
 }
 
@@ -43,6 +43,6 @@ final class LoginPasswordValidator
 extension LoginPasswordValidationErrorExtension
     on LoginPasswordValidationError {
   String message(BuildContext context) {
-    return context.localeKeys.error_password_cant_be_empty;
+    return context.localeKeys.passwordCannotBeEmpty;
   }
 }

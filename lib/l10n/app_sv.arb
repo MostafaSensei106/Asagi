@@ -17,8 +17,8 @@
       }
     }
   },
-  "fileSavedToDcim": "Fil sparad till galleri: {fileName}",
-  "@fileSavedToDcim": {
+  "fileSavedToGallery": "Fil sparad till galleri: {fileName}",
+  "@fileSavedToGallery": {
     "description": "Message shown when file is saved to gallery",
     "placeholders": {
       "fileName": {
@@ -35,8 +35,8 @@
       }
     }
   },
-  "fileAlreadySaved": "Fil är redan sparad",
-  "@fileAlreadySaved": {
+  "fileIsAlreadySaved": "Fil är redan sparad",
+  "@fileIsAlreadySaved": {
     "description": "Message shown when file already exists"
   },
   "error": "Fel",
@@ -67,116 +67,116 @@
   "@partial": {
     "description": "Payment status partial"
   },
-  "error_address_line_cant_be_empty": "Adressrad får inte vara tom",
-  "@error_address_line_cant_be_empty": {
+  "addressLineCannotBeEmpty": "Adressrad får inte vara tom",
+  "@addressLineCannotBeEmpty": {
     "description": "Address line empty error"
   },
-  "error_address_line_too_long": "Adressrad är för lång",
-  "@error_address_line_too_long": {
+  "addressLineIsTooLong": "Adressrad är för lång",
+  "@addressLineIsTooLong": {
     "description": "Address line too long error"
   },
-  "error_address_invalid_special_characters": "Specialtecken är inte tillåtna",
-  "@error_address_invalid_special_characters": {
+  "specialCharactersAreNotAllowed": "Specialtecken är inte tillåtna",
+  "@specialCharactersAreNotAllowed": {
     "description": "Address special characters error"
   },
-  "error_address_emoji_not_allowed": "Emojis är inte tillåtna",
-  "@error_address_emoji_not_allowed": {
+  "emojisAreNotAllowed": "Emojis är inte tillåtna",
+  "@emojisAreNotAllowed": {
     "description": "Address emoji not allowed error"
   },
-  "error_city_cant_be_empty": "Stad får inte vara tom",
-  "@error_city_cant_be_empty": {
+  "cityCannotBeEmpty": "Stad får inte vara tom",
+  "@cityCannotBeEmpty": {
     "description": "City empty error"
   },
-  "error_city_too_long": "Stadsnamn är för långt",
-  "@error_city_too_long": {
+  "cityNameIsTooLong": "Stadsnamn är för långt",
+  "@cityNameIsTooLong": {
     "description": "City too long error"
   },
-  "error_city_invalid_special_characters": "Staden innehåller ogiltiga specialtecken",
-  "@error_city_invalid_special_characters": {
+  "cityContainsInvalidSpecialCharacters": "Staden innehåller ogiltiga specialtecken",
+  "@cityContainsInvalidSpecialCharacters": {
     "description": "City special characters error"
   },
-  "error_address_label_cant_be_empty": "Adressetikett får inte vara tom",
-  "@error_address_label_cant_be_empty": {
+  "addressLabelCannotBeEmpty": "Adressetikett får inte vara tom",
+  "@addressLabelCannotBeEmpty": {
     "description": "Address label empty error"
   },
-  "error_address_label_too_long": "Adressetikett är för lång",
-  "@error_address_label_too_long": {
+  "addressLabelIsTooLong": "Adressetikett är för lång",
+  "@addressLabelIsTooLong": {
     "description": "Address label too long error"
   },
-  "error_email_cant_be_empty": "E-post får inte vara tom",
-  "@error_email_cant_be_empty": {
+  "emailCannotBeEmpty": "E-post får inte vara tom",
+  "@emailCannotBeEmpty": {
     "description": "Email empty error"
   },
-  "error_email_not_invalid_format": "Ogiltigt e-postformat",
-  "@error_email_not_invalid_format": {
+  "invalidEmailFormat": "Ogiltigt e-postformat",
+  "@invalidEmailFormat": {
     "description": "Email invalid format error"
   },
-  "error_email_contains_invalid_characters": "E-post innehåller ogiltiga tecken",
-  "@error_email_contains_invalid_characters": {
+  "emailContainsInvalidCharacters": "E-post innehåller ogiltiga tecken",
+  "@emailContainsInvalidCharacters": {
     "description": "Email invalid characters error"
   },
-  "error_email_must_contain_at_symbol": "E-post måste innehålla @",
-  "@error_email_must_contain_at_symbol": {
+  "emailMustContain": "E-post måste innehålla @",
+  "@emailMustContain": {
     "description": "Email missing @ error"
   },
-  "error_email_must_be_in_lowercase": "E-post måste vara i små bokstäver",
-  "@error_email_must_be_in_lowercase": {
+  "emailMustBeInLowercase": "E-post måste vara i små bokstäver",
+  "@emailMustBeInLowercase": {
     "description": "Email not in lowercase error"
   },
-  "error_arabic_not_allowed": "Arabiska tecken är inte tillåtna",
-  "@error_arabic_not_allowed": {
+  "arabicCharactersAreNotAllowed": "Arabiska tecken är inte tillåtna",
+  "@arabicCharactersAreNotAllowed": {
     "description": "Arabic characters not allowed error"
   },
-  "error_email_emoji_not_allowed": "Emojis är inte tillåtna i e-post",
-  "@error_email_emoji_not_allowed": {
+  "emojisAreNotAllowedInEmail": "Emojis är inte tillåtna i e-post",
+  "@emojisAreNotAllowedInEmail": {
     "description": "Email emoji not allowed error"
   },
-  "error_phone_number_cant_be_empty": "Telefonnummer får inte vara tomt",
-  "@error_phone_number_cant_be_empty": {
+  "phoneNumberCannotBeEmpty": "Telefonnummer får inte vara tomt",
+  "@phoneNumberCannotBeEmpty": {
     "description": "Phone number empty error"
   },
-  "error_phone_number_invalid": "Ogiltigt telefonnummer",
-  "@error_phone_number_invalid": {
+  "invalidPhoneNumber": "Ogiltigt telefonnummer",
+  "@invalidPhoneNumber": {
     "description": "Phone number invalid error"
   },
-  "error_phone_number_min_length": "Telefonnummer måste vara minst 11 siffror",
-  "@error_phone_number_min_length": {
+  "phoneNumberMustBeAtLeast11Digits": "Telefonnummer måste vara minst 11 siffror",
+  "@phoneNumberMustBeAtLeast11Digits": {
     "description": "Phone number min length error"
   },
-  "error_name_cant_be_empty": "Namn får inte vara tomt",
-  "@error_name_cant_be_empty": {
+  "nameCannotBeEmpty": "Namn får inte vara tomt",
+  "@nameCannotBeEmpty": {
     "description": "Name empty error"
   },
-  "error_name_invalid": "Ogiltigt namn",
-  "@error_name_invalid": {
+  "invalidName": "Ogiltigt namn",
+  "@invalidName": {
     "description": "Name invalid error"
   },
-  "error_name_too_short_at_least_3_characters": "Namn måste vara minst 3 tecken",
-  "@error_name_too_short_at_least_3_characters": {
+  "nameMustBeAtLeast3Characters": "Namn måste vara minst 3 tecken",
+  "@nameMustBeAtLeast3Characters": {
     "description": "Name too short error"
   },
-  "error_name_too_long_maximum_20_characters": "Namn får inte överstiga 20 tecken",
-  "@error_name_too_long_maximum_20_characters": {
+  "nameCannotExceed20Characters": "Namn får inte överstiga 20 tecken",
+  "@nameCannotExceed20Characters": {
     "description": "Name too long error"
   },
-  "error_name_invalid_special_characters": "Namn innehåller ogiltiga specialtecken",
-  "@error_name_invalid_special_characters": {
+  "nameContainsInvalidSpecialCharacters": "Namn innehåller ogiltiga specialtecken",
+  "@nameContainsInvalidSpecialCharacters": {
     "description": "Name special characters error"
   },
-  "error_name_emoji_not_allowed": "Emojis är inte tillåtna i namn",
-  "@error_name_emoji_not_allowed": {
+  "emojisAreNotAllowedInName": "Emojis är inte tillåtna i namn",
+  "@emojisAreNotAllowedInName": {
     "description": "Name emoji not allowed error"
   },
-  "error_password_cant_be_empty": "Lösenord får inte vara tomt",
-  "@error_password_cant_be_empty": {
+  "passwordCannotBeEmpty": "Lösenord får inte vara tomt",
+  "@passwordCannotBeEmpty": {
     "description": "Password empty error"
   },
-  "error_password_must_contain_uppercase_lowercase_number_and_special_character": "Lösenordet måste innehålla stora bokstäver, små bokstäver, siffror och specialtecken",
-  "@error_password_must_contain_uppercase_lowercase_number_and_special_character": {
+  "passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter": "Lösenordet måste innehålla stora bokstäver, små bokstäver, siffror och specialtecken",
+  "@passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter": {
     "description": "Password complex requirements error"
   },
-  "error_password_must_be_at_least_8_characters_long": "Lösenordet måste vara minst 8 tecken långt",
-  "@error_password_must_be_at_least_8_characters_long": {
+  "passwordMustBeAtLeast8CharactersLong": "Lösenordet måste vara minst 8 tecken långt",
+  "@passwordMustBeAtLeast8CharactersLong": {
     "description": "Password min length error"
   },
   "noInternetConnection": "Ingen internetanslutning",
@@ -463,250 +463,250 @@
   "@recommendZumiToAFriend": {
     "description": "Share app page description"
   },
-  "settingsGroupAppearance": "Utseende och språk",
-  "@settingsGroupAppearance": {
+  "appearanceLanguage": "Utseende och språk",
+  "@appearanceLanguage": {
     "description": "Settings hub section label"
   },
-  "settingsGroupCompression": "Komprimering",
-  "@settingsGroupCompression": {
+  "compression": "Komprimering",
+  "@compression": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAi": "AI på enheten",
-  "@settingsGroupAi": {
+  "onDeviceAI": "AI på enheten",
+  "@onDeviceAI": {
     "description": "Settings hub section label"
   },
-  "settingsGroupPrivacy": "Notiser och integritet",
-  "@settingsGroupPrivacy": {
+  "notificationsPrivacy": "Notiser och integritet",
+  "@notificationsPrivacy": {
     "description": "Settings hub section label"
   },
-  "settingsGroupPlans": "Planer och köp",
-  "@settingsGroupPlans": {
+  "plansPurchases": "Planer och köp",
+  "@plansPurchases": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAbout": "Om",
-  "@settingsGroupAbout": {
+  "about": "Om",
+  "@about": {
     "description": "Settings hub section label"
   },
-  "settingsGroupLegal": "Juridiskt",
-  "@settingsGroupLegal": {
+  "legal": "Juridiskt",
+  "@legal": {
     "description": "Settings hub section label"
   },
-  "settingsGroupHelp": "Hjälp och feedback",
-  "@settingsGroupHelp": {
+  "helpFeedback": "Hjälp och feedback",
+  "@helpFeedback": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAccount": "Konto",
-  "@settingsGroupAccount": {
+  "account": "Konto",
+  "@account": {
     "description": "Settings hub section label"
   },
-  "settingsAppearanceSubtitle": "Tema och app-språk",
-  "@settingsAppearanceSubtitle": {
+  "themeAndAppLanguage": "Tema och app-språk",
+  "@themeAndAppLanguage": {
     "description": "Settings hub row summary"
   },
-  "settingsLanguageSubtitle": "App-språk och riktning",
-  "@settingsLanguageSubtitle": {
+  "appLanguageAndDirection": "App-språk och riktning",
+  "@appLanguageAndDirection": {
     "description": "Settings hub row summary"
   },
-  "settingsCompressionSubtitle": "Standardkvalitet och format",
-  "@settingsCompressionSubtitle": {
+  "defaultQualityAndFormat": "Standardkvalitet och format",
+  "@defaultQualityAndFormat": {
     "description": "Settings hub row summary"
   },
-  "settingsStorageSubtitle": "Cache- och lagringsanvändning",
-  "@settingsStorageSubtitle": {
+  "cacheAndStorageUsage": "Cache- och lagringsanvändning",
+  "@cacheAndStorageUsage": {
     "description": "Settings hub row summary"
   },
   "aiSettings": "AI-inställningar",
   "zumiAssistant": "Zumi-assistent",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "En privat assistent för dina videor kommer snart. Du kommer att kunna fråga om komprimering, organisering och sparade videor här.",
-  "settingsAiSubtitle": "Lokala modeller och smarta verktyg",
-  "exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet": "Utforska lokala modeller och framtida AI-verktyg. Dessa alternativ är ännu inte aktiva.",
+  "localModelsAndSmartTools": "Lokala modeller och smarta verktyg",
+  "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "Utforska lokala modeller och framtida AI-verktyg. Dessa alternativ är ännu inte aktiva.",
   "localModels": "Lokala modeller",
-  "aiModelsSubtitle": "Bläddra och ladda ner stödda modeller",
+  "browseAndDownloadSupportedModels": "Bläddra och ladda ner stödda modeller",
   "chooseASupportedModelDownloadItToThisDeviceAndManageInstalledModelsHere": "Välj en stödd modell, ladda ner den till den här enheten och hantera installerade modeller här.",
   "importAModel": "Importera en modell",
-  "aiImportSubtitle": "Använd en kompatibel modell från dina filer",
+  "useACompatibleModelFromYourFiles": "Använd en kompatibel modell från dina filer",
   "selectACompatibleLocalModelFileAndReviewItsRequirementsBeforeUsingIt": "Välj en kompatibel lokal modelfil och granska dess krav innan du använder den.",
   "smartFeatures": "Smart funktioner",
-  "aiFeaturesSubtitle": "Komprimering, organisering och sökning",
-  "chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "Välj vilka lokala AI-förslag som ska användas för videokomprimering, organisering, namngivning och sökning.",
+  "compressionOrganizationAndSearch": "Komprimering, organisering och sökning",
+  "chooseWhichLocalAISuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "Välj vilka lokala AI-förslag som ska användas för videokomprimering, organisering, namngivning och sökning.",
   "modelPerformance": "Modellens prestanda",
-  "aiRuntimeSubtitle": "Bearbetnings- och resursinställningar",
+  "processingAndResourcePreferences": "Bearbetnings- och resursinställningar",
   "controlTheProcessingBackendAndResourceLimitsForSupportedModels": "Kontrollera bearbetningsbakgrunden och resursgränserna för stödjda modeller.",
   "conversationSettings": "Samtalsinställningar",
-  "aiChatSettingsSubtitle": "Streaming, tänkande och svarslängd",
+  "streamingThinkingAndResponseLength": "Streaming, tänkande och svarslängd",
   "configureHowTheAssistantRespondsIncludingStreamingThinkingModeSamplingAndResponseLimits": "Konfigurera hur assistenten svarar, inklusive streaming, tänkandemod, urval och svargränser.",
   "imagesAndAudio": "Bilder och ljud",
-  "aiMediaSubtitle": "Styr multimodala insatser",
+  "controlMultimodalInputs": "Styr multimodala insatser",
   "chooseWhetherCompatibleModelsCanAnalyzeSelectedImagesAndAudioFromYourVideos": "Välj om kompatibla modeller kan analysera utvalda bilder och ljud från dina videor.",
   "semanticSearch": "Semantisk sökning",
-  "aiSearchSubtitle": "Inbäddningar och lokal indexering",
+  "embeddingsAndLocalIndexing": "Inbäddningar och lokal indexering",
   "manageTheLocalEmbeddingModelAndSearchIndexForFindingVideosAndMomentsByMeaning": "Hantera den lokala inbäddningsmodellen och sökindexet för att hitta videor och ögonblick efter betydelse.",
   "toolsAndStructuredOutput": "Verktyg och strukturerat utdata",
-  "aiToolsSubtitle": "Åtgärder, scheman och bekräftelser",
+  "actionsSchemasAndConfirmations": "Åtgärder, scheman och bekräftelser",
   "manageSupportedAssistantActionsAndStructuredResponsesActionsThatAffectFilesWillRequireYourConfirmation": "Hantera stödda assistentåtgärder och strukturerade svar. Åtgärder som påverkar filer kräver din bekräftelse.",
-  "aiGroupModels": "Modeller",
-  "aiGroupExperience": "Assistentupplevelse",
-  "aiGroupCapabilities": "Smart kapacitet",
-  "aiGroupPerformance": "Prestanda",
-  "compressionHistorySubtitle": "Din komprimerade videohistorik",
-  "@compressionHistorySubtitle": {
+  "models": "Modeller",
+  "assistantExperience": "Assistentupplevelse",
+  "smartCapabilities": "Smart kapacitet",
+  "performance": "Prestanda",
+  "yourCompressedVideoHistory": "Din komprimerade videohistorik",
+  "@yourCompressedVideoHistory": {
     "description": "Settings hub row summary"
   },
-  "settingsNotificationsSubtitle": "Slutförande- och uppdateringsvarningar",
-  "@settingsNotificationsSubtitle": {
+  "completionAndUpdateAlerts": "Slutförande- och uppdateringsvarningar",
+  "@completionAndUpdateAlerts": {
     "description": "Settings hub row summary"
   },
-  "settingsPrivacySubtitle": "Din data stannar lokalt",
-  "@settingsPrivacySubtitle": {
+  "yourDataStaysLocal": "Din data stannar lokalt",
+  "@yourDataStaysLocal": {
     "description": "Settings hub row summary"
   },
-  "plansSubtitle": "Jämför planer och uppgradera",
-  "@plansSubtitle": {
+  "comparePlansAndUpgrade": "Jämför planer och uppgradera",
+  "@comparePlansAndUpgrade": {
     "description": "Settings hub row summary"
   },
-  "plansMethodsSubtitle": "Betalningsmetoder och fakturering",
-  "@plansMethodsSubtitle": {
+  "paymentMethodsAndBilling": "Betalningsmetoder och fakturering",
+  "@paymentMethodsAndBilling": {
     "description": "Settings hub row summary"
   },
-  "plansRestoreSubtitle": "Återställ ditt tidigare köp",
-  "@plansRestoreSubtitle": {
+  "restoreYourPreviousPurchase": "Återställ ditt tidigare köp",
+  "@restoreYourPreviousPurchase": {
     "description": "Settings hub row summary"
   },
-  "aboutAppSubtitle": "Versions- och byggdetaljer",
-  "@aboutAppSubtitle": {
+  "versionAndBuildDetails": "Versions- och byggdetaljer",
+  "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "aboutDeveloperSubtitle": "Utvecklaren bakom Zumi",
-  "@aboutDeveloperSubtitle": {
+  "theDeveloperBehindZumi": "Utvecklaren bakom Zumi",
+  "@theDeveloperBehindZumi": {
     "description": "Settings hub row summary"
   },
-  "aboutLicensesSubtitle": "Licenser för öppna källpaket",
-  "@aboutLicensesSubtitle": {
+  "openSourcePackageLicenses": "Licenser för öppna källpaket",
+  "@openSourcePackageLicenses": {
     "description": "Settings hub row summary"
   },
-  "legalPrivacySubtitle": "Hur data hanteras",
-  "@legalPrivacySubtitle": {
+  "howDataIsHandled": "Hur data hanteras",
+  "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "legalTermsSubtitle": "Regler för att använda Zumi",
-  "@legalTermsSubtitle": {
+  "rulesForUsingZumi": "Regler för att använda Zumi",
+  "@rulesForUsingZumi": {
     "description": "Settings hub row summary"
   },
-  "legalDataSafetySubtitle": "Vilken data vi samlar in",
-  "@legalDataSafetySubtitle": {
+  "whatDataWeCollect": "Vilken data vi samlar in",
+  "@whatDataWeCollect": {
     "description": "Settings hub row summary"
   },
-  "legalPermissionsSubtitle": "Varför vi behöver behörigheter",
-  "@legalPermissionsSubtitle": {
+  "whyWeNeedPermissions": "Varför vi behöver behörigheter",
+  "@whyWeNeedPermissions": {
     "description": "Settings hub row summary"
   },
-  "helpFaqSubtitle": "Svar på vanliga frågor",
-  "@helpFaqSubtitle": {
+  "answersToCommonQuestions": "Svar på vanliga frågor",
+  "@answersToCommonQuestions": {
     "description": "Settings hub row summary"
   },
-  "helpSupportSubtitle": "Kontakta utvecklaren direkt",
-  "@helpSupportSubtitle": {
+  "reachTheDeveloperDirectly": "Kontakta utvecklaren direkt",
+  "@reachTheDeveloperDirectly": {
     "description": "Settings hub row summary"
   },
-  "helpFeedbackSubtitle": "Skicka oss din feedback",
-  "@helpFeedbackSubtitle": {
+  "sendUsYourFeedback": "Skicka oss din feedback",
+  "@sendUsYourFeedback": {
     "description": "Settings hub row summary"
   },
-  "compressionPickVideo": "Välj video",
-  "compressionTargetMb": "Målstorlek (MB)",
-  "compressionStart": "Starta komprimering",
-  "compressionPause": "Pausa",
-  "compressionResume": "Återuppta",
-  "compressionViewResult": "Visa resultat",
-  "compressionSaveGallery": "Spara till galleri",
-  "compressionShare": "Dela video",
-  "compressionOriginalSize": "Ursprunglig storlek",
-  "compressionOutputSize": "Utdata storlek",
-  "compressionEmptyHistory": "Inga komprimerade videor än",
-  "compressionSavedGallery": "Sparad till galleri",
-  "compressionInvalidTarget": "Ange en målstorlek större än noll",
+  "pickVideo": "Välj video",
+  "targetSizeMB": "Målstorlek (MB)",
+  "startCompression": "Starta komprimering",
+  "pause": "Pausa",
+  "resume": "Återuppta",
+  "viewResult": "Visa resultat",
+  "saveToGallery": "Spara till galleri",
+  "shareVideo": "Dela video",
+  "originalSize": "Ursprunglig storlek",
+  "outputSize": "Utdata storlek",
+  "noCompressedVideosYet": "Inga komprimerade videor än",
+  "savedToGallery": "Sparad till galleri",
+  "enterATargetSizeGreaterThanZero": "Ange en målstorlek större än noll",
   "compressionCancelled": "Komprimering avbruten",
-  "compressionTargetExceeded": "Denna video kunde inte nå den valda storleken. Försök med en större målstorlek.",
-  "compressionTargetInfeasible": "Den valda storleken är för liten för denna video. Välj en större storlek.",
-  "compressionPreviewBefore": "Originalförhandsvisning",
-  "compressionPreviewAfter": "Komprimerad förhandsvisning",
-  "compressionPreset": "Målinställning",
-  "compressionCustom": "Anpassad storlek",
-  "compressionPreviewUnavailable": "Förhandsvisning ej tillgänglig",
-  "compressionAdvanced": "Avancerade kontroller",
-  "compressionAutomatic": "Automatisk",
-  "compressionResolutionLimit": "Maximal upplösning",
-  "compressionSourceResolution": "Ursprunglig upplösning",
-  "compressionFrameRateLimit": "Maximal bildfrekvens",
-  "compressionAudioQuality": "Ljudbitrate",
-  "compressionRemoveAudio": "Ta bort ljud",
-  "compressionVideoBitrateLimit": "Video bitrate-tak (kbps)",
-  "compressionHdrPolicy": "HDR-hantering",
-  "compressionHdrConvert": "Konvertera till SDR",
-  "compressionHdrPreserve": "Behåll HDR när det stöds",
-  "compressionPlanPreview": "Innan du börjar",
-  "compressionPlanLoading": "Beräknar komprimeringsplan…",
-  "compressionPlanResolution": "Planerad upplösning",
-  "compressionPlanVideoBitrate": "Planerad videobitrate",
-  "compressionPlanAudioBitrate": "Planerad ljudbitrate",
-  "compressionAudioConversionNote": "Omkodning konverterar ljud till AAC stereo. Dolby Atmos och DTS rumsljud kommer inte att bevaras.",
-  "compressionPlanTooSmall": "Detta mål är för litet för en användbar video. Öka storleken eller sänk andra begränsningar.",
-  "compressionPlanLowQuality": "Det valda målet kan minska videokvaliteten.",
-  "compressionPlanAlreadyWithinLimit": "Källan är redan inom storleksgränsen.",
-  "compressionInvalidBitrate": "Ange en bithastighet på minst 150 kbps, eller lämna tomt för automatisk inställning.",
-  "compressionInvalidResolution": "Ange en jämn upplösning från 240 till 16384, eller lämna tomt för automatisk inställning.",
-  "compressionSeek": "Videoposition",
-  "compressionInterrupted": "En tidigare komprimering avbröts. Dess temporära filer har rensats; du kan välja videon och försöka igen.",
-  "compressionDismiss": "Avvisa",
-  "compressionClearHistory": "Rensa historik",
-  "compressionClearHistoryConfirm": "Ta bort alla historikposter? Sparade videor kommer att finnas kvar på din enhet.",
-  "compressionAttempts": "Försök",
-  "compressionTargetSize": "Målstorlek",
-  "compressionOutputResolution": "Utdataupplösning",
-  "compressionInvalidVideo": "Den här videon kunde inte läsas. Välj en annan fil.",
-  "compressionInvalidOutput": "Den kodade videon misslyckades med verifiering. Din ursprungliga video ändrades inte.",
-  "compressionEncoderUnsupported": "Den här enheten kan inte koda den valda upplösningen eller bildhastigheten. Sänk den inställningen och försök igen.",
-  "compressionAudioDecoderUnsupported": "Den här enheten kan inte avkoda detta ljudformat för komprimering. Ta bort ljudet eller använd en stödd källa.",
-  "compressionVideoDecoderUnsupported": "Denna enhet kan inte avkoda detta videoformat eller profil för komprimering. Välj en annan källa eller enhet.",
-  "compressionMp4NotStreamable": "Den exporterade MP4-filen är inte redo för strömning. Prova en annan video eller enhet.",
-  "compressionNoSpace": "Det finns inte tillräckligt med ledigt utrymme för att komprimera denna video.",
-  "compressionHdrUnsupported": "Denna enhet kan inte bearbeta det valda HDR-läget. Försök att konvertera till SDR.",
-  "compressionGeneralFailure": "Komprimeringen kunde inte slutföras. Försök med en annan inställning eller video.",
-  "aboutIdentitySection": "Appidentitet",
-  "aboutAppName": "Appnamn",
-  "aboutPackageName": "Paketnamn",
-  "aboutVersion": "Version",
-  "aboutBuildNumber": "Byggnummer",
-  "aboutEnvironmentSection": "Enhet och bygg",
-  "aboutOperatingSystem": "Operativsystem",
-  "aboutOsVersion": "OS-version",
-  "aboutBuildMode": "Byggläge",
-  "aboutDebug": "Felsök",
-  "aboutRelease": "Släpp",
-  "aboutToolchainSection": "Byggd med",
-  "aboutInstallationSection": "Installation",
-  "aboutInstaller": "Installerad från",
-  "aboutInstalledOn": "Installerad på",
-  "aboutUpdatedOn": "Uppdaterad den",
-  "aboutUnavailable": "Inte tillgänglig",
-  "aboutProjectSection": "Projekt och support",
-  "aboutRepository": "GitHub-förråd",
-  "aboutRepositorySubtitle": "Visa Zumi-källkod",
-  "aboutReadme": "Läs README",
-  "aboutReadmeSubtitle": "Läs om Zumi på GitHub",
-  "aboutIssues": "Rapportera ett problem",
-  "aboutIssuesSubtitle": "Visa och skapa GitHub-ärenden",
-  "aboutLatestRelease": "Senaste version",
-  "aboutLatestReleaseSubtitle": "Visa releaser och nedladdningar",
-  "aboutDonate": "Supporta Zumi",
-  "aboutDonateSubtitle": "Öppna den officiella donationssidan",
-  "aboutLinkError": "Kunde inte öppna länken. Försök igen.",
-  "aboutDeveloperSection": "Utvecklare",
-  "aboutDeveloperName": "Mostafa Sensei",
-  "aboutDeveloperProfile": "GitHub-profil",
-  "aboutDeveloperProfileSubtitle": "Se projekt och kontaktinformation",
+  "thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize": "Denna video kunde inte nå den valda storleken. Försök med en större målstorlek.",
+  "theSelectedSizeIsTooSmallForThisVideoChooseALargerSize": "Den valda storleken är för liten för denna video. Välj en större storlek.",
+  "originalPreview": "Originalförhandsvisning",
+  "compressedPreview": "Komprimerad förhandsvisning",
+  "targetPreset": "Målinställning",
+  "customSize": "Anpassad storlek",
+  "previewUnavailable": "Förhandsvisning ej tillgänglig",
+  "advancedControls": "Avancerade kontroller",
+  "automatic": "Automatisk",
+  "maximumResolution": "Maximal upplösning",
+  "originalResolution": "Ursprunglig upplösning",
+  "maximumFrameRate": "Maximal bildfrekvens",
+  "audioBitrate": "Ljudbitrate",
+  "removeAudio": "Ta bort ljud",
+  "videoBitrateCeilingKbps": "Video bitrate-tak (kbps)",
+  "hdrHandling": "HDR-hantering",
+  "convertToSDR": "Konvertera till SDR",
+  "keepHDRWhenSupported": "Behåll HDR när det stöds",
+  "beforeYouStart": "Innan du börjar",
+  "calculatingCompressionPlan": "Beräknar komprimeringsplan…",
+  "plannedResolution": "Planerad upplösning",
+  "plannedVideoBitrate": "Planerad videobitrate",
+  "plannedAudioBitrate": "Planerad ljudbitrate",
+  "reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved": "Omkodning konverterar ljud till AAC stereo. Dolby Atmos och DTS rumsljud kommer inte att bevaras.",
+  "thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits": "Detta mål är för litet för en användbar video. Öka storleken eller sänk andra begränsningar.",
+  "theSelectedTargetMayReduceVideoQuality": "Det valda målet kan minska videokvaliteten.",
+  "theSourceIsAlreadyWithinTheSizeLimit": "Källan är redan inom storleksgränsen.",
+  "enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic": "Ange en bithastighet på minst 150 kbps, eller lämna tomt för automatisk inställning.",
+  "enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic": "Ange en jämn upplösning från 240 till 16384, eller lämna tomt för automatisk inställning.",
+  "videoPosition": "Videoposition",
+  "aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain": "En tidigare komprimering avbröts. Dess temporära filer har rensats; du kan välja videon och försöka igen.",
+  "dismiss": "Avvisa",
+  "clearHistory": "Rensa historik",
+  "removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice": "Ta bort alla historikposter? Sparade videor kommer att finnas kvar på din enhet.",
+  "attempts": "Försök",
+  "targetSize": "Målstorlek",
+  "outputResolution": "Utdataupplösning",
+  "thisVideoCouldNotBeReadChooseAnotherFile": "Den här videon kunde inte läsas. Välj en annan fil.",
+  "theEncodedVideoFailedVerificationYourOriginalVideoWasNotChanged": "Den kodade videon misslyckades med verifiering. Din ursprungliga video ändrades inte.",
+  "thisDeviceCannotEncodeTheSelectedResolutionOrFrameRateLowerThatSettingAndTryAgain": "Den här enheten kan inte koda den valda upplösningen eller bildhastigheten. Sänk den inställningen och försök igen.",
+  "thisDeviceCannotDecodeThisAudioFormatForCompressionRemoveAudioOrUseASupportedSource": "Den här enheten kan inte avkoda detta ljudformat för komprimering. Ta bort ljudet eller använd en stödd källa.",
+  "thisDeviceCannotDecodeThisVideoFormatOrProfileForCompressionChooseAnotherSourceOrDevice": "Denna enhet kan inte avkoda detta videoformat eller profil för komprimering. Välj en annan källa eller enhet.",
+  "theExportedMP4IsNotReadyForStreamingTryAnotherVideoOrDevice": "Den exporterade MP4-filen är inte redo för strömning. Prova en annan video eller enhet.",
+  "thereIsNotEnoughFreeStorageToCompressThisVideo": "Det finns inte tillräckligt med ledigt utrymme för att komprimera denna video.",
+  "thisDeviceCannotProcessTheSelectedHDRModeTryConvertingToSDR": "Denna enhet kan inte bearbeta det valda HDR-läget. Försök att konvertera till SDR.",
+  "compressionCouldNotBeCompletedTryAnotherSettingOrVideo": "Komprimeringen kunde inte slutföras. Försök med en annan inställning eller video.",
+  "appIdentity": "Appidentitet",
+  "appName": "Appnamn",
+  "packageName": "Paketnamn",
+  "version": "Version",
+  "buildNumber": "Byggnummer",
+  "deviceAndBuild": "Enhet och bygg",
+  "operatingSystem": "Operativsystem",
+  "osVersion": "OS-version",
+  "buildMode": "Byggläge",
+  "debug": "Felsök",
+  "release": "Släpp",
+  "builtWith": "Byggd med",
+  "installation": "Installation",
+  "installedFrom": "Installerad från",
+  "installedOn": "Installerad på",
+  "updatedOn": "Uppdaterad den",
+  "unavailable": "Inte tillgänglig",
+  "projectAndSupport": "Projekt och support",
+  "githubRepository": "GitHub-förråd",
+  "viewZumiSourceCode": "Visa Zumi-källkod",
+  "readTheREADME": "Läs README",
+  "learnAboutZumiOnGitHub": "Läs om Zumi på GitHub",
+  "reportAnIssue": "Rapportera ett problem",
+  "viewAndCreateGitHubIssues": "Visa och skapa GitHub-ärenden",
+  "latestRelease": "Senaste version",
+  "viewReleasesAndDownloads": "Visa releaser och nedladdningar",
+  "supportZumi": "Supporta Zumi",
+  "openTheOfficialDonationPage": "Öppna den officiella donationssidan",
+  "couldNotOpenTheLinkPleaseTryAgain": "Kunde inte öppna länken. Försök igen.",
+  "developer": "Utvecklare",
+  "mostafaSensei": "Mostafa Sensei",
+  "githubProfile": "GitHub-profil",
+  "seeProjectsAndContactDetails": "Se projekt och kontaktinformation",
   "maintenanceInProgress": "Underhåll pågår",
-  "maintenanceMessage": "Zumi är tillfälligt otillgänglig. Försök igen senare.",
+  "zumiIsTemporarilyUnavailablePleaseTryAgainLater": "Zumi är tillfälligt otillgänglig. Försök igen senare.",
   "comingSoon": "Kommer snart",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"

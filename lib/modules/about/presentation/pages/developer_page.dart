@@ -23,18 +23,18 @@ final class DeveloperPage extends StatelessWidget {
           padding: const EdgeInsets.all(AppSpacing.large),
           children: [
             AboutSection(
-              title: l10n.aboutDeveloperSection,
+              title: l10n.developer,
               icon: ZumiIcons.developer,
               shape: ExpressiveIconShape.softBurst,
               children: [
                 AboutRow(
-                  title: l10n.aboutDeveloperName,
+                  title: l10n.mostafaSensei,
                   subtitle: l10n.theDeveloperAndToolsBehindZumi,
                   icon: ZumiIcons.developer,
                 ),
                 AboutRow(
-                  title: l10n.aboutDeveloperProfile,
-                  subtitle: l10n.aboutDeveloperProfileSubtitle,
+                  title: l10n.githubProfile,
+                  subtitle: l10n.seeProjectsAndContactDetails,
                   icon: ZumiIcons.repository,
                   onTap: () => unawaited(_openProfile(context)),
                 ),
@@ -53,7 +53,10 @@ final class DeveloperPage extends StatelessWidget {
       );
     } catch (_) {
       if (context.mounted) {
-        context.toast.showError(context, context.localeKeys.aboutLinkError);
+        context.toast.showError(
+          context,
+          context.localeKeys.couldNotOpenTheLinkPleaseTryAgain,
+        );
       }
     }
   }

@@ -17,8 +17,8 @@
       }
     }
   },
-  "fileSavedToDcim": "檔案已保存到相簿：{fileName}",
-  "@fileSavedToDcim": {
+  "fileSavedToGallery": "檔案已保存到相簿：{fileName}",
+  "@fileSavedToGallery": {
     "description": "Message shown when file is saved to gallery",
     "placeholders": {
       "fileName": {
@@ -35,8 +35,8 @@
       }
     }
   },
-  "fileAlreadySaved": "檔案已經保存",
-  "@fileAlreadySaved": {
+  "fileIsAlreadySaved": "檔案已經保存",
+  "@fileIsAlreadySaved": {
     "description": "Message shown when file already exists"
   },
   "error": "錯誤",
@@ -67,116 +67,116 @@
   "@partial": {
     "description": "Payment status partial"
   },
-  "error_address_line_cant_be_empty": "地址欄位不能為空",
-  "@error_address_line_cant_be_empty": {
+  "addressLineCannotBeEmpty": "地址欄位不能為空",
+  "@addressLineCannotBeEmpty": {
     "description": "Address line empty error"
   },
-  "error_address_line_too_long": "地址欄位太長",
-  "@error_address_line_too_long": {
+  "addressLineIsTooLong": "地址欄位太長",
+  "@addressLineIsTooLong": {
     "description": "Address line too long error"
   },
-  "error_address_invalid_special_characters": "不允許特殊字元",
-  "@error_address_invalid_special_characters": {
+  "specialCharactersAreNotAllowed": "不允許特殊字元",
+  "@specialCharactersAreNotAllowed": {
     "description": "Address special characters error"
   },
-  "error_address_emoji_not_allowed": "不允許使用表情符號",
-  "@error_address_emoji_not_allowed": {
+  "emojisAreNotAllowed": "不允許使用表情符號",
+  "@emojisAreNotAllowed": {
     "description": "Address emoji not allowed error"
   },
-  "error_city_cant_be_empty": "城市不能為空",
-  "@error_city_cant_be_empty": {
+  "cityCannotBeEmpty": "城市不能為空",
+  "@cityCannotBeEmpty": {
     "description": "City empty error"
   },
-  "error_city_too_long": "城市名稱太長",
-  "@error_city_too_long": {
+  "cityNameIsTooLong": "城市名稱太長",
+  "@cityNameIsTooLong": {
     "description": "City too long error"
   },
-  "error_city_invalid_special_characters": "城市包含無效的特殊字元",
-  "@error_city_invalid_special_characters": {
+  "cityContainsInvalidSpecialCharacters": "城市包含無效的特殊字元",
+  "@cityContainsInvalidSpecialCharacters": {
     "description": "City special characters error"
   },
-  "error_address_label_cant_be_empty": "地址標籤不能為空",
-  "@error_address_label_cant_be_empty": {
+  "addressLabelCannotBeEmpty": "地址標籤不能為空",
+  "@addressLabelCannotBeEmpty": {
     "description": "Address label empty error"
   },
-  "error_address_label_too_long": "地址標籤太長",
-  "@error_address_label_too_long": {
+  "addressLabelIsTooLong": "地址標籤太長",
+  "@addressLabelIsTooLong": {
     "description": "Address label too long error"
   },
-  "error_email_cant_be_empty": "電子郵件不能為空",
-  "@error_email_cant_be_empty": {
+  "emailCannotBeEmpty": "電子郵件不能為空",
+  "@emailCannotBeEmpty": {
     "description": "Email empty error"
   },
-  "error_email_not_invalid_format": "電子郵件格式無效",
-  "@error_email_not_invalid_format": {
+  "invalidEmailFormat": "電子郵件格式無效",
+  "@invalidEmailFormat": {
     "description": "Email invalid format error"
   },
-  "error_email_contains_invalid_characters": "電子郵件包含無效字符",
-  "@error_email_contains_invalid_characters": {
+  "emailContainsInvalidCharacters": "電子郵件包含無效字符",
+  "@emailContainsInvalidCharacters": {
     "description": "Email invalid characters error"
   },
-  "error_email_must_contain_at_symbol": "電子郵件必須包含@",
-  "@error_email_must_contain_at_symbol": {
+  "emailMustContain": "電子郵件必須包含@",
+  "@emailMustContain": {
     "description": "Email missing @ error"
   },
-  "error_email_must_be_in_lowercase": "電子郵件必須為小寫",
-  "@error_email_must_be_in_lowercase": {
+  "emailMustBeInLowercase": "電子郵件必須為小寫",
+  "@emailMustBeInLowercase": {
     "description": "Email not in lowercase error"
   },
-  "error_arabic_not_allowed": "不允許使用阿拉伯字符",
-  "@error_arabic_not_allowed": {
+  "arabicCharactersAreNotAllowed": "不允許使用阿拉伯字符",
+  "@arabicCharactersAreNotAllowed": {
     "description": "Arabic characters not allowed error"
   },
-  "error_email_emoji_not_allowed": "電子郵件中不允許使用表情符號",
-  "@error_email_emoji_not_allowed": {
+  "emojisAreNotAllowedInEmail": "電子郵件中不允許使用表情符號",
+  "@emojisAreNotAllowedInEmail": {
     "description": "Email emoji not allowed error"
   },
-  "error_phone_number_cant_be_empty": "電話號碼不能為空",
-  "@error_phone_number_cant_be_empty": {
+  "phoneNumberCannotBeEmpty": "電話號碼不能為空",
+  "@phoneNumberCannotBeEmpty": {
     "description": "Phone number empty error"
   },
-  "error_phone_number_invalid": "電話號碼無效",
-  "@error_phone_number_invalid": {
+  "invalidPhoneNumber": "電話號碼無效",
+  "@invalidPhoneNumber": {
     "description": "Phone number invalid error"
   },
-  "error_phone_number_min_length": "電話號碼至少必須為11位數",
-  "@error_phone_number_min_length": {
+  "phoneNumberMustBeAtLeast11Digits": "電話號碼至少必須為11位數",
+  "@phoneNumberMustBeAtLeast11Digits": {
     "description": "Phone number min length error"
   },
-  "error_name_cant_be_empty": "姓名不能為空",
-  "@error_name_cant_be_empty": {
+  "nameCannotBeEmpty": "姓名不能為空",
+  "@nameCannotBeEmpty": {
     "description": "Name empty error"
   },
-  "error_name_invalid": "姓名無效",
-  "@error_name_invalid": {
+  "invalidName": "姓名無效",
+  "@invalidName": {
     "description": "Name invalid error"
   },
-  "error_name_too_short_at_least_3_characters": "姓名至少必須為3個字符",
-  "@error_name_too_short_at_least_3_characters": {
+  "nameMustBeAtLeast3Characters": "姓名至少必須為3個字符",
+  "@nameMustBeAtLeast3Characters": {
     "description": "Name too short error"
   },
-  "error_name_too_long_maximum_20_characters": "姓名不能超過20個字符",
-  "@error_name_too_long_maximum_20_characters": {
+  "nameCannotExceed20Characters": "姓名不能超過20個字符",
+  "@nameCannotExceed20Characters": {
     "description": "Name too long error"
   },
-  "error_name_invalid_special_characters": "姓名包含無效特殊字符",
-  "@error_name_invalid_special_characters": {
+  "nameContainsInvalidSpecialCharacters": "姓名包含無效特殊字符",
+  "@nameContainsInvalidSpecialCharacters": {
     "description": "Name special characters error"
   },
-  "error_name_emoji_not_allowed": "姓名中不允許使用表情符號",
-  "@error_name_emoji_not_allowed": {
+  "emojisAreNotAllowedInName": "姓名中不允許使用表情符號",
+  "@emojisAreNotAllowedInName": {
     "description": "Name emoji not allowed error"
   },
-  "error_password_cant_be_empty": "密碼不能為空",
-  "@error_password_cant_be_empty": {
+  "passwordCannotBeEmpty": "密碼不能為空",
+  "@passwordCannotBeEmpty": {
     "description": "Password empty error"
   },
-  "error_password_must_contain_uppercase_lowercase_number_and_special_character": "密碼必須包含大寫字母、小寫字母、數字和特殊字符",
-  "@error_password_must_contain_uppercase_lowercase_number_and_special_character": {
+  "passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter": "密碼必須包含大寫字母、小寫字母、數字和特殊字符",
+  "@passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter": {
     "description": "Password complex requirements error"
   },
-  "error_password_must_be_at_least_8_characters_long": "密碼長度至少為 8 個字符",
-  "@error_password_must_be_at_least_8_characters_long": {
+  "passwordMustBeAtLeast8CharactersLong": "密碼長度至少為 8 個字符",
+  "@passwordMustBeAtLeast8CharactersLong": {
     "description": "Password min length error"
   },
   "noInternetConnection": "無網路連線",
@@ -463,250 +463,250 @@
   "@recommendZumiToAFriend": {
     "description": "Share app page description"
   },
-  "settingsGroupAppearance": "外觀與語言",
-  "@settingsGroupAppearance": {
+  "appearanceLanguage": "外觀與語言",
+  "@appearanceLanguage": {
     "description": "Settings hub section label"
   },
-  "settingsGroupCompression": "壓縮",
-  "@settingsGroupCompression": {
+  "compression": "壓縮",
+  "@compression": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAi": "裝置端 AI",
-  "@settingsGroupAi": {
+  "onDeviceAI": "裝置端 AI",
+  "@onDeviceAI": {
     "description": "Settings hub section label"
   },
-  "settingsGroupPrivacy": "通知與隱私",
-  "@settingsGroupPrivacy": {
+  "notificationsPrivacy": "通知與隱私",
+  "@notificationsPrivacy": {
     "description": "Settings hub section label"
   },
-  "settingsGroupPlans": "方案與購買",
-  "@settingsGroupPlans": {
+  "plansPurchases": "方案與購買",
+  "@plansPurchases": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAbout": "關於",
-  "@settingsGroupAbout": {
+  "about": "關於",
+  "@about": {
     "description": "Settings hub section label"
   },
-  "settingsGroupLegal": "法律",
-  "@settingsGroupLegal": {
+  "legal": "法律",
+  "@legal": {
     "description": "Settings hub section label"
   },
-  "settingsGroupHelp": "幫助與回饋",
-  "@settingsGroupHelp": {
+  "helpFeedback": "幫助與回饋",
+  "@helpFeedback": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAccount": "帳戶",
-  "@settingsGroupAccount": {
+  "account": "帳戶",
+  "@account": {
     "description": "Settings hub section label"
   },
-  "settingsAppearanceSubtitle": "主題與應用程式語言",
-  "@settingsAppearanceSubtitle": {
+  "themeAndAppLanguage": "主題與應用程式語言",
+  "@themeAndAppLanguage": {
     "description": "Settings hub row summary"
   },
-  "settingsLanguageSubtitle": "應用程式語言與方向",
-  "@settingsLanguageSubtitle": {
+  "appLanguageAndDirection": "應用程式語言與方向",
+  "@appLanguageAndDirection": {
     "description": "Settings hub row summary"
   },
-  "settingsCompressionSubtitle": "預設品質與格式",
-  "@settingsCompressionSubtitle": {
+  "defaultQualityAndFormat": "預設品質與格式",
+  "@defaultQualityAndFormat": {
     "description": "Settings hub row summary"
   },
-  "settingsStorageSubtitle": "快取與儲存使用情況",
-  "@settingsStorageSubtitle": {
+  "cacheAndStorageUsage": "快取與儲存使用情況",
+  "@cacheAndStorageUsage": {
     "description": "Settings hub row summary"
   },
   "aiSettings": "AI 設定",
   "zumiAssistant": "Zumi 助手",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "專為您的影片打造的私人助手即將推出。您將能在此詢問有關壓縮、整理及已儲存影片的問題。",
-  "settingsAiSubtitle": "本地模型與智能工具",
-  "exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet": "探索本地模型與未來的 AI 工具。這些選項尚未啟用。",
+  "localModelsAndSmartTools": "本地模型與智能工具",
+  "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "探索本地模型與未來的 AI 工具。這些選項尚未啟用。",
   "localModels": "本地模型",
-  "aiModelsSubtitle": "瀏覽並下載支援的模型",
+  "browseAndDownloadSupportedModels": "瀏覽並下載支援的模型",
   "chooseASupportedModelDownloadItToThisDeviceAndManageInstalledModelsHere": "選擇支援的模型，將其下載到此裝置，並在此管理已安裝的模型。",
   "importAModel": "匯入模型",
-  "aiImportSubtitle": "使用您的檔案中的相容模型",
+  "useACompatibleModelFromYourFiles": "使用您的檔案中的相容模型",
   "selectACompatibleLocalModelFileAndReviewItsRequirementsBeforeUsingIt": "選擇相容的本地模型文件並在使用前檢查其需求。",
   "smartFeatures": "智慧功能",
-  "aiFeaturesSubtitle": "壓縮、組織和搜索",
-  "chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "選擇使用哪些本地 AI 建議來進行影片壓縮、組織、命名和搜索。",
+  "compressionOrganizationAndSearch": "壓縮、組織和搜索",
+  "chooseWhichLocalAISuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "選擇使用哪些本地 AI 建議來進行影片壓縮、組織、命名和搜索。",
   "modelPerformance": "模型性能",
-  "aiRuntimeSubtitle": "處理和資源偏好",
+  "processingAndResourcePreferences": "處理和資源偏好",
   "controlTheProcessingBackendAndResourceLimitsForSupportedModels": "控制受支持模型的處理後端和資源限制。",
   "conversationSettings": "對話設置",
-  "aiChatSettingsSubtitle": "串流、思考和回應長度",
+  "streamingThinkingAndResponseLength": "串流、思考和回應長度",
   "configureHowTheAssistantRespondsIncludingStreamingThinkingModeSamplingAndResponseLimits": "配置助理的回應方式，包括串流、思考模式、取樣和回應限制。",
   "imagesAndAudio": "圖像和音頻",
-  "aiMediaSubtitle": "控制多模態輸入",
+  "controlMultimodalInputs": "控制多模態輸入",
   "chooseWhetherCompatibleModelsCanAnalyzeSelectedImagesAndAudioFromYourVideos": "選擇是否允許兼容模型分析您視頻中選定的圖像和音頻。",
   "semanticSearch": "語義搜索",
-  "aiSearchSubtitle": "嵌入和本地索引",
+  "embeddingsAndLocalIndexing": "嵌入和本地索引",
   "manageTheLocalEmbeddingModelAndSearchIndexForFindingVideosAndMomentsByMeaning": "管理本地嵌入模型和搜索索引，以便按意義查找視頻和片段。",
   "toolsAndStructuredOutput": "工具與結構化輸出",
-  "aiToolsSubtitle": "操作、架構和確認",
+  "actionsSchemasAndConfirmations": "操作、架構和確認",
   "manageSupportedAssistantActionsAndStructuredResponsesActionsThatAffectFilesWillRequireYourConfirmation": "管理受支持的助理操作和結構化回應。影響檔案的操作需要您的確認。",
-  "aiGroupModels": "模型",
-  "aiGroupExperience": "助理體驗",
-  "aiGroupCapabilities": "智慧功能",
-  "aiGroupPerformance": "性能",
-  "compressionHistorySubtitle": "您的壓縮影片歷史",
-  "@compressionHistorySubtitle": {
+  "models": "模型",
+  "assistantExperience": "助理體驗",
+  "smartCapabilities": "智慧功能",
+  "performance": "性能",
+  "yourCompressedVideoHistory": "您的壓縮影片歷史",
+  "@yourCompressedVideoHistory": {
     "description": "Settings hub row summary"
   },
-  "settingsNotificationsSubtitle": "完成和更新提醒",
-  "@settingsNotificationsSubtitle": {
+  "completionAndUpdateAlerts": "完成和更新提醒",
+  "@completionAndUpdateAlerts": {
     "description": "Settings hub row summary"
   },
-  "settingsPrivacySubtitle": "您的資料保持本地",
-  "@settingsPrivacySubtitle": {
+  "yourDataStaysLocal": "您的資料保持本地",
+  "@yourDataStaysLocal": {
     "description": "Settings hub row summary"
   },
-  "plansSubtitle": "比較方案並升級",
-  "@plansSubtitle": {
+  "comparePlansAndUpgrade": "比較方案並升級",
+  "@comparePlansAndUpgrade": {
     "description": "Settings hub row summary"
   },
-  "plansMethodsSubtitle": "付款方式和帳單",
-  "@plansMethodsSubtitle": {
+  "paymentMethodsAndBilling": "付款方式和帳單",
+  "@paymentMethodsAndBilling": {
     "description": "Settings hub row summary"
   },
-  "plansRestoreSubtitle": "恢復您之前的購買",
-  "@plansRestoreSubtitle": {
+  "restoreYourPreviousPurchase": "恢復您之前的購買",
+  "@restoreYourPreviousPurchase": {
     "description": "Settings hub row summary"
   },
-  "aboutAppSubtitle": "版本和建置詳情",
-  "@aboutAppSubtitle": {
+  "versionAndBuildDetails": "版本和建置詳情",
+  "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "aboutDeveloperSubtitle": "Zumi 背後的開發者",
-  "@aboutDeveloperSubtitle": {
+  "theDeveloperBehindZumi": "Zumi 背後的開發者",
+  "@theDeveloperBehindZumi": {
     "description": "Settings hub row summary"
   },
-  "aboutLicensesSubtitle": "開源套件授權",
-  "@aboutLicensesSubtitle": {
+  "openSourcePackageLicenses": "開源套件授權",
+  "@openSourcePackageLicenses": {
     "description": "Settings hub row summary"
   },
-  "legalPrivacySubtitle": "資料處理方式",
-  "@legalPrivacySubtitle": {
+  "howDataIsHandled": "資料處理方式",
+  "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "legalTermsSubtitle": "使用 Zumi 的規則",
-  "@legalTermsSubtitle": {
+  "rulesForUsingZumi": "使用 Zumi 的規則",
+  "@rulesForUsingZumi": {
     "description": "Settings hub row summary"
   },
-  "legalDataSafetySubtitle": "我們收集的資料",
-  "@legalDataSafetySubtitle": {
+  "whatDataWeCollect": "我們收集的資料",
+  "@whatDataWeCollect": {
     "description": "Settings hub row summary"
   },
-  "legalPermissionsSubtitle": "為什麼我們需要權限",
-  "@legalPermissionsSubtitle": {
+  "whyWeNeedPermissions": "為什麼我們需要權限",
+  "@whyWeNeedPermissions": {
     "description": "Settings hub row summary"
   },
-  "helpFaqSubtitle": "常見問題解答",
-  "@helpFaqSubtitle": {
+  "answersToCommonQuestions": "常見問題解答",
+  "@answersToCommonQuestions": {
     "description": "Settings hub row summary"
   },
-  "helpSupportSubtitle": "直接聯繫開發者",
-  "@helpSupportSubtitle": {
+  "reachTheDeveloperDirectly": "直接聯繫開發者",
+  "@reachTheDeveloperDirectly": {
     "description": "Settings hub row summary"
   },
-  "helpFeedbackSubtitle": "發送您的反饋",
-  "@helpFeedbackSubtitle": {
+  "sendUsYourFeedback": "發送您的反饋",
+  "@sendUsYourFeedback": {
     "description": "Settings hub row summary"
   },
-  "compressionPickVideo": "揀選影片",
-  "compressionTargetMb": "目標大小（MB）",
-  "compressionStart": "開始壓縮",
-  "compressionPause": "暫停",
-  "compressionResume": "恢復",
-  "compressionViewResult": "查看結果",
-  "compressionSaveGallery": "儲存到相簿",
-  "compressionShare": "分享影片",
-  "compressionOriginalSize": "原始大小",
-  "compressionOutputSize": "輸出大小",
-  "compressionEmptyHistory": "尚無壓縮影片",
-  "compressionSavedGallery": "已儲存至相簿",
-  "compressionInvalidTarget": "請輸入大於零的目標大小",
+  "pickVideo": "揀選影片",
+  "targetSizeMB": "目標大小（MB）",
+  "startCompression": "開始壓縮",
+  "pause": "暫停",
+  "resume": "恢復",
+  "viewResult": "查看結果",
+  "saveToGallery": "儲存到相簿",
+  "shareVideo": "分享影片",
+  "originalSize": "原始大小",
+  "outputSize": "輸出大小",
+  "noCompressedVideosYet": "尚無壓縮影片",
+  "savedToGallery": "已儲存至相簿",
+  "enterATargetSizeGreaterThanZero": "請輸入大於零的目標大小",
   "compressionCancelled": "壓縮已取消",
-  "compressionTargetExceeded": "此影片無法達到所選大小。請嘗試更大的目標大小。",
-  "compressionTargetInfeasible": "所選大小對此影片來說過小。請選擇更大的大小。",
-  "compressionPreviewBefore": "原始預覽",
-  "compressionPreviewAfter": "壓縮預覽",
-  "compressionPreset": "目標預設",
-  "compressionCustom": "自訂尺寸",
-  "compressionPreviewUnavailable": "無法預覽",
-  "compressionAdvanced": "進階控制",
-  "compressionAutomatic": "自動",
-  "compressionResolutionLimit": "最大解析度",
-  "compressionSourceResolution": "原始解析度",
-  "compressionFrameRateLimit": "最高幀率",
-  "compressionAudioQuality": "音訊位元率",
-  "compressionRemoveAudio": "移除音訊",
-  "compressionVideoBitrateLimit": "影片位元率上限（kbps）",
-  "compressionHdrPolicy": "HDR 處理",
-  "compressionHdrConvert": "轉換為 SDR",
-  "compressionHdrPreserve": "支援時保留 HDR",
-  "compressionPlanPreview": "開始之前",
-  "compressionPlanLoading": "正在計算壓縮計畫…",
-  "compressionPlanResolution": "計畫解析度",
-  "compressionPlanVideoBitrate": "計畫影片位元率",
-  "compressionPlanAudioBitrate": "計畫音訊位元率",
-  "compressionAudioConversionNote": "重新編碼會將音訊轉換為 AAC 立體聲。Dolby Atmos 與 DTS 空間音訊將不被保留。",
-  "compressionPlanTooSmall": "此目標對於可用視頻來說太小。請增加尺寸或降低其他限制。",
-  "compressionPlanLowQuality": "選定的目標可能會降低視頻質量。",
-  "compressionPlanAlreadyWithinLimit": "來源已在尺寸限制內。",
-  "compressionInvalidBitrate": "請輸入至少 150 kbps 的比特率，或留空使用自動。",
-  "compressionInvalidResolution": "請輸入 240 到 16384 之間的偶數分辨率，或留空使用自動。",
-  "compressionSeek": "視頻位置",
-  "compressionInterrupted": "之前的壓縮操作被中斷。其臨時文件已清理；您可以選擇視頻並再試一次。",
-  "compressionDismiss": "關閉",
-  "compressionClearHistory": "清除歷史記錄",
-  "compressionClearHistoryConfirm": "要刪除所有歷史記錄嗎？已保存的影片將保留在您的裝置上。",
-  "compressionAttempts": "嘗試次數",
-  "compressionTargetSize": "目標大小",
-  "compressionOutputResolution": "輸出解析度",
-  "compressionInvalidVideo": "此影片無法讀取。請選擇其他檔案。",
-  "compressionInvalidOutput": "編碼的影片驗證失敗。您的原始影片未被更改。",
-  "compressionEncoderUnsupported": "此裝置無法編碼所選解析度或幀率。請降低該設定後再試。",
-  "compressionAudioDecoderUnsupported": "此裝置無法解碼此音訊格式以進行壓縮。請移除音訊或使用支援的來源。",
-  "compressionVideoDecoderUnsupported": "此裝置無法解碼此影片格式或壓縮配置檔。請選擇其他來源或裝置。",
-  "compressionMp4NotStreamable": "匯出的 MP4 尚未準備好播放串流。請嘗試其他影片或裝置。",
-  "compressionNoSpace": "可用的儲存空間不足以壓縮此影片。",
-  "compressionHdrUnsupported": "此裝置無法處理選取的 HDR 模式。請嘗試轉換為 SDR。",
-  "compressionGeneralFailure": "壓縮無法完成。請嘗試其他設定或影片。",
-  "aboutIdentitySection": "應用程式身份",
-  "aboutAppName": "應用程式名稱",
-  "aboutPackageName": "套件名稱",
-  "aboutVersion": "版本",
-  "aboutBuildNumber": "建置號碼",
-  "aboutEnvironmentSection": "裝置與建置",
-  "aboutOperatingSystem": "作業系統",
-  "aboutOsVersion": "作業系統版本",
-  "aboutBuildMode": "建置模式",
-  "aboutDebug": "除錯",
-  "aboutRelease": "發行",
-  "aboutToolchainSection": "建立於",
-  "aboutInstallationSection": "安裝",
-  "aboutInstaller": "已安裝自",
-  "aboutInstalledOn": "安裝於",
-  "aboutUpdatedOn": "更新於",
-  "aboutUnavailable": "不可用",
-  "aboutProjectSection": "專案與支援",
-  "aboutRepository": "GitHub 儲存庫",
-  "aboutRepositorySubtitle": "檢視 Zumi 原始碼",
-  "aboutReadme": "閱讀 README",
-  "aboutReadmeSubtitle": "在 GitHub 上了解 Zumi",
-  "aboutIssues": "回報問題",
-  "aboutIssuesSubtitle": "檢視並創建 GitHub 問題",
-  "aboutLatestRelease": "最新版本",
-  "aboutLatestReleaseSubtitle": "檢視版本與下載",
-  "aboutDonate": "支援 Zumi",
-  "aboutDonateSubtitle": "打開官方捐款頁面",
-  "aboutLinkError": "無法打開連結。請再試一次。",
-  "aboutDeveloperSection": "開發者",
-  "aboutDeveloperName": "Mostafa Sensei",
-  "aboutDeveloperProfile": "GitHub 個人檔案",
-  "aboutDeveloperProfileSubtitle": "查看專案與聯絡資訊",
+  "thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize": "此影片無法達到所選大小。請嘗試更大的目標大小。",
+  "theSelectedSizeIsTooSmallForThisVideoChooseALargerSize": "所選大小對此影片來說過小。請選擇更大的大小。",
+  "originalPreview": "原始預覽",
+  "compressedPreview": "壓縮預覽",
+  "targetPreset": "目標預設",
+  "customSize": "自訂尺寸",
+  "previewUnavailable": "無法預覽",
+  "advancedControls": "進階控制",
+  "automatic": "自動",
+  "maximumResolution": "最大解析度",
+  "originalResolution": "原始解析度",
+  "maximumFrameRate": "最高幀率",
+  "audioBitrate": "音訊位元率",
+  "removeAudio": "移除音訊",
+  "videoBitrateCeilingKbps": "影片位元率上限（kbps）",
+  "hdrHandling": "HDR 處理",
+  "convertToSDR": "轉換為 SDR",
+  "keepHDRWhenSupported": "支援時保留 HDR",
+  "beforeYouStart": "開始之前",
+  "calculatingCompressionPlan": "正在計算壓縮計畫…",
+  "plannedResolution": "計畫解析度",
+  "plannedVideoBitrate": "計畫影片位元率",
+  "plannedAudioBitrate": "計畫音訊位元率",
+  "reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved": "重新編碼會將音訊轉換為 AAC 立體聲。Dolby Atmos 與 DTS 空間音訊將不被保留。",
+  "thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits": "此目標對於可用視頻來說太小。請增加尺寸或降低其他限制。",
+  "theSelectedTargetMayReduceVideoQuality": "選定的目標可能會降低視頻質量。",
+  "theSourceIsAlreadyWithinTheSizeLimit": "來源已在尺寸限制內。",
+  "enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic": "請輸入至少 150 kbps 的比特率，或留空使用自動。",
+  "enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic": "請輸入 240 到 16384 之間的偶數分辨率，或留空使用自動。",
+  "videoPosition": "視頻位置",
+  "aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain": "之前的壓縮操作被中斷。其臨時文件已清理；您可以選擇視頻並再試一次。",
+  "dismiss": "關閉",
+  "clearHistory": "清除歷史記錄",
+  "removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice": "要刪除所有歷史記錄嗎？已保存的影片將保留在您的裝置上。",
+  "attempts": "嘗試次數",
+  "targetSize": "目標大小",
+  "outputResolution": "輸出解析度",
+  "thisVideoCouldNotBeReadChooseAnotherFile": "此影片無法讀取。請選擇其他檔案。",
+  "theEncodedVideoFailedVerificationYourOriginalVideoWasNotChanged": "編碼的影片驗證失敗。您的原始影片未被更改。",
+  "thisDeviceCannotEncodeTheSelectedResolutionOrFrameRateLowerThatSettingAndTryAgain": "此裝置無法編碼所選解析度或幀率。請降低該設定後再試。",
+  "thisDeviceCannotDecodeThisAudioFormatForCompressionRemoveAudioOrUseASupportedSource": "此裝置無法解碼此音訊格式以進行壓縮。請移除音訊或使用支援的來源。",
+  "thisDeviceCannotDecodeThisVideoFormatOrProfileForCompressionChooseAnotherSourceOrDevice": "此裝置無法解碼此影片格式或壓縮配置檔。請選擇其他來源或裝置。",
+  "theExportedMP4IsNotReadyForStreamingTryAnotherVideoOrDevice": "匯出的 MP4 尚未準備好播放串流。請嘗試其他影片或裝置。",
+  "thereIsNotEnoughFreeStorageToCompressThisVideo": "可用的儲存空間不足以壓縮此影片。",
+  "thisDeviceCannotProcessTheSelectedHDRModeTryConvertingToSDR": "此裝置無法處理選取的 HDR 模式。請嘗試轉換為 SDR。",
+  "compressionCouldNotBeCompletedTryAnotherSettingOrVideo": "壓縮無法完成。請嘗試其他設定或影片。",
+  "appIdentity": "應用程式身份",
+  "appName": "應用程式名稱",
+  "packageName": "套件名稱",
+  "version": "版本",
+  "buildNumber": "建置號碼",
+  "deviceAndBuild": "裝置與建置",
+  "operatingSystem": "作業系統",
+  "osVersion": "作業系統版本",
+  "buildMode": "建置模式",
+  "debug": "除錯",
+  "release": "發行",
+  "builtWith": "建立於",
+  "installation": "安裝",
+  "installedFrom": "已安裝自",
+  "installedOn": "安裝於",
+  "updatedOn": "更新於",
+  "unavailable": "不可用",
+  "projectAndSupport": "專案與支援",
+  "githubRepository": "GitHub 儲存庫",
+  "viewZumiSourceCode": "檢視 Zumi 原始碼",
+  "readTheREADME": "閱讀 README",
+  "learnAboutZumiOnGitHub": "在 GitHub 上了解 Zumi",
+  "reportAnIssue": "回報問題",
+  "viewAndCreateGitHubIssues": "檢視並創建 GitHub 問題",
+  "latestRelease": "最新版本",
+  "viewReleasesAndDownloads": "檢視版本與下載",
+  "supportZumi": "支援 Zumi",
+  "openTheOfficialDonationPage": "打開官方捐款頁面",
+  "couldNotOpenTheLinkPleaseTryAgain": "無法打開連結。請再試一次。",
+  "developer": "開發者",
+  "mostafaSensei": "Mostafa Sensei",
+  "githubProfile": "GitHub 個人檔案",
+  "seeProjectsAndContactDetails": "查看專案與聯絡資訊",
   "maintenanceInProgress": "維護中",
-  "maintenanceMessage": "Zumi 暫時無法使用。請稍後再試。",
+  "zumiIsTemporarilyUnavailablePleaseTryAgainLater": "Zumi 暫時無法使用。請稍後再試。",
   "comingSoon": "即將推出",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"

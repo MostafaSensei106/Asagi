@@ -44,15 +44,14 @@ extension EmailValidationErrorExtension on EmailValidationError {
   String message(BuildContext context) {
     final l = context.localeKeys;
     return switch (this) {
-      EmailValidationError.empty => l.error_email_cant_be_empty,
-      EmailValidationError.invalid => l.error_email_not_invalid_format,
+      EmailValidationError.empty => l.emailCannotBeEmpty,
+      EmailValidationError.invalid => l.invalidEmailFormat,
       EmailValidationError.invalidCharacters =>
-        l.error_email_contains_invalid_characters,
-      EmailValidationError.missingAtSign =>
-        l.error_email_must_contain_at_symbol,
-      EmailValidationError.notInLowerCase => l.error_email_must_be_in_lowercase,
-      EmailValidationError.arabicNotAllowed => l.error_arabic_not_allowed,
-      EmailValidationError.emojiNotAllowed => l.error_email_emoji_not_allowed,
+        l.emailContainsInvalidCharacters,
+      EmailValidationError.missingAtSign => l.emailMustContain,
+      EmailValidationError.notInLowerCase => l.emailMustBeInLowercase,
+      EmailValidationError.arabicNotAllowed => l.arabicCharactersAreNotAllowed,
+      EmailValidationError.emojiNotAllowed => l.emojisAreNotAllowedInEmail,
     };
   }
 }

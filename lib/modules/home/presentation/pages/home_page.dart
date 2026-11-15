@@ -80,15 +80,15 @@ final class HomePage extends HookWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    context.localeKeys.compressionInterrupted,
+                                    context
+                                        .localeKeys
+                                        .aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain,
                                   ),
                                   Align(
                                     alignment: AlignmentDirectional.centerEnd,
                                     child: TextButton(
                                       onPressed: cubit.dismissInterruptedNotice,
-                                      child: Text(
-                                        context.localeKeys.compressionDismiss,
-                                      ),
+                                      child: Text(context.localeKeys.dismiss),
                                     ),
                                   ),
                                 ],
@@ -100,7 +100,9 @@ final class HomePage extends HookWidget {
                           const Icon(Icons.video_library_outlined, size: 72),
                           const SizedBox(height: 16),
                           Text(
-                            context.localeKeys.compressVideosPrivatelyOnYourDevice,
+                            context
+                                .localeKeys
+                                .compressVideosPrivatelyOnYourDevice,
                             textAlign: TextAlign.center,
                             style: Theme.of(context).textTheme.titleMedium,
                           ),
@@ -121,13 +123,13 @@ final class HomePage extends HookWidget {
                                 ButtonSegment(
                                   value: false,
                                   label: Text(
-                                    context.localeKeys.compressionPreviewBefore,
+                                    context.localeKeys.originalPreview,
                                   ),
                                 ),
                                 ButtonSegment(
                                   value: true,
                                   label: Text(
-                                    context.localeKeys.compressionPreviewAfter,
+                                    context.localeKeys.compressedPreview,
                                   ),
                                 ),
                               ],
@@ -147,17 +149,17 @@ final class HomePage extends HookWidget {
                                 ? output.path
                                 : video.path,
                             title: completed && showAfter.value
-                                ? context.localeKeys.compressionPreviewAfter
-                                : context.localeKeys.compressionPreviewBefore,
+                                ? context.localeKeys.compressedPreview
+                                : context.localeKeys.originalPreview,
                           ),
                           const SizedBox(height: 16),
                           Text(
-                            '${context.localeKeys.compressionOriginalSize}: '
+                            '${context.localeKeys.originalSize}: '
                             '${(video.metadata.fileSizeBytes / 1000000).toStringAsFixed(1)} MB',
                           ),
                           if (completed) ...[
                             Text(
-                              '${context.localeKeys.compressionOutputSize}: '
+                              '${context.localeKeys.outputSize}: '
                               '${(output.bytes / 1000000).toStringAsFixed(1)} MB',
                             ),
                             if (output.warning != null) Text(output.warning!),
@@ -169,9 +171,7 @@ final class HomePage extends HookWidget {
                                   if (context.mounted) {
                                     _notice(
                                       context,
-                                      context
-                                          .localeKeys
-                                          .compressionSavedGallery,
+                                      context.localeKeys.savedToGallery,
                                     );
                                   }
                                 } catch (_) {
@@ -180,15 +180,13 @@ final class HomePage extends HookWidget {
                                       context,
                                       context
                                           .localeKeys
-                                          .compressionGeneralFailure,
+                                          .compressionCouldNotBeCompletedTryAnotherSettingOrVideo,
                                     );
                                   }
                                 }
                               },
                               icon: const Icon(Icons.save_alt),
-                              label: Text(
-                                context.localeKeys.compressionSaveGallery,
-                              ),
+                              label: Text(context.localeKeys.saveToGallery),
                             ),
                             TextButton.icon(
                               onPressed: () async {
@@ -202,18 +200,18 @@ final class HomePage extends HookWidget {
                                       context,
                                       context
                                           .localeKeys
-                                          .compressionGeneralFailure,
+                                          .compressionCouldNotBeCompletedTryAnotherSettingOrVideo,
                                     );
                                   }
                                 }
                               },
                               icon: const Icon(Icons.share_outlined),
-                              label: Text(context.localeKeys.compressionShare),
+                              label: Text(context.localeKeys.shareVideo),
                             ),
                           ] else ...[
                             const SizedBox(height: 24),
                             Text(
-                              context.localeKeys.compressionPreset,
+                              context.localeKeys.targetPreset,
                               style: Theme.of(context).textTheme.titleMedium,
                             ),
                             const SizedBox(height: 8),
@@ -241,14 +239,13 @@ final class HomePage extends HookWidget {
                                     decimal: true,
                                   ),
                               decoration: InputDecoration(
-                                labelText:
-                                    context.localeKeys.compressionTargetMb,
+                                labelText: context.localeKeys.targetSizeMB,
                                 hintText: '${state.targetMb}',
                                 errorText: validTarget.value
                                     ? null
                                     : context
                                           .localeKeys
-                                          .compressionInvalidTarget,
+                                          .enterATargetSizeGreaterThanZero,
                                 border: const OutlineInputBorder(),
                               ),
                               onChanged: (text) {
@@ -293,7 +290,7 @@ final class HomePage extends HookWidget {
                                   ? start
                                   : null,
                               icon: const Icon(Icons.compress),
-                              label: Text(context.localeKeys.compressionStart),
+                              label: Text(context.localeKeys.startCompression),
                             ),
                           ],
                         ],
@@ -309,7 +306,7 @@ final class HomePage extends HookWidget {
                           label: Text(
                             state.phase == CompressionPhase.picking
                                 ? context.localeKeys.pleaseWait
-                                : context.localeKeys.compressionPickVideo,
+                                : context.localeKeys.pickVideo,
                           ),
                         ),
                         if (video == null &&
@@ -371,8 +368,8 @@ final class _CompressionRunningDialog extends HookWidget {
                       : null,
                   child: Text(
                     state.phase == CompressionPhase.paused
-                        ? context.localeKeys.compressionResume
-                        : context.localeKeys.compressionPause,
+                        ? context.localeKeys.resume
+                        : context.localeKeys.pause,
                   ),
                 ),
                 TextButton(

@@ -33,10 +33,10 @@ extension CityValidatorErrorX on CityValidatorError {
   String message(BuildContext context) {
     final l = context.localeKeys;
     return switch (this) {
-      CityValidatorError.empty => l.error_city_cant_be_empty,
-      CityValidatorError.tooLong => l.error_city_too_long,
+      CityValidatorError.empty => l.cityCannotBeEmpty,
+      CityValidatorError.tooLong => l.cityNameIsTooLong,
       CityValidatorError.invalidSpecialChars =>
-        l.error_city_invalid_special_characters,
+        l.cityContainsInvalidSpecialCharacters,
     };
   }
 }

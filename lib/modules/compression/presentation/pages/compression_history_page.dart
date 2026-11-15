@@ -21,12 +21,10 @@ final class CompressionHistoryPage extends HookWidget {
       return null;
     }, [cubit]);
     return Scaffold(
-      appBar: AppBarComponent(
-        title: context.localeKeys.compressionHistory,
-      ),
+      appBar: AppBarComponent(title: context.localeKeys.compressionHistory),
       body: BlocSignalBuilder<CompressionCubit, CompressionState>(
         builder: (context, state) => state.history.isEmpty
-            ? Center(child: Text(context.localeKeys.compressionEmptyHistory))
+            ? Center(child: Text(context.localeKeys.noCompressedVideosYet))
             : Column(
                 children: [
                   Align(
@@ -36,11 +34,11 @@ final class CompressionHistoryPage extends HookWidget {
                         final confirmed = await showDialog<bool>(
                           context: context,
                           builder: (dialogContext) => AlertDialog(
-                            title: Text(
-                              context.localeKeys.compressionClearHistory,
-                            ),
+                            title: Text(context.localeKeys.clearHistory),
                             content: Text(
-                              context.localeKeys.compressionClearHistoryConfirm,
+                              context
+                                  .localeKeys
+                                  .removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice,
                             ),
                             actions: [
                               TextButton(
@@ -51,9 +49,7 @@ final class CompressionHistoryPage extends HookWidget {
                               FilledButton(
                                 onPressed: () =>
                                     Navigator.pop(dialogContext, true),
-                                child: Text(
-                                  context.localeKeys.compressionClearHistory,
-                                ),
+                                child: Text(context.localeKeys.clearHistory),
                               ),
                             ],
                           ),
@@ -61,7 +57,7 @@ final class CompressionHistoryPage extends HookWidget {
                         if (confirmed == true) await cubit.clearHistory();
                       },
                       icon: const Icon(Icons.delete_outline),
-                      label: Text(context.localeKeys.compressionClearHistory),
+                      label: Text(context.localeKeys.clearHistory),
                     ),
                   ),
                   Expanded(
@@ -82,44 +78,34 @@ final class CompressionHistoryPage extends HookWidget {
                             children: [
                               if (record.originalBytes > 0)
                                 ListTile(
-                                  title: Text(
-                                    context.localeKeys.compressionOriginalSize,
-                                  ),
+                                  title: Text(context.localeKeys.originalSize),
                                   trailing: Text(
                                     '${(record.originalBytes / 1000000).toStringAsFixed(1)} MB',
                                   ),
                                 ),
                               if (record.targetMb > 0)
                                 ListTile(
-                                  title: Text(
-                                    context.localeKeys.compressionTargetSize,
-                                  ),
+                                  title: Text(context.localeKeys.targetSize),
                                   trailing: Text('${record.targetMb} MB'),
                                 ),
                               if (record.width > 0 && record.height > 0)
                                 ListTile(
                                   title: Text(
-                                    context
-                                        .localeKeys
-                                        .compressionOutputResolution,
+                                    context.localeKeys.outputResolution,
                                   ),
                                   trailing: Text(
                                     '${record.width} × ${record.height}',
                                   ),
                                 ),
                               ListTile(
-                                title: Text(
-                                  context.localeKeys.compressionAttempts,
-                                ),
+                                title: Text(context.localeKeys.attempts),
                                 trailing: Text('${record.attempts}'),
                               ),
                               TextButton.icon(
                                 onPressed: () =>
                                     unawaited(OpenFilex.open(record.path)),
                                 icon: const Icon(Icons.play_arrow),
-                                label: Text(
-                                  context.localeKeys.compressionViewResult,
-                                ),
+                                label: Text(context.localeKeys.viewResult),
                               ),
                             ],
                           ),

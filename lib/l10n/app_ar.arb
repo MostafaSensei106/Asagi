@@ -17,8 +17,8 @@
       }
     }
   },
-  "fileSavedToDcim": "تم حفظ الملف في المعرض: {fileName}",
-  "@fileSavedToDcim": {
+  "fileSavedToGallery": "تم حفظ الملف في المعرض: {fileName}",
+  "@fileSavedToGallery": {
     "description": "Message shown when file is saved to gallery",
     "placeholders": {
       "fileName": {
@@ -35,8 +35,8 @@
       }
     }
   },
-  "fileAlreadySaved": "الملف محفوظ بالفعل",
-  "@fileAlreadySaved": {
+  "fileIsAlreadySaved": "الملف محفوظ بالفعل",
+  "@fileIsAlreadySaved": {
     "description": "Message shown when file already exists"
   },
   "error": "خطأ",
@@ -67,116 +67,116 @@
   "@partial": {
     "description": "Payment status partial"
   },
-  "error_address_line_cant_be_empty": "لا يمكن أن يكون سطر العنوان فارغاً",
-  "@error_address_line_cant_be_empty": {
+  "addressLineCannotBeEmpty": "لا يمكن أن يكون سطر العنوان فارغاً",
+  "@addressLineCannotBeEmpty": {
     "description": "Address line empty error"
   },
-  "error_address_line_too_long": "سطر العنوان طويل جداً",
-  "@error_address_line_too_long": {
+  "addressLineIsTooLong": "سطر العنوان طويل جداً",
+  "@addressLineIsTooLong": {
     "description": "Address line too long error"
   },
-  "error_address_invalid_special_characters": "الرموز الخاصة غير مسموح بها",
-  "@error_address_invalid_special_characters": {
+  "specialCharactersAreNotAllowed": "الرموز الخاصة غير مسموح بها",
+  "@specialCharactersAreNotAllowed": {
     "description": "Address special characters error"
   },
-  "error_address_emoji_not_allowed": "الرموز التعبيرية غير مسموح بها",
-  "@error_address_emoji_not_allowed": {
+  "emojisAreNotAllowed": "الرموز التعبيرية غير مسموح بها",
+  "@emojisAreNotAllowed": {
     "description": "Address emoji not allowed error"
   },
-  "error_city_cant_be_empty": "لا يمكن أن تكون المدينة فارغة",
-  "@error_city_cant_be_empty": {
+  "cityCannotBeEmpty": "لا يمكن أن تكون المدينة فارغة",
+  "@cityCannotBeEmpty": {
     "description": "City empty error"
   },
-  "error_city_too_long": "اسم المدينة طويل جداً",
-  "@error_city_too_long": {
+  "cityNameIsTooLong": "اسم المدينة طويل جداً",
+  "@cityNameIsTooLong": {
     "description": "City too long error"
   },
-  "error_city_invalid_special_characters": "تحتوي المدينة على رموز خاصة غير صالحة",
-  "@error_city_invalid_special_characters": {
+  "cityContainsInvalidSpecialCharacters": "تحتوي المدينة على رموز خاصة غير صالحة",
+  "@cityContainsInvalidSpecialCharacters": {
     "description": "City special characters error"
   },
-  "error_address_label_cant_be_empty": "لا يمكن أن يكون تصنيف العنوان فارغاً",
-  "@error_address_label_cant_be_empty": {
+  "addressLabelCannotBeEmpty": "لا يمكن أن يكون تصنيف العنوان فارغاً",
+  "@addressLabelCannotBeEmpty": {
     "description": "Address label empty error"
   },
-  "error_address_label_too_long": "تصنيف العنوان طويل جداً",
-  "@error_address_label_too_long": {
+  "addressLabelIsTooLong": "تصنيف العنوان طويل جداً",
+  "@addressLabelIsTooLong": {
     "description": "Address label too long error"
   },
-  "error_email_cant_be_empty": "لا يمكن أن يكون البريد الإلكتروني فارغاً",
-  "@error_email_cant_be_empty": {
+  "emailCannotBeEmpty": "لا يمكن أن يكون البريد الإلكتروني فارغاً",
+  "@emailCannotBeEmpty": {
     "description": "Email empty error"
   },
-  "error_email_not_invalid_format": "صيغة البريد الإلكتروني غير صالحة",
-  "@error_email_not_invalid_format": {
+  "invalidEmailFormat": "صيغة البريد الإلكتروني غير صالحة",
+  "@invalidEmailFormat": {
     "description": "Email invalid format error"
   },
-  "error_email_contains_invalid_characters": "البريد الإلكتروني يحتوي على رموز غير صالحة",
-  "@error_email_contains_invalid_characters": {
+  "emailContainsInvalidCharacters": "البريد الإلكتروني يحتوي على رموز غير صالحة",
+  "@emailContainsInvalidCharacters": {
     "description": "Email invalid characters error"
   },
-  "error_email_must_contain_at_symbol": "يجب أن يحتوي البريد الإلكتروني على علامة @",
-  "@error_email_must_contain_at_symbol": {
+  "emailMustContain": "يجب أن يحتوي البريد الإلكتروني على علامة @",
+  "@emailMustContain": {
     "description": "Email missing @ error"
   },
-  "error_email_must_be_in_lowercase": "يجب أن يكون البريد الإلكتروني بأحرف صغيرة",
-  "@error_email_must_be_in_lowercase": {
+  "emailMustBeInLowercase": "يجب أن يكون البريد الإلكتروني بأحرف صغيرة",
+  "@emailMustBeInLowercase": {
     "description": "Email not in lowercase error"
   },
-  "error_arabic_not_allowed": "الأحرف العربية غير مسموح بها",
-  "@error_arabic_not_allowed": {
+  "arabicCharactersAreNotAllowed": "الأحرف العربية غير مسموح بها",
+  "@arabicCharactersAreNotAllowed": {
     "description": "Arabic characters not allowed error"
   },
-  "error_email_emoji_not_allowed": "الرموز التعبيرية غير مسموح بها في البريد الإلكتروني",
-  "@error_email_emoji_not_allowed": {
+  "emojisAreNotAllowedInEmail": "الرموز التعبيرية غير مسموح بها في البريد الإلكتروني",
+  "@emojisAreNotAllowedInEmail": {
     "description": "Email emoji not allowed error"
   },
-  "error_phone_number_cant_be_empty": "لا يمكن أن يكون رقم الهاتف فارغاً",
-  "@error_phone_number_cant_be_empty": {
+  "phoneNumberCannotBeEmpty": "لا يمكن أن يكون رقم الهاتف فارغاً",
+  "@phoneNumberCannotBeEmpty": {
     "description": "Phone number empty error"
   },
-  "error_phone_number_invalid": "رقم الهاتف غير صالح",
-  "@error_phone_number_invalid": {
+  "invalidPhoneNumber": "رقم الهاتف غير صالح",
+  "@invalidPhoneNumber": {
     "description": "Phone number invalid error"
   },
-  "error_phone_number_min_length": "يجب أن يتكون رقم الهاتف من 11 رقماً على الأقل",
-  "@error_phone_number_min_length": {
+  "phoneNumberMustBeAtLeast11Digits": "يجب أن يتكون رقم الهاتف من 11 رقماً على الأقل",
+  "@phoneNumberMustBeAtLeast11Digits": {
     "description": "Phone number min length error"
   },
-  "error_name_cant_be_empty": "لا يمكن أن يكون الاسم فارغاً",
-  "@error_name_cant_be_empty": {
+  "nameCannotBeEmpty": "لا يمكن أن يكون الاسم فارغاً",
+  "@nameCannotBeEmpty": {
     "description": "Name empty error"
   },
-  "error_name_invalid": "الاسم غير صالح",
-  "@error_name_invalid": {
+  "invalidName": "الاسم غير صالح",
+  "@invalidName": {
     "description": "Name invalid error"
   },
-  "error_name_too_short_at_least_3_characters": "يجب ألا يقل الاسم عن 3 أحرف",
-  "@error_name_too_short_at_least_3_characters": {
+  "nameMustBeAtLeast3Characters": "يجب ألا يقل الاسم عن 3 أحرف",
+  "@nameMustBeAtLeast3Characters": {
     "description": "Name too short error"
   },
-  "error_name_too_long_maximum_20_characters": "يجب ألا يزيد الاسم عن 20 حرفاً",
-  "@error_name_too_long_maximum_20_characters": {
+  "nameCannotExceed20Characters": "يجب ألا يزيد الاسم عن 20 حرفاً",
+  "@nameCannotExceed20Characters": {
     "description": "Name too long error"
   },
-  "error_name_invalid_special_characters": "يحتوي الاسم على رموز خاصة غير صالحة",
-  "@error_name_invalid_special_characters": {
+  "nameContainsInvalidSpecialCharacters": "يحتوي الاسم على رموز خاصة غير صالحة",
+  "@nameContainsInvalidSpecialCharacters": {
     "description": "Name special characters error"
   },
-  "error_name_emoji_not_allowed": "الرموز التعبيرية غير مسموح بها في الاسم",
-  "@error_name_emoji_not_allowed": {
+  "emojisAreNotAllowedInName": "الرموز التعبيرية غير مسموح بها في الاسم",
+  "@emojisAreNotAllowedInName": {
     "description": "Name emoji not allowed error"
   },
-  "error_password_cant_be_empty": "لا يمكن أن تكون كلمة المرور فارغة",
-  "@error_password_cant_be_empty": {
+  "passwordCannotBeEmpty": "لا يمكن أن تكون كلمة المرور فارغة",
+  "@passwordCannotBeEmpty": {
     "description": "Password empty error"
   },
-  "error_password_must_contain_uppercase_lowercase_number_and_special_character": "يجب أن تحتوي كلمة المرور على أحرف كبيرة وصغيرة وأرقام ورموز خاصة",
-  "@error_password_must_contain_uppercase_lowercase_number_and_special_character": {
+  "passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter": "يجب أن تحتوي كلمة المرور على أحرف كبيرة وصغيرة وأرقام ورموز خاصة",
+  "@passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter": {
     "description": "Password complex requirements error"
   },
-  "error_password_must_be_at_least_8_characters_long": "يجب ألا تقل كلمة المرور عن 8 أحرف",
-  "@error_password_must_be_at_least_8_characters_long": {
+  "passwordMustBeAtLeast8CharactersLong": "يجب ألا تقل كلمة المرور عن 8 أحرف",
+  "@passwordMustBeAtLeast8CharactersLong": {
     "description": "Password min length error"
   },
   "noInternetConnection": "لا يوجد اتصال بالإنترنت",
@@ -463,250 +463,250 @@
   "@recommendZumiToAFriend": {
     "description": "Share app page description"
   },
-  "settingsGroupAppearance": "المظهر و الالوان",
-  "@settingsGroupAppearance": {
+  "appearanceLanguage": "المظهر و الالوان",
+  "@appearanceLanguage": {
     "description": "Settings hub section label"
   },
-  "settingsGroupCompression": "الضغط والتخزين",
-  "@settingsGroupCompression": {
+  "compression": "الضغط والتخزين",
+  "@compression": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAi": "الذكاء الاصطناعي",
-  "@settingsGroupAi": {
+  "onDeviceAI": "الذكاء الاصطناعي",
+  "@onDeviceAI": {
     "description": "Settings hub section label"
   },
-  "settingsGroupPrivacy": "الإشعارات والخصوصية",
-  "@settingsGroupPrivacy": {
+  "notificationsPrivacy": "الإشعارات والخصوصية",
+  "@notificationsPrivacy": {
     "description": "Settings hub section label"
   },
-  "settingsGroupPlans": "الخطط والمشتريات",
-  "@settingsGroupPlans": {
+  "plansPurchases": "الخطط والمشتريات",
+  "@plansPurchases": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAbout": "حول التطبيق",
-  "@settingsGroupAbout": {
+  "about": "حول التطبيق",
+  "@about": {
     "description": "Settings hub section label"
   },
-  "settingsGroupLegal": "قانوني وسياسات",
-  "@settingsGroupLegal": {
+  "legal": "قانوني وسياسات",
+  "@legal": {
     "description": "Settings hub section label"
   },
-  "settingsGroupHelp": "المساعدة والملاحظات",
-  "@settingsGroupHelp": {
+  "helpFeedback": "المساعدة والملاحظات",
+  "@helpFeedback": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAccount": "الحساب",
-  "@settingsGroupAccount": {
+  "account": "الحساب",
+  "@account": {
     "description": "Settings hub section label"
   },
-  "settingsAppearanceSubtitle": "المظهر، اللغة، وحجم النص",
-  "@settingsAppearanceSubtitle": {
+  "themeAndAppLanguage": "المظهر، اللغة، وحجم النص",
+  "@themeAndAppLanguage": {
     "description": "Settings hub row summary"
   },
-  "settingsLanguageSubtitle": "لغة التطبيق واتجاه النص",
-  "@settingsLanguageSubtitle": {
+  "appLanguageAndDirection": "لغة التطبيق واتجاه النص",
+  "@appLanguageAndDirection": {
     "description": "Settings hub row summary"
   },
-  "settingsCompressionSubtitle": "الجودة الافتراضية وصيغة الملف",
-  "@settingsCompressionSubtitle": {
+  "defaultQualityAndFormat": "الجودة الافتراضية وصيغة الملف",
+  "@defaultQualityAndFormat": {
     "description": "Settings hub row summary"
   },
-  "settingsStorageSubtitle": "الذاكرة والتخزين والمساحة المتاحة",
-  "@settingsStorageSubtitle": {
+  "cacheAndStorageUsage": "الذاكرة والتخزين والمساحة المتاحة",
+  "@cacheAndStorageUsage": {
     "description": "Settings hub row summary"
   },
   "aiSettings": "الذكاء الاصطناعي",
   "zumiAssistant": "مساعد Zumi",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "مساعد خاص لفيديوهاتك قادم قريبًا. ستتمكن من السؤال عن الضغط والتنظيم والفيديوهات المحفوظة هنا.",
-  "settingsAiSubtitle": "نماذج محلية وأدوات ذكية",
-  "exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet": "تعرّف على النماذج المحلية والأدوات الذكية القادمة. هذه الخيارات غير مفعّلة بعد.",
+  "localModelsAndSmartTools": "نماذج محلية وأدوات ذكية",
+  "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "تعرّف على النماذج المحلية والأدوات الذكية القادمة. هذه الخيارات غير مفعّلة بعد.",
   "localModels": "النماذج المحلية",
-  "aiModelsSubtitle": "تصفح النماذج المدعومة وتنزيلها",
+  "browseAndDownloadSupportedModels": "تصفح النماذج المدعومة وتنزيلها",
   "chooseASupportedModelDownloadItToThisDeviceAndManageInstalledModelsHere": "اختر نموذجًا مدعومًا، ونزّله على جهازك، وأدر النماذج المثبّتة من هنا.",
   "importAModel": "استيراد نموذج",
-  "aiImportSubtitle": "استخدم نموذجًا متوافقًا من ملفاتك",
+  "useACompatibleModelFromYourFiles": "استخدم نموذجًا متوافقًا من ملفاتك",
   "selectACompatibleLocalModelFileAndReviewItsRequirementsBeforeUsingIt": "اختر ملف نموذج محليًا متوافقًا وراجع متطلباته قبل استخدامه.",
   "smartFeatures": "الميزات الذكية",
-  "aiFeaturesSubtitle": "الضغط والتنظيم والبحث",
-  "chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "اختر اقتراحات الذكاء الاصطناعي المحلية للضغط والتنظيم والتسمية والبحث في الفيديوهات.",
+  "compressionOrganizationAndSearch": "الضغط والتنظيم والبحث",
+  "chooseWhichLocalAISuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "اختر اقتراحات الذكاء الاصطناعي المحلية للضغط والتنظيم والتسمية والبحث في الفيديوهات.",
   "modelPerformance": "أداء النموذج",
-  "aiRuntimeSubtitle": "تفضيلات المعالجة والموارد",
+  "processingAndResourcePreferences": "تفضيلات المعالجة والموارد",
   "controlTheProcessingBackendAndResourceLimitsForSupportedModels": "تحكم في طريقة المعالجة وحدود الموارد للنماذج المدعومة.",
   "conversationSettings": "إعدادات المحادثة",
-  "aiChatSettingsSubtitle": "البث المباشر والتفكير وطول الرد",
+  "streamingThinkingAndResponseLength": "البث المباشر والتفكير وطول الرد",
   "configureHowTheAssistantRespondsIncludingStreamingThinkingModeSamplingAndResponseLimits": "اضبط طريقة رد المساعد، بما فيها البث المباشر ووضع التفكير وأسلوب التوليد وحدود الرد.",
   "imagesAndAudio": "الصور والصوت",
-  "aiMediaSubtitle": "التحكم في المدخلات متعددة الوسائط",
+  "controlMultimodalInputs": "التحكم في المدخلات متعددة الوسائط",
   "chooseWhetherCompatibleModelsCanAnalyzeSelectedImagesAndAudioFromYourVideos": "حدد ما إذا كان النموذج المتوافق يمكنه تحليل الصور والصوت المختارين من فيديوهاتك.",
   "semanticSearch": "البحث الدلالي",
-  "aiSearchSubtitle": "التمثيلات والفهرسة المحلية",
+  "embeddingsAndLocalIndexing": "التمثيلات والفهرسة المحلية",
   "manageTheLocalEmbeddingModelAndSearchIndexForFindingVideosAndMomentsByMeaning": "أدر نموذج التمثيلات وفهرس البحث المحلي للعثور على الفيديوهات واللحظات بالمعنى.",
   "toolsAndStructuredOutput": "الأدوات والمخرجات المنظمة",
-  "aiToolsSubtitle": "الإجراءات والقوالب والتأكيد",
+  "actionsSchemasAndConfirmations": "الإجراءات والقوالب والتأكيد",
   "manageSupportedAssistantActionsAndStructuredResponsesActionsThatAffectFilesWillRequireYourConfirmation": "أدر إجراءات المساعد المدعومة والردود المنظمة. أي إجراء يغيّر الملفات سيتطلب تأكيدك.",
-  "aiGroupModels": "النماذج",
-  "aiGroupExperience": "تجربة المساعد",
-  "aiGroupCapabilities": "الميزات الذكية",
-  "aiGroupPerformance": "الأداء",
-  "compressionHistorySubtitle": "سجل كل الفيديوهات المضغوطة",
-  "@compressionHistorySubtitle": {
+  "models": "النماذج",
+  "assistantExperience": "تجربة المساعد",
+  "smartCapabilities": "الميزات الذكية",
+  "performance": "الأداء",
+  "yourCompressedVideoHistory": "سجل كل الفيديوهات المضغوطة",
+  "@yourCompressedVideoHistory": {
     "description": "Settings hub row summary"
   },
-  "settingsNotificationsSubtitle": "تنبيهات الإكمال والتحديثات الجديدة",
-  "@settingsNotificationsSubtitle": {
+  "completionAndUpdateAlerts": "تنبيهات الإكمال والتحديثات الجديدة",
+  "@completionAndUpdateAlerts": {
     "description": "Settings hub row summary"
   },
-  "settingsPrivacySubtitle": "بياناتك تبقى على جهازك",
-  "@settingsPrivacySubtitle": {
+  "yourDataStaysLocal": "بياناتك تبقى على جهازك",
+  "@yourDataStaysLocal": {
     "description": "Settings hub row summary"
   },
-  "plansSubtitle": "قارن الخطط وارتقِ الآن",
-  "@plansSubtitle": {
+  "comparePlansAndUpgrade": "قارن الخطط وارتقِ الآن",
+  "@comparePlansAndUpgrade": {
     "description": "Settings hub row summary"
   },
-  "plansMethodsSubtitle": "طرق الدفع وإدارة الفواتير",
-  "@plansMethodsSubtitle": {
+  "paymentMethodsAndBilling": "طرق الدفع وإدارة الفواتير",
+  "@paymentMethodsAndBilling": {
     "description": "Settings hub row summary"
   },
-  "plansRestoreSubtitle": "استعد عملية الشراء السابقة",
-  "@plansRestoreSubtitle": {
+  "restoreYourPreviousPurchase": "استعد عملية الشراء السابقة",
+  "@restoreYourPreviousPurchase": {
     "description": "Settings hub row summary"
   },
-  "aboutAppSubtitle": "رقم الإصدار وتفاصيل البناء",
-  "@aboutAppSubtitle": {
+  "versionAndBuildDetails": "رقم الإصدار وتفاصيل البناء",
+  "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "aboutDeveloperSubtitle": "المطور الذي بنى Zumi",
-  "@aboutDeveloperSubtitle": {
+  "theDeveloperBehindZumi": "المطور الذي بنى Zumi",
+  "@theDeveloperBehindZumi": {
     "description": "Settings hub row summary"
   },
-  "aboutLicensesSubtitle": "تراخيص الحزم مفتوحة المصدر",
-  "@aboutLicensesSubtitle": {
+  "openSourcePackageLicenses": "تراخيص الحزم مفتوحة المصدر",
+  "@openSourcePackageLicenses": {
     "description": "Settings hub row summary"
   },
-  "legalPrivacySubtitle": "كيف نتعامل مع بياناتك",
-  "@legalPrivacySubtitle": {
+  "howDataIsHandled": "كيف نتعامل مع بياناتك",
+  "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "legalTermsSubtitle": "قواعد استخدام تطبيق Zumi",
-  "@legalTermsSubtitle": {
+  "rulesForUsingZumi": "قواعد استخدام تطبيق Zumi",
+  "@rulesForUsingZumi": {
     "description": "Settings hub row summary"
   },
-  "legalDataSafetySubtitle": "البيانات التي نجمعها منك",
-  "@legalDataSafetySubtitle": {
+  "whatDataWeCollect": "البيانات التي نجمعها منك",
+  "@whatDataWeCollect": {
     "description": "Settings hub row summary"
   },
-  "legalPermissionsSubtitle": "الأذونات ولماذا نحتاج إليها",
-  "@legalPermissionsSubtitle": {
+  "whyWeNeedPermissions": "الأذونات ولماذا نحتاج إليها",
+  "@whyWeNeedPermissions": {
     "description": "Settings hub row summary"
   },
-  "helpFaqSubtitle": "إجابات لأكثر الأسئلة شيوعاً",
-  "@helpFaqSubtitle": {
+  "answersToCommonQuestions": "إجابات لأكثر الأسئلة شيوعاً",
+  "@answersToCommonQuestions": {
     "description": "Settings hub row summary"
   },
-  "helpSupportSubtitle": "تواصل مع المطور مباشرة",
-  "@helpSupportSubtitle": {
+  "reachTheDeveloperDirectly": "تواصل مع المطور مباشرة",
+  "@reachTheDeveloperDirectly": {
     "description": "Settings hub row summary"
   },
-  "helpFeedbackSubtitle": "أرسل لنا ملاحظاتك الآن",
-  "@helpFeedbackSubtitle": {
+  "sendUsYourFeedback": "أرسل لنا ملاحظاتك الآن",
+  "@sendUsYourFeedback": {
     "description": "Settings hub row summary"
   },
-  "compressionPickVideo": "اختر فيديو",
-  "compressionTargetMb": "الحجم المطلوب (ميجابايت)",
-  "compressionStart": "ابدأ الضغط",
-  "compressionPause": "إيقاف مؤقت",
-  "compressionResume": "استئناف",
-  "compressionViewResult": "عرض النتيجة",
-  "compressionSaveGallery": "حفظ في المعرض",
-  "compressionShare": "مشاركة الفيديو",
-  "compressionOriginalSize": "الحجم الأصلي",
-  "compressionOutputSize": "حجم الناتج",
-  "compressionEmptyHistory": "لا توجد فيديوهات مضغوطة بعد",
-  "compressionSavedGallery": "تم الحفظ في المعرض",
-  "compressionInvalidTarget": "أدخل حجماً أكبر من صفر",
+  "pickVideo": "اختر فيديو",
+  "targetSizeMB": "الحجم المطلوب (ميجابايت)",
+  "startCompression": "ابدأ الضغط",
+  "pause": "إيقاف مؤقت",
+  "resume": "استئناف",
+  "viewResult": "عرض النتيجة",
+  "saveToGallery": "حفظ في المعرض",
+  "shareVideo": "مشاركة الفيديو",
+  "originalSize": "الحجم الأصلي",
+  "outputSize": "حجم الناتج",
+  "noCompressedVideosYet": "لا توجد فيديوهات مضغوطة بعد",
+  "savedToGallery": "تم الحفظ في المعرض",
+  "enterATargetSizeGreaterThanZero": "أدخل حجماً أكبر من صفر",
   "compressionCancelled": "تم إلغاء الضغط",
-  "compressionTargetExceeded": "تعذر وصول الفيديو للحجم المحدد. جرّب حجمًا أكبر.",
-  "compressionTargetInfeasible": "الحجم المحدد صغير جدًا لهذا الفيديو. اختر حجمًا أكبر.",
-  "compressionPreviewBefore": "معاينة الفيديو الأصلي",
-  "compressionPreviewAfter": "معاينة الفيديو المضغوط",
-  "compressionPreset": "حجم جاهز",
-  "compressionCustom": "حجم مخصص",
-  "compressionPreviewUnavailable": "المعاينة غير متاحة",
-  "compressionAdvanced": "إعدادات متقدمة",
-  "compressionAutomatic": "تلقائي",
-  "compressionResolutionLimit": "أقصى دقة",
-  "compressionSourceResolution": "الدقة الأصلية",
-  "compressionFrameRateLimit": "أقصى معدل إطارات",
-  "compressionAudioQuality": "معدل بيانات الصوت",
-  "compressionRemoveAudio": "حذف الصوت",
-  "compressionVideoBitrateLimit": "الحد الأقصى لمعدل بيانات الفيديو (كيلوبت/ث)",
-  "compressionHdrPolicy": "معالجة HDR",
-  "compressionHdrConvert": "التحويل إلى SDR",
-  "compressionHdrPreserve": "الاحتفاظ بـ HDR عند دعم الجهاز",
-  "compressionPlanPreview": "قبل البدء",
-  "compressionPlanLoading": "جارٍ حساب خطة الضغط…",
-  "compressionPlanResolution": "الدقة المخططة",
-  "compressionPlanVideoBitrate": "معدل بيانات الفيديو المخطط",
-  "compressionPlanAudioBitrate": "معدل بيانات الصوت المخطط",
-  "compressionAudioConversionNote": "إعادة الترميز تحوّل الصوت إلى AAC ستيريو، ولا تحتفظ بالصوت المكاني Dolby Atmos أو DTS.",
-  "compressionPlanTooSmall": "الحجم صغير جدًا لفيديو صالح. زوّد الحجم أو خفّض الحدود الأخرى.",
-  "compressionPlanLowQuality": "قد يؤدي الحجم المحدد إلى خفض جودة الفيديو.",
-  "compressionPlanAlreadyWithinLimit": "الفيديو الأصلي أصغر بالفعل من الحجم المحدد.",
-  "compressionInvalidBitrate": "أدخل 150 كيلوبت/ث على الأقل، أو اتركه فارغًا للاختيار التلقائي",
-  "compressionInvalidResolution": "أدخل دقة زوجية من 240 إلى 16384، أو اتركها فارغة للاختيار التلقائي",
-  "compressionSeek": "موضع الفيديو",
-  "compressionInterrupted": "انقطعت عملية ضغط سابقة. حُذفت ملفاتها المؤقتة؛ يمكنك اختيار الفيديو وإعادة المحاولة.",
-  "compressionDismiss": "إخفاء",
-  "compressionClearHistory": "مسح السجل",
-  "compressionClearHistoryConfirm": "هل تريد حذف كل عناصر السجل؟ ستبقى الفيديوهات المحفوظة على جهازك.",
-  "compressionAttempts": "عدد المحاولات",
-  "compressionTargetSize": "الحجم المطلوب",
-  "compressionOutputResolution": "دقة الناتج",
-  "compressionInvalidVideo": "تعذرت قراءة هذا الفيديو. اختر ملفًا آخر.",
-  "compressionInvalidOutput": "فشل التحقق من الفيديو الناتج. لم يتغير الفيديو الأصلي.",
-  "compressionEncoderUnsupported": "الجهاز لا يدعم ترميز الدقة أو معدل الإطارات المحدد. خفّض الإعداد وأعد المحاولة.",
-  "compressionAudioDecoderUnsupported": "الجهاز لا يستطيع فك صيغة الصوت هذه لضغط الفيديو. احذف الصوت أو استخدم مصدرًا مدعومًا.",
-  "compressionVideoDecoderUnsupported": "الجهاز لا يستطيع فك صيغة الفيديو أو نسختها لضغطها. اختر ملفًا أو جهازًا آخر.",
-  "compressionMp4NotStreamable": "ملف MP4 الناتج غير مهيأ للتشغيل أثناء التحميل. جرّب فيديو أو جهازًا آخر.",
-  "compressionNoSpace": "لا توجد مساحة تخزين كافية لضغط هذا الفيديو.",
-  "compressionHdrUnsupported": "الجهاز لا يدعم وضع HDR المحدد. جرّب التحويل إلى SDR.",
-  "compressionGeneralFailure": "تعذر إكمال الضغط. جرّب إعدادًا أو فيديو آخر.",
-  "aboutIdentitySection": "هوية التطبيق",
-  "aboutAppName": "اسم التطبيق",
-  "aboutPackageName": "اسم الحزمة",
-  "aboutVersion": "الإصدار",
-  "aboutBuildNumber": "رقم البناء",
-  "aboutEnvironmentSection": "الجهاز والبناء",
-  "aboutOperatingSystem": "نظام التشغيل",
-  "aboutOsVersion": "إصدار النظام",
-  "aboutBuildMode": "وضع البناء",
-  "aboutDebug": "تجريبي",
-  "aboutRelease": "إصدار نهائي",
-  "aboutToolchainSection": "بُني باستخدام",
-  "aboutInstallationSection": "التثبيت",
-  "aboutInstaller": "مصدر التثبيت",
-  "aboutInstalledOn": "تاريخ التثبيت",
-  "aboutUpdatedOn": "تاريخ التحديث",
-  "aboutUnavailable": "غير متاح",
-  "aboutProjectSection": "المشروع والدعم",
-  "aboutRepository": "مستودع GitHub",
-  "aboutRepositorySubtitle": "استعرض كود Zumi",
-  "aboutReadme": "اقرأ ملف README",
-  "aboutReadmeSubtitle": "تعرف على Zumi في GitHub",
-  "aboutIssues": "الإبلاغ عن مشكلة",
-  "aboutIssuesSubtitle": "عرض مشكلات GitHub وإنشاء بلاغ",
-  "aboutLatestRelease": "آخر إصدار",
-  "aboutLatestReleaseSubtitle": "استعرض الإصدارات والتنزيلات",
-  "aboutDonate": "ادعم Zumi",
-  "aboutDonateSubtitle": "افتح صفحة التبرعات الرسمية",
-  "aboutLinkError": "تعذر فتح الرابط. حاول مرة أخرى.",
-  "aboutDeveloperSection": "المطوّر",
-  "aboutDeveloperName": "مصطفى سينسي",
-  "aboutDeveloperProfile": "حساب GitHub",
-  "aboutDeveloperProfileSubtitle": "المشاريع وبيانات التواصل",
+  "thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize": "تعذر وصول الفيديو للحجم المحدد. جرّب حجمًا أكبر.",
+  "theSelectedSizeIsTooSmallForThisVideoChooseALargerSize": "الحجم المحدد صغير جدًا لهذا الفيديو. اختر حجمًا أكبر.",
+  "originalPreview": "معاينة الفيديو الأصلي",
+  "compressedPreview": "معاينة الفيديو المضغوط",
+  "targetPreset": "حجم جاهز",
+  "customSize": "حجم مخصص",
+  "previewUnavailable": "المعاينة غير متاحة",
+  "advancedControls": "إعدادات متقدمة",
+  "automatic": "تلقائي",
+  "maximumResolution": "أقصى دقة",
+  "originalResolution": "الدقة الأصلية",
+  "maximumFrameRate": "أقصى معدل إطارات",
+  "audioBitrate": "معدل بيانات الصوت",
+  "removeAudio": "حذف الصوت",
+  "videoBitrateCeilingKbps": "الحد الأقصى لمعدل بيانات الفيديو (كيلوبت/ث)",
+  "hdrHandling": "معالجة HDR",
+  "convertToSDR": "التحويل إلى SDR",
+  "keepHDRWhenSupported": "الاحتفاظ بـ HDR عند دعم الجهاز",
+  "beforeYouStart": "قبل البدء",
+  "calculatingCompressionPlan": "جارٍ حساب خطة الضغط…",
+  "plannedResolution": "الدقة المخططة",
+  "plannedVideoBitrate": "معدل بيانات الفيديو المخطط",
+  "plannedAudioBitrate": "معدل بيانات الصوت المخطط",
+  "reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved": "إعادة الترميز تحوّل الصوت إلى AAC ستيريو، ولا تحتفظ بالصوت المكاني Dolby Atmos أو DTS.",
+  "thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits": "الحجم صغير جدًا لفيديو صالح. زوّد الحجم أو خفّض الحدود الأخرى.",
+  "theSelectedTargetMayReduceVideoQuality": "قد يؤدي الحجم المحدد إلى خفض جودة الفيديو.",
+  "theSourceIsAlreadyWithinTheSizeLimit": "الفيديو الأصلي أصغر بالفعل من الحجم المحدد.",
+  "enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic": "أدخل 150 كيلوبت/ث على الأقل، أو اتركه فارغًا للاختيار التلقائي",
+  "enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic": "أدخل دقة زوجية من 240 إلى 16384، أو اتركها فارغة للاختيار التلقائي",
+  "videoPosition": "موضع الفيديو",
+  "aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain": "انقطعت عملية ضغط سابقة. حُذفت ملفاتها المؤقتة؛ يمكنك اختيار الفيديو وإعادة المحاولة.",
+  "dismiss": "إخفاء",
+  "clearHistory": "مسح السجل",
+  "removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice": "هل تريد حذف كل عناصر السجل؟ ستبقى الفيديوهات المحفوظة على جهازك.",
+  "attempts": "عدد المحاولات",
+  "targetSize": "الحجم المطلوب",
+  "outputResolution": "دقة الناتج",
+  "thisVideoCouldNotBeReadChooseAnotherFile": "تعذرت قراءة هذا الفيديو. اختر ملفًا آخر.",
+  "theEncodedVideoFailedVerificationYourOriginalVideoWasNotChanged": "فشل التحقق من الفيديو الناتج. لم يتغير الفيديو الأصلي.",
+  "thisDeviceCannotEncodeTheSelectedResolutionOrFrameRateLowerThatSettingAndTryAgain": "الجهاز لا يدعم ترميز الدقة أو معدل الإطارات المحدد. خفّض الإعداد وأعد المحاولة.",
+  "thisDeviceCannotDecodeThisAudioFormatForCompressionRemoveAudioOrUseASupportedSource": "الجهاز لا يستطيع فك صيغة الصوت هذه لضغط الفيديو. احذف الصوت أو استخدم مصدرًا مدعومًا.",
+  "thisDeviceCannotDecodeThisVideoFormatOrProfileForCompressionChooseAnotherSourceOrDevice": "الجهاز لا يستطيع فك صيغة الفيديو أو نسختها لضغطها. اختر ملفًا أو جهازًا آخر.",
+  "theExportedMP4IsNotReadyForStreamingTryAnotherVideoOrDevice": "ملف MP4 الناتج غير مهيأ للتشغيل أثناء التحميل. جرّب فيديو أو جهازًا آخر.",
+  "thereIsNotEnoughFreeStorageToCompressThisVideo": "لا توجد مساحة تخزين كافية لضغط هذا الفيديو.",
+  "thisDeviceCannotProcessTheSelectedHDRModeTryConvertingToSDR": "الجهاز لا يدعم وضع HDR المحدد. جرّب التحويل إلى SDR.",
+  "compressionCouldNotBeCompletedTryAnotherSettingOrVideo": "تعذر إكمال الضغط. جرّب إعدادًا أو فيديو آخر.",
+  "appIdentity": "هوية التطبيق",
+  "appName": "اسم التطبيق",
+  "packageName": "اسم الحزمة",
+  "version": "الإصدار",
+  "buildNumber": "رقم البناء",
+  "deviceAndBuild": "الجهاز والبناء",
+  "operatingSystem": "نظام التشغيل",
+  "osVersion": "إصدار النظام",
+  "buildMode": "وضع البناء",
+  "debug": "تجريبي",
+  "release": "إصدار نهائي",
+  "builtWith": "بُني باستخدام",
+  "installation": "التثبيت",
+  "installedFrom": "مصدر التثبيت",
+  "installedOn": "تاريخ التثبيت",
+  "updatedOn": "تاريخ التحديث",
+  "unavailable": "غير متاح",
+  "projectAndSupport": "المشروع والدعم",
+  "githubRepository": "مستودع GitHub",
+  "viewZumiSourceCode": "استعرض كود Zumi",
+  "readTheREADME": "اقرأ ملف README",
+  "learnAboutZumiOnGitHub": "تعرف على Zumi في GitHub",
+  "reportAnIssue": "الإبلاغ عن مشكلة",
+  "viewAndCreateGitHubIssues": "عرض مشكلات GitHub وإنشاء بلاغ",
+  "latestRelease": "آخر إصدار",
+  "viewReleasesAndDownloads": "استعرض الإصدارات والتنزيلات",
+  "supportZumi": "ادعم Zumi",
+  "openTheOfficialDonationPage": "افتح صفحة التبرعات الرسمية",
+  "couldNotOpenTheLinkPleaseTryAgain": "تعذر فتح الرابط. حاول مرة أخرى.",
+  "developer": "المطوّر",
+  "mostafaSensei": "مصطفى سينسي",
+  "githubProfile": "حساب GitHub",
+  "seeProjectsAndContactDetails": "المشاريع وبيانات التواصل",
   "maintenanceInProgress": "التطبيق قيد الصيانة",
-  "maintenanceMessage": "Zumi غير متاح مؤقتًا. حاول مرة أخرى لاحقًا.",
+  "zumiIsTemporarilyUnavailablePleaseTryAgainLater": "Zumi غير متاح مؤقتًا. حاول مرة أخرى لاحقًا.",
   "comingSoon": "قريباً",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"

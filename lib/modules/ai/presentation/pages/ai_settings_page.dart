@@ -17,70 +17,70 @@ final class AiSettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final groups = [
       (
-        title: context.localeKeys.aiGroupModels,
+        title: context.localeKeys.models,
         icon: ZumiIcons.aiModels,
         shape: ExpressiveIconShape.gem,
         destinations: <({AppRoute route, String title, String subtitle})>[
           (
             route: const AiModelsRoute(),
             title: context.localeKeys.localModels,
-            subtitle: context.localeKeys.aiModelsSubtitle,
+            subtitle: context.localeKeys.browseAndDownloadSupportedModels,
           ),
           (
             route: const AiImportModelRoute(),
             title: context.localeKeys.importAModel,
-            subtitle: context.localeKeys.aiImportSubtitle,
+            subtitle: context.localeKeys.useACompatibleModelFromYourFiles,
           ),
         ],
       ),
       (
-        title: context.localeKeys.aiGroupExperience,
+        title: context.localeKeys.assistantExperience,
         icon: ZumiIcons.aiChatSettings,
         shape: ExpressiveIconShape.blossom,
         destinations: <({AppRoute route, String title, String subtitle})>[
           (
             route: const AiChatSettingsRoute(),
             title: context.localeKeys.conversationSettings,
-            subtitle: context.localeKeys.aiChatSettingsSubtitle,
+            subtitle: context.localeKeys.streamingThinkingAndResponseLength,
           ),
           (
             route: const AiMediaRoute(),
             title: context.localeKeys.imagesAndAudio,
-            subtitle: context.localeKeys.aiMediaSubtitle,
+            subtitle: context.localeKeys.controlMultimodalInputs,
           ),
         ],
       ),
       (
-        title: context.localeKeys.aiGroupCapabilities,
+        title: context.localeKeys.smartCapabilities,
         icon: ZumiIcons.aiFeatures,
         shape: ExpressiveIconShape.clover,
         destinations: <({AppRoute route, String title, String subtitle})>[
           (
             route: const AiFeaturesRoute(),
             title: context.localeKeys.smartFeatures,
-            subtitle: context.localeKeys.aiFeaturesSubtitle,
+            subtitle: context.localeKeys.compressionOrganizationAndSearch,
           ),
           (
             route: const AiSearchRoute(),
             title: context.localeKeys.semanticSearch,
-            subtitle: context.localeKeys.aiSearchSubtitle,
+            subtitle: context.localeKeys.embeddingsAndLocalIndexing,
           ),
           (
             route: const AiToolsRoute(),
             title: context.localeKeys.toolsAndStructuredOutput,
-            subtitle: context.localeKeys.aiToolsSubtitle,
+            subtitle: context.localeKeys.actionsSchemasAndConfirmations,
           ),
         ],
       ),
       (
-        title: context.localeKeys.aiGroupPerformance,
+        title: context.localeKeys.performance,
         icon: ZumiIcons.aiRuntime,
         shape: ExpressiveIconShape.diamond,
         destinations: <({AppRoute route, String title, String subtitle})>[
           (
             route: const AiRuntimeRoute(),
             title: context.localeKeys.modelPerformance,
-            subtitle: context.localeKeys.aiRuntimeSubtitle,
+            subtitle: context.localeKeys.processingAndResourcePreferences,
           ),
         ],
       ),
@@ -92,9 +92,7 @@ final class AiSettingsPage extends StatelessWidget {
     );
 
     return Scaffold(
-      appBar: SidePageAppBarComponent(
-        title: context.localeKeys.aiSettings,
-      ),
+      appBar: SidePageAppBarComponent(title: context.localeKeys.aiSettings),
       body: ListView(
         padding: const EdgeInsets.symmetric(
           horizontal: AppSpacing.large,

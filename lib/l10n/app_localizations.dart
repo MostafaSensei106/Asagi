@@ -171,7 +171,7 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'File saved to gallery: {fileName}'**
-  String fileSavedToDcim(String fileName);
+  String fileSavedToGallery(String fileName);
 
   /// Message shown when file is saved to documents
   ///
@@ -183,7 +183,7 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'File is already saved'**
-  String get fileAlreadySaved;
+  String get fileIsAlreadySaved;
 
   /// Generic error title
   ///
@@ -231,170 +231,169 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'Address line cannot be empty'**
-  String get error_address_line_cant_be_empty;
+  String get addressLineCannotBeEmpty;
 
   /// Address line too long error
   ///
   /// In en, this message translates to:
   /// **'Address line is too long'**
-  String get error_address_line_too_long;
+  String get addressLineIsTooLong;
 
   /// Address special characters error
   ///
   /// In en, this message translates to:
   /// **'Special characters are not allowed'**
-  String get error_address_invalid_special_characters;
+  String get specialCharactersAreNotAllowed;
 
   /// Address emoji not allowed error
   ///
   /// In en, this message translates to:
   /// **'Emojis are not allowed'**
-  String get error_address_emoji_not_allowed;
+  String get emojisAreNotAllowed;
 
   /// City empty error
   ///
   /// In en, this message translates to:
   /// **'City cannot be empty'**
-  String get error_city_cant_be_empty;
+  String get cityCannotBeEmpty;
 
   /// City too long error
   ///
   /// In en, this message translates to:
   /// **'City name is too long'**
-  String get error_city_too_long;
+  String get cityNameIsTooLong;
 
   /// City special characters error
   ///
   /// In en, this message translates to:
   /// **'City contains invalid special characters'**
-  String get error_city_invalid_special_characters;
+  String get cityContainsInvalidSpecialCharacters;
 
   /// Address label empty error
   ///
   /// In en, this message translates to:
   /// **'Address label cannot be empty'**
-  String get error_address_label_cant_be_empty;
+  String get addressLabelCannotBeEmpty;
 
   /// Address label too long error
   ///
   /// In en, this message translates to:
   /// **'Address label is too long'**
-  String get error_address_label_too_long;
+  String get addressLabelIsTooLong;
 
   /// Email empty error
   ///
   /// In en, this message translates to:
   /// **'Email cannot be empty'**
-  String get error_email_cant_be_empty;
+  String get emailCannotBeEmpty;
 
   /// Email invalid format error
   ///
   /// In en, this message translates to:
   /// **'Invalid email format'**
-  String get error_email_not_invalid_format;
+  String get invalidEmailFormat;
 
   /// Email invalid characters error
   ///
   /// In en, this message translates to:
   /// **'Email contains invalid characters'**
-  String get error_email_contains_invalid_characters;
+  String get emailContainsInvalidCharacters;
 
   /// Email missing @ error
   ///
   /// In en, this message translates to:
   /// **'Email must contain @'**
-  String get error_email_must_contain_at_symbol;
+  String get emailMustContain;
 
   /// Email not in lowercase error
   ///
   /// In en, this message translates to:
   /// **'Email must be in lowercase'**
-  String get error_email_must_be_in_lowercase;
+  String get emailMustBeInLowercase;
 
   /// Arabic characters not allowed error
   ///
   /// In en, this message translates to:
   /// **'Arabic characters are not allowed'**
-  String get error_arabic_not_allowed;
+  String get arabicCharactersAreNotAllowed;
 
   /// Email emoji not allowed error
   ///
   /// In en, this message translates to:
   /// **'Emojis are not allowed in email'**
-  String get error_email_emoji_not_allowed;
+  String get emojisAreNotAllowedInEmail;
 
   /// Phone number empty error
   ///
   /// In en, this message translates to:
   /// **'Phone number cannot be empty'**
-  String get error_phone_number_cant_be_empty;
+  String get phoneNumberCannotBeEmpty;
 
   /// Phone number invalid error
   ///
   /// In en, this message translates to:
   /// **'Invalid phone number'**
-  String get error_phone_number_invalid;
+  String get invalidPhoneNumber;
 
   /// Phone number min length error
   ///
   /// In en, this message translates to:
   /// **'Phone number must be at least 11 digits'**
-  String get error_phone_number_min_length;
+  String get phoneNumberMustBeAtLeast11Digits;
 
   /// Name empty error
   ///
   /// In en, this message translates to:
   /// **'Name cannot be empty'**
-  String get error_name_cant_be_empty;
+  String get nameCannotBeEmpty;
 
   /// Name invalid error
   ///
   /// In en, this message translates to:
   /// **'Invalid name'**
-  String get error_name_invalid;
+  String get invalidName;
 
   /// Name too short error
   ///
   /// In en, this message translates to:
   /// **'Name must be at least 3 characters'**
-  String get error_name_too_short_at_least_3_characters;
+  String get nameMustBeAtLeast3Characters;
 
   /// Name too long error
   ///
   /// In en, this message translates to:
   /// **'Name cannot exceed 20 characters'**
-  String get error_name_too_long_maximum_20_characters;
+  String get nameCannotExceed20Characters;
 
   /// Name special characters error
   ///
   /// In en, this message translates to:
   /// **'Name contains invalid special characters'**
-  String get error_name_invalid_special_characters;
+  String get nameContainsInvalidSpecialCharacters;
 
   /// Name emoji not allowed error
   ///
   /// In en, this message translates to:
   /// **'Emojis are not allowed in name'**
-  String get error_name_emoji_not_allowed;
+  String get emojisAreNotAllowedInName;
 
   /// Password empty error
   ///
   /// In en, this message translates to:
   /// **'Password cannot be empty'**
-  String get error_password_cant_be_empty;
+  String get passwordCannotBeEmpty;
 
   /// Password complex requirements error
   ///
   /// In en, this message translates to:
   /// **'Password must contain uppercase, lowercase, number, and special character'**
-  String
-  get error_password_must_contain_uppercase_lowercase_number_and_special_character;
+  String get passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter;
 
   /// Password min length error
   ///
   /// In en, this message translates to:
   /// **'Password must be at least 8 characters long'**
-  String get error_password_must_be_at_least_8_characters_long;
+  String get passwordMustBeAtLeast8CharactersLong;
 
   /// No internet connection message
   ///
@@ -826,79 +825,79 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'Appearance & language'**
-  String get settingsGroupAppearance;
+  String get appearanceLanguage;
 
   /// Settings hub section label
   ///
   /// In en, this message translates to:
   /// **'Compression'**
-  String get settingsGroupCompression;
+  String get compression;
 
   /// Settings hub section label
   ///
   /// In en, this message translates to:
   /// **'On-device AI'**
-  String get settingsGroupAi;
+  String get onDeviceAI;
 
   /// Settings hub section label
   ///
   /// In en, this message translates to:
   /// **'Notifications & privacy'**
-  String get settingsGroupPrivacy;
+  String get notificationsPrivacy;
 
   /// Settings hub section label
   ///
   /// In en, this message translates to:
   /// **'Plans & purchases'**
-  String get settingsGroupPlans;
+  String get plansPurchases;
 
   /// Settings hub section label
   ///
   /// In en, this message translates to:
   /// **'About'**
-  String get settingsGroupAbout;
+  String get about;
 
   /// Settings hub section label
   ///
   /// In en, this message translates to:
   /// **'Legal'**
-  String get settingsGroupLegal;
+  String get legal;
 
   /// Settings hub section label
   ///
   /// In en, this message translates to:
   /// **'Help & feedback'**
-  String get settingsGroupHelp;
+  String get helpFeedback;
 
   /// Settings hub section label
   ///
   /// In en, this message translates to:
   /// **'Account'**
-  String get settingsGroupAccount;
+  String get account;
 
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
   /// **'Theme and app language'**
-  String get settingsAppearanceSubtitle;
+  String get themeAndAppLanguage;
 
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
   /// **'App language and direction'**
-  String get settingsLanguageSubtitle;
+  String get appLanguageAndDirection;
 
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
   /// **'Default quality and format'**
-  String get settingsCompressionSubtitle;
+  String get defaultQualityAndFormat;
 
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
   /// **'Cache and storage usage'**
-  String get settingsStorageSubtitle;
+  String get cacheAndStorageUsage;
 
   /// No description provided for @aiSettings.
   ///
@@ -919,17 +918,17 @@ abstract class AppLocalizations {
   String
   get aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere;
 
-  /// No description provided for @settingsAiSubtitle.
+  /// No description provided for @localModelsAndSmartTools.
   ///
   /// In en, this message translates to:
   /// **'Local models and smart tools'**
-  String get settingsAiSubtitle;
+  String get localModelsAndSmartTools;
 
-  /// No description provided for @exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet.
+  /// No description provided for @exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet.
   ///
   /// In en, this message translates to:
   /// **'Explore local models and future AI tools. These options are not active yet.'**
-  String get exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet;
+  String get exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet;
 
   /// No description provided for @localModels.
   ///
@@ -937,11 +936,11 @@ abstract class AppLocalizations {
   /// **'Local models'**
   String get localModels;
 
-  /// No description provided for @aiModelsSubtitle.
+  /// No description provided for @browseAndDownloadSupportedModels.
   ///
   /// In en, this message translates to:
   /// **'Browse and download supported models'**
-  String get aiModelsSubtitle;
+  String get browseAndDownloadSupportedModels;
 
   /// No description provided for @chooseASupportedModelDownloadItToThisDeviceAndManageInstalledModelsHere.
   ///
@@ -956,11 +955,11 @@ abstract class AppLocalizations {
   /// **'Import a model'**
   String get importAModel;
 
-  /// No description provided for @aiImportSubtitle.
+  /// No description provided for @useACompatibleModelFromYourFiles.
   ///
   /// In en, this message translates to:
   /// **'Use a compatible model from your files'**
-  String get aiImportSubtitle;
+  String get useACompatibleModelFromYourFiles;
 
   /// No description provided for @selectACompatibleLocalModelFileAndReviewItsRequirementsBeforeUsingIt.
   ///
@@ -975,18 +974,18 @@ abstract class AppLocalizations {
   /// **'Smart features'**
   String get smartFeatures;
 
-  /// No description provided for @aiFeaturesSubtitle.
+  /// No description provided for @compressionOrganizationAndSearch.
   ///
   /// In en, this message translates to:
   /// **'Compression, organization, and search'**
-  String get aiFeaturesSubtitle;
+  String get compressionOrganizationAndSearch;
 
-  /// No description provided for @chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch.
+  /// No description provided for @chooseWhichLocalAISuggestionsToUseForVideoCompressionOrganizationNamingAndSearch.
   ///
   /// In en, this message translates to:
   /// **'Choose which local AI suggestions to use for video compression, organization, naming, and search.'**
   String
-  get chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch;
+  get chooseWhichLocalAISuggestionsToUseForVideoCompressionOrganizationNamingAndSearch;
 
   /// No description provided for @modelPerformance.
   ///
@@ -994,11 +993,11 @@ abstract class AppLocalizations {
   /// **'Model performance'**
   String get modelPerformance;
 
-  /// No description provided for @aiRuntimeSubtitle.
+  /// No description provided for @processingAndResourcePreferences.
   ///
   /// In en, this message translates to:
   /// **'Processing and resource preferences'**
-  String get aiRuntimeSubtitle;
+  String get processingAndResourcePreferences;
 
   /// No description provided for @controlTheProcessingBackendAndResourceLimitsForSupportedModels.
   ///
@@ -1012,11 +1011,11 @@ abstract class AppLocalizations {
   /// **'Conversation settings'**
   String get conversationSettings;
 
-  /// No description provided for @aiChatSettingsSubtitle.
+  /// No description provided for @streamingThinkingAndResponseLength.
   ///
   /// In en, this message translates to:
   /// **'Streaming, thinking, and response length'**
-  String get aiChatSettingsSubtitle;
+  String get streamingThinkingAndResponseLength;
 
   /// No description provided for @configureHowTheAssistantRespondsIncludingStreamingThinkingModeSamplingAndResponseLimits.
   ///
@@ -1031,11 +1030,11 @@ abstract class AppLocalizations {
   /// **'Images and audio'**
   String get imagesAndAudio;
 
-  /// No description provided for @aiMediaSubtitle.
+  /// No description provided for @controlMultimodalInputs.
   ///
   /// In en, this message translates to:
   /// **'Control multimodal inputs'**
-  String get aiMediaSubtitle;
+  String get controlMultimodalInputs;
 
   /// No description provided for @chooseWhetherCompatibleModelsCanAnalyzeSelectedImagesAndAudioFromYourVideos.
   ///
@@ -1050,11 +1049,11 @@ abstract class AppLocalizations {
   /// **'Semantic search'**
   String get semanticSearch;
 
-  /// No description provided for @aiSearchSubtitle.
+  /// No description provided for @embeddingsAndLocalIndexing.
   ///
   /// In en, this message translates to:
   /// **'Embeddings and local indexing'**
-  String get aiSearchSubtitle;
+  String get embeddingsAndLocalIndexing;
 
   /// No description provided for @manageTheLocalEmbeddingModelAndSearchIndexForFindingVideosAndMomentsByMeaning.
   ///
@@ -1069,11 +1068,11 @@ abstract class AppLocalizations {
   /// **'Tools and structured output'**
   String get toolsAndStructuredOutput;
 
-  /// No description provided for @aiToolsSubtitle.
+  /// No description provided for @actionsSchemasAndConfirmations.
   ///
   /// In en, this message translates to:
   /// **'Actions, schemas, and confirmations'**
-  String get aiToolsSubtitle;
+  String get actionsSchemasAndConfirmations;
 
   /// No description provided for @manageSupportedAssistantActionsAndStructuredResponsesActionsThatAffectFilesWillRequireYourConfirmation.
   ///
@@ -1082,203 +1081,203 @@ abstract class AppLocalizations {
   String
   get manageSupportedAssistantActionsAndStructuredResponsesActionsThatAffectFilesWillRequireYourConfirmation;
 
-  /// No description provided for @aiGroupModels.
+  /// No description provided for @models.
   ///
   /// In en, this message translates to:
   /// **'Models'**
-  String get aiGroupModels;
+  String get models;
 
-  /// No description provided for @aiGroupExperience.
+  /// No description provided for @assistantExperience.
   ///
   /// In en, this message translates to:
   /// **'Assistant experience'**
-  String get aiGroupExperience;
+  String get assistantExperience;
 
-  /// No description provided for @aiGroupCapabilities.
+  /// No description provided for @smartCapabilities.
   ///
   /// In en, this message translates to:
   /// **'Smart capabilities'**
-  String get aiGroupCapabilities;
+  String get smartCapabilities;
 
-  /// No description provided for @aiGroupPerformance.
+  /// No description provided for @performance.
   ///
   /// In en, this message translates to:
   /// **'Performance'**
-  String get aiGroupPerformance;
+  String get performance;
 
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
   /// **'Your compressed video history'**
-  String get compressionHistorySubtitle;
+  String get yourCompressedVideoHistory;
 
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
   /// **'Completion and update alerts'**
-  String get settingsNotificationsSubtitle;
+  String get completionAndUpdateAlerts;
 
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
   /// **'Your data stays local'**
-  String get settingsPrivacySubtitle;
+  String get yourDataStaysLocal;
 
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
   /// **'Compare plans and upgrade'**
-  String get plansSubtitle;
+  String get comparePlansAndUpgrade;
 
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
   /// **'Payment methods and billing'**
-  String get plansMethodsSubtitle;
+  String get paymentMethodsAndBilling;
 
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
   /// **'Restore your previous purchase'**
-  String get plansRestoreSubtitle;
+  String get restoreYourPreviousPurchase;
 
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
   /// **'Version and build details'**
-  String get aboutAppSubtitle;
+  String get versionAndBuildDetails;
 
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
   /// **'The developer behind Zumi'**
-  String get aboutDeveloperSubtitle;
+  String get theDeveloperBehindZumi;
 
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
   /// **'Open source package licenses'**
-  String get aboutLicensesSubtitle;
+  String get openSourcePackageLicenses;
 
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
   /// **'How data is handled'**
-  String get legalPrivacySubtitle;
+  String get howDataIsHandled;
 
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
   /// **'Rules for using Zumi'**
-  String get legalTermsSubtitle;
+  String get rulesForUsingZumi;
 
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
   /// **'What data we collect'**
-  String get legalDataSafetySubtitle;
+  String get whatDataWeCollect;
 
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
   /// **'Why we need permissions'**
-  String get legalPermissionsSubtitle;
+  String get whyWeNeedPermissions;
 
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
   /// **'Answers to common questions'**
-  String get helpFaqSubtitle;
+  String get answersToCommonQuestions;
 
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
   /// **'Reach the developer directly'**
-  String get helpSupportSubtitle;
+  String get reachTheDeveloperDirectly;
 
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
   /// **'Send us your feedback'**
-  String get helpFeedbackSubtitle;
+  String get sendUsYourFeedback;
 
-  /// No description provided for @compressionPickVideo.
+  /// No description provided for @pickVideo.
   ///
   /// In en, this message translates to:
   /// **'Pick video'**
-  String get compressionPickVideo;
+  String get pickVideo;
 
-  /// No description provided for @compressionTargetMb.
+  /// No description provided for @targetSizeMB.
   ///
   /// In en, this message translates to:
   /// **'Target size (MB)'**
-  String get compressionTargetMb;
+  String get targetSizeMB;
 
-  /// No description provided for @compressionStart.
+  /// No description provided for @startCompression.
   ///
   /// In en, this message translates to:
   /// **'Start compression'**
-  String get compressionStart;
+  String get startCompression;
 
-  /// No description provided for @compressionPause.
+  /// No description provided for @pause.
   ///
   /// In en, this message translates to:
   /// **'Pause'**
-  String get compressionPause;
+  String get pause;
 
-  /// No description provided for @compressionResume.
+  /// No description provided for @resume.
   ///
   /// In en, this message translates to:
   /// **'Resume'**
-  String get compressionResume;
+  String get resume;
 
-  /// No description provided for @compressionViewResult.
+  /// No description provided for @viewResult.
   ///
   /// In en, this message translates to:
   /// **'View result'**
-  String get compressionViewResult;
+  String get viewResult;
 
-  /// No description provided for @compressionSaveGallery.
+  /// No description provided for @saveToGallery.
   ///
   /// In en, this message translates to:
   /// **'Save to gallery'**
-  String get compressionSaveGallery;
+  String get saveToGallery;
 
-  /// No description provided for @compressionShare.
+  /// No description provided for @shareVideo.
   ///
   /// In en, this message translates to:
   /// **'Share video'**
-  String get compressionShare;
+  String get shareVideo;
 
-  /// No description provided for @compressionOriginalSize.
+  /// No description provided for @originalSize.
   ///
   /// In en, this message translates to:
   /// **'Original size'**
-  String get compressionOriginalSize;
+  String get originalSize;
 
-  /// No description provided for @compressionOutputSize.
+  /// No description provided for @outputSize.
   ///
   /// In en, this message translates to:
   /// **'Output size'**
-  String get compressionOutputSize;
+  String get outputSize;
 
-  /// No description provided for @compressionEmptyHistory.
+  /// No description provided for @noCompressedVideosYet.
   ///
   /// In en, this message translates to:
   /// **'No compressed videos yet'**
-  String get compressionEmptyHistory;
+  String get noCompressedVideosYet;
 
-  /// No description provided for @compressionSavedGallery.
+  /// No description provided for @savedToGallery.
   ///
   /// In en, this message translates to:
   /// **'Saved to gallery'**
-  String get compressionSavedGallery;
+  String get savedToGallery;
 
-  /// No description provided for @compressionInvalidTarget.
+  /// No description provided for @enterATargetSizeGreaterThanZero.
   ///
   /// In en, this message translates to:
   /// **'Enter a target size greater than zero'**
-  String get compressionInvalidTarget;
+  String get enterATargetSizeGreaterThanZero;
 
   /// No description provided for @compressionCancelled.
   ///
@@ -1286,479 +1285,485 @@ abstract class AppLocalizations {
   /// **'Compression cancelled'**
   String get compressionCancelled;
 
-  /// No description provided for @compressionTargetExceeded.
+  /// No description provided for @thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize.
   ///
   /// In en, this message translates to:
   /// **'This video could not reach the selected size. Try a larger target size.'**
-  String get compressionTargetExceeded;
+  String get thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize;
 
-  /// No description provided for @compressionTargetInfeasible.
+  /// No description provided for @theSelectedSizeIsTooSmallForThisVideoChooseALargerSize.
   ///
   /// In en, this message translates to:
   /// **'The selected size is too small for this video. Choose a larger size.'**
-  String get compressionTargetInfeasible;
+  String get theSelectedSizeIsTooSmallForThisVideoChooseALargerSize;
 
-  /// No description provided for @compressionPreviewBefore.
+  /// No description provided for @originalPreview.
   ///
   /// In en, this message translates to:
   /// **'Original preview'**
-  String get compressionPreviewBefore;
+  String get originalPreview;
 
-  /// No description provided for @compressionPreviewAfter.
+  /// No description provided for @compressedPreview.
   ///
   /// In en, this message translates to:
   /// **'Compressed preview'**
-  String get compressionPreviewAfter;
+  String get compressedPreview;
 
-  /// No description provided for @compressionPreset.
+  /// No description provided for @targetPreset.
   ///
   /// In en, this message translates to:
   /// **'Target preset'**
-  String get compressionPreset;
+  String get targetPreset;
 
-  /// No description provided for @compressionCustom.
+  /// No description provided for @customSize.
   ///
   /// In en, this message translates to:
   /// **'Custom size'**
-  String get compressionCustom;
+  String get customSize;
 
-  /// No description provided for @compressionPreviewUnavailable.
+  /// No description provided for @previewUnavailable.
   ///
   /// In en, this message translates to:
   /// **'Preview unavailable'**
-  String get compressionPreviewUnavailable;
+  String get previewUnavailable;
 
-  /// No description provided for @compressionAdvanced.
+  /// No description provided for @advancedControls.
   ///
   /// In en, this message translates to:
   /// **'Advanced controls'**
-  String get compressionAdvanced;
+  String get advancedControls;
 
-  /// No description provided for @compressionAutomatic.
+  /// No description provided for @automatic.
   ///
   /// In en, this message translates to:
   /// **'Automatic'**
-  String get compressionAutomatic;
+  String get automatic;
 
-  /// No description provided for @compressionResolutionLimit.
+  /// No description provided for @maximumResolution.
   ///
   /// In en, this message translates to:
   /// **'Maximum resolution'**
-  String get compressionResolutionLimit;
+  String get maximumResolution;
 
-  /// No description provided for @compressionSourceResolution.
+  /// No description provided for @originalResolution.
   ///
   /// In en, this message translates to:
   /// **'Original resolution'**
-  String get compressionSourceResolution;
+  String get originalResolution;
 
-  /// No description provided for @compressionFrameRateLimit.
+  /// No description provided for @maximumFrameRate.
   ///
   /// In en, this message translates to:
   /// **'Maximum frame rate'**
-  String get compressionFrameRateLimit;
+  String get maximumFrameRate;
 
-  /// No description provided for @compressionAudioQuality.
+  /// No description provided for @audioBitrate.
   ///
   /// In en, this message translates to:
   /// **'Audio bitrate'**
-  String get compressionAudioQuality;
+  String get audioBitrate;
 
-  /// No description provided for @compressionRemoveAudio.
+  /// No description provided for @removeAudio.
   ///
   /// In en, this message translates to:
   /// **'Remove audio'**
-  String get compressionRemoveAudio;
+  String get removeAudio;
 
-  /// No description provided for @compressionVideoBitrateLimit.
+  /// No description provided for @videoBitrateCeilingKbps.
   ///
   /// In en, this message translates to:
   /// **'Video bitrate ceiling (kbps)'**
-  String get compressionVideoBitrateLimit;
+  String get videoBitrateCeilingKbps;
 
-  /// No description provided for @compressionHdrPolicy.
+  /// No description provided for @hdrHandling.
   ///
   /// In en, this message translates to:
   /// **'HDR handling'**
-  String get compressionHdrPolicy;
+  String get hdrHandling;
 
-  /// No description provided for @compressionHdrConvert.
+  /// No description provided for @convertToSDR.
   ///
   /// In en, this message translates to:
   /// **'Convert to SDR'**
-  String get compressionHdrConvert;
+  String get convertToSDR;
 
-  /// No description provided for @compressionHdrPreserve.
+  /// No description provided for @keepHDRWhenSupported.
   ///
   /// In en, this message translates to:
   /// **'Keep HDR when supported'**
-  String get compressionHdrPreserve;
+  String get keepHDRWhenSupported;
 
-  /// No description provided for @compressionPlanPreview.
+  /// No description provided for @beforeYouStart.
   ///
   /// In en, this message translates to:
   /// **'Before you start'**
-  String get compressionPlanPreview;
+  String get beforeYouStart;
 
-  /// No description provided for @compressionPlanLoading.
+  /// No description provided for @calculatingCompressionPlan.
   ///
   /// In en, this message translates to:
   /// **'Calculating compression plan…'**
-  String get compressionPlanLoading;
+  String get calculatingCompressionPlan;
 
-  /// No description provided for @compressionPlanResolution.
+  /// No description provided for @plannedResolution.
   ///
   /// In en, this message translates to:
   /// **'Planned resolution'**
-  String get compressionPlanResolution;
+  String get plannedResolution;
 
-  /// No description provided for @compressionPlanVideoBitrate.
+  /// No description provided for @plannedVideoBitrate.
   ///
   /// In en, this message translates to:
   /// **'Planned video bitrate'**
-  String get compressionPlanVideoBitrate;
+  String get plannedVideoBitrate;
 
-  /// No description provided for @compressionPlanAudioBitrate.
+  /// No description provided for @plannedAudioBitrate.
   ///
   /// In en, this message translates to:
   /// **'Planned audio bitrate'**
-  String get compressionPlanAudioBitrate;
+  String get plannedAudioBitrate;
 
-  /// No description provided for @compressionAudioConversionNote.
+  /// No description provided for @reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved.
   ///
   /// In en, this message translates to:
   /// **'Re-encoding converts audio to AAC stereo. Dolby Atmos and DTS spatial audio will not be preserved.'**
-  String get compressionAudioConversionNote;
+  String
+  get reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved;
 
-  /// No description provided for @compressionPlanTooSmall.
+  /// No description provided for @thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits.
   ///
   /// In en, this message translates to:
   /// **'This target is too small for a usable video. Increase the size or lower other limits.'**
-  String get compressionPlanTooSmall;
+  String
+  get thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits;
 
-  /// No description provided for @compressionPlanLowQuality.
+  /// No description provided for @theSelectedTargetMayReduceVideoQuality.
   ///
   /// In en, this message translates to:
   /// **'The selected target may reduce video quality.'**
-  String get compressionPlanLowQuality;
+  String get theSelectedTargetMayReduceVideoQuality;
 
-  /// No description provided for @compressionPlanAlreadyWithinLimit.
+  /// No description provided for @theSourceIsAlreadyWithinTheSizeLimit.
   ///
   /// In en, this message translates to:
   /// **'The source is already within the size limit.'**
-  String get compressionPlanAlreadyWithinLimit;
+  String get theSourceIsAlreadyWithinTheSizeLimit;
 
-  /// No description provided for @compressionInvalidBitrate.
+  /// No description provided for @enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic.
   ///
   /// In en, this message translates to:
   /// **'Enter a bitrate of at least 150 kbps, or leave blank for automatic'**
-  String get compressionInvalidBitrate;
+  String get enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic;
 
-  /// No description provided for @compressionInvalidResolution.
+  /// No description provided for @enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic.
   ///
   /// In en, this message translates to:
   /// **'Enter an even resolution from 240 to 16384, or leave blank for automatic'**
-  String get compressionInvalidResolution;
+  String get enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic;
 
-  /// No description provided for @compressionSeek.
+  /// No description provided for @videoPosition.
   ///
   /// In en, this message translates to:
   /// **'Video position'**
-  String get compressionSeek;
+  String get videoPosition;
 
-  /// No description provided for @compressionInterrupted.
+  /// No description provided for @aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain.
   ///
   /// In en, this message translates to:
   /// **'A previous compression was interrupted. Its temporary files were cleaned up; you can select the video and try again.'**
-  String get compressionInterrupted;
+  String
+  get aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain;
 
-  /// No description provided for @compressionDismiss.
+  /// No description provided for @dismiss.
   ///
   /// In en, this message translates to:
   /// **'Dismiss'**
-  String get compressionDismiss;
+  String get dismiss;
 
-  /// No description provided for @compressionClearHistory.
+  /// No description provided for @clearHistory.
   ///
   /// In en, this message translates to:
   /// **'Clear history'**
-  String get compressionClearHistory;
+  String get clearHistory;
 
-  /// No description provided for @compressionClearHistoryConfirm.
+  /// No description provided for @removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice.
   ///
   /// In en, this message translates to:
   /// **'Remove all history entries? Saved videos will remain on your device.'**
-  String get compressionClearHistoryConfirm;
+  String get removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice;
 
-  /// No description provided for @compressionAttempts.
+  /// No description provided for @attempts.
   ///
   /// In en, this message translates to:
   /// **'Attempts'**
-  String get compressionAttempts;
+  String get attempts;
 
-  /// No description provided for @compressionTargetSize.
+  /// No description provided for @targetSize.
   ///
   /// In en, this message translates to:
   /// **'Target size'**
-  String get compressionTargetSize;
+  String get targetSize;
 
-  /// No description provided for @compressionOutputResolution.
+  /// No description provided for @outputResolution.
   ///
   /// In en, this message translates to:
   /// **'Output resolution'**
-  String get compressionOutputResolution;
+  String get outputResolution;
 
-  /// No description provided for @compressionInvalidVideo.
+  /// No description provided for @thisVideoCouldNotBeReadChooseAnotherFile.
   ///
   /// In en, this message translates to:
   /// **'This video could not be read. Choose another file.'**
-  String get compressionInvalidVideo;
+  String get thisVideoCouldNotBeReadChooseAnotherFile;
 
-  /// No description provided for @compressionInvalidOutput.
+  /// No description provided for @theEncodedVideoFailedVerificationYourOriginalVideoWasNotChanged.
   ///
   /// In en, this message translates to:
   /// **'The encoded video failed verification. Your original video was not changed.'**
-  String get compressionInvalidOutput;
+  String get theEncodedVideoFailedVerificationYourOriginalVideoWasNotChanged;
 
-  /// No description provided for @compressionEncoderUnsupported.
+  /// No description provided for @thisDeviceCannotEncodeTheSelectedResolutionOrFrameRateLowerThatSettingAndTryAgain.
   ///
   /// In en, this message translates to:
   /// **'This device cannot encode the selected resolution or frame rate. Lower that setting and try again.'**
-  String get compressionEncoderUnsupported;
+  String
+  get thisDeviceCannotEncodeTheSelectedResolutionOrFrameRateLowerThatSettingAndTryAgain;
 
-  /// No description provided for @compressionAudioDecoderUnsupported.
+  /// No description provided for @thisDeviceCannotDecodeThisAudioFormatForCompressionRemoveAudioOrUseASupportedSource.
   ///
   /// In en, this message translates to:
   /// **'This device cannot decode this audio format for compression. Remove audio or use a supported source.'**
-  String get compressionAudioDecoderUnsupported;
+  String
+  get thisDeviceCannotDecodeThisAudioFormatForCompressionRemoveAudioOrUseASupportedSource;
 
-  /// No description provided for @compressionVideoDecoderUnsupported.
+  /// No description provided for @thisDeviceCannotDecodeThisVideoFormatOrProfileForCompressionChooseAnotherSourceOrDevice.
   ///
   /// In en, this message translates to:
   /// **'This device cannot decode this video format or profile for compression. Choose another source or device.'**
-  String get compressionVideoDecoderUnsupported;
+  String
+  get thisDeviceCannotDecodeThisVideoFormatOrProfileForCompressionChooseAnotherSourceOrDevice;
 
-  /// No description provided for @compressionMp4NotStreamable.
+  /// No description provided for @theExportedMP4IsNotReadyForStreamingTryAnotherVideoOrDevice.
   ///
   /// In en, this message translates to:
   /// **'The exported MP4 is not ready for streaming. Try another video or device.'**
-  String get compressionMp4NotStreamable;
+  String get theExportedMP4IsNotReadyForStreamingTryAnotherVideoOrDevice;
 
-  /// No description provided for @compressionNoSpace.
+  /// No description provided for @thereIsNotEnoughFreeStorageToCompressThisVideo.
   ///
   /// In en, this message translates to:
   /// **'There is not enough free storage to compress this video.'**
-  String get compressionNoSpace;
+  String get thereIsNotEnoughFreeStorageToCompressThisVideo;
 
-  /// No description provided for @compressionHdrUnsupported.
+  /// No description provided for @thisDeviceCannotProcessTheSelectedHDRModeTryConvertingToSDR.
   ///
   /// In en, this message translates to:
   /// **'This device cannot process the selected HDR mode. Try converting to SDR.'**
-  String get compressionHdrUnsupported;
+  String get thisDeviceCannotProcessTheSelectedHDRModeTryConvertingToSDR;
 
-  /// No description provided for @compressionGeneralFailure.
+  /// No description provided for @compressionCouldNotBeCompletedTryAnotherSettingOrVideo.
   ///
   /// In en, this message translates to:
   /// **'Compression could not be completed. Try another setting or video.'**
-  String get compressionGeneralFailure;
+  String get compressionCouldNotBeCompletedTryAnotherSettingOrVideo;
 
-  /// No description provided for @aboutIdentitySection.
+  /// No description provided for @appIdentity.
   ///
   /// In en, this message translates to:
   /// **'App identity'**
-  String get aboutIdentitySection;
+  String get appIdentity;
 
-  /// No description provided for @aboutAppName.
+  /// No description provided for @appName.
   ///
   /// In en, this message translates to:
   /// **'App name'**
-  String get aboutAppName;
+  String get appName;
 
-  /// No description provided for @aboutPackageName.
+  /// No description provided for @packageName.
   ///
   /// In en, this message translates to:
   /// **'Package name'**
-  String get aboutPackageName;
+  String get packageName;
 
-  /// No description provided for @aboutVersion.
+  /// No description provided for @version.
   ///
   /// In en, this message translates to:
   /// **'Version'**
-  String get aboutVersion;
+  String get version;
 
-  /// No description provided for @aboutBuildNumber.
+  /// No description provided for @buildNumber.
   ///
   /// In en, this message translates to:
   /// **'Build number'**
-  String get aboutBuildNumber;
+  String get buildNumber;
 
-  /// No description provided for @aboutEnvironmentSection.
+  /// No description provided for @deviceAndBuild.
   ///
   /// In en, this message translates to:
   /// **'Device and build'**
-  String get aboutEnvironmentSection;
+  String get deviceAndBuild;
 
-  /// No description provided for @aboutOperatingSystem.
+  /// No description provided for @operatingSystem.
   ///
   /// In en, this message translates to:
   /// **'Operating system'**
-  String get aboutOperatingSystem;
+  String get operatingSystem;
 
-  /// No description provided for @aboutOsVersion.
+  /// No description provided for @osVersion.
   ///
   /// In en, this message translates to:
   /// **'OS version'**
-  String get aboutOsVersion;
+  String get osVersion;
 
-  /// No description provided for @aboutBuildMode.
+  /// No description provided for @buildMode.
   ///
   /// In en, this message translates to:
   /// **'Build mode'**
-  String get aboutBuildMode;
+  String get buildMode;
 
-  /// No description provided for @aboutDebug.
+  /// No description provided for @debug.
   ///
   /// In en, this message translates to:
   /// **'Debug'**
-  String get aboutDebug;
+  String get debug;
 
-  /// No description provided for @aboutRelease.
+  /// No description provided for @release.
   ///
   /// In en, this message translates to:
   /// **'Release'**
-  String get aboutRelease;
+  String get release;
 
-  /// No description provided for @aboutToolchainSection.
+  /// No description provided for @builtWith.
   ///
   /// In en, this message translates to:
   /// **'Built with'**
-  String get aboutToolchainSection;
+  String get builtWith;
 
-  /// No description provided for @aboutInstallationSection.
+  /// No description provided for @installation.
   ///
   /// In en, this message translates to:
   /// **'Installation'**
-  String get aboutInstallationSection;
+  String get installation;
 
-  /// No description provided for @aboutInstaller.
+  /// No description provided for @installedFrom.
   ///
   /// In en, this message translates to:
   /// **'Installed from'**
-  String get aboutInstaller;
+  String get installedFrom;
 
-  /// No description provided for @aboutInstalledOn.
+  /// No description provided for @installedOn.
   ///
   /// In en, this message translates to:
   /// **'Installed on'**
-  String get aboutInstalledOn;
+  String get installedOn;
 
-  /// No description provided for @aboutUpdatedOn.
+  /// No description provided for @updatedOn.
   ///
   /// In en, this message translates to:
   /// **'Updated on'**
-  String get aboutUpdatedOn;
+  String get updatedOn;
 
-  /// No description provided for @aboutUnavailable.
+  /// No description provided for @unavailable.
   ///
   /// In en, this message translates to:
   /// **'Unavailable'**
-  String get aboutUnavailable;
+  String get unavailable;
 
-  /// No description provided for @aboutProjectSection.
+  /// No description provided for @projectAndSupport.
   ///
   /// In en, this message translates to:
   /// **'Project and support'**
-  String get aboutProjectSection;
+  String get projectAndSupport;
 
-  /// No description provided for @aboutRepository.
+  /// No description provided for @githubRepository.
   ///
   /// In en, this message translates to:
   /// **'GitHub repository'**
-  String get aboutRepository;
+  String get githubRepository;
 
-  /// No description provided for @aboutRepositorySubtitle.
+  /// No description provided for @viewZumiSourceCode.
   ///
   /// In en, this message translates to:
   /// **'View Zumi source code'**
-  String get aboutRepositorySubtitle;
+  String get viewZumiSourceCode;
 
-  /// No description provided for @aboutReadme.
+  /// No description provided for @readTheREADME.
   ///
   /// In en, this message translates to:
   /// **'Read the README'**
-  String get aboutReadme;
+  String get readTheREADME;
 
-  /// No description provided for @aboutReadmeSubtitle.
+  /// No description provided for @learnAboutZumiOnGitHub.
   ///
   /// In en, this message translates to:
   /// **'Learn about Zumi on GitHub'**
-  String get aboutReadmeSubtitle;
+  String get learnAboutZumiOnGitHub;
 
-  /// No description provided for @aboutIssues.
+  /// No description provided for @reportAnIssue.
   ///
   /// In en, this message translates to:
   /// **'Report an issue'**
-  String get aboutIssues;
+  String get reportAnIssue;
 
-  /// No description provided for @aboutIssuesSubtitle.
+  /// No description provided for @viewAndCreateGitHubIssues.
   ///
   /// In en, this message translates to:
   /// **'View and create GitHub issues'**
-  String get aboutIssuesSubtitle;
+  String get viewAndCreateGitHubIssues;
 
-  /// No description provided for @aboutLatestRelease.
+  /// No description provided for @latestRelease.
   ///
   /// In en, this message translates to:
   /// **'Latest release'**
-  String get aboutLatestRelease;
+  String get latestRelease;
 
-  /// No description provided for @aboutLatestReleaseSubtitle.
+  /// No description provided for @viewReleasesAndDownloads.
   ///
   /// In en, this message translates to:
   /// **'View releases and downloads'**
-  String get aboutLatestReleaseSubtitle;
+  String get viewReleasesAndDownloads;
 
-  /// No description provided for @aboutDonate.
+  /// No description provided for @supportZumi.
   ///
   /// In en, this message translates to:
   /// **'Support Zumi'**
-  String get aboutDonate;
+  String get supportZumi;
 
-  /// No description provided for @aboutDonateSubtitle.
+  /// No description provided for @openTheOfficialDonationPage.
   ///
   /// In en, this message translates to:
   /// **'Open the official donation page'**
-  String get aboutDonateSubtitle;
+  String get openTheOfficialDonationPage;
 
-  /// No description provided for @aboutLinkError.
+  /// No description provided for @couldNotOpenTheLinkPleaseTryAgain.
   ///
   /// In en, this message translates to:
   /// **'Could not open the link. Please try again.'**
-  String get aboutLinkError;
+  String get couldNotOpenTheLinkPleaseTryAgain;
 
-  /// No description provided for @aboutDeveloperSection.
+  /// No description provided for @developer.
   ///
   /// In en, this message translates to:
   /// **'Developer'**
-  String get aboutDeveloperSection;
+  String get developer;
 
-  /// No description provided for @aboutDeveloperName.
+  /// No description provided for @mostafaSensei.
   ///
   /// In en, this message translates to:
   /// **'Mostafa Sensei'**
-  String get aboutDeveloperName;
+  String get mostafaSensei;
 
-  /// No description provided for @aboutDeveloperProfile.
+  /// No description provided for @githubProfile.
   ///
   /// In en, this message translates to:
   /// **'GitHub profile'**
-  String get aboutDeveloperProfile;
+  String get githubProfile;
 
-  /// No description provided for @aboutDeveloperProfileSubtitle.
+  /// No description provided for @seeProjectsAndContactDetails.
   ///
   /// In en, this message translates to:
   /// **'See projects and contact details'**
-  String get aboutDeveloperProfileSubtitle;
+  String get seeProjectsAndContactDetails;
 
   /// No description provided for @maintenanceInProgress.
   ///
@@ -1766,11 +1771,11 @@ abstract class AppLocalizations {
   /// **'Maintenance in progress'**
   String get maintenanceInProgress;
 
-  /// No description provided for @maintenanceMessage.
+  /// No description provided for @zumiIsTemporarilyUnavailablePleaseTryAgainLater.
   ///
   /// In en, this message translates to:
   /// **'Zumi is temporarily unavailable. Please try again later.'**
-  String get maintenanceMessage;
+  String get zumiIsTemporarilyUnavailablePleaseTryAgainLater;
 
   /// Badge shown on placeholder pages
   ///

@@ -15,7 +15,8 @@ final class PrivacySettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppPlaceholderPage(
       title: context.localeKeys.privacy,
-      description: context.localeKeys.onDeviceProcessingLocalLogsAndOptionalCrashReports,
+      description:
+          context.localeKeys.onDeviceProcessingLocalLogsAndOptionalCrashReports,
       icon: ZumiIcons.privacy,
     );
   }

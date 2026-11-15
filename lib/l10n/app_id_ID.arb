@@ -17,8 +17,8 @@
       }
     }
   },
-  "fileSavedToDcim": "File disimpan ke galeri: {fileName}",
-  "@fileSavedToDcim": {
+  "fileSavedToGallery": "File disimpan ke galeri: {fileName}",
+  "@fileSavedToGallery": {
     "description": "Message shown when file is saved to gallery",
     "placeholders": {
       "fileName": {
@@ -35,8 +35,8 @@
       }
     }
   },
-  "fileAlreadySaved": "File sudah disimpan",
-  "@fileAlreadySaved": {
+  "fileIsAlreadySaved": "File sudah disimpan",
+  "@fileIsAlreadySaved": {
     "description": "Message shown when file already exists"
   },
   "error": "Kesalahan",
@@ -67,116 +67,116 @@
   "@partial": {
     "description": "Payment status partial"
   },
-  "error_address_line_cant_be_empty": "Baris alamat tidak boleh kosong",
-  "@error_address_line_cant_be_empty": {
+  "addressLineCannotBeEmpty": "Baris alamat tidak boleh kosong",
+  "@addressLineCannotBeEmpty": {
     "description": "Address line empty error"
   },
-  "error_address_line_too_long": "Baris alamat terlalu panjang",
-  "@error_address_line_too_long": {
+  "addressLineIsTooLong": "Baris alamat terlalu panjang",
+  "@addressLineIsTooLong": {
     "description": "Address line too long error"
   },
-  "error_address_invalid_special_characters": "Karakter khusus tidak diperbolehkan",
-  "@error_address_invalid_special_characters": {
+  "specialCharactersAreNotAllowed": "Karakter khusus tidak diperbolehkan",
+  "@specialCharactersAreNotAllowed": {
     "description": "Address special characters error"
   },
-  "error_address_emoji_not_allowed": "Emoji tidak diperbolehkan",
-  "@error_address_emoji_not_allowed": {
+  "emojisAreNotAllowed": "Emoji tidak diperbolehkan",
+  "@emojisAreNotAllowed": {
     "description": "Address emoji not allowed error"
   },
-  "error_city_cant_be_empty": "Kota tidak boleh kosong",
-  "@error_city_cant_be_empty": {
+  "cityCannotBeEmpty": "Kota tidak boleh kosong",
+  "@cityCannotBeEmpty": {
     "description": "City empty error"
   },
-  "error_city_too_long": "Nama kota terlalu panjang",
-  "@error_city_too_long": {
+  "cityNameIsTooLong": "Nama kota terlalu panjang",
+  "@cityNameIsTooLong": {
     "description": "City too long error"
   },
-  "error_city_invalid_special_characters": "Kota mengandung karakter khusus yang tidak valid",
-  "@error_city_invalid_special_characters": {
+  "cityContainsInvalidSpecialCharacters": "Kota mengandung karakter khusus yang tidak valid",
+  "@cityContainsInvalidSpecialCharacters": {
     "description": "City special characters error"
   },
-  "error_address_label_cant_be_empty": "Label alamat tidak boleh kosong",
-  "@error_address_label_cant_be_empty": {
+  "addressLabelCannotBeEmpty": "Label alamat tidak boleh kosong",
+  "@addressLabelCannotBeEmpty": {
     "description": "Address label empty error"
   },
-  "error_address_label_too_long": "Label alamat terlalu panjang",
-  "@error_address_label_too_long": {
+  "addressLabelIsTooLong": "Label alamat terlalu panjang",
+  "@addressLabelIsTooLong": {
     "description": "Address label too long error"
   },
-  "error_email_cant_be_empty": "Email tidak boleh kosong",
-  "@error_email_cant_be_empty": {
+  "emailCannotBeEmpty": "Email tidak boleh kosong",
+  "@emailCannotBeEmpty": {
     "description": "Email empty error"
   },
-  "error_email_not_invalid_format": "Format email tidak valid",
-  "@error_email_not_invalid_format": {
+  "invalidEmailFormat": "Format email tidak valid",
+  "@invalidEmailFormat": {
     "description": "Email invalid format error"
   },
-  "error_email_contains_invalid_characters": "Email mengandung karakter tidak valid",
-  "@error_email_contains_invalid_characters": {
+  "emailContainsInvalidCharacters": "Email mengandung karakter tidak valid",
+  "@emailContainsInvalidCharacters": {
     "description": "Email invalid characters error"
   },
-  "error_email_must_contain_at_symbol": "Email harus mengandung @",
-  "@error_email_must_contain_at_symbol": {
+  "emailMustContain": "Email harus mengandung @",
+  "@emailMustContain": {
     "description": "Email missing @ error"
   },
-  "error_email_must_be_in_lowercase": "Email harus dalam huruf kecil",
-  "@error_email_must_be_in_lowercase": {
+  "emailMustBeInLowercase": "Email harus dalam huruf kecil",
+  "@emailMustBeInLowercase": {
     "description": "Email not in lowercase error"
   },
-  "error_arabic_not_allowed": "Karakter Arab tidak diperbolehkan",
-  "@error_arabic_not_allowed": {
+  "arabicCharactersAreNotAllowed": "Karakter Arab tidak diperbolehkan",
+  "@arabicCharactersAreNotAllowed": {
     "description": "Arabic characters not allowed error"
   },
-  "error_email_emoji_not_allowed": "Emoji tidak diperbolehkan dalam email",
-  "@error_email_emoji_not_allowed": {
+  "emojisAreNotAllowedInEmail": "Emoji tidak diperbolehkan dalam email",
+  "@emojisAreNotAllowedInEmail": {
     "description": "Email emoji not allowed error"
   },
-  "error_phone_number_cant_be_empty": "Nomor telepon tidak boleh kosong",
-  "@error_phone_number_cant_be_empty": {
+  "phoneNumberCannotBeEmpty": "Nomor telepon tidak boleh kosong",
+  "@phoneNumberCannotBeEmpty": {
     "description": "Phone number empty error"
   },
-  "error_phone_number_invalid": "Nomor telepon tidak valid",
-  "@error_phone_number_invalid": {
+  "invalidPhoneNumber": "Nomor telepon tidak valid",
+  "@invalidPhoneNumber": {
     "description": "Phone number invalid error"
   },
-  "error_phone_number_min_length": "Nomor telepon harus terdiri dari minimal 11 digit",
-  "@error_phone_number_min_length": {
+  "phoneNumberMustBeAtLeast11Digits": "Nomor telepon harus terdiri dari minimal 11 digit",
+  "@phoneNumberMustBeAtLeast11Digits": {
     "description": "Phone number min length error"
   },
-  "error_name_cant_be_empty": "Nama tidak boleh kosong",
-  "@error_name_cant_be_empty": {
+  "nameCannotBeEmpty": "Nama tidak boleh kosong",
+  "@nameCannotBeEmpty": {
     "description": "Name empty error"
   },
-  "error_name_invalid": "Nama tidak valid",
-  "@error_name_invalid": {
+  "invalidName": "Nama tidak valid",
+  "@invalidName": {
     "description": "Name invalid error"
   },
-  "error_name_too_short_at_least_3_characters": "Nama harus terdiri dari minimal 3 karakter",
-  "@error_name_too_short_at_least_3_characters": {
+  "nameMustBeAtLeast3Characters": "Nama harus terdiri dari minimal 3 karakter",
+  "@nameMustBeAtLeast3Characters": {
     "description": "Name too short error"
   },
-  "error_name_too_long_maximum_20_characters": "Nama tidak boleh melebihi 20 karakter",
-  "@error_name_too_long_maximum_20_characters": {
+  "nameCannotExceed20Characters": "Nama tidak boleh melebihi 20 karakter",
+  "@nameCannotExceed20Characters": {
     "description": "Name too long error"
   },
-  "error_name_invalid_special_characters": "Nama mengandung karakter khusus yang tidak valid",
-  "@error_name_invalid_special_characters": {
+  "nameContainsInvalidSpecialCharacters": "Nama mengandung karakter khusus yang tidak valid",
+  "@nameContainsInvalidSpecialCharacters": {
     "description": "Name special characters error"
   },
-  "error_name_emoji_not_allowed": "Emoji tidak diperbolehkan dalam nama",
-  "@error_name_emoji_not_allowed": {
+  "emojisAreNotAllowedInName": "Emoji tidak diperbolehkan dalam nama",
+  "@emojisAreNotAllowedInName": {
     "description": "Name emoji not allowed error"
   },
-  "error_password_cant_be_empty": "Kata sandi tidak boleh kosong",
-  "@error_password_cant_be_empty": {
+  "passwordCannotBeEmpty": "Kata sandi tidak boleh kosong",
+  "@passwordCannotBeEmpty": {
     "description": "Password empty error"
   },
-  "error_password_must_contain_uppercase_lowercase_number_and_special_character": "Kata sandi harus mengandung huruf besar, huruf kecil, angka, dan karakter khusus",
-  "@error_password_must_contain_uppercase_lowercase_number_and_special_character": {
+  "passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter": "Kata sandi harus mengandung huruf besar, huruf kecil, angka, dan karakter khusus",
+  "@passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter": {
     "description": "Password complex requirements error"
   },
-  "error_password_must_be_at_least_8_characters_long": "Kata sandi harus minimal 8 karakter",
-  "@error_password_must_be_at_least_8_characters_long": {
+  "passwordMustBeAtLeast8CharactersLong": "Kata sandi harus minimal 8 karakter",
+  "@passwordMustBeAtLeast8CharactersLong": {
     "description": "Password min length error"
   },
   "noInternetConnection": "Tidak ada koneksi internet",
@@ -463,250 +463,250 @@
   "@recommendZumiToAFriend": {
     "description": "Share app page description"
   },
-  "settingsGroupAppearance": "Tampilan & bahasa",
-  "@settingsGroupAppearance": {
+  "appearanceLanguage": "Tampilan & bahasa",
+  "@appearanceLanguage": {
     "description": "Settings hub section label"
   },
-  "settingsGroupCompression": "Kompresi",
-  "@settingsGroupCompression": {
+  "compression": "Kompresi",
+  "@compression": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAi": "AI di perangkat",
-  "@settingsGroupAi": {
+  "onDeviceAI": "AI di perangkat",
+  "@onDeviceAI": {
     "description": "Settings hub section label"
   },
-  "settingsGroupPrivacy": "Notifikasi & privasi",
-  "@settingsGroupPrivacy": {
+  "notificationsPrivacy": "Notifikasi & privasi",
+  "@notificationsPrivacy": {
     "description": "Settings hub section label"
   },
-  "settingsGroupPlans": "Paket & pembelian",
-  "@settingsGroupPlans": {
+  "plansPurchases": "Paket & pembelian",
+  "@plansPurchases": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAbout": "Tentang",
-  "@settingsGroupAbout": {
+  "about": "Tentang",
+  "@about": {
     "description": "Settings hub section label"
   },
-  "settingsGroupLegal": "Hukum",
-  "@settingsGroupLegal": {
+  "legal": "Hukum",
+  "@legal": {
     "description": "Settings hub section label"
   },
-  "settingsGroupHelp": "Bantuan & umpan balik",
-  "@settingsGroupHelp": {
+  "helpFeedback": "Bantuan & umpan balik",
+  "@helpFeedback": {
     "description": "Settings hub section label"
   },
-  "settingsGroupAccount": "Akun",
-  "@settingsGroupAccount": {
+  "account": "Akun",
+  "@account": {
     "description": "Settings hub section label"
   },
-  "settingsAppearanceSubtitle": "Tema dan bahasa aplikasi",
-  "@settingsAppearanceSubtitle": {
+  "themeAndAppLanguage": "Tema dan bahasa aplikasi",
+  "@themeAndAppLanguage": {
     "description": "Settings hub row summary"
   },
-  "settingsLanguageSubtitle": "Bahasa dan arah aplikasi",
-  "@settingsLanguageSubtitle": {
+  "appLanguageAndDirection": "Bahasa dan arah aplikasi",
+  "@appLanguageAndDirection": {
     "description": "Settings hub row summary"
   },
-  "settingsCompressionSubtitle": "Kualitas dan format default",
-  "@settingsCompressionSubtitle": {
+  "defaultQualityAndFormat": "Kualitas dan format default",
+  "@defaultQualityAndFormat": {
     "description": "Settings hub row summary"
   },
-  "settingsStorageSubtitle": "Penggunaan cache dan penyimpanan",
-  "@settingsStorageSubtitle": {
+  "cacheAndStorageUsage": "Penggunaan cache dan penyimpanan",
+  "@cacheAndStorageUsage": {
     "description": "Settings hub row summary"
   },
   "aiSettings": "Pengaturan AI",
   "zumiAssistant": "Asisten Zumi",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "Asisten pribadi untuk video Anda akan segera hadir. Anda akan dapat menanyakan tentang kompresi, organisasi, dan video yang disimpan di sini.",
-  "settingsAiSubtitle": "Model lokal dan alat pintar",
-  "exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet": "Jelajahi model lokal dan alat AI di masa depan. Opsi ini belum aktif.",
+  "localModelsAndSmartTools": "Model lokal dan alat pintar",
+  "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "Jelajahi model lokal dan alat AI di masa depan. Opsi ini belum aktif.",
   "localModels": "Model lokal",
-  "aiModelsSubtitle": "Jelajahi dan unduh model yang didukung",
+  "browseAndDownloadSupportedModels": "Jelajahi dan unduh model yang didukung",
   "chooseASupportedModelDownloadItToThisDeviceAndManageInstalledModelsHere": "Pilih model yang didukung, unduh ke perangkat ini, dan kelola model yang terpasang di sini.",
   "importAModel": "Impor model",
-  "aiImportSubtitle": "Gunakan model yang kompatibel dari file Anda",
+  "useACompatibleModelFromYourFiles": "Gunakan model yang kompatibel dari file Anda",
   "selectACompatibleLocalModelFileAndReviewItsRequirementsBeforeUsingIt": "Pilih file model lokal yang kompatibel dan tinjau persyaratannya sebelum menggunakannya.",
   "smartFeatures": "Fitur pintar",
-  "aiFeaturesSubtitle": "Kompresi, organisasi, dan pencarian",
-  "chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "Pilih saran AI lokal mana yang akan digunakan untuk kompresi video, organisasi, penamaan, dan pencarian.",
+  "compressionOrganizationAndSearch": "Kompresi, organisasi, dan pencarian",
+  "chooseWhichLocalAISuggestionsToUseForVideoCompressionOrganizationNamingAndSearch": "Pilih saran AI lokal mana yang akan digunakan untuk kompresi video, organisasi, penamaan, dan pencarian.",
   "modelPerformance": "Kinerja model",
-  "aiRuntimeSubtitle": "Preferensi pemrosesan dan sumber daya",
+  "processingAndResourcePreferences": "Preferensi pemrosesan dan sumber daya",
   "controlTheProcessingBackendAndResourceLimitsForSupportedModels": "Kontrol backend pemrosesan dan batas sumber daya untuk model yang didukung.",
   "conversationSettings": "Pengaturan percakapan",
-  "aiChatSettingsSubtitle": "Streaming, berpikir, dan panjang respons",
+  "streamingThinkingAndResponseLength": "Streaming, berpikir, dan panjang respons",
   "configureHowTheAssistantRespondsIncludingStreamingThinkingModeSamplingAndResponseLimits": "Konfigurasikan bagaimana asisten merespons, termasuk streaming, mode berpikir, sampling, dan batasan respons.",
   "imagesAndAudio": "Gambar dan audio",
-  "aiMediaSubtitle": "Kendalikan input multimodal",
+  "controlMultimodalInputs": "Kendalikan input multimodal",
   "chooseWhetherCompatibleModelsCanAnalyzeSelectedImagesAndAudioFromYourVideos": "Pilih apakah model yang kompatibel dapat menganalisis gambar dan audio tertentu dari video Anda.",
   "semanticSearch": "Pencarian semantik",
-  "aiSearchSubtitle": "Embedding dan pengindeksan lokal",
+  "embeddingsAndLocalIndexing": "Embedding dan pengindeksan lokal",
   "manageTheLocalEmbeddingModelAndSearchIndexForFindingVideosAndMomentsByMeaning": "Kelola model embedding lokal dan indeks pencarian untuk menemukan video dan momen berdasarkan makna.",
   "toolsAndStructuredOutput": "Alat dan output terstruktur",
-  "aiToolsSubtitle": "Tindakan, skema, dan konfirmasi",
+  "actionsSchemasAndConfirmations": "Tindakan, skema, dan konfirmasi",
   "manageSupportedAssistantActionsAndStructuredResponsesActionsThatAffectFilesWillRequireYourConfirmation": "Kelola tindakan asisten yang didukung dan respons terstruktur. Tindakan yang memengaruhi file akan memerlukan konfirmasi Anda.",
-  "aiGroupModels": "Model",
-  "aiGroupExperience": "Pengalaman asisten",
-  "aiGroupCapabilities": "Kemampuan cerdas",
-  "aiGroupPerformance": "Kinerja",
-  "compressionHistorySubtitle": "Riwayat video yang dikompres",
-  "@compressionHistorySubtitle": {
+  "models": "Model",
+  "assistantExperience": "Pengalaman asisten",
+  "smartCapabilities": "Kemampuan cerdas",
+  "performance": "Kinerja",
+  "yourCompressedVideoHistory": "Riwayat video yang dikompres",
+  "@yourCompressedVideoHistory": {
     "description": "Settings hub row summary"
   },
-  "settingsNotificationsSubtitle": "Peringatan penyelesaian dan pembaruan",
-  "@settingsNotificationsSubtitle": {
+  "completionAndUpdateAlerts": "Peringatan penyelesaian dan pembaruan",
+  "@completionAndUpdateAlerts": {
     "description": "Settings hub row summary"
   },
-  "settingsPrivacySubtitle": "Data Anda tetap lokal",
-  "@settingsPrivacySubtitle": {
+  "yourDataStaysLocal": "Data Anda tetap lokal",
+  "@yourDataStaysLocal": {
     "description": "Settings hub row summary"
   },
-  "plansSubtitle": "Bandingkan paket dan tingkatkan",
-  "@plansSubtitle": {
+  "comparePlansAndUpgrade": "Bandingkan paket dan tingkatkan",
+  "@comparePlansAndUpgrade": {
     "description": "Settings hub row summary"
   },
-  "plansMethodsSubtitle": "Metode pembayaran dan tagihan",
-  "@plansMethodsSubtitle": {
+  "paymentMethodsAndBilling": "Metode pembayaran dan tagihan",
+  "@paymentMethodsAndBilling": {
     "description": "Settings hub row summary"
   },
-  "plansRestoreSubtitle": "Pulihkan pembelian sebelumnya",
-  "@plansRestoreSubtitle": {
+  "restoreYourPreviousPurchase": "Pulihkan pembelian sebelumnya",
+  "@restoreYourPreviousPurchase": {
     "description": "Settings hub row summary"
   },
-  "aboutAppSubtitle": "Detail versi dan build",
-  "@aboutAppSubtitle": {
+  "versionAndBuildDetails": "Detail versi dan build",
+  "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "aboutDeveloperSubtitle": "Pengembang di balik Zumi",
-  "@aboutDeveloperSubtitle": {
+  "theDeveloperBehindZumi": "Pengembang di balik Zumi",
+  "@theDeveloperBehindZumi": {
     "description": "Settings hub row summary"
   },
-  "aboutLicensesSubtitle": "Lisensi paket sumber terbuka",
-  "@aboutLicensesSubtitle": {
+  "openSourcePackageLicenses": "Lisensi paket sumber terbuka",
+  "@openSourcePackageLicenses": {
     "description": "Settings hub row summary"
   },
-  "legalPrivacySubtitle": "Bagaimana data ditangani",
-  "@legalPrivacySubtitle": {
+  "howDataIsHandled": "Bagaimana data ditangani",
+  "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "legalTermsSubtitle": "Aturan penggunaan Zumi",
-  "@legalTermsSubtitle": {
+  "rulesForUsingZumi": "Aturan penggunaan Zumi",
+  "@rulesForUsingZumi": {
     "description": "Settings hub row summary"
   },
-  "legalDataSafetySubtitle": "Data apa yang kami kumpulkan",
-  "@legalDataSafetySubtitle": {
+  "whatDataWeCollect": "Data apa yang kami kumpulkan",
+  "@whatDataWeCollect": {
     "description": "Settings hub row summary"
   },
-  "legalPermissionsSubtitle": "Mengapa kami membutuhkan izin",
-  "@legalPermissionsSubtitle": {
+  "whyWeNeedPermissions": "Mengapa kami membutuhkan izin",
+  "@whyWeNeedPermissions": {
     "description": "Settings hub row summary"
   },
-  "helpFaqSubtitle": "Jawaban atas pertanyaan umum",
-  "@helpFaqSubtitle": {
+  "answersToCommonQuestions": "Jawaban atas pertanyaan umum",
+  "@answersToCommonQuestions": {
     "description": "Settings hub row summary"
   },
-  "helpSupportSubtitle": "Hubungi pengembang secara langsung",
-  "@helpSupportSubtitle": {
+  "reachTheDeveloperDirectly": "Hubungi pengembang secara langsung",
+  "@reachTheDeveloperDirectly": {
     "description": "Settings hub row summary"
   },
-  "helpFeedbackSubtitle": "Kirimkan umpan balik Anda",
-  "@helpFeedbackSubtitle": {
+  "sendUsYourFeedback": "Kirimkan umpan balik Anda",
+  "@sendUsYourFeedback": {
     "description": "Settings hub row summary"
   },
-  "compressionPickVideo": "Pilih video",
-  "compressionTargetMb": "Ukuran target (MB)",
-  "compressionStart": "Mulai kompresi",
-  "compressionPause": "Jeda",
-  "compressionResume": "Lanjutkan",
-  "compressionViewResult": "Lihat hasil",
-  "compressionSaveGallery": "Simpan ke galeri",
-  "compressionShare": "Bagikan video",
-  "compressionOriginalSize": "Ukuran asli",
-  "compressionOutputSize": "Ukuran output",
-  "compressionEmptyHistory": "Belum ada video yang dikompresi",
-  "compressionSavedGallery": "Disimpan ke galeri",
-  "compressionInvalidTarget": "Masukkan ukuran target yang lebih besar dari nol",
+  "pickVideo": "Pilih video",
+  "targetSizeMB": "Ukuran target (MB)",
+  "startCompression": "Mulai kompresi",
+  "pause": "Jeda",
+  "resume": "Lanjutkan",
+  "viewResult": "Lihat hasil",
+  "saveToGallery": "Simpan ke galeri",
+  "shareVideo": "Bagikan video",
+  "originalSize": "Ukuran asli",
+  "outputSize": "Ukuran output",
+  "noCompressedVideosYet": "Belum ada video yang dikompresi",
+  "savedToGallery": "Disimpan ke galeri",
+  "enterATargetSizeGreaterThanZero": "Masukkan ukuran target yang lebih besar dari nol",
   "compressionCancelled": "Kompresi dibatalkan",
-  "compressionTargetExceeded": "Video ini tidak dapat mencapai ukuran yang dipilih. Coba ukuran target yang lebih besar.",
-  "compressionTargetInfeasible": "Ukuran yang dipilih terlalu kecil untuk video ini. Pilih ukuran yang lebih besar.",
-  "compressionPreviewBefore": "Pratinjau asli",
-  "compressionPreviewAfter": "Pratinjau terkompresi",
-  "compressionPreset": "Preset target",
-  "compressionCustom": "Ukuran kustom",
-  "compressionPreviewUnavailable": "Pratinjau tidak tersedia",
-  "compressionAdvanced": "Kontrol lanjutan",
-  "compressionAutomatic": "Otomatis",
-  "compressionResolutionLimit": "Resolusi maksimum",
-  "compressionSourceResolution": "Resolusi asli",
-  "compressionFrameRateLimit": "Kecepatan bingkai maksimum",
-  "compressionAudioQuality": "Bitrate audio",
-  "compressionRemoveAudio": "Hapus audio",
-  "compressionVideoBitrateLimit": "Batas bitrate video (kbps)",
-  "compressionHdrPolicy": "Penanganan HDR",
-  "compressionHdrConvert": "Konversi ke SDR",
-  "compressionHdrPreserve": "Pertahankan HDR bila didukung",
-  "compressionPlanPreview": "Sebelum Anda memulai",
-  "compressionPlanLoading": "Menghitung rencana kompresi…",
-  "compressionPlanResolution": "Resolusi yang direncanakan",
-  "compressionPlanVideoBitrate": "Bitrate video yang direncanakan",
-  "compressionPlanAudioBitrate": "Bitrate audio yang direncanakan",
-  "compressionAudioConversionNote": "Pengkodean ulang mengubah audio menjadi AAC stereo. Dolby Atmos dan audio spasial DTS tidak akan dipertahankan.",
-  "compressionPlanTooSmall": "Target ini terlalu kecil untuk video yang dapat digunakan. Perbesar ukurannya atau turunkan batas lainnya.",
-  "compressionPlanLowQuality": "Target yang dipilih dapat mengurangi kualitas video.",
-  "compressionPlanAlreadyWithinLimit": "Sumber sudah berada dalam batas ukuran.",
-  "compressionInvalidBitrate": "Masukkan bitrate minimal 150 kbps, atau biarkan kosong untuk otomatis",
-  "compressionInvalidResolution": "Masukkan resolusi genap dari 240 hingga 16384, atau biarkan kosong untuk otomatis",
-  "compressionSeek": "Posisi video",
-  "compressionInterrupted": "Kompresi sebelumnya terhenti. File sementara telah dibersihkan; Anda dapat memilih video dan mencoba lagi.",
-  "compressionDismiss": "Tutup",
-  "compressionClearHistory": "Bersihkan riwayat",
-  "compressionClearHistoryConfirm": "Hapus semua riwayat? Video yang disimpan akan tetap ada di perangkat Anda.",
-  "compressionAttempts": "Percobaan",
-  "compressionTargetSize": "Ukuran target",
-  "compressionOutputResolution": "Resolusi keluaran",
-  "compressionInvalidVideo": "Video ini tidak dapat dibaca. Pilih file lain.",
-  "compressionInvalidOutput": "Video yang dikodekan gagal diverifikasi. Video asli Anda tidak berubah.",
-  "compressionEncoderUnsupported": "Perangkat ini tidak dapat mengkodekan resolusi atau laju bingkai yang dipilih. Turunkan pengaturan tersebut dan coba lagi.",
-  "compressionAudioDecoderUnsupported": "Perangkat ini tidak dapat mendekode format audio ini untuk kompresi. Hapus audio atau gunakan sumber yang didukung.",
-  "compressionVideoDecoderUnsupported": "Perangkat ini tidak dapat mendekode format video ini atau profil untuk kompresi. Pilih sumber atau perangkat lain.",
-  "compressionMp4NotStreamable": "MP4 yang diekspor belum siap untuk streaming. Coba video atau perangkat lain.",
-  "compressionNoSpace": "Tidak cukup penyimpanan bebas untuk mengompres video ini.",
-  "compressionHdrUnsupported": "Perangkat ini tidak dapat memproses mode HDR yang dipilih. Coba konversi ke SDR.",
-  "compressionGeneralFailure": "Kompresi tidak dapat diselesaikan. Coba pengaturan atau video lain.",
-  "aboutIdentitySection": "Identitas aplikasi",
-  "aboutAppName": "Nama aplikasi",
-  "aboutPackageName": "Nama paket",
-  "aboutVersion": "Versi",
-  "aboutBuildNumber": "Nomor build",
-  "aboutEnvironmentSection": "Perangkat dan build",
-  "aboutOperatingSystem": "Sistem operasi",
-  "aboutOsVersion": "Versi OS",
-  "aboutBuildMode": "Mode build",
-  "aboutDebug": "Debug",
-  "aboutRelease": "Rilis",
-  "aboutToolchainSection": "Dibuat dengan",
-  "aboutInstallationSection": "Instalasi",
-  "aboutInstaller": "Terpasang dari",
-  "aboutInstalledOn": "Terpasang pada",
-  "aboutUpdatedOn": "Diperbarui pada",
-  "aboutUnavailable": "Tidak tersedia",
-  "aboutProjectSection": "Proyek dan dukungan",
-  "aboutRepository": "Repositori GitHub",
-  "aboutRepositorySubtitle": "Lihat kode sumber Zumi",
-  "aboutReadme": "Baca README",
-  "aboutReadmeSubtitle": "Pelajari tentang Zumi di GitHub",
-  "aboutIssues": "Laporkan masalah",
-  "aboutIssuesSubtitle": "Lihat dan buat masalah di GitHub",
-  "aboutLatestRelease": "Rilis terbaru",
-  "aboutLatestReleaseSubtitle": "Lihat rilis dan unduhan",
-  "aboutDonate": "Dukung Zumi",
-  "aboutDonateSubtitle": "Buka halaman donasi resmi",
-  "aboutLinkError": "Tidak dapat membuka tautan. Silakan coba lagi.",
-  "aboutDeveloperSection": "Pengembang",
-  "aboutDeveloperName": "Mostafa Sensei",
-  "aboutDeveloperProfile": "Profil GitHub",
-  "aboutDeveloperProfileSubtitle": "Lihat proyek dan detail kontak",
+  "thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize": "Video ini tidak dapat mencapai ukuran yang dipilih. Coba ukuran target yang lebih besar.",
+  "theSelectedSizeIsTooSmallForThisVideoChooseALargerSize": "Ukuran yang dipilih terlalu kecil untuk video ini. Pilih ukuran yang lebih besar.",
+  "originalPreview": "Pratinjau asli",
+  "compressedPreview": "Pratinjau terkompresi",
+  "targetPreset": "Preset target",
+  "customSize": "Ukuran kustom",
+  "previewUnavailable": "Pratinjau tidak tersedia",
+  "advancedControls": "Kontrol lanjutan",
+  "automatic": "Otomatis",
+  "maximumResolution": "Resolusi maksimum",
+  "originalResolution": "Resolusi asli",
+  "maximumFrameRate": "Kecepatan bingkai maksimum",
+  "audioBitrate": "Bitrate audio",
+  "removeAudio": "Hapus audio",
+  "videoBitrateCeilingKbps": "Batas bitrate video (kbps)",
+  "hdrHandling": "Penanganan HDR",
+  "convertToSDR": "Konversi ke SDR",
+  "keepHDRWhenSupported": "Pertahankan HDR bila didukung",
+  "beforeYouStart": "Sebelum Anda memulai",
+  "calculatingCompressionPlan": "Menghitung rencana kompresi…",
+  "plannedResolution": "Resolusi yang direncanakan",
+  "plannedVideoBitrate": "Bitrate video yang direncanakan",
+  "plannedAudioBitrate": "Bitrate audio yang direncanakan",
+  "reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved": "Pengkodean ulang mengubah audio menjadi AAC stereo. Dolby Atmos dan audio spasial DTS tidak akan dipertahankan.",
+  "thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits": "Target ini terlalu kecil untuk video yang dapat digunakan. Perbesar ukurannya atau turunkan batas lainnya.",
+  "theSelectedTargetMayReduceVideoQuality": "Target yang dipilih dapat mengurangi kualitas video.",
+  "theSourceIsAlreadyWithinTheSizeLimit": "Sumber sudah berada dalam batas ukuran.",
+  "enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic": "Masukkan bitrate minimal 150 kbps, atau biarkan kosong untuk otomatis",
+  "enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic": "Masukkan resolusi genap dari 240 hingga 16384, atau biarkan kosong untuk otomatis",
+  "videoPosition": "Posisi video",
+  "aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain": "Kompresi sebelumnya terhenti. File sementara telah dibersihkan; Anda dapat memilih video dan mencoba lagi.",
+  "dismiss": "Tutup",
+  "clearHistory": "Bersihkan riwayat",
+  "removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice": "Hapus semua riwayat? Video yang disimpan akan tetap ada di perangkat Anda.",
+  "attempts": "Percobaan",
+  "targetSize": "Ukuran target",
+  "outputResolution": "Resolusi keluaran",
+  "thisVideoCouldNotBeReadChooseAnotherFile": "Video ini tidak dapat dibaca. Pilih file lain.",
+  "theEncodedVideoFailedVerificationYourOriginalVideoWasNotChanged": "Video yang dikodekan gagal diverifikasi. Video asli Anda tidak berubah.",
+  "thisDeviceCannotEncodeTheSelectedResolutionOrFrameRateLowerThatSettingAndTryAgain": "Perangkat ini tidak dapat mengkodekan resolusi atau laju bingkai yang dipilih. Turunkan pengaturan tersebut dan coba lagi.",
+  "thisDeviceCannotDecodeThisAudioFormatForCompressionRemoveAudioOrUseASupportedSource": "Perangkat ini tidak dapat mendekode format audio ini untuk kompresi. Hapus audio atau gunakan sumber yang didukung.",
+  "thisDeviceCannotDecodeThisVideoFormatOrProfileForCompressionChooseAnotherSourceOrDevice": "Perangkat ini tidak dapat mendekode format video ini atau profil untuk kompresi. Pilih sumber atau perangkat lain.",
+  "theExportedMP4IsNotReadyForStreamingTryAnotherVideoOrDevice": "MP4 yang diekspor belum siap untuk streaming. Coba video atau perangkat lain.",
+  "thereIsNotEnoughFreeStorageToCompressThisVideo": "Tidak cukup penyimpanan bebas untuk mengompres video ini.",
+  "thisDeviceCannotProcessTheSelectedHDRModeTryConvertingToSDR": "Perangkat ini tidak dapat memproses mode HDR yang dipilih. Coba konversi ke SDR.",
+  "compressionCouldNotBeCompletedTryAnotherSettingOrVideo": "Kompresi tidak dapat diselesaikan. Coba pengaturan atau video lain.",
+  "appIdentity": "Identitas aplikasi",
+  "appName": "Nama aplikasi",
+  "packageName": "Nama paket",
+  "version": "Versi",
+  "buildNumber": "Nomor build",
+  "deviceAndBuild": "Perangkat dan build",
+  "operatingSystem": "Sistem operasi",
+  "osVersion": "Versi OS",
+  "buildMode": "Mode build",
+  "debug": "Debug",
+  "release": "Rilis",
+  "builtWith": "Dibuat dengan",
+  "installation": "Instalasi",
+  "installedFrom": "Terpasang dari",
+  "installedOn": "Terpasang pada",
+  "updatedOn": "Diperbarui pada",
+  "unavailable": "Tidak tersedia",
+  "projectAndSupport": "Proyek dan dukungan",
+  "githubRepository": "Repositori GitHub",
+  "viewZumiSourceCode": "Lihat kode sumber Zumi",
+  "readTheREADME": "Baca README",
+  "learnAboutZumiOnGitHub": "Pelajari tentang Zumi di GitHub",
+  "reportAnIssue": "Laporkan masalah",
+  "viewAndCreateGitHubIssues": "Lihat dan buat masalah di GitHub",
+  "latestRelease": "Rilis terbaru",
+  "viewReleasesAndDownloads": "Lihat rilis dan unduhan",
+  "supportZumi": "Dukung Zumi",
+  "openTheOfficialDonationPage": "Buka halaman donasi resmi",
+  "couldNotOpenTheLinkPleaseTryAgain": "Tidak dapat membuka tautan. Silakan coba lagi.",
+  "developer": "Pengembang",
+  "mostafaSensei": "Mostafa Sensei",
+  "githubProfile": "Profil GitHub",
+  "seeProjectsAndContactDetails": "Lihat proyek dan detail kontak",
   "maintenanceInProgress": "Pemeliharaan sedang berlangsung",
-  "maintenanceMessage": "Zumi sementara tidak tersedia. Silakan coba lagi nanti.",
+  "zumiIsTemporarilyUnavailablePleaseTryAgainLater": "Zumi sementara tidak tersedia. Silakan coba lagi nanti.",
   "comingSoon": "Segera hadir",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"

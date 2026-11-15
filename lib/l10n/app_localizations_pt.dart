@@ -21,7 +21,7 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String fileSavedToDcim(String fileName) {
+  String fileSavedToGallery(String fileName) {
     return 'Ficheiro guardado na galeria: $fileName';
   }
 
@@ -31,7 +31,7 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get fileAlreadySaved => 'O ficheiro já está guardado';
+  String get fileIsAlreadySaved => 'O ficheiro já está guardado';
 
   @override
   String get error => 'Erro';
@@ -55,106 +55,100 @@ class AppLocalizationsPt extends AppLocalizations {
   String get partial => 'Parcial';
 
   @override
-  String get error_address_line_cant_be_empty =>
+  String get addressLineCannotBeEmpty =>
       'A linha de endereço não pode estar vazia';
 
   @override
-  String get error_address_line_too_long =>
-      'A linha de endereço é demasiado longa';
+  String get addressLineIsTooLong => 'A linha de endereço é demasiado longa';
 
   @override
-  String get error_address_invalid_special_characters =>
+  String get specialCharactersAreNotAllowed =>
       'Não são permitidos caracteres especiais';
 
   @override
-  String get error_address_emoji_not_allowed => 'Emojis não são permitidos';
+  String get emojisAreNotAllowed => 'Emojis não são permitidos';
 
   @override
-  String get error_city_cant_be_empty => 'A cidade não pode estar vazia';
+  String get cityCannotBeEmpty => 'A cidade não pode estar vazia';
 
   @override
-  String get error_city_too_long => 'O nome da cidade é demasiado longo';
+  String get cityNameIsTooLong => 'O nome da cidade é demasiado longo';
 
   @override
-  String get error_city_invalid_special_characters =>
+  String get cityContainsInvalidSpecialCharacters =>
       'A cidade contém caracteres especiais inválidos';
 
   @override
-  String get error_address_label_cant_be_empty =>
+  String get addressLabelCannotBeEmpty =>
       'O rótulo do endereço não pode estar vazio';
 
   @override
-  String get error_address_label_too_long =>
-      'O rótulo do endereço é demasiado longo';
+  String get addressLabelIsTooLong => 'O rótulo do endereço é demasiado longo';
 
   @override
-  String get error_email_cant_be_empty => 'O email não pode estar vazio';
+  String get emailCannotBeEmpty => 'O email não pode estar vazio';
 
   @override
-  String get error_email_not_invalid_format => 'Formato de email inválido';
+  String get invalidEmailFormat => 'Formato de email inválido';
 
   @override
-  String get error_email_contains_invalid_characters =>
+  String get emailContainsInvalidCharacters =>
       'O email contém caracteres inválidos';
 
   @override
-  String get error_email_must_contain_at_symbol => 'O email deve conter @';
+  String get emailMustContain => 'O email deve conter @';
 
   @override
-  String get error_email_must_be_in_lowercase =>
-      'O email deve estar em minúsculas';
+  String get emailMustBeInLowercase => 'O email deve estar em minúsculas';
 
   @override
-  String get error_arabic_not_allowed => 'Caracteres árabes não são permitidos';
+  String get arabicCharactersAreNotAllowed =>
+      'Caracteres árabes não são permitidos';
 
   @override
-  String get error_email_emoji_not_allowed =>
-      'Emojis não são permitidos no email';
+  String get emojisAreNotAllowedInEmail => 'Emojis não são permitidos no email';
 
   @override
-  String get error_phone_number_cant_be_empty =>
+  String get phoneNumberCannotBeEmpty =>
       'O número de telefone não pode estar vazio';
 
   @override
-  String get error_phone_number_invalid => 'Número de telefone inválido';
+  String get invalidPhoneNumber => 'Número de telefone inválido';
 
   @override
-  String get error_phone_number_min_length =>
+  String get phoneNumberMustBeAtLeast11Digits =>
       'O número de telefone deve ter pelo menos 11 dígitos';
 
   @override
-  String get error_name_cant_be_empty => 'O nome não pode estar vazio';
+  String get nameCannotBeEmpty => 'O nome não pode estar vazio';
 
   @override
-  String get error_name_invalid => 'Nome inválido';
+  String get invalidName => 'Nome inválido';
 
   @override
-  String get error_name_too_short_at_least_3_characters =>
+  String get nameMustBeAtLeast3Characters =>
       'O nome deve ter pelo menos 3 caracteres';
 
   @override
-  String get error_name_too_long_maximum_20_characters =>
+  String get nameCannotExceed20Characters =>
       'O nome não pode exceder 20 caracteres';
 
   @override
-  String get error_name_invalid_special_characters =>
+  String get nameContainsInvalidSpecialCharacters =>
       'O nome contém caracteres especiais inválidos';
 
   @override
-  String get error_name_emoji_not_allowed =>
-      'Emojis não são permitidos no nome';
+  String get emojisAreNotAllowedInName => 'Emojis não são permitidos no nome';
 
   @override
-  String get error_password_cant_be_empty =>
-      'A palavra-passe não pode estar vazia';
+  String get passwordCannotBeEmpty => 'A palavra-passe não pode estar vazia';
 
   @override
-  String
-  get error_password_must_contain_uppercase_lowercase_number_and_special_character =>
+  String get passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter =>
       'A palavra-passe deve conter maiúsculas, minúsculas, números e caracteres especiais';
 
   @override
-  String get error_password_must_be_at_least_8_characters_long =>
+  String get passwordMustBeAtLeast8CharactersLong =>
       'A palavra-passe deve ter pelo menos 8 caracteres';
 
   @override
@@ -402,43 +396,43 @@ class AppLocalizationsPt extends AppLocalizations {
   String get recommendZumiToAFriend => 'Recomende o Zumi a um amigo.';
 
   @override
-  String get settingsGroupAppearance => 'Aparência e idioma';
+  String get appearanceLanguage => 'Aparência e idioma';
 
   @override
-  String get settingsGroupCompression => 'Compressão';
+  String get compression => 'Compressão';
 
   @override
-  String get settingsGroupAi => 'IA no dispositivo';
+  String get onDeviceAI => 'IA no dispositivo';
 
   @override
-  String get settingsGroupPrivacy => 'Notificações e privacidade';
+  String get notificationsPrivacy => 'Notificações e privacidade';
 
   @override
-  String get settingsGroupPlans => 'Planos e compras';
+  String get plansPurchases => 'Planos e compras';
 
   @override
-  String get settingsGroupAbout => 'Sobre';
+  String get about => 'Sobre';
 
   @override
-  String get settingsGroupLegal => 'Legal';
+  String get legal => 'Legal';
 
   @override
-  String get settingsGroupHelp => 'Ajuda e feedback';
+  String get helpFeedback => 'Ajuda e feedback';
 
   @override
-  String get settingsGroupAccount => 'Conta';
+  String get account => 'Conta';
 
   @override
-  String get settingsAppearanceSubtitle => 'Tema e idioma da aplicação';
+  String get themeAndAppLanguage => 'Tema e idioma da aplicação';
 
   @override
-  String get settingsLanguageSubtitle => 'Idioma da aplicação e direção';
+  String get appLanguageAndDirection => 'Idioma da aplicação e direção';
 
   @override
-  String get settingsCompressionSubtitle => 'Qualidade e formato padrão';
+  String get defaultQualityAndFormat => 'Qualidade e formato padrão';
 
   @override
-  String get settingsStorageSubtitle => 'Uso de cache e armazenamento';
+  String get cacheAndStorageUsage => 'Uso de cache e armazenamento';
 
   @override
   String get aiSettings => 'Definições de IA';
@@ -452,17 +446,19 @@ class AppLocalizationsPt extends AppLocalizations {
       'Um assistente privado para os seus vídeos estará disponível em breve. Poderá perguntar sobre compressão, organização e vídeos guardados aqui.';
 
   @override
-  String get settingsAiSubtitle => 'Modelos locais e ferramentas inteligentes';
+  String get localModelsAndSmartTools =>
+      'Modelos locais e ferramentas inteligentes';
 
   @override
-  String get exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet =>
+  String get exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet =>
       'Explore modelos locais e futuras ferramentas de IA. Estas opções ainda não estão ativas.';
 
   @override
   String get localModels => 'Modelos locais';
 
   @override
-  String get aiModelsSubtitle => 'Navegue e descarregue modelos suportados';
+  String get browseAndDownloadSupportedModels =>
+      'Navegue e descarregue modelos suportados';
 
   @override
   String
@@ -473,7 +469,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get importAModel => 'Importar um modelo';
 
   @override
-  String get aiImportSubtitle =>
+  String get useACompatibleModelFromYourFiles =>
       'Utilize um modelo compatível a partir dos seus ficheiros';
 
   @override
@@ -485,18 +481,20 @@ class AppLocalizationsPt extends AppLocalizations {
   String get smartFeatures => 'Funcionalidades inteligentes';
 
   @override
-  String get aiFeaturesSubtitle => 'Compressão, organização e pesquisa';
+  String get compressionOrganizationAndSearch =>
+      'Compressão, organização e pesquisa';
 
   @override
   String
-  get chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
+  get chooseWhichLocalAISuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
       'Escolha quais sugestões de IA locais usar para compressão de vídeo, organização, nomeação e pesquisa.';
 
   @override
   String get modelPerformance => 'Desempenho do modelo';
 
   @override
-  String get aiRuntimeSubtitle => 'Preferências de processamento e recursos';
+  String get processingAndResourcePreferences =>
+      'Preferências de processamento e recursos';
 
   @override
   String get controlTheProcessingBackendAndResourceLimitsForSupportedModels =>
@@ -506,7 +504,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get conversationSettings => 'Definições de conversação';
 
   @override
-  String get aiChatSettingsSubtitle =>
+  String get streamingThinkingAndResponseLength =>
       'Transmissão, reflexão e comprimento da resposta';
 
   @override
@@ -518,7 +516,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get imagesAndAudio => 'Imagens e áudio';
 
   @override
-  String get aiMediaSubtitle => 'Controlar entradas multimodais';
+  String get controlMultimodalInputs => 'Controlar entradas multimodais';
 
   @override
   String
@@ -529,7 +527,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get semanticSearch => 'Pesquisa semântica';
 
   @override
-  String get aiSearchSubtitle => 'Embeddings e indexação local';
+  String get embeddingsAndLocalIndexing => 'Embeddings e indexação local';
 
   @override
   String
@@ -540,7 +538,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get toolsAndStructuredOutput => 'Ferramentas e saída estruturada';
 
   @override
-  String get aiToolsSubtitle => 'Ações, esquemas e confirmações';
+  String get actionsSchemasAndConfirmations => 'Ações, esquemas e confirmações';
 
   @override
   String
@@ -548,374 +546,379 @@ class AppLocalizationsPt extends AppLocalizations {
       'Gerir ações suportadas pelo assistente e respostas estruturadas. Ações que afetem ficheiros irão requerer a sua confirmação.';
 
   @override
-  String get aiGroupModels => 'Modelos';
+  String get models => 'Modelos';
 
   @override
-  String get aiGroupExperience => 'Experiência do assistente';
+  String get assistantExperience => 'Experiência do assistente';
 
   @override
-  String get aiGroupCapabilities => 'Capacidades inteligentes';
+  String get smartCapabilities => 'Capacidades inteligentes';
 
   @override
-  String get aiGroupPerformance => 'Desempenho';
+  String get performance => 'Desempenho';
 
   @override
-  String get compressionHistorySubtitle =>
+  String get yourCompressedVideoHistory =>
       'O seu histórico de vídeos comprimidos';
 
   @override
-  String get settingsNotificationsSubtitle =>
-      'Alertas de conclusão e atualização';
+  String get completionAndUpdateAlerts => 'Alertas de conclusão e atualização';
 
   @override
-  String get settingsPrivacySubtitle => 'Os seus dados permanecem localmente';
+  String get yourDataStaysLocal => 'Os seus dados permanecem localmente';
 
   @override
-  String get plansSubtitle => 'Comparar planos e atualizar';
+  String get comparePlansAndUpgrade => 'Comparar planos e atualizar';
 
   @override
-  String get plansMethodsSubtitle => 'Métodos de pagamento e faturação';
+  String get paymentMethodsAndBilling => 'Métodos de pagamento e faturação';
 
   @override
-  String get plansRestoreSubtitle => 'Restaurar a sua compra anterior';
+  String get restoreYourPreviousPurchase => 'Restaurar a sua compra anterior';
 
   @override
-  String get aboutAppSubtitle => 'Detalhes da versão e compilação';
+  String get versionAndBuildDetails => 'Detalhes da versão e compilação';
 
   @override
-  String get aboutDeveloperSubtitle => 'O desenvolvedor por trás do Zumi';
+  String get theDeveloperBehindZumi => 'O desenvolvedor por trás do Zumi';
 
   @override
-  String get aboutLicensesSubtitle => 'Licenças de pacotes open source';
+  String get openSourcePackageLicenses => 'Licenças de pacotes open source';
 
   @override
-  String get legalPrivacySubtitle => 'Como os dados são tratados';
+  String get howDataIsHandled => 'Como os dados são tratados';
 
   @override
-  String get legalTermsSubtitle => 'Regras para usar o Zumi';
+  String get rulesForUsingZumi => 'Regras para usar o Zumi';
 
   @override
-  String get legalDataSafetySubtitle => 'Quais dados recolhemos';
+  String get whatDataWeCollect => 'Quais dados recolhemos';
 
   @override
-  String get legalPermissionsSubtitle => 'Por que precisamos de permissões';
+  String get whyWeNeedPermissions => 'Por que precisamos de permissões';
 
   @override
-  String get helpFaqSubtitle => 'Respostas a perguntas comuns';
+  String get answersToCommonQuestions => 'Respostas a perguntas comuns';
 
   @override
-  String get helpSupportSubtitle => 'Contacte diretamente o desenvolvedor';
+  String get reachTheDeveloperDirectly =>
+      'Contacte diretamente o desenvolvedor';
 
   @override
-  String get helpFeedbackSubtitle => 'Envie-nos o seu feedback';
+  String get sendUsYourFeedback => 'Envie-nos o seu feedback';
 
   @override
-  String get compressionPickVideo => 'Escolher vídeo';
+  String get pickVideo => 'Escolher vídeo';
 
   @override
-  String get compressionTargetMb => 'Tamanho alvo (MB)';
+  String get targetSizeMB => 'Tamanho alvo (MB)';
 
   @override
-  String get compressionStart => 'Iniciar compressão';
+  String get startCompression => 'Iniciar compressão';
 
   @override
-  String get compressionPause => 'Pausar';
+  String get pause => 'Pausar';
 
   @override
-  String get compressionResume => 'Retomar';
+  String get resume => 'Retomar';
 
   @override
-  String get compressionViewResult => 'Ver resultado';
+  String get viewResult => 'Ver resultado';
 
   @override
-  String get compressionSaveGallery => 'Guardar na galeria';
+  String get saveToGallery => 'Guardar na galeria';
 
   @override
-  String get compressionShare => 'Partilhar vídeo';
+  String get shareVideo => 'Partilhar vídeo';
 
   @override
-  String get compressionOriginalSize => 'Tamanho original';
+  String get originalSize => 'Tamanho original';
 
   @override
-  String get compressionOutputSize => 'Tamanho de saída';
+  String get outputSize => 'Tamanho de saída';
 
   @override
-  String get compressionEmptyHistory => 'Ainda não há vídeos comprimidos';
+  String get noCompressedVideosYet => 'Ainda não há vídeos comprimidos';
 
   @override
-  String get compressionSavedGallery => 'Guardado na galeria';
+  String get savedToGallery => 'Guardado na galeria';
 
   @override
-  String get compressionInvalidTarget =>
+  String get enterATargetSizeGreaterThanZero =>
       'Introduza um tamanho alvo maior que zero';
 
   @override
   String get compressionCancelled => 'Compressão cancelada';
 
   @override
-  String get compressionTargetExceeded =>
+  String get thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize =>
       'Este vídeo não conseguiu atingir o tamanho selecionado. Experimente um tamanho alvo maior.';
 
   @override
-  String get compressionTargetInfeasible =>
+  String get theSelectedSizeIsTooSmallForThisVideoChooseALargerSize =>
       'O tamanho selecionado é demasiado pequeno para este vídeo. Escolha um tamanho maior.';
 
   @override
-  String get compressionPreviewBefore => 'Pré-visualização original';
+  String get originalPreview => 'Pré-visualização original';
 
   @override
-  String get compressionPreviewAfter => 'Pré-visualização comprimida';
+  String get compressedPreview => 'Pré-visualização comprimida';
 
   @override
-  String get compressionPreset => 'Definição de destino';
+  String get targetPreset => 'Definição de destino';
 
   @override
-  String get compressionCustom => 'Tamanho personalizado';
+  String get customSize => 'Tamanho personalizado';
 
   @override
-  String get compressionPreviewUnavailable => 'Pré-visualização indisponível';
+  String get previewUnavailable => 'Pré-visualização indisponível';
 
   @override
-  String get compressionAdvanced => 'Controles avançados';
+  String get advancedControls => 'Controles avançados';
 
   @override
-  String get compressionAutomatic => 'Automático';
+  String get automatic => 'Automático';
 
   @override
-  String get compressionResolutionLimit => 'Resolução máxima';
+  String get maximumResolution => 'Resolução máxima';
 
   @override
-  String get compressionSourceResolution => 'Resolução original';
+  String get originalResolution => 'Resolução original';
 
   @override
-  String get compressionFrameRateLimit => 'Taxa máxima de fotogramas';
+  String get maximumFrameRate => 'Taxa máxima de fotogramas';
 
   @override
-  String get compressionAudioQuality => 'Taxa de bits de áudio';
+  String get audioBitrate => 'Taxa de bits de áudio';
 
   @override
-  String get compressionRemoveAudio => 'Remover áudio';
+  String get removeAudio => 'Remover áudio';
 
   @override
-  String get compressionVideoBitrateLimit =>
-      'Teto da taxa de bits de vídeo (kbps)';
+  String get videoBitrateCeilingKbps => 'Teto da taxa de bits de vídeo (kbps)';
 
   @override
-  String get compressionHdrPolicy => 'Gestão de HDR';
+  String get hdrHandling => 'Gestão de HDR';
 
   @override
-  String get compressionHdrConvert => 'Converter para SDR';
+  String get convertToSDR => 'Converter para SDR';
 
   @override
-  String get compressionHdrPreserve => 'Manter HDR quando suportado';
+  String get keepHDRWhenSupported => 'Manter HDR quando suportado';
 
   @override
-  String get compressionPlanPreview => 'Antes de começar';
+  String get beforeYouStart => 'Antes de começar';
 
   @override
-  String get compressionPlanLoading => 'A calcular plano de compressão…';
+  String get calculatingCompressionPlan => 'A calcular plano de compressão…';
 
   @override
-  String get compressionPlanResolution => 'Resolução planeada';
+  String get plannedResolution => 'Resolução planeada';
 
   @override
-  String get compressionPlanVideoBitrate => 'Taxa de bits de vídeo planeada';
+  String get plannedVideoBitrate => 'Taxa de bits de vídeo planeada';
 
   @override
-  String get compressionPlanAudioBitrate => 'Taxa de bits de áudio planeada';
+  String get plannedAudioBitrate => 'Taxa de bits de áudio planeada';
 
   @override
-  String get compressionAudioConversionNote =>
+  String
+  get reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved =>
       'A nova codificação converte o áudio para AAC estéreo. Dolby Atmos e áudio espacial DTS não serão preservados.';
 
   @override
-  String get compressionPlanTooSmall =>
+  String
+  get thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits =>
       'Este alvo é demasiado pequeno para um vídeo utilizável. Aumente o tamanho ou reduza outros limites.';
 
   @override
-  String get compressionPlanLowQuality =>
+  String get theSelectedTargetMayReduceVideoQuality =>
       'O alvo selecionado pode reduzir a qualidade do vídeo.';
 
   @override
-  String get compressionPlanAlreadyWithinLimit =>
+  String get theSourceIsAlreadyWithinTheSizeLimit =>
       'A fonte já está dentro do limite de tamanho.';
 
   @override
-  String get compressionInvalidBitrate =>
+  String get enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic =>
       'Introduza uma taxa de bits de pelo menos 150 kbps ou deixe em branco para automático.';
 
   @override
-  String get compressionInvalidResolution =>
+  String get enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic =>
       'Introduza uma resolução par entre 240 e 16384, ou deixe em branco para automático.';
 
   @override
-  String get compressionSeek => 'Posição do vídeo';
+  String get videoPosition => 'Posição do vídeo';
 
   @override
-  String get compressionInterrupted =>
+  String
+  get aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain =>
       'Uma compressão anterior foi interrompida. Os seus ficheiros temporários foram limpos; pode selecionar o vídeo e tentar novamente.';
 
   @override
-  String get compressionDismiss => 'Fechar';
+  String get dismiss => 'Fechar';
 
   @override
-  String get compressionClearHistory => 'Limpar histórico';
+  String get clearHistory => 'Limpar histórico';
 
   @override
-  String get compressionClearHistoryConfirm =>
+  String get removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice =>
       'Remover todas as entradas de histórico? Os vídeos guardados permanecerão no seu dispositivo.';
 
   @override
-  String get compressionAttempts => 'Tentativas';
+  String get attempts => 'Tentativas';
 
   @override
-  String get compressionTargetSize => 'Tamanho alvo';
+  String get targetSize => 'Tamanho alvo';
 
   @override
-  String get compressionOutputResolution => 'Resolução de saída';
+  String get outputResolution => 'Resolução de saída';
 
   @override
-  String get compressionInvalidVideo =>
+  String get thisVideoCouldNotBeReadChooseAnotherFile =>
       'Não foi possível ler este vídeo. Escolha outro ficheiro.';
 
   @override
-  String get compressionInvalidOutput =>
+  String get theEncodedVideoFailedVerificationYourOriginalVideoWasNotChanged =>
       'O vídeo codificado falhou na verificação. O seu vídeo original não foi alterado.';
 
   @override
-  String get compressionEncoderUnsupported =>
+  String
+  get thisDeviceCannotEncodeTheSelectedResolutionOrFrameRateLowerThatSettingAndTryAgain =>
       'Este dispositivo não consegue codificar a resolução ou taxa de fotogramas selecionada. Baixe essa definição e tente novamente.';
 
   @override
-  String get compressionAudioDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisAudioFormatForCompressionRemoveAudioOrUseASupportedSource =>
       'Este dispositivo não consegue decodificar este formato de áudio para compressão. Remova o áudio ou utilize uma fonte suportada.';
 
   @override
-  String get compressionVideoDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisVideoFormatOrProfileForCompressionChooseAnotherSourceOrDevice =>
       'Este dispositivo não consegue decodificar este formato de vídeo ou perfil de compressão. Escolha outra fonte ou dispositivo.';
 
   @override
-  String get compressionMp4NotStreamable =>
+  String get theExportedMP4IsNotReadyForStreamingTryAnotherVideoOrDevice =>
       'O MP4 exportado não está pronto para streaming. Experimente outro vídeo ou dispositivo.';
 
   @override
-  String get compressionNoSpace =>
+  String get thereIsNotEnoughFreeStorageToCompressThisVideo =>
       'Não há armazenamento livre suficiente para comprimir este vídeo.';
 
   @override
-  String get compressionHdrUnsupported =>
+  String get thisDeviceCannotProcessTheSelectedHDRModeTryConvertingToSDR =>
       'Este dispositivo não consegue processar o modo HDR selecionado. Tente converter para SDR.';
 
   @override
-  String get compressionGeneralFailure =>
+  String get compressionCouldNotBeCompletedTryAnotherSettingOrVideo =>
       'A compressão não pôde ser concluída. Experimente outra configuração ou vídeo.';
 
   @override
-  String get aboutIdentitySection => 'Identificação da aplicação';
+  String get appIdentity => 'Identificação da aplicação';
 
   @override
-  String get aboutAppName => 'Nome da aplicação';
+  String get appName => 'Nome da aplicação';
 
   @override
-  String get aboutPackageName => 'Nome do pacote';
+  String get packageName => 'Nome do pacote';
 
   @override
-  String get aboutVersion => 'Versão';
+  String get version => 'Versão';
 
   @override
-  String get aboutBuildNumber => 'Número da compilação';
+  String get buildNumber => 'Número da compilação';
 
   @override
-  String get aboutEnvironmentSection => 'Dispositivo e compilação';
+  String get deviceAndBuild => 'Dispositivo e compilação';
 
   @override
-  String get aboutOperatingSystem => 'Sistema operativo';
+  String get operatingSystem => 'Sistema operativo';
 
   @override
-  String get aboutOsVersion => 'Versão do SO';
+  String get osVersion => 'Versão do SO';
 
   @override
-  String get aboutBuildMode => 'Modo de compilação';
+  String get buildMode => 'Modo de compilação';
 
   @override
-  String get aboutDebug => 'Depuração';
+  String get debug => 'Depuração';
 
   @override
-  String get aboutRelease => 'Versão de lançamento';
+  String get release => 'Versão de lançamento';
 
   @override
-  String get aboutToolchainSection => 'Construído com';
+  String get builtWith => 'Construído com';
 
   @override
-  String get aboutInstallationSection => 'Instalação';
+  String get installation => 'Instalação';
 
   @override
-  String get aboutInstaller => 'Instalado a partir de';
+  String get installedFrom => 'Instalado a partir de';
 
   @override
-  String get aboutInstalledOn => 'Instalado em';
+  String get installedOn => 'Instalado em';
 
   @override
-  String get aboutUpdatedOn => 'Atualizado em';
+  String get updatedOn => 'Atualizado em';
 
   @override
-  String get aboutUnavailable => 'Indisponível';
+  String get unavailable => 'Indisponível';
 
   @override
-  String get aboutProjectSection => 'Projeto e suporte';
+  String get projectAndSupport => 'Projeto e suporte';
 
   @override
-  String get aboutRepository => 'Repositório GitHub';
+  String get githubRepository => 'Repositório GitHub';
 
   @override
-  String get aboutRepositorySubtitle => 'Ver código-fonte do Zumi';
+  String get viewZumiSourceCode => 'Ver código-fonte do Zumi';
 
   @override
-  String get aboutReadme => 'Ler o README';
+  String get readTheREADME => 'Ler o README';
 
   @override
-  String get aboutReadmeSubtitle => 'Saiba mais sobre o Zumi no GitHub';
+  String get learnAboutZumiOnGitHub => 'Saiba mais sobre o Zumi no GitHub';
 
   @override
-  String get aboutIssues => 'Reportar um problema';
+  String get reportAnIssue => 'Reportar um problema';
 
   @override
-  String get aboutIssuesSubtitle => 'Ver e criar issues no GitHub';
+  String get viewAndCreateGitHubIssues => 'Ver e criar issues no GitHub';
 
   @override
-  String get aboutLatestRelease => 'Última versão';
+  String get latestRelease => 'Última versão';
 
   @override
-  String get aboutLatestReleaseSubtitle => 'Ver versões e downloads';
+  String get viewReleasesAndDownloads => 'Ver versões e downloads';
 
   @override
-  String get aboutDonate => 'Suporte ao Zumi';
+  String get supportZumi => 'Suporte ao Zumi';
 
   @override
-  String get aboutDonateSubtitle => 'Abrir a página oficial de doações';
+  String get openTheOfficialDonationPage => 'Abrir a página oficial de doações';
 
   @override
-  String get aboutLinkError =>
+  String get couldNotOpenTheLinkPleaseTryAgain =>
       'Não foi possível abrir o link. Por favor, tente novamente.';
 
   @override
-  String get aboutDeveloperSection => 'Desenvolvedor';
+  String get developer => 'Desenvolvedor';
 
   @override
-  String get aboutDeveloperName => 'Mostafa Sensei';
+  String get mostafaSensei => 'Mostafa Sensei';
 
   @override
-  String get aboutDeveloperProfile => 'Perfil GitHub';
+  String get githubProfile => 'Perfil GitHub';
 
   @override
-  String get aboutDeveloperProfileSubtitle =>
+  String get seeProjectsAndContactDetails =>
       'Ver projetos e detalhes de contacto';
 
   @override
   String get maintenanceInProgress => 'Manutenção em curso';
 
   @override
-  String get maintenanceMessage =>
+  String get zumiIsTemporarilyUnavailablePleaseTryAgainLater =>
       'O Zumi está temporariamente indisponível. Por favor, tente novamente mais tarde.';
 
   @override
@@ -1002,7 +1005,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   }
 
   @override
-  String fileSavedToDcim(String fileName) {
+  String fileSavedToGallery(String fileName) {
     return 'Arquivo salvo na galeria: $fileName';
   }
 
@@ -1012,7 +1015,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   }
 
   @override
-  String get fileAlreadySaved => 'Arquivo já está salvo';
+  String get fileIsAlreadySaved => 'Arquivo já está salvo';
 
   @override
   String get error => 'Erro';
@@ -1036,104 +1039,101 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get partial => 'Parcial';
 
   @override
-  String get error_address_line_cant_be_empty =>
+  String get addressLineCannotBeEmpty =>
       'A linha do endereço não pode estar vazia';
 
   @override
-  String get error_address_line_too_long => 'A linha do endereço é muito longa';
+  String get addressLineIsTooLong => 'A linha do endereço é muito longa';
 
   @override
-  String get error_address_invalid_special_characters =>
+  String get specialCharactersAreNotAllowed =>
       'Caracteres especiais não são permitidos';
 
   @override
-  String get error_address_emoji_not_allowed => 'Emojis não são permitidos';
+  String get emojisAreNotAllowed => 'Emojis não são permitidos';
 
   @override
-  String get error_city_cant_be_empty => 'A cidade não pode estar vazia';
+  String get cityCannotBeEmpty => 'A cidade não pode estar vazia';
 
   @override
-  String get error_city_too_long => 'O nome da cidade é muito longo';
+  String get cityNameIsTooLong => 'O nome da cidade é muito longo';
 
   @override
-  String get error_city_invalid_special_characters =>
+  String get cityContainsInvalidSpecialCharacters =>
       'A cidade contém caracteres especiais inválidos';
 
   @override
-  String get error_address_label_cant_be_empty =>
+  String get addressLabelCannotBeEmpty =>
       'O rótulo do endereço não pode estar vazio';
 
   @override
-  String get error_address_label_too_long =>
-      'O rótulo do endereço é muito longo';
+  String get addressLabelIsTooLong => 'O rótulo do endereço é muito longo';
 
   @override
-  String get error_email_cant_be_empty => 'O e-mail não pode estar vazio';
+  String get emailCannotBeEmpty => 'O e-mail não pode estar vazio';
 
   @override
-  String get error_email_not_invalid_format => 'Formato de e-mail inválido';
+  String get invalidEmailFormat => 'Formato de e-mail inválido';
 
   @override
-  String get error_email_contains_invalid_characters =>
+  String get emailContainsInvalidCharacters =>
       'O email contém caracteres inválidos';
 
   @override
-  String get error_email_must_contain_at_symbol => 'O email deve conter @';
+  String get emailMustContain => 'O email deve conter @';
 
   @override
-  String get error_email_must_be_in_lowercase =>
+  String get emailMustBeInLowercase =>
       'O email deve estar em letras minúsculas';
 
   @override
-  String get error_arabic_not_allowed => 'Caracteres árabes não são permitidos';
+  String get arabicCharactersAreNotAllowed =>
+      'Caracteres árabes não são permitidos';
 
   @override
-  String get error_email_emoji_not_allowed =>
-      'Emojis não são permitidos no email';
+  String get emojisAreNotAllowedInEmail => 'Emojis não são permitidos no email';
 
   @override
-  String get error_phone_number_cant_be_empty =>
+  String get phoneNumberCannotBeEmpty =>
       'O número de telefone não pode estar vazio';
 
   @override
-  String get error_phone_number_invalid => 'Número de telefone inválido';
+  String get invalidPhoneNumber => 'Número de telefone inválido';
 
   @override
-  String get error_phone_number_min_length =>
+  String get phoneNumberMustBeAtLeast11Digits =>
       'O número de telefone deve ter pelo menos 11 dígitos';
 
   @override
-  String get error_name_cant_be_empty => 'O nome não pode estar vazio';
+  String get nameCannotBeEmpty => 'O nome não pode estar vazio';
 
   @override
-  String get error_name_invalid => 'Nome inválido';
+  String get invalidName => 'Nome inválido';
 
   @override
-  String get error_name_too_short_at_least_3_characters =>
+  String get nameMustBeAtLeast3Characters =>
       'O nome deve ter pelo menos 3 caracteres';
 
   @override
-  String get error_name_too_long_maximum_20_characters =>
+  String get nameCannotExceed20Characters =>
       'O nome não pode exceder 20 caracteres';
 
   @override
-  String get error_name_invalid_special_characters =>
+  String get nameContainsInvalidSpecialCharacters =>
       'O nome contém caracteres especiais inválidos';
 
   @override
-  String get error_name_emoji_not_allowed =>
-      'Emojis não são permitidos no nome';
+  String get emojisAreNotAllowedInName => 'Emojis não são permitidos no nome';
 
   @override
-  String get error_password_cant_be_empty => 'A senha não pode estar vazia';
+  String get passwordCannotBeEmpty => 'A senha não pode estar vazia';
 
   @override
-  String
-  get error_password_must_contain_uppercase_lowercase_number_and_special_character =>
+  String get passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter =>
       'A senha deve conter letra maiúscula, letra minúscula, número e caractere especial';
 
   @override
-  String get error_password_must_be_at_least_8_characters_long =>
+  String get passwordMustBeAtLeast8CharactersLong =>
       'A senha deve ter pelo menos 8 caracteres';
 
   @override
@@ -1382,43 +1382,43 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get recommendZumiToAFriend => 'Recomende o Zumi a um amigo.';
 
   @override
-  String get settingsGroupAppearance => 'Aparência e idioma';
+  String get appearanceLanguage => 'Aparência e idioma';
 
   @override
-  String get settingsGroupCompression => 'Compressão';
+  String get compression => 'Compressão';
 
   @override
-  String get settingsGroupAi => 'IA no dispositivo';
+  String get onDeviceAI => 'IA no dispositivo';
 
   @override
-  String get settingsGroupPrivacy => 'Notificações e privacidade';
+  String get notificationsPrivacy => 'Notificações e privacidade';
 
   @override
-  String get settingsGroupPlans => 'Planos e compras';
+  String get plansPurchases => 'Planos e compras';
 
   @override
-  String get settingsGroupAbout => 'Sobre';
+  String get about => 'Sobre';
 
   @override
-  String get settingsGroupLegal => 'Legal';
+  String get legal => 'Legal';
 
   @override
-  String get settingsGroupHelp => 'Ajuda e feedback';
+  String get helpFeedback => 'Ajuda e feedback';
 
   @override
-  String get settingsGroupAccount => 'Conta';
+  String get account => 'Conta';
 
   @override
-  String get settingsAppearanceSubtitle => 'Tema e idioma do aplicativo';
+  String get themeAndAppLanguage => 'Tema e idioma do aplicativo';
 
   @override
-  String get settingsLanguageSubtitle => 'Idioma e direção do aplicativo';
+  String get appLanguageAndDirection => 'Idioma e direção do aplicativo';
 
   @override
-  String get settingsCompressionSubtitle => 'Qualidade e formato padrão';
+  String get defaultQualityAndFormat => 'Qualidade e formato padrão';
 
   @override
-  String get settingsStorageSubtitle => 'Uso de cache e armazenamento';
+  String get cacheAndStorageUsage => 'Uso de cache e armazenamento';
 
   @override
   String get aiSettings => 'Configurações de IA';
@@ -1432,17 +1432,19 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
       'Um assistente privado para seus vídeos chegará em breve. Você poderá perguntar sobre compressão, organização e vídeos salvos aqui.';
 
   @override
-  String get settingsAiSubtitle => 'Modelos locais e ferramentas inteligentes';
+  String get localModelsAndSmartTools =>
+      'Modelos locais e ferramentas inteligentes';
 
   @override
-  String get exploreLocalModelsAndFutureAiToolsTheseOptionsAreNotActiveYet =>
+  String get exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet =>
       'Explore modelos locais e futuras ferramentas de IA. Essas opções ainda não estão ativas.';
 
   @override
   String get localModels => 'Modelos locais';
 
   @override
-  String get aiModelsSubtitle => 'Navegue e baixe modelos suportados';
+  String get browseAndDownloadSupportedModels =>
+      'Navegue e baixe modelos suportados';
 
   @override
   String
@@ -1453,7 +1455,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get importAModel => 'Importar um modelo';
 
   @override
-  String get aiImportSubtitle =>
+  String get useACompatibleModelFromYourFiles =>
       'Use um modelo compatível a partir de seus arquivos';
 
   @override
@@ -1465,18 +1467,20 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get smartFeatures => 'Recursos inteligentes';
 
   @override
-  String get aiFeaturesSubtitle => 'Compactação, organização e pesquisa';
+  String get compressionOrganizationAndSearch =>
+      'Compactação, organização e pesquisa';
 
   @override
   String
-  get chooseWhichLocalAiSuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
+  get chooseWhichLocalAISuggestionsToUseForVideoCompressionOrganizationNamingAndSearch =>
       'Escolha quais sugestões de IA local usar para compactação de vídeo, organização, nomenclatura e pesquisa.';
 
   @override
   String get modelPerformance => 'Desempenho do modelo';
 
   @override
-  String get aiRuntimeSubtitle => 'Preferências de processamento e recursos';
+  String get processingAndResourcePreferences =>
+      'Preferências de processamento e recursos';
 
   @override
   String get controlTheProcessingBackendAndResourceLimitsForSupportedModels =>
@@ -1486,7 +1490,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get conversationSettings => 'Configurações de conversa';
 
   @override
-  String get aiChatSettingsSubtitle =>
+  String get streamingThinkingAndResponseLength =>
       'Transmissão, raciocínio e comprimento da resposta';
 
   @override
@@ -1498,7 +1502,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get imagesAndAudio => 'Imagens e áudio';
 
   @override
-  String get aiMediaSubtitle => 'Controle entradas multimodais';
+  String get controlMultimodalInputs => 'Controle entradas multimodais';
 
   @override
   String
@@ -1509,7 +1513,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get semanticSearch => 'Busca semântica';
 
   @override
-  String get aiSearchSubtitle => 'Incorporações e indexação local';
+  String get embeddingsAndLocalIndexing => 'Incorporações e indexação local';
 
   @override
   String
@@ -1520,7 +1524,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get toolsAndStructuredOutput => 'Ferramentas e saída estruturada';
 
   @override
-  String get aiToolsSubtitle => 'Ações, esquemas e confirmações';
+  String get actionsSchemasAndConfirmations => 'Ações, esquemas e confirmações';
 
   @override
   String
@@ -1528,375 +1532,380 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
       'Gerencie ações de assistente suportadas e respostas estruturadas. Ações que afetam arquivos exigirão sua confirmação.';
 
   @override
-  String get aiGroupModels => 'Modelos';
+  String get models => 'Modelos';
 
   @override
-  String get aiGroupExperience => 'Experiência do assistente';
+  String get assistantExperience => 'Experiência do assistente';
 
   @override
-  String get aiGroupCapabilities => 'Capacidades inteligentes';
+  String get smartCapabilities => 'Capacidades inteligentes';
 
   @override
-  String get aiGroupPerformance => 'Desempenho';
+  String get performance => 'Desempenho';
 
   @override
-  String get compressionHistorySubtitle =>
+  String get yourCompressedVideoHistory =>
       'Seu histórico de vídeos compactados';
 
   @override
-  String get settingsNotificationsSubtitle =>
-      'Alertas de conclusão e atualização';
+  String get completionAndUpdateAlerts => 'Alertas de conclusão e atualização';
 
   @override
-  String get settingsPrivacySubtitle => 'Seus dados permanecem locais';
+  String get yourDataStaysLocal => 'Seus dados permanecem locais';
 
   @override
-  String get plansSubtitle => 'Compare planos e faça upgrade';
+  String get comparePlansAndUpgrade => 'Compare planos e faça upgrade';
 
   @override
-  String get plansMethodsSubtitle => 'Métodos de pagamento e faturamento';
+  String get paymentMethodsAndBilling => 'Métodos de pagamento e faturamento';
 
   @override
-  String get plansRestoreSubtitle => 'Restaure sua compra anterior';
+  String get restoreYourPreviousPurchase => 'Restaure sua compra anterior';
 
   @override
-  String get aboutAppSubtitle => 'Detalhes de versão e build';
+  String get versionAndBuildDetails => 'Detalhes de versão e build';
 
   @override
-  String get aboutDeveloperSubtitle => 'O desenvolvedor por trás do Zumi';
+  String get theDeveloperBehindZumi => 'O desenvolvedor por trás do Zumi';
 
   @override
-  String get aboutLicensesSubtitle => 'Licenças de pacotes de código aberto';
+  String get openSourcePackageLicenses =>
+      'Licenças de pacotes de código aberto';
 
   @override
-  String get legalPrivacySubtitle => 'Como os dados são tratados';
+  String get howDataIsHandled => 'Como os dados são tratados';
 
   @override
-  String get legalTermsSubtitle => 'Regras para usar o Zumi';
+  String get rulesForUsingZumi => 'Regras para usar o Zumi';
 
   @override
-  String get legalDataSafetySubtitle => 'Quais dados coletamos';
+  String get whatDataWeCollect => 'Quais dados coletamos';
 
   @override
-  String get legalPermissionsSubtitle => 'Por que precisamos de permissões';
+  String get whyWeNeedPermissions => 'Por que precisamos de permissões';
 
   @override
-  String get helpFaqSubtitle => 'Respostas a perguntas comuns';
+  String get answersToCommonQuestions => 'Respostas a perguntas comuns';
 
   @override
-  String get helpSupportSubtitle =>
+  String get reachTheDeveloperDirectly =>
       'Entre em contato diretamente com o desenvolvedor';
 
   @override
-  String get helpFeedbackSubtitle => 'Envie-nos seu feedback';
+  String get sendUsYourFeedback => 'Envie-nos seu feedback';
 
   @override
-  String get compressionPickVideo => 'Escolher vídeo';
+  String get pickVideo => 'Escolher vídeo';
 
   @override
-  String get compressionTargetMb => 'Tamanho alvo (MB)';
+  String get targetSizeMB => 'Tamanho alvo (MB)';
 
   @override
-  String get compressionStart => 'Iniciar compressão';
+  String get startCompression => 'Iniciar compressão';
 
   @override
-  String get compressionPause => 'Pausar';
+  String get pause => 'Pausar';
 
   @override
-  String get compressionResume => 'Retomar';
+  String get resume => 'Retomar';
 
   @override
-  String get compressionViewResult => 'Ver resultado';
+  String get viewResult => 'Ver resultado';
 
   @override
-  String get compressionSaveGallery => 'Salvar na galeria';
+  String get saveToGallery => 'Salvar na galeria';
 
   @override
-  String get compressionShare => 'Compartilhar vídeo';
+  String get shareVideo => 'Compartilhar vídeo';
 
   @override
-  String get compressionOriginalSize => 'Tamanho original';
+  String get originalSize => 'Tamanho original';
 
   @override
-  String get compressionOutputSize => 'Tamanho de saída';
+  String get outputSize => 'Tamanho de saída';
 
   @override
-  String get compressionEmptyHistory => 'Nenhum vídeo comprimido ainda';
+  String get noCompressedVideosYet => 'Nenhum vídeo comprimido ainda';
 
   @override
-  String get compressionSavedGallery => 'Salvo na galeria';
+  String get savedToGallery => 'Salvo na galeria';
 
   @override
-  String get compressionInvalidTarget =>
+  String get enterATargetSizeGreaterThanZero =>
       'Digite um tamanho alvo maior que zero';
 
   @override
   String get compressionCancelled => 'Compressão cancelada';
 
   @override
-  String get compressionTargetExceeded =>
+  String get thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize =>
       'Este vídeo não pôde atingir o tamanho selecionado. Tente um tamanho alvo maior.';
 
   @override
-  String get compressionTargetInfeasible =>
+  String get theSelectedSizeIsTooSmallForThisVideoChooseALargerSize =>
       'O tamanho selecionado é muito pequeno para este vídeo. Escolha um tamanho maior.';
 
   @override
-  String get compressionPreviewBefore => 'Visualização original';
+  String get originalPreview => 'Visualização original';
 
   @override
-  String get compressionPreviewAfter => 'Visualização comprimida';
+  String get compressedPreview => 'Visualização comprimida';
 
   @override
-  String get compressionPreset => 'Predefinição de destino';
+  String get targetPreset => 'Predefinição de destino';
 
   @override
-  String get compressionCustom => 'Tamanho personalizado';
+  String get customSize => 'Tamanho personalizado';
 
   @override
-  String get compressionPreviewUnavailable => 'Pré-visualização indisponível';
+  String get previewUnavailable => 'Pré-visualização indisponível';
 
   @override
-  String get compressionAdvanced => 'Controles avançados';
+  String get advancedControls => 'Controles avançados';
 
   @override
-  String get compressionAutomatic => 'Automático';
+  String get automatic => 'Automático';
 
   @override
-  String get compressionResolutionLimit => 'Resolução máxima';
+  String get maximumResolution => 'Resolução máxima';
 
   @override
-  String get compressionSourceResolution => 'Resolução original';
+  String get originalResolution => 'Resolução original';
 
   @override
-  String get compressionFrameRateLimit => 'Taxa de quadros máxima';
+  String get maximumFrameRate => 'Taxa de quadros máxima';
 
   @override
-  String get compressionAudioQuality => 'Taxa de bits de áudio';
+  String get audioBitrate => 'Taxa de bits de áudio';
 
   @override
-  String get compressionRemoveAudio => 'Remover áudio';
+  String get removeAudio => 'Remover áudio';
 
   @override
-  String get compressionVideoBitrateLimit =>
-      'Teto de taxa de bits de vídeo (kbps)';
+  String get videoBitrateCeilingKbps => 'Teto de taxa de bits de vídeo (kbps)';
 
   @override
-  String get compressionHdrPolicy => 'Manipulação de HDR';
+  String get hdrHandling => 'Manipulação de HDR';
 
   @override
-  String get compressionHdrConvert => 'Converter para SDR';
+  String get convertToSDR => 'Converter para SDR';
 
   @override
-  String get compressionHdrPreserve => 'Manter HDR quando suportado';
+  String get keepHDRWhenSupported => 'Manter HDR quando suportado';
 
   @override
-  String get compressionPlanPreview => 'Antes de começar';
+  String get beforeYouStart => 'Antes de começar';
 
   @override
-  String get compressionPlanLoading => 'Calculando plano de compressão…';
+  String get calculatingCompressionPlan => 'Calculando plano de compressão…';
 
   @override
-  String get compressionPlanResolution => 'Resolução planejada';
+  String get plannedResolution => 'Resolução planejada';
 
   @override
-  String get compressionPlanVideoBitrate => 'Taxa de bits de vídeo planejada';
+  String get plannedVideoBitrate => 'Taxa de bits de vídeo planejada';
 
   @override
-  String get compressionPlanAudioBitrate => 'Taxa de bits de áudio planejada';
+  String get plannedAudioBitrate => 'Taxa de bits de áudio planejada';
 
   @override
-  String get compressionAudioConversionNote =>
+  String
+  get reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved =>
       'A recodificação converte o áudio para AAC estéreo. Dolby Atmos e áudio espacial DTS não serão preservados.';
 
   @override
-  String get compressionPlanTooSmall =>
+  String
+  get thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits =>
       'Este alvo é pequeno demais para um vídeo utilizável. Aumente o tamanho ou reduza outros limites.';
 
   @override
-  String get compressionPlanLowQuality =>
+  String get theSelectedTargetMayReduceVideoQuality =>
       'O alvo selecionado pode reduzir a qualidade do vídeo.';
 
   @override
-  String get compressionPlanAlreadyWithinLimit =>
+  String get theSourceIsAlreadyWithinTheSizeLimit =>
       'A fonte já está dentro do limite de tamanho.';
 
   @override
-  String get compressionInvalidBitrate =>
+  String get enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic =>
       'Digite uma taxa de bits de pelo menos 150 kbps, ou deixe em branco para automático.';
 
   @override
-  String get compressionInvalidResolution =>
+  String get enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic =>
       'Digite uma resolução par de 240 a 16384, ou deixe em branco para automático.';
 
   @override
-  String get compressionSeek => 'Posição do vídeo';
+  String get videoPosition => 'Posição do vídeo';
 
   @override
-  String get compressionInterrupted =>
+  String
+  get aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain =>
       'Uma compressão anterior foi interrompida. Seus arquivos temporários foram limpos; você pode selecionar o vídeo e tentar novamente.';
 
   @override
-  String get compressionDismiss => 'Fechar';
+  String get dismiss => 'Fechar';
 
   @override
-  String get compressionClearHistory => 'Limpar histórico';
+  String get clearHistory => 'Limpar histórico';
 
   @override
-  String get compressionClearHistoryConfirm =>
+  String get removeAllHistoryEntriesSavedVideosWillRemainOnYourDevice =>
       'Remover todos os registros de histórico? Os vídeos salvos permanecerão no seu dispositivo.';
 
   @override
-  String get compressionAttempts => 'Tentativas';
+  String get attempts => 'Tentativas';
 
   @override
-  String get compressionTargetSize => 'Tamanho alvo';
+  String get targetSize => 'Tamanho alvo';
 
   @override
-  String get compressionOutputResolution => 'Resolução de saída';
+  String get outputResolution => 'Resolução de saída';
 
   @override
-  String get compressionInvalidVideo =>
+  String get thisVideoCouldNotBeReadChooseAnotherFile =>
       'Este vídeo não pôde ser lido. Escolha outro arquivo.';
 
   @override
-  String get compressionInvalidOutput =>
+  String get theEncodedVideoFailedVerificationYourOriginalVideoWasNotChanged =>
       'O vídeo codificado falhou na verificação. Seu vídeo original não foi alterado.';
 
   @override
-  String get compressionEncoderUnsupported =>
+  String
+  get thisDeviceCannotEncodeTheSelectedResolutionOrFrameRateLowerThatSettingAndTryAgain =>
       'Este dispositivo não pode codificar a resolução ou taxa de quadros selecionada. Reduza essa configuração e tente novamente.';
 
   @override
-  String get compressionAudioDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisAudioFormatForCompressionRemoveAudioOrUseASupportedSource =>
       'Este dispositivo não pode decodificar este formato de áudio para compressão. Remova o áudio ou use uma fonte suportada.';
 
   @override
-  String get compressionVideoDecoderUnsupported =>
+  String
+  get thisDeviceCannotDecodeThisVideoFormatOrProfileForCompressionChooseAnotherSourceOrDevice =>
       'Este dispositivo não pode decodificar este formato de vídeo ou perfil de compressão. Escolha outra fonte ou dispositivo.';
 
   @override
-  String get compressionMp4NotStreamable =>
+  String get theExportedMP4IsNotReadyForStreamingTryAnotherVideoOrDevice =>
       'O MP4 exportado não está pronto para streaming. Tente outro vídeo ou dispositivo.';
 
   @override
-  String get compressionNoSpace =>
+  String get thereIsNotEnoughFreeStorageToCompressThisVideo =>
       'Não há armazenamento livre suficiente para comprimir este vídeo.';
 
   @override
-  String get compressionHdrUnsupported =>
+  String get thisDeviceCannotProcessTheSelectedHDRModeTryConvertingToSDR =>
       'Este dispositivo não pode processar o modo HDR selecionado. Tente converter para SDR.';
 
   @override
-  String get compressionGeneralFailure =>
+  String get compressionCouldNotBeCompletedTryAnotherSettingOrVideo =>
       'A compressão não pôde ser concluída. Tente outra configuração ou vídeo.';
 
   @override
-  String get aboutIdentitySection => 'Identificação do aplicativo';
+  String get appIdentity => 'Identificação do aplicativo';
 
   @override
-  String get aboutAppName => 'Nome do aplicativo';
+  String get appName => 'Nome do aplicativo';
 
   @override
-  String get aboutPackageName => 'Nome do pacote';
+  String get packageName => 'Nome do pacote';
 
   @override
-  String get aboutVersion => 'Versão';
+  String get version => 'Versão';
 
   @override
-  String get aboutBuildNumber => 'Número da compilação';
+  String get buildNumber => 'Número da compilação';
 
   @override
-  String get aboutEnvironmentSection => 'Dispositivo e compilação';
+  String get deviceAndBuild => 'Dispositivo e compilação';
 
   @override
-  String get aboutOperatingSystem => 'Sistema operacional';
+  String get operatingSystem => 'Sistema operacional';
 
   @override
-  String get aboutOsVersion => 'Versão do SO';
+  String get osVersion => 'Versão do SO';
 
   @override
-  String get aboutBuildMode => 'Modo de compilação';
+  String get buildMode => 'Modo de compilação';
 
   @override
-  String get aboutDebug => 'Depuração';
+  String get debug => 'Depuração';
 
   @override
-  String get aboutRelease => 'Release';
+  String get release => 'Release';
 
   @override
-  String get aboutToolchainSection => 'Construído com';
+  String get builtWith => 'Construído com';
 
   @override
-  String get aboutInstallationSection => 'Instalação';
+  String get installation => 'Instalação';
 
   @override
-  String get aboutInstaller => 'Instalado de';
+  String get installedFrom => 'Instalado de';
 
   @override
-  String get aboutInstalledOn => 'Instalado em';
+  String get installedOn => 'Instalado em';
 
   @override
-  String get aboutUpdatedOn => 'Atualizado em';
+  String get updatedOn => 'Atualizado em';
 
   @override
-  String get aboutUnavailable => 'Indisponível';
+  String get unavailable => 'Indisponível';
 
   @override
-  String get aboutProjectSection => 'Projeto e suporte';
+  String get projectAndSupport => 'Projeto e suporte';
 
   @override
-  String get aboutRepository => 'Repositório no GitHub';
+  String get githubRepository => 'Repositório no GitHub';
 
   @override
-  String get aboutRepositorySubtitle => 'Ver código-fonte do Zumi';
+  String get viewZumiSourceCode => 'Ver código-fonte do Zumi';
 
   @override
-  String get aboutReadme => 'Ler o README';
+  String get readTheREADME => 'Ler o README';
 
   @override
-  String get aboutReadmeSubtitle => 'Saiba sobre o Zumi no GitHub';
+  String get learnAboutZumiOnGitHub => 'Saiba sobre o Zumi no GitHub';
 
   @override
-  String get aboutIssues => 'Reportar um problema';
+  String get reportAnIssue => 'Reportar um problema';
 
   @override
-  String get aboutIssuesSubtitle => 'Ver e criar issues no GitHub';
+  String get viewAndCreateGitHubIssues => 'Ver e criar issues no GitHub';
 
   @override
-  String get aboutLatestRelease => 'Última versão';
+  String get latestRelease => 'Última versão';
 
   @override
-  String get aboutLatestReleaseSubtitle => 'Ver lançamentos e downloads';
+  String get viewReleasesAndDownloads => 'Ver lançamentos e downloads';
 
   @override
-  String get aboutDonate => 'Apoiar o Zumi';
+  String get supportZumi => 'Apoiar o Zumi';
 
   @override
-  String get aboutDonateSubtitle => 'Abrir a página oficial de doações';
+  String get openTheOfficialDonationPage => 'Abrir a página oficial de doações';
 
   @override
-  String get aboutLinkError =>
+  String get couldNotOpenTheLinkPleaseTryAgain =>
       'Não foi possível abrir o link. Por favor, tente novamente.';
 
   @override
-  String get aboutDeveloperSection => 'Desenvolvedor';
+  String get developer => 'Desenvolvedor';
 
   @override
-  String get aboutDeveloperName => 'Mostafa Sensei';
+  String get mostafaSensei => 'Mostafa Sensei';
 
   @override
-  String get aboutDeveloperProfile => 'Perfil no GitHub';
+  String get githubProfile => 'Perfil no GitHub';
 
   @override
-  String get aboutDeveloperProfileSubtitle =>
+  String get seeProjectsAndContactDetails =>
       'Ver projetos e detalhes de contato';
 
   @override
   String get maintenanceInProgress => 'Manutenção em andamento';
 
   @override
-  String get maintenanceMessage =>
+  String get zumiIsTemporarilyUnavailablePleaseTryAgainLater =>
       'O Zumi está temporariamente indisponível. Por favor, tente novamente mais tarde.';
 
   @override

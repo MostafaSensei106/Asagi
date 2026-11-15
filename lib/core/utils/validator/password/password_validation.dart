@@ -31,11 +31,11 @@ extension PasswordValidationErrorExtension on PasswordValidationError {
   String message(BuildContext context) {
     final l = context.localeKeys;
     return switch (this) {
-      PasswordValidationError.empty => l.error_password_cant_be_empty,
+      PasswordValidationError.empty => l.passwordCannotBeEmpty,
       PasswordValidationError.invalid =>
-        l.error_password_must_contain_uppercase_lowercase_number_and_special_character,
+        l.passwordMustContainUppercaseLowercaseNumberAndSpecialCharacter,
       PasswordValidationError.minLength =>
-        l.error_password_must_be_at_least_8_characters_long,
+        l.passwordMustBeAtLeast8CharactersLong,
     };
   }
 }

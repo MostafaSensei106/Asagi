@@ -15,7 +15,8 @@ final class StorageSettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppPlaceholderPage(
       title: context.localeKeys.storageCleanup,
-      description: context.localeKeys.storageUsageCacheSizeAndTemporaryFileCleanup,
+      description:
+          context.localeKeys.storageUsageCacheSizeAndTemporaryFileCleanup,
       icon: ZumiIcons.storage,
     );
   }

@@ -27,26 +27,28 @@ final class CompressionPlanSummary extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ExpressiveSectionHeader(
-              title: context.localeKeys.compressionPlanPreview,
-            ),
+            ExpressiveSectionHeader(title: context.localeKeys.beforeYouStart),
             const SizedBox(height: AppSpacing.small),
             if (isLoading)
-              Text(context.localeKeys.compressionPlanLoading)
+              Text(context.localeKeys.calculatingCompressionPlan)
             else if (current == null)
-              Text(context.localeKeys.compressionGeneralFailure)
+              Text(
+                context
+                    .localeKeys
+                    .compressionCouldNotBeCompletedTryAnotherSettingOrVideo,
+              )
             else ...[
               if (!current.isInfeasible)
                 _line(
-                  context.localeKeys.compressionPlanResolution,
+                  context.localeKeys.plannedResolution,
                   '${current.targetWidth} × ${current.targetHeight}',
                 ),
               _line(
-                context.localeKeys.compressionPlanVideoBitrate,
+                context.localeKeys.plannedVideoBitrate,
                 '${(current.targetVideoBitrateBps / 1000).round()} kbps',
               ),
               _line(
-                context.localeKeys.compressionPlanAudioBitrate,
+                context.localeKeys.plannedAudioBitrate,
                 '${(current.targetAudioBitrateBps / 1000).round()} kbps',
               ),
               if (hasAudio &&
@@ -56,7 +58,9 @@ final class CompressionPlanSummary extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: AppSpacing.small),
                   child: Text(
-                    context.localeKeys.compressionAudioConversionNote,
+                    context
+                        .localeKeys
+                        .reEncodingConvertsAudioToAACStereoDolbyAtmosAndDTSSpatialAudioWillNotBePreserved,
                     style: TextStyle(color: scheme.onSurfaceVariant),
                   ),
                 ),
@@ -65,13 +69,18 @@ final class CompressionPlanSummary extends StatelessWidget {
                   padding: const EdgeInsets.only(top: AppSpacing.small),
                   child: Text(
                     current.isInfeasible
-                        ? context.localeKeys.compressionPlanTooSmall
+                        ? context
+                              .localeKeys
+                              .thisTargetIsTooSmallForAUsableVideoIncreaseTheSizeOrLowerOtherLimits
                         : switch (current.warningMessage) {
                             'ALREADY_WITHIN_LIMIT' =>
                               context
                                   .localeKeys
-                                  .compressionPlanAlreadyWithinLimit,
-                            _ => context.localeKeys.compressionPlanLowQuality,
+                                  .theSourceIsAlreadyWithinTheSizeLimit,
+                            _ =>
+                              context
+                                  .localeKeys
+                                  .theSelectedTargetMayReduceVideoQuality,
                           },
                     style: TextStyle(
                       color: current.isInfeasible

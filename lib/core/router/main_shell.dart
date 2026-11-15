@@ -75,10 +75,7 @@ final class _ShellChrome extends HookWidget {
         label: context.localeKeys.compressionHistory,
         icon: ZumiIcons.compressionHistory,
       ),
-      AppNavItem(
-        label: context.localeKeys.settings,
-        icon: ZumiIcons.settings,
-      ),
+      AppNavItem(label: context.localeKeys.settings, icon: ZumiIcons.settings),
     ];
 
     // External branch changes must move the PageView after this build frame.

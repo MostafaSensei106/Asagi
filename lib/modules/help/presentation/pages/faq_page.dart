@@ -15,7 +15,8 @@ final class FaqPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppPlaceholderPage(
       title: context.localeKeys.faq,
-      description: context.localeKeys.answersToCommonQuestionsAboutCompressionAndBilling,
+      description:
+          context.localeKeys.answersToCommonQuestionsAboutCompressionAndBilling,
       icon: ZumiIcons.faq,
     );
   }

@@ -49,7 +49,10 @@ final class _AboutContent extends StatelessWidget {
       await getIt<BaseUrlLauncherServices>().launchWebsite(url: url);
     } catch (_) {
       if (context.mounted) {
-        context.toast.showError(context, context.localeKeys.aboutLinkError);
+        context.toast.showError(
+          context,
+          context.localeKeys.couldNotOpenTheLinkPleaseTryAgain,
+        );
       }
     }
   }
@@ -79,27 +82,27 @@ final class _AboutContent extends StatelessWidget {
               ),
               const Gap(AppSpacing.large),
               AboutSection(
-                title: l10n.aboutIdentitySection,
+                title: l10n.appIdentity,
                 icon: ZumiIcons.appInfo,
                 shape: ExpressiveIconShape.blossom,
                 children: [
                   AboutRow(
-                    title: l10n.aboutAppName,
+                    title: l10n.appName,
                     subtitle: info.appName,
                     icon: ZumiIcons.appInfo,
                   ),
                   AboutRow(
-                    title: l10n.aboutPackageName,
+                    title: l10n.packageName,
                     subtitle: info.packageName,
                     icon: ZumiIcons.package,
                   ),
                   AboutRow(
-                    title: l10n.aboutVersion,
+                    title: l10n.version,
                     subtitle: info.version,
                     icon: ZumiIcons.version,
                   ),
                   AboutRow(
-                    title: l10n.aboutBuildNumber,
+                    title: l10n.buildNumber,
                     subtitle: info.buildNumber,
                     icon: ZumiIcons.build,
                   ),
@@ -107,12 +110,12 @@ final class _AboutContent extends StatelessWidget {
               ),
               const Gap(AppSpacing.large),
               AboutSection(
-                title: l10n.aboutEnvironmentSection,
+                title: l10n.deviceAndBuild,
                 icon: ZumiIcons.device,
                 shape: ExpressiveIconShape.gem,
                 children: [
                   AboutRow(
-                    title: l10n.aboutOperatingSystem,
+                    title: l10n.operatingSystem,
                     subtitle: info.operatingSystemName,
                     icon: switch (info.operatingSystemName.toLowerCase()) {
                       'android' => ZumiIcons.android,
@@ -121,22 +124,20 @@ final class _AboutContent extends StatelessWidget {
                     },
                   ),
                   AboutRow(
-                    title: l10n.aboutOsVersion,
+                    title: l10n.osVersion,
                     subtitle: info.operatingSystemVersion,
                     icon: ZumiIcons.version,
                   ),
                   AboutRow(
-                    title: l10n.aboutBuildMode,
-                    subtitle: info.isDebug
-                        ? l10n.aboutDebug
-                        : l10n.aboutRelease,
+                    title: l10n.buildMode,
+                    subtitle: info.isDebug ? l10n.debug : l10n.release,
                     icon: ZumiIcons.build,
                   ),
                 ],
               ),
               const Gap(AppSpacing.large),
               AboutSection(
-                title: l10n.aboutToolchainSection,
+                title: l10n.builtWith,
                 icon: ZumiIcons.developer,
                 shape: ExpressiveIconShape.clover,
                 children: [
@@ -154,66 +155,63 @@ final class _AboutContent extends StatelessWidget {
               ),
               const Gap(AppSpacing.large),
               AboutSection(
-                title: l10n.aboutInstallationSection,
+                title: l10n.installation,
                 icon: ZumiIcons.storage,
                 shape: ExpressiveIconShape.diamond,
                 children: [
                   AboutRow(
-                    title: l10n.aboutInstaller,
-                    subtitle: _value(
-                      info.installerStore,
-                      l10n.aboutUnavailable,
-                    ),
+                    title: l10n.installedFrom,
+                    subtitle: _value(info.installerStore, l10n.unavailable),
                     icon: ZumiIcons.storage,
                   ),
                   AboutRow(
-                    title: l10n.aboutInstalledOn,
-                    subtitle: _date(info.installDate, l10n.aboutUnavailable),
+                    title: l10n.installedOn,
+                    subtitle: _date(info.installDate, l10n.unavailable),
                     icon: ZumiIcons.calendar,
                   ),
                   AboutRow(
-                    title: l10n.aboutUpdatedOn,
-                    subtitle: _date(info.updateTime, l10n.aboutUnavailable),
+                    title: l10n.updatedOn,
+                    subtitle: _date(info.updateTime, l10n.unavailable),
                     icon: ZumiIcons.calendar,
                   ),
                 ],
               ),
               const Gap(AppSpacing.large),
               AboutSection(
-                title: l10n.aboutProjectSection,
+                title: l10n.projectAndSupport,
                 icon: ZumiIcons.repository,
                 shape: ExpressiveIconShape.sunny,
                 children: [
                   AboutRow(
-                    title: l10n.aboutRepository,
-                    subtitle: l10n.aboutRepositorySubtitle,
+                    title: l10n.githubRepository,
+                    subtitle: l10n.viewZumiSourceCode,
                     icon: ZumiIcons.repository,
                     onTap: () =>
                         unawaited(_open(context, AboutUrls.repository)),
                   ),
                   AboutRow(
-                    title: l10n.aboutReadme,
-                    subtitle: l10n.aboutReadmeSubtitle,
+                    title: l10n.readTheREADME,
+                    subtitle: l10n.learnAboutZumiOnGitHub,
                     icon: ZumiIcons.repository,
                     onTap: () => unawaited(_open(context, AboutUrls.readme)),
                   ),
                   AboutRow(
-                    title: l10n.aboutIssues,
-                    subtitle: l10n.aboutIssuesSubtitle,
+                    title: l10n.reportAnIssue,
+                    subtitle: l10n.viewAndCreateGitHubIssues,
                     icon: ZumiIcons.issues,
                     onTap: () => unawaited(_open(context, AboutUrls.issues)),
                   ),
                   AboutRow(
-                    title: l10n.aboutLatestRelease,
-                    subtitle: l10n.aboutLatestReleaseSubtitle,
+                    title: l10n.latestRelease,
+                    subtitle: l10n.viewReleasesAndDownloads,
                     icon: ZumiIcons.release,
                     onTap: () =>
                         unawaited(_open(context, AboutUrls.latestRelease)),
                   ),
                   if (AboutUrls.donations != null)
                     AboutRow(
-                      title: l10n.aboutDonate,
-                      subtitle: l10n.aboutDonateSubtitle,
+                      title: l10n.supportZumi,
+                      subtitle: l10n.openTheOfficialDonationPage,
                       icon: ZumiIcons.donate,
                       onTap: () =>
                           unawaited(_open(context, AboutUrls.donations!)),
@@ -228,7 +226,7 @@ final class _AboutContent extends StatelessWidget {
                 children: [
                   AboutRow(
                     title: l10n.openSourceLicenses,
-                    subtitle: l10n.aboutLicensesSubtitle,
+                    subtitle: l10n.openSourcePackageLicenses,
                     icon: ZumiIcons.licenses,
                     onTap: () => unawaited(context.push(const LicensesRoute())),
                   ),

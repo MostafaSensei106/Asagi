@@ -61,7 +61,7 @@ final class VideoSelectPage extends StatelessWidget {
                 label: Text(
                   state.phase == CompressionPhase.picking
                       ? context.localeKeys.pleaseWait
-                      : context.localeKeys.compressionPickVideo,
+                      : context.localeKeys.pickVideo,
                 ),
               ),
             ],
