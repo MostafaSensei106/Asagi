@@ -291,7 +291,7 @@
   "@light": {
     "description": "Light theme mode"
   },
-  "alwaysUseTheLightTheme": "استخدم السمة الفاتحة دائمًا.",
+  "alwaysUseTheLightTheme": "استخدم السمة الفاتحة.",
   "@alwaysUseTheLightTheme": {
     "description": "Light theme mode subtitle"
   },
@@ -299,7 +299,7 @@
   "@dark": {
     "description": "Dark theme mode"
   },
-  "alwaysUseTheDarkTheme": "استخدم السمة الداكنة دائمًا.",
+  "alwaysUseTheDarkTheme": "استخدم السمة الداكنة.",
   "@alwaysUseTheDarkTheme": {
     "description": "Dark theme mode subtitle"
   },
@@ -319,7 +319,7 @@
   "@highContrast": {
     "description": "High contrast mode toggle title"
   },
-  "sharperTextAndSurfaces": "أسود وأبيض نقي لتباين فائق ",
+  "sharperTextAndSurfaces": "أسود وأبيض نقي لتباين فائق.",
   "@sharperTextAndSurfaces": {
     "description": "High contrast mode toggle subtitle"
   },

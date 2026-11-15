@@ -15,75 +15,7 @@ final class ThemePreviewCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final scheme = context.colorScheme;
-    final isDark = scheme.brightness == Brightness.dark;
-    final isAmoled = isDark && scheme.surface == const Color(0xff000000);
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    context.localeKeys.themePreview,
-                    style: context.textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  Text(
-                    context.localeKeys.surfacesTextAndAccents,
-                    style: context.textTheme.bodySmall?.copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            if (isAmoled)
-              Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: AppSpacing.small + 2,
-                  vertical: 5,
-                ),
-                decoration: BoxDecoration(
-                  color: scheme.primaryContainer,
-                  borderRadius: BorderRadius.circular(AppRadii.pill),
-                  border: Border.all(
-                    color: scheme.primary.withValues(alpha: 0.6),
-                  ),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      LucideIcons.zap,
-                      size: 13,
-                      color: scheme.onPrimaryContainer,
-                    ),
-                    const Gap.horizontal(4),
-                    Text(
-                      'AMOLED',
-                      style: context.textTheme.labelSmall?.copyWith(
-                        color: scheme.onPrimaryContainer,
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: 0.6,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-          ],
-        ),
-        const Gap(AppSpacing.medium),
-        const _ThemeSample(),
-      ],
-    );
+    return const _ThemeSample();
   }
 }
 
@@ -125,7 +57,7 @@ final class _ThemeSample extends StatelessWidget {
                         Text(
                           context.localeKeys.zumiEngine,
                           style: context.textTheme.labelLarge?.copyWith(
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w600,
                             color: scheme.onSurface,
                           ),
                         ),

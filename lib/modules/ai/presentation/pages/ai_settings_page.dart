@@ -111,7 +111,7 @@ final class AiSettingsPage extends StatelessWidget {
                 count: group.destinations.length,
                 shape: group.shape,
               ),
-            const Gap(AppSpacing.small),
+            const Gap(AppSpacing.large),
           ],
         ],
       ),

@@ -15,7 +15,7 @@ class ExpressiveSectionHeader extends StatelessWidget {
     return Row(
       children: [
         const Gap.horizontal(AppSpacing.small),
-        Expanded(child: Text(title, style: context.textTheme.titleMedium)),
+        Expanded(child: Text(title, style: context.textTheme.titleSmall)),
       ],
     );
   }

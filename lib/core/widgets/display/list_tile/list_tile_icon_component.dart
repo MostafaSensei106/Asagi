@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../extensions/extensions.dart';
 import '../expressive_icon.dart';
 import 'list_tile_component.dart';
 
@@ -80,16 +81,22 @@ final class ListTileIconComponent extends StatelessWidget {
       ListTileGroupType.single => ListTileComponent.new,
     };
     return tile(
-      title: Text(title),
+      title: Text(
+        title,
+        style: context.textTheme.labelMedium?.copyWith(
+          fontWeight: FontWeight.w600,
+          color: scheme.onSurface,
+        ),
+      ),
       leading: ExpressiveIcon(
         icon: leading,
         shape: shape,
         backgroundColor: selected == true
             ? scheme.primary
-            : scheme.secondaryContainer,
+            : scheme.primaryContainer,
         foregroundColor: selected == true
             ? scheme.onPrimary
-            : scheme.onSecondaryContainer,
+            : scheme.onPrimaryContainer,
       ),
       subtitle: subtitle == null ? null : Text(subtitle!),
       trailing: trailing,

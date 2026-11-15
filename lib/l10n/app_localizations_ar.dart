@@ -242,13 +242,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get light => 'فاتح';
 
   @override
-  String get alwaysUseTheLightTheme => 'استخدم السمة الفاتحة دائمًا.';
+  String get alwaysUseTheLightTheme => 'استخدم السمة الفاتحة.';
 
   @override
   String get dark => 'داكن';
 
   @override
-  String get alwaysUseTheDarkTheme => 'استخدم السمة الداكنة دائمًا.';
+  String get alwaysUseTheDarkTheme => 'استخدم السمة الداكنة.';
 
   @override
   String get theme => 'السمة';
@@ -263,7 +263,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get highContrast => 'تباين عالي';
 
   @override
-  String get sharperTextAndSurfaces => 'أسود وأبيض نقي لتباين فائق ';
+  String get sharperTextAndSurfaces => 'أسود وأبيض نقي لتباين فائق.';
 
   @override
   String get zumiEngine => 'محرك Zumi';
