@@ -71,7 +71,8 @@ class SidePageAppBarComponent extends StatelessWidget
           variant: IconButtonVariant.filled,
           onPressed: () => leave(context),
           foregroundColor:
-              foregroundColor ?? Theme.of(context).colorScheme.onSurface,
+              foregroundColor ??
+              Theme.of(context).colorScheme.onPrimaryContainer,
           icon: icon,
         ),
       );
