@@ -279,6 +279,30 @@
   "@themeColorSchemeAndMotionPreferences": {
     "description": "Appearance settings page description"
   },
+  "system": "النظام",
+  "@system": {
+    "description": "Theme mode that follows the device setting"
+  },
+  "matchYourDeviceSetting": "اتبع إعداد الجهاز.",
+  "@matchYourDeviceSetting": {
+    "description": "System theme mode subtitle"
+  },
+  "light": "فاتح",
+  "@light": {
+    "description": "Light theme mode"
+  },
+  "alwaysUseTheLightTheme": "استخدم السمة الفاتحة دائمًا.",
+  "@alwaysUseTheLightTheme": {
+    "description": "Light theme mode subtitle"
+  },
+  "dark": "داكن",
+  "@dark": {
+    "description": "Dark theme mode"
+  },
+  "alwaysUseTheDarkTheme": "استخدم السمة الداكنة دائمًا.",
+  "@alwaysUseTheDarkTheme": {
+    "description": "Dark theme mode subtitle"
+  },
   "language": "اللغة",
   "@language": {
     "description": "Language settings page title"

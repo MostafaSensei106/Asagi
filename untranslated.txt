@@ -1,1 +1,298 @@
-{}
+{
+  "de": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "de_DE": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "es": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "es_ES": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "fr": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "id": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "id_ID": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "it": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "it_IT": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "ja": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "ja_JP": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "ko": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "ko_KR": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "nl": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "nl_BE": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "pl": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "pl_PL": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "pt": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "pt_BR": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "ru": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "ru_RU": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "sv": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "sv_SE": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "th": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "th_TH": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "tr": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "tr_TR": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "vi": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "zh": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "zh_CN": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "zh_HK": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "zh_SG": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ],
+
+  "zh_TW": [
+    "system",
+    "matchYourDeviceSetting",
+    "light",
+    "alwaysUseTheLightTheme",
+    "dark",
+    "alwaysUseTheDarkTheme"
+  ]
+}

@@ -545,6 +545,42 @@ abstract class AppLocalizations {
   /// **'Theme, color scheme, and motion preferences.'**
   String get themeColorSchemeAndMotionPreferences;
 
+  /// Theme mode that follows the device setting
+  ///
+  /// In en, this message translates to:
+  /// **'System'**
+  String get system;
+
+  /// System theme mode subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Match your device setting.'**
+  String get matchYourDeviceSetting;
+
+  /// Light theme mode
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get light;
+
+  /// Light theme mode subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Always use the light theme.'**
+  String get alwaysUseTheLightTheme;
+
+  /// Dark theme mode
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get dark;
+
+  /// Dark theme mode subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Always use the dark theme.'**
+  String get alwaysUseTheDarkTheme;
+
   /// Language settings page title
   ///
   /// In en, this message translates to:

@@ -125,8 +125,7 @@ final class ListTileComponent extends StatelessWidget {
             clipBehavior: Clip.antiAlias,
             child: ListTile(
               title: DefaultTextStyle.merge(
-                style: Theme.of(context).textTheme.bodyMedium
-                    ?.copyWith(fontWeight: FontWeight.w500),
+                style: Theme.of(context).textTheme.bodyMedium,
                 child: title,
               ),
               leading: leading,

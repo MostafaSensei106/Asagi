@@ -233,6 +233,24 @@ class AppLocalizationsAr extends AppLocalizations {
       'السمة والألوان وتفضيلات الحركة.';
 
   @override
+  String get system => 'النظام';
+
+  @override
+  String get matchYourDeviceSetting => 'اتبع إعداد الجهاز.';
+
+  @override
+  String get light => 'فاتح';
+
+  @override
+  String get alwaysUseTheLightTheme => 'استخدم السمة الفاتحة دائمًا.';
+
+  @override
+  String get dark => 'داكن';
+
+  @override
+  String get alwaysUseTheDarkTheme => 'استخدم السمة الداكنة دائمًا.';
+
+  @override
   String get language => 'اللغة';
 
   @override

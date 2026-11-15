@@ -239,6 +239,24 @@ class AppLocalizationsIt extends AppLocalizations {
       'Tema, schema di colori e preferenze di movimento.';
 
   @override
+  String get system => 'System';
+
+  @override
+  String get matchYourDeviceSetting => 'Match your device setting.';
+
+  @override
+  String get light => 'Light';
+
+  @override
+  String get alwaysUseTheLightTheme => 'Always use the light theme.';
+
+  @override
+  String get dark => 'Dark';
+
+  @override
+  String get alwaysUseTheDarkTheme => 'Always use the dark theme.';
+
+  @override
   String get language => 'Lingua';
 
   @override

@@ -279,6 +279,30 @@
   "@themeColorSchemeAndMotionPreferences": {
     "description": "Appearance settings page description"
   },
+  "system": "System",
+  "@system": {
+    "description": "Theme mode that follows the device setting"
+  },
+  "matchYourDeviceSetting": "Match your device setting.",
+  "@matchYourDeviceSetting": {
+    "description": "System theme mode subtitle"
+  },
+  "light": "Light",
+  "@light": {
+    "description": "Light theme mode"
+  },
+  "alwaysUseTheLightTheme": "Always use the light theme.",
+  "@alwaysUseTheLightTheme": {
+    "description": "Light theme mode subtitle"
+  },
+  "dark": "Dark",
+  "@dark": {
+    "description": "Dark theme mode"
+  },
+  "alwaysUseTheDarkTheme": "Always use the dark theme.",
+  "@alwaysUseTheDarkTheme": {
+    "description": "Dark theme mode subtitle"
+  },
   "language": "Language",
   "@language": {
     "description": "Language settings page title"

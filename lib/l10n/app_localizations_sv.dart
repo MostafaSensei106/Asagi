@@ -231,6 +231,24 @@ class AppLocalizationsSv extends AppLocalizations {
       'Tema, färgschema och rörelseinställningar.';
 
   @override
+  String get system => 'System';
+
+  @override
+  String get matchYourDeviceSetting => 'Match your device setting.';
+
+  @override
+  String get light => 'Light';
+
+  @override
+  String get alwaysUseTheLightTheme => 'Always use the light theme.';
+
+  @override
+  String get dark => 'Dark';
+
+  @override
+  String get alwaysUseTheDarkTheme => 'Always use the dark theme.';
+
+  @override
   String get language => 'Språk';
 
   @override
