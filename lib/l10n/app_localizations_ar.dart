@@ -251,6 +251,21 @@ class AppLocalizationsAr extends AppLocalizations {
   String get alwaysUseTheDarkTheme => 'استخدم السمة الداكنة دائمًا.';
 
   @override
+  String get theme => 'السمة';
+
+  @override
+  String get themePreview => 'معاينة المظهر';
+
+  @override
+  String get surfacesTextAndAccents => 'أسطح ونصوص ولمسات';
+
+  @override
+  String get highContrast => 'تباين عالي';
+
+  @override
+  String get sharperTextAndSurfaces => 'نصوص وأسطح أوضح';
+
+  @override
   String get language => 'اللغة';
 
   @override

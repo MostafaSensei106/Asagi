@@ -581,6 +581,36 @@ abstract class AppLocalizations {
   /// **'Always use the dark theme.'**
   String get alwaysUseTheDarkTheme;
 
+  /// Section title for the theme mode choices
+  ///
+  /// In en, this message translates to:
+  /// **'Theme'**
+  String get theme;
+
+  /// Title of the live theme preview card
+  ///
+  /// In en, this message translates to:
+  /// **'Theme preview'**
+  String get themePreview;
+
+  /// Subtitle of the live theme preview card
+  ///
+  /// In en, this message translates to:
+  /// **'Surfaces, text, and accents'**
+  String get surfacesTextAndAccents;
+
+  /// High contrast mode toggle title
+  ///
+  /// In en, this message translates to:
+  /// **'High contrast'**
+  String get highContrast;
+
+  /// High contrast mode toggle subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Sharper text and surfaces'**
+  String get sharperTextAndSurfaces;
+
   /// Language settings page title
   ///
   /// In en, this message translates to:

@@ -303,6 +303,26 @@
   "@alwaysUseTheDarkTheme": {
     "description": "Dark theme mode subtitle"
   },
+  "theme": "Theme",
+  "@theme": {
+    "description": "Section title for the theme mode choices"
+  },
+  "themePreview": "Theme preview",
+  "@themePreview": {
+    "description": "Title of the live theme preview card"
+  },
+  "surfacesTextAndAccents": "Surfaces, text, and accents",
+  "@surfacesTextAndAccents": {
+    "description": "Subtitle of the live theme preview card"
+  },
+  "highContrast": "High contrast",
+  "@highContrast": {
+    "description": "High contrast mode toggle title"
+  },
+  "sharperTextAndSurfaces": "Sharper text and surfaces",
+  "@sharperTextAndSurfaces": {
+    "description": "High contrast mode toggle subtitle"
+  },
   "language": "Language",
   "@language": {
     "description": "Language settings page title"

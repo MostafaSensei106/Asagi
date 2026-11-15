@@ -20,12 +20,21 @@ class ThemeCubit extends HydratedCubitSignal<ThemeState> {
 
   Future<void> _init() async {
     final themeMode = await _repo.getThemeMode();
-    emit(state.value.copyWith(themeMode: themeMode));
+    final highContrast = await _repo.getHighContrast();
+    emit(
+      state.value.copyWith(themeMode: themeMode, highContrast: highContrast),
+    );
   }
 
   Future<void> changeTheme(ThemeMode newMode) async {
     if (state.value.themeMode == newMode) return;
     emit(state.value.copyWith(themeMode: newMode));
     await _repo.cacheThemeMode(newMode);
+  }
+
+  Future<void> changeHighContrast(bool enabled) async {
+    if (state.value.highContrast == enabled) return;
+    emit(state.value.copyWith(highContrast: enabled));
+    await _repo.cacheHighContrast(enabled);
   }
 }

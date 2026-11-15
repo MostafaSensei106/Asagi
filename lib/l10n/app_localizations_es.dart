@@ -257,6 +257,21 @@ class AppLocalizationsEs extends AppLocalizations {
   String get alwaysUseTheDarkTheme => 'Always use the dark theme.';
 
   @override
+  String get theme => 'Theme';
+
+  @override
+  String get themePreview => 'Theme preview';
+
+  @override
+  String get surfacesTextAndAccents => 'Surfaces, text, and accents';
+
+  @override
+  String get highContrast => 'High contrast';
+
+  @override
+  String get sharperTextAndSurfaces => 'Sharper text and surfaces';
+
+  @override
   String get language => 'Idioma';
 
   @override

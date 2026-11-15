@@ -303,6 +303,26 @@
   "@alwaysUseTheDarkTheme": {
     "description": "Dark theme mode subtitle"
   },
+  "theme": "السمة",
+  "@theme": {
+    "description": "Section title for the theme mode choices"
+  },
+  "themePreview": "معاينة المظهر",
+  "@themePreview": {
+    "description": "Title of the live theme preview card"
+  },
+  "surfacesTextAndAccents": "أسطح ونصوص ولمسات",
+  "@surfacesTextAndAccents": {
+    "description": "Subtitle of the live theme preview card"
+  },
+  "highContrast": "تباين عالي",
+  "@highContrast": {
+    "description": "High contrast mode toggle title"
+  },
+  "sharperTextAndSurfaces": "نصوص وأسطح أوضح",
+  "@sharperTextAndSurfaces": {
+    "description": "High contrast mode toggle subtitle"
+  },
   "language": "اللغة",
   "@language": {
     "description": "Language settings page title"

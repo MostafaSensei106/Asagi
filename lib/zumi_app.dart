@@ -31,10 +31,19 @@ class ZumiApp extends StatelessWidget {
             final themeMode = context.select(
               (ThemeCubit cubit) => cubit.state.value.themeMode,
             );
+            final highContrast = context.select(
+              (ThemeCubit cubit) => cubit.state.value.highContrast,
+            );
             return MaterialApp.router(
               title: AppMetadata.name,
-              theme: AppTheme.light,
-              darkTheme: AppTheme.dark,
+              theme: highContrast
+                  ? AppTheme.lightHighContrast()
+                  : AppTheme.light(),
+              darkTheme: highContrast
+                  ? AppTheme.darkHighContrast()
+                  : AppTheme.dark(),
+              highContrastTheme: AppTheme.lightHighContrast(),
+              highContrastDarkTheme: AppTheme.darkHighContrast(),
               themeMode: themeMode,
               locale: AppSupportedLocales.values.firstWhere(
                 (supportedLocale) => supportedLocale.toString() == locale,

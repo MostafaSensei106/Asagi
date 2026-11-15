@@ -27,4 +27,14 @@ class ThemeRepository implements BaseThemeRepository {
       orElse: () => ThemeMode.system,
     );
   }
+
+  @override
+  Future<void> cacheHighContrast(bool highContrast) async {
+    await _storage.setData(key: PrefKeys.highContrast, value: highContrast);
+  }
+
+  @override
+  Future<bool> getHighContrast() async {
+    return await _storage.getData<bool>(key: PrefKeys.highContrast) ?? false;
+  }
 }

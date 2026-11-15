@@ -5,42 +5,65 @@ import 'package:zumi/core/utils/theme/app_theme.dart';
 void main() {
   group('AppTheme', () {
     test('light theme brightness matches its color scheme', () {
-      expect(AppTheme.light.brightness, Brightness.light);
-      expect(AppTheme.light.colorScheme.brightness, Brightness.light);
+      final theme = AppTheme.light();
+      expect(theme.brightness, Brightness.light);
+      expect(theme.colorScheme.brightness, Brightness.light);
+      expect(theme.colorScheme.primary, const Color(0xff3c6090));
     });
 
     test('dark theme brightness matches its color scheme', () {
-      expect(AppTheme.dark.brightness, Brightness.dark);
-      expect(AppTheme.dark.colorScheme.brightness, Brightness.dark);
+      final theme = AppTheme.dark();
+      expect(theme.brightness, Brightness.dark);
+      expect(theme.colorScheme.brightness, Brightness.dark);
+      expect(theme.colorScheme.primary, const Color(0xffa5c8ff));
     });
 
-    for (final (name, theme) in [
-      ('light', AppTheme.light),
-      ('dark', AppTheme.dark),
-    ]) {
-      test('$name theme uses the static Google Sans family by default', () {
-        expect(theme.textTheme.bodyMedium?.fontFamily, AppTheme.fontFamily);
-        expect(theme.textTheme.labelLarge?.fontFamily, AppTheme.fontFamily);
-      });
+    test('medium contrast light and dark return expected schemes', () {
+      final lightMed = AppTheme.lightMediumContrast();
+      final darkMed = AppTheme.darkMediumContrast();
 
-      test('$name theme uses the variable Google Sans family for headings', () {
-        final display = theme.textTheme.displayLarge;
+      expect(lightMed.colorScheme.primary, const Color(0xff093764));
+      expect(darkMed.colorScheme.primary, const Color(0xffcaddff));
+    });
 
-        expect(
-          display?.fontVariations,
-          contains(const FontVariation('wght', 400)),
-        );
-      });
-    }
+    test(
+      'dark high contrast uses AMOLED pure black with base primary/secondary',
+      () {
+        final darkHigh = AppTheme.darkHighContrast();
+        final scheme = darkHigh.colorScheme;
 
-    test('variableTextStyle writes arbitrary weights to the wght axis', () {
-      final style = AppTheme.variableTextStyle(weight: 550, grade: -25);
+        // Pure black surfaces for AMOLED
+        expect(scheme.surface, const Color(0xff000000));
+        expect(darkHigh.scaffoldBackgroundColor, const Color(0xff000000));
+        expect(scheme.onSurface, const Color(0xffffffff));
 
-      expect(style.fontWeight, FontWeight.w600);
-      expect(style.fontVariations, [
-        const FontVariation('wght', 550),
-        const FontVariation('GRAD', -25),
-      ]);
+        // Base primary and secondary are preserved
+        expect(scheme.primary, const Color(0xffa5c8ff));
+        expect(scheme.secondary, const Color(0xffbcc7dc));
+      },
+    );
+
+    test('light high contrast uses pure white with base primary/secondary', () {
+      final lightHigh = AppTheme.lightHighContrast();
+      final scheme = lightHigh.colorScheme;
+
+      expect(scheme.surface, const Color(0xffffffff));
+      expect(lightHigh.scaffoldBackgroundColor, const Color(0xffffffff));
+      expect(scheme.onSurface, const Color(0xff000000));
+
+      // Base primary and secondary are preserved
+      expect(scheme.primary, const Color(0xff3c6090));
+      expect(scheme.secondary, const Color(0xff545f71));
+    });
+
+    test('MaterialTheme wrapper provides matching schemes and themes', () {
+      const materialTheme = MaterialTheme(TextTheme());
+      expect(materialTheme.light().brightness, Brightness.light);
+      expect(materialTheme.dark().brightness, Brightness.dark);
+      expect(
+        materialTheme.darkHighContrast().colorScheme.surface,
+        const Color(0xff000000),
+      );
     });
   });
 }
