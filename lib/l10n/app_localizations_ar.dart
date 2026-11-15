@@ -263,7 +263,28 @@ class AppLocalizationsAr extends AppLocalizations {
   String get highContrast => 'تباين عالي';
 
   @override
-  String get sharperTextAndSurfaces => 'نصوص وأسطح أوضح';
+  String get sharperTextAndSurfaces => 'أسود وأبيض نقي لتباين فائق ';
+
+  @override
+  String get zumiEngine => 'محرك Zumi';
+
+  @override
+  String get targetSizeOptimizer => 'مُحسِّن الفيديو للحجم المستهدف';
+
+  @override
+  String get encodingFormat => 'جارٍ الترميز • H.265 / HEVC';
+
+  @override
+  String get compressAction => 'ضغط';
+
+  @override
+  String get primaryColor => 'أساسي';
+
+  @override
+  String get secondaryColor => 'ثانوي';
+
+  @override
+  String get tertiaryColor => 'ثالثي';
 
   @override
   String get language => 'اللغة';

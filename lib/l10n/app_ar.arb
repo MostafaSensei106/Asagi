@@ -319,9 +319,37 @@
   "@highContrast": {
     "description": "High contrast mode toggle title"
   },
-  "sharperTextAndSurfaces": "نصوص وأسطح أوضح",
+  "sharperTextAndSurfaces": "أسود وأبيض نقي لتباين فائق ",
   "@sharperTextAndSurfaces": {
     "description": "High contrast mode toggle subtitle"
+  },
+  "zumiEngine": "محرك Zumi",
+  "@zumiEngine": {
+    "description": "Engine title in theme preview card"
+  },
+  "targetSizeOptimizer": "مُحسِّن الفيديو للحجم المستهدف",
+  "@targetSizeOptimizer": {
+    "description": "Engine subtitle in theme preview card"
+  },
+  "encodingFormat": "جارٍ الترميز • H.265 / HEVC",
+  "@encodingFormat": {
+    "description": "Encoding status in theme preview card"
+  },
+  "compressAction": "ضغط",
+  "@compressAction": {
+    "description": "Compress button in theme preview card"
+  },
+  "primaryColor": "أساسي",
+  "@primaryColor": {
+    "description": "Primary color tooltip in theme preview card"
+  },
+  "secondaryColor": "ثانوي",
+  "@secondaryColor": {
+    "description": "Secondary color tooltip in theme preview card"
+  },
+  "tertiaryColor": "ثالثي",
+  "@tertiaryColor": {
+    "description": "Tertiary color tooltip in theme preview card"
   },
   "language": "اللغة",
   "@language": {

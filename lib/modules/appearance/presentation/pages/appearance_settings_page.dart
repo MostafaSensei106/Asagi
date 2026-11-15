@@ -34,12 +34,12 @@ final class AppearanceSettingsPage extends StatelessWidget {
             ),
             children: [
               const ThemePreviewCard(),
-              const Gap(AppSpacing.xLarge),
+              const Gap(AppSpacing.large),
               ThemeModeSection(
                 selectedMode: state.themeMode,
                 onChanged: (mode) => unawaited(cubit.changeTheme(mode)),
               ),
-              const Gap(AppSpacing.xLarge),
+              const Gap(AppSpacing.small),
               ContrastSection(
                 enabled: state.highContrast,
                 onChanged: (value) =>

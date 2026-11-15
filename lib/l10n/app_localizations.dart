@@ -608,8 +608,50 @@ abstract class AppLocalizations {
   /// High contrast mode toggle subtitle
   ///
   /// In en, this message translates to:
-  /// **'Sharper text and surfaces'**
+  /// **'Pure black and white surfaces '**
   String get sharperTextAndSurfaces;
+
+  /// Engine title in theme preview card
+  ///
+  /// In en, this message translates to:
+  /// **'Zumi Engine'**
+  String get zumiEngine;
+
+  /// Engine subtitle in theme preview card
+  ///
+  /// In en, this message translates to:
+  /// **'Target-Size Video Optimizer'**
+  String get targetSizeOptimizer;
+
+  /// Encoding status in theme preview card
+  ///
+  /// In en, this message translates to:
+  /// **'Encoding • H.265 / HEVC'**
+  String get encodingFormat;
+
+  /// Compress button in theme preview card
+  ///
+  /// In en, this message translates to:
+  /// **'Compress'**
+  String get compressAction;
+
+  /// Primary color tooltip in theme preview card
+  ///
+  /// In en, this message translates to:
+  /// **'Primary'**
+  String get primaryColor;
+
+  /// Secondary color tooltip in theme preview card
+  ///
+  /// In en, this message translates to:
+  /// **'Secondary'**
+  String get secondaryColor;
+
+  /// Tertiary color tooltip in theme preview card
+  ///
+  /// In en, this message translates to:
+  /// **'Tertiary'**
+  String get tertiaryColor;
 
   /// Language settings page title
   ///

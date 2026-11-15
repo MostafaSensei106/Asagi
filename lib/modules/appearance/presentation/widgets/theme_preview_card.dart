@@ -22,40 +22,40 @@ final class ThemePreviewCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const _ThemeSample(),
-        const Gap(AppSpacing.medium),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  context.localeKeys.themePreview,
-                  style: context.textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w600,
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    context.localeKeys.themePreview,
+                    style: context.textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
-                ),
-                const Gap(AppSpacing.xSmall),
-                Text(
-                  context.localeKeys.surfacesTextAndAccents,
-                  style: context.textTheme.bodySmall?.copyWith(
-                    color: scheme.onSurfaceVariant,
+                  Text(
+                    context.localeKeys.surfacesTextAndAccents,
+                    style: context.textTheme.bodySmall?.copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             if (isAmoled)
               Container(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: AppSpacing.small,
-                  vertical: 4,
+                  horizontal: AppSpacing.small + 2,
+                  vertical: 5,
                 ),
                 decoration: BoxDecoration(
                   color: scheme.primaryContainer,
                   borderRadius: BorderRadius.circular(AppRadii.pill),
                   border: Border.all(
-                    color: scheme.primary.withValues(alpha: 0.5),
+                    color: scheme.primary.withValues(alpha: 0.6),
                   ),
                 ),
                 child: Row(
@@ -71,7 +71,7 @@ final class ThemePreviewCard extends StatelessWidget {
                       'AMOLED',
                       style: context.textTheme.labelSmall?.copyWith(
                         color: scheme.onPrimaryContainer,
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w800,
                         letterSpacing: 0.6,
                       ),
                     ),
@@ -80,6 +80,8 @@ final class ThemePreviewCard extends StatelessWidget {
               ),
           ],
         ),
+        const Gap(AppSpacing.medium),
+        const _ThemeSample(),
       ],
     );
   }
@@ -95,7 +97,6 @@ final class _ThemeSample extends StatelessWidget {
     final scheme = context.colorScheme;
 
     return Container(
-      padding: const EdgeInsets.all(AppSpacing.medium),
       decoration: BoxDecoration(
         color: scheme.surface,
         borderRadius: BorderRadius.circular(AppRadii.large),
@@ -122,35 +123,17 @@ final class _ThemeSample extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          'Zumi Engine',
+                          context.localeKeys.zumiEngine,
                           style: context.textTheme.labelLarge?.copyWith(
                             fontWeight: FontWeight.w700,
                             color: scheme.onSurface,
                           ),
                         ),
-                        const Gap.horizontal(6),
-                        Container(
-                              width: 7,
-                              height: 7,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: scheme.primary,
-                              ),
-                            )
-                            .animate(
-                              onPlay: (controller) =>
-                                  controller.repeat(reverse: true),
-                            )
-                            .scale(
-                              begin: const Offset(0.7, 0.7),
-                              end: const Offset(1.3, 1.3),
-                              duration: 1200.ms,
-                            ),
                       ],
                     ),
                     const Gap(2),
                     Text(
-                      'Target-Size Video Optimizer',
+                      context.localeKeys.targetSizeOptimizer,
                       style: context.textTheme.bodySmall?.copyWith(
                         fontSize: 11,
                         color: scheme.onSurfaceVariant,
@@ -259,7 +242,7 @@ final class _ThemeSample extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Encoding • H.265 / HEVC',
+                      context.localeKeys.encodingFormat,
                       style: context.textTheme.bodySmall?.copyWith(
                         fontSize: 10,
                         color: scheme.onSurfaceVariant,
@@ -369,7 +352,7 @@ final class _ThemeSample extends StatelessWidget {
                       Icon(LucideIcons.play, size: 14, color: scheme.onPrimary),
                       const Gap.horizontal(6),
                       Text(
-                        'Compress',
+                        context.localeKeys.compressAction,
                         style: context.textTheme.labelMedium?.copyWith(
                           color: scheme.onPrimary,
                           fontWeight: FontWeight.w600,
@@ -391,7 +374,7 @@ final class _ThemeSample extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      'Settings',
+                      context.localeKeys.settings,
                       style: context.textTheme.labelMedium?.copyWith(
                         color: scheme.onSecondaryContainer,
                         fontWeight: FontWeight.w600,
@@ -409,30 +392,39 @@ final class _ThemeSample extends StatelessWidget {
           // 5. Palette Swatches Indicator Bar
           Row(
             children: [
-              _ColorSwatch(color: scheme.primary, tooltip: 'Primary'),
+              _ColorSwatch(
+                color: scheme.primary,
+                tooltip: context.localeKeys.primaryColor,
+              ),
               const Gap.horizontal(4),
               _ColorSwatch(
                 color: scheme.primaryContainer,
-                tooltip: 'Primary Container',
+                tooltip: '${context.localeKeys.primaryColor} Container',
               ),
               const Gap.horizontal(4),
-              _ColorSwatch(color: scheme.secondary, tooltip: 'Secondary'),
+              _ColorSwatch(
+                color: scheme.secondary,
+                tooltip: context.localeKeys.secondaryColor,
+              ),
               const Gap.horizontal(4),
               _ColorSwatch(
                 color: scheme.secondaryContainer,
-                tooltip: 'Secondary Container',
+                tooltip: '${context.localeKeys.secondaryColor} Container',
               ),
               const Gap.horizontal(4),
-              _ColorSwatch(color: scheme.tertiary, tooltip: 'Tertiary'),
+              _ColorSwatch(
+                color: scheme.tertiary,
+                tooltip: context.localeKeys.tertiaryColor,
+              ),
               const Gap.horizontal(4),
               _ColorSwatch(
                 color: scheme.tertiaryContainer,
-                tooltip: 'Tertiary Container',
+                tooltip: '${context.localeKeys.tertiaryColor} Container',
               ),
               const Gap.horizontal(4),
               _ColorSwatch(
                 color: scheme.surfaceContainerHighest,
-                tooltip: 'Surface Container Highest',
+                tooltip: 'Surface',
               ),
             ],
           ),

@@ -265,7 +265,28 @@ class AppLocalizationsId extends AppLocalizations {
   String get highContrast => 'High contrast';
 
   @override
-  String get sharperTextAndSurfaces => 'Sharper text and surfaces';
+  String get sharperTextAndSurfaces => 'Pure black and white surfaces ';
+
+  @override
+  String get zumiEngine => 'Zumi Engine';
+
+  @override
+  String get targetSizeOptimizer => 'Target-Size Video Optimizer';
+
+  @override
+  String get encodingFormat => 'Encoding • H.265 / HEVC';
+
+  @override
+  String get compressAction => 'Compress';
+
+  @override
+  String get primaryColor => 'Primary';
+
+  @override
+  String get secondaryColor => 'Secondary';
+
+  @override
+  String get tertiaryColor => 'Tertiary';
 
   @override
   String get language => 'Bahasa';

@@ -10,7 +10,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "de_DE": [
@@ -24,7 +31,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "es": [
@@ -38,7 +52,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "es_ES": [
@@ -52,7 +73,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "fr": [
@@ -66,7 +94,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "id": [
@@ -80,7 +115,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "id_ID": [
@@ -94,7 +136,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "it": [
@@ -108,7 +157,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "it_IT": [
@@ -122,7 +178,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "ja": [
@@ -136,7 +199,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "ja_JP": [
@@ -150,7 +220,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "ko": [
@@ -164,7 +241,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "ko_KR": [
@@ -178,7 +262,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "nl": [
@@ -192,7 +283,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "nl_BE": [
@@ -206,7 +304,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "pl": [
@@ -220,7 +325,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "pl_PL": [
@@ -234,7 +346,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "pt": [
@@ -248,7 +367,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "pt_BR": [
@@ -262,7 +388,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "ru": [
@@ -276,7 +409,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "ru_RU": [
@@ -290,7 +430,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "sv": [
@@ -304,7 +451,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "sv_SE": [
@@ -318,7 +472,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "th": [
@@ -332,7 +493,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "th_TH": [
@@ -346,7 +514,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "tr": [
@@ -360,7 +535,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "tr_TR": [
@@ -374,7 +556,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "vi": [
@@ -388,7 +577,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "zh": [
@@ -402,7 +598,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "zh_CN": [
@@ -416,7 +619,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "zh_HK": [
@@ -430,7 +640,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "zh_SG": [
@@ -444,7 +661,14 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ],
 
   "zh_TW": [
@@ -458,6 +682,13 @@
     "themePreview",
     "surfacesTextAndAccents",
     "highContrast",
-    "sharperTextAndSurfaces"
+    "sharperTextAndSurfaces",
+    "zumiEngine",
+    "targetSizeOptimizer",
+    "encodingFormat",
+    "compressAction",
+    "primaryColor",
+    "secondaryColor",
+    "tertiaryColor"
   ]
 }

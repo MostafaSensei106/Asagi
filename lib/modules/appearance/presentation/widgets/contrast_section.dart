@@ -23,7 +23,7 @@ final class ContrastSection extends StatelessWidget {
       title: title,
       subtitle: context.localeKeys.sharperTextAndSurfaces,
       leading: LucideIcons.contrast,
-      shape: ExpressiveIconShape.fan,
+      shape: ExpressiveIconShape.diamond,
       showChevron: false,
       trailing: SwitchComponent(
         label: title,

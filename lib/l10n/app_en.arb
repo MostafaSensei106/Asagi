@@ -319,9 +319,37 @@
   "@highContrast": {
     "description": "High contrast mode toggle title"
   },
-  "sharperTextAndSurfaces": "Sharper text and surfaces",
+  "sharperTextAndSurfaces": "Pure black and white surfaces ",
   "@sharperTextAndSurfaces": {
     "description": "High contrast mode toggle subtitle"
+  },
+  "zumiEngine": "Zumi Engine",
+  "@zumiEngine": {
+    "description": "Engine title in theme preview card"
+  },
+  "targetSizeOptimizer": "Target-Size Video Optimizer",
+  "@targetSizeOptimizer": {
+    "description": "Engine subtitle in theme preview card"
+  },
+  "encodingFormat": "Encoding • H.265 / HEVC",
+  "@encodingFormat": {
+    "description": "Encoding status in theme preview card"
+  },
+  "compressAction": "Compress",
+  "@compressAction": {
+    "description": "Compress button in theme preview card"
+  },
+  "primaryColor": "Primary",
+  "@primaryColor": {
+    "description": "Primary color tooltip in theme preview card"
+  },
+  "secondaryColor": "Secondary",
+  "@secondaryColor": {
+    "description": "Secondary color tooltip in theme preview card"
+  },
+  "tertiaryColor": "Tertiary",
+  "@tertiaryColor": {
+    "description": "Tertiary color tooltip in theme preview card"
   },
   "language": "Language",
   "@language": {
