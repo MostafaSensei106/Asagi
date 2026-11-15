@@ -111,43 +111,14 @@ abstract class AppLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
     Locale('ar'),
-    Locale('ar', 'AE'),
-    Locale('ar', 'BH'),
-    Locale('ar', 'DJ'),
-    Locale('ar', 'DZ'),
     Locale('ar', 'EG'),
-    Locale('ar', 'IQ'),
-    Locale('ar', 'JO'),
-    Locale('ar', 'KM'),
-    Locale('ar', 'KW'),
-    Locale('ar', 'LB'),
-    Locale('ar', 'LY'),
-    Locale('ar', 'MA'),
-    Locale('ar', 'MR'),
-    Locale('ar', 'OM'),
-    Locale('ar', 'PS'),
-    Locale('ar', 'QA'),
-    Locale('ar', 'SA'),
-    Locale('ar', 'SD'),
-    Locale('ar', 'SO'),
-    Locale('ar', 'SY'),
-    Locale('ar', 'TN'),
-    Locale('ar', 'YE'),
     Locale('de'),
-    Locale('de', 'AT'),
-    Locale('de', 'CH'),
     Locale('de', 'DE'),
     Locale('en'),
-    Locale('en', 'AU'),
-    Locale('en', 'CA'),
     Locale('en', 'GB'),
-    Locale('en', 'US'),
     Locale('es'),
     Locale('es', 'ES'),
-    Locale('es', 'MX'),
     Locale('fr'),
-    Locale('fr', 'CA'),
-    Locale('fr', 'FR'),
     Locale('id'),
     Locale('id', 'ID'),
     Locale('it'),
@@ -158,12 +129,10 @@ abstract class AppLocalizations {
     Locale('ko', 'KR'),
     Locale('nl'),
     Locale('nl', 'BE'),
-    Locale('nl', 'NL'),
     Locale('pl'),
     Locale('pl', 'PL'),
     Locale('pt'),
     Locale('pt', 'BR'),
-    Locale('pt', 'PT'),
     Locale('ru'),
     Locale('ru', 'RU'),
     Locale('sv'),
@@ -173,7 +142,6 @@ abstract class AppLocalizations {
     Locale('tr'),
     Locale('tr', 'TR'),
     Locale('vi'),
-    Locale('vi', 'VN'),
     Locale('zh'),
     Locale('zh', 'CN'),
     Locale('zh', 'HK'),
@@ -1870,60 +1838,14 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
     case 'ar':
       {
         switch (locale.countryCode) {
-          case 'AE':
-            return AppLocalizationsArAe();
-          case 'BH':
-            return AppLocalizationsArBh();
-          case 'DJ':
-            return AppLocalizationsArDj();
-          case 'DZ':
-            return AppLocalizationsArDz();
           case 'EG':
             return AppLocalizationsArEg();
-          case 'IQ':
-            return AppLocalizationsArIq();
-          case 'JO':
-            return AppLocalizationsArJo();
-          case 'KM':
-            return AppLocalizationsArKm();
-          case 'KW':
-            return AppLocalizationsArKw();
-          case 'LB':
-            return AppLocalizationsArLb();
-          case 'LY':
-            return AppLocalizationsArLy();
-          case 'MA':
-            return AppLocalizationsArMa();
-          case 'MR':
-            return AppLocalizationsArMr();
-          case 'OM':
-            return AppLocalizationsArOm();
-          case 'PS':
-            return AppLocalizationsArPs();
-          case 'QA':
-            return AppLocalizationsArQa();
-          case 'SA':
-            return AppLocalizationsArSa();
-          case 'SD':
-            return AppLocalizationsArSd();
-          case 'SO':
-            return AppLocalizationsArSo();
-          case 'SY':
-            return AppLocalizationsArSy();
-          case 'TN':
-            return AppLocalizationsArTn();
-          case 'YE':
-            return AppLocalizationsArYe();
         }
         break;
       }
     case 'de':
       {
         switch (locale.countryCode) {
-          case 'AT':
-            return AppLocalizationsDeAt();
-          case 'CH':
-            return AppLocalizationsDeCh();
           case 'DE':
             return AppLocalizationsDeDe();
         }
@@ -1932,14 +1854,8 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
     case 'en':
       {
         switch (locale.countryCode) {
-          case 'AU':
-            return AppLocalizationsEnAu();
-          case 'CA':
-            return AppLocalizationsEnCa();
           case 'GB':
             return AppLocalizationsEnGb();
-          case 'US':
-            return AppLocalizationsEnUs();
         }
         break;
       }
@@ -1948,18 +1864,6 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
         switch (locale.countryCode) {
           case 'ES':
             return AppLocalizationsEsEs();
-          case 'MX':
-            return AppLocalizationsEsMx();
-        }
-        break;
-      }
-    case 'fr':
-      {
-        switch (locale.countryCode) {
-          case 'CA':
-            return AppLocalizationsFrCa();
-          case 'FR':
-            return AppLocalizationsFrFr();
         }
         break;
       }
@@ -2000,8 +1904,6 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
         switch (locale.countryCode) {
           case 'BE':
             return AppLocalizationsNlBe();
-          case 'NL':
-            return AppLocalizationsNlNl();
         }
         break;
       }
@@ -2018,8 +1920,6 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
         switch (locale.countryCode) {
           case 'BR':
             return AppLocalizationsPtBr();
-          case 'PT':
-            return AppLocalizationsPtPt();
         }
         break;
       }
@@ -2052,14 +1952,6 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
         switch (locale.countryCode) {
           case 'TR':
             return AppLocalizationsTrTr();
-        }
-        break;
-      }
-    case 'vi':
-      {
-        switch (locale.countryCode) {
-          case 'VN':
-            return AppLocalizationsViVn();
         }
         break;
       }
