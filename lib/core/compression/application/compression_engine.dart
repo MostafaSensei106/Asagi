@@ -5,6 +5,7 @@ import '../domain/models/compression_output.dart';
 import '../domain/models/compression_plan.dart';
 import '../domain/models/compression_preferences.dart';
 import '../domain/models/encode_request.dart';
+import '../domain/models/share_preset.dart';
 import '../domain/models/video_metadata.dart';
 import '../domain/policies/hdr_policy.dart';
 import 'encoding_control.dart';
@@ -37,6 +38,7 @@ final class CompressionEngine {
     HdrMode? hdrMode,
     CompressionPreferences preferences = const CompressionPreferences(),
     String? sourceName,
+    SharePresetId? presetId,
   }) async {
     preferences.validate();
     final effectiveHdrMode = hdrMode ?? preferences.hdrMode;
@@ -45,7 +47,12 @@ final class CompressionEngine {
     try {
       final info = await encoder.inspect(source);
       final sourceShortEdge = info.displayShortEdge;
-      var plan = await planner.plan(info, targetMb, preferences: preferences);
+      var plan = await planner.plan(
+        info,
+        targetMb,
+        preferences: preferences,
+        presetId: presetId,
+      );
       await _control.checkpoint();
       final requiresUserTransform =
           (preferences.maxShortEdge != null &&

@@ -20,14 +20,16 @@ import '../../modules/privacy/privacy.dart';
 import '../../modules/settings/settings.dart';
 import '../../modules/storage/storage.dart';
 import '../constants/zumi_icons.dart';
+import '../di/di.dart';
 import '../extensions/extensions.dart';
+import '../services/billing/billing_service.dart';
 import '../widgets/navigation/bottom_nav_bar/bottom_nav_bar_component.dart';
 import 'observers/app_navigator_observer.dart';
 import 'route_metadata.dart';
 
 part 'main_shell.dart';
-part 'routes/compression_routes.dart';
 part 'routes/ai_routes.dart';
+part 'routes/compression_routes.dart';
 part 'routes/main_routes.dart';
 part 'routes/settings_info_routes.dart';
 part 'routes/user_routes.dart';

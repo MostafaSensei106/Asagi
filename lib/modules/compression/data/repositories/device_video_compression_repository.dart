@@ -12,6 +12,7 @@ import '../../../../core/compression/domain/models/interrupted_compression_job.d
 import '../../../../core/compression/infrastructure/storage/mp4_faststart_validator.dart';
 import '../../../../core/native/pigeon_messages.g.dart';
 import '../../../../core/native/rust/frb_generated.dart';
+import '../../../../core/services/billing/billing_service.dart';
 import '../../domain/models/compression_record.dart';
 import '../../domain/models/resumed_compression.dart';
 import '../../domain/models/selected_video.dart';
@@ -20,9 +21,12 @@ import 'encoder_calibration_store.dart';
 
 final class DeviceVideoCompressionRepository
     implements VideoCompressionRepository {
-  DeviceVideoCompressionRepository({ImagePicker? picker})
-    : _picker = picker ?? ImagePicker(),
-      _encoder = PlatformVideoEncoder(NativeMediaApi()) {
+  DeviceVideoCompressionRepository({
+    ImagePicker? picker,
+    PurchaseProofStore? purchaseProofs,
+  }) : _picker = picker ?? ImagePicker(),
+       _encoder = PlatformVideoEncoder(NativeMediaApi()),
+       _planner = RustCompressionPlanner(purchaseProofs: purchaseProofs) {
     _engine = CompressionEngine(
       planner: _planner,
       encoder: _encoder,
@@ -35,7 +39,7 @@ final class DeviceVideoCompressionRepository
   static const _preferencesKey = 'compression_preferences_v1';
   final ImagePicker _picker;
   final PlatformVideoEncoder _encoder;
-  final CompressionPlanner _planner = RustCompressionPlanner();
+  final CompressionPlanner _planner;
   late final CompressionEngine _engine;
   Future<void>? _rustReady;
 
@@ -59,8 +63,9 @@ final class DeviceVideoCompressionRepository
   Future<CompressionOutput> compress(
     SelectedVideo video,
     double targetMb,
-    CompressionPreferences preferences,
-  ) async {
+    CompressionPreferences preferences, {
+    SharePresetId? presetId,
+  }) async {
     if (!targetMb.isFinite || targetMb <= 0) {
       throw ArgumentError.value(targetMb, 'targetMb');
     }
@@ -103,6 +108,7 @@ final class DeviceVideoCompressionRepository
         video.metadata,
         targetMb * learnedFactor,
         preferences: preferences,
+        presetId: presetId,
       );
       if (learnedPlan.isInfeasible) learnedFactor = 1.0;
     }
@@ -125,6 +131,7 @@ final class DeviceVideoCompressionRepository
           workspacePath: workspacePath,
           acceptedMaxBytes: acceptedMaxBytes,
           preferences: preferences,
+          presetId: presetId,
           onAttemptMeasured: calibrationProfile == null
               ? null
               : (plan, source, bytes) => calibration!.observe(

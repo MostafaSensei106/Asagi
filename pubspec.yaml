@@ -56,6 +56,8 @@ dependencies:
   country_flags: ^4.1.2
   sensors_plus: ^7.1.1
   google_nav_bar: ^5.0.7
+  in_app_purchase: ^3.3.0
+  in_app_purchase_android: ^0.5.5
 
 dev_dependencies:
   flutter_test:
@@ -80,6 +82,8 @@ flutter:
   uses-material-design: true
   assets:
   - assets/icons/play_store_512.png
+  - android/app/src/main/assets/licenses/ffmpeg/LICENSE.LGPLv2.1
+  - android/app/src/main/assets/licenses/ffmpeg/SOURCE_INFO.json
 
   fonts:
   # Google Sans static instances. Registering each weight/style lets Flutter

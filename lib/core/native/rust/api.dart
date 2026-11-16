@@ -7,6 +7,16 @@ import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
 
 import 'frb_generated.dart';
 
+// These function are ignored because they are on traits that is not defined in current crate (put an empty `#[frb]` on it to unignore): `clone`, `fmt`
+
+Future<LoyaltyStatus> verifySubscriptionReceipt({
+  required String originalJson,
+  required List<int> signatureBytes,
+}) => RustLib.instance.api.crateApiVerifySubscriptionReceipt(
+  originalJson: originalJson,
+  signatureBytes: signatureBytes,
+);
+
 /// Decode and filter video into the streaming `.zf` fallback staging format.
 /// The file is video-only (NV12 with per-frame microsecond PTS); native code
 /// must preserve/extract any audio from `input_path` separately.
@@ -25,3 +35,38 @@ Future<BigInt> stageFallbackVideo({
   maxFps: maxFps,
   toneMapHdr: toneMapHdr,
 );
+
+class LoyaltyStatus {
+  const LoyaltyStatus({
+    required this.isActive,
+    required this.consecutiveMonths,
+    required this.currentDiscountPercent,
+    required this.nextMonthDiscountPercent,
+    required this.isWinbackEligible,
+  });
+
+  final bool isActive;
+  final int consecutiveMonths;
+  final int currentDiscountPercent;
+  final int nextMonthDiscountPercent;
+  final bool isWinbackEligible;
+
+  @override
+  int get hashCode =>
+      isActive.hashCode ^
+      consecutiveMonths.hashCode ^
+      currentDiscountPercent.hashCode ^
+      nextMonthDiscountPercent.hashCode ^
+      isWinbackEligible.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is LoyaltyStatus &&
+          runtimeType == other.runtimeType &&
+          isActive == other.isActive &&
+          consecutiveMonths == other.consecutiveMonths &&
+          currentDiscountPercent == other.currentDiscountPercent &&
+          nextMonthDiscountPercent == other.nextMonthDiscountPercent &&
+          isWinbackEligible == other.isWinbackEligible;
+}

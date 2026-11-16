@@ -14,8 +14,9 @@ abstract interface class VideoCompressionRepository {
   Future<CompressionOutput> compress(
     SelectedVideo video,
     double targetMb,
-    CompressionPreferences preferences,
-  );
+    CompressionPreferences preferences, {
+    SharePresetId? presetId,
+  });
   Future<CompressionPlan> previewPlan(
     SelectedVideo video,
     double targetMb,

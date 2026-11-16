@@ -5,7 +5,10 @@ pub fn calculate_compression_plan(
     info: InputMetadata,
     target_size_mb: f64,
     custom_k_factor: Option<f32>,
+    original_json: Option<String>,
+    signature_bytes: Option<Vec<u8>>,
 ) -> Result<CalculationPlan, String> {
+    authorize_pro_receipt(None, true, original_json, signature_bytes)?;
     use crate::domain::CompressionPolicy;
     if !target_size_mb.is_finite()
         || target_size_mb <= 0.0
@@ -27,7 +30,10 @@ pub fn calculate_custom_compression_plan(
     target_size_mb: f64,
     custom_k_factor: Option<f32>,
     preferences: PlanningPreferences,
+    original_json: Option<String>,
+    signature_bytes: Option<Vec<u8>>,
 ) -> Result<CalculationPlan, String> {
+    authorize_pro_receipt(None, true, original_json, signature_bytes)?;
     if !target_size_mb.is_finite()
         || target_size_mb <= 0.0
         || target_size_mb * 1_000_000.0 > u64::MAX as f64
@@ -71,8 +77,52 @@ pub fn resolve_platform_preset(
     info: InputMetadata,
     preset_id: PresetId,
     custom_k_factor: Option<f32>,
+    original_json: Option<String>,
+    signature_bytes: Option<Vec<u8>>,
 ) -> Result<PresetPlan, String> {
+    authorize_pro_receipt(Some(preset_id), false, original_json, signature_bytes)?;
     PlatformPreset::by_id(preset_id).resolve(&info, safety_margin(custom_k_factor))
+}
+
+fn authorize_pro_receipt(
+    preset_id: Option<PresetId>,
+    is_custom: bool,
+    original_json: Option<String>,
+    signature_bytes: Option<Vec<u8>>,
+) -> Result<(), String> {
+    if !crate::domain::licensing::preset_requires_pro(preset_id, is_custom) {
+        return Ok(());
+    }
+    let original_json = original_json.ok_or_else(|| "E_PRO_SUBSCRIPTION_REQUIRED".to_owned())?;
+    let signature_bytes =
+        signature_bytes.ok_or_else(|| "E_PRO_SUBSCRIPTION_REQUIRED".to_owned())?;
+    let public_key = option_env!("ZUMI_PLAY_RSA_PUBLIC_KEY_PEM")
+        .filter(|key| !key.trim().is_empty())
+        .ok_or_else(|| "E_PRO_SUBSCRIPTION_REQUIRED".to_owned())?;
+    let purchase = crate::domain::licensing::verify_google_play_purchase(
+        &original_json,
+        &signature_bytes,
+        public_key.as_bytes(),
+    )
+    .map_err(|_| "E_PRO_SUBSCRIPTION_REQUIRED".to_owned())?;
+    let json: serde_json::Value = serde_json::from_str(&original_json)
+        .map_err(|_| "E_PRO_SUBSCRIPTION_REQUIRED".to_owned())?;
+    let active = json
+        .get("purchaseState")
+        .and_then(serde_json::Value::as_i64)
+        == Some(0)
+        && json
+            .get("autoRenewing")
+            .and_then(serde_json::Value::as_bool)
+            .unwrap_or(true)
+        && json
+            .get("productId")
+            .and_then(serde_json::Value::as_str)
+            .is_some_and(|id| id == "zumi_pro_monthly");
+    if !active || purchase.purchase_token.trim().is_empty() {
+        return Err("E_PRO_SUBSCRIPTION_REQUIRED".into());
+    }
+    Ok(())
 }
 
 /// Single place that turns the optional float margin into the domain's `f64`.

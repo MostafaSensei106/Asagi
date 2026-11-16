@@ -17,6 +17,7 @@ class Planner implements CompressionPlanner {
     VideoMetadata info,
     double targetMb, {
     CompressionPreferences preferences = const CompressionPreferences(),
+    SharePresetId? presetId,
   }) async => const CompressionPlan(
     targetVideoBitrateBps: 1000000,
     targetAudioBitrateBps: 0,
@@ -99,8 +100,11 @@ void main() {
     expect(result.bytes, 90);
     expect(
       await directory.list(recursive: true).where((f) => f is File).length,
-      1,
+      2,
     );
+    final jobDirectory = directory.listSync().whereType<Directory>().single;
+    expect(await File('${jobDirectory.path}/job_state.json').exists(), isTrue);
+    expect(await File('${jobDirectory.path}/.inprogress').exists(), isFalse);
   });
   test(
     'reports measured attempts without letting calibration fail the job',

@@ -198,6 +198,21 @@ pub fn authorize_preset_plan(
     )
 }
 
+/// Fail-closed plan gate used by FFI and unit tests with an injected verifier key.
+pub fn authorize_signed_preset_plan(
+    preset_id: Option<PresetId>,
+    is_custom: bool,
+    receipt: Option<&LoyaltyReceipt>,
+    public_key: &[u8],
+    scheme: SignatureScheme,
+) -> Result<(), LicensingError> {
+    if !preset_requires_pro(preset_id, is_custom) {
+        return Ok(());
+    }
+    let receipt = receipt.ok_or(LicensingError::ProRequired)?;
+    verify_receipt(receipt, public_key, scheme)
+}
+
 // Howard Hinnant's Gregorian date conversion, with Unix day zero as epoch.
 fn civil_from_days(days: i64) -> (i64, u32, u32) {
     let z = days + 719_468;
@@ -294,5 +309,62 @@ mod tests {
             authorize_preset_plan(Some(PresetId::Whatsapp), false, false),
             Ok(())
         );
+    }
+
+    #[test]
+    fn custom_and_youtube_short_require_signed_receipt() {
+        let key = ed25519_dalek::SigningKey::from_bytes(&[9_u8; 32]);
+        let public = key.verifying_key().to_bytes();
+        for (preset, custom) in [(Some(PresetId::YouTubeShorts), false), (None, true)] {
+            assert_eq!(
+                authorize_signed_preset_plan(
+                    preset,
+                    custom,
+                    None,
+                    &public,
+                    SignatureScheme::Ed25519
+                ),
+                Err(LicensingError::ProRequired),
+            );
+            let mut receipt = LoyaltyReceipt {
+                purchase_token: "test-token".into(),
+                start_time_millis: 1_700_000_000_000,
+                latest_renewal_millis: 1_700_000_000_000,
+                signature_bytes: Vec::new(),
+            };
+            receipt.signature_bytes = key
+                .sign(signed_payload(&receipt).as_bytes())
+                .to_bytes()
+                .to_vec();
+            assert_eq!(
+                authorize_signed_preset_plan(
+                    preset,
+                    custom,
+                    Some(&receipt),
+                    &public,
+                    SignatureScheme::Ed25519
+                ),
+                Ok(()),
+            );
+            receipt.signature_bytes[0] ^= 1;
+            assert_eq!(
+                authorize_signed_preset_plan(
+                    preset,
+                    custom,
+                    Some(&receipt),
+                    &public,
+                    SignatureScheme::Ed25519
+                ),
+                Err(LicensingError::InvalidSignature),
+            );
+        }
+    }
+
+    #[test]
+    fn loyalty_discount_progresses_by_two_percent_to_thirty() {
+        for month in 0..=15 {
+            assert_eq!(discount_percent(month), (month * 2).min(30) as u8);
+        }
+        assert_eq!(discount_percent(30), 30);
     }
 }

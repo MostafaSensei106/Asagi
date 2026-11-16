@@ -240,6 +240,7 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
         video,
         current.targetMb,
         current.preferences,
+        presetId: current.selectedPresetId,
       );
       if (isClosed || stateValue.phase == CompressionPhase.cancelled) return;
       emit(

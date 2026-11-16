@@ -28,6 +28,9 @@ import 'package:zumi/core/services/app_info/interface/base_package_info_adapter.
     as _i283;
 import 'package:zumi/core/services/app_info/package_info_plus_adapter.dart'
     as _i647;
+import 'package:zumi/core/services/billing/billing_service.dart' as _i546;
+import 'package:zumi/core/services/billing/google_play_billing_service.dart'
+    as _i141;
 import 'package:zumi/core/services/file_opener/base_file_opener_service.dart'
     as _i255;
 import 'package:zumi/core/services/file_opener/url_file_opener_service.dart'
@@ -77,6 +80,7 @@ import 'package:zumi/modules/about/data/about_app_repsitory.dart' as _i529;
 import 'package:zumi/modules/about/data/base_about_app_repository.dart'
     as _i374;
 import 'package:zumi/modules/about/logic/cubit/about_app_cubit.dart' as _i811;
+import 'package:zumi/modules/plans/logic/subscription_cubit.dart' as _i877;
 
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -105,11 +109,17 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i283.BasePackageInfoAdapter>(
       () => _i647.PackageInfoPlusAdapter(gh<_i655.PackageInfo>()),
     );
+    gh.lazySingleton<_i546.PurchaseProofStore>(
+      () => _i546.InMemoryPurchaseProofStore(),
+    );
     gh.lazySingleton<_i459.BaseAuditLogger>(() => const _i603.AppAuditLogger());
     gh.lazySingleton<_i43.BasePermissionService>(
       () => const _i358.PermissionHandlerService(),
     );
     gh.lazySingleton<_i320.BaseAiModelService>(() => _i111.AiModelService());
+    gh.lazySingleton<_i546.BillingService>(
+      () => _i141.GooglePlayBillingService(),
+    );
     gh.lazySingleton<_i666.BaseToastService>(
       () => _i524.ToastificationService(gh<_i813.ThemeService>()),
     );
@@ -142,6 +152,12 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i248.BaseAppInfoService>(
       () => _i481.AppInfoService(gh<_i283.BasePackageInfoAdapter>()),
+    );
+    gh.factory<_i877.SubscriptionCubit>(
+      () => _i877.SubscriptionCubit(
+        gh<_i546.BillingService>(),
+        gh<_i546.PurchaseProofStore>(),
+      ),
     );
     gh.factory<_i255.BaseFileOpenerService>(
       () => _i385.UrlFileOpenerService(
@@ -191,12 +207,18 @@ extension GetItInjectableX on _i174.GetIt {
   _i647.PackageInfoPlusAdapter get packageInfoPlusAdapter =>
       get<_i647.PackageInfoPlusAdapter>();
 
+  _i546.InMemoryPurchaseProofStore get inMemoryPurchaseProofStore =>
+      get<_i546.InMemoryPurchaseProofStore>();
+
   _i603.AppAuditLogger get appAuditLogger => get<_i603.AppAuditLogger>();
 
   _i358.PermissionHandlerService get permissionHandlerService =>
       get<_i358.PermissionHandlerService>();
 
   _i111.AiModelService get aiModelService => get<_i111.AiModelService>();
+
+  _i141.GooglePlayBillingService get googlePlayBillingService =>
+      get<_i141.GooglePlayBillingService>();
 
   _i524.ToastificationService get toastificationService =>
       get<_i524.ToastificationService>();
@@ -224,6 +246,9 @@ extension GetItInjectableX on _i174.GetIt {
       get<_i704.UrlLauncherService>();
 
   _i481.AppInfoService get appInfoService => get<_i481.AppInfoService>();
+
+  _i877.SubscriptionCubit get subscriptionCubit =>
+      get<_i877.SubscriptionCubit>();
 
   _i385.UrlFileOpenerService get urlFileOpenerService =>
       get<_i385.UrlFileOpenerService>();

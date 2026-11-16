@@ -8,6 +8,7 @@ abstract interface class CompressionPlanner {
     VideoMetadata info,
     double targetMb, {
     CompressionPreferences preferences = const CompressionPreferences(),
+    SharePresetId? presetId,
   });
 
   /// Zero accepts the artifact; positive values request a retry at that bitrate.

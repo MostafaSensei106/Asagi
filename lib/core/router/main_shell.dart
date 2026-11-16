@@ -6,7 +6,11 @@ final class _MainShell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => BlocSignalProvider<CompressionCubit>(
-    create: (_) => CompressionCubit(DeviceVideoCompressionRepository()),
+    create: (_) => CompressionCubit(
+      DeviceVideoCompressionRepository(
+        purchaseProofs: getIt<PurchaseProofStore>(),
+      ),
+    ),
     child: KaiselBranchedShell.specs(
       branches: const [
         KaiselBranchSpec<AppRoute>(

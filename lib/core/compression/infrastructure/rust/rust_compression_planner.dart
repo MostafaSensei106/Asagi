@@ -1,6 +1,9 @@
+import 'dart:convert';
+
 import '../../../native/rust/api/calculator.dart' as rust;
 import '../../../native/rust/domain/models.dart' as wire;
 import '../../../native/rust/domain/presets.dart' as wire_presets;
+import '../../../services/billing/billing_service.dart';
 import '../../domain/contracts/compression_planner.dart';
 import '../../domain/models/compression_plan.dart';
 import '../../domain/models/compression_preferences.dart';
@@ -9,6 +12,8 @@ import '../../domain/models/share_preset.dart';
 import '../../domain/models/video_metadata.dart';
 
 final class RustCompressionPlanner implements CompressionPlanner {
+  RustCompressionPlanner({this._purchaseProofs});
+  final PurchaseProofStore? _purchaseProofs;
   List<SharePreset>? _presets;
 
   @override
@@ -16,8 +21,13 @@ final class RustCompressionPlanner implements CompressionPlanner {
     VideoMetadata info,
     double targetMb, {
     CompressionPreferences preferences = const CompressionPreferences(),
+    SharePresetId? presetId,
   }) async {
     preferences.validate();
+    if (presetId != null) {
+      return (await resolvePreset(info, presetId)).plan;
+    }
+    final proof = _purchaseProofs?.current;
     final sourceShortEdge = info.displayShortEdge;
     final p = await rust.calculateCustomCompressionPlan(
       info: _toWireMetadata(info),
@@ -38,6 +48,8 @@ final class RustCompressionPlanner implements CompressionPlanner {
         videoBitrateCeilingBps:
             (preferences.videoBitrateCeilingKbps ?? 0) * 1000,
       ),
+      originalJson: proof?.originalJson,
+      signatureBytes: proof == null ? null : base64Decode(proof.signature),
     );
     return _toPlan(p);
   }
@@ -78,9 +90,12 @@ final class RustCompressionPlanner implements CompressionPlanner {
     VideoMetadata info,
     SharePresetId id,
   ) async {
+    final proof = _purchaseProofs?.current;
     final resolved = await rust.resolvePlatformPreset(
       info: _toWireMetadata(info),
       presetId: _toPresetId(id),
+      originalJson: proof?.originalJson,
+      signatureBytes: proof == null ? null : base64Decode(proof.signature),
     );
     final preset = await _presetById(id);
     return SharePresetPlan(
