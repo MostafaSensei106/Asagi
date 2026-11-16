@@ -7,8 +7,32 @@ import 'package:zumi/l10n/app_localizations.dart';
 void main() {
   test('language choices are unique country-specific locales', () {
     final locales = AppSupportedLocales.values;
-    expect(locales.length, 51);
-    expect(locales.map((locale) => locale.toString()).toSet().length, 51);
+    final tags = locales.map((locale) => locale.toString()).toList();
+
+    // One selectable region per language, except Chinese which offers
+    // several written standards.
+    expect(tags.toSet(), {
+      'ar_EG',
+      'de_DE',
+      'en_GB',
+      'es_ES',
+      'id_ID',
+      'it_IT',
+      'ja_JP',
+      'ko_KR',
+      'nl_BE',
+      'pl_PL',
+      'pt_BR',
+      'ru_RU',
+      'sv_SE',
+      'th_TH',
+      'tr_TR',
+      'zh_CN',
+      'zh_HK',
+      'zh_SG',
+      'zh_TW',
+    });
+    expect(tags.toSet(), hasLength(tags.length));
     expect(locales.where((locale) => locale.languageCode == 'hi'), isEmpty);
 
     for (final locale in locales) {
@@ -62,7 +86,7 @@ void main() {
           'en',
           systemLocale: const Locale('fr', 'FR'),
         ),
-        const Locale('en', 'US'),
+        const Locale('en', 'GB'),
       );
       expect(AppSupportedLocales.resolve('xx'), isNull);
 
