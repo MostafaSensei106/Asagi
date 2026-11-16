@@ -159,13 +159,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get retry => 'Повторить';
 
   @override
-  String get cancel => 'Отмена';
-
-  @override
   String get confirm => 'Подтвердить';
-
-  @override
-  String get pleaseWait => 'Пожалуйста, подождите...';
 
   @override
   String get ok => 'ОК';
@@ -335,9 +329,6 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'Разработчик и инструменты, использованные для создания Zumi.';
-
-  @override
-  String get openSourceLicenses => 'Лицензии с открытым исходным кодом';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -1001,6 +992,9 @@ class AppLocalizationsRu extends AppLocalizations {
       'Unlock Discord Nitro, YouTube Shorts and Custom compression.';
 
   @override
+  String get pleaseWait => 'Пожалуйста, подождите...';
+
+  @override
   String get subscribe => 'Subscribe';
 
   @override
@@ -1068,7 +1062,13 @@ class AppLocalizationsRu extends AppLocalizations {
       'This removes .inprogress files and job_state.json from interrupted jobs only.';
 
   @override
+  String get cancel => 'Отмена';
+
+  @override
   String get clean => 'Clean';
+
+  @override
+  String get openSourceLicenses => 'Лицензии с открытым исходным кодом';
 
   @override
   String get ffmpegLicenseTitle => 'FFmpeg LGPL 2.1 license text';
@@ -1360,13 +1360,7 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
   String get retry => 'Повторить';
 
   @override
-  String get cancel => 'Отмена';
-
-  @override
   String get confirm => 'Подтвердить';
-
-  @override
-  String get pleaseWait => 'Пожалуйста, подождите...';
 
   @override
   String get ok => 'ОК';
@@ -1482,9 +1476,6 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'Разработчик и инструменты, использованные для создания Zumi.';
-
-  @override
-  String get openSourceLicenses => 'Лицензии с открытым исходным кодом';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -2125,6 +2116,15 @@ class AppLocalizationsRuRu extends AppLocalizationsRu {
 
   @override
   String get comingSoon => 'Скоро';
+
+  @override
+  String get pleaseWait => 'Пожалуйста, подождите...';
+
+  @override
+  String get cancel => 'Отмена';
+
+  @override
+  String get openSourceLicenses => 'Лицензии с открытым исходным кодом';
 
   @override
   String get languageName => 'Русский';

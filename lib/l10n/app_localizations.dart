@@ -413,23 +413,11 @@ abstract class AppLocalizations {
   /// **'Retry'**
   String get retry;
 
-  /// Cancel button text
-  ///
-  /// In en, this message translates to:
-  /// **'Cancel'**
-  String get cancel;
-
   /// Confirm button text
   ///
   /// In en, this message translates to:
   /// **'Confirm'**
   String get confirm;
-
-  /// Please wait dialog text
-  ///
-  /// In en, this message translates to:
-  /// **'Please wait…'**
-  String get pleaseWait;
 
   /// OK button text
   ///
@@ -736,12 +724,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The developer and tools behind Zumi.'**
   String get theDeveloperAndToolsBehindZumi;
-
-  /// Licenses page title
-  ///
-  /// In en, this message translates to:
-  /// **'Open Source Licenses'**
-  String get openSourceLicenses;
 
   /// Licenses page description
   ///
@@ -1927,6 +1909,12 @@ abstract class AppLocalizations {
   /// **'Unlock Discord Nitro, YouTube Shorts and Custom compression.'**
   String get proFeaturesDescription;
 
+  /// Please wait dialog text
+  ///
+  /// In en, this message translates to:
+  /// **'Please wait…'**
+  String get pleaseWait;
+
   /// No description provided for @subscribe.
   ///
   /// In en, this message translates to:
@@ -2041,11 +2029,23 @@ abstract class AppLocalizations {
   /// **'This removes .inprogress files and job_state.json from interrupted jobs only.'**
   String get cleanInterruptedJobsConfirmation;
 
+  /// Cancel button text
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
   /// No description provided for @clean.
   ///
   /// In en, this message translates to:
   /// **'Clean'**
   String get clean;
+
+  /// Licenses page title
+  ///
+  /// In en, this message translates to:
+  /// **'Open Source Licenses'**
+  String get openSourceLicenses;
 
   /// No description provided for @ffmpegLicenseTitle.
   ///

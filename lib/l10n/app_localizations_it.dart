@@ -164,13 +164,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get retry => 'Riprova';
 
   @override
-  String get cancel => 'Annulla';
-
-  @override
   String get confirm => 'Conferma';
-
-  @override
-  String get pleaseWait => 'Attendere prego...';
 
   @override
   String get ok => 'OK';
@@ -340,9 +334,6 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'Lo sviluppatore e gli strumenti dietro Zumi.';
-
-  @override
-  String get openSourceLicenses => 'Licenze open-source';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -1006,6 +997,9 @@ class AppLocalizationsIt extends AppLocalizations {
       'Unlock Discord Nitro, YouTube Shorts and Custom compression.';
 
   @override
+  String get pleaseWait => 'Attendere prego...';
+
+  @override
   String get subscribe => 'Subscribe';
 
   @override
@@ -1073,7 +1067,13 @@ class AppLocalizationsIt extends AppLocalizations {
       'This removes .inprogress files and job_state.json from interrupted jobs only.';
 
   @override
+  String get cancel => 'Annulla';
+
+  @override
   String get clean => 'Clean';
+
+  @override
+  String get openSourceLicenses => 'Licenze open-source';
 
   @override
   String get ffmpegLicenseTitle => 'FFmpeg LGPL 2.1 license text';
@@ -1370,13 +1370,7 @@ class AppLocalizationsItIt extends AppLocalizationsIt {
   String get retry => 'Riprova';
 
   @override
-  String get cancel => 'Annulla';
-
-  @override
   String get confirm => 'Conferma';
-
-  @override
-  String get pleaseWait => 'Attendere prego...';
 
   @override
   String get ok => 'OK';
@@ -1492,9 +1486,6 @@ class AppLocalizationsItIt extends AppLocalizationsIt {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'Lo sviluppatore e gli strumenti dietro Zumi.';
-
-  @override
-  String get openSourceLicenses => 'Licenze open-source';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -2135,6 +2126,15 @@ class AppLocalizationsItIt extends AppLocalizationsIt {
 
   @override
   String get comingSoon => 'Prossimamente';
+
+  @override
+  String get pleaseWait => 'Attendere prego...';
+
+  @override
+  String get cancel => 'Annulla';
+
+  @override
+  String get openSourceLicenses => 'Licenze open-source';
 
   @override
   String get languageName => 'Italiano';

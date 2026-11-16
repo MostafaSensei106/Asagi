@@ -163,13 +163,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get retry => 'Réessayer';
 
   @override
-  String get cancel => 'Annuler';
-
-  @override
   String get confirm => 'Confirmer';
-
-  @override
-  String get pleaseWait => 'Veuillez patienter...';
 
   @override
   String get ok => 'OK';
@@ -339,9 +333,6 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'Le développeur et les outils derrière Zumi.';
-
-  @override
-  String get openSourceLicenses => 'Licences open-source';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -1007,6 +998,9 @@ class AppLocalizationsFr extends AppLocalizations {
       'Unlock Discord Nitro, YouTube Shorts and Custom compression.';
 
   @override
+  String get pleaseWait => 'Veuillez patienter...';
+
+  @override
   String get subscribe => 'Subscribe';
 
   @override
@@ -1074,7 +1068,13 @@ class AppLocalizationsFr extends AppLocalizations {
       'This removes .inprogress files and job_state.json from interrupted jobs only.';
 
   @override
+  String get cancel => 'Annuler';
+
+  @override
   String get clean => 'Clean';
+
+  @override
+  String get openSourceLicenses => 'Licences open-source';
 
   @override
   String get ffmpegLicenseTitle => 'FFmpeg LGPL 2.1 license text';

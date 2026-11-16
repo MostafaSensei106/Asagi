@@ -150,13 +150,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get retry => '再試行';
 
   @override
-  String get cancel => 'キャンセル';
-
-  @override
   String get confirm => '確認';
-
-  @override
-  String get pleaseWait => 'お待ちください...';
 
   @override
   String get ok => 'OK';
@@ -321,9 +315,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get theDeveloperAndToolsBehindZumi => 'Zumiの開発者と使用されているツール。';
-
-  @override
-  String get openSourceLicenses => 'オープンソースライセンス';
 
   @override
   String get openSourcePackagesBundledWithZumi => 'Zumiに同梱されているオープンソースパッケージ。';
@@ -963,6 +954,9 @@ class AppLocalizationsJa extends AppLocalizations {
       'Unlock Discord Nitro, YouTube Shorts and Custom compression.';
 
   @override
+  String get pleaseWait => 'お待ちください...';
+
+  @override
   String get subscribe => 'Subscribe';
 
   @override
@@ -1030,7 +1024,13 @@ class AppLocalizationsJa extends AppLocalizations {
       'This removes .inprogress files and job_state.json from interrupted jobs only.';
 
   @override
+  String get cancel => 'キャンセル';
+
+  @override
   String get clean => 'Clean';
+
+  @override
+  String get openSourceLicenses => 'オープンソースライセンス';
 
   @override
   String get ffmpegLicenseTitle => 'FFmpeg LGPL 2.1 license text';
@@ -1313,13 +1313,7 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
   String get retry => '再試行';
 
   @override
-  String get cancel => 'キャンセル';
-
-  @override
   String get confirm => '確認';
-
-  @override
-  String get pleaseWait => 'お待ちください...';
 
   @override
   String get ok => 'OK';
@@ -1430,9 +1424,6 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get theDeveloperAndToolsBehindZumi => 'Zumiの開発者と使用されているツール。';
-
-  @override
-  String get openSourceLicenses => 'オープンソースライセンス';
 
   @override
   String get openSourcePackagesBundledWithZumi => 'Zumiに同梱されているオープンソースパッケージ。';
@@ -2049,6 +2040,15 @@ class AppLocalizationsJaJp extends AppLocalizationsJa {
 
   @override
   String get comingSoon => '近日公開';
+
+  @override
+  String get pleaseWait => 'お待ちください...';
+
+  @override
+  String get cancel => 'キャンセル';
+
+  @override
+  String get openSourceLicenses => 'オープンソースライセンス';
 
   @override
   String get languageName => '日本語';

@@ -159,13 +159,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get retry => 'Opnieuw proberen';
 
   @override
-  String get cancel => 'Annuleren';
-
-  @override
   String get confirm => 'Bevestigen';
-
-  @override
-  String get pleaseWait => 'Even geduld...';
 
   @override
   String get ok => 'OK';
@@ -334,9 +328,6 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'De ontwikkelaar en tools achter Zumi.';
-
-  @override
-  String get openSourceLicenses => 'Open-source licenties';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -996,6 +987,9 @@ class AppLocalizationsNl extends AppLocalizations {
       'Unlock Discord Nitro, YouTube Shorts and Custom compression.';
 
   @override
+  String get pleaseWait => 'Even geduld...';
+
+  @override
   String get subscribe => 'Subscribe';
 
   @override
@@ -1063,7 +1057,13 @@ class AppLocalizationsNl extends AppLocalizations {
       'This removes .inprogress files and job_state.json from interrupted jobs only.';
 
   @override
+  String get cancel => 'Annuleren';
+
+  @override
   String get clean => 'Clean';
+
+  @override
+  String get openSourceLicenses => 'Open-source licenties';
 
   @override
   String get ffmpegLicenseTitle => 'FFmpeg LGPL 2.1 license text';
@@ -1355,13 +1355,7 @@ class AppLocalizationsNlBe extends AppLocalizationsNl {
   String get retry => 'Opnieuw proberen';
 
   @override
-  String get cancel => 'Annuleren';
-
-  @override
   String get confirm => 'Bevestigen';
-
-  @override
-  String get pleaseWait => 'Even geduld...';
 
   @override
   String get ok => 'OK';
@@ -1476,9 +1470,6 @@ class AppLocalizationsNlBe extends AppLocalizationsNl {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'De ontwikkelaar en tools achter Zumi.';
-
-  @override
-  String get openSourceLicenses => 'Open-source licenties';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -2115,6 +2106,15 @@ class AppLocalizationsNlBe extends AppLocalizationsNl {
 
   @override
   String get comingSoon => 'Binnenkort beschikbaar';
+
+  @override
+  String get pleaseWait => 'Even geduld...';
+
+  @override
+  String get cancel => 'Annuleren';
+
+  @override
+  String get openSourceLicenses => 'Open-source licenties';
 
   @override
   String get languageName => 'Nederlands';

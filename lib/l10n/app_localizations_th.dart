@@ -155,13 +155,7 @@ class AppLocalizationsTh extends AppLocalizations {
   String get retry => 'ลองอีกครั้ง';
 
   @override
-  String get cancel => 'ยกเลิก';
-
-  @override
   String get confirm => 'ยืนยัน';
-
-  @override
-  String get pleaseWait => 'กรุณารอสักครู่...';
 
   @override
   String get ok => 'ตกลง';
@@ -330,9 +324,6 @@ class AppLocalizationsTh extends AppLocalizations {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'ผู้พัฒนาและเครื่องมือเบื้องหลัง Zumi';
-
-  @override
-  String get openSourceLicenses => 'ใบอนุญาตโอเพนซอร์ส';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -991,6 +982,9 @@ class AppLocalizationsTh extends AppLocalizations {
       'Unlock Discord Nitro, YouTube Shorts and Custom compression.';
 
   @override
+  String get pleaseWait => 'กรุณารอสักครู่...';
+
+  @override
   String get subscribe => 'Subscribe';
 
   @override
@@ -1058,7 +1052,13 @@ class AppLocalizationsTh extends AppLocalizations {
       'This removes .inprogress files and job_state.json from interrupted jobs only.';
 
   @override
+  String get cancel => 'ยกเลิก';
+
+  @override
   String get clean => 'Clean';
+
+  @override
+  String get openSourceLicenses => 'ใบอนุญาตโอเพนซอร์ส';
 
   @override
   String get ffmpegLicenseTitle => 'FFmpeg LGPL 2.1 license text';
@@ -1346,13 +1346,7 @@ class AppLocalizationsThTh extends AppLocalizationsTh {
   String get retry => 'ลองอีกครั้ง';
 
   @override
-  String get cancel => 'ยกเลิก';
-
-  @override
   String get confirm => 'ยืนยัน';
-
-  @override
-  String get pleaseWait => 'กรุณารอสักครู่...';
 
   @override
   String get ok => 'ตกลง';
@@ -1467,9 +1461,6 @@ class AppLocalizationsThTh extends AppLocalizationsTh {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'ผู้พัฒนาและเครื่องมือเบื้องหลัง Zumi';
-
-  @override
-  String get openSourceLicenses => 'ใบอนุญาตโอเพนซอร์ส';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -2105,6 +2096,15 @@ class AppLocalizationsThTh extends AppLocalizationsTh {
 
   @override
   String get comingSoon => 'เร็วๆ นี้';
+
+  @override
+  String get pleaseWait => 'กรุณารอสักครู่...';
+
+  @override
+  String get cancel => 'ยกเลิก';
+
+  @override
+  String get openSourceLicenses => 'ใบอนุญาตโอเพนซอร์ส';
 
   @override
   String get languageName => 'ไทย';

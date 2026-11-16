@@ -156,13 +156,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get retry => 'Försök igen';
 
   @override
-  String get cancel => 'Avbryt';
-
-  @override
   String get confirm => 'Bekräfta';
-
-  @override
-  String get pleaseWait => 'Vänligen vänta...';
 
   @override
   String get ok => 'OK';
@@ -331,9 +325,6 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'Utvecklaren och verktygen bakom Zumi.';
-
-  @override
-  String get openSourceLicenses => 'Öppen källkod-licenser';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -994,6 +985,9 @@ class AppLocalizationsSv extends AppLocalizations {
       'Unlock Discord Nitro, YouTube Shorts and Custom compression.';
 
   @override
+  String get pleaseWait => 'Vänligen vänta...';
+
+  @override
   String get subscribe => 'Subscribe';
 
   @override
@@ -1061,7 +1055,13 @@ class AppLocalizationsSv extends AppLocalizations {
       'This removes .inprogress files and job_state.json from interrupted jobs only.';
 
   @override
+  String get cancel => 'Avbryt';
+
+  @override
   String get clean => 'Clean';
+
+  @override
+  String get openSourceLicenses => 'Öppen källkod-licenser';
 
   @override
   String get ffmpegLicenseTitle => 'FFmpeg LGPL 2.1 license text';
@@ -1350,13 +1350,7 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   String get retry => 'Försök igen';
 
   @override
-  String get cancel => 'Avbryt';
-
-  @override
   String get confirm => 'Bekräfta';
-
-  @override
-  String get pleaseWait => 'Vänligen vänta...';
 
   @override
   String get ok => 'OK';
@@ -1471,9 +1465,6 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'Utvecklaren och verktygen bakom Zumi.';
-
-  @override
-  String get openSourceLicenses => 'Öppen källkod-licenser';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -2111,6 +2102,15 @@ class AppLocalizationsSvSe extends AppLocalizationsSv {
 
   @override
   String get comingSoon => 'Kommer snart';
+
+  @override
+  String get pleaseWait => 'Vänligen vänta...';
+
+  @override
+  String get cancel => 'Avbryt';
+
+  @override
+  String get openSourceLicenses => 'Öppen källkod-licenser';
 
   @override
   String get languageName => 'Svenska';

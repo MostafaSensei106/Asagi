@@ -158,13 +158,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get retry => 'Tekrar dene';
 
   @override
-  String get cancel => 'İptal';
-
-  @override
   String get confirm => 'Onayla';
-
-  @override
-  String get pleaseWait => 'Lütfen bekleyin...';
 
   @override
   String get ok => 'Tamam';
@@ -333,9 +327,6 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'Zumi\'nin arkasındaki geliştirici ve araçlar.';
-
-  @override
-  String get openSourceLicenses => 'Açık kaynak lisansları';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -995,6 +986,9 @@ class AppLocalizationsTr extends AppLocalizations {
       'Unlock Discord Nitro, YouTube Shorts and Custom compression.';
 
   @override
+  String get pleaseWait => 'Lütfen bekleyin...';
+
+  @override
   String get subscribe => 'Subscribe';
 
   @override
@@ -1062,7 +1056,13 @@ class AppLocalizationsTr extends AppLocalizations {
       'This removes .inprogress files and job_state.json from interrupted jobs only.';
 
   @override
+  String get cancel => 'İptal';
+
+  @override
   String get clean => 'Clean';
+
+  @override
+  String get openSourceLicenses => 'Açık kaynak lisansları';
 
   @override
   String get ffmpegLicenseTitle => 'FFmpeg LGPL 2.1 license text';
@@ -1353,13 +1353,7 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   String get retry => 'Tekrar dene';
 
   @override
-  String get cancel => 'İptal';
-
-  @override
   String get confirm => 'Onayla';
-
-  @override
-  String get pleaseWait => 'Lütfen bekleyin...';
 
   @override
   String get ok => 'Tamam';
@@ -1474,9 +1468,6 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'Zumi\'nin arkasındaki geliştirici ve araçlar.';
-
-  @override
-  String get openSourceLicenses => 'Açık kaynak lisansları';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -2113,6 +2104,15 @@ class AppLocalizationsTrTr extends AppLocalizationsTr {
 
   @override
   String get comingSoon => 'Yakında';
+
+  @override
+  String get pleaseWait => 'Lütfen bekleyin...';
+
+  @override
+  String get cancel => 'İptal';
+
+  @override
+  String get openSourceLicenses => 'Açık kaynak lisansları';
 
   @override
   String get languageName => 'Türkçe';

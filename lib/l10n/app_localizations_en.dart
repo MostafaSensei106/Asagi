@@ -157,13 +157,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get retry => 'Retry';
 
   @override
-  String get cancel => 'Cancel';
-
-  @override
   String get confirm => 'Confirm';
-
-  @override
-  String get pleaseWait => 'Please wait…';
 
   @override
   String get ok => 'OK';
@@ -332,9 +326,6 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'The developer and tools behind Zumi.';
-
-  @override
-  String get openSourceLicenses => 'Open Source Licenses';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -992,6 +983,9 @@ class AppLocalizationsEn extends AppLocalizations {
       'Unlock Discord Nitro, YouTube Shorts and Custom compression.';
 
   @override
+  String get pleaseWait => 'Please wait…';
+
+  @override
   String get subscribe => 'Subscribe';
 
   @override
@@ -1059,7 +1053,13 @@ class AppLocalizationsEn extends AppLocalizations {
       'This removes .inprogress files and job_state.json from interrupted jobs only.';
 
   @override
+  String get cancel => 'Cancel';
+
+  @override
   String get clean => 'Clean';
+
+  @override
+  String get openSourceLicenses => 'Open Source Licenses';
 
   @override
   String get ffmpegLicenseTitle => 'FFmpeg LGPL 2.1 license text';
@@ -1349,13 +1349,7 @@ class AppLocalizationsEnGb extends AppLocalizationsEn {
   String get retry => 'Retry';
 
   @override
-  String get cancel => 'Cancel';
-
-  @override
   String get confirm => 'Confirm';
-
-  @override
-  String get pleaseWait => 'Please wait...';
 
   @override
   String get ok => 'OK';
@@ -1470,9 +1464,6 @@ class AppLocalizationsEnGb extends AppLocalizationsEn {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'The developer and tools behind Zumi.';
-
-  @override
-  String get openSourceLicenses => 'Open-source licenses';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -2107,6 +2098,15 @@ class AppLocalizationsEnGb extends AppLocalizationsEn {
 
   @override
   String get comingSoon => 'Coming soon';
+
+  @override
+  String get pleaseWait => 'Please wait...';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get openSourceLicenses => 'Open-source licenses';
 
   @override
   String get languageName => 'English';

@@ -158,13 +158,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get retry => 'إعادة المحاولة';
 
   @override
-  String get cancel => 'إلغاء';
-
-  @override
   String get confirm => 'تأكيد';
-
-  @override
-  String get pleaseWait => 'جارٍ المعالجة…';
 
   @override
   String get ok => 'حسناً';
@@ -333,9 +327,6 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'المطور والأدوات المستخدمة في بناء Zumi.';
-
-  @override
-  String get openSourceLicenses => 'تراخيص مفتوحة المصدر';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -990,6 +981,9 @@ class AppLocalizationsAr extends AppLocalizations {
       'افتح ضغط Discord Nitro وYouTube Shorts والوضع المخصص.';
 
   @override
+  String get pleaseWait => 'جارٍ المعالجة…';
+
+  @override
   String get subscribe => 'اشترك';
 
   @override
@@ -1057,7 +1051,13 @@ class AppLocalizationsAr extends AppLocalizations {
       'سيُحذف .inprogress وjob_state.json من المهام المتوقفة فقط.';
 
   @override
+  String get cancel => 'إلغاء';
+
+  @override
   String get clean => 'تنظيف';
+
+  @override
+  String get openSourceLicenses => 'تراخيص مفتوحة المصدر';
 
   @override
   String get ffmpegLicenseTitle => 'نص ترخيص FFmpeg LGPL 2.1';
@@ -1200,9 +1200,6 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
   String get retry => 'جرّب تاني';
 
   @override
-  String get pleaseWait => 'استنى شوية...';
-
-  @override
   String get compressVideosPrivatelyOnYourDevice =>
       'اضغط فيديوهاتك بخصوصية على موبايلك.';
 
@@ -1211,6 +1208,9 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
 
   @override
   String get startCompression => 'ابدأ الضغط';
+
+  @override
+  String get pleaseWait => 'استنى شوية...';
 
   @override
   String get languageName => 'العربية';

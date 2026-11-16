@@ -161,13 +161,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get retry => 'Tentar novamente';
 
   @override
-  String get cancel => 'Cancelar';
-
-  @override
   String get confirm => 'Confirmar';
-
-  @override
-  String get pleaseWait => 'Por favor, aguarde...';
 
   @override
   String get ok => 'OK';
@@ -337,9 +331,6 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'O desenvolvedor e as ferramentas por trás do Zumi.';
-
-  @override
-  String get openSourceLicenses => 'Licenças de código aberto';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -1000,6 +991,9 @@ class AppLocalizationsPt extends AppLocalizations {
       'Unlock Discord Nitro, YouTube Shorts and Custom compression.';
 
   @override
+  String get pleaseWait => 'Por favor, aguarde...';
+
+  @override
   String get subscribe => 'Subscribe';
 
   @override
@@ -1067,7 +1061,13 @@ class AppLocalizationsPt extends AppLocalizations {
       'This removes .inprogress files and job_state.json from interrupted jobs only.';
 
   @override
+  String get cancel => 'Cancelar';
+
+  @override
   String get clean => 'Clean';
+
+  @override
+  String get openSourceLicenses => 'Licenças de código aberto';
 
   @override
   String get ffmpegLicenseTitle => 'FFmpeg LGPL 2.1 license text';
@@ -1363,13 +1363,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get retry => 'Tentar novamente';
 
   @override
-  String get cancel => 'Cancelar';
-
-  @override
   String get confirm => 'Confirmar';
-
-  @override
-  String get pleaseWait => 'Aguarde...';
 
   @override
   String get ok => 'OK';
@@ -1485,9 +1479,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'O desenvolvedor e as ferramentas por trás do Zumi.';
-
-  @override
-  String get openSourceLicenses => 'Licenças de código aberto';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -2126,6 +2117,15 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get comingSoon => 'Em breve';
+
+  @override
+  String get pleaseWait => 'Aguarde...';
+
+  @override
+  String get cancel => 'Cancelar';
+
+  @override
+  String get openSourceLicenses => 'Licenças de código aberto';
 
   @override
   String get languageName => 'Português';

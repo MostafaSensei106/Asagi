@@ -164,13 +164,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get retry => 'Reintentar';
 
   @override
-  String get cancel => 'Cancelar';
-
-  @override
   String get confirm => 'Confirmar';
-
-  @override
-  String get pleaseWait => 'Por favor espera...';
 
   @override
   String get ok => 'OK';
@@ -340,9 +334,6 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'El desarrollador y las herramientas detrás de Zumi.';
-
-  @override
-  String get openSourceLicenses => 'Licencias de código abierto';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -1007,6 +998,9 @@ class AppLocalizationsEs extends AppLocalizations {
       'Unlock Discord Nitro, YouTube Shorts and Custom compression.';
 
   @override
+  String get pleaseWait => 'Por favor espera...';
+
+  @override
   String get subscribe => 'Subscribe';
 
   @override
@@ -1074,7 +1068,13 @@ class AppLocalizationsEs extends AppLocalizations {
       'This removes .inprogress files and job_state.json from interrupted jobs only.';
 
   @override
+  String get cancel => 'Cancelar';
+
+  @override
   String get clean => 'Clean';
+
+  @override
+  String get openSourceLicenses => 'Licencias de código abierto';
 
   @override
   String get ffmpegLicenseTitle => 'FFmpeg LGPL 2.1 license text';
@@ -1371,13 +1371,7 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
   String get retry => 'Reintentar';
 
   @override
-  String get cancel => 'Cancelar';
-
-  @override
   String get confirm => 'Confirmar';
-
-  @override
-  String get pleaseWait => 'Por favor espera...';
 
   @override
   String get ok => 'OK';
@@ -1493,9 +1487,6 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'El desarrollador y las herramientas detrás de Zumi.';
-
-  @override
-  String get openSourceLicenses => 'Licencias de código abierto';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -2137,6 +2128,15 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
 
   @override
   String get comingSoon => 'Próximamente';
+
+  @override
+  String get pleaseWait => 'Por favor espera...';
+
+  @override
+  String get cancel => 'Cancelar';
+
+  @override
+  String get openSourceLicenses => 'Licencias de código abierto';
 
   @override
   String get languageName => 'Español';

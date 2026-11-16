@@ -160,13 +160,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get retry => 'Coba lagi';
 
   @override
-  String get cancel => 'Batal';
-
-  @override
   String get confirm => 'Konfirmasi';
-
-  @override
-  String get pleaseWait => 'Harap tunggu...';
 
   @override
   String get ok => 'OK';
@@ -335,9 +329,6 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'Pengembang dan alat di balik Zumi.';
-
-  @override
-  String get openSourceLicenses => 'Lisensi sumber terbuka';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -996,6 +987,9 @@ class AppLocalizationsId extends AppLocalizations {
       'Unlock Discord Nitro, YouTube Shorts and Custom compression.';
 
   @override
+  String get pleaseWait => 'Harap tunggu...';
+
+  @override
   String get subscribe => 'Subscribe';
 
   @override
@@ -1063,7 +1057,13 @@ class AppLocalizationsId extends AppLocalizations {
       'This removes .inprogress files and job_state.json from interrupted jobs only.';
 
   @override
+  String get cancel => 'Batal';
+
+  @override
   String get clean => 'Clean';
+
+  @override
+  String get openSourceLicenses => 'Lisensi sumber terbuka';
 
   @override
   String get ffmpegLicenseTitle => 'FFmpeg LGPL 2.1 license text';
@@ -1356,13 +1356,7 @@ class AppLocalizationsIdId extends AppLocalizationsId {
   String get retry => 'Coba lagi';
 
   @override
-  String get cancel => 'Batal';
-
-  @override
   String get confirm => 'Konfirmasi';
-
-  @override
-  String get pleaseWait => 'Harap tunggu...';
 
   @override
   String get ok => 'OK';
@@ -1477,9 +1471,6 @@ class AppLocalizationsIdId extends AppLocalizationsId {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'Pengembang dan alat di balik Zumi.';
-
-  @override
-  String get openSourceLicenses => 'Lisensi sumber terbuka';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -2115,6 +2106,15 @@ class AppLocalizationsIdId extends AppLocalizationsId {
 
   @override
   String get comingSoon => 'Segera hadir';
+
+  @override
+  String get pleaseWait => 'Harap tunggu...';
+
+  @override
+  String get cancel => 'Batal';
+
+  @override
+  String get openSourceLicenses => 'Lisensi sumber terbuka';
 
   @override
   String get languageName => 'Bahasa Indonesia';

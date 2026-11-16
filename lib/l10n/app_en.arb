@@ -191,7 +191,6 @@
   "@retry": {
     "description": "Retry button text"
   },
-  "cancel": "Cancel",
   "@cancel": {
     "description": "Cancel button text"
   },
@@ -199,7 +198,6 @@
   "@confirm": {
     "description": "Confirm button text"
   },
-  "pleaseWait": "Please wait...",
   "@pleaseWait": {
     "description": "Please wait dialog text"
   },
@@ -407,7 +405,6 @@
   "@theDeveloperAndToolsBehindZumi": {
     "description": "Developer page description"
   },
-  "openSourceLicenses": "Open-source licenses",
   "@openSourceLicenses": {
     "description": "Licenses page title"
   },

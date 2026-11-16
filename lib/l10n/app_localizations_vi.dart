@@ -156,13 +156,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get retry => 'Thử lại';
 
   @override
-  String get cancel => 'Hủy';
-
-  @override
   String get confirm => 'Xác nhận';
-
-  @override
-  String get pleaseWait => 'Vui lòng đợi...';
 
   @override
   String get ok => 'OK';
@@ -332,9 +326,6 @@ class AppLocalizationsVi extends AppLocalizations {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'Nhà phát triển và các công cụ phía sau Zumi.';
-
-  @override
-  String get openSourceLicenses => 'Giấy phép mã nguồn mở';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -993,6 +984,9 @@ class AppLocalizationsVi extends AppLocalizations {
       'Unlock Discord Nitro, YouTube Shorts and Custom compression.';
 
   @override
+  String get pleaseWait => 'Vui lòng đợi...';
+
+  @override
   String get subscribe => 'Subscribe';
 
   @override
@@ -1060,7 +1054,13 @@ class AppLocalizationsVi extends AppLocalizations {
       'This removes .inprogress files and job_state.json from interrupted jobs only.';
 
   @override
+  String get cancel => 'Hủy';
+
+  @override
   String get clean => 'Clean';
+
+  @override
+  String get openSourceLicenses => 'Giấy phép mã nguồn mở';
 
   @override
   String get ffmpegLicenseTitle => 'FFmpeg LGPL 2.1 license text';

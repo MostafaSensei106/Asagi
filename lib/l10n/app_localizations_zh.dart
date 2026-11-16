@@ -149,13 +149,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get retry => '重试';
 
   @override
-  String get cancel => '取消';
-
-  @override
   String get confirm => '确认';
-
-  @override
-  String get pleaseWait => '请稍候...';
 
   @override
   String get ok => '确定';
@@ -315,9 +309,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get theDeveloperAndToolsBehindZumi => 'Zumi 的开发者及工具。';
-
-  @override
-  String get openSourceLicenses => '开源许可';
 
   @override
   String get openSourcePackagesBundledWithZumi => '随 Zumi 打包的开源软件包。';
@@ -952,6 +943,9 @@ class AppLocalizationsZh extends AppLocalizations {
       'Unlock Discord Nitro, YouTube Shorts and Custom compression.';
 
   @override
+  String get pleaseWait => '请稍候...';
+
+  @override
   String get subscribe => 'Subscribe';
 
   @override
@@ -1019,7 +1013,13 @@ class AppLocalizationsZh extends AppLocalizations {
       'This removes .inprogress files and job_state.json from interrupted jobs only.';
 
   @override
+  String get cancel => '取消';
+
+  @override
   String get clean => 'Clean';
+
+  @override
+  String get openSourceLicenses => '开源许可';
 
   @override
   String get ffmpegLicenseTitle => 'FFmpeg LGPL 2.1 license text';
@@ -1301,13 +1301,7 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get retry => '重试';
 
   @override
-  String get cancel => '取消';
-
-  @override
   String get confirm => '确认';
-
-  @override
-  String get pleaseWait => '请稍候...';
 
   @override
   String get ok => '确定';
@@ -1413,9 +1407,6 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get theDeveloperAndToolsBehindZumi => 'Zumi 的开发者及工具。';
-
-  @override
-  String get openSourceLicenses => '开源许可';
 
   @override
   String get openSourcePackagesBundledWithZumi => '随 Zumi 打包的开源软件包。';
@@ -2029,6 +2020,15 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get comingSoon => '即将到来';
 
   @override
+  String get pleaseWait => '请稍候...';
+
+  @override
+  String get cancel => '取消';
+
+  @override
+  String get openSourceLicenses => '开源许可';
+
+  @override
   String get languageName => '简体中文';
 
   @override
@@ -2237,13 +2237,7 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
   String get retry => '重試';
 
   @override
-  String get cancel => '取消';
-
-  @override
   String get confirm => '確認';
-
-  @override
-  String get pleaseWait => '請稍候…';
 
   @override
   String get ok => '確定';
@@ -2350,9 +2344,6 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
 
   @override
   String get theDeveloperAndToolsBehindZumi => 'Zumi 的開發者與工具。';
-
-  @override
-  String get openSourceLicenses => '開源授權';
 
   @override
   String get openSourcePackagesBundledWithZumi => 'Zumi 所包含的開源套件。';
@@ -2966,6 +2957,15 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
   String get comingSoon => '即將推出';
 
   @override
+  String get pleaseWait => '請稍候…';
+
+  @override
+  String get cancel => '取消';
+
+  @override
+  String get openSourceLicenses => '開源授權';
+
+  @override
   String get languageName => '繁體中文';
 
   @override
@@ -3174,13 +3174,7 @@ class AppLocalizationsZhSg extends AppLocalizationsZh {
   String get retry => '重试';
 
   @override
-  String get cancel => '取消';
-
-  @override
   String get confirm => '确认';
-
-  @override
-  String get pleaseWait => '请稍候...';
 
   @override
   String get ok => '确定';
@@ -3286,9 +3280,6 @@ class AppLocalizationsZhSg extends AppLocalizationsZh {
 
   @override
   String get theDeveloperAndToolsBehindZumi => 'Zumi 的开发者及工具。';
-
-  @override
-  String get openSourceLicenses => '开源许可';
 
   @override
   String get openSourcePackagesBundledWithZumi => '随 Zumi 打包的开源软件包。';
@@ -3902,6 +3893,15 @@ class AppLocalizationsZhSg extends AppLocalizationsZh {
   String get comingSoon => '即将到来';
 
   @override
+  String get pleaseWait => '请稍候...';
+
+  @override
+  String get cancel => '取消';
+
+  @override
+  String get openSourceLicenses => '开源许可';
+
+  @override
   String get languageName => '简体中文';
 
   @override
@@ -4110,13 +4110,7 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get retry => '重試';
 
   @override
-  String get cancel => '取消';
-
-  @override
   String get confirm => '確認';
-
-  @override
-  String get pleaseWait => '請稍候…';
 
   @override
   String get ok => '確定';
@@ -4223,9 +4217,6 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get theDeveloperAndToolsBehindZumi => 'Zumi 的開發者與工具。';
-
-  @override
-  String get openSourceLicenses => '開源授權';
 
   @override
   String get openSourcePackagesBundledWithZumi => 'Zumi 所包含的開源套件。';
@@ -4837,6 +4828,15 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get comingSoon => '即將推出';
+
+  @override
+  String get pleaseWait => '請稍候…';
+
+  @override
+  String get cancel => '取消';
+
+  @override
+  String get openSourceLicenses => '開源授權';
 
   @override
   String get languageName => '繁體中文';

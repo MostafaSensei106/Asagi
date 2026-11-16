@@ -161,13 +161,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get retry => 'Erneut versuchen';
 
   @override
-  String get cancel => 'Abbrechen';
-
-  @override
   String get confirm => 'Bestätigen';
-
-  @override
-  String get pleaseWait => 'Bitte warten...';
 
   @override
   String get ok => 'OK';
@@ -336,9 +330,6 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'Der Entwickler und die Werkzeuge hinter Zumi.';
-
-  @override
-  String get openSourceLicenses => 'Open-Source-Lizenzen';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -1002,6 +993,9 @@ class AppLocalizationsDe extends AppLocalizations {
       'Unlock Discord Nitro, YouTube Shorts and Custom compression.';
 
   @override
+  String get pleaseWait => 'Bitte warten...';
+
+  @override
   String get subscribe => 'Subscribe';
 
   @override
@@ -1069,7 +1063,13 @@ class AppLocalizationsDe extends AppLocalizations {
       'This removes .inprogress files and job_state.json from interrupted jobs only.';
 
   @override
+  String get cancel => 'Abbrechen';
+
+  @override
   String get clean => 'Clean';
+
+  @override
+  String get openSourceLicenses => 'Open-Source-Lizenzen';
 
   @override
   String get ffmpegLicenseTitle => 'FFmpeg LGPL 2.1 license text';
@@ -1363,13 +1363,7 @@ class AppLocalizationsDeDe extends AppLocalizationsDe {
   String get retry => 'Erneut versuchen';
 
   @override
-  String get cancel => 'Abbrechen';
-
-  @override
   String get confirm => 'Bestätigen';
-
-  @override
-  String get pleaseWait => 'Bitte warten...';
 
   @override
   String get ok => 'OK';
@@ -1484,9 +1478,6 @@ class AppLocalizationsDeDe extends AppLocalizationsDe {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'Der Entwickler und die Werkzeuge hinter Zumi.';
-
-  @override
-  String get openSourceLicenses => 'Open-Source-Lizenzen';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -2127,6 +2118,15 @@ class AppLocalizationsDeDe extends AppLocalizationsDe {
 
   @override
   String get comingSoon => 'Demnächst verfügbar';
+
+  @override
+  String get pleaseWait => 'Bitte warten...';
+
+  @override
+  String get cancel => 'Abbrechen';
+
+  @override
+  String get openSourceLicenses => 'Open-Source-Lizenzen';
 
   @override
   String get languageName => 'Deutsch';

@@ -151,13 +151,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get retry => '재시도';
 
   @override
-  String get cancel => '취소';
-
-  @override
   String get confirm => '확인';
-
-  @override
-  String get pleaseWait => '잠시만 기다려 주세요...';
 
   @override
   String get ok => '확인';
@@ -323,9 +317,6 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get theDeveloperAndToolsBehindZumi => 'Zumi의 개발자 및 사용 도구.';
-
-  @override
-  String get openSourceLicenses => '오픈 소스 라이선스';
 
   @override
   String get openSourcePackagesBundledWithZumi => 'Zumi에 포함된 오픈 소스 패키지.';
@@ -966,6 +957,9 @@ class AppLocalizationsKo extends AppLocalizations {
       'Unlock Discord Nitro, YouTube Shorts and Custom compression.';
 
   @override
+  String get pleaseWait => '잠시만 기다려 주세요...';
+
+  @override
   String get subscribe => 'Subscribe';
 
   @override
@@ -1033,7 +1027,13 @@ class AppLocalizationsKo extends AppLocalizations {
       'This removes .inprogress files and job_state.json from interrupted jobs only.';
 
   @override
+  String get cancel => '취소';
+
+  @override
   String get clean => 'Clean';
+
+  @override
+  String get openSourceLicenses => '오픈 소스 라이선스';
 
   @override
   String get ffmpegLicenseTitle => 'FFmpeg LGPL 2.1 license text';
@@ -1317,13 +1317,7 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   String get retry => '재시도';
 
   @override
-  String get cancel => '취소';
-
-  @override
   String get confirm => '확인';
-
-  @override
-  String get pleaseWait => '잠시만 기다려 주세요...';
 
   @override
   String get ok => '확인';
@@ -1435,9 +1429,6 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get theDeveloperAndToolsBehindZumi => 'Zumi의 개발자 및 사용 도구.';
-
-  @override
-  String get openSourceLicenses => '오픈 소스 라이선스';
 
   @override
   String get openSourcePackagesBundledWithZumi => 'Zumi에 포함된 오픈 소스 패키지.';
@@ -2055,6 +2046,15 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
 
   @override
   String get comingSoon => '곧 출시';
+
+  @override
+  String get pleaseWait => '잠시만 기다려 주세요...';
+
+  @override
+  String get cancel => '취소';
+
+  @override
+  String get openSourceLicenses => '오픈 소스 라이선스';
 
   @override
   String get languageName => '한국어';

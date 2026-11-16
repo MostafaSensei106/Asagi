@@ -159,13 +159,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get retry => 'Ponów próbę';
 
   @override
-  String get cancel => 'Anuluj';
-
-  @override
   String get confirm => 'Potwierdź';
-
-  @override
-  String get pleaseWait => 'Proszę czekać...';
 
   @override
   String get ok => 'OK';
@@ -335,9 +329,6 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'Deweloper i narzędzia stojące za Zumi.';
-
-  @override
-  String get openSourceLicenses => 'Licencje open-source';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -1001,6 +992,9 @@ class AppLocalizationsPl extends AppLocalizations {
       'Unlock Discord Nitro, YouTube Shorts and Custom compression.';
 
   @override
+  String get pleaseWait => 'Proszę czekać...';
+
+  @override
   String get subscribe => 'Subscribe';
 
   @override
@@ -1068,7 +1062,13 @@ class AppLocalizationsPl extends AppLocalizations {
       'This removes .inprogress files and job_state.json from interrupted jobs only.';
 
   @override
+  String get cancel => 'Anuluj';
+
+  @override
   String get clean => 'Clean';
+
+  @override
+  String get openSourceLicenses => 'Licencje open-source';
 
   @override
   String get ffmpegLicenseTitle => 'FFmpeg LGPL 2.1 license text';
@@ -1360,13 +1360,7 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
   String get retry => 'Ponów próbę';
 
   @override
-  String get cancel => 'Anuluj';
-
-  @override
   String get confirm => 'Potwierdź';
-
-  @override
-  String get pleaseWait => 'Proszę czekać...';
 
   @override
   String get ok => 'OK';
@@ -1482,9 +1476,6 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
   @override
   String get theDeveloperAndToolsBehindZumi =>
       'Deweloper i narzędzia stojące za Zumi.';
-
-  @override
-  String get openSourceLicenses => 'Licencje open-source';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -2125,6 +2116,15 @@ class AppLocalizationsPlPl extends AppLocalizationsPl {
 
   @override
   String get comingSoon => 'Wkrótce';
+
+  @override
+  String get pleaseWait => 'Proszę czekać...';
+
+  @override
+  String get cancel => 'Anuluj';
+
+  @override
+  String get openSourceLicenses => 'Licencje open-source';
 
   @override
   String get languageName => 'Polski';
