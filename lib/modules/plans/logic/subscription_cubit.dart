@@ -10,6 +10,13 @@ import '../../../core/services/billing/billing_service.dart';
 
 const proMonthlyProductId = 'zumi_pro_monthly';
 
+enum SubscriptionNotice {
+  purchaseCancelled,
+  purchaseVerified,
+  purchasesRestored,
+  noActivePurchaseFound,
+}
+
 final class SubscriptionState {
   const SubscriptionState({
     this.offer,
@@ -30,7 +37,7 @@ final class SubscriptionState {
   final int nextDiscount;
   final int months;
   final String? error;
-  final String? message;
+  final SubscriptionNotice? message;
   SubscriptionState copyWith({
     SubscriptionOfferInfo? offer,
     bool? isLoading,
@@ -40,7 +47,7 @@ final class SubscriptionState {
     int? nextDiscount,
     int? months,
     String? error,
-    String? message,
+    SubscriptionNotice? message,
   }) => SubscriptionState(
     offer: offer ?? this.offer,
     isLoading: isLoading ?? false,
@@ -72,8 +79,8 @@ final class SubscriptionCubit extends CubitSignal<SubscriptionState> {
     try {
       final offer = await _billing.fetchMonthlyPlan(proMonthlyProductId);
       if (!isClosed) emit(stateValue.copyWith(offer: offer));
-    } catch (error) {
-      if (!isClosed) emit(stateValue.copyWith(error: '$error'));
+    } catch (_) {
+      if (!isClosed) emit(stateValue.copyWith(error: 'billingUnavailable'));
     }
   }
 
@@ -89,14 +96,14 @@ final class SubscriptionCubit extends CubitSignal<SubscriptionState> {
           stateValue.copyWith(
             isPurchasing: false,
             message: receipt == null
-                ? 'Purchase cancelled.'
-                : 'Purchase verified.',
+                ? SubscriptionNotice.purchaseCancelled
+                : SubscriptionNotice.purchaseVerified,
           ),
         );
       }
-    } catch (error) {
+    } catch (_) {
       if (!isClosed) {
-        emit(stateValue.copyWith(isPurchasing: false, error: '$error'));
+        emit(stateValue.copyWith(isPurchasing: false, error: 'purchaseFailed'));
       }
     }
   }
@@ -109,7 +116,7 @@ final class SubscriptionCubit extends CubitSignal<SubscriptionState> {
         emit(
           stateValue.copyWith(
             isPurchasing: false,
-            message: 'No active purchase found.',
+            message: SubscriptionNotice.noActivePurchaseFound,
           ),
         );
       } else {
@@ -117,13 +124,13 @@ final class SubscriptionCubit extends CubitSignal<SubscriptionState> {
         emit(
           stateValue.copyWith(
             isPurchasing: false,
-            message: 'Purchases restored.',
+            message: SubscriptionNotice.purchasesRestored,
           ),
         );
       }
-    } catch (error) {
+    } catch (_) {
       if (!isClosed) {
-        emit(stateValue.copyWith(isPurchasing: false, error: '$error'));
+        emit(stateValue.copyWith(isPurchasing: false, error: 'restoreFailed'));
       }
     }
   }
@@ -134,6 +141,7 @@ final class SubscriptionCubit extends CubitSignal<SubscriptionState> {
       final status = await rust.verifySubscriptionReceipt(
         originalJson: receipt.originalJson,
         signatureBytes: base64Decode(receipt.signature),
+        loyaltyToken: receipt.loyaltyToken,
       );
       if (status.isActive && receipt.productId == proMonthlyProductId) {
         _proofs.save(receipt);
@@ -151,10 +159,10 @@ final class SubscriptionCubit extends CubitSignal<SubscriptionState> {
           ),
         );
       }
-    } catch (error) {
+    } catch (_) {
       _proofs.clear();
       if (!isClosed) {
-        emit(stateValue.copyWith(isActive: false, error: '$error'));
+        emit(stateValue.copyWith(isActive: false, error: 'receiptVerificationFailed'));
       }
     }
   }

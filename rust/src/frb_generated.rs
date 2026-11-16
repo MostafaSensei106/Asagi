@@ -74,6 +74,7 @@ fn wire__crate__api__calculator__calculate_compression_plan_impl(
             let api_custom_k_factor = <Option<f32>>::sse_decode(&mut deserializer);
             let api_original_json = <Option<String>>::sse_decode(&mut deserializer);
             let api_signature_bytes = <Option<Vec<u8>>>::sse_decode(&mut deserializer);
+            let api_loyalty_token = <Option<String>>::sse_decode(&mut deserializer);
             deserializer.end();
             move |context| {
                 transform_result_sse::<_, String>((move || {
@@ -83,6 +84,7 @@ fn wire__crate__api__calculator__calculate_compression_plan_impl(
                         api_custom_k_factor,
                         api_original_json,
                         api_signature_bytes,
+                        api_loyalty_token,
                     )?;
                     std::result::Result::Ok(output_ok)
                 })())
@@ -119,6 +121,7 @@ fn wire__crate__api__calculator__calculate_custom_compression_plan_impl(
                 <crate::domain::models::PlanningPreferences>::sse_decode(&mut deserializer);
             let api_original_json = <Option<String>>::sse_decode(&mut deserializer);
             let api_signature_bytes = <Option<Vec<u8>>>::sse_decode(&mut deserializer);
+            let api_loyalty_token = <Option<String>>::sse_decode(&mut deserializer);
             deserializer.end();
             move |context| {
                 transform_result_sse::<_, String>((move || {
@@ -129,6 +132,7 @@ fn wire__crate__api__calculator__calculate_custom_compression_plan_impl(
                         api_preferences,
                         api_original_json,
                         api_signature_bytes,
+                        api_loyalty_token,
                     )?;
                     std::result::Result::Ok(output_ok)
                 })())
@@ -195,6 +199,7 @@ fn wire__crate__api__calculator__resolve_platform_preset_impl(
             let api_custom_k_factor = <Option<f32>>::sse_decode(&mut deserializer);
             let api_original_json = <Option<String>>::sse_decode(&mut deserializer);
             let api_signature_bytes = <Option<Vec<u8>>>::sse_decode(&mut deserializer);
+            let api_loyalty_token = <Option<String>>::sse_decode(&mut deserializer);
             deserializer.end();
             move |context| {
                 transform_result_sse::<_, String>((move || {
@@ -204,6 +209,7 @@ fn wire__crate__api__calculator__resolve_platform_preset_impl(
                         api_custom_k_factor,
                         api_original_json,
                         api_signature_bytes,
+                        api_loyalty_token,
                     )?;
                     std::result::Result::Ok(output_ok)
                 })())
@@ -321,12 +327,14 @@ fn wire__crate__api__verify_subscription_receipt_impl(
                 flutter_rust_bridge::for_generated::SseDeserializer::new(message);
             let api_original_json = <String>::sse_decode(&mut deserializer);
             let api_signature_bytes = <Vec<u8>>::sse_decode(&mut deserializer);
+            let api_loyalty_token = <Option<String>>::sse_decode(&mut deserializer);
             deserializer.end();
             move |context| {
                 transform_result_sse::<_, String>((move || {
                     let output_ok = crate::api::verify_subscription_receipt(
                         api_original_json,
                         api_signature_bytes,
+                        api_loyalty_token,
                     )?;
                     std::result::Result::Ok(output_ok)
                 })())

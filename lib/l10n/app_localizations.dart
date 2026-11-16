@@ -428,7 +428,7 @@ abstract class AppLocalizations {
   /// Please wait dialog text
   ///
   /// In en, this message translates to:
-  /// **'Please wait...'**
+  /// **'Please wait…'**
   String get pleaseWait;
 
   /// OK button text
@@ -740,7 +740,7 @@ abstract class AppLocalizations {
   /// Licenses page title
   ///
   /// In en, this message translates to:
-  /// **'Open-source licenses'**
+  /// **'Open Source Licenses'**
   String get openSourceLicenses;
 
   /// Licenses page description
@@ -1890,6 +1890,216 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Coming soon'**
   String get comingSoon;
+
+  /// No description provided for @zumiProTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Zumi Pro'**
+  String get zumiProTitle;
+
+  /// No description provided for @subscriptionPerMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'{price} / month'**
+  String subscriptionPerMonth(Object price);
+
+  /// No description provided for @planUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Unavailable'**
+  String get planUnavailable;
+
+  /// No description provided for @loading.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading…'**
+  String get loading;
+
+  /// No description provided for @subscriptionActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active subscription'**
+  String get subscriptionActive;
+
+  /// No description provided for @proFeaturesDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock Discord Nitro, YouTube Shorts and Custom compression.'**
+  String get proFeaturesDescription;
+
+  /// No description provided for @subscribe.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscribe'**
+  String get subscribe;
+
+  /// No description provided for @currentLoyaltyDiscount.
+  ///
+  /// In en, this message translates to:
+  /// **'Loyalty discount: {percent}%'**
+  String currentLoyaltyDiscount(Object percent);
+
+  /// No description provided for @nextMonthLoyaltyPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Next month: {percent}% loyalty discount — estimated {price}'**
+  String nextMonthLoyaltyPrice(Object percent, Object price);
+
+  /// No description provided for @nextMonthLoyaltyDiscount.
+  ///
+  /// In en, this message translates to:
+  /// **'Next month: {percent}% loyalty discount'**
+  String nextMonthLoyaltyDiscount(Object percent);
+
+  /// No description provided for @loyaltyCancellationWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancelling resets your accumulated loyalty discount to the base price. If you subscribe again, loyalty starts again at 2%.'**
+  String get loyaltyCancellationWarning;
+
+  /// No description provided for @purchaseCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchase cancelled.'**
+  String get purchaseCancelled;
+
+  /// No description provided for @purchaseVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchase verified.'**
+  String get purchaseVerified;
+
+  /// No description provided for @purchasesRestored.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchases restored.'**
+  String get purchasesRestored;
+
+  /// No description provided for @noActivePurchaseFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No active purchase found.'**
+  String get noActivePurchaseFound;
+
+  /// No description provided for @restorePurchaseDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore purchases made with this Google Play account.'**
+  String get restorePurchaseDescription;
+
+  /// No description provided for @zumiProActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Zumi Pro is active'**
+  String get zumiProActive;
+
+  /// No description provided for @checking.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking…'**
+  String get checking;
+
+  /// No description provided for @interruptedCompressionJobs.
+  ///
+  /// In en, this message translates to:
+  /// **'Interrupted compression jobs'**
+  String get interruptedCompressionJobs;
+
+  /// No description provided for @interruptedJobsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'You can resume these jobs from compression. Cleanup removes their temporary files and saved job state.'**
+  String get interruptedJobsDescription;
+
+  /// No description provided for @noInterruptedJobs.
+  ///
+  /// In en, this message translates to:
+  /// **'No interrupted jobs found.'**
+  String get noInterruptedJobs;
+
+  /// No description provided for @cleanInterruptedJobs.
+  ///
+  /// In en, this message translates to:
+  /// **'Clean interrupted files'**
+  String get cleanInterruptedJobs;
+
+  /// No description provided for @cleaning.
+  ///
+  /// In en, this message translates to:
+  /// **'Cleaning…'**
+  String get cleaning;
+
+  /// No description provided for @cleanInterruptedJobsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Clean interrupted jobs?'**
+  String get cleanInterruptedJobsTitle;
+
+  /// No description provided for @cleanInterruptedJobsConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'This removes .inprogress files and job_state.json from interrupted jobs only.'**
+  String get cleanInterruptedJobsConfirmation;
+
+  /// No description provided for @clean.
+  ///
+  /// In en, this message translates to:
+  /// **'Clean'**
+  String get clean;
+
+  /// No description provided for @ffmpegLicenseTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'FFmpeg LGPL 2.1 license text'**
+  String get ffmpegLicenseTitle;
+
+  /// No description provided for @ffmpegLicense.
+  ///
+  /// In en, this message translates to:
+  /// **'License: {license}'**
+  String ffmpegLicense(Object license);
+
+  /// No description provided for @ffmpegVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'Version: {version}'**
+  String ffmpegVersion(Object version);
+
+  /// No description provided for @ffmpegLinkage.
+  ///
+  /// In en, this message translates to:
+  /// **'Linkage: {linkage}'**
+  String ffmpegLinkage(Object linkage);
+
+  /// No description provided for @ffmpegBuiltAbis.
+  ///
+  /// In en, this message translates to:
+  /// **'Built ABIs: {abis}'**
+  String ffmpegBuiltAbis(Object abis);
+
+  /// No description provided for @ffmpegSource.
+  ///
+  /// In en, this message translates to:
+  /// **'Source: {source}'**
+  String ffmpegSource(Object source);
+
+  /// No description provided for @thirdPartyLicenses.
+  ///
+  /// In en, this message translates to:
+  /// **'Flutter and Dart packages'**
+  String get thirdPartyLicenses;
+
+  /// No description provided for @thirdPartyLicensesDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Open their third-party license notices.'**
+  String get thirdPartyLicensesDescription;
+
+  /// No description provided for @fullFfmpegLicenseFallback.
+  ///
+  /// In en, this message translates to:
+  /// **'Full license text is shipped in the app\'s LGPL license asset.'**
+  String get fullFfmpegLicenseFallback;
 
   /// No description provided for @languageName.
   ///

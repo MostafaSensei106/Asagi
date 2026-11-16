@@ -12,9 +12,11 @@ import 'frb_generated.dart';
 Future<LoyaltyStatus> verifySubscriptionReceipt({
   required String originalJson,
   required List<int> signatureBytes,
+  String? loyaltyToken,
 }) => RustLib.instance.api.crateApiVerifySubscriptionReceipt(
   originalJson: originalJson,
   signatureBytes: signatureBytes,
+  loyaltyToken: loyaltyToken,
 );
 
 /// Decode and filter video into the streaming `.zf` fallback staging format.

@@ -17,12 +17,14 @@ Future<CalculationPlan> calculateCompressionPlan({
   double? customKFactor,
   String? originalJson,
   Uint8List? signatureBytes,
+  String? loyaltyToken,
 }) => RustLib.instance.api.crateApiCalculatorCalculateCompressionPlan(
   info: info,
   targetSizeMb: targetSizeMb,
   customKFactor: customKFactor,
   originalJson: originalJson,
   signatureBytes: signatureBytes,
+  loyaltyToken: loyaltyToken,
 );
 
 Future<CalculationPlan> calculateCustomCompressionPlan({
@@ -32,6 +34,7 @@ Future<CalculationPlan> calculateCustomCompressionPlan({
   double? customKFactor,
   String? originalJson,
   Uint8List? signatureBytes,
+  String? loyaltyToken,
 }) => RustLib.instance.api.crateApiCalculatorCalculateCustomCompressionPlan(
   info: info,
   targetSizeMb: targetSizeMb,
@@ -39,6 +42,7 @@ Future<CalculationPlan> calculateCustomCompressionPlan({
   preferences: preferences,
   originalJson: originalJson,
   signatureBytes: signatureBytes,
+  loyaltyToken: loyaltyToken,
 );
 
 /// Zero means accept. A positive bitrate requests another attempt. Errors never
@@ -71,10 +75,12 @@ Future<PresetPlan> resolvePlatformPreset({
   double? customKFactor,
   String? originalJson,
   Uint8List? signatureBytes,
+  String? loyaltyToken,
 }) => RustLib.instance.api.crateApiCalculatorResolvePlatformPreset(
   info: info,
   presetId: presetId,
   customKFactor: customKFactor,
   originalJson: originalJson,
   signatureBytes: signatureBytes,
+  loyaltyToken: loyaltyToken,
 );

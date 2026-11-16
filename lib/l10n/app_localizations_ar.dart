@@ -164,7 +164,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get confirm => 'تأكيد';
 
   @override
-  String get pleaseWait => 'يرجى الانتظار...';
+  String get pleaseWait => 'جارٍ المعالجة…';
 
   @override
   String get ok => 'حسناً';
@@ -335,7 +335,7 @@ class AppLocalizationsAr extends AppLocalizations {
       'المطور والأدوات المستخدمة في بناء Zumi.';
 
   @override
-  String get openSourceLicenses => 'تراخيص مفتوحة المصدر';
+  String get openSourceLicenses => 'تراخيص المصادر المفتوحة';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -967,6 +967,136 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get comingSoon => 'قريباً';
+
+  @override
+  String get zumiProTitle => 'Zumi Pro';
+
+  @override
+  String subscriptionPerMonth(Object price) {
+    return '$price / شهرياً';
+  }
+
+  @override
+  String get planUnavailable => 'غير متاح';
+
+  @override
+  String get loading => 'جارٍ التحميل…';
+
+  @override
+  String get subscriptionActive => 'الاشتراك مفعّل';
+
+  @override
+  String get proFeaturesDescription =>
+      'افتح ضغط Discord Nitro وYouTube Shorts والوضع المخصص.';
+
+  @override
+  String get subscribe => 'اشترك';
+
+  @override
+  String currentLoyaltyDiscount(Object percent) {
+    return 'خصم الولاء الحالي: $percent%';
+  }
+
+  @override
+  String nextMonthLoyaltyPrice(Object percent, Object price) {
+    return 'الشهر القادم: خصم ولاء $percent% — السعر المتوقع $price';
+  }
+
+  @override
+  String nextMonthLoyaltyDiscount(Object percent) {
+    return 'الشهر القادم: خصم ولاء $percent%';
+  }
+
+  @override
+  String get loyaltyCancellationWarning =>
+      'إلغاء الاشتراك يعيد السعر الأساسي ويفقدك الخصم المتراكم. عند الاشتراك مجدداً يبدأ الخصم من 2%.';
+
+  @override
+  String get purchaseCancelled => 'تم إلغاء الشراء.';
+
+  @override
+  String get purchaseVerified => 'تم التحقق من الشراء.';
+
+  @override
+  String get purchasesRestored => 'تمت استعادة المشتريات.';
+
+  @override
+  String get noActivePurchaseFound => 'لم يتم العثور على شراء نشط.';
+
+  @override
+  String get restorePurchaseDescription =>
+      'استعد المشتريات المرتبطة بحساب Google Play هذا.';
+
+  @override
+  String get zumiProActive => 'اشتراك Zumi Pro مفعّل';
+
+  @override
+  String get checking => 'جارٍ التحقق…';
+
+  @override
+  String get interruptedCompressionJobs => 'مهام الضغط المتوقفة';
+
+  @override
+  String get interruptedJobsDescription =>
+      'يمكنك استئناف هذه المهام من شاشة الضغط. ينظف الإجراء الملفات المؤقتة وملف حالة المهمة.';
+
+  @override
+  String get noInterruptedJobs => 'لا توجد مهام متوقفة.';
+
+  @override
+  String get cleanInterruptedJobs => 'تنظيف الملفات المتوقفة';
+
+  @override
+  String get cleaning => 'جارٍ التنظيف…';
+
+  @override
+  String get cleanInterruptedJobsTitle => 'تنظيف المهام المتوقفة؟';
+
+  @override
+  String get cleanInterruptedJobsConfirmation =>
+      'سيُحذف .inprogress وjob_state.json من المهام المتوقفة فقط.';
+
+  @override
+  String get clean => 'تنظيف';
+
+  @override
+  String get ffmpegLicenseTitle => 'نص ترخيص FFmpeg LGPL 2.1';
+
+  @override
+  String ffmpegLicense(Object license) {
+    return 'الترخيص: $license';
+  }
+
+  @override
+  String ffmpegVersion(Object version) {
+    return 'الإصدار: $version';
+  }
+
+  @override
+  String ffmpegLinkage(Object linkage) {
+    return 'نوع الربط: $linkage';
+  }
+
+  @override
+  String ffmpegBuiltAbis(Object abis) {
+    return 'المعماريات المبنية: $abis';
+  }
+
+  @override
+  String ffmpegSource(Object source) {
+    return 'المصدر: $source';
+  }
+
+  @override
+  String get thirdPartyLicenses => 'حزم Flutter وDart';
+
+  @override
+  String get thirdPartyLicensesDescription =>
+      'اعرض إشعارات تراخيص الجهات الخارجية.';
+
+  @override
+  String get fullFfmpegLicenseFallback =>
+      'نص الترخيص الكامل مضمّن في ملف ترخيص LGPL داخل التطبيق.';
 
   @override
   String get languageName => 'العربية';

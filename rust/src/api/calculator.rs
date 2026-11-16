@@ -7,8 +7,9 @@ pub fn calculate_compression_plan(
     custom_k_factor: Option<f32>,
     original_json: Option<String>,
     signature_bytes: Option<Vec<u8>>,
+    loyalty_token: Option<String>,
 ) -> Result<CalculationPlan, String> {
-    authorize_pro_receipt(None, true, original_json, signature_bytes)?;
+    authorize_pro_receipt(None, true, original_json, signature_bytes, loyalty_token)?;
     use crate::domain::CompressionPolicy;
     if !target_size_mb.is_finite()
         || target_size_mb <= 0.0
@@ -32,8 +33,9 @@ pub fn calculate_custom_compression_plan(
     preferences: PlanningPreferences,
     original_json: Option<String>,
     signature_bytes: Option<Vec<u8>>,
+    loyalty_token: Option<String>,
 ) -> Result<CalculationPlan, String> {
-    authorize_pro_receipt(None, true, original_json, signature_bytes)?;
+    authorize_pro_receipt(None, true, original_json, signature_bytes, loyalty_token)?;
     if !target_size_mb.is_finite()
         || target_size_mb <= 0.0
         || target_size_mb * 1_000_000.0 > u64::MAX as f64
@@ -79,8 +81,15 @@ pub fn resolve_platform_preset(
     custom_k_factor: Option<f32>,
     original_json: Option<String>,
     signature_bytes: Option<Vec<u8>>,
+    loyalty_token: Option<String>,
 ) -> Result<PresetPlan, String> {
-    authorize_pro_receipt(Some(preset_id), false, original_json, signature_bytes)?;
+    authorize_pro_receipt(
+        Some(preset_id),
+        false,
+        original_json,
+        signature_bytes,
+        loyalty_token,
+    )?;
     PlatformPreset::by_id(preset_id).resolve(&info, safety_margin(custom_k_factor))
 }
 
@@ -89,6 +98,7 @@ fn authorize_pro_receipt(
     is_custom: bool,
     original_json: Option<String>,
     signature_bytes: Option<Vec<u8>>,
+    loyalty_token: Option<String>,
 ) -> Result<(), String> {
     if !crate::domain::licensing::preset_requires_pro(preset_id, is_custom) {
         return Ok(());
@@ -105,6 +115,13 @@ fn authorize_pro_receipt(
         public_key.as_bytes(),
     )
     .map_err(|_| "E_PRO_SUBSCRIPTION_REQUIRED".to_owned())?;
+    if let Some(token) = loyalty_token {
+        let loyalty_key = option_env!("ZUMI_LOYALTY_RSA_PUBLIC_KEY_PEM")
+            .filter(|key| !key.trim().is_empty())
+            .ok_or_else(|| "E_LOYALTY_RECEIPT_INVALID".to_owned())?;
+        crate::domain::licensing::verify_loyalty_token(&token, &purchase, loyalty_key.as_bytes())
+            .map_err(|_| "E_LOYALTY_RECEIPT_INVALID".to_owned())?;
+    }
     let json: serde_json::Value = serde_json::from_str(&original_json)
         .map_err(|_| "E_PRO_SUBSCRIPTION_REQUIRED".to_owned())?;
     let active = json

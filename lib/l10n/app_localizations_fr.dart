@@ -986,6 +986,136 @@ class AppLocalizationsFr extends AppLocalizations {
   String get comingSoon => 'Bientôt disponible';
 
   @override
+  String get zumiProTitle => 'Zumi Pro';
+
+  @override
+  String subscriptionPerMonth(Object price) {
+    return '$price / month';
+  }
+
+  @override
+  String get planUnavailable => 'Unavailable';
+
+  @override
+  String get loading => 'Loading…';
+
+  @override
+  String get subscriptionActive => 'Active subscription';
+
+  @override
+  String get proFeaturesDescription =>
+      'Unlock Discord Nitro, YouTube Shorts and Custom compression.';
+
+  @override
+  String get subscribe => 'Subscribe';
+
+  @override
+  String currentLoyaltyDiscount(Object percent) {
+    return 'Loyalty discount: $percent%';
+  }
+
+  @override
+  String nextMonthLoyaltyPrice(Object percent, Object price) {
+    return 'Next month: $percent% loyalty discount — estimated $price';
+  }
+
+  @override
+  String nextMonthLoyaltyDiscount(Object percent) {
+    return 'Next month: $percent% loyalty discount';
+  }
+
+  @override
+  String get loyaltyCancellationWarning =>
+      'Cancelling resets your accumulated loyalty discount to the base price. If you subscribe again, loyalty starts again at 2%.';
+
+  @override
+  String get purchaseCancelled => 'Purchase cancelled.';
+
+  @override
+  String get purchaseVerified => 'Purchase verified.';
+
+  @override
+  String get purchasesRestored => 'Purchases restored.';
+
+  @override
+  String get noActivePurchaseFound => 'No active purchase found.';
+
+  @override
+  String get restorePurchaseDescription =>
+      'Restore purchases made with this Google Play account.';
+
+  @override
+  String get zumiProActive => 'Zumi Pro is active';
+
+  @override
+  String get checking => 'Checking…';
+
+  @override
+  String get interruptedCompressionJobs => 'Interrupted compression jobs';
+
+  @override
+  String get interruptedJobsDescription =>
+      'You can resume these jobs from compression. Cleanup removes their temporary files and saved job state.';
+
+  @override
+  String get noInterruptedJobs => 'No interrupted jobs found.';
+
+  @override
+  String get cleanInterruptedJobs => 'Clean interrupted files';
+
+  @override
+  String get cleaning => 'Cleaning…';
+
+  @override
+  String get cleanInterruptedJobsTitle => 'Clean interrupted jobs?';
+
+  @override
+  String get cleanInterruptedJobsConfirmation =>
+      'This removes .inprogress files and job_state.json from interrupted jobs only.';
+
+  @override
+  String get clean => 'Clean';
+
+  @override
+  String get ffmpegLicenseTitle => 'FFmpeg LGPL 2.1 license text';
+
+  @override
+  String ffmpegLicense(Object license) {
+    return 'License: $license';
+  }
+
+  @override
+  String ffmpegVersion(Object version) {
+    return 'Version: $version';
+  }
+
+  @override
+  String ffmpegLinkage(Object linkage) {
+    return 'Linkage: $linkage';
+  }
+
+  @override
+  String ffmpegBuiltAbis(Object abis) {
+    return 'Built ABIs: $abis';
+  }
+
+  @override
+  String ffmpegSource(Object source) {
+    return 'Source: $source';
+  }
+
+  @override
+  String get thirdPartyLicenses => 'Flutter and Dart packages';
+
+  @override
+  String get thirdPartyLicensesDescription =>
+      'Open their third-party license notices.';
+
+  @override
+  String get fullFfmpegLicenseFallback =>
+      'Full license text is shipped in the app\'s LGPL license asset.';
+
+  @override
   String get languageName => 'Français';
 
   @override

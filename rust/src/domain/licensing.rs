@@ -55,9 +55,7 @@ pub fn verify_receipt(
     let payload = signed_payload(receipt);
     match scheme {
         SignatureScheme::RsaPkcs1Sha1 => {
-            let key = RsaPublicKey::from_public_key_der(public_key)
-                .or_else(|_| RsaPublicKey::from_pkcs1_der(public_key))
-                .map_err(|_| LicensingError::InvalidPublicKey)?;
+            let key = parse_rsa_public_key(public_key)?;
             let digest = Sha1::digest(payload.as_bytes());
             key.verify(
                 Pkcs1v15Sign::new::<Sha1>(),
@@ -88,9 +86,7 @@ pub fn verify_google_play_purchase(
     signature_bytes: &[u8],
     play_rsa_public_key: &[u8],
 ) -> Result<GooglePlayPurchase, LicensingError> {
-    let key = RsaPublicKey::from_public_key_der(play_rsa_public_key)
-        .or_else(|_| RsaPublicKey::from_pkcs1_der(play_rsa_public_key))
-        .map_err(|_| LicensingError::InvalidPublicKey)?;
+    let key = parse_rsa_public_key(play_rsa_public_key)?;
     let digest = Sha1::digest(original_json.as_bytes());
     key.verify(Pkcs1v15Sign::new::<Sha1>(), &digest, signature_bytes)
         .map_err(|_| LicensingError::InvalidSignature)?;
@@ -115,11 +111,84 @@ pub fn verify_google_play_purchase(
     })
 }
 
+fn parse_rsa_public_key(encoded: &[u8]) -> Result<RsaPublicKey, LicensingError> {
+    let parse_der = |der: &[u8]| {
+        RsaPublicKey::from_public_key_der(der).or_else(|_| RsaPublicKey::from_pkcs1_der(der))
+    };
+    if let Ok(key) = parse_der(encoded) {
+        return Ok(key);
+    }
+    let text = std::str::from_utf8(encoded).map_err(|_| LicensingError::InvalidPublicKey)?;
+    let body = text
+        .lines()
+        .filter(|line| !line.trim_start().starts_with("-----"))
+        .collect::<String>();
+    let der = decode_base64(body.as_bytes()).ok_or(LicensingError::InvalidPublicKey)?;
+    parse_der(&der).map_err(|_| LicensingError::InvalidPublicKey)
+}
+
+fn decode_base64(input: &[u8]) -> Option<Vec<u8>> {
+    let mut output = Vec::with_capacity(input.len() * 3 / 4);
+    let mut accumulator = 0_u32;
+    let mut bits = 0_u8;
+    let mut padding = false;
+    for byte in input
+        .iter()
+        .copied()
+        .filter(|byte| !byte.is_ascii_whitespace())
+    {
+        let value = match byte {
+            b'A'..=b'Z' => byte - b'A',
+            b'a'..=b'z' => byte - b'a' + 26,
+            b'0'..=b'9' => byte - b'0' + 52,
+            b'+' => 62,
+            b'/' => 63,
+            b'=' => {
+                padding = true;
+                continue;
+            }
+            _ => return None,
+        };
+        if padding {
+            return None;
+        }
+        accumulator = (accumulator << 6) | u32::from(value);
+        bits += 6;
+        if bits >= 8 {
+            bits -= 8;
+            output.push(((accumulator >> bits) & 0xff) as u8);
+        }
+    }
+    if output.is_empty() || !matches!(bits, 0 | 2 | 4) {
+        return None;
+    }
+    Some(output)
+}
+
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct GooglePlayPurchase {
     pub purchase_token: String,
     pub start_time_millis: i64,
     pub original_json: String,
+}
+
+/// Verify a separately signed renewal envelope and bind it to the Play receipt.
+/// `loyalty_token` is JSON encoded [`LoyaltyReceipt`] with the raw signature
+/// bytes represented as a JSON byte array.
+pub fn verify_loyalty_token(
+    loyalty_token: &str,
+    purchase: &GooglePlayPurchase,
+    public_key: &[u8],
+) -> Result<u32, LicensingError> {
+    let receipt: LoyaltyReceipt =
+        serde_json::from_str(loyalty_token).map_err(|_| LicensingError::InvalidReceipt)?;
+    if receipt.purchase_token != purchase.purchase_token
+        || receipt.start_time_millis != purchase.start_time_millis
+    {
+        return Err(LicensingError::InvalidReceipt);
+    }
+    verify_receipt(&receipt, public_key, SignatureScheme::RsaPkcs1Sha1)?;
+    consecutive_months(receipt.start_time_millis, receipt.latest_renewal_millis)
 }
 
 /// Stable, unambiguous bytes to be signed by the entitlement issuer.

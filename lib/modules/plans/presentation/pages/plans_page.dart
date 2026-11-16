@@ -21,7 +21,9 @@ final class PlansPage extends StatelessWidget {
             final cubit = context.read<SubscriptionCubit>();
             final price =
                 state.offer?.price ??
-                (state.isLoading ? 'Loading…' : 'Unavailable');
+                (state.isLoading
+                    ? context.localeKeys.loading
+                    : context.localeKeys.planUnavailable);
             return ListView(
               padding: const EdgeInsets.all(24),
               children: [
@@ -32,20 +34,16 @@ final class PlansPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Zumi Pro',
+                          context.localeKeys.zumiProTitle,
                           style: Theme.of(context).textTheme.headlineMedium,
                         ),
                         const SizedBox(height: 8),
-                        Text('$price / month'),
+                        Text(context.localeKeys.subscriptionPerMonth(price)),
                         const SizedBox(height: 16),
                         Text(
                           state.isActive
-                              ? (context.isArabic
-                                    ? 'الاشتراك مفعّل'
-                                    : 'Active subscription')
-                              : (context.isArabic
-                                    ? 'افتح ضغط Discord Nitro وYouTube Shorts والوضع المخصص.'
-                                    : 'Unlock Discord Nitro, YouTube Shorts and Custom compression.'),
+                              ? context.localeKeys.subscriptionActive
+                              : context.localeKeys.proFeaturesDescription,
                         ),
                         const SizedBox(height: 20),
                         FilledButton(
@@ -54,10 +52,8 @@ final class PlansPage extends StatelessWidget {
                               : cubit.purchase,
                           child: Text(
                             state.isPurchasing
-                                ? (context.isArabic
-                                      ? 'جارٍ المعالجة…'
-                                      : 'Please wait…')
-                                : (context.isArabic ? 'اشترك' : 'Subscribe'),
+                                ? context.localeKeys.pleaseWait
+                                : context.localeKeys.subscribe,
                           ),
                         ),
                       ],
@@ -65,35 +61,25 @@ final class PlansPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-                Text(
-                  context.isArabic
-                      ? 'خصم الولاء الحالي: ${state.currentDiscount}%'
-                      : 'Loyalty discount: ${state.currentDiscount}%',
-                ),
+                Text(context.localeKeys.currentLoyaltyDiscount(state.currentDiscount)),
                 const SizedBox(height: 8),
                 LinearProgressIndicator(value: state.currentDiscount / 30),
                 const SizedBox(height: 8),
-                Text(
-                  context.isArabic
-                      ? 'الشهر القادم: خصم ولاء ${state.nextDiscount}%${state.offer == null ? '' : ' — السعر المتوقع ${_nextMonthPrice(state)}'}'
-                      : 'Next month: ${state.nextDiscount}% loyalty discount${state.offer == null ? '' : ' — estimated ${_nextMonthPrice(state)}'}',
-                ),
+                Text(state.offer == null
+                    ? context.localeKeys.nextMonthLoyaltyDiscount(state.nextDiscount)
+                    : context.localeKeys.nextMonthLoyaltyPrice(state.nextDiscount, _nextMonthPrice(state))),
                 const SizedBox(height: 20),
                 Card(
                   child: Padding(
                     padding: const EdgeInsets.all(16),
-                    child: Text(
-                      context.isArabic
-                          ? 'إلغاء الاشتراك يعيد السعر الأساسي ويفقدك الخصم المتراكم. عند الاشتراك مجدداً يبدأ الخصم من 2%.'
-                          : 'Cancelling resets your accumulated loyalty discount to the base price. If you subscribe again, loyalty starts again at 2%.',
-                    ),
+                    child: Text(context.localeKeys.loyaltyCancellationWarning),
                   ),
                 ),
                 if (state.error != null)
                   Padding(
                     padding: const EdgeInsets.only(top: 16),
                     child: Text(
-                      state.error!,
+                      _billingError(context, state.error!),
                       style: TextStyle(
                         color: Theme.of(context).colorScheme.error,
                       ),
@@ -102,15 +88,11 @@ final class PlansPage extends StatelessWidget {
                 if (state.message != null)
                   Padding(
                     padding: const EdgeInsets.only(top: 12),
-                    child: Text(state.message!),
+                    child: Text(_noticeText(context, state.message!)),
                   ),
                 TextButton(
                   onPressed: state.isPurchasing ? null : cubit.restore,
-                  child: Text(
-                    context.isArabic
-                        ? 'استعادة المشتريات'
-                        : 'Restore purchases',
-                  ),
+                  child: Text(context.localeKeys.restorePurchases),
                 ),
               ],
             );
@@ -126,3 +108,17 @@ String _nextMonthPrice(SubscriptionState state) {
   final amount = offer.rawPrice * (100 - state.nextDiscount) / 100;
   return '${offer.currencySymbol}${amount.toStringAsFixed(2)}';
 }
+
+String _billingError(BuildContext context, String error) => switch (error) {
+  'billingUnavailable' => context.localeKeys.billingUnavailable,
+  'purchaseFailed' => context.localeKeys.purchaseFailed,
+  'restoreFailed' => context.localeKeys.restoreFailed,
+  _ => context.localeKeys.receiptVerificationFailed,
+};
+
+String _noticeText(BuildContext context, SubscriptionNotice notice) => switch (notice) {
+  SubscriptionNotice.purchaseCancelled => context.localeKeys.purchaseCancelled,
+  SubscriptionNotice.purchaseVerified => context.localeKeys.purchaseVerified,
+  SubscriptionNotice.purchasesRestored => context.localeKeys.purchasesRestored,
+  SubscriptionNotice.noActivePurchaseFound => context.localeKeys.noActivePurchaseFound,
+};

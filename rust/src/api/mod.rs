@@ -12,6 +12,7 @@ pub struct LoyaltyStatus {
 pub fn verify_subscription_receipt(
     original_json: String,
     signature_bytes: Vec<u8>,
+    loyalty_token: Option<String>,
 ) -> Result<LoyaltyStatus, String> {
     let public_key = option_env!("ZUMI_PLAY_RSA_PUBLIC_KEY_PEM")
         .filter(|key| !key.trim().is_empty())
@@ -32,8 +33,15 @@ pub fn verify_subscription_receipt(
             == Some(0);
     // Play's client signature proves the initial purchase only; it does not
     // prove renewal history. Never infer renewed months from the device clock.
-    let months = 0;
-    let _ = purchase;
+    let months = if let Some(token) = loyalty_token {
+        let loyalty_key = option_env!("ZUMI_LOYALTY_RSA_PUBLIC_KEY_PEM")
+            .filter(|key| !key.trim().is_empty())
+            .ok_or_else(|| "E_LOYALTY_RECEIPT_INVALID".to_owned())?;
+        crate::domain::licensing::verify_loyalty_token(&token, &purchase, loyalty_key.as_bytes())
+            .map_err(|_| "E_LOYALTY_RECEIPT_INVALID".to_owned())?
+    } else {
+        0
+    };
     Ok(LoyaltyStatus {
         is_active: active,
         consecutive_months: months,

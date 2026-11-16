@@ -25,11 +25,13 @@ final class PurchaseReceiptPayload {
     required this.signature,
     required this.purchaseToken,
     required this.productId,
+    this.loyaltyToken,
   });
   final String originalJson;
   final String signature;
   final String purchaseToken;
   final String productId;
+  final String? loyaltyToken;
 }
 
 abstract interface class BillingService {

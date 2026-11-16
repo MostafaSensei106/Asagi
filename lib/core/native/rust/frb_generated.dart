@@ -86,6 +86,7 @@ abstract class RustLibApi extends BaseApi {
     double? customKFactor,
     String? originalJson,
     Uint8List? signatureBytes,
+    String? loyaltyToken,
   });
 
   Future<CalculationPlan> crateApiCalculatorCalculateCustomCompressionPlan({
@@ -95,6 +96,7 @@ abstract class RustLibApi extends BaseApi {
     double? customKFactor,
     String? originalJson,
     Uint8List? signatureBytes,
+    String? loyaltyToken,
   });
 
   Future<List<PlatformPreset>> crateApiCalculatorPlatformPresets();
@@ -105,6 +107,7 @@ abstract class RustLibApi extends BaseApi {
     double? customKFactor,
     String? originalJson,
     Uint8List? signatureBytes,
+    String? loyaltyToken,
   });
 
   Future<BigInt> crateApiStageFallbackVideo({
@@ -126,6 +129,7 @@ abstract class RustLibApi extends BaseApi {
   Future<LoyaltyStatus> crateApiVerifySubscriptionReceipt({
     required String originalJson,
     required List<int> signatureBytes,
+    String? loyaltyToken,
   });
 }
 
@@ -144,6 +148,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
     double? customKFactor,
     String? originalJson,
     Uint8List? signatureBytes,
+    String? loyaltyToken,
   }) {
     return handler.executeNormal(
       NormalTask(
@@ -154,6 +159,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           sse_encode_opt_box_autoadd_f_32(customKFactor, serializer);
           sse_encode_opt_String(originalJson, serializer);
           sse_encode_opt_list_prim_u_8_strict(signatureBytes, serializer);
+          sse_encode_opt_String(loyaltyToken, serializer);
           pdeCallFfi(
             generalizedFrbRustBinding,
             serializer,
@@ -172,6 +178,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           customKFactor,
           originalJson,
           signatureBytes,
+          loyaltyToken,
         ],
         apiImpl: this,
       ),
@@ -187,6 +194,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           'customKFactor',
           'originalJson',
           'signatureBytes',
+          'loyaltyToken',
         ],
       );
 
@@ -198,6 +206,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
     double? customKFactor,
     String? originalJson,
     Uint8List? signatureBytes,
+    String? loyaltyToken,
   }) {
     return handler.executeNormal(
       NormalTask(
@@ -209,6 +218,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           sse_encode_box_autoadd_planning_preferences(preferences, serializer);
           sse_encode_opt_String(originalJson, serializer);
           sse_encode_opt_list_prim_u_8_strict(signatureBytes, serializer);
+          sse_encode_opt_String(loyaltyToken, serializer);
           pdeCallFfi(
             generalizedFrbRustBinding,
             serializer,
@@ -228,6 +238,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           preferences,
           originalJson,
           signatureBytes,
+          loyaltyToken,
         ],
         apiImpl: this,
       ),
@@ -245,6 +256,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           'preferences',
           'originalJson',
           'signatureBytes',
+          'loyaltyToken',
         ],
       );
 
@@ -282,6 +294,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
     double? customKFactor,
     String? originalJson,
     Uint8List? signatureBytes,
+    String? loyaltyToken,
   }) {
     return handler.executeNormal(
       NormalTask(
@@ -292,6 +305,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           sse_encode_opt_box_autoadd_f_32(customKFactor, serializer);
           sse_encode_opt_String(originalJson, serializer);
           sse_encode_opt_list_prim_u_8_strict(signatureBytes, serializer);
+          sse_encode_opt_String(loyaltyToken, serializer);
           pdeCallFfi(
             generalizedFrbRustBinding,
             serializer,
@@ -310,6 +324,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           customKFactor,
           originalJson,
           signatureBytes,
+          loyaltyToken,
         ],
         apiImpl: this,
       ),
@@ -325,6 +340,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           'customKFactor',
           'originalJson',
           'signatureBytes',
+          'loyaltyToken',
         ],
       );
 
@@ -427,6 +443,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   Future<LoyaltyStatus> crateApiVerifySubscriptionReceipt({
     required String originalJson,
     required List<int> signatureBytes,
+    String? loyaltyToken,
   }) {
     return handler.executeNormal(
       NormalTask(
@@ -434,6 +451,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           final serializer = SseSerializer(generalizedFrbRustBinding);
           sse_encode_String(originalJson, serializer);
           sse_encode_list_prim_u_8_loose(signatureBytes, serializer);
+          sse_encode_opt_String(loyaltyToken, serializer);
           pdeCallFfi(
             generalizedFrbRustBinding,
             serializer,
@@ -446,7 +464,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           decodeErrorData: sse_decode_String,
         ),
         constMeta: kCrateApiVerifySubscriptionReceiptConstMeta,
-        argValues: [originalJson, signatureBytes],
+        argValues: [originalJson, signatureBytes, loyaltyToken],
         apiImpl: this,
       ),
     );
@@ -455,7 +473,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   TaskConstMeta get kCrateApiVerifySubscriptionReceiptConstMeta =>
       const TaskConstMeta(
         debugName: 'verify_subscription_receipt',
-        argNames: ['originalJson', 'signatureBytes'],
+        argNames: ['originalJson', 'signatureBytes', 'loyaltyToken'],
       );
 
   @protected

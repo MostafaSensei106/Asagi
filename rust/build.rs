@@ -14,9 +14,14 @@ fn main() {
     println!("cargo:rerun-if-env-changed=FFMPEG_INCLUDE_DIR");
     println!("cargo:rerun-if-env-changed=FFMPEG_DLL_PATH");
     println!("cargo:rerun-if-env-changed=ZUMI_PLAY_RSA_PUBLIC_KEY_PEM");
+    println!("cargo:rerun-if-env-changed=ZUMI_LOYALTY_RSA_PUBLIC_KEY_PEM");
     println!(
         "cargo:rustc-env=ZUMI_PLAY_RSA_PUBLIC_KEY_PEM={}",
         env::var("ZUMI_PLAY_RSA_PUBLIC_KEY_PEM").unwrap_or_default()
+    );
+    println!(
+        "cargo:rustc-env=ZUMI_LOYALTY_RSA_PUBLIC_KEY_PEM={}",
+        env::var("ZUMI_LOYALTY_RSA_PUBLIC_KEY_PEM").unwrap_or_default()
     );
 
     let target = env::var("TARGET").unwrap_or_default();

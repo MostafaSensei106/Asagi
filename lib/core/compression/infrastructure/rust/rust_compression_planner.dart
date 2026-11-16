@@ -50,6 +50,7 @@ final class RustCompressionPlanner implements CompressionPlanner {
       ),
       originalJson: proof?.originalJson,
       signatureBytes: proof == null ? null : base64Decode(proof.signature),
+      loyaltyToken: proof?.loyaltyToken,
     );
     return _toPlan(p);
   }
@@ -96,6 +97,7 @@ final class RustCompressionPlanner implements CompressionPlanner {
       presetId: _toPresetId(id),
       originalJson: proof?.originalJson,
       signatureBytes: proof == null ? null : base64Decode(proof.signature),
+      loyaltyToken: proof?.loyaltyToken,
     );
     final preset = await _presetById(id);
     return SharePresetPlan(
