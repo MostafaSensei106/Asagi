@@ -1123,6 +1123,10 @@ class AppLocalizationsSv extends AppLocalizations {
   String get storageJobsLoadFailed => 'Interrupted jobs could not be loaded.';
 
   @override
+  String get cleanupInterruptedJobsFailed =>
+      'The interrupted files could not be cleaned.';
+
+  @override
   String get languageName => 'Svenska';
 
   @override

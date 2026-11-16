@@ -1117,6 +1117,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get storageJobsLoadFailed => 'تعذر تحميل المهام المتوقفة.';
 
   @override
+  String get cleanupInterruptedJobsFailed =>
+      'تعذر تنظيف ملفات المهام المتوقفة.';
+
+  @override
   String get languageName => 'العربية';
 
   @override

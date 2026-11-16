@@ -5,135 +5,37 @@ import '../../../../core/di/di.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/widgets/navigation/app_bar/side_page_app_bar_component.dart';
 import '../../logic/subscription_cubit.dart';
+import '../widgets/loyalty_progress_card.dart';
+import '../widgets/subscription_feedback.dart';
+import '../widgets/subscription_offer_card.dart';
 
 final class PlansPage extends StatelessWidget {
   const PlansPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return BlocSignalProvider<SubscriptionCubit>(
-      create: (_) => getIt<SubscriptionCubit>(),
-      child: Scaffold(
-        appBar: SidePageAppBarComponent(title: context.localeKeys.plans),
-        body: BlocSignalBuilder<SubscriptionCubit, SubscriptionState>(
-          buildWhen: (before, after) => before != after,
-          builder: (context, state) {
-            final cubit = context.read<SubscriptionCubit>();
-            final price =
-                state.offer?.price ??
-                (state.isLoading
-                    ? context.localeKeys.loading
-                    : context.localeKeys.planUnavailable);
-            return ListView(
-              padding: const EdgeInsets.all(24),
-              children: [
-                Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          context.localeKeys.zumiProTitle,
-                          style: Theme.of(context).textTheme.headlineMedium,
-                        ),
-                        const SizedBox(height: 8),
-                        Text(context.localeKeys.subscriptionPerMonth(price)),
-                        const SizedBox(height: 16),
-                        Text(
-                          state.isActive
-                              ? context.localeKeys.subscriptionActive
-                              : context.localeKeys.proFeaturesDescription,
-                        ),
-                        const SizedBox(height: 20),
-                        FilledButton(
-                          onPressed: state.isPurchasing || state.isActive
-                              ? null
-                              : cubit.purchase,
-                          child: Text(
-                            state.isPurchasing
-                                ? context.localeKeys.pleaseWait
-                                : context.localeKeys.subscribe,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 20),
-                Text(
-                  context.localeKeys.currentLoyaltyDiscount(
-                    state.currentDiscount,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                LinearProgressIndicator(value: state.currentDiscount / 30),
-                const SizedBox(height: 8),
-                Text(
-                  state.offer == null
-                      ? context.localeKeys.nextMonthLoyaltyDiscount(
-                          state.nextDiscount,
-                        )
-                      : context.localeKeys.nextMonthLoyaltyPrice(
-                          state.nextDiscount,
-                          _nextMonthPrice(state),
-                        ),
-                ),
-                const SizedBox(height: 20),
-                Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: Text(context.localeKeys.loyaltyCancellationWarning),
-                  ),
-                ),
-                if (state.error != null)
-                  Padding(
-                    padding: const EdgeInsets.only(top: 16),
-                    child: Text(
-                      _billingError(context, state.error!),
-                      style: TextStyle(
-                        color: Theme.of(context).colorScheme.error,
-                      ),
-                    ),
-                  ),
-                if (state.message != null)
-                  Padding(
-                    padding: const EdgeInsets.only(top: 12),
-                    child: Text(_noticeText(context, state.message!)),
-                  ),
-                TextButton(
-                  onPressed: state.isPurchasing ? null : cubit.restore,
-                  child: Text(context.localeKeys.restorePurchases),
-                ),
-              ],
-            );
-          },
-        ),
+  Widget build(BuildContext context) => BlocSignalProvider<SubscriptionCubit>(
+    create: (_) => getIt<SubscriptionCubit>(),
+    child: Scaffold(
+      appBar: SidePageAppBarComponent(title: context.localeKeys.plans),
+      body: BlocSignalBuilder<SubscriptionCubit, SubscriptionState>(
+        buildWhen: (before, after) => before != after,
+        builder: (context, state) {
+          final cubit = context.read<SubscriptionCubit>();
+          return ListView(
+            padding: const EdgeInsets.all(24),
+            children: [
+              SubscriptionOfferCard(state: state, onSubscribe: cubit.purchase),
+              const SizedBox(height: 20),
+              LoyaltyProgressCard(state: state),
+              SubscriptionFeedback(state: state),
+              TextButton(
+                onPressed: state.isPurchasing ? null : cubit.restore,
+                child: Text(context.localeKeys.restorePurchases),
+              ),
+            ],
+          );
+        },
       ),
-    );
-  }
+    ),
+  );
 }
-
-String _nextMonthPrice(SubscriptionState state) {
-  final offer = state.offer!;
-  final amount = offer.rawPrice * (100 - state.nextDiscount) / 100;
-  return '${offer.currencySymbol}${amount.toStringAsFixed(2)}';
-}
-
-String _billingError(BuildContext context, String error) => switch (error) {
-  'billingUnavailable' => context.localeKeys.billingUnavailable,
-  'purchaseFailed' => context.localeKeys.purchaseFailed,
-  'restoreFailed' => context.localeKeys.restoreFailed,
-  _ => context.localeKeys.receiptVerificationFailed,
-};
-
-String _noticeText(
-  BuildContext context,
-  SubscriptionNotice notice,
-) => switch (notice) {
-  SubscriptionNotice.purchaseCancelled => context.localeKeys.purchaseCancelled,
-  SubscriptionNotice.purchaseVerified => context.localeKeys.purchaseVerified,
-  SubscriptionNotice.purchasesRestored => context.localeKeys.purchasesRestored,
-  SubscriptionNotice.noActivePurchaseFound =>
-    context.localeKeys.noActivePurchaseFound,
-};

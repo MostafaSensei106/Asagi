@@ -58,7 +58,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "de_DE": [
@@ -120,7 +121,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "es": [
@@ -182,7 +184,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "es_ES": [
@@ -244,7 +247,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "fr": [
@@ -306,7 +310,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "id": [
@@ -368,7 +373,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "id_ID": [
@@ -430,7 +436,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "it": [
@@ -492,7 +499,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "it_IT": [
@@ -554,7 +562,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "ja": [
@@ -616,7 +625,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "ja_JP": [
@@ -678,7 +688,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "ko": [
@@ -740,7 +751,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "ko_KR": [
@@ -802,7 +814,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "nl": [
@@ -864,7 +877,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "nl_BE": [
@@ -926,7 +940,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "pl": [
@@ -988,7 +1003,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "pl_PL": [
@@ -1050,7 +1066,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "pt": [
@@ -1112,7 +1129,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "pt_BR": [
@@ -1174,7 +1192,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "ru": [
@@ -1236,7 +1255,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "ru_RU": [
@@ -1298,7 +1318,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "sv": [
@@ -1360,7 +1381,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "sv_SE": [
@@ -1422,7 +1444,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "th": [
@@ -1484,7 +1507,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "th_TH": [
@@ -1546,7 +1570,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "tr": [
@@ -1608,7 +1633,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "tr_TR": [
@@ -1670,7 +1696,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "vi": [
@@ -1732,7 +1759,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "zh": [
@@ -1794,7 +1822,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "zh_CN": [
@@ -1856,7 +1885,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "zh_HK": [
@@ -1918,7 +1948,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "zh_SG": [
@@ -1980,7 +2011,8 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ],
 
   "zh_TW": [
@@ -2042,6 +2074,7 @@
     "restoreFailed",
     "receiptVerificationFailed",
     "ffmpegName",
-    "storageJobsLoadFailed"
+    "storageJobsLoadFailed",
+    "cleanupInterruptedJobsFailed"
   ]
 }

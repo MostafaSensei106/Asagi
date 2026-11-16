@@ -2137,6 +2137,12 @@ abstract class AppLocalizations {
   /// **'Interrupted jobs could not be loaded.'**
   String get storageJobsLoadFailed;
 
+  /// No description provided for @cleanupInterruptedJobsFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'The interrupted files could not be cleaned.'**
+  String get cleanupInterruptedJobsFailed;
+
   /// No description provided for @languageName.
   ///
   /// In en, this message translates to:

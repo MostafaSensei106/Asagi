@@ -5,6 +5,8 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../compression/domain/contracts/artifact_store.dart';
+import '../compression/infrastructure/storage/file_artifact_store.dart';
 import '../services/shared_prefs/base_pref_storage_service.dart';
 import '../services/shared_prefs/storage_facade.dart';
 
@@ -31,4 +33,7 @@ abstract class InjectionModule {
   @lazySingleton
   StorageFacade storageFacade(BasePrefStorageService service) =>
       service as StorageFacade;
+
+  @lazySingleton
+  ArtifactStore get artifactStore => const FileArtifactStore();
 }

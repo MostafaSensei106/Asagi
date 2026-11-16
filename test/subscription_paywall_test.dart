@@ -2,6 +2,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:zumi/core/di/di.dart';
 import 'package:zumi/core/services/billing/billing_service.dart';
+import 'package:zumi/core/services/billing/fake_billing_service.dart';
+import 'package:zumi/core/services/billing/in_memory_purchase_proof_store.dart';
 import 'package:zumi/l10n/app_localizations.dart';
 import 'package:zumi/modules/plans/logic/subscription_cubit.dart';
 import 'package:zumi/modules/plans/presentation/pages/plans_page.dart';

@@ -80,9 +80,7 @@ final class AppPlaceholderPage extends StatelessWidget {
                       Text(
                         title,
                         textAlign: TextAlign.center,
-                        style: textTheme.headlineSmall?.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: textTheme.headlineSmall,
                       ),
                       const Gap(AppSpacing.small),
                       Text(
