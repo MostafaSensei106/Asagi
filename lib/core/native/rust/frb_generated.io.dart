@@ -11,6 +11,7 @@ import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated_io.dart';
 
 import 'api/calculator.dart';
 import 'domain/models.dart';
+import 'domain/presets.dart';
 import 'frb_generated.dart';
 
 abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
@@ -55,6 +56,9 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   InputMetadata dco_decode_input_metadata(dynamic raw);
 
   @protected
+  List<PlatformPreset> dco_decode_list_platform_preset(dynamic raw);
+
+  @protected
   Uint8List dco_decode_list_prim_u_8_strict(dynamic raw);
 
   @protected
@@ -67,6 +71,18 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   PlanningPreferences dco_decode_planning_preferences(dynamic raw);
 
   @protected
+  PlatformPreset dco_decode_platform_preset(dynamic raw);
+
+  @protected
+  PresetId dco_decode_preset_id(dynamic raw);
+
+  @protected
+  PresetPlan dco_decode_preset_plan(dynamic raw);
+
+  @protected
+  PresetTier dco_decode_preset_tier(dynamic raw);
+
+  @protected
   int dco_decode_u_32(dynamic raw);
 
   @protected
@@ -74,6 +90,9 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   int dco_decode_u_8(dynamic raw);
+
+  @protected
+  void dco_decode_unit(dynamic raw);
 
   @protected
   String sse_decode_String(SseDeserializer deserializer);
@@ -115,6 +134,11 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   InputMetadata sse_decode_input_metadata(SseDeserializer deserializer);
 
   @protected
+  List<PlatformPreset> sse_decode_list_platform_preset(
+    SseDeserializer deserializer,
+  );
+
+  @protected
   Uint8List sse_decode_list_prim_u_8_strict(SseDeserializer deserializer);
 
   @protected
@@ -129,6 +153,18 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   );
 
   @protected
+  PlatformPreset sse_decode_platform_preset(SseDeserializer deserializer);
+
+  @protected
+  PresetId sse_decode_preset_id(SseDeserializer deserializer);
+
+  @protected
+  PresetPlan sse_decode_preset_plan(SseDeserializer deserializer);
+
+  @protected
+  PresetTier sse_decode_preset_tier(SseDeserializer deserializer);
+
+  @protected
   int sse_decode_u_32(SseDeserializer deserializer);
 
   @protected
@@ -136,6 +172,9 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   int sse_decode_u_8(SseDeserializer deserializer);
+
+  @protected
+  void sse_decode_unit(SseDeserializer deserializer);
 
   @protected
   void sse_encode_String(String self, SseSerializer serializer);
@@ -183,6 +222,12 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   void sse_encode_input_metadata(InputMetadata self, SseSerializer serializer);
 
   @protected
+  void sse_encode_list_platform_preset(
+    List<PlatformPreset> self,
+    SseSerializer serializer,
+  );
+
+  @protected
   void sse_encode_list_prim_u_8_strict(
     Uint8List self,
     SseSerializer serializer,
@@ -201,6 +246,21 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   );
 
   @protected
+  void sse_encode_platform_preset(
+    PlatformPreset self,
+    SseSerializer serializer,
+  );
+
+  @protected
+  void sse_encode_preset_id(PresetId self, SseSerializer serializer);
+
+  @protected
+  void sse_encode_preset_plan(PresetPlan self, SseSerializer serializer);
+
+  @protected
+  void sse_encode_preset_tier(PresetTier self, SseSerializer serializer);
+
+  @protected
   void sse_encode_u_32(int self, SseSerializer serializer);
 
   @protected
@@ -208,6 +268,9 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   void sse_encode_u_8(int self, SseSerializer serializer);
+
+  @protected
+  void sse_encode_unit(void self, SseSerializer serializer);
 }
 
 // Section: wire_class

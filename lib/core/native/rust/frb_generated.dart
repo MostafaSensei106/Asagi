@@ -10,6 +10,7 @@ import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
 
 import 'api/calculator.dart';
 import 'domain/models.dart';
+import 'domain/presets.dart';
 import 'frb_generated.dart';
 import 'frb_generated.io.dart'
     if (dart.library.js_interop) 'frb_generated.web.dart';
@@ -67,7 +68,7 @@ class RustLib extends BaseEntrypoint<RustLibApi, RustLibApiImpl, RustLibWire> {
   String get codegenVersion => '2.13.0';
 
   @override
-  int get rustContentHash => -503754515;
+  int get rustContentHash => -1670454708;
 
   static const kDefaultExternalLibraryLoaderConfig =
       ExternalLibraryLoaderConfig(
@@ -88,6 +89,14 @@ abstract class RustLibApi extends BaseApi {
     required InputMetadata info,
     required double targetSizeMb,
     required PlanningPreferences preferences,
+    double? customKFactor,
+  });
+
+  Future<List<PlatformPreset>> crateApiCalculatorPlatformPresets();
+
+  Future<PresetPlan> crateApiCalculatorResolvePlatformPreset({
+    required InputMetadata info,
+    required PresetId presetId,
     double? customKFactor,
   });
 
@@ -185,6 +194,70 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       );
 
   @override
+  Future<List<PlatformPreset>> crateApiCalculatorPlatformPresets() {
+    return handler.executeNormal(
+      NormalTask(
+        callFfi: (port_) {
+          final serializer = SseSerializer(generalizedFrbRustBinding);
+          pdeCallFfi(
+            generalizedFrbRustBinding,
+            serializer,
+            funcId: 3,
+            port: port_,
+          );
+        },
+        codec: SseCodec(
+          decodeSuccessData: sse_decode_list_platform_preset,
+          decodeErrorData: null,
+        ),
+        constMeta: kCrateApiCalculatorPlatformPresetsConstMeta,
+        argValues: [],
+        apiImpl: this,
+      ),
+    );
+  }
+
+  TaskConstMeta get kCrateApiCalculatorPlatformPresetsConstMeta =>
+      const TaskConstMeta(debugName: 'platform_presets', argNames: []);
+
+  @override
+  Future<PresetPlan> crateApiCalculatorResolvePlatformPreset({
+    required InputMetadata info,
+    required PresetId presetId,
+    double? customKFactor,
+  }) {
+    return handler.executeNormal(
+      NormalTask(
+        callFfi: (port_) {
+          final serializer = SseSerializer(generalizedFrbRustBinding);
+          sse_encode_box_autoadd_input_metadata(info, serializer);
+          sse_encode_preset_id(presetId, serializer);
+          sse_encode_opt_box_autoadd_f_32(customKFactor, serializer);
+          pdeCallFfi(
+            generalizedFrbRustBinding,
+            serializer,
+            funcId: 4,
+            port: port_,
+          );
+        },
+        codec: SseCodec(
+          decodeSuccessData: sse_decode_preset_plan,
+          decodeErrorData: sse_decode_String,
+        ),
+        constMeta: kCrateApiCalculatorResolvePlatformPresetConstMeta,
+        argValues: [info, presetId, customKFactor],
+        apiImpl: this,
+      ),
+    );
+  }
+
+  TaskConstMeta get kCrateApiCalculatorResolvePlatformPresetConstMeta =>
+      const TaskConstMeta(
+        debugName: 'resolve_platform_preset',
+        argNames: ['info', 'presetId', 'customKFactor'],
+      );
+
+  @override
   Future<int> crateApiCalculatorVerifyAttempt({
     required BigInt actualBytes,
     required double durationSecs,
@@ -202,7 +275,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           pdeCallFfi(
             generalizedFrbRustBinding,
             serializer,
-            funcId: 3,
+            funcId: 5,
             port: port_,
           );
         },
@@ -315,6 +388,12 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  List<PlatformPreset> dco_decode_list_platform_preset(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return (raw as List<dynamic>).map(dco_decode_platform_preset).toList();
+  }
+
+  @protected
   Uint8List dco_decode_list_prim_u_8_strict(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return raw as Uint8List;
@@ -347,6 +426,49 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  PlatformPreset dco_decode_platform_preset(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    final arr = raw as List<dynamic>;
+    if (arr.length != 8)
+      throw Exception('unexpected arr length: expect 8 but see ${arr.length}');
+    return PlatformPreset(
+      id: dco_decode_preset_id(arr[0]),
+      targetMb: dco_decode_u_32(arr[1]),
+      relaxedTargetMb: dco_decode_u_32(arr[2]),
+      maxShortEdge: dco_decode_u_32(arr[3]),
+      maxFps: dco_decode_u_32(arr[4]),
+      bitrateCapBps: dco_decode_u_32(arr[5]),
+      requireFaststart: dco_decode_bool(arr[6]),
+      verifiedOn: dco_decode_String(arr[7]),
+    );
+  }
+
+  @protected
+  PresetId dco_decode_preset_id(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return PresetId.values[raw as int];
+  }
+
+  @protected
+  PresetPlan dco_decode_preset_plan(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    final arr = raw as List<dynamic>;
+    if (arr.length != 3)
+      throw Exception('unexpected arr length: expect 3 but see ${arr.length}');
+    return PresetPlan(
+      tier: dco_decode_preset_tier(arr[0]),
+      effectiveTargetMb: dco_decode_u_32(arr[1]),
+      plan: dco_decode_calculation_plan(arr[2]),
+    );
+  }
+
+  @protected
+  PresetTier dco_decode_preset_tier(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return PresetTier.values[raw as int];
+  }
+
+  @protected
   int dco_decode_u_32(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return raw as int;
@@ -362,6 +484,12 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   int dco_decode_u_8(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return raw as int;
+  }
+
+  @protected
+  void dco_decode_unit(dynamic raw) {
+    // Codec=Dco (DartCObject based), see doc to use other codecs
+    return;
   }
 
   @protected
@@ -474,6 +602,20 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  List<PlatformPreset> sse_decode_list_platform_preset(
+    SseDeserializer deserializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+
+    final len_ = sse_decode_i_32(deserializer);
+    final ans_ = <PlatformPreset>[];
+    for (var idx_ = 0; idx_ < len_; ++idx_) {
+      ans_.add(sse_decode_platform_preset(deserializer));
+    }
+    return ans_;
+  }
+
+  @protected
   Uint8List sse_decode_list_prim_u_8_strict(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     final len_ = sse_decode_i_32(deserializer);
@@ -520,6 +662,56 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  PlatformPreset sse_decode_platform_preset(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    final var_id = sse_decode_preset_id(deserializer);
+    final var_targetMb = sse_decode_u_32(deserializer);
+    final var_relaxedTargetMb = sse_decode_u_32(deserializer);
+    final var_maxShortEdge = sse_decode_u_32(deserializer);
+    final var_maxFps = sse_decode_u_32(deserializer);
+    final var_bitrateCapBps = sse_decode_u_32(deserializer);
+    final var_requireFaststart = sse_decode_bool(deserializer);
+    final var_verifiedOn = sse_decode_String(deserializer);
+    return PlatformPreset(
+      id: var_id,
+      targetMb: var_targetMb,
+      relaxedTargetMb: var_relaxedTargetMb,
+      maxShortEdge: var_maxShortEdge,
+      maxFps: var_maxFps,
+      bitrateCapBps: var_bitrateCapBps,
+      requireFaststart: var_requireFaststart,
+      verifiedOn: var_verifiedOn,
+    );
+  }
+
+  @protected
+  PresetId sse_decode_preset_id(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    final inner = sse_decode_i_32(deserializer);
+    return PresetId.values[inner];
+  }
+
+  @protected
+  PresetPlan sse_decode_preset_plan(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    final var_tier = sse_decode_preset_tier(deserializer);
+    final var_effectiveTargetMb = sse_decode_u_32(deserializer);
+    final var_plan = sse_decode_calculation_plan(deserializer);
+    return PresetPlan(
+      tier: var_tier,
+      effectiveTargetMb: var_effectiveTargetMb,
+      plan: var_plan,
+    );
+  }
+
+  @protected
+  PresetTier sse_decode_preset_tier(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    final inner = sse_decode_i_32(deserializer);
+    return PresetTier.values[inner];
+  }
+
+  @protected
   int sse_decode_u_32(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     return deserializer.buffer.getUint32();
@@ -535,6 +727,11 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   int sse_decode_u_8(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     return deserializer.buffer.getUint8();
+  }
+
+  @protected
+  void sse_decode_unit(SseDeserializer deserializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
   }
 
   @protected
@@ -631,6 +828,18 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  void sse_encode_list_platform_preset(
+    List<PlatformPreset> self,
+    SseSerializer serializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_i_32(self.length, serializer);
+    for (final item in self) {
+      sse_encode_platform_preset(item, serializer);
+    }
+  }
+
+  @protected
   void sse_encode_list_prim_u_8_strict(
     Uint8List self,
     SseSerializer serializer,
@@ -673,6 +882,42 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
+  void sse_encode_platform_preset(
+    PlatformPreset self,
+    SseSerializer serializer,
+  ) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_preset_id(self.id, serializer);
+    sse_encode_u_32(self.targetMb, serializer);
+    sse_encode_u_32(self.relaxedTargetMb, serializer);
+    sse_encode_u_32(self.maxShortEdge, serializer);
+    sse_encode_u_32(self.maxFps, serializer);
+    sse_encode_u_32(self.bitrateCapBps, serializer);
+    sse_encode_bool(self.requireFaststart, serializer);
+    sse_encode_String(self.verifiedOn, serializer);
+  }
+
+  @protected
+  void sse_encode_preset_id(PresetId self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_i_32(self.index, serializer);
+  }
+
+  @protected
+  void sse_encode_preset_plan(PresetPlan self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_preset_tier(self.tier, serializer);
+    sse_encode_u_32(self.effectiveTargetMb, serializer);
+    sse_encode_calculation_plan(self.plan, serializer);
+  }
+
+  @protected
+  void sse_encode_preset_tier(PresetTier self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    sse_encode_i_32(self.index, serializer);
+  }
+
+  @protected
   void sse_encode_u_32(int self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     serializer.buffer.putUint32(self);
@@ -688,5 +933,10 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   void sse_encode_u_8(int self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     serializer.buffer.putUint8(self);
+  }
+
+  @protected
+  void sse_encode_unit(void self, SseSerializer serializer) {
+    // Codec=Sse (Serialization based), see doc to use other codecs
   }
 }

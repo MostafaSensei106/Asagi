@@ -39,7 +39,7 @@ flutter_rust_bridge::frb_generated_boilerplate!(
     default_rust_auto_opaque = RustAutoOpaqueMoi,
 );
 pub(crate) const FLUTTER_RUST_BRIDGE_CODEGEN_VERSION: &str = "2.13.0";
-pub(crate) const FLUTTER_RUST_BRIDGE_CODEGEN_CONTENT_HASH: i32 = -503754515;
+pub(crate) const FLUTTER_RUST_BRIDGE_CODEGEN_CONTENT_HASH: i32 = -1670454708;
 
 // Section: executor
 
@@ -121,6 +121,77 @@ fn wire__crate__api__calculator__calculate_custom_compression_plan_impl(
                         api_target_size_mb,
                         api_custom_k_factor,
                         api_preferences,
+                    )?;
+                    std::result::Result::Ok(output_ok)
+                })())
+            }
+        },
+    )
+}
+fn wire__crate__api__calculator__platform_presets_impl(
+    port_: flutter_rust_bridge::for_generated::MessagePort,
+    ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
+    rust_vec_len_: i32,
+    data_len_: i32,
+) {
+    FLUTTER_RUST_BRIDGE_HANDLER.wrap_normal::<flutter_rust_bridge::for_generated::SseCodec, _, _>(
+        flutter_rust_bridge::for_generated::TaskInfo {
+            debug_name: "platform_presets",
+            port: Some(port_),
+            mode: flutter_rust_bridge::for_generated::FfiCallMode::Normal,
+        },
+        move || {
+            let message = unsafe {
+                flutter_rust_bridge::for_generated::Dart2RustMessageSse::from_wire(
+                    ptr_,
+                    rust_vec_len_,
+                    data_len_,
+                )
+            };
+            let mut deserializer =
+                flutter_rust_bridge::for_generated::SseDeserializer::new(message);
+            deserializer.end();
+            move |context| {
+                transform_result_sse::<_, ()>((move || {
+                    let output_ok = Ok::<_, ()>(crate::api::calculator::platform_presets())?;
+                    std::result::Result::Ok(output_ok)
+                })())
+            }
+        },
+    )
+}
+fn wire__crate__api__calculator__resolve_platform_preset_impl(
+    port_: flutter_rust_bridge::for_generated::MessagePort,
+    ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
+    rust_vec_len_: i32,
+    data_len_: i32,
+) {
+    FLUTTER_RUST_BRIDGE_HANDLER.wrap_normal::<flutter_rust_bridge::for_generated::SseCodec, _, _>(
+        flutter_rust_bridge::for_generated::TaskInfo {
+            debug_name: "resolve_platform_preset",
+            port: Some(port_),
+            mode: flutter_rust_bridge::for_generated::FfiCallMode::Normal,
+        },
+        move || {
+            let message = unsafe {
+                flutter_rust_bridge::for_generated::Dart2RustMessageSse::from_wire(
+                    ptr_,
+                    rust_vec_len_,
+                    data_len_,
+                )
+            };
+            let mut deserializer =
+                flutter_rust_bridge::for_generated::SseDeserializer::new(message);
+            let api_info = <crate::domain::models::InputMetadata>::sse_decode(&mut deserializer);
+            let api_preset_id = <crate::domain::presets::PresetId>::sse_decode(&mut deserializer);
+            let api_custom_k_factor = <Option<f32>>::sse_decode(&mut deserializer);
+            deserializer.end();
+            move |context| {
+                transform_result_sse::<_, String>((move || {
+                    let output_ok = crate::api::calculator::resolve_platform_preset(
+                        api_info,
+                        api_preset_id,
+                        api_custom_k_factor,
                     )?;
                     std::result::Result::Ok(output_ok)
                 })())
@@ -258,6 +329,20 @@ impl SseDecode for crate::domain::models::InputMetadata {
     }
 }
 
+impl SseDecode for Vec<crate::domain::presets::PlatformPreset> {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    fn sse_decode(deserializer: &mut flutter_rust_bridge::for_generated::SseDeserializer) -> Self {
+        let mut len_ = <i32>::sse_decode(deserializer);
+        let mut ans_ = Vec::with_capacity(len_ as usize);
+        for idx_ in 0..len_ {
+            ans_.push(<crate::domain::presets::PlatformPreset>::sse_decode(
+                deserializer,
+            ));
+        }
+        return ans_;
+    }
+}
+
 impl SseDecode for Vec<u8> {
     // Codec=Sse (Serialization based), see doc to use other codecs
     fn sse_decode(deserializer: &mut flutter_rust_bridge::for_generated::SseDeserializer) -> Self {
@@ -308,6 +393,77 @@ impl SseDecode for crate::domain::models::PlanningPreferences {
     }
 }
 
+impl SseDecode for crate::domain::presets::PlatformPreset {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    fn sse_decode(deserializer: &mut flutter_rust_bridge::for_generated::SseDeserializer) -> Self {
+        let mut var_id = <crate::domain::presets::PresetId>::sse_decode(deserializer);
+        let mut var_targetMb = <u32>::sse_decode(deserializer);
+        let mut var_relaxedTargetMb = <u32>::sse_decode(deserializer);
+        let mut var_maxShortEdge = <u32>::sse_decode(deserializer);
+        let mut var_maxFps = <u32>::sse_decode(deserializer);
+        let mut var_bitrateCapBps = <u32>::sse_decode(deserializer);
+        let mut var_requireFaststart = <bool>::sse_decode(deserializer);
+        let mut var_verifiedOn = <String>::sse_decode(deserializer);
+        return crate::domain::presets::PlatformPreset {
+            id: var_id,
+            target_mb: var_targetMb,
+            relaxed_target_mb: var_relaxedTargetMb,
+            max_short_edge: var_maxShortEdge,
+            max_fps: var_maxFps,
+            bitrate_cap_bps: var_bitrateCapBps,
+            require_faststart: var_requireFaststart,
+            verified_on: var_verifiedOn,
+        };
+    }
+}
+
+impl SseDecode for crate::domain::presets::PresetId {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    fn sse_decode(deserializer: &mut flutter_rust_bridge::for_generated::SseDeserializer) -> Self {
+        let mut inner = <i32>::sse_decode(deserializer);
+        return match inner {
+            0 => crate::domain::presets::PresetId::Whatsapp,
+            1 => crate::domain::presets::PresetId::WhatsappHd,
+            2 => crate::domain::presets::PresetId::Discord,
+            3 => crate::domain::presets::PresetId::InstagramReels,
+            4 => crate::domain::presets::PresetId::TikTok,
+            5 => crate::domain::presets::PresetId::Facebook,
+            6 => crate::domain::presets::PresetId::X,
+            7 => crate::domain::presets::PresetId::YouTubeShorts,
+            8 => crate::domain::presets::PresetId::Email,
+            _ => unreachable!("Invalid variant for PresetId: {}", inner),
+        };
+    }
+}
+
+impl SseDecode for crate::domain::presets::PresetPlan {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    fn sse_decode(deserializer: &mut flutter_rust_bridge::for_generated::SseDeserializer) -> Self {
+        let mut var_tier = <crate::domain::presets::PresetTier>::sse_decode(deserializer);
+        let mut var_effectiveTargetMb = <u32>::sse_decode(deserializer);
+        let mut var_plan = <crate::domain::models::CalculationPlan>::sse_decode(deserializer);
+        return crate::domain::presets::PresetPlan {
+            tier: var_tier,
+            effective_target_mb: var_effectiveTargetMb,
+            plan: var_plan,
+        };
+    }
+}
+
+impl SseDecode for crate::domain::presets::PresetTier {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    fn sse_decode(deserializer: &mut flutter_rust_bridge::for_generated::SseDeserializer) -> Self {
+        let mut inner = <i32>::sse_decode(deserializer);
+        return match inner {
+            0 => crate::domain::presets::PresetTier::Exact,
+            1 => crate::domain::presets::PresetTier::ReducedQuality,
+            2 => crate::domain::presets::PresetTier::RelaxedSize,
+            3 => crate::domain::presets::PresetTier::Unsatisfiable,
+            _ => unreachable!("Invalid variant for PresetTier: {}", inner),
+        };
+    }
+}
+
 impl SseDecode for u32 {
     // Codec=Sse (Serialization based), see doc to use other codecs
     fn sse_decode(deserializer: &mut flutter_rust_bridge::for_generated::SseDeserializer) -> Self {
@@ -327,6 +483,11 @@ impl SseDecode for u8 {
     fn sse_decode(deserializer: &mut flutter_rust_bridge::for_generated::SseDeserializer) -> Self {
         deserializer.cursor.read_u8().unwrap()
     }
+}
+
+impl SseDecode for () {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    fn sse_decode(deserializer: &mut flutter_rust_bridge::for_generated::SseDeserializer) -> Self {}
 }
 
 fn pde_ffi_dispatcher_primary_impl(
@@ -350,7 +511,14 @@ fn pde_ffi_dispatcher_primary_impl(
             rust_vec_len,
             data_len,
         ),
-        3 => wire__crate__api__calculator__verify_attempt_impl(port, ptr, rust_vec_len, data_len),
+        3 => wire__crate__api__calculator__platform_presets_impl(port, ptr, rust_vec_len, data_len),
+        4 => wire__crate__api__calculator__resolve_platform_preset_impl(
+            port,
+            ptr,
+            rust_vec_len,
+            data_len,
+        ),
+        5 => wire__crate__api__calculator__verify_attempt_impl(port, ptr, rust_vec_len, data_len),
         _ => unreachable!(),
     }
 }
@@ -447,6 +615,106 @@ impl flutter_rust_bridge::IntoIntoDart<crate::domain::models::PlanningPreference
         self
     }
 }
+// Codec=Dco (DartCObject based), see doc to use other codecs
+impl flutter_rust_bridge::IntoDart for crate::domain::presets::PlatformPreset {
+    fn into_dart(self) -> flutter_rust_bridge::for_generated::DartAbi {
+        [
+            self.id.into_into_dart().into_dart(),
+            self.target_mb.into_into_dart().into_dart(),
+            self.relaxed_target_mb.into_into_dart().into_dart(),
+            self.max_short_edge.into_into_dart().into_dart(),
+            self.max_fps.into_into_dart().into_dart(),
+            self.bitrate_cap_bps.into_into_dart().into_dart(),
+            self.require_faststart.into_into_dart().into_dart(),
+            self.verified_on.into_into_dart().into_dart(),
+        ]
+        .into_dart()
+    }
+}
+impl flutter_rust_bridge::for_generated::IntoDartExceptPrimitive
+    for crate::domain::presets::PlatformPreset
+{
+}
+impl flutter_rust_bridge::IntoIntoDart<crate::domain::presets::PlatformPreset>
+    for crate::domain::presets::PlatformPreset
+{
+    fn into_into_dart(self) -> crate::domain::presets::PlatformPreset {
+        self
+    }
+}
+// Codec=Dco (DartCObject based), see doc to use other codecs
+impl flutter_rust_bridge::IntoDart for crate::domain::presets::PresetId {
+    fn into_dart(self) -> flutter_rust_bridge::for_generated::DartAbi {
+        match self {
+            Self::Whatsapp => 0.into_dart(),
+            Self::WhatsappHd => 1.into_dart(),
+            Self::Discord => 2.into_dart(),
+            Self::InstagramReels => 3.into_dart(),
+            Self::TikTok => 4.into_dart(),
+            Self::Facebook => 5.into_dart(),
+            Self::X => 6.into_dart(),
+            Self::YouTubeShorts => 7.into_dart(),
+            Self::Email => 8.into_dart(),
+            _ => unreachable!(),
+        }
+    }
+}
+impl flutter_rust_bridge::for_generated::IntoDartExceptPrimitive
+    for crate::domain::presets::PresetId
+{
+}
+impl flutter_rust_bridge::IntoIntoDart<crate::domain::presets::PresetId>
+    for crate::domain::presets::PresetId
+{
+    fn into_into_dart(self) -> crate::domain::presets::PresetId {
+        self
+    }
+}
+// Codec=Dco (DartCObject based), see doc to use other codecs
+impl flutter_rust_bridge::IntoDart for crate::domain::presets::PresetPlan {
+    fn into_dart(self) -> flutter_rust_bridge::for_generated::DartAbi {
+        [
+            self.tier.into_into_dart().into_dart(),
+            self.effective_target_mb.into_into_dart().into_dart(),
+            self.plan.into_into_dart().into_dart(),
+        ]
+        .into_dart()
+    }
+}
+impl flutter_rust_bridge::for_generated::IntoDartExceptPrimitive
+    for crate::domain::presets::PresetPlan
+{
+}
+impl flutter_rust_bridge::IntoIntoDart<crate::domain::presets::PresetPlan>
+    for crate::domain::presets::PresetPlan
+{
+    fn into_into_dart(self) -> crate::domain::presets::PresetPlan {
+        self
+    }
+}
+// Codec=Dco (DartCObject based), see doc to use other codecs
+impl flutter_rust_bridge::IntoDart for crate::domain::presets::PresetTier {
+    fn into_dart(self) -> flutter_rust_bridge::for_generated::DartAbi {
+        match self {
+            Self::Exact => 0.into_dart(),
+            Self::ReducedQuality => 1.into_dart(),
+            Self::RelaxedSize => 2.into_dart(),
+            Self::Unsatisfiable => 3.into_dart(),
+            _ => unreachable!(),
+        }
+    }
+}
+impl flutter_rust_bridge::for_generated::IntoDartExceptPrimitive
+    for crate::domain::presets::PresetTier
+{
+}
+impl flutter_rust_bridge::IntoIntoDart<crate::domain::presets::PresetTier>
+    for crate::domain::presets::PresetTier
+{
+    fn into_into_dart(self) -> crate::domain::presets::PresetTier {
+        self
+    }
+}
 
 impl SseEncode for String {
     // Codec=Sse (Serialization based), see doc to use other codecs
@@ -512,6 +780,16 @@ impl SseEncode for crate::domain::models::InputMetadata {
     }
 }
 
+impl SseEncode for Vec<crate::domain::presets::PlatformPreset> {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    fn sse_encode(self, serializer: &mut flutter_rust_bridge::for_generated::SseSerializer) {
+        <i32>::sse_encode(self.len() as _, serializer);
+        for item in self {
+            <crate::domain::presets::PlatformPreset>::sse_encode(item, serializer);
+        }
+    }
+}
+
 impl SseEncode for Vec<u8> {
     // Codec=Sse (Serialization based), see doc to use other codecs
     fn sse_encode(self, serializer: &mut flutter_rust_bridge::for_generated::SseSerializer) {
@@ -552,6 +830,70 @@ impl SseEncode for crate::domain::models::PlanningPreferences {
     }
 }
 
+impl SseEncode for crate::domain::presets::PlatformPreset {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    fn sse_encode(self, serializer: &mut flutter_rust_bridge::for_generated::SseSerializer) {
+        <crate::domain::presets::PresetId>::sse_encode(self.id, serializer);
+        <u32>::sse_encode(self.target_mb, serializer);
+        <u32>::sse_encode(self.relaxed_target_mb, serializer);
+        <u32>::sse_encode(self.max_short_edge, serializer);
+        <u32>::sse_encode(self.max_fps, serializer);
+        <u32>::sse_encode(self.bitrate_cap_bps, serializer);
+        <bool>::sse_encode(self.require_faststart, serializer);
+        <String>::sse_encode(self.verified_on, serializer);
+    }
+}
+
+impl SseEncode for crate::domain::presets::PresetId {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    fn sse_encode(self, serializer: &mut flutter_rust_bridge::for_generated::SseSerializer) {
+        <i32>::sse_encode(
+            match self {
+                crate::domain::presets::PresetId::Whatsapp => 0,
+                crate::domain::presets::PresetId::WhatsappHd => 1,
+                crate::domain::presets::PresetId::Discord => 2,
+                crate::domain::presets::PresetId::InstagramReels => 3,
+                crate::domain::presets::PresetId::TikTok => 4,
+                crate::domain::presets::PresetId::Facebook => 5,
+                crate::domain::presets::PresetId::X => 6,
+                crate::domain::presets::PresetId::YouTubeShorts => 7,
+                crate::domain::presets::PresetId::Email => 8,
+                _ => {
+                    unimplemented!("");
+                }
+            },
+            serializer,
+        );
+    }
+}
+
+impl SseEncode for crate::domain::presets::PresetPlan {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    fn sse_encode(self, serializer: &mut flutter_rust_bridge::for_generated::SseSerializer) {
+        <crate::domain::presets::PresetTier>::sse_encode(self.tier, serializer);
+        <u32>::sse_encode(self.effective_target_mb, serializer);
+        <crate::domain::models::CalculationPlan>::sse_encode(self.plan, serializer);
+    }
+}
+
+impl SseEncode for crate::domain::presets::PresetTier {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    fn sse_encode(self, serializer: &mut flutter_rust_bridge::for_generated::SseSerializer) {
+        <i32>::sse_encode(
+            match self {
+                crate::domain::presets::PresetTier::Exact => 0,
+                crate::domain::presets::PresetTier::ReducedQuality => 1,
+                crate::domain::presets::PresetTier::RelaxedSize => 2,
+                crate::domain::presets::PresetTier::Unsatisfiable => 3,
+                _ => {
+                    unimplemented!("");
+                }
+            },
+            serializer,
+        );
+    }
+}
+
 impl SseEncode for u32 {
     // Codec=Sse (Serialization based), see doc to use other codecs
     fn sse_encode(self, serializer: &mut flutter_rust_bridge::for_generated::SseSerializer) {
@@ -571,6 +913,11 @@ impl SseEncode for u8 {
     fn sse_encode(self, serializer: &mut flutter_rust_bridge::for_generated::SseSerializer) {
         serializer.cursor.write_u8(self).unwrap();
     }
+}
+
+impl SseEncode for () {
+    // Codec=Sse (Serialization based), see doc to use other codecs
+    fn sse_encode(self, serializer: &mut flutter_rust_bridge::for_generated::SseSerializer) {}
 }
 
 #[cfg(not(target_family = "wasm"))]

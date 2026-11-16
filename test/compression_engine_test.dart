@@ -7,6 +7,7 @@ import 'package:zumi/core/compression/domain/contracts/video_encoder.dart';
 import 'package:zumi/core/compression/domain/models/compression_plan.dart';
 import 'package:zumi/core/compression/domain/models/compression_preferences.dart';
 import 'package:zumi/core/compression/domain/models/encode_request.dart';
+import 'package:zumi/core/compression/domain/models/share_preset.dart';
 import 'package:zumi/core/compression/domain/models/video_metadata.dart';
 import 'package:zumi/core/compression/infrastructure/storage/file_artifact_store.dart';
 
@@ -37,6 +38,13 @@ class Planner implements CompressionPlanner {
     if (attempt == 2) throw StateError('E_TARGET_EXCEEDED');
     return 500000;
   }
+
+  @override
+  Future<List<SharePreset>> presets() => throw UnimplementedError();
+
+  @override
+  Future<SharePresetPlan> resolvePreset(VideoMetadata info, SharePresetId id) =>
+      throw UnimplementedError();
 }
 
 class Encoder implements VideoEncoder {

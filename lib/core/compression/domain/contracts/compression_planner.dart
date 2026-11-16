@@ -1,5 +1,6 @@
 import '../models/compression_plan.dart';
 import '../models/compression_preferences.dart';
+import '../models/share_preset.dart';
 import '../models/video_metadata.dart';
 
 abstract interface class CompressionPlanner {
@@ -16,4 +17,11 @@ abstract interface class CompressionPlanner {
     CompressionPlan plan,
     int attempt,
   );
+
+  /// The destination presets this build knows about.
+  Future<List<SharePreset>> presets();
+
+  /// Resolves [id] against [info], degrading to a larger size or a smaller
+  /// resolution when the preset as written cannot hold a usable bitrate.
+  Future<SharePresetPlan> resolvePreset(VideoMetadata info, SharePresetId id);
 }

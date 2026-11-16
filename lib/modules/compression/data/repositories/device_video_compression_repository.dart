@@ -22,7 +22,7 @@ final class DeviceVideoCompressionRepository
     : _picker = picker ?? ImagePicker(),
       _encoder = PlatformVideoEncoder(NativeMediaApi()) {
     _engine = CompressionEngine(
-      planner: RustCompressionPlanner(),
+      planner: _planner,
       encoder: _encoder,
       artifacts: const FileArtifactStore(),
     );
@@ -33,6 +33,7 @@ final class DeviceVideoCompressionRepository
   static const _preferencesKey = 'compression_preferences_v1';
   final ImagePicker _picker;
   final PlatformVideoEncoder _encoder;
+  final CompressionPlanner _planner = RustCompressionPlanner();
   late final CompressionEngine _engine;
   Future<void>? _rustReady;
 
@@ -100,7 +101,7 @@ final class DeviceVideoCompressionRepository
         ? 1.0
         : calibration!.recommendedFactor(calibrationProfile);
     if (learnedFactor < 0.99) {
-      final learnedPlan = await RustCompressionPlanner().plan(
+      final learnedPlan = await _planner.plan(
         video.metadata,
         targetMb * learnedFactor,
         preferences: preferences,
@@ -222,11 +223,22 @@ final class DeviceVideoCompressionRepository
   ) async {
     preferences.validate();
     await _ensureRust();
-    return RustCompressionPlanner().plan(
-      video.metadata,
-      targetMb,
-      preferences: preferences,
-    );
+    return _planner.plan(video.metadata, targetMb, preferences: preferences);
+  }
+
+  @override
+  Future<List<SharePreset>> presets() async {
+    await _ensureRust();
+    return _planner.presets();
+  }
+
+  @override
+  Future<SharePresetPlan> resolvePreset(
+    SelectedVideo video,
+    SharePresetId id,
+  ) async {
+    await _ensureRust();
+    return _planner.resolvePreset(video.metadata, id);
   }
 
   @override

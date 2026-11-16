@@ -6,7 +6,10 @@
 import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
 
 import '../domain/models.dart';
+import '../domain/presets.dart';
 import '../frb_generated.dart';
+
+// These functions are ignored because they are not marked as `pub`: `safety_margin`
 
 Future<CalculationPlan> calculateCompressionPlan({
   required InputMetadata info,
@@ -42,4 +45,24 @@ Future<int> verifyAttempt({
   durationSecs: durationSecs,
   plan: plan,
   attempt: attempt,
+);
+
+/// Every share-target preset, in picker order. The table lives in Rust so the
+/// platform limits have exactly one source of truth.
+Future<List<PlatformPreset>> platformPresets() =>
+    RustLib.instance.api.crateApiCalculatorPlatformPresets();
+
+/// Plan a share-target preset against a source.
+///
+/// A size problem is not an error: it comes back as a degraded
+/// [`PresetTier`](crate::domain::presets::PresetTier) so the UI can explain the
+/// trade. Only a malformed source or a bad margin returns `Err`.
+Future<PresetPlan> resolvePlatformPreset({
+  required InputMetadata info,
+  required PresetId presetId,
+  double? customKFactor,
+}) => RustLib.instance.api.crateApiCalculatorResolvePlatformPreset(
+  info: info,
+  presetId: presetId,
+  customKFactor: customKFactor,
 );
