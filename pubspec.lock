@@ -93,10 +93,10 @@ packages:
     dependency: "direct main"
     description:
       name: bloc_signals
-      sha256: "4bd777cf25ee195cc72935b44402ab73864185bcf96668ec5fe17dedf6ef14a7"
+      sha256: f572f7cbf1f9440393755c3eb81b21a1774fcc26c8baa73d926d561068188d50
       url: "https://pub.dev"
     source: hosted
-    version: "1.7.1"
+    version: "1.7.2"
   bloc_signals_flutter:
     dependency: "direct main"
     description:
@@ -109,10 +109,10 @@ packages:
     dependency: "direct main"
     description:
       name: bloc_signals_hydrate
-      sha256: "57ca6c947b930cd55bb0e821eaf66ab7e7e0eaa4d7777fe7c45e1803dd7d94e2"
+      sha256: bb3c1ca93367db3e5c4a5ac367b40fdb282eb812d094a64fcee808dc5bdd60d8
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.0"
+    version: "1.1.2"
   bloc_test:
     dependency: "direct dev"
     description:
@@ -546,10 +546,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_edge_ai_litertlm
-      sha256: acbfa36080e54baf729b15ebb34a74f00f4f1b2d43b61416d80ef82d6121ca3b
+      sha256: "6280bde1e4cbe61d8ee611ea1a3588dc1fb3d61b76bf89bc9f623f8b96b432d7"
       url: "https://pub.dev"
     source: hosted
-    version: "1.20.0"
+    version: "1.20.1"
   flutter_hooks:
     dependency: "direct main"
     description:
@@ -713,10 +713,10 @@ packages:
     dependency: "direct main"
     description:
       name: gal
-      sha256: "883aeeeb24662190b18ec588732d9e94fea4e5ca2af6ac26404c3843daae48c6"
+      sha256: "5bd6542d6a387b76b50a803ad87573f3f505baea7c7153054f6d8fac7fc46d98"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0"
+    version: "3.0.1"
   genai_primitives:
     dependency: transitive
     description:
@@ -817,10 +817,10 @@ packages:
     dependency: transitive
     description:
       name: image
-      sha256: "89ed75b2f8231fe676808c5564f9590d728024ded7ac782a7ed8474f1c95b72a"
+      sha256: bc13f61f0f5cb77936e78ae5dae3800f442718dac5d2bc4654f03c239230ed0c
       url: "https://pub.dev"
     source: hosted
-    version: "4.12.0"
+    version: "4.13.1"
   image_picker:
     dependency: "direct main"
     description:
