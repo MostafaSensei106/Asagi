@@ -48,6 +48,9 @@ esac
 CPU_FLAGS=()
 if [[ "$FFMPEG_ARCH" == "aarch64" || "$FFMPEG_ARCH" == "arm" ]]; then
   CPU_FLAGS+=(--enable-neon)
+elif [[ "$FFMPEG_ARCH" == "x86_64" ]]; then
+  # NDK builds do not guarantee NASM/YASM is installed on the host.
+  CPU_FLAGS+=(--disable-x86asm)
 fi
 
 CC="$TOOLCHAIN/clang$TOOL_SUFFIX"

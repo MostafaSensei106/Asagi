@@ -7,10 +7,9 @@
 use std::ffi::CString;
 
 use rsmpeg::{
-    avcodec::{AVCodec, AVCodecContext},
+    avcodec::AVCodecContext,
     avfilter::{AVFilter, AVFilterGraph, AVFilterInOut},
     avformat::AVFormatContextInput,
-    avutil::AVFrame,
     error::RsmpegError,
     ffi,
 };
@@ -63,7 +62,7 @@ pub fn decode_filter_to_sink(
     let mut input = AVFormatContextInput::open(&input_url, None, &mut format_options)
         .map_err(|error| format_error("E_FFMPEG_OPEN", error))?;
     let (stream_index, decoder_codec) = input
-        .find_best_stream(ffi::AVMediaType::AVMEDIA_TYPE_VIDEO)
+        .find_best_stream(ffi::AVMEDIA_TYPE_VIDEO)
         .map_err(|error| format_error("E_FFMPEG_STREAM", error))?
         .ok_or("E_VIDEO_STREAM_MISSING")?;
 
@@ -128,7 +127,7 @@ fn create_filter_graph(
 ) -> Result<AVFilterGraph, String> {
     let buffer = AVFilter::get_by_name(c"buffer").ok_or("E_FFMPEG_FILTER_MISSING")?;
     let buffer_sink = AVFilter::get_by_name(c"buffersink").ok_or("E_FFMPEG_FILTER_MISSING")?;
-    let mut graph = AVFilterGraph::new();
+    let graph = AVFilterGraph::new();
     let sar_num = if decoder.sample_aspect_ratio.num > 0 {
         decoder.sample_aspect_ratio.num
     } else {
@@ -180,6 +179,8 @@ fn create_filter_graph(
     graph
         .config()
         .map_err(|error| format_error("E_FFMPEG_FILTER_CONFIG", error))?;
+    drop(source);
+    drop(output);
     Ok(graph)
 }
 
@@ -190,16 +191,19 @@ fn drain_decoder(
     sink: &mut dyn RawFrameSink,
 ) -> Result<(), String> {
     loop {
-        let mut frame = match decoder.receive_frame() {
+        let frame = match decoder.receive_frame() {
             Ok(frame) => frame,
             Err(RsmpegError::DecoderDrainError | RsmpegError::DecoderFlushedError) => break,
             Err(error) => return Err(format_error("E_FFMPEG_DECODE", error)),
         };
-        frame.pts = frame.best_effort_timestamp;
-        let mut source = graph.get_filter(c"in").ok_or("E_FFMPEG_FILTER_MISSING")?;
-        source
-            .buffersrc_add_frame(Some(frame), Some(ffi::AV_BUFFERSRC_FLAG_KEEP_REF as i32))
-            .map_err(|error| format_error("E_FFMPEG_FILTER", error))?;
+        let mut frame = frame;
+        frame.set_pts(frame.best_effort_timestamp);
+        {
+            let mut source = graph.get_filter(c"in").ok_or("E_FFMPEG_FILTER_MISSING")?;
+            source
+                .buffersrc_add_frame(Some(frame), Some(ffi::AV_BUFFERSRC_FLAG_KEEP_REF as i32))
+                .map_err(|error| format_error("E_FFMPEG_FILTER", error))?;
+        }
         drain_filter(graph, layout, sink)?;
     }
     Ok(())

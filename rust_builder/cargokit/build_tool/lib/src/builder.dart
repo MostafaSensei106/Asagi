@@ -230,6 +230,63 @@ class RustBuilder {
       );
       final ndkPath = path.join(sdkPath, 'ndk', ndkVersion);
       final minSdk = math.max(target.androidMinSdkVersion!, minSdkVersion);
+      final hostTag = Platform.isMacOS
+          ? 'darwin-x86_64'
+          : Platform.isLinux
+              ? 'linux-x86_64'
+              : 'windows-x86_64';
+      final sysroot = path.join(
+        ndkPath,
+        'toolchains',
+        'llvm',
+        'prebuilt',
+        hostTag,
+        'sysroot',
+      );
+      final clangResourceRoot = Directory(
+        path.join(
+          ndkPath,
+          'toolchains',
+          'llvm',
+          'prebuilt',
+          hostTag,
+          'lib',
+          'clang',
+        ),
+      );
+      final clangVersions = await clangResourceRoot
+          .list()
+          .where(
+            (entry) =>
+                entry is Directory &&
+                File(path.join(entry.path, 'include', 'stddef.h')).existsSync(),
+          )
+          .toList();
+      if (clangVersions.isEmpty) {
+        throw BuildException(
+          'Android NDK clang resource headers were not found in '
+          '${clangResourceRoot.path}',
+        );
+      }
+      final clangResourceInclude = path.join(
+        clangVersions.first.path,
+        'include',
+      );
+      final clangResourceDir = clangVersions.first.path;
+      final clangLibraryDir = path.join(
+        ndkPath,
+        'toolchains',
+        'llvm',
+        'prebuilt',
+        hostTag,
+        'lib',
+      );
+      final clangTarget = switch (ffmpegAbi) {
+        'arm64-v8a' => 'aarch64-linux-android$minSdk',
+        'armeabi-v7a' => 'armv7a-linux-androideabi$minSdk',
+        'x86_64' => 'x86_64-linux-android$minSdk',
+        _ => throw StateError('Unsupported FFmpeg ABI: $ffmpegAbi'),
+      };
       final ffmpegCache = path.join(environment.targetTempDir, 'ffmpeg');
       final jniLibs = path.join(
         repositoryRoot,
@@ -260,6 +317,13 @@ class RustBuilder {
         'FFMPEG_INCLUDE_DIR': path.join(ffmpegInstall, 'include'),
         // rusty_ffmpeg links dynamically against the Cargokit-built shared libs.
         'FFMPEG_DLL_PATH': path.join(ffmpegInstall, 'lib'),
+        // bindgen otherwise picks the host glibc headers for Android targets.
+        'BINDGEN_EXTRA_CLANG_ARGS': '--target=$clangTarget --sysroot=$sysroot '
+            '-resource-dir=$clangResourceDir '
+            '-I$clangResourceInclude -I$sysroot/usr/include '
+            '-include stdint.h -include stddef.h',
+        // Use the NDK's libclang with its matching clang resource headers.
+        'LIBCLANG_PATH': clangLibraryDir,
       });
     }
     return buildEnvironment;
