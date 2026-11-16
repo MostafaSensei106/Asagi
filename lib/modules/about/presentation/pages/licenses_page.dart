@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/app_metadata.dart';
+import '../../../../core/extensions/extensions.dart';
 import '../../../../core/widgets/navigation/app_bar/side_page_app_bar_component.dart';
 
 const _sourceInfoAsset =

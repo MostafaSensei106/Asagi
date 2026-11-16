@@ -25,8 +25,7 @@ final class FakeBillingService implements BillingService {
   @override
   Stream<PurchaseReceiptPayload> get purchaseUpdates => _updates.stream;
 
-  Future<void> emitPurchase(PurchaseReceiptPayload receipt) =>
-      _updates.add(receipt);
+  void emitPurchase(PurchaseReceiptPayload receipt) => _updates.add(receipt);
 
   Future<void> dispose() => _updates.close();
 }

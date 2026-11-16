@@ -9,6 +9,8 @@ import '../../../core/native/rust/frb_generated.dart';
 import '../../../core/services/billing/billing_service.dart';
 import 'subscription_state.dart';
 
+export 'subscription_state.dart';
+
 const proMonthlyProductId = 'zumi_pro_monthly';
 
 @injectable
