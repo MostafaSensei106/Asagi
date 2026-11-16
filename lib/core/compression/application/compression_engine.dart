@@ -100,6 +100,7 @@ final class CompressionEngine {
                   .clamp(1, preferences.maxFrameRate)
                   .toDouble(),
               hdrMode: effectiveHdrMode,
+              isHdr: info.isHdr,
             ),
           );
         } finally {

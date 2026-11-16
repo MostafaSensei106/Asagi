@@ -128,6 +128,22 @@ class Media3VideoEncoder(
             }
         }
     }
+
+    /**
+     * The staged v1 format is NV12, while Media3 RawAssetLoader accepts GLES texture IDs.
+     * This entry point deliberately rejects until the YUV-to-texture producer and audio path
+     * are available; treating the staged file as a normal MediaItem would invoke a demuxer and
+     * silently fail or drop source audio.
+     */
+    override suspend fun encodeStagedFallback(
+        stagedPath: String,
+        request: EncodeConfiguration
+    ): Boolean = withContext(Dispatchers.Main) {
+        check(transformer == null && !preparing) { "E_BUSY" }
+        require(java.io.File(stagedPath).isFile) { "E_STAGED_FALLBACK_MISSING" }
+        throw IllegalStateException("E_STAGED_FALLBACK_GL_PIPELINE_UNAVAILABLE")
+    }
+
     override suspend fun pause() = withContext(Dispatchers.Main) {
         if (!paused && (preparing || transformer != null)) {
             paused = true

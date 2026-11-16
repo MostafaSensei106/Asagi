@@ -5,6 +5,7 @@ import android.media.MediaCodecList
 import android.media.MediaExtractor
 import android.media.MediaFormat
 import android.net.Uri
+import com.mostafa.sensei.zumi.FlutterError
 
 /** Verifies that the device can decode the tracks Media3 will transcode. */
 internal object SourceDecodeSupport {
@@ -27,7 +28,7 @@ internal object SourceDecodeSupport {
                     else -> continue
                 }
                 if (codecs.findDecoderForFormat(format) == null) {
-                    throw IllegalStateException(error)
+                    throw FlutterError(error)
                 }
             }
         } finally {

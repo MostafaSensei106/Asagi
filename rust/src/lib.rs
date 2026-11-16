@@ -7,6 +7,7 @@ mod frb_generated;
     any(target_arch = "arm", target_arch = "aarch64", target_arch = "x86_64")
 ))]
 pub mod infrastructure;
+pub mod staged_yuv;
 
 #[flutter_rust_bridge::frb(init)]
 pub fn init_app() {

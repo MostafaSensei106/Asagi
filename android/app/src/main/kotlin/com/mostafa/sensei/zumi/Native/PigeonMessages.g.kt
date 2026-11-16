@@ -404,6 +404,7 @@ interface NativeMediaApi {
   suspend fun pauseEncoding()
   suspend fun resumeEncoding()
   suspend fun startHardwareEncoding(request: NativeCompressRequest): Boolean
+  suspend fun compressStagedFallback(stagedPath: String, request: NativeCompressRequest): Boolean
 
   companion object {
     /** The codec used by NativeMediaApi. */
@@ -496,6 +497,26 @@ interface NativeMediaApi {
             CoroutineScope(Dispatchers.Main).launch {
               val wrapped: List<Any?> = try {
                 listOf(api.startHardwareEncoding(requestArg))
+              } catch (exception: Throwable) {
+                PigeonMessagesPigeonUtils.wrapError(exception)
+              }
+              reply.reply(wrapped)
+            }
+          }
+        } else {
+          channel.setMessageHandler(null)
+        }
+      }
+      run {
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.zumi.NativeMediaApi.compressStagedFallback$separatedMessageChannelSuffix", codec)
+        if (api != null) {
+          channel.setMessageHandler { message, reply ->
+            val args = message as List<Any?>
+            val stagedPathArg = args[0] as String
+            val requestArg = args[1] as NativeCompressRequest
+            CoroutineScope(Dispatchers.Main).launch {
+              val wrapped: List<Any?> = try {
+                listOf(api.compressStagedFallback(stagedPathArg, requestArg))
               } catch (exception: Throwable) {
                 PigeonMessagesPigeonUtils.wrapError(exception)
               }

@@ -11,6 +11,7 @@ import 'dart:convert';
 
 import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated_web.dart';
 
+import 'api.dart';
 import 'api/calculator.dart';
 import 'domain/models.dart';
 import 'domain/presets.dart';

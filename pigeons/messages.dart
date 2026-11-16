@@ -52,4 +52,7 @@ abstract class NativeMediaApi {
 
   @async
   bool startHardwareEncoding(NativeCompressRequest request);
+
+  @async
+  bool compressStagedFallback(String stagedPath, NativeCompressRequest request);
 }

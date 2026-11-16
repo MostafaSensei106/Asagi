@@ -4,7 +4,9 @@
 //! NV12 frame into the platform H.264 encoder. This module never encodes or
 //! muxes video with FFmpeg.
 
-use std::ffi::CString;
+use std::{ffi::CString, path::Path};
+
+use crate::staged_yuv::StagedYuvWriter;
 
 use rsmpeg::{
     avcodec::AVCodecContext,
@@ -101,6 +103,72 @@ pub fn decode_filter_to_sink(
     drain_decoder(&mut decoder, &mut graph, options.output_layout, sink)?;
     push_eof(&mut graph)?;
     drain_filter(&mut graph, options.output_layout, sink)
+}
+
+/// Decode and filter a source into a versioned, streaming NV12 staging file.
+///
+/// The format contains video only. Audio must be retained or decoded by the
+/// platform side from the original source; this function never drops or
+/// re-encodes audio silently.
+pub fn stage_video_to_file(
+    input_path: &str,
+    output_path: &Path,
+    options: DecodeFilterOptions,
+) -> Result<u64, String> {
+    if options.output_layout != RawFrameLayout::Nv12 {
+        return Err("E_STAGED_LAYOUT_UNSUPPORTED".into());
+    }
+    let mut sink = StagedFrameSink {
+        writer: Some(
+            StagedYuvWriter::create(
+                output_path,
+                options.output_width,
+                options.output_height,
+                options.max_fps,
+            )
+            .map_err(|error| format!("E_STAGED_FILE: {error}"))?,
+        ),
+        width: options.output_width,
+        height: options.output_height,
+    };
+    decode_filter_to_sink(input_path, options, &mut sink)?;
+    sink.writer
+        .take()
+        .expect("writer is present until decoding completes")
+        .finish()
+        .map_err(|error| format!("E_STAGED_FILE: {error}"))
+}
+
+struct StagedFrameSink {
+    writer: Option<StagedYuvWriter>,
+    width: u32,
+    height: u32,
+}
+
+impl RawFrameSink for StagedFrameSink {
+    fn push_frame(&mut self, frame: RawYuvFrame) -> Result<(), String> {
+        if frame.layout != RawFrameLayout::Nv12 {
+            return Err("E_STAGED_LAYOUT_UNSUPPORTED".into());
+        }
+        if frame.width != self.width || frame.height != self.height {
+            return Err("E_STAGED_DIMENSIONS_INVALID".into());
+        }
+        if frame.time_base_den <= 0 || frame.time_base_num <= 0 || frame.presentation_timestamp < 0
+        {
+            return Err("E_STAGED_TIMESTAMP_INVALID".into());
+        }
+        let timestamp_us = i128::from(frame.presentation_timestamp)
+            .checked_mul(i128::from(frame.time_base_num))
+            .and_then(|value| value.checked_mul(1_000_000))
+            .ok_or("E_STAGED_TIMESTAMP_INVALID")?
+            / i128::from(frame.time_base_den);
+        let timestamp_us = u64::try_from(timestamp_us).map_err(|_| "E_STAGED_TIMESTAMP_INVALID")?;
+        self.writer
+            .as_mut()
+            .expect("writer is present until decoding completes")
+            .push_frame(timestamp_us, &frame.bytes)
+            .map_err(|error| format!("E_STAGED_FILE: {error}"))
+    }
 }
 
 fn validate_options(options: DecodeFilterOptions) -> Result<(), String> {

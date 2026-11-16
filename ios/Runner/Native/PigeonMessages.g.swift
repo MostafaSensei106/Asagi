@@ -407,6 +407,7 @@ protocol NativeMediaApi {
   func pauseEncoding() async throws
   func resumeEncoding() async throws
   func startHardwareEncoding(request: NativeCompressRequest) async throws -> Bool
+  func compressStagedFallback(stagedPath: String, request: NativeCompressRequest) async throws -> Bool
 }
 
 /// Generated setup class from Pigeon to handle messages through the `binaryMessenger`.
@@ -493,6 +494,24 @@ class NativeMediaApiSetup {
       }
     } else {
       startHardwareEncodingChannel.setMessageHandler(nil)
+    }
+    let compressStagedFallbackChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.zumi.NativeMediaApi.compressStagedFallback\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
+    if let api = api {
+      compressStagedFallbackChannel.setMessageHandler { message, reply in
+        let args = message as! [Any?]
+        let stagedPathArg = args[0] as! String
+        let requestArg = args[1] as! NativeCompressRequest
+        Task { @MainActor in
+          do {
+            let result = try await api.compressStagedFallback(stagedPath: stagedPathArg, request: requestArg)
+            reply(wrapResult(result))
+          } catch {
+            reply(wrapError(error))
+          }
+        }
+      }
+    } else {
+      compressStagedFallbackChannel.setMessageHandler(nil)
     }
   }
 }

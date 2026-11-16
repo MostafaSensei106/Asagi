@@ -14,6 +14,7 @@ data class EncodeConfiguration(
 interface VideoMetadataReader { fun read(path: String): SourceMetadata }
 interface VideoEncodingBackend {
     suspend fun encode(request: EncodeConfiguration): Boolean
+    suspend fun encodeStagedFallback(stagedPath: String, request: EncodeConfiguration): Boolean
     suspend fun pause()
     suspend fun resume()
     suspend fun cancel()

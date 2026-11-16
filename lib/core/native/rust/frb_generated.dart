@@ -8,6 +8,7 @@ import 'dart:convert';
 
 import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
 
+import 'api.dart';
 import 'api/calculator.dart';
 import 'domain/models.dart';
 import 'domain/presets.dart';
@@ -68,7 +69,7 @@ class RustLib extends BaseEntrypoint<RustLibApi, RustLibApiImpl, RustLibWire> {
   String get codegenVersion => '2.13.0';
 
   @override
-  int get rustContentHash => -1670454708;
+  int get rustContentHash => -1626523300;
 
   static const kDefaultExternalLibraryLoaderConfig =
       ExternalLibraryLoaderConfig(
@@ -98,6 +99,15 @@ abstract class RustLibApi extends BaseApi {
     required InputMetadata info,
     required PresetId presetId,
     double? customKFactor,
+  });
+
+  Future<BigInt> crateApiStageFallbackVideo({
+    required String inputPath,
+    required String stagedPath,
+    required int outputWidth,
+    required int outputHeight,
+    required int maxFps,
+    required bool toneMapHdr,
   });
 
   Future<int> crateApiCalculatorVerifyAttempt({
@@ -258,6 +268,62 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       );
 
   @override
+  Future<BigInt> crateApiStageFallbackVideo({
+    required String inputPath,
+    required String stagedPath,
+    required int outputWidth,
+    required int outputHeight,
+    required int maxFps,
+    required bool toneMapHdr,
+  }) {
+    return handler.executeNormal(
+      NormalTask(
+        callFfi: (port_) {
+          final serializer = SseSerializer(generalizedFrbRustBinding);
+          sse_encode_String(inputPath, serializer);
+          sse_encode_String(stagedPath, serializer);
+          sse_encode_u_32(outputWidth, serializer);
+          sse_encode_u_32(outputHeight, serializer);
+          sse_encode_u_32(maxFps, serializer);
+          sse_encode_bool(toneMapHdr, serializer);
+          pdeCallFfi(
+            generalizedFrbRustBinding,
+            serializer,
+            funcId: 5,
+            port: port_,
+          );
+        },
+        codec: SseCodec(
+          decodeSuccessData: sse_decode_u_64,
+          decodeErrorData: sse_decode_String,
+        ),
+        constMeta: kCrateApiStageFallbackVideoConstMeta,
+        argValues: [
+          inputPath,
+          stagedPath,
+          outputWidth,
+          outputHeight,
+          maxFps,
+          toneMapHdr,
+        ],
+        apiImpl: this,
+      ),
+    );
+  }
+
+  TaskConstMeta get kCrateApiStageFallbackVideoConstMeta => const TaskConstMeta(
+    debugName: 'stage_fallback_video',
+    argNames: [
+      'inputPath',
+      'stagedPath',
+      'outputWidth',
+      'outputHeight',
+      'maxFps',
+      'toneMapHdr',
+    ],
+  );
+
+  @override
   Future<int> crateApiCalculatorVerifyAttempt({
     required BigInt actualBytes,
     required double durationSecs,
@@ -275,7 +341,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           pdeCallFfi(
             generalizedFrbRustBinding,
             serializer,
-            funcId: 5,
+            funcId: 6,
             port: port_,
           );
         },

@@ -49,6 +49,18 @@ class NativeVideoEngine private constructor(
             withContext(Dispatchers.Main) { MediaProcessingService.stop(context) }
         }
     }
+    override suspend fun compressStagedFallback(
+        stagedPath: String,
+        request: NativeCompressRequest
+    ): Boolean {
+        val configuration = EncodeConfiguration(
+            requireNotNull(request.inputPath), requireNotNull(request.outputPath),
+            requireNotNull(request.targetVideoBitrateBps), requireNotNull(request.targetAudioBitrateBps),
+            requireNotNull(request.targetWidth), requireNotNull(request.targetHeight), request.frameRate ?: 30.0,
+            if (request.hdrMode == NativeHdrMode.PRESERVE) HdrMode.PRESERVE else HdrMode.TONE_MAP_TO_SDR,
+        )
+        return backend.encodeStagedFallback(stagedPath, configuration)
+    }
     override suspend fun pauseEncoding() = backend.pause()
     override suspend fun resumeEncoding() = backend.resume()
     override suspend fun cancelEncoding() = backend.cancel()

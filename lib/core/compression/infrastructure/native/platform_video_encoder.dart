@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/services.dart';
 
 import '../../../native/pigeon_messages.g.dart' as wire;
+import '../../../native/rust/api.dart' as rust;
 import '../../domain/contracts/video_encoder.dart';
 import '../../domain/models/encode_request.dart';
 import '../../domain/models/video_metadata.dart';
@@ -39,21 +42,39 @@ final class PlatformVideoEncoder
   @override
   Future<void> encode(EncodeRequest request) async {
     final p = request.plan;
-    final success = await api.startHardwareEncoding(
-      wire.NativeCompressRequest(
-        inputPath: request.inputPath,
-        outputPath: request.outputPath,
-        targetVideoBitrateBps: p.targetVideoBitrateBps,
-        targetAudioBitrateBps: p.targetAudioBitrateBps,
-        targetWidth: p.targetWidth,
-        targetHeight: p.targetHeight,
-        frameRate: request.frameRate,
-        hdrMode: switch (request.hdrMode) {
-          HdrMode.preserve => wire.NativeHdrMode.preserve,
-          HdrMode.toneMapToSdr => wire.NativeHdrMode.toneMapToSdr,
-        },
-      ),
+    final nativeRequest = wire.NativeCompressRequest(
+      inputPath: request.inputPath,
+      outputPath: request.outputPath,
+      targetVideoBitrateBps: p.targetVideoBitrateBps,
+      targetAudioBitrateBps: p.targetAudioBitrateBps,
+      targetWidth: p.targetWidth,
+      targetHeight: p.targetHeight,
+      frameRate: request.frameRate,
+      hdrMode: switch (request.hdrMode) {
+        HdrMode.preserve => wire.NativeHdrMode.preserve,
+        HdrMode.toneMapToSdr => wire.NativeHdrMode.toneMapToSdr,
+      },
     );
+    late final bool success;
+    try {
+      success = await api.startHardwareEncoding(nativeRequest);
+    } on PlatformException catch (error) {
+      if (!Platform.isAndroid ||
+          error.code != 'E_VIDEO_DECODER_UNSUPPORTED' ||
+          request.isHdr) {
+        rethrow;
+      }
+      final stagedPath = '${request.outputPath}.fallback.zf';
+      await rust.stageFallbackVideo(
+        inputPath: request.inputPath,
+        stagedPath: stagedPath,
+        outputWidth: p.targetWidth,
+        outputHeight: p.targetHeight,
+        maxFps: request.frameRate.round(),
+        toneMapHdr: false,
+      );
+      success = await api.compressStagedFallback(stagedPath, nativeRequest);
+    }
     if (!success) throw StateError('E_ENCODING');
   }
 
