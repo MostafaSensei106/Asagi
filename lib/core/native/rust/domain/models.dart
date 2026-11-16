@@ -19,6 +19,7 @@ class CalculationPlan {
     required this.isInfeasible,
     this.warningMessage,
   });
+
   final int targetVideoBitrateBps;
   final int targetAudioBitrateBps;
   final int targetWidth;
@@ -66,7 +67,9 @@ class InputMetadata {
     required this.bitrateBps,
     required this.fileSizeBytes,
     required this.hasAudio,
+    required this.pixelAspectRatio,
   });
+
   final double durationSecs;
   final int width;
   final int height;
@@ -74,6 +77,10 @@ class InputMetadata {
   final int bitrateBps;
   final BigInt fileSizeBytes;
   final bool hasAudio;
+
+  /// Sample aspect ratio: horizontal stretch applied to non-square pixels.
+  /// `1.0` means square pixels, so the storage size is also the display size.
+  final double pixelAspectRatio;
 
   @override
   int get hashCode =>
@@ -83,7 +90,8 @@ class InputMetadata {
       rotation.hashCode ^
       bitrateBps.hashCode ^
       fileSizeBytes.hashCode ^
-      hasAudio.hashCode;
+      hasAudio.hashCode ^
+      pixelAspectRatio.hashCode;
 
   @override
   bool operator ==(Object other) =>
@@ -96,7 +104,8 @@ class InputMetadata {
           rotation == other.rotation &&
           bitrateBps == other.bitrateBps &&
           fileSizeBytes == other.fileSizeBytes &&
-          hasAudio == other.hasAudio;
+          hasAudio == other.hasAudio &&
+          pixelAspectRatio == other.pixelAspectRatio;
 }
 
 class PlanningPreferences {

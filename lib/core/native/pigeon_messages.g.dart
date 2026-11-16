@@ -10,9 +10,9 @@ import 'package:flutter/services.dart';
 import 'package:meta/meta.dart' show immutable, protected, visibleForTesting;
 
 Object? _extractReplyValueOrThrow(
-  List<Object?>? replyList,
-  String channelName, {
-  required bool isNullValid,
+    List<Object?>? replyList,
+    String channelName, {
+    required bool isNullValid,
 }) {
   if (replyList == null) {
     throw PlatformException(
@@ -46,9 +46,8 @@ bool _deepEquals(Object? a, Object? b) {
   }
   if (a is List && b is List) {
     return a.length == b.length &&
-        a.indexed.every(
-          ((int, dynamic) item) => _deepEquals(item.$2, b[item.$1]),
-        );
+        a.indexed
+            .every(((int, dynamic) item) => _deepEquals(item.$2, b[item.$1]));
   }
   if (a is Map && b is Map) {
     if (a.length != b.length) {
@@ -97,7 +96,11 @@ int _deepHash(Object? value) {
   return value.hashCode;
 }
 
-enum NativeHdrMode { preserve, toneMapToSdr }
+
+enum NativeHdrMode {
+  preserve,
+  toneMapToSdr;
+}
 
 class NativeVideoMetadata {
   NativeVideoMetadata({
@@ -112,6 +115,7 @@ class NativeVideoMetadata {
     this.fileSizeBytes,
     this.isHdr,
     this.colorTransfer,
+    this.pixelAspectRatio,
   });
 
   String? path;
@@ -136,6 +140,8 @@ class NativeVideoMetadata {
 
   String? colorTransfer;
 
+  double? pixelAspectRatio;
+
   List<Object?> _toList() {
     return <Object?>[
       path,
@@ -149,12 +155,12 @@ class NativeVideoMetadata {
       fileSizeBytes,
       isHdr,
       colorTransfer,
+      pixelAspectRatio,
     ];
   }
 
   Object encode() {
-    return _toList();
-  }
+    return _toList();  }
 
   static NativeVideoMetadata decode(Object result) {
     result as List<Object?>;
@@ -170,6 +176,7 @@ class NativeVideoMetadata {
       fileSizeBytes: result[8] as int?,
       isHdr: result[9] as bool?,
       colorTransfer: result[10] as String?,
+      pixelAspectRatio: result[11] as double?,
     );
   }
 
@@ -182,17 +189,7 @@ class NativeVideoMetadata {
     if (identical(this, other)) {
       return true;
     }
-    return _deepEquals(path, other.path) &&
-        _deepEquals(durationSeconds, other.durationSeconds) &&
-        _deepEquals(width, other.width) &&
-        _deepEquals(height, other.height) &&
-        _deepEquals(rotation, other.rotation) &&
-        _deepEquals(bitrateBps, other.bitrateBps) &&
-        _deepEquals(frameRate, other.frameRate) &&
-        _deepEquals(hasAudio, other.hasAudio) &&
-        _deepEquals(fileSizeBytes, other.fileSizeBytes) &&
-        _deepEquals(isHdr, other.isHdr) &&
-        _deepEquals(colorTransfer, other.colorTransfer);
+    return _deepEquals(path, other.path) && _deepEquals(durationSeconds, other.durationSeconds) && _deepEquals(width, other.width) && _deepEquals(height, other.height) && _deepEquals(rotation, other.rotation) && _deepEquals(bitrateBps, other.bitrateBps) && _deepEquals(frameRate, other.frameRate) && _deepEquals(hasAudio, other.hasAudio) && _deepEquals(fileSizeBytes, other.fileSizeBytes) && _deepEquals(isHdr, other.isHdr) && _deepEquals(colorTransfer, other.colorTransfer) && _deepEquals(pixelAspectRatio, other.pixelAspectRatio);
   }
 
   @override
@@ -201,7 +198,7 @@ class NativeVideoMetadata {
 
   @override
   String toString() {
-    return 'NativeVideoMetadata(path: $path, durationSeconds: $durationSeconds, width: $width, height: $height, rotation: $rotation, bitrateBps: $bitrateBps, frameRate: $frameRate, hasAudio: $hasAudio, fileSizeBytes: $fileSizeBytes, isHdr: $isHdr, colorTransfer: $colorTransfer)';
+    return 'NativeVideoMetadata(path: $path, durationSeconds: $durationSeconds, width: $width, height: $height, rotation: $rotation, bitrateBps: $bitrateBps, frameRate: $frameRate, hasAudio: $hasAudio, fileSizeBytes: $fileSizeBytes, isHdr: $isHdr, colorTransfer: $colorTransfer, pixelAspectRatio: $pixelAspectRatio)';
   }
 }
 
@@ -247,8 +244,7 @@ class NativeCompressRequest {
   }
 
   Object encode() {
-    return _toList();
-  }
+    return _toList();  }
 
   static NativeCompressRequest decode(Object result) {
     result as List<Object?>;
@@ -273,14 +269,7 @@ class NativeCompressRequest {
     if (identical(this, other)) {
       return true;
     }
-    return _deepEquals(inputPath, other.inputPath) &&
-        _deepEquals(outputPath, other.outputPath) &&
-        _deepEquals(targetVideoBitrateBps, other.targetVideoBitrateBps) &&
-        _deepEquals(targetAudioBitrateBps, other.targetAudioBitrateBps) &&
-        _deepEquals(targetWidth, other.targetWidth) &&
-        _deepEquals(targetHeight, other.targetHeight) &&
-        _deepEquals(frameRate, other.frameRate) &&
-        _deepEquals(hdrMode, other.hdrMode);
+    return _deepEquals(inputPath, other.inputPath) && _deepEquals(outputPath, other.outputPath) && _deepEquals(targetVideoBitrateBps, other.targetVideoBitrateBps) && _deepEquals(targetAudioBitrateBps, other.targetAudioBitrateBps) && _deepEquals(targetWidth, other.targetWidth) && _deepEquals(targetHeight, other.targetHeight) && _deepEquals(frameRate, other.frameRate) && _deepEquals(hdrMode, other.hdrMode);
   }
 
   @override
@@ -293,6 +282,7 @@ class NativeCompressRequest {
   }
 }
 
+
 class _PigeonCodec extends StandardMessageCodec {
   const _PigeonCodec();
   @override
@@ -300,13 +290,13 @@ class _PigeonCodec extends StandardMessageCodec {
     if (value is int) {
       buffer.putUint8(4);
       buffer.putInt64(value);
-    } else if (value is NativeHdrMode) {
+    }    else if (value is NativeHdrMode) {
       buffer.putUint8(129);
       writeValue(buffer, value.index);
-    } else if (value is NativeVideoMetadata) {
+    }    else if (value is NativeVideoMetadata) {
       buffer.putUint8(130);
       writeValue(buffer, value.encode());
-    } else if (value is NativeCompressRequest) {
+    }    else if (value is NativeCompressRequest) {
       buffer.putUint8(131);
       writeValue(buffer, value.encode());
     } else {
@@ -335,41 +325,38 @@ class NativeMediaApi {
   /// available for dependency injection. If it is left null, the default
   /// BinaryMessenger will be used which routes to the host platform.
   NativeMediaApi({
-    BinaryMessenger? binaryMessenger,
-    String messageChannelSuffix = '',
-  }) : pigeonVar_binaryMessenger = binaryMessenger,
-       pigeonVar_messageChannelSuffix = messageChannelSuffix.isNotEmpty
-           ? '.$messageChannelSuffix'
-           : '';
+      BinaryMessenger? binaryMessenger, 
+      String messageChannelSuffix = '', 
+      })
+      : pigeonVar_binaryMessenger = binaryMessenger,
+        pigeonVar_messageChannelSuffix = messageChannelSuffix.isNotEmpty ? '.$messageChannelSuffix' : '';
 
   final BinaryMessenger? pigeonVar_binaryMessenger;
   static const MessageCodec<Object?> pigeonChannelCodec = _PigeonCodec();
 
   final String pigeonVar_messageChannelSuffix;
 
+
   Future<NativeVideoMetadata> extractVideoMetadata(String inputPath) async {
-    final pigeonVar_channelName =
-        'dev.flutter.pigeon.zumi.NativeMediaApi.extractVideoMetadata$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName = 'dev.flutter.pigeon.zumi.NativeMediaApi.extractVideoMetadata$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
       binaryMessenger: pigeonVar_binaryMessenger,
     );
-    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(
-      <Object?>[inputPath],
-    );
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(<Object?>[inputPath]);
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     final Object? pigeonVar_replyValue = _extractReplyValueOrThrow(
-      pigeonVar_replyList,
-      pigeonVar_channelName,
-      isNullValid: false,
-    );
+        pigeonVar_replyList,
+        pigeonVar_channelName,
+        isNullValid: false,
+    )
+    ;
     return pigeonVar_replyValue! as NativeVideoMetadata;
   }
 
   Future<void> cancelEncoding() async {
-    final pigeonVar_channelName =
-        'dev.flutter.pigeon.zumi.NativeMediaApi.cancelEncoding$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName = 'dev.flutter.pigeon.zumi.NativeMediaApi.cancelEncoding$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -378,15 +365,15 @@ class NativeMediaApi {
     final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(null);
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     _extractReplyValueOrThrow(
-      pigeonVar_replyList,
-      pigeonVar_channelName,
-      isNullValid: true,
-    );
+        pigeonVar_replyList,
+        pigeonVar_channelName,
+        isNullValid: true,
+    )
+    ;
   }
 
   Future<void> pauseEncoding() async {
-    final pigeonVar_channelName =
-        'dev.flutter.pigeon.zumi.NativeMediaApi.pauseEncoding$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName = 'dev.flutter.pigeon.zumi.NativeMediaApi.pauseEncoding$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -395,15 +382,15 @@ class NativeMediaApi {
     final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(null);
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     _extractReplyValueOrThrow(
-      pigeonVar_replyList,
-      pigeonVar_channelName,
-      isNullValid: true,
-    );
+        pigeonVar_replyList,
+        pigeonVar_channelName,
+        isNullValid: true,
+    )
+    ;
   }
 
   Future<void> resumeEncoding() async {
-    final pigeonVar_channelName =
-        'dev.flutter.pigeon.zumi.NativeMediaApi.resumeEncoding$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName = 'dev.flutter.pigeon.zumi.NativeMediaApi.resumeEncoding$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -412,29 +399,28 @@ class NativeMediaApi {
     final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(null);
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     _extractReplyValueOrThrow(
-      pigeonVar_replyList,
-      pigeonVar_channelName,
-      isNullValid: true,
-    );
+        pigeonVar_replyList,
+        pigeonVar_channelName,
+        isNullValid: true,
+    )
+    ;
   }
 
   Future<bool> startHardwareEncoding(NativeCompressRequest request) async {
-    final pigeonVar_channelName =
-        'dev.flutter.pigeon.zumi.NativeMediaApi.startHardwareEncoding$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName = 'dev.flutter.pigeon.zumi.NativeMediaApi.startHardwareEncoding$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
       binaryMessenger: pigeonVar_binaryMessenger,
     );
-    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(
-      <Object?>[request],
-    );
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(<Object?>[request]);
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     final Object? pigeonVar_replyValue = _extractReplyValueOrThrow(
-      pigeonVar_replyList,
-      pigeonVar_channelName,
-      isNullValid: false,
-    );
+        pigeonVar_replyList,
+        pigeonVar_channelName,
+        isNullValid: false,
+    )
+    ;
     return pigeonVar_replyValue! as bool;
   }
 }

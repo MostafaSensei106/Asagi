@@ -11,7 +11,6 @@ anyhow = "1.0.104"
 flutter_rust_bridge = "=2.13.0"
 serde = { version = "1.0.229", features = ["derive"] }
 serde_json = "1.0.154"
-tempfile = "3.27.0"
 thiserror = "2.0.21"
 tracing = "0.1.44"
 

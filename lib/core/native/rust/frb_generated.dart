@@ -17,6 +17,7 @@ import 'frb_generated.io.dart'
 /// Main entrypoint of the Rust API
 class RustLib extends BaseEntrypoint<RustLibApi, RustLibApiImpl, RustLibWire> {
   RustLib._();
+
   @internal
   static final instance = RustLib._();
 
@@ -299,8 +300,8 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   InputMetadata dco_decode_input_metadata(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     final arr = raw as List<dynamic>;
-    if (arr.length != 7)
-      throw Exception('unexpected arr length: expect 7 but see ${arr.length}');
+    if (arr.length != 8)
+      throw Exception('unexpected arr length: expect 8 but see ${arr.length}');
     return InputMetadata(
       durationSecs: dco_decode_f_64(arr[0]),
       width: dco_decode_u_32(arr[1]),
@@ -309,6 +310,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       bitrateBps: dco_decode_u_32(arr[4]),
       fileSizeBytes: dco_decode_u_64(arr[5]),
       hasAudio: dco_decode_bool(arr[6]),
+      pixelAspectRatio: dco_decode_f_64(arr[7]),
     );
   }
 
@@ -458,6 +460,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
     final var_bitrateBps = sse_decode_u_32(deserializer);
     final var_fileSizeBytes = sse_decode_u_64(deserializer);
     final var_hasAudio = sse_decode_bool(deserializer);
+    final var_pixelAspectRatio = sse_decode_f_64(deserializer);
     return InputMetadata(
       durationSecs: var_durationSecs,
       width: var_width,
@@ -466,6 +469,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       bitrateBps: var_bitrateBps,
       fileSizeBytes: var_fileSizeBytes,
       hasAudio: var_hasAudio,
+      pixelAspectRatio: var_pixelAspectRatio,
     );
   }
 
@@ -623,6 +627,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
     sse_encode_u_32(self.bitrateBps, serializer);
     sse_encode_u_64(self.fileSizeBytes, serializer);
     sse_encode_bool(self.hasAudio, serializer);
+    sse_encode_f_64(self.pixelAspectRatio, serializer);
   }
 
   @protected

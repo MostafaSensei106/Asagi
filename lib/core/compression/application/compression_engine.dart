@@ -43,9 +43,7 @@ final class CompressionEngine {
     CompressionWorkspace? job;
     try {
       final info = await encoder.inspect(source);
-      final sourceShortEdge = info.width < info.height
-          ? info.width
-          : info.height;
+      final sourceShortEdge = info.displayShortEdge;
       var plan = await planner.plan(info, targetMb, preferences: preferences);
       await _control.checkpoint();
       final requiresUserTransform =

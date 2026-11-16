@@ -27,7 +27,7 @@ class NativeVideoEngine private constructor(
         NativeVideoMetadata(path = inputPath, durationSeconds = m.durationSeconds,
             width = m.width, height = m.height, rotation = m.rotation, bitrateBps = m.bitrateBps,
             frameRate = m.frameRate, hasAudio = m.hasAudio, fileSizeBytes = m.fileSizeBytes,
-            isHdr = m.isHdr, colorTransfer = m.colorTransfer)
+            isHdr = m.isHdr, colorTransfer = m.colorTransfer, pixelAspectRatio = m.pixelAspectRatio)
     }
     override suspend fun startHardwareEncoding(request: NativeCompressRequest): Boolean {
         val context = appContext

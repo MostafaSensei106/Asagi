@@ -26,7 +26,7 @@ final class NativeVideoEngine: NSObject, NativeMediaApi, FlutterStreamHandler {
     return NativeVideoMetadata(path: inputPath, durationSeconds: m.durationSeconds,
       width: m.width, height: m.height, rotation: m.rotation, bitrateBps: m.bitrateBps,
       frameRate: m.frameRate, hasAudio: m.hasAudio, fileSizeBytes: m.fileSizeBytes,
-      isHdr: m.isHdr, colorTransfer: m.colorTransfer)
+      isHdr: m.isHdr, colorTransfer: m.colorTransfer, pixelAspectRatio: m.pixelAspectRatio)
   }
   func startHardwareEncoding(request: NativeCompressRequest) async throws -> Bool {
     guard let source = request.inputPath, let output = request.outputPath,

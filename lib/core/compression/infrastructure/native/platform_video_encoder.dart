@@ -27,8 +27,14 @@ final class PlatformVideoEncoder
       frameRate: m.frameRate ?? 30,
       isHdr: m.isHdr ?? false,
       colorTransfer: m.colorTransfer ?? 'unknown',
+      pixelAspectRatio: _sanitizeAspectRatio(m.pixelAspectRatio),
     );
   }
+
+  /// A malformed container must not poison the planner, which rejects
+  /// non-finite or non-positive aspect ratios outright.
+  static double _sanitizeAspectRatio(double? value) =>
+      value != null && value.isFinite && value > 0 ? value : 1.0;
 
   @override
   Future<void> encode(EncodeRequest request) async {

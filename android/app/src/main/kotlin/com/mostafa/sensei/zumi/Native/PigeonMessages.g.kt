@@ -223,7 +223,8 @@ data class NativeVideoMetadata (
   val hasAudio: Boolean? = null,
   val fileSizeBytes: Long? = null,
   val isHdr: Boolean? = null,
-  val colorTransfer: String? = null
+  val colorTransfer: String? = null,
+  val pixelAspectRatio: Double? = null
 )
  {
   companion object {
@@ -239,7 +240,8 @@ data class NativeVideoMetadata (
       val fileSizeBytes = pigeonVar_list[8] as Long?
       val isHdr = pigeonVar_list[9] as Boolean?
       val colorTransfer = pigeonVar_list[10] as String?
-      return NativeVideoMetadata(path, durationSeconds, width, height, rotation, bitrateBps, frameRate, hasAudio, fileSizeBytes, isHdr, colorTransfer)
+      val pixelAspectRatio = pigeonVar_list[11] as Double?
+      return NativeVideoMetadata(path, durationSeconds, width, height, rotation, bitrateBps, frameRate, hasAudio, fileSizeBytes, isHdr, colorTransfer, pixelAspectRatio)
     }
   }
   fun toList(): List<Any?> {
@@ -255,6 +257,7 @@ data class NativeVideoMetadata (
       fileSizeBytes,
       isHdr,
       colorTransfer,
+      pixelAspectRatio,
     )
   }
   override fun equals(other: Any?): Boolean {
@@ -265,7 +268,7 @@ data class NativeVideoMetadata (
       return true
     }
     val other = other as NativeVideoMetadata
-    return PigeonMessagesPigeonUtils.deepEquals(this.path, other.path) && PigeonMessagesPigeonUtils.deepEquals(this.durationSeconds, other.durationSeconds) && PigeonMessagesPigeonUtils.deepEquals(this.width, other.width) && PigeonMessagesPigeonUtils.deepEquals(this.height, other.height) && PigeonMessagesPigeonUtils.deepEquals(this.rotation, other.rotation) && PigeonMessagesPigeonUtils.deepEquals(this.bitrateBps, other.bitrateBps) && PigeonMessagesPigeonUtils.deepEquals(this.frameRate, other.frameRate) && PigeonMessagesPigeonUtils.deepEquals(this.hasAudio, other.hasAudio) && PigeonMessagesPigeonUtils.deepEquals(this.fileSizeBytes, other.fileSizeBytes) && PigeonMessagesPigeonUtils.deepEquals(this.isHdr, other.isHdr) && PigeonMessagesPigeonUtils.deepEquals(this.colorTransfer, other.colorTransfer)
+    return PigeonMessagesPigeonUtils.deepEquals(this.path, other.path) && PigeonMessagesPigeonUtils.deepEquals(this.durationSeconds, other.durationSeconds) && PigeonMessagesPigeonUtils.deepEquals(this.width, other.width) && PigeonMessagesPigeonUtils.deepEquals(this.height, other.height) && PigeonMessagesPigeonUtils.deepEquals(this.rotation, other.rotation) && PigeonMessagesPigeonUtils.deepEquals(this.bitrateBps, other.bitrateBps) && PigeonMessagesPigeonUtils.deepEquals(this.frameRate, other.frameRate) && PigeonMessagesPigeonUtils.deepEquals(this.hasAudio, other.hasAudio) && PigeonMessagesPigeonUtils.deepEquals(this.fileSizeBytes, other.fileSizeBytes) && PigeonMessagesPigeonUtils.deepEquals(this.isHdr, other.isHdr) && PigeonMessagesPigeonUtils.deepEquals(this.colorTransfer, other.colorTransfer) && PigeonMessagesPigeonUtils.deepEquals(this.pixelAspectRatio, other.pixelAspectRatio)
   }
 
   override fun hashCode(): Int {
@@ -281,10 +284,11 @@ data class NativeVideoMetadata (
     result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.fileSizeBytes)
     result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.isHdr)
     result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.colorTransfer)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.pixelAspectRatio)
     return result
   }
   override fun toString(): String {
-    return "NativeVideoMetadata(path=$path, durationSeconds=$durationSeconds, width=$width, height=$height, rotation=$rotation, bitrateBps=$bitrateBps, frameRate=$frameRate, hasAudio=$hasAudio, fileSizeBytes=$fileSizeBytes, isHdr=$isHdr, colorTransfer=$colorTransfer)"
+    return "NativeVideoMetadata(path=$path, durationSeconds=$durationSeconds, width=$width, height=$height, rotation=$rotation, bitrateBps=$bitrateBps, frameRate=$frameRate, hasAudio=$hasAudio, fileSizeBytes=$fileSizeBytes, isHdr=$isHdr, colorTransfer=$colorTransfer, pixelAspectRatio=$pixelAspectRatio)"
   }
 }
 

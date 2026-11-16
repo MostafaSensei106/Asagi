@@ -34,6 +34,9 @@ impl TargetSizePolicy {
             || i.duration_secs <= 0.0
             || i.width < 2
             || i.height < 2
+            || !i.pixel_aspect_ratio.is_finite()
+            || i.pixel_aspect_ratio <= 0.0
+            || i.display_short_edge() < 2.0
             || i.file_size_bytes == 0
             || ![0, 90, 180, 270].contains(&i.rotation)
             || limit == 0
@@ -64,7 +67,10 @@ impl TargetSizePolicy {
         if preferences.video_bitrate_ceiling_bps > 0 {
             video = video.min(preferences.video_bitrate_ceiling_bps);
         }
-        let source_short = i.width.min(i.height) & !1;
+        // The ladder is expressed in display (square) pixels because that is the
+        // unit every planning limit uses: `max_short_edge` is documented as
+        // displayed pixels and the encoder writes square pixels.
+        let source_short = (i.display_short_edge().floor() as u32) & !1;
         let mut heights = vec![
             source_short,
             4320,
@@ -108,11 +114,14 @@ impl TargetSizePolicy {
             .or_else(|| ladder.iter().filter(allowed).find(|r| video >= r.1));
         let low = chosen.is_some_and(|r| video < r.2);
         let (w, h) = if skip {
-            (i.width, i.height)
-        } else if let Some(r) = chosen {
-            let scale = (r.0 as f64 / i.width.min(i.height) as f64).min(1.0);
             (
-                ((i.width as f64 * scale) as u32 & !1).max(2),
+                (i.display_width() as u32 & !1).max(2),
+                (i.height & !1).max(2),
+            )
+        } else if let Some(r) = chosen {
+            let scale = (r.0 as f64 / i.display_short_edge()).min(1.0);
+            (
+                ((i.display_width() * scale) as u32 & !1).max(2),
                 ((i.height as f64 * scale) as u32 & !1).max(2),
             )
         } else {
@@ -167,6 +176,7 @@ mod tests {
             bitrate_bps: 16000000,
             file_size_bytes: 120000000,
             has_audio: true,
+            pixel_aspect_ratio: 1.0,
         }
     }
     #[test]
@@ -243,6 +253,35 @@ mod tests {
         assert_eq!(plan.target_audio_bitrate_bps, 0);
         assert_eq!(plan.target_video_bitrate_bps, 6_000_000);
     }
+
+    #[test]
+    fn anamorphic_sources_plan_in_display_pixels() {
+        let mut source = input(60.0);
+        source.width = 1440;
+        source.height = 1080;
+        source.rotation = 0;
+        source.bitrate_bps = 0;
+
+        source.pixel_aspect_ratio = 4.0 / 3.0;
+        let stretched = TargetSizePolicy.plan(&source, 16000000, 0.93).unwrap();
+        assert_eq!(
+            (stretched.target_width, stretched.target_height),
+            (1280, 720)
+        );
+
+        source.pixel_aspect_ratio = 1.0;
+        let square = TargetSizePolicy.plan(&source, 16000000, 0.93).unwrap();
+        assert_eq!((square.target_width, square.target_height), (960, 720));
+    }
+
+    #[test]
+    fn rejects_degenerate_pixel_aspect_ratio() {
+        for sar in [0.0, -1.0, f64::NAN, f64::INFINITY] {
+            let mut source = input(60.0);
+            source.pixel_aspect_ratio = sar;
+            assert!(TargetSizePolicy.plan(&source, 16000000, 0.93).is_err());
+        }
+    }
 }
 
 #[cfg(test)]
@@ -251,10 +290,13 @@ mod properties {
     use proptest::prelude::*;
     proptest! {
         #[test]
-        fn never_upscales_or_emits_odd_dimensions(width in 2u32..8192, height in 2u32..8192, duration in 1.0f64..3600.0, limit in 1u64..100_000_000) {
-            let i = InputMetadata { duration_secs: duration, width, height, rotation: 0, bitrate_bps: 10_000_000, file_size_bytes: 200_000_000, has_audio: false };
+        fn never_upscales_or_emits_odd_dimensions(width in 2u32..8192, height in 2u32..8192, sar in 0.5f64..2.0, duration in 1.0f64..3600.0, limit in 1u64..100_000_000) {
+            let i = InputMetadata { duration_secs: duration, width, height, rotation: 0, bitrate_bps: 10_000_000, file_size_bytes: 200_000_000, has_audio: false, pixel_aspect_ratio: sar };
             let p = TargetSizePolicy.plan(&i, limit, 0.93).unwrap();
-            prop_assert!(p.target_width <= width && p.target_height <= height);
+            // Dimensions are display pixels, so the upper bound is the width
+            // after the non-square-pixel stretch.
+            prop_assert!(p.target_width <= (width as f64 * sar) as u32);
+            prop_assert!(p.target_height <= height);
             prop_assert_eq!(p.target_width % 2, 0);
             prop_assert_eq!(p.target_height % 2, 0);
             prop_assert!(p.target_video_bitrate_bps <= 9_000_000);

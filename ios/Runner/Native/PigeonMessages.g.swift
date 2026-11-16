@@ -202,6 +202,7 @@ struct NativeVideoMetadata: Hashable, CustomStringConvertible {
   var fileSizeBytes: Int64? = nil
   var isHdr: Bool? = nil
   var colorTransfer: String? = nil
+  var pixelAspectRatio: Double? = nil
 
 
   // swift-format-ignore: AlwaysUseLowerCamelCase
@@ -217,6 +218,7 @@ struct NativeVideoMetadata: Hashable, CustomStringConvertible {
     let fileSizeBytes: Int64? = nilOrValue(pigeonVar_list[8])
     let isHdr: Bool? = nilOrValue(pigeonVar_list[9])
     let colorTransfer: String? = nilOrValue(pigeonVar_list[10])
+    let pixelAspectRatio: Double? = nilOrValue(pigeonVar_list[11])
 
     return NativeVideoMetadata(
       path: path,
@@ -229,7 +231,8 @@ struct NativeVideoMetadata: Hashable, CustomStringConvertible {
       hasAudio: hasAudio,
       fileSizeBytes: fileSizeBytes,
       isHdr: isHdr,
-      colorTransfer: colorTransfer
+      colorTransfer: colorTransfer,
+      pixelAspectRatio: pixelAspectRatio
     )
   }
   func toList() -> [Any?] {
@@ -245,13 +248,14 @@ struct NativeVideoMetadata: Hashable, CustomStringConvertible {
       fileSizeBytes,
       isHdr,
       colorTransfer,
+      pixelAspectRatio,
     ]
   }
   static func == (lhs: NativeVideoMetadata, rhs: NativeVideoMetadata) -> Bool {
     if Swift.type(of: lhs) != Swift.type(of: rhs) {
       return false
     }
-    return PigeonMessagesPigeonInternal.deepEquals(lhs.path, rhs.path) && PigeonMessagesPigeonInternal.deepEquals(lhs.durationSeconds, rhs.durationSeconds) && PigeonMessagesPigeonInternal.deepEquals(lhs.width, rhs.width) && PigeonMessagesPigeonInternal.deepEquals(lhs.height, rhs.height) && PigeonMessagesPigeonInternal.deepEquals(lhs.rotation, rhs.rotation) && PigeonMessagesPigeonInternal.deepEquals(lhs.bitrateBps, rhs.bitrateBps) && PigeonMessagesPigeonInternal.deepEquals(lhs.frameRate, rhs.frameRate) && PigeonMessagesPigeonInternal.deepEquals(lhs.hasAudio, rhs.hasAudio) && PigeonMessagesPigeonInternal.deepEquals(lhs.fileSizeBytes, rhs.fileSizeBytes) && PigeonMessagesPigeonInternal.deepEquals(lhs.isHdr, rhs.isHdr) && PigeonMessagesPigeonInternal.deepEquals(lhs.colorTransfer, rhs.colorTransfer)
+    return PigeonMessagesPigeonInternal.deepEquals(lhs.path, rhs.path) && PigeonMessagesPigeonInternal.deepEquals(lhs.durationSeconds, rhs.durationSeconds) && PigeonMessagesPigeonInternal.deepEquals(lhs.width, rhs.width) && PigeonMessagesPigeonInternal.deepEquals(lhs.height, rhs.height) && PigeonMessagesPigeonInternal.deepEquals(lhs.rotation, rhs.rotation) && PigeonMessagesPigeonInternal.deepEquals(lhs.bitrateBps, rhs.bitrateBps) && PigeonMessagesPigeonInternal.deepEquals(lhs.frameRate, rhs.frameRate) && PigeonMessagesPigeonInternal.deepEquals(lhs.hasAudio, rhs.hasAudio) && PigeonMessagesPigeonInternal.deepEquals(lhs.fileSizeBytes, rhs.fileSizeBytes) && PigeonMessagesPigeonInternal.deepEquals(lhs.isHdr, rhs.isHdr) && PigeonMessagesPigeonInternal.deepEquals(lhs.colorTransfer, rhs.colorTransfer) && PigeonMessagesPigeonInternal.deepEquals(lhs.pixelAspectRatio, rhs.pixelAspectRatio)
   }
 
   func hash(into hasher: inout Hasher) {
@@ -267,10 +271,11 @@ struct NativeVideoMetadata: Hashable, CustomStringConvertible {
     PigeonMessagesPigeonInternal.deepHash(value: fileSizeBytes, hasher: &hasher)
     PigeonMessagesPigeonInternal.deepHash(value: isHdr, hasher: &hasher)
     PigeonMessagesPigeonInternal.deepHash(value: colorTransfer, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: pixelAspectRatio, hasher: &hasher)
   }
 
   public var description: String {
-    return "NativeVideoMetadata(path: \(String(describing: path)), durationSeconds: \(String(describing: durationSeconds)), width: \(String(describing: width)), height: \(String(describing: height)), rotation: \(String(describing: rotation)), bitrateBps: \(String(describing: bitrateBps)), frameRate: \(String(describing: frameRate)), hasAudio: \(String(describing: hasAudio)), fileSizeBytes: \(String(describing: fileSizeBytes)), isHdr: \(String(describing: isHdr)), colorTransfer: \(String(describing: colorTransfer)))"
+    return "NativeVideoMetadata(path: \(String(describing: path)), durationSeconds: \(String(describing: durationSeconds)), width: \(String(describing: width)), height: \(String(describing: height)), rotation: \(String(describing: rotation)), bitrateBps: \(String(describing: bitrateBps)), frameRate: \(String(describing: frameRate)), hasAudio: \(String(describing: hasAudio)), fileSizeBytes: \(String(describing: fileSizeBytes)), isHdr: \(String(describing: isHdr)), colorTransfer: \(String(describing: colorTransfer)), pixelAspectRatio: \(String(describing: pixelAspectRatio)))"
   }
 }
 

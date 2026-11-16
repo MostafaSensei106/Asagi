@@ -26,10 +26,13 @@ impl AttemptVerifier for HardLimitVerifier {
         if attempt >= plan.max_attempts {
             return Err("E_TARGET_EXCEEDED".into());
         }
-        let audio = plan.target_audio_bitrate_bps as f64 * duration_secs / 8.0;
-        let container = (plan.hard_limit_bytes as f64 * plan.safety_margin * 0.01).max(32768.0);
-        let actual_video = (actual_bytes as f64 - audio - container).max(1.0);
-        let goal = (plan.hard_limit_bytes as f64 * plan.safety_margin - audio - container).max(0.0);
+        let reserved = plan.target_audio_bitrate_bps as f64 * duration_secs / 8.0
+            + (plan.hard_limit_bytes as f64 * plan.safety_margin * 0.01).max(32768.0);
+        let goal = plan.hard_limit_bytes as f64 * plan.safety_margin - reserved;
+        if goal <= 0.0 {
+            return Err("E_TARGET_INFEASIBLE".into());
+        }
+        let actual_video = (actual_bytes as f64 - reserved).max(1.0);
         let bitrate =
             (plan.target_video_bitrate_bps as f64 * (goal / actual_video).clamp(0.5, 0.98)) as u32;
         if bitrate < 150000 {

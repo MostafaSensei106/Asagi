@@ -9,6 +9,27 @@ pub struct InputMetadata {
     pub bitrate_bps: u32,
     pub file_size_bytes: u64,
     pub has_audio: bool,
+    /// Sample aspect ratio: horizontal stretch applied to non-square pixels.
+    /// `1.0` means square pixels, so the storage size is also the display size.
+    #[serde(default = "square_pixels")]
+    pub pixel_aspect_ratio: f64,
+}
+
+fn square_pixels() -> f64 {
+    1.0
+}
+
+impl InputMetadata {
+    /// Width in display pixels once non-square pixels are stretched horizontally.
+    pub fn display_width(&self) -> f64 {
+        self.width as f64 * self.pixel_aspect_ratio
+    }
+
+    /// Short edge in display pixels. Every planning limit is expressed in
+    /// displayed pixels, so anamorphic sources are compared after the stretch.
+    pub fn display_short_edge(&self) -> f64 {
+        self.display_width().min(self.height as f64)
+    }
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]

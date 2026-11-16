@@ -9,6 +9,8 @@ struct SourceMetadata {
   let fileSizeBytes: Int64
   let isHdr: Bool
   let colorTransfer: String
+  /// Stored pixels per displayed pixel; 1.0 means square pixels.
+  let pixelAspectRatio: Double
 }
 struct EncodeConfiguration {
   let inputPath: String, outputPath: String

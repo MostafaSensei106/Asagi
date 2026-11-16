@@ -22,6 +22,7 @@ final class NativeVideoMetadata {
   int? fileSizeBytes;
   bool? isHdr;
   String? colorTransfer;
+  double? pixelAspectRatio;
 }
 
 final class NativeCompressRequest {

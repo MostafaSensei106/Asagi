@@ -244,6 +244,7 @@ impl SseDecode for crate::domain::models::InputMetadata {
         let mut var_bitrateBps = <u32>::sse_decode(deserializer);
         let mut var_fileSizeBytes = <u64>::sse_decode(deserializer);
         let mut var_hasAudio = <bool>::sse_decode(deserializer);
+        let mut var_pixelAspectRatio = <f64>::sse_decode(deserializer);
         return crate::domain::models::InputMetadata {
             duration_secs: var_durationSecs,
             width: var_width,
@@ -252,6 +253,7 @@ impl SseDecode for crate::domain::models::InputMetadata {
             bitrate_bps: var_bitrateBps,
             file_size_bytes: var_fileSizeBytes,
             has_audio: var_hasAudio,
+            pixel_aspect_ratio: var_pixelAspectRatio,
         };
     }
 }
@@ -406,6 +408,7 @@ impl flutter_rust_bridge::IntoDart for crate::domain::models::InputMetadata {
             self.bitrate_bps.into_into_dart().into_dart(),
             self.file_size_bytes.into_into_dart().into_dart(),
             self.has_audio.into_into_dart().into_dart(),
+            self.pixel_aspect_ratio.into_into_dart().into_dart(),
         ]
         .into_dart()
     }
@@ -505,6 +508,7 @@ impl SseEncode for crate::domain::models::InputMetadata {
         <u32>::sse_encode(self.bitrate_bps, serializer);
         <u64>::sse_encode(self.file_size_bytes, serializer);
         <bool>::sse_encode(self.has_audio, serializer);
+        <f64>::sse_encode(self.pixel_aspect_ratio, serializer);
     }
 }
 
