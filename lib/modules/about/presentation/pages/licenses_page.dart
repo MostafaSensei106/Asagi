@@ -40,6 +40,9 @@ final class LicensesPage extends StatelessWidget {
       builder: (context, snapshot) {
         final (metadata, license) = snapshot.data ?? (null, null);
         final builds = metadata?['builds'] as Map<String, dynamic>? ?? const {};
+        final licenseName = metadata?['license'] as String?;
+        final version = metadata?['version'] as String?;
+        final linkage = metadata?['linkage'] as String?;
         return ListView(
           padding: const EdgeInsets.all(20),
           children: [
@@ -59,28 +62,20 @@ final class LicensesPage extends StatelessWidget {
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
                     const SizedBox(height: 8),
-                    Text(
-                      context.localeKeys.ffmpegLicense(
-                        metadata?['license'] as String? ?? 'LGPL-2.1-or-later',
+                    if (licenseName != null)
+                      Text(context.localeKeys.ffmpegLicense(licenseName)),
+                    if (version != null)
+                      Text(context.localeKeys.ffmpegVersion(version)),
+                    if (linkage != null)
+                      Text(context.localeKeys.ffmpegLinkage(linkage)),
+                    if (builds.isNotEmpty)
+                      Text(
+                        context.localeKeys.ffmpegBuiltAbis(
+                          builds.keys.join(', '),
+                        ),
                       ),
-                    ),
-                    Text(
-                      context.localeKeys.ffmpegVersion(
-                        metadata?['version'] as String? ?? '7.1.5',
-                      ),
-                    ),
-                    Text(
-                      context.localeKeys.ffmpegLinkage(
-                        metadata?['linkage'] as String? ?? 'shared',
-                      ),
-                    ),
-                    Text(
-                      context.localeKeys.ffmpegBuiltAbis(
-                        builds.keys.isEmpty
-                            ? 'arm64-v8a'
-                            : builds.keys.join(', '),
-                      ),
-                    ),
+                    if (metadata == null)
+                      Text(context.localeKeys.ffmpegBuildMetadataUnavailable),
                     if (metadata?['source_url'] case final String source)
                       SelectableText(context.localeKeys.ffmpegSource(source)),
                   ],

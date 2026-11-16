@@ -1096,6 +1096,10 @@ class AppLocalizationsJa extends AppLocalizations {
       'The interrupted files could not be cleaned.';
 
   @override
+  String get ffmpegBuildMetadataUnavailable =>
+      'FFmpeg build metadata is unavailable.';
+
+  @override
   String get languageName => '日本語';
 
   @override

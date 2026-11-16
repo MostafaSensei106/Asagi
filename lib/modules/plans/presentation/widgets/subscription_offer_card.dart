@@ -15,7 +15,8 @@ final class SubscriptionOfferCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final price = state.offer?.price ??
+    final price =
+        state.offer?.price ??
         (state.isLoading
             ? context.localeKeys.loading
             : context.localeKeys.planUnavailable);
@@ -33,17 +34,21 @@ final class SubscriptionOfferCard extends StatelessWidget {
             const SizedBox(height: 8),
             Text(context.localeKeys.subscriptionPerMonth(price)),
             const SizedBox(height: 16),
-            Text(state.isActive
-                ? context.localeKeys.subscriptionActive
-                : context.localeKeys.proFeaturesDescription),
+            Text(
+              state.isActive
+                  ? context.localeKeys.subscriptionActive
+                  : context.localeKeys.proFeaturesDescription,
+            ),
             const SizedBox(height: 20),
             FilledButton(
               onPressed: state.isPurchasing || state.isActive
                   ? null
                   : onSubscribe,
-              child: Text(state.isPurchasing
-                  ? context.localeKeys.pleaseWait
-                  : context.localeKeys.subscribe),
+              child: Text(
+                state.isPurchasing
+                    ? context.localeKeys.pleaseWait
+                    : context.localeKeys.subscribe,
+              ),
             ),
           ],
         ),

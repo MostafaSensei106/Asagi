@@ -17,6 +17,8 @@ import 'package:injectable/injectable.dart' as _i526;
 import 'package:package_info_plus/package_info_plus.dart' as _i655;
 import 'package:share_plus/share_plus.dart' as _i998;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
+import 'package:zumi/core/compression/domain/contracts/artifact_store.dart'
+    as _i904;
 import 'package:zumi/core/di/injection_module.dart' as _i837;
 import 'package:zumi/core/services/ai/ai_model_service.dart' as _i111;
 import 'package:zumi/core/services/ai/interface/base_ai_model_service.dart'
@@ -31,6 +33,8 @@ import 'package:zumi/core/services/app_info/package_info_plus_adapter.dart'
 import 'package:zumi/core/services/billing/billing_service.dart' as _i546;
 import 'package:zumi/core/services/billing/google_play_billing_service.dart'
     as _i141;
+import 'package:zumi/core/services/billing/in_memory_purchase_proof_store.dart'
+    as _i961;
 import 'package:zumi/core/services/file_opener/base_file_opener_service.dart'
     as _i255;
 import 'package:zumi/core/services/file_opener/url_file_opener_service.dart'
@@ -81,6 +85,12 @@ import 'package:zumi/modules/about/data/base_about_app_repository.dart'
     as _i374;
 import 'package:zumi/modules/about/logic/cubit/about_app_cubit.dart' as _i811;
 import 'package:zumi/modules/plans/logic/subscription_cubit.dart' as _i877;
+import 'package:zumi/modules/storage/data/repositories/file_storage_repository.dart'
+    as _i117;
+import 'package:zumi/modules/storage/domain/repositories/storage_repository.dart'
+    as _i938;
+import 'package:zumi/modules/storage/logic/storage_settings_cubit.dart'
+    as _i407;
 
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -103,6 +113,7 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i998.SharePlus>(() => injectionModule.sharePlus);
     gh.lazySingleton<_i895.Connectivity>(() => injectionModule.connectivity);
+    gh.lazySingleton<_i904.ArtifactStore>(() => injectionModule.artifactStore);
     gh.lazySingleton<_i664.L10nService>(() => _i664.L10nService());
     gh.lazySingleton<_i813.ThemeService>(() => _i813.ThemeService());
     gh.lazySingleton<_i613.CacheManager>(() => _i613.CacheManager());
@@ -110,13 +121,16 @@ extension GetItInjectableX on _i174.GetIt {
       () => _i647.PackageInfoPlusAdapter(gh<_i655.PackageInfo>()),
     );
     gh.lazySingleton<_i546.PurchaseProofStore>(
-      () => _i546.InMemoryPurchaseProofStore(),
+      () => _i961.InMemoryPurchaseProofStore(),
     );
     gh.lazySingleton<_i459.BaseAuditLogger>(() => const _i603.AppAuditLogger());
     gh.lazySingleton<_i43.BasePermissionService>(
       () => const _i358.PermissionHandlerService(),
     );
     gh.lazySingleton<_i320.BaseAiModelService>(() => _i111.AiModelService());
+    gh.lazySingleton<_i938.StorageRepository>(
+      () => _i117.FileStorageRepository(gh<_i904.ArtifactStore>()),
+    );
     gh.lazySingleton<_i546.BillingService>(
       () => _i141.GooglePlayBillingService(),
     );
@@ -149,6 +163,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i91.BaseUrlLauncherServices>(
       () => _i704.UrlLauncherService(gh<_i459.BaseAuditLogger>()),
+    );
+    gh.factory<_i407.StorageSettingsCubit>(
+      () => _i407.StorageSettingsCubit(gh<_i938.StorageRepository>()),
     );
     gh.lazySingleton<_i248.BaseAppInfoService>(
       () => _i481.AppInfoService(gh<_i283.BasePackageInfoAdapter>()),
@@ -207,8 +224,8 @@ extension GetItInjectableX on _i174.GetIt {
   _i647.PackageInfoPlusAdapter get packageInfoPlusAdapter =>
       get<_i647.PackageInfoPlusAdapter>();
 
-  _i546.InMemoryPurchaseProofStore get inMemoryPurchaseProofStore =>
-      get<_i546.InMemoryPurchaseProofStore>();
+  _i961.InMemoryPurchaseProofStore get inMemoryPurchaseProofStore =>
+      get<_i961.InMemoryPurchaseProofStore>();
 
   _i603.AppAuditLogger get appAuditLogger => get<_i603.AppAuditLogger>();
 
@@ -216,6 +233,9 @@ extension GetItInjectableX on _i174.GetIt {
       get<_i358.PermissionHandlerService>();
 
   _i111.AiModelService get aiModelService => get<_i111.AiModelService>();
+
+  _i117.FileStorageRepository get fileStorageRepository =>
+      get<_i117.FileStorageRepository>();
 
   _i141.GooglePlayBillingService get googlePlayBillingService =>
       get<_i141.GooglePlayBillingService>();
@@ -244,6 +264,9 @@ extension GetItInjectableX on _i174.GetIt {
 
   _i704.UrlLauncherService get urlLauncherService =>
       get<_i704.UrlLauncherService>();
+
+  _i407.StorageSettingsCubit get storageSettingsCubit =>
+      get<_i407.StorageSettingsCubit>();
 
   _i481.AppInfoService get appInfoService => get<_i481.AppInfoService>();
 

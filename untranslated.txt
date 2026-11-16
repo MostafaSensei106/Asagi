@@ -59,7 +59,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "de_DE": [
@@ -122,7 +123,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "es": [
@@ -185,7 +187,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "es_ES": [
@@ -248,7 +251,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "fr": [
@@ -311,7 +315,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "id": [
@@ -374,7 +379,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "id_ID": [
@@ -437,7 +443,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "it": [
@@ -500,7 +507,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "it_IT": [
@@ -563,7 +571,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "ja": [
@@ -626,7 +635,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "ja_JP": [
@@ -689,7 +699,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "ko": [
@@ -752,7 +763,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "ko_KR": [
@@ -815,7 +827,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "nl": [
@@ -878,7 +891,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "nl_BE": [
@@ -941,7 +955,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "pl": [
@@ -1004,7 +1019,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "pl_PL": [
@@ -1067,7 +1083,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "pt": [
@@ -1130,7 +1147,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "pt_BR": [
@@ -1193,7 +1211,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "ru": [
@@ -1256,7 +1275,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "ru_RU": [
@@ -1319,7 +1339,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "sv": [
@@ -1382,7 +1403,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "sv_SE": [
@@ -1445,7 +1467,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "th": [
@@ -1508,7 +1531,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "th_TH": [
@@ -1571,7 +1595,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "tr": [
@@ -1634,7 +1659,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "tr_TR": [
@@ -1697,7 +1723,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "vi": [
@@ -1760,7 +1787,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "zh": [
@@ -1823,7 +1851,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "zh_CN": [
@@ -1886,7 +1915,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "zh_HK": [
@@ -1949,7 +1979,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "zh_SG": [
@@ -2012,7 +2043,8 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ],
 
   "zh_TW": [
@@ -2075,6 +2107,7 @@
     "receiptVerificationFailed",
     "ffmpegName",
     "storageJobsLoadFailed",
-    "cleanupInterruptedJobsFailed"
+    "cleanupInterruptedJobsFailed",
+    "ffmpegBuildMetadataUnavailable"
   ]
 }

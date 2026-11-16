@@ -42,8 +42,10 @@ final class SubscriptionFeedback extends StatelessWidget {
       switch (notice) {
         SubscriptionNotice.purchaseCancelled =>
           context.localeKeys.purchaseCancelled,
-        SubscriptionNotice.purchaseVerified => context.localeKeys.purchaseVerified,
-        SubscriptionNotice.purchasesRestored => context.localeKeys.purchasesRestored,
+        SubscriptionNotice.purchaseVerified =>
+          context.localeKeys.purchaseVerified,
+        SubscriptionNotice.purchasesRestored =>
+          context.localeKeys.purchasesRestored,
         SubscriptionNotice.noActivePurchaseFound =>
           context.localeKeys.noActivePurchaseFound,
       };

@@ -2143,6 +2143,12 @@ abstract class AppLocalizations {
   /// **'The interrupted files could not be cleaned.'**
   String get cleanupInterruptedJobsFailed;
 
+  /// No description provided for @ffmpegBuildMetadataUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'FFmpeg build metadata is unavailable.'**
+  String get ffmpegBuildMetadataUnavailable;
+
   /// No description provided for @languageName.
   ///
   /// In en, this message translates to:

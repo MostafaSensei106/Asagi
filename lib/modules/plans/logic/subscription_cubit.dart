@@ -2,24 +2,14 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:bloc_signals/bloc_signals.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../core/native/rust/api.dart' as rust;
 import '../../../core/native/rust/frb_generated.dart';
 import '../../../core/services/billing/billing_service.dart';
+import 'subscription_state.dart';
 
 const proMonthlyProductId = 'zumi_pro_monthly';
-
-part 'subscription_state.dart';
-part 'subscription_state.freezed.dart';
-
-enum SubscriptionNotice {
-  purchaseCancelled,
-  purchaseVerified,
-  purchasesRestored,
-  noActivePurchaseFound,
-}
 
 @injectable
 final class SubscriptionCubit extends CubitSignal<SubscriptionState> {
@@ -43,7 +33,12 @@ final class SubscriptionCubit extends CubitSignal<SubscriptionState> {
       }
     } catch (_) {
       if (!isClosed) {
-        emit(stateValue.copyWith(isLoading: false, error: SubscriptionFailure.billingUnavailable));
+        emit(
+          stateValue.copyWith(
+            isLoading: false,
+            error: SubscriptionFailure.billingUnavailable,
+          ),
+        );
       }
     }
   }
@@ -70,7 +65,12 @@ final class SubscriptionCubit extends CubitSignal<SubscriptionState> {
       }
     } catch (_) {
       if (!isClosed) {
-        emit(stateValue.copyWith(isPurchasing: false, error: SubscriptionFailure.purchaseFailed));
+        emit(
+          stateValue.copyWith(
+            isPurchasing: false,
+            error: SubscriptionFailure.purchaseFailed,
+          ),
+        );
       }
     }
   }
@@ -90,14 +90,21 @@ final class SubscriptionCubit extends CubitSignal<SubscriptionState> {
       } else {
         final verified = await _verify(receipt);
         if (isClosed) return;
-        emit(stateValue.copyWith(
-          isPurchasing: false,
-          message: verified ? SubscriptionNotice.purchasesRestored : null,
-        ));
+        emit(
+          stateValue.copyWith(
+            isPurchasing: false,
+            message: verified ? SubscriptionNotice.purchasesRestored : null,
+          ),
+        );
       }
     } catch (_) {
       if (!isClosed) {
-        emit(stateValue.copyWith(isPurchasing: false, error: SubscriptionFailure.restoreFailed));
+        emit(
+          stateValue.copyWith(
+            isPurchasing: false,
+            error: SubscriptionFailure.restoreFailed,
+          ),
+        );
       }
     }
   }

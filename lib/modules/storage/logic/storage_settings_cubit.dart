@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc_signals/bloc_signals.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -11,7 +13,7 @@ part 'storage_settings_cubit.freezed.dart';
 final class StorageSettingsCubit extends CubitSignal<StorageSettingsState> {
   StorageSettingsCubit(this._repository)
     : super(initialState: const StorageSettingsState()) {
-    load();
+    unawaited(load());
   }
 
   final StorageRepository _repository;

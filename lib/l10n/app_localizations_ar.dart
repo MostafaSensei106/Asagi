@@ -1121,6 +1121,9 @@ class AppLocalizationsAr extends AppLocalizations {
       'تعذر تنظيف ملفات المهام المتوقفة.';
 
   @override
+  String get ffmpegBuildMetadataUnavailable => 'بيانات بناء FFmpeg غير متاحة.';
+
+  @override
   String get languageName => 'العربية';
 
   @override

@@ -25,17 +25,21 @@ final class RestorePurchasesPage extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(state.isActive
-                    ? context.localeKeys.zumiProActive
-                    : context.localeKeys.restorePurchaseDescription),
+                Text(
+                  state.isActive
+                      ? context.localeKeys.zumiProActive
+                      : context.localeKeys.restorePurchaseDescription,
+                ),
                 const SizedBox(height: 16),
                 FilledButton(
                   onPressed: state.isPurchasing
                       ? null
                       : context.read<SubscriptionCubit>().restore,
-                  child: Text(state.isPurchasing
-                      ? context.localeKeys.checking
-                      : context.localeKeys.restorePurchases),
+                  child: Text(
+                    state.isPurchasing
+                        ? context.localeKeys.checking
+                        : context.localeKeys.restorePurchases,
+                  ),
                 ),
                 SubscriptionFeedback(state: state),
               ],

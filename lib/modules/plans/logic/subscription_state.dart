@@ -1,4 +1,8 @@
-part of 'subscription_cubit.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../../../core/services/billing/billing_service.dart';
+
+part 'subscription_state.freezed.dart';
 
 enum SubscriptionNotice {
   purchaseCancelled,

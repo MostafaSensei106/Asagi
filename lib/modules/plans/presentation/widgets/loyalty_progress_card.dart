@@ -22,9 +22,14 @@ final class LoyaltyProgressCard extends StatelessWidget {
         const SizedBox(height: 8),
         LinearProgressIndicator(value: state.currentDiscount / 30),
         const SizedBox(height: 8),
-        Text(nextPrice == null
-            ? context.localeKeys.nextMonthLoyaltyDiscount(state.nextDiscount)
-            : context.localeKeys.nextMonthLoyaltyPrice(state.nextDiscount, nextPrice)),
+        Text(
+          nextPrice == null
+              ? context.localeKeys.nextMonthLoyaltyDiscount(state.nextDiscount)
+              : context.localeKeys.nextMonthLoyaltyPrice(
+                  state.nextDiscount,
+                  nextPrice,
+                ),
+        ),
         const SizedBox(height: 20),
         Card(
           child: Padding(

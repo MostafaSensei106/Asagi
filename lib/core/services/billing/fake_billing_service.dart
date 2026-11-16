@@ -15,8 +15,9 @@ final class FakeBillingService implements BillingService {
       offer;
 
   @override
-  Future<PurchaseReceiptPayload?> purchaseMonthlyPlan({String? offerToken})
-  async => receipt;
+  Future<PurchaseReceiptPayload?> purchaseMonthlyPlan({
+    String? offerToken,
+  }) async => receipt;
 
   @override
   Future<PurchaseReceiptPayload?> restoreActivePurchase() async => receipt;
