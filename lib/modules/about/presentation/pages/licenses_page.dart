@@ -25,12 +25,16 @@ final class LicensesPage extends StatelessWidget {
       return (null, null);
     } on FormatException {
       return (null, null);
+    } on TypeError {
+      return (null, null);
     }
   }
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: const SidePageAppBarComponent(title: 'Open Source Licenses'),
+    appBar: SidePageAppBarComponent(
+      title: context.localeKeys.openSourceLicenses,
+    ),
     body: FutureBuilder<(Map<String, dynamic>?, String?)>(
       future: _loadFfmpegNotice(),
       builder: (context, snapshot) {
@@ -51,20 +55,34 @@ final class LicensesPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'FFmpeg',
+                      context.localeKeys.ffmpegName,
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      'License: ${metadata?['license'] ?? 'LGPL-2.1-or-later'}',
+                      context.localeKeys.ffmpegLicense(
+                        metadata?['license'] as String? ?? 'LGPL-2.1-or-later',
+                      ),
                     ),
-                    Text('Version: ${metadata?['version'] ?? '7.1.5'}'),
-                    Text('Linkage: ${metadata?['linkage'] ?? 'shared'}'),
                     Text(
-                      'Built ABIs: ${builds.keys.isEmpty ? 'arm64-v8a' : builds.keys.join(', ')}',
+                      context.localeKeys.ffmpegVersion(
+                        metadata?['version'] as String? ?? '7.1.5',
+                      ),
+                    ),
+                    Text(
+                      context.localeKeys.ffmpegLinkage(
+                        metadata?['linkage'] as String? ?? 'shared',
+                      ),
+                    ),
+                    Text(
+                      context.localeKeys.ffmpegBuiltAbis(
+                        builds.keys.isEmpty
+                            ? 'arm64-v8a'
+                            : builds.keys.join(', '),
+                      ),
                     ),
                     if (metadata?['source_url'] case final String source)
-                      SelectableText('Source: $source'),
+                      SelectableText(context.localeKeys.ffmpegSource(source)),
                   ],
                 ),
               ),
@@ -72,19 +90,19 @@ final class LicensesPage extends StatelessWidget {
             if (snapshot.connectionState == ConnectionState.waiting)
               const LinearProgressIndicator(),
             ExpansionTile(
-              title: const Text('FFmpeg LGPL v2.1 license text'),
+              title: Text(context.localeKeys.ffmpegLicenseTitle),
               children: [
                 Padding(
                   padding: const EdgeInsets.all(16),
                   child: SelectableText(
-                    license ?? 'Full license text is shipped in android/app/src/main/assets/licenses/ffmpeg/LICENSE.LGPLv2.1.',
+                    license ?? context.localeKeys.fullFfmpegLicenseFallback,
                   ),
                 ),
               ],
             ),
             ListTile(
-              title: const Text('Flutter and Dart packages'),
-              subtitle: const Text('Open their third-party license notices.'),
+              title: Text(context.localeKeys.thirdPartyLicenses),
+              subtitle: Text(context.localeKeys.thirdPartyLicensesDescription),
               trailing: const Icon(Icons.open_in_new),
               onTap: () => Navigator.of(context).push(
                 MaterialPageRoute<void>(

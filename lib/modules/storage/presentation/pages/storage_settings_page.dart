@@ -16,6 +16,7 @@ final class _StorageSettingsPageState extends State<StorageSettingsPage> {
   final FileArtifactStore _store = const FileArtifactStore();
   late Future<List<String>> _jobs = _loadJobs();
   bool _cleaning = false;
+  bool _cleanupFailed = false;
 
   Future<List<String>> _loadJobs() async {
     final cache = await getTemporaryDirectory();
@@ -27,30 +28,25 @@ final class _StorageSettingsPageState extends State<StorageSettingsPage> {
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text(
-          context.isArabic
-              ? 'تنظيف المهام المتوقفة؟'
-              : 'Clean interrupted jobs?',
-        ),
-        content: Text(
-          context.isArabic
-              ? 'سيُحذف كل ملف .inprogress وحالة job_state.json داخل المهام المتوقفة فقط.'
-              : 'This removes .inprogress files and job_state.json from interrupted jobs only.',
-        ),
+        title: Text(context.localeKeys.cleanInterruptedJobsTitle),
+        content: Text(context.localeKeys.cleanInterruptedJobsConfirmation),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, false),
-            child: Text(context.isArabic ? 'إلغاء' : 'Cancel'),
+            child: Text(context.localeKeys.cancel),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(context, true),
-            child: Text(context.isArabic ? 'تنظيف' : 'Clean'),
+            child: Text(context.localeKeys.clean),
           ),
         ],
       ),
     );
     if (confirmed != true || !mounted) return;
-    setState(() => _cleaning = true);
+    setState(() {
+      _cleaning = true;
+      _cleanupFailed = false;
+    });
     try {
       final cache = await getTemporaryDirectory();
       await _store.cleanupInterrupted(
@@ -58,6 +54,8 @@ final class _StorageSettingsPageState extends State<StorageSettingsPage> {
         Duration.zero,
       );
       if (mounted) setState(() => _jobs = _loadJobs());
+    } catch (_) {
+      if (mounted) setState(() => _cleanupFailed = true);
     } finally {
       if (mounted) setState(() => _cleaning = false);
     }
@@ -74,28 +72,19 @@ final class _StorageSettingsPageState extends State<StorageSettingsPage> {
           padding: const EdgeInsets.all(24),
           children: [
             Text(
-              context.isArabic
-                  ? 'المهام المتوقفة'
-                  : 'Interrupted compression jobs',
+              context.localeKeys.interruptedCompressionJobs,
               style: Theme.of(context).textTheme.titleLarge,
             ),
             const SizedBox(height: 8),
-            Text(
-              context.isArabic
-                  ? 'يمكن استئناف هذه المهام من شاشة الضغط. التنظيف يحذف الملفات المؤقتة وملف الحالة الخاص بها.'
-                  : 'You can resume these jobs from compression. Cleanup removes their temporary files and saved job state.',
-            ),
+            Text(context.localeKeys.interruptedJobsDescription),
             const SizedBox(height: 16),
             if (snapshot.connectionState == ConnectionState.waiting)
               const LinearProgressIndicator(),
-            if (snapshot.hasError) Text('${snapshot.error}'),
+            if (snapshot.hasError)
+              Text(context.localeKeys.storageJobsLoadFailed),
             if (snapshot.connectionState == ConnectionState.done &&
                 jobs.isEmpty)
-              Text(
-                context.isArabic
-                    ? 'لا توجد مهام متوقفة.'
-                    : 'No interrupted jobs found.',
-              ),
+              Text(context.localeKeys.noInterruptedJobs),
             for (final id in jobs)
               ListTile(
                 leading: const Icon(Icons.video_file_outlined),
@@ -107,12 +96,18 @@ final class _StorageSettingsPageState extends State<StorageSettingsPage> {
               icon: const Icon(Icons.delete_sweep_outlined),
               label: Text(
                 _cleaning
-                    ? (context.isArabic ? 'جارٍ التنظيف…' : 'Cleaning…')
-                    : (context.isArabic
-                          ? 'تنظيف الملفات المتوقفة'
-                          : 'Clean interrupted files'),
+                    ? context.localeKeys.cleaning
+                    : context.localeKeys.cleanInterruptedJobs,
               ),
             ),
+            if (_cleanupFailed)
+              Padding(
+                padding: const EdgeInsets.only(top: 12),
+                child: Text(
+                  context.localeKeys.cleanupInterruptedJobsFailed,
+                  style: TextStyle(color: Theme.of(context).colorScheme.error),
+                ),
+              ),
           ],
         );
       },

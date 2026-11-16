@@ -1061,6 +1061,26 @@ class AppLocalizationsZh extends AppLocalizations {
       'Full license text is shipped in the app\'s LGPL license asset.';
 
   @override
+  String get billingUnavailable =>
+      'Subscription details are unavailable right now.';
+
+  @override
+  String get purchaseFailed => 'The purchase could not be completed.';
+
+  @override
+  String get restoreFailed => 'Purchases could not be restored.';
+
+  @override
+  String get receiptVerificationFailed =>
+      'The purchase receipt could not be verified.';
+
+  @override
+  String get ffmpegName => 'FFmpeg';
+
+  @override
+  String get storageJobsLoadFailed => 'Interrupted jobs could not be loaded.';
+
+  @override
   String get languageName => '简体中文';
 
   @override

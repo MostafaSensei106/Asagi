@@ -90,14 +90,17 @@ final class SubscriptionCubit extends CubitSignal<SubscriptionState> {
       final receipt = await _billing.purchaseMonthlyPlan(
         offerToken: stateValue.offer?.offerToken,
       );
-      if (receipt != null) await _verify(receipt);
+      if (isClosed) return;
+      final verified = receipt != null && await _verify(receipt);
       if (!isClosed) {
         emit(
           stateValue.copyWith(
             isPurchasing: false,
             message: receipt == null
                 ? SubscriptionNotice.purchaseCancelled
-                : SubscriptionNotice.purchaseVerified,
+                : verified
+                ? SubscriptionNotice.purchaseVerified
+                : null,
           ),
         );
       }
@@ -112,6 +115,7 @@ final class SubscriptionCubit extends CubitSignal<SubscriptionState> {
     emit(stateValue.copyWith(isPurchasing: true));
     try {
       final receipt = await _billing.restoreActivePurchase();
+      if (isClosed) return;
       if (receipt == null) {
         emit(
           stateValue.copyWith(
@@ -120,13 +124,12 @@ final class SubscriptionCubit extends CubitSignal<SubscriptionState> {
           ),
         );
       } else {
-        await _verify(receipt);
-        emit(
-          stateValue.copyWith(
-            isPurchasing: false,
-            message: SubscriptionNotice.purchasesRestored,
-          ),
-        );
+        final verified = await _verify(receipt);
+        if (isClosed) return;
+        emit(stateValue.copyWith(
+          isPurchasing: false,
+          message: verified ? SubscriptionNotice.purchasesRestored : null,
+        ));
       }
     } catch (_) {
       if (!isClosed) {
@@ -135,7 +138,7 @@ final class SubscriptionCubit extends CubitSignal<SubscriptionState> {
     }
   }
 
-  Future<void> _verify(PurchaseReceiptPayload receipt) async {
+  Future<bool> _verify(PurchaseReceiptPayload receipt) async {
     try {
       await RustLib.init();
       final status = await rust.verifySubscriptionReceipt(
@@ -159,11 +162,18 @@ final class SubscriptionCubit extends CubitSignal<SubscriptionState> {
           ),
         );
       }
+      return status.isActive && receipt.productId == proMonthlyProductId;
     } catch (_) {
       _proofs.clear();
       if (!isClosed) {
-        emit(stateValue.copyWith(isActive: false, error: 'receiptVerificationFailed'));
+        emit(
+          stateValue.copyWith(
+            isActive: false,
+            error: 'receiptVerificationFailed',
+          ),
+        );
       }
+      return false;
     }
   }
 

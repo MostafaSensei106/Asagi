@@ -2101,6 +2101,42 @@ abstract class AppLocalizations {
   /// **'Full license text is shipped in the app\'s LGPL license asset.'**
   String get fullFfmpegLicenseFallback;
 
+  /// No description provided for @billingUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscription details are unavailable right now.'**
+  String get billingUnavailable;
+
+  /// No description provided for @purchaseFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'The purchase could not be completed.'**
+  String get purchaseFailed;
+
+  /// No description provided for @restoreFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchases could not be restored.'**
+  String get restoreFailed;
+
+  /// No description provided for @receiptVerificationFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'The purchase receipt could not be verified.'**
+  String get receiptVerificationFailed;
+
+  /// No description provided for @ffmpegName.
+  ///
+  /// In en, this message translates to:
+  /// **'FFmpeg'**
+  String get ffmpegName;
+
+  /// No description provided for @storageJobsLoadFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Interrupted jobs could not be loaded.'**
+  String get storageJobsLoadFailed;
+
   /// No description provided for @languageName.
   ///
   /// In en, this message translates to:

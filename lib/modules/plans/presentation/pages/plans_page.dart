@@ -61,13 +61,24 @@ final class PlansPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-                Text(context.localeKeys.currentLoyaltyDiscount(state.currentDiscount)),
+                Text(
+                  context.localeKeys.currentLoyaltyDiscount(
+                    state.currentDiscount,
+                  ),
+                ),
                 const SizedBox(height: 8),
                 LinearProgressIndicator(value: state.currentDiscount / 30),
                 const SizedBox(height: 8),
-                Text(state.offer == null
-                    ? context.localeKeys.nextMonthLoyaltyDiscount(state.nextDiscount)
-                    : context.localeKeys.nextMonthLoyaltyPrice(state.nextDiscount, _nextMonthPrice(state))),
+                Text(
+                  state.offer == null
+                      ? context.localeKeys.nextMonthLoyaltyDiscount(
+                          state.nextDiscount,
+                        )
+                      : context.localeKeys.nextMonthLoyaltyPrice(
+                          state.nextDiscount,
+                          _nextMonthPrice(state),
+                        ),
+                ),
                 const SizedBox(height: 20),
                 Card(
                   child: Padding(
@@ -116,9 +127,13 @@ String _billingError(BuildContext context, String error) => switch (error) {
   _ => context.localeKeys.receiptVerificationFailed,
 };
 
-String _noticeText(BuildContext context, SubscriptionNotice notice) => switch (notice) {
+String _noticeText(
+  BuildContext context,
+  SubscriptionNotice notice,
+) => switch (notice) {
   SubscriptionNotice.purchaseCancelled => context.localeKeys.purchaseCancelled,
   SubscriptionNotice.purchaseVerified => context.localeKeys.purchaseVerified,
   SubscriptionNotice.purchasesRestored => context.localeKeys.purchasesRestored,
-  SubscriptionNotice.noActivePurchaseFound => context.localeKeys.noActivePurchaseFound,
+  SubscriptionNotice.noActivePurchaseFound =>
+    context.localeKeys.noActivePurchaseFound,
 };

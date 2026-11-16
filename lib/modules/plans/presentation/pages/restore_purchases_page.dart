@@ -25,10 +25,8 @@ final class RestorePurchasesPage extends StatelessWidget {
               children: [
                 Text(
                   state.isActive
-                      ? (context.isArabic ? 'اشتراك Zumi Pro مفعّل' : 'Zumi Pro is active')
-                      : (context.isArabic
-                            ? 'استعد المشتريات المرتبطة بحساب Google Play هذا.'
-                            : 'Restore purchases made with this Google Play account.'),
+                      ? context.localeKeys.zumiProActive
+                      : context.localeKeys.restorePurchaseDescription,
                 ),
                 const SizedBox(height: 16),
                 FilledButton(
@@ -37,21 +35,19 @@ final class RestorePurchasesPage extends StatelessWidget {
                       : context.read<SubscriptionCubit>().restore,
                   child: Text(
                     state.isPurchasing
-                        ? (context.isArabic ? 'جارٍ التحقق…' : 'Checking…')
-                        : (context.isArabic ? 'استعادة المشتريات' : 'Restore purchases'),
+                        ? context.localeKeys.checking
+                        : context.localeKeys.restorePurchases,
                   ),
                 ),
                 if (state.error != null)
                   Padding(
                     padding: const EdgeInsets.all(16),
-                    child: Text(state.error!),
+                    child: Text(_billingError(context, state.error!)),
                   ),
                 if (state.message != null)
                   Padding(
                     padding: const EdgeInsets.all(16),
-                    child: Text(context.isArabic && state.message == 'No active purchase found.'
-                        ? 'لم يتم العثور على شراء نشط.'
-                        : state.message!),
+                    child: Text(_noticeText(context, state.message!)),
                   ),
               ],
             ),
@@ -61,3 +57,21 @@ final class RestorePurchasesPage extends StatelessWidget {
     );
   }
 }
+
+String _billingError(BuildContext context, String error) => switch (error) {
+  'billingUnavailable' => context.localeKeys.billingUnavailable,
+  'purchaseFailed' => context.localeKeys.purchaseFailed,
+  'restoreFailed' => context.localeKeys.restoreFailed,
+  _ => context.localeKeys.receiptVerificationFailed,
+};
+
+String _noticeText(
+  BuildContext context,
+  SubscriptionNotice notice,
+) => switch (notice) {
+  SubscriptionNotice.purchaseCancelled => context.localeKeys.purchaseCancelled,
+  SubscriptionNotice.purchaseVerified => context.localeKeys.purchaseVerified,
+  SubscriptionNotice.purchasesRestored => context.localeKeys.purchasesRestored,
+  SubscriptionNotice.noActivePurchaseFound =>
+    context.localeKeys.noActivePurchaseFound,
+};

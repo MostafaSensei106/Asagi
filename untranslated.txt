@@ -52,7 +52,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "de_DE": [
@@ -108,7 +114,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "es": [
@@ -164,7 +176,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "es_ES": [
@@ -220,7 +238,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "fr": [
@@ -276,7 +300,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "id": [
@@ -332,7 +362,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "id_ID": [
@@ -388,7 +424,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "it": [
@@ -444,7 +486,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "it_IT": [
@@ -500,7 +548,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "ja": [
@@ -556,7 +610,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "ja_JP": [
@@ -612,7 +672,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "ko": [
@@ -668,7 +734,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "ko_KR": [
@@ -724,7 +796,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "nl": [
@@ -780,7 +858,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "nl_BE": [
@@ -836,7 +920,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "pl": [
@@ -892,7 +982,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "pl_PL": [
@@ -948,7 +1044,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "pt": [
@@ -1004,7 +1106,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "pt_BR": [
@@ -1060,7 +1168,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "ru": [
@@ -1116,7 +1230,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "ru_RU": [
@@ -1172,7 +1292,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "sv": [
@@ -1228,7 +1354,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "sv_SE": [
@@ -1284,7 +1416,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "th": [
@@ -1340,7 +1478,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "th_TH": [
@@ -1396,7 +1540,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "tr": [
@@ -1452,7 +1602,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "tr_TR": [
@@ -1508,7 +1664,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "vi": [
@@ -1564,7 +1726,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "zh": [
@@ -1620,7 +1788,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "zh_CN": [
@@ -1676,7 +1850,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "zh_HK": [
@@ -1732,7 +1912,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "zh_SG": [
@@ -1788,7 +1974,13 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ],
 
   "zh_TW": [
@@ -1844,6 +2036,12 @@
     "ffmpegSource",
     "thirdPartyLicenses",
     "thirdPartyLicensesDescription",
-    "fullFfmpegLicenseFallback"
+    "fullFfmpegLicenseFallback",
+    "billingUnavailable",
+    "purchaseFailed",
+    "restoreFailed",
+    "receiptVerificationFailed",
+    "ffmpegName",
+    "storageJobsLoadFailed"
   ]
 }

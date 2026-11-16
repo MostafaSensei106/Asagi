@@ -1099,6 +1099,24 @@ class AppLocalizationsAr extends AppLocalizations {
       'نص الترخيص الكامل مضمّن في ملف ترخيص LGPL داخل التطبيق.';
 
   @override
+  String get billingUnavailable => 'تفاصيل الاشتراك غير متاحة حالياً.';
+
+  @override
+  String get purchaseFailed => 'تعذر إكمال عملية الشراء.';
+
+  @override
+  String get restoreFailed => 'تعذرت استعادة المشتريات.';
+
+  @override
+  String get receiptVerificationFailed => 'تعذر التحقق من إيصال الشراء.';
+
+  @override
+  String get ffmpegName => 'FFmpeg';
+
+  @override
+  String get storageJobsLoadFailed => 'تعذر تحميل المهام المتوقفة.';
+
+  @override
   String get languageName => 'العربية';
 
   @override

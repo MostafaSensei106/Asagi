@@ -10,7 +10,10 @@ import 'billing_service.dart';
 @LazySingleton(as: BillingService)
 final class GooglePlayBillingService implements BillingService {
   GooglePlayBillingService() : _store = InAppPurchase.instance {
-    _subscription = _store.purchaseStream.listen(_onPurchases);
+    _subscription = _store.purchaseStream.listen(
+      _onPurchases,
+      onError: _onPurchaseStreamError,
+    );
   }
 
   final InAppPurchase _store;
@@ -118,6 +121,15 @@ final class GooglePlayBillingService implements BillingService {
         unawaited(_store.completePurchase(purchase));
       }
     }
+  }
+
+  void _onPurchaseStreamError(Object error, StackTrace stackTrace) {
+    for (final completer in _pending.values) {
+      if (!completer.isCompleted) {
+        completer.completeError(StateError('E_BILLING_STREAM'));
+      }
+    }
+    _pending.clear();
   }
 
   PurchaseReceiptPayload? _receipt(PurchaseDetails purchase) {
