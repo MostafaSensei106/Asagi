@@ -54,7 +54,7 @@ The build must pass **at minimum**:
 
 **Why not LGPL v3.** v3 adds the "Installation Information" requirement (section 6 of GPLv3, incorporated by reference). For a consumer product, that means being able to hand the user the keys and information needed to install a modified library on their own locked-down device. Android's signed, verified-boot, non-rooted deployment model makes that requirement effectively unsatisfiable without weakening the device. v2.1's relinking requirement can be met by dynamic linking alone.
 
-**Library allow-list.** Only these external libraries may be enabled, all permissive or LGPL-compatible: `libvpx` (BSD), `libdav1d` (BSD), `libopus` (BSD), `libaom` (BSD), `libwebp` (BSD), `zlib`. Explicitly **forbidden**: `libx264`, `libx265`, `libxavs`, `libxvid`, `libvidstab`, `libfdk-aac`, `libaribb24` — GPL, nonfree, or both. `libmp3lame` is LGPL and acceptable, but unnecessary for v1.
+**External library allow-list.** No external FFmpeg libraries are enabled. In particular, `libzimg`/`zscale` and external encoders are omitted. Explicitly **forbidden**: `libx264`, `libx265`, `libxavs`, `libxvid`, `libvidstab`, `libfdk-aac`, `libaribb24` — GPL, nonfree, or both.
 
 ### 3. FFmpeg decodes and filters; MediaCodec keeps encoding
 
@@ -76,21 +76,24 @@ FFmpeg is introduced as a **decoder and filter graph only**. Encoding continues 
 
 So hardware encoding stays mandatory for H.264 output, and FFmpeg's job is narrow: **open the file, decode it, and hand over clean frames.**
 
-### 4. Shared libraries plus a visible license surface
+### 4. Shared libraries are built automatically before Cargo
 
 LGPLv2.1 section 6 requires that a user be able to modify the library and relink the application against it. The practical implementation on Android:
 
-- Build FFmpeg with `--enable-shared`, producing `libavcodec.so`, `libavformat.so`, `libavutil.so`, `libswscale.so`, `libswresample.so` (and any enabled codec libs). These ship unmodified in `jniLibs` per ABI (`arm64-v8a`, `x86_64`).
+- Cargokit invokes `scripts/build_ffmpeg_android.sh` before Cargo starts. This ordering matters: `rusty_ffmpeg` generates bindings in a dependency build script, which runs before this crate's `rust/build.rs`. The script builds the pinned FFmpeg `n7.1.5` source with the NDK, caches each ABI under Cargokit's target directory, and copies the resulting shared libraries into Android `jniLibs`.
+- Configure explicitly disables GPL, version 3, nonfree code, static libraries, programs, docs, encoders, and muxers. It enables only the required demuxers, decoders, and filters (scale, fps, format, transpose, hflip, vflip, tonemap); `zscale` is omitted. No external libraries are built into FFmpeg.
+- The script includes the full LGPL v2.1 text and writes `SOURCE_INFO.json` with the tag, commit, source URL, linkage, and relevant configure flags into Android assets. `rust/build.rs` verifies the matching headers and `.so` files selected by Cargokit before linking.
+- `rsmpeg` remains pinned to the FFmpeg 7.1 bindings. Host Rust tests do not link FFmpeg.
 - Because the libraries are dynamically linked and replaceable, no object files or relinking offer are needed for compliance. **Static linking would trigger that obligation**, which is why `--enable-shared` is non-negotiable even though it costs a few megabytes.
 - Ship the full LGPL v2.1 text and the FFmpeg source URL/pinned version in the app's licenses screen, alongside the existing Rust dependency notices.
 - Keep `strip = "symbols"` in `rust/Cargo.toml` for **our** code. Stripping our own symbols is unrelated to LGPL compliance (the obligation is about the library, not our application), and it is the existing asset-protection choice. Do not strip the FFmpeg `.so` files in a way that removes license or version strings — that is the only reading of "modified" we need to avoid.
 
 ### 5. GPL is blocked mechanically, not by intention
 
-A CI job runs `cargo-deny` with a license allow-list, and the FFmpeg configure step fails the build if `--disable-gpl`/`--disable-version3`/`--disable-nonfree` are missing. A reviewer reminder is not a control. The gate is:
+A CI job runs `cargo-deny` with a license allow-list, and the Android build rejects missing headers or shared libraries. A reviewer reminder is not a control. The gate is:
 
 - `deny.toml` allows only the permissive and LGPL-compatible license set in use.
-- The FFmpeg build script asserts the configuration flags rather than trusting the caller.
+- The Android build helper pins source and configuration, and the Rust build script rejects missing headers or shared libraries.
 - The gate runs on pull requests, so a dependency bump cannot silently pull GPL code in.
 
 ## Consequences
@@ -106,14 +109,14 @@ A CI job runs `cargo-deny` with a license allow-list, and the FFmpeg configure s
 
 - **APK size grows** by several megabytes for the shared FFmpeg libraries. This is a real cost on low-end devices and in emerging markets.
 - **Two decode paths to maintain.** A bug may reproduce on one and not the other, which makes the matrix longer, not shorter.
-- **Build complexity.** A reproducible NDK cross-build must be scripted and cached, or every CI run pays for it.
+- **Build time and toolchain dependency.** Android builds fetch FFmpeg source and require Git, Make, and the Android NDK. The per-ABI build is cached under the Cargokit target directory.
 - **Not a complete fix.** Files whose audio codec is unsupported still fail; FFmpeg gives us a decoder for common audio too, but the guarantee is decode-side only — encoding is still whatever the device's hardware supports.
 - **iOS is unfinished work**, explicitly carried into v1.1.
 
 ### Risks
 
 - **Hardware encoder absence.** A device with no H.264 encoder at all, or one that rejects the planned resolution, still cannot produce H.264. The current `E_ENCODER_UNSUPPORTED` path remains the honest answer. Do not paper over it.
-- **ABI coverage gaps.** Shipping `arm64-v8a` and `x86_64` only means 32-bit devices are unsupported. Given `minSdk` 30 and current device distribution, this is acceptable, but it must be stated in the store listing rather than discovered by a user.
+- **ABI coverage gaps.** FFmpeg fallback is supported only for `arm64-v8a`, `armeabi-v7a`, and `x86_64`; other Android ABIs remain unsupported.
 - **Patent licensing is a separate axis from copyright licensing.** LGPL governs the source code; MPEG LA / Access Advance govern the patents in H.264. Using an LGPL decoder does not settle patent questions. Our position is the common one: decode-side patent exposure for a free app is materially different from encode-side, and hardware encoding on the device keeps encode royalties with the device vendor. This should be reviewed if the app ever monetises the codec itself.
 - **Version drift.** FFmpeg moves. Pin an exact tag and record it in the notices screen so the shipped source offer is accurate.
 
@@ -132,8 +135,8 @@ A CI job runs `cargo-deny` with a license allow-list, and the FFmpeg configure s
 
 This ADR is satisfied when all of the following hold:
 
-- [ ] `scripts/build_ffmpeg_android.sh` builds `arm64-v8a` and `x86_64` with the four required flags, and fails loudly if a GPL library is enabled.
-- [ ] `arm64-v8a`/`x86_64` shared libraries are present in the built APK.
+- [ ] Cargokit builds FFmpeg 7.1.5 for Android with the LGPL-only shared configuration and no FFmpeg encoders.
+- [ ] `arm64-v8a`, `armeabi-v7a`, and `x86_64` shared libraries are present in the built APK.
 - [ ] `cargo-deny` runs in CI with a license allow-list and blocks GPL crates.
 - [ ] A source that fails MediaCodec decode succeeds through the FFmpeg path and produces a verified MP4 satisfying the size guarantee.
 - [ ] The licenses screen lists FFmpeg under LGPL v2.1 with the pinned source URL.

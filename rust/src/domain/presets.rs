@@ -97,6 +97,25 @@ fn preset(
 }
 
 impl PlatformPreset {
+    /// Whether choosing this destination requires an active Pro entitlement.
+    pub fn is_pro_only(&self) -> bool {
+        matches!(self.id, PresetId::Discord | PresetId::YouTubeShorts)
+    }
+
+    /// Resolve only after the caller has supplied the verified entitlement
+    /// state. Custom plans use the same licensing policy outside this table.
+    pub fn resolve_for_subscription(
+        &self,
+        input: &InputMetadata,
+        safety: f64,
+        subscription_active: bool,
+    ) -> Result<PresetPlan, String> {
+        if self.is_pro_only() && !subscription_active {
+            return Err("E_PRO_REQUIRED".into());
+        }
+        self.resolve(input, safety)
+    }
+
     /// Every preset, in the order the picker shows them.
     pub fn all() -> Vec<Self> {
         vec![

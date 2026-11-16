@@ -3,6 +3,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import '../../../../core/compression/domain/models/compression_output.dart';
 import '../../../../core/compression/domain/models/compression_plan.dart';
 import '../../../../core/compression/domain/models/compression_preferences.dart';
+import '../../../../core/compression/domain/models/interrupted_compression_job.dart';
+import '../../../../core/compression/domain/models/share_preset.dart';
 import '../../domain/models/compression_record.dart';
 import '../../domain/models/selected_video.dart';
 
@@ -33,5 +35,10 @@ sealed class CompressionState with _$CompressionState {
     String? error,
     @Default(<CompressionRecord>[]) List<CompressionRecord> history,
     @Default(0) int interruptedJobs,
+    @Default(<InterruptedCompressionJob>[])
+    List<InterruptedCompressionJob> recoverableJobs,
+    @Default(<SharePreset>[]) List<SharePreset> presets,
+    @Default(SharePresetId.whatsapp) SharePresetId? selectedPresetId,
+    SharePresetPlan? resolvedPresetPlan,
   }) = _CompressionState;
 }

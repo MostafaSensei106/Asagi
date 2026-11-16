@@ -13,7 +13,9 @@ import '../cubit/compression_cubit.dart';
 import '../cubit/compression_state.dart';
 import '../widgets/compression_advanced_controls.dart';
 import '../widgets/compression_plan_summary.dart';
+import '../widgets/platform_presets_bar.dart';
 import '../widgets/video_preview.dart';
+import '../widgets/zumi_preset_feedback_card.dart';
 
 final class CompressionSetupPage extends HookWidget {
   const CompressionSetupPage({super.key});
@@ -22,9 +24,10 @@ final class CompressionSetupPage extends HookWidget {
   Widget build(BuildContext context) {
     final cubit = BlocSignalProvider.of<CompressionCubit>(context);
     final target = useTextEditingController(
-      text: '${cubit.stateValue.targetMb}',
+      text: '${cubit.stateValue.targetMb.toInt()}',
     );
     final valid = useState(true);
+
     return Scaffold(
       appBar: AppBarComponent(title: context.localeKeys.compressionSetup),
       body: BlocSignalBuilder<CompressionCubit, CompressionState>(
@@ -37,6 +40,16 @@ final class CompressionSetupPage extends HookWidget {
               ),
             );
           }
+
+          // Sync text field with cubit state if preset changed targetMb
+          final expectedText =
+              state.targetMb.truncateToDouble() == state.targetMb
+              ? '${state.targetMb.toInt()}'
+              : state.targetMb.toStringAsFixed(1);
+          if (target.text != expectedText && state.selectedPresetId != null) {
+            target.text = expectedText;
+          }
+
           return ListView(
             padding: const EdgeInsets.all(24),
             children: [
@@ -53,25 +66,22 @@ final class CompressionSetupPage extends HookWidget {
               ),
               const SizedBox(height: 24),
               Text(
-                context.localeKeys.targetPreset,
+                'المنصة المستهدفة أو الحجم',
                 style: Theme.of(context).textTheme.titleMedium,
               ),
-              const SizedBox(height: 8),
-              Wrap(
-                spacing: 8,
-                children: [
-                  for (final preset in const [8.0, 16.0, 25.0])
-                    ChoiceChip(
-                      label: Text('${preset.toInt()} MB'),
-                      selected: state.targetMb == preset,
-                      onSelected: (_) {
-                        target.text = '${preset.toInt()}';
-                        valid.value = true;
-                        cubit.setTargetMb(preset);
-                      },
-                    ),
-                  Chip(label: Text(context.localeKeys.customSize)),
-                ],
+              const SizedBox(height: 12),
+              PlatformPresetsBar(
+                selectedPresetId: state.selectedPresetId,
+                onPresetSelected: (id) {
+                  valid.value = true;
+                  cubit.selectPreset(id);
+                },
+              ),
+              const SizedBox(height: 16),
+              ZumiPresetFeedbackCard(
+                selectedPresetId: state.selectedPresetId,
+                presetPlan: state.resolvedPresetPlan,
+                isLoading: state.planning,
               ),
               const SizedBox(height: 16),
               TextField(
@@ -81,6 +91,9 @@ final class CompressionSetupPage extends HookWidget {
                 ),
                 decoration: InputDecoration(
                   labelText: context.localeKeys.targetSizeMB,
+                  helperText: state.selectedPresetId != null
+                      ? 'تم الضبط تلقائياً للمنصة (تغيير الرقم يحول للوضع المخصص)'
+                      : null,
                   errorText: valid.value
                       ? null
                       : context.localeKeys.enterATargetSizeGreaterThanZero,

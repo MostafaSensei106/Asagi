@@ -8,10 +8,12 @@ import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../core/compression/compression_engine.dart';
+import '../../../../core/compression/domain/models/interrupted_compression_job.dart';
 import '../../../../core/compression/infrastructure/storage/mp4_faststart_validator.dart';
 import '../../../../core/native/pigeon_messages.g.dart';
 import '../../../../core/native/rust/frb_generated.dart';
 import '../../domain/models/compression_record.dart';
+import '../../domain/models/resumed_compression.dart';
 import '../../domain/models/selected_video.dart';
 import '../../domain/repositories/video_compression_repository.dart';
 import 'encoder_calibration_store.dart';
@@ -65,10 +67,6 @@ final class DeviceVideoCompressionRepository
     await _ensureRust();
     final cache = await getTemporaryDirectory();
     final workspacePath = '${cache.path}/compression';
-    await const FileArtifactStore().cleanupInterrupted(
-      workspacePath,
-      const Duration(hours: 12),
-    );
     EncoderCalibrationStore? calibration;
     String? calibrationProfile;
     if (Platform.isAndroid) {
@@ -122,6 +120,7 @@ final class DeviceVideoCompressionRepository
       try {
         output = await _engine.compress(
           source: video.path,
+          sourceName: video.name,
           targetMb: targetMb * factor,
           workspacePath: workspacePath,
           acceptedMaxBytes: acceptedMaxBytes,
@@ -337,12 +336,37 @@ final class DeviceVideoCompressionRepository
   }
 
   @override
-  Future<int> recoverInterrupted() async {
+  Future<List<InterruptedCompressionJob>> recoverInterrupted() async {
     final cache = await getTemporaryDirectory();
-    return const FileArtifactStore().cleanupInterrupted(
+    return const FileArtifactStore().listInterrupted(
       '${cache.path}/compression',
-      Duration.zero,
     );
+  }
+
+  @override
+  Future<void> discardInterrupted(String jobId) async {
+    final cache = await getTemporaryDirectory();
+    await const FileArtifactStore().deleteInterrupted(
+      '${cache.path}/compression',
+      jobId,
+    );
+  }
+
+  @override
+  Future<ResumedCompression> resumeInterrupted(
+    InterruptedCompressionJob job,
+  ) async {
+    final source = File(job.sourcePath);
+    if (!await source.exists()) throw StateError('E_RESUME_SOURCE_UNAVAILABLE');
+    final metadata = await _encoder.inspect(source.path);
+    final video = SelectedVideo(
+      path: source.path,
+      name: job.sourceName,
+      metadata: metadata,
+    );
+    final output = await compress(video, job.targetMb, job.preferences);
+    await discardInterrupted(job.id);
+    return ResumedCompression(video: video, output: output);
   }
 
   @override

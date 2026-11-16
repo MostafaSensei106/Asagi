@@ -2,6 +2,7 @@
 /// Details: https://fzyzcjy.github.io/flutter_rust_bridge/manual/integrate/builtin
 
 import 'dart:io';
+import 'dart:math' as math;
 
 import 'package:collection/collection.dart';
 import 'package:logging/logging.dart';
@@ -196,7 +197,7 @@ class RustBuilder {
     return {};
   }
 
-  Future<Map<String, String>> _buildAndroidEnv() {
+  Future<Map<String, String>> _buildAndroidEnv() async {
     final sdkPath = environment.androidSdkPath;
     final ndkVersion = environment.androidNdkVersion;
     final minSdkVersion = environment.androidMinSdkVersion;
@@ -219,7 +220,49 @@ class RustBuilder {
     if (!env.ndkIsInstalled() && environment.javaHome != null) {
       env.installNdk(javaHome: environment.javaHome!);
     }
-    return env.buildEnvironment();
+    final buildEnvironment = await env.buildEnvironment();
+    final ffmpegAbi = target.android;
+    if (const ['arm64-v8a', 'armeabi-v7a', 'x86_64'].contains(ffmpegAbi)) {
+      // Build FFmpeg before Cargo: rusty_ffmpeg needs its headers while its
+      // dependency build script generates bindings.
+      final repositoryRoot = path.normalize(
+        path.join(environment.manifestDir, '..'),
+      );
+      final ndkPath = path.join(sdkPath, 'ndk', ndkVersion);
+      final minSdk = math.max(target.androidMinSdkVersion!, minSdkVersion);
+      final ffmpegCache = path.join(environment.targetTempDir, 'ffmpeg');
+      final jniLibs = path.join(
+        repositoryRoot,
+        'android',
+        'app',
+        'src',
+        'main',
+        'jniLibs',
+      );
+      runCommand(
+          'bash',
+          [
+            path.join(repositoryRoot, 'scripts', 'build_ffmpeg_android.sh'),
+            ffmpegAbi!,
+            target.rust,
+            '$minSdk',
+            ndkPath,
+            ffmpegCache,
+            jniLibs,
+          ],
+          environment: buildEnvironment);
+      final ffmpegInstall = path.join(
+        ffmpegCache,
+        'build-n7.1.5-$ffmpegAbi',
+        'install',
+      );
+      buildEnvironment.addAll({
+        'FFMPEG_INCLUDE_DIR': path.join(ffmpegInstall, 'include'),
+        // rusty_ffmpeg links dynamically against the Cargokit-built shared libs.
+        'FFMPEG_DLL_PATH': path.join(ffmpegInstall, 'lib'),
+      });
+    }
+    return buildEnvironment;
   }
 
   Map<String, String> _buildOhosEnv() {

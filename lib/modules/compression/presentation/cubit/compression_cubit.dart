@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:bloc_signals/bloc_signals.dart';
 
 import '../../../../core/compression/domain/models/compression_preferences.dart';
+import '../../../../core/compression/domain/models/interrupted_compression_job.dart';
+import '../../../../core/compression/domain/models/share_preset.dart';
 import '../../domain/repositories/video_compression_repository.dart';
 import 'compression_state.dart';
 
@@ -11,6 +13,7 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
     : super(initialState: const CompressionState()) {
     unawaited(loadDefaultTarget());
     unawaited(loadPreferences());
+    unawaited(loadPresets());
     unawaited(recoverInterrupted());
   }
 
@@ -35,16 +38,7 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
         emit(previous);
         return false;
       }
-      emit(
-        CompressionState(
-          video: video,
-          targetMb: stateValue.targetMb,
-          preferences: stateValue.preferences,
-          phase: CompressionPhase.ready,
-          history: stateValue.history,
-          interruptedJobs: stateValue.interruptedJobs,
-        ),
-      );
+      emit(stateValue.copyWith(video: video, phase: CompressionPhase.ready));
       unawaited(refreshPlan());
       return true;
     } catch (error) {
@@ -57,11 +51,62 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
     }
   }
 
+  void selectPreset(SharePresetId? id) {
+    if (stateValue.selectedPresetId == id) return;
+    _targetModified = true;
+    if (id == null) {
+      emit(
+        stateValue.copyWith(selectedPresetId: null, resolvedPresetPlan: null),
+      );
+      unawaited(refreshPlan());
+      return;
+    }
+    SharePreset? match;
+    for (final preset in stateValue.presets) {
+      if (preset.id == id) {
+        match = preset;
+        break;
+      }
+    }
+    final targetMb = match != null
+        ? match.targetMb.toDouble()
+        : stateValue.targetMb;
+    final prefs = match != null ? match.preferences : stateValue.preferences;
+    emit(
+      stateValue.copyWith(
+        selectedPresetId: id,
+        targetMb: targetMb,
+        preferences: prefs,
+      ),
+    );
+    unawaited(refreshPlan());
+  }
+
   void setTargetMb(double value) {
     if (!value.isFinite || value <= 0) return;
     _targetModified = true;
-    emit(stateValue.copyWith(targetMb: value));
+    emit(
+      stateValue.copyWith(
+        targetMb: value,
+        selectedPresetId: null,
+        resolvedPresetPlan: null,
+      ),
+    );
     unawaited(refreshPlan());
+  }
+
+  Future<void> loadPresets() async {
+    try {
+      final list = await repository.presets();
+      if (!isClosed) {
+        emit(stateValue.copyWith(presets: list));
+        if (stateValue.video != null && stateValue.selectedPresetId != null) {
+          await refreshPlan();
+        }
+      }
+    } catch (_) {
+      // Presets table is read from memory; fallback to defaults if unavailable.
+    }
   }
 
   Future<void> loadPreferences() async {
@@ -80,7 +125,13 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
     preferences.validate();
     if (isClosed) return;
     _preferencesModified = true;
-    emit(stateValue.copyWith(preferences: preferences));
+    emit(
+      stateValue.copyWith(
+        preferences: preferences,
+        selectedPresetId: null,
+        resolvedPresetPlan: null,
+      ),
+    );
     _preferencesSave = _preferencesSave.then((_) async {
       try {
         await repository.savePreferences(preferences);
@@ -105,13 +156,35 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
     final version = ++_planVersion;
     emit(stateValue.copyWith(planning: true, previewPlan: null));
     try {
-      final plan = await repository.previewPlan(
-        video,
-        stateValue.targetMb,
-        stateValue.preferences,
-      );
-      if (!isClosed && version == _planVersion) {
-        emit(stateValue.copyWith(planning: false, previewPlan: plan));
+      final presetId = stateValue.selectedPresetId;
+      if (presetId != null) {
+        final presetPlan = await repository.resolvePreset(video, presetId);
+        if (!isClosed && version == _planVersion) {
+          emit(
+            stateValue.copyWith(
+              planning: false,
+              previewPlan: presetPlan.plan,
+              resolvedPresetPlan: presetPlan,
+              targetMb: presetPlan.effectiveTargetMb.toDouble(),
+              preferences: presetPlan.preferences,
+            ),
+          );
+        }
+      } else {
+        final plan = await repository.previewPlan(
+          video,
+          stateValue.targetMb,
+          stateValue.preferences,
+        );
+        if (!isClosed && version == _planVersion) {
+          emit(
+            stateValue.copyWith(
+              planning: false,
+              previewPlan: plan,
+              resolvedPresetPlan: null,
+            ),
+          );
+        }
       }
     } catch (error) {
       if (!isClosed && version == _planVersion) {
@@ -119,6 +192,7 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
           stateValue.copyWith(
             planning: false,
             previewPlan: null,
+            resolvedPresetPlan: null,
             error: '$error',
           ),
         );
@@ -224,17 +298,81 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
 
   Future<void> recoverInterrupted() async {
     try {
-      final count = await repository.recoverInterrupted();
-      if (!isClosed && count > 0) {
-        emit(stateValue.copyWith(interruptedJobs: count));
+      final jobs = await repository.recoverInterrupted();
+      if (!isClosed && jobs.isNotEmpty) {
+        emit(
+          stateValue.copyWith(
+            interruptedJobs: jobs.length,
+            recoverableJobs: jobs,
+          ),
+        );
       }
     } catch (_) {
-      // Failed cleanup is retried on the next app launch.
+      // Recovery can be retried on the next app launch.
     }
   }
 
-  void dismissInterruptedNotice() {
-    emit(stateValue.copyWith(interruptedJobs: 0));
+  Future<void> resumeInterrupted(InterruptedCompressionJob job) async {
+    if (stateValue.phase == CompressionPhase.running ||
+        stateValue.phase == CompressionPhase.paused) {
+      return;
+    }
+    await _progressSubscription?.cancel();
+    emit(
+      stateValue.copyWith(
+        phase: CompressionPhase.running,
+        targetMb: job.targetMb,
+        preferences: job.preferences,
+        progress: 0,
+        error: null,
+      ),
+    );
+    _progressSubscription = repository.progress.listen((value) {
+      if (!isClosed && stateValue.phase == CompressionPhase.running) {
+        emit(stateValue.copyWith(progress: value.clamp(0.0, 0.95)));
+      }
+    });
+    try {
+      final result = await repository.resumeInterrupted(job);
+      if (isClosed) return;
+      final remaining = stateValue.recoverableJobs
+          .where((candidate) => candidate.id != job.id)
+          .toList();
+      emit(
+        stateValue.copyWith(
+          phase: CompressionPhase.completed,
+          video: result.video,
+          output: result.output,
+          progress: 1,
+          recoverableJobs: remaining,
+          interruptedJobs: remaining.length,
+        ),
+      );
+      await loadHistory();
+    } catch (error) {
+      if (!isClosed) {
+        emit(
+          stateValue.copyWith(phase: CompressionPhase.failure, error: '$error'),
+        );
+      }
+    } finally {
+      await _progressSubscription?.cancel();
+      _progressSubscription = null;
+    }
+  }
+
+  Future<void> discardInterrupted(String jobId) async {
+    await repository.discardInterrupted(jobId);
+    if (isClosed) return;
+    final remaining = stateValue.recoverableJobs
+        .where((job) => job.id != jobId)
+        .toList();
+    emit(
+      stateValue.copyWith(
+        recoverableJobs: remaining,
+        interruptedJobs: remaining.length,
+      ),
+    );
   }
 
   Future<void> saveToGallery() async {

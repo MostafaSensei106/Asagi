@@ -79,18 +79,65 @@ final class HomePage extends HookWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    context
-                                        .localeKeys
-                                        .aPreviousCompressionWasInterruptedItsTemporaryFilesWereCleanedUpYouCanSelectTheVideoAndTryAgain,
+                                  const Text(
+                                    'وجدت مهام ضغط متوقفة. يمكنك استئنافها بنفس الإعدادات أو حذفها.',
                                   ),
-                                  Align(
-                                    alignment: AlignmentDirectional.centerEnd,
-                                    child: TextButton(
-                                      onPressed: cubit.dismissInterruptedNotice,
-                                      child: Text(context.localeKeys.dismiss),
+                                  const SizedBox(height: 8),
+                                  for (final job in state.recoverableJobs)
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 8),
+                                      child: Row(
+                                        children: [
+                                          Expanded(
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  job.sourceName,
+                                                  maxLines: 1,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .titleSmall,
+                                                ),
+                                                Text(
+                                                  job.sourceAvailable
+                                                      ? '${job.targetMb.toStringAsFixed(0)} MB · ${job.phase} · ${job.updatedAt.toLocal()}'
+                                                      : 'الملف الأصلي غير موجود · احذف المهمة لتنظيف المؤقتات',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .bodySmall,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          TextButton(
+                                            onPressed:
+                                                !job.sourceAvailable ||
+                                                    state.phase ==
+                                                        CompressionPhase.running
+                                                ? null
+                                                : () => unawaited(
+                                                    cubit.resumeInterrupted(
+                                                      job,
+                                                    ),
+                                                  ),
+                                            child: const Text('استئناف'),
+                                          ),
+                                          IconButton(
+                                            tooltip: 'حذف المهمة المتوقفة',
+                                            onPressed: () => unawaited(
+                                              cubit.discardInterrupted(job.id),
+                                            ),
+                                            icon: const Icon(
+                                              Icons.delete_outline,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
-                                  ),
                                 ],
                               ),
                             ),

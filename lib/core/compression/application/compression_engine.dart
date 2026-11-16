@@ -36,6 +36,7 @@ final class CompressionEngine {
     onAttemptMeasured,
     HdrMode? hdrMode,
     CompressionPreferences preferences = const CompressionPreferences(),
+    String? sourceName,
   }) async {
     preferences.validate();
     final effectiveHdrMode = hdrMode ?? preferences.hdrMode;
@@ -65,8 +66,28 @@ final class CompressionEngine {
       }
       if (plan.isInfeasible) throw StateError('E_TARGET_INFEASIBLE');
       job = await artifacts.create(workspacePath);
+      Future<void> saveJobState(String phase, int attempt) =>
+          job!.saveJobState({
+            'version': 1,
+            'source': source,
+            'sourceName': sourceName ?? source,
+            'targetMb': targetMb,
+            'preferences': {
+              'maxShortEdge': preferences.maxShortEdge,
+              'maxFrameRate': preferences.maxFrameRate,
+              'audioBitrateKbps': preferences.audioBitrateKbps,
+              'videoBitrateCeilingKbps': preferences.videoBitrateCeilingKbps,
+              'hdrMode': preferences.hdrMode.name,
+            },
+            'phase': phase,
+            'attempt': attempt,
+            'updatedAt': DateTime.now().toUtc().toIso8601String(),
+          });
+
+      await saveJobState('planned', 1);
       for (var attempt = 1; attempt <= plan.maxAttempts; attempt++) {
         await _control.checkpoint();
+        await saveJobState('encoding', attempt);
         final path = job.pathForAttempt(attempt);
         _control.encoding = true;
         try {
@@ -85,6 +106,7 @@ final class CompressionEngine {
           _control.encoding = false;
         }
         await _control.checkpoint();
+        await saveJobState('verifying', attempt);
         final encoded = await encoder.inspect(path);
         final durationTolerance = info.durationSecs * 0.05 > 1
             ? info.durationSecs * 0.05
@@ -117,6 +139,7 @@ final class CompressionEngine {
             bytes > 0 &&
             bytes <= acceptedMaxBytes) {
           await _control.checkpoint();
+          await saveJobState('complete', attempt);
           await job.commit();
           return CompressionOutput(path, bytes, attempt, plan.warningMessage);
         }
@@ -128,6 +151,7 @@ final class CompressionEngine {
         );
         await _control.checkpoint();
         if (next == 0) {
+          await saveJobState('complete', attempt);
           await job.commit();
           return CompressionOutput(path, bytes, attempt, plan.warningMessage);
         }
