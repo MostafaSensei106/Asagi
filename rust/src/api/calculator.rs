@@ -148,3 +148,30 @@ fn authorize_pro_receipt(
 fn safety_margin(custom_k_factor: Option<f32>) -> f64 {
     custom_k_factor.map_or(0.93, f64::from)
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn ffis_fail_closed_for_each_pro_plan_kind_without_a_receipt() {
+        for (preset, custom) in [
+            (Some(PresetId::Discord), false),
+            (Some(PresetId::YouTubeShorts), false),
+            (None, true),
+        ] {
+            assert_eq!(
+                authorize_pro_receipt(preset, custom, None, None, None),
+                Err("E_PRO_SUBSCRIPTION_REQUIRED".into()),
+            );
+        }
+    }
+
+    #[test]
+    fn free_presets_do_not_require_a_subscription_proof() {
+        assert_eq!(
+            authorize_pro_receipt(Some(PresetId::Whatsapp), false, None, None, None),
+            Ok(()),
+        );
+    }
+}

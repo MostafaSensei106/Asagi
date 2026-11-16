@@ -83,7 +83,13 @@ import 'package:zumi/core/utils/theme/logic/cubit/theme_cubit.dart' as _i839;
 import 'package:zumi/modules/about/data/about_app_repsitory.dart' as _i529;
 import 'package:zumi/modules/about/data/base_about_app_repository.dart'
     as _i374;
+import 'package:zumi/modules/about/data/repositories/asset_open_source_license_repository.dart'
+    as _i146;
+import 'package:zumi/modules/about/domain/repositories/open_source_license_repository.dart'
+    as _i302;
 import 'package:zumi/modules/about/logic/cubit/about_app_cubit.dart' as _i811;
+import 'package:zumi/modules/about/logic/open_source_licenses_cubit.dart'
+    as _i214;
 import 'package:zumi/modules/plans/logic/subscription_cubit.dart' as _i877;
 import 'package:zumi/modules/storage/data/repositories/file_storage_repository.dart'
     as _i117;
@@ -119,6 +125,14 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i613.CacheManager>(() => _i613.CacheManager());
     gh.lazySingleton<_i283.BasePackageInfoAdapter>(
       () => _i647.PackageInfoPlusAdapter(gh<_i655.PackageInfo>()),
+    );
+    gh.lazySingleton<_i302.OpenSourceLicenseRepository>(
+      () => _i146.AssetOpenSourceLicenseRepository(),
+    );
+    gh.factory<_i214.OpenSourceLicensesCubit>(
+      () => _i214.OpenSourceLicensesCubit(
+        gh<_i302.OpenSourceLicenseRepository>(),
+      ),
     );
     gh.lazySingleton<_i546.PurchaseProofStore>(
       () => _i961.InMemoryPurchaseProofStore(),
@@ -223,6 +237,12 @@ extension GetItInjectableX on _i174.GetIt {
 
   _i647.PackageInfoPlusAdapter get packageInfoPlusAdapter =>
       get<_i647.PackageInfoPlusAdapter>();
+
+  _i146.AssetOpenSourceLicenseRepository get assetOpenSourceLicenseRepository =>
+      get<_i146.AssetOpenSourceLicenseRepository>();
+
+  _i214.OpenSourceLicensesCubit get openSourceLicensesCubit =>
+      get<_i214.OpenSourceLicensesCubit>();
 
   _i961.InMemoryPurchaseProofStore get inMemoryPurchaseProofStore =>
       get<_i961.InMemoryPurchaseProofStore>();

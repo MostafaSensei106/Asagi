@@ -19,23 +19,37 @@ final class StorageSettingsCubit extends CubitSignal<StorageSettingsState> {
   final StorageRepository _repository;
 
   Future<void> load() async {
-    emit(stateValue.copyWith(isLoading: true, error: false));
+    emit(stateValue.copyWith(isLoading: true, error: null));
     try {
       final jobs = await _repository.interruptedJobIds();
       if (!isClosed) emit(stateValue.copyWith(jobIds: jobs, isLoading: false));
     } catch (_) {
-      if (!isClosed) emit(stateValue.copyWith(isLoading: false, error: true));
+      if (!isClosed) {
+        emit(
+          stateValue.copyWith(
+            isLoading: false,
+            error: StorageSettingsFailure.loadFailed,
+          ),
+        );
+      }
     }
   }
 
   Future<void> clean() async {
-    emit(stateValue.copyWith(isCleaning: true, error: false));
+    emit(stateValue.copyWith(isCleaning: true, error: null));
     try {
       await _repository.cleanInterruptedJobs();
       if (!isClosed) emit(stateValue.copyWith(isCleaning: false));
       await load();
     } catch (_) {
-      if (!isClosed) emit(stateValue.copyWith(isCleaning: false, error: true));
+      if (!isClosed) {
+        emit(
+          stateValue.copyWith(
+            isCleaning: false,
+            error: StorageSettingsFailure.cleanupFailed,
+          ),
+        );
+      }
     }
   }
 }

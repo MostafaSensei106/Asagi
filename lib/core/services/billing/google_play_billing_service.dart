@@ -118,8 +118,16 @@ final class GooglePlayBillingService implements BillingService {
         if (pending != null && !pending.isCompleted) pending.complete(null);
       }
       if (purchase.pendingCompletePurchase) {
-        unawaited(_store.completePurchase(purchase));
+        unawaited(_completePurchase(purchase));
       }
+    }
+  }
+
+  Future<void> _completePurchase(PurchaseDetails purchase) async {
+    try {
+      await _store.completePurchase(purchase);
+    } catch (_) {
+      _updates.addError(StateError('E_BILLING_ACK'));
     }
   }
 

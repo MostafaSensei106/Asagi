@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$StorageSettingsState {
 
- List<String> get jobIds; bool get isLoading; bool get isCleaning; bool get error;
+ List<String> get jobIds; bool get isLoading; bool get isCleaning; StorageSettingsFailure? get error;
 /// Create a copy of StorageSettingsState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -51,7 +51,7 @@ abstract mixin class $StorageSettingsStateCopyWith<$Res>  {
   factory $StorageSettingsStateCopyWith(StorageSettingsState value, $Res Function(StorageSettingsState) _then) = _$StorageSettingsStateCopyWithImpl;
 @useResult
 $Res call({
- List<String> jobIds, bool isLoading, bool isCleaning, bool error
+ List<String> jobIds, bool isLoading, bool isCleaning, StorageSettingsFailure? error
 });
 
 
@@ -68,13 +68,13 @@ class _$StorageSettingsStateCopyWithImpl<$Res>
 
 /// Create a copy of StorageSettingsState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? jobIds = null,Object? isLoading = null,Object? isCleaning = null,Object? error = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? jobIds = null,Object? isLoading = null,Object? isCleaning = null,Object? error = freezed,}) {
   return _then(StorageSettingsState(
 jobIds: null == jobIds ? _self.jobIds : jobIds // ignore: cast_nullable_to_non_nullable
 as List<String>,isLoading: null == isLoading ? _self.isLoading : isLoading // ignore: cast_nullable_to_non_nullable
 as bool,isCleaning: null == isCleaning ? _self.isCleaning : isCleaning // ignore: cast_nullable_to_non_nullable
-as bool,error: null == error ? _self.error : error // ignore: cast_nullable_to_non_nullable
-as bool,
+as bool,error: freezed == error ? _self.error : error // ignore: cast_nullable_to_non_nullable
+as StorageSettingsFailure?,
   ));
 }
 
@@ -156,7 +156,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<String> jobIds,  bool isLoading,  bool isCleaning,  bool error)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<String> jobIds,  bool isLoading,  bool isCleaning,  StorageSettingsFailure? error)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _StorageSettingsState() when $default != null:
 return $default(_that.jobIds,_that.isLoading,_that.isCleaning,_that.error);case _:
@@ -177,7 +177,7 @@ return $default(_that.jobIds,_that.isLoading,_that.isCleaning,_that.error);case 
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<String> jobIds,  bool isLoading,  bool isCleaning,  bool error)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<String> jobIds,  bool isLoading,  bool isCleaning,  StorageSettingsFailure? error)  $default,) {final _that = this;
 switch (_that) {
 case _StorageSettingsState():
 return $default(_that.jobIds,_that.isLoading,_that.isCleaning,_that.error);}
@@ -194,7 +194,7 @@ return $default(_that.jobIds,_that.isLoading,_that.isCleaning,_that.error);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<String> jobIds,  bool isLoading,  bool isCleaning,  bool error)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<String> jobIds,  bool isLoading,  bool isCleaning,  StorageSettingsFailure? error)?  $default,) {final _that = this;
 switch (_that) {
 case _StorageSettingsState() when $default != null:
 return $default(_that.jobIds,_that.isLoading,_that.isCleaning,_that.error);case _:
@@ -209,7 +209,7 @@ return $default(_that.jobIds,_that.isLoading,_that.isCleaning,_that.error);case 
 
 
 class _StorageSettingsState implements StorageSettingsState {
-  const _StorageSettingsState({ List<String> jobIds = const <String>[], this.isLoading = false, this.isCleaning = false, this.error = false}): _jobIds = jobIds;
+  const _StorageSettingsState({ List<String> jobIds = const <String>[], this.isLoading = false, this.isCleaning = false, this.error}): _jobIds = jobIds;
   
 
  final  List<String> _jobIds;
@@ -221,7 +221,7 @@ class _StorageSettingsState implements StorageSettingsState {
 
 @override@JsonKey() final  bool isLoading;
 @override@JsonKey() final  bool isCleaning;
-@override@JsonKey() final  bool error;
+@override final  StorageSettingsFailure? error;
 
 /// Create a copy of StorageSettingsState
 /// with the given fields replaced by the non-null parameter values.
@@ -255,7 +255,7 @@ abstract mixin class _$StorageSettingsStateCopyWith<$Res> implements $StorageSet
   factory _$StorageSettingsStateCopyWith(_StorageSettingsState value, $Res Function(_StorageSettingsState) _then) = __$StorageSettingsStateCopyWithImpl;
 @override @useResult
 $Res call({
- List<String> jobIds, bool isLoading, bool isCleaning, bool error
+ List<String> jobIds, bool isLoading, bool isCleaning, StorageSettingsFailure? error
 });
 
 
@@ -272,13 +272,13 @@ class __$StorageSettingsStateCopyWithImpl<$Res>
 
 /// Create a copy of StorageSettingsState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? jobIds = null,Object? isLoading = null,Object? isCleaning = null,Object? error = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? jobIds = null,Object? isLoading = null,Object? isCleaning = null,Object? error = freezed,}) {
   return _then(_StorageSettingsState(
 jobIds: null == jobIds ? _self._jobIds : jobIds // ignore: cast_nullable_to_non_nullable
 as List<String>,isLoading: null == isLoading ? _self.isLoading : isLoading // ignore: cast_nullable_to_non_nullable
 as bool,isCleaning: null == isCleaning ? _self.isCleaning : isCleaning // ignore: cast_nullable_to_non_nullable
-as bool,error: null == error ? _self.error : error // ignore: cast_nullable_to_non_nullable
-as bool,
+as bool,error: freezed == error ? _self.error : error // ignore: cast_nullable_to_non_nullable
+as StorageSettingsFailure?,
   ));
 }
 

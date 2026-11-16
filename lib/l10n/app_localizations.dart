@@ -2149,6 +2149,12 @@ abstract class AppLocalizations {
   /// **'FFmpeg build metadata is unavailable.'**
   String get ffmpegBuildMetadataUnavailable;
 
+  /// No description provided for @openSourceLicensesLoadFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Open source license notices could not be loaded.'**
+  String get openSourceLicensesLoadFailed;
+
   /// No description provided for @languageName.
   ///
   /// In en, this message translates to:

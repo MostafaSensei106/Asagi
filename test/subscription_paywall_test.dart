@@ -35,6 +35,23 @@ void main() {
     await billing.dispose();
   });
 
+  test(
+    'subscription cubit reads an offer and restores through the fake',
+    () async {
+      final cubit = getIt<SubscriptionCubit>();
+      await Future<void>.delayed(Duration.zero);
+      expect(cubit.stateValue.offer?.price, 'EGP 99.99');
+
+      await cubit.restore();
+
+      expect(
+        cubit.stateValue.message,
+        SubscriptionNotice.noActivePurchaseFound,
+      );
+      await cubit.close();
+    },
+  );
+
   testWidgets('paywall displays localized Play price and loyalty progress', (
     tester,
   ) async {

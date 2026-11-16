@@ -60,7 +60,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "de_DE": [
@@ -124,7 +125,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "es": [
@@ -188,7 +190,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "es_ES": [
@@ -252,7 +255,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "fr": [
@@ -316,7 +320,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "id": [
@@ -380,7 +385,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "id_ID": [
@@ -444,7 +450,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "it": [
@@ -508,7 +515,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "it_IT": [
@@ -572,7 +580,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "ja": [
@@ -636,7 +645,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "ja_JP": [
@@ -700,7 +710,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "ko": [
@@ -764,7 +775,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "ko_KR": [
@@ -828,7 +840,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "nl": [
@@ -892,7 +905,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "nl_BE": [
@@ -956,7 +970,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "pl": [
@@ -1020,7 +1035,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "pl_PL": [
@@ -1084,7 +1100,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "pt": [
@@ -1148,7 +1165,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "pt_BR": [
@@ -1212,7 +1230,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "ru": [
@@ -1276,7 +1295,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "ru_RU": [
@@ -1340,7 +1360,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "sv": [
@@ -1404,7 +1425,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "sv_SE": [
@@ -1468,7 +1490,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "th": [
@@ -1532,7 +1555,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "th_TH": [
@@ -1596,7 +1620,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "tr": [
@@ -1660,7 +1685,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "tr_TR": [
@@ -1724,7 +1750,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "vi": [
@@ -1788,7 +1815,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "zh": [
@@ -1852,7 +1880,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "zh_CN": [
@@ -1916,7 +1945,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "zh_HK": [
@@ -1980,7 +2010,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "zh_SG": [
@@ -2044,7 +2075,8 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ],
 
   "zh_TW": [
@@ -2108,6 +2140,7 @@
     "ffmpegName",
     "storageJobsLoadFailed",
     "cleanupInterruptedJobsFailed",
-    "ffmpegBuildMetadataUnavailable"
+    "ffmpegBuildMetadataUnavailable",
+    "openSourceLicensesLoadFailed"
   ]
 }

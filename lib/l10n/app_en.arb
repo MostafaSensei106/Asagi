@@ -829,6 +829,7 @@
   "storageJobsLoadFailed": "Interrupted jobs could not be loaded.",
   "cleanupInterruptedJobsFailed": "The interrupted files could not be cleaned.",
   "ffmpegBuildMetadataUnavailable": "FFmpeg build metadata is unavailable.",
+  "openSourceLicensesLoadFailed": "Open source license notices could not be loaded.",
   "languageName": "English",
   "countryCode": "US",
   "countryName": "{countryCode, select, AE{United Arab Emirates} AT{Austria} AU{Australia} BE{Belgium} BH{Bahrain} BR{Brazil} CA{Canada} CH{Switzerland} CN{China} DE{Germany} DJ{Djibouti} DZ{Algeria} EG{Egypt} ES{Spain} FR{France} GB{United Kingdom} HK{Hong Kong SAR China} ID{Indonesia} IQ{Iraq} IT{Italy} JO{Jordan} JP{Japan} KM{Comoros} KR{South Korea} KW{Kuwait} LB{Lebanon} LY{Libya} MA{Morocco} MR{Mauritania} MX{Mexico} NL{Netherlands} OM{Oman} PL{Poland} PS{Palestinian Territories} PT{Portugal} QA{Qatar} RU{Russia} SA{Saudi Arabia} SD{Sudan} SE{Sweden} SG{Singapore} SO{Somalia} SY{Syria} TH{Thailand} TN{Tunisia} TR{Türkiye} TW{Taiwan} US{United States} VN{Vietnam} YE{Yemen} other{Country}}",

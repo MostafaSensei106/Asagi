@@ -335,7 +335,7 @@ class AppLocalizationsAr extends AppLocalizations {
       'المطور والأدوات المستخدمة في بناء Zumi.';
 
   @override
-  String get openSourceLicenses => 'تراخيص المصادر المفتوحة';
+  String get openSourceLicenses => 'تراخيص مفتوحة المصدر';
 
   @override
   String get openSourcePackagesBundledWithZumi =>
@@ -1122,6 +1122,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get ffmpegBuildMetadataUnavailable => 'بيانات بناء FFmpeg غير متاحة.';
+
+  @override
+  String get openSourceLicensesLoadFailed =>
+      'تعذر تحميل إشعارات تراخيص المصادر المفتوحة.';
 
   @override
   String get languageName => 'العربية';

@@ -19,12 +19,24 @@ final class SubscriptionCubit extends CubitSignal<SubscriptionState> {
     : super(initialState: const SubscriptionState()) {
     _updates = _billing.purchaseUpdates.listen(
       (receipt) => unawaited(_verify(receipt)),
+      onError: _onPurchaseUpdateError,
     );
     unawaited(load());
   }
   final BillingService _billing;
   final PurchaseProofStore _proofs;
   late final StreamSubscription<PurchaseReceiptPayload> _updates;
+
+  void _onPurchaseUpdateError(Object _) {
+    if (!isClosed) {
+      emit(
+        stateValue.copyWith(
+          isPurchasing: false,
+          error: SubscriptionFailure.purchaseFailed,
+        ),
+      );
+    }
+  }
 
   Future<void> load() async {
     emit(stateValue.copyWith(isLoading: true));

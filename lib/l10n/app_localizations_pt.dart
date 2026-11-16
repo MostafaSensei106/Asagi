@@ -1137,6 +1137,10 @@ class AppLocalizationsPt extends AppLocalizations {
       'FFmpeg build metadata is unavailable.';
 
   @override
+  String get openSourceLicensesLoadFailed =>
+      'Open source license notices could not be loaded.';
+
+  @override
   String get languageName => 'Português';
 
   @override

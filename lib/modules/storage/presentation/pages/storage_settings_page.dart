@@ -69,9 +69,11 @@ final class _StorageSettingsContent extends StatelessWidget {
       Text(context.localeKeys.interruptedJobsDescription),
       const SizedBox(height: 16),
       if (state.isLoading || state.isCleaning) const LinearProgressIndicator(),
-      if (state.error)
+      if (state.error != null)
         Text(
-          context.localeKeys.storageJobsLoadFailed,
+          state.error == StorageSettingsFailure.cleanupFailed
+              ? context.localeKeys.cleanupInterruptedJobsFailed
+              : context.localeKeys.storageJobsLoadFailed,
           style: TextStyle(color: Theme.of(context).colorScheme.error),
         ),
       if (!state.isLoading && state.jobIds.isEmpty)
