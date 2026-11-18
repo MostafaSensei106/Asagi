@@ -17,7 +17,22 @@ final class PurchaseMethodsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.localeKeys;
-    final colorScheme = context.colorScheme;
+
+    void showPaymentInfo({
+      required String title,
+      required String description,
+      required IconData icon,
+      required InfoIllustrationKind illustrationKind,
+    }) {
+      unawaited(
+        context.showInfoBottomSheet(
+          title: title,
+          description: description,
+          icon: icon,
+          illustrationKind: illustrationKind,
+        ),
+      );
+    }
 
     return Scaffold(
       appBar: SidePageAppBarComponent(title: l10n.paymentMethods),
@@ -25,135 +40,127 @@ final class PurchaseMethodsPage extends StatelessWidget {
         child: ListView(
           padding: const EdgeInsets.symmetric(
             horizontal: AppSpacing.large,
-            vertical: AppSpacing.medium,
+            vertical: AppSpacing.small,
           ),
           children: [
-            CardComponent.filled(
-              padding: const EdgeInsets.all(AppSpacing.large),
-              child: Row(
-                children: [
-                  ExpressiveIcon(
-                    icon: ZumiIcons.purchaseMethods,
-                    shape: ExpressiveIconShape.cookie,
-                    size: 52,
-                    backgroundColor: colorScheme.primaryContainer,
-                    foregroundColor: colorScheme.onPrimaryContainer,
-                  ),
-                  const Gap.horizontal(AppSpacing.large),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          l10n.paymentMethods,
-                          style: context.textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const Gap(AppSpacing.xSmall),
-                        Text(
-                          l10n.supportedWaysToPayIncludingStoreBilling,
-                          style: context.textTheme.bodySmall?.copyWith(
-                            color: colorScheme.onSurfaceVariant,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const Gap(AppSpacing.xLarge),
-            const ExpressiveSectionHeader(
-              title: 'Supported Payment Options',
-              icon: ZumiIcons.purchaseMethods,
-              shape: ExpressiveIconShape.cookie,
-            ),
-            const Gap(AppSpacing.small),
-            const ListTileGroup(
+            ExpressiveSectionHeader(title: l10n.supportedPaymentOptions),
+            ListTileGroup(
               children: [
                 ListTileIconComponent.top(
                   shape: ExpressiveIconShape.gem,
-                  title: 'App Store / Google Play In-App Billing',
-                  subtitle: 'One-tap checkout with Face ID, Touch ID, or fingerprint verification',
+                  title: l10n.storeBillingTitle,
+                  subtitle: l10n.storeBillingSummary,
                   leading: ZumiIcons.purchaseMethods,
-                  showChevron: false,
+                  onTap: () => showPaymentInfo(
+                    title: l10n.storeBillingTitle,
+                    description: l10n.storeBillingDetails,
+                    icon: ZumiIcons.purchaseMethods,
+                    illustrationKind: InfoIllustrationKind.storeBilling,
+                  ),
+                  onLongPress: () => showPaymentInfo(
+                    title: l10n.storeBillingTitle,
+                    description: l10n.storeBillingDetails,
+                    icon: ZumiIcons.purchaseMethods,
+                    illustrationKind: InfoIllustrationKind.storeBilling,
+                  ),
                 ),
                 ListTileIconComponent.middle(
                   shape: ExpressiveIconShape.pill,
-                  title: 'Credit & Debit Cards',
-                  subtitle: 'Visa, MasterCard, American Express, and Discover linked to your store account',
+                  title: l10n.creditDebitCardsTitle,
+                  subtitle: l10n.creditDebitCardsSummary,
                   leading: LucideIcons.creditCard,
-                  showChevron: false,
+                  onTap: () => showPaymentInfo(
+                    title: l10n.creditDebitCardsTitle,
+                    description: l10n.creditDebitCardsDetails,
+                    icon: LucideIcons.creditCard,
+                    illustrationKind: InfoIllustrationKind.creditDebitCard,
+                  ),
+                  onLongPress: () => showPaymentInfo(
+                    title: l10n.creditDebitCardsTitle,
+                    description: l10n.creditDebitCardsDetails,
+                    icon: LucideIcons.creditCard,
+                    illustrationKind: InfoIllustrationKind.creditDebitCard,
+                  ),
                 ),
                 ListTileIconComponent.middle(
                   shape: ExpressiveIconShape.sunny,
-                  title: 'Store Balance & Gift Cards',
-                  subtitle: 'Redeem store cards and promotional credits towards Zumi subscriptions',
+                  title: l10n.storeBalanceGiftCardsTitle,
+                  subtitle: l10n.storeBalanceGiftCardsSummary,
                   leading: LucideIcons.gift,
                   showChevron: false,
+                  onTap: () => showPaymentInfo(
+                    title: l10n.storeBalanceGiftCardsTitle,
+                    description: l10n.storeBalanceGiftCardsDetails,
+                    icon: LucideIcons.gift,
+                    illustrationKind: InfoIllustrationKind.storeBalanceGiftCard,
+                  ),
+                  onLongPress: () => showPaymentInfo(
+                    title: l10n.storeBalanceGiftCardsTitle,
+                    description: l10n.storeBalanceGiftCardsDetails,
+                    icon: LucideIcons.gift,
+                    illustrationKind: InfoIllustrationKind.storeBalanceGiftCard,
+                  ),
                 ),
                 ListTileIconComponent.bottom(
                   shape: ExpressiveIconShape.heart,
-                  title: 'Digital Wallets & Local Methods',
-                  subtitle: 'Google Pay, Apple Pay, PayPal, and regional carriers supported by your store',
+                  title: l10n.digitalWalletsTitle,
+                  subtitle: l10n.digitalWalletsSummary,
                   leading: LucideIcons.wallet,
-                  showChevron: false,
+                  onTap: () => showPaymentInfo(
+                    title: l10n.digitalWalletsTitle,
+                    description: l10n.digitalWalletsDetails,
+                    icon: LucideIcons.wallet,
+                    illustrationKind: InfoIllustrationKind.digitalWallet,
+                  ),
+                  onLongPress: () => showPaymentInfo(
+                    title: l10n.digitalWalletsTitle,
+                    description: l10n.digitalWalletsDetails,
+                    icon: LucideIcons.wallet,
+                    illustrationKind: InfoIllustrationKind.digitalWallet,
+                  ),
                 ),
               ],
             ),
-            const Gap(AppSpacing.xLarge),
-            const ExpressiveSectionHeader(
-              title: 'Protection & Safety Guarantee',
-              icon: ZumiIcons.dataSafety,
-              shape: ExpressiveIconShape.diamond,
-            ),
-            const Gap(AppSpacing.small),
-            CardComponent.outlined(
-              padding: const EdgeInsets.all(AppSpacing.large),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Icon(
-                        ZumiIcons.dataSafety,
-                        size: 20,
-                        color: colorScheme.primary,
-                      ),
-                      const Gap.horizontal(AppSpacing.small),
-                      Text(
-                        'Store Protected Purchases',
-                        style: context.textTheme.titleSmall?.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
+            const Gap(AppSpacing.large),
+            ExpressiveSectionHeader(title: l10n.paymentProtectionTitle),
+            ListTileGroup(
+              children: [
+                ListTileIconComponent(
+                  shape: ExpressiveIconShape.clover,
+                  title: l10n.storeProtectedPurchases,
+                  subtitle: l10n.storeProtectedPurchasesSummary,
+                  leading: ZumiIcons.dataSafety,
+                  onTap: () => showPaymentInfo(
+                    title: l10n.storeProtectedPurchases,
+                    description: l10n.storeProtectedPurchasesDetails,
+                    icon: ZumiIcons.dataSafety,
+                    illustrationKind: InfoIllustrationKind.purchaseProtection,
                   ),
-                  const Gap(AppSpacing.small),
-                  Text(
-                    'Zumi never sees or retains your financial billing data. Every transaction is authenticated and encrypted directly by Google or Apple. You can cancel anytime without hidden fees.',
-                    style: context.textTheme.bodyMedium?.copyWith(
-                      color: colorScheme.onSurfaceVariant,
-                      height: 1.45,
-                    ),
+                  onLongPress: () => showPaymentInfo(
+                    title: l10n.storeProtectedPurchases,
+                    description: l10n.storeProtectedPurchasesDetails,
+                    icon: ZumiIcons.dataSafety,
+                    illustrationKind: InfoIllustrationKind.purchaseProtection,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
             const Gap(AppSpacing.large),
             FilledButtonComponent.icon(
               expand: true,
               icon: ZumiIcons.plans,
-              label: 'View Available Plans',
+              label: l10n.plans,
               onPressed: () => unawaited(context.push(const PlansRoute())),
             ),
             const Gap(AppSpacing.small),
             Center(
-              child: TextButtonComponent(
-                label: l10n.restorePurchases,
-                onPressed: () =>
-                    unawaited(context.push(const RestorePurchasesRoute())),
+              child: SizedBox(
+                width: double.infinity,
+                child: OutlinedButtonComponent(
+                  label: l10n.restorePurchases,
+                  onPressed: () =>
+                      unawaited(context.push(const RestorePurchasesRoute())),
+                ),
               ),
             ),
           ],

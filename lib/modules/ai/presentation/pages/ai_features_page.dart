@@ -54,7 +54,7 @@ final class _AiFeaturesPageState extends State<AiFeaturesPage> {
                   onLongPress: () => context.showInfoBottomSheet(
                     title: l10n.smartBitrateRecommender,
                     icon: LucideIcons.gauge,
-                    illustrationKind: InfoIllustrationKind.performance,
+                    illustrationKind: InfoIllustrationKind.bitrateControl,
                     description: l10n.bitrateRecommenderDetails,
                   ),
                   subtitle: l10n.bitrateRecommenderDescription,
@@ -79,7 +79,7 @@ final class _AiFeaturesPageState extends State<AiFeaturesPage> {
                   onLongPress: () => context.showInfoBottomSheet(
                     title: l10n.sceneAwareKeyframePlacement,
                     icon: LucideIcons.scanLine,
-                    illustrationKind: InfoIllustrationKind.mediaAnalysis,
+                    illustrationKind: InfoIllustrationKind.frameRate,
                     description: l10n.sceneKeyframeDetails,
                   ),
                   subtitle: l10n.sceneKeyframeDescription,
@@ -104,7 +104,7 @@ final class _AiFeaturesPageState extends State<AiFeaturesPage> {
                   onLongPress: () => context.showInfoBottomSheet(
                     title: l10n.cameraSensorDenoising,
                     icon: LucideIcons.sparkles,
-                    illustrationKind: InfoIllustrationKind.mediaAnalysis,
+                    illustrationKind: InfoIllustrationKind.videoQuality,
                     description: l10n.noiseReductionDetails,
                   ),
                   subtitle: l10n.noiseReductionDescription,

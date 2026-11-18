@@ -135,7 +135,7 @@ final class _AiRuntimePageState extends State<AiRuntimePage> {
                 onLongPress: () => context.showInfoBottomSheet(
                   title: l10n.batterySaverMode,
                   icon: LucideIcons.batteryLow,
-                  illustrationKind: InfoIllustrationKind.performance,
+                  illustrationKind: InfoIllustrationKind.batteryOptimization,
                   description: l10n.batterySaverDetails,
                 ),
                 subtitle: l10n.batterySaverDescription,

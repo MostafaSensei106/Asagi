@@ -3552,7 +3552,7 @@ abstract class AppLocalizations {
   /// No description provided for @jobCompletedShort.
   ///
   /// In en, this message translates to:
-  /// **'Alerts when compression finishes.'**
+  /// **'Compression finished'**
   String get jobCompletedShort;
 
   /// No description provided for @jobCompletedDetails.
@@ -3576,7 +3576,7 @@ abstract class AppLocalizations {
   /// No description provided for @backgroundStatusShort.
   ///
   /// In en, this message translates to:
-  /// **'Shows active background jobs.'**
+  /// **'Background job status'**
   String get backgroundStatusShort;
 
   /// No description provided for @backgroundStatusDetails.
@@ -3600,7 +3600,7 @@ abstract class AppLocalizations {
   /// No description provided for @interruptionErrorShort.
   ///
   /// In en, this message translates to:
-  /// **'Alerts when compression is interrupted.'**
+  /// **'Compression error alerts'**
   String get interruptionErrorShort;
 
   /// No description provided for @interruptionErrorDetails.
@@ -3624,7 +3624,7 @@ abstract class AppLocalizations {
   /// No description provided for @completionSoundShort.
   ///
   /// In en, this message translates to:
-  /// **'Plays a completion chime.'**
+  /// **'Completion chime'**
   String get completionSoundShort;
 
   /// No description provided for @completionSoundDetails.
@@ -3648,7 +3648,7 @@ abstract class AppLocalizations {
   /// No description provided for @hapticFeedbackShort.
   ///
   /// In en, this message translates to:
-  /// **'Vibrates after key interactions.'**
+  /// **'Interaction vibration'**
   String get hapticFeedbackShort;
 
   /// No description provided for @hapticFeedbackDetails.
@@ -3672,7 +3672,7 @@ abstract class AppLocalizations {
   /// No description provided for @productUpdatesShort.
   ///
   /// In en, this message translates to:
-  /// **'News about features and codecs.'**
+  /// **'Feature and codec news'**
   String get productUpdatesShort;
 
   /// No description provided for @productUpdatesDetails.
@@ -3696,7 +3696,7 @@ abstract class AppLocalizations {
   /// No description provided for @savingsDigestShort.
   ///
   /// In en, this message translates to:
-  /// **'Summarizes storage savings occasionally.'**
+  /// **'Storage space saved'**
   String get savingsDigestShort;
 
   /// No description provided for @savingsDigestDetails.
@@ -3710,6 +3710,276 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Savings digest'**
   String get savingsDigestToast;
+
+  /// No description provided for @diagnosticsTelemetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Diagnostics & Telemetry'**
+  String get diagnosticsTelemetry;
+
+  /// No description provided for @anonymousCrashReports.
+  ///
+  /// In en, this message translates to:
+  /// **'Anonymous Crash Reports'**
+  String get anonymousCrashReports;
+
+  /// No description provided for @anonymousCrashReportsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Help fix crashes by sending non-identifiable system error stack traces'**
+  String get anonymousCrashReportsDescription;
+
+  /// No description provided for @encoderPerformanceTelemetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Encoder Performance Telemetry'**
+  String get encoderPerformanceTelemetry;
+
+  /// No description provided for @encoderPerformanceTelemetryDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Share hardware encoding timings to help tune platform profiles'**
+  String get encoderPerformanceTelemetryDescription;
+
+  /// No description provided for @metadataAndTempFiles.
+  ///
+  /// In en, this message translates to:
+  /// **'Metadata & Temp Files'**
+  String get metadataAndTempFiles;
+
+  /// No description provided for @preserveVideoMetadata.
+  ///
+  /// In en, this message translates to:
+  /// **'Preserve Video Metadata'**
+  String get preserveVideoMetadata;
+
+  /// No description provided for @preserveVideoMetadataDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep EXIF camera info, GPS coordinates, and creation timestamps in output'**
+  String get preserveVideoMetadataDescription;
+
+  /// No description provided for @autoWipeTempBuffers.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto-Wipe Temp Buffers'**
+  String get autoWipeTempBuffers;
+
+  /// No description provided for @autoWipeTempBuffersDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Immediately purge temporary encoding scratchpads upon completion'**
+  String get autoWipeTempBuffersDescription;
+
+  /// No description provided for @clearScratchpadNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear Scratchpad Now'**
+  String get clearScratchpadNow;
+
+  /// No description provided for @clearScratchpadDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Free any lingering temporary preview frames and worker caches'**
+  String get clearScratchpadDescription;
+
+  /// No description provided for @scratchpadCleared.
+  ///
+  /// In en, this message translates to:
+  /// **'Temporary compression scratchpad cleared'**
+  String get scratchpadCleared;
+
+  /// No description provided for @clearing.
+  ///
+  /// In en, this message translates to:
+  /// **'Clearing…'**
+  String get clearing;
+
+  /// No description provided for @clear.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear'**
+  String get clear;
+
+  /// No description provided for @crashReportsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Crash reports'**
+  String get crashReportsLabel;
+
+  /// No description provided for @telemetryLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Telemetry'**
+  String get telemetryLabel;
+
+  /// No description provided for @metadataPreservationLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Metadata preservation'**
+  String get metadataPreservationLabel;
+
+  /// No description provided for @autoWipeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto wipe'**
+  String get autoWipeLabel;
+
+  /// No description provided for @privacyDocumentsAndPolicies.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Documents & Policies'**
+  String get privacyDocumentsAndPolicies;
+
+  /// No description provided for @crashReportsSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Crash diagnostics stay anonymous'**
+  String get crashReportsSummary;
+
+  /// No description provided for @encoderTelemetrySummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Hardware encoding timings'**
+  String get encoderTelemetrySummary;
+
+  /// No description provided for @metadataPreservationSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep camera details'**
+  String get metadataPreservationSummary;
+
+  /// No description provided for @automaticTempCleanupSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete temporary buffers'**
+  String get automaticTempCleanupSummary;
+
+  /// No description provided for @scratchpadCleanupSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove cached preview files'**
+  String get scratchpadCleanupSummary;
+
+  /// No description provided for @privacyPolicySummary.
+  ///
+  /// In en, this message translates to:
+  /// **'How Zumi handles data'**
+  String get privacyPolicySummary;
+
+  /// No description provided for @dataSafetySummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Collected data and purpose'**
+  String get dataSafetySummary;
+
+  /// No description provided for @permissionsSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Why Zumi needs access'**
+  String get permissionsSummary;
+
+  /// No description provided for @supportedPaymentOptions.
+  ///
+  /// In en, this message translates to:
+  /// **'Supported Payment Options'**
+  String get supportedPaymentOptions;
+
+  /// No description provided for @paymentProtectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Protection & Safety Guarantee'**
+  String get paymentProtectionTitle;
+
+  /// No description provided for @storeBillingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'App Store / Google Play Billing'**
+  String get storeBillingTitle;
+
+  /// No description provided for @storeBillingSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Secure store checkout'**
+  String get storeBillingSummary;
+
+  /// No description provided for @storeBillingDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchases are completed securely through your device’s official app store account. Payment is authenticated using the security options configured on your device.'**
+  String get storeBillingDetails;
+
+  /// No description provided for @creditDebitCardsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Credit & Debit Cards'**
+  String get creditDebitCardsTitle;
+
+  /// No description provided for @creditDebitCardsSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Cards through your store'**
+  String get creditDebitCardsSummary;
+
+  /// No description provided for @creditDebitCardsDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Use a card saved to your Google Play or Apple App Store account. The store processes the payment, so Zumi never receives your card number.'**
+  String get creditDebitCardsDetails;
+
+  /// No description provided for @storeBalanceGiftCardsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Store Balance & Gift Cards'**
+  String get storeBalanceGiftCardsTitle;
+
+  /// No description provided for @storeBalanceGiftCardsSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Redeem store credit'**
+  String get storeBalanceGiftCardsSummary;
+
+  /// No description provided for @storeBalanceGiftCardsDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Use eligible store balance, redeemed gift cards, or promotional credit toward a Zumi subscription. Availability depends on your store and region.'**
+  String get storeBalanceGiftCardsDetails;
+
+  /// No description provided for @digitalWalletsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Digital Wallets & Local Methods'**
+  String get digitalWalletsTitle;
+
+  /// No description provided for @digitalWalletsSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Store-supported payment methods'**
+  String get digitalWalletsSummary;
+
+  /// No description provided for @digitalWalletsDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Your store may offer Google Pay, Apple Pay, PayPal, or regional payment methods. Available options depend on your account, device, and region.'**
+  String get digitalWalletsDetails;
+
+  /// No description provided for @storeProtectedPurchases.
+  ///
+  /// In en, this message translates to:
+  /// **'Store-Protected Purchases'**
+  String get storeProtectedPurchases;
+
+  /// No description provided for @storeProtectedPurchasesSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Billing stays with stores'**
+  String get storeProtectedPurchasesSummary;
+
+  /// No description provided for @storeProtectedPurchasesDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Zumi never sees or retains your financial billing data. Google Play or Apple App Store authenticates and encrypts every transaction. You can cancel anytime through your store account, without hidden fees.'**
+  String get storeProtectedPurchasesDetails;
 }
 
 class _AppLocalizationsDelegate

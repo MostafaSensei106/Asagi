@@ -53,7 +53,7 @@ final class _AiToolsPageState extends State<AiToolsPage> {
                 onLongPress: () => context.showInfoBottomSheet(
                   title: l10n.directVideoTrimming,
                   icon: LucideIcons.scissors,
-                  illustrationKind: InfoIllustrationKind.fileAction,
+                  illustrationKind: InfoIllustrationKind.videoCompression,
                   description: l10n.directTrimmingDetails,
                 ),
                 subtitle: l10n.directTrimmingDescription,
@@ -100,7 +100,7 @@ final class _AiToolsPageState extends State<AiToolsPage> {
                 onLongPress: () => context.showInfoBottomSheet(
                   title: l10n.metadataScrubber,
                   icon: LucideIcons.fileKey,
-                  illustrationKind: InfoIllustrationKind.privacy,
+                  illustrationKind: InfoIllustrationKind.metadataRemoval,
                   description: l10n.metadataScrubberDetails,
                 ),
                 subtitle: l10n.metadataScrubberDescription,
@@ -131,7 +131,7 @@ final class _AiToolsPageState extends State<AiToolsPage> {
                 onLongPress: () => context.showInfoBottomSheet(
                   title: l10n.requireConfirmation,
                   icon: LucideIcons.shieldCheck,
-                  illustrationKind: InfoIllustrationKind.privacy,
+                  illustrationKind: InfoIllustrationKind.fileAccess,
                   description: l10n.requireConfirmationDetails,
                 ),
                 subtitle: l10n.requireConfirmationDescription,
@@ -156,7 +156,7 @@ final class _AiToolsPageState extends State<AiToolsPage> {
                 onLongPress: () => context.showInfoBottomSheet(
                   title: l10n.sandboxedScratchpad,
                   icon: LucideIcons.packageOpen,
-                  illustrationKind: InfoIllustrationKind.fileAction,
+                  illustrationKind: InfoIllustrationKind.scratchpadCleanup,
                   description: l10n.sandboxedScratchpadDetails,
                 ),
                 subtitle: l10n.sandboxedScratchpadDescription,

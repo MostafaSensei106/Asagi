@@ -1997,7 +1997,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get jobCompletedNotification => 'اكتمل الضغط';
 
   @override
-  String get jobCompletedShort => 'تنبيه عند اكتمال الضغط.';
+  String get jobCompletedShort => 'اكتمل الضغط';
 
   @override
   String get jobCompletedDetails =>
@@ -2010,7 +2010,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get backgroundStatusNotification => 'حالة العمل بالخلفية';
 
   @override
-  String get backgroundStatusShort => 'يعرض المهام النشطة بالخلفية.';
+  String get backgroundStatusShort => 'حالة مهام الخلفية';
 
   @override
   String get backgroundStatusDetails =>
@@ -2023,7 +2023,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get interruptionErrorNotification => 'تنبيهات التوقف والأخطاء';
 
   @override
-  String get interruptionErrorShort => 'تنبيه عند توقف عملية الضغط.';
+  String get interruptionErrorShort => 'تنبيهات أخطاء الضغط';
 
   @override
   String get interruptionErrorDetails =>
@@ -2036,7 +2036,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get completionSoundNotification => 'صوت عند الاكتمال';
 
   @override
-  String get completionSoundShort => 'يشغّل نغمة عند الاكتمال.';
+  String get completionSoundShort => 'نغمة عند الاكتمال';
 
   @override
   String get completionSoundDetails =>
@@ -2049,7 +2049,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get hapticFeedbackNotification => 'الاهتزاز اللمسي';
 
   @override
-  String get hapticFeedbackShort => 'يهتز بعد التفاعلات المهمة.';
+  String get hapticFeedbackShort => 'اهتزاز التفاعلات';
 
   @override
   String get hapticFeedbackDetails =>
@@ -2062,7 +2062,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get productUpdatesNotification => 'ميزات وبرامج ترميز جديدة';
 
   @override
-  String get productUpdatesShort => 'أخبار الميزات وبرامج الترميز.';
+  String get productUpdatesShort => 'أخبار الميزات والترميزات';
 
   @override
   String get productUpdatesDetails =>
@@ -2075,7 +2075,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get savingsDigestNotification => 'ملخص التوفير في التخزين';
 
   @override
-  String get savingsDigestShort => 'يلخص التوفير في التخزين دوريًا.';
+  String get savingsDigestShort => 'مساحة التخزين الموفرة';
 
   @override
   String get savingsDigestDetails =>
@@ -2083,6 +2083,151 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get savingsDigestToast => 'ملخص التوفير';
+
+  @override
+  String get diagnosticsTelemetry => 'التشخيص والقياس عن بُعد';
+
+  @override
+  String get anonymousCrashReports => 'تقارير الأعطال المجهولة';
+
+  @override
+  String get anonymousCrashReportsDescription =>
+      'ساعد في إصلاح الأعطال بإرسال سجلات أخطاء النظام دون معلومات تكشف هويتك';
+
+  @override
+  String get encoderPerformanceTelemetry => 'بيانات أداء الترميز';
+
+  @override
+  String get encoderPerformanceTelemetryDescription =>
+      'شارك أوقات الترميز عبر العتاد للمساعدة في ضبط إعدادات الأنظمة';
+
+  @override
+  String get metadataAndTempFiles => 'البيانات الوصفية والملفات المؤقتة';
+
+  @override
+  String get preserveVideoMetadata => 'الاحتفاظ ببيانات الفيديو الوصفية';
+
+  @override
+  String get preserveVideoMetadataDescription =>
+      'احتفظ بمعلومات كاميرا EXIF وإحداثيات GPS والطوابع الزمنية في الملف الناتج';
+
+  @override
+  String get autoWipeTempBuffers => 'مسح المخازن المؤقتة تلقائيًا';
+
+  @override
+  String get autoWipeTempBuffersDescription =>
+      'احذف ملفات الترميز المؤقتة فور اكتمال العملية';
+
+  @override
+  String get clearScratchpadNow => 'مسح مساحة العمل المؤقتة الآن';
+
+  @override
+  String get clearScratchpadDescription =>
+      'حرّر إطارات المعاينة المؤقتة وذاكرة التخزين المؤقت المتبقية';
+
+  @override
+  String get scratchpadCleared => 'تم مسح مساحة الضغط المؤقتة';
+
+  @override
+  String get clearing => 'جارٍ المسح…';
+
+  @override
+  String get clear => 'مسح';
+
+  @override
+  String get crashReportsLabel => 'تقارير الأعطال';
+
+  @override
+  String get telemetryLabel => 'بيانات القياس عن بُعد';
+
+  @override
+  String get metadataPreservationLabel => 'الاحتفاظ بالبيانات الوصفية';
+
+  @override
+  String get autoWipeLabel => 'المسح التلقائي';
+
+  @override
+  String get privacyDocumentsAndPolicies => 'مستندات وسياسات الخصوصية';
+
+  @override
+  String get crashReportsSummary => 'تشخيص أعطال مجهول الهوية';
+
+  @override
+  String get encoderTelemetrySummary => 'أوقات ترميز العتاد';
+
+  @override
+  String get metadataPreservationSummary => 'احتفظ بتفاصيل الكاميرا';
+
+  @override
+  String get automaticTempCleanupSummary => 'احذف الملفات المؤقتة';
+
+  @override
+  String get scratchpadCleanupSummary => 'أزل ملفات المعاينة';
+
+  @override
+  String get privacyPolicySummary => 'طريقة حماية بياناتك';
+
+  @override
+  String get dataSafetySummary => 'البيانات وأسباب جمعها';
+
+  @override
+  String get permissionsSummary => 'سبب طلب الأذونات';
+
+  @override
+  String get supportedPaymentOptions => 'خيارات الدفع المتاحة';
+
+  @override
+  String get paymentProtectionTitle => 'ضمان الحماية والأمان';
+
+  @override
+  String get storeBillingTitle => 'الدفع عبر App Store أو Google Play';
+
+  @override
+  String get storeBillingSummary => 'دفع آمن عبر المتجر';
+
+  @override
+  String get storeBillingDetails =>
+      'تُستكمل عمليات الشراء بأمان عبر حساب المتجر الرسمي على جهازك. ويجري التحقق من الدفع باستخدام خيارات الأمان المفعّلة على جهازك.';
+
+  @override
+  String get creditDebitCardsTitle => 'بطاقات الائتمان والخصم';
+
+  @override
+  String get creditDebitCardsSummary => 'بطاقات عبر متجرك';
+
+  @override
+  String get creditDebitCardsDetails =>
+      'استخدم بطاقة محفوظة في حساب Google Play أو Apple App Store. يتولى المتجر معالجة الدفع، لذلك لا يصل رقم بطاقتك إلى Zumi.';
+
+  @override
+  String get storeBalanceGiftCardsTitle => 'رصيد المتجر وبطاقات الهدايا';
+
+  @override
+  String get storeBalanceGiftCardsSummary => 'استخدم رصيد المتجر';
+
+  @override
+  String get storeBalanceGiftCardsDetails =>
+      'استخدم رصيد المتجر أو بطاقة هدايا مستردة أو رصيدًا ترويجيًا مؤهلًا لاشتراك Zumi. يعتمد التوفر على المتجر والمنطقة.';
+
+  @override
+  String get digitalWalletsTitle => 'المحافظ الرقمية وطرق الدفع المحلية';
+
+  @override
+  String get digitalWalletsSummary => 'طرق دفع يدعمها المتجر';
+
+  @override
+  String get digitalWalletsDetails =>
+      'قد يوفّر متجرك Google Pay أو Apple Pay أو PayPal أو طرق دفع محلية. تعتمد الخيارات المتاحة على حسابك وجهازك ومنطقتك.';
+
+  @override
+  String get storeProtectedPurchases => 'مشتريات محمية عبر المتجر';
+
+  @override
+  String get storeProtectedPurchasesSummary => 'الفوترة لدى المتجر';
+
+  @override
+  String get storeProtectedPurchasesDetails =>
+      'لا يطّلع Zumi على بيانات الدفع ولا يحتفظ بها. يتحقق Google Play أو Apple App Store من كل معاملة ويشفّرها. يمكنك الإلغاء في أي وقت من حساب المتجر دون رسوم مخفية.';
 }
 
 /// The translations for Arabic, as used in Egypt (`ar_EG`).

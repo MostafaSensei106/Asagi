@@ -22,6 +22,46 @@ enum InfoIllustrationKind {
   notificationProductUpdate,
   notificationStorageSavings,
   general,
+  crashReports,
+  encoderTelemetry,
+  metadataPreservation,
+  automaticTempCleanup,
+  scratchpadCleanup,
+  privacyPolicy,
+  dataSafety,
+  appPermissions,
+  notificationPermission,
+  notificationQuietHours,
+  notificationGrouping,
+  notificationPreview,
+  notificationPriority,
+  notificationDelivery,
+  videoCompression,
+  videoQuality,
+  videoResolution,
+  videoFormat,
+  bitrateControl,
+  frameRate,
+  hardwareEncoding,
+  batteryOptimization,
+  storageManagement,
+  cacheManagement,
+  fileAccess,
+  metadataRemoval,
+  locationPrivacy,
+  analyticsPrivacy,
+  diagnosticsPrivacy,
+  modelDownload,
+  modelStorage,
+  modelPerformance,
+  speechRecognition,
+  subtitleGeneration,
+  mediaSearch,
+  storeBilling,
+  creditDebitCard,
+  storeBalanceGiftCard,
+  digitalWallet,
+  purchaseProtection,
 }
 
 /// A themed, animated illustration built from widgets for explanation sheets.
@@ -136,6 +176,11 @@ final class _IllustrationScene extends StatelessWidget {
         accent: accent,
         secondary: secondary,
       ),
+      _ => _TopicScene(
+        accent: accent,
+        secondary: secondary,
+        variant: kind.index,
+      ),
     };
 
     return Align(
@@ -143,6 +188,109 @@ final class _IllustrationScene extends StatelessWidget {
           .animate()
           .fadeIn(duration: 350.ms)
           .slideY(begin: 0.12, duration: 420.ms, curve: Curves.easeOutCubic),
+    );
+  }
+}
+
+/// A family of distinct, topic-tuned scenes for settings and common actions.
+/// Each kind gets its own visual rhythm while sharing the same design tokens.
+final class _TopicScene extends StatelessWidget {
+  const _TopicScene({
+    required this.accent,
+    required this.secondary,
+    required this.variant,
+  });
+
+  final Color accent;
+  final Color secondary;
+  final int variant;
+
+  static const _icons = [
+    LucideIcons.shieldCheck,
+    LucideIcons.cpu,
+    LucideIcons.fileVideo,
+    LucideIcons.trash2,
+    LucideIcons.database,
+    LucideIcons.fileText,
+    LucideIcons.lockKeyhole,
+    LucideIcons.keyRound,
+    LucideIcons.bell,
+    LucideIcons.moon,
+    LucideIcons.layers,
+    LucideIcons.eye,
+    LucideIcons.circleAlert,
+    LucideIcons.send,
+    LucideIcons.video,
+    LucideIcons.slidersHorizontal,
+    LucideIcons.maximize,
+    LucideIcons.fileType,
+    LucideIcons.gauge,
+    LucideIcons.film,
+    LucideIcons.cpu,
+    LucideIcons.batteryCharging,
+    LucideIcons.hardDrive,
+    LucideIcons.database,
+    LucideIcons.folderOpen,
+    LucideIcons.scanLine,
+    LucideIcons.mapPin,
+    LucideIcons.chartNoAxesColumn,
+    LucideIcons.activity,
+    LucideIcons.download,
+    LucideIcons.hardDriveDownload,
+    LucideIcons.gauge,
+    LucideIcons.audioLines,
+    LucideIcons.closedCaption,
+    LucideIcons.search,
+    LucideIcons.creditCard,
+    LucideIcons.creditCard,
+    LucideIcons.gift,
+    LucideIcons.wallet,
+    LucideIcons.shieldCheck,
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    final icon =
+        _icons[(variant - InfoIllustrationKind.crashReports.index) %
+            _icons.length];
+    final layout = variant % 3;
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        if (layout == 1) ...[
+          _FeatureCard(
+            color: secondary.withValues(alpha: 0.18),
+            child: _Bars(
+              color: secondary,
+              heights: [10 + (variant % 4) * 3, 24, 16, 30, 19],
+            ),
+          ),
+          const SizedBox(width: 12),
+        ] else ...[
+          _FeatureCard(
+            color: secondary.withValues(alpha: 0.18),
+            child: Icon(icon, color: secondary, size: 30),
+          ),
+          const SizedBox(width: 12),
+        ],
+        Icon(
+          layout == 2 ? LucideIcons.arrowDown : LucideIcons.arrowRight,
+          color: accent,
+          size: 21,
+        ),
+        const SizedBox(width: 12),
+        _FeatureCard(
+          color: accent.withValues(alpha: 0.18),
+          child: layout == 2
+              ? _Bars(color: accent, heights: const [13, 25, 17, 29, 20])
+              : Icon(
+                  layout == 1 ? LucideIcons.check : icon,
+                  color: accent,
+                  size: 30,
+                ),
+        ),
+      ],
     );
   }
 }

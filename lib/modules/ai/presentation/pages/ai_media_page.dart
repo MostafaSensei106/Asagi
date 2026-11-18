@@ -43,7 +43,7 @@ final class _AiMediaPageState extends State<AiMediaPage> {
                   onLongPress: () => context.showInfoBottomSheet(
                     title: l10n.analyzeVideoThumbnails,
                     icon: LucideIcons.galleryThumbnails,
-                    illustrationKind: InfoIllustrationKind.mediaAnalysis,
+                    illustrationKind: InfoIllustrationKind.mediaSearch,
                     description: l10n.analyzeThumbnailsDetails,
                   ),
                   subtitle: l10n.analyzeThumbnailsDescription,
@@ -64,7 +64,7 @@ final class _AiMediaPageState extends State<AiMediaPage> {
                   onLongPress: () => context.showInfoBottomSheet(
                     title: l10n.keyframeSamplingDensity,
                     icon: LucideIcons.settings2,
-                    illustrationKind: InfoIllustrationKind.mediaAnalysis,
+                    illustrationKind: InfoIllustrationKind.frameRate,
                     description: l10n.samplingDensityDetails,
                   ),
                   subtitle: _sampleRate == 1
@@ -109,7 +109,7 @@ final class _AiMediaPageState extends State<AiMediaPage> {
                   onLongPress: () => context.showInfoBottomSheet(
                     title: l10n.speechToText,
                     icon: LucideIcons.audioLines,
-                    illustrationKind: InfoIllustrationKind.audio,
+                    illustrationKind: InfoIllustrationKind.speechRecognition,
                     description: l10n.speechToTextDetails,
                   ),
                   subtitle: l10n.speechToTextDescription,
@@ -130,7 +130,7 @@ final class _AiMediaPageState extends State<AiMediaPage> {
                   onLongPress: () => context.showInfoBottomSheet(
                     title: l10n.spokenLanguageAutoDetect,
                     icon: LucideIcons.languages,
-                    illustrationKind: InfoIllustrationKind.audio,
+                    illustrationKind: InfoIllustrationKind.subtitleGeneration,
                     description: l10n.spokenLanguageDetails,
                   ),
                   subtitle: l10n.spokenLanguageDescription,

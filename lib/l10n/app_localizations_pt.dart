@@ -2016,7 +2016,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get jobCompletedNotification => 'Job Completed';
 
   @override
-  String get jobCompletedShort => 'Alerts when compression finishes.';
+  String get jobCompletedShort => 'Compression finished';
 
   @override
   String get jobCompletedDetails =>
@@ -2029,7 +2029,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get backgroundStatusNotification => 'Background Status';
 
   @override
-  String get backgroundStatusShort => 'Shows active background jobs.';
+  String get backgroundStatusShort => 'Background job status';
 
   @override
   String get backgroundStatusDetails =>
@@ -2042,8 +2042,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get interruptionErrorNotification => 'Interruption & Error Alerts';
 
   @override
-  String get interruptionErrorShort =>
-      'Alerts when compression is interrupted.';
+  String get interruptionErrorShort => 'Compression error alerts';
 
   @override
   String get interruptionErrorDetails =>
@@ -2056,7 +2055,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get completionSoundNotification => 'Sound on Completion';
 
   @override
-  String get completionSoundShort => 'Plays a completion chime.';
+  String get completionSoundShort => 'Completion chime';
 
   @override
   String get completionSoundDetails =>
@@ -2069,7 +2068,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get hapticFeedbackNotification => 'Haptic Vibration';
 
   @override
-  String get hapticFeedbackShort => 'Vibrates after key interactions.';
+  String get hapticFeedbackShort => 'Interaction vibration';
 
   @override
   String get hapticFeedbackDetails =>
@@ -2082,7 +2081,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get productUpdatesNotification => 'New Features & Codecs';
 
   @override
-  String get productUpdatesShort => 'News about features and codecs.';
+  String get productUpdatesShort => 'Feature and codec news';
 
   @override
   String get productUpdatesDetails =>
@@ -2095,7 +2094,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get savingsDigestNotification => 'Storage Savings Digest';
 
   @override
-  String get savingsDigestShort => 'Summarizes storage savings occasionally.';
+  String get savingsDigestShort => 'Storage space saved';
 
   @override
   String get savingsDigestDetails =>
@@ -2103,6 +2102,151 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get savingsDigestToast => 'Savings digest';
+
+  @override
+  String get diagnosticsTelemetry => 'Diagnostics & Telemetry';
+
+  @override
+  String get anonymousCrashReports => 'Anonymous Crash Reports';
+
+  @override
+  String get anonymousCrashReportsDescription =>
+      'Help fix crashes by sending non-identifiable system error stack traces';
+
+  @override
+  String get encoderPerformanceTelemetry => 'Encoder Performance Telemetry';
+
+  @override
+  String get encoderPerformanceTelemetryDescription =>
+      'Share hardware encoding timings to help tune platform profiles';
+
+  @override
+  String get metadataAndTempFiles => 'Metadata & Temp Files';
+
+  @override
+  String get preserveVideoMetadata => 'Preserve Video Metadata';
+
+  @override
+  String get preserveVideoMetadataDescription =>
+      'Keep EXIF camera info, GPS coordinates, and creation timestamps in output';
+
+  @override
+  String get autoWipeTempBuffers => 'Auto-Wipe Temp Buffers';
+
+  @override
+  String get autoWipeTempBuffersDescription =>
+      'Immediately purge temporary encoding scratchpads upon completion';
+
+  @override
+  String get clearScratchpadNow => 'Clear Scratchpad Now';
+
+  @override
+  String get clearScratchpadDescription =>
+      'Free any lingering temporary preview frames and worker caches';
+
+  @override
+  String get scratchpadCleared => 'Temporary compression scratchpad cleared';
+
+  @override
+  String get clearing => 'Clearing…';
+
+  @override
+  String get clear => 'Clear';
+
+  @override
+  String get crashReportsLabel => 'Crash reports';
+
+  @override
+  String get telemetryLabel => 'Telemetry';
+
+  @override
+  String get metadataPreservationLabel => 'Metadata preservation';
+
+  @override
+  String get autoWipeLabel => 'Auto wipe';
+
+  @override
+  String get privacyDocumentsAndPolicies => 'Privacy Documents & Policies';
+
+  @override
+  String get crashReportsSummary => 'Crash diagnostics stay anonymous';
+
+  @override
+  String get encoderTelemetrySummary => 'Hardware encoding timings';
+
+  @override
+  String get metadataPreservationSummary => 'Keep camera details';
+
+  @override
+  String get automaticTempCleanupSummary => 'Delete temporary buffers';
+
+  @override
+  String get scratchpadCleanupSummary => 'Remove cached preview files';
+
+  @override
+  String get privacyPolicySummary => 'How Zumi handles data';
+
+  @override
+  String get dataSafetySummary => 'Collected data and purpose';
+
+  @override
+  String get permissionsSummary => 'Why Zumi needs access';
+
+  @override
+  String get supportedPaymentOptions => 'Supported Payment Options';
+
+  @override
+  String get paymentProtectionTitle => 'Protection & Safety Guarantee';
+
+  @override
+  String get storeBillingTitle => 'App Store / Google Play Billing';
+
+  @override
+  String get storeBillingSummary => 'Secure store checkout';
+
+  @override
+  String get storeBillingDetails =>
+      'Purchases are completed securely through your device’s official app store account. Payment is authenticated using the security options configured on your device.';
+
+  @override
+  String get creditDebitCardsTitle => 'Credit & Debit Cards';
+
+  @override
+  String get creditDebitCardsSummary => 'Cards through your store';
+
+  @override
+  String get creditDebitCardsDetails =>
+      'Use a card saved to your Google Play or Apple App Store account. The store processes the payment, so Zumi never receives your card number.';
+
+  @override
+  String get storeBalanceGiftCardsTitle => 'Store Balance & Gift Cards';
+
+  @override
+  String get storeBalanceGiftCardsSummary => 'Redeem store credit';
+
+  @override
+  String get storeBalanceGiftCardsDetails =>
+      'Use eligible store balance, redeemed gift cards, or promotional credit toward a Zumi subscription. Availability depends on your store and region.';
+
+  @override
+  String get digitalWalletsTitle => 'Digital Wallets & Local Methods';
+
+  @override
+  String get digitalWalletsSummary => 'Store-supported payment methods';
+
+  @override
+  String get digitalWalletsDetails =>
+      'Your store may offer Google Pay, Apple Pay, PayPal, or regional payment methods. Available options depend on your account, device, and region.';
+
+  @override
+  String get storeProtectedPurchases => 'Store-Protected Purchases';
+
+  @override
+  String get storeProtectedPurchasesSummary => 'Billing stays with stores';
+
+  @override
+  String get storeProtectedPurchasesDetails =>
+      'Zumi never sees or retains your financial billing data. Google Play or Apple App Store authenticates and encrypts every transaction. You can cancel anytime through your store account, without hidden fees.';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
