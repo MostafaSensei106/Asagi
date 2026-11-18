@@ -54,7 +54,7 @@ final class _AiFeaturesPageState extends State<AiFeaturesPage> {
                   onLongPress: () => context.showInfoBottomSheet(
                     title: l10n.smartBitrateRecommender,
                     icon: LucideIcons.gauge,
-                    inputIcon: LucideIcons.video,
+                    illustrationKind: InfoIllustrationKind.performance,
                     description: l10n.bitrateRecommenderDetails,
                   ),
                   subtitle: l10n.bitrateRecommenderDescription,
@@ -79,8 +79,7 @@ final class _AiFeaturesPageState extends State<AiFeaturesPage> {
                   onLongPress: () => context.showInfoBottomSheet(
                     title: l10n.sceneAwareKeyframePlacement,
                     icon: LucideIcons.scanLine,
-                    inputIcon: LucideIcons.video,
-                    outputIcon: LucideIcons.galleryThumbnails,
+                    illustrationKind: InfoIllustrationKind.mediaAnalysis,
                     description: l10n.sceneKeyframeDetails,
                   ),
                   subtitle: l10n.sceneKeyframeDescription,
@@ -105,8 +104,7 @@ final class _AiFeaturesPageState extends State<AiFeaturesPage> {
                   onLongPress: () => context.showInfoBottomSheet(
                     title: l10n.cameraSensorDenoising,
                     icon: LucideIcons.sparkles,
-                    inputIcon: LucideIcons.galleryThumbnails,
-                    outputIcon: LucideIcons.images,
+                    illustrationKind: InfoIllustrationKind.mediaAnalysis,
                     description: l10n.noiseReductionDetails,
                   ),
                   subtitle: l10n.noiseReductionDescription,
@@ -131,8 +129,7 @@ final class _AiFeaturesPageState extends State<AiFeaturesPage> {
                   onLongPress: () => context.showInfoBottomSheet(
                     title: l10n.silentAudioTrimming,
                     icon: LucideIcons.volumeX,
-                    inputIcon: LucideIcons.audioLines,
-                    outputIcon: LucideIcons.volumeX,
+                    illustrationKind: InfoIllustrationKind.audio,
                     description: l10n.silentAudioDetails,
                   ),
                   subtitle: l10n.silentAudioDescription,
@@ -157,8 +154,7 @@ final class _AiFeaturesPageState extends State<AiFeaturesPage> {
                   onLongPress: () => context.showInfoBottomSheet(
                     title: l10n.subjectFacePriority,
                     icon: LucideIcons.scanFace,
-                    inputIcon: LucideIcons.images,
-                    outputIcon: LucideIcons.scanFace,
+                    illustrationKind: InfoIllustrationKind.mediaAnalysis,
                     description: l10n.facePriorityDetails,
                   ),
                   subtitle: l10n.facePriorityDescription,

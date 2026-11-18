@@ -28,201 +28,220 @@ final class _NotificationsSettingsPageState
   bool _productUpdates = true;
   bool _savingsDigest = true;
 
-  void _onToggle(String key, bool value, void Function() apply) {
+  void _onToggle(String label, bool value, VoidCallback apply) {
     unawaited(HapticFeedback.selectionClick());
     setState(apply);
-    context.toast.showInfo(context, value ? '$key enabled' : '$key disabled');
+    context.toast.showInfo(
+      context,
+      '$label ${value ? context.localeKeys.enabled : context.localeKeys.disabled}',
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.localeKeys;
-    final colorScheme = context.colorScheme;
 
     return Scaffold(
       appBar: SidePageAppBarComponent(title: l10n.notifications),
-      body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.symmetric(
-            horizontal: AppSpacing.large,
-            vertical: AppSpacing.medium,
-          ),
-          children: [
-            CardComponent.filled(
-              padding: const EdgeInsets.all(AppSpacing.large),
-              child: Row(
-                children: [
-                  ExpressiveIcon(
-                    icon: ZumiIcons.notifications,
-                    shape: ExpressiveIconShape.burst,
-                    size: 56,
-                    backgroundColor: colorScheme.primaryContainer,
-                    foregroundColor: colorScheme.onPrimaryContainer,
-                  ),
-                  const Gap.horizontal(AppSpacing.large),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          l10n.notifications,
-                          style: context.textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const Gap(AppSpacing.xSmall),
-                        Text(
-                          l10n.jobCompletionAndProductUpdateNotifications,
-                          style: context.textTheme.bodySmall?.copyWith(
-                            color: colorScheme.onSurfaceVariant,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const Gap(AppSpacing.xLarge),
-            const ExpressiveSectionHeader(
-              title: 'Compression Alerts',
-              icon: ZumiIcons.compressionProgress,
-              shape: ExpressiveIconShape.sunny,
-            ),
-            const Gap(AppSpacing.small),
-            ListTileGroup(
-              children: [
-                ListTileComponent.top(
-                  title: const Text('Job Completed'),
-                  subtitle: const Text(
-                    'Notify when a video has finished compression in the background',
-                  ),
-                  showChevron: false,
-                  trailing: SwitchComponent(
-                    value: _jobCompletion,
-                    onChanged: (val) => _onToggle(
-                      'Job completed alert',
-                      val,
-                      () => _jobCompletion = val,
-                    ),
-                  ),
-                ),
-                ListTileComponent.middle(
-                  title: const Text('Background Status'),
-                  subtitle: const Text(
-                    'Show ongoing status icon in system tray while compression is running',
-                  ),
-                  showChevron: false,
-                  trailing: SwitchComponent(
-                    value: _backgroundStatus,
-                    onChanged: (val) => _onToggle(
-                      'Background status',
-                      val,
-                      () => _backgroundStatus = val,
-                    ),
-                  ),
-                ),
-                ListTileComponent.bottom(
-                  title: const Text('Interruption & Error Alerts'),
-                  subtitle: const Text(
-                    'Notify immediately if a job is paused by low storage or battery',
-                  ),
-                  showChevron: false,
-                  trailing: SwitchComponent(
-                    value: _errorAlerts,
-                    onChanged: (val) => _onToggle(
-                      'Error alerts',
-                      val,
-                      () => _errorAlerts = val,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const Gap(AppSpacing.xLarge),
-            const ExpressiveSectionHeader(
-              title: 'Feedback & Haptics',
-              icon: LucideIcons.vibrate,
-              shape: ExpressiveIconShape.softBurst,
-            ),
-            const Gap(AppSpacing.small),
-            ListTileGroup(
-              children: [
-                ListTileComponent.top(
-                  title: const Text('Sound on Completion'),
-                  subtitle: const Text(
-                    'Play subtle chime when compression export is ready',
-                  ),
-                  showChevron: false,
-                  trailing: SwitchComponent(
-                    value: _completionSound,
-                    onChanged: (val) => _onToggle(
-                      'Completion sound',
-                      val,
-                      () => _completionSound = val,
-                    ),
-                  ),
-                ),
-                ListTileComponent.bottom(
-                  title: const Text('Haptic Vibration'),
-                  subtitle: const Text(
-                    'Vibrate upon completing compression or button taps',
-                  ),
-                  showChevron: false,
-                  trailing: SwitchComponent(
-                    value: _hapticFeedback,
-                    onChanged: (val) => _onToggle(
-                      'Haptic feedback',
-                      val,
-                      () => _hapticFeedback = val,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const Gap(AppSpacing.xLarge),
-            const ExpressiveSectionHeader(
-              title: 'Product & Storage Insights',
-              icon: ZumiIcons.storage,
-              shape: ExpressiveIconShape.cookie,
-            ),
-            const Gap(AppSpacing.small),
-            ListTileGroup(
-              children: [
-                ListTileComponent.top(
-                  title: const Text('New Features & Codecs'),
-                  subtitle: const Text(
-                    'Notifications about new video codecs and major updates',
-                  ),
-                  showChevron: false,
-                  trailing: SwitchComponent(
-                    value: _productUpdates,
-                    onChanged: (val) => _onToggle(
-                      'Feature notifications',
-                      val,
-                      () => _productUpdates = val,
-                    ),
-                  ),
-                ),
-                ListTileComponent.bottom(
-                  title: const Text('Storage Savings Digest'),
-                  subtitle: const Text(
-                    'Occasional summary of storage saved by compressing videos',
-                  ),
-                  showChevron: false,
-                  trailing: SwitchComponent(
-                    value: _savingsDigest,
-                    onChanged: (val) => _onToggle(
-                      'Savings digest',
-                      val,
-                      () => _savingsDigest = val,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
+      body: ListView(
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.large,
+          vertical: AppSpacing.medium,
         ),
+        children: [
+          ExpressiveSectionHeader(title: l10n.compressionAlerts),
+          ListTileGroup(
+            children: [
+              ListTileIconComponent.top(
+                leading: LucideIcons.check,
+                title: l10n.jobCompletedNotification,
+                subtitle: l10n.jobCompletedShort,
+                onLongPress: () => context.showInfoBottomSheet(
+                  title: l10n.jobCompletedNotification,
+                  description: l10n.jobCompletedDetails,
+                  icon: LucideIcons.check,
+                  illustrationKind: InfoIllustrationKind.fileAction,
+                ),
+                onTap: () => _onToggle(
+                  l10n.jobCompletedToast,
+                  !_jobCompletion,
+                  () => _jobCompletion = !_jobCompletion,
+                ),
+                showChevron: false,
+                trailing: SwitchComponent(
+                  value: _jobCompletion,
+                  onChanged: (value) => _onToggle(
+                    l10n.jobCompletedToast,
+                    value,
+                    () => _jobCompletion = value,
+                  ),
+                ),
+              ),
+              ListTileIconComponent.middle(
+                leading: LucideIcons.activity,
+                title: l10n.backgroundStatusNotification,
+                subtitle: l10n.backgroundStatusShort,
+                onLongPress: () => context.showInfoBottomSheet(
+                  title: l10n.backgroundStatusNotification,
+                  description: l10n.backgroundStatusDetails,
+                  icon: LucideIcons.activity,
+                  illustrationKind: InfoIllustrationKind.performance,
+                ),
+                onTap: () => _onToggle(
+                  l10n.backgroundStatusToast,
+                  !_backgroundStatus,
+                  () => _backgroundStatus = !_backgroundStatus,
+                ),
+                showChevron: false,
+                trailing: SwitchComponent(
+                  value: _backgroundStatus,
+                  onChanged: (value) => _onToggle(
+                    l10n.backgroundStatusToast,
+                    value,
+                    () => _backgroundStatus = value,
+                  ),
+                ),
+              ),
+              ListTileIconComponent.bottom(
+                leading: LucideIcons.bell,
+                title: l10n.interruptionErrorNotification,
+                subtitle: l10n.interruptionErrorShort,
+                onLongPress: () => context.showInfoBottomSheet(
+                  title: l10n.interruptionErrorNotification,
+                  description: l10n.interruptionErrorDetails,
+                  icon: LucideIcons.bell,
+                  illustrationKind: InfoIllustrationKind.performance,
+                ),
+                onTap: () => _onToggle(
+                  l10n.interruptionErrorToast,
+                  !_errorAlerts,
+                  () => _errorAlerts = !_errorAlerts,
+                ),
+                showChevron: false,
+                trailing: SwitchComponent(
+                  value: _errorAlerts,
+                  onChanged: (value) => _onToggle(
+                    l10n.interruptionErrorToast,
+                    value,
+                    () => _errorAlerts = value,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const Gap(AppSpacing.large),
+          ExpressiveSectionHeader(title: l10n.feedbackAndHaptics),
+          ListTileGroup(
+            children: [
+              ListTileIconComponent.top(
+                leading: LucideIcons.audioLines,
+                title: l10n.completionSoundNotification,
+                subtitle: l10n.completionSoundShort,
+                onLongPress: () => context.showInfoBottomSheet(
+                  title: l10n.completionSoundNotification,
+                  description: l10n.completionSoundDetails,
+                  icon: LucideIcons.audioLines,
+                  illustrationKind: InfoIllustrationKind.audio,
+                ),
+                onTap: () => _onToggle(
+                  l10n.completionSoundToast,
+                  !_completionSound,
+                  () => _completionSound = !_completionSound,
+                ),
+                showChevron: false,
+                trailing: SwitchComponent(
+                  value: _completionSound,
+                  onChanged: (value) => _onToggle(
+                    l10n.completionSoundToast,
+                    value,
+                    () => _completionSound = value,
+                  ),
+                ),
+              ),
+              ListTileIconComponent.bottom(
+                leading: LucideIcons.vibrate,
+                title: l10n.hapticFeedbackNotification,
+                subtitle: l10n.hapticFeedbackShort,
+                onLongPress: () => context.showInfoBottomSheet(
+                  title: l10n.hapticFeedbackNotification,
+                  description: l10n.hapticFeedbackDetails,
+                  icon: LucideIcons.vibrate,
+                  illustrationKind: InfoIllustrationKind.performance,
+                ),
+                onTap: () => _onToggle(
+                  l10n.hapticFeedbackToast,
+                  !_hapticFeedback,
+                  () => _hapticFeedback = !_hapticFeedback,
+                ),
+                showChevron: false,
+                trailing: SwitchComponent(
+                  value: _hapticFeedback,
+                  onChanged: (value) => _onToggle(
+                    l10n.hapticFeedbackToast,
+                    value,
+                    () => _hapticFeedback = value,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const Gap(AppSpacing.large),
+          ExpressiveSectionHeader(title: l10n.productStorageInsights),
+          const Gap(AppSpacing.small),
+          ListTileGroup(
+            children: [
+              ListTileIconComponent.top(
+                leading: LucideIcons.sparkles,
+                title: l10n.productUpdatesNotification,
+                subtitle: l10n.productUpdatesShort,
+                onLongPress: () => context.showInfoBottomSheet(
+                  title: l10n.productUpdatesNotification,
+                  description: l10n.productUpdatesDetails,
+                  icon: LucideIcons.sparkles,
+                ),
+                onTap: () => _onToggle(
+                  l10n.productUpdatesToast,
+                  !_productUpdates,
+                  () => _productUpdates = !_productUpdates,
+                ),
+                showChevron: false,
+                trailing: SwitchComponent(
+                  value: _productUpdates,
+                  onChanged: (value) => _onToggle(
+                    l10n.productUpdatesToast,
+                    value,
+                    () => _productUpdates = value,
+                  ),
+                ),
+              ),
+              ListTileIconComponent.bottom(
+                leading: ZumiIcons.storage,
+                title: l10n.savingsDigestNotification,
+                subtitle: l10n.savingsDigestShort,
+                onLongPress: () => context.showInfoBottomSheet(
+                  title: l10n.savingsDigestNotification,
+                  description: l10n.savingsDigestDetails,
+                  icon: ZumiIcons.storage,
+                  illustrationKind: InfoIllustrationKind.search,
+                ),
+                onTap: () => _onToggle(
+                  l10n.savingsDigestToast,
+                  !_savingsDigest,
+                  () => _savingsDigest = !_savingsDigest,
+                ),
+                showChevron: false,
+                trailing: SwitchComponent(
+                  value: _savingsDigest,
+                  onChanged: (value) => _onToggle(
+                    l10n.savingsDigestToast,
+                    value,
+                    () => _savingsDigest = value,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

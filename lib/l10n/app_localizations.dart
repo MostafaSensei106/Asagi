@@ -3524,6 +3524,192 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Keeps intermediate edits in a temporary isolated location. The original files remain untouched while the operation is in progress.'**
   String get sandboxedScratchpadDetails;
+
+  /// No description provided for @compressionAlerts.
+  ///
+  /// In en, this message translates to:
+  /// **'Compression Alerts'**
+  String get compressionAlerts;
+
+  /// No description provided for @feedbackAndHaptics.
+  ///
+  /// In en, this message translates to:
+  /// **'Feedback & Haptics'**
+  String get feedbackAndHaptics;
+
+  /// No description provided for @productStorageInsights.
+  ///
+  /// In en, this message translates to:
+  /// **'Product & Storage Insights'**
+  String get productStorageInsights;
+
+  /// No description provided for @jobCompletedNotification.
+  ///
+  /// In en, this message translates to:
+  /// **'Job Completed'**
+  String get jobCompletedNotification;
+
+  /// No description provided for @jobCompletedShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Alerts when compression finishes.'**
+  String get jobCompletedShort;
+
+  /// No description provided for @jobCompletedDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Sends a notification after a video finishes compressing in the background. Open it to return to the completed job.'**
+  String get jobCompletedDetails;
+
+  /// No description provided for @jobCompletedToast.
+  ///
+  /// In en, this message translates to:
+  /// **'Job completed alert'**
+  String get jobCompletedToast;
+
+  /// No description provided for @backgroundStatusNotification.
+  ///
+  /// In en, this message translates to:
+  /// **'Background Status'**
+  String get backgroundStatusNotification;
+
+  /// No description provided for @backgroundStatusShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Shows active background jobs.'**
+  String get backgroundStatusShort;
+
+  /// No description provided for @backgroundStatusDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Keeps an ongoing status visible while compression is running in the background. This helps you see that work is still in progress.'**
+  String get backgroundStatusDetails;
+
+  /// No description provided for @backgroundStatusToast.
+  ///
+  /// In en, this message translates to:
+  /// **'Background status'**
+  String get backgroundStatusToast;
+
+  /// No description provided for @interruptionErrorNotification.
+  ///
+  /// In en, this message translates to:
+  /// **'Interruption & Error Alerts'**
+  String get interruptionErrorNotification;
+
+  /// No description provided for @interruptionErrorShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Alerts when compression is interrupted.'**
+  String get interruptionErrorShort;
+
+  /// No description provided for @interruptionErrorDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifies you if a compression job stops because of low storage, battery, or another error. The message helps you understand why the job did not finish.'**
+  String get interruptionErrorDetails;
+
+  /// No description provided for @interruptionErrorToast.
+  ///
+  /// In en, this message translates to:
+  /// **'Error alerts'**
+  String get interruptionErrorToast;
+
+  /// No description provided for @completionSoundNotification.
+  ///
+  /// In en, this message translates to:
+  /// **'Sound on Completion'**
+  String get completionSoundNotification;
+
+  /// No description provided for @completionSoundShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Plays a completion chime.'**
+  String get completionSoundShort;
+
+  /// No description provided for @completionSoundDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Plays a brief chime when video compression and export are complete. Turn it off to receive visual notifications only.'**
+  String get completionSoundDetails;
+
+  /// No description provided for @completionSoundToast.
+  ///
+  /// In en, this message translates to:
+  /// **'Completion sound'**
+  String get completionSoundToast;
+
+  /// No description provided for @hapticFeedbackNotification.
+  ///
+  /// In en, this message translates to:
+  /// **'Haptic Vibration'**
+  String get hapticFeedbackNotification;
+
+  /// No description provided for @hapticFeedbackShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Vibrates after key interactions.'**
+  String get hapticFeedbackShort;
+
+  /// No description provided for @hapticFeedbackDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Uses a short vibration after compression finishes and selected button interactions. Turn it off for a quieter tactile experience.'**
+  String get hapticFeedbackDetails;
+
+  /// No description provided for @hapticFeedbackToast.
+  ///
+  /// In en, this message translates to:
+  /// **'Haptic feedback'**
+  String get hapticFeedbackToast;
+
+  /// No description provided for @productUpdatesNotification.
+  ///
+  /// In en, this message translates to:
+  /// **'New Features & Codecs'**
+  String get productUpdatesNotification;
+
+  /// No description provided for @productUpdatesShort.
+  ///
+  /// In en, this message translates to:
+  /// **'News about features and codecs.'**
+  String get productUpdatesShort;
+
+  /// No description provided for @productUpdatesDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Sends updates about major app features and newly supported video codecs. Turn it off to limit product news notifications.'**
+  String get productUpdatesDetails;
+
+  /// No description provided for @productUpdatesToast.
+  ///
+  /// In en, this message translates to:
+  /// **'Feature notifications'**
+  String get productUpdatesToast;
+
+  /// No description provided for @savingsDigestNotification.
+  ///
+  /// In en, this message translates to:
+  /// **'Storage Savings Digest'**
+  String get savingsDigestNotification;
+
+  /// No description provided for @savingsDigestShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Summarizes storage savings occasionally.'**
+  String get savingsDigestShort;
+
+  /// No description provided for @savingsDigestDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Occasionally summarizes the storage space saved by compressing your videos. It gives you a quick view of the value of your compression history.'**
+  String get savingsDigestDetails;
+
+  /// No description provided for @savingsDigestToast.
+  ///
+  /// In en, this message translates to:
+  /// **'Savings digest'**
+  String get savingsDigestToast;
 }
 
 class _AppLocalizationsDelegate

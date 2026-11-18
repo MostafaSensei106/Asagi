@@ -53,8 +53,7 @@ final class _AiToolsPageState extends State<AiToolsPage> {
                 onLongPress: () => context.showInfoBottomSheet(
                   title: l10n.directVideoTrimming,
                   icon: LucideIcons.scissors,
-                  inputIcon: LucideIcons.video,
-                  outputIcon: LucideIcons.scissors,
+                  illustrationKind: InfoIllustrationKind.fileAction,
                   description: l10n.directTrimmingDetails,
                 ),
                 subtitle: l10n.directTrimmingDescription,
@@ -76,8 +75,7 @@ final class _AiToolsPageState extends State<AiToolsPage> {
                 onLongPress: () => context.showInfoBottomSheet(
                   title: l10n.audioTrackExtraction,
                   icon: LucideIcons.audioLines,
-                  inputIcon: LucideIcons.video,
-                  outputIcon: LucideIcons.audioLines,
+                  illustrationKind: InfoIllustrationKind.audio,
                   description: l10n.audioExtractionDetails,
                 ),
                 subtitle: l10n.audioExtractionDescription,
@@ -102,8 +100,7 @@ final class _AiToolsPageState extends State<AiToolsPage> {
                 onLongPress: () => context.showInfoBottomSheet(
                   title: l10n.metadataScrubber,
                   icon: LucideIcons.fileKey,
-                  inputIcon: LucideIcons.fileText,
-                  outputIcon: LucideIcons.shieldCheck,
+                  illustrationKind: InfoIllustrationKind.privacy,
                   description: l10n.metadataScrubberDetails,
                 ),
                 subtitle: l10n.metadataScrubberDescription,
@@ -126,7 +123,6 @@ final class _AiToolsPageState extends State<AiToolsPage> {
           ),
           const Gap(AppSpacing.xLarge),
           ExpressiveSectionHeader(title: l10n.safetyGuardrails),
-          const Gap(AppSpacing.small),
           ListTileGroup(
             children: [
               ListTileIconComponent.top(
@@ -135,7 +131,7 @@ final class _AiToolsPageState extends State<AiToolsPage> {
                 onLongPress: () => context.showInfoBottomSheet(
                   title: l10n.requireConfirmation,
                   icon: LucideIcons.shieldCheck,
-                  inputIcon: LucideIcons.fileText,
+                  illustrationKind: InfoIllustrationKind.privacy,
                   description: l10n.requireConfirmationDetails,
                 ),
                 subtitle: l10n.requireConfirmationDescription,
@@ -160,8 +156,7 @@ final class _AiToolsPageState extends State<AiToolsPage> {
                 onLongPress: () => context.showInfoBottomSheet(
                   title: l10n.sandboxedScratchpad,
                   icon: LucideIcons.packageOpen,
-                  inputIcon: LucideIcons.folderOpen,
-                  outputIcon: LucideIcons.packageOpen,
+                  illustrationKind: InfoIllustrationKind.fileAction,
                   description: l10n.sandboxedScratchpadDetails,
                 ),
                 subtitle: l10n.sandboxedScratchpadDescription,

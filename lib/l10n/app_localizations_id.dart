@@ -1998,6 +1998,107 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String get sandboxedScratchpadDetails =>
       'Keeps intermediate edits in a temporary isolated location. The original files remain untouched while the operation is in progress.';
+
+  @override
+  String get compressionAlerts => 'Compression Alerts';
+
+  @override
+  String get feedbackAndHaptics => 'Feedback & Haptics';
+
+  @override
+  String get productStorageInsights => 'Product & Storage Insights';
+
+  @override
+  String get jobCompletedNotification => 'Job Completed';
+
+  @override
+  String get jobCompletedShort => 'Alerts when compression finishes.';
+
+  @override
+  String get jobCompletedDetails =>
+      'Sends a notification after a video finishes compressing in the background. Open it to return to the completed job.';
+
+  @override
+  String get jobCompletedToast => 'Job completed alert';
+
+  @override
+  String get backgroundStatusNotification => 'Background Status';
+
+  @override
+  String get backgroundStatusShort => 'Shows active background jobs.';
+
+  @override
+  String get backgroundStatusDetails =>
+      'Keeps an ongoing status visible while compression is running in the background. This helps you see that work is still in progress.';
+
+  @override
+  String get backgroundStatusToast => 'Background status';
+
+  @override
+  String get interruptionErrorNotification => 'Interruption & Error Alerts';
+
+  @override
+  String get interruptionErrorShort =>
+      'Alerts when compression is interrupted.';
+
+  @override
+  String get interruptionErrorDetails =>
+      'Notifies you if a compression job stops because of low storage, battery, or another error. The message helps you understand why the job did not finish.';
+
+  @override
+  String get interruptionErrorToast => 'Error alerts';
+
+  @override
+  String get completionSoundNotification => 'Sound on Completion';
+
+  @override
+  String get completionSoundShort => 'Plays a completion chime.';
+
+  @override
+  String get completionSoundDetails =>
+      'Plays a brief chime when video compression and export are complete. Turn it off to receive visual notifications only.';
+
+  @override
+  String get completionSoundToast => 'Completion sound';
+
+  @override
+  String get hapticFeedbackNotification => 'Haptic Vibration';
+
+  @override
+  String get hapticFeedbackShort => 'Vibrates after key interactions.';
+
+  @override
+  String get hapticFeedbackDetails =>
+      'Uses a short vibration after compression finishes and selected button interactions. Turn it off for a quieter tactile experience.';
+
+  @override
+  String get hapticFeedbackToast => 'Haptic feedback';
+
+  @override
+  String get productUpdatesNotification => 'New Features & Codecs';
+
+  @override
+  String get productUpdatesShort => 'News about features and codecs.';
+
+  @override
+  String get productUpdatesDetails =>
+      'Sends updates about major app features and newly supported video codecs. Turn it off to limit product news notifications.';
+
+  @override
+  String get productUpdatesToast => 'Feature notifications';
+
+  @override
+  String get savingsDigestNotification => 'Storage Savings Digest';
+
+  @override
+  String get savingsDigestShort => 'Summarizes storage savings occasionally.';
+
+  @override
+  String get savingsDigestDetails =>
+      'Occasionally summarizes the storage space saved by compressing your videos. It gives you a quick view of the value of your compression history.';
+
+  @override
+  String get savingsDigestToast => 'Savings digest';
 }
 
 /// The translations for Indonesian, as used in Indonesia (`id_ID`).

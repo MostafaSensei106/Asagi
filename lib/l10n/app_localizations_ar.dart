@@ -1983,6 +1983,106 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get sandboxedScratchpadDetails =>
       'يحتفظ بالتعديلات الوسيطة في موقع مؤقت ومعزول. وتظل الملفات الأصلية دون تغيير أثناء تنفيذ العملية.';
+
+  @override
+  String get compressionAlerts => 'تنبيهات الضغط';
+
+  @override
+  String get feedbackAndHaptics => 'التنبيهات والاهتزاز';
+
+  @override
+  String get productStorageInsights => 'معلومات المنتج والتخزين';
+
+  @override
+  String get jobCompletedNotification => 'اكتمل الضغط';
+
+  @override
+  String get jobCompletedShort => 'تنبيه عند اكتمال الضغط.';
+
+  @override
+  String get jobCompletedDetails =>
+      'يرسل إشعارًا بعد انتهاء ضغط الفيديو في الخلفية. افتح الإشعار للعودة إلى المهمة المكتملة.';
+
+  @override
+  String get jobCompletedToast => 'Job completed alert';
+
+  @override
+  String get backgroundStatusNotification => 'حالة العمل بالخلفية';
+
+  @override
+  String get backgroundStatusShort => 'يعرض المهام النشطة بالخلفية.';
+
+  @override
+  String get backgroundStatusDetails =>
+      'يعرض حالة مستمرة أثناء ضغط الفيديو في الخلفية. يساعدك ذلك على معرفة أن العمل ما زال جاريًا.';
+
+  @override
+  String get backgroundStatusToast => 'حالة العمل بالخلفية';
+
+  @override
+  String get interruptionErrorNotification => 'تنبيهات التوقف والأخطاء';
+
+  @override
+  String get interruptionErrorShort => 'تنبيه عند توقف عملية الضغط.';
+
+  @override
+  String get interruptionErrorDetails =>
+      'ينبهك إذا توقفت مهمة الضغط بسبب نقص التخزين أو البطارية أو حدوث خطأ. توضح الرسالة سبب عدم اكتمال المهمة.';
+
+  @override
+  String get interruptionErrorToast => 'تنبيهات الأخطاء';
+
+  @override
+  String get completionSoundNotification => 'صوت عند الاكتمال';
+
+  @override
+  String get completionSoundShort => 'يشغّل نغمة عند الاكتمال.';
+
+  @override
+  String get completionSoundDetails =>
+      'يشغّل نغمة قصيرة عند انتهاء ضغط الفيديو وتصديره. أوقفه للاكتفاء بالإشعارات المرئية.';
+
+  @override
+  String get completionSoundToast => 'صوت الاكتمال';
+
+  @override
+  String get hapticFeedbackNotification => 'الاهتزاز اللمسي';
+
+  @override
+  String get hapticFeedbackShort => 'يهتز بعد التفاعلات المهمة.';
+
+  @override
+  String get hapticFeedbackDetails =>
+      'يستخدم اهتزازًا قصيرًا عند انتهاء الضغط وبعض تفاعلات الأزرار. أوقفه لتعطيل هذه الاستجابة اللمسية.';
+
+  @override
+  String get hapticFeedbackToast => 'Haptic feedback';
+
+  @override
+  String get productUpdatesNotification => 'ميزات وبرامج ترميز جديدة';
+
+  @override
+  String get productUpdatesShort => 'أخبار الميزات وبرامج الترميز.';
+
+  @override
+  String get productUpdatesDetails =>
+      'يرسل تحديثات عن ميزات التطبيق المهمة وبرامج ترميز الفيديو الجديدة. أوقفه لتقليل إشعارات أخبار المنتج.';
+
+  @override
+  String get productUpdatesToast => 'إشعارات الميزات';
+
+  @override
+  String get savingsDigestNotification => 'ملخص التوفير في التخزين';
+
+  @override
+  String get savingsDigestShort => 'يلخص التوفير في التخزين دوريًا.';
+
+  @override
+  String get savingsDigestDetails =>
+      'يلخص من وقت لآخر مساحة التخزين التي وفرتها بضغط الفيديوهات. ويمنحك نظرة سريعة على نتائج سجل الضغط.';
+
+  @override
+  String get savingsDigestToast => 'ملخص التوفير';
 }
 
 /// The translations for Arabic, as used in Egypt (`ar_EG`).

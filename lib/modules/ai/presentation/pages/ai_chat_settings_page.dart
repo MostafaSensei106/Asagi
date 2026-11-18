@@ -41,8 +41,7 @@ final class _AiChatSettingsPageState extends State<AiChatSettingsPage> {
                 onLongPress: () => context.showInfoBottomSheet(
                   title: l10n.streamTextOutput,
                   icon: LucideIcons.textAlignCenter,
-                  inputIcon: LucideIcons.messageSquareText,
-                  outputIcon: LucideIcons.textAlignCenter,
+                  illustrationKind: InfoIllustrationKind.conversation,
                   description: l10n.streamTextDetails,
                 ),
                 subtitle: l10n.streamTextDescription,
@@ -63,8 +62,7 @@ final class _AiChatSettingsPageState extends State<AiChatSettingsPage> {
                 onLongPress: () => context.showInfoBottomSheet(
                   title: l10n.showReasoningThinking,
                   icon: LucideIcons.textAlignEnd,
-                  inputIcon: LucideIcons.messageSquareText,
-                  outputIcon: LucideIcons.messageSquareText,
+                  illustrationKind: InfoIllustrationKind.conversation,
                   description: l10n.showReasoningDetails,
                 ),
                 subtitle: l10n.showReasoningDescription,

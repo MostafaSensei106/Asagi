@@ -43,8 +43,7 @@ final class _AiMediaPageState extends State<AiMediaPage> {
                   onLongPress: () => context.showInfoBottomSheet(
                     title: l10n.analyzeVideoThumbnails,
                     icon: LucideIcons.galleryThumbnails,
-                    inputIcon: LucideIcons.video,
-                    outputIcon: LucideIcons.galleryThumbnails,
+                    illustrationKind: InfoIllustrationKind.mediaAnalysis,
                     description: l10n.analyzeThumbnailsDetails,
                   ),
                   subtitle: l10n.analyzeThumbnailsDescription,
@@ -65,8 +64,7 @@ final class _AiMediaPageState extends State<AiMediaPage> {
                   onLongPress: () => context.showInfoBottomSheet(
                     title: l10n.keyframeSamplingDensity,
                     icon: LucideIcons.settings2,
-                    inputIcon: LucideIcons.video,
-                    outputIcon: LucideIcons.scanLine,
+                    illustrationKind: InfoIllustrationKind.mediaAnalysis,
                     description: l10n.samplingDensityDetails,
                   ),
                   subtitle: _sampleRate == 1
@@ -111,8 +109,7 @@ final class _AiMediaPageState extends State<AiMediaPage> {
                   onLongPress: () => context.showInfoBottomSheet(
                     title: l10n.speechToText,
                     icon: LucideIcons.audioLines,
-                    inputIcon: LucideIcons.audioLines,
-                    outputIcon: LucideIcons.fileText,
+                    illustrationKind: InfoIllustrationKind.audio,
                     description: l10n.speechToTextDetails,
                   ),
                   subtitle: l10n.speechToTextDescription,
@@ -133,8 +130,7 @@ final class _AiMediaPageState extends State<AiMediaPage> {
                   onLongPress: () => context.showInfoBottomSheet(
                     title: l10n.spokenLanguageAutoDetect,
                     icon: LucideIcons.languages,
-                    inputIcon: LucideIcons.audioLines,
-                    outputIcon: LucideIcons.languages,
+                    illustrationKind: InfoIllustrationKind.audio,
                     description: l10n.spokenLanguageDetails,
                   ),
                   subtitle: l10n.spokenLanguageDescription,

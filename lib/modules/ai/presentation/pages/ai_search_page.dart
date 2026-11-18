@@ -90,8 +90,7 @@ final class _AiSearchPageState extends State<AiSearchPage> {
                 onLongPress: () => context.showInfoBottomSheet(
                   title: l10n.enableSemanticSearch,
                   icon: LucideIcons.search,
-                  inputIcon: LucideIcons.video,
-                  outputIcon: LucideIcons.search,
+                  illustrationKind: InfoIllustrationKind.search,
                   description: l10n.semanticSearchDetails,
                 ),
                 subtitle: l10n.semanticSearchDescription,
@@ -114,8 +113,7 @@ final class _AiSearchPageState extends State<AiSearchPage> {
                 onLongPress: () => context.showInfoBottomSheet(
                   title: l10n.indexOnlyWhenCharging,
                   icon: LucideIcons.batteryCharging,
-                  inputIcon: LucideIcons.batteryCharging,
-                  outputIcon: LucideIcons.search,
+                  illustrationKind: InfoIllustrationKind.search,
                   description: l10n.indexChargingDetails,
                 ),
                 subtitle: l10n.indexChargingDescription,
