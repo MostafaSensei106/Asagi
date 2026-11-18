@@ -5,11 +5,16 @@ import 'package:material_ui/material_ui.dart';
 
 import '../../../constants/app_config.dart';
 
+/// Tonal (secondary) action button.
+///
+/// Grows to fill the available width when [expand] is `true`, otherwise sizes
+/// itself to its content.
 final class FilledTonalButtonComponent extends StatelessWidget {
   const FilledTonalButtonComponent({
     required this.label,
     required this.onPressed,
     super.key,
+    this.expand = false,
     this.useInBorderRadius = false,
     this.width,
     this.height,
@@ -22,6 +27,7 @@ final class FilledTonalButtonComponent extends StatelessWidget {
     required this.label,
     required this.onPressed,
     super.key,
+    this.expand = false,
     this.useInBorderRadius = false,
     this.width,
     this.height,
@@ -30,6 +36,7 @@ final class FilledTonalButtonComponent extends StatelessWidget {
   });
   final String label;
   final VoidCallback onPressed;
+  final bool expand;
   final bool useInBorderRadius;
   final IconData? icon;
   final double? width;
@@ -64,7 +71,7 @@ final class FilledTonalButtonComponent extends StatelessWidget {
     foregroundColor:
         foregroundColor ?? Theme.of(context).colorScheme.onSecondaryContainer,
     minimumSize: Size(
-      width ?? double.infinity,
+      expand ? (width ?? double.infinity) : (width ?? 0),
       height ?? AppConfig.buttonHeight,
     ),
     shape: RoundedRectangleBorder(

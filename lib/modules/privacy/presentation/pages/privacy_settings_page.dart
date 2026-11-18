@@ -142,7 +142,6 @@ final class _PrivacySettingsPageState extends State<PrivacySettingsPage> {
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Crash Reports',
                     value: _crashReports,
                     onChanged: (val) => _onToggle(
                       'Crash reports',
@@ -158,7 +157,6 @@ final class _PrivacySettingsPageState extends State<PrivacySettingsPage> {
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Performance Telemetry',
                     value: _performanceTelemetry,
                     onChanged: (val) => _onToggle(
                       'Telemetry',
@@ -185,7 +183,6 @@ final class _PrivacySettingsPageState extends State<PrivacySettingsPage> {
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Preserve Metadata',
                     value: _preserveMetadata,
                     onChanged: (val) => _onToggle(
                       'Metadata preservation',
@@ -201,7 +198,6 @@ final class _PrivacySettingsPageState extends State<PrivacySettingsPage> {
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Auto Wipe Cache',
                     value: _autoWipeTempCache,
                     onChanged: (val) => _onToggle(
                       'Auto wipe',

@@ -2172,6 +2172,608 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{countryCode, select, AE{United Arab Emirates} AT{Austria} AU{Australia} BE{Belgium} BH{Bahrain} BR{Brazil} CA{Canada} CH{Switzerland} CN{China} DE{Germany} DJ{Djibouti} DZ{Algeria} EG{Egypt} ES{Spain} FR{France} GB{United Kingdom} HK{Hong Kong SAR China} ID{Indonesia} IQ{Iraq} IT{Italy} JO{Jordan} JP{Japan} KM{Comoros} KR{South Korea} KW{Kuwait} LB{Lebanon} LY{Libya} MA{Morocco} MR{Mauritania} MX{Mexico} NL{Netherlands} OM{Oman} PL{Poland} PS{Palestinian Territories} PT{Portugal} QA{Qatar} RU{Russia} SA{Saudi Arabia} SD{Sudan} SE{Sweden} SG{Singapore} SO{Somalia} SY{Syria} TH{Thailand} TN{Tunisia} TR{Türkiye} TW{Taiwan} US{United States} VN{Vietnam} YE{Yemen} other{Country}}'**
   String countryName(String countryCode);
+
+  /// Onboarding slide chip
+  ///
+  /// In en, this message translates to:
+  /// **'Lossless visual quality'**
+  String get losslessVisualQuality;
+
+  /// Onboarding slide chip
+  ///
+  /// In en, this message translates to:
+  /// **'Up to 90% size reduction'**
+  String get upTo90PercentSizeReduction;
+
+  /// Onboarding slide chip
+  ///
+  /// In en, this message translates to:
+  /// **'Instant preview'**
+  String get instantPreview;
+
+  /// Onboarding privacy slide tagline
+  ///
+  /// In en, this message translates to:
+  /// **'Zero cloud uploads. Your videos and personal memories never leave your device.'**
+  String
+  get zeroCloudUploadsYourVideosAndPersonalMemoriesNeverLeaveYourDeviceHardware;
+
+  /// Onboarding privacy slide chip
+  ///
+  /// In en, this message translates to:
+  /// **'100% offline'**
+  String get fullyOffline;
+
+  /// Onboarding privacy slide chip
+  ///
+  /// In en, this message translates to:
+  /// **'No tracking'**
+  String get noTracking;
+
+  /// Onboarding privacy slide chip
+  ///
+  /// In en, this message translates to:
+  /// **'Zero cloud servers'**
+  String get zeroCloudServers;
+
+  /// Onboarding engine slide title
+  ///
+  /// In en, this message translates to:
+  /// **'Native Rust engine speed'**
+  String get nativeRustEngineSpeed;
+
+  /// Onboarding engine slide tagline
+  ///
+  /// In en, this message translates to:
+  /// **'Engineered with Rust and native GPU acceleration for lightning-fast compression and low battery draw.'**
+  String
+  get engineeredWithRustAndNativeGpuAccelerationForLightningFastCompressionAndLowBatteryDraw;
+
+  /// Onboarding engine slide chip
+  ///
+  /// In en, this message translates to:
+  /// **'H.264 & HEVC'**
+  String get h264AndHevc;
+
+  /// Onboarding engine slide chip
+  ///
+  /// In en, this message translates to:
+  /// **'AV1 support'**
+  String get av1Support;
+
+  /// Onboarding engine slide chip
+  ///
+  /// In en, this message translates to:
+  /// **'Batch queuing'**
+  String get batchQueuing;
+
+  /// Primary action that advances to the next onboarding slide
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get continueLabel;
+
+  /// Home card describing recovered jobs
+  ///
+  /// In en, this message translates to:
+  /// **'Found interrupted compression jobs. You can resume them with the same settings or delete them.'**
+  String
+  get foundInterruptedCompressionJobsYouCanResumeThemWithTheSameSettingsOrDeleteThem;
+
+  /// Interrupted job subtitle when the source video no longer exists
+  ///
+  /// In en, this message translates to:
+  /// **'Original file is missing · delete the job to clean up temporary files'**
+  String get originalFileIsMissingDeleteTheJobToCleanUpTemporaryFiles;
+
+  /// Tooltip for discarding an interrupted compression job
+  ///
+  /// In en, this message translates to:
+  /// **'Delete interrupted job'**
+  String get deleteInterruptedJob;
+
+  /// WhatsApp preset tuning badge
+  ///
+  /// In en, this message translates to:
+  /// **'16MB cap · 720p'**
+  String get whatsappAlgorithmBadge;
+
+  /// WhatsApp preset explanation
+  ///
+  /// In en, this message translates to:
+  /// **'Tuned to WhatsApp\'s strict limits to avoid failed sends.'**
+  String get whatsappPresetDescription;
+
+  /// WhatsApp HD preset tuning badge
+  ///
+  /// In en, this message translates to:
+  /// **'1080p HD'**
+  String get whatsappHdAlgorithmBadge;
+
+  /// WhatsApp HD preset explanation
+  ///
+  /// In en, this message translates to:
+  /// **'The highest clarity WhatsApp allows in HD media mode.'**
+  String get whatsappHdPresetDescription;
+
+  /// Instagram Reels preset tuning badge
+  ///
+  /// In en, this message translates to:
+  /// **'5 Mbps cap · 1080p'**
+  String get instagramReelsAlgorithmBadge;
+
+  /// Instagram Reels preset explanation
+  ///
+  /// In en, this message translates to:
+  /// **'Capped at 5 Mbps to protect the video from Instagram\'s aggressive compression.'**
+  String get instagramReelsPresetDescription;
+
+  /// TikTok preset tuning badge
+  ///
+  /// In en, this message translates to:
+  /// **'60fps · 6 Mbps cap'**
+  String get tikTokAlgorithmBadge;
+
+  /// TikTok preset explanation
+  ///
+  /// In en, this message translates to:
+  /// **'A balanced mix of motion quality and processing speed on TikTok.'**
+  String get tikTokPresetDescription;
+
+  /// Discord preset tuning badge
+  ///
+  /// In en, this message translates to:
+  /// **'10MB cap'**
+  String get discordAlgorithmBadge;
+
+  /// Discord preset explanation
+  ///
+  /// In en, this message translates to:
+  /// **'Avoids the \"Your files are too powerful\" message and ensures instant uploads.'**
+  String get discordPresetDescription;
+
+  /// X (Twitter) preset tuning badge
+  ///
+  /// In en, this message translates to:
+  /// **'Forced faststart'**
+  String get xAlgorithmBadge;
+
+  /// X (Twitter) preset explanation
+  ///
+  /// In en, this message translates to:
+  /// **'Places the moov atom at the start of the file so playback starts instantly in the feed.'**
+  String get xPresetDescription;
+
+  /// Facebook preset tuning badge
+  ///
+  /// In en, this message translates to:
+  /// **'Constrained VBR · 1080p'**
+  String get facebookAlgorithmBadge;
+
+  /// Facebook preset explanation
+  ///
+  /// In en, this message translates to:
+  /// **'A constrained bitrate protects image sharpness in the feed and Reels.'**
+  String get facebookPresetDescription;
+
+  /// YouTube Shorts preset tuning badge
+  ///
+  /// In en, this message translates to:
+  /// **'High bitrate · 1080p'**
+  String get youTubeShortsAlgorithmBadge;
+
+  /// YouTube Shorts preset explanation
+  ///
+  /// In en, this message translates to:
+  /// **'Fast upload prep that keeps the highest possible detail and quality.'**
+  String get youTubeShortsPresetDescription;
+
+  /// Email preset tuning badge
+  ///
+  /// In en, this message translates to:
+  /// **'True 25MB cap'**
+  String get emailAlgorithmBadge;
+
+  /// Email preset explanation
+  ///
+  /// In en, this message translates to:
+  /// **'A definitive fix for exceeding email attachment limits.'**
+  String get emailPresetDescription;
+
+  /// Subtitle of the custom size preset card
+  ///
+  /// In en, this message translates to:
+  /// **'Any size'**
+  String get anySize;
+
+  /// Badge of the custom size preset card
+  ///
+  /// In en, this message translates to:
+  /// **'Manual control'**
+  String get manualControl;
+
+  /// Loading message while the preset plan is computed
+  ///
+  /// In en, this message translates to:
+  /// **'🐾 Zumi is studying the platform\'s algorithm and calculating the budget...'**
+  String get zumiIsStudyingThePlatformAlgorithmAndCalculatingTheBudget;
+
+  /// Title of the custom mode feedback card
+  ///
+  /// In en, this message translates to:
+  /// **'Custom control mode'**
+  String get customControlMode;
+
+  /// Body of the custom mode feedback card
+  ///
+  /// In en, this message translates to:
+  /// **'You set the target size manually. The engine will apply the highest possible resolution and quality within that cap.'**
+  String
+  get youSetTheTargetSizeManuallyTheEngineWillApplyTheHighestPossibleQualityWithinThatCap;
+
+  /// Infeasible plan title
+  ///
+  /// In en, this message translates to:
+  /// **'Zumi is puzzled (impossible target for the {name} cap)'**
+  String zumiIsPuzzledAnImpossibleTargetForTheNameCap(String name);
+
+  /// Infeasible plan explanation
+  ///
+  /// In en, this message translates to:
+  /// **'The video is too long to fit within the {size} cap without severe image distortion. We suggest trimming the video or choosing another platform with a higher cap.'**
+  String
+  theVideoIsTooLongToFitWithinTheSizeCapWithoutSevereDistortionWeSuggestTrimmingTheVideoOrChoosingAnotherPlatformWithAHigherCap(
+    String size,
+  );
+
+  /// Reduced quality warning title
+  ///
+  /// In en, this message translates to:
+  /// **'Zumi alert: protecting quality from distortion'**
+  String get zumiAlertProtectingQualityFromDistortion;
+
+  /// Reduced quality warning explanation
+  ///
+  /// In en, this message translates to:
+  /// **'The {name} budget is tight for this duration, so we lowered the resolution to {width}×{height} to prevent pixel scatter and ensure smooth playback.'**
+  String
+  theNameBudgetIsTightForThisDurationSoWeLoweredTheResolutionToWidthHeightToPreventPixelScatterAndEnsureSmoothPlayback(
+    String name,
+    int width,
+    int height,
+  );
+
+  /// Relaxed size title
+  ///
+  /// In en, this message translates to:
+  /// **'Adjusting the cap for {name}'**
+  String adjustingTheCapForName(String name);
+
+  /// Relaxed size explanation
+  ///
+  /// In en, this message translates to:
+  /// **'The base cap is very tight, so the target was automatically raised to {targetMb} MB to produce a clear, acceptable video.'**
+  String
+  theBaseCapIsVeryTightSoTheTargetWasAutomaticallyRaisedToTargetMbMbToProduceAClearAcceptableVideo(
+    String targetMb,
+  );
+
+  /// Exact match title
+  ///
+  /// In en, this message translates to:
+  /// **'Tuned for the {name} algorithm'**
+  String tunedForTheNameAlgorithm(String name);
+
+  /// Exact match badge
+  ///
+  /// In en, this message translates to:
+  /// **'Exact match'**
+  String get exactMatch;
+
+  /// Section header above the preset bar
+  ///
+  /// In en, this message translates to:
+  /// **'Target platform or size'**
+  String get targetPlatformOrSize;
+
+  /// Helper text under the target size field
+  ///
+  /// In en, this message translates to:
+  /// **'Set automatically for the platform (changing the number switches to custom mode)'**
+  String
+  get setAutomaticallyForThePlatformChangingTheNumberSwitchesToCustomMode;
+
+  /// Full Terms of Service text copied to the clipboard
+  ///
+  /// In en, this message translates to:
+  /// **'1. Acceptance of Terms\nBy downloading, accessing, or using Zumi (\"the Application\"), you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you must discontinue using the application.\n\n2. Personal License\nWe grant you a personal, revocable, non-exclusive, non-transferable license to use Zumi strictly for your personal, non-commercial, or internal creative media compression workflows on compatible devices.\n\n3. On-Device Execution & Content Ownership\nZumi executes compression pipelines exclusively on your device hardware using local encoders. You retain 100% of all intellectual property rights and copyrights in and to your video files and media. Zumi never uploads, hosts, replicates, or claims ownership over any videos you select or process. You are solely responsible for ensuring you have all requisite permissions and licenses for any media you compress.\n\n4. In-App Subscriptions & Billing\nOptional premium features (such as Zumi Pro) may be offered as recurring subscriptions or one-time unlock purchases. All billing, renewals, cancellations, and tax collections are processed exclusively through the official platform store (Google Play or Apple App Store). Subscriptions renew automatically unless cancelled at least 24 hours prior to the conclusion of the active billing cycle.\n\n5. Disclaimer of Warranties\nThe Application is provided \"as is\" and \"as available,\" without warranty of any kind, express or implied. While we employ rigorous testing and standard-compliant codecs, we do not guarantee that media compression will achieve specific file reduction percentages without visual changes for every source codec.\n'**
+  String get termsOfServiceFullText;
+
+  /// Confirmation toast after copying the terms
+  ///
+  /// In en, this message translates to:
+  /// **'Terms copied to clipboard'**
+  String get termsCopiedToClipboard;
+
+  /// Terms section title
+  ///
+  /// In en, this message translates to:
+  /// **'1. Acceptance & License'**
+  String get termsAcceptanceLicenseTitle;
+
+  /// Terms section body
+  ///
+  /// In en, this message translates to:
+  /// **'By using Zumi, you agree to these Terms. We grant you a personal, non-exclusive, non-transferable license to compress media locally on your devices.'**
+  String get termsAcceptanceLicenseBody;
+
+  /// Terms section title
+  ///
+  /// In en, this message translates to:
+  /// **'2. 100% Content Ownership'**
+  String get termsContentOwnershipTitle;
+
+  /// Terms section body
+  ///
+  /// In en, this message translates to:
+  /// **'You retain all copyrights and ownership over your videos. Zumi does not transmit, store, or claim any rights to your media files.'**
+  String get termsContentOwnershipBody;
+
+  /// Terms section title
+  ///
+  /// In en, this message translates to:
+  /// **'3. Local On-Device Processing'**
+  String get termsLocalOnDeviceProcessingTitle;
+
+  /// Terms section body
+  ///
+  /// In en, this message translates to:
+  /// **'All compression pipelines run completely on your device hardware without external server dependencies or remote media processing.'**
+  String get termsLocalOnDeviceProcessingBody;
+
+  /// Terms section title
+  ///
+  /// In en, this message translates to:
+  /// **'4. Subscriptions & Billing'**
+  String get termsSubscriptionsAndBillingTitle;
+
+  /// Terms section body
+  ///
+  /// In en, this message translates to:
+  /// **'Purchases and subscriptions are managed securely via official Google Play and Apple App Store billing. Cancellations can be performed anytime in your store account.'**
+  String get termsSubscriptionsAndBillingBody;
+
+  /// Terms section title
+  ///
+  /// In en, this message translates to:
+  /// **'5. Disclaimers & Fair Use'**
+  String get termsDisclaimersAndFairUseTitle;
+
+  /// Terms section body
+  ///
+  /// In en, this message translates to:
+  /// **'The software is provided \"as is.\" You are responsible for ensuring you have proper rights to the video content you process.'**
+  String get termsDisclaimersAndFairUseBody;
+
+  /// Terms page version and revision date
+  ///
+  /// In en, this message translates to:
+  /// **'Version 1.2 • November 2026'**
+  String get version12November2026;
+
+  /// Data safety category
+  ///
+  /// In en, this message translates to:
+  /// **'Videos and Photos'**
+  String get videosAndPhotos;
+
+  /// Data safety category details
+  ///
+  /// In en, this message translates to:
+  /// **'Processed exclusively on-device. Media files are never transmitted to external servers or third-party platforms.'**
+  String
+  get processedExclusivelyOnDeviceMediaFilesAreNeverTransmittedToExternalServersOrThirdPartyPlatforms;
+
+  /// Data safety category
+  ///
+  /// In en, this message translates to:
+  /// **'Financial Info & Payment'**
+  String get financialInfoAndPayment;
+
+  /// Data safety category details
+  ///
+  /// In en, this message translates to:
+  /// **'All payment details are handled directly by Google Play Store or Apple App Store. Zumi never accesses card details.'**
+  String
+  get allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreZumiNeverAccessesCardDetails;
+
+  /// Data safety category
+  ///
+  /// In en, this message translates to:
+  /// **'App Performance & Crash Logs'**
+  String get appPerformanceAndCrashLogs;
+
+  /// Data safety category details
+  ///
+  /// In en, this message translates to:
+  /// **'Optional non-identifiable crash logs and stack traces used solely for diagnosing bugs and optimizing stability.'**
+  String
+  get optionalNonIdentifiableCrashLogsAndStackTracesUsedSolelyForDiagnosingBugsAndOptimizingStability;
+
+  /// Data safety category
+  ///
+  /// In en, this message translates to:
+  /// **'Device or Other Identifiers'**
+  String get deviceOrOtherIdentifiers;
+
+  /// Data safety category details
+  ///
+  /// In en, this message translates to:
+  /// **'No advertising IDs, IMEI numbers, MAC addresses, or persistent hardware identifiers are gathered.'**
+  String
+  get noAdvertisingIdsImeiNumbersMacAddressesOrPersistentHardwareIdentifiersAreGathered;
+
+  /// Data safety summary card header
+  ///
+  /// In en, this message translates to:
+  /// **'Store Safety Summary'**
+  String get storeSafetySummary;
+
+  /// Data safety affirmative row
+  ///
+  /// In en, this message translates to:
+  /// **'No data shared with third parties'**
+  String get noDataSharedWithThirdParties;
+
+  /// Data safety affirmative row
+  ///
+  /// In en, this message translates to:
+  /// **'No user data collected for advertising'**
+  String get noUserDataCollectedForAdvertising;
+
+  /// Data safety affirmative row
+  ///
+  /// In en, this message translates to:
+  /// **'Data encrypted in transit (store purchases)'**
+  String get dataEncryptedInTransitStorePurchases;
+
+  /// Data safety affirmative row
+  ///
+  /// In en, this message translates to:
+  /// **'You can request data deletion at any time'**
+  String get youCanRequestDataDeletionAtAnyTime;
+
+  /// Section header above the data safety categories
+  ///
+  /// In en, this message translates to:
+  /// **'Data Collection Breakdown'**
+  String get dataCollectionBreakdown;
+
+  /// Data safety chip for optionally collected data
+  ///
+  /// In en, this message translates to:
+  /// **'Optional Only'**
+  String get optionalOnly;
+
+  /// Data safety chip for data that is never collected
+  ///
+  /// In en, this message translates to:
+  /// **'Not Collected'**
+  String get notCollected;
+
+  /// Privacy highlight title
+  ///
+  /// In en, this message translates to:
+  /// **'Zero Cloud Uploads'**
+  String get zeroCloudUploads;
+
+  /// Privacy highlight description
+  ///
+  /// In en, this message translates to:
+  /// **'Videos never leave local memory or storage during processing.'**
+  String get videosNeverLeaveLocalMemoryOrStorageDuringProcessing;
+
+  /// Privacy highlight title
+  ///
+  /// In en, this message translates to:
+  /// **'No Advertising IDs'**
+  String get noAdvertisingIds;
+
+  /// Privacy highlight description
+  ///
+  /// In en, this message translates to:
+  /// **'No ad SDKs, user fingerprinting, or commercial tracking cookies.'**
+  String get noAdSdksUserFingerprintingOrCommercialTrackingCookies;
+
+  /// Privacy highlight title
+  ///
+  /// In en, this message translates to:
+  /// **'100% User Governed'**
+  String get oneHundredPercentUserGoverned;
+
+  /// Privacy highlight description
+  ///
+  /// In en, this message translates to:
+  /// **'All cache and history can be purged with a single tap in settings.'**
+  String get allCacheAndHistoryCanBePurgedWithASingleTapInSettings;
+
+  /// Privacy policy last-updated line
+  ///
+  /// In en, this message translates to:
+  /// **'Last updated: November 2026'**
+  String get lastUpdatedNovember2026;
+
+  /// Section header above the detailed privacy policies
+  ///
+  /// In en, this message translates to:
+  /// **'Detailed Privacy Policies'**
+  String get detailedPrivacyPolicies;
+
+  /// Privacy policy section title
+  ///
+  /// In en, this message translates to:
+  /// **'1. Video Processing Commitment'**
+  String get videoProcessingCommitmentTitle;
+
+  /// Privacy policy section body
+  ///
+  /// In en, this message translates to:
+  /// **'Zumi was built with a fundamental architectural guarantee: your videos, clips, and audio tracks are encoded exclusively on your device hardware using local native codecs. At no point is your media streamed, stored, or processed on external cloud infrastructure.'**
+  String get videoProcessingCommitmentBody;
+
+  /// Privacy policy section title
+  ///
+  /// In en, this message translates to:
+  /// **'2. Information We Never Collect'**
+  String get informationWeNeverCollectTitle;
+
+  /// Privacy policy section body
+  ///
+  /// In en, this message translates to:
+  /// **'We do not collect names, email addresses (unless you explicitly contact customer support), phone numbers, contacts, device locations, biometric identifiers, or visual contents of your media library.'**
+  String get informationWeNeverCollectBody;
+
+  /// Privacy policy section title
+  ///
+  /// In en, this message translates to:
+  /// **'3. Optional Diagnostics'**
+  String get optionalDiagnosticsTitle;
+
+  /// Privacy policy section body
+  ///
+  /// In en, this message translates to:
+  /// **'You may optionally enable anonymous crash reporting to help us identify and fix bugs. These reports contain only non-identifying operating system versions, device models, and exception stack traces, never media content.'**
+  String get optionalDiagnosticsBody;
+
+  /// Privacy policy section title
+  ///
+  /// In en, this message translates to:
+  /// **'4. Third-Party Store Payments'**
+  String get thirdPartyStorePaymentsTitle;
+
+  /// Privacy policy section body
+  ///
+  /// In en, this message translates to:
+  /// **'Subscription and in-app purchase operations are executed directly through the official Apple App Store or Google Play Store. Zumi does not process or retain your credit card or financial billing information.'**
+  String get thirdPartyStorePaymentsBody;
+
+  /// Privacy policy section title
+  ///
+  /// In en, this message translates to:
+  /// **'5. Data Deletion & Storage Hygiene'**
+  String get dataDeletionAndStorageHygieneTitle;
+
+  /// Privacy policy section body
+  ///
+  /// In en, this message translates to:
+  /// **'All compression history records and temporary preview files reside strictly in sandboxed application directories. You can wipe all history and cached frames at any time directly through Storage Settings.'**
+  String get dataDeletionAndStorageHygieneBody;
+
+  /// Button that copies the full terms text to the clipboard
+  ///
+  /// In en, this message translates to:
+  /// **'Copy Terms'**
+  String get copyTerms;
 }
 
 class _AppLocalizationsDelegate

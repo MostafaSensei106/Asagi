@@ -148,6 +148,7 @@ Zumi Diagnostics:
                   FilledTonalButtonComponent.icon(
                     icon: ZumiIcons.build,
                     label: 'Copy Diagnostics for Support',
+                    expand: true,
                     onPressed: () => _copyDiagnostics(context),
                   ),
                 ],

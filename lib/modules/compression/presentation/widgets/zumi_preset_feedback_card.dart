@@ -2,6 +2,7 @@ import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/compression/domain/models/share_preset.dart';
+import '../../../../core/extensions/extensions.dart';
 import '../../../../core/widgets/design_system/tokens/tokens.dart';
 import 'platform_presets_bar.dart';
 
@@ -22,24 +23,25 @@ class ZumiPresetFeedbackCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final l10n = context.localeKeys;
 
     if (isLoading) {
       return Card(
         color: scheme.surfaceContainerLow,
-        child: const Padding(
-          padding: EdgeInsets.all(AppSpacing.medium),
+        child: Padding(
+          padding: const EdgeInsets.all(AppSpacing.medium),
           child: Row(
             children: [
-              SizedBox(
+              const SizedBox(
                 width: 18,
                 height: 18,
                 child: CircularProgressIndicator(strokeWidth: 2),
               ),
-              SizedBox(width: AppSpacing.medium),
+              const SizedBox(width: AppSpacing.medium),
               Expanded(
                 child: Text(
-                  '🐾 Zumi يقوم بدراسة خوارزمية المنصة وحساب الميزانية...',
-                  style: TextStyle(fontSize: 13),
+                  l10n.zumiIsStudyingThePlatformAlgorithmAndCalculatingTheBudget,
+                  style: const TextStyle(fontSize: 13),
                 ),
               ),
             ],
@@ -59,21 +61,21 @@ class ZumiPresetFeedbackCard extends StatelessWidget {
             children: [
               Icon(LucideIcons.sliders, size: 20, color: scheme.primary),
               const SizedBox(width: AppSpacing.medium),
-              const Expanded(
+              Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'وضع التحكم المخصص',
-                      style: TextStyle(
+                      l10n.customControlMode,
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 13,
                       ),
                     ),
-                    SizedBox(height: 2),
+                    const SizedBox(height: 2),
                     Text(
-                      'أنت تحدد حجم الهدف يدوياً. سيطبق المحرك أقصى دقة وجودة ممكنة داخل هذا السقف.',
-                      style: TextStyle(fontSize: 12),
+                      l10n.youSetTheTargetSizeManuallyTheEngineWillApplyTheHighestPossibleQualityWithinThatCap,
+                      style: const TextStyle(fontSize: 12),
                     ),
                   ],
                 ),
@@ -106,7 +108,9 @@ class ZumiPresetFeedbackCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Zumi في حيرة (هدف غير ممكن لسقف ${descriptor.name})',
+                      l10n.zumiIsPuzzledAnImpossibleTargetForTheNameCap(
+                        descriptor.name,
+                      ),
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 13,
@@ -115,7 +119,9 @@ class ZumiPresetFeedbackCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      'مدة الفيديو طويلة جداً بحيث لا يمكن استيعابها في سقف ${descriptor.sizeBadge} دون تشويه تام للصورة. ننصح بقص الفيديو أو اختيار منصة أخرى بسقف أعلى.',
+                      l10n.theVideoIsTooLongToFitWithinTheSizeCapWithoutSevereDistortionWeSuggestTrimmingTheVideoOrChoosingAnotherPlatformWithAHigherCap(
+                        descriptor.sizeBadge,
+                      ),
                       style: TextStyle(
                         fontSize: 12,
                         color: scheme.onErrorContainer,
@@ -146,7 +152,7 @@ class ZumiPresetFeedbackCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'تنبيه Zumi: حماية الجودة من التشوّه',
+                      l10n.zumiAlertProtectingQualityFromDistortion,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 13,
@@ -155,7 +161,11 @@ class ZumiPresetFeedbackCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      'حجم ميزانية ${descriptor.name} ضيق بالنسبة للمدة، لذا خفّضنا الدقة إلى ${plan.plan.targetWidth}×${plan.plan.targetHeight} لمنع تشتت البكسلات ولضمان سلاسة العرض.',
+                      l10n.theNameBudgetIsTightForThisDurationSoWeLoweredTheResolutionToWidthHeightToPreventPixelScatterAndEnsureSmoothPlayback(
+                        descriptor.name,
+                        plan.plan.targetWidth,
+                        plan.plan.targetHeight,
+                      ),
                       style: TextStyle(
                         fontSize: 12,
                         color: scheme.onSurfaceVariant,
@@ -186,7 +196,7 @@ class ZumiPresetFeedbackCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'تعديل السقف لـ ${descriptor.name}',
+                      l10n.adjustingTheCapForName(descriptor.name),
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 13,
@@ -195,7 +205,9 @@ class ZumiPresetFeedbackCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      'السقف الأساسي ضيق جداً، فتم رفع الهدف تلقائياً إلى ${plan.effectiveTargetMb} MB لتحقيق فيديو واضح ومقبول.',
+                      l10n.theBaseCapIsVeryTightSoTheTargetWasAutomaticallyRaisedToTargetMbMbToProduceAClearAcceptableVideo(
+                        plan.effectiveTargetMb.toStringAsFixed(0),
+                      ),
                       style: TextStyle(
                         fontSize: 12,
                         color: scheme.onSecondaryContainer,
@@ -227,7 +239,7 @@ class ZumiPresetFeedbackCard extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        'مضبوط لخوارزمية ${descriptor.name}',
+                        l10n.tunedForTheNameAlgorithm(descriptor.name),
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 13,
@@ -243,9 +255,9 @@ class ZumiPresetFeedbackCard extends StatelessWidget {
                           color: Colors.green.withValues(alpha: 0.15),
                           borderRadius: BorderRadius.circular(4),
                         ),
-                        child: const Text(
-                          'تطابق تام',
-                          style: TextStyle(
+                        child: Text(
+                          l10n.exactMatch,
+                          style: const TextStyle(
                             fontSize: 10,
                             fontWeight: FontWeight.bold,
                             color: Colors.green,
@@ -256,7 +268,7 @@ class ZumiPresetFeedbackCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    descriptor.description,
+                    descriptor.description(l10n),
                     style: TextStyle(
                       fontSize: 12,
                       color: scheme.onSurfaceVariant,

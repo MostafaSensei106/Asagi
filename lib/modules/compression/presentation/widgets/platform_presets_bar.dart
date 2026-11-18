@@ -2,99 +2,106 @@ import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/compression/domain/models/share_preset.dart';
+import '../../../../core/extensions/extensions.dart';
 import '../../../../core/widgets/design_system/tokens/tokens.dart';
+import '../../../../l10n/app_localizations.dart';
 
-/// Preset presentation data holding icons, localized hints, and algorithmic notes.
+/// Preset presentation data holding the icon, brand name, and size cap.
+///
+/// User-facing tuning copy is resolved through [AppLocalizations] rather than
+/// stored here so the catalog can stay `const` while following the locale.
 class PresetDescriptor {
   const PresetDescriptor({
     required this.id,
     required this.name,
     required this.sizeBadge,
-    required this.algorithmBadge,
-    required this.description,
     required this.icon,
   });
 
   final SharePresetId id;
   final String name;
   final String sizeBadge;
-  final String algorithmBadge;
-  final String description;
   final IconData icon;
+
+  /// Short badge summarising how the engine tunes this preset.
+  String algorithmBadge(AppLocalizations l10n) => switch (id) {
+    SharePresetId.whatsapp => l10n.whatsappAlgorithmBadge,
+    SharePresetId.whatsappHd => l10n.whatsappHdAlgorithmBadge,
+    SharePresetId.instagramReels => l10n.instagramReelsAlgorithmBadge,
+    SharePresetId.tikTok => l10n.tikTokAlgorithmBadge,
+    SharePresetId.discord => l10n.discordAlgorithmBadge,
+    SharePresetId.x => l10n.xAlgorithmBadge,
+    SharePresetId.facebook => l10n.facebookAlgorithmBadge,
+    SharePresetId.youTubeShorts => l10n.youTubeShortsAlgorithmBadge,
+    SharePresetId.email => l10n.emailAlgorithmBadge,
+  };
+
+  /// Plain-language explanation of why the preset is tuned this way.
+  String description(AppLocalizations l10n) => switch (id) {
+    SharePresetId.whatsapp => l10n.whatsappPresetDescription,
+    SharePresetId.whatsappHd => l10n.whatsappHdPresetDescription,
+    SharePresetId.instagramReels => l10n.instagramReelsPresetDescription,
+    SharePresetId.tikTok => l10n.tikTokPresetDescription,
+    SharePresetId.discord => l10n.discordPresetDescription,
+    SharePresetId.x => l10n.xPresetDescription,
+    SharePresetId.facebook => l10n.facebookPresetDescription,
+    SharePresetId.youTubeShorts => l10n.youTubeShortsPresetDescription,
+    SharePresetId.email => l10n.emailPresetDescription,
+  };
 
   static const List<PresetDescriptor> catalog = [
     PresetDescriptor(
       id: SharePresetId.whatsapp,
       name: 'WhatsApp',
       sizeBadge: '16 MB',
-      algorithmBadge: 'سقف 16MB · 720p',
-      description: 'مضبوط على حدود واتساب الصارمة لتفادي فشل الإرسال.',
       icon: LucideIcons.messageCircle,
     ),
     PresetDescriptor(
       id: SharePresetId.whatsappHd,
       name: 'WhatsApp HD',
       sizeBadge: '64 MB',
-      algorithmBadge: '1080p HD',
-      description: 'أقصى وضوح يسمح به واتساب في وضع الوسائط عالية الدقة.',
       icon: LucideIcons.sparkles,
     ),
     PresetDescriptor(
       id: SharePresetId.instagramReels,
       name: 'Instagram Reels',
       sizeBadge: '30 MB',
-      algorithmBadge: 'سقف 5 Mbps · 1080p',
-      description:
-          'مقيد بسقف 5 Mbps لحماية الفيديو من ضغط خوارزمية إنستجرام القاسي.',
       icon: LucideIcons.camera,
     ),
     PresetDescriptor(
       id: SharePresetId.tikTok,
       name: 'TikTok',
       sizeBadge: '50 MB',
-      algorithmBadge: '60fps · سقف 6 Mbps',
-      description: 'توازن مثالي بين جودة الحركة وسرعة المعالجة على تيك توك.',
       icon: LucideIcons.film,
     ),
     PresetDescriptor(
       id: SharePresetId.discord,
       name: 'Discord',
       sizeBadge: '10 MB',
-      algorithmBadge: 'سقف 10MB',
-      description:
-          'لتفادي رسالة Your files are too powerful وضمان الرفع الفوري.',
       icon: LucideIcons.gamepad2,
     ),
     PresetDescriptor(
       id: SharePresetId.x,
       name: 'X (Twitter)',
       sizeBadge: '512 MB',
-      algorithmBadge: 'Faststart إجباري',
-      description: 'ترتيب moov في أول الملف لضمان التشغيل الفوري في الـ Feed.',
       icon: LucideIcons.send,
     ),
     PresetDescriptor(
       id: SharePresetId.facebook,
       name: 'Facebook',
       sizeBadge: '50 MB',
-      algorithmBadge: 'VBR محكوم · 1080p',
-      description: 'معدل بت محكوم لحماية حدة الصورة في الـ Feed و Reels.',
       icon: LucideIcons.globe,
     ),
     PresetDescriptor(
       id: SharePresetId.youTubeShorts,
       name: 'YouTube Shorts',
       sizeBadge: '100 MB',
-      algorithmBadge: 'High Bitrate · 1080p',
-      description: 'تجهيز سريع للرفع مع الاحتفاظ بأعلى تفاصيل وجودة ممكنة.',
       icon: LucideIcons.play,
     ),
     PresetDescriptor(
       id: SharePresetId.email,
       name: 'Email (Gmail/Outlook)',
       sizeBadge: '25 MB',
-      algorithmBadge: 'سقف 25MB حقيقي',
-      description: 'حل جذري لمشكلة تجاوز سقف مرفقات البريد الإلكتروني.',
       icon: LucideIcons.mail,
     ),
   ];
@@ -118,6 +125,7 @@ class PlatformPresetsBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
+    final l10n = context.localeKeys;
     final isCustom = selectedPresetId == null;
 
     return SizedBox(
@@ -131,9 +139,9 @@ class PlatformPresetsBar extends StatelessWidget {
           if (index == PresetDescriptor.catalog.length) {
             // Custom card
             return _PresetCard(
-              title: 'حجم مخصص',
-              subtitle: 'Custom Size',
-              badge: 'تحكم يدوي',
+              title: l10n.customSize,
+              subtitle: l10n.anySize,
+              badge: l10n.manualControl,
               icon: LucideIcons.slidersHorizontal,
               isSelected: isCustom,
               onTap: () => onPresetSelected(null),
@@ -147,7 +155,7 @@ class PlatformPresetsBar extends StatelessWidget {
           return _PresetCard(
             title: descriptor.name,
             subtitle: descriptor.sizeBadge,
-            badge: descriptor.algorithmBadge,
+            badge: descriptor.algorithmBadge(l10n),
             icon: descriptor.icon,
             isSelected: isSelected,
             onTap: () => onPresetSelected(descriptor.id),

@@ -22,42 +22,41 @@ final class PrivacyPolicyPage extends StatelessWidget {
     final highlights = [
       (
         icon: ZumiIcons.privacy,
-        title: 'Zero Cloud Uploads',
-        desc: 'Videos never leave local memory or storage during processing.',
+        title: l10n.zeroCloudUploads,
+        desc: l10n.videosNeverLeaveLocalMemoryOrStorageDuringProcessing,
       ),
       (
         icon: ZumiIcons.dataSafety,
-        title: 'No Advertising IDs',
-        desc:
-            'No ad SDKs, user fingerprinting, or commercial tracking cookies.',
+        title: l10n.noAdvertisingIds,
+        desc: l10n.noAdSdksUserFingerprintingOrCommercialTrackingCookies,
       ),
       (
         icon: ZumiIcons.storage,
-        title: '100% User Governed',
-        desc: 'All cache and history can be purged with a single tap in settings.',
+        title: l10n.oneHundredPercentUserGoverned,
+        desc: l10n.allCacheAndHistoryCanBePurgedWithASingleTapInSettings,
       ),
     ];
 
     final policySections = [
       (
-        title: '1. Video Processing Commitment',
-        content: 'Zumi was built with a fundamental architectural guarantee: your videos, clips, and audio tracks are encoded exclusively on your device hardware using local native codecs. At no point is your media streamed, stored, or processed on external cloud infrastructure.',
+        title: l10n.videoProcessingCommitmentTitle,
+        content: l10n.videoProcessingCommitmentBody,
       ),
       (
-        title: '2. Information We Never Collect',
-        content: 'We do not collect names, email addresses (unless you explicitly contact customer support), phone numbers, contacts, device locations, biometric identifiers, or visual contents of your media library.',
+        title: l10n.informationWeNeverCollectTitle,
+        content: l10n.informationWeNeverCollectBody,
       ),
       (
-        title: '3. Optional Diagnostics',
-        content: 'You may optionally enable anonymous crash reporting to help us identify and fix bugs. These reports contain only non-identifying operating system versions, device models, and exception stack traces, never media content.',
+        title: l10n.optionalDiagnosticsTitle,
+        content: l10n.optionalDiagnosticsBody,
       ),
       (
-        title: '4. Third-Party Store Payments',
-        content: 'Subscription and in-app purchase operations are executed directly through the official Apple App Store or Google Play Store. Zumi does not process or retain your credit card or financial billing information.',
+        title: l10n.thirdPartyStorePaymentsTitle,
+        content: l10n.thirdPartyStorePaymentsBody,
       ),
       (
-        title: '5. Data Deletion & Storage Hygiene',
-        content: 'All compression history records and temporary preview files reside strictly in sandboxed application directories. You can wipe all history and cached frames at any time directly through Storage Settings.',
+        title: l10n.dataDeletionAndStorageHygieneTitle,
+        content: l10n.dataDeletionAndStorageHygieneBody,
       ),
     ];
 

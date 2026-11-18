@@ -837,5 +837,429 @@
         "type": "String"
       }
     }
+  },
+  "losslessVisualQuality": "Lossless visual quality",
+  "@losslessVisualQuality": {
+    "description": "Onboarding slide chip"
+  },
+  "upTo90PercentSizeReduction": "Up to 90% size reduction",
+  "@upTo90PercentSizeReduction": {
+    "description": "Onboarding slide chip"
+  },
+  "instantPreview": "Instant preview",
+  "@instantPreview": {
+    "description": "Onboarding slide chip"
+  },
+  "zeroCloudUploadsYourVideosAndPersonalMemoriesNeverLeaveYourDeviceHardware": "Zero cloud uploads. Your videos and personal memories never leave your device.",
+  "@zeroCloudUploadsYourVideosAndPersonalMemoriesNeverLeaveYourDeviceHardware": {
+    "description": "Onboarding privacy slide tagline"
+  },
+  "fullyOffline": "100% offline",
+  "@fullyOffline": {
+    "description": "Onboarding privacy slide chip"
+  },
+  "noTracking": "No tracking",
+  "@noTracking": {
+    "description": "Onboarding privacy slide chip"
+  },
+  "zeroCloudServers": "Zero cloud servers",
+  "@zeroCloudServers": {
+    "description": "Onboarding privacy slide chip"
+  },
+  "nativeRustEngineSpeed": "Native Rust engine speed",
+  "@nativeRustEngineSpeed": {
+    "description": "Onboarding engine slide title"
+  },
+  "engineeredWithRustAndNativeGpuAccelerationForLightningFastCompressionAndLowBatteryDraw": "Engineered with Rust and native GPU acceleration for lightning-fast compression and low battery draw.",
+  "@engineeredWithRustAndNativeGpuAccelerationForLightningFastCompressionAndLowBatteryDraw": {
+    "description": "Onboarding engine slide tagline"
+  },
+  "h264AndHevc": "H.264 & HEVC",
+  "@h264AndHevc": {
+    "description": "Onboarding engine slide chip"
+  },
+  "av1Support": "AV1 support",
+  "@av1Support": {
+    "description": "Onboarding engine slide chip"
+  },
+  "batchQueuing": "Batch queuing",
+  "@batchQueuing": {
+    "description": "Onboarding engine slide chip"
+  },
+  "continueLabel": "Continue",
+  "@continueLabel": {
+    "description": "Primary action that advances to the next onboarding slide"
+  },
+  "foundInterruptedCompressionJobsYouCanResumeThemWithTheSameSettingsOrDeleteThem": "Found interrupted compression jobs. You can resume them with the same settings or delete them.",
+  "@foundInterruptedCompressionJobsYouCanResumeThemWithTheSameSettingsOrDeleteThem": {
+    "description": "Home card describing recovered jobs"
+  },
+  "originalFileIsMissingDeleteTheJobToCleanUpTemporaryFiles": "Original file is missing · delete the job to clean up temporary files",
+  "@originalFileIsMissingDeleteTheJobToCleanUpTemporaryFiles": {
+    "description": "Interrupted job subtitle when the source video no longer exists"
+  },
+  "deleteInterruptedJob": "Delete interrupted job",
+  "@deleteInterruptedJob": {
+    "description": "Tooltip for discarding an interrupted compression job"
+  },
+  "whatsappAlgorithmBadge": "16MB cap · 720p",
+  "@whatsappAlgorithmBadge": {
+    "description": "WhatsApp preset tuning badge"
+  },
+  "whatsappPresetDescription": "Tuned to WhatsApp's strict limits to avoid failed sends.",
+  "@whatsappPresetDescription": {
+    "description": "WhatsApp preset explanation"
+  },
+  "whatsappHdAlgorithmBadge": "1080p HD",
+  "@whatsappHdAlgorithmBadge": {
+    "description": "WhatsApp HD preset tuning badge"
+  },
+  "whatsappHdPresetDescription": "The highest clarity WhatsApp allows in HD media mode.",
+  "@whatsappHdPresetDescription": {
+    "description": "WhatsApp HD preset explanation"
+  },
+  "instagramReelsAlgorithmBadge": "5 Mbps cap · 1080p",
+  "@instagramReelsAlgorithmBadge": {
+    "description": "Instagram Reels preset tuning badge"
+  },
+  "instagramReelsPresetDescription": "Capped at 5 Mbps to protect the video from Instagram's aggressive compression.",
+  "@instagramReelsPresetDescription": {
+    "description": "Instagram Reels preset explanation"
+  },
+  "tikTokAlgorithmBadge": "60fps · 6 Mbps cap",
+  "@tikTokAlgorithmBadge": {
+    "description": "TikTok preset tuning badge"
+  },
+  "tikTokPresetDescription": "A balanced mix of motion quality and processing speed on TikTok.",
+  "@tikTokPresetDescription": {
+    "description": "TikTok preset explanation"
+  },
+  "discordAlgorithmBadge": "10MB cap",
+  "@discordAlgorithmBadge": {
+    "description": "Discord preset tuning badge"
+  },
+  "discordPresetDescription": "Avoids the \"Your files are too powerful\" message and ensures instant uploads.",
+  "@discordPresetDescription": {
+    "description": "Discord preset explanation"
+  },
+  "xAlgorithmBadge": "Forced faststart",
+  "@xAlgorithmBadge": {
+    "description": "X (Twitter) preset tuning badge"
+  },
+  "xPresetDescription": "Places the moov atom at the start of the file so playback starts instantly in the feed.",
+  "@xPresetDescription": {
+    "description": "X (Twitter) preset explanation"
+  },
+  "facebookAlgorithmBadge": "Constrained VBR · 1080p",
+  "@facebookAlgorithmBadge": {
+    "description": "Facebook preset tuning badge"
+  },
+  "facebookPresetDescription": "A constrained bitrate protects image sharpness in the feed and Reels.",
+  "@facebookPresetDescription": {
+    "description": "Facebook preset explanation"
+  },
+  "youTubeShortsAlgorithmBadge": "High bitrate · 1080p",
+  "@youTubeShortsAlgorithmBadge": {
+    "description": "YouTube Shorts preset tuning badge"
+  },
+  "youTubeShortsPresetDescription": "Fast upload prep that keeps the highest possible detail and quality.",
+  "@youTubeShortsPresetDescription": {
+    "description": "YouTube Shorts preset explanation"
+  },
+  "emailAlgorithmBadge": "True 25MB cap",
+  "@emailAlgorithmBadge": {
+    "description": "Email preset tuning badge"
+  },
+  "emailPresetDescription": "A definitive fix for exceeding email attachment limits.",
+  "@emailPresetDescription": {
+    "description": "Email preset explanation"
+  },
+  "anySize": "Any size",
+  "@anySize": {
+    "description": "Subtitle of the custom size preset card"
+  },
+  "manualControl": "Manual control",
+  "@manualControl": {
+    "description": "Badge of the custom size preset card"
+  },
+  "zumiIsStudyingThePlatformAlgorithmAndCalculatingTheBudget": "🐾 Zumi is studying the platform's algorithm and calculating the budget...",
+  "@zumiIsStudyingThePlatformAlgorithmAndCalculatingTheBudget": {
+    "description": "Loading message while the preset plan is computed"
+  },
+  "customControlMode": "Custom control mode",
+  "@customControlMode": {
+    "description": "Title of the custom mode feedback card"
+  },
+  "youSetTheTargetSizeManuallyTheEngineWillApplyTheHighestPossibleQualityWithinThatCap": "You set the target size manually. The engine will apply the highest possible resolution and quality within that cap.",
+  "@youSetTheTargetSizeManuallyTheEngineWillApplyTheHighestPossibleQualityWithinThatCap": {
+    "description": "Body of the custom mode feedback card"
+  },
+  "zumiIsPuzzledAnImpossibleTargetForTheNameCap": "Zumi is puzzled (impossible target for the {name} cap)",
+  "@zumiIsPuzzledAnImpossibleTargetForTheNameCap": {
+    "description": "Infeasible plan title",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "theVideoIsTooLongToFitWithinTheSizeCapWithoutSevereDistortionWeSuggestTrimmingTheVideoOrChoosingAnotherPlatformWithAHigherCap": "The video is too long to fit within the {size} cap without severe image distortion. We suggest trimming the video or choosing another platform with a higher cap.",
+  "@theVideoIsTooLongToFitWithinTheSizeCapWithoutSevereDistortionWeSuggestTrimmingTheVideoOrChoosingAnotherPlatformWithAHigherCap": {
+    "description": "Infeasible plan explanation",
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "zumiAlertProtectingQualityFromDistortion": "Zumi alert: protecting quality from distortion",
+  "@zumiAlertProtectingQualityFromDistortion": {
+    "description": "Reduced quality warning title"
+  },
+  "theNameBudgetIsTightForThisDurationSoWeLoweredTheResolutionToWidthHeightToPreventPixelScatterAndEnsureSmoothPlayback": "The {name} budget is tight for this duration, so we lowered the resolution to {width}×{height} to prevent pixel scatter and ensure smooth playback.",
+  "@theNameBudgetIsTightForThisDurationSoWeLoweredTheResolutionToWidthHeightToPreventPixelScatterAndEnsureSmoothPlayback": {
+    "description": "Reduced quality warning explanation",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "width": {
+        "type": "int"
+      },
+      "height": {
+        "type": "int"
+      }
+    }
+  },
+  "adjustingTheCapForName": "Adjusting the cap for {name}",
+  "@adjustingTheCapForName": {
+    "description": "Relaxed size title",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "theBaseCapIsVeryTightSoTheTargetWasAutomaticallyRaisedToTargetMbMbToProduceAClearAcceptableVideo": "The base cap is very tight, so the target was automatically raised to {targetMb} MB to produce a clear, acceptable video.",
+  "@theBaseCapIsVeryTightSoTheTargetWasAutomaticallyRaisedToTargetMbMbToProduceAClearAcceptableVideo": {
+    "description": "Relaxed size explanation",
+    "placeholders": {
+      "targetMb": {
+        "type": "String"
+      }
+    }
+  },
+  "tunedForTheNameAlgorithm": "Tuned for the {name} algorithm",
+  "@tunedForTheNameAlgorithm": {
+    "description": "Exact match title",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "exactMatch": "Exact match",
+  "@exactMatch": {
+    "description": "Exact match badge"
+  },
+  "targetPlatformOrSize": "Target platform or size",
+  "@targetPlatformOrSize": {
+    "description": "Section header above the preset bar"
+  },
+  "setAutomaticallyForThePlatformChangingTheNumberSwitchesToCustomMode": "Set automatically for the platform (changing the number switches to custom mode)",
+  "@setAutomaticallyForThePlatformChangingTheNumberSwitchesToCustomMode": {
+    "description": "Helper text under the target size field"
+  },
+  "termsOfServiceFullText": "1. Acceptance of Terms\nBy downloading, accessing, or using Zumi (\"the Application\"), you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you must discontinue using the application.\n\n2. Personal License\nWe grant you a personal, revocable, non-exclusive, non-transferable license to use Zumi strictly for your personal, non-commercial, or internal creative media compression workflows on compatible devices.\n\n3. On-Device Execution & Content Ownership\nZumi executes compression pipelines exclusively on your device hardware using local encoders. You retain 100% of all intellectual property rights and copyrights in and to your video files and media. Zumi never uploads, hosts, replicates, or claims ownership over any videos you select or process. You are solely responsible for ensuring you have all requisite permissions and licenses for any media you compress.\n\n4. In-App Subscriptions & Billing\nOptional premium features (such as Zumi Pro) may be offered as recurring subscriptions or one-time unlock purchases. All billing, renewals, cancellations, and tax collections are processed exclusively through the official platform store (Google Play or Apple App Store). Subscriptions renew automatically unless cancelled at least 24 hours prior to the conclusion of the active billing cycle.\n\n5. Disclaimer of Warranties\nThe Application is provided \"as is\" and \"as available,\" without warranty of any kind, express or implied. While we employ rigorous testing and standard-compliant codecs, we do not guarantee that media compression will achieve specific file reduction percentages without visual changes for every source codec.\n",
+  "@termsOfServiceFullText": {
+    "description": "Full Terms of Service text copied to the clipboard"
+  },
+  "termsCopiedToClipboard": "Terms copied to clipboard",
+  "@termsCopiedToClipboard": {
+    "description": "Confirmation toast after copying the terms"
+  },
+  "termsAcceptanceLicenseTitle": "1. Acceptance & License",
+  "@termsAcceptanceLicenseTitle": {
+    "description": "Terms section title"
+  },
+  "termsAcceptanceLicenseBody": "By using Zumi, you agree to these Terms. We grant you a personal, non-exclusive, non-transferable license to compress media locally on your devices.",
+  "@termsAcceptanceLicenseBody": {
+    "description": "Terms section body"
+  },
+  "termsContentOwnershipTitle": "2. 100% Content Ownership",
+  "@termsContentOwnershipTitle": {
+    "description": "Terms section title"
+  },
+  "termsContentOwnershipBody": "You retain all copyrights and ownership over your videos. Zumi does not transmit, store, or claim any rights to your media files.",
+  "@termsContentOwnershipBody": {
+    "description": "Terms section body"
+  },
+  "termsLocalOnDeviceProcessingTitle": "3. Local On-Device Processing",
+  "@termsLocalOnDeviceProcessingTitle": {
+    "description": "Terms section title"
+  },
+  "termsLocalOnDeviceProcessingBody": "All compression pipelines run completely on your device hardware without external server dependencies or remote media processing.",
+  "@termsLocalOnDeviceProcessingBody": {
+    "description": "Terms section body"
+  },
+  "termsSubscriptionsAndBillingTitle": "4. Subscriptions & Billing",
+  "@termsSubscriptionsAndBillingTitle": {
+    "description": "Terms section title"
+  },
+  "termsSubscriptionsAndBillingBody": "Purchases and subscriptions are managed securely via official Google Play and Apple App Store billing. Cancellations can be performed anytime in your store account.",
+  "@termsSubscriptionsAndBillingBody": {
+    "description": "Terms section body"
+  },
+  "termsDisclaimersAndFairUseTitle": "5. Disclaimers & Fair Use",
+  "@termsDisclaimersAndFairUseTitle": {
+    "description": "Terms section title"
+  },
+  "termsDisclaimersAndFairUseBody": "The software is provided \"as is.\" You are responsible for ensuring you have proper rights to the video content you process.",
+  "@termsDisclaimersAndFairUseBody": {
+    "description": "Terms section body"
+  },
+  "version12November2026": "Version 1.2 • November 2026",
+  "@version12November2026": {
+    "description": "Terms page version and revision date"
+  },
+  "videosAndPhotos": "Videos and Photos",
+  "@videosAndPhotos": {
+    "description": "Data safety category"
+  },
+  "processedExclusivelyOnDeviceMediaFilesAreNeverTransmittedToExternalServersOrThirdPartyPlatforms": "Processed exclusively on-device. Media files are never transmitted to external servers or third-party platforms.",
+  "@processedExclusivelyOnDeviceMediaFilesAreNeverTransmittedToExternalServersOrThirdPartyPlatforms": {
+    "description": "Data safety category details"
+  },
+  "financialInfoAndPayment": "Financial Info & Payment",
+  "@financialInfoAndPayment": {
+    "description": "Data safety category"
+  },
+  "allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreZumiNeverAccessesCardDetails": "All payment details are handled directly by Google Play Store or Apple App Store. Zumi never accesses card details.",
+  "@allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreZumiNeverAccessesCardDetails": {
+    "description": "Data safety category details"
+  },
+  "appPerformanceAndCrashLogs": "App Performance & Crash Logs",
+  "@appPerformanceAndCrashLogs": {
+    "description": "Data safety category"
+  },
+  "optionalNonIdentifiableCrashLogsAndStackTracesUsedSolelyForDiagnosingBugsAndOptimizingStability": "Optional non-identifiable crash logs and stack traces used solely for diagnosing bugs and optimizing stability.",
+  "@optionalNonIdentifiableCrashLogsAndStackTracesUsedSolelyForDiagnosingBugsAndOptimizingStability": {
+    "description": "Data safety category details"
+  },
+  "deviceOrOtherIdentifiers": "Device or Other Identifiers",
+  "@deviceOrOtherIdentifiers": {
+    "description": "Data safety category"
+  },
+  "noAdvertisingIdsImeiNumbersMacAddressesOrPersistentHardwareIdentifiersAreGathered": "No advertising IDs, IMEI numbers, MAC addresses, or persistent hardware identifiers are gathered.",
+  "@noAdvertisingIdsImeiNumbersMacAddressesOrPersistentHardwareIdentifiersAreGathered": {
+    "description": "Data safety category details"
+  },
+  "storeSafetySummary": "Store Safety Summary",
+  "@storeSafetySummary": {
+    "description": "Data safety summary card header"
+  },
+  "noDataSharedWithThirdParties": "No data shared with third parties",
+  "@noDataSharedWithThirdParties": {
+    "description": "Data safety affirmative row"
+  },
+  "noUserDataCollectedForAdvertising": "No user data collected for advertising",
+  "@noUserDataCollectedForAdvertising": {
+    "description": "Data safety affirmative row"
+  },
+  "dataEncryptedInTransitStorePurchases": "Data encrypted in transit (store purchases)",
+  "@dataEncryptedInTransitStorePurchases": {
+    "description": "Data safety affirmative row"
+  },
+  "youCanRequestDataDeletionAtAnyTime": "You can request data deletion at any time",
+  "@youCanRequestDataDeletionAtAnyTime": {
+    "description": "Data safety affirmative row"
+  },
+  "dataCollectionBreakdown": "Data Collection Breakdown",
+  "@dataCollectionBreakdown": {
+    "description": "Section header above the data safety categories"
+  },
+  "optionalOnly": "Optional Only",
+  "@optionalOnly": {
+    "description": "Data safety chip for optionally collected data"
+  },
+  "notCollected": "Not Collected",
+  "@notCollected": {
+    "description": "Data safety chip for data that is never collected"
+  },
+  "zeroCloudUploads": "Zero Cloud Uploads",
+  "@zeroCloudUploads": {
+    "description": "Privacy highlight title"
+  },
+  "videosNeverLeaveLocalMemoryOrStorageDuringProcessing": "Videos never leave local memory or storage during processing.",
+  "@videosNeverLeaveLocalMemoryOrStorageDuringProcessing": {
+    "description": "Privacy highlight description"
+  },
+  "noAdvertisingIds": "No Advertising IDs",
+  "@noAdvertisingIds": {
+    "description": "Privacy highlight title"
+  },
+  "noAdSdksUserFingerprintingOrCommercialTrackingCookies": "No ad SDKs, user fingerprinting, or commercial tracking cookies.",
+  "@noAdSdksUserFingerprintingOrCommercialTrackingCookies": {
+    "description": "Privacy highlight description"
+  },
+  "oneHundredPercentUserGoverned": "100% User Governed",
+  "@oneHundredPercentUserGoverned": {
+    "description": "Privacy highlight title"
+  },
+  "allCacheAndHistoryCanBePurgedWithASingleTapInSettings": "All cache and history can be purged with a single tap in settings.",
+  "@allCacheAndHistoryCanBePurgedWithASingleTapInSettings": {
+    "description": "Privacy highlight description"
+  },
+  "lastUpdatedNovember2026": "Last updated: November 2026",
+  "@lastUpdatedNovember2026": {
+    "description": "Privacy policy last-updated line"
+  },
+  "detailedPrivacyPolicies": "Detailed Privacy Policies",
+  "@detailedPrivacyPolicies": {
+    "description": "Section header above the detailed privacy policies"
+  },
+  "videoProcessingCommitmentTitle": "1. Video Processing Commitment",
+  "@videoProcessingCommitmentTitle": {
+    "description": "Privacy policy section title"
+  },
+  "videoProcessingCommitmentBody": "Zumi was built with a fundamental architectural guarantee: your videos, clips, and audio tracks are encoded exclusively on your device hardware using local native codecs. At no point is your media streamed, stored, or processed on external cloud infrastructure.",
+  "@videoProcessingCommitmentBody": {
+    "description": "Privacy policy section body"
+  },
+  "informationWeNeverCollectTitle": "2. Information We Never Collect",
+  "@informationWeNeverCollectTitle": {
+    "description": "Privacy policy section title"
+  },
+  "informationWeNeverCollectBody": "We do not collect names, email addresses (unless you explicitly contact customer support), phone numbers, contacts, device locations, biometric identifiers, or visual contents of your media library.",
+  "@informationWeNeverCollectBody": {
+    "description": "Privacy policy section body"
+  },
+  "optionalDiagnosticsTitle": "3. Optional Diagnostics",
+  "@optionalDiagnosticsTitle": {
+    "description": "Privacy policy section title"
+  },
+  "optionalDiagnosticsBody": "You may optionally enable anonymous crash reporting to help us identify and fix bugs. These reports contain only non-identifying operating system versions, device models, and exception stack traces, never media content.",
+  "@optionalDiagnosticsBody": {
+    "description": "Privacy policy section body"
+  },
+  "thirdPartyStorePaymentsTitle": "4. Third-Party Store Payments",
+  "@thirdPartyStorePaymentsTitle": {
+    "description": "Privacy policy section title"
+  },
+  "thirdPartyStorePaymentsBody": "Subscription and in-app purchase operations are executed directly through the official Apple App Store or Google Play Store. Zumi does not process or retain your credit card or financial billing information.",
+  "@thirdPartyStorePaymentsBody": {
+    "description": "Privacy policy section body"
+  },
+  "dataDeletionAndStorageHygieneTitle": "5. Data Deletion & Storage Hygiene",
+  "@dataDeletionAndStorageHygieneTitle": {
+    "description": "Privacy policy section title"
+  },
+  "dataDeletionAndStorageHygieneBody": "All compression history records and temporary preview files reside strictly in sandboxed application directories. You can wipe all history and cached frames at any time directly through Storage Settings.",
+  "@dataDeletionAndStorageHygieneBody": {
+    "description": "Privacy policy section body"
+  },
+  "copyTerms": "Copy Terms",
+  "@copyTerms": {
+    "description": "Button that copies the full terms text to the clipboard"
   }
 }

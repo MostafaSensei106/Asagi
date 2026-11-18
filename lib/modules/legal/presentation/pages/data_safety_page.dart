@@ -17,32 +17,36 @@ final class DataSafetyPage extends StatelessWidget {
 
     final declarations = [
       (
-        category: 'Videos and Photos',
+        category: l10n.videosAndPhotos,
         icon: ZumiIcons.videoSelect,
         collected: false,
         shared: false,
-        details: 'Processed exclusively on-device. Media files are never transmitted to external servers or third-party platforms.',
+        details:
+            l10n.processedExclusivelyOnDeviceMediaFilesAreNeverTransmittedToExternalServersOrThirdPartyPlatforms,
       ),
       (
-        category: 'Financial Info & Payment',
+        category: l10n.financialInfoAndPayment,
         icon: ZumiIcons.purchaseMethods,
         collected: false,
         shared: false,
-        details: 'All payment details are handled directly by Google Play Store or Apple App Store. Zumi never accesses card details.',
+        details:
+            l10n.allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreZumiNeverAccessesCardDetails,
       ),
       (
-        category: 'App Performance & Crash Logs',
+        category: l10n.appPerformanceAndCrashLogs,
         icon: ZumiIcons.developer,
         collected: true,
         shared: false,
-        details: 'Optional non-identifiable crash logs and stack traces used solely for diagnosing bugs and optimizing stability.',
+        details:
+            l10n.optionalNonIdentifiableCrashLogsAndStackTracesUsedSolelyForDiagnosingBugsAndOptimizingStability,
       ),
       (
-        category: 'Device or Other Identifiers',
+        category: l10n.deviceOrOtherIdentifiers,
         icon: ZumiIcons.device,
         collected: false,
         shared: false,
-        details: 'No advertising IDs, IMEI numbers, MAC addresses, or persistent hardware identifiers are gathered.',
+        details:
+            l10n.noAdvertisingIdsImeiNumbersMacAddressesOrPersistentHardwareIdentifiersAreGathered,
       ),
     ];
 
@@ -105,7 +109,7 @@ final class DataSafetyPage extends StatelessWidget {
                       ),
                       const Gap.horizontal(AppSpacing.small),
                       Text(
-                        'Store Safety Summary',
+                        l10n.storeSafetySummary,
                         style: context.textTheme.titleSmall?.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
@@ -113,30 +117,30 @@ final class DataSafetyPage extends StatelessWidget {
                     ],
                   ),
                   const Gap(AppSpacing.medium),
-                  const _SafetyRow(
-                    label: 'No data shared with third parties',
+                  _SafetyRow(
+                    label: l10n.noDataSharedWithThirdParties,
                     isAffirmative: true,
                   ),
                   const Gap(AppSpacing.small),
-                  const _SafetyRow(
-                    label: 'No user data collected for advertising',
+                  _SafetyRow(
+                    label: l10n.noUserDataCollectedForAdvertising,
                     isAffirmative: true,
                   ),
                   const Gap(AppSpacing.small),
-                  const _SafetyRow(
-                    label: 'Data encrypted in transit (store purchases)',
+                  _SafetyRow(
+                    label: l10n.dataEncryptedInTransitStorePurchases,
                     isAffirmative: true,
                   ),
                   const Gap(AppSpacing.small),
-                  const _SafetyRow(
-                    label: 'You can request data deletion at any time',
+                  _SafetyRow(
+                    label: l10n.youCanRequestDataDeletionAtAnyTime,
                     isAffirmative: true,
                   ),
                 ],
               ),
             ),
             const Gap(AppSpacing.xLarge),
-            const ExpressiveSectionHeader(title: 'Data Collection Breakdown'),
+            ExpressiveSectionHeader(title: l10n.dataCollectionBreakdown),
             const Gap(AppSpacing.small),
             for (final item in declarations) ...[
               CardComponent.outlined(
@@ -158,8 +162,8 @@ final class DataSafetyPage extends StatelessWidget {
                         ),
                         ChipComponent(
                           label: item.collected
-                              ? 'Optional Only'
-                              : 'Not Collected',
+                              ? l10n.optionalOnly
+                              : l10n.notCollected,
                           showBorder: false,
                         ),
                       ],

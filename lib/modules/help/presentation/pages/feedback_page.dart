@@ -186,7 +186,6 @@ final class _FeedbackPageState extends State<FeedbackPage> {
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Include Diagnostics',
                     value: _includeDiagnostics,
                     onChanged: (val) {
                       unawaited(HapticFeedback.selectionClick());

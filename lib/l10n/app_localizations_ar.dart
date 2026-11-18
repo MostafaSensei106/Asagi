@@ -1190,6 +1190,372 @@ class AppLocalizationsAr extends AppLocalizations {
     });
     return '$_temp0';
   }
+
+  @override
+  String get losslessVisualQuality => 'جودة بصرية بلا فقدان';
+
+  @override
+  String get upTo90PercentSizeReduction => 'تقليل الحجم حتى 90%';
+
+  @override
+  String get instantPreview => 'معاينة فورية';
+
+  @override
+  String
+  get zeroCloudUploadsYourVideosAndPersonalMemoriesNeverLeaveYourDeviceHardware =>
+      'بلا رفع للسحابة. فيديوهاتك وذكرياتك الشخصية لا تغادر جهازك أبداً.';
+
+  @override
+  String get fullyOffline => 'يعمل دون إنترنت 100%';
+
+  @override
+  String get noTracking => 'بلا تتبّع';
+
+  @override
+  String get zeroCloudServers => 'صفر خوادم سحابية';
+
+  @override
+  String get nativeRustEngineSpeed => 'سرعة محرك Rust الأصلي';
+
+  @override
+  String
+  get engineeredWithRustAndNativeGpuAccelerationForLightningFastCompressionAndLowBatteryDraw =>
+      'مبني بلغة Rust مع تسريع GPU أصلي لضغط فائق السرعة واستهلاك منخفض للبطارية.';
+
+  @override
+  String get h264AndHevc => 'H.264 و HEVC';
+
+  @override
+  String get av1Support => 'دعم AV1';
+
+  @override
+  String get batchQueuing => 'معالجة دُفعات';
+
+  @override
+  String get continueLabel => 'متابعة';
+
+  @override
+  String
+  get foundInterruptedCompressionJobsYouCanResumeThemWithTheSameSettingsOrDeleteThem =>
+      'وجدت مهام ضغط متوقفة. يمكنك استئنافها بنفس الإعدادات أو حذفها.';
+
+  @override
+  String get originalFileIsMissingDeleteTheJobToCleanUpTemporaryFiles =>
+      'الملف الأصلي غير موجود · احذف المهمة لتنظيف المؤقتات';
+
+  @override
+  String get deleteInterruptedJob => 'حذف المهمة المتوقفة';
+
+  @override
+  String get whatsappAlgorithmBadge => 'سقف 16MB · 720p';
+
+  @override
+  String get whatsappPresetDescription =>
+      'مضبوط على حدود واتساب الصارمة لتفادي فشل الإرسال.';
+
+  @override
+  String get whatsappHdAlgorithmBadge => '1080p HD';
+
+  @override
+  String get whatsappHdPresetDescription =>
+      'أقصى وضوح يسمح به واتساب في وضع الوسائط عالية الدقة.';
+
+  @override
+  String get instagramReelsAlgorithmBadge => 'سقف 5 Mbps · 1080p';
+
+  @override
+  String get instagramReelsPresetDescription =>
+      'مقيد بسقف 5 Mbps لحماية الفيديو من ضغط خوارزمية إنستجرام القاسي.';
+
+  @override
+  String get tikTokAlgorithmBadge => '60fps · سقف 6 Mbps';
+
+  @override
+  String get tikTokPresetDescription =>
+      'توازن مثالي بين جودة الحركة وسرعة المعالجة على تيك توك.';
+
+  @override
+  String get discordAlgorithmBadge => 'سقف 10MB';
+
+  @override
+  String get discordPresetDescription =>
+      'لتفادي رسالة Your files are too powerful وضمان الرفع الفوري.';
+
+  @override
+  String get xAlgorithmBadge => 'Faststart إجباري';
+
+  @override
+  String get xPresetDescription =>
+      'ترتيب moov في أول الملف لضمان التشغيل الفوري في الـ Feed.';
+
+  @override
+  String get facebookAlgorithmBadge => 'VBR محكوم · 1080p';
+
+  @override
+  String get facebookPresetDescription =>
+      'معدل بت محكوم لحماية حدة الصورة في الـ Feed و Reels.';
+
+  @override
+  String get youTubeShortsAlgorithmBadge => 'بتريت عالٍ · 1080p';
+
+  @override
+  String get youTubeShortsPresetDescription =>
+      'تجهيز سريع للرفع مع الاحتفاظ بأعلى تفاصيل وجودة ممكنة.';
+
+  @override
+  String get emailAlgorithmBadge => 'سقف 25MB حقيقي';
+
+  @override
+  String get emailPresetDescription =>
+      'حل جذري لمشكلة تجاوز سقف مرفقات البريد الإلكتروني.';
+
+  @override
+  String get anySize => 'أي حجم';
+
+  @override
+  String get manualControl => 'تحكم يدوي';
+
+  @override
+  String get zumiIsStudyingThePlatformAlgorithmAndCalculatingTheBudget =>
+      '🐾 Zumi يقوم بدراسة خوارزمية المنصة وحساب الميزانية...';
+
+  @override
+  String get customControlMode => 'وضع التحكم المخصص';
+
+  @override
+  String
+  get youSetTheTargetSizeManuallyTheEngineWillApplyTheHighestPossibleQualityWithinThatCap =>
+      'أنت تحدد حجم الهدف يدوياً. سيطبق المحرك أقصى دقة وجودة ممكنة داخل هذا السقف.';
+
+  @override
+  String zumiIsPuzzledAnImpossibleTargetForTheNameCap(String name) {
+    return 'Zumi في حيرة (هدف غير ممكن لسقف $name)';
+  }
+
+  @override
+  String
+  theVideoIsTooLongToFitWithinTheSizeCapWithoutSevereDistortionWeSuggestTrimmingTheVideoOrChoosingAnotherPlatformWithAHigherCap(
+    String size,
+  ) {
+    return 'مدة الفيديو طويلة جداً بحيث لا يمكن استيعابها في سقف $size دون تشويه تام للصورة. ننصح بقص الفيديو أو اختيار منصة أخرى بسقف أعلى.';
+  }
+
+  @override
+  String get zumiAlertProtectingQualityFromDistortion =>
+      'تنبيه Zumi: حماية الجودة من التشوّه';
+
+  @override
+  String
+  theNameBudgetIsTightForThisDurationSoWeLoweredTheResolutionToWidthHeightToPreventPixelScatterAndEnsureSmoothPlayback(
+    String name,
+    int width,
+    int height,
+  ) {
+    return 'حجم ميزانية $name ضيق بالنسبة للمدة، لذا خفّضنا الدقة إلى $width×$height لمنع تشتت البكسلات ولضمان سلاسة العرض.';
+  }
+
+  @override
+  String adjustingTheCapForName(String name) {
+    return 'تعديل السقف لـ $name';
+  }
+
+  @override
+  String
+  theBaseCapIsVeryTightSoTheTargetWasAutomaticallyRaisedToTargetMbMbToProduceAClearAcceptableVideo(
+    String targetMb,
+  ) {
+    return 'السقف الأساسي ضيق جداً، فتم رفع الهدف تلقائياً إلى $targetMb MB لتحقيق فيديو واضح ومقبول.';
+  }
+
+  @override
+  String tunedForTheNameAlgorithm(String name) {
+    return 'مضبوط لخوارزمية $name';
+  }
+
+  @override
+  String get exactMatch => 'تطابق تام';
+
+  @override
+  String get targetPlatformOrSize => 'المنصة المستهدفة أو الحجم';
+
+  @override
+  String
+  get setAutomaticallyForThePlatformChangingTheNumberSwitchesToCustomMode =>
+      'تم الضبط تلقائياً للمنصة (تغيير الرقم يحول للوضع المخصص)';
+
+  @override
+  String get termsOfServiceFullText =>
+      '1. قبول الشروط\nبتحميلك أو وصولك إلى Zumi (\"التطبيق\") أو استخدامه، فإنك توافق على الالتزام بشروط الخدمة هذه. وإذا كنت لا توافق على أي جزء من هذه الشروط، فيجب عليك التوقف عن استخدام التطبيق.\n\n2. ترخيص شخصي\nنمنحك ترخيصاً شخصياً وقابلاً للإلغاء وغير حصري وغير قابل للتحويل لاستخدام Zumi بشكل صارم في مهام ضغط الوسائط الإبداعية الشخصية أو غير التجارية أو الداخلية على الأجهزة المتوافقة.\n\n3. التنفيذ على الجهاز وملكية المحتوى\nينفّذ Zumi خطوط ضغط الوسائط حصرياً على عتاد جهازك باستخدام مُرمِّزات محلية. وتحتفظ بنسبة 100% من جميع حقوق الملكية الفكرية وحقوق النشر في ملفات الفيديو والوسائط الخاصة بك. ولا يقوم Zumi أبداً برفع أو استضافة أو نسخ أو المطالبة بملكية أي فيديوهات تختارها أو تعالجها. وأنت وحدك المسؤول عن ضمان حصولك على جميع الأذونات والتراخيص اللازمة لأي وسائط تضغطها.\n\n4. الاشتراكات داخل التطبيق والفوترة\nقد تُقدَّم الميزات المميزة الاختيارية (مثل Zumi Pro) كاشتراكات متكررة أو عمليات شراء لمرة واحدة. تتم جميع عمليات الفوترة والتجديد والإلغاء وتحصيل الضرائب حصرياً عبر متجر المنصة الرسمي (Google Play أو Apple App Store). تتجدد الاشتراكات تلقائياً ما لم يتم إلغاؤها قبل 24 ساعة على الأقل من انتهاء دورة الفوترة النشطة.\n\n5. إخلاء المسؤولية عن الضمانات\nيُقدَّم التطبيق \"كما هو\" و\"حسب توافره\"، دون أي ضمان من أي نوع، صريحاً أو ضمنياً. ورغم أننا نجري اختبارات صارمة ونستخدم مُرمِّزات متوافقة مع المعايير، فإننا لا نضمن أن يحقق ضغط الوسائط نسب تقليل محددة للملف دون تغييرات بصرية لكل مُرمِّز مصدري.\n';
+
+  @override
+  String get termsCopiedToClipboard => 'تم نسخ الشروط إلى الحافظة';
+
+  @override
+  String get termsAcceptanceLicenseTitle => '1. القبول والترخيص';
+
+  @override
+  String get termsAcceptanceLicenseBody =>
+      'باستخدامك Zumi، فإنك توافق على هذه الشروط. نمنحك ترخيصاً شخصياً وغير حصري وغير قابل للتحويل لضغط الوسائط محلياً على أجهزتك.';
+
+  @override
+  String get termsContentOwnershipTitle => '2. ملكية المحتوى 100%';
+
+  @override
+  String get termsContentOwnershipBody =>
+      'تحتفظ بجميع حقوق النشر والملكية لفيديوهاتك. لا يقوم Zumi بنقل أو تخزين أو المطالبة بأي حقوق في ملفات الوسائط الخاصة بك.';
+
+  @override
+  String get termsLocalOnDeviceProcessingTitle =>
+      '3. المعالجة المحلية على الجهاز';
+
+  @override
+  String get termsLocalOnDeviceProcessingBody =>
+      'تعمل جميع خطوط الضغط بالكامل على عتاد جهازك دون الاعتماد على خوادم خارجية أو معالجة وسائط عن بُعد.';
+
+  @override
+  String get termsSubscriptionsAndBillingTitle => '4. الاشتراكات والفوترة';
+
+  @override
+  String get termsSubscriptionsAndBillingBody =>
+      'تُدار عمليات الشراء والاشتراكات بأمان عبر فوترة Google Play وApple App Store الرسمية. ويمكن الإلغاء في أي وقت من حساب المتجر الخاص بك.';
+
+  @override
+  String get termsDisclaimersAndFairUseTitle =>
+      '5. إخلاء المسؤولية والاستخدام العادل';
+
+  @override
+  String get termsDisclaimersAndFairUseBody =>
+      'يُقدَّم البرنامج \"كما هو\". وأنت مسؤول عن ضمان امتلاكك الحقوق المناسبة لمحتوى الفيديو الذي تعالجه.';
+
+  @override
+  String get version12November2026 => 'الإصدار 1.2 • نوفمبر 2026';
+
+  @override
+  String get videosAndPhotos => 'الفيديوهات والصور';
+
+  @override
+  String
+  get processedExclusivelyOnDeviceMediaFilesAreNeverTransmittedToExternalServersOrThirdPartyPlatforms =>
+      'تُعالَج حصرياً على الجهاز. لا تُنقل ملفات الوسائط أبداً إلى خوادم خارجية أو منصات طرف ثالث.';
+
+  @override
+  String get financialInfoAndPayment => 'المعلومات المالية والدفع';
+
+  @override
+  String
+  get allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreZumiNeverAccessesCardDetails =>
+      'يتولى Google Play Store أو Apple App Store التعامل مع جميع تفاصيل الدفع مباشرة. ولا يطّلع Zumi أبداً على بيانات البطاقة.';
+
+  @override
+  String get appPerformanceAndCrashLogs => 'أداء التطبيق وسجلات الأعطال';
+
+  @override
+  String
+  get optionalNonIdentifiableCrashLogsAndStackTracesUsedSolelyForDiagnosingBugsAndOptimizingStability =>
+      'سجلات أعطال اختيارية غير قابلة للتعرّف وتتبّعات مكدّس تُستخدم فقط لتشخيص الأخطاء وتحسين الاستقرار.';
+
+  @override
+  String get deviceOrOtherIdentifiers => 'الجهاز أو معرّفات أخرى';
+
+  @override
+  String
+  get noAdvertisingIdsImeiNumbersMacAddressesOrPersistentHardwareIdentifiersAreGathered =>
+      'لا يتم جمع أي معرّفات إعلانية أو أرقام IMEI أو عناوين MAC أو معرّفات عتاد دائمة.';
+
+  @override
+  String get storeSafetySummary => 'ملخص السلامة في المتجر';
+
+  @override
+  String get noDataSharedWithThirdParties =>
+      'لا تتم مشاركة أي بيانات مع أطراف ثالثة';
+
+  @override
+  String get noUserDataCollectedForAdvertising =>
+      'لا يتم جمع بيانات المستخدم للإعلانات';
+
+  @override
+  String get dataEncryptedInTransitStorePurchases =>
+      'البيانات مشفّرة أثناء النقل (مشتريات المتجر)';
+
+  @override
+  String get youCanRequestDataDeletionAtAnyTime =>
+      'يمكنك طلب حذف البيانات في أي وقت';
+
+  @override
+  String get dataCollectionBreakdown => 'تفصيل جمع البيانات';
+
+  @override
+  String get optionalOnly => 'اختياري فقط';
+
+  @override
+  String get notCollected => 'غير مُجمَّع';
+
+  @override
+  String get zeroCloudUploads => 'صفر رفع سحابي';
+
+  @override
+  String get videosNeverLeaveLocalMemoryOrStorageDuringProcessing =>
+      'لا تغادر الفيديوهات الذاكرة أو التخزين المحلي أثناء المعالجة.';
+
+  @override
+  String get noAdvertisingIds => 'بلا معرّفات إعلانية';
+
+  @override
+  String get noAdSdksUserFingerprintingOrCommercialTrackingCookies =>
+      'لا مجموعات تطوير إعلانية ولا بصمات مستخدم ولا ملفات تتبّع تجارية.';
+
+  @override
+  String get oneHundredPercentUserGoverned => 'تحكّم كامل للمستخدم';
+
+  @override
+  String get allCacheAndHistoryCanBePurgedWithASingleTapInSettings =>
+      'يمكن مسح كل الذاكرة المؤقتة والسجل بلمسة واحدة من الإعدادات.';
+
+  @override
+  String get lastUpdatedNovember2026 => 'آخر تحديث: نوفمبر 2026';
+
+  @override
+  String get detailedPrivacyPolicies => 'سياسات الخصوصية التفصيلية';
+
+  @override
+  String get videoProcessingCommitmentTitle => '1. التزام معالجة الفيديو';
+
+  @override
+  String get videoProcessingCommitmentBody =>
+      'بُني Zumi على ضمان معماري أساسي: تتم ترميز فيديوهاتك ومقاطعك ومسارات الصوت حصرياً على عتاد جهازك باستخدام مُرمِّزات أصلية محلية. ولا يتم بث وسائطك أو تخزينها أو معالجتها على بنية سحابية خارجية في أي مرحلة.';
+
+  @override
+  String get informationWeNeverCollectTitle => '2. معلومات لا نجمعها أبداً';
+
+  @override
+  String get informationWeNeverCollectBody =>
+      'لا نجمع الأسماء أو عناوين البريد الإلكتروني (إلا إذا تواصلت مع الدعم الفني بشكل صريح)، ولا أرقام الهواتف أو جهات الاتصال أو مواقع الجهاز أو المعرّفات الحيوية أو المحتوى البصري لمكتبة الوسائط الخاصة بك.';
+
+  @override
+  String get optionalDiagnosticsTitle => '3. التشخيصات الاختيارية';
+
+  @override
+  String get optionalDiagnosticsBody =>
+      'يمكنك اختيارياً تفعيل الإبلاغ المجهول عن الأعطال لمساعدتنا في تحديد الأخطاء وإصلاحها. وتحتوي هذه التقارير على إصدارات نظام التشغيل غير المعرِّفة، وطرازات الأجهزة، وتتبّعات مكدّس الاستثناءات فقط، ولا تحتوي أبداً على محتوى الوسائط.';
+
+  @override
+  String get thirdPartyStorePaymentsTitle =>
+      '4. مدفوعات المتاجر التابعة لجهات خارجية';
+
+  @override
+  String get thirdPartyStorePaymentsBody =>
+      'تُنفَّذ عمليات الاشتراك والشراء داخل التطبيق مباشرة عبر Apple App Store أو Google Play Store الرسمي. ولا يقوم Zumi بمعالجة أو الاحتفاظ بمعلومات بطاقتك الائتمانية أو الفوترة المالية.';
+
+  @override
+  String get dataDeletionAndStorageHygieneTitle =>
+      '5. حذف البيانات ونظافة التخزين';
+
+  @override
+  String get dataDeletionAndStorageHygieneBody =>
+      'توجد جميع سجلات تاريخ الضغط وملفات المعاينة المؤقتة بشكل صارم داخل أدلة التطبيق المعزولة. ويمكنك محو كل السجل والإطارات المخزّنة مؤقتاً في أي وقت مباشرة من إعدادات التخزين.';
+
+  @override
+  String get copyTerms => 'نسخ الشروط';
 }
 
 /// The translations for Arabic, as used in Egypt (`ar_EG`).

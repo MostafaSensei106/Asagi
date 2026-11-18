@@ -1194,6 +1194,371 @@ class AppLocalizationsTh extends AppLocalizations {
     });
     return '$_temp0';
   }
+
+  @override
+  String get losslessVisualQuality => 'Lossless visual quality';
+
+  @override
+  String get upTo90PercentSizeReduction => 'Up to 90% size reduction';
+
+  @override
+  String get instantPreview => 'Instant preview';
+
+  @override
+  String
+  get zeroCloudUploadsYourVideosAndPersonalMemoriesNeverLeaveYourDeviceHardware =>
+      'Zero cloud uploads. Your videos and personal memories never leave your device.';
+
+  @override
+  String get fullyOffline => '100% offline';
+
+  @override
+  String get noTracking => 'No tracking';
+
+  @override
+  String get zeroCloudServers => 'Zero cloud servers';
+
+  @override
+  String get nativeRustEngineSpeed => 'Native Rust engine speed';
+
+  @override
+  String
+  get engineeredWithRustAndNativeGpuAccelerationForLightningFastCompressionAndLowBatteryDraw =>
+      'Engineered with Rust and native GPU acceleration for lightning-fast compression and low battery draw.';
+
+  @override
+  String get h264AndHevc => 'H.264 & HEVC';
+
+  @override
+  String get av1Support => 'AV1 support';
+
+  @override
+  String get batchQueuing => 'Batch queuing';
+
+  @override
+  String get continueLabel => 'Continue';
+
+  @override
+  String
+  get foundInterruptedCompressionJobsYouCanResumeThemWithTheSameSettingsOrDeleteThem =>
+      'Found interrupted compression jobs. You can resume them with the same settings or delete them.';
+
+  @override
+  String get originalFileIsMissingDeleteTheJobToCleanUpTemporaryFiles =>
+      'Original file is missing · delete the job to clean up temporary files';
+
+  @override
+  String get deleteInterruptedJob => 'Delete interrupted job';
+
+  @override
+  String get whatsappAlgorithmBadge => '16MB cap · 720p';
+
+  @override
+  String get whatsappPresetDescription =>
+      'Tuned to WhatsApp\'s strict limits to avoid failed sends.';
+
+  @override
+  String get whatsappHdAlgorithmBadge => '1080p HD';
+
+  @override
+  String get whatsappHdPresetDescription =>
+      'The highest clarity WhatsApp allows in HD media mode.';
+
+  @override
+  String get instagramReelsAlgorithmBadge => '5 Mbps cap · 1080p';
+
+  @override
+  String get instagramReelsPresetDescription =>
+      'Capped at 5 Mbps to protect the video from Instagram\'s aggressive compression.';
+
+  @override
+  String get tikTokAlgorithmBadge => '60fps · 6 Mbps cap';
+
+  @override
+  String get tikTokPresetDescription =>
+      'A balanced mix of motion quality and processing speed on TikTok.';
+
+  @override
+  String get discordAlgorithmBadge => '10MB cap';
+
+  @override
+  String get discordPresetDescription =>
+      'Avoids the \"Your files are too powerful\" message and ensures instant uploads.';
+
+  @override
+  String get xAlgorithmBadge => 'Forced faststart';
+
+  @override
+  String get xPresetDescription =>
+      'Places the moov atom at the start of the file so playback starts instantly in the feed.';
+
+  @override
+  String get facebookAlgorithmBadge => 'Constrained VBR · 1080p';
+
+  @override
+  String get facebookPresetDescription =>
+      'A constrained bitrate protects image sharpness in the feed and Reels.';
+
+  @override
+  String get youTubeShortsAlgorithmBadge => 'High bitrate · 1080p';
+
+  @override
+  String get youTubeShortsPresetDescription =>
+      'Fast upload prep that keeps the highest possible detail and quality.';
+
+  @override
+  String get emailAlgorithmBadge => 'True 25MB cap';
+
+  @override
+  String get emailPresetDescription =>
+      'A definitive fix for exceeding email attachment limits.';
+
+  @override
+  String get anySize => 'Any size';
+
+  @override
+  String get manualControl => 'Manual control';
+
+  @override
+  String get zumiIsStudyingThePlatformAlgorithmAndCalculatingTheBudget =>
+      '🐾 Zumi is studying the platform\'s algorithm and calculating the budget...';
+
+  @override
+  String get customControlMode => 'Custom control mode';
+
+  @override
+  String
+  get youSetTheTargetSizeManuallyTheEngineWillApplyTheHighestPossibleQualityWithinThatCap =>
+      'You set the target size manually. The engine will apply the highest possible resolution and quality within that cap.';
+
+  @override
+  String zumiIsPuzzledAnImpossibleTargetForTheNameCap(String name) {
+    return 'Zumi is puzzled (impossible target for the $name cap)';
+  }
+
+  @override
+  String
+  theVideoIsTooLongToFitWithinTheSizeCapWithoutSevereDistortionWeSuggestTrimmingTheVideoOrChoosingAnotherPlatformWithAHigherCap(
+    String size,
+  ) {
+    return 'The video is too long to fit within the $size cap without severe image distortion. We suggest trimming the video or choosing another platform with a higher cap.';
+  }
+
+  @override
+  String get zumiAlertProtectingQualityFromDistortion =>
+      'Zumi alert: protecting quality from distortion';
+
+  @override
+  String
+  theNameBudgetIsTightForThisDurationSoWeLoweredTheResolutionToWidthHeightToPreventPixelScatterAndEnsureSmoothPlayback(
+    String name,
+    int width,
+    int height,
+  ) {
+    return 'The $name budget is tight for this duration, so we lowered the resolution to $width×$height to prevent pixel scatter and ensure smooth playback.';
+  }
+
+  @override
+  String adjustingTheCapForName(String name) {
+    return 'Adjusting the cap for $name';
+  }
+
+  @override
+  String
+  theBaseCapIsVeryTightSoTheTargetWasAutomaticallyRaisedToTargetMbMbToProduceAClearAcceptableVideo(
+    String targetMb,
+  ) {
+    return 'The base cap is very tight, so the target was automatically raised to $targetMb MB to produce a clear, acceptable video.';
+  }
+
+  @override
+  String tunedForTheNameAlgorithm(String name) {
+    return 'Tuned for the $name algorithm';
+  }
+
+  @override
+  String get exactMatch => 'Exact match';
+
+  @override
+  String get targetPlatformOrSize => 'Target platform or size';
+
+  @override
+  String
+  get setAutomaticallyForThePlatformChangingTheNumberSwitchesToCustomMode =>
+      'Set automatically for the platform (changing the number switches to custom mode)';
+
+  @override
+  String get termsOfServiceFullText =>
+      '1. Acceptance of Terms\nBy downloading, accessing, or using Zumi (\"the Application\"), you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you must discontinue using the application.\n\n2. Personal License\nWe grant you a personal, revocable, non-exclusive, non-transferable license to use Zumi strictly for your personal, non-commercial, or internal creative media compression workflows on compatible devices.\n\n3. On-Device Execution & Content Ownership\nZumi executes compression pipelines exclusively on your device hardware using local encoders. You retain 100% of all intellectual property rights and copyrights in and to your video files and media. Zumi never uploads, hosts, replicates, or claims ownership over any videos you select or process. You are solely responsible for ensuring you have all requisite permissions and licenses for any media you compress.\n\n4. In-App Subscriptions & Billing\nOptional premium features (such as Zumi Pro) may be offered as recurring subscriptions or one-time unlock purchases. All billing, renewals, cancellations, and tax collections are processed exclusively through the official platform store (Google Play or Apple App Store). Subscriptions renew automatically unless cancelled at least 24 hours prior to the conclusion of the active billing cycle.\n\n5. Disclaimer of Warranties\nThe Application is provided \"as is\" and \"as available,\" without warranty of any kind, express or implied. While we employ rigorous testing and standard-compliant codecs, we do not guarantee that media compression will achieve specific file reduction percentages without visual changes for every source codec.\n';
+
+  @override
+  String get termsCopiedToClipboard => 'Terms copied to clipboard';
+
+  @override
+  String get termsAcceptanceLicenseTitle => '1. Acceptance & License';
+
+  @override
+  String get termsAcceptanceLicenseBody =>
+      'By using Zumi, you agree to these Terms. We grant you a personal, non-exclusive, non-transferable license to compress media locally on your devices.';
+
+  @override
+  String get termsContentOwnershipTitle => '2. 100% Content Ownership';
+
+  @override
+  String get termsContentOwnershipBody =>
+      'You retain all copyrights and ownership over your videos. Zumi does not transmit, store, or claim any rights to your media files.';
+
+  @override
+  String get termsLocalOnDeviceProcessingTitle =>
+      '3. Local On-Device Processing';
+
+  @override
+  String get termsLocalOnDeviceProcessingBody =>
+      'All compression pipelines run completely on your device hardware without external server dependencies or remote media processing.';
+
+  @override
+  String get termsSubscriptionsAndBillingTitle => '4. Subscriptions & Billing';
+
+  @override
+  String get termsSubscriptionsAndBillingBody =>
+      'Purchases and subscriptions are managed securely via official Google Play and Apple App Store billing. Cancellations can be performed anytime in your store account.';
+
+  @override
+  String get termsDisclaimersAndFairUseTitle => '5. Disclaimers & Fair Use';
+
+  @override
+  String get termsDisclaimersAndFairUseBody =>
+      'The software is provided \"as is.\" You are responsible for ensuring you have proper rights to the video content you process.';
+
+  @override
+  String get version12November2026 => 'Version 1.2 • November 2026';
+
+  @override
+  String get videosAndPhotos => 'Videos and Photos';
+
+  @override
+  String
+  get processedExclusivelyOnDeviceMediaFilesAreNeverTransmittedToExternalServersOrThirdPartyPlatforms =>
+      'Processed exclusively on-device. Media files are never transmitted to external servers or third-party platforms.';
+
+  @override
+  String get financialInfoAndPayment => 'Financial Info & Payment';
+
+  @override
+  String
+  get allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreZumiNeverAccessesCardDetails =>
+      'All payment details are handled directly by Google Play Store or Apple App Store. Zumi never accesses card details.';
+
+  @override
+  String get appPerformanceAndCrashLogs => 'App Performance & Crash Logs';
+
+  @override
+  String
+  get optionalNonIdentifiableCrashLogsAndStackTracesUsedSolelyForDiagnosingBugsAndOptimizingStability =>
+      'Optional non-identifiable crash logs and stack traces used solely for diagnosing bugs and optimizing stability.';
+
+  @override
+  String get deviceOrOtherIdentifiers => 'Device or Other Identifiers';
+
+  @override
+  String
+  get noAdvertisingIdsImeiNumbersMacAddressesOrPersistentHardwareIdentifiersAreGathered =>
+      'No advertising IDs, IMEI numbers, MAC addresses, or persistent hardware identifiers are gathered.';
+
+  @override
+  String get storeSafetySummary => 'Store Safety Summary';
+
+  @override
+  String get noDataSharedWithThirdParties =>
+      'No data shared with third parties';
+
+  @override
+  String get noUserDataCollectedForAdvertising =>
+      'No user data collected for advertising';
+
+  @override
+  String get dataEncryptedInTransitStorePurchases =>
+      'Data encrypted in transit (store purchases)';
+
+  @override
+  String get youCanRequestDataDeletionAtAnyTime =>
+      'You can request data deletion at any time';
+
+  @override
+  String get dataCollectionBreakdown => 'Data Collection Breakdown';
+
+  @override
+  String get optionalOnly => 'Optional Only';
+
+  @override
+  String get notCollected => 'Not Collected';
+
+  @override
+  String get zeroCloudUploads => 'Zero Cloud Uploads';
+
+  @override
+  String get videosNeverLeaveLocalMemoryOrStorageDuringProcessing =>
+      'Videos never leave local memory or storage during processing.';
+
+  @override
+  String get noAdvertisingIds => 'No Advertising IDs';
+
+  @override
+  String get noAdSdksUserFingerprintingOrCommercialTrackingCookies =>
+      'No ad SDKs, user fingerprinting, or commercial tracking cookies.';
+
+  @override
+  String get oneHundredPercentUserGoverned => '100% User Governed';
+
+  @override
+  String get allCacheAndHistoryCanBePurgedWithASingleTapInSettings =>
+      'All cache and history can be purged with a single tap in settings.';
+
+  @override
+  String get lastUpdatedNovember2026 => 'Last updated: November 2026';
+
+  @override
+  String get detailedPrivacyPolicies => 'Detailed Privacy Policies';
+
+  @override
+  String get videoProcessingCommitmentTitle => '1. Video Processing Commitment';
+
+  @override
+  String get videoProcessingCommitmentBody =>
+      'Zumi was built with a fundamental architectural guarantee: your videos, clips, and audio tracks are encoded exclusively on your device hardware using local native codecs. At no point is your media streamed, stored, or processed on external cloud infrastructure.';
+
+  @override
+  String get informationWeNeverCollectTitle =>
+      '2. Information We Never Collect';
+
+  @override
+  String get informationWeNeverCollectBody =>
+      'We do not collect names, email addresses (unless you explicitly contact customer support), phone numbers, contacts, device locations, biometric identifiers, or visual contents of your media library.';
+
+  @override
+  String get optionalDiagnosticsTitle => '3. Optional Diagnostics';
+
+  @override
+  String get optionalDiagnosticsBody =>
+      'You may optionally enable anonymous crash reporting to help us identify and fix bugs. These reports contain only non-identifying operating system versions, device models, and exception stack traces, never media content.';
+
+  @override
+  String get thirdPartyStorePaymentsTitle => '4. Third-Party Store Payments';
+
+  @override
+  String get thirdPartyStorePaymentsBody =>
+      'Subscription and in-app purchase operations are executed directly through the official Apple App Store or Google Play Store. Zumi does not process or retain your credit card or financial billing information.';
+
+  @override
+  String get dataDeletionAndStorageHygieneTitle =>
+      '5. Data Deletion & Storage Hygiene';
+
+  @override
+  String get dataDeletionAndStorageHygieneBody =>
+      'All compression history records and temporary preview files reside strictly in sandboxed application directories. You can wipe all history and cached frames at any time directly through Storage Settings.';
+
+  @override
+  String get copyTerms => 'Copy Terms';
 }
 
 /// The translations for Thai, as used in Thailand (`th_TH`).

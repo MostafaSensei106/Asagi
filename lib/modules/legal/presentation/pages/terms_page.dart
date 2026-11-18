@@ -15,26 +15,10 @@ import '../../../../core/widgets/widgets.dart';
 final class TermsPage extends StatelessWidget {
   const TermsPage({super.key});
 
-  static const String _termsContent = '''
-1. Acceptance of Terms
-By downloading, accessing, or using Zumi ("the Application"), you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you must discontinue using the application.
-
-2. Personal License
-We grant you a personal, revocable, non-exclusive, non-transferable license to use Zumi strictly for your personal, non-commercial, or internal creative media compression workflows on compatible devices.
-
-3. On-Device Execution & Content Ownership
-Zumi executes compression pipelines exclusively on your device hardware using local encoders. You retain 100% of all intellectual property rights and copyrights in and to your video files and media. Zumi never uploads, hosts, replicates, or claims ownership over any videos you select or process. You are solely responsible for ensuring you have all requisite permissions and licenses for any media you compress.
-
-4. In-App Subscriptions & Billing
-Optional premium features (such as Zumi Pro) may be offered as recurring subscriptions or one-time unlock purchases. All billing, renewals, cancellations, and tax collections are processed exclusively through the official platform store (Google Play or Apple App Store). Subscriptions renew automatically unless cancelled at least 24 hours prior to the conclusion of the active billing cycle.
-
-5. Disclaimer of Warranties
-The Application is provided "as is" and "as available," without warranty of any kind, express or implied. While we employ rigorous testing and standard-compliant codecs, we do not guarantee that media compression will achieve specific file reduction percentages without visual changes for every source codec.
-''';
-
   void _copyTerms(BuildContext context) {
-    unawaited(Clipboard.setData(const ClipboardData(text: _termsContent)));
-    context.toast.showSuccess(context, 'Terms copied to clipboard');
+    final l10n = context.localeKeys;
+    unawaited(Clipboard.setData(ClipboardData(text: l10n.termsOfServiceFullText)));
+    context.toast.showSuccess(context, l10n.termsCopiedToClipboard);
   }
 
   @override
@@ -44,24 +28,24 @@ The Application is provided "as is" and "as available," without warranty of any 
 
     final sections = [
       (
-        title: '1. Acceptance & License',
-        body: 'By using Zumi, you agree to these Terms. We grant you a personal, non-exclusive, non-transferable license to compress media locally on your devices.',
+        title: l10n.termsAcceptanceLicenseTitle,
+        body: l10n.termsAcceptanceLicenseBody,
       ),
       (
-        title: '2. 100% Content Ownership',
-        body: 'You retain all copyrights and ownership over your videos. Zumi does not transmit, store, or claim any rights to your media files.',
+        title: l10n.termsContentOwnershipTitle,
+        body: l10n.termsContentOwnershipBody,
       ),
       (
-        title: '3. Local On-Device Processing',
-        body: 'All compression pipelines run completely on your device hardware without external server dependencies or remote media processing.',
+        title: l10n.termsLocalOnDeviceProcessingTitle,
+        body: l10n.termsLocalOnDeviceProcessingBody,
       ),
       (
-        title: '4. Subscriptions & Billing',
-        body: 'Purchases and subscriptions are managed securely via official Google Play and Apple App Store billing. Cancellations can be performed anytime in your store account.',
+        title: l10n.termsSubscriptionsAndBillingTitle,
+        body: l10n.termsSubscriptionsAndBillingBody,
       ),
       (
-        title: '5. Disclaimers & Fair Use',
-        body: 'The software is provided "as is." You are responsible for ensuring you have proper rights to the video content you process.',
+        title: l10n.termsDisclaimersAndFairUseTitle,
+        body: l10n.termsDisclaimersAndFairUseBody,
       ),
     ];
 
@@ -105,7 +89,7 @@ The Application is provided "as is" and "as available," without warranty of any 
                         ),
                         const Gap(AppSpacing.small),
                         Text(
-                          'Version 1.2 • November 2026',
+                          l10n.version12November2026,
                           style: context.textTheme.labelSmall?.copyWith(
                             color: colorScheme.primary,
                             fontWeight: FontWeight.bold,
@@ -123,7 +107,7 @@ The Application is provided "as is" and "as available," without warranty of any 
                 Expanded(
                   child: OutlinedButtonComponent.icon(
                     icon: ZumiIcons.repository,
-                    label: 'Copy Terms',
+                    label: l10n.copyTerms,
                     onPressed: () => _copyTerms(context),
                   ),
                 ),

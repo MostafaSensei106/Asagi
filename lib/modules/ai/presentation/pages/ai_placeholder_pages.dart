@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
+import 'package:pinput/pinput.dart';
 
 import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/constants/zumi_icons.dart';
@@ -75,149 +76,108 @@ final class _AiModelsPageState extends State<AiModelsPage> {
 
     return Scaffold(
       appBar: SidePageAppBarComponent(title: l10n.localModels),
-      body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.symmetric(
-            horizontal: AppSpacing.large,
-            vertical: AppSpacing.medium,
-          ),
-          children: [
+      body: ListView(
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.large,
+          vertical: AppSpacing.small,
+        ),
+        children: [
+          const ExpressiveSectionHeader(title: 'Supported On-Device Models'),
+          for (final model in _models) ...[
             CardComponent.filled(
-              padding: const EdgeInsets.all(AppSpacing.large),
-              child: Row(
+              padding: const EdgeInsets.all(AppSpacing.small),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ExpressiveIcon(
-                    icon: ZumiIcons.aiModels,
-                    shape: ExpressiveIconShape.gem,
-                    size: 52,
-                    backgroundColor: colorScheme.primaryContainer,
-                    foregroundColor: colorScheme.onPrimaryContainer,
+                  Row(
+                    children: [
+                      ExpressiveIcon(
+                        icon: ZumiIcons.ai,
+                        shape: ExpressiveIconShape.cookie,
+                        size: AppIconSizes.xlarge,
+                        backgroundColor: _activeModelId == model.id
+                            ? colorScheme.primaryContainer
+                            : colorScheme.surfaceContainerHighest,
+                        foregroundColor: _activeModelId == model.id
+                            ? colorScheme.onPrimaryContainer
+                            : colorScheme.onSurfaceVariant,
+                      ),
+                      const Gap.horizontal(AppSpacing.xSmall),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              model.name,
+                              style: context.textTheme.titleSmall?.copyWith(),
+                            ),
+                            Text(
+                              '${model.size} • ${model.ram}',
+                              style: context.textTheme.bodySmall?.copyWith(
+                                color: colorScheme.primary,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      if (_activeModelId == model.id)
+                        const ChipComponent(label: 'Active', showBorder: false),
+                    ],
                   ),
-                  const Gap.horizontal(AppSpacing.large),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          l10n.localModels,
-                          style: context.textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const Gap(AppSpacing.xSmall),
-                        Text(
-                          l10n.chooseASupportedModelDownloadItToThisDeviceAndManageInstalledModelsHere,
-                          style: context.textTheme.bodySmall?.copyWith(
-                            color: colorScheme.onSurfaceVariant,
-                          ),
-                        ),
-                      ],
+                  const Gap(AppSpacing.small),
+                  Text(
+                    model.desc,
+                    style: context.textTheme.bodySmall?.copyWith(
+                      color: colorScheme.onSurfaceVariant,
+                      height: 1.4,
                     ),
+                  ),
+                  const Gap(AppSpacing.medium),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      if (model.isInstalled) ...[
+                        if (_activeModelId != model.id)
+                          FilledTonalButtonComponent(
+                            label: 'Set Active',
+                            useInBorderRadius: true,
+                            onPressed: () {
+                              unawaited(HapticFeedback.selectionClick());
+                              setState(() => _activeModelId = model.id);
+                              context.toast.showSuccess(
+                                context,
+                                '${model.name} activated',
+                              );
+                            },
+                          )
+                        else
+                          const OutlinedButtonComponent(
+                            label: 'Installed',
+                            useInBorderRadius: true,
+                            isEnabled: false,
+                          ),
+                      ] else
+                        FilledButtonComponent.icon(
+                          icon: LucideIcons.download,
+                          label: 'Download (${model.size})',
+                          useInBorderRadius: true,
+                          onPressed: () {
+                            unawaited(HapticFeedback.mediumImpact());
+                            context.toast.showInfo(
+                              context,
+                              'Download queued for ${model.name}',
+                            );
+                          },
+                        ),
+                    ],
                   ),
                 ],
               ),
             ),
-            const Gap(AppSpacing.xLarge),
-            const ExpressiveSectionHeader(title: 'Supported On-Device Models'),
             const Gap(AppSpacing.small),
-            for (final model in _models) ...[
-              CardComponent.outlined(
-                padding: const EdgeInsets.all(AppSpacing.large),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        ExpressiveIcon(
-                          icon: ZumiIcons.ai,
-                          shape: ExpressiveIconShape.cookie,
-                          size: 36,
-                          backgroundColor: _activeModelId == model.id
-                              ? colorScheme.primaryContainer
-                              : colorScheme.surfaceContainerHighest,
-                          foregroundColor: _activeModelId == model.id
-                              ? colorScheme.onPrimaryContainer
-                              : colorScheme.onSurfaceVariant,
-                        ),
-                        const Gap.horizontal(AppSpacing.medium),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                model.name,
-                                style: context.textTheme.titleSmall?.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Text(
-                                '${model.size} • ${model.ram}',
-                                style: context.textTheme.bodySmall?.copyWith(
-                                  color: colorScheme.primary,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        if (_activeModelId == model.id)
-                          const ChipComponent(
-                            label: 'Active',
-                            showBorder: false,
-                          ),
-                      ],
-                    ),
-                    const Gap(AppSpacing.small),
-                    Text(
-                      model.desc,
-                      style: context.textTheme.bodySmall?.copyWith(
-                        color: colorScheme.onSurfaceVariant,
-                        height: 1.4,
-                      ),
-                    ),
-                    const Gap(AppSpacing.medium),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        if (model.isInstalled) ...[
-                          if (_activeModelId != model.id)
-                            FilledTonalButtonComponent(
-                              label: 'Set Active',
-                              onPressed: () {
-                                unawaited(HapticFeedback.selectionClick());
-                                setState(() => _activeModelId = model.id);
-                                context.toast.showSuccess(
-                                  context,
-                                  '${model.name} activated',
-                                );
-                              },
-                            )
-                          else
-                            const OutlinedButtonComponent(
-                              label: 'Installed',
-                              isEnabled: false,
-                            ),
-                        ] else
-                          FilledButtonComponent.icon(
-                            icon: LucideIcons.download,
-                            label: 'Download (${model.size})',
-                            onPressed: () {
-                              unawaited(HapticFeedback.mediumImpact());
-                              context.toast.showInfo(
-                                context,
-                                'Download queued for ${model.name}',
-                              );
-                            },
-                          ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              const Gap(AppSpacing.medium),
-            ],
           ],
-        ),
+        ],
       ),
     );
   }
@@ -265,118 +225,78 @@ final class _AiImportModelPageState extends State<AiImportModelPage> {
 
     return Scaffold(
       appBar: SidePageAppBarComponent(title: l10n.importAModel),
-      body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.symmetric(
-            horizontal: AppSpacing.large,
-            vertical: AppSpacing.medium,
-          ),
-          children: [
-            CardComponent.filled(
-              padding: const EdgeInsets.all(AppSpacing.large),
-              child: Row(
-                children: [
-                  ExpressiveIcon(
-                    icon: ZumiIcons.aiImport,
-                    shape: ExpressiveIconShape.fan,
-                    size: 52,
-                    backgroundColor: colorScheme.primaryContainer,
-                    foregroundColor: colorScheme.onPrimaryContainer,
-                  ),
-                  const Gap.horizontal(AppSpacing.large),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          l10n.importAModel,
-                          style: context.textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const Gap(AppSpacing.xSmall),
-                        Text(
-                          l10n.selectACompatibleLocalModelFileAndReviewItsRequirementsBeforeUsingIt,
-                          style: context.textTheme.bodySmall?.copyWith(
-                            color: colorScheme.onSurfaceVariant,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const Gap(AppSpacing.xLarge),
-            CardComponent.outlined(
-              padding: const EdgeInsets.all(AppSpacing.large),
-              child: Column(
-                children: [
-                  Icon(
-                    LucideIcons.fileUp,
-                    size: 44,
-                    color: colorScheme.primary,
-                  ),
-                  const Gap(AppSpacing.medium),
-                  Text(
-                    _selectedFileName ?? 'No Model File Selected',
-                    style: context.textTheme.titleSmall?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const Gap(AppSpacing.xSmall),
-                  Text(
-                    'Compatible formats: .gguf, .onnx, .tflite',
-                    style: context.textTheme.bodySmall?.copyWith(
-                      color: colorScheme.onSurfaceVariant,
-                    ),
-                  ),
-                  const Gap(AppSpacing.large),
-                  FilledTonalButtonComponent.icon(
-                    icon: LucideIcons.folderOpen,
-                    label: 'Browse Files',
-                    onPressed: _pickModelFile,
-                  ),
-                ],
-              ),
-            ),
-            const Gap(AppSpacing.xLarge),
-            const ExpressiveSectionHeader(
-              title: 'Import Compatibility Checklist',
-            ),
-            const Gap(AppSpacing.small),
-            CardComponent.outlined(
-              padding: const EdgeInsets.all(AppSpacing.large),
-              child: Column(
-                children: [
-                  _ChecklistRow(
-                    label: 'Format & Quantization (GGUF / ONNX / TFLite)',
-                    isValid: _selectedFileName != null,
-                  ),
-                  const Gap(AppSpacing.small),
-                  _ChecklistRow(
-                    label: 'Memory Cap Verification (< 2GB Peak RAM)',
-                    isValid: _selectedFileName != null,
-                  ),
-                  const Gap(AppSpacing.small),
-                  _ChecklistRow(
-                    label: 'Architecture (Llama / MobileNet / Whisper)',
-                    isValid: _selectedFileName != null,
-                  ),
-                ],
-              ),
-            ),
-            const Gap(AppSpacing.large),
-            FilledButtonComponent(
-              expand: true,
-              label: _isValidating ? 'Validating…' : 'Validate & Import Model',
-              icon: ZumiIcons.aiImport,
-              isEnabled: _selectedFileName != null && !_isValidating,
-              isLoading: _isValidating,
-              onPressed: _selectedFileName != null ? _validateAndImport : null,
-            ),
-          ],
+      body: ListView(
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.large,
+          vertical: AppSpacing.small,
         ),
+        children: [
+          CardComponent.filled(
+            padding: const EdgeInsets.all(AppSpacing.medium),
+            child: Column(
+              children: [
+                Icon(
+                  LucideIcons.fileUp,
+                  size: AppIconSizes.large,
+                  color: colorScheme.primary,
+                ),
+                const Gap(AppSpacing.small),
+                Text(
+                  _selectedFileName ?? 'No Model File Selected',
+                  style: context.textTheme.titleSmall?.copyWith(),
+                ),
+                const Gap(AppSpacing.xSmall),
+                Text(
+                  'Compatible formats: .gguf, .onnx, .tflite',
+                  style: context.textTheme.bodySmall?.copyWith(
+                    color: colorScheme.onSurfaceVariant,
+                  ),
+                ),
+                const Gap(AppSpacing.large),
+                FilledTonalButtonComponent.icon(
+                  icon: LucideIcons.folderOpen,
+                  label: 'Browse Files',
+                  onPressed: _pickModelFile,
+                ),
+              ],
+            ),
+          ),
+          const Gap(AppSpacing.xLarge),
+          const ExpressiveSectionHeader(
+            title: 'Import Compatibility Checklist',
+          ),
+          const Gap(AppSpacing.small),
+          CardComponent.filled(
+            padding: const EdgeInsets.all(AppSpacing.medium),
+            child: Column(
+              children: [
+                _ChecklistRow(
+                  label: 'Format & Quantization (GGUF / ONNX / TFLite)',
+                  isValid: _selectedFileName != null,
+                ),
+                const Gap(AppSpacing.small),
+                _ChecklistRow(
+                  label: 'Memory Cap Verification (< 2GB Peak RAM)',
+                  isValid: _selectedFileName != null,
+                ),
+                const Gap(AppSpacing.small),
+                _ChecklistRow(
+                  label: 'Architecture (Llama / MobileNet / Whisper)',
+                  isValid: _selectedFileName != null,
+                ),
+              ],
+            ),
+          ),
+          const Gap(AppSpacing.large),
+          FilledButtonComponent(
+            expand: true,
+            label: _isValidating ? 'Validating…' : 'Validate & Import Model',
+            icon: ZumiIcons.aiImport,
+            isEnabled: _selectedFileName != null && !_isValidating,
+            isLoading: _isValidating,
+            onPressed: _selectedFileName != null ? _validateAndImport : null,
+          ),
+        ],
       ),
     );
   }
@@ -456,7 +376,6 @@ final class _AiFeaturesPageState extends State<AiFeaturesPage> {
                 children: [
                   ExpressiveIcon(
                     icon: ZumiIcons.aiFeatures,
-                    shape: ExpressiveIconShape.puffyDiamond,
                     size: 52,
                     backgroundColor: colorScheme.primaryContainer,
                     foregroundColor: colorScheme.onPrimaryContainer,
@@ -497,7 +416,6 @@ final class _AiFeaturesPageState extends State<AiFeaturesPage> {
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Bitrate Recommender',
                     value: _bitrateRecommender,
                     onChanged: (val) => _onToggle(
                       'Bitrate recommender',
@@ -513,7 +431,6 @@ final class _AiFeaturesPageState extends State<AiFeaturesPage> {
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Scene Keyframes',
                     value: _sceneKeyframes,
                     onChanged: (val) => _onToggle(
                       'Scene keyframes',
@@ -529,7 +446,6 @@ final class _AiFeaturesPageState extends State<AiFeaturesPage> {
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Noise Reduction',
                     value: _noiseReduction,
                     onChanged: (val) => _onToggle(
                       'Noise reduction',
@@ -545,7 +461,6 @@ final class _AiFeaturesPageState extends State<AiFeaturesPage> {
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Silent Trim',
                     value: _silentTrim,
                     onChanged: (val) =>
                         _onToggle('Silent trim', val, () => _silentTrim = val),
@@ -558,7 +473,6 @@ final class _AiFeaturesPageState extends State<AiFeaturesPage> {
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Face Priority',
                     value: _facePriority,
                     onChanged: (val) => _onToggle(
                       'Face priority',
@@ -748,7 +662,6 @@ final class _AiRuntimePageState extends State<AiRuntimePage> {
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Battery Saver',
                     value: _lowPowerMode,
                     onChanged: (val) {
                       unawaited(HapticFeedback.selectionClick());
@@ -791,146 +704,101 @@ final class _AiChatSettingsPageState extends State<AiChatSettingsPage> {
   @override
   Widget build(BuildContext context) {
     final l10n = context.localeKeys;
-    final colorScheme = context.colorScheme;
-
     return Scaffold(
       appBar: SidePageAppBarComponent(title: l10n.conversationSettings),
-      body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.symmetric(
-            horizontal: AppSpacing.large,
-            vertical: AppSpacing.medium,
-          ),
-          children: [
-            CardComponent.filled(
-              padding: const EdgeInsets.all(AppSpacing.large),
-              child: Row(
-                children: [
-                  ExpressiveIcon(
-                    icon: ZumiIcons.aiChatSettings,
-                    shape: ExpressiveIconShape.clover,
-                    size: 52,
-                    backgroundColor: colorScheme.primaryContainer,
-                    foregroundColor: colorScheme.onPrimaryContainer,
-                  ),
-                  const Gap.horizontal(AppSpacing.large),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          l10n.conversationSettings,
-                          style: context.textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const Gap(AppSpacing.xSmall),
-                        Text(
-                          l10n.configureHowTheAssistantRespondsIncludingStreamingThinkingModeSamplingAndResponseLimits,
-                          style: context.textTheme.bodySmall?.copyWith(
-                            color: colorScheme.onSurfaceVariant,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+      body: ListView(
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.large,
+          vertical: AppSpacing.small,
+        ),
+        children: [
+          const ExpressiveSectionHeader(title: 'Interaction Style'),
+          ListTileGroup(
+            children: [
+              ListTileIconComponent.top(
+                leading: LucideIcons.textAlignCenter,
+                title: 'Stream Text Output',
+                subtitle: 'Render assistant tokens continuously as they are generated',
+                onTap: () => setState(() {
+                  _streaming = !_streaming;
+                }),
+                trailing: SwitchComponent(
+                  value: _streaming,
+                  onChanged: (val) {
+                    unawaited(HapticFeedback.selectionClick());
+                    setState(() => _streaming = val);
+                  },
+                ),
               ),
-            ),
-            const Gap(AppSpacing.xLarge),
-            const ExpressiveSectionHeader(title: 'Interaction Style'),
-            const Gap(AppSpacing.small),
-            ListTileGroup(
+              ListTileIconComponent.bottom(
+                leading: LucideIcons.textAlignEnd,
+                title: 'Show Reasoning / Thinking',
+                subtitle:
+                    'Display step-by-step reasoning blocks inside chat bubbles',
+                onTap: () => setState(() {
+                  _showThinking = !_showThinking;
+                }),
+                trailing: SwitchComponent(
+                  value: _showThinking,
+                  onChanged: (val) {
+                    unawaited(HapticFeedback.selectionClick());
+                    setState(() => _showThinking = val);
+                  },
+                ),
+              ),
+            ],
+          ),
+          const Gap(AppSpacing.large),
+          const ExpressiveSectionHeader(title: 'Generation Sampling'),
+          CardComponent.filled(
+            padding: const EdgeInsets.all(AppSpacing.small),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                ListTileComponent.top(
-                  title: const Text('Stream Text Output'),
-                  subtitle: const Text(
-                    'Render assistant tokens continuously as they are generated',
-                  ),
-                  showChevron: false,
-                  trailing: SwitchComponent(
-                    label: 'Streaming',
-                    value: _streaming,
-                    onChanged: (val) {
-                      unawaited(HapticFeedback.selectionClick());
-                      setState(() => _streaming = val);
-                    },
+                Text(
+                  'Creativity & Temperature: ${_temperature.toStringAsFixed(1)}',
+                  style: context.textTheme.titleSmall?.copyWith(
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                ListTileComponent.bottom(
-                  title: const Text('Show Reasoning / Thinking'),
-                  subtitle: const Text(
-                    'Display step-by-step reasoning blocks inside chat bubbles',
+                Slider(
+                  value: _temperature,
+                  min: 0.1,
+                  divisions: 9,
+                  label: _temperature.toStringAsFixed(1),
+                  onChanged: (val) => {
+                    HapticFeedbackType.vibrate,
+                    setState(() => _temperature = val),
+                  },
+                ),
+                const Gap(AppSpacing.medium),
+                Text(
+                  'Max Generation Tokens',
+                  style: context.textTheme.titleSmall?.copyWith(
+                    fontWeight: FontWeight.bold,
                   ),
-                  showChevron: false,
-                  trailing: SwitchComponent(
-                    label: 'Thinking Mode',
-                    value: _showThinking,
-                    onChanged: (val) {
-                      unawaited(HapticFeedback.selectionClick());
-                      setState(() => _showThinking = val);
-                    },
+                ),
+                const Gap(AppSpacing.small),
+                DropdownButtonFormField<String>(
+                  initialValue: _maxTokens,
+                  decoration: const InputDecoration(
+                    contentPadding: EdgeInsets.symmetric(
+                      horizontal: AppSpacing.medium,
+                      vertical: AppSpacing.small,
+                    ),
                   ),
+                  items: const [
+                    DropdownMenuItem(value: '256', child: Text('256 Tokens')),
+                    DropdownMenuItem(value: '512', child: Text('512 Tokens')),
+                    DropdownMenuItem(value: '1024', child: Text('1024 Tokens')),
+                    DropdownMenuItem(value: '2048', child: Text('2048 Tokens')),
+                  ],
+                  onChanged: (val) => setState(() => _maxTokens = val!),
                 ),
               ],
             ),
-            const Gap(AppSpacing.xLarge),
-            const ExpressiveSectionHeader(title: 'Generation Sampling'),
-            const Gap(AppSpacing.small),
-            CardComponent.outlined(
-              padding: const EdgeInsets.all(AppSpacing.large),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Creativity & Temperature: ${_temperature.toStringAsFixed(1)}',
-                    style: context.textTheme.titleSmall?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Slider(
-                    value: _temperature,
-                    min: 0.1,
-                    divisions: 9,
-                    label: _temperature.toStringAsFixed(1),
-                    onChanged: (val) => setState(() => _temperature = val),
-                  ),
-                  const Gap(AppSpacing.medium),
-                  Text(
-                    'Max Generation Tokens',
-                    style: context.textTheme.titleSmall?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const Gap(AppSpacing.small),
-                  DropdownButtonFormField<String>(
-                    initialValue: _maxTokens,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      contentPadding: EdgeInsets.symmetric(
-                        horizontal: AppSpacing.medium,
-                        vertical: AppSpacing.small,
-                      ),
-                    ),
-                    items: const [
-                      DropdownMenuItem(value: '256', child: Text('256 Tokens')),
-                      DropdownMenuItem(value: '512', child: Text('512 Tokens')),
-                      DropdownMenuItem(
-                        value: '1024',
-                        child: Text('1024 Tokens'),
-                      ),
-                      DropdownMenuItem(
-                        value: '2048',
-                        child: Text('2048 Tokens'),
-                      ),
-                    ],
-                    onChanged: (val) => setState(() => _maxTokens = val!),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -1014,7 +882,6 @@ final class _AiMediaPageState extends State<AiMediaPage> {
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Analyze Thumbnails',
                     value: _analyzeThumbnails,
                     onChanged: (val) {
                       unawaited(HapticFeedback.selectionClick());
@@ -1060,7 +927,6 @@ final class _AiMediaPageState extends State<AiMediaPage> {
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Transcribe Audio',
                     value: _transcribeAudio,
                     onChanged: (val) {
                       unawaited(HapticFeedback.selectionClick());
@@ -1075,7 +941,6 @@ final class _AiMediaPageState extends State<AiMediaPage> {
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Auto Detect Language',
                     value: _autoLang,
                     onChanged: (val) {
                       unawaited(HapticFeedback.selectionClick());
@@ -1218,7 +1083,6 @@ final class _AiSearchPageState extends State<AiSearchPage> {
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Semantic Search',
                     value: _semanticIndexing,
                     onChanged: (val) {
                       unawaited(HapticFeedback.selectionClick());
@@ -1233,7 +1097,6 @@ final class _AiSearchPageState extends State<AiSearchPage> {
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Index When Charging',
                     value: _indexWhileCharging,
                     onChanged: (val) {
                       unawaited(HapticFeedback.selectionClick());
@@ -1335,7 +1198,6 @@ final class _AiToolsPageState extends State<AiToolsPage> {
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Video Trimmer',
                     value: _trimTool,
                     onChanged: (val) =>
                         _onToggle('Video trimmer', val, () => _trimTool = val),
@@ -1348,7 +1210,6 @@ final class _AiToolsPageState extends State<AiToolsPage> {
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Audio Extractor',
                     value: _audioExtractTool,
                     onChanged: (val) => _onToggle(
                       'Audio extractor',
@@ -1364,7 +1225,6 @@ final class _AiToolsPageState extends State<AiToolsPage> {
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Metadata Scrubber',
                     value: _metadataStripTool,
                     onChanged: (val) => _onToggle(
                       'Metadata scrubber',
@@ -1387,7 +1247,6 @@ final class _AiToolsPageState extends State<AiToolsPage> {
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Require Confirmation',
                     value: _confirmDestructive,
                     onChanged: (val) => _onToggle(
                       'Safety confirmation',
@@ -1403,7 +1262,6 @@ final class _AiToolsPageState extends State<AiToolsPage> {
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Sandboxed Scratchpad',
                     value: _sandboxScratchpad,
                     onChanged: (val) => _onToggle(
                       'Sandboxed scratchpad',

@@ -66,7 +66,7 @@ final class CompressionSetupPage extends HookWidget {
               ),
               const SizedBox(height: 24),
               Text(
-                'المنصة المستهدفة أو الحجم',
+                context.localeKeys.targetPlatformOrSize,
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               const SizedBox(height: 12),
@@ -92,7 +92,9 @@ final class CompressionSetupPage extends HookWidget {
                 decoration: InputDecoration(
                   labelText: context.localeKeys.targetSizeMB,
                   helperText: state.selectedPresetId != null
-                      ? 'تم الضبط تلقائياً للمنصة (تغيير الرقم يحول للوضع المخصص)'
+                      ? context
+                            .localeKeys
+                            .setAutomaticallyForThePlatformChangingTheNumberSwitchesToCustomMode
                       : null,
                   errorText: valid.value
                       ? null

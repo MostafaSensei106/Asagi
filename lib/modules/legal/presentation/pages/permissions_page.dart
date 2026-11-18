@@ -147,6 +147,7 @@ final class PermissionsPage extends StatelessWidget {
                   FilledTonalButtonComponent.icon(
                     icon: ZumiIcons.settings,
                     label: 'Manage in System Settings',
+                    expand: true,
                     onPressed: () {
                       unawaited(HapticFeedback.selectionClick());
                       context.toast.showInfo(

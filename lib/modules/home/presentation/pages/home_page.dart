@@ -58,6 +58,7 @@ final class HomePage extends HookWidget {
             previous.planning != current.planning ||
             previous.interruptedJobs != current.interruptedJobs,
         builder: (context, state) {
+          final l10n = context.localeKeys;
           final video = state.video;
           final output = state.output;
           final completed =
@@ -79,8 +80,8 @@ final class HomePage extends HookWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const Text(
-                                    'وجدت مهام ضغط متوقفة. يمكنك استئنافها بنفس الإعدادات أو حذفها.',
+                                  Text(
+                                    l10n.foundInterruptedCompressionJobsYouCanResumeThemWithTheSameSettingsOrDeleteThem,
                                   ),
                                   const SizedBox(height: 8),
                                   for (final job in state.recoverableJobs)
@@ -105,7 +106,7 @@ final class HomePage extends HookWidget {
                                                 Text(
                                                   job.sourceAvailable
                                                       ? '${job.targetMb.toStringAsFixed(0)} MB · ${job.phase} · ${job.updatedAt.toLocal()}'
-                                                      : 'الملف الأصلي غير موجود · احذف المهمة لتنظيف المؤقتات',
+                                                      : l10n.originalFileIsMissingDeleteTheJobToCleanUpTemporaryFiles,
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .bodySmall,
@@ -124,10 +125,10 @@ final class HomePage extends HookWidget {
                                                       job,
                                                     ),
                                                   ),
-                                            child: const Text('استئناف'),
+                                            child: Text(l10n.resume),
                                           ),
                                           IconButton(
-                                            tooltip: 'حذف المهمة المتوقفة',
+                                            tooltip: l10n.deleteInterruptedJob,
                                             onPressed: () => unawaited(
                                               cubit.discardInterrupted(job.id),
                                             ),

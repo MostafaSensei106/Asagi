@@ -99,7 +99,6 @@ final class _NotificationsSettingsPageState
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Job Completed',
                     value: _jobCompletion,
                     onChanged: (val) => _onToggle(
                       'Job completed alert',
@@ -115,7 +114,6 @@ final class _NotificationsSettingsPageState
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Background Status',
                     value: _backgroundStatus,
                     onChanged: (val) => _onToggle(
                       'Background status',
@@ -131,7 +129,6 @@ final class _NotificationsSettingsPageState
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Interruption Alerts',
                     value: _errorAlerts,
                     onChanged: (val) => _onToggle(
                       'Error alerts',
@@ -158,7 +155,6 @@ final class _NotificationsSettingsPageState
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Sound on Completion',
                     value: _completionSound,
                     onChanged: (val) => _onToggle(
                       'Completion sound',
@@ -174,7 +170,6 @@ final class _NotificationsSettingsPageState
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Haptic Feedback',
                     value: _hapticFeedback,
                     onChanged: (val) => _onToggle(
                       'Haptic feedback',
@@ -201,7 +196,6 @@ final class _NotificationsSettingsPageState
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'New Features',
                     value: _productUpdates,
                     onChanged: (val) => _onToggle(
                       'Feature notifications',
@@ -217,7 +211,6 @@ final class _NotificationsSettingsPageState
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(
-                    label: 'Savings Digest',
                     value: _savingsDigest,
                     onChanged: (val) => _onToggle(
                       'Savings digest',

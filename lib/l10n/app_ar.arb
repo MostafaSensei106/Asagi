@@ -829,5 +829,246 @@
   "openSourceLicensesLoadFailed": "تعذر تحميل إشعارات تراخيص المصادر المفتوحة.",
   "languageName": "العربية",
   "countryCode": "EG",
-  "countryName": "{countryCode, select, AE{الإمارات العربية المتحدة} AT{النمسا} AU{أستراليا} BE{بلجيكا} BH{البحرين} BR{البرازيل} CA{كندا} CH{سويسرا} CN{الصين} DE{ألمانيا} DJ{جيبوتي} DZ{الجزائر} EG{مصر} ES{إسبانيا} FR{فرنسا} GB{المملكة المتحدة} HK{هونغ كونغ الصينية (منطقة إدارية خاصة)} ID{إندونيسيا} IQ{العراق} IT{إيطاليا} JO{الأردن} JP{اليابان} KM{جزر القمر} KR{كوريا الجنوبية} KW{الكويت} LB{لبنان} LY{ليبيا} MA{المغرب} MR{موريتانيا} MX{المكسيك} NL{هولندا} OM{عُمان} PL{بولندا} PS{الأراضي الفلسطينية} PT{البرتغال} QA{قطر} RU{روسيا} SA{المملكة العربية السعودية} SD{السودان} SE{السويد} SG{سنغافورة} SO{الصومال} SY{سوريا} TH{تايلاند} TN{تونس} TR{تركيا} TW{تايوان} US{الولايات المتحدة} VN{فيتنام} YE{اليمن} other{بلد}}"
+  "countryName": "{countryCode, select, AE{الإمارات العربية المتحدة} AT{النمسا} AU{أستراليا} BE{بلجيكا} BH{البحرين} BR{البرازيل} CA{كندا} CH{سويسرا} CN{الصين} DE{ألمانيا} DJ{جيبوتي} DZ{الجزائر} EG{مصر} ES{إسبانيا} FR{فرنسا} GB{المملكة المتحدة} HK{هونغ كونغ الصينية (منطقة إدارية خاصة)} ID{إندونيسيا} IQ{العراق} IT{إيطاليا} JO{الأردن} JP{اليابان} KM{جزر القمر} KR{كوريا الجنوبية} KW{الكويت} LB{لبنان} LY{ليبيا} MA{المغرب} MR{موريتانيا} MX{المكسيك} NL{هولندا} OM{عُمان} PL{بولندا} PS{الأراضي الفلسطينية} PT{البرتغال} QA{قطر} RU{روسيا} SA{المملكة العربية السعودية} SD{السودان} SE{السويد} SG{سنغافورة} SO{الصومال} SY{سوريا} TH{تايلاند} TN{تونس} TR{تركيا} TW{تايوان} US{الولايات المتحدة} VN{فيتنام} YE{اليمن} other{بلد}}",
+  "losslessVisualQuality": "جودة بصرية بلا فقدان",
+  "upTo90PercentSizeReduction": "تقليل الحجم حتى 90%",
+  "instantPreview": "معاينة فورية",
+  "zeroCloudUploadsYourVideosAndPersonalMemoriesNeverLeaveYourDeviceHardware": "بلا رفع للسحابة. فيديوهاتك وذكرياتك الشخصية لا تغادر جهازك أبداً.",
+  "fullyOffline": "يعمل دون إنترنت 100%",
+  "noTracking": "بلا تتبّع",
+  "zeroCloudServers": "صفر خوادم سحابية",
+  "nativeRustEngineSpeed": "سرعة محرك Rust الأصلي",
+  "engineeredWithRustAndNativeGpuAccelerationForLightningFastCompressionAndLowBatteryDraw": "مبني بلغة Rust مع تسريع GPU أصلي لضغط فائق السرعة واستهلاك منخفض للبطارية.",
+  "h264AndHevc": "H.264 و HEVC",
+  "av1Support": "دعم AV1",
+  "batchQueuing": "معالجة دُفعات",
+  "continueLabel": "متابعة",
+  "foundInterruptedCompressionJobsYouCanResumeThemWithTheSameSettingsOrDeleteThem": "وجدت مهام ضغط متوقفة. يمكنك استئنافها بنفس الإعدادات أو حذفها.",
+  "originalFileIsMissingDeleteTheJobToCleanUpTemporaryFiles": "الملف الأصلي غير موجود · احذف المهمة لتنظيف المؤقتات",
+  "deleteInterruptedJob": "حذف المهمة المتوقفة",
+  "whatsappAlgorithmBadge": "سقف 16MB · 720p",
+  "whatsappPresetDescription": "مضبوط على حدود واتساب الصارمة لتفادي فشل الإرسال.",
+  "whatsappHdAlgorithmBadge": "1080p HD",
+  "whatsappHdPresetDescription": "أقصى وضوح يسمح به واتساب في وضع الوسائط عالية الدقة.",
+  "instagramReelsAlgorithmBadge": "سقف 5 Mbps · 1080p",
+  "instagramReelsPresetDescription": "مقيد بسقف 5 Mbps لحماية الفيديو من ضغط خوارزمية إنستجرام القاسي.",
+  "tikTokAlgorithmBadge": "60fps · سقف 6 Mbps",
+  "tikTokPresetDescription": "توازن مثالي بين جودة الحركة وسرعة المعالجة على تيك توك.",
+  "discordAlgorithmBadge": "سقف 10MB",
+  "discordPresetDescription": "لتفادي رسالة Your files are too powerful وضمان الرفع الفوري.",
+  "xAlgorithmBadge": "Faststart إجباري",
+  "xPresetDescription": "ترتيب moov في أول الملف لضمان التشغيل الفوري في الـ Feed.",
+  "facebookAlgorithmBadge": "VBR محكوم · 1080p",
+  "facebookPresetDescription": "معدل بت محكوم لحماية حدة الصورة في الـ Feed و Reels.",
+  "youTubeShortsAlgorithmBadge": "بتريت عالٍ · 1080p",
+  "youTubeShortsPresetDescription": "تجهيز سريع للرفع مع الاحتفاظ بأعلى تفاصيل وجودة ممكنة.",
+  "emailAlgorithmBadge": "سقف 25MB حقيقي",
+  "emailPresetDescription": "حل جذري لمشكلة تجاوز سقف مرفقات البريد الإلكتروني.",
+  "anySize": "أي حجم",
+  "manualControl": "تحكم يدوي",
+  "zumiIsStudyingThePlatformAlgorithmAndCalculatingTheBudget": "🐾 Zumi يقوم بدراسة خوارزمية المنصة وحساب الميزانية...",
+  "customControlMode": "وضع التحكم المخصص",
+  "youSetTheTargetSizeManuallyTheEngineWillApplyTheHighestPossibleQualityWithinThatCap": "أنت تحدد حجم الهدف يدوياً. سيطبق المحرك أقصى دقة وجودة ممكنة داخل هذا السقف.",
+  "zumiIsPuzzledAnImpossibleTargetForTheNameCap": "Zumi في حيرة (هدف غير ممكن لسقف {name})",
+  "theVideoIsTooLongToFitWithinTheSizeCapWithoutSevereDistortionWeSuggestTrimmingTheVideoOrChoosingAnotherPlatformWithAHigherCap": "مدة الفيديو طويلة جداً بحيث لا يمكن استيعابها في سقف {size} دون تشويه تام للصورة. ننصح بقص الفيديو أو اختيار منصة أخرى بسقف أعلى.",
+  "zumiAlertProtectingQualityFromDistortion": "تنبيه Zumi: حماية الجودة من التشوّه",
+  "theNameBudgetIsTightForThisDurationSoWeLoweredTheResolutionToWidthHeightToPreventPixelScatterAndEnsureSmoothPlayback": "حجم ميزانية {name} ضيق بالنسبة للمدة، لذا خفّضنا الدقة إلى {width}×{height} لمنع تشتت البكسلات ولضمان سلاسة العرض.",
+  "adjustingTheCapForName": "تعديل السقف لـ {name}",
+  "theBaseCapIsVeryTightSoTheTargetWasAutomaticallyRaisedToTargetMbMbToProduceAClearAcceptableVideo": "السقف الأساسي ضيق جداً، فتم رفع الهدف تلقائياً إلى {targetMb} MB لتحقيق فيديو واضح ومقبول.",
+  "tunedForTheNameAlgorithm": "مضبوط لخوارزمية {name}",
+  "exactMatch": "تطابق تام",
+  "targetPlatformOrSize": "المنصة المستهدفة أو الحجم",
+  "setAutomaticallyForThePlatformChangingTheNumberSwitchesToCustomMode": "تم الضبط تلقائياً للمنصة (تغيير الرقم يحول للوضع المخصص)",
+  "termsOfServiceFullText": "1. قبول الشروط\nبتحميلك أو وصولك إلى Zumi (\"التطبيق\") أو استخدامه، فإنك توافق على الالتزام بشروط الخدمة هذه. وإذا كنت لا توافق على أي جزء من هذه الشروط، فيجب عليك التوقف عن استخدام التطبيق.\n\n2. ترخيص شخصي\nنمنحك ترخيصاً شخصياً وقابلاً للإلغاء وغير حصري وغير قابل للتحويل لاستخدام Zumi بشكل صارم في مهام ضغط الوسائط الإبداعية الشخصية أو غير التجارية أو الداخلية على الأجهزة المتوافقة.\n\n3. التنفيذ على الجهاز وملكية المحتوى\nينفّذ Zumi خطوط ضغط الوسائط حصرياً على عتاد جهازك باستخدام مُرمِّزات محلية. وتحتفظ بنسبة 100% من جميع حقوق الملكية الفكرية وحقوق النشر في ملفات الفيديو والوسائط الخاصة بك. ولا يقوم Zumi أبداً برفع أو استضافة أو نسخ أو المطالبة بملكية أي فيديوهات تختارها أو تعالجها. وأنت وحدك المسؤول عن ضمان حصولك على جميع الأذونات والتراخيص اللازمة لأي وسائط تضغطها.\n\n4. الاشتراكات داخل التطبيق والفوترة\nقد تُقدَّم الميزات المميزة الاختيارية (مثل Zumi Pro) كاشتراكات متكررة أو عمليات شراء لمرة واحدة. تتم جميع عمليات الفوترة والتجديد والإلغاء وتحصيل الضرائب حصرياً عبر متجر المنصة الرسمي (Google Play أو Apple App Store). تتجدد الاشتراكات تلقائياً ما لم يتم إلغاؤها قبل 24 ساعة على الأقل من انتهاء دورة الفوترة النشطة.\n\n5. إخلاء المسؤولية عن الضمانات\nيُقدَّم التطبيق \"كما هو\" و\"حسب توافره\"، دون أي ضمان من أي نوع، صريحاً أو ضمنياً. ورغم أننا نجري اختبارات صارمة ونستخدم مُرمِّزات متوافقة مع المعايير، فإننا لا نضمن أن يحقق ضغط الوسائط نسب تقليل محددة للملف دون تغييرات بصرية لكل مُرمِّز مصدري.\n",
+  "@termsOfServiceFullText": {
+    "description": "Full Terms of Service text copied to the clipboard"
+  },
+  "termsCopiedToClipboard": "تم نسخ الشروط إلى الحافظة",
+  "@termsCopiedToClipboard": {
+    "description": "Confirmation toast after copying the terms"
+  },
+  "termsAcceptanceLicenseTitle": "1. القبول والترخيص",
+  "@termsAcceptanceLicenseTitle": {
+    "description": "Terms section title"
+  },
+  "termsAcceptanceLicenseBody": "باستخدامك Zumi، فإنك توافق على هذه الشروط. نمنحك ترخيصاً شخصياً وغير حصري وغير قابل للتحويل لضغط الوسائط محلياً على أجهزتك.",
+  "@termsAcceptanceLicenseBody": {
+    "description": "Terms section body"
+  },
+  "termsContentOwnershipTitle": "2. ملكية المحتوى 100%",
+  "@termsContentOwnershipTitle": {
+    "description": "Terms section title"
+  },
+  "termsContentOwnershipBody": "تحتفظ بجميع حقوق النشر والملكية لفيديوهاتك. لا يقوم Zumi بنقل أو تخزين أو المطالبة بأي حقوق في ملفات الوسائط الخاصة بك.",
+  "@termsContentOwnershipBody": {
+    "description": "Terms section body"
+  },
+  "termsLocalOnDeviceProcessingTitle": "3. المعالجة المحلية على الجهاز",
+  "@termsLocalOnDeviceProcessingTitle": {
+    "description": "Terms section title"
+  },
+  "termsLocalOnDeviceProcessingBody": "تعمل جميع خطوط الضغط بالكامل على عتاد جهازك دون الاعتماد على خوادم خارجية أو معالجة وسائط عن بُعد.",
+  "@termsLocalOnDeviceProcessingBody": {
+    "description": "Terms section body"
+  },
+  "termsSubscriptionsAndBillingTitle": "4. الاشتراكات والفوترة",
+  "@termsSubscriptionsAndBillingTitle": {
+    "description": "Terms section title"
+  },
+  "termsSubscriptionsAndBillingBody": "تُدار عمليات الشراء والاشتراكات بأمان عبر فوترة Google Play وApple App Store الرسمية. ويمكن الإلغاء في أي وقت من حساب المتجر الخاص بك.",
+  "@termsSubscriptionsAndBillingBody": {
+    "description": "Terms section body"
+  },
+  "termsDisclaimersAndFairUseTitle": "5. إخلاء المسؤولية والاستخدام العادل",
+  "@termsDisclaimersAndFairUseTitle": {
+    "description": "Terms section title"
+  },
+  "termsDisclaimersAndFairUseBody": "يُقدَّم البرنامج \"كما هو\". وأنت مسؤول عن ضمان امتلاكك الحقوق المناسبة لمحتوى الفيديو الذي تعالجه.",
+  "@termsDisclaimersAndFairUseBody": {
+    "description": "Terms section body"
+  },
+  "version12November2026": "الإصدار 1.2 • نوفمبر 2026",
+  "@version12November2026": {
+    "description": "Terms page version and revision date"
+  },
+  "videosAndPhotos": "الفيديوهات والصور",
+  "@videosAndPhotos": {
+    "description": "Data safety category"
+  },
+  "processedExclusivelyOnDeviceMediaFilesAreNeverTransmittedToExternalServersOrThirdPartyPlatforms": "تُعالَج حصرياً على الجهاز. لا تُنقل ملفات الوسائط أبداً إلى خوادم خارجية أو منصات طرف ثالث.",
+  "@processedExclusivelyOnDeviceMediaFilesAreNeverTransmittedToExternalServersOrThirdPartyPlatforms": {
+    "description": "Data safety category details"
+  },
+  "financialInfoAndPayment": "المعلومات المالية والدفع",
+  "@financialInfoAndPayment": {
+    "description": "Data safety category"
+  },
+  "allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreZumiNeverAccessesCardDetails": "يتولى Google Play Store أو Apple App Store التعامل مع جميع تفاصيل الدفع مباشرة. ولا يطّلع Zumi أبداً على بيانات البطاقة.",
+  "@allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreZumiNeverAccessesCardDetails": {
+    "description": "Data safety category details"
+  },
+  "appPerformanceAndCrashLogs": "أداء التطبيق وسجلات الأعطال",
+  "@appPerformanceAndCrashLogs": {
+    "description": "Data safety category"
+  },
+  "optionalNonIdentifiableCrashLogsAndStackTracesUsedSolelyForDiagnosingBugsAndOptimizingStability": "سجلات أعطال اختيارية غير قابلة للتعرّف وتتبّعات مكدّس تُستخدم فقط لتشخيص الأخطاء وتحسين الاستقرار.",
+  "@optionalNonIdentifiableCrashLogsAndStackTracesUsedSolelyForDiagnosingBugsAndOptimizingStability": {
+    "description": "Data safety category details"
+  },
+  "deviceOrOtherIdentifiers": "الجهاز أو معرّفات أخرى",
+  "@deviceOrOtherIdentifiers": {
+    "description": "Data safety category"
+  },
+  "noAdvertisingIdsImeiNumbersMacAddressesOrPersistentHardwareIdentifiersAreGathered": "لا يتم جمع أي معرّفات إعلانية أو أرقام IMEI أو عناوين MAC أو معرّفات عتاد دائمة.",
+  "@noAdvertisingIdsImeiNumbersMacAddressesOrPersistentHardwareIdentifiersAreGathered": {
+    "description": "Data safety category details"
+  },
+  "storeSafetySummary": "ملخص السلامة في المتجر",
+  "@storeSafetySummary": {
+    "description": "Data safety summary card header"
+  },
+  "noDataSharedWithThirdParties": "لا تتم مشاركة أي بيانات مع أطراف ثالثة",
+  "@noDataSharedWithThirdParties": {
+    "description": "Data safety affirmative row"
+  },
+  "noUserDataCollectedForAdvertising": "لا يتم جمع بيانات المستخدم للإعلانات",
+  "@noUserDataCollectedForAdvertising": {
+    "description": "Data safety affirmative row"
+  },
+  "dataEncryptedInTransitStorePurchases": "البيانات مشفّرة أثناء النقل (مشتريات المتجر)",
+  "@dataEncryptedInTransitStorePurchases": {
+    "description": "Data safety affirmative row"
+  },
+  "youCanRequestDataDeletionAtAnyTime": "يمكنك طلب حذف البيانات في أي وقت",
+  "@youCanRequestDataDeletionAtAnyTime": {
+    "description": "Data safety affirmative row"
+  },
+  "dataCollectionBreakdown": "تفصيل جمع البيانات",
+  "@dataCollectionBreakdown": {
+    "description": "Section header above the data safety categories"
+  },
+  "optionalOnly": "اختياري فقط",
+  "@optionalOnly": {
+    "description": "Data safety chip for optionally collected data"
+  },
+  "notCollected": "غير مُجمَّع",
+  "@notCollected": {
+    "description": "Data safety chip for data that is never collected"
+  },
+  "zeroCloudUploads": "صفر رفع سحابي",
+  "@zeroCloudUploads": {
+    "description": "Privacy highlight title"
+  },
+  "videosNeverLeaveLocalMemoryOrStorageDuringProcessing": "لا تغادر الفيديوهات الذاكرة أو التخزين المحلي أثناء المعالجة.",
+  "@videosNeverLeaveLocalMemoryOrStorageDuringProcessing": {
+    "description": "Privacy highlight description"
+  },
+  "noAdvertisingIds": "بلا معرّفات إعلانية",
+  "@noAdvertisingIds": {
+    "description": "Privacy highlight title"
+  },
+  "noAdSdksUserFingerprintingOrCommercialTrackingCookies": "لا مجموعات تطوير إعلانية ولا بصمات مستخدم ولا ملفات تتبّع تجارية.",
+  "@noAdSdksUserFingerprintingOrCommercialTrackingCookies": {
+    "description": "Privacy highlight description"
+  },
+  "oneHundredPercentUserGoverned": "تحكّم كامل للمستخدم",
+  "@oneHundredPercentUserGoverned": {
+    "description": "Privacy highlight title"
+  },
+  "allCacheAndHistoryCanBePurgedWithASingleTapInSettings": "يمكن مسح كل الذاكرة المؤقتة والسجل بلمسة واحدة من الإعدادات.",
+  "@allCacheAndHistoryCanBePurgedWithASingleTapInSettings": {
+    "description": "Privacy highlight description"
+  },
+  "lastUpdatedNovember2026": "آخر تحديث: نوفمبر 2026",
+  "@lastUpdatedNovember2026": {
+    "description": "Privacy policy last-updated line"
+  },
+  "detailedPrivacyPolicies": "سياسات الخصوصية التفصيلية",
+  "@detailedPrivacyPolicies": {
+    "description": "Section header above the detailed privacy policies"
+  },
+  "videoProcessingCommitmentTitle": "1. التزام معالجة الفيديو",
+  "@videoProcessingCommitmentTitle": {
+    "description": "Privacy policy section title"
+  },
+  "videoProcessingCommitmentBody": "بُني Zumi على ضمان معماري أساسي: تتم ترميز فيديوهاتك ومقاطعك ومسارات الصوت حصرياً على عتاد جهازك باستخدام مُرمِّزات أصلية محلية. ولا يتم بث وسائطك أو تخزينها أو معالجتها على بنية سحابية خارجية في أي مرحلة.",
+  "@videoProcessingCommitmentBody": {
+    "description": "Privacy policy section body"
+  },
+  "informationWeNeverCollectTitle": "2. معلومات لا نجمعها أبداً",
+  "@informationWeNeverCollectTitle": {
+    "description": "Privacy policy section title"
+  },
+  "informationWeNeverCollectBody": "لا نجمع الأسماء أو عناوين البريد الإلكتروني (إلا إذا تواصلت مع الدعم الفني بشكل صريح)، ولا أرقام الهواتف أو جهات الاتصال أو مواقع الجهاز أو المعرّفات الحيوية أو المحتوى البصري لمكتبة الوسائط الخاصة بك.",
+  "@informationWeNeverCollectBody": {
+    "description": "Privacy policy section body"
+  },
+  "optionalDiagnosticsTitle": "3. التشخيصات الاختيارية",
+  "@optionalDiagnosticsTitle": {
+    "description": "Privacy policy section title"
+  },
+  "optionalDiagnosticsBody": "يمكنك اختيارياً تفعيل الإبلاغ المجهول عن الأعطال لمساعدتنا في تحديد الأخطاء وإصلاحها. وتحتوي هذه التقارير على إصدارات نظام التشغيل غير المعرِّفة، وطرازات الأجهزة، وتتبّعات مكدّس الاستثناءات فقط، ولا تحتوي أبداً على محتوى الوسائط.",
+  "@optionalDiagnosticsBody": {
+    "description": "Privacy policy section body"
+  },
+  "thirdPartyStorePaymentsTitle": "4. مدفوعات المتاجر التابعة لجهات خارجية",
+  "@thirdPartyStorePaymentsTitle": {
+    "description": "Privacy policy section title"
+  },
+  "thirdPartyStorePaymentsBody": "تُنفَّذ عمليات الاشتراك والشراء داخل التطبيق مباشرة عبر Apple App Store أو Google Play Store الرسمي. ولا يقوم Zumi بمعالجة أو الاحتفاظ بمعلومات بطاقتك الائتمانية أو الفوترة المالية.",
+  "@thirdPartyStorePaymentsBody": {
+    "description": "Privacy policy section body"
+  },
+  "dataDeletionAndStorageHygieneTitle": "5. حذف البيانات ونظافة التخزين",
+  "@dataDeletionAndStorageHygieneTitle": {
+    "description": "Privacy policy section title"
+  },
+  "dataDeletionAndStorageHygieneBody": "توجد جميع سجلات تاريخ الضغط وملفات المعاينة المؤقتة بشكل صارم داخل أدلة التطبيق المعزولة. ويمكنك محو كل السجل والإطارات المخزّنة مؤقتاً في أي وقت مباشرة من إعدادات التخزين.",
+  "@dataDeletionAndStorageHygieneBody": {
+    "description": "Privacy policy section body"
+  },
+  "copyTerms": "نسخ الشروط",
+  "@copyTerms": {
+    "description": "Button that copies the full terms text to the clipboard"
+  }
 }

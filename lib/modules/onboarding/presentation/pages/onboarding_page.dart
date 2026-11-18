@@ -68,10 +68,10 @@ final class _OnboardingPageState extends State<OnboardingPage> {
         subtitle:
             l10n.learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone,
         tagline: l10n.compareTheBeforeAndAfterSizeThenSaveOrShareTheResult,
-        chips: const [
-          'Lossless Visual Quality',
-          'Up to 90% Size Reduction',
-          'Instant Preview',
+        chips: [
+          l10n.losslessVisualQuality,
+          l10n.upTo90PercentSizeReduction,
+          l10n.instantPreview,
         ],
       ),
       _OnboardingSlide(
@@ -79,16 +79,26 @@ final class _OnboardingPageState extends State<OnboardingPage> {
         shape: ExpressiveIconShape.heart,
         title: l10n.compressVideosPrivatelyOnYourDevice,
         subtitle: l10n.onDeviceProcessingLocalLogsAndOptionalCrashReports,
-        tagline: 'Zero cloud uploads. Your videos and personal memories never leave your device hardware.',
-        chips: const ['100% Offline', 'No Tracking', 'Zero Cloud Servers'],
+        tagline:
+            l10n.zeroCloudUploadsYourVideosAndPersonalMemoriesNeverLeaveYourDeviceHardware,
+        chips: [
+          l10n.fullyOffline,
+          l10n.noTracking,
+          l10n.zeroCloudServers,
+        ],
       ),
       _OnboardingSlide(
         icon: ZumiIcons.aiRuntime,
         shape: ExpressiveIconShape.burst,
-        title: 'Native Rust Engine Speed',
+        title: l10n.nativeRustEngineSpeed,
         subtitle: l10n.chooseResolutionBitrateAndOutputFormatBeforeYouStart,
-        tagline: 'Engineered with Rust and native GPU acceleration for lightning-fast compression and low battery draw.',
-        chips: const ['H.264 & HEVC', 'AV1 Support', 'Batch Queuing'],
+        tagline:
+            l10n.engineeredWithRustAndNativeGpuAccelerationForLightningFastCompressionAndLowBatteryDraw,
+        chips: [
+          l10n.h264AndHevc,
+          l10n.av1Support,
+          l10n.batchQueuing,
+        ],
       ),
     ];
 
@@ -213,7 +223,7 @@ final class _OnboardingPageState extends State<OnboardingPage> {
                     expand: true,
                     label: _currentPage == slides.length - 1
                         ? l10n.ok
-                        : 'Continue',
+                        : l10n.continueLabel,
                     icon: _currentPage == slides.length - 1
                         ? ZumiIcons.compressionResult
                         : ZumiIcons.chevronForward,

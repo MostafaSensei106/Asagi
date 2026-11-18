@@ -25,11 +25,7 @@ final class ContrastSection extends StatelessWidget {
       leading: LucideIcons.contrast,
       shape: ExpressiveIconShape.diamond,
       showChevron: false,
-      trailing: SwitchComponent(
-        label: title,
-        value: enabled,
-        onChanged: onChanged,
-      ),
+      trailing: SwitchComponent(value: enabled, onChanged: onChanged),
       onTap: () => onChanged(!enabled),
     );
   }

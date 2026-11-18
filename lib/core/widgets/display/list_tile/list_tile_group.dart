@@ -1,7 +1,6 @@
 import 'package:material_ui/material_ui.dart';
 
 import '../../../constants/design_system/tokens/tokens.dart';
-import '../divider/divider_component.dart';
 
 class ListTileGroup extends StatelessWidget {
   const ListTileGroup({required this.children, super.key});
@@ -16,15 +15,7 @@ class ListTileGroup extends StatelessWidget {
     return _ListTileGroupScope(
       child: ClipRRect(
         borderRadius: BorderRadius.circular(AppRadii.large),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            for (var index = 0; index < children.length; index++) ...[
-              if (index > 0) const DividerComponent(),
-              children[index],
-            ],
-          ],
-        ),
+        child: Column(mainAxisSize: MainAxisSize.min, children: children),
       ),
     );
   }
