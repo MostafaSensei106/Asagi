@@ -6,7 +6,6 @@ import '../../../../core/constants/zumi_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/widgets/widgets.dart';
 import '../../logic/subscription_cubit.dart';
-import '../widgets/loyalty_progress_card.dart';
 import '../widgets/subscription_feedback.dart';
 import '../widgets/subscription_offer_card.dart';
 
@@ -15,7 +14,7 @@ final class PlansPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: SidePageAppBarComponent(title: context.localeKeys.plans),
+    appBar: SidePageAppBarComponent(title: context.localeKeys.plansPurchases),
     body: BlocSignalBuilder<SubscriptionCubit, SubscriptionState>(
       buildWhen: (before, after) => before != after,
       builder: (context, state) {
@@ -23,12 +22,11 @@ final class PlansPage extends StatelessWidget {
         return ListView(
           padding: const EdgeInsets.symmetric(
             horizontal: AppSpacing.large,
-            vertical: AppSpacing.medium,
+            vertical: AppSpacing.small,
           ),
           children: [
             SubscriptionOfferCard(state: state, onSubscribe: cubit.purchase),
-            const Gap(AppSpacing.small),
-            LoyaltyProgressCard(state: state),
+            const Gap(AppSpacing.large),
             SubscriptionFeedback(state: state, onRetry: cubit.load),
             const Gap(AppSpacing.small),
             Center(
@@ -38,7 +36,7 @@ final class PlansPage extends StatelessWidget {
                   icon: ZumiIcons.restorePurchases,
                   label: context.localeKeys.restorePurchases,
                   //  isEnable: !state.isPurchasing,
-                  onPressed: cubit.restore,
+                  onPressed: !state.isPurchasing ? cubit.restore : null,
                 ),
               ),
             ),

@@ -990,7 +990,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get proFeaturesDescription =>
-      'Use custom-size compression and exclusive Discord and YouTube Shorts presets.';
+      'Custom compression, sharing presets, on-device AI tools, and loyalty savings.';
 
   @override
   String get pleaseWait => 'Bitte warten...';
@@ -1018,13 +1018,146 @@ class AppLocalizationsDe extends AppLocalizations {
       'Cancelling resets your accumulated loyalty discount to the base price. If you subscribe again, loyalty starts again at 2%.';
 
   @override
-  String get premiumFeatureCustomSize => 'Custom-size compression';
+  String get proBenefitsTitle => 'Pro features';
 
   @override
-  String get premiumFeatureDiscordPreset => 'Discord export preset';
+  String get proCustomCompressionGroup => 'Custom compression';
 
   @override
-  String get premiumFeatureYouTubeShortsPreset => 'YouTube Shorts preset';
+  String get proSharingPresetsGroup => 'Exclusive sharing presets';
+
+  @override
+  String get proAiGroupTitle => 'On-device AI toolkit';
+
+  @override
+  String get proLoyaltyGroup => 'Loyalty savings';
+
+  @override
+  String get proCustomSizeBenefit =>
+      'Set a precise maximum size for every video export.';
+
+  @override
+  String get proResolutionBenefit =>
+      'Choose output resolution from 240p to source quality.';
+
+  @override
+  String get proFrameRateBenefit => 'Cap exports at 24, 30, 60, or 120 fps.';
+
+  @override
+  String get proVideoBitrateBenefit =>
+      'Control the maximum video bitrate on Android.';
+
+  @override
+  String get proAudioBitrateBenefit =>
+      'Choose audio bitrate or remove audio entirely.';
+
+  @override
+  String get proDiscordBenefit =>
+      'Export videos within Discord size and encoding limits.';
+
+  @override
+  String get proYouTubeShortsBenefit =>
+      'Prepare vertical videos for YouTube Shorts limits.';
+
+  @override
+  String get proAiAssistantBenefit =>
+      'Get AI guidance for compression and app features.';
+
+  @override
+  String get proAiSceneBenefit =>
+      'Understand video scenes with on-device AI analysis.';
+
+  @override
+  String get proAiTranscriptionBenefit =>
+      'Transcribe speech and find moments by meaning.';
+
+  @override
+  String get proLoyaltyBenefit =>
+      'Earn monthly loyalty discounts up to thirty percent.';
+
+  @override
+  String get proCustomSizeTitle => 'Choose a target file size';
+
+  @override
+  String get proCustomSizeDetails =>
+      'Set a precise size ceiling for each custom compression.';
+
+  @override
+  String get proResolutionTitle => 'Set maximum resolution';
+
+  @override
+  String get proResolutionDetails =>
+      'Limit output resolution from 240p up to the source size.';
+
+  @override
+  String get proFrameRateTitle => 'Control maximum frame rate';
+
+  @override
+  String get proFrameRateDetails =>
+      'Choose a 24, 30, 60, or 120 fps output cap on Android.';
+
+  @override
+  String get proVideoBitrateTitle => 'Set a video bitrate ceiling';
+
+  @override
+  String get proVideoBitrateDetails =>
+      'Set the maximum video bitrate on Android.';
+
+  @override
+  String get proAudioBitrateTitle => 'Choose audio quality';
+
+  @override
+  String get proAudioBitrateDetails =>
+      'Pick an audio bitrate or remove audio on Android.';
+
+  @override
+  String get proDiscordTitle => 'Discord-targeted export';
+
+  @override
+  String get proDiscordDetails =>
+      'Use a preset tuned to Discord size and encoding limits.';
+
+  @override
+  String get proYouTubeShortsTitle => 'YouTube Shorts export';
+
+  @override
+  String get proYouTubeShortsDetails =>
+      'Use Shorts size, resolution, and frame-rate limits.';
+
+  @override
+  String get proAiAssistantTitle => 'AI assistant';
+
+  @override
+  String get proAiAssistantDetails =>
+      'Get help with video compression and app features.';
+
+  @override
+  String get proAiSceneTitle => 'Scene understanding';
+
+  @override
+  String get proAiSceneDetails =>
+      'Explore video content with on-device AI analysis.';
+
+  @override
+  String get proAiTranscriptionTitle => 'Transcription and search';
+
+  @override
+  String get proAiTranscriptionDetails =>
+      'Transcribe speech and find moments by meaning.';
+
+  @override
+  String get proLoyaltyTitle => 'Monthly loyalty discount';
+
+  @override
+  String get proLoyaltyDetails => 'Earn 2% per consecutive month, up to 30%.';
+
+  @override
+  String get proPlatformAvailabilityNote =>
+      'Advanced resolution, frame-rate, and bitrate controls are available on Android. Export limits depend on device support.';
+
+  @override
+  String get proAiAvailabilityNote =>
+      'AI features require a compatible on-device model.';
 
   @override
   String get loyaltySavingsTitle => 'Loyalty savings';

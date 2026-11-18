@@ -1906,7 +1906,7 @@ abstract class AppLocalizations {
   /// No description provided for @proFeaturesDescription.
   ///
   /// In en, this message translates to:
-  /// **'Use custom-size compression and exclusive Discord and YouTube Shorts presets.'**
+  /// **'Custom compression, sharing presets, on-device AI tools, and loyalty savings.'**
   String get proFeaturesDescription;
 
   /// Please wait dialog text
@@ -1945,23 +1945,245 @@ abstract class AppLocalizations {
   /// **'Cancelling resets your accumulated loyalty discount to the base price. If you subscribe again, loyalty starts again at 2%.'**
   String get loyaltyCancellationWarning;
 
-  /// No description provided for @premiumFeatureCustomSize.
+  /// No description provided for @proBenefitsTitle.
   ///
   /// In en, this message translates to:
-  /// **'Custom-size compression'**
-  String get premiumFeatureCustomSize;
+  /// **'Pro features'**
+  String get proBenefitsTitle;
 
-  /// No description provided for @premiumFeatureDiscordPreset.
+  /// No description provided for @proCustomCompressionGroup.
   ///
   /// In en, this message translates to:
-  /// **'Discord export preset'**
-  String get premiumFeatureDiscordPreset;
+  /// **'Custom compression'**
+  String get proCustomCompressionGroup;
 
-  /// No description provided for @premiumFeatureYouTubeShortsPreset.
+  /// No description provided for @proSharingPresetsGroup.
   ///
   /// In en, this message translates to:
-  /// **'YouTube Shorts preset'**
-  String get premiumFeatureYouTubeShortsPreset;
+  /// **'Exclusive sharing presets'**
+  String get proSharingPresetsGroup;
+
+  /// No description provided for @proAiGroupTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'On-device AI toolkit'**
+  String get proAiGroupTitle;
+
+  /// No description provided for @proLoyaltyGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'Loyalty savings'**
+  String get proLoyaltyGroup;
+
+  /// No description provided for @proCustomSizeBenefit.
+  ///
+  /// In en, this message translates to:
+  /// **'Set a precise maximum size for every video export.'**
+  String get proCustomSizeBenefit;
+
+  /// No description provided for @proResolutionBenefit.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose output resolution from 240p to source quality.'**
+  String get proResolutionBenefit;
+
+  /// No description provided for @proFrameRateBenefit.
+  ///
+  /// In en, this message translates to:
+  /// **'Cap exports at 24, 30, 60, or 120 fps.'**
+  String get proFrameRateBenefit;
+
+  /// No description provided for @proVideoBitrateBenefit.
+  ///
+  /// In en, this message translates to:
+  /// **'Control the maximum video bitrate on Android.'**
+  String get proVideoBitrateBenefit;
+
+  /// No description provided for @proAudioBitrateBenefit.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose audio bitrate or remove audio entirely.'**
+  String get proAudioBitrateBenefit;
+
+  /// No description provided for @proDiscordBenefit.
+  ///
+  /// In en, this message translates to:
+  /// **'Export videos within Discord size and encoding limits.'**
+  String get proDiscordBenefit;
+
+  /// No description provided for @proYouTubeShortsBenefit.
+  ///
+  /// In en, this message translates to:
+  /// **'Prepare vertical videos for YouTube Shorts limits.'**
+  String get proYouTubeShortsBenefit;
+
+  /// No description provided for @proAiAssistantBenefit.
+  ///
+  /// In en, this message translates to:
+  /// **'Get AI guidance for compression and app features.'**
+  String get proAiAssistantBenefit;
+
+  /// No description provided for @proAiSceneBenefit.
+  ///
+  /// In en, this message translates to:
+  /// **'Understand video scenes with on-device AI analysis.'**
+  String get proAiSceneBenefit;
+
+  /// No description provided for @proAiTranscriptionBenefit.
+  ///
+  /// In en, this message translates to:
+  /// **'Transcribe speech and find moments by meaning.'**
+  String get proAiTranscriptionBenefit;
+
+  /// No description provided for @proLoyaltyBenefit.
+  ///
+  /// In en, this message translates to:
+  /// **'Earn monthly loyalty discounts up to thirty percent.'**
+  String get proLoyaltyBenefit;
+
+  /// No description provided for @proCustomSizeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a target file size'**
+  String get proCustomSizeTitle;
+
+  /// No description provided for @proCustomSizeDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Set a precise size ceiling for each custom compression.'**
+  String get proCustomSizeDetails;
+
+  /// No description provided for @proResolutionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Set maximum resolution'**
+  String get proResolutionTitle;
+
+  /// No description provided for @proResolutionDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Limit output resolution from 240p up to the source size.'**
+  String get proResolutionDetails;
+
+  /// No description provided for @proFrameRateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Control maximum frame rate'**
+  String get proFrameRateTitle;
+
+  /// No description provided for @proFrameRateDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a 24, 30, 60, or 120 fps output cap on Android.'**
+  String get proFrameRateDetails;
+
+  /// No description provided for @proVideoBitrateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Set a video bitrate ceiling'**
+  String get proVideoBitrateTitle;
+
+  /// No description provided for @proVideoBitrateDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Set the maximum video bitrate on Android.'**
+  String get proVideoBitrateDetails;
+
+  /// No description provided for @proAudioBitrateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose audio quality'**
+  String get proAudioBitrateTitle;
+
+  /// No description provided for @proAudioBitrateDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick an audio bitrate or remove audio on Android.'**
+  String get proAudioBitrateDetails;
+
+  /// No description provided for @proDiscordTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Discord-targeted export'**
+  String get proDiscordTitle;
+
+  /// No description provided for @proDiscordDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Use a preset tuned to Discord size and encoding limits.'**
+  String get proDiscordDetails;
+
+  /// No description provided for @proYouTubeShortsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'YouTube Shorts export'**
+  String get proYouTubeShortsTitle;
+
+  /// No description provided for @proYouTubeShortsDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Use Shorts size, resolution, and frame-rate limits.'**
+  String get proYouTubeShortsDetails;
+
+  /// No description provided for @proAiAssistantTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'AI assistant'**
+  String get proAiAssistantTitle;
+
+  /// No description provided for @proAiAssistantDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Get help with video compression and app features.'**
+  String get proAiAssistantDetails;
+
+  /// No description provided for @proAiSceneTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Scene understanding'**
+  String get proAiSceneTitle;
+
+  /// No description provided for @proAiSceneDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore video content with on-device AI analysis.'**
+  String get proAiSceneDetails;
+
+  /// No description provided for @proAiTranscriptionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Transcription and search'**
+  String get proAiTranscriptionTitle;
+
+  /// No description provided for @proAiTranscriptionDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Transcribe speech and find moments by meaning.'**
+  String get proAiTranscriptionDetails;
+
+  /// No description provided for @proLoyaltyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly loyalty discount'**
+  String get proLoyaltyTitle;
+
+  /// No description provided for @proLoyaltyDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Earn 2% per consecutive month, up to 30%.'**
+  String get proLoyaltyDetails;
+
+  /// No description provided for @proPlatformAvailabilityNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Advanced resolution, frame-rate, and bitrate controls are available on Android. Export limits depend on device support.'**
+  String get proPlatformAvailabilityNote;
+
+  /// No description provided for @proAiAvailabilityNote.
+  ///
+  /// In en, this message translates to:
+  /// **'AI features require a compatible on-device model.'**
+  String get proAiAvailabilityNote;
 
   /// No description provided for @loyaltySavingsTitle.
   ///

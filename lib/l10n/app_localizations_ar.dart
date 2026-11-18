@@ -978,7 +978,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get proFeaturesDescription =>
-      'استخدم ضغطًا بحجم مخصص وإعدادَي Discord وYouTube Shorts الحصريين.';
+      'ضغط مخصص، وإعدادات مشاركة، وأدوات ذكاء اصطناعي، وخصومات ولاء.';
 
   @override
   String get pleaseWait => 'جارٍ المعالجة…';
@@ -1006,13 +1006,140 @@ class AppLocalizationsAr extends AppLocalizations {
       'إلغاء الاشتراك يعيد السعر الأساسي ويفقدك الخصم المتراكم. عند الاشتراك مجدداً يبدأ الخصم من 2%.';
 
   @override
-  String get premiumFeatureCustomSize => 'الضغط بحجم مخصص';
+  String get proBenefitsTitle => 'مزايا Pro';
 
   @override
-  String get premiumFeatureDiscordPreset => 'إعداد مشاركة Discord';
+  String get proCustomCompressionGroup => 'ضغط مخصص';
 
   @override
-  String get premiumFeatureYouTubeShortsPreset => 'إعداد YouTube Shorts';
+  String get proSharingPresetsGroup => 'إعدادات مشاركة حصرية';
+
+  @override
+  String get proAiGroupTitle => 'أدوات ذكاء اصطناعي محلية';
+
+  @override
+  String get proLoyaltyGroup => 'خصومات الولاء';
+
+  @override
+  String get proCustomSizeBenefit =>
+      'حدد الحجم الأقصى لكل فيديو قبل تصديره بدقة.';
+
+  @override
+  String get proResolutionBenefit => 'اختر دقة الفيديو من 240p حتى دقة المصدر.';
+
+  @override
+  String get proFrameRateBenefit =>
+      'حدد معدل الإطارات المناسب لكل فيديو مضغوط.';
+
+  @override
+  String get proVideoBitrateBenefit => 'تحكم في الحد الأقصى لمعدل بت الفيديو.';
+
+  @override
+  String get proAudioBitrateBenefit => 'اختر جودة الصوت أو احذفه من الفيديو.';
+
+  @override
+  String get proDiscordBenefit => 'صدّر فيديوهات مناسبة لحدود Discord وحجمها.';
+
+  @override
+  String get proYouTubeShortsBenefit =>
+      'جهز فيديوهات عمودية تناسب حدود YouTube Shorts.';
+
+  @override
+  String get proAiAssistantBenefit =>
+      'احصل على مساعدة ذكية لضغط الفيديو وميزات التطبيق.';
+
+  @override
+  String get proAiSceneBenefit =>
+      'حلل مشاهد الفيديو محليًا باستخدام الذكاء الاصطناعي.';
+
+  @override
+  String get proAiTranscriptionBenefit =>
+      'فرّغ الكلام وابحث عن اللحظات حسب معناها.';
+
+  @override
+  String get proLoyaltyBenefit => 'اجمع خصم ولاء شهريًا يصل إلى ثلاثين بالمئة.';
+
+  @override
+  String get proCustomSizeTitle => 'اختر حجم الملف المستهدف';
+
+  @override
+  String get proCustomSizeDetails =>
+      'حدد سقفًا دقيقًا لحجم كل عملية ضغط مخصصة.';
+
+  @override
+  String get proResolutionTitle => 'حدد أقصى دقة';
+
+  @override
+  String get proResolutionDetails => 'حدد دقة الإخراج من 240p حتى حجم المصدر.';
+
+  @override
+  String get proFrameRateTitle => 'تحكم في معدل الإطارات';
+
+  @override
+  String get proFrameRateDetails =>
+      'اختر حدًا أقصى قدره 24 أو 30 أو 60 أو 120 إطارًا على Android.';
+
+  @override
+  String get proVideoBitrateTitle => 'حدد سقف معدل بت الفيديو';
+
+  @override
+  String get proVideoBitrateDetails => 'حدد أقصى معدل بت للفيديو على Android.';
+
+  @override
+  String get proAudioBitrateTitle => 'اختر جودة الصوت';
+
+  @override
+  String get proAudioBitrateDetails =>
+      'اختر معدل بت الصوت أو احذفه على Android.';
+
+  @override
+  String get proDiscordTitle => 'تصدير مضبوط لـ Discord';
+
+  @override
+  String get proDiscordDetails =>
+      'استخدم إعدادًا يلائم حدود الحجم والترميز في Discord.';
+
+  @override
+  String get proYouTubeShortsTitle => 'تصدير YouTube Shorts';
+
+  @override
+  String get proYouTubeShortsDetails =>
+      'استخدم حدود Shorts للحجم والدقة ومعدل الإطارات.';
+
+  @override
+  String get proAiAssistantTitle => 'مساعد الذكاء الاصطناعي';
+
+  @override
+  String get proAiAssistantDetails =>
+      'احصل على مساعدة في ضغط الفيديو وميزات التطبيق.';
+
+  @override
+  String get proAiSceneTitle => 'فهم المشاهد';
+
+  @override
+  String get proAiSceneDetails =>
+      'استكشف محتوى الفيديو بتحليل الذكاء الاصطناعي المحلي.';
+
+  @override
+  String get proAiTranscriptionTitle => 'تفريغ وبحث ذكي';
+
+  @override
+  String get proAiTranscriptionDetails =>
+      'فرّغ الكلام وابحث عن اللحظات حسب معناها.';
+
+  @override
+  String get proLoyaltyTitle => 'خصم ولاء شهري';
+
+  @override
+  String get proLoyaltyDetails => 'اكسب 2% عن كل شهر متتالٍ، بحد أقصى 30%.';
+
+  @override
+  String get proPlatformAvailabilityNote =>
+      'تتوفر أدوات الدقة ومعدل الإطارات والبت المتقدمة على Android. وتعتمد الحدود على دعم الجهاز.';
+
+  @override
+  String get proAiAvailabilityNote =>
+      'تتطلب ميزات الذكاء الاصطناعي نموذجًا محليًا متوافقًا.';
 
   @override
   String get loyaltySavingsTitle => 'توفير الولاء';

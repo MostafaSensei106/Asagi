@@ -22,7 +22,7 @@ final class LoyaltyProgressCard extends StatelessWidget {
     final progress = (state.currentDiscount / 30).clamp(0.0, 1.0).toDouble();
 
     return CardComponent.filled(
-      padding: const EdgeInsets.all(AppSpacing.large),
+      padding: const EdgeInsets.all(AppSpacing.small),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -42,9 +42,7 @@ final class LoyaltyProgressCard extends StatelessWidget {
                   children: [
                     Text(
                       l10n.loyaltySavingsTitle,
-                      style: context.textTheme.titleMedium?.copyWith(
-                        fontWeight: FontWeight.w700,
-                      ),
+                      style: context.textTheme.titleMedium,
                     ),
                     const Gap(AppSpacing.xSmall),
                     Text(
@@ -72,9 +70,7 @@ final class LoyaltyProgressCard extends StatelessWidget {
               ),
               Text(
                 '${state.currentDiscount}% / 30%',
-                style: context.textTheme.labelMedium?.copyWith(
-                  fontWeight: FontWeight.w700,
-                ),
+                style: context.textTheme.labelMedium,
               ),
             ],
           ),
@@ -88,9 +84,7 @@ final class LoyaltyProgressCard extends StatelessWidget {
             nextPrice == null
                 ? l10n.nextMonthLoyaltyDiscount(state.nextDiscount)
                 : l10n.nextMonthLoyaltyPrice(state.nextDiscount, nextPrice),
-            style: context.textTheme.bodyMedium?.copyWith(
-              fontWeight: FontWeight.w600,
-            ),
+            style: context.textTheme.bodyMedium,
           ),
           const Gap(AppSpacing.large),
           Container(

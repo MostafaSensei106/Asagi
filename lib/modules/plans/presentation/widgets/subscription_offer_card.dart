@@ -7,6 +7,9 @@ import '../../../../core/extensions/extensions.dart';
 import '../../../../core/widgets/widgets.dart';
 import '../../logic/subscription_cubit.dart';
 
+typedef _ProFeature = ({String text});
+typedef _ProFeatureGroup = ({String title, List<_ProFeature> features});
+
 final class SubscriptionOfferCard extends StatelessWidget {
   const SubscriptionOfferCard({
     required this.state,
@@ -28,10 +31,38 @@ final class SubscriptionOfferCard extends StatelessWidget {
         ? l10n.loading
         : l10n.planUnavailable;
     final canSubscribe =
+        offer != null &&
         !state.isLoading &&
         !state.isPurchasing &&
-        !state.isActive &&
-        state.offer != null;
+        !state.isActive;
+    final groups = <_ProFeatureGroup>[
+      (
+        title: l10n.proCustomCompressionGroup,
+        features: [
+          (text: l10n.proCustomSizeBenefit),
+          (text: l10n.proResolutionBenefit),
+          (text: l10n.proFrameRateBenefit),
+          (text: l10n.proVideoBitrateBenefit),
+          (text: l10n.proAudioBitrateBenefit),
+        ],
+      ),
+      (
+        title: l10n.proSharingPresetsGroup,
+        features: [
+          (text: l10n.proDiscordBenefit),
+          (text: l10n.proYouTubeShortsBenefit),
+        ],
+      ),
+      (
+        title: l10n.proAiGroupTitle,
+        features: [
+          (text: l10n.proAiAssistantBenefit),
+          (text: l10n.proAiSceneBenefit),
+          (text: l10n.proAiTranscriptionBenefit),
+        ],
+      ),
+      (title: l10n.proLoyaltyGroup, features: [(text: l10n.proLoyaltyBenefit)]),
+    ];
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(AppRadii.xLarge),
@@ -40,122 +71,184 @@ final class SubscriptionOfferCard extends StatelessWidget {
           gradient: LinearGradient(
             begin: AlignmentDirectional.topStart,
             end: AlignmentDirectional.bottomEnd,
-            colors: [scheme.primaryContainer, scheme.tertiaryContainer],
+            colors: [scheme.primaryContainer, scheme.secondaryContainer],
           ),
-          borderRadius: BorderRadius.circular(AppRadii.xLarge),
         ),
-        child: Stack(
-          children: [
-            PositionedDirectional(
-              top: -30,
-              end: -24,
-              child: Icon(
-                LucideIcons.sparkles,
-                size: 148,
-                color: scheme.primary.withValues(alpha: 0.08),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(AppSpacing.large),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+        child: Padding(
+          padding: const EdgeInsets.all(AppSpacing.small),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
                 children: [
-                  Row(
-                    children: [
-                      ExpressiveIcon(
-                        icon: ZumiIcons.plans,
-                        shape: ExpressiveIconShape.gem,
-                        size: 52,
-                        backgroundColor: scheme.primary,
-                        foregroundColor: scheme.onPrimary,
-                      ),
-                      const Gap.horizontal(AppSpacing.medium),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              l10n.zumiProTitle,
-                              style: context.textTheme.headlineSmall?.copyWith(
-                                fontWeight: FontWeight.w800,
-                                color: scheme.onSurface,
-                              ),
-                            ),
-                            const Gap(AppSpacing.xSmall),
-                            _StatusPill(isActive: state.isActive),
-                          ],
-                        ),
-                      ),
-                    ],
+                  ExpressiveIcon(
+                    icon: ZumiIcons.plans,
+                    shape: ExpressiveIconShape.gem,
+                    size: 68,
+                    backgroundColor: scheme.surface.withValues(alpha: 0.72),
+                    foregroundColor: scheme.onPrimaryContainer,
                   ),
-                  const Gap(AppSpacing.large),
-                  Text(
-                    priceLabel,
-                    style: context.textTheme.titleLarge?.copyWith(
-                      fontWeight: FontWeight.w700,
-                      color: scheme.onSurface,
-                    ),
-                  ),
-                  if (state.isLoading && state.offer == null) ...[
-                    const Gap(AppSpacing.small),
-                    const LinearProgressIndicator(),
-                  ],
-                  const Gap(AppSpacing.small),
-                  Text(
-                    l10n.proFeaturesDescription,
-                    style: context.textTheme.bodyMedium?.copyWith(
-                      color: scheme.onSurfaceVariant,
-                      height: 1.45,
-                    ),
-                  ),
-                  const Gap(AppSpacing.medium),
-                  _BenefitLine(label: l10n.premiumFeatureCustomSize),
-                  const Gap(AppSpacing.small),
-                  _BenefitLine(label: l10n.premiumFeatureDiscordPreset),
-                  const Gap(AppSpacing.small),
-                  _BenefitLine(label: l10n.premiumFeatureYouTubeShortsPreset),
-                  const Gap(AppSpacing.large),
-                  FilledButtonComponent.icon(
-                    expand: true,
-                    icon: state.isActive ? LucideIcons.check : ZumiIcons.plans,
-                    label: state.isActive
-                        ? l10n.subscriptionActive
-                        : state.isPurchasing
-                        ? l10n.pleaseWait
-                        : l10n.subscribe,
-                    isEnabled: canSubscribe,
-                    isLoading: state.isPurchasing,
-                    onPressed: canSubscribe ? onSubscribe : null,
-                  ),
-                  const Gap(AppSpacing.medium),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        LucideIcons.shieldCheck,
-                        size: 16,
-                        color: scheme.onSurfaceVariant,
-                      ),
-                      const Gap.horizontal(AppSpacing.small),
-                      Flexible(
-                        child: Text(
-                          l10n.subscriptionSecureBilling,
-                          textAlign: TextAlign.center,
-                          style: context.textTheme.bodySmall?.copyWith(
-                            color: scheme.onSurfaceVariant,
+                  const Gap.horizontal(AppSpacing.large),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          l10n.zumiProTitle,
+                          style: context.textTheme.headlineSmall?.copyWith(
+                            fontWeight: FontWeight.w800,
+                            color: scheme.onPrimaryContainer,
                           ),
                         ),
-                      ),
-                    ],
+                        const Gap(AppSpacing.small),
+                        _StatusPill(isActive: state.isActive),
+                      ],
+                    ),
                   ),
                 ],
               ),
-            ),
-          ],
+              const Gap(AppSpacing.large),
+              Text(
+                priceLabel,
+                style: context.textTheme.headlineSmall?.copyWith(
+                  fontWeight: FontWeight.w800,
+                  color: scheme.onPrimaryContainer,
+                ),
+              ),
+              if (state.isLoading && offer == null) ...[
+                const Gap(AppSpacing.small),
+                const LinearProgressIndicator(),
+              ],
+              const Gap(AppSpacing.large),
+              Text(
+                l10n.proBenefitsTitle,
+                style: context.textTheme.titleLarge?.copyWith(
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+              for (final group in groups) ...[
+                const Gap(AppSpacing.medium),
+                _FeatureGroup(group: group),
+              ],
+              const Gap(AppSpacing.large),
+              FilledButtonComponent.icon(
+                expand: true,
+                icon: state.isActive ? LucideIcons.check : ZumiIcons.plans,
+                label: state.isActive
+                    ? l10n.subscriptionActive
+                    : state.isPurchasing
+                    ? l10n.pleaseWait
+                    : l10n.subscribe,
+                isEnabled: canSubscribe,
+                isLoading: state.isPurchasing,
+                onPressed: canSubscribe ? onSubscribe : null,
+              ),
+              const Gap(AppSpacing.medium),
+              Row(
+                children: [
+                  Icon(
+                    LucideIcons.shieldCheck,
+                    size: 17,
+                    color: scheme.onPrimaryContainer.withValues(alpha: 0.78),
+                  ),
+                  const Gap.horizontal(AppSpacing.small),
+                  Expanded(
+                    child: Text(
+                      l10n.subscriptionSecureBilling,
+                      style: context.textTheme.bodySmall?.copyWith(
+                        color: scheme.onPrimaryContainer.withValues(
+                          alpha: 0.78,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const Gap(AppSpacing.small),
+              Text(
+                l10n.proPlatformAvailabilityNote,
+                style: context.textTheme.bodySmall?.copyWith(
+                  color: scheme.onPrimaryContainer.withValues(alpha: 0.78),
+                ),
+              ),
+              const Gap(AppSpacing.small),
+              Text(
+                l10n.proAiAvailabilityNote,
+                style: context.textTheme.bodySmall?.copyWith(
+                  color: scheme.onPrimaryContainer.withValues(alpha: 0.78),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
+}
+
+final class _FeatureGroup extends StatelessWidget {
+  const _FeatureGroup({required this.group});
+
+  final _ProFeatureGroup group;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          group.title,
+          style: context.textTheme.titleSmall?.copyWith(
+            fontWeight: FontWeight.w800,
+            color: context.colorScheme.onPrimaryContainer,
+          ),
+        ),
+        const Gap(AppSpacing.xSmall),
+        for (final feature in group.features) _FeatureRow(feature: feature),
+      ],
+    );
+  }
+}
+
+final class _FeatureRow extends StatelessWidget {
+  const _FeatureRow({required this.feature});
+
+  final _ProFeature feature;
+
+  @override
+  Widget build(BuildContext context) => Padding(
+    padding: const EdgeInsets.symmetric(vertical: AppSpacing.small),
+    child: Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          width: 22,
+          height: 22,
+          decoration: BoxDecoration(
+            color: context.colorScheme.onPrimaryContainer.withValues(
+              alpha: 0.12,
+            ),
+            shape: BoxShape.circle,
+          ),
+          child: Icon(
+            LucideIcons.check,
+            size: 15,
+            color: context.colorScheme.onPrimaryContainer,
+          ),
+        ),
+        const Gap.horizontal(AppSpacing.small),
+        Expanded(
+          child: Text(
+            feature.text,
+            style: context.textTheme.bodyMedium?.copyWith(
+              color: context.colorScheme.onPrimaryContainer,
+              height: 1.35,
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
 }
 
 final class _StatusPill extends StatelessWidget {
@@ -167,7 +260,7 @@ final class _StatusPill extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.localeKeys;
     final scheme = context.colorScheme;
-    final color = isActive ? scheme.tertiary : scheme.primary;
+    final color = scheme.onPrimaryContainer;
 
     return Container(
       padding: const EdgeInsets.symmetric(
@@ -196,32 +289,6 @@ final class _StatusPill extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-final class _BenefitLine extends StatelessWidget {
-  const _BenefitLine({required this.label});
-
-  final String label;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = context.colorScheme;
-    return Row(
-      children: [
-        Icon(LucideIcons.check, size: 17, color: scheme.primary),
-        const Gap.horizontal(AppSpacing.small),
-        Expanded(
-          child: Text(
-            label,
-            style: context.textTheme.bodyMedium?.copyWith(
-              color: scheme.onSurface,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-        ),
-      ],
     );
   }
 }
