@@ -26,15 +26,7 @@ final class HeroBackground extends StatelessWidget {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               stops: const [0, 0.55, 1],
-              colors: [
-                scheme.primaryContainer,
-                Color.lerp(
-                  scheme.primaryContainer,
-                  scheme.tertiaryContainer,
-                  0.55,
-                )!,
-                scheme.surface,
-              ],
+              colors: [scheme.primaryContainer, scheme.surface],
             ),
           ),
         ),

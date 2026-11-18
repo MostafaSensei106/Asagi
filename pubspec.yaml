@@ -54,7 +54,6 @@ dependencies:
   device_info_plus: ^13.3.0
   cupertino_ui: ^1.1.6
   country_flags: ^4.1.2
-  sensors_plus: ^7.1.1
   google_nav_bar: ^5.0.7
   in_app_purchase: ^3.3.0
   in_app_purchase_android: ^0.5.5
