@@ -1,3 +1,10 @@
 export 'pages/ai_chat_page.dart';
-export 'pages/ai_placeholder_pages.dart';
+export 'pages/ai_chat_settings_page.dart';
+export 'pages/ai_features_page.dart';
+export 'pages/ai_import_model_page.dart';
+export 'pages/ai_media_page.dart';
+export 'pages/ai_models_page.dart';
+export 'pages/ai_runtime_page.dart';
+export 'pages/ai_search_page.dart';
 export 'pages/ai_settings_page.dart';
+export 'pages/ai_tools_page.dart';

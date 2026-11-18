@@ -1556,6 +1556,433 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get copyTerms => 'نسخ الشروط';
+
+  @override
+  String get compressionIntelligence => 'ذكاء الضغط';
+
+  @override
+  String get smartBitrateRecommender => 'اقتراح معدل البت الذكي';
+
+  @override
+  String get bitrateRecommenderDescription => 'يوزّع معدل البت حسب الحركة';
+
+  @override
+  String get bitrateRecommender => 'اقتراح معدل البت';
+
+  @override
+  String get sceneAwareKeyframePlacement =>
+      'تحديد الإطارات المفتاحية حسب المشهد';
+
+  @override
+  String get sceneKeyframeDescription => 'يحدد الإطارات عند تغيّر المشهد';
+
+  @override
+  String get sceneKeyframes => 'إطارات المشهد';
+
+  @override
+  String get cameraSensorDenoising => 'تقليل تشويش مستشعر الكاميرا';
+
+  @override
+  String get noiseReductionDescription => 'يقلل تشويش الصور بالإضاءة المنخفضة';
+
+  @override
+  String get noiseReduction => 'تقليل التشويش';
+
+  @override
+  String get silentAudioTrimming => 'قص المقاطع الصوتية الصامتة';
+
+  @override
+  String get silentAudioDescription => 'يتجاوز المقاطع الصوتية الصامتة';
+
+  @override
+  String get silentTrim => 'قص الصمت';
+
+  @override
+  String get subjectFacePriority => 'إعطاء الأولوية للأشخاص والوجوه';
+
+  @override
+  String get facePriorityDescription => 'يحسن الجودة حول الوجوه';
+
+  @override
+  String get facePriority => 'أولوية الوجوه';
+
+  @override
+  String get hardwareAcceleration => 'تسريع الأجهزة';
+
+  @override
+  String get computeBackend => 'واجهة المعالجة';
+
+  @override
+  String get backendAuto => 'تلقائي (محرك عصبي / معالج رسومي)';
+
+  @override
+  String get backendVulkan => 'Vulkan / معالجة رسومية';
+
+  @override
+  String get backendCpu => 'معالجة متعددة الخيوط عبر المعالج';
+
+  @override
+  String cpuThreadAllocation(int count) {
+    return 'تخصيص خيوط المعالج: $count خيط';
+  }
+
+  @override
+  String cpuThreadLabel(int count) {
+    return '$count خيوط';
+  }
+
+  @override
+  String get memoryBudgetCap => 'حد الذاكرة المسموح';
+
+  @override
+  String get batterySaverMode => 'وضع توفير البطارية';
+
+  @override
+  String get batterySaverDescription => 'يقلل المعالجة لتوفير البطارية';
+
+  @override
+  String get benchmarking => 'جارٍ الاختبار…';
+
+  @override
+  String get benchmarkEngineNow => 'اختبر أداء المحرك الآن';
+
+  @override
+  String get benchmarkResult =>
+      'نتيجة الاختبار: ٤٬٨٢٠ رمزًا/ثانية • أداء الجهاز مثالي';
+
+  @override
+  String get interactionStyle => 'أسلوب التفاعل';
+
+  @override
+  String get streamTextOutput => 'عرض النص تدريجيًا';
+
+  @override
+  String get streamTextDescription => 'يعرض الرد أثناء إنشائه';
+
+  @override
+  String get showReasoningThinking => 'إظهار التفكير';
+
+  @override
+  String get showReasoningDescription => 'يعرض التفكير داخل فقاعات المحادثة';
+
+  @override
+  String get generationSampling => 'إعدادات توليد الرد';
+
+  @override
+  String creativityTemperature(String value) {
+    return 'الإبداع ودرجة الحرارة: $value';
+  }
+
+  @override
+  String get maxGenerationTokens => 'الحد الأقصى لرموز الرد';
+
+  @override
+  String tokensCount(int count) {
+    return '$count رمز';
+  }
+
+  @override
+  String get visualSampling => 'تحليل الصورة';
+
+  @override
+  String get analyzeVideoThumbnails => 'تحليل الصور المصغرة للفيديو';
+
+  @override
+  String get analyzeThumbnailsDescription => 'يحدد المشاهد والحركة والإضاءة';
+
+  @override
+  String get keyframeSamplingDensity => 'كثافة أخذ الإطارات';
+
+  @override
+  String framePerSecond(int count) {
+    return '$count إطار/ثانية';
+  }
+
+  @override
+  String framesPerSecond(int count) {
+    return '$count إطارات/ثانية';
+  }
+
+  @override
+  String get audioTranscription => 'تحويل الصوت إلى نص';
+
+  @override
+  String get speechToText => 'تحويل الكلام إلى نص';
+
+  @override
+  String get speechToTextDescription => 'ينشئ ترجمة نصية من الصوت';
+
+  @override
+  String get spokenLanguageAutoDetect => 'اكتشاف لغة الكلام تلقائيًا';
+
+  @override
+  String get spokenLanguageDescription => 'يكتشف لغة الكلام تلقائيًا';
+
+  @override
+  String get semanticIndexRebuilt =>
+      'أُعيد بناء فهرس البحث الدلالي (فُهرس ١٤٢ فيديو)';
+
+  @override
+  String get vectorDatabaseStatus => 'حالة قاعدة البيانات المتجهية';
+
+  @override
+  String videosIndexed(int count) {
+    return 'تمت فهرسة $count فيديو';
+  }
+
+  @override
+  String get embeddingStorage =>
+      'أبعاد التمثيل: ٣٨٤ • المساحة المستخدمة: ١٢٫٤ م.ب';
+
+  @override
+  String get rebuilding => 'جارٍ إعادة البناء…';
+
+  @override
+  String get rebuildIndex => 'إعادة بناء الفهرس';
+
+  @override
+  String get indexingPreferences => 'تفضيلات الفهرسة';
+
+  @override
+  String get enableSemanticSearch => 'تفعيل البحث الدلالي';
+
+  @override
+  String get semanticSearchDescription => 'يعثر على الفيديو بعبارات وصفية';
+
+  @override
+  String get indexOnlyWhenCharging => 'الفهرسة أثناء الشحن فقط';
+
+  @override
+  String get indexChargingDescription => 'يفهرس الفيديو أثناء الشحن فقط';
+
+  @override
+  String get assistantCapabilities => 'إمكانات المساعد';
+
+  @override
+  String get directVideoTrimming => 'قص الفيديو مباشرة';
+
+  @override
+  String get directTrimmingDescription => 'يقص الفيديو دون إعادة ترميز';
+
+  @override
+  String get videoTrimmer => 'قص الفيديو';
+
+  @override
+  String get audioTrackExtraction => 'استخراج المسار الصوتي';
+
+  @override
+  String get audioExtractionDescription => 'يصدر الصوت دون ترميز الفيديو';
+
+  @override
+  String get audioExtractor => 'استخراج الصوت';
+
+  @override
+  String get metadataScrubber => 'إزالة البيانات الوصفية';
+
+  @override
+  String get metadataScrubberDescription => 'يزيل البيانات الشخصية من الوسائط';
+
+  @override
+  String get metadataScrubberToast => 'إزالة البيانات الوصفية';
+
+  @override
+  String get safetyGuardrails => 'الأمان والضوابط';
+
+  @override
+  String get requireConfirmation => 'طلب تأكيد التغييرات';
+
+  @override
+  String get requireConfirmationDescription => 'يطلب التأكيد قبل تعديل الملفات';
+
+  @override
+  String get safetyConfirmation => 'تأكيد الأمان';
+
+  @override
+  String get sandboxedScratchpad => 'مساحة عمل مؤقتة معزولة';
+
+  @override
+  String get sandboxedScratchpadDescription => 'يعزل التعديلات المؤقتة';
+
+  @override
+  String get sandboxedScratchpadToast => 'مساحة العمل المعزولة';
+
+  @override
+  String get enabled => 'مفعّل';
+
+  @override
+  String get disabled => 'معطّل';
+
+  @override
+  String get supportedOnDeviceModels => 'النماذج المدعومة على الجهاز';
+
+  @override
+  String get zumiBitrateOptimizer => 'محسّن معدل البت من Zumi (0.2B)';
+
+  @override
+  String get localRateControlDescription =>
+      'نموذج محلي لضبط معدل البت واختيار جودة المشاهد.';
+
+  @override
+  String get mobileNetSceneClassifier => 'مصنّف المشاهد MobileNetV4';
+
+  @override
+  String get sceneClassifierDescription =>
+      'يكتشف الحركة السريعة وتغييرات الكاميرا لتحديد الإطارات المفتاحية.';
+
+  @override
+  String get whisperTinyTranscriber => 'محول الصوت إلى نص Whisper Tiny';
+
+  @override
+  String get whisperTranscriberDescription =>
+      'تحويل محلي سريع للكلام إلى نص لإنشاء ترجمة الفيديو.';
+
+  @override
+  String get llamaMobileAssistant => 'مساعد Llama 3.2 1B للأجهزة المحمولة';
+
+  @override
+  String get llamaAssistantDescription =>
+      'مساعد للمحادثة والإجابة عن أسئلة الفيديو واقتراح تعديلات.';
+
+  @override
+  String get active => 'نشط';
+
+  @override
+  String get setActive => 'تفعيل';
+
+  @override
+  String get installed => 'مثبّت';
+
+  @override
+  String downloadModel(String size) {
+    return 'تنزيل ($size)';
+  }
+
+  @override
+  String modelActivated(String name) {
+    return 'تم تفعيل $name';
+  }
+
+  @override
+  String modelDownloadQueued(String name) {
+    return 'تمت إضافة تنزيل $name إلى قائمة الانتظار';
+  }
+
+  @override
+  String get modelFileSelected => 'تم اختيار ملف النموذج';
+
+  @override
+  String get modelImportedVerified =>
+      'تم استيراد النموذج والتحقق من صلاحيته للتشغيل المحلي';
+
+  @override
+  String get noModelFileSelected => 'لم يتم اختيار ملف نموذج';
+
+  @override
+  String get compatibleModelFormats => 'الصيغ المتوافقة: .gguf و.onnx و.tflite';
+
+  @override
+  String get browseFiles => 'تصفح الملفات';
+
+  @override
+  String get importCompatibilityChecklist => 'قائمة التحقق من توافق الاستيراد';
+
+  @override
+  String get formatQuantizationChecklist =>
+      'الصيغة والكمّية (GGUF / ONNX / TFLite)';
+
+  @override
+  String get memoryCapVerification => 'التحقق من حد الذاكرة (أقل من 2GB RAM)';
+
+  @override
+  String get architectureCompatibility =>
+      'المعمارية (Llama / MobileNet / Whisper)';
+
+  @override
+  String get validatingModel => 'جارٍ التحقق…';
+
+  @override
+  String get validateImportModel => 'تحقق واستورد النموذج';
+
+  @override
+  String modelStorageUsage(String size, String ram) {
+    return '$size • $ram';
+  }
+
+  @override
+  String get bitrateRecommenderDetails =>
+      'يحلل الحركة والتفاصيل البصرية لاقتراح معدل البت المناسب لكل مشهد. ويساعد ذلك في الحفاظ على التفاصيل المهمة في الفيديو.';
+
+  @override
+  String get sceneKeyframeDetails =>
+      'يكتشف تغيّر المشاهد وانتقالات الكاميرا، ثم يحدد الإطارات المفتاحية في مواضع مناسبة. وهذا يجعل التنقل داخل الفيديو أكثر سلاسة.';
+
+  @override
+  String get noiseReductionDetails =>
+      'يقلل التشويش في اللقطات منخفضة الإضاءة قبل الضغط. وقد تبدو الصورة أوضح وينتج عنها ملف أصغر.';
+
+  @override
+  String get silentAudioDetails =>
+      'يكتشف الأجزاء الصامتة في المسار الصوتي ويقصها. وهذا يزيل بيانات صوتية لا تضيف صوتًا مفيدًا.';
+
+  @override
+  String get facePriorityDetails =>
+      'يكتشف الأشخاص والوجوه في الفيديو. ثم يحافظ الضغط على تفاصيل مرئية أكثر حولهم.';
+
+  @override
+  String get batterySaverDetails =>
+      'يقلل معالجة النماذج المكثفة عندما تكون البطارية منخفضة. وهذا يساعد على إطالة وقت استخدام الجهاز.';
+
+  @override
+  String get streamTextDetails =>
+      'يعرض رد المساعد أثناء إنشائه. وبذلك يمكنك البدء في القراءة قبل اكتمال الرد.';
+
+  @override
+  String get showReasoningDetails =>
+      'يعرض تفاصيل إضافية عن التفكير في ردود المحادثة عندما يدعمها النموذج. وقد يجعل ذلك الردود أطول وأكثر تفصيلًا.';
+
+  @override
+  String get analyzeThumbnailsDetails =>
+      'يحلل إطارات من الفيديو للتعرف على المشاهد والأنشطة والإضاءة. وهذا يمنح المساعد سياقًا مرئيًا عن الفيديو المحدد.';
+
+  @override
+  String get samplingDensityDetails =>
+      'اختر عدد الإطارات التي يتم تحليلها كل ثانية. المعدل الأعلى يلتقط تغييرات أكثر ويتطلب معالجة إضافية.';
+
+  @override
+  String get speechToTextDetails =>
+      'يعالج صوت الفيديو المحدد على الجهاز ويحوّل الكلام إلى نص. ويمكن استخدام النص الناتج للترجمة والبحث.';
+
+  @override
+  String get spokenLanguageDetails =>
+      'يتعرف على اللغة المستخدمة في الصوت. وتساعد اللغة المكتشفة على اختيار إعدادات مناسبة لتحويل الكلام إلى نص.';
+
+  @override
+  String get semanticSearchDetails =>
+      'ينشئ فهرس بحث يعتمد على المعنى ويُخزّن على الجهاز. يمكنك استخدام أوصاف مثل «شاطئ وقت الغروب» للعثور على فيديوهات مناسبة.';
+
+  @override
+  String get indexChargingDetails =>
+      'ينتظر توصيل الجهاز بالطاقة قبل إنشاء بيانات البحث. وهذا يقلل نشاط الفهرسة عند استخدام البطارية.';
+
+  @override
+  String get directTrimmingDetails =>
+      'يسمح للمساعد بقص مقاطع الفيديو دون إعادة ترميزها. وهذا أسرع ويحافظ على جودة الفيديو الأصلية.';
+
+  @override
+  String get audioExtractionDetails =>
+      'يسمح للمساعد بتصدير المسار الصوتي من الفيديو كملف مستقل. ولا تتم إعادة ترميز الفيديو نفسه.';
+
+  @override
+  String get metadataScrubberDetails =>
+      'يزيل البيانات الشخصية مثل معلومات EXIF وموقع GPS من الوسائط. وهذا يساعد على حماية المعلومات قبل مشاركة الملفات.';
+
+  @override
+  String get requireConfirmationDetails =>
+      'يطلب موافقتك قبل أن يغيّر المساعد الملفات. ويمكنك مراجعة الإجراءات التي تستبدل المحتوى أو تحفظه أو تحذفه.';
+
+  @override
+  String get sandboxedScratchpadDetails =>
+      'يحتفظ بالتعديلات الوسيطة في موقع مؤقت ومعزول. وتظل الملفات الأصلية دون تغيير أثناء تنفيذ العملية.';
 }
 
 /// The translations for Arabic, as used in Egypt (`ar_EG`).

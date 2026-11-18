@@ -1261,5 +1261,210 @@
   "copyTerms": "Copy Terms",
   "@copyTerms": {
     "description": "Button that copies the full terms text to the clipboard"
-  }
+  },
+  "compressionIntelligence": "Compression Intelligence",
+  "smartBitrateRecommender": "Smart Bitrate Recommender",
+  "bitrateRecommenderDescription": "Allocates bitrate by motion.",
+  "bitrateRecommender": "Bitrate recommender",
+  "sceneAwareKeyframePlacement": "Scene-Aware Keyframe Placement",
+  "sceneKeyframeDescription": "Places keyframes at scene changes.",
+  "sceneKeyframes": "Scene keyframes",
+  "cameraSensorDenoising": "Camera Sensor De-Noising",
+  "noiseReductionDescription": "Reduces low-light image noise.",
+  "noiseReduction": "Noise reduction",
+  "silentAudioTrimming": "Silent Audio Trimming",
+  "silentAudioDescription": "Skips silent audio sections.",
+  "silentTrim": "Silent trim",
+  "subjectFacePriority": "Subject & Face Priority",
+  "facePriorityDescription": "Improves quality around faces.",
+  "facePriority": "Face priority",
+  "hardwareAcceleration": "Hardware Acceleration",
+  "computeBackend": "Compute Backend",
+  "backendAuto": "Auto (Neural Engine / GPU)",
+  "backendVulkan": "Vulkan / GPU Compute",
+  "backendCpu": "CPU Multi-Threading",
+  "cpuThreadAllocation": "CPU Thread Allocation: {count} Threads",
+  "@cpuThreadAllocation": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cpuThreadLabel": "{count} Threads",
+  "@cpuThreadLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "memoryBudgetCap": "Memory Budget Cap",
+  "batterySaverMode": "Battery Saver Mode",
+  "batterySaverDescription": "Limits compute to save battery.",
+  "benchmarking": "Testing…",
+  "benchmarkEngineNow": "Benchmark Engine Now",
+  "benchmarkResult": "Benchmark score: 4,820 tokens/sec • Hardware optimal",
+  "interactionStyle": "Interaction Style",
+  "streamTextOutput": "Stream Text Output",
+  "streamTextDescription": "Shows the reply as generated.",
+  "showReasoningThinking": "Show Reasoning / Thinking",
+  "showReasoningDescription": "Displays reasoning inside chat bubbles.",
+  "generationSampling": "Generation Sampling",
+  "creativityTemperature": "Creativity & Temperature: {value}",
+  "@creativityTemperature": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "maxGenerationTokens": "Max Generation Tokens",
+  "tokensCount": "{count} Tokens",
+  "@tokensCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "visualSampling": "Visual Sampling",
+  "analyzeVideoThumbnails": "Analyze Video Thumbnails",
+  "analyzeThumbnailsDescription": "Finds scenes, actions, and lighting.",
+  "keyframeSamplingDensity": "Keyframe Sampling Density",
+  "framePerSecond": "{count} Frame/sec",
+  "@framePerSecond": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "framesPerSecond": "{count} Frames/sec",
+  "@framesPerSecond": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "audioTranscription": "Audio Transcription",
+  "speechToText": "Speech-to-Text Transcription",
+  "speechToTextDescription": "Creates subtitles from audio.",
+  "spokenLanguageAutoDetect": "Spoken Language Auto-Detect",
+  "spokenLanguageDescription": "Detects spoken language automatically.",
+  "semanticIndexRebuilt": "Semantic video search index rebuilt (142 videos indexed)",
+  "vectorDatabaseStatus": "Vector Database Status",
+  "videosIndexed": "{count} Videos Indexed",
+  "@videosIndexed": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "embeddingStorage": "Embedding dimension: 384-dim • Storage used: 12.4 MB",
+  "rebuilding": "Rebuilding…",
+  "rebuildIndex": "Rebuild Index",
+  "indexingPreferences": "Indexing Preferences",
+  "enableSemanticSearch": "Enable Semantic Search",
+  "semanticSearchDescription": "Finds videos using natural phrases.",
+  "indexOnlyWhenCharging": "Index Only When Charging",
+  "indexChargingDescription": "Indexes videos while charging only.",
+  "assistantCapabilities": "Assistant Capabilities",
+  "directVideoTrimming": "Direct Video Trimming",
+  "directTrimmingDescription": "Trims videos without re-encoding.",
+  "videoTrimmer": "Video trimmer",
+  "audioTrackExtraction": "Audio Track Extraction",
+  "audioExtractionDescription": "Exports audio without video encoding.",
+  "audioExtractor": "Audio extractor",
+  "metadataScrubber": "Metadata Scrubber",
+  "metadataScrubberDescription": "Removes personal media metadata.",
+  "metadataScrubberToast": "Metadata scrubber",
+  "safetyGuardrails": "Safety & Guardrails",
+  "requireConfirmation": "Require Confirmation For Changes",
+  "requireConfirmationDescription": "Confirms changes before file edits.",
+  "safetyConfirmation": "Safety confirmation",
+  "sandboxedScratchpad": "Sandboxed Temp Scratchpad",
+  "sandboxedScratchpadDescription": "Keeps temporary edits isolated.",
+  "sandboxedScratchpadToast": "Sandboxed scratchpad",
+  "enabled": "enabled",
+  "disabled": "disabled",
+  "supportedOnDeviceModels": "Supported On-Device Models",
+  "zumiBitrateOptimizer": "Zumi Bitrate Optimizer (0.2B)",
+  "localRateControlDescription": "Local neural rate-control model for optimal scene quantization.",
+  "mobileNetSceneClassifier": "MobileNetV4 Scene Classifier",
+  "sceneClassifierDescription": "Detects fast motion and camera cuts to place clean keyframes.",
+  "whisperTinyTranscriber": "Whisper Tiny Audio Transcriber",
+  "whisperTranscriberDescription": "High-speed local speech-to-text for automatic video subtitles.",
+  "llamaMobileAssistant": "Llama 3.2 1B Mobile Assistant",
+  "llamaAssistantDescription": "Conversational assistant for video questions and editing advice.",
+  "active": "Active",
+  "setActive": "Set Active",
+  "installed": "Installed",
+  "downloadModel": "Download ({size})",
+  "@downloadModel": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "modelActivated": "{name} activated",
+  "@modelActivated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "modelDownloadQueued": "Download queued for {name}",
+  "@modelDownloadQueued": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "modelFileSelected": "Model file selected",
+  "modelImportedVerified": "Model imported and verified for local inference",
+  "noModelFileSelected": "No Model File Selected",
+  "compatibleModelFormats": "Compatible formats: .gguf, .onnx, .tflite",
+  "browseFiles": "Browse Files",
+  "importCompatibilityChecklist": "Import Compatibility Checklist",
+  "formatQuantizationChecklist": "Format & Quantization (GGUF / ONNX / TFLite)",
+  "memoryCapVerification": "Memory Cap Verification (< 2GB Peak RAM)",
+  "architectureCompatibility": "Architecture (Llama / MobileNet / Whisper)",
+  "validatingModel": "Validating…",
+  "validateImportModel": "Validate & Import Model",
+  "modelStorageUsage": "{size} • {ram}",
+  "@modelStorageUsage": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      },
+      "ram": {
+        "type": "String"
+      }
+    }
+  },
+  "bitrateRecommenderDetails": "Analyzes movement and visual complexity to recommend the bitrate for each scene. This helps preserve detail where the video needs it.",
+  "sceneKeyframeDetails": "Detects scene changes and camera cuts, then places keyframes at useful points. This keeps seeking through the video smooth and responsive.",
+  "noiseReductionDetails": "Reduces grain in low-light footage before compression. Cleaner footage can look clearer and may produce a smaller output file.",
+  "silentAudioDetails": "Finds quiet sections in the audio track and trims them. This removes audio data that does not add useful sound.",
+  "facePriorityDetails": "Detects people and faces in the video. Compression then preserves more visual detail around those subjects.",
+  "batterySaverDetails": "Reduces intensive model processing when the battery is low. This helps extend device runtime during demanding tasks.",
+  "streamTextDetails": "Displays the assistant response as it is generated. You can begin reading before the complete response is ready.",
+  "showReasoningDetails": "Shows extra reasoning details in chat responses when the selected model provides them. It may make responses longer and more detailed.",
+  "analyzeThumbnailsDetails": "Samples video frames to recognize scenes, activities, and lighting. This gives the assistant visual context about the selected video.",
+  "samplingDensityDetails": "Choose how many frames are checked each second. Higher sampling can capture more scene changes and requires more processing.",
+  "speechToTextDetails": "Processes the selected video audio on this device and turns spoken words into text. The resulting text can support subtitles and search.",
+  "spokenLanguageDetails": "Identifies the language spoken in the audio. The detected language helps choose suitable transcription settings.",
+  "semanticSearchDetails": "Builds a meaning-based search index stored on this device. You can use descriptions such as “beach at sunset” to find matching videos.",
+  "indexChargingDetails": "Waits until the device is connected to power before generating search data. This reduces indexing activity while using battery power.",
+  "directTrimmingDetails": "Lets the assistant trim video clips without re-encoding the video. This is faster and preserves the original video quality.",
+  "audioExtractionDetails": "Lets the assistant export a video’s audio track as a separate audio file. The video itself is not re-encoded.",
+  "metadataScrubberDetails": "Removes personal metadata such as EXIF details and GPS location from media. This helps protect information before sharing files.",
+  "requireConfirmationDetails": "Asks for your approval before the assistant changes files. You can review actions that overwrite, save, or delete content.",
+  "sandboxedScratchpadDetails": "Keeps intermediate edits in a temporary isolated location. The original files remain untouched while the operation is in progress."
 }

@@ -79,26 +79,18 @@ final class _OnboardingPageState extends State<OnboardingPage> {
         shape: ExpressiveIconShape.heart,
         title: l10n.compressVideosPrivatelyOnYourDevice,
         subtitle: l10n.onDeviceProcessingLocalLogsAndOptionalCrashReports,
-        tagline:
-            l10n.zeroCloudUploadsYourVideosAndPersonalMemoriesNeverLeaveYourDeviceHardware,
-        chips: [
-          l10n.fullyOffline,
-          l10n.noTracking,
-          l10n.zeroCloudServers,
-        ],
+        tagline: l10n
+            .zeroCloudUploadsYourVideosAndPersonalMemoriesNeverLeaveYourDeviceHardware,
+        chips: [l10n.fullyOffline, l10n.noTracking, l10n.zeroCloudServers],
       ),
       _OnboardingSlide(
         icon: ZumiIcons.aiRuntime,
         shape: ExpressiveIconShape.burst,
         title: l10n.nativeRustEngineSpeed,
         subtitle: l10n.chooseResolutionBitrateAndOutputFormatBeforeYouStart,
-        tagline:
-            l10n.engineeredWithRustAndNativeGpuAccelerationForLightningFastCompressionAndLowBatteryDraw,
-        chips: [
-          l10n.h264AndHevc,
-          l10n.av1Support,
-          l10n.batchQueuing,
-        ],
+        tagline: l10n
+            .engineeredWithRustAndNativeGpuAccelerationForLightningFastCompressionAndLowBatteryDraw,
+        chips: [l10n.h264AndHevc, l10n.av1Support, l10n.batchQueuing],
       ),
     ];
 

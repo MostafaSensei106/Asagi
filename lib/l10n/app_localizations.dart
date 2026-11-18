@@ -2774,6 +2774,756 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Copy Terms'**
   String get copyTerms;
+
+  /// No description provided for @compressionIntelligence.
+  ///
+  /// In en, this message translates to:
+  /// **'Compression Intelligence'**
+  String get compressionIntelligence;
+
+  /// No description provided for @smartBitrateRecommender.
+  ///
+  /// In en, this message translates to:
+  /// **'Smart Bitrate Recommender'**
+  String get smartBitrateRecommender;
+
+  /// No description provided for @bitrateRecommenderDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Allocates bitrate by motion.'**
+  String get bitrateRecommenderDescription;
+
+  /// No description provided for @bitrateRecommender.
+  ///
+  /// In en, this message translates to:
+  /// **'Bitrate recommender'**
+  String get bitrateRecommender;
+
+  /// No description provided for @sceneAwareKeyframePlacement.
+  ///
+  /// In en, this message translates to:
+  /// **'Scene-Aware Keyframe Placement'**
+  String get sceneAwareKeyframePlacement;
+
+  /// No description provided for @sceneKeyframeDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Places keyframes at scene changes.'**
+  String get sceneKeyframeDescription;
+
+  /// No description provided for @sceneKeyframes.
+  ///
+  /// In en, this message translates to:
+  /// **'Scene keyframes'**
+  String get sceneKeyframes;
+
+  /// No description provided for @cameraSensorDenoising.
+  ///
+  /// In en, this message translates to:
+  /// **'Camera Sensor De-Noising'**
+  String get cameraSensorDenoising;
+
+  /// No description provided for @noiseReductionDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Reduces low-light image noise.'**
+  String get noiseReductionDescription;
+
+  /// No description provided for @noiseReduction.
+  ///
+  /// In en, this message translates to:
+  /// **'Noise reduction'**
+  String get noiseReduction;
+
+  /// No description provided for @silentAudioTrimming.
+  ///
+  /// In en, this message translates to:
+  /// **'Silent Audio Trimming'**
+  String get silentAudioTrimming;
+
+  /// No description provided for @silentAudioDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Skips silent audio sections.'**
+  String get silentAudioDescription;
+
+  /// No description provided for @silentTrim.
+  ///
+  /// In en, this message translates to:
+  /// **'Silent trim'**
+  String get silentTrim;
+
+  /// No description provided for @subjectFacePriority.
+  ///
+  /// In en, this message translates to:
+  /// **'Subject & Face Priority'**
+  String get subjectFacePriority;
+
+  /// No description provided for @facePriorityDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Improves quality around faces.'**
+  String get facePriorityDescription;
+
+  /// No description provided for @facePriority.
+  ///
+  /// In en, this message translates to:
+  /// **'Face priority'**
+  String get facePriority;
+
+  /// No description provided for @hardwareAcceleration.
+  ///
+  /// In en, this message translates to:
+  /// **'Hardware Acceleration'**
+  String get hardwareAcceleration;
+
+  /// No description provided for @computeBackend.
+  ///
+  /// In en, this message translates to:
+  /// **'Compute Backend'**
+  String get computeBackend;
+
+  /// No description provided for @backendAuto.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto (Neural Engine / GPU)'**
+  String get backendAuto;
+
+  /// No description provided for @backendVulkan.
+  ///
+  /// In en, this message translates to:
+  /// **'Vulkan / GPU Compute'**
+  String get backendVulkan;
+
+  /// No description provided for @backendCpu.
+  ///
+  /// In en, this message translates to:
+  /// **'CPU Multi-Threading'**
+  String get backendCpu;
+
+  /// No description provided for @cpuThreadAllocation.
+  ///
+  /// In en, this message translates to:
+  /// **'CPU Thread Allocation: {count} Threads'**
+  String cpuThreadAllocation(int count);
+
+  /// No description provided for @cpuThreadLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Threads'**
+  String cpuThreadLabel(int count);
+
+  /// No description provided for @memoryBudgetCap.
+  ///
+  /// In en, this message translates to:
+  /// **'Memory Budget Cap'**
+  String get memoryBudgetCap;
+
+  /// No description provided for @batterySaverMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Battery Saver Mode'**
+  String get batterySaverMode;
+
+  /// No description provided for @batterySaverDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Limits compute to save battery.'**
+  String get batterySaverDescription;
+
+  /// No description provided for @benchmarking.
+  ///
+  /// In en, this message translates to:
+  /// **'Testing…'**
+  String get benchmarking;
+
+  /// No description provided for @benchmarkEngineNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Benchmark Engine Now'**
+  String get benchmarkEngineNow;
+
+  /// No description provided for @benchmarkResult.
+  ///
+  /// In en, this message translates to:
+  /// **'Benchmark score: 4,820 tokens/sec • Hardware optimal'**
+  String get benchmarkResult;
+
+  /// No description provided for @interactionStyle.
+  ///
+  /// In en, this message translates to:
+  /// **'Interaction Style'**
+  String get interactionStyle;
+
+  /// No description provided for @streamTextOutput.
+  ///
+  /// In en, this message translates to:
+  /// **'Stream Text Output'**
+  String get streamTextOutput;
+
+  /// No description provided for @streamTextDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Shows the reply as generated.'**
+  String get streamTextDescription;
+
+  /// No description provided for @showReasoningThinking.
+  ///
+  /// In en, this message translates to:
+  /// **'Show Reasoning / Thinking'**
+  String get showReasoningThinking;
+
+  /// No description provided for @showReasoningDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Displays reasoning inside chat bubbles.'**
+  String get showReasoningDescription;
+
+  /// No description provided for @generationSampling.
+  ///
+  /// In en, this message translates to:
+  /// **'Generation Sampling'**
+  String get generationSampling;
+
+  /// No description provided for @creativityTemperature.
+  ///
+  /// In en, this message translates to:
+  /// **'Creativity & Temperature: {value}'**
+  String creativityTemperature(String value);
+
+  /// No description provided for @maxGenerationTokens.
+  ///
+  /// In en, this message translates to:
+  /// **'Max Generation Tokens'**
+  String get maxGenerationTokens;
+
+  /// No description provided for @tokensCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Tokens'**
+  String tokensCount(int count);
+
+  /// No description provided for @visualSampling.
+  ///
+  /// In en, this message translates to:
+  /// **'Visual Sampling'**
+  String get visualSampling;
+
+  /// No description provided for @analyzeVideoThumbnails.
+  ///
+  /// In en, this message translates to:
+  /// **'Analyze Video Thumbnails'**
+  String get analyzeVideoThumbnails;
+
+  /// No description provided for @analyzeThumbnailsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Finds scenes, actions, and lighting.'**
+  String get analyzeThumbnailsDescription;
+
+  /// No description provided for @keyframeSamplingDensity.
+  ///
+  /// In en, this message translates to:
+  /// **'Keyframe Sampling Density'**
+  String get keyframeSamplingDensity;
+
+  /// No description provided for @framePerSecond.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Frame/sec'**
+  String framePerSecond(int count);
+
+  /// No description provided for @framesPerSecond.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Frames/sec'**
+  String framesPerSecond(int count);
+
+  /// No description provided for @audioTranscription.
+  ///
+  /// In en, this message translates to:
+  /// **'Audio Transcription'**
+  String get audioTranscription;
+
+  /// No description provided for @speechToText.
+  ///
+  /// In en, this message translates to:
+  /// **'Speech-to-Text Transcription'**
+  String get speechToText;
+
+  /// No description provided for @speechToTextDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Creates subtitles from audio.'**
+  String get speechToTextDescription;
+
+  /// No description provided for @spokenLanguageAutoDetect.
+  ///
+  /// In en, this message translates to:
+  /// **'Spoken Language Auto-Detect'**
+  String get spokenLanguageAutoDetect;
+
+  /// No description provided for @spokenLanguageDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Detects spoken language automatically.'**
+  String get spokenLanguageDescription;
+
+  /// No description provided for @semanticIndexRebuilt.
+  ///
+  /// In en, this message translates to:
+  /// **'Semantic video search index rebuilt (142 videos indexed)'**
+  String get semanticIndexRebuilt;
+
+  /// No description provided for @vectorDatabaseStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Vector Database Status'**
+  String get vectorDatabaseStatus;
+
+  /// No description provided for @videosIndexed.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Videos Indexed'**
+  String videosIndexed(int count);
+
+  /// No description provided for @embeddingStorage.
+  ///
+  /// In en, this message translates to:
+  /// **'Embedding dimension: 384-dim • Storage used: 12.4 MB'**
+  String get embeddingStorage;
+
+  /// No description provided for @rebuilding.
+  ///
+  /// In en, this message translates to:
+  /// **'Rebuilding…'**
+  String get rebuilding;
+
+  /// No description provided for @rebuildIndex.
+  ///
+  /// In en, this message translates to:
+  /// **'Rebuild Index'**
+  String get rebuildIndex;
+
+  /// No description provided for @indexingPreferences.
+  ///
+  /// In en, this message translates to:
+  /// **'Indexing Preferences'**
+  String get indexingPreferences;
+
+  /// No description provided for @enableSemanticSearch.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable Semantic Search'**
+  String get enableSemanticSearch;
+
+  /// No description provided for @semanticSearchDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Finds videos using natural phrases.'**
+  String get semanticSearchDescription;
+
+  /// No description provided for @indexOnlyWhenCharging.
+  ///
+  /// In en, this message translates to:
+  /// **'Index Only When Charging'**
+  String get indexOnlyWhenCharging;
+
+  /// No description provided for @indexChargingDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Indexes videos while charging only.'**
+  String get indexChargingDescription;
+
+  /// No description provided for @assistantCapabilities.
+  ///
+  /// In en, this message translates to:
+  /// **'Assistant Capabilities'**
+  String get assistantCapabilities;
+
+  /// No description provided for @directVideoTrimming.
+  ///
+  /// In en, this message translates to:
+  /// **'Direct Video Trimming'**
+  String get directVideoTrimming;
+
+  /// No description provided for @directTrimmingDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Trims videos without re-encoding.'**
+  String get directTrimmingDescription;
+
+  /// No description provided for @videoTrimmer.
+  ///
+  /// In en, this message translates to:
+  /// **'Video trimmer'**
+  String get videoTrimmer;
+
+  /// No description provided for @audioTrackExtraction.
+  ///
+  /// In en, this message translates to:
+  /// **'Audio Track Extraction'**
+  String get audioTrackExtraction;
+
+  /// No description provided for @audioExtractionDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Exports audio without video encoding.'**
+  String get audioExtractionDescription;
+
+  /// No description provided for @audioExtractor.
+  ///
+  /// In en, this message translates to:
+  /// **'Audio extractor'**
+  String get audioExtractor;
+
+  /// No description provided for @metadataScrubber.
+  ///
+  /// In en, this message translates to:
+  /// **'Metadata Scrubber'**
+  String get metadataScrubber;
+
+  /// No description provided for @metadataScrubberDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Removes personal media metadata.'**
+  String get metadataScrubberDescription;
+
+  /// No description provided for @metadataScrubberToast.
+  ///
+  /// In en, this message translates to:
+  /// **'Metadata scrubber'**
+  String get metadataScrubberToast;
+
+  /// No description provided for @safetyGuardrails.
+  ///
+  /// In en, this message translates to:
+  /// **'Safety & Guardrails'**
+  String get safetyGuardrails;
+
+  /// No description provided for @requireConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Require Confirmation For Changes'**
+  String get requireConfirmation;
+
+  /// No description provided for @requireConfirmationDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirms changes before file edits.'**
+  String get requireConfirmationDescription;
+
+  /// No description provided for @safetyConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Safety confirmation'**
+  String get safetyConfirmation;
+
+  /// No description provided for @sandboxedScratchpad.
+  ///
+  /// In en, this message translates to:
+  /// **'Sandboxed Temp Scratchpad'**
+  String get sandboxedScratchpad;
+
+  /// No description provided for @sandboxedScratchpadDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Keeps temporary edits isolated.'**
+  String get sandboxedScratchpadDescription;
+
+  /// No description provided for @sandboxedScratchpadToast.
+  ///
+  /// In en, this message translates to:
+  /// **'Sandboxed scratchpad'**
+  String get sandboxedScratchpadToast;
+
+  /// No description provided for @enabled.
+  ///
+  /// In en, this message translates to:
+  /// **'enabled'**
+  String get enabled;
+
+  /// No description provided for @disabled.
+  ///
+  /// In en, this message translates to:
+  /// **'disabled'**
+  String get disabled;
+
+  /// No description provided for @supportedOnDeviceModels.
+  ///
+  /// In en, this message translates to:
+  /// **'Supported On-Device Models'**
+  String get supportedOnDeviceModels;
+
+  /// No description provided for @zumiBitrateOptimizer.
+  ///
+  /// In en, this message translates to:
+  /// **'Zumi Bitrate Optimizer (0.2B)'**
+  String get zumiBitrateOptimizer;
+
+  /// No description provided for @localRateControlDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Local neural rate-control model for optimal scene quantization.'**
+  String get localRateControlDescription;
+
+  /// No description provided for @mobileNetSceneClassifier.
+  ///
+  /// In en, this message translates to:
+  /// **'MobileNetV4 Scene Classifier'**
+  String get mobileNetSceneClassifier;
+
+  /// No description provided for @sceneClassifierDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Detects fast motion and camera cuts to place clean keyframes.'**
+  String get sceneClassifierDescription;
+
+  /// No description provided for @whisperTinyTranscriber.
+  ///
+  /// In en, this message translates to:
+  /// **'Whisper Tiny Audio Transcriber'**
+  String get whisperTinyTranscriber;
+
+  /// No description provided for @whisperTranscriberDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'High-speed local speech-to-text for automatic video subtitles.'**
+  String get whisperTranscriberDescription;
+
+  /// No description provided for @llamaMobileAssistant.
+  ///
+  /// In en, this message translates to:
+  /// **'Llama 3.2 1B Mobile Assistant'**
+  String get llamaMobileAssistant;
+
+  /// No description provided for @llamaAssistantDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Conversational assistant for video questions and editing advice.'**
+  String get llamaAssistantDescription;
+
+  /// No description provided for @active.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get active;
+
+  /// No description provided for @setActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Set Active'**
+  String get setActive;
+
+  /// No description provided for @installed.
+  ///
+  /// In en, this message translates to:
+  /// **'Installed'**
+  String get installed;
+
+  /// No description provided for @downloadModel.
+  ///
+  /// In en, this message translates to:
+  /// **'Download ({size})'**
+  String downloadModel(String size);
+
+  /// No description provided for @modelActivated.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} activated'**
+  String modelActivated(String name);
+
+  /// No description provided for @modelDownloadQueued.
+  ///
+  /// In en, this message translates to:
+  /// **'Download queued for {name}'**
+  String modelDownloadQueued(String name);
+
+  /// No description provided for @modelFileSelected.
+  ///
+  /// In en, this message translates to:
+  /// **'Model file selected'**
+  String get modelFileSelected;
+
+  /// No description provided for @modelImportedVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Model imported and verified for local inference'**
+  String get modelImportedVerified;
+
+  /// No description provided for @noModelFileSelected.
+  ///
+  /// In en, this message translates to:
+  /// **'No Model File Selected'**
+  String get noModelFileSelected;
+
+  /// No description provided for @compatibleModelFormats.
+  ///
+  /// In en, this message translates to:
+  /// **'Compatible formats: .gguf, .onnx, .tflite'**
+  String get compatibleModelFormats;
+
+  /// No description provided for @browseFiles.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse Files'**
+  String get browseFiles;
+
+  /// No description provided for @importCompatibilityChecklist.
+  ///
+  /// In en, this message translates to:
+  /// **'Import Compatibility Checklist'**
+  String get importCompatibilityChecklist;
+
+  /// No description provided for @formatQuantizationChecklist.
+  ///
+  /// In en, this message translates to:
+  /// **'Format & Quantization (GGUF / ONNX / TFLite)'**
+  String get formatQuantizationChecklist;
+
+  /// No description provided for @memoryCapVerification.
+  ///
+  /// In en, this message translates to:
+  /// **'Memory Cap Verification (< 2GB Peak RAM)'**
+  String get memoryCapVerification;
+
+  /// No description provided for @architectureCompatibility.
+  ///
+  /// In en, this message translates to:
+  /// **'Architecture (Llama / MobileNet / Whisper)'**
+  String get architectureCompatibility;
+
+  /// No description provided for @validatingModel.
+  ///
+  /// In en, this message translates to:
+  /// **'Validating…'**
+  String get validatingModel;
+
+  /// No description provided for @validateImportModel.
+  ///
+  /// In en, this message translates to:
+  /// **'Validate & Import Model'**
+  String get validateImportModel;
+
+  /// No description provided for @modelStorageUsage.
+  ///
+  /// In en, this message translates to:
+  /// **'{size} • {ram}'**
+  String modelStorageUsage(String size, String ram);
+
+  /// No description provided for @bitrateRecommenderDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Analyzes movement and visual complexity to recommend the bitrate for each scene. This helps preserve detail where the video needs it.'**
+  String get bitrateRecommenderDetails;
+
+  /// No description provided for @sceneKeyframeDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Detects scene changes and camera cuts, then places keyframes at useful points. This keeps seeking through the video smooth and responsive.'**
+  String get sceneKeyframeDetails;
+
+  /// No description provided for @noiseReductionDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Reduces grain in low-light footage before compression. Cleaner footage can look clearer and may produce a smaller output file.'**
+  String get noiseReductionDetails;
+
+  /// No description provided for @silentAudioDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Finds quiet sections in the audio track and trims them. This removes audio data that does not add useful sound.'**
+  String get silentAudioDetails;
+
+  /// No description provided for @facePriorityDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Detects people and faces in the video. Compression then preserves more visual detail around those subjects.'**
+  String get facePriorityDetails;
+
+  /// No description provided for @batterySaverDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Reduces intensive model processing when the battery is low. This helps extend device runtime during demanding tasks.'**
+  String get batterySaverDetails;
+
+  /// No description provided for @streamTextDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Displays the assistant response as it is generated. You can begin reading before the complete response is ready.'**
+  String get streamTextDetails;
+
+  /// No description provided for @showReasoningDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Shows extra reasoning details in chat responses when the selected model provides them. It may make responses longer and more detailed.'**
+  String get showReasoningDetails;
+
+  /// No description provided for @analyzeThumbnailsDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Samples video frames to recognize scenes, activities, and lighting. This gives the assistant visual context about the selected video.'**
+  String get analyzeThumbnailsDetails;
+
+  /// No description provided for @samplingDensityDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose how many frames are checked each second. Higher sampling can capture more scene changes and requires more processing.'**
+  String get samplingDensityDetails;
+
+  /// No description provided for @speechToTextDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Processes the selected video audio on this device and turns spoken words into text. The resulting text can support subtitles and search.'**
+  String get speechToTextDetails;
+
+  /// No description provided for @spokenLanguageDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Identifies the language spoken in the audio. The detected language helps choose suitable transcription settings.'**
+  String get spokenLanguageDetails;
+
+  /// No description provided for @semanticSearchDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Builds a meaning-based search index stored on this device. You can use descriptions such as “beach at sunset” to find matching videos.'**
+  String get semanticSearchDetails;
+
+  /// No description provided for @indexChargingDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Waits until the device is connected to power before generating search data. This reduces indexing activity while using battery power.'**
+  String get indexChargingDetails;
+
+  /// No description provided for @directTrimmingDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Lets the assistant trim video clips without re-encoding the video. This is faster and preserves the original video quality.'**
+  String get directTrimmingDetails;
+
+  /// No description provided for @audioExtractionDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Lets the assistant export a video’s audio track as a separate audio file. The video itself is not re-encoded.'**
+  String get audioExtractionDetails;
+
+  /// No description provided for @metadataScrubberDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Removes personal metadata such as EXIF details and GPS location from media. This helps protect information before sharing files.'**
+  String get metadataScrubberDetails;
+
+  /// No description provided for @requireConfirmationDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Asks for your approval before the assistant changes files. You can review actions that overwrite, save, or delete content.'**
+  String get requireConfirmationDetails;
+
+  /// No description provided for @sandboxedScratchpadDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Keeps intermediate edits in a temporary isolated location. The original files remain untouched while the operation is in progress.'**
+  String get sandboxedScratchpadDetails;
 }
 
 class _AppLocalizationsDelegate

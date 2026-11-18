@@ -35,6 +35,8 @@ export 'display/swipeable_action_tile/models/swipe_action.dart';
 export 'display/swipeable_action_tile/models/swipeable_action_tile_style.dart';
 export 'display/swipeable_action_tile/swipeable_action_tile.dart';
 export 'feedback/bottom_sheet/bottom_sheet_component.dart';
+export 'feedback/bottom_sheet/info_bottom_sheet_component.dart';
+export 'feedback/bottom_sheet/info_bottom_sheet_illustration.dart';
 export 'feedback/dialog/dialog_component.dart';
 export 'feedback/loading_indicator/loading_indicator_component.dart';
 export 'inputs/checkbox/checkbox_component.dart';

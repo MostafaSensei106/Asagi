@@ -21,32 +21,32 @@ final class DataSafetyPage extends StatelessWidget {
         icon: ZumiIcons.videoSelect,
         collected: false,
         shared: false,
-        details:
-            l10n.processedExclusivelyOnDeviceMediaFilesAreNeverTransmittedToExternalServersOrThirdPartyPlatforms,
+        details: l10n
+            .processedExclusivelyOnDeviceMediaFilesAreNeverTransmittedToExternalServersOrThirdPartyPlatforms,
       ),
       (
         category: l10n.financialInfoAndPayment,
         icon: ZumiIcons.purchaseMethods,
         collected: false,
         shared: false,
-        details:
-            l10n.allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreZumiNeverAccessesCardDetails,
+        details: l10n
+            .allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreZumiNeverAccessesCardDetails,
       ),
       (
         category: l10n.appPerformanceAndCrashLogs,
         icon: ZumiIcons.developer,
         collected: true,
         shared: false,
-        details:
-            l10n.optionalNonIdentifiableCrashLogsAndStackTracesUsedSolelyForDiagnosingBugsAndOptimizingStability,
+        details: l10n
+            .optionalNonIdentifiableCrashLogsAndStackTracesUsedSolelyForDiagnosingBugsAndOptimizingStability,
       ),
       (
         category: l10n.deviceOrOtherIdentifiers,
         icon: ZumiIcons.device,
         collected: false,
         shared: false,
-        details:
-            l10n.noAdvertisingIdsImeiNumbersMacAddressesOrPersistentHardwareIdentifiersAreGathered,
+        details: l10n
+            .noAdvertisingIdsImeiNumbersMacAddressesOrPersistentHardwareIdentifiersAreGathered,
       ),
     ];
 

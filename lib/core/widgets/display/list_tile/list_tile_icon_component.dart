@@ -16,6 +16,7 @@ final class ListTileIconComponent extends StatelessWidget {
     this.subtitle,
     this.trailing,
     this.onTap,
+    this.onLongPress,
     this.selected,
     this.shape = ExpressiveIconShape.blossom,
     this.showChevron = true,
@@ -29,6 +30,7 @@ final class ListTileIconComponent extends StatelessWidget {
     this.subtitle,
     this.trailing,
     this.onTap,
+    this.onLongPress,
     this.selected,
     this.shape = ExpressiveIconShape.blossom,
     this.showChevron = true,
@@ -42,6 +44,7 @@ final class ListTileIconComponent extends StatelessWidget {
     this.subtitle,
     this.trailing,
     this.onTap,
+    this.onLongPress,
     this.selected,
     this.shape = ExpressiveIconShape.blossom,
     this.showChevron = true,
@@ -55,6 +58,7 @@ final class ListTileIconComponent extends StatelessWidget {
     this.subtitle,
     this.trailing,
     this.onTap,
+    this.onLongPress,
     this.selected,
     this.shape = ExpressiveIconShape.blossom,
     this.showChevron = true,
@@ -68,6 +72,7 @@ final class ListTileIconComponent extends StatelessWidget {
     this.subtitle,
     this.trailing,
     this.onTap,
+    this.onLongPress,
     this.selected,
     this.shape = ExpressiveIconShape.blossom,
     this.showChevron = true,
@@ -80,6 +85,7 @@ final class ListTileIconComponent extends StatelessWidget {
   final String? subtitle;
   final Widget? trailing;
   final VoidCallback? onTap;
+  final VoidCallback? onLongPress;
   final bool? selected;
   final bool useinBorderRadius;
   final ListTileGroupType groupType;
@@ -93,7 +99,7 @@ final class ListTileIconComponent extends StatelessWidget {
       ListTileGroupType.bottom => ListTileComponent.bottom,
       ListTileGroupType.single => ListTileComponent.new,
     };
-    return tile(
+    final listTile = tile(
       title: Text(
         title,
         style: context.textTheme.labelMedium?.copyWith(
@@ -123,5 +129,9 @@ final class ListTileIconComponent extends StatelessWidget {
               onTap!();
             },
     );
+
+    if (onLongPress == null) return listTile;
+
+    return GestureDetector(onLongPress: onLongPress, child: listTile);
   }
 }

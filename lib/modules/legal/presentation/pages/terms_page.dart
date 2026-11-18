@@ -17,7 +17,9 @@ final class TermsPage extends StatelessWidget {
 
   void _copyTerms(BuildContext context) {
     final l10n = context.localeKeys;
-    unawaited(Clipboard.setData(ClipboardData(text: l10n.termsOfServiceFullText)));
+    unawaited(
+      Clipboard.setData(ClipboardData(text: l10n.termsOfServiceFullText)),
+    );
     context.toast.showSuccess(context, l10n.termsCopiedToClipboard);
   }
 

@@ -62,43 +62,49 @@ final class BottomSheetComponent extends StatelessWidget {
     // inset keeps every field (and the submit button) reachable while typing.
     final keyboardInset = MediaQuery.viewInsetsOf(context).bottom;
 
-    return AnimatedPadding(
-      duration: const Duration(milliseconds: 150),
-      curve: Curves.easeOut,
-      padding: EdgeInsets.only(bottom: keyboardInset),
-      child: Material(
-        color: theme.colorScheme.surface,
-        clipBehavior: Clip.antiAlias,
-        borderRadius: const BorderRadius.vertical(
-          top: Radius.circular(AppConfig.outBorderRadius),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(AppConfig.padding),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              if (showHandle)
-                Padding(
-                  padding: const EdgeInsets.only(bottom: AppConfig.paddingHalf),
-                  child: _DragHandle(color: theme.colorScheme.onSurfaceVariant),
-                ),
-              if (title != null) ...[
-                Text(
-                  title!,
-                  style: theme.textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w700,
+    return SafeArea(
+      child: AnimatedPadding(
+        duration: const Duration(milliseconds: 150),
+        curve: Curves.easeOut,
+        padding: EdgeInsets.only(bottom: keyboardInset),
+        child: Material(
+          color: theme.colorScheme.surface,
+          clipBehavior: Clip.antiAlias,
+          borderRadius: const BorderRadius.vertical(
+            top: Radius.circular(AppConfig.outBorderRadius),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(AppConfig.padding),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (showHandle)
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      bottom: AppConfig.paddingHalf,
+                    ),
+                    child: _DragHandle(
+                      color: theme.colorScheme.onSurfaceVariant,
+                    ),
+                  ),
+                if (title != null) ...[
+                  Text(
+                    title!,
+                    style: theme.textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  const SizedBox(height: AppConfig.paddingHalf),
+                ],
+                Flexible(
+                  child: SingleChildScrollView(
+                    keyboardDismissBehavior:
+                        ScrollViewKeyboardDismissBehavior.onDrag,
+                    child: child,
                   ),
                 ),
-                const SizedBox(height: AppConfig.paddingHalf),
               ],
-              Flexible(
-                child: SingleChildScrollView(
-                  keyboardDismissBehavior:
-                      ScrollViewKeyboardDismissBehavior.onDrag,
-                  child: child,
-                ),
-              ),
-            ],
+            ),
           ),
         ),
       ),

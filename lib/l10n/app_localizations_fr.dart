@@ -1575,4 +1575,438 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get copyTerms => 'Copy Terms';
+
+  @override
+  String get compressionIntelligence => 'Compression Intelligence';
+
+  @override
+  String get smartBitrateRecommender => 'Smart Bitrate Recommender';
+
+  @override
+  String get bitrateRecommenderDescription => 'Allocates bitrate by motion.';
+
+  @override
+  String get bitrateRecommender => 'Bitrate recommender';
+
+  @override
+  String get sceneAwareKeyframePlacement => 'Scene-Aware Keyframe Placement';
+
+  @override
+  String get sceneKeyframeDescription => 'Places keyframes at scene changes.';
+
+  @override
+  String get sceneKeyframes => 'Scene keyframes';
+
+  @override
+  String get cameraSensorDenoising => 'Camera Sensor De-Noising';
+
+  @override
+  String get noiseReductionDescription => 'Reduces low-light image noise.';
+
+  @override
+  String get noiseReduction => 'Noise reduction';
+
+  @override
+  String get silentAudioTrimming => 'Silent Audio Trimming';
+
+  @override
+  String get silentAudioDescription => 'Skips silent audio sections.';
+
+  @override
+  String get silentTrim => 'Silent trim';
+
+  @override
+  String get subjectFacePriority => 'Subject & Face Priority';
+
+  @override
+  String get facePriorityDescription => 'Improves quality around faces.';
+
+  @override
+  String get facePriority => 'Face priority';
+
+  @override
+  String get hardwareAcceleration => 'Hardware Acceleration';
+
+  @override
+  String get computeBackend => 'Compute Backend';
+
+  @override
+  String get backendAuto => 'Auto (Neural Engine / GPU)';
+
+  @override
+  String get backendVulkan => 'Vulkan / GPU Compute';
+
+  @override
+  String get backendCpu => 'CPU Multi-Threading';
+
+  @override
+  String cpuThreadAllocation(int count) {
+    return 'CPU Thread Allocation: $count Threads';
+  }
+
+  @override
+  String cpuThreadLabel(int count) {
+    return '$count Threads';
+  }
+
+  @override
+  String get memoryBudgetCap => 'Memory Budget Cap';
+
+  @override
+  String get batterySaverMode => 'Battery Saver Mode';
+
+  @override
+  String get batterySaverDescription => 'Limits compute to save battery.';
+
+  @override
+  String get benchmarking => 'Testing…';
+
+  @override
+  String get benchmarkEngineNow => 'Benchmark Engine Now';
+
+  @override
+  String get benchmarkResult =>
+      'Benchmark score: 4,820 tokens/sec • Hardware optimal';
+
+  @override
+  String get interactionStyle => 'Interaction Style';
+
+  @override
+  String get streamTextOutput => 'Stream Text Output';
+
+  @override
+  String get streamTextDescription => 'Shows the reply as generated.';
+
+  @override
+  String get showReasoningThinking => 'Show Reasoning / Thinking';
+
+  @override
+  String get showReasoningDescription =>
+      'Displays reasoning inside chat bubbles.';
+
+  @override
+  String get generationSampling => 'Generation Sampling';
+
+  @override
+  String creativityTemperature(String value) {
+    return 'Creativity & Temperature: $value';
+  }
+
+  @override
+  String get maxGenerationTokens => 'Max Generation Tokens';
+
+  @override
+  String tokensCount(int count) {
+    return '$count Tokens';
+  }
+
+  @override
+  String get visualSampling => 'Visual Sampling';
+
+  @override
+  String get analyzeVideoThumbnails => 'Analyze Video Thumbnails';
+
+  @override
+  String get analyzeThumbnailsDescription =>
+      'Finds scenes, actions, and lighting.';
+
+  @override
+  String get keyframeSamplingDensity => 'Keyframe Sampling Density';
+
+  @override
+  String framePerSecond(int count) {
+    return '$count Frame/sec';
+  }
+
+  @override
+  String framesPerSecond(int count) {
+    return '$count Frames/sec';
+  }
+
+  @override
+  String get audioTranscription => 'Audio Transcription';
+
+  @override
+  String get speechToText => 'Speech-to-Text Transcription';
+
+  @override
+  String get speechToTextDescription => 'Creates subtitles from audio.';
+
+  @override
+  String get spokenLanguageAutoDetect => 'Spoken Language Auto-Detect';
+
+  @override
+  String get spokenLanguageDescription =>
+      'Detects spoken language automatically.';
+
+  @override
+  String get semanticIndexRebuilt =>
+      'Semantic video search index rebuilt (142 videos indexed)';
+
+  @override
+  String get vectorDatabaseStatus => 'Vector Database Status';
+
+  @override
+  String videosIndexed(int count) {
+    return '$count Videos Indexed';
+  }
+
+  @override
+  String get embeddingStorage =>
+      'Embedding dimension: 384-dim • Storage used: 12.4 MB';
+
+  @override
+  String get rebuilding => 'Rebuilding…';
+
+  @override
+  String get rebuildIndex => 'Rebuild Index';
+
+  @override
+  String get indexingPreferences => 'Indexing Preferences';
+
+  @override
+  String get enableSemanticSearch => 'Enable Semantic Search';
+
+  @override
+  String get semanticSearchDescription => 'Finds videos using natural phrases.';
+
+  @override
+  String get indexOnlyWhenCharging => 'Index Only When Charging';
+
+  @override
+  String get indexChargingDescription => 'Indexes videos while charging only.';
+
+  @override
+  String get assistantCapabilities => 'Assistant Capabilities';
+
+  @override
+  String get directVideoTrimming => 'Direct Video Trimming';
+
+  @override
+  String get directTrimmingDescription => 'Trims videos without re-encoding.';
+
+  @override
+  String get videoTrimmer => 'Video trimmer';
+
+  @override
+  String get audioTrackExtraction => 'Audio Track Extraction';
+
+  @override
+  String get audioExtractionDescription =>
+      'Exports audio without video encoding.';
+
+  @override
+  String get audioExtractor => 'Audio extractor';
+
+  @override
+  String get metadataScrubber => 'Metadata Scrubber';
+
+  @override
+  String get metadataScrubberDescription => 'Removes personal media metadata.';
+
+  @override
+  String get metadataScrubberToast => 'Metadata scrubber';
+
+  @override
+  String get safetyGuardrails => 'Safety & Guardrails';
+
+  @override
+  String get requireConfirmation => 'Require Confirmation For Changes';
+
+  @override
+  String get requireConfirmationDescription =>
+      'Confirms changes before file edits.';
+
+  @override
+  String get safetyConfirmation => 'Safety confirmation';
+
+  @override
+  String get sandboxedScratchpad => 'Sandboxed Temp Scratchpad';
+
+  @override
+  String get sandboxedScratchpadDescription =>
+      'Keeps temporary edits isolated.';
+
+  @override
+  String get sandboxedScratchpadToast => 'Sandboxed scratchpad';
+
+  @override
+  String get enabled => 'enabled';
+
+  @override
+  String get disabled => 'disabled';
+
+  @override
+  String get supportedOnDeviceModels => 'Supported On-Device Models';
+
+  @override
+  String get zumiBitrateOptimizer => 'Zumi Bitrate Optimizer (0.2B)';
+
+  @override
+  String get localRateControlDescription =>
+      'Local neural rate-control model for optimal scene quantization.';
+
+  @override
+  String get mobileNetSceneClassifier => 'MobileNetV4 Scene Classifier';
+
+  @override
+  String get sceneClassifierDescription =>
+      'Detects fast motion and camera cuts to place clean keyframes.';
+
+  @override
+  String get whisperTinyTranscriber => 'Whisper Tiny Audio Transcriber';
+
+  @override
+  String get whisperTranscriberDescription =>
+      'High-speed local speech-to-text for automatic video subtitles.';
+
+  @override
+  String get llamaMobileAssistant => 'Llama 3.2 1B Mobile Assistant';
+
+  @override
+  String get llamaAssistantDescription =>
+      'Conversational assistant for video questions and editing advice.';
+
+  @override
+  String get active => 'Active';
+
+  @override
+  String get setActive => 'Set Active';
+
+  @override
+  String get installed => 'Installed';
+
+  @override
+  String downloadModel(String size) {
+    return 'Download ($size)';
+  }
+
+  @override
+  String modelActivated(String name) {
+    return '$name activated';
+  }
+
+  @override
+  String modelDownloadQueued(String name) {
+    return 'Download queued for $name';
+  }
+
+  @override
+  String get modelFileSelected => 'Model file selected';
+
+  @override
+  String get modelImportedVerified =>
+      'Model imported and verified for local inference';
+
+  @override
+  String get noModelFileSelected => 'No Model File Selected';
+
+  @override
+  String get compatibleModelFormats =>
+      'Compatible formats: .gguf, .onnx, .tflite';
+
+  @override
+  String get browseFiles => 'Browse Files';
+
+  @override
+  String get importCompatibilityChecklist => 'Import Compatibility Checklist';
+
+  @override
+  String get formatQuantizationChecklist =>
+      'Format & Quantization (GGUF / ONNX / TFLite)';
+
+  @override
+  String get memoryCapVerification =>
+      'Memory Cap Verification (< 2GB Peak RAM)';
+
+  @override
+  String get architectureCompatibility =>
+      'Architecture (Llama / MobileNet / Whisper)';
+
+  @override
+  String get validatingModel => 'Validating…';
+
+  @override
+  String get validateImportModel => 'Validate & Import Model';
+
+  @override
+  String modelStorageUsage(String size, String ram) {
+    return '$size • $ram';
+  }
+
+  @override
+  String get bitrateRecommenderDetails =>
+      'Analyzes movement and visual complexity to recommend the bitrate for each scene. This helps preserve detail where the video needs it.';
+
+  @override
+  String get sceneKeyframeDetails =>
+      'Detects scene changes and camera cuts, then places keyframes at useful points. This keeps seeking through the video smooth and responsive.';
+
+  @override
+  String get noiseReductionDetails =>
+      'Reduces grain in low-light footage before compression. Cleaner footage can look clearer and may produce a smaller output file.';
+
+  @override
+  String get silentAudioDetails =>
+      'Finds quiet sections in the audio track and trims them. This removes audio data that does not add useful sound.';
+
+  @override
+  String get facePriorityDetails =>
+      'Detects people and faces in the video. Compression then preserves more visual detail around those subjects.';
+
+  @override
+  String get batterySaverDetails =>
+      'Reduces intensive model processing when the battery is low. This helps extend device runtime during demanding tasks.';
+
+  @override
+  String get streamTextDetails =>
+      'Displays the assistant response as it is generated. You can begin reading before the complete response is ready.';
+
+  @override
+  String get showReasoningDetails =>
+      'Shows extra reasoning details in chat responses when the selected model provides them. It may make responses longer and more detailed.';
+
+  @override
+  String get analyzeThumbnailsDetails =>
+      'Samples video frames to recognize scenes, activities, and lighting. This gives the assistant visual context about the selected video.';
+
+  @override
+  String get samplingDensityDetails =>
+      'Choose how many frames are checked each second. Higher sampling can capture more scene changes and requires more processing.';
+
+  @override
+  String get speechToTextDetails =>
+      'Processes the selected video audio on this device and turns spoken words into text. The resulting text can support subtitles and search.';
+
+  @override
+  String get spokenLanguageDetails =>
+      'Identifies the language spoken in the audio. The detected language helps choose suitable transcription settings.';
+
+  @override
+  String get semanticSearchDetails =>
+      'Builds a meaning-based search index stored on this device. You can use descriptions such as “beach at sunset” to find matching videos.';
+
+  @override
+  String get indexChargingDetails =>
+      'Waits until the device is connected to power before generating search data. This reduces indexing activity while using battery power.';
+
+  @override
+  String get directTrimmingDetails =>
+      'Lets the assistant trim video clips without re-encoding the video. This is faster and preserves the original video quality.';
+
+  @override
+  String get audioExtractionDetails =>
+      'Lets the assistant export a video’s audio track as a separate audio file. The video itself is not re-encoded.';
+
+  @override
+  String get metadataScrubberDetails =>
+      'Removes personal metadata such as EXIF details and GPS location from media. This helps protect information before sharing files.';
+
+  @override
+  String get requireConfirmationDetails =>
+      'Asks for your approval before the assistant changes files. You can review actions that overwrite, save, or delete content.';
+
+  @override
+  String get sandboxedScratchpadDetails =>
+      'Keeps intermediate edits in a temporary isolated location. The original files remain untouched while the operation is in progress.';
 }

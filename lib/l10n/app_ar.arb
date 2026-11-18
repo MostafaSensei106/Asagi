@@ -1070,5 +1070,210 @@
   "copyTerms": "نسخ الشروط",
   "@copyTerms": {
     "description": "Button that copies the full terms text to the clipboard"
-  }
+  },
+  "compressionIntelligence": "ذكاء الضغط",
+  "smartBitrateRecommender": "اقتراح معدل البت الذكي",
+  "bitrateRecommenderDescription": "يوزّع معدل البت حسب الحركة",
+  "bitrateRecommender": "اقتراح معدل البت",
+  "sceneAwareKeyframePlacement": "تحديد الإطارات المفتاحية حسب المشهد",
+  "sceneKeyframeDescription": "يحدد الإطارات عند تغيّر المشهد",
+  "sceneKeyframes": "إطارات المشهد",
+  "cameraSensorDenoising": "تقليل تشويش مستشعر الكاميرا",
+  "noiseReductionDescription": "يقلل تشويش الصور بالإضاءة المنخفضة",
+  "noiseReduction": "تقليل التشويش",
+  "silentAudioTrimming": "قص المقاطع الصوتية الصامتة",
+  "silentAudioDescription": "يتجاوز المقاطع الصوتية الصامتة",
+  "silentTrim": "قص الصمت",
+  "subjectFacePriority": "إعطاء الأولوية للأشخاص والوجوه",
+  "facePriorityDescription": "يحسن الجودة حول الوجوه",
+  "facePriority": "أولوية الوجوه",
+  "hardwareAcceleration": "تسريع الأجهزة",
+  "computeBackend": "واجهة المعالجة",
+  "backendAuto": "تلقائي (محرك عصبي / معالج رسومي)",
+  "backendVulkan": "Vulkan / معالجة رسومية",
+  "backendCpu": "معالجة متعددة الخيوط عبر المعالج",
+  "cpuThreadAllocation": "تخصيص خيوط المعالج: {count} خيط",
+  "@cpuThreadAllocation": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cpuThreadLabel": "{count} خيوط",
+  "@cpuThreadLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "memoryBudgetCap": "حد الذاكرة المسموح",
+  "batterySaverMode": "وضع توفير البطارية",
+  "batterySaverDescription": "يقلل المعالجة لتوفير البطارية",
+  "benchmarking": "جارٍ الاختبار…",
+  "benchmarkEngineNow": "اختبر أداء المحرك الآن",
+  "benchmarkResult": "نتيجة الاختبار: ٤٬٨٢٠ رمزًا/ثانية • أداء الجهاز مثالي",
+  "interactionStyle": "أسلوب التفاعل",
+  "streamTextOutput": "عرض النص تدريجيًا",
+  "streamTextDescription": "يعرض الرد أثناء إنشائه",
+  "showReasoningThinking": "إظهار التفكير",
+  "showReasoningDescription": "يعرض التفكير داخل فقاعات المحادثة",
+  "generationSampling": "إعدادات توليد الرد",
+  "creativityTemperature": "الإبداع ودرجة الحرارة: {value}",
+  "@creativityTemperature": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "maxGenerationTokens": "الحد الأقصى لرموز الرد",
+  "tokensCount": "{count} رمز",
+  "@tokensCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "visualSampling": "تحليل الصورة",
+  "analyzeVideoThumbnails": "تحليل الصور المصغرة للفيديو",
+  "analyzeThumbnailsDescription": "يحدد المشاهد والحركة والإضاءة",
+  "keyframeSamplingDensity": "كثافة أخذ الإطارات",
+  "framePerSecond": "{count} إطار/ثانية",
+  "@framePerSecond": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "framesPerSecond": "{count} إطارات/ثانية",
+  "@framesPerSecond": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "audioTranscription": "تحويل الصوت إلى نص",
+  "speechToText": "تحويل الكلام إلى نص",
+  "speechToTextDescription": "ينشئ ترجمة نصية من الصوت",
+  "spokenLanguageAutoDetect": "اكتشاف لغة الكلام تلقائيًا",
+  "spokenLanguageDescription": "يكتشف لغة الكلام تلقائيًا",
+  "semanticIndexRebuilt": "أُعيد بناء فهرس البحث الدلالي (فُهرس ١٤٢ فيديو)",
+  "vectorDatabaseStatus": "حالة قاعدة البيانات المتجهية",
+  "videosIndexed": "تمت فهرسة {count} فيديو",
+  "@videosIndexed": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "embeddingStorage": "أبعاد التمثيل: ٣٨٤ • المساحة المستخدمة: ١٢٫٤ م.ب",
+  "rebuilding": "جارٍ إعادة البناء…",
+  "rebuildIndex": "إعادة بناء الفهرس",
+  "indexingPreferences": "تفضيلات الفهرسة",
+  "enableSemanticSearch": "تفعيل البحث الدلالي",
+  "semanticSearchDescription": "يعثر على الفيديو بعبارات وصفية",
+  "indexOnlyWhenCharging": "الفهرسة أثناء الشحن فقط",
+  "indexChargingDescription": "يفهرس الفيديو أثناء الشحن فقط",
+  "assistantCapabilities": "إمكانات المساعد",
+  "directVideoTrimming": "قص الفيديو مباشرة",
+  "directTrimmingDescription": "يقص الفيديو دون إعادة ترميز",
+  "videoTrimmer": "قص الفيديو",
+  "audioTrackExtraction": "استخراج المسار الصوتي",
+  "audioExtractionDescription": "يصدر الصوت دون ترميز الفيديو",
+  "audioExtractor": "استخراج الصوت",
+  "metadataScrubber": "إزالة البيانات الوصفية",
+  "metadataScrubberDescription": "يزيل البيانات الشخصية من الوسائط",
+  "metadataScrubberToast": "إزالة البيانات الوصفية",
+  "safetyGuardrails": "الأمان والضوابط",
+  "requireConfirmation": "طلب تأكيد التغييرات",
+  "requireConfirmationDescription": "يطلب التأكيد قبل تعديل الملفات",
+  "safetyConfirmation": "تأكيد الأمان",
+  "sandboxedScratchpad": "مساحة عمل مؤقتة معزولة",
+  "sandboxedScratchpadDescription": "يعزل التعديلات المؤقتة",
+  "sandboxedScratchpadToast": "مساحة العمل المعزولة",
+  "enabled": "مفعّل",
+  "disabled": "معطّل",
+  "supportedOnDeviceModels": "النماذج المدعومة على الجهاز",
+  "zumiBitrateOptimizer": "محسّن معدل البت من Zumi (0.2B)",
+  "localRateControlDescription": "نموذج محلي لضبط معدل البت واختيار جودة المشاهد.",
+  "mobileNetSceneClassifier": "مصنّف المشاهد MobileNetV4",
+  "sceneClassifierDescription": "يكتشف الحركة السريعة وتغييرات الكاميرا لتحديد الإطارات المفتاحية.",
+  "whisperTinyTranscriber": "محول الصوت إلى نص Whisper Tiny",
+  "whisperTranscriberDescription": "تحويل محلي سريع للكلام إلى نص لإنشاء ترجمة الفيديو.",
+  "llamaMobileAssistant": "مساعد Llama 3.2 1B للأجهزة المحمولة",
+  "llamaAssistantDescription": "مساعد للمحادثة والإجابة عن أسئلة الفيديو واقتراح تعديلات.",
+  "active": "نشط",
+  "setActive": "تفعيل",
+  "installed": "مثبّت",
+  "downloadModel": "تنزيل ({size})",
+  "@downloadModel": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "modelActivated": "تم تفعيل {name}",
+  "@modelActivated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "modelDownloadQueued": "تمت إضافة تنزيل {name} إلى قائمة الانتظار",
+  "@modelDownloadQueued": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "modelFileSelected": "تم اختيار ملف النموذج",
+  "modelImportedVerified": "تم استيراد النموذج والتحقق من صلاحيته للتشغيل المحلي",
+  "noModelFileSelected": "لم يتم اختيار ملف نموذج",
+  "compatibleModelFormats": "الصيغ المتوافقة: .gguf و.onnx و.tflite",
+  "browseFiles": "تصفح الملفات",
+  "importCompatibilityChecklist": "قائمة التحقق من توافق الاستيراد",
+  "formatQuantizationChecklist": "الصيغة والكمّية (GGUF / ONNX / TFLite)",
+  "memoryCapVerification": "التحقق من حد الذاكرة (أقل من 2GB RAM)",
+  "architectureCompatibility": "المعمارية (Llama / MobileNet / Whisper)",
+  "validatingModel": "جارٍ التحقق…",
+  "validateImportModel": "تحقق واستورد النموذج",
+  "modelStorageUsage": "{size} • {ram}",
+  "@modelStorageUsage": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      },
+      "ram": {
+        "type": "String"
+      }
+    }
+  },
+  "bitrateRecommenderDetails": "يحلل الحركة والتفاصيل البصرية لاقتراح معدل البت المناسب لكل مشهد. ويساعد ذلك في الحفاظ على التفاصيل المهمة في الفيديو.",
+  "sceneKeyframeDetails": "يكتشف تغيّر المشاهد وانتقالات الكاميرا، ثم يحدد الإطارات المفتاحية في مواضع مناسبة. وهذا يجعل التنقل داخل الفيديو أكثر سلاسة.",
+  "noiseReductionDetails": "يقلل التشويش في اللقطات منخفضة الإضاءة قبل الضغط. وقد تبدو الصورة أوضح وينتج عنها ملف أصغر.",
+  "silentAudioDetails": "يكتشف الأجزاء الصامتة في المسار الصوتي ويقصها. وهذا يزيل بيانات صوتية لا تضيف صوتًا مفيدًا.",
+  "facePriorityDetails": "يكتشف الأشخاص والوجوه في الفيديو. ثم يحافظ الضغط على تفاصيل مرئية أكثر حولهم.",
+  "batterySaverDetails": "يقلل معالجة النماذج المكثفة عندما تكون البطارية منخفضة. وهذا يساعد على إطالة وقت استخدام الجهاز.",
+  "streamTextDetails": "يعرض رد المساعد أثناء إنشائه. وبذلك يمكنك البدء في القراءة قبل اكتمال الرد.",
+  "showReasoningDetails": "يعرض تفاصيل إضافية عن التفكير في ردود المحادثة عندما يدعمها النموذج. وقد يجعل ذلك الردود أطول وأكثر تفصيلًا.",
+  "analyzeThumbnailsDetails": "يحلل إطارات من الفيديو للتعرف على المشاهد والأنشطة والإضاءة. وهذا يمنح المساعد سياقًا مرئيًا عن الفيديو المحدد.",
+  "samplingDensityDetails": "اختر عدد الإطارات التي يتم تحليلها كل ثانية. المعدل الأعلى يلتقط تغييرات أكثر ويتطلب معالجة إضافية.",
+  "speechToTextDetails": "يعالج صوت الفيديو المحدد على الجهاز ويحوّل الكلام إلى نص. ويمكن استخدام النص الناتج للترجمة والبحث.",
+  "spokenLanguageDetails": "يتعرف على اللغة المستخدمة في الصوت. وتساعد اللغة المكتشفة على اختيار إعدادات مناسبة لتحويل الكلام إلى نص.",
+  "semanticSearchDetails": "ينشئ فهرس بحث يعتمد على المعنى ويُخزّن على الجهاز. يمكنك استخدام أوصاف مثل «شاطئ وقت الغروب» للعثور على فيديوهات مناسبة.",
+  "indexChargingDetails": "ينتظر توصيل الجهاز بالطاقة قبل إنشاء بيانات البحث. وهذا يقلل نشاط الفهرسة عند استخدام البطارية.",
+  "directTrimmingDetails": "يسمح للمساعد بقص مقاطع الفيديو دون إعادة ترميزها. وهذا أسرع ويحافظ على جودة الفيديو الأصلية.",
+  "audioExtractionDetails": "يسمح للمساعد بتصدير المسار الصوتي من الفيديو كملف مستقل. ولا تتم إعادة ترميز الفيديو نفسه.",
+  "metadataScrubberDetails": "يزيل البيانات الشخصية مثل معلومات EXIF وموقع GPS من الوسائط. وهذا يساعد على حماية المعلومات قبل مشاركة الملفات.",
+  "requireConfirmationDetails": "يطلب موافقتك قبل أن يغيّر المساعد الملفات. ويمكنك مراجعة الإجراءات التي تستبدل المحتوى أو تحفظه أو تحذفه.",
+  "sandboxedScratchpadDetails": "يحتفظ بالتعديلات الوسيطة في موقع مؤقت ومعزول. وتظل الملفات الأصلية دون تغيير أثناء تنفيذ العملية."
 }
