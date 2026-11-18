@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/services.dart';
+import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/design_system/tokens/tokens.dart';
@@ -37,7 +38,7 @@ final class _OnboardingPageState extends State<OnboardingPage> {
     if (Navigator.of(context).canPop()) {
       Navigator.of(context).pop();
     } else {
-      unawaited(context.replace(const HomeTabRoute()));
+      unawaited(context.push(const HomeTabRoute()));
     }
   }
 
@@ -66,27 +67,27 @@ final class _OnboardingPageState extends State<OnboardingPage> {
         title: l10n.welcomeToZumi,
         subtitle:
             l10n.learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone,
-        tagline: l10n.compressTheBeforeAndAfterSizeThenSaveOrShareTheResult,
-        chips: const ['Lossless Visual Quality', 'Up to 90% Size Reduction', 'Instant Preview'],
+        tagline: l10n.compareTheBeforeAndAfterSizeThenSaveOrShareTheResult,
+        chips: const [
+          'Lossless Visual Quality',
+          'Up to 90% Size Reduction',
+          'Instant Preview',
+        ],
       ),
       _OnboardingSlide(
         icon: ZumiIcons.privacy,
         shape: ExpressiveIconShape.heart,
         title: l10n.compressVideosPrivatelyOnYourDevice,
-        subtitle:
-            l10n.onDeviceProcessingLocalLogsAndOptionalCrashReports,
-        tagline:
-            'Zero cloud uploads. Your videos and personal memories never leave your device hardware.',
+        subtitle: l10n.onDeviceProcessingLocalLogsAndOptionalCrashReports,
+        tagline: 'Zero cloud uploads. Your videos and personal memories never leave your device hardware.',
         chips: const ['100% Offline', 'No Tracking', 'Zero Cloud Servers'],
       ),
       _OnboardingSlide(
         icon: ZumiIcons.aiRuntime,
         shape: ExpressiveIconShape.burst,
         title: 'Native Rust Engine Speed',
-        subtitle:
-            l10n.chooseResolutionBitrateAndOutputFormatBeforeYouStart,
-        tagline:
-            'Engineered with Rust and native GPU acceleration for lightning-fast compression and low battery draw.',
+        subtitle: l10n.chooseResolutionBitrateAndOutputFormatBeforeYouStart,
+        tagline: 'Engineered with Rust and native GPU acceleration for lightning-fast compression and low battery draw.',
         chips: const ['H.264 & HEVC', 'AV1 Support', 'Batch Queuing'],
       ),
     ];
@@ -174,10 +175,7 @@ final class _OnboardingPageState extends State<OnboardingPage> {
                           alignment: WrapAlignment.center,
                           children: [
                             for (final chip in slide.chips)
-                              ChipComponent(
-                                label: chip,
-                                showBorder: false,
-                              ),
+                              ChipComponent(label: chip, showBorder: false),
                           ],
                         ),
                       ],

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/services.dart';
+import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/design_system/tokens/tokens.dart';
@@ -44,28 +45,23 @@ The Application is provided "as is" and "as available," without warranty of any 
     final sections = [
       (
         title: '1. Acceptance & License',
-        body:
-            'By using Zumi, you agree to these Terms. We grant you a personal, non-exclusive, non-transferable license to compress media locally on your devices.',
+        body: 'By using Zumi, you agree to these Terms. We grant you a personal, non-exclusive, non-transferable license to compress media locally on your devices.',
       ),
       (
         title: '2. 100% Content Ownership',
-        body:
-            'You retain all copyrights and ownership over your videos. Zumi does not transmit, store, or claim any rights to your media files.',
+        body: 'You retain all copyrights and ownership over your videos. Zumi does not transmit, store, or claim any rights to your media files.',
       ),
       (
         title: '3. Local On-Device Processing',
-        body:
-            'All compression pipelines run completely on your device hardware without external server dependencies or remote media processing.',
+        body: 'All compression pipelines run completely on your device hardware without external server dependencies or remote media processing.',
       ),
       (
         title: '4. Subscriptions & Billing',
-        body:
-            'Purchases and subscriptions are managed securely via official Google Play and Apple App Store billing. Cancellations can be performed anytime in your store account.',
+        body: 'Purchases and subscriptions are managed securely via official Google Play and Apple App Store billing. Cancellations can be performed anytime in your store account.',
       ),
       (
         title: '5. Disclaimers & Fair Use',
-        body:
-            'The software is provided "as is." You are responsible for ensuring you have proper rights to the video content you process.',
+        body: 'The software is provided "as is." You are responsible for ensuring you have proper rights to the video content you process.',
       ),
     ];
 
@@ -136,7 +132,8 @@ The Application is provided "as is" and "as available," without warranty of any 
                   child: FilledTonalButtonComponent.icon(
                     icon: ZumiIcons.support,
                     label: l10n.support,
-                    onPressed: () => unawaited(context.push(const SupportRoute())),
+                    onPressed: () =>
+                        unawaited(context.push(const SupportRoute())),
                   ),
                 ),
               ],

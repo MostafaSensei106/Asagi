@@ -48,7 +48,6 @@ export 'inputs/text_form_field/text_form_field_component.dart';
 export 'layout/gap.dart';
 export 'navigation/app_bar/app_bar_component.dart';
 export 'navigation/app_bar/side_page_app_bar_component.dart';
-export 'navigation/app_hero_page_scaffold.dart';
 export 'navigation/app_page_scaffold.dart';
 export 'navigation/bottom_nav_bar/bottom_nav_bar_component.dart';
 export 'navigation/sliver_tab_bar.dart';

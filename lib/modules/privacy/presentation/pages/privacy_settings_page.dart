@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/services.dart';
+import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/design_system/tokens/tokens.dart';
@@ -126,7 +127,11 @@ final class _PrivacySettingsPageState extends State<PrivacySettingsPage> {
               ),
             ),
             const Gap(AppSpacing.xLarge),
-            const ExpressiveSectionHeader(title: 'Diagnostics & Telemetry'),
+            const ExpressiveSectionHeader(
+              title: 'Diagnostics & Telemetry',
+              icon: ZumiIcons.developer,
+              shape: ExpressiveIconShape.gem,
+            ),
             const Gap(AppSpacing.small),
             ListTileGroup(
               children: [
@@ -165,7 +170,11 @@ final class _PrivacySettingsPageState extends State<PrivacySettingsPage> {
               ],
             ),
             const Gap(AppSpacing.xLarge),
-            const ExpressiveSectionHeader(title: 'Metadata & Temp Files'),
+            const ExpressiveSectionHeader(
+              title: 'Metadata & Temp Files',
+              icon: ZumiIcons.storage,
+              shape: ExpressiveIconShape.clover,
+            ),
             const Gap(AppSpacing.small),
             ListTileGroup(
               children: [
@@ -216,7 +225,11 @@ final class _PrivacySettingsPageState extends State<PrivacySettingsPage> {
               ],
             ),
             const Gap(AppSpacing.xLarge),
-            const ExpressiveSectionHeader(title: 'Privacy Documents & Policies'),
+            const ExpressiveSectionHeader(
+              title: 'Privacy Documents & Policies',
+              icon: ZumiIcons.privacyPolicy,
+              shape: ExpressiveIconShape.heart,
+            ),
             const Gap(AppSpacing.small),
             ListTileGroup(
               children: [
@@ -225,7 +238,8 @@ final class _PrivacySettingsPageState extends State<PrivacySettingsPage> {
                   title: l10n.privacyPolicy,
                   subtitle: l10n.howZumiHandlesYourVideosAndData,
                   leading: ZumiIcons.privacyPolicy,
-                  onTap: () => unawaited(context.push(const PrivacyPolicyRoute())),
+                  onTap: () =>
+                      unawaited(context.push(const PrivacyPolicyRoute())),
                 ),
                 ListTileIconComponent.middle(
                   shape: ExpressiveIconShape.diamond,
@@ -240,7 +254,8 @@ final class _PrivacySettingsPageState extends State<PrivacySettingsPage> {
                   subtitle:
                       l10n.runtimePermissionsZumiRequestsAndWhyEachIsNeeded,
                   leading: ZumiIcons.permissions,
-                  onTap: () => unawaited(context.push(const PermissionsRoute())),
+                  onTap: () =>
+                      unawaited(context.push(const PermissionsRoute())),
                 ),
               ],
             ),

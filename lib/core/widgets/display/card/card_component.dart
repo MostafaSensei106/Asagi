@@ -17,6 +17,33 @@ final class CardComponent extends StatelessWidget {
     this.borderRadius,
   });
 
+  const CardComponent.filled({
+    required this.child,
+    super.key,
+    this.padding,
+    this.color,
+    this.onTap,
+    this.borderRadius,
+  }) : variant = CardVariant.filled;
+
+  const CardComponent.outlined({
+    required this.child,
+    super.key,
+    this.padding,
+    this.color,
+    this.onTap,
+    this.borderRadius,
+  }) : variant = CardVariant.outlined;
+
+  const CardComponent.elevated({
+    required this.child,
+    super.key,
+    this.padding,
+    this.color,
+    this.onTap,
+    this.borderRadius,
+  }) : variant = CardVariant.elevated;
+
   final Widget child;
   final EdgeInsetsGeometry? padding;
   final Color? color;

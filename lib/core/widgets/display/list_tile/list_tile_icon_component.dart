@@ -21,6 +21,19 @@ final class ListTileIconComponent extends StatelessWidget {
     this.showChevron = true,
   }) : groupType = ListTileGroupType.single;
 
+  const ListTileIconComponent.single({
+    required this.title,
+    required this.leading,
+    this.useinBorderRadius = false,
+    super.key,
+    this.subtitle,
+    this.trailing,
+    this.onTap,
+    this.selected,
+    this.shape = ExpressiveIconShape.blossom,
+    this.showChevron = true,
+  }) : groupType = ListTileGroupType.single;
+
   const ListTileIconComponent.top({
     required this.title,
     required this.leading,

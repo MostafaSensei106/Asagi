@@ -22,6 +22,19 @@ final class ListTileComponent extends StatelessWidget {
     this.contentPadding,
   }) : groupType = ListTileGroupType.single;
 
+  const ListTileComponent.single({
+    required this.title,
+    this.useinBorderRadius = false,
+    this.leading,
+    super.key,
+    this.subtitle,
+    this.trailing,
+    this.onTap,
+    this.selected,
+    this.showChevron = true,
+    this.contentPadding,
+  }) : groupType = ListTileGroupType.single;
+
   const ListTileComponent.top({
     required this.title,
     this.useinBorderRadius = false,

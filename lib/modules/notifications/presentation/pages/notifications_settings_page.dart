@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/services.dart';
+import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/design_system/tokens/tokens.dart';
@@ -30,10 +31,7 @@ final class _NotificationsSettingsPageState
   void _onToggle(String key, bool value, void Function() apply) {
     unawaited(HapticFeedback.selectionClick());
     setState(apply);
-    context.toast.showInfo(
-      context,
-      value ? '$key enabled' : '$key disabled',
-    );
+    context.toast.showInfo(context, value ? '$key enabled' : '$key disabled');
   }
 
   @override
@@ -57,7 +55,7 @@ final class _NotificationsSettingsPageState
                   ExpressiveIcon(
                     icon: ZumiIcons.notifications,
                     shape: ExpressiveIconShape.burst,
-                    size: 52,
+                    size: 56,
                     backgroundColor: colorScheme.primaryContainer,
                     foregroundColor: colorScheme.onPrimaryContainer,
                   ),
@@ -86,7 +84,11 @@ final class _NotificationsSettingsPageState
               ),
             ),
             const Gap(AppSpacing.xLarge),
-            const ExpressiveSectionHeader(title: 'Compression Alerts'),
+            const ExpressiveSectionHeader(
+              title: 'Compression Alerts',
+              icon: ZumiIcons.compressionProgress,
+              shape: ExpressiveIconShape.sunny,
+            ),
             const Gap(AppSpacing.small),
             ListTileGroup(
               children: [
@@ -141,7 +143,11 @@ final class _NotificationsSettingsPageState
               ],
             ),
             const Gap(AppSpacing.xLarge),
-            const ExpressiveSectionHeader(title: 'Feedback & Haptics'),
+            const ExpressiveSectionHeader(
+              title: 'Feedback & Haptics',
+              icon: LucideIcons.vibrate,
+              shape: ExpressiveIconShape.softBurst,
+            ),
             const Gap(AppSpacing.small),
             ListTileGroup(
               children: [
@@ -180,7 +186,11 @@ final class _NotificationsSettingsPageState
               ],
             ),
             const Gap(AppSpacing.xLarge),
-            const ExpressiveSectionHeader(title: 'Product & Storage Insights'),
+            const ExpressiveSectionHeader(
+              title: 'Product & Storage Insights',
+              icon: ZumiIcons.storage,
+              shape: ExpressiveIconShape.cookie,
+            ),
             const Gap(AppSpacing.small),
             ListTileGroup(
               children: [
