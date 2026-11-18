@@ -18,6 +18,29 @@ class ThemeCubit extends HydratedCubitSignal<ThemeState> {
 
   final BaseThemeRepository _repo;
 
+  @override
+  ThemeState? fromJson(dynamic json) {
+    if (json is! Map<String, dynamic>) return null;
+
+    final themeModeName = json['themeMode'];
+    final themeMode = ThemeMode.values.firstWhere(
+      (mode) => mode.name == themeModeName,
+      orElse: () => ThemeMode.system,
+    );
+    final highContrast = json['highContrast'];
+
+    return ThemeState(
+      themeMode: themeMode,
+      highContrast: highContrast is bool ? highContrast : false,
+    );
+  }
+
+  @override
+  Map<String, dynamic> toJson(ThemeState state) => {
+    'themeMode': state.themeMode.name,
+    'highContrast': state.highContrast,
+  };
+
   Future<void> _init() async {
     final themeMode = await _repo.getThemeMode();
     final highContrast = await _repo.getHighContrast();
