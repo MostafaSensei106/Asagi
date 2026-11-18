@@ -15,6 +15,7 @@ import '../../modules/language/language.dart';
 import '../../modules/legal/legal.dart';
 import '../../modules/notifications/notifications.dart';
 import '../../modules/onboarding/onboarding.dart';
+import '../../modules/plans/logic/subscription_cubit.dart';
 import '../../modules/plans/plans.dart';
 import '../../modules/privacy/privacy.dart';
 import '../../modules/settings/settings.dart';
@@ -131,7 +132,10 @@ final class AppRouter {
         FeedbackRoute() => const FeedbackPage(),
 
         // Plans and purchases.
-        PlansRoute() => const PlansPage(),
+        PlansRoute() => BlocSignalProvider<SubscriptionCubit>(
+          create: (_) => getIt<SubscriptionCubit>(),
+          child: const PlansPage(),
+        ),
         PlanDetailsRoute() => const PlanDetailsPage(),
         PurchaseMethodsRoute() => const PurchaseMethodsPage(),
         RestorePurchasesRoute() => const RestorePurchasesPage(),

@@ -990,7 +990,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get proFeaturesDescription =>
-      'Unlock Discord Nitro, YouTube Shorts and Custom compression.';
+      'Use custom-size compression and exclusive Discord and YouTube Shorts presets.';
 
   @override
   String get pleaseWait => 'Bitte warten...';
@@ -1016,6 +1016,25 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get loyaltyCancellationWarning =>
       'Cancelling resets your accumulated loyalty discount to the base price. If you subscribe again, loyalty starts again at 2%.';
+
+  @override
+  String get premiumFeatureCustomSize => 'Custom-size compression';
+
+  @override
+  String get premiumFeatureDiscordPreset => 'Discord export preset';
+
+  @override
+  String get premiumFeatureYouTubeShortsPreset => 'YouTube Shorts preset';
+
+  @override
+  String get loyaltySavingsTitle => 'Loyalty savings';
+
+  @override
+  String get loyaltyProgressLabel => 'Progress toward your next discount';
+
+  @override
+  String get subscriptionSecureBilling =>
+      'Secure billing through your app store';
 
   @override
   String get purchaseCancelled => 'Purchase cancelled.';

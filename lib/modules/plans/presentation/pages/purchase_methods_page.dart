@@ -36,135 +36,133 @@ final class PurchaseMethodsPage extends StatelessWidget {
 
     return Scaffold(
       appBar: SidePageAppBarComponent(title: l10n.paymentMethods),
-      body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.symmetric(
-            horizontal: AppSpacing.large,
-            vertical: AppSpacing.small,
-          ),
-          children: [
-            ExpressiveSectionHeader(title: l10n.supportedPaymentOptions),
-            ListTileGroup(
-              children: [
-                ListTileIconComponent.top(
-                  shape: ExpressiveIconShape.gem,
+      body: ListView(
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.large,
+          vertical: AppSpacing.small,
+        ),
+        children: [
+          ExpressiveSectionHeader(title: l10n.supportedPaymentOptions),
+          ListTileGroup(
+            children: [
+              ListTileIconComponent.top(
+                shape: ExpressiveIconShape.gem,
+                title: l10n.storeBillingTitle,
+                subtitle: l10n.storeBillingSummary,
+                leading: ZumiIcons.purchaseMethods,
+                onTap: () => showPaymentInfo(
                   title: l10n.storeBillingTitle,
-                  subtitle: l10n.storeBillingSummary,
-                  leading: ZumiIcons.purchaseMethods,
-                  onTap: () => showPaymentInfo(
-                    title: l10n.storeBillingTitle,
-                    description: l10n.storeBillingDetails,
-                    icon: ZumiIcons.purchaseMethods,
-                    illustrationKind: InfoIllustrationKind.storeBilling,
-                  ),
-                  onLongPress: () => showPaymentInfo(
-                    title: l10n.storeBillingTitle,
-                    description: l10n.storeBillingDetails,
-                    icon: ZumiIcons.purchaseMethods,
-                    illustrationKind: InfoIllustrationKind.storeBilling,
-                  ),
+                  description: l10n.storeBillingDetails,
+                  icon: ZumiIcons.purchaseMethods,
+                  illustrationKind: InfoIllustrationKind.storeBilling,
                 ),
-                ListTileIconComponent.middle(
-                  shape: ExpressiveIconShape.pill,
-                  title: l10n.creditDebitCardsTitle,
-                  subtitle: l10n.creditDebitCardsSummary,
-                  leading: LucideIcons.creditCard,
-                  onTap: () => showPaymentInfo(
-                    title: l10n.creditDebitCardsTitle,
-                    description: l10n.creditDebitCardsDetails,
-                    icon: LucideIcons.creditCard,
-                    illustrationKind: InfoIllustrationKind.creditDebitCard,
-                  ),
-                  onLongPress: () => showPaymentInfo(
-                    title: l10n.creditDebitCardsTitle,
-                    description: l10n.creditDebitCardsDetails,
-                    icon: LucideIcons.creditCard,
-                    illustrationKind: InfoIllustrationKind.creditDebitCard,
-                  ),
-                ),
-                ListTileIconComponent.middle(
-                  shape: ExpressiveIconShape.sunny,
-                  title: l10n.storeBalanceGiftCardsTitle,
-                  subtitle: l10n.storeBalanceGiftCardsSummary,
-                  leading: LucideIcons.gift,
-                  showChevron: false,
-                  onTap: () => showPaymentInfo(
-                    title: l10n.storeBalanceGiftCardsTitle,
-                    description: l10n.storeBalanceGiftCardsDetails,
-                    icon: LucideIcons.gift,
-                    illustrationKind: InfoIllustrationKind.storeBalanceGiftCard,
-                  ),
-                  onLongPress: () => showPaymentInfo(
-                    title: l10n.storeBalanceGiftCardsTitle,
-                    description: l10n.storeBalanceGiftCardsDetails,
-                    icon: LucideIcons.gift,
-                    illustrationKind: InfoIllustrationKind.storeBalanceGiftCard,
-                  ),
-                ),
-                ListTileIconComponent.bottom(
-                  shape: ExpressiveIconShape.heart,
-                  title: l10n.digitalWalletsTitle,
-                  subtitle: l10n.digitalWalletsSummary,
-                  leading: LucideIcons.wallet,
-                  onTap: () => showPaymentInfo(
-                    title: l10n.digitalWalletsTitle,
-                    description: l10n.digitalWalletsDetails,
-                    icon: LucideIcons.wallet,
-                    illustrationKind: InfoIllustrationKind.digitalWallet,
-                  ),
-                  onLongPress: () => showPaymentInfo(
-                    title: l10n.digitalWalletsTitle,
-                    description: l10n.digitalWalletsDetails,
-                    icon: LucideIcons.wallet,
-                    illustrationKind: InfoIllustrationKind.digitalWallet,
-                  ),
-                ),
-              ],
-            ),
-            const Gap(AppSpacing.large),
-            ExpressiveSectionHeader(title: l10n.paymentProtectionTitle),
-            ListTileGroup(
-              children: [
-                ListTileIconComponent(
-                  shape: ExpressiveIconShape.clover,
-                  title: l10n.storeProtectedPurchases,
-                  subtitle: l10n.storeProtectedPurchasesSummary,
-                  leading: ZumiIcons.dataSafety,
-                  onTap: () => showPaymentInfo(
-                    title: l10n.storeProtectedPurchases,
-                    description: l10n.storeProtectedPurchasesDetails,
-                    icon: ZumiIcons.dataSafety,
-                    illustrationKind: InfoIllustrationKind.purchaseProtection,
-                  ),
-                  onLongPress: () => showPaymentInfo(
-                    title: l10n.storeProtectedPurchases,
-                    description: l10n.storeProtectedPurchasesDetails,
-                    icon: ZumiIcons.dataSafety,
-                    illustrationKind: InfoIllustrationKind.purchaseProtection,
-                  ),
-                ),
-              ],
-            ),
-            const Gap(AppSpacing.large),
-            FilledButtonComponent.icon(
-              expand: true,
-              icon: ZumiIcons.plans,
-              label: l10n.plans,
-              onPressed: () => unawaited(context.push(const PlansRoute())),
-            ),
-            const Gap(AppSpacing.small),
-            Center(
-              child: SizedBox(
-                width: double.infinity,
-                child: OutlinedButtonComponent(
-                  label: l10n.restorePurchases,
-                  onPressed: () =>
-                      unawaited(context.push(const RestorePurchasesRoute())),
+                onLongPress: () => showPaymentInfo(
+                  title: l10n.storeBillingTitle,
+                  description: l10n.storeBillingDetails,
+                  icon: ZumiIcons.purchaseMethods,
+                  illustrationKind: InfoIllustrationKind.storeBilling,
                 ),
               ),
+              ListTileIconComponent.middle(
+                shape: ExpressiveIconShape.pill,
+                title: l10n.creditDebitCardsTitle,
+                subtitle: l10n.creditDebitCardsSummary,
+                leading: LucideIcons.creditCard,
+                onTap: () => showPaymentInfo(
+                  title: l10n.creditDebitCardsTitle,
+                  description: l10n.creditDebitCardsDetails,
+                  icon: LucideIcons.creditCard,
+                  illustrationKind: InfoIllustrationKind.creditDebitCard,
+                ),
+                onLongPress: () => showPaymentInfo(
+                  title: l10n.creditDebitCardsTitle,
+                  description: l10n.creditDebitCardsDetails,
+                  icon: LucideIcons.creditCard,
+                  illustrationKind: InfoIllustrationKind.creditDebitCard,
+                ),
+              ),
+              ListTileIconComponent.middle(
+                shape: ExpressiveIconShape.sunny,
+                title: l10n.storeBalanceGiftCardsTitle,
+                subtitle: l10n.storeBalanceGiftCardsSummary,
+                leading: LucideIcons.gift,
+                showChevron: false,
+                onTap: () => showPaymentInfo(
+                  title: l10n.storeBalanceGiftCardsTitle,
+                  description: l10n.storeBalanceGiftCardsDetails,
+                  icon: LucideIcons.gift,
+                  illustrationKind: InfoIllustrationKind.storeBalanceGiftCard,
+                ),
+                onLongPress: () => showPaymentInfo(
+                  title: l10n.storeBalanceGiftCardsTitle,
+                  description: l10n.storeBalanceGiftCardsDetails,
+                  icon: LucideIcons.gift,
+                  illustrationKind: InfoIllustrationKind.storeBalanceGiftCard,
+                ),
+              ),
+              ListTileIconComponent.bottom(
+                shape: ExpressiveIconShape.heart,
+                title: l10n.digitalWalletsTitle,
+                subtitle: l10n.digitalWalletsSummary,
+                leading: LucideIcons.wallet,
+                onTap: () => showPaymentInfo(
+                  title: l10n.digitalWalletsTitle,
+                  description: l10n.digitalWalletsDetails,
+                  icon: LucideIcons.wallet,
+                  illustrationKind: InfoIllustrationKind.digitalWallet,
+                ),
+                onLongPress: () => showPaymentInfo(
+                  title: l10n.digitalWalletsTitle,
+                  description: l10n.digitalWalletsDetails,
+                  icon: LucideIcons.wallet,
+                  illustrationKind: InfoIllustrationKind.digitalWallet,
+                ),
+              ),
+            ],
+          ),
+          const Gap(AppSpacing.large),
+          ExpressiveSectionHeader(title: l10n.paymentProtectionTitle),
+          ListTileGroup(
+            children: [
+              ListTileIconComponent(
+                shape: ExpressiveIconShape.clover,
+                title: l10n.storeProtectedPurchases,
+                subtitle: l10n.storeProtectedPurchasesSummary,
+                leading: ZumiIcons.dataSafety,
+                onTap: () => showPaymentInfo(
+                  title: l10n.storeProtectedPurchases,
+                  description: l10n.storeProtectedPurchasesDetails,
+                  icon: ZumiIcons.dataSafety,
+                  illustrationKind: InfoIllustrationKind.purchaseProtection,
+                ),
+                onLongPress: () => showPaymentInfo(
+                  title: l10n.storeProtectedPurchases,
+                  description: l10n.storeProtectedPurchasesDetails,
+                  icon: ZumiIcons.dataSafety,
+                  illustrationKind: InfoIllustrationKind.purchaseProtection,
+                ),
+              ),
+            ],
+          ),
+          const Gap(AppSpacing.large),
+          FilledButtonComponent.icon(
+            expand: true,
+            icon: ZumiIcons.plans,
+            label: l10n.plans,
+            onPressed: () => unawaited(context.push(const PlansRoute())),
+          ),
+          const Gap(AppSpacing.small),
+          Center(
+            child: SizedBox(
+              width: double.infinity,
+              child: OutlinedButtonComponent(
+                label: l10n.restorePurchases,
+                onPressed: () =>
+                    unawaited(context.push(const RestorePurchasesRoute())),
+              ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

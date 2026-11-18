@@ -978,7 +978,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get proFeaturesDescription =>
-      'افتح ضغط Discord Nitro وYouTube Shorts والوضع المخصص.';
+      'استخدم ضغطًا بحجم مخصص وإعدادَي Discord وYouTube Shorts الحصريين.';
 
   @override
   String get pleaseWait => 'جارٍ المعالجة…';
@@ -1004,6 +1004,24 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get loyaltyCancellationWarning =>
       'إلغاء الاشتراك يعيد السعر الأساسي ويفقدك الخصم المتراكم. عند الاشتراك مجدداً يبدأ الخصم من 2%.';
+
+  @override
+  String get premiumFeatureCustomSize => 'الضغط بحجم مخصص';
+
+  @override
+  String get premiumFeatureDiscordPreset => 'إعداد مشاركة Discord';
+
+  @override
+  String get premiumFeatureYouTubeShortsPreset => 'إعداد YouTube Shorts';
+
+  @override
+  String get loyaltySavingsTitle => 'توفير الولاء';
+
+  @override
+  String get loyaltyProgressLabel => 'التقدم نحو الخصم التالي';
+
+  @override
+  String get subscriptionSecureBilling => 'فوترة آمنة عبر متجر التطبيقات';
 
   @override
   String get purchaseCancelled => 'تم إلغاء الشراء.';

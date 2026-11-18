@@ -1906,7 +1906,7 @@ abstract class AppLocalizations {
   /// No description provided for @proFeaturesDescription.
   ///
   /// In en, this message translates to:
-  /// **'Unlock Discord Nitro, YouTube Shorts and Custom compression.'**
+  /// **'Use custom-size compression and exclusive Discord and YouTube Shorts presets.'**
   String get proFeaturesDescription;
 
   /// Please wait dialog text
@@ -1944,6 +1944,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cancelling resets your accumulated loyalty discount to the base price. If you subscribe again, loyalty starts again at 2%.'**
   String get loyaltyCancellationWarning;
+
+  /// No description provided for @premiumFeatureCustomSize.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom-size compression'**
+  String get premiumFeatureCustomSize;
+
+  /// No description provided for @premiumFeatureDiscordPreset.
+  ///
+  /// In en, this message translates to:
+  /// **'Discord export preset'**
+  String get premiumFeatureDiscordPreset;
+
+  /// No description provided for @premiumFeatureYouTubeShortsPreset.
+  ///
+  /// In en, this message translates to:
+  /// **'YouTube Shorts preset'**
+  String get premiumFeatureYouTubeShortsPreset;
+
+  /// No description provided for @loyaltySavingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Loyalty savings'**
+  String get loyaltySavingsTitle;
+
+  /// No description provided for @loyaltyProgressLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Progress toward your next discount'**
+  String get loyaltyProgressLabel;
+
+  /// No description provided for @subscriptionSecureBilling.
+  ///
+  /// In en, this message translates to:
+  /// **'Secure billing through your app store'**
+  String get subscriptionSecureBilling;
 
   /// No description provided for @purchaseCancelled.
   ///
