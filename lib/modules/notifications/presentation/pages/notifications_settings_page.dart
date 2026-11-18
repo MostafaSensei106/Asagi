@@ -60,7 +60,8 @@ final class _NotificationsSettingsPageState
                   title: l10n.jobCompletedNotification,
                   description: l10n.jobCompletedDetails,
                   icon: LucideIcons.check,
-                  illustrationKind: InfoIllustrationKind.fileAction,
+                  illustrationKind:
+                      InfoIllustrationKind.notificationJobCompletion,
                 ),
                 onTap: () => _onToggle(
                   l10n.jobCompletedToast,
@@ -85,7 +86,8 @@ final class _NotificationsSettingsPageState
                   title: l10n.backgroundStatusNotification,
                   description: l10n.backgroundStatusDetails,
                   icon: LucideIcons.activity,
-                  illustrationKind: InfoIllustrationKind.performance,
+                  illustrationKind:
+                      InfoIllustrationKind.notificationBackgroundStatus,
                 ),
                 onTap: () => _onToggle(
                   l10n.backgroundStatusToast,
@@ -110,7 +112,8 @@ final class _NotificationsSettingsPageState
                   title: l10n.interruptionErrorNotification,
                   description: l10n.interruptionErrorDetails,
                   icon: LucideIcons.bell,
-                  illustrationKind: InfoIllustrationKind.performance,
+                  illustrationKind:
+                      InfoIllustrationKind.notificationInterruptionAlert,
                 ),
                 onTap: () => _onToggle(
                   l10n.interruptionErrorToast,
@@ -141,7 +144,8 @@ final class _NotificationsSettingsPageState
                   title: l10n.completionSoundNotification,
                   description: l10n.completionSoundDetails,
                   icon: LucideIcons.audioLines,
-                  illustrationKind: InfoIllustrationKind.audio,
+                  illustrationKind:
+                      InfoIllustrationKind.notificationCompletionSound,
                 ),
                 onTap: () => _onToggle(
                   l10n.completionSoundToast,
@@ -166,7 +170,8 @@ final class _NotificationsSettingsPageState
                   title: l10n.hapticFeedbackNotification,
                   description: l10n.hapticFeedbackDetails,
                   icon: LucideIcons.vibrate,
-                  illustrationKind: InfoIllustrationKind.performance,
+                  illustrationKind:
+                      InfoIllustrationKind.notificationHapticFeedback,
                 ),
                 onTap: () => _onToggle(
                   l10n.hapticFeedbackToast,
@@ -197,6 +202,8 @@ final class _NotificationsSettingsPageState
                 onLongPress: () => context.showInfoBottomSheet(
                   title: l10n.productUpdatesNotification,
                   description: l10n.productUpdatesDetails,
+                  illustrationKind:
+                      InfoIllustrationKind.notificationProductUpdate,
                   icon: LucideIcons.sparkles,
                 ),
                 onTap: () => _onToggle(
@@ -222,7 +229,8 @@ final class _NotificationsSettingsPageState
                   title: l10n.savingsDigestNotification,
                   description: l10n.savingsDigestDetails,
                   icon: ZumiIcons.storage,
-                  illustrationKind: InfoIllustrationKind.search,
+                  illustrationKind:
+                      InfoIllustrationKind.notificationStorageSavings,
                 ),
                 onTap: () => _onToggle(
                   l10n.savingsDigestToast,

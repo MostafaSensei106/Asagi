@@ -14,6 +14,13 @@ enum InfoIllustrationKind {
   search,
   privacy,
   fileAction,
+  notificationJobCompletion,
+  notificationBackgroundStatus,
+  notificationInterruptionAlert,
+  notificationCompletionSound,
+  notificationHapticFeedback,
+  notificationProductUpdate,
+  notificationStorageSavings,
   general,
 }
 
@@ -105,6 +112,26 @@ final class _IllustrationScene extends StatelessWidget {
         accent: accent,
         secondary: secondary,
       ),
+      InfoIllustrationKind.notificationJobCompletion =>
+        _NotificationJobCompletionScene(accent: accent, secondary: secondary),
+      InfoIllustrationKind.notificationBackgroundStatus =>
+        _NotificationBackgroundStatusScene(
+          accent: accent,
+          secondary: secondary,
+        ),
+      InfoIllustrationKind.notificationInterruptionAlert =>
+        _NotificationInterruptionAlertScene(
+          accent: accent,
+          secondary: secondary,
+        ),
+      InfoIllustrationKind.notificationCompletionSound =>
+        _NotificationCompletionSoundScene(accent: accent, secondary: secondary),
+      InfoIllustrationKind.notificationHapticFeedback =>
+        _NotificationHapticFeedbackScene(accent: accent, secondary: secondary),
+      InfoIllustrationKind.notificationProductUpdate =>
+        _NotificationProductUpdateScene(accent: accent, secondary: secondary),
+      InfoIllustrationKind.notificationStorageSavings =>
+        _NotificationStorageSavingsScene(accent: accent, secondary: secondary),
       InfoIllustrationKind.general => _GeneralScene(
         accent: accent,
         secondary: secondary,
@@ -571,6 +598,401 @@ final class _FileCard extends StatelessWidget {
         const SizedBox(height: 8),
         _TextLine(color: accent, width: 34),
       ],
+    ),
+  );
+}
+
+final class _NotificationJobCompletionScene extends StatelessWidget {
+  const _NotificationJobCompletionScene({
+    required this.accent,
+    required this.secondary,
+  });
+
+  final Color accent;
+  final Color secondary;
+
+  @override
+  Widget build(BuildContext context) => Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      _FeatureCard(
+        width: 154,
+        color: secondary.withValues(alpha: 0.18),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              children: [
+                Icon(LucideIcons.fileVideo, color: secondary, size: 21),
+                const SizedBox(width: 9),
+                Expanded(child: _TextLine(color: secondary, width: 70)),
+              ],
+            ),
+            const SizedBox(height: 14),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: LinearProgressIndicator(
+                value: 1,
+                minHeight: 8,
+                color: accent,
+                backgroundColor: accent.withValues(alpha: 0.2),
+              ),
+            ),
+          ],
+        ),
+      ),
+      const SizedBox(width: 14),
+      ExpressiveIcon(
+            icon: LucideIcons.check,
+            shape: ExpressiveIconShape.clover,
+            size: 56,
+            backgroundColor: accent.withValues(alpha: 0.18),
+            foregroundColor: accent,
+          )
+          .animate(delay: 150.ms)
+          .fadeIn()
+          .scale(begin: const Offset(0.7, 0.7), curve: Curves.easeOutBack),
+    ],
+  );
+}
+
+final class _NotificationBackgroundStatusScene extends StatelessWidget {
+  const _NotificationBackgroundStatusScene({
+    required this.accent,
+    required this.secondary,
+  });
+
+  final Color accent;
+  final Color secondary;
+
+  @override
+  Widget build(BuildContext context) => Container(
+    width: 226,
+    padding: const EdgeInsets.all(16),
+    decoration: BoxDecoration(
+      color: secondary.withValues(alpha: 0.16),
+      borderRadius: BorderRadius.circular(22),
+    ),
+    child: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Row(
+          children: [
+            ExpressiveIcon(
+              icon: LucideIcons.activity,
+              shape: ExpressiveIconShape.pill,
+              size: 38,
+              backgroundColor: accent.withValues(alpha: 0.17),
+              foregroundColor: accent,
+            ),
+            const SizedBox(width: 12),
+            Expanded(child: _TextLine(color: secondary, width: 110)),
+            Icon(LucideIcons.moreHorizontal, color: secondary, size: 18),
+          ],
+        ),
+        const SizedBox(height: 16),
+        Row(
+              children: [
+                Icon(LucideIcons.fileVideo, color: accent, size: 17),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: LinearProgressIndicator(
+                      value: 0.64,
+                      minHeight: 7,
+                      color: accent,
+                      backgroundColor: accent.withValues(alpha: 0.17),
+                    ),
+                  ),
+                ),
+              ],
+            )
+            .animate(onPlay: (controller) => controller.repeat(reverse: true))
+            .fade(begin: 0.65, end: 1, duration: 900.ms),
+      ],
+    ),
+  );
+}
+
+final class _NotificationInterruptionAlertScene extends StatelessWidget {
+  const _NotificationInterruptionAlertScene({
+    required this.accent,
+    required this.secondary,
+  });
+
+  final Color accent;
+  final Color secondary;
+
+  @override
+  Widget build(BuildContext context) => Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          _CauseCard(icon: LucideIcons.database, color: secondary),
+          const SizedBox(height: 10),
+          _CauseCard(icon: LucideIcons.batteryLow, color: secondary),
+        ],
+      ),
+      const SizedBox(width: 16),
+      ExpressiveIcon(
+        icon: LucideIcons.bell,
+        shape: ExpressiveIconShape.burst,
+        size: 70,
+        backgroundColor: accent.withValues(alpha: 0.19),
+        foregroundColor: accent,
+      ).animate().shakeX(duration: 650.ms, hz: 3, amount: 0.08),
+    ],
+  );
+}
+
+final class _CauseCard extends StatelessWidget {
+  const _CauseCard({required this.icon, required this.color});
+
+  final IconData icon;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) => Container(
+    width: 104,
+    height: 48,
+    padding: const EdgeInsets.symmetric(horizontal: 12),
+    decoration: BoxDecoration(
+      color: color.withValues(alpha: 0.16),
+      borderRadius: BorderRadius.circular(15),
+    ),
+    child: Row(
+      children: [
+        Icon(icon, color: color, size: 19),
+        const SizedBox(width: 9),
+        Expanded(child: _TextLine(color: color, width: 48)),
+      ],
+    ),
+  );
+}
+
+final class _NotificationCompletionSoundScene extends StatelessWidget {
+  const _NotificationCompletionSoundScene({
+    required this.accent,
+    required this.secondary,
+  });
+
+  final Color accent;
+  final Color secondary;
+
+  @override
+  Widget build(BuildContext context) => Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      ExpressiveIcon(
+        icon: LucideIcons.bellRing,
+        shape: ExpressiveIconShape.sunny,
+        size: 68,
+        backgroundColor: accent.withValues(alpha: 0.18),
+        foregroundColor: accent,
+      ).animate().scale(
+        begin: const Offset(0.9, 0.9),
+        curve: Curves.easeInOut,
+        duration: 500.ms,
+      ),
+      const SizedBox(width: 18),
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(LucideIcons.audioLines, color: secondary, size: 22),
+          const SizedBox(height: 9),
+          _Bars(color: secondary, heights: const [12, 22, 32, 16, 27, 12, 21]),
+        ],
+      ),
+    ],
+  );
+}
+
+final class _NotificationHapticFeedbackScene extends StatelessWidget {
+  const _NotificationHapticFeedbackScene({
+    required this.accent,
+    required this.secondary,
+  });
+
+  final Color accent;
+  final Color secondary;
+
+  @override
+  Widget build(BuildContext context) => Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      _FeatureCard(
+        width: 78,
+        color: secondary.withValues(alpha: 0.16),
+        child: Icon(LucideIcons.vibrate, color: secondary, size: 30),
+      ),
+      const SizedBox(width: 14),
+      Container(
+            width: 58,
+            height: 106,
+            padding: const EdgeInsets.all(6),
+            decoration: BoxDecoration(
+              color: accent.withValues(alpha: 0.19),
+              borderRadius: BorderRadius.circular(19),
+            ),
+            child: Container(
+              decoration: BoxDecoration(
+                color: accent.withValues(alpha: 0.12),
+                borderRadius: BorderRadius.circular(14),
+              ),
+              child: Icon(LucideIcons.smartphone, color: accent, size: 28),
+            ),
+          )
+          .animate(onPlay: (controller) => controller.repeat(reverse: true))
+          .slideX(begin: -0.08, end: 0.08, duration: 180.ms),
+      const SizedBox(width: 14),
+      _FeatureCard(
+        width: 78,
+        color: secondary.withValues(alpha: 0.16),
+        child: Icon(LucideIcons.vibrate, color: secondary, size: 30),
+      ),
+    ],
+  );
+}
+
+final class _NotificationProductUpdateScene extends StatelessWidget {
+  const _NotificationProductUpdateScene({
+    required this.accent,
+    required this.secondary,
+  });
+
+  final Color accent;
+  final Color secondary;
+
+  @override
+  Widget build(BuildContext context) => Container(
+    width: 220,
+    padding: const EdgeInsets.all(16),
+    decoration: BoxDecoration(
+      color: secondary.withValues(alpha: 0.16),
+      borderRadius: BorderRadius.circular(22),
+    ),
+    child: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Row(
+          children: [
+            ExpressiveIcon(
+              icon: LucideIcons.sparkles,
+              shape: ExpressiveIconShape.gem,
+              size: 38,
+              backgroundColor: accent.withValues(alpha: 0.18),
+              foregroundColor: accent,
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _TextLine(color: secondary, width: 98),
+                  const SizedBox(height: 8),
+                  _TextLine(color: secondary.withValues(alpha: 0.6), width: 70),
+                ],
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 14),
+        Row(
+          children: [
+            _UpdateChip(color: accent),
+            const SizedBox(width: 8),
+            _UpdateChip(color: secondary),
+            const SizedBox(width: 8),
+            _UpdateChip(color: accent.withValues(alpha: 0.55)),
+          ],
+        ),
+      ],
+    ),
+  );
+}
+
+final class _UpdateChip extends StatelessWidget {
+  const _UpdateChip({required this.color});
+
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) => Expanded(
+    child: Container(
+      height: 25,
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.2),
+        borderRadius: BorderRadius.circular(9),
+      ),
+      child: Icon(LucideIcons.check, size: 14, color: color),
+    ),
+  );
+}
+
+final class _NotificationStorageSavingsScene extends StatelessWidget {
+  const _NotificationStorageSavingsScene({
+    required this.accent,
+    required this.secondary,
+  });
+
+  final Color accent;
+  final Color secondary;
+
+  @override
+  Widget build(BuildContext context) => Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    crossAxisAlignment: CrossAxisAlignment.end,
+    children: [
+      _StorageBar(height: 96, color: secondary, fill: 0.88),
+      const SizedBox(width: 16),
+      Icon(LucideIcons.arrowRight, color: accent, size: 22),
+      const SizedBox(width: 16),
+      _StorageBar(height: 96, color: accent, fill: 0.48),
+      const SizedBox(width: 14),
+      ExpressiveIcon(
+        icon: LucideIcons.hardDrive,
+        shape: ExpressiveIconShape.cookie,
+        size: 54,
+        backgroundColor: accent.withValues(alpha: 0.16),
+        foregroundColor: accent,
+      ),
+    ],
+  );
+}
+
+final class _StorageBar extends StatelessWidget {
+  const _StorageBar({
+    required this.height,
+    required this.color,
+    required this.fill,
+  });
+
+  final double height;
+  final Color color;
+  final double fill;
+
+  @override
+  Widget build(BuildContext context) => Container(
+    width: 36,
+    height: height,
+    padding: const EdgeInsets.all(5),
+    alignment: Alignment.bottomCenter,
+    decoration: BoxDecoration(
+      color: color.withValues(alpha: 0.14),
+      borderRadius: BorderRadius.circular(13),
+    ),
+    child: FractionallySizedBox(
+      heightFactor: fill,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(9),
+        ),
+      ),
     ),
   );
 }
