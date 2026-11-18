@@ -1,6 +1,5 @@
 import 'package:material_ui/material_ui.dart';
 
-import 'app_hero_sliver.dart';
 import 'page_scroll_content.dart';
 
 /// Collapsing expressive page title above the shared padded sliver content.

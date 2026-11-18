@@ -1,25 +1,250 @@
+import 'dart:async';
+
+import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/constants/zumi_icons.dart';
 import '../../../../core/extensions/extensions.dart';
-import '../../../../core/widgets/display/placeholder/app_placeholder_page.dart';
+import '../../../../core/router/app_router.dart';
+import '../../../../core/widgets/widgets.dart';
 
-/// Placeholder for the Onboarding destination.
-///
-/// The navigation contract is final; the real screen lands in a later
-/// milestone without changing this route or its public constructor.
-final class OnboardingPage extends StatelessWidget {
+/// First-run onboarding experience introducing Zumi's on-device compression
+/// workflow, privacy guarantee, and hardware performance.
+final class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
 
   @override
+  State<OnboardingPage> createState() => _OnboardingPageState();
+}
+
+final class _OnboardingPageState extends State<OnboardingPage> {
+  final PageController _pageController = PageController();
+  int _currentPage = 0;
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  void _onPageChanged(int index) {
+    setState(() => _currentPage = index);
+  }
+
+  void _finishOnboarding() {
+    unawaited(HapticFeedback.mediumImpact());
+    if (Navigator.of(context).canPop()) {
+      Navigator.of(context).pop();
+    } else {
+      unawaited(context.replace(const HomeTabRoute()));
+    }
+  }
+
+  void _nextPage() {
+    if (_currentPage < 2) {
+      unawaited(
+        _pageController.nextPage(
+          duration: const Duration(milliseconds: 320),
+          curve: Curves.easeInOutCubic,
+        ),
+      );
+    } else {
+      _finishOnboarding();
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return AppPlaceholderPage(
-      title: context.localeKeys.welcomeToZumi,
-      description: context
-          .localeKeys
-          .learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone,
-      icon: ZumiIcons.onboarding,
-      showAppBar: false,
+    final colorScheme = context.colorScheme;
+    final l10n = context.localeKeys;
+
+    final slides = [
+      _OnboardingSlide(
+        icon: ZumiIcons.videoSelect,
+        shape: ExpressiveIconShape.gem,
+        title: l10n.welcomeToZumi,
+        subtitle:
+            l10n.learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone,
+        tagline: l10n.compressTheBeforeAndAfterSizeThenSaveOrShareTheResult,
+        chips: const ['Lossless Visual Quality', 'Up to 90% Size Reduction', 'Instant Preview'],
+      ),
+      _OnboardingSlide(
+        icon: ZumiIcons.privacy,
+        shape: ExpressiveIconShape.heart,
+        title: l10n.compressVideosPrivatelyOnYourDevice,
+        subtitle:
+            l10n.onDeviceProcessingLocalLogsAndOptionalCrashReports,
+        tagline:
+            'Zero cloud uploads. Your videos and personal memories never leave your device hardware.',
+        chips: const ['100% Offline', 'No Tracking', 'Zero Cloud Servers'],
+      ),
+      _OnboardingSlide(
+        icon: ZumiIcons.aiRuntime,
+        shape: ExpressiveIconShape.burst,
+        title: 'Native Rust Engine Speed',
+        subtitle:
+            l10n.chooseResolutionBitrateAndOutputFormatBeforeYouStart,
+        tagline:
+            'Engineered with Rust and native GPU acceleration for lightning-fast compression and low battery draw.',
+        chips: const ['H.264 & HEVC', 'AV1 Support', 'Batch Queuing'],
+      ),
+    ];
+
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: AppSpacing.large,
+                vertical: AppSpacing.small,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const BrandLogo(size: 36),
+                  if (_currentPage < slides.length - 1)
+                    TextButtonComponent(
+                      label: l10n.cancel,
+                      onPressed: _finishOnboarding,
+                    )
+                  else
+                    const SizedBox(height: 48),
+                ],
+              ),
+            ),
+            Expanded(
+              child: PageView.builder(
+                controller: _pageController,
+                itemCount: slides.length,
+                onPageChanged: _onPageChanged,
+                itemBuilder: (context, index) {
+                  final slide = slides[index];
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppSpacing.xLarge,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ExpressiveIcon(
+                          icon: slide.icon,
+                          shape: slide.shape,
+                          size: 96,
+                          backgroundColor: colorScheme.primaryContainer,
+                          foregroundColor: colorScheme.onPrimaryContainer,
+                        ),
+                        const Gap(AppSpacing.xxLarge),
+                        Text(
+                          slide.title,
+                          textAlign: TextAlign.center,
+                          style: context.textTheme.headlineMedium?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const Gap(AppSpacing.medium),
+                        Text(
+                          slide.subtitle,
+                          textAlign: TextAlign.center,
+                          style: context.textTheme.bodyLarge?.copyWith(
+                            color: colorScheme.onSurfaceVariant,
+                            height: 1.4,
+                          ),
+                        ),
+                        const Gap(AppSpacing.large),
+                        CardComponent.outlined(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: AppSpacing.large,
+                            vertical: AppSpacing.medium,
+                          ),
+                          child: Text(
+                            slide.tagline,
+                            textAlign: TextAlign.center,
+                            style: context.textTheme.bodyMedium?.copyWith(
+                              color: colorScheme.primary,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                        const Gap(AppSpacing.large),
+                        Wrap(
+                          spacing: AppSpacing.small,
+                          runSpacing: AppSpacing.small,
+                          alignment: WrapAlignment.center,
+                          children: [
+                            for (final chip in slide.chips)
+                              ChipComponent(
+                                label: chip,
+                                showBorder: false,
+                              ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(AppSpacing.xLarge),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(
+                      slides.length,
+                      (index) => AnimatedContainer(
+                        duration: const Duration(milliseconds: 250),
+                        margin: const EdgeInsets.symmetric(
+                          horizontal: AppSpacing.xSmall,
+                        ),
+                        height: 8,
+                        width: _currentPage == index ? 28 : 8,
+                        decoration: BoxDecoration(
+                          color: _currentPage == index
+                              ? colorScheme.primary
+                              : colorScheme.outlineVariant,
+                          borderRadius: BorderRadius.circular(AppRadii.pill),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const Gap(AppSpacing.large),
+                  FilledButtonComponent(
+                    expand: true,
+                    label: _currentPage == slides.length - 1
+                        ? l10n.ok
+                        : 'Continue',
+                    icon: _currentPage == slides.length - 1
+                        ? ZumiIcons.compressionResult
+                        : ZumiIcons.chevronForward,
+                    onPressed: _nextPage,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
+}
+
+final class _OnboardingSlide {
+  const _OnboardingSlide({
+    required this.icon,
+    required this.shape,
+    required this.title,
+    required this.subtitle,
+    required this.tagline,
+    required this.chips,
+  });
+
+  final IconData icon;
+  final ExpressiveIconShape shape;
+  final String title;
+  final String subtitle;
+  final String tagline;
+  final List<String> chips;
 }
