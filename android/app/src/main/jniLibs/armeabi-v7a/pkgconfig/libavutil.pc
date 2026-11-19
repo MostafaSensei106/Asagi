@@ -1,0 +1,14 @@
+prefix=/home/ottafa/Devolpments/zumi/build/rust_lib_zumi/build/ffmpeg/build-n7.1.5-armeabi-v7a/install
+exec_prefix=${prefix}
+libdir=/home/ottafa/Devolpments/zumi/build/rust_lib_zumi/build/ffmpeg/build-n7.1.5-armeabi-v7a/install/lib
+includedir=/home/ottafa/Devolpments/zumi/build/rust_lib_zumi/build/ffmpeg/build-n7.1.5-armeabi-v7a/install/include
+
+Name: libavutil
+Description: FFmpeg utility library
+Version: 59.39.100
+Requires: 
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lavutil 
+Libs.private: -pthread -lm -latomic -landroid -lmediandk
+Cflags: -I${includedir}
