@@ -3,6 +3,28 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
+val keyPropertiesFile = rootProject.file("key.properties")
+val keyProperties = java.util.Properties().apply {
+    if (keyPropertiesFile.exists()) {
+        keyPropertiesFile.inputStream().use { load(it) }
+    }
+}
+val requiredSigningProperties = listOf("keyAlias", "keyPassword", "storeFile", "storePassword")
+val releaseTasksRequested = gradle.startParameter.taskNames.any { taskName ->
+    taskName.substringAfterLast(':').contains("release", ignoreCase = true)
+}
+
+if (releaseTasksRequested && !keyPropertiesFile.exists()) {
+    throw GradleException(
+        "Release signing requires android/key.properties. Configure the keystore before building a release."
+    )
+}
+if (releaseTasksRequested && requiredSigningProperties.any { keyProperties.getProperty(it).isNullOrBlank() }) {
+    throw GradleException(
+        "android/key.properties must define: ${requiredSigningProperties.joinToString(", ")}"
+    )
+}
+
 android {
     namespace = "com.mostafa.sensei.zumi"
     compileSdk = 37
@@ -22,16 +44,23 @@ android {
     }
 
     signingConfigs {
-        create("release") {
-            signingConfig = signingConfigs.getByName("release")
-            isMinifyEnabled = true
-            isShrinkResources = true
+        if (requiredSigningProperties.all { !keyProperties.getProperty(it).isNullOrBlank() }) {
+            create("release") {
+                keyAlias = keyProperties.getProperty("keyAlias")
+                keyPassword = keyProperties.getProperty("keyPassword")
+                storeFile = file(keyProperties.getProperty("storeFile"))
+                storePassword = keyProperties.getProperty("storePassword")
+            }
         }
     }
 
     buildTypes {
         release {
-            signingConfig = signingConfigs.getByName("debug")
+            if (requiredSigningProperties.all { !keyProperties.getProperty(it).isNullOrBlank() }) {
+                signingConfig = signingConfigs.getByName("release")
+            }
+            isMinifyEnabled = true
+            isShrinkResources = true
         }
     }
 }
