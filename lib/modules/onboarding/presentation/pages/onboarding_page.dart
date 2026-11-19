@@ -4,13 +4,13 @@ import 'package:flutter/services.dart';
 import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
-import '../../../../core/constants/zumi_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../../core/widgets/widgets.dart';
 
-/// First-run onboarding experience introducing Zumi's on-device compression
+/// First-run onboarding experience introducing Asagi's on-device compression
 /// workflow, privacy guarantee, and hardware performance.
 final class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
@@ -62,11 +62,11 @@ final class _OnboardingPageState extends State<OnboardingPage> {
 
     final slides = [
       _OnboardingSlide(
-        icon: ZumiIcons.videoSelect,
+        icon: AsagiIcons.videoSelect,
         shape: ExpressiveIconShape.gem,
-        title: l10n.welcomeToZumi,
+        title: l10n.welcomeToAsagi,
         subtitle:
-            l10n.learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone,
+            l10n.learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone,
         tagline: l10n.compareTheBeforeAndAfterSizeThenSaveOrShareTheResult,
         chips: [
           l10n.losslessVisualQuality,
@@ -75,7 +75,7 @@ final class _OnboardingPageState extends State<OnboardingPage> {
         ],
       ),
       _OnboardingSlide(
-        icon: ZumiIcons.privacy,
+        icon: AsagiIcons.privacy,
         shape: ExpressiveIconShape.heart,
         title: l10n.compressVideosPrivatelyOnYourDevice,
         subtitle: l10n.onDeviceProcessingLocalLogsAndOptionalCrashReports,
@@ -84,7 +84,7 @@ final class _OnboardingPageState extends State<OnboardingPage> {
         chips: [l10n.fullyOffline, l10n.noTracking, l10n.zeroCloudServers],
       ),
       _OnboardingSlide(
-        icon: ZumiIcons.aiRuntime,
+        icon: AsagiIcons.aiRuntime,
         shape: ExpressiveIconShape.burst,
         title: l10n.nativeRustEngineSpeed,
         subtitle: l10n.chooseResolutionBitrateAndOutputFormatBeforeYouStart,
@@ -217,8 +217,8 @@ final class _OnboardingPageState extends State<OnboardingPage> {
                         ? l10n.ok
                         : l10n.continueLabel,
                     icon: _currentPage == slides.length - 1
-                        ? ZumiIcons.compressionResult
-                        : ZumiIcons.chevronForward,
+                        ? AsagiIcons.compressionResult
+                        : AsagiIcons.chevronForward,
                     onPressed: _nextPage,
                   ),
                 ],

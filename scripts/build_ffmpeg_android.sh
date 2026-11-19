@@ -12,7 +12,7 @@ FFMPEG_TAG="n7.1.5"
 SOURCE_DIR="$CACHE_ROOT/source-$FFMPEG_TAG-$ABI"
 BUILD_DIR="$CACHE_ROOT/build-$FFMPEG_TAG-$ABI"
 PREFIX="$BUILD_DIR/install"
-STAMP="$BUILD_DIR/.zumi-build-stamp"
+STAMP="$BUILD_DIR/.asagi-build-stamp"
 case "$(uname -s)" in
   Linux*) HOST_TAG="linux-x86_64"; TOOL_SUFFIX="" ;;
   Darwin*) HOST_TAG="darwin-x86_64"; TOOL_SUFFIX="" ;;

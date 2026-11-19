@@ -1,15 +1,15 @@
 import 'dart:io';
 
+import 'package:asagi/core/compression/application/compression_engine.dart';
+import 'package:asagi/core/compression/domain/contracts/compression_planner.dart';
+import 'package:asagi/core/compression/domain/contracts/video_encoder.dart';
+import 'package:asagi/core/compression/domain/models/compression_plan.dart';
+import 'package:asagi/core/compression/domain/models/compression_preferences.dart';
+import 'package:asagi/core/compression/domain/models/encode_request.dart';
+import 'package:asagi/core/compression/domain/models/share_preset.dart';
+import 'package:asagi/core/compression/domain/models/video_metadata.dart';
+import 'package:asagi/core/compression/infrastructure/storage/file_artifact_store.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:zumi/core/compression/application/compression_engine.dart';
-import 'package:zumi/core/compression/domain/contracts/compression_planner.dart';
-import 'package:zumi/core/compression/domain/contracts/video_encoder.dart';
-import 'package:zumi/core/compression/domain/models/compression_plan.dart';
-import 'package:zumi/core/compression/domain/models/compression_preferences.dart';
-import 'package:zumi/core/compression/domain/models/encode_request.dart';
-import 'package:zumi/core/compression/domain/models/share_preset.dart';
-import 'package:zumi/core/compression/domain/models/video_metadata.dart';
-import 'package:zumi/core/compression/infrastructure/storage/file_artifact_store.dart';
 
 class Planner implements CompressionPlanner {
   @override
@@ -79,7 +79,7 @@ class Encoder implements VideoEncoder {
 void main() {
   late Directory directory;
   setUp(() async {
-    directory = await Directory.systemTemp.createTemp('zumi-test-');
+    directory = await Directory.systemTemp.createTemp('asagi-test-');
   });
   tearDown(() async {
     await directory.delete(recursive: true);
@@ -183,13 +183,13 @@ void main() {
   test(
     'stale cleanup leaves unmarked directories and source files alone',
     () async {
-      final stale = await Directory('${directory.path}/zumi-stale').create();
+      final stale = await Directory('${directory.path}/asagi-stale').create();
       final marker = await File('${stale.path}/.inprogress')
           .writeAsString('{}');
       await marker.setLastModified(
         DateTime.now().subtract(const Duration(days: 1)),
       );
-      await Directory('${directory.path}/zumi-unmarked').create();
+      await Directory('${directory.path}/asagi-unmarked').create();
       await File('${directory.path}/source.mp4').writeAsString('original');
       expect(
         await const FileArtifactStore().cleanupInterrupted(
@@ -199,7 +199,7 @@ void main() {
         1,
       );
       expect(
-        await Directory('${directory.path}/zumi-unmarked').exists(),
+        await Directory('${directory.path}/asagi-unmarked').exists(),
         isTrue,
       );
       expect(

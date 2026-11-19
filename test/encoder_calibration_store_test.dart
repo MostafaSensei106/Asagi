@@ -1,7 +1,7 @@
+import 'package:asagi/core/compression/domain/models/compression_plan.dart';
+import 'package:asagi/modules/compression/data/repositories/encoder_calibration_store.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:zumi/core/compression/domain/models/compression_plan.dart';
-import 'package:zumi/modules/compression/data/repositories/encoder_calibration_store.dart';
 
 const plan = CompressionPlan(
   targetVideoBitrateBps: 800000,

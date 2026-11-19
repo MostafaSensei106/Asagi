@@ -1,7 +1,7 @@
+import 'package:asagi/core/compression/domain/contracts/compression_planner.dart';
+import 'package:asagi/core/compression/infrastructure/rust/rust_compression_planner.dart';
+import 'package:asagi/core/native/pigeon_messages.g.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:zumi/core/compression/domain/contracts/compression_planner.dart';
-import 'package:zumi/core/compression/infrastructure/rust/rust_compression_planner.dart';
-import 'package:zumi/core/native/pigeon_messages.g.dart';
 
 void main() {
   test('native request preserves compression parameters through codec', () {

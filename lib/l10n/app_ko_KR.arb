@@ -1,7 +1,7 @@
 {
   "@@locale": "ko_KR",
-  "zumi": "Zumi",
-  "@zumi": {
+  "asagi": "Asagi",
+  "@asagi": {
     "description": "Application name shown in the app and on the home page"
   },
   "downloadFile": "파일 다운로드",
@@ -211,12 +211,12 @@
   "@compressVideosPrivatelyOnYourDevice": {
     "description": "Home page description"
   },
-  "welcomeToZumi": "Zumi에 오신 것을 환영합니다",
-  "@welcomeToZumi": {
+  "welcomeToAsagi": "Asagi에 오신 것을 환영합니다",
+  "@welcomeToAsagi": {
     "description": "Onboarding page title"
   },
-  "learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": "Zumi가 휴대폰을 벗어나지 않고 동영상을 어떻게 압축하는지 알아보세요.",
-  "@learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": {
+  "learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": "Asagi가 휴대폰을 벗어나지 않고 동영상을 어떻게 압축하는지 알아보세요.",
+  "@learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": {
     "description": "Onboarding page description"
   },
   "signIn": "로그인",
@@ -319,8 +319,8 @@
   "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
     "description": "Privacy settings page description"
   },
-  "aboutZumi": "Zumi 정보",
-  "@aboutZumi": {
+  "aboutAsagi": "Asagi 정보",
+  "@aboutAsagi": {
     "description": "App info page title"
   },
   "versionBuildNumberAndApplicationDetails": "버전, 빌드 번호 및 애플리케이션 세부 정보.",
@@ -331,48 +331,48 @@
   "@aboutTheDeveloper": {
     "description": "Developer page title"
   },
-  "theDeveloperAndToolsBehindZumi": "Zumi의 개발자 및 사용 도구.",
-  "@theDeveloperAndToolsBehindZumi": {
+  "theDeveloperAndToolsBehindAsagi": "Asagi의 개발자 및 사용 도구.",
+  "@theDeveloperAndToolsBehindAsagi": {
     "description": "Developer page description"
   },
   "openSourceLicenses": "오픈 소스 라이선스",
   "@openSourceLicenses": {
     "description": "Licenses page title"
   },
-  "openSourcePackagesBundledWithZumi": "Zumi에 포함된 오픈 소스 패키지.",
-  "@openSourcePackagesBundledWithZumi": {
+  "openSourcePackagesBundledWithAsagi": "Asagi에 포함된 오픈 소스 패키지.",
+  "@openSourcePackagesBundledWithAsagi": {
     "description": "Licenses page description"
   },
   "privacyPolicy": "개인정보 처리방침",
   "@privacyPolicy": {
     "description": "Privacy policy page title"
   },
-  "howZumiHandlesYourVideosAndData": "Zumi가 동영상과 데이터를 처리하는 방식.",
-  "@howZumiHandlesYourVideosAndData": {
+  "howAsagiHandlesYourVideosAndData": "Asagi가 동영상과 데이터를 처리하는 방식.",
+  "@howAsagiHandlesYourVideosAndData": {
     "description": "Privacy policy page description"
   },
   "termsOfService": "서비스 약관",
   "@termsOfService": {
     "description": "Terms page title"
   },
-  "theTermsThatApplyToZumiAndItsPurchases": "Zumi 및 구매에 적용되는 약관.",
-  "@theTermsThatApplyToZumiAndItsPurchases": {
+  "theTermsThatApplyToAsagiAndItsPurchases": "Asagi 및 구매에 적용되는 약관.",
+  "@theTermsThatApplyToAsagiAndItsPurchases": {
     "description": "Terms page description"
   },
   "dataSafety": "데이터 안전",
   "@dataSafety": {
     "description": "Data safety page title"
   },
-  "summaryOfTheDataZumiCollectsAndWhy": "Zumi가 수집하는 데이터 요약 및 이유",
-  "@summaryOfTheDataZumiCollectsAndWhy": {
+  "summaryOfTheDataAsagiCollectsAndWhy": "Asagi가 수집하는 데이터 요약 및 이유",
+  "@summaryOfTheDataAsagiCollectsAndWhy": {
     "description": "Data safety page description"
   },
   "permissions": "권한",
   "@permissions": {
     "description": "Permissions page title"
   },
-  "runtimePermissionsZumiRequestsAndWhyEachIsNeeded": "Zumi가 요청하는 런타임 권한과 각 권한이 필요한 이유.",
-  "@runtimePermissionsZumiRequestsAndWhyEachIsNeeded": {
+  "runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": "Asagi가 요청하는 런타임 권한과 각 권한이 필요한 이유.",
+  "@runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": {
     "description": "Permissions page description"
   },
   "faq": "FAQ",
@@ -447,20 +447,20 @@
   "@permanentlyRemoveYourAccountAndItsServerSideData": {
     "description": "Delete account page description"
   },
-  "rateZumi": "Zumi 평가하기",
-  "@rateZumi": {
+  "rateAsagi": "Asagi 평가하기",
+  "@rateAsagi": {
     "description": "Rate app page title"
   },
-  "tellOthersHowZumiWorkedForYouOnTheStore": "스토어에서 Zumi가 어떻게 작동했는지 다른 사람에게 알려주세요.",
-  "@tellOthersHowZumiWorkedForYouOnTheStore": {
+  "tellOthersHowAsagiWorkedForYouOnTheStore": "스토어에서 Asagi가 어떻게 작동했는지 다른 사람에게 알려주세요.",
+  "@tellOthersHowAsagiWorkedForYouOnTheStore": {
     "description": "Rate app page description"
   },
-  "shareZumi": "Zumi 공유하기",
-  "@shareZumi": {
+  "shareAsagi": "Asagi 공유하기",
+  "@shareAsagi": {
     "description": "Share app page title"
   },
-  "recommendZumiToAFriend": "친구에게 Zumi를 추천하세요.",
-  "@recommendZumiToAFriend": {
+  "recommendAsagiToAFriend": "친구에게 Asagi를 추천하세요.",
+  "@recommendAsagiToAFriend": {
     "description": "Share app page description"
   },
   "appearanceLanguage": "외관 및 언어",
@@ -516,7 +516,7 @@
     "description": "Settings hub row summary"
   },
   "aiSettings": "AI 설정",
-  "zumiAssistant": "Zumi 어시스턴트",
+  "asagiAssistant": "Asagi 어시스턴트",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "곧 여러분의 동영상을 위한 개인 비서가 제공됩니다. 여기에서 압축, 정리 및 저장된 동영상에 대해 물어볼 수 있습니다.",
   "localModelsAndSmartTools": "로컬 모델 및 스마트 도구",
   "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "로컬 모델과 미래 AI 도구를 탐험하세요. 이 옵션들은 아직 활성화되어 있지 않습니다.",
@@ -576,8 +576,8 @@
   "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "theDeveloperBehindZumi": "Zumi 개발자",
-  "@theDeveloperBehindZumi": {
+  "theDeveloperBehindAsagi": "Asagi 개발자",
+  "@theDeveloperBehindAsagi": {
     "description": "Settings hub row summary"
   },
   "openSourcePackageLicenses": "오픈 소스 패키지 라이선스",
@@ -588,8 +588,8 @@
   "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "rulesForUsingZumi": "Zumi 사용 규칙",
-  "@rulesForUsingZumi": {
+  "rulesForUsingAsagi": "Asagi 사용 규칙",
+  "@rulesForUsingAsagi": {
     "description": "Settings hub row summary"
   },
   "whatDataWeCollect": "수집하는 데이터",
@@ -691,14 +691,14 @@
   "unavailable": "사용 불가",
   "projectAndSupport": "프로젝트 및 지원",
   "githubRepository": "GitHub 저장소",
-  "viewZumiSourceCode": "Zumi 소스 코드 보기",
+  "viewAsagiSourceCode": "Asagi 소스 코드 보기",
   "readTheREADME": "README 읽기",
-  "learnAboutZumiOnGitHub": "GitHub에서 Zumi에 대해 알아보기",
+  "learnAboutAsagiOnGitHub": "GitHub에서 Asagi에 대해 알아보기",
   "reportAnIssue": "문제 보고",
   "viewAndCreateGitHubIssues": "GitHub 이슈 보기 및 생성",
   "latestRelease": "최신 릴리스",
   "viewReleasesAndDownloads": "릴리스 및 다운로드 보기",
-  "supportZumi": "Zumi 지원",
+  "supportAsagi": "Asagi 지원",
   "openTheOfficialDonationPage": "공식 기부 페이지 열기",
   "couldNotOpenTheLinkPleaseTryAgain": "링크를 열 수 없습니다. 다시 시도하세요.",
   "developer": "개발자",
@@ -706,7 +706,7 @@
   "githubProfile": "GitHub 프로필",
   "seeProjectsAndContactDetails": "프로젝트 및 연락처 정보 보기",
   "maintenanceInProgress": "유지보수 진행 중",
-  "zumiIsTemporarilyUnavailablePleaseTryAgainLater": "Zumi를 일시적으로 사용할 수 없습니다. 나중에 다시 시도하세요.",
+  "asagiIsTemporarilyUnavailablePleaseTryAgainLater": "Asagi를 일시적으로 사용할 수 없습니다. 나중에 다시 시도하세요.",
   "comingSoon": "곧 출시",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"

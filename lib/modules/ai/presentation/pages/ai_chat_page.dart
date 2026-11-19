@@ -40,7 +40,7 @@ final class AiChatPage extends HookWidget {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBarComponent(
-        title: context.localeKeys.zumiAssistant,
+        title: context.localeKeys.asagiAssistant,
         leading: Padding(
           padding: const EdgeInsets.all(7.5),
           child: IconButtonComponent(
@@ -66,7 +66,7 @@ final class AiChatPage extends HookWidget {
                   color: Theme.of(context).colorScheme.primaryContainer,
                 ),
                 child: Text(
-                  context.localeKeys.zumiAssistant,
+                  context.localeKeys.asagiAssistant,
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     color: Theme.of(context).colorScheme.onPrimaryContainer,
                   ),

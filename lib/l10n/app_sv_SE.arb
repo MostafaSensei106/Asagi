@@ -1,7 +1,7 @@
 {
   "@@locale": "sv_SE",
-  "zumi": "Zumi",
-  "@zumi": {
+  "asagi": "Asagi",
+  "@asagi": {
     "description": "Application name shown in the app and on the home page"
   },
   "downloadFile": "Ladda ner fil",
@@ -211,12 +211,12 @@
   "@compressVideosPrivatelyOnYourDevice": {
     "description": "Home page description"
   },
-  "welcomeToZumi": "Välkommen till Zumi",
-  "@welcomeToZumi": {
+  "welcomeToAsagi": "Välkommen till Asagi",
+  "@welcomeToAsagi": {
     "description": "Onboarding page title"
   },
-  "learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": "Lär dig hur Zumi komprimerar dina videor utan att någonsin lämna din telefon.",
-  "@learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": {
+  "learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": "Lär dig hur Asagi komprimerar dina videor utan att någonsin lämna din telefon.",
+  "@learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": {
     "description": "Onboarding page description"
   },
   "signIn": "Logga in",
@@ -319,8 +319,8 @@
   "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
     "description": "Privacy settings page description"
   },
-  "aboutZumi": "Om Zumi",
-  "@aboutZumi": {
+  "aboutAsagi": "Om Asagi",
+  "@aboutAsagi": {
     "description": "App info page title"
   },
   "versionBuildNumberAndApplicationDetails": "Version, byggnummer och applikationsdetaljer.",
@@ -331,48 +331,48 @@
   "@aboutTheDeveloper": {
     "description": "Developer page title"
   },
-  "theDeveloperAndToolsBehindZumi": "Utvecklaren och verktygen bakom Zumi.",
-  "@theDeveloperAndToolsBehindZumi": {
+  "theDeveloperAndToolsBehindAsagi": "Utvecklaren och verktygen bakom Asagi.",
+  "@theDeveloperAndToolsBehindAsagi": {
     "description": "Developer page description"
   },
   "openSourceLicenses": "Öppen källkod-licenser",
   "@openSourceLicenses": {
     "description": "Licenses page title"
   },
-  "openSourcePackagesBundledWithZumi": "Öppen källkodspaket som ingår i Zumi.",
-  "@openSourcePackagesBundledWithZumi": {
+  "openSourcePackagesBundledWithAsagi": "Öppen källkodspaket som ingår i Asagi.",
+  "@openSourcePackagesBundledWithAsagi": {
     "description": "Licenses page description"
   },
   "privacyPolicy": "Integritetspolicy",
   "@privacyPolicy": {
     "description": "Privacy policy page title"
   },
-  "howZumiHandlesYourVideosAndData": "Hur Zumi hanterar dina videor och data.",
-  "@howZumiHandlesYourVideosAndData": {
+  "howAsagiHandlesYourVideosAndData": "Hur Asagi hanterar dina videor och data.",
+  "@howAsagiHandlesYourVideosAndData": {
     "description": "Privacy policy page description"
   },
   "termsOfService": "Användarvillkor",
   "@termsOfService": {
     "description": "Terms page title"
   },
-  "theTermsThatApplyToZumiAndItsPurchases": "Villkoren som gäller för Zumi och dess köp.",
-  "@theTermsThatApplyToZumiAndItsPurchases": {
+  "theTermsThatApplyToAsagiAndItsPurchases": "Villkoren som gäller för Asagi och dess köp.",
+  "@theTermsThatApplyToAsagiAndItsPurchases": {
     "description": "Terms page description"
   },
   "dataSafety": "Datasäkerhet",
   "@dataSafety": {
     "description": "Data safety page title"
   },
-  "summaryOfTheDataZumiCollectsAndWhy": "Sammanfattning av de data som Zumi samlar in och varför.",
-  "@summaryOfTheDataZumiCollectsAndWhy": {
+  "summaryOfTheDataAsagiCollectsAndWhy": "Sammanfattning av de data som Asagi samlar in och varför.",
+  "@summaryOfTheDataAsagiCollectsAndWhy": {
     "description": "Data safety page description"
   },
   "permissions": "Behörigheter",
   "@permissions": {
     "description": "Permissions page title"
   },
-  "runtimePermissionsZumiRequestsAndWhyEachIsNeeded": "Körningstillstånd som Zumi begär och varför varje behövs.",
-  "@runtimePermissionsZumiRequestsAndWhyEachIsNeeded": {
+  "runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": "Körningstillstånd som Asagi begär och varför varje behövs.",
+  "@runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": {
     "description": "Permissions page description"
   },
   "faq": "FAQ",
@@ -447,20 +447,20 @@
   "@permanentlyRemoveYourAccountAndItsServerSideData": {
     "description": "Delete account page description"
   },
-  "rateZumi": "Betygsätt Zumi",
-  "@rateZumi": {
+  "rateAsagi": "Betygsätt Asagi",
+  "@rateAsagi": {
     "description": "Rate app page title"
   },
-  "tellOthersHowZumiWorkedForYouOnTheStore": "Berätta för andra hur Zumi fungerade för dig i butiken.",
-  "@tellOthersHowZumiWorkedForYouOnTheStore": {
+  "tellOthersHowAsagiWorkedForYouOnTheStore": "Berätta för andra hur Asagi fungerade för dig i butiken.",
+  "@tellOthersHowAsagiWorkedForYouOnTheStore": {
     "description": "Rate app page description"
   },
-  "shareZumi": "Dela Zumi",
-  "@shareZumi": {
+  "shareAsagi": "Delan Asagi",
+  "@shareAsagi": {
     "description": "Share app page title"
   },
-  "recommendZumiToAFriend": "Rekommendera Zumi till en vän.",
-  "@recommendZumiToAFriend": {
+  "recommendAsagiToAFriend": "Rekommenderan Asagi till en vän.",
+  "@recommendAsagiToAFriend": {
     "description": "Share app page description"
   },
   "appearanceLanguage": "Utseende och språk",
@@ -516,7 +516,7 @@
     "description": "Settings hub row summary"
   },
   "aiSettings": "AI-inställningar",
-  "zumiAssistant": "Zumi-assistent",
+  "asagiAssistant": "Asagi-assistent",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "En privat assistent för dina videor kommer snart. Du kommer att kunna fråga om komprimering, organisering och sparade videor här.",
   "localModelsAndSmartTools": "Lokala modeller och smarta verktyg",
   "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "Utforska lokala modeller och framtida AI-verktyg. Dessa alternativ är ännu inte aktiva.",
@@ -576,8 +576,8 @@
   "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "theDeveloperBehindZumi": "Utvecklaren bakom Zumi",
-  "@theDeveloperBehindZumi": {
+  "theDeveloperBehindAsagi": "Utvecklaren bakom Asagi",
+  "@theDeveloperBehindAsagi": {
     "description": "Settings hub row summary"
   },
   "openSourcePackageLicenses": "Licenser för öppna källpaket",
@@ -588,8 +588,8 @@
   "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "rulesForUsingZumi": "Regler för att använda Zumi",
-  "@rulesForUsingZumi": {
+  "rulesForUsingAsagi": "Regler för att användan Asagi",
+  "@rulesForUsingAsagi": {
     "description": "Settings hub row summary"
   },
   "whatDataWeCollect": "Vilken data vi samlar in",
@@ -691,14 +691,14 @@
   "unavailable": "Inte tillgänglig",
   "projectAndSupport": "Projekt och support",
   "githubRepository": "GitHub-förråd",
-  "viewZumiSourceCode": "Visa Zumi-källkod",
+  "viewAsagiSourceCode": "Visan Asagi-källkod",
   "readTheREADME": "Läs README",
-  "learnAboutZumiOnGitHub": "Läs om Zumi på GitHub",
+  "learnAboutAsagiOnGitHub": "Läs om Asagi på GitHub",
   "reportAnIssue": "Rapportera ett problem",
   "viewAndCreateGitHubIssues": "Visa och skapa GitHub-ärenden",
   "latestRelease": "Senaste version",
   "viewReleasesAndDownloads": "Visa releaser och nedladdningar",
-  "supportZumi": "Supporta Zumi",
+  "supportAsagi": "Supportan Asagi",
   "openTheOfficialDonationPage": "Öppna den officiella donationssidan",
   "couldNotOpenTheLinkPleaseTryAgain": "Kunde inte öppna länken. Försök igen.",
   "developer": "Utvecklare",
@@ -706,7 +706,7 @@
   "githubProfile": "GitHub-profil",
   "seeProjectsAndContactDetails": "Se projekt och kontaktinformation",
   "maintenanceInProgress": "Underhåll pågår",
-  "zumiIsTemporarilyUnavailablePleaseTryAgainLater": "Zumi är tillfälligt otillgänglig. Försök igen senare.",
+  "asagiIsTemporarilyUnavailablePleaseTryAgainLater": "Asagi är tillfälligt otillgänglig. Försök igen senare.",
   "comingSoon": "Kommer snart",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"

@@ -1,10 +1,10 @@
-package com.mostafa.sensei.zumi.app
+package com.mostafa.sensei.asagi.app
 
 import android.content.Context
 import androidx.media3.common.util.UnstableApi
-import com.mostafa.sensei.zumi.*
-import com.mostafa.sensei.zumi.app.contracts.*
-import com.mostafa.sensei.zumi.app.media3.*
+import com.mostafa.sensei.asagi.*
+import com.mostafa.sensei.asagi.app.contracts.*
+import com.mostafa.sensei.asagi.app.media3.*
 import io.flutter.plugin.common.EventChannel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.CoroutineScope

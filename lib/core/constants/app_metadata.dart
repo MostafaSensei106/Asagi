@@ -1,3 +1,3 @@
 abstract final class AppMetadata {
-  static const String name = 'Zumi';
+  static const String name = 'Asagi';
 }

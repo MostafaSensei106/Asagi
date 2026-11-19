@@ -1,5 +1,5 @@
 
-=== zumi-ink.svg  (8014 bytes)
+=== asagi-ink.svg  (8014 bytes)
 viewBox 0 0 1024 1024 · aspect 1.0 (square)
 colours 1: #162b46 · gradients 0 · anchors 369
 margins L127.0 R96.7 T127.1 B100.5 · bbox fill 0.608
@@ -8,7 +8,7 @@ margins L127.0 R96.7 T127.1 B100.5 · bbox fill 0.608
 · INFO [precision] Coordinates with 4+ decimals: round to 0–2 decimals to reduce size and reveal misalignments.
 production-readiness score: 83/100 (heuristic)
 
-=== zumi-reversed.svg  (8014 bytes)
+=== asagi-reversed.svg  (8014 bytes)
 viewBox 0 0 1024 1024 · aspect 1.0 (square)
 colours 1: #ffffff · gradients 0 · anchors 369
 margins L127.0 R96.7 T127.1 B100.5 · bbox fill 0.608
@@ -17,7 +17,7 @@ margins L127.0 R96.7 T127.1 B100.5 · bbox fill 0.608
 · INFO [precision] Coordinates with 4+ decimals: round to 0–2 decimals to reduce size and reveal misalignments.
 production-readiness score: 83/100 (heuristic)
 
-=== zumi-symbol.svg  (29299 bytes)
+=== asagi-symbol.svg  (29299 bytes)
 viewBox 0 0 1024 1024 · aspect 1.0 (square)
 colours 6: #162b46 #087f8c #61d4c5 #bde3e4 #ffb582 #ffffff · gradients 0 · anchors 1331
 margins L127.0 R96.7 T127.1 B100.5 · bbox fill 0.608
@@ -28,14 +28,14 @@ margins L127.0 R96.7 T127.1 B100.5 · bbox fill 0.608
 · INFO [precision] Coordinates with 4+ decimals: round to 0–2 decimals to reduce size and reveal misalignments.
 production-readiness score: 67/100 (heuristic)
 
-=== zumi-wordmark.svg  (2953 bytes)
+=== asagi-wordmark.svg  (2953 bytes)
 viewBox 0 0 1843 679 · aspect 2.714 (horizontal)
 colours 1: #162b46 · gradients 0 · anchors 102
 margins L167.0 R205.2 T87.1 B65.4 · bbox fill 0.619
 · INFO [precision] Coordinates with 4+ decimals: round to 0–2 decimals to reduce size and reveal misalignments.
 production-readiness score: 99/100 (heuristic)
 
-=== zumi-horizontal-dark.svg  (36461 bytes)
+=== asagi-horizontal-dark.svg  (36461 bytes)
 viewBox 0 0 1800 760 · aspect 2.368 (wide)
 colours 6: #162b46 #087f8c #61d4c5 #bde3e4 #ffb582 #ffffff · gradients 0 · anchors 1478
 margins L127.0 R162.2 T87.1 B-163.5 · bbox fill 0.924
@@ -48,7 +48,7 @@ margins L127.0 R162.2 T87.1 B-163.5 · bbox fill 0.924
 · INFO [off-centre-y] Vertical margins differ (top 87.1, bottom -163.5). Remember the optical centre sits slightly above the geometric centre.
 production-readiness score: 58/100 (heuristic)
 
-=== zumi-horizontal.svg  (36514 bytes)
+=== asagi-horizontal.svg  (36514 bytes)
 viewBox 0 0 1800 760 · aspect 2.368 (wide)
 colours 6: #162b46 #087f8c #61d4c5 #bde3e4 #ffb582 #ffffff · gradients 0 · anchors 1478
 margins L127.0 R162.2 T87.1 B-163.5 · bbox fill 0.924
@@ -61,7 +61,7 @@ margins L127.0 R162.2 T87.1 B-163.5 · bbox fill 0.924
 · INFO [off-centre-y] Vertical margins differ (top 87.1, bottom -163.5). Remember the optical centre sits slightly above the geometric centre.
 production-readiness score: 58/100 (heuristic)
 
-=== zumi-stacked.svg  (35396 bytes)
+=== asagi-stacked.svg  (35396 bytes)
 viewBox 0 0 1000 1250 · aspect 0.8 (square)
 colours 6: #162b46 #087f8c #61d4c5 #bde3e4 #ffb582 #ffffff · gradients 0 · anchors 1433
 margins L127.0 R-637.8 T87.1 B326.5 · bbox fill 1.011

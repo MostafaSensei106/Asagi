@@ -1,8 +1,8 @@
-package com.mostafa.sensei.zumi.app.media3
+package com.mostafa.sensei.asagi.app.media3
 
 import android.media.MediaCodecList
 import android.media.MediaCodecInfo
-import com.mostafa.sensei.zumi.app.contracts.*
+import com.mostafa.sensei.asagi.app.contracts.*
 
 class AndroidHdrPolicy : HdrConfigurationPolicy {
     override fun preserve(request: EncodeConfiguration, source: SourceMetadata): Boolean {

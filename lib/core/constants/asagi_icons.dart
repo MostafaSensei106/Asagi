@@ -5,7 +5,7 @@ import 'package:material_ui/material_ui.dart';
 ///
 /// Keeping icons here means routes, the settings hub, and page scaffolds never
 /// drift apart, and swapping an icon is a one-line change.
-abstract final class ZumiIcons {
+abstract final class AsagiIcons {
   // Core destinations.
   static const IconData home = LucideIcons.house;
   static const IconData onboarding = LucideIcons.sparkles;

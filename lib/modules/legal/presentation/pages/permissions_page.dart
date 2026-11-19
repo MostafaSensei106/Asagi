@@ -3,12 +3,12 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
-import '../../../../core/constants/zumi_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/widgets/widgets.dart';
 
-/// Details why Zumi requests specific device runtime permissions and how they
+/// Details why Asagi requests specific device runtime permissions and how they
 /// are strictly used.
 final class PermissionsPage extends StatelessWidget {
   const PermissionsPage({super.key});
@@ -23,21 +23,21 @@ final class PermissionsPage extends StatelessWidget {
         title: 'Photos & Videos (Media Access)',
         purpose: 'Needed to browse and select video files for compression, and to save the compressed videos directly to your camera roll or downloads folder.',
         type: 'Essential',
-        icon: ZumiIcons.videoSelect,
+        icon: AsagiIcons.videoSelect,
         isEssential: true,
       ),
       (
         title: 'Notifications',
-        purpose: 'Allows Zumi to alert you when a long video compression task finishes in the background, or if a task encounters an error.',
+        purpose: 'Allows Asagi to alert you when a long video compression task finishes in the background, or if a task encounters an error.',
         type: 'Optional',
-        icon: ZumiIcons.notifications,
+        icon: AsagiIcons.notifications,
         isEssential: false,
       ),
       (
         title: 'Foreground Service & Wake Lock',
         purpose: 'Prevents the operating system from terminating high-bitrate video encoding when your screen turns off or while using another application.',
         type: 'Recommended',
-        icon: ZumiIcons.aiRuntime,
+        icon: AsagiIcons.aiRuntime,
         isEssential: false,
       ),
     ];
@@ -56,7 +56,7 @@ final class PermissionsPage extends StatelessWidget {
               child: Row(
                 children: [
                   ExpressiveIcon(
-                    icon: ZumiIcons.permissions,
+                    icon: AsagiIcons.permissions,
                     shape: ExpressiveIconShape.arch,
                     size: 52,
                     backgroundColor: colorScheme.primaryContainer,
@@ -75,7 +75,7 @@ final class PermissionsPage extends StatelessWidget {
                         ),
                         const Gap(AppSpacing.xSmall),
                         Text(
-                          l10n.runtimePermissionsZumiRequestsAndWhyEachIsNeeded,
+                          l10n.runtimePermissionsAsagiRequestsAndWhyEachIsNeeded,
                           style: context.textTheme.bodySmall?.copyWith(
                             color: colorScheme.onSurfaceVariant,
                           ),
@@ -145,7 +145,7 @@ final class PermissionsPage extends StatelessWidget {
                   ),
                   const Gap(AppSpacing.medium),
                   FilledTonalButtonComponent.icon(
-                    icon: ZumiIcons.settings,
+                    icon: AsagiIcons.settings,
                     label: 'Manage in System Settings',
                     expand: true,
                     onPressed: () {

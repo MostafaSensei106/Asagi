@@ -11,7 +11,7 @@ import '../widgets/contrast_section.dart';
 import '../widgets/theme_mode_section.dart';
 import '../widgets/theme_preview_card.dart';
 
-/// Lets the user preview the theme and pick how Zumi resolves it.
+/// Lets the user preview the theme and pick how Asagi resolves it.
 ///
 /// Only the theme mode and the high-contrast switch are real preferences, so
 /// the page exposes just those instead of fake color scheme or motion controls.

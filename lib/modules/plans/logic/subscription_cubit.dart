@@ -11,7 +11,7 @@ import 'subscription_state.dart';
 
 export 'subscription_state.dart';
 
-const proMonthlyProductId = 'zumi_pro_monthly';
+const proMonthlyProductId = 'asagi_pro_monthly';
 
 @injectable
 final class SubscriptionCubit extends CubitSignal<SubscriptionState> {

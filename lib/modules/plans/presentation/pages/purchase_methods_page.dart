@@ -4,8 +4,8 @@ import 'package:kaisel/kaisel.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
-import '../../../../core/constants/zumi_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../../core/widgets/widgets.dart';
@@ -49,17 +49,17 @@ final class PurchaseMethodsPage extends StatelessWidget {
                 shape: ExpressiveIconShape.gem,
                 title: l10n.storeBillingTitle,
                 subtitle: l10n.storeBillingSummary,
-                leading: ZumiIcons.purchaseMethods,
+                leading: AsagiIcons.purchaseMethods,
                 onTap: () => showPaymentInfo(
                   title: l10n.storeBillingTitle,
                   description: l10n.storeBillingDetails,
-                  icon: ZumiIcons.purchaseMethods,
+                  icon: AsagiIcons.purchaseMethods,
                   illustrationKind: InfoIllustrationKind.storeBilling,
                 ),
                 onLongPress: () => showPaymentInfo(
                   title: l10n.storeBillingTitle,
                   description: l10n.storeBillingDetails,
-                  icon: ZumiIcons.purchaseMethods,
+                  icon: AsagiIcons.purchaseMethods,
                   illustrationKind: InfoIllustrationKind.storeBilling,
                 ),
               ),
@@ -128,17 +128,17 @@ final class PurchaseMethodsPage extends StatelessWidget {
                 shape: ExpressiveIconShape.clover,
                 title: l10n.storeProtectedPurchases,
                 subtitle: l10n.storeProtectedPurchasesSummary,
-                leading: ZumiIcons.dataSafety,
+                leading: AsagiIcons.dataSafety,
                 onTap: () => showPaymentInfo(
                   title: l10n.storeProtectedPurchases,
                   description: l10n.storeProtectedPurchasesDetails,
-                  icon: ZumiIcons.dataSafety,
+                  icon: AsagiIcons.dataSafety,
                   illustrationKind: InfoIllustrationKind.purchaseProtection,
                 ),
                 onLongPress: () => showPaymentInfo(
                   title: l10n.storeProtectedPurchases,
                   description: l10n.storeProtectedPurchasesDetails,
-                  icon: ZumiIcons.dataSafety,
+                  icon: AsagiIcons.dataSafety,
                   illustrationKind: InfoIllustrationKind.purchaseProtection,
                 ),
               ),
@@ -147,7 +147,7 @@ final class PurchaseMethodsPage extends StatelessWidget {
           const Gap(AppSpacing.large),
           FilledButtonComponent.icon(
             expand: true,
-            icon: ZumiIcons.plans,
+            icon: AsagiIcons.plans,
             label: l10n.plans,
             onPressed: () => unawaited(context.push(const PlansRoute())),
           ),

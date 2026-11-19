@@ -10,6 +10,88 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 
+import 'package:asagi/core/compression/domain/contracts/artifact_store.dart'
+    as _i0;
+import 'package:asagi/core/di/injection_module.dart' as _i938;
+import 'package:asagi/core/services/ai/ai_model_service.dart' as _i491;
+import 'package:asagi/core/services/ai/interface/base_ai_model_service.dart'
+    as _i454;
+import 'package:asagi/core/services/app_info/app_info_service.dart' as _i822;
+import 'package:asagi/core/services/app_info/interface/base_app_info_service.dart'
+    as _i752;
+import 'package:asagi/core/services/app_info/interface/base_package_info_adapter.dart'
+    as _i615;
+import 'package:asagi/core/services/app_info/package_info_plus_adapter.dart'
+    as _i132;
+import 'package:asagi/core/services/billing/billing_service.dart' as _i521;
+import 'package:asagi/core/services/billing/google_play_billing_service.dart'
+    as _i296;
+import 'package:asagi/core/services/billing/in_memory_purchase_proof_store.dart'
+    as _i183;
+import 'package:asagi/core/services/file_opener/base_file_opener_service.dart'
+    as _i1039;
+import 'package:asagi/core/services/file_opener/url_file_opener_service.dart'
+    as _i283;
+import 'package:asagi/core/services/l10n/l10n_service.dart' as _i843;
+import 'package:asagi/core/services/permissions/base_permission_service.dart'
+    as _i415;
+import 'package:asagi/core/services/permissions/permission_handler_service.dart'
+    as _i47;
+import 'package:asagi/core/services/security/audit/app_audit_logger.dart'
+    as _i923;
+import 'package:asagi/core/services/security/audit/base_audit_logger.dart'
+    as _i619;
+import 'package:asagi/core/services/security/clipboard_guard_service.dart'
+    as _i586;
+import 'package:asagi/core/services/security/secure_vault_service.dart'
+    as _i590;
+import 'package:asagi/core/services/session/user_session_service.dart' as _i849;
+import 'package:asagi/core/services/share/base_share_service.dart' as _i550;
+import 'package:asagi/core/services/share/share_plus_service.dart' as _i770;
+import 'package:asagi/core/services/shared_prefs/base_pref_storage_service.dart'
+    as _i896;
+import 'package:asagi/core/services/shared_prefs/secure_storage_service.dart'
+    as _i559;
+import 'package:asagi/core/services/shared_prefs/shared_prefs_service.dart'
+    as _i883;
+import 'package:asagi/core/services/shared_prefs/storage_facade.dart' as _i960;
+import 'package:asagi/core/services/theme/theme_service.dart' as _i264;
+import 'package:asagi/core/services/toast/base_toast_service.dart' as _i630;
+import 'package:asagi/core/services/toast/toastification_service.dart' as _i885;
+import 'package:asagi/core/services/url_launcher/base_url_launcher_services.dart'
+    as _i1073;
+import 'package:asagi/core/services/url_launcher/url_launcher_service.dart'
+    as _i31;
+import 'package:asagi/core/utils/cache/cache_manager.dart' as _i866;
+import 'package:asagi/core/utils/localization/data/base_localization_repository.dart'
+    as _i604;
+import 'package:asagi/core/utils/localization/data/localization_repository.dart'
+    as _i676;
+import 'package:asagi/core/utils/localization/logic/cubit/localization_cubit.dart'
+    as _i1040;
+import 'package:asagi/core/utils/network/logic/cubit/network_cubit.dart'
+    as _i295;
+import 'package:asagi/core/utils/theme/data/base_theme_repository.dart'
+    as _i911;
+import 'package:asagi/core/utils/theme/data/theme_repository.dart' as _i219;
+import 'package:asagi/core/utils/theme/logic/cubit/theme_cubit.dart' as _i664;
+import 'package:asagi/modules/about/data/about_app_repsitory.dart' as _i382;
+import 'package:asagi/modules/about/data/base_about_app_repository.dart'
+    as _i812;
+import 'package:asagi/modules/about/data/repositories/asset_open_source_license_repository.dart'
+    as _i560;
+import 'package:asagi/modules/about/domain/repositories/open_source_license_repository.dart'
+    as _i433;
+import 'package:asagi/modules/about/logic/cubit/about_app_cubit.dart' as _i188;
+import 'package:asagi/modules/about/logic/open_source_licenses_cubit.dart'
+    as _i37;
+import 'package:asagi/modules/plans/logic/subscription_cubit.dart' as _i184;
+import 'package:asagi/modules/storage/data/repositories/file_storage_repository.dart'
+    as _i806;
+import 'package:asagi/modules/storage/domain/repositories/storage_repository.dart'
+    as _i547;
+import 'package:asagi/modules/storage/logic/storage_settings_cubit.dart'
+    as _i633;
 import 'package:connectivity_plus/connectivity_plus.dart' as _i895;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as _i558;
 import 'package:get_it/get_it.dart' as _i174;
@@ -17,86 +99,6 @@ import 'package:injectable/injectable.dart' as _i526;
 import 'package:package_info_plus/package_info_plus.dart' as _i655;
 import 'package:share_plus/share_plus.dart' as _i998;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
-import 'package:zumi/core/compression/domain/contracts/artifact_store.dart'
-    as _i904;
-import 'package:zumi/core/di/injection_module.dart' as _i837;
-import 'package:zumi/core/services/ai/ai_model_service.dart' as _i111;
-import 'package:zumi/core/services/ai/interface/base_ai_model_service.dart'
-    as _i320;
-import 'package:zumi/core/services/app_info/app_info_service.dart' as _i481;
-import 'package:zumi/core/services/app_info/interface/base_app_info_service.dart'
-    as _i248;
-import 'package:zumi/core/services/app_info/interface/base_package_info_adapter.dart'
-    as _i283;
-import 'package:zumi/core/services/app_info/package_info_plus_adapter.dart'
-    as _i647;
-import 'package:zumi/core/services/billing/billing_service.dart' as _i546;
-import 'package:zumi/core/services/billing/google_play_billing_service.dart'
-    as _i141;
-import 'package:zumi/core/services/billing/in_memory_purchase_proof_store.dart'
-    as _i961;
-import 'package:zumi/core/services/file_opener/base_file_opener_service.dart'
-    as _i255;
-import 'package:zumi/core/services/file_opener/url_file_opener_service.dart'
-    as _i385;
-import 'package:zumi/core/services/l10n/l10n_service.dart' as _i664;
-import 'package:zumi/core/services/permissions/base_permission_service.dart'
-    as _i43;
-import 'package:zumi/core/services/permissions/permission_handler_service.dart'
-    as _i358;
-import 'package:zumi/core/services/security/audit/app_audit_logger.dart'
-    as _i603;
-import 'package:zumi/core/services/security/audit/base_audit_logger.dart'
-    as _i459;
-import 'package:zumi/core/services/security/clipboard_guard_service.dart'
-    as _i356;
-import 'package:zumi/core/services/security/secure_vault_service.dart' as _i698;
-import 'package:zumi/core/services/session/user_session_service.dart' as _i1064;
-import 'package:zumi/core/services/share/base_share_service.dart' as _i763;
-import 'package:zumi/core/services/share/share_plus_service.dart' as _i491;
-import 'package:zumi/core/services/shared_prefs/base_pref_storage_service.dart'
-    as _i969;
-import 'package:zumi/core/services/shared_prefs/secure_storage_service.dart'
-    as _i606;
-import 'package:zumi/core/services/shared_prefs/shared_prefs_service.dart'
-    as _i994;
-import 'package:zumi/core/services/shared_prefs/storage_facade.dart' as _i887;
-import 'package:zumi/core/services/theme/theme_service.dart' as _i813;
-import 'package:zumi/core/services/toast/base_toast_service.dart' as _i666;
-import 'package:zumi/core/services/toast/toastification_service.dart' as _i524;
-import 'package:zumi/core/services/url_launcher/base_url_launcher_services.dart'
-    as _i91;
-import 'package:zumi/core/services/url_launcher/url_launcher_service.dart'
-    as _i704;
-import 'package:zumi/core/utils/cache/cache_manager.dart' as _i613;
-import 'package:zumi/core/utils/localization/data/base_localization_repository.dart'
-    as _i699;
-import 'package:zumi/core/utils/localization/data/localization_repository.dart'
-    as _i875;
-import 'package:zumi/core/utils/localization/logic/cubit/localization_cubit.dart'
-    as _i1015;
-import 'package:zumi/core/utils/network/logic/cubit/network_cubit.dart'
-    as _i944;
-import 'package:zumi/core/utils/theme/data/base_theme_repository.dart' as _i882;
-import 'package:zumi/core/utils/theme/data/theme_repository.dart' as _i538;
-import 'package:zumi/core/utils/theme/logic/cubit/theme_cubit.dart' as _i839;
-import 'package:zumi/modules/about/data/about_app_repsitory.dart' as _i529;
-import 'package:zumi/modules/about/data/base_about_app_repository.dart'
-    as _i374;
-import 'package:zumi/modules/about/data/repositories/asset_open_source_license_repository.dart'
-    as _i146;
-import 'package:zumi/modules/about/domain/repositories/open_source_license_repository.dart'
-    as _i302;
-import 'package:zumi/modules/about/logic/cubit/about_app_cubit.dart' as _i811;
-import 'package:zumi/modules/about/logic/open_source_licenses_cubit.dart'
-    as _i214;
-import 'package:zumi/modules/plans/logic/subscription_cubit.dart' as _i877;
-import 'package:zumi/modules/storage/data/repositories/file_storage_repository.dart'
-    as _i117;
-import 'package:zumi/modules/storage/domain/repositories/storage_repository.dart'
-    as _i938;
-import 'package:zumi/modules/storage/logic/storage_settings_cubit.dart'
-    as _i407;
 
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -119,199 +121,198 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i998.SharePlus>(() => injectionModule.sharePlus);
     gh.lazySingleton<_i895.Connectivity>(() => injectionModule.connectivity);
-    gh.lazySingleton<_i904.ArtifactStore>(() => injectionModule.artifactStore);
-    gh.lazySingleton<_i664.L10nService>(() => _i664.L10nService());
-    gh.lazySingleton<_i813.ThemeService>(() => _i813.ThemeService());
-    gh.lazySingleton<_i613.CacheManager>(() => _i613.CacheManager());
-    gh.lazySingleton<_i283.BasePackageInfoAdapter>(
-      () => _i647.PackageInfoPlusAdapter(gh<_i655.PackageInfo>()),
+    gh.lazySingleton<_i0.ArtifactStore>(() => injectionModule.artifactStore);
+    gh.lazySingleton<_i843.L10nService>(() => _i843.L10nService());
+    gh.lazySingleton<_i264.ThemeService>(() => _i264.ThemeService());
+    gh.lazySingleton<_i866.CacheManager>(() => _i866.CacheManager());
+    gh.lazySingleton<_i1040.LocalizationCubit>(
+      () => _i1040.LocalizationCubit(l10nService: gh<_i843.L10nService>()),
     );
-    gh.lazySingleton<_i302.OpenSourceLicenseRepository>(
-      () => _i146.AssetOpenSourceLicenseRepository(),
+    gh.lazySingleton<_i454.BaseAiModelService>(() => _i491.AiModelService());
+    gh.lazySingleton<_i619.BaseAuditLogger>(() => const _i923.AppAuditLogger());
+    gh.lazySingleton<_i1073.BaseUrlLauncherServices>(
+      () => _i31.UrlLauncherService(gh<_i619.BaseAuditLogger>()),
     );
-    gh.factory<_i214.OpenSourceLicensesCubit>(
-      () => _i214.OpenSourceLicensesCubit(
-        gh<_i302.OpenSourceLicenseRepository>(),
-      ),
+    gh.lazySingleton<_i615.BasePackageInfoAdapter>(
+      () => _i132.PackageInfoPlusAdapter(gh<_i655.PackageInfo>()),
     );
-    gh.lazySingleton<_i546.PurchaseProofStore>(
-      () => _i961.InMemoryPurchaseProofStore(),
+    gh.lazySingleton<_i415.BasePermissionService>(
+      () => const _i47.PermissionHandlerService(),
     );
-    gh.lazySingleton<_i459.BaseAuditLogger>(() => const _i603.AppAuditLogger());
-    gh.lazySingleton<_i43.BasePermissionService>(
-      () => const _i358.PermissionHandlerService(),
+    gh.lazySingleton<_i521.PurchaseProofStore>(
+      () => _i183.InMemoryPurchaseProofStore(),
     );
-    gh.lazySingleton<_i320.BaseAiModelService>(() => _i111.AiModelService());
-    gh.lazySingleton<_i938.StorageRepository>(
-      () => _i117.FileStorageRepository(gh<_i904.ArtifactStore>()),
+    gh.lazySingleton<_i550.BaseShareService>(
+      () => _i770.SharePlusService(gh<_i998.SharePlus>()),
     );
-    gh.lazySingleton<_i546.BillingService>(
-      () => _i141.GooglePlayBillingService(),
+    gh.lazySingleton<_i433.OpenSourceLicenseRepository>(
+      () => _i560.AssetOpenSourceLicenseRepository(),
     );
-    gh.lazySingleton<_i666.BaseToastService>(
-      () => _i524.ToastificationService(gh<_i813.ThemeService>()),
+    gh.lazySingleton<_i630.BaseToastService>(
+      () => _i885.ToastificationService(gh<_i264.ThemeService>()),
     );
-    gh.lazySingleton<_i763.BaseShareService>(
-      () => _i491.SharePlusService(gh<_i998.SharePlus>()),
+    gh.lazySingleton<_i521.BillingService>(
+      () => _i296.GooglePlayBillingService(),
     );
-    gh.lazySingleton<_i1015.LocalizationCubit>(
-      () => _i1015.LocalizationCubit(l10nService: gh<_i664.L10nService>()),
+    gh.lazySingleton<_i559.SecureStorageService>(
+      () => _i559.SecureStorageService(gh<_i558.FlutterSecureStorage>()),
     );
-    gh.lazySingleton<_i698.BaseSecureVaultService>(
-      () => _i698.SecureVaultService(
+    gh.lazySingleton<_i547.StorageRepository>(
+      () => _i806.FileStorageRepository(gh<_i0.ArtifactStore>()),
+    );
+    gh.lazySingleton<_i883.SharedPrefsService>(
+      () => _i883.SharedPrefsService(gh<_i460.SharedPreferences>()),
+    );
+    gh.lazySingleton<_i590.BaseSecureVaultService>(
+      () => _i590.SecureVaultService(
         gh<_i558.FlutterSecureStorage>(),
-        gh<_i459.BaseAuditLogger>(),
+        gh<_i619.BaseAuditLogger>(),
       ),
     );
-    gh.lazySingleton<_i606.SecureStorageService>(
-      () => _i606.SecureStorageService(gh<_i558.FlutterSecureStorage>()),
+    gh.lazySingleton<_i295.NetworkCubit>(
+      () => _i295.NetworkCubit(gh<_i895.Connectivity>()),
     );
-    gh.lazySingleton<_i994.SharedPrefsService>(
-      () => _i994.SharedPrefsService(gh<_i460.SharedPreferences>()),
+    gh.lazySingleton<_i752.BaseAppInfoService>(
+      () => _i822.AppInfoService(gh<_i615.BasePackageInfoAdapter>()),
     );
-    gh.lazySingleton<_i356.BaseClipboardGuardService>(
-      () => _i356.ClipboardGuardService(gh<_i459.BaseAuditLogger>()),
+    gh.factory<_i633.StorageSettingsCubit>(
+      () => _i633.StorageSettingsCubit(gh<_i547.StorageRepository>()),
     );
-    gh.lazySingleton<_i944.NetworkCubit>(
-      () => _i944.NetworkCubit(gh<_i895.Connectivity>()),
+    gh.lazySingleton<_i586.BaseClipboardGuardService>(
+      () => _i586.ClipboardGuardService(gh<_i619.BaseAuditLogger>()),
     );
-    gh.lazySingleton<_i91.BaseUrlLauncherServices>(
-      () => _i704.UrlLauncherService(gh<_i459.BaseAuditLogger>()),
+    gh.factory<_i37.OpenSourceLicensesCubit>(
+      () =>
+          _i37.OpenSourceLicensesCubit(gh<_i433.OpenSourceLicenseRepository>()),
     );
-    gh.factory<_i407.StorageSettingsCubit>(
-      () => _i407.StorageSettingsCubit(gh<_i938.StorageRepository>()),
-    );
-    gh.lazySingleton<_i248.BaseAppInfoService>(
-      () => _i481.AppInfoService(gh<_i283.BasePackageInfoAdapter>()),
-    );
-    gh.factory<_i877.SubscriptionCubit>(
-      () => _i877.SubscriptionCubit(
-        gh<_i546.BillingService>(),
-        gh<_i546.PurchaseProofStore>(),
+    gh.lazySingleton<_i896.BasePrefStorageService>(
+      () => _i960.StorageFacade(
+        sharedPrefsService: gh<_i883.SharedPrefsService>(),
+        secureStorageService: gh<_i559.SecureStorageService>(),
       ),
     );
-    gh.factory<_i255.BaseFileOpenerService>(
-      () => _i385.UrlFileOpenerService(
-        gh<_i91.BaseUrlLauncherServices>(),
-        gh<_i459.BaseAuditLogger>(),
+    gh.factory<_i1039.BaseFileOpenerService>(
+      () => _i283.UrlFileOpenerService(
+        gh<_i1073.BaseUrlLauncherServices>(),
+        gh<_i619.BaseAuditLogger>(),
       ),
     );
-    gh.lazySingleton<_i969.BasePrefStorageService>(
-      () => _i887.StorageFacade(
-        sharedPrefsService: gh<_i994.SharedPrefsService>(),
-        secureStorageService: gh<_i606.SecureStorageService>(),
+    gh.lazySingleton<_i812.BaseAboutAppRepository>(
+      () => _i382.AboutAppRepsitory(gh<_i752.BaseAppInfoService>()),
+    );
+    gh.lazySingleton<_i911.BaseThemeRepository>(
+      () => _i219.ThemeRepository(gh<_i896.BasePrefStorageService>()),
+    );
+    gh.lazySingleton<_i960.StorageFacade>(
+      () => injectionModule.storageFacade(gh<_i896.BasePrefStorageService>()),
+    );
+    gh.factory<_i184.SubscriptionCubit>(
+      () => _i184.SubscriptionCubit(
+        gh<_i521.BillingService>(),
+        gh<_i521.PurchaseProofStore>(),
       ),
     );
-    gh.lazySingleton<_i374.BaseAboutAppRepository>(
-      () => _i529.AboutAppRepsitory(gh<_i248.BaseAppInfoService>()),
+    gh.factory<_i188.AboutAppCubit>(
+      () => _i188.AboutAppCubit(gh<_i812.BaseAboutAppRepository>()),
     );
-    gh.lazySingleton<_i699.BaseLocalizationRepository>(
-      () => _i875.LocalizationRepository(
-        storage: gh<_i969.BasePrefStorageService>(),
-        l10nService: gh<_i664.L10nService>(),
+    gh.lazySingleton<_i604.BaseLocalizationRepository>(
+      () => _i676.LocalizationRepository(
+        storage: gh<_i896.BasePrefStorageService>(),
+        l10nService: gh<_i843.L10nService>(),
       ),
     );
-    gh.lazySingleton<_i882.BaseThemeRepository>(
-      () => _i538.ThemeRepository(gh<_i969.BasePrefStorageService>()),
+    gh.lazySingleton<_i664.ThemeCubit>(
+      () => _i664.ThemeCubit(gh<_i911.BaseThemeRepository>()),
     );
-    gh.factory<_i811.AboutAppCubit>(
-      () => _i811.AboutAppCubit(gh<_i374.BaseAboutAppRepository>()),
-    );
-    gh.lazySingleton<_i887.StorageFacade>(
-      () => injectionModule.storageFacade(gh<_i969.BasePrefStorageService>()),
-    );
-    gh.lazySingleton<_i1064.UserSessionServiceBase>(
-      () => _i1064.UserSessionService(gh<_i887.StorageFacade>()),
-    );
-    gh.lazySingleton<_i839.ThemeCubit>(
-      () => _i839.ThemeCubit(gh<_i882.BaseThemeRepository>()),
+    gh.lazySingleton<_i849.UserSessionServiceBase>(
+      () => _i849.UserSessionService(gh<_i960.StorageFacade>()),
     );
     return this;
   }
 
-  _i664.L10nService get l10nService => get<_i664.L10nService>();
+  _i843.L10nService get l10nService => get<_i843.L10nService>();
 
-  _i813.ThemeService get themeService => get<_i813.ThemeService>();
+  _i264.ThemeService get themeService => get<_i264.ThemeService>();
 
-  _i613.CacheManager get cacheManager => get<_i613.CacheManager>();
+  _i866.CacheManager get cacheManager => get<_i866.CacheManager>();
 
-  _i647.PackageInfoPlusAdapter get packageInfoPlusAdapter =>
-      get<_i647.PackageInfoPlusAdapter>();
+  _i1040.LocalizationCubit get localizationCubit =>
+      get<_i1040.LocalizationCubit>();
 
-  _i146.AssetOpenSourceLicenseRepository get assetOpenSourceLicenseRepository =>
-      get<_i146.AssetOpenSourceLicenseRepository>();
+  _i491.AiModelService get aiModelService => get<_i491.AiModelService>();
 
-  _i214.OpenSourceLicensesCubit get openSourceLicensesCubit =>
-      get<_i214.OpenSourceLicensesCubit>();
+  _i923.AppAuditLogger get appAuditLogger => get<_i923.AppAuditLogger>();
 
-  _i961.InMemoryPurchaseProofStore get inMemoryPurchaseProofStore =>
-      get<_i961.InMemoryPurchaseProofStore>();
+  _i31.UrlLauncherService get urlLauncherService =>
+      get<_i31.UrlLauncherService>();
 
-  _i603.AppAuditLogger get appAuditLogger => get<_i603.AppAuditLogger>();
+  _i132.PackageInfoPlusAdapter get packageInfoPlusAdapter =>
+      get<_i132.PackageInfoPlusAdapter>();
 
-  _i358.PermissionHandlerService get permissionHandlerService =>
-      get<_i358.PermissionHandlerService>();
+  _i47.PermissionHandlerService get permissionHandlerService =>
+      get<_i47.PermissionHandlerService>();
 
-  _i111.AiModelService get aiModelService => get<_i111.AiModelService>();
+  _i183.InMemoryPurchaseProofStore get inMemoryPurchaseProofStore =>
+      get<_i183.InMemoryPurchaseProofStore>();
 
-  _i117.FileStorageRepository get fileStorageRepository =>
-      get<_i117.FileStorageRepository>();
+  _i770.SharePlusService get sharePlusService => get<_i770.SharePlusService>();
 
-  _i141.GooglePlayBillingService get googlePlayBillingService =>
-      get<_i141.GooglePlayBillingService>();
+  _i560.AssetOpenSourceLicenseRepository get assetOpenSourceLicenseRepository =>
+      get<_i560.AssetOpenSourceLicenseRepository>();
 
-  _i524.ToastificationService get toastificationService =>
-      get<_i524.ToastificationService>();
+  _i885.ToastificationService get toastificationService =>
+      get<_i885.ToastificationService>();
 
-  _i491.SharePlusService get sharePlusService => get<_i491.SharePlusService>();
+  _i296.GooglePlayBillingService get googlePlayBillingService =>
+      get<_i296.GooglePlayBillingService>();
 
-  _i1015.LocalizationCubit get localizationCubit =>
-      get<_i1015.LocalizationCubit>();
+  _i559.SecureStorageService get secureStorageService =>
+      get<_i559.SecureStorageService>();
 
-  _i698.SecureVaultService get secureVaultService =>
-      get<_i698.SecureVaultService>();
+  _i806.FileStorageRepository get fileStorageRepository =>
+      get<_i806.FileStorageRepository>();
 
-  _i606.SecureStorageService get secureStorageService =>
-      get<_i606.SecureStorageService>();
+  _i883.SharedPrefsService get sharedPrefsService =>
+      get<_i883.SharedPrefsService>();
 
-  _i994.SharedPrefsService get sharedPrefsService =>
-      get<_i994.SharedPrefsService>();
+  _i590.SecureVaultService get secureVaultService =>
+      get<_i590.SecureVaultService>();
 
-  _i356.ClipboardGuardService get clipboardGuardService =>
-      get<_i356.ClipboardGuardService>();
+  _i295.NetworkCubit get networkCubit => get<_i295.NetworkCubit>();
 
-  _i944.NetworkCubit get networkCubit => get<_i944.NetworkCubit>();
+  _i822.AppInfoService get appInfoService => get<_i822.AppInfoService>();
 
-  _i704.UrlLauncherService get urlLauncherService =>
-      get<_i704.UrlLauncherService>();
+  _i633.StorageSettingsCubit get storageSettingsCubit =>
+      get<_i633.StorageSettingsCubit>();
 
-  _i407.StorageSettingsCubit get storageSettingsCubit =>
-      get<_i407.StorageSettingsCubit>();
+  _i586.ClipboardGuardService get clipboardGuardService =>
+      get<_i586.ClipboardGuardService>();
 
-  _i481.AppInfoService get appInfoService => get<_i481.AppInfoService>();
+  _i37.OpenSourceLicensesCubit get openSourceLicensesCubit =>
+      get<_i37.OpenSourceLicensesCubit>();
 
-  _i877.SubscriptionCubit get subscriptionCubit =>
-      get<_i877.SubscriptionCubit>();
+  _i960.StorageFacade get storageFacade => get<_i960.StorageFacade>();
 
-  _i385.UrlFileOpenerService get urlFileOpenerService =>
-      get<_i385.UrlFileOpenerService>();
+  _i283.UrlFileOpenerService get urlFileOpenerService =>
+      get<_i283.UrlFileOpenerService>();
 
-  _i887.StorageFacade get storageFacade => get<_i887.StorageFacade>();
+  _i382.AboutAppRepsitory get aboutAppRepsitory =>
+      get<_i382.AboutAppRepsitory>();
 
-  _i529.AboutAppRepsitory get aboutAppRepsitory =>
-      get<_i529.AboutAppRepsitory>();
+  _i219.ThemeRepository get themeRepository => get<_i219.ThemeRepository>();
 
-  _i875.LocalizationRepository get localizationRepository =>
-      get<_i875.LocalizationRepository>();
+  _i184.SubscriptionCubit get subscriptionCubit =>
+      get<_i184.SubscriptionCubit>();
 
-  _i538.ThemeRepository get themeRepository => get<_i538.ThemeRepository>();
+  _i188.AboutAppCubit get aboutAppCubit => get<_i188.AboutAppCubit>();
 
-  _i811.AboutAppCubit get aboutAppCubit => get<_i811.AboutAppCubit>();
+  _i676.LocalizationRepository get localizationRepository =>
+      get<_i676.LocalizationRepository>();
 
-  _i1064.UserSessionService get userSessionService =>
-      get<_i1064.UserSessionService>();
+  _i664.ThemeCubit get themeCubit => get<_i664.ThemeCubit>();
 
-  _i839.ThemeCubit get themeCubit => get<_i839.ThemeCubit>();
+  _i849.UserSessionService get userSessionService =>
+      get<_i849.UserSessionService>();
 }
 
-class _$InjectionModule extends _i837.InjectionModule {}
+class _$InjectionModule extends _i938.InjectionModule {}

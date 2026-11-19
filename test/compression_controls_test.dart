@@ -1,14 +1,14 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:asagi/core/compression/application/compression_engine.dart';
+import 'package:asagi/core/compression/domain/contracts/video_encoder.dart';
+import 'package:asagi/core/compression/domain/models/compression_output.dart';
+import 'package:asagi/core/compression/domain/models/compression_preferences.dart';
+import 'package:asagi/core/compression/domain/models/encode_request.dart';
+import 'package:asagi/core/compression/domain/models/video_metadata.dart';
+import 'package:asagi/core/compression/infrastructure/storage/file_artifact_store.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:zumi/core/compression/application/compression_engine.dart';
-import 'package:zumi/core/compression/domain/contracts/video_encoder.dart';
-import 'package:zumi/core/compression/domain/models/compression_output.dart';
-import 'package:zumi/core/compression/domain/models/compression_preferences.dart';
-import 'package:zumi/core/compression/domain/models/encode_request.dart';
-import 'package:zumi/core/compression/domain/models/video_metadata.dart';
-import 'package:zumi/core/compression/infrastructure/storage/file_artifact_store.dart';
 
 import 'compression_engine_test.dart' show Planner;
 
@@ -71,7 +71,7 @@ void main() {
   late ControlledEncoder encoder;
   late CompressionEngine engine;
   setUp(() async {
-    directory = await Directory.systemTemp.createTemp('zumi-control-');
+    directory = await Directory.systemTemp.createTemp('asagi-control-');
     encoder = ControlledEncoder();
     engine = CompressionEngine(
       planner: Planner(),

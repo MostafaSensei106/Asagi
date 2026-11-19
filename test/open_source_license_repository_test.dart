@@ -1,5 +1,5 @@
+import 'package:asagi/modules/about/data/repositories/asset_open_source_license_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:zumi/modules/about/data/repositories/asset_open_source_license_repository.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();

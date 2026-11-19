@@ -1,7 +1,7 @@
 {
   "@@locale": "zh_CN",
-  "zumi": "Zumi",
-  "@zumi": {
+  "asagi": "Asagi",
+  "@asagi": {
     "description": "Application name shown in the app and on the home page"
   },
   "downloadFile": "下载文件",
@@ -211,12 +211,12 @@
   "@compressVideosPrivatelyOnYourDevice": {
     "description": "Home page description"
   },
-  "welcomeToZumi": "欢迎使用Zumi",
-  "@welcomeToZumi": {
+  "welcomeToAsagi": "欢迎使用Asagi",
+  "@welcomeToAsagi": {
     "description": "Onboarding page title"
   },
-  "learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": "了解Zumi如何在不离开手机的情况下压缩您的视频。",
-  "@learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": {
+  "learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": "了解Asagi如何在不离开手机的情况下压缩您的视频。",
+  "@learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": {
     "description": "Onboarding page description"
   },
   "signIn": "登录",
@@ -319,8 +319,8 @@
   "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
     "description": "Privacy settings page description"
   },
-  "aboutZumi": "关于 Zumi",
-  "@aboutZumi": {
+  "aboutAsagi": "关于 Asagi",
+  "@aboutAsagi": {
     "description": "App info page title"
   },
   "versionBuildNumberAndApplicationDetails": "版本、构建号和应用详情。",
@@ -331,48 +331,48 @@
   "@aboutTheDeveloper": {
     "description": "Developer page title"
   },
-  "theDeveloperAndToolsBehindZumi": "Zumi 的开发者及工具。",
-  "@theDeveloperAndToolsBehindZumi": {
+  "theDeveloperAndToolsBehindAsagi": "Asagi 的开发者及工具。",
+  "@theDeveloperAndToolsBehindAsagi": {
     "description": "Developer page description"
   },
   "openSourceLicenses": "开源许可",
   "@openSourceLicenses": {
     "description": "Licenses page title"
   },
-  "openSourcePackagesBundledWithZumi": "随 Zumi 打包的开源软件包。",
-  "@openSourcePackagesBundledWithZumi": {
+  "openSourcePackagesBundledWithAsagi": "随 Asagi 打包的开源软件包。",
+  "@openSourcePackagesBundledWithAsagi": {
     "description": "Licenses page description"
   },
   "privacyPolicy": "隐私政策",
   "@privacyPolicy": {
     "description": "Privacy policy page title"
   },
-  "howZumiHandlesYourVideosAndData": "Zumi 如何处理您的视频和数据。",
-  "@howZumiHandlesYourVideosAndData": {
+  "howAsagiHandlesYourVideosAndData": "Asagi 如何处理您的视频和数据。",
+  "@howAsagiHandlesYourVideosAndData": {
     "description": "Privacy policy page description"
   },
   "termsOfService": "服务条款",
   "@termsOfService": {
     "description": "Terms page title"
   },
-  "theTermsThatApplyToZumiAndItsPurchases": "适用于 Zumi 及其购买内容的条款。",
-  "@theTermsThatApplyToZumiAndItsPurchases": {
+  "theTermsThatApplyToAsagiAndItsPurchases": "适用于 Asagi 及其购买内容的条款。",
+  "@theTermsThatApplyToAsagiAndItsPurchases": {
     "description": "Terms page description"
   },
   "dataSafety": "数据安全",
   "@dataSafety": {
     "description": "Data safety page title"
   },
-  "summaryOfTheDataZumiCollectsAndWhy": "Zumi 收集的数据摘要及原因。",
-  "@summaryOfTheDataZumiCollectsAndWhy": {
+  "summaryOfTheDataAsagiCollectsAndWhy": "Asagi 收集的数据摘要及原因。",
+  "@summaryOfTheDataAsagiCollectsAndWhy": {
     "description": "Data safety page description"
   },
   "permissions": "权限",
   "@permissions": {
     "description": "Permissions page title"
   },
-  "runtimePermissionsZumiRequestsAndWhyEachIsNeeded": "Zumi 请求的运行时权限及每个权限的必要性。",
-  "@runtimePermissionsZumiRequestsAndWhyEachIsNeeded": {
+  "runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": "Asagi 请求的运行时权限及每个权限的必要性。",
+  "@runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": {
     "description": "Permissions page description"
   },
   "faq": "常见问题",
@@ -447,20 +447,20 @@
   "@permanentlyRemoveYourAccountAndItsServerSideData": {
     "description": "Delete account page description"
   },
-  "rateZumi": "评价 Zumi",
-  "@rateZumi": {
+  "rateAsagi": "评价 Asagi",
+  "@rateAsagi": {
     "description": "Rate app page title"
   },
-  "tellOthersHowZumiWorkedForYouOnTheStore": "告诉其他人 Zumi 在商店中的使用体验。",
-  "@tellOthersHowZumiWorkedForYouOnTheStore": {
+  "tellOthersHowAsagiWorkedForYouOnTheStore": "告诉其他人 Asagi 在商店中的使用体验。",
+  "@tellOthersHowAsagiWorkedForYouOnTheStore": {
     "description": "Rate app page description"
   },
-  "shareZumi": "分享 Zumi",
-  "@shareZumi": {
+  "shareAsagi": "分享 Asagi",
+  "@shareAsagi": {
     "description": "Share app page title"
   },
-  "recommendZumiToAFriend": "推荐 Zumi 给朋友。",
-  "@recommendZumiToAFriend": {
+  "recommendAsagiToAFriend": "推荐 Asagi 给朋友。",
+  "@recommendAsagiToAFriend": {
     "description": "Share app page description"
   },
   "appearanceLanguage": "外观与语言",
@@ -516,7 +516,7 @@
     "description": "Settings hub row summary"
   },
   "aiSettings": "AI 设置",
-  "zumiAssistant": "Zumi 助手",
+  "asagiAssistant": "Asagi 助手",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "一个专用于你视频的私人助手即将到来。你将能够在这里询问有关压缩、组织和已保存视频的问题。",
   "localModelsAndSmartTools": "本地模型和智能工具",
   "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "探索本地模型和未来 AI 工具。这些选项尚未激活。",
@@ -576,8 +576,8 @@
   "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "theDeveloperBehindZumi": "Zumi背后的开发者",
-  "@theDeveloperBehindZumi": {
+  "theDeveloperBehindAsagi": "Asagi背后的开发者",
+  "@theDeveloperBehindAsagi": {
     "description": "Settings hub row summary"
   },
   "openSourcePackageLicenses": "开源软件包许可证",
@@ -588,8 +588,8 @@
   "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "rulesForUsingZumi": "使用Zumi的规则",
-  "@rulesForUsingZumi": {
+  "rulesForUsingAsagi": "使用Asagi的规则",
+  "@rulesForUsingAsagi": {
     "description": "Settings hub row summary"
   },
   "whatDataWeCollect": "我们收集的数据",
@@ -691,14 +691,14 @@
   "unavailable": "不可用",
   "projectAndSupport": "项目和支持",
   "githubRepository": "GitHub 仓库",
-  "viewZumiSourceCode": "查看 Zumi 源代码",
+  "viewAsagiSourceCode": "查看 Asagi 源代码",
   "readTheREADME": "阅读 README",
-  "learnAboutZumiOnGitHub": "在 GitHub 上了解 Zumi",
+  "learnAboutAsagiOnGitHub": "在 GitHub 上了解 Asagi",
   "reportAnIssue": "报告问题",
   "viewAndCreateGitHubIssues": "查看并创建 GitHub 问题",
   "latestRelease": "最新版本",
   "viewReleasesAndDownloads": "查看版本和下载",
-  "supportZumi": "支持 Zumi",
+  "supportAsagi": "支持 Asagi",
   "openTheOfficialDonationPage": "打开官方捐赠页面",
   "couldNotOpenTheLinkPleaseTryAgain": "无法打开链接。请重试。",
   "developer": "开发者",
@@ -706,7 +706,7 @@
   "githubProfile": "GitHub 个人资料",
   "seeProjectsAndContactDetails": "查看项目和联系方式",
   "maintenanceInProgress": "维护中",
-  "zumiIsTemporarilyUnavailablePleaseTryAgainLater": "Zumi 暂时不可用。请稍后再试。",
+  "asagiIsTemporarilyUnavailablePleaseTryAgainLater": "Asagi 暂时不可用。请稍后再试。",
   "comingSoon": "即将到来",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"

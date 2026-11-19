@@ -13,7 +13,7 @@ successful decode and flush. A failed decode removes the partial file.
 
 | Offset | Size | Field |
 | ---: | ---: | --- |
-| 0 | 8 | Magic bytes `ZUMIYUV\0` |
+| 0 | 8 | Magic bytes `ASAGIYUV\0` |
 | 8 | 2 | Version, `1` |
 | 10 | 2 | Header size, `36` |
 | 12 | 4 | Output width in pixels (even) |

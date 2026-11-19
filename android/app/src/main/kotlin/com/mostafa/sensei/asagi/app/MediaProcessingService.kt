@@ -1,4 +1,4 @@
-package com.mostafa.sensei.zumi.app
+package com.mostafa.sensei.asagi.app
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -10,13 +10,13 @@ import android.content.Intent
 import android.content.pm.ServiceInfo
 import android.os.Build
 import android.os.IBinder
-import com.mostafa.sensei.zumi.MainActivity
-import com.mostafa.sensei.zumi.R
+import com.mostafa.sensei.asagi.MainActivity
+import com.mostafa.sensei.asagi.R
 
 /** Keeps a user-started encode visible while the app is in the background. */
 class MediaProcessingService : Service() {
     companion object {
-        private const val CHANNEL = "zumi_media_processing"
+        private const val CHANNEL = "asagi_media_processing"
         private const val NOTIFICATION_ID = 3101
         private var active: MediaProcessingService? = null
         var onTimeout: (() -> Unit)? = null

@@ -10,7 +10,7 @@ class AppLocalizationsIt extends AppLocalizations {
   AppLocalizationsIt([String locale = 'it']) : super(locale);
 
   @override
-  String get zumi => 'Zumi';
+  String get asagi => 'Asagi';
 
   @override
   String get downloadFile => 'Scarica file';
@@ -174,11 +174,11 @@ class AppLocalizationsIt extends AppLocalizations {
       'Comprimi i video in modo privato direttamente sul tuo dispositivo.';
 
   @override
-  String get welcomeToZumi => 'Benvenuto in Zumi';
+  String get welcomeToAsagi => 'Benvenuto in Asagi';
 
   @override
-  String get learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone =>
-      'Scopri come Zumi comprime i tuoi video senza mai lasciare il tuo telefono.';
+  String get learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone =>
+      'Scopri come Asagi comprime i tuoi video senza mai lasciare il tuo telefono.';
 
   @override
   String get signIn => 'Accedi';
@@ -266,7 +266,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get sharperTextAndSurfaces => 'Pure black and white surfaces ';
 
   @override
-  String get zumiEngine => 'Zumi Engine';
+  String get asagiEngine => 'Asagi Engine';
 
   @override
   String get targetSizeOptimizer => 'Target-Size Video Optimizer';
@@ -322,7 +322,7 @@ class AppLocalizationsIt extends AppLocalizations {
       'Elaborazione sul dispositivo, registri locali e rapporti sugli arresti opzionali.';
 
   @override
-  String get aboutZumi => 'Informazioni su Zumi';
+  String get aboutAsagi => 'Informazioni su Asagi';
 
   @override
   String get versionBuildNumberAndApplicationDetails =>
@@ -332,40 +332,40 @@ class AppLocalizationsIt extends AppLocalizations {
   String get aboutTheDeveloper => 'Informazioni sullo sviluppatore';
 
   @override
-  String get theDeveloperAndToolsBehindZumi =>
-      'Lo sviluppatore e gli strumenti dietro Zumi.';
+  String get theDeveloperAndToolsBehindAsagi =>
+      'Lo sviluppatore e gli strumenti dietro Asagi.';
 
   @override
-  String get openSourcePackagesBundledWithZumi =>
-      'Pacchetti open-source inclusi con Zumi.';
+  String get openSourcePackagesBundledWithAsagi =>
+      'Pacchetti open-source inclusi con Asagi.';
 
   @override
   String get privacyPolicy => 'Informativa sulla privacy';
 
   @override
-  String get howZumiHandlesYourVideosAndData =>
-      'Come Zumi gestisce i tuoi video e i tuoi dati.';
+  String get howAsagiHandlesYourVideosAndData =>
+      'Come Asagi gestisce i tuoi video e i tuoi dati.';
 
   @override
   String get termsOfService => 'Termini di servizio';
 
   @override
-  String get theTermsThatApplyToZumiAndItsPurchases =>
-      'I termini che si applicano a Zumi e ai suoi acquisti.';
+  String get theTermsThatApplyToAsagiAndItsPurchases =>
+      'I termini che si applicano an Asagi e ai suoi acquisti.';
 
   @override
   String get dataSafety => 'Sicurezza dei dati';
 
   @override
-  String get summaryOfTheDataZumiCollectsAndWhy =>
-      'Riepilogo dei dati che Zumi raccoglie e perché.';
+  String get summaryOfTheDataAsagiCollectsAndWhy =>
+      'Riepilogo dei dati che Asagi raccoglie e perché.';
 
   @override
   String get permissions => 'Autorizzazioni';
 
   @override
-  String get runtimePermissionsZumiRequestsAndWhyEachIsNeeded =>
-      'Autorizzazioni runtime richieste da Zumi e perché ciascuna è necessaria.';
+  String get runtimePermissionsAsagiRequestsAndWhyEachIsNeeded =>
+      'Autorizzazioni runtime richieste dan Asagi e perché ciascuna è necessaria.';
 
   @override
   String get faq => 'FAQ';
@@ -431,17 +431,17 @@ class AppLocalizationsIt extends AppLocalizations {
       'Rimuovi permanentemente il tuo account e i dati lato server.';
 
   @override
-  String get rateZumi => 'Valuta Zumi';
+  String get rateAsagi => 'Valutan Asagi';
 
   @override
-  String get tellOthersHowZumiWorkedForYouOnTheStore =>
-      'Dì agli altri come Zumi ha funzionato per te nel negozio.';
+  String get tellOthersHowAsagiWorkedForYouOnTheStore =>
+      'Dì agli altri come Asagi ha funzionato per te nel negozio.';
 
   @override
-  String get shareZumi => 'Condividi Zumi';
+  String get shareAsagi => 'Condividi Asagi';
 
   @override
-  String get recommendZumiToAFriend => 'Consiglia Zumi a un amico.';
+  String get recommendAsagiToAFriend => 'Consiglian Asagi a un amico.';
 
   @override
   String get appearanceLanguage => 'Aspetto e lingua';
@@ -486,7 +486,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get aiSettings => 'Impostazioni AI';
 
   @override
-  String get zumiAssistant => 'Assistente Zumi';
+  String get asagiAssistant => 'Assistente Asagi';
 
   @override
   String
@@ -630,7 +630,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get versionAndBuildDetails => 'Dettagli su versione e build';
 
   @override
-  String get theDeveloperBehindZumi => 'Lo sviluppatore dietro Zumi';
+  String get theDeveloperBehindAsagi => 'Lo sviluppatore dietro Asagi';
 
   @override
   String get openSourcePackageLicenses => 'Licenze dei pacchetti open source';
@@ -639,7 +639,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get howDataIsHandled => 'Come vengono gestiti i dati';
 
   @override
-  String get rulesForUsingZumi => 'Regole per l\'uso di Zumi';
+  String get rulesForUsingAsagi => 'Regole per l\'uso di Asagi';
 
   @override
   String get whatDataWeCollect => 'Quali dati raccogliamo';
@@ -921,13 +921,13 @@ class AppLocalizationsIt extends AppLocalizations {
   String get githubRepository => 'Repository GitHub';
 
   @override
-  String get viewZumiSourceCode => 'Visualizza il codice sorgente di Zumi';
+  String get viewAsagiSourceCode => 'Visualizza il codice sorgente di Asagi';
 
   @override
   String get readTheREADME => 'Leggi il README';
 
   @override
-  String get learnAboutZumiOnGitHub => 'Scopri Zumi su GitHub';
+  String get learnAboutAsagiOnGitHub => 'Scopri Asagi su GitHub';
 
   @override
   String get reportAnIssue => 'Segnala un problema';
@@ -942,7 +942,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get viewReleasesAndDownloads => 'Visualizza release e download';
 
   @override
-  String get supportZumi => 'Supporta Zumi';
+  String get supportAsagi => 'Supportan Asagi';
 
   @override
   String get openTheOfficialDonationPage =>
@@ -969,14 +969,14 @@ class AppLocalizationsIt extends AppLocalizations {
   String get maintenanceInProgress => 'Manutenzione in corso';
 
   @override
-  String get zumiIsTemporarilyUnavailablePleaseTryAgainLater =>
-      'Zumi è temporaneamente non disponibile. Riprova più tardi.';
+  String get asagiIsTemporarilyUnavailablePleaseTryAgainLater =>
+      'Asagi è temporaneamente non disponibile. Riprova più tardi.';
 
   @override
   String get comingSoon => 'Prossimamente';
 
   @override
-  String get zumiProTitle => 'Zumi Pro';
+  String get asagiProTitle => 'Asagi Pro';
 
   @override
   String subscriptionPerMonth(Object price) {
@@ -1190,7 +1190,7 @@ class AppLocalizationsIt extends AppLocalizations {
       'Restore purchases made with this Google Play account.';
 
   @override
-  String get zumiProActive => 'Zumi Pro is active';
+  String get asagiProActive => 'Asagi Pro is active';
 
   @override
   String get checking => 'Checking…';
@@ -1487,8 +1487,8 @@ class AppLocalizationsIt extends AppLocalizations {
   String get manualControl => 'Manual control';
 
   @override
-  String get zumiIsStudyingThePlatformAlgorithmAndCalculatingTheBudget =>
-      '🐾 Zumi is studying the platform\'s algorithm and calculating the budget...';
+  String get asagiIsStudyingThePlatformAlgorithmAndCalculatingTheBudget =>
+      '🐾 Asagi is studying the platform\'s algorithm and calculating the budget...';
 
   @override
   String get customControlMode => 'Custom control mode';
@@ -1499,8 +1499,8 @@ class AppLocalizationsIt extends AppLocalizations {
       'You set the target size manually. The engine will apply the highest possible resolution and quality within that cap.';
 
   @override
-  String zumiIsPuzzledAnImpossibleTargetForTheNameCap(String name) {
-    return 'Zumi is puzzled (impossible target for the $name cap)';
+  String asagiIsPuzzledAnImpossibleTargetForTheNameCap(String name) {
+    return 'Asagi is puzzled (impossible target for the $name cap)';
   }
 
   @override
@@ -1512,8 +1512,8 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
-  String get zumiAlertProtectingQualityFromDistortion =>
-      'Zumi alert: protecting quality from distortion';
+  String get asagiAlertProtectingQualityFromDistortion =>
+      'Asagi alert: protecting quality from distortion';
 
   @override
   String
@@ -1556,7 +1556,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get termsOfServiceFullText =>
-      '1. Acceptance of Terms\nBy downloading, accessing, or using Zumi (\"the Application\"), you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you must discontinue using the application.\n\n2. Personal License\nWe grant you a personal, revocable, non-exclusive, non-transferable license to use Zumi strictly for your personal, non-commercial, or internal creative media compression workflows on compatible devices.\n\n3. On-Device Execution & Content Ownership\nZumi executes compression pipelines exclusively on your device hardware using local encoders. You retain 100% of all intellectual property rights and copyrights in and to your video files and media. Zumi never uploads, hosts, replicates, or claims ownership over any videos you select or process. You are solely responsible for ensuring you have all requisite permissions and licenses for any media you compress.\n\n4. In-App Subscriptions & Billing\nOptional premium features (such as Zumi Pro) may be offered as recurring subscriptions or one-time unlock purchases. All billing, renewals, cancellations, and tax collections are processed exclusively through the official platform store (Google Play or Apple App Store). Subscriptions renew automatically unless cancelled at least 24 hours prior to the conclusion of the active billing cycle.\n\n5. Disclaimer of Warranties\nThe Application is provided \"as is\" and \"as available,\" without warranty of any kind, express or implied. While we employ rigorous testing and standard-compliant codecs, we do not guarantee that media compression will achieve specific file reduction percentages without visual changes for every source codec.\n';
+      '1. Acceptance of Terms\nBy downloading, accessing, or using Asagi (\"the Application\"), you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you must discontinue using the application.\n\n2. Personal License\nWe grant you a personal, revocable, non-exclusive, non-transferable license to use Asagi strictly for your personal, non-commercial, or internal creative media compression workflows on compatible devices.\n\n3. On-Device Execution & Content Ownership\nAsagi executes compression pipelines exclusively on your device hardware using local encoders. You retain 100% of all intellectual property rights and copyrights in and to your video files and media. Asagi never uploads, hosts, replicates, or claims ownership over any videos you select or process. You are solely responsible for ensuring you have all requisite permissions and licenses for any media you compress.\n\n4. In-App Subscriptions & Billing\nOptional premium features (such as Asagi Pro) may be offered as recurring subscriptions or one-time unlock purchases. All billing, renewals, cancellations, and tax collections are processed exclusively through the official platform store (Google Play or Apple App Store). Subscriptions renew automatically unless cancelled at least 24 hours prior to the conclusion of the active billing cycle.\n\n5. Disclaimer of Warranties\nThe Application is provided \"as is\" and \"as available,\" without warranty of any kind, express or implied. While we employ rigorous testing and standard-compliant codecs, we do not guarantee that media compression will achieve specific file reduction percentages without visual changes for every source codec.\n';
 
   @override
   String get termsCopiedToClipboard => 'Terms copied to clipboard';
@@ -1566,14 +1566,14 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get termsAcceptanceLicenseBody =>
-      'By using Zumi, you agree to these Terms. We grant you a personal, non-exclusive, non-transferable license to compress media locally on your devices.';
+      'By using Asagi, you agree to these Terms. We grant you a personal, non-exclusive, non-transferable license to compress media locally on your devices.';
 
   @override
   String get termsContentOwnershipTitle => '2. 100% Content Ownership';
 
   @override
   String get termsContentOwnershipBody =>
-      'You retain all copyrights and ownership over your videos. Zumi does not transmit, store, or claim any rights to your media files.';
+      'You retain all copyrights and ownership over your videos. Asagi does not transmit, store, or claim any rights to your media files.';
 
   @override
   String get termsLocalOnDeviceProcessingTitle =>
@@ -1613,8 +1613,8 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String
-  get allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreZumiNeverAccessesCardDetails =>
-      'All payment details are handled directly by Google Play Store or Apple App Store. Zumi never accesses card details.';
+  get allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreAsagiNeverAccessesCardDetails =>
+      'All payment details are handled directly by Google Play Store or Apple App Store. Asagi never accesses card details.';
 
   @override
   String get appPerformanceAndCrashLogs => 'App Performance & Crash Logs';
@@ -1692,7 +1692,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get videoProcessingCommitmentBody =>
-      'Zumi was built with a fundamental architectural guarantee: your videos, clips, and audio tracks are encoded exclusively on your device hardware using local native codecs. At no point is your media streamed, stored, or processed on external cloud infrastructure.';
+      'Asagi was built with a fundamental architectural guarantee: your videos, clips, and audio tracks are encoded exclusively on your device hardware using local native codecs. At no point is your media streamed, stored, or processed on external cloud infrastructure.';
 
   @override
   String get informationWeNeverCollectTitle =>
@@ -1714,7 +1714,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get thirdPartyStorePaymentsBody =>
-      'Subscription and in-app purchase operations are executed directly through the official Apple App Store or Google Play Store. Zumi does not process or retain your credit card or financial billing information.';
+      'Subscription and in-app purchase operations are executed directly through the official Apple App Store or Google Play Store. Asagi does not process or retain your credit card or financial billing information.';
 
   @override
   String get dataDeletionAndStorageHygieneTitle =>
@@ -1991,7 +1991,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get supportedOnDeviceModels => 'Supported On-Device Models';
 
   @override
-  String get zumiBitrateOptimizer => 'Zumi Bitrate Optimizer (0.2B)';
+  String get asagiBitrateOptimizer => 'Asagi Bitrate Optimizer (0.2B)';
 
   @override
   String get localRateControlDescription =>
@@ -2342,13 +2342,13 @@ class AppLocalizationsIt extends AppLocalizations {
   String get scratchpadCleanupSummary => 'Remove cached preview files';
 
   @override
-  String get privacyPolicySummary => 'How Zumi handles data';
+  String get privacyPolicySummary => 'How Asagi handles data';
 
   @override
   String get dataSafetySummary => 'Collected data and purpose';
 
   @override
-  String get permissionsSummary => 'Why Zumi needs access';
+  String get permissionsSummary => 'Why Asagi needs access';
 
   @override
   String get supportedPaymentOptions => 'Supported Payment Options';
@@ -2374,7 +2374,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get creditDebitCardsDetails =>
-      'Use a card saved to your Google Play or Apple App Store account. The store processes the payment, so Zumi never receives your card number.';
+      'Use a card saved to your Google Play or Apple App Store account. The store processes the payment, so Asagi never receives your card number.';
 
   @override
   String get storeBalanceGiftCardsTitle => 'Store Balance & Gift Cards';
@@ -2384,7 +2384,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get storeBalanceGiftCardsDetails =>
-      'Use eligible store balance, redeemed gift cards, or promotional credit toward a Zumi subscription. Availability depends on your store and region.';
+      'Use eligible store balance, redeemed gift cards, or promotional credit toward an Asagi subscription. Availability depends on your store and region.';
 
   @override
   String get digitalWalletsTitle => 'Digital Wallets & Local Methods';
@@ -2404,7 +2404,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get storeProtectedPurchasesDetails =>
-      'Zumi never sees or retains your financial billing data. Google Play or Apple App Store authenticates and encrypts every transaction. You can cancel anytime through your store account, without hidden fees.';
+      'Asagi never sees or retains your financial billing data. Google Play or Apple App Store authenticates and encrypts every transaction. You can cancel anytime through your store account, without hidden fees.';
 }
 
 /// The translations for Italian, as used in Italy (`it_IT`).
@@ -2412,7 +2412,7 @@ class AppLocalizationsItIt extends AppLocalizationsIt {
   AppLocalizationsItIt() : super('it_IT');
 
   @override
-  String get zumi => 'Zumi';
+  String get asagi => 'Asagi';
 
   @override
   String get downloadFile => 'Scarica file';
@@ -2576,11 +2576,11 @@ class AppLocalizationsItIt extends AppLocalizationsIt {
       'Comprimi i video in modo privato direttamente sul tuo dispositivo.';
 
   @override
-  String get welcomeToZumi => 'Benvenuto in Zumi';
+  String get welcomeToAsagi => 'Benvenuto in Asagi';
 
   @override
-  String get learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone =>
-      'Scopri come Zumi comprime i tuoi video senza mai lasciare il tuo telefono.';
+  String get learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone =>
+      'Scopri come Asagi comprime i tuoi video senza mai lasciare il tuo telefono.';
 
   @override
   String get signIn => 'Accedi';
@@ -2670,7 +2670,7 @@ class AppLocalizationsItIt extends AppLocalizationsIt {
       'Elaborazione sul dispositivo, registri locali e rapporti sugli arresti opzionali.';
 
   @override
-  String get aboutZumi => 'Informazioni su Zumi';
+  String get aboutAsagi => 'Informazioni su Asagi';
 
   @override
   String get versionBuildNumberAndApplicationDetails =>
@@ -2680,40 +2680,40 @@ class AppLocalizationsItIt extends AppLocalizationsIt {
   String get aboutTheDeveloper => 'Informazioni sullo sviluppatore';
 
   @override
-  String get theDeveloperAndToolsBehindZumi =>
-      'Lo sviluppatore e gli strumenti dietro Zumi.';
+  String get theDeveloperAndToolsBehindAsagi =>
+      'Lo sviluppatore e gli strumenti dietro Asagi.';
 
   @override
-  String get openSourcePackagesBundledWithZumi =>
-      'Pacchetti open-source inclusi con Zumi.';
+  String get openSourcePackagesBundledWithAsagi =>
+      'Pacchetti open-source inclusi con Asagi.';
 
   @override
   String get privacyPolicy => 'Informativa sulla privacy';
 
   @override
-  String get howZumiHandlesYourVideosAndData =>
-      'Come Zumi gestisce i tuoi video e i tuoi dati.';
+  String get howAsagiHandlesYourVideosAndData =>
+      'Come Asagi gestisce i tuoi video e i tuoi dati.';
 
   @override
   String get termsOfService => 'Termini di servizio';
 
   @override
-  String get theTermsThatApplyToZumiAndItsPurchases =>
-      'I termini che si applicano a Zumi e ai suoi acquisti.';
+  String get theTermsThatApplyToAsagiAndItsPurchases =>
+      'I termini che si applicano an Asagi e ai suoi acquisti.';
 
   @override
   String get dataSafety => 'Sicurezza dei dati';
 
   @override
-  String get summaryOfTheDataZumiCollectsAndWhy =>
-      'Riepilogo dei dati che Zumi raccoglie e perché.';
+  String get summaryOfTheDataAsagiCollectsAndWhy =>
+      'Riepilogo dei dati che Asagi raccoglie e perché.';
 
   @override
   String get permissions => 'Autorizzazioni';
 
   @override
-  String get runtimePermissionsZumiRequestsAndWhyEachIsNeeded =>
-      'Autorizzazioni runtime richieste da Zumi e perché ciascuna è necessaria.';
+  String get runtimePermissionsAsagiRequestsAndWhyEachIsNeeded =>
+      'Autorizzazioni runtime richieste dan Asagi e perché ciascuna è necessaria.';
 
   @override
   String get faq => 'FAQ';
@@ -2779,17 +2779,17 @@ class AppLocalizationsItIt extends AppLocalizationsIt {
       'Rimuovi permanentemente il tuo account e i dati lato server.';
 
   @override
-  String get rateZumi => 'Valuta Zumi';
+  String get rateAsagi => 'Valutan Asagi';
 
   @override
-  String get tellOthersHowZumiWorkedForYouOnTheStore =>
-      'Dì agli altri come Zumi ha funzionato per te nel negozio.';
+  String get tellOthersHowAsagiWorkedForYouOnTheStore =>
+      'Dì agli altri come Asagi ha funzionato per te nel negozio.';
 
   @override
-  String get shareZumi => 'Condividi Zumi';
+  String get shareAsagi => 'Condividi Asagi';
 
   @override
-  String get recommendZumiToAFriend => 'Consiglia Zumi a un amico.';
+  String get recommendAsagiToAFriend => 'Consiglian Asagi a un amico.';
 
   @override
   String get appearanceLanguage => 'Aspetto e lingua';
@@ -2834,7 +2834,7 @@ class AppLocalizationsItIt extends AppLocalizationsIt {
   String get aiSettings => 'Impostazioni AI';
 
   @override
-  String get zumiAssistant => 'Assistente Zumi';
+  String get asagiAssistant => 'Assistente Asagi';
 
   @override
   String
@@ -2978,7 +2978,7 @@ class AppLocalizationsItIt extends AppLocalizationsIt {
   String get versionAndBuildDetails => 'Dettagli su versione e build';
 
   @override
-  String get theDeveloperBehindZumi => 'Lo sviluppatore dietro Zumi';
+  String get theDeveloperBehindAsagi => 'Lo sviluppatore dietro Asagi';
 
   @override
   String get openSourcePackageLicenses => 'Licenze dei pacchetti open source';
@@ -2987,7 +2987,7 @@ class AppLocalizationsItIt extends AppLocalizationsIt {
   String get howDataIsHandled => 'Come vengono gestiti i dati';
 
   @override
-  String get rulesForUsingZumi => 'Regole per l\'uso di Zumi';
+  String get rulesForUsingAsagi => 'Regole per l\'uso di Asagi';
 
   @override
   String get whatDataWeCollect => 'Quali dati raccogliamo';
@@ -3269,13 +3269,13 @@ class AppLocalizationsItIt extends AppLocalizationsIt {
   String get githubRepository => 'Repository GitHub';
 
   @override
-  String get viewZumiSourceCode => 'Visualizza il codice sorgente di Zumi';
+  String get viewAsagiSourceCode => 'Visualizza il codice sorgente di Asagi';
 
   @override
   String get readTheREADME => 'Leggi il README';
 
   @override
-  String get learnAboutZumiOnGitHub => 'Scopri Zumi su GitHub';
+  String get learnAboutAsagiOnGitHub => 'Scopri Asagi su GitHub';
 
   @override
   String get reportAnIssue => 'Segnala un problema';
@@ -3290,7 +3290,7 @@ class AppLocalizationsItIt extends AppLocalizationsIt {
   String get viewReleasesAndDownloads => 'Visualizza release e download';
 
   @override
-  String get supportZumi => 'Supporta Zumi';
+  String get supportAsagi => 'Supportan Asagi';
 
   @override
   String get openTheOfficialDonationPage =>
@@ -3317,8 +3317,8 @@ class AppLocalizationsItIt extends AppLocalizationsIt {
   String get maintenanceInProgress => 'Manutenzione in corso';
 
   @override
-  String get zumiIsTemporarilyUnavailablePleaseTryAgainLater =>
-      'Zumi è temporaneamente non disponibile. Riprova più tardi.';
+  String get asagiIsTemporarilyUnavailablePleaseTryAgainLater =>
+      'Asagi è temporaneamente non disponibile. Riprova più tardi.';
 
   @override
   String get comingSoon => 'Prossimamente';

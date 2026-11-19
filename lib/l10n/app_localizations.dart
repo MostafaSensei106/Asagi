@@ -152,8 +152,8 @@ abstract class AppLocalizations {
   /// Application name shown in the app and on the home page
   ///
   /// In en, this message translates to:
-  /// **'Zumi'**
-  String get zumi;
+  /// **'Asagi'**
+  String get asagi;
 
   /// Title for download file dialog
   ///
@@ -434,14 +434,14 @@ abstract class AppLocalizations {
   /// Onboarding page title
   ///
   /// In en, this message translates to:
-  /// **'Welcome to Zumi'**
-  String get welcomeToZumi;
+  /// **'Welcome to Asagi'**
+  String get welcomeToAsagi;
 
   /// Onboarding page description
   ///
   /// In en, this message translates to:
-  /// **'Learn how Zumi compresses your videos without ever leaving your phone.'**
-  String get learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone;
+  /// **'Learn how Asagi compresses your videos without ever leaving your phone.'**
+  String get learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone;
 
   /// Login page title
   ///
@@ -602,8 +602,8 @@ abstract class AppLocalizations {
   /// Engine title in theme preview card
   ///
   /// In en, this message translates to:
-  /// **'Zumi Engine'**
-  String get zumiEngine;
+  /// **'Asagi Engine'**
+  String get asagiEngine;
 
   /// Engine subtitle in theme preview card
   ///
@@ -704,8 +704,8 @@ abstract class AppLocalizations {
   /// App info page title
   ///
   /// In en, this message translates to:
-  /// **'About Zumi'**
-  String get aboutZumi;
+  /// **'About Asagi'**
+  String get aboutAsagi;
 
   /// App info page description
   ///
@@ -722,14 +722,14 @@ abstract class AppLocalizations {
   /// Developer page description
   ///
   /// In en, this message translates to:
-  /// **'The developer and tools behind Zumi.'**
-  String get theDeveloperAndToolsBehindZumi;
+  /// **'The developer and tools behind Asagi.'**
+  String get theDeveloperAndToolsBehindAsagi;
 
   /// Licenses page description
   ///
   /// In en, this message translates to:
-  /// **'Open-source packages bundled with Zumi.'**
-  String get openSourcePackagesBundledWithZumi;
+  /// **'Open-source packages bundled with Asagi.'**
+  String get openSourcePackagesBundledWithAsagi;
 
   /// Privacy policy page title
   ///
@@ -740,8 +740,8 @@ abstract class AppLocalizations {
   /// Privacy policy page description
   ///
   /// In en, this message translates to:
-  /// **'How Zumi handles your videos and data.'**
-  String get howZumiHandlesYourVideosAndData;
+  /// **'How Asagi handles your videos and data.'**
+  String get howAsagiHandlesYourVideosAndData;
 
   /// Terms page title
   ///
@@ -752,8 +752,8 @@ abstract class AppLocalizations {
   /// Terms page description
   ///
   /// In en, this message translates to:
-  /// **'The terms that apply to Zumi and its purchases.'**
-  String get theTermsThatApplyToZumiAndItsPurchases;
+  /// **'The terms that apply to Asagi and its purchases.'**
+  String get theTermsThatApplyToAsagiAndItsPurchases;
 
   /// Data safety page title
   ///
@@ -764,8 +764,8 @@ abstract class AppLocalizations {
   /// Data safety page description
   ///
   /// In en, this message translates to:
-  /// **'Summary of the data Zumi collects and why.'**
-  String get summaryOfTheDataZumiCollectsAndWhy;
+  /// **'Summary of the datan Asagi collects and why.'**
+  String get summaryOfTheDataAsagiCollectsAndWhy;
 
   /// Permissions page title
   ///
@@ -776,8 +776,8 @@ abstract class AppLocalizations {
   /// Permissions page description
   ///
   /// In en, this message translates to:
-  /// **'Runtime permissions Zumi requests and why each is needed.'**
-  String get runtimePermissionsZumiRequestsAndWhyEachIsNeeded;
+  /// **'Runtime permissions Asagi requests and why each is needed.'**
+  String get runtimePermissionsAsagiRequestsAndWhyEachIsNeeded;
 
   /// FAQ page title
   ///
@@ -890,26 +890,26 @@ abstract class AppLocalizations {
   /// Rate app page title
   ///
   /// In en, this message translates to:
-  /// **'Rate Zumi'**
-  String get rateZumi;
+  /// **'Rate Asagi'**
+  String get rateAsagi;
 
   /// Rate app page description
   ///
   /// In en, this message translates to:
-  /// **'Tell others how Zumi worked for you on the store.'**
-  String get tellOthersHowZumiWorkedForYouOnTheStore;
+  /// **'Tell others how Asagi worked for you on the store.'**
+  String get tellOthersHowAsagiWorkedForYouOnTheStore;
 
   /// Share app page title
   ///
   /// In en, this message translates to:
-  /// **'Share Zumi'**
-  String get shareZumi;
+  /// **'Share Asagi'**
+  String get shareAsagi;
 
   /// Share app page description
   ///
   /// In en, this message translates to:
-  /// **'Recommend Zumi to a friend.'**
-  String get recommendZumiToAFriend;
+  /// **'Recommend Asagi to a friend.'**
+  String get recommendAsagiToAFriend;
 
   /// Settings hub section label
   ///
@@ -995,11 +995,11 @@ abstract class AppLocalizations {
   /// **'AI settings'**
   String get aiSettings;
 
-  /// No description provided for @zumiAssistant.
+  /// No description provided for @asagiAssistant.
   ///
   /// In en, this message translates to:
-  /// **'Zumi Assistant'**
-  String get zumiAssistant;
+  /// **'Asagi Assistant'**
+  String get asagiAssistant;
 
   /// No description provided for @aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere.
   ///
@@ -1240,8 +1240,8 @@ abstract class AppLocalizations {
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
-  /// **'The developer behind Zumi'**
-  String get theDeveloperBehindZumi;
+  /// **'The developer behind Asagi'**
+  String get theDeveloperBehindAsagi;
 
   /// Settings hub row summary
   ///
@@ -1258,8 +1258,8 @@ abstract class AppLocalizations {
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
-  /// **'Rules for using Zumi'**
-  String get rulesForUsingZumi;
+  /// **'Rules for using Asagi'**
+  String get rulesForUsingAsagi;
 
   /// Settings hub row summary
   ///
@@ -1771,11 +1771,11 @@ abstract class AppLocalizations {
   /// **'GitHub repository'**
   String get githubRepository;
 
-  /// No description provided for @viewZumiSourceCode.
+  /// No description provided for @viewAsagiSourceCode.
   ///
   /// In en, this message translates to:
-  /// **'View Zumi source code'**
-  String get viewZumiSourceCode;
+  /// **'View Asagi source code'**
+  String get viewAsagiSourceCode;
 
   /// No description provided for @readTheREADME.
   ///
@@ -1783,11 +1783,11 @@ abstract class AppLocalizations {
   /// **'Read the README'**
   String get readTheREADME;
 
-  /// No description provided for @learnAboutZumiOnGitHub.
+  /// No description provided for @learnAboutAsagiOnGitHub.
   ///
   /// In en, this message translates to:
-  /// **'Learn about Zumi on GitHub'**
-  String get learnAboutZumiOnGitHub;
+  /// **'Learn about Asagi on GitHub'**
+  String get learnAboutAsagiOnGitHub;
 
   /// No description provided for @reportAnIssue.
   ///
@@ -1813,11 +1813,11 @@ abstract class AppLocalizations {
   /// **'View releases and downloads'**
   String get viewReleasesAndDownloads;
 
-  /// No description provided for @supportZumi.
+  /// No description provided for @supportAsagi.
   ///
   /// In en, this message translates to:
-  /// **'Support Zumi'**
-  String get supportZumi;
+  /// **'Support Asagi'**
+  String get supportAsagi;
 
   /// No description provided for @openTheOfficialDonationPage.
   ///
@@ -1861,11 +1861,11 @@ abstract class AppLocalizations {
   /// **'Maintenance in progress'**
   String get maintenanceInProgress;
 
-  /// No description provided for @zumiIsTemporarilyUnavailablePleaseTryAgainLater.
+  /// No description provided for @asagiIsTemporarilyUnavailablePleaseTryAgainLater.
   ///
   /// In en, this message translates to:
-  /// **'Zumi is temporarily unavailable. Please try again later.'**
-  String get zumiIsTemporarilyUnavailablePleaseTryAgainLater;
+  /// **'Asagi is temporarily unavailable. Please try again later.'**
+  String get asagiIsTemporarilyUnavailablePleaseTryAgainLater;
 
   /// Badge shown on placeholder pages
   ///
@@ -1873,11 +1873,11 @@ abstract class AppLocalizations {
   /// **'Coming soon'**
   String get comingSoon;
 
-  /// No description provided for @zumiProTitle.
+  /// No description provided for @asagiProTitle.
   ///
   /// In en, this message translates to:
-  /// **'Zumi Pro'**
-  String get zumiProTitle;
+  /// **'Asagi Pro'**
+  String get asagiProTitle;
 
   /// No description provided for @subscriptionPerMonth.
   ///
@@ -2233,11 +2233,11 @@ abstract class AppLocalizations {
   /// **'Restore purchases made with this Google Play account.'**
   String get restorePurchaseDescription;
 
-  /// No description provided for @zumiProActive.
+  /// No description provided for @asagiProActive.
   ///
   /// In en, this message translates to:
-  /// **'Zumi Pro is active'**
-  String get zumiProActive;
+  /// **'Asagi Pro is active'**
+  String get asagiProActive;
 
   /// No description provided for @checking.
   ///
@@ -2653,8 +2653,8 @@ abstract class AppLocalizations {
   /// Loading message while the preset plan is computed
   ///
   /// In en, this message translates to:
-  /// **'🐾 Zumi is studying the platform\'s algorithm and calculating the budget...'**
-  String get zumiIsStudyingThePlatformAlgorithmAndCalculatingTheBudget;
+  /// **'🐾 Asagi is studying the platform\'s algorithm and calculating the budget...'**
+  String get asagiIsStudyingThePlatformAlgorithmAndCalculatingTheBudget;
 
   /// Title of the custom mode feedback card
   ///
@@ -2672,8 +2672,8 @@ abstract class AppLocalizations {
   /// Infeasible plan title
   ///
   /// In en, this message translates to:
-  /// **'Zumi is puzzled (impossible target for the {name} cap)'**
-  String zumiIsPuzzledAnImpossibleTargetForTheNameCap(String name);
+  /// **'Asagi is puzzled (impossible target for the {name} cap)'**
+  String asagiIsPuzzledAnImpossibleTargetForTheNameCap(String name);
 
   /// Infeasible plan explanation
   ///
@@ -2687,8 +2687,8 @@ abstract class AppLocalizations {
   /// Reduced quality warning title
   ///
   /// In en, this message translates to:
-  /// **'Zumi alert: protecting quality from distortion'**
-  String get zumiAlertProtectingQualityFromDistortion;
+  /// **'Asagi alert: protecting quality from distortion'**
+  String get asagiAlertProtectingQualityFromDistortion;
 
   /// Reduced quality warning explanation
   ///
@@ -2744,7 +2744,7 @@ abstract class AppLocalizations {
   /// Full Terms of Service text copied to the clipboard
   ///
   /// In en, this message translates to:
-  /// **'1. Acceptance of Terms\nBy downloading, accessing, or using Zumi (\"the Application\"), you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you must discontinue using the application.\n\n2. Personal License\nWe grant you a personal, revocable, non-exclusive, non-transferable license to use Zumi strictly for your personal, non-commercial, or internal creative media compression workflows on compatible devices.\n\n3. On-Device Execution & Content Ownership\nZumi executes compression pipelines exclusively on your device hardware using local encoders. You retain 100% of all intellectual property rights and copyrights in and to your video files and media. Zumi never uploads, hosts, replicates, or claims ownership over any videos you select or process. You are solely responsible for ensuring you have all requisite permissions and licenses for any media you compress.\n\n4. In-App Subscriptions & Billing\nOptional premium features (such as Zumi Pro) may be offered as recurring subscriptions or one-time unlock purchases. All billing, renewals, cancellations, and tax collections are processed exclusively through the official platform store (Google Play or Apple App Store). Subscriptions renew automatically unless cancelled at least 24 hours prior to the conclusion of the active billing cycle.\n\n5. Disclaimer of Warranties\nThe Application is provided \"as is\" and \"as available,\" without warranty of any kind, express or implied. While we employ rigorous testing and standard-compliant codecs, we do not guarantee that media compression will achieve specific file reduction percentages without visual changes for every source codec.\n'**
+  /// **'1. Acceptance of Terms\nBy downloading, accessing, or using Asagi (\"the Application\"), you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you must discontinue using the application.\n\n2. Personal License\nWe grant you a personal, revocable, non-exclusive, non-transferable license to use Asagi strictly for your personal, non-commercial, or internal creative media compression workflows on compatible devices.\n\n3. On-Device Execution & Content Ownership\nAsagi executes compression pipelines exclusively on your device hardware using local encoders. You retain 100% of all intellectual property rights and copyrights in and to your video files and media. Asagi never uploads, hosts, replicates, or claims ownership over any videos you select or process. You are solely responsible for ensuring you have all requisite permissions and licenses for any media you compress.\n\n4. In-App Subscriptions & Billing\nOptional premium features (such as Asagi Pro) may be offered as recurring subscriptions or one-time unlock purchases. All billing, renewals, cancellations, and tax collections are processed exclusively through the official platform store (Google Play or Apple App Store). Subscriptions renew automatically unless cancelled at least 24 hours prior to the conclusion of the active billing cycle.\n\n5. Disclaimer of Warranties\nThe Application is provided \"as is\" and \"as available,\" without warranty of any kind, express or implied. While we employ rigorous testing and standard-compliant codecs, we do not guarantee that media compression will achieve specific file reduction percentages without visual changes for every source codec.\n'**
   String get termsOfServiceFullText;
 
   /// Confirmation toast after copying the terms
@@ -2762,7 +2762,7 @@ abstract class AppLocalizations {
   /// Terms section body
   ///
   /// In en, this message translates to:
-  /// **'By using Zumi, you agree to these Terms. We grant you a personal, non-exclusive, non-transferable license to compress media locally on your devices.'**
+  /// **'By using Asagi, you agree to these Terms. We grant you a personal, non-exclusive, non-transferable license to compress media locally on your devices.'**
   String get termsAcceptanceLicenseBody;
 
   /// Terms section title
@@ -2774,7 +2774,7 @@ abstract class AppLocalizations {
   /// Terms section body
   ///
   /// In en, this message translates to:
-  /// **'You retain all copyrights and ownership over your videos. Zumi does not transmit, store, or claim any rights to your media files.'**
+  /// **'You retain all copyrights and ownership over your videos. Asagi does not transmit, store, or claim any rights to your media files.'**
   String get termsContentOwnershipBody;
 
   /// Terms section title
@@ -2841,9 +2841,9 @@ abstract class AppLocalizations {
   /// Data safety category details
   ///
   /// In en, this message translates to:
-  /// **'All payment details are handled directly by Google Play Store or Apple App Store. Zumi never accesses card details.'**
+  /// **'All payment details are handled directly by Google Play Store or Apple App Store. Asagi never accesses card details.'**
   String
-  get allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreZumiNeverAccessesCardDetails;
+  get allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreAsagiNeverAccessesCardDetails;
 
   /// Data safety category
   ///
@@ -2976,7 +2976,7 @@ abstract class AppLocalizations {
   /// Privacy policy section body
   ///
   /// In en, this message translates to:
-  /// **'Zumi was built with a fundamental architectural guarantee: your videos, clips, and audio tracks are encoded exclusively on your device hardware using local native codecs. At no point is your media streamed, stored, or processed on external cloud infrastructure.'**
+  /// **'Asagi was built with a fundamental architectural guarantee: your videos, clips, and audio tracks are encoded exclusively on your device hardware using local native codecs. At no point is your media streamed, stored, or processed on external cloud infrastructure.'**
   String get videoProcessingCommitmentBody;
 
   /// Privacy policy section title
@@ -3012,7 +3012,7 @@ abstract class AppLocalizations {
   /// Privacy policy section body
   ///
   /// In en, this message translates to:
-  /// **'Subscription and in-app purchase operations are executed directly through the official Apple App Store or Google Play Store. Zumi does not process or retain your credit card or financial billing information.'**
+  /// **'Subscription and in-app purchase operations are executed directly through the official Apple App Store or Google Play Store. Asagi does not process or retain your credit card or financial billing information.'**
   String get thirdPartyStorePaymentsBody;
 
   /// Privacy policy section title
@@ -3513,11 +3513,11 @@ abstract class AppLocalizations {
   /// **'Supported On-Device Models'**
   String get supportedOnDeviceModels;
 
-  /// No description provided for @zumiBitrateOptimizer.
+  /// No description provided for @asagiBitrateOptimizer.
   ///
   /// In en, this message translates to:
-  /// **'Zumi Bitrate Optimizer (0.2B)'**
-  String get zumiBitrateOptimizer;
+  /// **'Asagi Bitrate Optimizer (0.2B)'**
+  String get asagiBitrateOptimizer;
 
   /// No description provided for @localRateControlDescription.
   ///
@@ -4122,7 +4122,7 @@ abstract class AppLocalizations {
   /// No description provided for @privacyPolicySummary.
   ///
   /// In en, this message translates to:
-  /// **'How Zumi handles data'**
+  /// **'How Asagi handles data'**
   String get privacyPolicySummary;
 
   /// No description provided for @dataSafetySummary.
@@ -4134,7 +4134,7 @@ abstract class AppLocalizations {
   /// No description provided for @permissionsSummary.
   ///
   /// In en, this message translates to:
-  /// **'Why Zumi needs access'**
+  /// **'Why Asagi needs access'**
   String get permissionsSummary;
 
   /// No description provided for @supportedPaymentOptions.
@@ -4182,7 +4182,7 @@ abstract class AppLocalizations {
   /// No description provided for @creditDebitCardsDetails.
   ///
   /// In en, this message translates to:
-  /// **'Use a card saved to your Google Play or Apple App Store account. The store processes the payment, so Zumi never receives your card number.'**
+  /// **'Use a card saved to your Google Play or Apple App Store account. The store processes the payment, so Asagi never receives your card number.'**
   String get creditDebitCardsDetails;
 
   /// No description provided for @storeBalanceGiftCardsTitle.
@@ -4200,7 +4200,7 @@ abstract class AppLocalizations {
   /// No description provided for @storeBalanceGiftCardsDetails.
   ///
   /// In en, this message translates to:
-  /// **'Use eligible store balance, redeemed gift cards, or promotional credit toward a Zumi subscription. Availability depends on your store and region.'**
+  /// **'Use eligible store balance, redeemed gift cards, or promotional credit toward an Asagi subscription. Availability depends on your store and region.'**
   String get storeBalanceGiftCardsDetails;
 
   /// No description provided for @digitalWalletsTitle.
@@ -4236,7 +4236,7 @@ abstract class AppLocalizations {
   /// No description provided for @storeProtectedPurchasesDetails.
   ///
   /// In en, this message translates to:
-  /// **'Zumi never sees or retains your financial billing data. Google Play or Apple App Store authenticates and encrypts every transaction. You can cancel anytime through your store account, without hidden fees.'**
+  /// **'Asagi never sees or retains your financial billing data. Google Play or Apple App Store authenticates and encrypts every transaction. You can cancel anytime through your store account, without hidden fees.'**
   String get storeProtectedPurchasesDetails;
 }
 

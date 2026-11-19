@@ -10,10 +10,10 @@ Configure these values in the trusted Android release build environment. They
 are embedded into the Rust library at compile time; do not commit key material
 or signing private keys.
 
-- `ZUMI_PLAY_RSA_PUBLIC_KEY_PEM`: the Play Console license public key. PEM and
+- `ASAGI_PLAY_RSA_PUBLIC_KEY_PEM`: the Play Console license public key. PEM and
   base64 encoded DER are accepted.
-- `ZUMI_LOYALTY_RSA_PUBLIC_KEY_PEM`: public key for the service that signs
-  Zumi loyalty entitlement tokens. PEM and base64 encoded DER are accepted.
+- `ASAGI_LOYALTY_RSA_PUBLIC_KEY_PEM`: public key for the service that signs
+  Asagi loyalty entitlement tokens. PEM and base64 encoded DER are accepted.
 
 With no Play public key, Rust rejects Pro plans with
 `E_PRO_SUBSCRIPTION_REQUIRED`. A loyalty token is optional; without one, Rust

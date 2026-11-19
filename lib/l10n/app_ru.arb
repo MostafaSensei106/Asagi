@@ -1,7 +1,7 @@
 {
   "@@locale": "ru",
-  "zumi": "Zumi",
-  "@zumi": {
+  "asagi": "Asagi",
+  "@asagi": {
     "description": "Application name shown in the app and on the home page"
   },
   "downloadFile": "Скачать файл",
@@ -211,12 +211,12 @@
   "@compressVideosPrivatelyOnYourDevice": {
     "description": "Home page description"
   },
-  "welcomeToZumi": "Добро пожаловать в Zumi",
-  "@welcomeToZumi": {
+  "welcomeToAsagi": "Добро пожаловать в Asagi",
+  "@welcomeToAsagi": {
     "description": "Onboarding page title"
   },
-  "learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": "Узнайте, как Zumi сжимает ваши видео, не покидая ваш телефон.",
-  "@learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": {
+  "learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": "Узнайте, как Asagi сжимает ваши видео, не покидая ваш телефон.",
+  "@learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": {
     "description": "Onboarding page description"
   },
   "signIn": "Войти",
@@ -319,8 +319,8 @@
   "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
     "description": "Privacy settings page description"
   },
-  "aboutZumi": "О Zumi",
-  "@aboutZumi": {
+  "aboutAsagi": "О Asagi",
+  "@aboutAsagi": {
     "description": "App info page title"
   },
   "versionBuildNumberAndApplicationDetails": "Версия, номер сборки и информация о приложении.",
@@ -331,48 +331,48 @@
   "@aboutTheDeveloper": {
     "description": "Developer page title"
   },
-  "theDeveloperAndToolsBehindZumi": "Разработчик и инструменты, использованные для создания Zumi.",
-  "@theDeveloperAndToolsBehindZumi": {
+  "theDeveloperAndToolsBehindAsagi": "Разработчик и инструменты, использованные для создания Asagi.",
+  "@theDeveloperAndToolsBehindAsagi": {
     "description": "Developer page description"
   },
   "openSourceLicenses": "Лицензии с открытым исходным кодом",
   "@openSourceLicenses": {
     "description": "Licenses page title"
   },
-  "openSourcePackagesBundledWithZumi": "Пакеты с открытым исходным кодом, включённые в Zumi.",
-  "@openSourcePackagesBundledWithZumi": {
+  "openSourcePackagesBundledWithAsagi": "Пакеты с открытым исходным кодом, включённые в Asagi.",
+  "@openSourcePackagesBundledWithAsagi": {
     "description": "Licenses page description"
   },
   "privacyPolicy": "Политика конфиденциальности",
   "@privacyPolicy": {
     "description": "Privacy policy page title"
   },
-  "howZumiHandlesYourVideosAndData": "Как Zumi обрабатывает ваши видео и данные.",
-  "@howZumiHandlesYourVideosAndData": {
+  "howAsagiHandlesYourVideosAndData": "Как Asagi обрабатывает ваши видео и данные.",
+  "@howAsagiHandlesYourVideosAndData": {
     "description": "Privacy policy page description"
   },
   "termsOfService": "Условия использования",
   "@termsOfService": {
     "description": "Terms page title"
   },
-  "theTermsThatApplyToZumiAndItsPurchases": "Условия, которые применяются к Zumi и его покупкам.",
-  "@theTermsThatApplyToZumiAndItsPurchases": {
+  "theTermsThatApplyToAsagiAndItsPurchases": "Условия, которые применяются к Asagi и его покупкам.",
+  "@theTermsThatApplyToAsagiAndItsPurchases": {
     "description": "Terms page description"
   },
   "dataSafety": "Безопасность данных",
   "@dataSafety": {
     "description": "Data safety page title"
   },
-  "summaryOfTheDataZumiCollectsAndWhy": "Сводка собираемых данных Zumi и причины их сбора.",
-  "@summaryOfTheDataZumiCollectsAndWhy": {
+  "summaryOfTheDataAsagiCollectsAndWhy": "Сводка собираемых данных Asagi и причины их сбора.",
+  "@summaryOfTheDataAsagiCollectsAndWhy": {
     "description": "Data safety page description"
   },
   "permissions": "Разрешения",
   "@permissions": {
     "description": "Permissions page title"
   },
-  "runtimePermissionsZumiRequestsAndWhyEachIsNeeded": "Разрешения во время работы, которые запрашивает Zumi, и зачем нужны каждое из них.",
-  "@runtimePermissionsZumiRequestsAndWhyEachIsNeeded": {
+  "runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": "Разрешения во время работы, которые запрашивает Asagi, и зачем нужны каждое из них.",
+  "@runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": {
     "description": "Permissions page description"
   },
   "faq": "Часто задаваемые вопросы",
@@ -447,20 +447,20 @@
   "@permanentlyRemoveYourAccountAndItsServerSideData": {
     "description": "Delete account page description"
   },
-  "rateZumi": "Оценить Zumi",
-  "@rateZumi": {
+  "rateAsagi": "Оценить Asagi",
+  "@rateAsagi": {
     "description": "Rate app page title"
   },
-  "tellOthersHowZumiWorkedForYouOnTheStore": "Расскажите другим, как Zumi работал для вас в магазине.",
-  "@tellOthersHowZumiWorkedForYouOnTheStore": {
+  "tellOthersHowAsagiWorkedForYouOnTheStore": "Расскажите другим, как Asagi работал для вас в магазине.",
+  "@tellOthersHowAsagiWorkedForYouOnTheStore": {
     "description": "Rate app page description"
   },
-  "shareZumi": "Поделиться Zumi",
-  "@shareZumi": {
+  "shareAsagi": "Поделиться Asagi",
+  "@shareAsagi": {
     "description": "Share app page title"
   },
-  "recommendZumiToAFriend": "Порекомендуйте Zumi другу.",
-  "@recommendZumiToAFriend": {
+  "recommendAsagiToAFriend": "Порекомендуйте Asagi другу.",
+  "@recommendAsagiToAFriend": {
     "description": "Share app page description"
   },
   "appearanceLanguage": "Внешний вид и язык",
@@ -516,7 +516,7 @@
     "description": "Settings hub row summary"
   },
   "aiSettings": "Настройки ИИ",
-  "zumiAssistant": "Помощник Zumi",
+  "asagiAssistant": "Помощник Asagi",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "Скоро появится личный помощник для ваших видео. Здесь вы сможете задавать вопросы о сжатии, организации и сохранённых видео.",
   "localModelsAndSmartTools": "Локальные модели и умные инструменты",
   "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "Изучайте локальные модели и будущие инструменты ИИ. Эти опции пока недоступны.",
@@ -576,8 +576,8 @@
   "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "theDeveloperBehindZumi": "Разработчик Zumi",
-  "@theDeveloperBehindZumi": {
+  "theDeveloperBehindAsagi": "Разработчик Asagi",
+  "@theDeveloperBehindAsagi": {
     "description": "Settings hub row summary"
   },
   "openSourcePackageLicenses": "Лицензии на пакеты с открытым исходным кодом",
@@ -588,8 +588,8 @@
   "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "rulesForUsingZumi": "Правила использования Zumi",
-  "@rulesForUsingZumi": {
+  "rulesForUsingAsagi": "Правила использования Asagi",
+  "@rulesForUsingAsagi": {
     "description": "Settings hub row summary"
   },
   "whatDataWeCollect": "Какие данные мы собираем",
@@ -691,14 +691,14 @@
   "unavailable": "Недоступно",
   "projectAndSupport": "Проект и поддержка",
   "githubRepository": "Репозиторий на GitHub",
-  "viewZumiSourceCode": "Просмотреть исходный код Zumi",
+  "viewAsagiSourceCode": "Просмотреть исходный код Asagi",
   "readTheREADME": "Прочитать README",
-  "learnAboutZumiOnGitHub": "Узнать о Zumi на GitHub",
+  "learnAboutAsagiOnGitHub": "Узнать о Asagi на GitHub",
   "reportAnIssue": "Сообщить о проблеме",
   "viewAndCreateGitHubIssues": "Просмотреть и создать задачи на GitHub",
   "latestRelease": "Последний выпуск",
   "viewReleasesAndDownloads": "Просмотреть выпуски и загрузки",
-  "supportZumi": "Поддержать Zumi",
+  "supportAsagi": "Поддержать Asagi",
   "openTheOfficialDonationPage": "Открыть официальную страницу пожертвований",
   "couldNotOpenTheLinkPleaseTryAgain": "Не удалось открыть ссылку. Пожалуйста, попробуйте еще раз.",
   "developer": "Разработчик",
@@ -706,7 +706,7 @@
   "githubProfile": "Профиль на GitHub",
   "seeProjectsAndContactDetails": "Посмотреть проекты и контактные данные",
   "maintenanceInProgress": "Идёт техническое обслуживание",
-  "zumiIsTemporarilyUnavailablePleaseTryAgainLater": "Zumi временно недоступен. Пожалуйста, попробуйте позже.",
+  "asagiIsTemporarilyUnavailablePleaseTryAgainLater": "Asagi временно недоступен. Пожалуйста, попробуйте позже.",
   "comingSoon": "Скоро",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"

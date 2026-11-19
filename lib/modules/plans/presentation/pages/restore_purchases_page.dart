@@ -27,7 +27,7 @@ final class RestorePurchasesPage extends StatelessWidget {
               children: [
                 Text(
                   state.isActive
-                      ? context.localeKeys.zumiProActive
+                      ? context.localeKeys.asagiProActive
                       : context.localeKeys.restorePurchaseDescription,
                 ),
                 const SizedBox(height: 16),

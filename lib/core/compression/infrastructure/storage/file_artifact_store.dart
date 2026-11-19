@@ -11,7 +11,7 @@ final class FileArtifactStore implements ArtifactStore {
   @override
   Future<CompressionWorkspace> create(String workspacePath) async {
     final root = await Directory(workspacePath).create(recursive: true);
-    final job = await root.createTemp('zumi-');
+    final job = await root.createTemp('asagi-');
     try {
       await File('${job.path}/.inprogress').writeAsString(
         jsonEncode({
@@ -62,7 +62,7 @@ final class FileArtifactStore implements ArtifactStore {
 
   @override
   Future<void> deleteInterrupted(String workspacePath, String jobId) async {
-    if (!RegExp(r'^zumi-[A-Za-z0-9_-]+$').hasMatch(jobId)) {
+    if (!RegExp(r'^asagi-[A-Za-z0-9_-]+$').hasMatch(jobId)) {
       throw ArgumentError.value(jobId, 'jobId');
     }
     final root = Directory(workspacePath);
@@ -116,7 +116,7 @@ final class FileArtifactStore implements ArtifactStore {
   bool _isJobDirectory(Directory directory) => directory.uri.pathSegments
       .where((segment) => segment.isNotEmpty)
       .last
-      .startsWith('zumi-');
+      .startsWith('asagi-');
 
   @override
   Future<int> cleanupInterrupted(
@@ -133,7 +133,7 @@ final class FileArtifactStore implements ArtifactStore {
           !entry.uri.pathSegments
               .where((s) => s.isNotEmpty)
               .last
-              .startsWith('zumi-')) {
+              .startsWith('asagi-')) {
         continue;
       }
       final marker = File('${entry.path}/.inprogress');

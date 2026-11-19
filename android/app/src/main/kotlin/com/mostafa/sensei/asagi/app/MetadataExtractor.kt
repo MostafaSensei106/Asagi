@@ -1,7 +1,7 @@
-package com.mostafa.sensei.zumi.app
+package com.mostafa.sensei.asagi.app
 
-import com.mostafa.sensei.zumi.app.contracts.SourceMetadata
-import com.mostafa.sensei.zumi.app.contracts.VideoMetadataReader
+import com.mostafa.sensei.asagi.app.contracts.SourceMetadata
+import com.mostafa.sensei.asagi.app.contracts.VideoMetadataReader
 import android.content.Context
 import android.media.MediaMetadataRetriever
 import android.media.MediaExtractor

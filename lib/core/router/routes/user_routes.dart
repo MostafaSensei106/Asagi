@@ -13,7 +13,7 @@ final class PlansRoute extends AppRoute {
     name: 'plans',
     path: '/plans',
     section: AppRouteSection.plans,
-    icon: ZumiIcons.plans,
+    icon: AsagiIcons.plans,
     showInSettingsHub: true,
   );
 }
@@ -33,7 +33,7 @@ final class PlanDetailsRoute extends AppRoute {
     name: 'plans_details',
     path: '/plans/details',
     section: AppRouteSection.plans,
-    icon: ZumiIcons.planDetails,
+    icon: AsagiIcons.planDetails,
   );
 }
 
@@ -46,7 +46,7 @@ final class PurchaseMethodsRoute extends AppRoute {
     name: 'plans_methods',
     path: '/plans/methods',
     section: AppRouteSection.plans,
-    icon: ZumiIcons.purchaseMethods,
+    icon: AsagiIcons.purchaseMethods,
     showInSettingsHub: true,
   );
 }
@@ -60,7 +60,7 @@ final class RestorePurchasesRoute extends AppRoute {
     name: 'plans_restore',
     path: '/plans/restore',
     section: AppRouteSection.plans,
-    icon: ZumiIcons.restorePurchases,
+    icon: AsagiIcons.restorePurchases,
     showInSettingsHub: true,
   );
 }
@@ -69,7 +69,7 @@ final class RestorePurchasesRoute extends AppRoute {
 // Growth.
 // ---------------------------------------------------------------------------
 
-/// Prompt to rate Zumi on the store after a successful compression.
+/// Prompt to rate Asagi on the store after a successful compression.
 final class RateAppRoute extends AppRoute {
   const RateAppRoute();
 
@@ -78,11 +78,11 @@ final class RateAppRoute extends AppRoute {
     name: 'rate_app',
     path: '/rate',
     section: AppRouteSection.help,
-    icon: ZumiIcons.rateApp,
+    icon: AsagiIcons.rateApp,
   );
 }
 
-/// Share sheet for recommending Zumi to friends.
+/// Share sheet for recommending Asagi to friends.
 final class ShareAppRoute extends AppRoute {
   const ShareAppRoute();
 
@@ -91,6 +91,6 @@ final class ShareAppRoute extends AppRoute {
     name: 'share_app',
     path: '/share',
     section: AppRouteSection.help,
-    icon: ZumiIcons.shareApp,
+    icon: AsagiIcons.shareApp,
   );
 }

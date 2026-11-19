@@ -1,4 +1,4 @@
-<h1 align="center">🦦 Zumi</h1>
+<h1 align="center">🦦 Asagi</h1>
 
 <p align="center">
   <strong>Offline, target-size video compression for Android and iOS.</strong><br/>
@@ -16,7 +16,7 @@
 
 <p align="center">
   <a href="#-overview">Overview</a> ·
-  <a href="#-why-zumi">Why Zumi</a> ·
+  <a href="#-why-asagi">Why Asagi</a> ·
   <a href="#-features">Features</a> ·
   <a href="#-how-the-size-guarantee-works">How it works</a> ·
   <a href="#-architecture">Architecture</a> ·
@@ -33,9 +33,9 @@
 
 ## 📖 Overview
 
-Zumi is a **fully offline video compression engine** that turns a source video into a file that fits under a hard size ceiling, the way messaging platforms actually enforce limits.
+Asagi is a **fully offline video compression engine** that turns a source video into a file that fits under a hard size ceiling, the way messaging platforms actually enforce limits.
 
-Most compressors treat a target as an approximation: you ask for 16 MB and get 17.4 MB, which WhatsApp, Discord, or an email gateway then rejects. Zumi treats the target as a **ceiling**, not an estimate. It plans a bitrate budget, encodes with the platform hardware encoder, measures the real output, and retries with a corrected bitrate if the encoder overshot. A file that exceeds the ceiling is never published as a success.
+Most compressors treat a target as an approximation: you ask for 16 MB and get 17.4 MB, which WhatsApp, Discord, or an email gateway then rejects. Asagi treats the target as a **ceiling**, not an estimate. It plans a bitrate budget, encodes with the platform hardware encoder, measures the real output, and retries with a corrected bitrate if the encoder overshot. A file that exceeds the ceiling is never published as a success.
 
 The engine is split across three layers:
 
@@ -47,13 +47,13 @@ The engine is split across three layers:
 
 Video buffers never cross the Dart or Rust boundary. Dart orchestrates; Rust decides; the platform encodes.
 
-> **Name note:** the original v1.1 specification sometimes refers to the product as *FitVid*. This repository, package, and documentation use **Zumi** everywhere.
+> **Name note:** the original v1.1 specification sometimes refers to the product as *FitVid*. This repository, package, and documentation use **Asagi** everywhere.
 
 ---
 
-## ✨ Why Zumi
+## ✨ Why Asagi
 
-| | Zumi | `ffmpeg_kit_flutter` | `video_compress` |
+| | Asagi | `ffmpeg_kit_flutter` | `video_compress` |
 | --- | --- | --- | --- |
 | Hard target-size ceiling | ✅ Verified after encode | ⚠️ Manual two-pass tuning | ❌ Quality presets only |
 | Retry when the encoder overshoots | ✅ One corrected retry | ❌ Manual | ❌ |
@@ -65,13 +65,13 @@ Video buffers never cross the Dart or Rust boundary. Dart orchestrates; Rust dec
 | On-device video processing | ✅ | ✅ | ✅ |
 | Hard size guarantee | ✅ `actual <= limit` or error | ❌ | ❌ |
 
-**The core promise:** if Zumi returns a path, that file is at or under the requested ceiling. If it cannot get there honestly, it throws instead of shipping an oversized file.
+**The core promise:** if Asagi returns a path, that file is at or under the requested ceiling. If it cannot get there honestly, it throws instead of shipping an oversized file.
 
 ---
 
 ## 🚀 Features
 
-| Area | What Zumi does |
+| Area | What Asagi does |
 | --- | --- |
 | **Target size** | Decimal MB ceilings, 90–95% safety margin (default 93%), measured verification |
 | **Quality** | Picks the highest resolution whose comfortable bitrate fits the budget |
@@ -153,7 +153,7 @@ Resolution is selected from the ladder in two passes: **comfortable** quality fi
 | 360p | 250,000 bps | 500,000 bps |
 | 240p | 150,000 bps | 250,000 bps |
 
-Zumi never upscales and always emits even dimensions. For 90°/270° rotation it swaps width and height so the native layer applies the transform exactly once.
+Asagi never upscales and always emits even dimensions. For 90°/270° rotation it swaps width and height so the native layer applies the transform exactly once.
 
 > The "comfortable" numbers are starting points for calibration, not universal truths. The spec requires VMAF tuning against a real corpus (fast motion, static scenes, screen recordings, low light).
 
@@ -193,8 +193,8 @@ The 180 s / 8 MB case lands on **360p with a quality warning** because the comfo
 
 ```
 lib/
-├── main.dart                      # Initializes services and launches ZumiApp
-├── zumi_app.dart                  # Themes, localization, routing
+├── main.dart                      # Initializes services and launches AsagiApp
+├── asagi_app.dart                  # Themes, localization, routing
 ├── modules/compression/          # App flow, Cubit, repository, screens
 ├── core/compression/             # Shared compression engine
 │   ├── compression_engine.dart    # Public export barrel
@@ -222,7 +222,7 @@ rust/src/
     ├── planning.rs                # TargetSizePolicy
     └── verification.rs            # Attempt acceptance and retry math
 
-android/app/src/main/kotlin/com/mostafa/sensei/zumi/
+android/app/src/main/kotlin/com/mostafa/sensei/asagi/
 ├── MainActivity.kt
 ├── NativeVideoEngine.kt           # Pigeon + EventChannel adapter only
 ├── MetadataExtractor.kt           # MediaMetadataRetriever
@@ -262,7 +262,7 @@ source path + targetMb + workspace
         │        └── return source untouched, attempts = 0
         │
         ▼
-  artifacts.create(workspace) ───► job/zumi-XXXX/
+  artifacts.create(workspace) ───► job/asagi-XXXX/
         │
         ▼
   for attempt in 1..maxAttempts
@@ -320,14 +320,14 @@ Pause and cancel are **process-local**. They are not durable across process deat
 
 ### Advanced media and spatial audio
 
-Android decodes source tracks through codecs installed on the device. When compression is needed, its output is H.264 SDR (or HEVC Main10 for supported HDR preservation) with AAC stereo audio in MP4. Before export, the native pipeline checks that the device has decoders for every track it will process. Missing support fails early with `E_AUDIO_DECODER_UNSUPPORTED` or `E_VIDEO_DECODER_UNSUPPORTED`. Choosing **Remove audio** skips the audio check. Decoder presence does not guarantee that every profile or container will work; test actual media on the target device. If the original file is already under the size limit and no transform is requested, Zumi copies it unchanged, so its original tracks remain intact.
+Android decodes source tracks through codecs installed on the device. When compression is needed, its output is H.264 SDR (or HEVC Main10 for supported HDR preservation) with AAC stereo audio in MP4. Before export, the native pipeline checks that the device has decoders for every track it will process. Missing support fails early with `E_AUDIO_DECODER_UNSUPPORTED` or `E_VIDEO_DECODER_UNSUPPORTED`. Choosing **Remove audio** skips the audio check. Decoder presence does not guarantee that every profile or container will work; test actual media on the target device. If the original file is already under the size limit and no transform is requested, Asagi copies it unchanged, so its original tracks remain intact.
 
 | Source track | Formats that the Android pipeline can import when the device provides a decoder |
 | --- | --- |
 | Audio | AAC, Opus, Vorbis, FLAC, AC-3, E-AC-3 / E-AC-3 JOC (Dolby Atmos), AC-4, DTS / DTS-HD, TrueHD |
 | Video | H.264/AVC, H.265/HEVC, VP8, VP9, AV1, MPEG-4 Part 2, Dolby Vision when the device and Media3 can decode/tone-map its profile |
 
-An encoded output **does not preserve Dolby Atmos objects, DTS spatial metadata, surround channels, or the original audio codec**. It is AAC stereo. Zumi does not bundle Dolby/DTS decoders or encoders, and support for importing these sources depends on the installed platform decoder and container extractor. Advanced video sources such as HEVC, VP9, and AV1 are likewise device-dependent; the current output is H.264 SDR or HEVC Main10 for supported HDR preservation. Dolby Vision dynamic metadata is not preserved.
+An encoded output **does not preserve Dolby Atmos objects, DTS spatial metadata, surround channels, or the original audio codec**. It is AAC stereo. Asagi does not bundle Dolby/DTS decoders or encoders, and support for importing these sources depends on the installed platform decoder and container extractor. Advanced video sources such as HEVC, VP9, and AV1 are likewise device-dependent; the current output is H.264 SDR or HEVC Main10 for supported HDR preservation. Dolby Vision dynamic metadata is not preserved.
 
 See [Android supported media formats](https://developer.android.com/media/platform/supported-formats), [Media3 Transformer supported formats](https://developer.android.com/media/media3/transformer/supported-formats), and [Media3 sample-format limitations](https://developer.android.com/media/media3/exoplayer/supported-formats).
 
@@ -341,7 +341,7 @@ See [Android supported media formats](https://developer.android.com/media/platfo
 | --- | --- | --- |
 | Flutter SDK | Stable channel | App and bindings |
 | Dart SDK | `^3.13.7` | Language constraint declared in `pubspec.yaml` |
-| Rust toolchain | Stable, 2021 edition | `rust_lib_zumi` |
+| Rust toolchain | Stable, 2021 edition | `rust_lib_asagi` |
 | `flutter_rust_bridge_codegen` | **2.13.0** | Regenerating FRB bindings |
 | Xcode | 15+ (deployment target 15.0) | iOS build (macOS only) |
 | Android SDK + NDK | API 30+, current NDK | Android native build and LiteRT-LM runtime |
@@ -365,8 +365,8 @@ flutter_rust_bridge_codegen --version
 ### 1. Clone
 
 ```bash
-git clone <your-repository-url> zumi
-cd zumi
+git clone <your-repository-url> asagi
+cd asagi
 ```
 
 ### 2. Install Dart dependencies
@@ -418,9 +418,9 @@ flutter run -d <ios-device-id>
 
 ```dart
 import 'package:path_provider/path_provider.dart';
-import 'package:zumi/core/compression/compression_engine.dart';
-import 'package:zumi/core/native/pigeon_messages.g.dart';
-import 'package:zumi/core/native/rust/frb_generated.dart';
+import 'package:asagi/core/compression/compression_engine.dart';
+import 'package:asagi/core/native/pigeon_messages.g.dart';
+import 'package:asagi/core/native/rust/frb_generated.dart';
 
 Future<void> compressExample(String sourcePath) async {
   await RustLib.init(); // once per process
@@ -535,7 +535,7 @@ A failed HDR verification discards the artifact. It can never be published as a 
 
 ### Workspace lifecycle and cleanup
 
-Zumi writes into `workspacePath/zumi-XXXX/attempt-N.mp4`. Ownership of a verified file transfers to the caller on commit.
+Asagi writes into `workspacePath/asagi-XXXX/attempt-N.mp4`. Ownership of a verified file transfers to the caller on commit.
 
 ```dart
 // Caller responsibilities after a successful compress:
@@ -550,7 +550,7 @@ final removed = await store.cleanupInterrupted(
 print('swept $removed stale job(s)');
 ```
 
-`cleanupInterrupted` only removes `zumi-*` directories containing a `.inprogress` marker older than the cutoff. It never touches unrelated cache content.
+`cleanupInterrupted` only removes `asagi-*` directories containing a `.inprogress` marker older than the cutoff. It never touches unrelated cache content.
 
 > ⚠️ When `attempts == 0`, `output.path` is the **source file**. Do not delete it as if it were a temporary artifact.
 
@@ -831,7 +831,7 @@ Commands run between bounded batches, so pause takes effect at the next sample b
 </details>
 
 <details>
-<summary><strong>Leaked <code>zumi-*</code> directories</strong></summary>
+<summary><strong>Leaked <code>asagi-*</code> directories</strong></summary>
 
 Interrupted jobs are marked `.inprogress` and intentionally left for later cleanup. Call:
 
@@ -842,7 +842,7 @@ await const FileArtifactStore().cleanupInterrupted(
 );
 ```
 
-Only marked `zumi-*` directories older than the cutoff are removed.
+Only marked `asagi-*` directories older than the cutoff are removed.
 </details>
 
 <details>
@@ -855,7 +855,7 @@ Swift compilation and CocoaPods cannot run on Linux or Windows. Android work is 
 
 ## 🚢 Deployment
 
-Zumi is an on-device engine, so deployment is app packaging, not server hosting.
+Asagi is an on-device engine, so deployment is app packaging, not server hosting.
 
 ### Android
 
@@ -909,7 +909,7 @@ Update `version:` in `pubspec.yaml` (`1.0.0+1` → `1.0.1+2`) before a release. 
 - **No analytics by default.** The spec allows opt-in crash reporting only; local logs are the default.
 - **Location metadata is not explicitly stripped yet.** The v1.1 spec proposes a `strip_location` option defaulting to `true`, but no such control exists in the current engine. Do not claim location removal until it is implemented and tested.
 - **Android service permissions are declared.** Gallery access is mediated by the picker; media-processing foreground-service permissions are declared in the manifest.
-- **Temporary files are scoped.** Jobs live under `zumi-*` with an `.inprogress` marker and are swept explicitly.
+- **Temporary files are scoped.** Jobs live under `asagi-*` with an `.inprogress` marker and are swept explicitly.
 - **No FFmpeg GPL surface.** Only platform codecs are used in v1.
 
 If you add crash reporting, it must be opt-in, disclosed, and off by default. Do not quietly turn on network access and keep the offline claim.
@@ -989,4 +989,4 @@ Until a license is added:
 
 - Do not assume MIT, Apache-2.0, or any other grant.
 - Do not redistribute the code or assets publicly.
-- Do not ship the Zumi name or mascot commercially without clearance.
+- Do not ship the Asagi name or mascot commercially without clearance.

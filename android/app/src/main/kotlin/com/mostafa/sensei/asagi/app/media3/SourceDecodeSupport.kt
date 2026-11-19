@@ -1,11 +1,11 @@
-package com.mostafa.sensei.zumi.app.media3
+package com.mostafa.sensei.asagi.app.media3
 
 import android.content.Context
 import android.media.MediaCodecList
 import android.media.MediaExtractor
 import android.media.MediaFormat
 import android.net.Uri
-import com.mostafa.sensei.zumi.FlutterError
+import com.mostafa.sensei.asagi.FlutterError
 
 /** Verifies that the device can decode the tracks Media3 will transcode. */
 internal object SourceDecodeSupport {

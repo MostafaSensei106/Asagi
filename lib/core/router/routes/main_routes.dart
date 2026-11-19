@@ -9,7 +9,7 @@ final class MainRouteEntry extends AppRoute {
     name: 'home',
     path: '/',
     section: AppRouteSection.core,
-    icon: ZumiIcons.home,
+    icon: AsagiIcons.home,
   );
 }
 
@@ -22,11 +22,11 @@ final class HomeTabRoute extends AppRoute {
     name: 'home_tab',
     path: '/',
     section: AppRouteSection.core,
-    icon: ZumiIcons.home,
+    icon: AsagiIcons.home,
   );
 }
 
-/// First-run introduction to Zumi's compression workflow and privacy model.
+/// First-run introduction to Asagi's compression workflow and privacy model.
 final class OnboardingRoute extends AppRoute {
   const OnboardingRoute();
 
@@ -35,6 +35,6 @@ final class OnboardingRoute extends AppRoute {
     name: 'onboarding',
     path: '/onboarding',
     section: AppRouteSection.core,
-    icon: ZumiIcons.onboarding,
+    icon: AsagiIcons.onboarding,
   );
 }

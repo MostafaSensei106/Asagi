@@ -1,7 +1,7 @@
 {
   "@@locale": "tr",
-  "zumi": "Zumi",
-  "@zumi": {
+  "asagi": "Asagi",
+  "@asagi": {
     "description": "Application name shown in the app and on the home page"
   },
   "downloadFile": "Dosyayı İndir",
@@ -211,12 +211,12 @@
   "@compressVideosPrivatelyOnYourDevice": {
     "description": "Home page description"
   },
-  "welcomeToZumi": "Zumi'ye hoş geldiniz",
-  "@welcomeToZumi": {
+  "welcomeToAsagi": "Asagi'ye hoş geldiniz",
+  "@welcomeToAsagi": {
     "description": "Onboarding page title"
   },
-  "learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": "Zumi'nin videolarınızı telefonunuzu hiç terk etmeden nasıl sıkıştırdığını öğrenin.",
-  "@learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": {
+  "learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": "Asagi'nin videolarınızı telefonunuzu hiç terk etmeden nasıl sıkıştırdığını öğrenin.",
+  "@learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": {
     "description": "Onboarding page description"
   },
   "signIn": "Giriş yap",
@@ -319,8 +319,8 @@
   "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
     "description": "Privacy settings page description"
   },
-  "aboutZumi": "Zumi Hakkında",
-  "@aboutZumi": {
+  "aboutAsagi": "Asagi Hakkında",
+  "@aboutAsagi": {
     "description": "App info page title"
   },
   "versionBuildNumberAndApplicationDetails": "Sürüm, yapı numarası ve uygulama detayları.",
@@ -331,48 +331,48 @@
   "@aboutTheDeveloper": {
     "description": "Developer page title"
   },
-  "theDeveloperAndToolsBehindZumi": "Zumi'nin arkasındaki geliştirici ve araçlar.",
-  "@theDeveloperAndToolsBehindZumi": {
+  "theDeveloperAndToolsBehindAsagi": "Asagi'nin arkasındaki geliştirici ve araçlar.",
+  "@theDeveloperAndToolsBehindAsagi": {
     "description": "Developer page description"
   },
   "openSourceLicenses": "Açık kaynak lisansları",
   "@openSourceLicenses": {
     "description": "Licenses page title"
   },
-  "openSourcePackagesBundledWithZumi": "Zumi ile birlikte gelen açık kaynak paketler.",
-  "@openSourcePackagesBundledWithZumi": {
+  "openSourcePackagesBundledWithAsagi": "Asagi ile birlikte gelen açık kaynak paketler.",
+  "@openSourcePackagesBundledWithAsagi": {
     "description": "Licenses page description"
   },
   "privacyPolicy": "Gizlilik politikası",
   "@privacyPolicy": {
     "description": "Privacy policy page title"
   },
-  "howZumiHandlesYourVideosAndData": "Zumi videolarınızı ve verilerinizi nasıl işliyor.",
-  "@howZumiHandlesYourVideosAndData": {
+  "howAsagiHandlesYourVideosAndData": "Asagi videolarınızı ve verilerinizi nasıl işliyor.",
+  "@howAsagiHandlesYourVideosAndData": {
     "description": "Privacy policy page description"
   },
   "termsOfService": "Hizmet şartları",
   "@termsOfService": {
     "description": "Terms page title"
   },
-  "theTermsThatApplyToZumiAndItsPurchases": "Zumi ve satın alımları için geçerli şartlar.",
-  "@theTermsThatApplyToZumiAndItsPurchases": {
+  "theTermsThatApplyToAsagiAndItsPurchases": "Asagi ve satın alımları için geçerli şartlar.",
+  "@theTermsThatApplyToAsagiAndItsPurchases": {
     "description": "Terms page description"
   },
   "dataSafety": "Veri güvenliği",
   "@dataSafety": {
     "description": "Data safety page title"
   },
-  "summaryOfTheDataZumiCollectsAndWhy": "Zumi'nin topladığı verilerin özeti ve neden toplandığı.  ",
-  "@summaryOfTheDataZumiCollectsAndWhy": {
+  "summaryOfTheDataAsagiCollectsAndWhy": "Asagi'nin topladığı verilerin özeti ve neden toplandığı.  ",
+  "@summaryOfTheDataAsagiCollectsAndWhy": {
     "description": "Data safety page description"
   },
   "permissions": "İzinler  ",
   "@permissions": {
     "description": "Permissions page title"
   },
-  "runtimePermissionsZumiRequestsAndWhyEachIsNeeded": "Zumi'nin istediği çalışma zamanı izinleri ve her birinin neden gerekli olduğu.  ",
-  "@runtimePermissionsZumiRequestsAndWhyEachIsNeeded": {
+  "runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": "Asagi'nin istediği çalışma zamanı izinleri ve her birinin neden gerekli olduğu.  ",
+  "@runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": {
     "description": "Permissions page description"
   },
   "faq": "SSS  ",
@@ -447,20 +447,20 @@
   "@permanentlyRemoveYourAccountAndItsServerSideData": {
     "description": "Delete account page description"
   },
-  "rateZumi": "Zumi'yi değerlendirin",
-  "@rateZumi": {
+  "rateAsagi": "Asagi'yi değerlendirin",
+  "@rateAsagi": {
     "description": "Rate app page title"
   },
-  "tellOthersHowZumiWorkedForYouOnTheStore": "Zumi'nin sizde nasıl çalıştığını başkalarına söyleyin.",
-  "@tellOthersHowZumiWorkedForYouOnTheStore": {
+  "tellOthersHowAsagiWorkedForYouOnTheStore": "Asagi'nin sizde nasıl çalıştığını başkalarına söyleyin.",
+  "@tellOthersHowAsagiWorkedForYouOnTheStore": {
     "description": "Rate app page description"
   },
-  "shareZumi": "Zumi'yi paylaş",
-  "@shareZumi": {
+  "shareAsagi": "Asagi'yi paylaş",
+  "@shareAsagi": {
     "description": "Share app page title"
   },
-  "recommendZumiToAFriend": "Zumi'yi bir arkadaşınıza önerin.",
-  "@recommendZumiToAFriend": {
+  "recommendAsagiToAFriend": "Asagi'yi bir arkadaşınıza önerin.",
+  "@recommendAsagiToAFriend": {
     "description": "Share app page description"
   },
   "appearanceLanguage": "Görünüm ve dil",
@@ -516,7 +516,7 @@
     "description": "Settings hub row summary"
   },
   "aiSettings": "AI ayarları",
-  "zumiAssistant": "Zumi Asistan",
+  "asagiAssistant": "Asagi Asistan",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "Videolarınız için özel bir asistan çok yakında geliyor. Buradan sıkıştırma, düzenleme ve kaydedilmiş videolar hakkında sorular sorabileceksiniz.",
   "localModelsAndSmartTools": "Yerel modeller ve akıllı araçlar",
   "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "Yerel modelleri ve gelecekteki AI araçlarını keşfedin. Bu seçenekler henüz aktif değil.",
@@ -576,8 +576,8 @@
   "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "theDeveloperBehindZumi": "Zumi'nin arkasındaki geliştirici",
-  "@theDeveloperBehindZumi": {
+  "theDeveloperBehindAsagi": "Asagi'nin arkasındaki geliştirici",
+  "@theDeveloperBehindAsagi": {
     "description": "Settings hub row summary"
   },
   "openSourcePackageLicenses": "Açık kaynak paket lisansları",
@@ -588,8 +588,8 @@
   "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "rulesForUsingZumi": "Zumi'yi kullanma kuralları",
-  "@rulesForUsingZumi": {
+  "rulesForUsingAsagi": "Asagi'yi kullanma kuralları",
+  "@rulesForUsingAsagi": {
     "description": "Settings hub row summary"
   },
   "whatDataWeCollect": "Hangi verileri topladığımız",
@@ -691,14 +691,14 @@
   "unavailable": "Kullanılamıyor",
   "projectAndSupport": "Proje ve destek",
   "githubRepository": "GitHub deposu",
-  "viewZumiSourceCode": "Zumi kaynak kodunu görüntüle",
+  "viewAsagiSourceCode": "Asagi kaynak kodunu görüntüle",
   "readTheREADME": "README dosyasını oku",
-  "learnAboutZumiOnGitHub": "GitHub'da Zumi hakkında bilgi edinin",
+  "learnAboutAsagiOnGitHub": "GitHub'dan Asagi hakkında bilgi edinin",
   "reportAnIssue": "Bir sorun bildirin",
   "viewAndCreateGitHubIssues": "GitHub sorunlarını görüntüle ve oluştur",
   "latestRelease": "En son sürüm",
   "viewReleasesAndDownloads": "Sürümleri ve indirmeleri görüntüle",
-  "supportZumi": "Zumi'yi destekleyin",
+  "supportAsagi": "Asagi'yi destekleyin",
   "openTheOfficialDonationPage": "Resmî bağış sayfasını aç",
   "couldNotOpenTheLinkPleaseTryAgain": "Bağlantı açılamadı. Lütfen tekrar deneyin.",
   "developer": "Geliştirici",
@@ -706,7 +706,7 @@
   "githubProfile": "GitHub profili",
   "seeProjectsAndContactDetails": "Projeleri ve iletişim bilgilerini gör",
   "maintenanceInProgress": "Bakım devam ediyor",
-  "zumiIsTemporarilyUnavailablePleaseTryAgainLater": "Zumi geçici olarak kullanılamıyor. Lütfen daha sonra tekrar deneyin.",
+  "asagiIsTemporarilyUnavailablePleaseTryAgainLater": "Asagi geçici olarak kullanılamıyor. Lütfen daha sonra tekrar deneyin.",
   "comingSoon": "Yakında",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"

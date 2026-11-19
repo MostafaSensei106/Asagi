@@ -1,7 +1,7 @@
 {
   "@@locale": "th",
-  "zumi": "Zumi",
-  "@zumi": {
+  "asagi": "Asagi",
+  "@asagi": {
     "description": "Application name shown in the app and on the home page"
   },
   "downloadFile": "ดาวน์โหลดไฟล์",
@@ -211,12 +211,12 @@
   "@compressVideosPrivatelyOnYourDevice": {
     "description": "Home page description"
   },
-  "welcomeToZumi": "ยินดีต้อนรับสู่ Zumi",
-  "@welcomeToZumi": {
+  "welcomeToAsagi": "ยินดีต้อนรับสู่ Asagi",
+  "@welcomeToAsagi": {
     "description": "Onboarding page title"
   },
-  "learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": "เรียนรู้ว่า Zumi บีบอัดวิดีโอของคุณอย่างไรโดยไม่ต้องออกจากโทรศัพท์",
-  "@learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": {
+  "learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": "เรียนรู้ว่า Asagi บีบอัดวิดีโอของคุณอย่างไรโดยไม่ต้องออกจากโทรศัพท์",
+  "@learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": {
     "description": "Onboarding page description"
   },
   "signIn": "ลงชื่อเข้าใช้",
@@ -319,8 +319,8 @@
   "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
     "description": "Privacy settings page description"
   },
-  "aboutZumi": "เกี่ยวกับ Zumi",
-  "@aboutZumi": {
+  "aboutAsagi": "เกี่ยวกับ Asagi",
+  "@aboutAsagi": {
     "description": "App info page title"
   },
   "versionBuildNumberAndApplicationDetails": "เวอร์ชัน หมายเลขบิลด์ และรายละเอียดแอปพลิเคชัน",
@@ -331,48 +331,48 @@
   "@aboutTheDeveloper": {
     "description": "Developer page title"
   },
-  "theDeveloperAndToolsBehindZumi": "ผู้พัฒนาและเครื่องมือเบื้องหลัง Zumi",
-  "@theDeveloperAndToolsBehindZumi": {
+  "theDeveloperAndToolsBehindAsagi": "ผู้พัฒนาและเครื่องมือเบื้องหลัง Asagi",
+  "@theDeveloperAndToolsBehindAsagi": {
     "description": "Developer page description"
   },
   "openSourceLicenses": "ใบอนุญาตโอเพนซอร์ส",
   "@openSourceLicenses": {
     "description": "Licenses page title"
   },
-  "openSourcePackagesBundledWithZumi": "แพ็กเกจโอเพนซอร์สที่มาพร้อมกับ Zumi",
-  "@openSourcePackagesBundledWithZumi": {
+  "openSourcePackagesBundledWithAsagi": "แพ็กเกจโอเพนซอร์สที่มาพร้อมกับ Asagi",
+  "@openSourcePackagesBundledWithAsagi": {
     "description": "Licenses page description"
   },
   "privacyPolicy": "นโยบายความเป็นส่วนตัว",
   "@privacyPolicy": {
     "description": "Privacy policy page title"
   },
-  "howZumiHandlesYourVideosAndData": "วิธีที่ Zumi จัดการวิดีโอและข้อมูลของคุณ",
-  "@howZumiHandlesYourVideosAndData": {
+  "howAsagiHandlesYourVideosAndData": "วิธีที่ Asagi จัดการวิดีโอและข้อมูลของคุณ",
+  "@howAsagiHandlesYourVideosAndData": {
     "description": "Privacy policy page description"
   },
   "termsOfService": "ข้อกำหนดในการให้บริการ",
   "@termsOfService": {
     "description": "Terms page title"
   },
-  "theTermsThatApplyToZumiAndItsPurchases": "ข้อกำหนดที่ใช้กับ Zumi และการซื้อของมัน",
-  "@theTermsThatApplyToZumiAndItsPurchases": {
+  "theTermsThatApplyToAsagiAndItsPurchases": "ข้อกำหนดที่ใช้กับ Asagi และการซื้อของมัน",
+  "@theTermsThatApplyToAsagiAndItsPurchases": {
     "description": "Terms page description"
   },
   "dataSafety": "ความปลอดภัยของข้อมูล",
   "@dataSafety": {
     "description": "Data safety page title"
   },
-  "summaryOfTheDataZumiCollectsAndWhy": "สรุปข้อมูลที่ Zumi รวบรวมและเหตุผล",
-  "@summaryOfTheDataZumiCollectsAndWhy": {
+  "summaryOfTheDataAsagiCollectsAndWhy": "สรุปข้อมูลที่ Asagi รวบรวมและเหตุผล",
+  "@summaryOfTheDataAsagiCollectsAndWhy": {
     "description": "Data safety page description"
   },
   "permissions": "สิทธิ์",
   "@permissions": {
     "description": "Permissions page title"
   },
-  "runtimePermissionsZumiRequestsAndWhyEachIsNeeded": "สิทธิ์ในเวลารันไทม์ที่ Zumi ขอและเหตุผลที่ต้องใช้แต่ละอย่าง",
-  "@runtimePermissionsZumiRequestsAndWhyEachIsNeeded": {
+  "runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": "สิทธิ์ในเวลารันไทม์ที่ Asagi ขอและเหตุผลที่ต้องใช้แต่ละอย่าง",
+  "@runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": {
     "description": "Permissions page description"
   },
   "faq": "คำถามที่พบบ่อย",
@@ -447,20 +447,20 @@
   "@permanentlyRemoveYourAccountAndItsServerSideData": {
     "description": "Delete account page description"
   },
-  "rateZumi": "ให้คะแนน Zumi",
-  "@rateZumi": {
+  "rateAsagi": "ให้คะแนน Asagi",
+  "@rateAsagi": {
     "description": "Rate app page title"
   },
-  "tellOthersHowZumiWorkedForYouOnTheStore": "บอกผู้อื่นว่า Zumi ทำงานอย่างไรสำหรับคุณในร้านค้า",
-  "@tellOthersHowZumiWorkedForYouOnTheStore": {
+  "tellOthersHowAsagiWorkedForYouOnTheStore": "บอกผู้อื่นว่า Asagi ทำงานอย่างไรสำหรับคุณในร้านค้า",
+  "@tellOthersHowAsagiWorkedForYouOnTheStore": {
     "description": "Rate app page description"
   },
-  "shareZumi": "แชร์ Zumi",
-  "@shareZumi": {
+  "shareAsagi": "แชร์ Asagi",
+  "@shareAsagi": {
     "description": "Share app page title"
   },
-  "recommendZumiToAFriend": "แนะนำ Zumi ให้เพื่อน",
-  "@recommendZumiToAFriend": {
+  "recommendAsagiToAFriend": "แนะนำ Asagi ให้เพื่อน",
+  "@recommendAsagiToAFriend": {
     "description": "Share app page description"
   },
   "appearanceLanguage": "ลักษณะและภาษา",
@@ -516,7 +516,7 @@
     "description": "Settings hub row summary"
   },
   "aiSettings": "การตั้งค่า AI",
-  "zumiAssistant": "ผู้ช่วย Zumi",
+  "asagiAssistant": "ผู้ช่วย Asagi",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "ผู้ช่วยส่วนตัวสำหรับวิดีโอของคุณกำลังจะมาเร็ว ๆ นี้ คุณจะสามารถถามเกี่ยวกับการบีบอัด การจัดระเบียบ และวิดีโอที่บันทึกไว้ที่นี่",
   "localModelsAndSmartTools": "โมเดลท้องถิ่นและเครื่องมืออัจฉริยะ",
   "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "สำรวจโมเดลท้องถิ่นและเครื่องมือ AI ในอนาคต ตัวเลือกเหล่านี้ยังไม่เปิดใช้งาน",
@@ -576,8 +576,8 @@
   "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "theDeveloperBehindZumi": "นักพัฒนาผู้สร้าง Zumi",
-  "@theDeveloperBehindZumi": {
+  "theDeveloperBehindAsagi": "นักพัฒนาผู้สร้าง Asagi",
+  "@theDeveloperBehindAsagi": {
     "description": "Settings hub row summary"
   },
   "openSourcePackageLicenses": "ใบอนุญาตแพ็กเกจโอเพ่นซอร์ส",
@@ -588,8 +588,8 @@
   "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "rulesForUsingZumi": "กฎสำหรับการใช้ Zumi",
-  "@rulesForUsingZumi": {
+  "rulesForUsingAsagi": "กฎสำหรับการใช้ Asagi",
+  "@rulesForUsingAsagi": {
     "description": "Settings hub row summary"
   },
   "whatDataWeCollect": "ข้อมูลที่เรารวบรวม",
@@ -691,14 +691,14 @@
   "unavailable": "ไม่สามารถใช้งานได้",
   "projectAndSupport": "โครงการและการสนับสนุน",
   "githubRepository": "คลังเก็บ GitHub",
-  "viewZumiSourceCode": "ดูซอร์สโค้ดของ Zumi",
+  "viewAsagiSourceCode": "ดูซอร์สโค้ดของ Asagi",
   "readTheREADME": "อ่าน README",
-  "learnAboutZumiOnGitHub": "เรียนรู้เกี่ยวกับ Zumi บน GitHub",
+  "learnAboutAsagiOnGitHub": "เรียนรู้เกี่ยวกับ Asagi บน GitHub",
   "reportAnIssue": "รายงานปัญหา",
   "viewAndCreateGitHubIssues": "ดูและสร้างปัญหาใน GitHub",
   "latestRelease": "รุ่นล่าสุด",
   "viewReleasesAndDownloads": "ดูรุ่นและดาวน์โหลด",
-  "supportZumi": "สนับสนุน Zumi",
+  "supportAsagi": "สนับสนุน Asagi",
   "openTheOfficialDonationPage": "เปิดหน้าบริจาคอย่างเป็นทางการ",
   "couldNotOpenTheLinkPleaseTryAgain": "ไม่สามารถเปิดลิงก์ได้ โปรดลองอีกครั้ง",
   "developer": "นักพัฒนา",
@@ -706,7 +706,7 @@
   "githubProfile": "โปรไฟล์ GitHub",
   "seeProjectsAndContactDetails": "ดูโครงการและรายละเอียดการติดต่อ",
   "maintenanceInProgress": "อยู่ระหว่างการบำรุงรักษา",
-  "zumiIsTemporarilyUnavailablePleaseTryAgainLater": "Zumi ไม่สามารถใช้งานได้ชั่วคราว โปรดลองอีกครั้งภายหลัง",
+  "asagiIsTemporarilyUnavailablePleaseTryAgainLater": "Asagi ไม่สามารถใช้งานได้ชั่วคราว โปรดลองอีกครั้งภายหลัง",
   "comingSoon": "เร็วๆ นี้",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"

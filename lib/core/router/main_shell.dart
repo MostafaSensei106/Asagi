@@ -73,13 +73,13 @@ final class _ShellChrome extends HookWidget {
     final isWide = MediaQuery.sizeOf(context).width >= 840;
 
     final items = [
-      AppNavItem(label: context.localeKeys.zumi, icon: ZumiIcons.home),
-      AppNavItem(label: context.localeKeys.zumiAssistant, icon: ZumiIcons.ai),
+      AppNavItem(label: context.localeKeys.asagi, icon: AsagiIcons.home),
+      AppNavItem(label: context.localeKeys.asagiAssistant, icon: AsagiIcons.ai),
       AppNavItem(
         label: context.localeKeys.compressionHistory,
-        icon: ZumiIcons.compressionHistory,
+        icon: AsagiIcons.compressionHistory,
       ),
-      AppNavItem(label: context.localeKeys.settings, icon: ZumiIcons.settings),
+      AppNavItem(label: context.localeKeys.settings, icon: AsagiIcons.settings),
     ];
 
     // External branch changes must move the PageView after this build frame.

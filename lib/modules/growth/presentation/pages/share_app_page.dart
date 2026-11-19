@@ -4,19 +4,19 @@ import 'package:flutter/services.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
-import '../../../../core/constants/zumi_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/widgets/widgets.dart';
 
 /// Share screen allowing users to invite friends, copy app link,
-/// and share Zumi recommendations.
+/// and share Asagi recommendations.
 final class ShareAppPage extends StatelessWidget {
   const ShareAppPage({super.key});
 
-  static const String _shareUrl = 'https://zumi.app/download';
+  static const String _shareUrl = 'https://asagi.app/download';
   static const String _shareMessage =
-      'Check out Zumi! It compresses videos up to 90% without quality loss, directly on your phone with 100% privacy: https://zumi.app/download';
+      'Check out Asagi! It compresses videos up to 90% without quality loss, directly on your phone with 100% privacy: https://asagi.app/download';
 
   void _copyLink(BuildContext context) {
     unawaited(Clipboard.setData(const ClipboardData(text: _shareUrl)));
@@ -37,7 +37,7 @@ final class ShareAppPage extends StatelessWidget {
     final colorScheme = context.colorScheme;
 
     return Scaffold(
-      appBar: SidePageAppBarComponent(title: l10n.shareZumi),
+      appBar: SidePageAppBarComponent(title: l10n.shareAsagi),
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.symmetric(
@@ -50,7 +50,7 @@ final class ShareAppPage extends StatelessWidget {
               child: Column(
                 children: [
                   ExpressiveIcon(
-                    icon: ZumiIcons.shareApp,
+                    icon: AsagiIcons.shareApp,
                     shape: ExpressiveIconShape.heart,
                     size: 68,
                     backgroundColor: colorScheme.primaryContainer,
@@ -58,14 +58,14 @@ final class ShareAppPage extends StatelessWidget {
                   ),
                   const Gap(AppSpacing.large),
                   Text(
-                    l10n.shareZumi,
+                    l10n.shareAsagi,
                     style: context.textTheme.headlineSmall?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   const Gap(AppSpacing.small),
                   Text(
-                    l10n.recommendZumiToAFriend,
+                    l10n.recommendAsagiToAFriend,
                     textAlign: TextAlign.center,
                     style: context.textTheme.bodyMedium?.copyWith(
                       color: colorScheme.onSurfaceVariant,
@@ -89,7 +89,7 @@ final class ShareAppPage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Zumi Video Compressor',
+                              'Asagi Video Compressor',
                               style: context.textTheme.titleMedium?.copyWith(
                                 fontWeight: FontWeight.bold,
                               ),
@@ -151,7 +151,7 @@ final class ShareAppPage extends StatelessWidget {
             const Gap(AppSpacing.xLarge),
             FilledButtonComponent.icon(
               expand: true,
-              icon: ZumiIcons.shareApp,
+              icon: AsagiIcons.shareApp,
               label: 'Share Invitation Link',
               onPressed: () => _shareViaSheet(context),
             ),

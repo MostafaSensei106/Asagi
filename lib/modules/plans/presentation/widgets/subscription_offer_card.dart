@@ -1,8 +1,8 @@
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
-import '../../../../core/constants/zumi_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/widgets/widgets.dart';
 import '../../logic/subscription_cubit.dart';
@@ -82,7 +82,7 @@ final class SubscriptionOfferCard extends StatelessWidget {
               Row(
                 children: [
                   ExpressiveIcon(
-                    icon: ZumiIcons.plans,
+                    icon: AsagiIcons.plans,
                     shape: ExpressiveIconShape.gem,
                     size: 68,
                     backgroundColor: scheme.surface.withValues(alpha: 0.72),
@@ -94,7 +94,7 @@ final class SubscriptionOfferCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          l10n.zumiProTitle,
+                          l10n.asagiProTitle,
                           style: context.textTheme.headlineSmall?.copyWith(
                             fontWeight: FontWeight.w800,
                             color: scheme.onPrimaryContainer,
@@ -133,7 +133,7 @@ final class SubscriptionOfferCard extends StatelessWidget {
               const Gap(AppSpacing.large),
               FilledButtonComponent.icon(
                 expand: true,
-                icon: state.isActive ? LucideIcons.check : ZumiIcons.plans,
+                icon: state.isActive ? LucideIcons.check : AsagiIcons.plans,
                 label: state.isActive
                     ? l10n.subscriptionActive
                     : state.isPurchasing
@@ -281,7 +281,7 @@ final class _StatusPill extends StatelessWidget {
           ),
           const Gap.horizontal(AppSpacing.xSmall),
           Text(
-            isActive ? l10n.subscriptionActive : l10n.zumiProTitle,
+            isActive ? l10n.subscriptionActive : l10n.asagiProTitle,
             style: context.textTheme.labelSmall?.copyWith(
               color: color,
               fontWeight: FontWeight.w700,

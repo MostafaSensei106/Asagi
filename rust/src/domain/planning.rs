@@ -13,7 +13,7 @@ impl TargetSizePolicy {
         if preferences.max_short_edge != 0
             && (preferences.max_short_edge < 240
                 || preferences.max_short_edge > 16384
-                || preferences.max_short_edge % 2 != 0)
+                || !preferences.max_short_edge.is_multiple_of(2))
             || ![-1, 0, 48000, 64000, 96000, 128000].contains(&preferences.audio_bitrate_bps)
             || preferences.video_bitrate_ceiling_bps != 0
                 && preferences.video_bitrate_ceiling_bps < 150000

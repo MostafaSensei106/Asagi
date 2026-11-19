@@ -1,7 +1,7 @@
 {
   "@@locale": "nl_BE",
-  "zumi": "Zumi",
-  "@zumi": {
+  "asagi": "Asagi",
+  "@asagi": {
     "description": "Application name shown in the app and on the home page"
   },
   "downloadFile": "Bestand downloaden",
@@ -211,12 +211,12 @@
   "@compressVideosPrivatelyOnYourDevice": {
     "description": "Home page description"
   },
-  "welcomeToZumi": "Welkom bij Zumi",
-  "@welcomeToZumi": {
+  "welcomeToAsagi": "Welkom bij Asagi",
+  "@welcomeToAsagi": {
     "description": "Onboarding page title"
   },
-  "learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": "Leer hoe Zumi uw video's comprimeert zonder uw telefoon ooit te verlaten.",
-  "@learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": {
+  "learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": "Leer hoe Asagi uw video's comprimeert zonder uw telefoon ooit te verlaten.",
+  "@learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": {
     "description": "Onboarding page description"
   },
   "signIn": "Inloggen",
@@ -319,8 +319,8 @@
   "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
     "description": "Privacy settings page description"
   },
-  "aboutZumi": "Over Zumi",
-  "@aboutZumi": {
+  "aboutAsagi": "Over Asagi",
+  "@aboutAsagi": {
     "description": "App info page title"
   },
   "versionBuildNumberAndApplicationDetails": "Versie, buildnummer en applicatiedetails.",
@@ -331,48 +331,48 @@
   "@aboutTheDeveloper": {
     "description": "Developer page title"
   },
-  "theDeveloperAndToolsBehindZumi": "De ontwikkelaar en tools achter Zumi.",
-  "@theDeveloperAndToolsBehindZumi": {
+  "theDeveloperAndToolsBehindAsagi": "De ontwikkelaar en tools achter Asagi.",
+  "@theDeveloperAndToolsBehindAsagi": {
     "description": "Developer page description"
   },
   "openSourceLicenses": "Open-source licenties",
   "@openSourceLicenses": {
     "description": "Licenses page title"
   },
-  "openSourcePackagesBundledWithZumi": "Open-source pakketten die met Zumi worden meegeleverd.",
-  "@openSourcePackagesBundledWithZumi": {
+  "openSourcePackagesBundledWithAsagi": "Open-source pakketten die met Asagi worden meegeleverd.",
+  "@openSourcePackagesBundledWithAsagi": {
     "description": "Licenses page description"
   },
   "privacyPolicy": "Privacybeleid",
   "@privacyPolicy": {
     "description": "Privacy policy page title"
   },
-  "howZumiHandlesYourVideosAndData": "Hoe Zumi met uw video's en gegevens omgaat.",
-  "@howZumiHandlesYourVideosAndData": {
+  "howAsagiHandlesYourVideosAndData": "Hoe Asagi met uw video's en gegevens omgaat.",
+  "@howAsagiHandlesYourVideosAndData": {
     "description": "Privacy policy page description"
   },
   "termsOfService": "Gebruiksvoorwaarden",
   "@termsOfService": {
     "description": "Terms page title"
   },
-  "theTermsThatApplyToZumiAndItsPurchases": "De voorwaarden die van toepassing zijn op Zumi en de aankopen ervan.",
-  "@theTermsThatApplyToZumiAndItsPurchases": {
+  "theTermsThatApplyToAsagiAndItsPurchases": "De voorwaarden die van toepassing zijn op Asagi en de aankopen ervan.",
+  "@theTermsThatApplyToAsagiAndItsPurchases": {
     "description": "Terms page description"
   },
   "dataSafety": "Gegevensbeveiliging",
   "@dataSafety": {
     "description": "Data safety page title"
   },
-  "summaryOfTheDataZumiCollectsAndWhy": "Samenvatting van de gegevens die Zumi verzamelt en waarom. ",
-  "@summaryOfTheDataZumiCollectsAndWhy": {
+  "summaryOfTheDataAsagiCollectsAndWhy": "Samenvatting van de gegevens die Asagi verzamelt en waarom. ",
+  "@summaryOfTheDataAsagiCollectsAndWhy": {
     "description": "Data safety page description"
   },
   "permissions": "Toestemmingen",
   "@permissions": {
     "description": "Permissions page title"
   },
-  "runtimePermissionsZumiRequestsAndWhyEachIsNeeded": "Runtime-permissies die Zumi aanvraagt en waarom elk nodig is. ",
-  "@runtimePermissionsZumiRequestsAndWhyEachIsNeeded": {
+  "runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": "Runtime-permissies die Asagi aanvraagt en waarom elk nodig is. ",
+  "@runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": {
     "description": "Permissions page description"
   },
   "faq": "FAQ",
@@ -447,20 +447,20 @@
   "@permanentlyRemoveYourAccountAndItsServerSideData": {
     "description": "Delete account page description"
   },
-  "rateZumi": "Beoordeel Zumi",
-  "@rateZumi": {
+  "rateAsagi": "Beoordeel Asagi",
+  "@rateAsagi": {
     "description": "Rate app page title"
   },
-  "tellOthersHowZumiWorkedForYouOnTheStore": "Vertel anderen hoe Zumi voor u werkte in de winkel.",
-  "@tellOthersHowZumiWorkedForYouOnTheStore": {
+  "tellOthersHowAsagiWorkedForYouOnTheStore": "Vertel anderen hoe Asagi voor u werkte in de winkel.",
+  "@tellOthersHowAsagiWorkedForYouOnTheStore": {
     "description": "Rate app page description"
   },
-  "shareZumi": "Deel Zumi",
-  "@shareZumi": {
+  "shareAsagi": "Deel Asagi",
+  "@shareAsagi": {
     "description": "Share app page title"
   },
-  "recommendZumiToAFriend": "Beveel Zumi aan een vriend aan.",
-  "@recommendZumiToAFriend": {
+  "recommendAsagiToAFriend": "Beveel Asagi aan een vriend aan.",
+  "@recommendAsagiToAFriend": {
     "description": "Share app page description"
   },
   "appearanceLanguage": "Uiterlijk & taal",
@@ -516,7 +516,7 @@
     "description": "Settings hub row summary"
   },
   "aiSettings": "AI-instellingen",
-  "zumiAssistant": "Zumi Assistent",
+  "asagiAssistant": "Asagi Assistent",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "Een privé-assistent voor je video's komt binnenkort. Je kunt hier vragen stellen over compressie, organisatie en opgeslagen video's.",
   "localModelsAndSmartTools": "Lokale modellen en slimme tools",
   "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "Verken lokale modellen en toekomstige AI-tools. Deze opties zijn nog niet actief.",
@@ -576,8 +576,8 @@
   "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "theDeveloperBehindZumi": "De ontwikkelaar achter Zumi",
-  "@theDeveloperBehindZumi": {
+  "theDeveloperBehindAsagi": "De ontwikkelaar achter Asagi",
+  "@theDeveloperBehindAsagi": {
     "description": "Settings hub row summary"
   },
   "openSourcePackageLicenses": "Open source pakketlicenties",
@@ -588,8 +588,8 @@
   "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "rulesForUsingZumi": "Regels voor het gebruik van Zumi",
-  "@rulesForUsingZumi": {
+  "rulesForUsingAsagi": "Regels voor het gebruik van Asagi",
+  "@rulesForUsingAsagi": {
     "description": "Settings hub row summary"
   },
   "whatDataWeCollect": "Welke gegevens we verzamelen",
@@ -691,14 +691,14 @@
   "unavailable": "Niet beschikbaar",
   "projectAndSupport": "Project en ondersteuning",
   "githubRepository": "GitHub-repository",
-  "viewZumiSourceCode": "Bekijk Zumi-broncode",
+  "viewAsagiSourceCode": "Bekijk Asagi-broncode",
   "readTheREADME": "Lees de README",
-  "learnAboutZumiOnGitHub": "Leer over Zumi op GitHub",
+  "learnAboutAsagiOnGitHub": "Leer over Asagi op GitHub",
   "reportAnIssue": "Meld een probleem",
   "viewAndCreateGitHubIssues": "Bekijk en maak GitHub-issues",
   "latestRelease": "Laatste release",
   "viewReleasesAndDownloads": "Bekijk releases en downloads",
-  "supportZumi": "Ondersteun Zumi",
+  "supportAsagi": "Ondersteun Asagi",
   "openTheOfficialDonationPage": "Open de officiële donatiepagina",
   "couldNotOpenTheLinkPleaseTryAgain": "Kon de link niet openen. Probeer het opnieuw.",
   "developer": "Ontwikkelaar",
@@ -706,7 +706,7 @@
   "githubProfile": "GitHub-profiel",
   "seeProjectsAndContactDetails": "Bekijk projecten en contactgegevens",
   "maintenanceInProgress": "Onderhoud in uitvoering",
-  "zumiIsTemporarilyUnavailablePleaseTryAgainLater": "Zumi is tijdelijk niet beschikbaar. Probeer het later opnieuw.",
+  "asagiIsTemporarilyUnavailablePleaseTryAgainLater": "Asagi is tijdelijk niet beschikbaar. Probeer het later opnieuw.",
   "comingSoon": "Binnenkort beschikbaar",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"

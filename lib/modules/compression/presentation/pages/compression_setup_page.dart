@@ -11,11 +11,11 @@ import '../../../../core/router/app_router.dart';
 import '../../../../core/widgets/navigation/app_bar/app_bar_component.dart';
 import '../cubit/compression_cubit.dart';
 import '../cubit/compression_state.dart';
+import '../widgets/asagi_preset_feedback_card.dart';
 import '../widgets/compression_advanced_controls.dart';
 import '../widgets/compression_plan_summary.dart';
 import '../widgets/platform_presets_bar.dart';
 import '../widgets/video_preview.dart';
-import '../widgets/zumi_preset_feedback_card.dart';
 
 final class CompressionSetupPage extends HookWidget {
   const CompressionSetupPage({super.key});
@@ -78,7 +78,7 @@ final class CompressionSetupPage extends HookWidget {
                 },
               ),
               const SizedBox(height: 16),
-              ZumiPresetFeedbackCard(
+              AsagiPresetFeedbackCard(
                 selectedPresetId: state.selectedPresetId,
                 presetPlan: state.resolvedPresetPlan,
                 isLoading: state.planning,

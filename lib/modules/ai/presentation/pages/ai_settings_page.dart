@@ -3,13 +3,13 @@ import 'dart:async';
 import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 
-import '../../../../core/constants/zumi_icons.dart';
+import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../../core/widgets/design_system/tokens/tokens.dart';
 import '../../../../core/widgets/widgets.dart';
 
-/// Navigation hub for the AI capabilities planned for Zumi.
+/// Navigation hub for the AI capabilities planned for Asagi.
 final class AiSettingsPage extends StatelessWidget {
   const AiSettingsPage({super.key});
 
@@ -18,7 +18,7 @@ final class AiSettingsPage extends StatelessWidget {
     final groups = [
       (
         title: context.localeKeys.models,
-        icon: ZumiIcons.aiModels,
+        icon: AsagiIcons.aiModels,
         shape: ExpressiveIconShape.gem,
         destinations: <({AppRoute route, String title, String subtitle})>[
           (
@@ -35,7 +35,7 @@ final class AiSettingsPage extends StatelessWidget {
       ),
       (
         title: context.localeKeys.assistantExperience,
-        icon: ZumiIcons.aiChatSettings,
+        icon: AsagiIcons.aiChatSettings,
         shape: ExpressiveIconShape.blossom,
         destinations: <({AppRoute route, String title, String subtitle})>[
           (
@@ -52,7 +52,7 @@ final class AiSettingsPage extends StatelessWidget {
       ),
       (
         title: context.localeKeys.smartCapabilities,
-        icon: ZumiIcons.aiFeatures,
+        icon: AsagiIcons.aiFeatures,
         shape: ExpressiveIconShape.clover,
         destinations: <({AppRoute route, String title, String subtitle})>[
           (
@@ -74,7 +74,7 @@ final class AiSettingsPage extends StatelessWidget {
       ),
       (
         title: context.localeKeys.performance,
-        icon: ZumiIcons.aiRuntime,
+        icon: AsagiIcons.aiRuntime,
         shape: ExpressiveIconShape.diamond,
         destinations: <({AppRoute route, String title, String subtitle})>[
           (
@@ -86,7 +86,7 @@ final class AiSettingsPage extends StatelessWidget {
       ),
     ];
     final trailing = Icon(
-      context.isArabic ? ZumiIcons.chevronBack : ZumiIcons.chevronForward,
+      context.isArabic ? AsagiIcons.chevronBack : AsagiIcons.chevronForward,
       size: AppIconSizes.small,
       color: context.colorScheme.onSurfaceVariant,
     );

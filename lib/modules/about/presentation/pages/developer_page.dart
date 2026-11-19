@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
-import '../../../../core/constants/zumi_icons.dart';
 import '../../../../core/di/di.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/services/url_launcher/base_url_launcher_services.dart';
@@ -24,18 +24,18 @@ final class DeveloperPage extends StatelessWidget {
           children: [
             AboutSection(
               title: l10n.developer,
-              icon: ZumiIcons.developer,
+              icon: AsagiIcons.developer,
               shape: ExpressiveIconShape.softBurst,
               children: [
                 AboutRow(
                   title: l10n.mostafaSensei,
-                  subtitle: l10n.theDeveloperAndToolsBehindZumi,
-                  icon: ZumiIcons.developer,
+                  subtitle: l10n.theDeveloperAndToolsBehindAsagi,
+                  icon: AsagiIcons.developer,
                 ),
                 AboutRow(
                   title: l10n.githubProfile,
                   subtitle: l10n.seeProjectsAndContactDetails,
-                  icon: ZumiIcons.repository,
+                  icon: AsagiIcons.repository,
                   onTap: () => unawaited(_openProfile(context)),
                 ),
               ],

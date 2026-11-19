@@ -1,6 +1,6 @@
 import 'package:material_ui/material_ui.dart';
 
-import '../../../../core/constants/zumi_icons.dart';
+import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/widgets/widgets.dart';
 
@@ -31,14 +31,14 @@ final class PrivacyStorageSection extends StatelessWidget {
         ListTileGroup(
           children: [
             ListTileIconComponent.top(
-              leading: ZumiIcons.privacyPolicy,
+              leading: AsagiIcons.privacyPolicy,
               title: l10n.preserveVideoMetadata,
               subtitle: l10n.metadataPreservationSummary,
               onTap: () => onPreserveMetadataChanged(!preserveMetadata),
               onLongPress: () => context.showInfoBottomSheet(
                 title: l10n.preserveVideoMetadata,
                 description: l10n.preserveVideoMetadataDescription,
-                icon: ZumiIcons.privacyPolicy,
+                icon: AsagiIcons.privacyPolicy,
                 illustrationKind: InfoIllustrationKind.metadataPreservation,
               ),
               trailing: SwitchComponent(
@@ -47,14 +47,14 @@ final class PrivacyStorageSection extends StatelessWidget {
               ),
             ),
             ListTileIconComponent.middle(
-              leading: ZumiIcons.storage,
+              leading: AsagiIcons.storage,
               title: l10n.autoWipeTempBuffers,
               subtitle: l10n.automaticTempCleanupSummary,
               onTap: () => onAutoWipeChanged(!autoWipeTempCache),
               onLongPress: () => context.showInfoBottomSheet(
                 title: l10n.autoWipeTempBuffers,
                 description: l10n.autoWipeTempBuffersDescription,
-                icon: ZumiIcons.storage,
+                icon: AsagiIcons.storage,
                 illustrationKind: InfoIllustrationKind.automaticTempCleanup,
               ),
               trailing: SwitchComponent(
@@ -63,14 +63,14 @@ final class PrivacyStorageSection extends StatelessWidget {
               ),
             ),
             ListTileIconComponent.bottom(
-              leading: ZumiIcons.storage,
+              leading: AsagiIcons.storage,
               title: l10n.clearScratchpadNow,
               subtitle: l10n.scratchpadCleanupSummary,
               onTap: isClearingCache ? null : onClearCache,
               onLongPress: () => context.showInfoBottomSheet(
                 title: l10n.clearScratchpadNow,
                 description: l10n.clearScratchpadDescription,
-                icon: ZumiIcons.storage,
+                icon: AsagiIcons.storage,
                 illustrationKind: InfoIllustrationKind.scratchpadCleanup,
               ),
               showChevron: false,

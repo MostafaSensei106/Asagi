@@ -14,7 +14,7 @@ final class PlatformVideoEncoder
   final wire.NativeMediaApi api;
   @override
   late final Stream<double> progress = const EventChannel(
-    'zumi/encoding_progress',
+    'asagi/encoding_progress',
   ).receiveBroadcastStream().map((value) => (value as num).toDouble());
   @override
   Future<VideoMetadata> inspect(String path) async {

@@ -14,7 +14,7 @@ pub fn verify_subscription_receipt(
     signature_bytes: Vec<u8>,
     loyalty_token: Option<String>,
 ) -> Result<LoyaltyStatus, String> {
-    let public_key = option_env!("ZUMI_PLAY_RSA_PUBLIC_KEY_PEM")
+    let public_key = option_env!("ASAGI_PLAY_RSA_PUBLIC_KEY_PEM")
         .filter(|key| !key.trim().is_empty())
         .ok_or_else(|| "E_PRO_SUBSCRIPTION_REQUIRED".to_owned())?;
     let purchase = crate::domain::licensing::verify_google_play_purchase(
@@ -26,7 +26,7 @@ pub fn verify_subscription_receipt(
     let value: serde_json::Value = serde_json::from_str(&original_json)
         .map_err(|_| "E_PRO_SUBSCRIPTION_REQUIRED".to_owned())?;
     let active = value.get("productId").and_then(serde_json::Value::as_str)
-        == Some("zumi_pro_monthly")
+        == Some("asagi_pro_monthly")
         && value
             .get("purchaseState")
             .and_then(serde_json::Value::as_i64)
@@ -34,7 +34,7 @@ pub fn verify_subscription_receipt(
     // Play's client signature proves the initial purchase only; it does not
     // prove renewal history. Never infer renewed months from the device clock.
     let months = if let Some(token) = loyalty_token {
-        let loyalty_key = option_env!("ZUMI_LOYALTY_RSA_PUBLIC_KEY_PEM")
+        let loyalty_key = option_env!("ASAGI_LOYALTY_RSA_PUBLIC_KEY_PEM")
             .filter(|key| !key.trim().is_empty())
             .ok_or_else(|| "E_LOYALTY_RECEIPT_INVALID".to_owned())?;
         crate::domain::licensing::verify_loyalty_token(&token, &purchase, loyalty_key.as_bytes())

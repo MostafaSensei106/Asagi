@@ -4,8 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
-import '../../../../core/constants/zumi_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../../core/widgets/widgets.dart';
@@ -15,7 +15,7 @@ import '../../../../core/widgets/widgets.dart';
 final class SupportPage extends StatelessWidget {
   const SupportPage({super.key});
 
-  static const String _supportEmail = 'support@zumi.app';
+  static const String _supportEmail = 'support@asagi.app';
 
   void _copyEmail(BuildContext context) {
     unawaited(Clipboard.setData(const ClipboardData(text: _supportEmail)));
@@ -24,7 +24,7 @@ final class SupportPage extends StatelessWidget {
 
   void _copyDiagnostics(BuildContext context) {
     const specs = '''
-Zumi Diagnostics:
+Asagi Diagnostics:
 - App Version: 1.0.0 (Build 1)
 - Engine: Rust Native Planner + Platform Encoders
 - Codecs: H.264 (HW), HEVC (HW), AV1 (SW/HW)
@@ -54,7 +54,7 @@ Zumi Diagnostics:
               child: Row(
                 children: [
                   ExpressiveIcon(
-                    icon: ZumiIcons.support,
+                    icon: AsagiIcons.support,
                     shape: ExpressiveIconShape.sunny,
                     size: 52,
                     backgroundColor: colorScheme.primaryContainer,
@@ -92,15 +92,15 @@ Zumi Diagnostics:
                 ListTileIconComponent.top(
                   shape: ExpressiveIconShape.gem,
                   title: 'Email Support',
-                  subtitle: 'support@zumi.app • 24/7 assistance',
-                  leading: ZumiIcons.support,
+                  subtitle: 'support@asagi.app • 24/7 assistance',
+                  leading: AsagiIcons.support,
                   onTap: () => _copyEmail(context),
                 ),
                 ListTileIconComponent.middle(
                   shape: ExpressiveIconShape.softBurst,
                   title: l10n.sendFeedback,
                   subtitle: l10n.reportAProblemOrSuggestAnImprovement,
-                  leading: ZumiIcons.feedback,
+                  leading: AsagiIcons.feedback,
                   onTap: () => unawaited(context.push(const FeedbackRoute())),
                 ),
                 ListTileIconComponent.bottom(
@@ -108,7 +108,7 @@ Zumi Diagnostics:
                   title: l10n.faq,
                   subtitle:
                       l10n.answersToCommonQuestionsAboutCompressionAndBilling,
-                  leading: ZumiIcons.faq,
+                  leading: AsagiIcons.faq,
                   onTap: () => unawaited(context.push(const FaqRoute())),
                 ),
               ],
@@ -146,7 +146,7 @@ Zumi Diagnostics:
                   const _DiagRow(label: 'Privacy State', value: '100% Offline'),
                   const Gap(AppSpacing.medium),
                   FilledTonalButtonComponent.icon(
-                    icon: ZumiIcons.build,
+                    icon: AsagiIcons.build,
                     label: 'Copy Diagnostics for Support',
                     expand: true,
                     onPressed: () => _copyDiagnostics(context),

@@ -1,7 +1,7 @@
 {
   "@@locale": "en",
-  "zumi": "Zumi",
-  "@zumi": {
+  "asagi": "Asagi",
+  "@asagi": {
     "description": "Application name shown in the app and on the home page"
   },
   "downloadFile": "Download File",
@@ -209,12 +209,12 @@
   "@compressVideosPrivatelyOnYourDevice": {
     "description": "Home page description"
   },
-  "welcomeToZumi": "Welcome to Zumi",
-  "@welcomeToZumi": {
+  "welcomeToAsagi": "Welcome to Asagi",
+  "@welcomeToAsagi": {
     "description": "Onboarding page title"
   },
-  "learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": "Learn how Zumi compresses your videos without ever leaving your phone.",
-  "@learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": {
+  "learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": "Learn how Asagi compresses your videos without ever leaving your phone.",
+  "@learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": {
     "description": "Onboarding page description"
   },
   "signIn": "Sign in",
@@ -321,8 +321,8 @@
   "@sharperTextAndSurfaces": {
     "description": "High contrast mode toggle subtitle"
   },
-  "zumiEngine": "Zumi Engine",
-  "@zumiEngine": {
+  "asagiEngine": "Asagi Engine",
+  "@asagiEngine": {
     "description": "Engine title in theme preview card"
   },
   "targetSizeOptimizer": "Target-Size Video Optimizer",
@@ -389,8 +389,8 @@
   "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
     "description": "Privacy settings page description"
   },
-  "aboutZumi": "About Zumi",
-  "@aboutZumi": {
+  "aboutAsagi": "About Asagi",
+  "@aboutAsagi": {
     "description": "App info page title"
   },
   "versionBuildNumberAndApplicationDetails": "Version, build number, and application details.",
@@ -401,47 +401,47 @@
   "@aboutTheDeveloper": {
     "description": "Developer page title"
   },
-  "theDeveloperAndToolsBehindZumi": "The developer and tools behind Zumi.",
-  "@theDeveloperAndToolsBehindZumi": {
+  "theDeveloperAndToolsBehindAsagi": "The developer and tools behind Asagi.",
+  "@theDeveloperAndToolsBehindAsagi": {
     "description": "Developer page description"
   },
   "@openSourceLicenses": {
     "description": "Licenses page title"
   },
-  "openSourcePackagesBundledWithZumi": "Open-source packages bundled with Zumi.",
-  "@openSourcePackagesBundledWithZumi": {
+  "openSourcePackagesBundledWithAsagi": "Open-source packages bundled with Asagi.",
+  "@openSourcePackagesBundledWithAsagi": {
     "description": "Licenses page description"
   },
   "privacyPolicy": "Privacy policy",
   "@privacyPolicy": {
     "description": "Privacy policy page title"
   },
-  "howZumiHandlesYourVideosAndData": "How Zumi handles your videos and data.",
-  "@howZumiHandlesYourVideosAndData": {
+  "howAsagiHandlesYourVideosAndData": "How Asagi handles your videos and data.",
+  "@howAsagiHandlesYourVideosAndData": {
     "description": "Privacy policy page description"
   },
   "termsOfService": "Terms of service",
   "@termsOfService": {
     "description": "Terms page title"
   },
-  "theTermsThatApplyToZumiAndItsPurchases": "The terms that apply to Zumi and its purchases.",
-  "@theTermsThatApplyToZumiAndItsPurchases": {
+  "theTermsThatApplyToAsagiAndItsPurchases": "The terms that apply to Asagi and its purchases.",
+  "@theTermsThatApplyToAsagiAndItsPurchases": {
     "description": "Terms page description"
   },
   "dataSafety": "Data safety",
   "@dataSafety": {
     "description": "Data safety page title"
   },
-  "summaryOfTheDataZumiCollectsAndWhy": "Summary of the data Zumi collects and why.",
-  "@summaryOfTheDataZumiCollectsAndWhy": {
+  "summaryOfTheDataAsagiCollectsAndWhy": "Summary of the datan Asagi collects and why.",
+  "@summaryOfTheDataAsagiCollectsAndWhy": {
     "description": "Data safety page description"
   },
   "permissions": "Permissions",
   "@permissions": {
     "description": "Permissions page title"
   },
-  "runtimePermissionsZumiRequestsAndWhyEachIsNeeded": "Runtime permissions Zumi requests and why each is needed.",
-  "@runtimePermissionsZumiRequestsAndWhyEachIsNeeded": {
+  "runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": "Runtime permissions Asagi requests and why each is needed.",
+  "@runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": {
     "description": "Permissions page description"
   },
   "faq": "FAQ",
@@ -516,20 +516,20 @@
   "@permanentlyRemoveYourAccountAndItsServerSideData": {
     "description": "Delete account page description"
   },
-  "rateZumi": "Rate Zumi",
-  "@rateZumi": {
+  "rateAsagi": "Rate Asagi",
+  "@rateAsagi": {
     "description": "Rate app page title"
   },
-  "tellOthersHowZumiWorkedForYouOnTheStore": "Tell others how Zumi worked for you on the store.",
-  "@tellOthersHowZumiWorkedForYouOnTheStore": {
+  "tellOthersHowAsagiWorkedForYouOnTheStore": "Tell others how Asagi worked for you on the store.",
+  "@tellOthersHowAsagiWorkedForYouOnTheStore": {
     "description": "Rate app page description"
   },
-  "shareZumi": "Share Zumi",
-  "@shareZumi": {
+  "shareAsagi": "Share Asagi",
+  "@shareAsagi": {
     "description": "Share app page title"
   },
-  "recommendZumiToAFriend": "Recommend Zumi to a friend.",
-  "@recommendZumiToAFriend": {
+  "recommendAsagiToAFriend": "Recommend Asagi to a friend.",
+  "@recommendAsagiToAFriend": {
     "description": "Share app page description"
   },
   "appearanceLanguage": "Appearance & language",
@@ -585,7 +585,7 @@
     "description": "Settings hub row summary"
   },
   "aiSettings": "AI settings",
-  "zumiAssistant": "Zumi Assistant",
+  "asagiAssistant": "Asagi Assistant",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "A private assistant for your videos is coming soon. You will be able to ask about compression, organization, and saved videos here.",
   "localModelsAndSmartTools": "Local models and smart tools",
   "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "Explore local models and future AI tools. These options are not active yet.",
@@ -645,8 +645,8 @@
   "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "theDeveloperBehindZumi": "The developer behind Zumi",
-  "@theDeveloperBehindZumi": {
+  "theDeveloperBehindAsagi": "The developer behind Asagi",
+  "@theDeveloperBehindAsagi": {
     "description": "Settings hub row summary"
   },
   "openSourcePackageLicenses": "Open source package licenses",
@@ -657,8 +657,8 @@
   "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "rulesForUsingZumi": "Rules for using Zumi",
-  "@rulesForUsingZumi": {
+  "rulesForUsingAsagi": "Rules for using Asagi",
+  "@rulesForUsingAsagi": {
     "description": "Settings hub row summary"
   },
   "whatDataWeCollect": "What data we collect",
@@ -760,14 +760,14 @@
   "unavailable": "Unavailable",
   "projectAndSupport": "Project and support",
   "githubRepository": "GitHub repository",
-  "viewZumiSourceCode": "View Zumi source code",
+  "viewAsagiSourceCode": "View Asagi source code",
   "readTheREADME": "Read the README",
-  "learnAboutZumiOnGitHub": "Learn about Zumi on GitHub",
+  "learnAboutAsagiOnGitHub": "Learn about Asagi on GitHub",
   "reportAnIssue": "Report an issue",
   "viewAndCreateGitHubIssues": "View and create GitHub issues",
   "latestRelease": "Latest release",
   "viewReleasesAndDownloads": "View releases and downloads",
-  "supportZumi": "Support Zumi",
+  "supportAsagi": "Support Asagi",
   "openTheOfficialDonationPage": "Open the official donation page",
   "couldNotOpenTheLinkPleaseTryAgain": "Could not open the link. Please try again.",
   "developer": "Developer",
@@ -775,12 +775,12 @@
   "githubProfile": "GitHub profile",
   "seeProjectsAndContactDetails": "See projects and contact details",
   "maintenanceInProgress": "Maintenance in progress",
-  "zumiIsTemporarilyUnavailablePleaseTryAgainLater": "Zumi is temporarily unavailable. Please try again later.",
+  "asagiIsTemporarilyUnavailablePleaseTryAgainLater": "Asagi is temporarily unavailable. Please try again later.",
   "comingSoon": "Coming soon",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"
   },
-  "zumiProTitle": "Zumi Pro",
+  "asagiProTitle": "Asagi Pro",
   "subscriptionPerMonth": "{price} / month",
   "planUnavailable": "Unavailable",
   "loading": "Loading…",
@@ -840,7 +840,7 @@
   "purchasesRestored": "Purchases restored.",
   "noActivePurchaseFound": "No active purchase found.",
   "restorePurchaseDescription": "Restore purchases made with this Google Play account.",
-  "zumiProActive": "Zumi Pro is active",
+  "asagiProActive": "Asagi Pro is active",
   "checking": "Checking…",
   "interruptedCompressionJobs": "Interrupted compression jobs",
   "interruptedJobsDescription": "You can resume these jobs from compression. Cleanup removes their temporary files and saved job state.",
@@ -1025,8 +1025,8 @@
   "@manualControl": {
     "description": "Badge of the custom size preset card"
   },
-  "zumiIsStudyingThePlatformAlgorithmAndCalculatingTheBudget": "🐾 Zumi is studying the platform's algorithm and calculating the budget...",
-  "@zumiIsStudyingThePlatformAlgorithmAndCalculatingTheBudget": {
+  "asagiIsStudyingThePlatformAlgorithmAndCalculatingTheBudget": "🐾 Asagi is studying the platform's algorithm and calculating the budget...",
+  "@asagiIsStudyingThePlatformAlgorithmAndCalculatingTheBudget": {
     "description": "Loading message while the preset plan is computed"
   },
   "customControlMode": "Custom control mode",
@@ -1037,8 +1037,8 @@
   "@youSetTheTargetSizeManuallyTheEngineWillApplyTheHighestPossibleQualityWithinThatCap": {
     "description": "Body of the custom mode feedback card"
   },
-  "zumiIsPuzzledAnImpossibleTargetForTheNameCap": "Zumi is puzzled (impossible target for the {name} cap)",
-  "@zumiIsPuzzledAnImpossibleTargetForTheNameCap": {
+  "asagiIsPuzzledAnImpossibleTargetForTheNameCap": "Asagi is puzzled (impossible target for the {name} cap)",
+  "@asagiIsPuzzledAnImpossibleTargetForTheNameCap": {
     "description": "Infeasible plan title",
     "placeholders": {
       "name": {
@@ -1055,8 +1055,8 @@
       }
     }
   },
-  "zumiAlertProtectingQualityFromDistortion": "Zumi alert: protecting quality from distortion",
-  "@zumiAlertProtectingQualityFromDistortion": {
+  "asagiAlertProtectingQualityFromDistortion": "Asagi alert: protecting quality from distortion",
+  "@asagiAlertProtectingQualityFromDistortion": {
     "description": "Reduced quality warning title"
   },
   "theNameBudgetIsTightForThisDurationSoWeLoweredTheResolutionToWidthHeightToPreventPixelScatterAndEnsureSmoothPlayback": "The {name} budget is tight for this duration, so we lowered the resolution to {width}×{height} to prevent pixel scatter and ensure smooth playback.",
@@ -1113,7 +1113,7 @@
   "@setAutomaticallyForThePlatformChangingTheNumberSwitchesToCustomMode": {
     "description": "Helper text under the target size field"
   },
-  "termsOfServiceFullText": "1. Acceptance of Terms\nBy downloading, accessing, or using Zumi (\"the Application\"), you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you must discontinue using the application.\n\n2. Personal License\nWe grant you a personal, revocable, non-exclusive, non-transferable license to use Zumi strictly for your personal, non-commercial, or internal creative media compression workflows on compatible devices.\n\n3. On-Device Execution & Content Ownership\nZumi executes compression pipelines exclusively on your device hardware using local encoders. You retain 100% of all intellectual property rights and copyrights in and to your video files and media. Zumi never uploads, hosts, replicates, or claims ownership over any videos you select or process. You are solely responsible for ensuring you have all requisite permissions and licenses for any media you compress.\n\n4. In-App Subscriptions & Billing\nOptional premium features (such as Zumi Pro) may be offered as recurring subscriptions or one-time unlock purchases. All billing, renewals, cancellations, and tax collections are processed exclusively through the official platform store (Google Play or Apple App Store). Subscriptions renew automatically unless cancelled at least 24 hours prior to the conclusion of the active billing cycle.\n\n5. Disclaimer of Warranties\nThe Application is provided \"as is\" and \"as available,\" without warranty of any kind, express or implied. While we employ rigorous testing and standard-compliant codecs, we do not guarantee that media compression will achieve specific file reduction percentages without visual changes for every source codec.\n",
+  "termsOfServiceFullText": "1. Acceptance of Terms\nBy downloading, accessing, or using Asagi (\"the Application\"), you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you must discontinue using the application.\n\n2. Personal License\nWe grant you a personal, revocable, non-exclusive, non-transferable license to use Asagi strictly for your personal, non-commercial, or internal creative media compression workflows on compatible devices.\n\n3. On-Device Execution & Content Ownership\nAsagi executes compression pipelines exclusively on your device hardware using local encoders. You retain 100% of all intellectual property rights and copyrights in and to your video files and media. Asagi never uploads, hosts, replicates, or claims ownership over any videos you select or process. You are solely responsible for ensuring you have all requisite permissions and licenses for any media you compress.\n\n4. In-App Subscriptions & Billing\nOptional premium features (such as Asagi Pro) may be offered as recurring subscriptions or one-time unlock purchases. All billing, renewals, cancellations, and tax collections are processed exclusively through the official platform store (Google Play or Apple App Store). Subscriptions renew automatically unless cancelled at least 24 hours prior to the conclusion of the active billing cycle.\n\n5. Disclaimer of Warranties\nThe Application is provided \"as is\" and \"as available,\" without warranty of any kind, express or implied. While we employ rigorous testing and standard-compliant codecs, we do not guarantee that media compression will achieve specific file reduction percentages without visual changes for every source codec.\n",
   "@termsOfServiceFullText": {
     "description": "Full Terms of Service text copied to the clipboard"
   },
@@ -1125,7 +1125,7 @@
   "@termsAcceptanceLicenseTitle": {
     "description": "Terms section title"
   },
-  "termsAcceptanceLicenseBody": "By using Zumi, you agree to these Terms. We grant you a personal, non-exclusive, non-transferable license to compress media locally on your devices.",
+  "termsAcceptanceLicenseBody": "By using Asagi, you agree to these Terms. We grant you a personal, non-exclusive, non-transferable license to compress media locally on your devices.",
   "@termsAcceptanceLicenseBody": {
     "description": "Terms section body"
   },
@@ -1133,7 +1133,7 @@
   "@termsContentOwnershipTitle": {
     "description": "Terms section title"
   },
-  "termsContentOwnershipBody": "You retain all copyrights and ownership over your videos. Zumi does not transmit, store, or claim any rights to your media files.",
+  "termsContentOwnershipBody": "You retain all copyrights and ownership over your videos. Asagi does not transmit, store, or claim any rights to your media files.",
   "@termsContentOwnershipBody": {
     "description": "Terms section body"
   },
@@ -1177,8 +1177,8 @@
   "@financialInfoAndPayment": {
     "description": "Data safety category"
   },
-  "allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreZumiNeverAccessesCardDetails": "All payment details are handled directly by Google Play Store or Apple App Store. Zumi never accesses card details.",
-  "@allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreZumiNeverAccessesCardDetails": {
+  "allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreAsagiNeverAccessesCardDetails": "All payment details are handled directly by Google Play Store or Apple App Store. Asagi never accesses card details.",
+  "@allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreAsagiNeverAccessesCardDetails": {
     "description": "Data safety category details"
   },
   "appPerformanceAndCrashLogs": "App Performance & Crash Logs",
@@ -1265,7 +1265,7 @@
   "@videoProcessingCommitmentTitle": {
     "description": "Privacy policy section title"
   },
-  "videoProcessingCommitmentBody": "Zumi was built with a fundamental architectural guarantee: your videos, clips, and audio tracks are encoded exclusively on your device hardware using local native codecs. At no point is your media streamed, stored, or processed on external cloud infrastructure.",
+  "videoProcessingCommitmentBody": "Asagi was built with a fundamental architectural guarantee: your videos, clips, and audio tracks are encoded exclusively on your device hardware using local native codecs. At no point is your media streamed, stored, or processed on external cloud infrastructure.",
   "@videoProcessingCommitmentBody": {
     "description": "Privacy policy section body"
   },
@@ -1289,7 +1289,7 @@
   "@thirdPartyStorePaymentsTitle": {
     "description": "Privacy policy section title"
   },
-  "thirdPartyStorePaymentsBody": "Subscription and in-app purchase operations are executed directly through the official Apple App Store or Google Play Store. Zumi does not process or retain your credit card or financial billing information.",
+  "thirdPartyStorePaymentsBody": "Subscription and in-app purchase operations are executed directly through the official Apple App Store or Google Play Store. Asagi does not process or retain your credit card or financial billing information.",
   "@thirdPartyStorePaymentsBody": {
     "description": "Privacy policy section body"
   },
@@ -1434,7 +1434,7 @@
   "enabled": "enabled",
   "disabled": "disabled",
   "supportedOnDeviceModels": "Supported On-Device Models",
-  "zumiBitrateOptimizer": "Zumi Bitrate Optimizer (0.2B)",
+  "asagiBitrateOptimizer": "Asagi Bitrate Optimizer (0.2B)",
   "localRateControlDescription": "Local neural rate-control model for optimal scene quantization.",
   "mobileNetSceneClassifier": "MobileNetV4 Scene Classifier",
   "sceneClassifierDescription": "Detects fast motion and camera cuts to place clean keyframes.",
@@ -1566,9 +1566,9 @@
   "metadataPreservationSummary": "Keep camera details",
   "automaticTempCleanupSummary": "Delete temporary buffers",
   "scratchpadCleanupSummary": "Remove cached preview files",
-  "privacyPolicySummary": "How Zumi handles data",
+  "privacyPolicySummary": "How Asagi handles data",
   "dataSafetySummary": "Collected data and purpose",
-  "permissionsSummary": "Why Zumi needs access",
+  "permissionsSummary": "Why Asagi needs access",
   "supportedPaymentOptions": "Supported Payment Options",
   "paymentProtectionTitle": "Protection & Safety Guarantee",
   "storeBillingTitle": "App Store / Google Play Billing",
@@ -1576,14 +1576,14 @@
   "storeBillingDetails": "Purchases are completed securely through your device’s official app store account. Payment is authenticated using the security options configured on your device.",
   "creditDebitCardsTitle": "Credit & Debit Cards",
   "creditDebitCardsSummary": "Cards through your store",
-  "creditDebitCardsDetails": "Use a card saved to your Google Play or Apple App Store account. The store processes the payment, so Zumi never receives your card number.",
+  "creditDebitCardsDetails": "Use a card saved to your Google Play or Apple App Store account. The store processes the payment, so Asagi never receives your card number.",
   "storeBalanceGiftCardsTitle": "Store Balance & Gift Cards",
   "storeBalanceGiftCardsSummary": "Redeem store credit",
-  "storeBalanceGiftCardsDetails": "Use eligible store balance, redeemed gift cards, or promotional credit toward a Zumi subscription. Availability depends on your store and region.",
+  "storeBalanceGiftCardsDetails": "Use eligible store balance, redeemed gift cards, or promotional credit toward an Asagi subscription. Availability depends on your store and region.",
   "digitalWalletsTitle": "Digital Wallets & Local Methods",
   "digitalWalletsSummary": "Store-supported payment methods",
   "digitalWalletsDetails": "Your store may offer Google Pay, Apple Pay, PayPal, or regional payment methods. Available options depend on your account, device, and region.",
   "storeProtectedPurchases": "Store-Protected Purchases",
   "storeProtectedPurchasesSummary": "Billing stays with stores",
-  "storeProtectedPurchasesDetails": "Zumi never sees or retains your financial billing data. Google Play or Apple App Store authenticates and encrypts every transaction. You can cancel anytime through your store account, without hidden fees."
+  "storeProtectedPurchasesDetails": "Asagi never sees or retains your financial billing data. Google Play or Apple App Store authenticates and encrypts every transaction. You can cancel anytime through your store account, without hidden fees."
 }

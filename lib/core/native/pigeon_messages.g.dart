@@ -355,7 +355,7 @@ class NativeMediaApi {
 
   Future<NativeVideoMetadata> extractVideoMetadata(String inputPath) async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.zumi.NativeMediaApi.extractVideoMetadata$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.asagi.NativeMediaApi.extractVideoMetadata$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -375,7 +375,7 @@ class NativeMediaApi {
 
   Future<void> cancelEncoding() async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.zumi.NativeMediaApi.cancelEncoding$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.asagi.NativeMediaApi.cancelEncoding$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -392,7 +392,7 @@ class NativeMediaApi {
 
   Future<void> pauseEncoding() async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.zumi.NativeMediaApi.pauseEncoding$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.asagi.NativeMediaApi.pauseEncoding$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -409,7 +409,7 @@ class NativeMediaApi {
 
   Future<void> resumeEncoding() async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.zumi.NativeMediaApi.resumeEncoding$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.asagi.NativeMediaApi.resumeEncoding$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -426,7 +426,7 @@ class NativeMediaApi {
 
   Future<bool> startHardwareEncoding(NativeCompressRequest request) async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.zumi.NativeMediaApi.startHardwareEncoding$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.asagi.NativeMediaApi.startHardwareEncoding$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -449,7 +449,7 @@ class NativeMediaApi {
     NativeCompressRequest request,
   ) async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.zumi.NativeMediaApi.compressStagedFallback$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.asagi.NativeMediaApi.compressStagedFallback$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,

@@ -1509,7 +1509,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "10.3.3"
-  rust_lib_zumi:
+  rust_lib_asagi:
     dependency: "direct main"
     description:
       path: rust_builder

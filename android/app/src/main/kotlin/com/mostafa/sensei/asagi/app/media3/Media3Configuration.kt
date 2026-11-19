@@ -1,4 +1,4 @@
-package com.mostafa.sensei.zumi.app.media3
+package com.mostafa.sensei.asagi.app.media3
 
 import android.content.Context
 import android.net.Uri
@@ -8,7 +8,7 @@ import androidx.media3.effect.Presentation
 import androidx.media3.effect.FrameDropEffect
 import androidx.media3.transformer.*
 import com.google.common.collect.ImmutableList
-import com.mostafa.sensei.zumi.app.contracts.EncodeConfiguration
+import com.mostafa.sensei.asagi.app.contracts.EncodeConfiguration
 
 @UnstableApi
 object Media3Configuration {

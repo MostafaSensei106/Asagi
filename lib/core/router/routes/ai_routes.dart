@@ -9,7 +9,7 @@ final class AiChatRoute extends AppRoute {
     name: 'ai_chat',
     path: '/ai/chat',
     section: AppRouteSection.ai,
-    icon: ZumiIcons.ai,
+    icon: AsagiIcons.ai,
   );
 }
 
@@ -22,7 +22,7 @@ final class AiSettingsRoute extends AppRoute {
     name: 'settings_ai',
     path: '/settings/ai',
     section: AppRouteSection.ai,
-    icon: ZumiIcons.ai,
+    icon: AsagiIcons.ai,
     showInSettingsHub: true,
   );
 }
@@ -36,7 +36,7 @@ final class AiModelsRoute extends AppRoute {
     name: 'settings_ai_models',
     path: '/settings/ai/models',
     section: AppRouteSection.ai,
-    icon: ZumiIcons.aiModels,
+    icon: AsagiIcons.aiModels,
   );
 }
 
@@ -49,7 +49,7 @@ final class AiImportModelRoute extends AppRoute {
     name: 'settings_ai_import',
     path: '/settings/ai/import',
     section: AppRouteSection.ai,
-    icon: ZumiIcons.aiImport,
+    icon: AsagiIcons.aiImport,
   );
 }
 
@@ -62,7 +62,7 @@ final class AiFeaturesRoute extends AppRoute {
     name: 'settings_ai_features',
     path: '/settings/ai/features',
     section: AppRouteSection.ai,
-    icon: ZumiIcons.aiFeatures,
+    icon: AsagiIcons.aiFeatures,
   );
 }
 
@@ -75,7 +75,7 @@ final class AiChatSettingsRoute extends AppRoute {
     name: 'settings_ai_chat',
     path: '/settings/ai/chat',
     section: AppRouteSection.ai,
-    icon: ZumiIcons.aiChatSettings,
+    icon: AsagiIcons.aiChatSettings,
   );
 }
 
@@ -88,7 +88,7 @@ final class AiMediaRoute extends AppRoute {
     name: 'settings_ai_media',
     path: '/settings/ai/media',
     section: AppRouteSection.ai,
-    icon: ZumiIcons.aiMedia,
+    icon: AsagiIcons.aiMedia,
   );
 }
 
@@ -101,7 +101,7 @@ final class AiSearchRoute extends AppRoute {
     name: 'settings_ai_search',
     path: '/settings/ai/search',
     section: AppRouteSection.ai,
-    icon: ZumiIcons.aiSearch,
+    icon: AsagiIcons.aiSearch,
   );
 }
 
@@ -114,7 +114,7 @@ final class AiToolsRoute extends AppRoute {
     name: 'settings_ai_tools',
     path: '/settings/ai/tools',
     section: AppRouteSection.ai,
-    icon: ZumiIcons.aiTools,
+    icon: AsagiIcons.aiTools,
   );
 }
 
@@ -127,6 +127,6 @@ final class AiRuntimeRoute extends AppRoute {
     name: 'settings_ai_runtime',
     path: '/settings/ai/runtime',
     section: AppRouteSection.ai,
-    icon: ZumiIcons.aiRuntime,
+    icon: AsagiIcons.aiRuntime,
   );
 }

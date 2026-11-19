@@ -12,8 +12,8 @@ import 'core/utils/theme/app_theme.dart';
 import 'core/utils/theme/logic/cubit/theme_cubit.dart';
 import 'l10n/app_localizations.dart';
 
-class ZumiApp extends StatelessWidget {
-  const ZumiApp({super.key});
+class AsagiApp extends StatelessWidget {
+  const AsagiApp({super.key});
 
   @override
   Widget build(BuildContext context) {

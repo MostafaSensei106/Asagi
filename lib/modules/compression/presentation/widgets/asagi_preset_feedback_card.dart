@@ -6,10 +6,10 @@ import '../../../../core/extensions/extensions.dart';
 import '../../../../core/widgets/design_system/tokens/tokens.dart';
 import 'platform_presets_bar.dart';
 
-/// Interactive Zumi Mascot Feedback Card that explains the algorithmic tuning
+/// Interactive Asagi Mascot Feedback Card that explains the algorithmic tuning
 /// and warns about quality degradation or infeasible limits.
-class ZumiPresetFeedbackCard extends StatelessWidget {
-  const ZumiPresetFeedbackCard({
+class AsagiPresetFeedbackCard extends StatelessWidget {
+  const AsagiPresetFeedbackCard({
     required this.selectedPresetId,
     required this.presetPlan,
     required this.isLoading,
@@ -40,7 +40,7 @@ class ZumiPresetFeedbackCard extends StatelessWidget {
               const SizedBox(width: AppSpacing.medium),
               Expanded(
                 child: Text(
-                  l10n.zumiIsStudyingThePlatformAlgorithmAndCalculatingTheBudget,
+                  l10n.asagiIsStudyingThePlatformAlgorithmAndCalculatingTheBudget,
                   style: const TextStyle(fontSize: 13),
                 ),
               ),
@@ -89,7 +89,7 @@ class ZumiPresetFeedbackCard extends StatelessWidget {
     final descriptor = PresetDescriptor.of(selectedPresetId!);
     final plan = presetPlan;
 
-    // Check Zumi expressions based on plan result
+    // Check Asagi expressions based on plan result
     if (plan != null &&
         (plan.plan.isInfeasible ||
             plan.tier == SharePresetTier.unsatisfiable)) {
@@ -108,7 +108,7 @@ class ZumiPresetFeedbackCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      l10n.zumiIsPuzzledAnImpossibleTargetForTheNameCap(
+                      l10n.asagiIsPuzzledAnImpossibleTargetForTheNameCap(
                         descriptor.name,
                       ),
                       style: TextStyle(
@@ -152,7 +152,7 @@ class ZumiPresetFeedbackCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      l10n.zumiAlertProtectingQualityFromDistortion,
+                      l10n.asagiAlertProtectingQualityFromDistortion,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 13,
@@ -222,7 +222,7 @@ class ZumiPresetFeedbackCard extends StatelessWidget {
       );
     }
 
-    // Exact Match (Happy Zumi)
+    // Exact Match (Happy Asagi)
     return Card(
       color: scheme.surfaceContainerLow,
       child: Padding(

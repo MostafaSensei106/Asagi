@@ -14,7 +14,7 @@ typedef _ThemeModeOption = ({
   String subtitle,
 });
 
-/// Lets the user pick how Zumi resolves its theme.
+/// Lets the user pick how Asagi resolves its theme.
 final class ThemeModeSection extends StatelessWidget {
   const ThemeModeSection({
     required this.selectedMode,

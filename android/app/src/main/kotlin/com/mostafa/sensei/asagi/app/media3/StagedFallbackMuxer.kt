@@ -1,4 +1,4 @@
-package com.mostafa.sensei.zumi.app.media3
+package com.mostafa.sensei.asagi.app.media3
 
 import android.content.Context
 import android.media.MediaCodec
@@ -12,7 +12,7 @@ import androidx.media3.common.MimeTypes
 import androidx.media3.common.util.MediaFormatUtil
 import androidx.media3.muxer.BufferInfo
 import androidx.media3.muxer.Mp4Muxer
-import com.mostafa.sensei.zumi.app.contracts.EncodeConfiguration
+import com.mostafa.sensei.asagi.app.contracts.EncodeConfiguration
 import java.io.File
 import java.io.FileOutputStream
 import java.io.RandomAccessFile

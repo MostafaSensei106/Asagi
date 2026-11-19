@@ -9,7 +9,7 @@ final class VideoSelectRoute extends AppRoute {
     name: 'video_select',
     path: '/compression/select',
     section: AppRouteSection.compression,
-    icon: ZumiIcons.videoSelect,
+    icon: AsagiIcons.videoSelect,
   );
 }
 
@@ -28,7 +28,7 @@ final class CompressionSetupRoute extends AppRoute {
     name: 'compression_setup',
     path: '/compression/setup',
     section: AppRouteSection.compression,
-    icon: ZumiIcons.compressionSetup,
+    icon: AsagiIcons.compressionSetup,
   );
 }
 
@@ -47,7 +47,7 @@ final class CompressionProgressRoute extends AppRoute {
     name: 'compression_progress',
     path: '/compression/progress',
     section: AppRouteSection.compression,
-    icon: ZumiIcons.compressionProgress,
+    icon: AsagiIcons.compressionProgress,
   );
 }
 
@@ -66,7 +66,7 @@ final class CompressionResultRoute extends AppRoute {
     name: 'compression_result',
     path: '/compression/result',
     section: AppRouteSection.compression,
-    icon: ZumiIcons.compressionResult,
+    icon: AsagiIcons.compressionResult,
   );
 }
 
@@ -79,6 +79,6 @@ final class CompressionHistoryRoute extends AppRoute {
     name: 'compression_history',
     path: '/compression/history',
     section: AppRouteSection.compression,
-    icon: ZumiIcons.compressionHistory,
+    icon: AsagiIcons.compressionHistory,
   );
 }

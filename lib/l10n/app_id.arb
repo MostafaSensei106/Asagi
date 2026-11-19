@@ -1,7 +1,7 @@
 {
   "@@locale": "id",
-  "zumi": "Zumi",
-  "@zumi": {
+  "asagi": "Asagi",
+  "@asagi": {
     "description": "Application name shown in the app and on the home page"
   },
   "downloadFile": "Unduh File",
@@ -211,12 +211,12 @@
   "@compressVideosPrivatelyOnYourDevice": {
     "description": "Home page description"
   },
-  "welcomeToZumi": "Selamat datang di Zumi",
-  "@welcomeToZumi": {
+  "welcomeToAsagi": "Selamat datang di Asagi",
+  "@welcomeToAsagi": {
     "description": "Onboarding page title"
   },
-  "learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": "Pelajari cara Zumi mengompres video Anda tanpa harus meninggalkan ponsel.",
-  "@learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": {
+  "learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": "Pelajari caran Asagi mengompres video Anda tanpa harus meninggalkan ponsel.",
+  "@learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": {
     "description": "Onboarding page description"
   },
   "signIn": "Masuk",
@@ -319,8 +319,8 @@
   "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
     "description": "Privacy settings page description"
   },
-  "aboutZumi": "Tentang Zumi",
-  "@aboutZumi": {
+  "aboutAsagi": "Tentang Asagi",
+  "@aboutAsagi": {
     "description": "App info page title"
   },
   "versionBuildNumberAndApplicationDetails": "Versi, nomor build, dan detail aplikasi.",
@@ -331,48 +331,48 @@
   "@aboutTheDeveloper": {
     "description": "Developer page title"
   },
-  "theDeveloperAndToolsBehindZumi": "Pengembang dan alat di balik Zumi.",
-  "@theDeveloperAndToolsBehindZumi": {
+  "theDeveloperAndToolsBehindAsagi": "Pengembang dan alat di balik Asagi.",
+  "@theDeveloperAndToolsBehindAsagi": {
     "description": "Developer page description"
   },
   "openSourceLicenses": "Lisensi sumber terbuka",
   "@openSourceLicenses": {
     "description": "Licenses page title"
   },
-  "openSourcePackagesBundledWithZumi": "Paket sumber terbuka yang disertakan dengan Zumi.",
-  "@openSourcePackagesBundledWithZumi": {
+  "openSourcePackagesBundledWithAsagi": "Paket sumber terbuka yang disertakan dengan Asagi.",
+  "@openSourcePackagesBundledWithAsagi": {
     "description": "Licenses page description"
   },
   "privacyPolicy": "Kebijakan privasi",
   "@privacyPolicy": {
     "description": "Privacy policy page title"
   },
-  "howZumiHandlesYourVideosAndData": "Bagaimana Zumi menangani video dan data Anda.",
-  "@howZumiHandlesYourVideosAndData": {
+  "howAsagiHandlesYourVideosAndData": "Bagaimanan Asagi menangani video dan data Anda.",
+  "@howAsagiHandlesYourVideosAndData": {
     "description": "Privacy policy page description"
   },
   "termsOfService": "Ketentuan layanan",
   "@termsOfService": {
     "description": "Terms page title"
   },
-  "theTermsThatApplyToZumiAndItsPurchases": "Ketentuan yang berlaku untuk Zumi dan pembeliannya.",
-  "@theTermsThatApplyToZumiAndItsPurchases": {
+  "theTermsThatApplyToAsagiAndItsPurchases": "Ketentuan yang berlaku untuk Asagi dan pembeliannya.",
+  "@theTermsThatApplyToAsagiAndItsPurchases": {
     "description": "Terms page description"
   },
   "dataSafety": "Keamanan data",
   "@dataSafety": {
     "description": "Data safety page title"
   },
-  "summaryOfTheDataZumiCollectsAndWhy": "Ringkasan data yang dikumpulkan Zumi dan alasannya.",
-  "@summaryOfTheDataZumiCollectsAndWhy": {
+  "summaryOfTheDataAsagiCollectsAndWhy": "Ringkasan data yang dikumpulkan Asagi dan alasannya.",
+  "@summaryOfTheDataAsagiCollectsAndWhy": {
     "description": "Data safety page description"
   },
   "permissions": "Izin",
   "@permissions": {
     "description": "Permissions page title"
   },
-  "runtimePermissionsZumiRequestsAndWhyEachIsNeeded": "Izin runtime yang diminta Zumi dan alasan setiap izin dibutuhkan.",
-  "@runtimePermissionsZumiRequestsAndWhyEachIsNeeded": {
+  "runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": "Izin runtime yang dimintan Asagi dan alasan setiap izin dibutuhkan.",
+  "@runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": {
     "description": "Permissions page description"
   },
   "faq": "FAQ",
@@ -447,20 +447,20 @@
   "@permanentlyRemoveYourAccountAndItsServerSideData": {
     "description": "Delete account page description"
   },
-  "rateZumi": "Beri rating Zumi",
-  "@rateZumi": {
+  "rateAsagi": "Beri rating Asagi",
+  "@rateAsagi": {
     "description": "Rate app page title"
   },
-  "tellOthersHowZumiWorkedForYouOnTheStore": "Beritahu orang lain bagaimana Zumi bekerja untuk Anda di toko.",
-  "@tellOthersHowZumiWorkedForYouOnTheStore": {
+  "tellOthersHowAsagiWorkedForYouOnTheStore": "Beritahu orang lain bagaimanan Asagi bekerja untuk Anda di toko.",
+  "@tellOthersHowAsagiWorkedForYouOnTheStore": {
     "description": "Rate app page description"
   },
-  "shareZumi": "Bagikan Zumi",
-  "@shareZumi": {
+  "shareAsagi": "Bagikan Asagi",
+  "@shareAsagi": {
     "description": "Share app page title"
   },
-  "recommendZumiToAFriend": "Rekomendasikan Zumi kepada teman.",
-  "@recommendZumiToAFriend": {
+  "recommendAsagiToAFriend": "Rekomendasikan Asagi kepada teman.",
+  "@recommendAsagiToAFriend": {
     "description": "Share app page description"
   },
   "appearanceLanguage": "Tampilan & bahasa",
@@ -516,7 +516,7 @@
     "description": "Settings hub row summary"
   },
   "aiSettings": "Pengaturan AI",
-  "zumiAssistant": "Asisten Zumi",
+  "asagiAssistant": "Asisten Asagi",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "Asisten pribadi untuk video Anda akan segera hadir. Anda akan dapat menanyakan tentang kompresi, organisasi, dan video yang disimpan di sini.",
   "localModelsAndSmartTools": "Model lokal dan alat pintar",
   "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "Jelajahi model lokal dan alat AI di masa depan. Opsi ini belum aktif.",
@@ -576,8 +576,8 @@
   "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "theDeveloperBehindZumi": "Pengembang di balik Zumi",
-  "@theDeveloperBehindZumi": {
+  "theDeveloperBehindAsagi": "Pengembang di balik Asagi",
+  "@theDeveloperBehindAsagi": {
     "description": "Settings hub row summary"
   },
   "openSourcePackageLicenses": "Lisensi paket sumber terbuka",
@@ -588,8 +588,8 @@
   "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "rulesForUsingZumi": "Aturan penggunaan Zumi",
-  "@rulesForUsingZumi": {
+  "rulesForUsingAsagi": "Aturan penggunaan Asagi",
+  "@rulesForUsingAsagi": {
     "description": "Settings hub row summary"
   },
   "whatDataWeCollect": "Data apa yang kami kumpulkan",
@@ -691,14 +691,14 @@
   "unavailable": "Tidak tersedia",
   "projectAndSupport": "Proyek dan dukungan",
   "githubRepository": "Repositori GitHub",
-  "viewZumiSourceCode": "Lihat kode sumber Zumi",
+  "viewAsagiSourceCode": "Lihat kode sumber Asagi",
   "readTheREADME": "Baca README",
-  "learnAboutZumiOnGitHub": "Pelajari tentang Zumi di GitHub",
+  "learnAboutAsagiOnGitHub": "Pelajari tentang Asagi di GitHub",
   "reportAnIssue": "Laporkan masalah",
   "viewAndCreateGitHubIssues": "Lihat dan buat masalah di GitHub",
   "latestRelease": "Rilis terbaru",
   "viewReleasesAndDownloads": "Lihat rilis dan unduhan",
-  "supportZumi": "Dukung Zumi",
+  "supportAsagi": "Dukung Asagi",
   "openTheOfficialDonationPage": "Buka halaman donasi resmi",
   "couldNotOpenTheLinkPleaseTryAgain": "Tidak dapat membuka tautan. Silakan coba lagi.",
   "developer": "Pengembang",
@@ -706,7 +706,7 @@
   "githubProfile": "Profil GitHub",
   "seeProjectsAndContactDetails": "Lihat proyek dan detail kontak",
   "maintenanceInProgress": "Pemeliharaan sedang berlangsung",
-  "zumiIsTemporarilyUnavailablePleaseTryAgainLater": "Zumi sementara tidak tersedia. Silakan coba lagi nanti.",
+  "asagiIsTemporarilyUnavailablePleaseTryAgainLater": "Asagi sementara tidak tersedia. Silakan coba lagi nanti.",
   "comingSoon": "Segera hadir",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"

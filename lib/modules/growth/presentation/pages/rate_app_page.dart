@@ -5,13 +5,13 @@ import 'package:kaisel/kaisel.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
-import '../../../../core/constants/zumi_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../../core/widgets/widgets.dart';
 
-/// Rating and review screen prompting users to review Zumi on the store
+/// Rating and review screen prompting users to review Asagi on the store
 /// or provide direct developer feedback.
 final class RateAppPage extends StatefulWidget {
   const RateAppPage({super.key});
@@ -48,7 +48,7 @@ final class _RateAppPageState extends State<RateAppPage> {
     final isHighRating = _rating >= 4;
 
     return Scaffold(
-      appBar: SidePageAppBarComponent(title: l10n.rateZumi),
+      appBar: SidePageAppBarComponent(title: l10n.rateAsagi),
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.symmetric(
@@ -61,7 +61,7 @@ final class _RateAppPageState extends State<RateAppPage> {
               child: Column(
                 children: [
                   ExpressiveIcon(
-                    icon: ZumiIcons.rateApp,
+                    icon: AsagiIcons.rateApp,
                     shape: ExpressiveIconShape.sunny,
                     size: 72,
                     backgroundColor: Colors.amber.withValues(alpha: 0.2),
@@ -69,7 +69,7 @@ final class _RateAppPageState extends State<RateAppPage> {
                   ),
                   const Gap(AppSpacing.large),
                   Text(
-                    'Enjoying Zumi?',
+                    'Enjoying Asagi?',
                     textAlign: TextAlign.center,
                     style: context.textTheme.headlineSmall?.copyWith(
                       fontWeight: FontWeight.bold,
@@ -77,7 +77,7 @@ final class _RateAppPageState extends State<RateAppPage> {
                   ),
                   const Gap(AppSpacing.small),
                   Text(
-                    l10n.tellOthersHowZumiWorkedForYouOnTheStore,
+                    l10n.tellOthersHowAsagiWorkedForYouOnTheStore,
                     textAlign: TextAlign.center,
                     style: context.textTheme.bodyMedium?.copyWith(
                       color: colorScheme.onSurfaceVariant,
@@ -92,7 +92,7 @@ final class _RateAppPageState extends State<RateAppPage> {
                         iconSize: 36,
                         icon: Icon(
                           star <= _rating
-                              ? ZumiIcons.rateApp
+                              ? AsagiIcons.rateApp
                               : LucideIcons.star,
                           color: star <= _rating
                               ? Colors.amber.shade600
@@ -121,7 +121,7 @@ final class _RateAppPageState extends State<RateAppPage> {
             const Gap(AppSpacing.xLarge),
             FilledButtonComponent.icon(
               expand: true,
-              icon: isHighRating ? ZumiIcons.rateApp : ZumiIcons.feedback,
+              icon: isHighRating ? AsagiIcons.rateApp : AsagiIcons.feedback,
               label: isHighRating
                   ? 'Rate on Google Play / App Store'
                   : 'Send Feedback to Developers',
@@ -136,7 +136,7 @@ final class _RateAppPageState extends State<RateAppPage> {
             ),
             const Gap(AppSpacing.xLarge),
             const ExpressiveSectionHeader(
-              title: 'What Creators Love About Zumi',
+              title: 'What Creators Love About Asagi',
             ),
             const Gap(AppSpacing.small),
             CardComponent.outlined(
@@ -147,7 +147,7 @@ final class _RateAppPageState extends State<RateAppPage> {
                   Row(
                     children: [
                       ExpressiveIcon(
-                        icon: ZumiIcons.compressionResult,
+                        icon: AsagiIcons.compressionResult,
                         size: 32,
                         backgroundColor: colorScheme.primaryContainer,
                         foregroundColor: colorScheme.onPrimaryContainer,
@@ -168,7 +168,7 @@ final class _RateAppPageState extends State<RateAppPage> {
                   Row(
                     children: [
                       ExpressiveIcon(
-                        icon: ZumiIcons.privacy,
+                        icon: AsagiIcons.privacy,
                         shape: ExpressiveIconShape.heart,
                         size: 32,
                         backgroundColor: colorScheme.secondaryContainer,

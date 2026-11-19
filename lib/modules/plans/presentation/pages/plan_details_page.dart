@@ -3,13 +3,13 @@ import 'dart:async';
 import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
-import '../../../../core/constants/zumi_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../../core/widgets/widgets.dart';
 
-/// Detailed breakdown comparing Free capabilities with Zumi Pro features.
+/// Detailed breakdown comparing Free capabilities with Asagi Pro features.
 final class PlanDetailsPage extends StatelessWidget {
   const PlanDetailsPage({super.key});
 
@@ -23,43 +23,43 @@ final class PlanDetailsPage extends StatelessWidget {
         feature: 'Maximum Output Resolution',
         free: '1080p FHD',
         pro: '4K & 8K Ultra HD',
-        icon: ZumiIcons.videoSelect,
+        icon: AsagiIcons.videoSelect,
       ),
       (
         feature: 'Batch Compression Queue',
         free: '1 video at a time',
         pro: 'Unlimited parallel queue',
-        icon: ZumiIcons.package,
+        icon: AsagiIcons.package,
       ),
       (
         feature: 'Advanced Codecs (HEVC & AV1)',
         free: 'H.264 only',
         pro: 'H.264, HEVC, AV1 & VP9',
-        icon: ZumiIcons.compressionSetup,
+        icon: AsagiIcons.compressionSetup,
       ),
       (
         feature: 'HDR & 10-Bit Color Depth',
         free: 'Standard 8-Bit SDR',
         pro: 'Full HDR10 & Dolby Vision',
-        icon: ZumiIcons.onboarding,
+        icon: AsagiIcons.onboarding,
       ),
       (
         feature: 'Custom Bitrate & Two-Pass',
         free: 'Preset profiles',
         pro: 'Granular bitrate & CRF',
-        icon: ZumiIcons.compressionDefaults,
+        icon: AsagiIcons.compressionDefaults,
       ),
       (
         feature: 'Hardware Acceleration Priority',
         free: 'Standard priority',
         pro: 'Neural engine & GPU priority',
-        icon: ZumiIcons.aiRuntime,
+        icon: AsagiIcons.aiRuntime,
       ),
       (
         feature: 'Loyalty Monthly Savings',
         free: 'None',
         pro: 'Up to 20% renewal discount',
-        icon: ZumiIcons.plans,
+        icon: AsagiIcons.plans,
       ),
     ];
 
@@ -77,7 +77,7 @@ final class PlanDetailsPage extends StatelessWidget {
               child: Row(
                 children: [
                   ExpressiveIcon(
-                    icon: ZumiIcons.plans,
+                    icon: AsagiIcons.plans,
                     shape: ExpressiveIconShape.gem,
                     size: 52,
                     backgroundColor: colorScheme.primaryContainer,
@@ -120,7 +120,7 @@ final class PlanDetailsPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            l10n.zumiProTitle,
+                            l10n.asagiProTitle,
                             style: context.textTheme.titleMedium?.copyWith(
                               fontWeight: FontWeight.bold,
                             ),
@@ -143,7 +143,7 @@ final class PlanDetailsPage extends StatelessWidget {
                   FilledButtonComponent(
                     expand: true,
                     label: 'View Plans & Upgrade',
-                    icon: ZumiIcons.plans,
+                    icon: AsagiIcons.plans,
                     onPressed: () =>
                         unawaited(context.push(const PlansRoute())),
                   ),
@@ -153,7 +153,7 @@ final class PlanDetailsPage extends StatelessWidget {
             const Gap(AppSpacing.xLarge),
             const ExpressiveSectionHeader(
               title: 'Tier Comparison',
-              icon: ZumiIcons.plans,
+              icon: AsagiIcons.plans,
               shape: ExpressiveIconShape.gem,
             ),
             const Gap(AppSpacing.small),
@@ -231,7 +231,7 @@ final class PlanDetailsPage extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Zumi Pro',
+                                  'Asagi Pro',
                                   style: context.textTheme.labelSmall?.copyWith(
                                     color: colorScheme.primary,
                                     fontWeight: FontWeight.bold,

@@ -1,7 +1,7 @@
 {
   "@@locale": "pl_PL",
-  "zumi": "Zumi",
-  "@zumi": {
+  "asagi": "Asagi",
+  "@asagi": {
     "description": "Application name shown in the app and on the home page"
   },
   "downloadFile": "Pobierz plik",
@@ -211,12 +211,12 @@
   "@compressVideosPrivatelyOnYourDevice": {
     "description": "Home page description"
   },
-  "welcomeToZumi": "Witamy w Zumi",
-  "@welcomeToZumi": {
+  "welcomeToAsagi": "Witamy w Asagi",
+  "@welcomeToAsagi": {
     "description": "Onboarding page title"
   },
-  "learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": "Dowiedz się, jak Zumi kompresuje Twoje filmy, nie opuszczając telefonu.",
-  "@learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": {
+  "learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": "Dowiedz się, jak Asagi kompresuje Twoje filmy, nie opuszczając telefonu.",
+  "@learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": {
     "description": "Onboarding page description"
   },
   "signIn": "Zaloguj się",
@@ -319,8 +319,8 @@
   "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
     "description": "Privacy settings page description"
   },
-  "aboutZumi": "O Zumi",
-  "@aboutZumi": {
+  "aboutAsagi": "O Asagi",
+  "@aboutAsagi": {
     "description": "App info page title"
   },
   "versionBuildNumberAndApplicationDetails": "Wersja, numer kompilacji i szczegóły aplikacji.",
@@ -331,48 +331,48 @@
   "@aboutTheDeveloper": {
     "description": "Developer page title"
   },
-  "theDeveloperAndToolsBehindZumi": "Deweloper i narzędzia stojące za Zumi.",
-  "@theDeveloperAndToolsBehindZumi": {
+  "theDeveloperAndToolsBehindAsagi": "Deweloper i narzędzia stojące zan Asagi.",
+  "@theDeveloperAndToolsBehindAsagi": {
     "description": "Developer page description"
   },
   "openSourceLicenses": "Licencje open-source",
   "@openSourceLicenses": {
     "description": "Licenses page title"
   },
-  "openSourcePackagesBundledWithZumi": "Pakiety open-source dołączone do Zumi.",
-  "@openSourcePackagesBundledWithZumi": {
+  "openSourcePackagesBundledWithAsagi": "Pakiety open-source dołączone do Asagi.",
+  "@openSourcePackagesBundledWithAsagi": {
     "description": "Licenses page description"
   },
   "privacyPolicy": "Polityka prywatności",
   "@privacyPolicy": {
     "description": "Privacy policy page title"
   },
-  "howZumiHandlesYourVideosAndData": "Jak Zumi obsługuje Twoje filmy i dane.",
-  "@howZumiHandlesYourVideosAndData": {
+  "howAsagiHandlesYourVideosAndData": "Jak Asagi obsługuje Twoje filmy i dane.",
+  "@howAsagiHandlesYourVideosAndData": {
     "description": "Privacy policy page description"
   },
   "termsOfService": "Warunki świadczenia usług",
   "@termsOfService": {
     "description": "Terms page title"
   },
-  "theTermsThatApplyToZumiAndItsPurchases": "Warunki, które obowiązują w Zumi i przy jego zakupach.",
-  "@theTermsThatApplyToZumiAndItsPurchases": {
+  "theTermsThatApplyToAsagiAndItsPurchases": "Warunki, które obowiązują w Asagi i przy jego zakupach.",
+  "@theTermsThatApplyToAsagiAndItsPurchases": {
     "description": "Terms page description"
   },
   "dataSafety": "Bezpieczeństwo danych",
   "@dataSafety": {
     "description": "Data safety page title"
   },
-  "summaryOfTheDataZumiCollectsAndWhy": "Podsumowanie danych, które Zumi zbiera i dlaczego.",
-  "@summaryOfTheDataZumiCollectsAndWhy": {
+  "summaryOfTheDataAsagiCollectsAndWhy": "Podsumowanie danych, które Asagi zbiera i dlaczego.",
+  "@summaryOfTheDataAsagiCollectsAndWhy": {
     "description": "Data safety page description"
   },
   "permissions": "Uprawnienia",
   "@permissions": {
     "description": "Permissions page title"
   },
-  "runtimePermissionsZumiRequestsAndWhyEachIsNeeded": "Uprawnienia w czasie działania, o które prosi Zumi i dlaczego każde jest potrzebne.",
-  "@runtimePermissionsZumiRequestsAndWhyEachIsNeeded": {
+  "runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": "Uprawnienia w czasie działania, o które prosi Asagi i dlaczego każde jest potrzebne.",
+  "@runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": {
     "description": "Permissions page description"
   },
   "faq": "FAQ",
@@ -447,20 +447,20 @@
   "@permanentlyRemoveYourAccountAndItsServerSideData": {
     "description": "Delete account page description"
   },
-  "rateZumi": "Oceń Zumi",
-  "@rateZumi": {
+  "rateAsagi": "Oceń Asagi",
+  "@rateAsagi": {
     "description": "Rate app page title"
   },
-  "tellOthersHowZumiWorkedForYouOnTheStore": "Powiedz innym, jak Zumi działał dla Ciebie w sklepie.",
-  "@tellOthersHowZumiWorkedForYouOnTheStore": {
+  "tellOthersHowAsagiWorkedForYouOnTheStore": "Powiedz innym, jak Asagi działał dla Ciebie w sklepie.",
+  "@tellOthersHowAsagiWorkedForYouOnTheStore": {
     "description": "Rate app page description"
   },
-  "shareZumi": "Udostępnij Zumi",
-  "@shareZumi": {
+  "shareAsagi": "Udostępnij Asagi",
+  "@shareAsagi": {
     "description": "Share app page title"
   },
-  "recommendZumiToAFriend": "Poleć Zumi znajomemu.",
-  "@recommendZumiToAFriend": {
+  "recommendAsagiToAFriend": "Poleć Asagi znajomemu.",
+  "@recommendAsagiToAFriend": {
     "description": "Share app page description"
   },
   "appearanceLanguage": "Wygląd i język",
@@ -516,7 +516,7 @@
     "description": "Settings hub row summary"
   },
   "aiSettings": "Ustawienia AI",
-  "zumiAssistant": "Asystent Zumi",
+  "asagiAssistant": "Asystent Asagi",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "Wkrótce pojawi się prywatny asystent dla Twoich filmów. Będziesz mógł pytać tutaj o kompresję, organizację i zapisane filmy.",
   "localModelsAndSmartTools": "Modele lokalne i inteligentne narzędzia",
   "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "Eksploruj modele lokalne i przyszłe narzędzia AI. Te opcje nie są jeszcze aktywne.",
@@ -576,8 +576,8 @@
   "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "theDeveloperBehindZumi": "Twórca stojący za Zumi",
-  "@theDeveloperBehindZumi": {
+  "theDeveloperBehindAsagi": "Twórca stojący zan Asagi",
+  "@theDeveloperBehindAsagi": {
     "description": "Settings hub row summary"
   },
   "openSourcePackageLicenses": "Licencje pakietów open source",
@@ -588,8 +588,8 @@
   "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "rulesForUsingZumi": "Zasady korzystania z Zumi",
-  "@rulesForUsingZumi": {
+  "rulesForUsingAsagi": "Zasady korzystania z Asagi",
+  "@rulesForUsingAsagi": {
     "description": "Settings hub row summary"
   },
   "whatDataWeCollect": "Jakie dane zbieramy",
@@ -691,14 +691,14 @@
   "unavailable": "Niedostępne",
   "projectAndSupport": "Projekt i wsparcie",
   "githubRepository": "Repozytorium GitHub",
-  "viewZumiSourceCode": "Wyświetl kod źródłowy Zumi",
+  "viewAsagiSourceCode": "Wyświetl kod źródłowy Asagi",
   "readTheREADME": "Przeczytaj README",
-  "learnAboutZumiOnGitHub": "Dowiedz się o Zumi na GitHub",
+  "learnAboutAsagiOnGitHub": "Dowiedz się o Asagi na GitHub",
   "reportAnIssue": "Zgłoś problem",
   "viewAndCreateGitHubIssues": "Wyświetlaj i twórz zgłoszenia na GitHub",
   "latestRelease": "Najnowsze wydanie",
   "viewReleasesAndDownloads": "Wyświetl wydania i pobierz",
-  "supportZumi": "Wsparcie Zumi",
+  "supportAsagi": "Wsparcie Asagi",
   "openTheOfficialDonationPage": "Otwórz oficjalną stronę darowizn",
   "couldNotOpenTheLinkPleaseTryAgain": "Nie można otworzyć linku. Spróbuj ponownie.",
   "developer": "Deweloper",
@@ -706,7 +706,7 @@
   "githubProfile": "Profil GitHub",
   "seeProjectsAndContactDetails": "Zobacz projekty i dane kontaktowe",
   "maintenanceInProgress": "Konserwacja w toku",
-  "zumiIsTemporarilyUnavailablePleaseTryAgainLater": "Zumi jest tymczasowo niedostępny. Spróbuj ponownie później.",
+  "asagiIsTemporarilyUnavailablePleaseTryAgainLater": "Asagi jest tymczasowo niedostępny. Spróbuj ponownie później.",
   "comingSoon": "Wkrótce",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"

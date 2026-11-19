@@ -1,4 +1,4 @@
-# Zumi — current identity
+# Asagi — current identity
 Start with **brand-board.png**. The app icon and hero now use the same approved character.
 
 - `masters/`: transparent raster and matching palette-vector artwork.

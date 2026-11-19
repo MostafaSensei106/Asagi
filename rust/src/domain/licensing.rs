@@ -195,7 +195,7 @@ pub fn verify_loyalty_token(
 /// Length-prefixing the token prevents separator injection.
 pub fn signed_payload(receipt: &LoyaltyReceipt) -> String {
     format!(
-        "zumi-entitlement-v1\n{}:{}\n{}\n{}",
+        "asagi-entitlement-v1\n{}:{}\n{}\n{}",
         receipt.purchase_token.len(),
         receipt.purchase_token,
         receipt.start_time_millis,

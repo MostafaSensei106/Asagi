@@ -1,6 +1,6 @@
 import 'package:material_ui/material_ui.dart';
 
-import '../../../../core/constants/zumi_icons.dart';
+import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/widgets/widgets.dart';
 
@@ -27,14 +27,14 @@ final class PrivacyTelemetrySection extends StatelessWidget {
         ListTileGroup(
           children: [
             ListTileIconComponent.top(
-              leading: ZumiIcons.developer,
+              leading: AsagiIcons.developer,
               title: l10n.anonymousCrashReports,
               subtitle: l10n.crashReportsSummary,
               onTap: () => onCrashReportsChanged(!crashReports),
               onLongPress: () => context.showInfoBottomSheet(
                 title: l10n.anonymousCrashReports,
                 description: l10n.anonymousCrashReportsDescription,
-                icon: ZumiIcons.developer,
+                icon: AsagiIcons.developer,
                 illustrationKind: InfoIllustrationKind.crashReports,
               ),
               trailing: SwitchComponent(
@@ -43,14 +43,14 @@ final class PrivacyTelemetrySection extends StatelessWidget {
               ),
             ),
             ListTileIconComponent.bottom(
-              leading: ZumiIcons.developer,
+              leading: AsagiIcons.developer,
               title: l10n.encoderPerformanceTelemetry,
               subtitle: l10n.encoderTelemetrySummary,
               onTap: () => onPerformanceTelemetryChanged(!performanceTelemetry),
               onLongPress: () => context.showInfoBottomSheet(
                 title: l10n.encoderPerformanceTelemetry,
                 description: l10n.encoderPerformanceTelemetryDescription,
-                icon: ZumiIcons.developer,
+                icon: AsagiIcons.developer,
                 illustrationKind: InfoIllustrationKind.encoderTelemetry,
               ),
               trailing: SwitchComponent(

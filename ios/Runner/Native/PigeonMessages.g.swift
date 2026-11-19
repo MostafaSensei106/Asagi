@@ -416,7 +416,7 @@ class NativeMediaApiSetup {
   /// Sets up an instance of `NativeMediaApi` to handle messages through the `binaryMessenger`.
   static func setUp(binaryMessenger: FlutterBinaryMessenger, api: NativeMediaApi?, messageChannelSuffix: String = "") {
     let channelSuffix = messageChannelSuffix.count > 0 ? ".\(messageChannelSuffix)" : ""
-    let extractVideoMetadataChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.zumi.NativeMediaApi.extractVideoMetadata\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
+    let extractVideoMetadataChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.asagi.NativeMediaApi.extractVideoMetadata\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
     if let api = api {
       extractVideoMetadataChannel.setMessageHandler { message, reply in
         let args = message as! [Any?]
@@ -433,7 +433,7 @@ class NativeMediaApiSetup {
     } else {
       extractVideoMetadataChannel.setMessageHandler(nil)
     }
-    let cancelEncodingChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.zumi.NativeMediaApi.cancelEncoding\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
+    let cancelEncodingChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.asagi.NativeMediaApi.cancelEncoding\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
     if let api = api {
       cancelEncodingChannel.setMessageHandler { _, reply in
         Task { @MainActor in
@@ -448,7 +448,7 @@ class NativeMediaApiSetup {
     } else {
       cancelEncodingChannel.setMessageHandler(nil)
     }
-    let pauseEncodingChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.zumi.NativeMediaApi.pauseEncoding\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
+    let pauseEncodingChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.asagi.NativeMediaApi.pauseEncoding\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
     if let api = api {
       pauseEncodingChannel.setMessageHandler { _, reply in
         Task { @MainActor in
@@ -463,7 +463,7 @@ class NativeMediaApiSetup {
     } else {
       pauseEncodingChannel.setMessageHandler(nil)
     }
-    let resumeEncodingChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.zumi.NativeMediaApi.resumeEncoding\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
+    let resumeEncodingChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.asagi.NativeMediaApi.resumeEncoding\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
     if let api = api {
       resumeEncodingChannel.setMessageHandler { _, reply in
         Task { @MainActor in
@@ -478,7 +478,7 @@ class NativeMediaApiSetup {
     } else {
       resumeEncodingChannel.setMessageHandler(nil)
     }
-    let startHardwareEncodingChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.zumi.NativeMediaApi.startHardwareEncoding\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
+    let startHardwareEncodingChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.asagi.NativeMediaApi.startHardwareEncoding\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
     if let api = api {
       startHardwareEncodingChannel.setMessageHandler { message, reply in
         let args = message as! [Any?]
@@ -495,7 +495,7 @@ class NativeMediaApiSetup {
     } else {
       startHardwareEncodingChannel.setMessageHandler(nil)
     }
-    let compressStagedFallbackChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.zumi.NativeMediaApi.compressStagedFallback\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
+    let compressStagedFallbackChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.asagi.NativeMediaApi.compressStagedFallback\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
     if let api = api {
       compressStagedFallbackChannel.setMessageHandler { message, reply in
         let args = message as! [Any?]

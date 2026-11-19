@@ -1,7 +1,7 @@
 {
   "@@locale": "zh_TW",
-  "zumi": "Zumi",
-  "@zumi": {
+  "asagi": "Asagi",
+  "@asagi": {
     "description": "Application name shown in the app and on the home page"
   },
   "downloadFile": "下載檔案",
@@ -211,12 +211,12 @@
   "@compressVideosPrivatelyOnYourDevice": {
     "description": "Home page description"
   },
-  "welcomeToZumi": "歡迎來到 Zumi",
-  "@welcomeToZumi": {
+  "welcomeToAsagi": "歡迎來到 Asagi",
+  "@welcomeToAsagi": {
     "description": "Onboarding page title"
   },
-  "learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": "了解 Zumi 如何在不離開手機的情況下壓縮您的影片。",
-  "@learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": {
+  "learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": "了解 Asagi 如何在不離開手機的情況下壓縮您的影片。",
+  "@learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": {
     "description": "Onboarding page description"
   },
   "signIn": "登入",
@@ -319,8 +319,8 @@
   "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
     "description": "Privacy settings page description"
   },
-  "aboutZumi": "關於 Zumi",
-  "@aboutZumi": {
+  "aboutAsagi": "關於 Asagi",
+  "@aboutAsagi": {
     "description": "App info page title"
   },
   "versionBuildNumberAndApplicationDetails": "版本、建置號碼與應用程式詳情。",
@@ -331,48 +331,48 @@
   "@aboutTheDeveloper": {
     "description": "Developer page title"
   },
-  "theDeveloperAndToolsBehindZumi": "Zumi 的開發者與工具。",
-  "@theDeveloperAndToolsBehindZumi": {
+  "theDeveloperAndToolsBehindAsagi": "Asagi 的開發者與工具。",
+  "@theDeveloperAndToolsBehindAsagi": {
     "description": "Developer page description"
   },
   "openSourceLicenses": "開源授權",
   "@openSourceLicenses": {
     "description": "Licenses page title"
   },
-  "openSourcePackagesBundledWithZumi": "Zumi 所包含的開源套件。",
-  "@openSourcePackagesBundledWithZumi": {
+  "openSourcePackagesBundledWithAsagi": "Asagi 所包含的開源套件。",
+  "@openSourcePackagesBundledWithAsagi": {
     "description": "Licenses page description"
   },
   "privacyPolicy": "隱私政策",
   "@privacyPolicy": {
     "description": "Privacy policy page title"
   },
-  "howZumiHandlesYourVideosAndData": "Zumi 如何處理您的影片與資料。",
-  "@howZumiHandlesYourVideosAndData": {
+  "howAsagiHandlesYourVideosAndData": "Asagi 如何處理您的影片與資料。",
+  "@howAsagiHandlesYourVideosAndData": {
     "description": "Privacy policy page description"
   },
   "termsOfService": "服務條款",
   "@termsOfService": {
     "description": "Terms page title"
   },
-  "theTermsThatApplyToZumiAndItsPurchases": "適用於 Zumi 及其購買項目的條款。",
-  "@theTermsThatApplyToZumiAndItsPurchases": {
+  "theTermsThatApplyToAsagiAndItsPurchases": "適用於 Asagi 及其購買項目的條款。",
+  "@theTermsThatApplyToAsagiAndItsPurchases": {
     "description": "Terms page description"
   },
   "dataSafety": "資料安全",
   "@dataSafety": {
     "description": "Data safety page title"
   },
-  "summaryOfTheDataZumiCollectsAndWhy": "Zumi 收集的資料摘要及原因。",
-  "@summaryOfTheDataZumiCollectsAndWhy": {
+  "summaryOfTheDataAsagiCollectsAndWhy": "Asagi 收集的資料摘要及原因。",
+  "@summaryOfTheDataAsagiCollectsAndWhy": {
     "description": "Data safety page description"
   },
   "permissions": "權限",
   "@permissions": {
     "description": "Permissions page title"
   },
-  "runtimePermissionsZumiRequestsAndWhyEachIsNeeded": "Zumi 請求的運行時權限及其必要原因。",
-  "@runtimePermissionsZumiRequestsAndWhyEachIsNeeded": {
+  "runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": "Asagi 請求的運行時權限及其必要原因。",
+  "@runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": {
     "description": "Permissions page description"
   },
   "faq": "常見問題",
@@ -447,20 +447,20 @@
   "@permanentlyRemoveYourAccountAndItsServerSideData": {
     "description": "Delete account page description"
   },
-  "rateZumi": "評價 Zumi",
-  "@rateZumi": {
+  "rateAsagi": "評價 Asagi",
+  "@rateAsagi": {
     "description": "Rate app page title"
   },
-  "tellOthersHowZumiWorkedForYouOnTheStore": "告訴其他人 Zumi 在商店上的使用體驗。",
-  "@tellOthersHowZumiWorkedForYouOnTheStore": {
+  "tellOthersHowAsagiWorkedForYouOnTheStore": "告訴其他人 Asagi 在商店上的使用體驗。",
+  "@tellOthersHowAsagiWorkedForYouOnTheStore": {
     "description": "Rate app page description"
   },
-  "shareZumi": "分享 Zumi",
-  "@shareZumi": {
+  "shareAsagi": "分享 Asagi",
+  "@shareAsagi": {
     "description": "Share app page title"
   },
-  "recommendZumiToAFriend": "向朋友推薦 Zumi。",
-  "@recommendZumiToAFriend": {
+  "recommendAsagiToAFriend": "向朋友推薦 Asagi。",
+  "@recommendAsagiToAFriend": {
     "description": "Share app page description"
   },
   "appearanceLanguage": "外觀與語言",
@@ -516,7 +516,7 @@
     "description": "Settings hub row summary"
   },
   "aiSettings": "AI 設定",
-  "zumiAssistant": "Zumi 助手",
+  "asagiAssistant": "Asagi 助手",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "專為您的影片打造的私人助手即將推出。您將能在此詢問有關壓縮、整理及已儲存影片的問題。",
   "localModelsAndSmartTools": "本地模型與智能工具",
   "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "探索本地模型與未來的 AI 工具。這些選項尚未啟用。",
@@ -576,8 +576,8 @@
   "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "theDeveloperBehindZumi": "Zumi 背後的開發者",
-  "@theDeveloperBehindZumi": {
+  "theDeveloperBehindAsagi": "Asagi 背後的開發者",
+  "@theDeveloperBehindAsagi": {
     "description": "Settings hub row summary"
   },
   "openSourcePackageLicenses": "開源套件授權",
@@ -588,8 +588,8 @@
   "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "rulesForUsingZumi": "使用 Zumi 的規則",
-  "@rulesForUsingZumi": {
+  "rulesForUsingAsagi": "使用 Asagi 的規則",
+  "@rulesForUsingAsagi": {
     "description": "Settings hub row summary"
   },
   "whatDataWeCollect": "我們收集的資料",
@@ -691,14 +691,14 @@
   "unavailable": "不可用",
   "projectAndSupport": "專案與支援",
   "githubRepository": "GitHub 儲存庫",
-  "viewZumiSourceCode": "檢視 Zumi 原始碼",
+  "viewAsagiSourceCode": "檢視 Asagi 原始碼",
   "readTheREADME": "閱讀 README",
-  "learnAboutZumiOnGitHub": "在 GitHub 上了解 Zumi",
+  "learnAboutAsagiOnGitHub": "在 GitHub 上了解 Asagi",
   "reportAnIssue": "回報問題",
   "viewAndCreateGitHubIssues": "檢視並創建 GitHub 問題",
   "latestRelease": "最新版本",
   "viewReleasesAndDownloads": "檢視版本與下載",
-  "supportZumi": "支援 Zumi",
+  "supportAsagi": "支援 Asagi",
   "openTheOfficialDonationPage": "打開官方捐款頁面",
   "couldNotOpenTheLinkPleaseTryAgain": "無法打開連結。請再試一次。",
   "developer": "開發者",
@@ -706,7 +706,7 @@
   "githubProfile": "GitHub 個人檔案",
   "seeProjectsAndContactDetails": "查看專案與聯絡資訊",
   "maintenanceInProgress": "維護中",
-  "zumiIsTemporarilyUnavailablePleaseTryAgainLater": "Zumi 暫時無法使用。請稍後再試。",
+  "asagiIsTemporarilyUnavailablePleaseTryAgainLater": "Asagi 暫時無法使用。請稍後再試。",
   "comingSoon": "即將推出",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"

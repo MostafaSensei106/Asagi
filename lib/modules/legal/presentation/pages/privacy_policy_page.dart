@@ -3,13 +3,13 @@ import 'dart:async';
 import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
-import '../../../../core/constants/zumi_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../../core/widgets/widgets.dart';
 
-/// Privacy Policy detailing Zumi's on-device processing guarantees,
+/// Privacy Policy detailing Asagi's on-device processing guarantees,
 /// zero media transmission, and local sandboxed storage.
 final class PrivacyPolicyPage extends StatelessWidget {
   const PrivacyPolicyPage({super.key});
@@ -21,17 +21,17 @@ final class PrivacyPolicyPage extends StatelessWidget {
 
     final highlights = [
       (
-        icon: ZumiIcons.privacy,
+        icon: AsagiIcons.privacy,
         title: l10n.zeroCloudUploads,
         desc: l10n.videosNeverLeaveLocalMemoryOrStorageDuringProcessing,
       ),
       (
-        icon: ZumiIcons.dataSafety,
+        icon: AsagiIcons.dataSafety,
         title: l10n.noAdvertisingIds,
         desc: l10n.noAdSdksUserFingerprintingOrCommercialTrackingCookies,
       ),
       (
-        icon: ZumiIcons.storage,
+        icon: AsagiIcons.storage,
         title: l10n.oneHundredPercentUserGoverned,
         desc: l10n.allCacheAndHistoryCanBePurgedWithASingleTapInSettings,
       ),
@@ -74,7 +74,7 @@ final class PrivacyPolicyPage extends StatelessWidget {
               child: Row(
                 children: [
                   ExpressiveIcon(
-                    icon: ZumiIcons.privacyPolicy,
+                    icon: AsagiIcons.privacyPolicy,
                     shape: ExpressiveIconShape.heart,
                     size: 52,
                     backgroundColor: colorScheme.primaryContainer,
@@ -93,7 +93,7 @@ final class PrivacyPolicyPage extends StatelessWidget {
                         ),
                         const Gap(AppSpacing.xSmall),
                         Text(
-                          l10n.howZumiHandlesYourVideosAndData,
+                          l10n.howAsagiHandlesYourVideosAndData,
                           style: context.textTheme.bodySmall?.copyWith(
                             color: colorScheme.onSurfaceVariant,
                           ),
@@ -186,16 +186,16 @@ final class PrivacyPolicyPage extends StatelessWidget {
                 ListTileIconComponent.top(
                   shape: ExpressiveIconShape.diamond,
                   title: l10n.dataSafety,
-                  subtitle: l10n.summaryOfTheDataZumiCollectsAndWhy,
-                  leading: ZumiIcons.dataSafety,
+                  subtitle: l10n.summaryOfTheDataAsagiCollectsAndWhy,
+                  leading: AsagiIcons.dataSafety,
                   onTap: () => unawaited(context.push(const DataSafetyRoute())),
                 ),
                 ListTileIconComponent.bottom(
                   shape: ExpressiveIconShape.arch,
                   title: l10n.permissions,
                   subtitle:
-                      l10n.runtimePermissionsZumiRequestsAndWhyEachIsNeeded,
-                  leading: ZumiIcons.permissions,
+                      l10n.runtimePermissionsAsagiRequestsAndWhyEachIsNeeded,
+                  leading: AsagiIcons.permissions,
                   onTap: () =>
                       unawaited(context.push(const PermissionsRoute())),
                 ),

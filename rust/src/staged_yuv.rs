@@ -7,7 +7,7 @@ use std::fs::{self, File, OpenOptions};
 use std::io::{self, Seek, SeekFrom, Write};
 use std::path::{Path, PathBuf};
 
-pub const MAGIC: &[u8; 8] = b"ZUMIYUV\0";
+pub const MAGIC: &[u8; 8] = b"ASAGIYU\0";
 pub const VERSION: u16 = 1;
 pub const HEADER_LEN: u16 = 36;
 pub const LAYOUT_NV12: u32 = 1;
@@ -27,7 +27,12 @@ pub struct StagedYuvWriter {
 
 impl StagedYuvWriter {
     pub fn create(path: impl AsRef<Path>, width: u32, height: u32, fps: u32) -> io::Result<Self> {
-        if width < 2 || height < 2 || width % 2 != 0 || height % 2 != 0 || fps == 0 {
+        if width < 2
+            || height < 2
+            || !width.is_multiple_of(2)
+            || !height.is_multiple_of(2)
+            || fps == 0
+        {
             return Err(io::Error::new(
                 io::ErrorKind::InvalidInput,
                 "invalid staged YUV dimensions or fps",
@@ -143,7 +148,7 @@ mod tests {
 
     fn test_path(name: &str) -> (PathBuf, PathBuf) {
         let dir =
-            std::env::temp_dir().join(format!("zumi-staged-yuv-{}-{}", std::process::id(), name));
+            std::env::temp_dir().join(format!("asagi-staged-yuv-{}-{}", std::process::id(), name));
         let _ = fs::remove_dir_all(&dir);
         fs::create_dir_all(&dir).unwrap();
         (dir.join("staged.zf"), dir)

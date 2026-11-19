@@ -6,7 +6,7 @@ Act as a senior Flutter engineer. Read the surrounding feature and shared code b
 
 ## Project Structure & Module Organization
 
-Zumi is a Flutter app with a Rust compression core and native Android/iOS integrations. Most Dart code lives in `lib/`: shared platform services and widgets are under `lib/core/`, feature screens and flows are grouped in `lib/modules/<feature>/`, and translations are in `lib/l10n/`. Tests are in `test/`. Images, icons, and generated launcher assets are under `assets/`. Rust source is in `rust/src/`; the Flutter Rust bridge plugin and build support are in `rust_builder/`. Platform projects are in `android/`, `ios/`, and `web/`.
+Asagi is a Flutter app with a Rust compression core and native Android/iOS integrations. Most Dart code lives in `lib/`: shared platform services and widgets are under `lib/core/`, feature screens and flows are grouped in `lib/modules/<feature>/`, and translations are in `lib/l10n/`. Tests are in `test/`. Images, icons, and generated launcher assets are under `assets/`. Rust source is in `rust/src/`; the Flutter Rust bridge plugin and build support are in `rust_builder/`. Platform projects are in `android/`, `ios/`, and `web/`.
 
 ## Clean Architecture & Dependency Direction
 

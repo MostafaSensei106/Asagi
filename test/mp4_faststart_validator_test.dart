@@ -1,7 +1,7 @@
 import 'dart:io';
 
+import 'package:asagi/core/compression/infrastructure/storage/mp4_faststart_validator.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:zumi/core/compression/infrastructure/storage/mp4_faststart_validator.dart';
 
 List<int> box(String type, {int size = 8}) => [
   (size >> 24) & 255,
@@ -13,7 +13,7 @@ List<int> box(String type, {int size = 8}) => [
 
 void main() {
   test('accepts moov before mdat and skips free boxes', () async {
-    final directory = await Directory.systemTemp.createTemp('zumi-mp4-test-');
+    final directory = await Directory.systemTemp.createTemp('asagi-mp4-test-');
     try {
       final file = File('${directory.path}/fast.mp4');
       await file.writeAsBytes([
@@ -32,7 +32,7 @@ void main() {
   });
 
   test('rejects late moov and truncated box sizes', () async {
-    final directory = await Directory.systemTemp.createTemp('zumi-mp4-test-');
+    final directory = await Directory.systemTemp.createTemp('asagi-mp4-test-');
     try {
       final file = File('${directory.path}/late.mp4');
       await file.writeAsBytes([...box('ftyp'), ...box('mdat'), ...box('moov')]);

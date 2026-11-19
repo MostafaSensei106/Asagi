@@ -1,8 +1,8 @@
-package com.mostafa.sensei.zumi
+package com.mostafa.sensei.asagi
 
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
-import com.mostafa.sensei.zumi.app.NativeVideoEngine
+import com.mostafa.sensei.asagi.app.NativeVideoEngine
 
 @androidx.media3.common.util.UnstableApi
 class MainActivity : FlutterActivity() {
@@ -10,6 +10,6 @@ class MainActivity : FlutterActivity() {
         super.configureFlutterEngine(flutterEngine)
         val native = NativeVideoEngine(applicationContext)
         NativeMediaApi.setUp(flutterEngine.dartExecutor.binaryMessenger, native)
-        io.flutter.plugin.common.EventChannel(flutterEngine.dartExecutor.binaryMessenger, "zumi/encoding_progress").setStreamHandler(native)
+        io.flutter.plugin.common.EventChannel(flutterEngine.dartExecutor.binaryMessenger, "asagi/encoding_progress").setStreamHandler(native)
     }
 }

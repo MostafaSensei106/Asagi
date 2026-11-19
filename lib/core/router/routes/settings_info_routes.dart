@@ -13,7 +13,7 @@ final class SettingsRoute extends AppRoute {
     name: 'settings',
     path: '/settings',
     section: AppRouteSection.core,
-    icon: ZumiIcons.settings,
+    icon: AsagiIcons.settings,
   );
 }
 
@@ -26,7 +26,7 @@ final class AppearanceSettingsRoute extends AppRoute {
     name: 'settings_appearance',
     path: '/settings/appearance',
     section: AppRouteSection.appearance,
-    icon: ZumiIcons.appearance,
+    icon: AsagiIcons.appearance,
     showInSettingsHub: true,
   );
 }
@@ -40,7 +40,7 @@ final class LanguageSettingsRoute extends AppRoute {
     name: 'settings_language',
     path: '/settings/language',
     section: AppRouteSection.appearance,
-    icon: ZumiIcons.language,
+    icon: AsagiIcons.language,
     showInSettingsHub: true,
   );
 }
@@ -54,7 +54,7 @@ final class CompressionDefaultsRoute extends AppRoute {
     name: 'settings_compression',
     path: '/settings/compression',
     section: AppRouteSection.compression,
-    icon: ZumiIcons.compressionDefaults,
+    icon: AsagiIcons.compressionDefaults,
     showInSettingsHub: true,
   );
 }
@@ -68,7 +68,7 @@ final class StorageSettingsRoute extends AppRoute {
     name: 'settings_storage',
     path: '/settings/storage',
     section: AppRouteSection.compression,
-    icon: ZumiIcons.storage,
+    icon: AsagiIcons.storage,
     showInSettingsHub: true,
   );
 }
@@ -82,7 +82,7 @@ final class NotificationsSettingsRoute extends AppRoute {
     name: 'settings_notifications',
     path: '/settings/notifications',
     section: AppRouteSection.privacy,
-    icon: ZumiIcons.notifications,
+    icon: AsagiIcons.notifications,
     showInSettingsHub: true,
   );
 }
@@ -96,7 +96,7 @@ final class PrivacySettingsRoute extends AppRoute {
     name: 'settings_privacy',
     path: '/settings/privacy',
     section: AppRouteSection.privacy,
-    icon: ZumiIcons.privacy,
+    icon: AsagiIcons.privacy,
     showInSettingsHub: true,
   );
 }
@@ -114,12 +114,12 @@ final class AppInfoRoute extends AppRoute {
     name: 'about_app',
     path: '/about/app',
     section: AppRouteSection.about,
-    icon: ZumiIcons.appInfo,
+    icon: AsagiIcons.appInfo,
     showInSettingsHub: true,
   );
 }
 
-/// Information about the people and tools behind Zumi.
+/// Information about the people and tools behind Asagi.
 final class DeveloperRoute extends AppRoute {
   const DeveloperRoute();
 
@@ -128,7 +128,7 @@ final class DeveloperRoute extends AppRoute {
     name: 'about_developer',
     path: '/about/developer',
     section: AppRouteSection.about,
-    icon: ZumiIcons.developer,
+    icon: AsagiIcons.developer,
     showInSettingsHub: true,
   );
 }
@@ -142,7 +142,7 @@ final class LicensesRoute extends AppRoute {
     name: 'about_licenses',
     path: '/about/licenses',
     section: AppRouteSection.about,
-    icon: ZumiIcons.licenses,
+    icon: AsagiIcons.licenses,
   );
 }
 
@@ -159,7 +159,7 @@ final class PrivacyPolicyRoute extends AppRoute {
     name: 'legal_privacy_policy',
     path: '/legal/privacy',
     section: AppRouteSection.legal,
-    icon: ZumiIcons.privacyPolicy,
+    icon: AsagiIcons.privacyPolicy,
     showInSettingsHub: true,
   );
 }
@@ -173,7 +173,7 @@ final class TermsRoute extends AppRoute {
     name: 'legal_terms',
     path: '/legal/terms',
     section: AppRouteSection.legal,
-    icon: ZumiIcons.terms,
+    icon: AsagiIcons.terms,
     showInSettingsHub: true,
   );
 }
@@ -187,12 +187,12 @@ final class DataSafetyRoute extends AppRoute {
     name: 'legal_data_safety',
     path: '/legal/data-safety',
     section: AppRouteSection.legal,
-    icon: ZumiIcons.dataSafety,
+    icon: AsagiIcons.dataSafety,
     showInSettingsHub: true,
   );
 }
 
-/// Runtime permissions Zumi requests and why each one is needed.
+/// Runtime permissions Asagi requests and why each one is needed.
 final class PermissionsRoute extends AppRoute {
   const PermissionsRoute();
 
@@ -201,7 +201,7 @@ final class PermissionsRoute extends AppRoute {
     name: 'legal_permissions',
     path: '/legal/permissions',
     section: AppRouteSection.legal,
-    icon: ZumiIcons.permissions,
+    icon: AsagiIcons.permissions,
     showInSettingsHub: true,
   );
 }
@@ -219,7 +219,7 @@ final class FaqRoute extends AppRoute {
     name: 'help_faq',
     path: '/help/faq',
     section: AppRouteSection.help,
-    icon: ZumiIcons.faq,
+    icon: AsagiIcons.faq,
     showInSettingsHub: true,
   );
 }
@@ -233,7 +233,7 @@ final class SupportRoute extends AppRoute {
     name: 'help_support',
     path: '/help/support',
     section: AppRouteSection.help,
-    icon: ZumiIcons.support,
+    icon: AsagiIcons.support,
     showInSettingsHub: true,
   );
 }
@@ -247,7 +247,7 @@ final class FeedbackRoute extends AppRoute {
     name: 'help_feedback',
     path: '/help/feedback',
     section: AppRouteSection.help,
-    icon: ZumiIcons.feedback,
+    icon: AsagiIcons.feedback,
     showInSettingsHub: true,
   );
 }

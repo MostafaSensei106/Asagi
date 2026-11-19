@@ -1,7 +1,7 @@
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
-import '../../../../core/constants/zumi_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/widgets/widgets.dart';
 
@@ -18,7 +18,7 @@ final class DataSafetyPage extends StatelessWidget {
     final declarations = [
       (
         category: l10n.videosAndPhotos,
-        icon: ZumiIcons.videoSelect,
+        icon: AsagiIcons.videoSelect,
         collected: false,
         shared: false,
         details: l10n
@@ -26,15 +26,15 @@ final class DataSafetyPage extends StatelessWidget {
       ),
       (
         category: l10n.financialInfoAndPayment,
-        icon: ZumiIcons.purchaseMethods,
+        icon: AsagiIcons.purchaseMethods,
         collected: false,
         shared: false,
         details: l10n
-            .allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreZumiNeverAccessesCardDetails,
+            .allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreAsagiNeverAccessesCardDetails,
       ),
       (
         category: l10n.appPerformanceAndCrashLogs,
-        icon: ZumiIcons.developer,
+        icon: AsagiIcons.developer,
         collected: true,
         shared: false,
         details: l10n
@@ -42,7 +42,7 @@ final class DataSafetyPage extends StatelessWidget {
       ),
       (
         category: l10n.deviceOrOtherIdentifiers,
-        icon: ZumiIcons.device,
+        icon: AsagiIcons.device,
         collected: false,
         shared: false,
         details: l10n
@@ -64,7 +64,7 @@ final class DataSafetyPage extends StatelessWidget {
               child: Row(
                 children: [
                   ExpressiveIcon(
-                    icon: ZumiIcons.dataSafety,
+                    icon: AsagiIcons.dataSafety,
                     shape: ExpressiveIconShape.diamond,
                     size: 52,
                     backgroundColor: colorScheme.primaryContainer,
@@ -83,7 +83,7 @@ final class DataSafetyPage extends StatelessWidget {
                         ),
                         const Gap(AppSpacing.xSmall),
                         Text(
-                          l10n.summaryOfTheDataZumiCollectsAndWhy,
+                          l10n.summaryOfTheDataAsagiCollectsAndWhy,
                           style: context.textTheme.bodySmall?.copyWith(
                             color: colorScheme.onSurfaceVariant,
                           ),
@@ -103,7 +103,7 @@ final class DataSafetyPage extends StatelessWidget {
                   Row(
                     children: [
                       Icon(
-                        ZumiIcons.privacy,
+                        AsagiIcons.privacy,
                         size: 20,
                         color: colorScheme.primary,
                       ),
@@ -200,7 +200,7 @@ final class _SafetyRow extends StatelessWidget {
     return Row(
       children: [
         Icon(
-          isAffirmative ? ZumiIcons.compressionResult : ZumiIcons.dataSafety,
+          isAffirmative ? AsagiIcons.compressionResult : AsagiIcons.dataSafety,
           size: 16,
           color: isAffirmative ? colorScheme.primary : colorScheme.error,
         ),

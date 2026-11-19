@@ -27,5 +27,5 @@ protocol VideoEncodingBackend {
   func cancel() async throws
 }
 func videoFailure(_ code: String) -> NSError {
-  NSError(domain: "Zumi", code: 1, userInfo: [NSLocalizedDescriptionKey: code])
+  NSError(domain: "Asagi", code: 1, userInfo: [NSLocalizedDescriptionKey: code])
 }

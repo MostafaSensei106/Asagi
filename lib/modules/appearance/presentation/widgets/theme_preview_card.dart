@@ -55,7 +55,7 @@ final class _ThemeSample extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          context.localeKeys.zumiEngine,
+                          context.localeKeys.asagiEngine,
                           style: context.textTheme.labelLarge?.copyWith(
                             fontWeight: FontWeight.w600,
                             color: scheme.onSurface,

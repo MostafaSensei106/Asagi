@@ -1,4 +1,4 @@
-package com.mostafa.sensei.zumi.app.contracts
+package com.mostafa.sensei.asagi.app.contracts
 
 enum class HdrMode { PRESERVE, TONE_MAP_TO_SDR }
 data class SourceMetadata(

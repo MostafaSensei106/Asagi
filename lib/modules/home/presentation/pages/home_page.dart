@@ -44,7 +44,7 @@ final class HomePage extends HookWidget {
     }
 
     return Scaffold(
-      appBar: AppBarComponent(title: context.localeKeys.zumi),
+      appBar: AppBarComponent(title: context.localeKeys.asagi),
       body: BlocSignalBuilder<CompressionCubit, CompressionState>(
         bloc: cubit,
         buildWhen: (previous, current) =>

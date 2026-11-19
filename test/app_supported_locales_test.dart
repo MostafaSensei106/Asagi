@@ -1,8 +1,8 @@
+import 'package:asagi/core/utils/localization/app_supported_locales.dart';
+import 'package:asagi/l10n/app_localizations.dart';
 import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
-import 'package:zumi/core/utils/localization/app_supported_locales.dart';
-import 'package:zumi/l10n/app_localizations.dart';
 
 void main() {
   test('language choices are unique country-specific locales', () {

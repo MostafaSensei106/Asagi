@@ -1,7 +1,7 @@
 {
   "@@locale": "vi",
-  "zumi": "Zumi",
-  "@zumi": {
+  "asagi": "Asagi",
+  "@asagi": {
     "description": "Application name shown in the app and on the home page"
   },
   "downloadFile": "Tải xuống Tệp",
@@ -211,12 +211,12 @@
   "@compressVideosPrivatelyOnYourDevice": {
     "description": "Home page description"
   },
-  "welcomeToZumi": "Chào mừng đến với Zumi",
-  "@welcomeToZumi": {
+  "welcomeToAsagi": "Chào mừng đến với Asagi",
+  "@welcomeToAsagi": {
     "description": "Onboarding page title"
   },
-  "learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": "Tìm hiểu cách Zumi nén video của bạn mà không cần rời khỏi điện thoại.",
-  "@learnHowZumiCompressesYourVideosWithoutEverLeavingYourPhone": {
+  "learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": "Tìm hiểu cách Asagi nén video của bạn mà không cần rời khỏi điện thoại.",
+  "@learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": {
     "description": "Onboarding page description"
   },
   "signIn": "Đăng nhập",
@@ -319,8 +319,8 @@
   "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
     "description": "Privacy settings page description"
   },
-  "aboutZumi": "Về Zumi",
-  "@aboutZumi": {
+  "aboutAsagi": "Về Asagi",
+  "@aboutAsagi": {
     "description": "App info page title"
   },
   "versionBuildNumberAndApplicationDetails": "Phiên bản, số bản dựng và chi tiết ứng dụng.",
@@ -331,48 +331,48 @@
   "@aboutTheDeveloper": {
     "description": "Developer page title"
   },
-  "theDeveloperAndToolsBehindZumi": "Nhà phát triển và các công cụ phía sau Zumi.",
-  "@theDeveloperAndToolsBehindZumi": {
+  "theDeveloperAndToolsBehindAsagi": "Nhà phát triển và các công cụ phía sau Asagi.",
+  "@theDeveloperAndToolsBehindAsagi": {
     "description": "Developer page description"
   },
   "openSourceLicenses": "Giấy phép mã nguồn mở",
   "@openSourceLicenses": {
     "description": "Licenses page title"
   },
-  "openSourcePackagesBundledWithZumi": "Các gói mã nguồn mở đi kèm với Zumi.",
-  "@openSourcePackagesBundledWithZumi": {
+  "openSourcePackagesBundledWithAsagi": "Các gói mã nguồn mở đi kèm với Asagi.",
+  "@openSourcePackagesBundledWithAsagi": {
     "description": "Licenses page description"
   },
   "privacyPolicy": "Chính sách quyền riêng tư",
   "@privacyPolicy": {
     "description": "Privacy policy page title"
   },
-  "howZumiHandlesYourVideosAndData": "Cách Zumi xử lý video và dữ liệu của bạn.",
-  "@howZumiHandlesYourVideosAndData": {
+  "howAsagiHandlesYourVideosAndData": "Cách Asagi xử lý video và dữ liệu của bạn.",
+  "@howAsagiHandlesYourVideosAndData": {
     "description": "Privacy policy page description"
   },
   "termsOfService": "Điều khoản dịch vụ",
   "@termsOfService": {
     "description": "Terms page title"
   },
-  "theTermsThatApplyToZumiAndItsPurchases": "Các điều khoản áp dụng cho Zumi và các giao dịch mua của nó.",
-  "@theTermsThatApplyToZumiAndItsPurchases": {
+  "theTermsThatApplyToAsagiAndItsPurchases": "Các điều khoản áp dụng cho Asagi và các giao dịch mua của nó.",
+  "@theTermsThatApplyToAsagiAndItsPurchases": {
     "description": "Terms page description"
   },
   "dataSafety": "An toàn dữ liệu",
   "@dataSafety": {
     "description": "Data safety page title"
   },
-  "summaryOfTheDataZumiCollectsAndWhy": "Tóm tắt dữ liệu Zumi thu thập và lý do.",
-  "@summaryOfTheDataZumiCollectsAndWhy": {
+  "summaryOfTheDataAsagiCollectsAndWhy": "Tóm tắt dữ liệu Asagi thu thập và lý do.",
+  "@summaryOfTheDataAsagiCollectsAndWhy": {
     "description": "Data safety page description"
   },
   "permissions": "Quyền hạn",
   "@permissions": {
     "description": "Permissions page title"
   },
-  "runtimePermissionsZumiRequestsAndWhyEachIsNeeded": "Quyền hạn khi chạy mà Zumi yêu cầu và lý do cần thiết cho từng quyền.",
-  "@runtimePermissionsZumiRequestsAndWhyEachIsNeeded": {
+  "runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": "Quyền hạn khi chạy mà Asagi yêu cầu và lý do cần thiết cho từng quyền.",
+  "@runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": {
     "description": "Permissions page description"
   },
   "faq": "Câu hỏi thường gặp",
@@ -447,20 +447,20 @@
   "@permanentlyRemoveYourAccountAndItsServerSideData": {
     "description": "Delete account page description"
   },
-  "rateZumi": "Đánh giá Zumi",
-  "@rateZumi": {
+  "rateAsagi": "Đánh giá Asagi",
+  "@rateAsagi": {
     "description": "Rate app page title"
   },
-  "tellOthersHowZumiWorkedForYouOnTheStore": "Cho người khác biết Zumi đã hoạt động như thế nào với bạn trên cửa hàng.",
-  "@tellOthersHowZumiWorkedForYouOnTheStore": {
+  "tellOthersHowAsagiWorkedForYouOnTheStore": "Cho người khác biết Asagi đã hoạt động như thế nào với bạn trên cửa hàng.",
+  "@tellOthersHowAsagiWorkedForYouOnTheStore": {
     "description": "Rate app page description"
   },
-  "shareZumi": "Chia sẻ Zumi",
-  "@shareZumi": {
+  "shareAsagi": "Chia sẻ Asagi",
+  "@shareAsagi": {
     "description": "Share app page title"
   },
-  "recommendZumiToAFriend": "Đề xuất Zumi cho một người bạn.",
-  "@recommendZumiToAFriend": {
+  "recommendAsagiToAFriend": "Đề xuất Asagi cho một người bạn.",
+  "@recommendAsagiToAFriend": {
     "description": "Share app page description"
   },
   "appearanceLanguage": "Giao diện & ngôn ngữ",
@@ -516,7 +516,7 @@
     "description": "Settings hub row summary"
   },
   "aiSettings": "Cài đặt AI",
-  "zumiAssistant": "Trợ lý Zumi",
+  "asagiAssistant": "Trợ lý Asagi",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "Một trợ lý cá nhân cho video của bạn sắp ra mắt. Bạn sẽ có thể hỏi về nén, tổ chức và các video đã lưu tại đây.",
   "localModelsAndSmartTools": "Mô hình cục bộ và công cụ thông minh",
   "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "Khám phá các mô hình cục bộ và công cụ AI tương lai. Những tùy chọn này vẫn chưa được kích hoạt.",
@@ -576,8 +576,8 @@
   "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "theDeveloperBehindZumi": "Nhà phát triển đứng sau Zumi",
-  "@theDeveloperBehindZumi": {
+  "theDeveloperBehindAsagi": "Nhà phát triển đứng sau Asagi",
+  "@theDeveloperBehindAsagi": {
     "description": "Settings hub row summary"
   },
   "openSourcePackageLicenses": "Giấy phép gói mã nguồn mở",
@@ -588,8 +588,8 @@
   "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "rulesForUsingZumi": "Quy tắc sử dụng Zumi",
-  "@rulesForUsingZumi": {
+  "rulesForUsingAsagi": "Quy tắc sử dụng Asagi",
+  "@rulesForUsingAsagi": {
     "description": "Settings hub row summary"
   },
   "whatDataWeCollect": "Dữ liệu chúng tôi thu thập",
@@ -691,14 +691,14 @@
   "unavailable": "Không có sẵn",
   "projectAndSupport": "Dự án và hỗ trợ",
   "githubRepository": "Kho lưu trữ GitHub",
-  "viewZumiSourceCode": "Xem mã nguồn Zumi",
+  "viewAsagiSourceCode": "Xem mã nguồn Asagi",
   "readTheREADME": "Đọc README",
-  "learnAboutZumiOnGitHub": "Tìm hiểu về Zumi trên GitHub",
+  "learnAboutAsagiOnGitHub": "Tìm hiểu về Asagi trên GitHub",
   "reportAnIssue": "Báo cáo sự cố",
   "viewAndCreateGitHubIssues": "Xem và tạo các vấn đề trên GitHub",
   "latestRelease": "Phiên bản mới nhất",
   "viewReleasesAndDownloads": "Xem các bản phát hành và tải xuống",
-  "supportZumi": "Hỗ trợ Zumi",
+  "supportAsagi": "Hỗ trợ Asagi",
   "openTheOfficialDonationPage": "Mở trang quyên góp chính thức",
   "couldNotOpenTheLinkPleaseTryAgain": "Không thể mở liên kết. Vui lòng thử lại.",
   "developer": "Nhà phát triển",
@@ -706,7 +706,7 @@
   "githubProfile": "Hồ sơ GitHub",
   "seeProjectsAndContactDetails": "Xem dự án và thông tin liên hệ",
   "maintenanceInProgress": "Đang bảo trì",
-  "zumiIsTemporarilyUnavailablePleaseTryAgainLater": "Zumi hiện tạm thời không khả dụng. Vui lòng thử lại sau.",
+  "asagiIsTemporarilyUnavailablePleaseTryAgainLater": "Asagi hiện tạm thời không khả dụng. Vui lòng thử lại sau.",
   "comingSoon": "Sắp ra mắt",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"

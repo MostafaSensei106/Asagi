@@ -4,8 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
-import '../../../../core/constants/zumi_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/widgets/widgets.dart';
 
@@ -222,13 +222,13 @@ final class _NotificationsSettingsPageState
                 ),
               ),
               ListTileIconComponent.bottom(
-                leading: ZumiIcons.storage,
+                leading: AsagiIcons.storage,
                 title: l10n.savingsDigestNotification,
                 subtitle: l10n.savingsDigestShort,
                 onLongPress: () => context.showInfoBottomSheet(
                   title: l10n.savingsDigestNotification,
                   description: l10n.savingsDigestDetails,
-                  icon: ZumiIcons.storage,
+                  icon: AsagiIcons.storage,
                   illustrationKind:
                       InfoIllustrationKind.notificationStorageSavings,
                 ),

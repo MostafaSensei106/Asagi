@@ -4,8 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
-import '../../../../core/constants/zumi_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/widgets/widgets.dart';
 
@@ -115,7 +115,7 @@ final class _AiImportModelPageState extends State<AiImportModelPage> {
             label: _isValidating
                 ? l10n.validatingModel
                 : l10n.validateImportModel,
-            icon: ZumiIcons.aiImport,
+            icon: AsagiIcons.aiImport,
             isEnabled: _selectedFileName != null && !_isValidating,
             isLoading: _isValidating,
             onPressed: _selectedFileName != null ? _validateAndImport : null,
@@ -138,7 +138,7 @@ final class _ChecklistRow extends StatelessWidget {
     return Row(
       children: [
         Icon(
-          isValid ? ZumiIcons.compressionResult : LucideIcons.minus,
+          isValid ? AsagiIcons.compressionResult : LucideIcons.minus,
           size: 18,
           color: isValid ? colorScheme.primary : colorScheme.onSurfaceVariant,
         ),

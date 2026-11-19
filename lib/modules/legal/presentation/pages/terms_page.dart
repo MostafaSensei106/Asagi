@@ -4,8 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
-import '../../../../core/constants/zumi_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../../core/widgets/widgets.dart';
@@ -65,7 +65,7 @@ final class TermsPage extends StatelessWidget {
               child: Row(
                 children: [
                   ExpressiveIcon(
-                    icon: ZumiIcons.terms,
+                    icon: AsagiIcons.terms,
                     shape: ExpressiveIconShape.pill,
                     size: 52,
                     backgroundColor: colorScheme.primaryContainer,
@@ -84,7 +84,7 @@ final class TermsPage extends StatelessWidget {
                         ),
                         const Gap(AppSpacing.xSmall),
                         Text(
-                          l10n.theTermsThatApplyToZumiAndItsPurchases,
+                          l10n.theTermsThatApplyToAsagiAndItsPurchases,
                           style: context.textTheme.bodySmall?.copyWith(
                             color: colorScheme.onSurfaceVariant,
                           ),
@@ -108,7 +108,7 @@ final class TermsPage extends StatelessWidget {
               children: [
                 Expanded(
                   child: OutlinedButtonComponent.icon(
-                    icon: ZumiIcons.repository,
+                    icon: AsagiIcons.repository,
                     label: l10n.copyTerms,
                     onPressed: () => _copyTerms(context),
                   ),
@@ -116,7 +116,7 @@ final class TermsPage extends StatelessWidget {
                 const Gap.horizontal(AppSpacing.medium),
                 Expanded(
                   child: FilledTonalButtonComponent.icon(
-                    icon: ZumiIcons.support,
+                    icon: AsagiIcons.support,
                     label: l10n.support,
                     onPressed: () =>
                         unawaited(context.push(const SupportRoute())),

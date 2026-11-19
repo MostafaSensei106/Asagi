@@ -1,4 +1,4 @@
-# Zumi — approved mascot identity
+# Asagi — approved mascot identity
 
 ## Brand idea
 Small file. Full story. / حجم أصغر. حكايتك كاملة.
@@ -6,11 +6,11 @@ A nimble white stoat hugs a video tile while its long tail wraps around it. The 
 
 ## Source of truth
 - `source/mascot.png`: detailed identity-preserving reconstruction of the selected board's hero, generated with the built-in image tool. This is not a pixel-exact crop of the original board.
-- `masters/zumi-symbol.png`: normalized transparent digital master.
-- `masters/zumi-symbol.svg`: genuine path-only palette vector traced from that same artwork. Flat colors replace soft raster shading; character and contour remain consistent. Not an embedded bitmap SVG.
-- `masters/zumi-wordmark.png`: selected chunky forward-leaning lettering reconstructed from the reference.
-- `masters/zumi-wordmark.svg`: monochrome outline version of those same letters.
-- `masters/zumi-small.png`: optical cut preserving the pose, ears, paws, tail and video, with fewer fur details and stronger outline.
+- `masters/asagi-symbol.png`: normalized transparent digital master.
+- `masters/asagi-symbol.svg`: genuine path-only palette vector traced from that same artwork. Flat colors replace soft raster shading; character and contour remain consistent. Not an embedded bitmap SVG.
+- `masters/asagi-wordmark.png`: selected chunky forward-leaning lettering reconstructed from the reference.
+- `masters/asagi-wordmark.svg`: monochrome outline version of those same letters.
+- `masters/asagi-small.png`: optical cut preserving the pose, ears, paws, tail and video, with fewer fur details and stronger outline.
 - `mascot/ready.png`, `working.png`, `done.png`: separate transparent expressive poses matching the approved reference.
 
 The original image board remains the creative reference. The normalized artwork is the export source. Never substitute old compact animal drawings. All legacy assets are archived separately.
@@ -18,15 +18,15 @@ The original image board remains the creative reference. The normalized artwork 
 ## File selection
 | Use | File |
 |---|---|
-| Main app/store icon | icons/app/zumi-lagoon-1024.png |
-| Dark app tile | icons/app/zumi-midnight-1024.png |
-| Snow app tile | icons/app/zumi-snow-1024.png |
+| Main app/store icon | icons/app/asagi-lagoon-1024.png |
+| Dark app tile | icons/app/asagi-midnight-1024.png |
+| Snow app tile | icons/app/asagi-snow-1024.png |
 | Website/favicon | icons/web/ contents |
-| Header | lockups/zumi-horizontal.png or .svg |
-| Tall placement | lockups/zumi-stacked.png or .svg |
-| Dark header | lockups/zumi-horizontal-dark.svg |
-| Single ink | masters/zumi-ink.svg |
-| Reversed single ink | masters/zumi-reversed.svg |
+| Header | lockups/asagi-horizontal.png or .svg |
+| Tall placement | lockups/asagi-stacked.png or .svg |
+| Dark header | lockups/asagi-horizontal-dark.svg |
+| Single ink | masters/asagi-ink.svg |
+| Reversed single ink | masters/asagi-reversed.svg |
 | Interface illustrations | mascot/*.png |
 | Interface controls | ui/*.svg |
 

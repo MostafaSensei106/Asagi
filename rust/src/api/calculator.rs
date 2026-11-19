@@ -106,7 +106,7 @@ fn authorize_pro_receipt(
     let original_json = original_json.ok_or_else(|| "E_PRO_SUBSCRIPTION_REQUIRED".to_owned())?;
     let signature_bytes =
         signature_bytes.ok_or_else(|| "E_PRO_SUBSCRIPTION_REQUIRED".to_owned())?;
-    let public_key = option_env!("ZUMI_PLAY_RSA_PUBLIC_KEY_PEM")
+    let public_key = option_env!("ASAGI_PLAY_RSA_PUBLIC_KEY_PEM")
         .filter(|key| !key.trim().is_empty())
         .ok_or_else(|| "E_PRO_SUBSCRIPTION_REQUIRED".to_owned())?;
     let purchase = crate::domain::licensing::verify_google_play_purchase(
@@ -116,7 +116,7 @@ fn authorize_pro_receipt(
     )
     .map_err(|_| "E_PRO_SUBSCRIPTION_REQUIRED".to_owned())?;
     if let Some(token) = loyalty_token {
-        let loyalty_key = option_env!("ZUMI_LOYALTY_RSA_PUBLIC_KEY_PEM")
+        let loyalty_key = option_env!("ASAGI_LOYALTY_RSA_PUBLIC_KEY_PEM")
             .filter(|key| !key.trim().is_empty())
             .ok_or_else(|| "E_LOYALTY_RECEIPT_INVALID".to_owned())?;
         crate::domain::licensing::verify_loyalty_token(&token, &purchase, loyalty_key.as_bytes())
@@ -135,7 +135,7 @@ fn authorize_pro_receipt(
         && json
             .get("productId")
             .and_then(serde_json::Value::as_str)
-            .is_some_and(|id| id == "zumi_pro_monthly");
+            .is_some_and(|id| id == "asagi_pro_monthly");
     if !active || purchase.purchase_token.trim().is_empty() {
         return Err("E_PRO_SUBSCRIPTION_REQUIRED".into());
     }

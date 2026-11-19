@@ -4,8 +4,8 @@ import 'package:bloc_signals_flutter/bloc_signals_flutter.dart';
 import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
-import '../../../../core/constants/zumi_icons.dart';
 import '../../../../core/di/di.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/router/app_router.dart';
@@ -22,7 +22,7 @@ final class AboutAppPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: SidePageAppBarComponent(title: context.localeKeys.aboutZumi),
+    appBar: SidePageAppBarComponent(title: context.localeKeys.aboutAsagi),
     body: SafeArea(
       child: BlocSignalBuilder<AboutAppCubit, AboutAppState>(
         builder: (context, state) => state.maybeWhen(
@@ -83,136 +83,136 @@ final class _AboutContent extends StatelessWidget {
               const Gap(AppSpacing.large),
               AboutSection(
                 title: l10n.appIdentity,
-                icon: ZumiIcons.appInfo,
+                icon: AsagiIcons.appInfo,
                 shape: ExpressiveIconShape.blossom,
                 children: [
                   AboutRow(
                     title: l10n.appName,
                     subtitle: info.appName,
-                    icon: ZumiIcons.appInfo,
+                    icon: AsagiIcons.appInfo,
                   ),
                   AboutRow(
                     title: l10n.packageName,
                     subtitle: info.packageName,
-                    icon: ZumiIcons.package,
+                    icon: AsagiIcons.package,
                   ),
                   AboutRow(
                     title: l10n.version,
                     subtitle: info.version,
-                    icon: ZumiIcons.version,
+                    icon: AsagiIcons.version,
                   ),
                   AboutRow(
                     title: l10n.buildNumber,
                     subtitle: info.buildNumber,
-                    icon: ZumiIcons.build,
+                    icon: AsagiIcons.build,
                   ),
                 ],
               ),
               const Gap(AppSpacing.large),
               AboutSection(
                 title: l10n.deviceAndBuild,
-                icon: ZumiIcons.device,
+                icon: AsagiIcons.device,
                 shape: ExpressiveIconShape.gem,
                 children: [
                   AboutRow(
                     title: l10n.operatingSystem,
                     subtitle: info.operatingSystemName,
                     icon: switch (info.operatingSystemName.toLowerCase()) {
-                      'android' => ZumiIcons.android,
-                      'ios' => ZumiIcons.ios,
-                      _ => ZumiIcons.device,
+                      'android' => AsagiIcons.android,
+                      'ios' => AsagiIcons.ios,
+                      _ => AsagiIcons.device,
                     },
                   ),
                   AboutRow(
                     title: l10n.osVersion,
                     subtitle: info.operatingSystemVersion,
-                    icon: ZumiIcons.version,
+                    icon: AsagiIcons.version,
                   ),
                   AboutRow(
                     title: l10n.buildMode,
                     subtitle: info.isDebug ? l10n.debug : l10n.release,
-                    icon: ZumiIcons.build,
+                    icon: AsagiIcons.build,
                   ),
                 ],
               ),
               const Gap(AppSpacing.large),
               AboutSection(
                 title: l10n.builtWith,
-                icon: ZumiIcons.developer,
+                icon: AsagiIcons.developer,
                 shape: ExpressiveIconShape.clover,
                 children: [
                   AboutRow(
                     title: 'Dart',
                     subtitle: _version(info.dartVersion, info.dartChanal),
-                    icon: ZumiIcons.developer,
+                    icon: AsagiIcons.developer,
                   ),
                   AboutRow(
                     title: 'Flutter',
                     subtitle: _version(info.flutterVersion, info.flutterChanal),
-                    icon: ZumiIcons.developer,
+                    icon: AsagiIcons.developer,
                   ),
                 ],
               ),
               const Gap(AppSpacing.large),
               AboutSection(
                 title: l10n.installation,
-                icon: ZumiIcons.storage,
+                icon: AsagiIcons.storage,
                 shape: ExpressiveIconShape.diamond,
                 children: [
                   AboutRow(
                     title: l10n.installedFrom,
                     subtitle: _value(info.installerStore, l10n.unavailable),
-                    icon: ZumiIcons.storage,
+                    icon: AsagiIcons.storage,
                   ),
                   AboutRow(
                     title: l10n.installedOn,
                     subtitle: _date(info.installDate, l10n.unavailable),
-                    icon: ZumiIcons.calendar,
+                    icon: AsagiIcons.calendar,
                   ),
                   AboutRow(
                     title: l10n.updatedOn,
                     subtitle: _date(info.updateTime, l10n.unavailable),
-                    icon: ZumiIcons.calendar,
+                    icon: AsagiIcons.calendar,
                   ),
                 ],
               ),
               const Gap(AppSpacing.large),
               AboutSection(
                 title: l10n.projectAndSupport,
-                icon: ZumiIcons.repository,
+                icon: AsagiIcons.repository,
                 shape: ExpressiveIconShape.sunny,
                 children: [
                   AboutRow(
                     title: l10n.githubRepository,
-                    subtitle: l10n.viewZumiSourceCode,
-                    icon: ZumiIcons.repository,
+                    subtitle: l10n.viewAsagiSourceCode,
+                    icon: AsagiIcons.repository,
                     onTap: () =>
                         unawaited(_open(context, AboutUrls.repository)),
                   ),
                   AboutRow(
                     title: l10n.readTheREADME,
-                    subtitle: l10n.learnAboutZumiOnGitHub,
-                    icon: ZumiIcons.repository,
+                    subtitle: l10n.learnAboutAsagiOnGitHub,
+                    icon: AsagiIcons.repository,
                     onTap: () => unawaited(_open(context, AboutUrls.readme)),
                   ),
                   AboutRow(
                     title: l10n.reportAnIssue,
                     subtitle: l10n.viewAndCreateGitHubIssues,
-                    icon: ZumiIcons.issues,
+                    icon: AsagiIcons.issues,
                     onTap: () => unawaited(_open(context, AboutUrls.issues)),
                   ),
                   AboutRow(
                     title: l10n.latestRelease,
                     subtitle: l10n.viewReleasesAndDownloads,
-                    icon: ZumiIcons.release,
+                    icon: AsagiIcons.release,
                     onTap: () =>
                         unawaited(_open(context, AboutUrls.latestRelease)),
                   ),
                   if (AboutUrls.donations != null)
                     AboutRow(
-                      title: l10n.supportZumi,
+                      title: l10n.supportAsagi,
                       subtitle: l10n.openTheOfficialDonationPage,
-                      icon: ZumiIcons.donate,
+                      icon: AsagiIcons.donate,
                       onTap: () =>
                           unawaited(_open(context, AboutUrls.donations!)),
                     ),
@@ -221,13 +221,13 @@ final class _AboutContent extends StatelessWidget {
               const Gap(AppSpacing.large),
               AboutSection(
                 title: l10n.openSourceLicenses,
-                icon: ZumiIcons.licenses,
+                icon: AsagiIcons.licenses,
                 shape: ExpressiveIconShape.pentagon,
                 children: [
                   AboutRow(
                     title: l10n.openSourceLicenses,
                     subtitle: l10n.openSourcePackageLicenses,
-                    icon: ZumiIcons.licenses,
+                    icon: AsagiIcons.licenses,
                     onTap: () => unawaited(context.push(const LicensesRoute())),
                   ),
                 ],

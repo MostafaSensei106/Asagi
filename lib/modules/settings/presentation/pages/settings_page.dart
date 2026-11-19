@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 
-import '../../../../core/constants/zumi_icons.dart';
+import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../../core/router/route_metadata.dart';
@@ -117,7 +117,7 @@ final class SettingsPage extends StatelessWidget {
     final title = _routeTitleFor(context, route);
     final subtitle = _routeSubtitleFor(context, route);
     final trailing = Icon(
-      context.isArabic ? ZumiIcons.chevronBack : ZumiIcons.chevronForward,
+      context.isArabic ? AsagiIcons.chevronBack : AsagiIcons.chevronForward,
       size: AppIconSizes.small,
       color: context.colorScheme.onSurfaceVariant,
     );
@@ -205,10 +205,10 @@ final class SettingsPage extends StatelessWidget {
         'plans_methods' => context.localeKeys.paymentMethodsAndBilling,
         'plans_restore' => context.localeKeys.restoreYourPreviousPurchase,
         'about_app' => context.localeKeys.versionAndBuildDetails,
-        'about_developer' => context.localeKeys.theDeveloperBehindZumi,
+        'about_developer' => context.localeKeys.theDeveloperBehindAsagi,
         'about_licenses' => context.localeKeys.openSourcePackageLicenses,
         'legal_privacy_policy' => context.localeKeys.howDataIsHandled,
-        'legal_terms' => context.localeKeys.rulesForUsingZumi,
+        'legal_terms' => context.localeKeys.rulesForUsingAsagi,
         'legal_data_safety' => context.localeKeys.whatDataWeCollect,
         'legal_permissions' => context.localeKeys.whyWeNeedPermissions,
         'help_faq' => context.localeKeys.answersToCommonQuestions,
@@ -230,7 +230,7 @@ final class SettingsPage extends StatelessWidget {
         'plans' => context.localeKeys.plans,
         'plans_methods' => context.localeKeys.paymentMethods,
         'plans_restore' => context.localeKeys.restorePurchases,
-        'about_app' => context.localeKeys.aboutZumi,
+        'about_app' => context.localeKeys.aboutAsagi,
         'about_developer' => context.localeKeys.aboutTheDeveloper,
         'about_licenses' => context.localeKeys.openSourceLicenses,
         'legal_privacy_policy' => context.localeKeys.privacyPolicy,

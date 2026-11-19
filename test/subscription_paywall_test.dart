@@ -1,13 +1,13 @@
+import 'package:asagi/core/di/di.dart';
+import 'package:asagi/core/services/billing/billing_service.dart';
+import 'package:asagi/core/services/billing/fake_billing_service.dart';
+import 'package:asagi/core/services/billing/in_memory_purchase_proof_store.dart';
+import 'package:asagi/l10n/app_localizations.dart';
+import 'package:asagi/modules/plans/logic/subscription_cubit.dart';
+import 'package:asagi/modules/plans/presentation/pages/plans_page.dart';
+import 'package:asagi/modules/plans/presentation/pages/restore_purchases_page.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
-import 'package:zumi/core/di/di.dart';
-import 'package:zumi/core/services/billing/billing_service.dart';
-import 'package:zumi/core/services/billing/fake_billing_service.dart';
-import 'package:zumi/core/services/billing/in_memory_purchase_proof_store.dart';
-import 'package:zumi/l10n/app_localizations.dart';
-import 'package:zumi/modules/plans/logic/subscription_cubit.dart';
-import 'package:zumi/modules/plans/presentation/pages/plans_page.dart';
-import 'package:zumi/modules/plans/presentation/pages/restore_purchases_page.dart';
 
 void main() {
   late FakeBillingService billing;
@@ -58,7 +58,7 @@ void main() {
     await tester.pumpWidget(_app(const PlansPage()));
     await tester.pumpAndSettle();
 
-    expect(find.text('Zumi Pro'), findsOneWidget);
+    expect(find.text('Asagi Pro'), findsOneWidget);
     expect(find.text('EGP 99.99 / month'), findsOneWidget);
     expect(find.text('Loyalty discount: 0%'), findsOneWidget);
     expect(find.textContaining('Next month: 2%'), findsOneWidget);
