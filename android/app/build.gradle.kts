@@ -1,12 +1,14 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("dev.flutter.flutter-gradle-plugin")
 }
 
 val keyPropertiesFile = rootProject.file("key.properties")
-val keyProperties = java.util.Properties().apply {
+val keyProperties = Properties().apply {
     if (keyPropertiesFile.exists()) {
-        keyPropertiesFile.inputStream().use { load(it) }
+        keyPropertiesFile.inputStream().use { propertiesStream -> load(propertiesStream) }
     }
 }
 val requiredSigningProperties = listOf("keyAlias", "keyPassword", "storeFile", "storePassword")
