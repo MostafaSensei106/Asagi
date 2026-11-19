@@ -262,7 +262,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get colorScheme => 'Color scheme';
 
   @override
-  String get automaticColorScheme => 'Auto (Asagi default)';
+  String get automaticColorScheme => 'Auto';
 
   @override
   String get sharperTextAndSurfaces => 'Pure black and white surfaces ';

@@ -315,7 +315,7 @@
   },
   "highContrast": "High contrast",
   "colorScheme": "Color scheme",
-  "automaticColorScheme": "Auto (Asagi default)",
+  "automaticColorScheme": "Auto",
   "@highContrast": {
     "description": "High contrast mode toggle title"
   },

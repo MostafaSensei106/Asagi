@@ -21,26 +21,72 @@ final class ColorSchemeSection extends StatelessWidget {
     children: [
       ExpressiveSectionHeader(title: context.localeKeys.colorScheme),
       const Gap(AppSpacing.small),
-      DropdownButtonFormField<AsagiColorSchemeVariant>(
-        initialValue: selectedVariant,
-        decoration: InputDecoration(
-          labelText: context.localeKeys.colorScheme,
-          border: const OutlineInputBorder(),
-        ),
-        items: AsagiColorSchemeVariant.values
-            .map(
-              (variant) => DropdownMenuItem(
-                value: variant,
-                child: Text(_label(context, variant)),
-              ),
-            )
-            .toList(growable: false),
-        onChanged: (variant) {
-          if (variant != null && variant != selectedVariant) onChanged(variant);
+      LayoutBuilder(
+        builder: (context, constraints) {
+          const spacing = AppSpacing.small;
+          final itemWidth = (constraints.maxWidth - spacing) / 2;
+
+          return Wrap(
+            spacing: spacing,
+            runSpacing: spacing,
+            children: [
+              for (final variant in AsagiColorSchemeVariant.values)
+                SizedBox(
+                  width: itemWidth,
+                  child: ChoiceChip(
+                    avatar: Icon(_icon(variant), size: 18),
+                    showCheckmark: false,
+                    label: SizedBox(
+                      width: double.infinity,
+                      child: Text(
+                        _label(context, variant),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    selected: variant == selectedVariant,
+                    onSelected: (_) => onChanged(variant),
+                    side: BorderSide.none,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppSpacing.small,
+                      vertical: AppSpacing.xSmall,
+                    ),
+                    backgroundColor: Theme.of(context)
+                        .colorScheme
+                        .surfaceContainerHighest,
+                    selectedColor: Theme.of(context)
+                        .colorScheme
+                        .primaryContainer,
+                    labelStyle: TextStyle(
+                      color: variant == selectedVariant
+                          ? Theme.of(context).colorScheme.onPrimaryContainer
+                          : Theme.of(context).colorScheme.onSurfaceVariant,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(AppRadii.pill),
+                    ),
+                  ),
+                ),
+            ],
+          );
         },
       ),
     ],
   );
+
+  IconData _icon(AsagiColorSchemeVariant variant) => switch (variant) {
+    AsagiColorSchemeVariant.auto => Icons.auto_awesome,
+    AsagiColorSchemeVariant.tonalSpot => Icons.palette_outlined,
+    AsagiColorSchemeVariant.fidelity => Icons.center_focus_strong,
+    AsagiColorSchemeVariant.content => Icons.layers_outlined,
+    AsagiColorSchemeVariant.expressive => Icons.auto_awesome_outlined,
+    AsagiColorSchemeVariant.fruitSalad => Icons.eco_outlined,
+    AsagiColorSchemeVariant.monochrome => Icons.contrast,
+    AsagiColorSchemeVariant.neutral => Icons.circle_outlined,
+    AsagiColorSchemeVariant.rainbow => Icons.gradient,
+    AsagiColorSchemeVariant.vibrant => Icons.water_drop_outlined,
+  };
 
   String _label(BuildContext context, AsagiColorSchemeVariant variant) {
     if (variant == AsagiColorSchemeVariant.auto) {

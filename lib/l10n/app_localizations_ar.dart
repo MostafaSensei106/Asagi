@@ -260,7 +260,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get colorScheme => 'نمط الألوان';
 
   @override
-  String get automaticColorScheme => 'تلقائي (ألوان Asagi الافتراضية)';
+  String get automaticColorScheme => 'تلقائي';
 
   @override
   String get sharperTextAndSurfaces => 'أسود وأبيض نقي لتباين فائق.';

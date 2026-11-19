@@ -602,7 +602,7 @@ abstract class AppLocalizations {
   /// No description provided for @automaticColorScheme.
   ///
   /// In en, this message translates to:
-  /// **'Auto (Asagi default)'**
+  /// **'Auto'**
   String get automaticColorScheme;
 
   /// High contrast mode toggle subtitle

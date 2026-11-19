@@ -2,7 +2,7 @@
   "@@locale": "ar",
   "asagi": "Asagi",
   "colorScheme": "نمط الألوان",
-  "automaticColorScheme": "تلقائي (ألوان Asagi الافتراضية)",
+  "automaticColorScheme": "تلقائي",
   "@asagi": {
     "description": "Application name shown in the app and on the home page"
   },
