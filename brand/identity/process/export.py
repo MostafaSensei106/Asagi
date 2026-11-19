@@ -19,7 +19,7 @@ M = P / "masters"
 I = P / "icons"
 L = P / "lockups"
 # Remove the former blue-black cast while preserving the mascot's shading.
-for image in [S / "mascot.png", *sorted((S / "extra-states").glob("*.png")), *[P / "mascot" / f"{name}.png" for name in ("ready", "working", "done")]]:
+for image in [S / "mascot.png", S / "small.png", *sorted((S / "extra-states").glob("*.png")), *[P / "mascot" / f"{name}.png" for name in ("ready", "working", "done")], *([M / "asagi-small.png"] if (M / "asagi-small.png").exists() else [])]:
     recolored = image.with_name(image.stem + ".asagi.png")
     mag(image, "-fill", "#243438", "-fuzz", "18%", "-opaque", "#001F3F", recolored)
     recolored.replace(image)

@@ -1,76 +1,49 @@
 
-=== asagi-ink.svg  (8014 bytes)
+=== asagi-symbol.svg  (30863 bytes)
 viewBox 0 0 1024 1024 · aspect 1.0 (square)
-colours 1: #162b46 · gradients 0 · anchors 369
-margins L127.0 R96.7 T127.1 B100.5 · bbox fill 0.608
-▲ WARN [complex] 369 anchor points — more than 95% of comparable reference logos (median 53.0). Simplify: fewer points, merged shapes, less detail.
-▲ WARN [tiny-detail] 2 sub-shape(s) smaller than 1/48 of the canvas (≈1 px at 48 px): 6.8×9.6 at (435,358); 14.6×15.1 at (323,384). They vanish when small — enlarge, merge or remove them, or provide a small-size version.
-· INFO [precision] Coordinates with 4+ decimals: round to 0–2 decimals to reduce size and reveal misalignments.
-production-readiness score: 83/100 (heuristic)
-
-=== asagi-reversed.svg  (8014 bytes)
-viewBox 0 0 1024 1024 · aspect 1.0 (square)
-colours 1: #ffffff · gradients 0 · anchors 369
-margins L127.0 R96.7 T127.1 B100.5 · bbox fill 0.608
-▲ WARN [complex] 369 anchor points — more than 95% of comparable reference logos (median 53.0). Simplify: fewer points, merged shapes, less detail.
-▲ WARN [tiny-detail] 2 sub-shape(s) smaller than 1/48 of the canvas (≈1 px at 48 px): 6.8×9.6 at (435,358); 14.6×15.1 at (323,384). They vanish when small — enlarge, merge or remove them, or provide a small-size version.
-· INFO [precision] Coordinates with 4+ decimals: round to 0–2 decimals to reduce size and reveal misalignments.
-production-readiness score: 83/100 (heuristic)
-
-=== asagi-symbol.svg  (29299 bytes)
-viewBox 0 0 1024 1024 · aspect 1.0 (square)
-colours 6: #162b46 #087f8c #61d4c5 #bde3e4 #ffb582 #ffffff · gradients 0 · anchors 1331
-margins L127.0 R96.7 T127.1 B100.5 · bbox fill 0.608
+colours 6: #243438 #0095a9 #6fcbc2 #bce4e2 #faad7d #ffffff · gradients 0 · anchors 1407
+margins L127.1 R96.7 T127.1 B100.6 · bbox fill 0.608
 ▲ WARN [many-colors] 6 distinct colours. ~75% of reference logos use ≤3; each extra colour costs recall and reproduction.
 ▲ WARN [white-knockout] 9 white shape(s) are painted on top of coloured shapes. If they are meant as holes, they will show as white blobs on coloured/photo backgrounds and break one-colour versions — make real holes (fill-rule="evenodd" or subtracted paths). Ignore if the white is deliberate (e.g. a symbol on a tile).
-▲ WARN [complex] 1331 anchor points — more than 95% of comparable reference logos (median 53.0). Simplify: fewer points, merged shapes, less detail.
-▲ WARN [tiny-detail] 41 sub-shape(s) smaller than 1/48 of the canvas (≈1 px at 48 px): 6.8×9.6 at (435,358); 14.6×15.1 at (323,384); 0.4×13.6 at (901,552); 12.8×6.7 at (609,889) …. They vanish when small — enlarge, merge or remove them, or provide a small-size version.
+▲ WARN [low-contrast] Low contrast on #f7faf8: #6fcbc2 (1.8:1), #bce4e2 (1.3:1), #faad7d (1.8:1), #ffffff (1.1:1) — aim for ≥3:1 for logo parts, 4.5:1 for small text.
+▲ WARN [complex] 1407 anchor points — more than 95% of comparable reference logos (median 53.0). Simplify: fewer points, merged shapes, less detail.
+▲ WARN [tiny-detail] 44 sub-shape(s) smaller than 1/48 of the canvas (≈1 px at 48 px): 5.1×6.2 at (667,563); 4.0×6.0 at (662,572); 5.4×8.0 at (435,359); 14.4×14.5 at (323,384) …. They vanish when small — enlarge, merge or remove them, or provide a small-size version.
 · INFO [precision] Coordinates with 4+ decimals: round to 0–2 decimals to reduce size and reveal misalignments.
-production-readiness score: 67/100 (heuristic)
+production-readiness score: 59/100 (heuristic)
 
-=== asagi-wordmark.svg  (2953 bytes)
-viewBox 0 0 1843 679 · aspect 2.714 (horizontal)
-colours 1: #162b46 · gradients 0 · anchors 102
-margins L167.0 R205.2 T87.1 B65.4 · bbox fill 0.619
+=== asagi-wordmark.svg  (3182 bytes)
+viewBox 0 0 924 316 · aspect 2.924 (horizontal)
+colours 1: #243438 · gradients 0 · anchors 124
+margins L0.3 R0.7 T0.0 B0.3 · bbox fill 0.998
+· INFO [no-title] No <title>: add one for accessibility (e.g. <title>Brand logo</title>).
 · INFO [precision] Coordinates with 4+ decimals: round to 0–2 decimals to reduce size and reveal misalignments.
-production-readiness score: 99/100 (heuristic)
+production-readiness score: 98/100 (heuristic)
 
-=== asagi-horizontal-dark.svg  (36461 bytes)
+=== asagi-horizontal.svg  (40406 bytes)
 viewBox 0 0 1800 760 · aspect 2.368 (wide)
-colours 6: #162b46 #087f8c #61d4c5 #bde3e4 #ffb582 #ffffff · gradients 0 · anchors 1478
-margins L127.0 R162.2 T87.1 B-163.5 · bbox fill 0.924
+colours 6: #243438 #0095a9 #6fcbc2 #bce4e2 #faad7d #ffffff · gradients 0 · anchors 1674
+margins L0.3 R862.5 T0.0 B-163.4 · bbox fill 0.633
 ▲ WARN [many-colors] 6 distinct colours. ~75% of reference logos use ≤3; each extra colour costs recall and reproduction.
 ▲ WARN [white-knockout] 9 white shape(s) are painted on top of coloured shapes. If they are meant as holes, they will show as white blobs on coloured/photo backgrounds and break one-colour versions — make real holes (fill-rule="evenodd" or subtracted paths). Ignore if the white is deliberate (e.g. a symbol on a tile).
-▲ WARN [complex] 1478 anchor points — more than 95% of comparable reference logos (median 75.0). Simplify: fewer points, merged shapes, less detail.
-▲ WARN [tiny-detail] 49 sub-shape(s) smaller than 1/32 of the lockup height (≈1 px at 32 px tall): 6.8×9.6 at (435,358); 14.6×15.1 at (323,384); 0.4×13.6 at (901,552); 12.8×6.7 at (609,889) …. They vanish when small — enlarge, merge or remove them, or provide a small-size version.
+▲ WARN [low-contrast] Low contrast on #f7faf8: #6fcbc2 (1.8:1), #bce4e2 (1.3:1), #faad7d (1.8:1), #ffffff (1.1:1) — aim for ≥3:1 for logo parts, 4.5:1 for small text.
+▲ WARN [complex] 1674 anchor points — more than 95% of comparable reference logos (median 75.0). Simplify: fewer points, merged shapes, less detail.
+▲ WARN [tiny-detail] 57 sub-shape(s) smaller than 1/32 of the lockup height (≈1 px at 32 px tall): 5.1×6.2 at (667,563); 4.0×6.0 at (662,572); 5.4×8.0 at (435,359); 14.4×14.5 at (323,384) …. They vanish when small — enlarge, merge or remove them, or provide a small-size version.
 ▲ WARN [overflow] Artwork extends beyond the viewBox and will be clipped.
 · INFO [precision] Coordinates with 4+ decimals: round to 0–2 decimals to reduce size and reveal misalignments.
-· INFO [off-centre-y] Vertical margins differ (top 87.1, bottom -163.5). Remember the optical centre sits slightly above the geometric centre.
-production-readiness score: 58/100 (heuristic)
+· INFO [off-centre-x] Horizontal margins differ (left 0.3, right 862.5). Intentional optical centring? Otherwise centre it.
+· INFO [off-centre-y] Vertical margins differ (top 0.0, bottom -163.4). Remember the optical centre sits slightly above the geometric centre.
+production-readiness score: 49/100 (heuristic)
 
-=== asagi-horizontal.svg  (36514 bytes)
-viewBox 0 0 1800 760 · aspect 2.368 (wide)
-colours 6: #162b46 #087f8c #61d4c5 #bde3e4 #ffb582 #ffffff · gradients 0 · anchors 1478
-margins L127.0 R162.2 T87.1 B-163.5 · bbox fill 0.924
-▲ WARN [many-colors] 6 distinct colours. ~75% of reference logos use ≤3; each extra colour costs recall and reproduction.
-▲ WARN [white-knockout] 9 white shape(s) are painted on top of coloured shapes. If they are meant as holes, they will show as white blobs on coloured/photo backgrounds and break one-colour versions — make real holes (fill-rule="evenodd" or subtracted paths). Ignore if the white is deliberate (e.g. a symbol on a tile).
-▲ WARN [complex] 1478 anchor points — more than 95% of comparable reference logos (median 75.0). Simplify: fewer points, merged shapes, less detail.
-▲ WARN [tiny-detail] 49 sub-shape(s) smaller than 1/32 of the lockup height (≈1 px at 32 px tall): 6.8×9.6 at (435,358); 14.6×15.1 at (323,384); 0.4×13.6 at (901,552); 12.8×6.7 at (609,889) …. They vanish when small — enlarge, merge or remove them, or provide a small-size version.
-▲ WARN [overflow] Artwork extends beyond the viewBox and will be clipped.
-· INFO [precision] Coordinates with 4+ decimals: round to 0–2 decimals to reduce size and reveal misalignments.
-· INFO [off-centre-y] Vertical margins differ (top 87.1, bottom -163.5). Remember the optical centre sits slightly above the geometric centre.
-production-readiness score: 58/100 (heuristic)
-
-=== asagi-stacked.svg  (35396 bytes)
+=== asagi-stacked.svg  (37496 bytes)
 viewBox 0 0 1000 1250 · aspect 0.8 (square)
-colours 6: #162b46 #087f8c #61d4c5 #bde3e4 #ffb582 #ffffff · gradients 0 · anchors 1433
-margins L127.0 R-637.8 T87.1 B326.5 · bbox fill 1.011
+colours 6: #243438 #0095a9 #6fcbc2 #bce4e2 #faad7d #ffffff · gradients 0 · anchors 1531
+margins L0.3 R72.7 T0.0 B326.6 · bbox fill 0.685
 ▲ WARN [many-colors] 6 distinct colours. ~75% of reference logos use ≤3; each extra colour costs recall and reproduction.
 ▲ WARN [white-knockout] 9 white shape(s) are painted on top of coloured shapes. If they are meant as holes, they will show as white blobs on coloured/photo backgrounds and break one-colour versions — make real holes (fill-rule="evenodd" or subtracted paths). Ignore if the white is deliberate (e.g. a symbol on a tile).
-▲ WARN [complex] 1433 anchor points — more than 95% of comparable reference logos (median 53.0). Simplify: fewer points, merged shapes, less detail.
-▲ WARN [tiny-detail] 50 sub-shape(s) smaller than 1/48 of the canvas (≈1 px at 48 px): 6.8×9.6 at (435,358); 14.6×15.1 at (323,384); 15.0×26.0 at (128,750); 0.4×13.6 at (901,552) …. They vanish when small — enlarge, merge or remove them, or provide a small-size version.
-▲ WARN [overflow] Artwork extends beyond the viewBox and will be clipped.
+▲ WARN [low-contrast] Low contrast on #f7faf8: #6fcbc2 (1.8:1), #bce4e2 (1.3:1), #faad7d (1.8:1), #ffffff (1.1:1) — aim for ≥3:1 for logo parts, 4.5:1 for small text.
+▲ WARN [complex] 1531 anchor points — more than 95% of comparable reference logos (median 53.0). Simplify: fewer points, merged shapes, less detail.
+▲ WARN [tiny-detail] 53 sub-shape(s) smaller than 1/48 of the canvas (≈1 px at 48 px): 5.1×6.2 at (667,563); 4.0×6.0 at (662,572); 5.4×8.0 at (435,359); 14.4×14.5 at (323,384) …. They vanish when small — enlarge, merge or remove them, or provide a small-size version.
 · INFO [precision] Coordinates with 4+ decimals: round to 0–2 decimals to reduce size and reveal misalignments.
-· INFO [off-centre-x] Horizontal margins differ (left 127.0, right -637.8). Intentional optical centring? Otherwise centre it.
-· INFO [off-centre-y] Vertical margins differ (top 87.1, bottom 326.5). Remember the optical centre sits slightly above the geometric centre.
+· INFO [off-centre-x] Horizontal margins differ (left 0.3, right 72.7). Intentional optical centring? Otherwise centre it.
+· INFO [off-centre-y] Vertical margins differ (top 0.0, bottom 326.6). Remember the optical centre sits slightly above the geometric centre.
 production-readiness score: 57/100 (heuristic)
