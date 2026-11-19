@@ -593,6 +593,18 @@ abstract class AppLocalizations {
   /// **'High contrast'**
   String get highContrast;
 
+  /// No description provided for @colorScheme.
+  ///
+  /// In en, this message translates to:
+  /// **'Color scheme'**
+  String get colorScheme;
+
+  /// No description provided for @automaticColorScheme.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto (Asagi default)'**
+  String get automaticColorScheme;
+
   /// High contrast mode toggle subtitle
   ///
   /// In en, this message translates to:

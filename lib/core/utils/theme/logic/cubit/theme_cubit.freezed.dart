@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ThemeState {
 
- ThemeMode get themeMode; bool get highContrast;
+ ThemeMode get themeMode; bool get highContrast; AsagiColorSchemeVariant get colorSchemeVariant;
 /// Create a copy of ThemeState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -27,20 +27,20 @@ $ThemeStateCopyWith<ThemeState> get copyWith => _$ThemeStateCopyWithImpl<ThemeSt
 @override
 bool operator ==(Object other) {
   final _this = this as ThemeState;
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ThemeState&&(identical(other.themeMode, _this.themeMode) || other.themeMode == _this.themeMode)&&(identical(other.highContrast, _this.highContrast) || other.highContrast == _this.highContrast));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ThemeState&&(identical(other.themeMode, _this.themeMode) || other.themeMode == _this.themeMode)&&(identical(other.highContrast, _this.highContrast) || other.highContrast == _this.highContrast)&&(identical(other.colorSchemeVariant, _this.colorSchemeVariant) || other.colorSchemeVariant == _this.colorSchemeVariant));
 }
 
 
 @override
 int get hashCode {
   final _this = this as ThemeState;
-  return Object.hash(runtimeType,_this.themeMode,_this.highContrast);
+  return Object.hash(runtimeType,_this.themeMode,_this.highContrast,_this.colorSchemeVariant);
 }
 
 @override
 String toString() {
   final _this = this as ThemeState;
-  return 'ThemeState(themeMode: ${_this.themeMode}, highContrast: ${_this.highContrast})';
+  return 'ThemeState(themeMode: ${_this.themeMode}, highContrast: ${_this.highContrast}, colorSchemeVariant: ${_this.colorSchemeVariant})';
 }
 
 
@@ -51,7 +51,7 @@ abstract mixin class $ThemeStateCopyWith<$Res>  {
   factory $ThemeStateCopyWith(ThemeState value, $Res Function(ThemeState) _then) = _$ThemeStateCopyWithImpl;
 @useResult
 $Res call({
- ThemeMode themeMode, bool highContrast
+ ThemeMode themeMode, bool highContrast, AsagiColorSchemeVariant colorSchemeVariant
 });
 
 
@@ -68,11 +68,12 @@ class _$ThemeStateCopyWithImpl<$Res>
 
 /// Create a copy of ThemeState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? themeMode = null,Object? highContrast = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? themeMode = null,Object? highContrast = null,Object? colorSchemeVariant = null,}) {
   return _then(ThemeState(
 themeMode: null == themeMode ? _self.themeMode : themeMode // ignore: cast_nullable_to_non_nullable
 as ThemeMode,highContrast: null == highContrast ? _self.highContrast : highContrast // ignore: cast_nullable_to_non_nullable
-as bool,
+as bool,colorSchemeVariant: null == colorSchemeVariant ? _self.colorSchemeVariant : colorSchemeVariant // ignore: cast_nullable_to_non_nullable
+as AsagiColorSchemeVariant,
   ));
 }
 
@@ -154,10 +155,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ThemeMode themeMode,  bool highContrast)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ThemeMode themeMode,  bool highContrast,  AsagiColorSchemeVariant colorSchemeVariant)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ThemeState() when $default != null:
-return $default(_that.themeMode,_that.highContrast);case _:
+return $default(_that.themeMode,_that.highContrast,_that.colorSchemeVariant);case _:
   return orElse();
 
 }
@@ -175,10 +176,10 @@ return $default(_that.themeMode,_that.highContrast);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ThemeMode themeMode,  bool highContrast)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ThemeMode themeMode,  bool highContrast,  AsagiColorSchemeVariant colorSchemeVariant)  $default,) {final _that = this;
 switch (_that) {
 case _ThemeState():
-return $default(_that.themeMode,_that.highContrast);}
+return $default(_that.themeMode,_that.highContrast,_that.colorSchemeVariant);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -192,10 +193,10 @@ return $default(_that.themeMode,_that.highContrast);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ThemeMode themeMode,  bool highContrast)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ThemeMode themeMode,  bool highContrast,  AsagiColorSchemeVariant colorSchemeVariant)?  $default,) {final _that = this;
 switch (_that) {
 case _ThemeState() when $default != null:
-return $default(_that.themeMode,_that.highContrast);case _:
+return $default(_that.themeMode,_that.highContrast,_that.colorSchemeVariant);case _:
   return null;
 
 }
@@ -207,11 +208,12 @@ return $default(_that.themeMode,_that.highContrast);case _:
 
 
 class _ThemeState implements ThemeState {
-  const _ThemeState({this.themeMode = ThemeMode.system, this.highContrast = false});
+  const _ThemeState({this.themeMode = ThemeMode.system, this.highContrast = false, this.colorSchemeVariant = AsagiColorSchemeVariant.auto});
   
 
 @override@JsonKey() final  ThemeMode themeMode;
 @override@JsonKey() final  bool highContrast;
+@override@JsonKey() final  AsagiColorSchemeVariant colorSchemeVariant;
 
 /// Create a copy of ThemeState
 /// with the given fields replaced by the non-null parameter values.
@@ -223,18 +225,18 @@ _$ThemeStateCopyWith<_ThemeState> get copyWith => __$ThemeStateCopyWithImpl<_The
 
 @override
 bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType&&other is _ThemeState&&(identical(other.themeMode, themeMode) || other.themeMode == themeMode)&&(identical(other.highContrast, highContrast) || other.highContrast == highContrast));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _ThemeState&&(identical(other.themeMode, themeMode) || other.themeMode == themeMode)&&(identical(other.highContrast, highContrast) || other.highContrast == highContrast)&&(identical(other.colorSchemeVariant, colorSchemeVariant) || other.colorSchemeVariant == colorSchemeVariant));
 }
 
 
 @override
 int get hashCode {
-    return Object.hash(runtimeType,themeMode,highContrast);
+    return Object.hash(runtimeType,themeMode,highContrast,colorSchemeVariant);
 }
 
 @override
 String toString() {
-    return 'ThemeState(themeMode: $themeMode, highContrast: $highContrast)';
+    return 'ThemeState(themeMode: $themeMode, highContrast: $highContrast, colorSchemeVariant: $colorSchemeVariant)';
 }
 
 
@@ -245,7 +247,7 @@ abstract mixin class _$ThemeStateCopyWith<$Res> implements $ThemeStateCopyWith<$
   factory _$ThemeStateCopyWith(_ThemeState value, $Res Function(_ThemeState) _then) = __$ThemeStateCopyWithImpl;
 @override @useResult
 $Res call({
- ThemeMode themeMode, bool highContrast
+ ThemeMode themeMode, bool highContrast, AsagiColorSchemeVariant colorSchemeVariant
 });
 
 
@@ -262,11 +264,12 @@ class __$ThemeStateCopyWithImpl<$Res>
 
 /// Create a copy of ThemeState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? themeMode = null,Object? highContrast = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? themeMode = null,Object? highContrast = null,Object? colorSchemeVariant = null,}) {
   return _then(_ThemeState(
 themeMode: null == themeMode ? _self.themeMode : themeMode // ignore: cast_nullable_to_non_nullable
 as ThemeMode,highContrast: null == highContrast ? _self.highContrast : highContrast // ignore: cast_nullable_to_non_nullable
-as bool,
+as bool,colorSchemeVariant: null == colorSchemeVariant ? _self.colorSchemeVariant : colorSchemeVariant // ignore: cast_nullable_to_non_nullable
+as AsagiColorSchemeVariant,
   ));
 }
 

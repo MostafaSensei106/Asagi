@@ -257,6 +257,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get highContrast => 'تباين عالي';
 
   @override
+  String get colorScheme => 'نمط الألوان';
+
+  @override
+  String get automaticColorScheme => 'تلقائي (ألوان Asagi الافتراضية)';
+
+  @override
   String get sharperTextAndSurfaces => 'أسود وأبيض نقي لتباين فائق.';
 
   @override

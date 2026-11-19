@@ -314,6 +314,8 @@
     "description": "Subtitle of the live theme preview card"
   },
   "highContrast": "High contrast",
+  "colorScheme": "Color scheme",
+  "automaticColorScheme": "Auto (Asagi default)",
   "@highContrast": {
     "description": "High contrast mode toggle title"
   },

@@ -1,8 +1,6 @@
 final class PrefKeys {
   PrefKeys._();
   static const String language = 'language';
-  static const String themeMode = 'themeMode';
-  static const String highContrast = 'highContrast';
   static const String userToken = 'userToken';
   static const String userRefreshToken = 'userRefreshToken';
   static const String userId = 'userId';

@@ -71,9 +71,6 @@ import 'package:asagi/core/utils/localization/logic/cubit/localization_cubit.dar
     as _i1040;
 import 'package:asagi/core/utils/network/logic/cubit/network_cubit.dart'
     as _i295;
-import 'package:asagi/core/utils/theme/data/base_theme_repository.dart'
-    as _i911;
-import 'package:asagi/core/utils/theme/data/theme_repository.dart' as _i219;
 import 'package:asagi/core/utils/theme/logic/cubit/theme_cubit.dart' as _i664;
 import 'package:asagi/modules/about/data/about_app_repsitory.dart' as _i382;
 import 'package:asagi/modules/about/data/base_about_app_repository.dart'
@@ -125,6 +122,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i843.L10nService>(() => _i843.L10nService());
     gh.lazySingleton<_i264.ThemeService>(() => _i264.ThemeService());
     gh.lazySingleton<_i866.CacheManager>(() => _i866.CacheManager());
+    gh.lazySingleton<_i664.ThemeCubit>(() => _i664.ThemeCubit());
     gh.lazySingleton<_i1040.LocalizationCubit>(
       () => _i1040.LocalizationCubit(l10nService: gh<_i843.L10nService>()),
     );
@@ -200,9 +198,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i812.BaseAboutAppRepository>(
       () => _i382.AboutAppRepsitory(gh<_i752.BaseAppInfoService>()),
     );
-    gh.lazySingleton<_i911.BaseThemeRepository>(
-      () => _i219.ThemeRepository(gh<_i896.BasePrefStorageService>()),
-    );
     gh.lazySingleton<_i960.StorageFacade>(
       () => injectionModule.storageFacade(gh<_i896.BasePrefStorageService>()),
     );
@@ -221,9 +216,6 @@ extension GetItInjectableX on _i174.GetIt {
         l10nService: gh<_i843.L10nService>(),
       ),
     );
-    gh.lazySingleton<_i664.ThemeCubit>(
-      () => _i664.ThemeCubit(gh<_i911.BaseThemeRepository>()),
-    );
     gh.lazySingleton<_i849.UserSessionServiceBase>(
       () => _i849.UserSessionService(gh<_i960.StorageFacade>()),
     );
@@ -235,6 +227,8 @@ extension GetItInjectableX on _i174.GetIt {
   _i264.ThemeService get themeService => get<_i264.ThemeService>();
 
   _i866.CacheManager get cacheManager => get<_i866.CacheManager>();
+
+  _i664.ThemeCubit get themeCubit => get<_i664.ThemeCubit>();
 
   _i1040.LocalizationCubit get localizationCubit =>
       get<_i1040.LocalizationCubit>();
@@ -299,8 +293,6 @@ extension GetItInjectableX on _i174.GetIt {
   _i382.AboutAppRepsitory get aboutAppRepsitory =>
       get<_i382.AboutAppRepsitory>();
 
-  _i219.ThemeRepository get themeRepository => get<_i219.ThemeRepository>();
-
   _i184.SubscriptionCubit get subscriptionCubit =>
       get<_i184.SubscriptionCubit>();
 
@@ -308,8 +300,6 @@ extension GetItInjectableX on _i174.GetIt {
 
   _i676.LocalizationRepository get localizationRepository =>
       get<_i676.LocalizationRepository>();
-
-  _i664.ThemeCubit get themeCubit => get<_i664.ThemeCubit>();
 
   _i849.UserSessionService get userSessionService =>
       get<_i849.UserSessionService>();

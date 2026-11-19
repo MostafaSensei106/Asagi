@@ -258,6 +258,12 @@ class AppLocalizationsPl extends AppLocalizations {
   String get highContrast => 'High contrast';
 
   @override
+  String get colorScheme => 'Color scheme';
+
+  @override
+  String get automaticColorScheme => 'Auto (Asagi default)';
+
+  @override
   String get sharperTextAndSurfaces => 'Pure black and white surfaces ';
 
   @override

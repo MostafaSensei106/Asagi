@@ -1,22 +1,16 @@
-import 'dart:async';
-
 import 'package:bloc_signals_hydrate/bloc_signals_hydrate.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:material_ui/material_ui.dart';
 
-import '../../data/base_theme_repository.dart';
+import '../../app_theme.dart';
 
 part 'theme_cubit.freezed.dart';
 part 'theme_state.dart';
 
 @lazySingleton
 class ThemeCubit extends HydratedCubitSignal<ThemeState> {
-  ThemeCubit(this._repo) : super(initialState: const ThemeState()) {
-    unawaited(_init());
-  }
-
-  final BaseThemeRepository _repo;
+  ThemeCubit() : super(initialState: const ThemeState());
 
   @override
   ThemeState? fromJson(dynamic json) {
@@ -28,10 +22,16 @@ class ThemeCubit extends HydratedCubitSignal<ThemeState> {
       orElse: () => ThemeMode.system,
     );
     final highContrast = json['highContrast'];
+    final variantName = json['colorSchemeVariant'];
+    final variant = AsagiColorSchemeVariant.values.firstWhere(
+      (value) => value.name == variantName,
+      orElse: () => AsagiColorSchemeVariant.auto,
+    );
 
     return ThemeState(
       themeMode: themeMode,
       highContrast: highContrast is bool ? highContrast : false,
+      colorSchemeVariant: variant,
     );
   }
 
@@ -39,25 +39,21 @@ class ThemeCubit extends HydratedCubitSignal<ThemeState> {
   Map<String, dynamic> toJson(ThemeState state) => {
     'themeMode': state.themeMode.name,
     'highContrast': state.highContrast,
+    'colorSchemeVariant': state.colorSchemeVariant.name,
   };
 
-  Future<void> _init() async {
-    final themeMode = await _repo.getThemeMode();
-    final highContrast = await _repo.getHighContrast();
-    emit(
-      state.value.copyWith(themeMode: themeMode, highContrast: highContrast),
-    );
-  }
-
-  Future<void> changeTheme(ThemeMode newMode) async {
+  void changeTheme(ThemeMode newMode) {
     if (state.value.themeMode == newMode) return;
     emit(state.value.copyWith(themeMode: newMode));
-    await _repo.cacheThemeMode(newMode);
   }
 
-  Future<void> changeHighContrast(bool enabled) async {
+  void changeHighContrast(bool enabled) {
     if (state.value.highContrast == enabled) return;
     emit(state.value.copyWith(highContrast: enabled));
-    await _repo.cacheHighContrast(enabled);
+  }
+
+  void changeColorSchemeVariant(AsagiColorSchemeVariant variant) {
+    if (state.value.colorSchemeVariant == variant) return;
+    emit(state.value.copyWith(colorSchemeVariant: variant));
   }
 }

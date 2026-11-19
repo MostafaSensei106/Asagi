@@ -34,16 +34,25 @@ class AsagiApp extends StatelessWidget {
             final highContrast = context.select(
               (ThemeCubit cubit) => cubit.state.value.highContrast,
             );
+            final colorSchemeVariant = context.select(
+              (ThemeCubit cubit) => cubit.state.value.colorSchemeVariant,
+            );
             return MaterialApp.router(
               title: AppMetadata.name,
-              theme: highContrast
-                  ? AppTheme.lightHighContrast()
-                  : AppTheme.light(),
-              darkTheme: highContrast
-                  ? AppTheme.darkHighContrast()
-                  : AppTheme.dark(),
-              highContrastTheme: AppTheme.lightHighContrast(),
-              highContrastDarkTheme: AppTheme.darkHighContrast(),
+              theme: AppTheme.light(
+                variant: colorSchemeVariant,
+                highContrast: highContrast,
+              ),
+              darkTheme: AppTheme.dark(
+                variant: colorSchemeVariant,
+                highContrast: highContrast,
+              ),
+              highContrastTheme: AppTheme.lightHighContrast(
+                variant: colorSchemeVariant,
+              ),
+              highContrastDarkTheme: AppTheme.darkHighContrast(
+                variant: colorSchemeVariant,
+              ),
               themeMode: themeMode,
               locale: AppSupportedLocales.values.firstWhere(
                 (supportedLocale) => supportedLocale.toString() == locale,
