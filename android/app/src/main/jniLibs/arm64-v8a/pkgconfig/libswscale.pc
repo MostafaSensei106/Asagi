@@ -1,7 +1,7 @@
-prefix=/home/ottafa/Devolpments/zumi/build/rust_lib_zumi/build/ffmpeg/build-n7.1.5-arm64-v8a/install
+prefix=/home/ottafa/Devolpments/zumi/build/rust_lib_asagi/build/ffmpeg/build-n7.1.5-arm64-v8a/install
 exec_prefix=${prefix}
-libdir=/home/ottafa/Devolpments/zumi/build/rust_lib_zumi/build/ffmpeg/build-n7.1.5-arm64-v8a/install/lib
-includedir=/home/ottafa/Devolpments/zumi/build/rust_lib_zumi/build/ffmpeg/build-n7.1.5-arm64-v8a/install/include
+libdir=/home/ottafa/Devolpments/zumi/build/rust_lib_asagi/build/ffmpeg/build-n7.1.5-arm64-v8a/install/lib
+includedir=/home/ottafa/Devolpments/zumi/build/rust_lib_asagi/build/ffmpeg/build-n7.1.5-arm64-v8a/install/include
 
 Name: libswscale
 Description: FFmpeg image rescaling library

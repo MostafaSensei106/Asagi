@@ -13,13 +13,13 @@ A nimble white stoat hugs a video tile while its long tail wraps around it. The 
 - `masters/asagi-small.png`: optical cut preserving the pose, ears, paws, tail and video, with fewer fur details and stronger outline.
 - `mascot/ready.png`, `working.png`, `done.png`: separate transparent expressive poses matching the approved reference.
 
-The original image board remains the creative reference. The normalized artwork is the export source. Never substitute old compact animal drawings. All legacy assets are archived separately.
+The approved stoat pose remains the character reference; the current visual system is shown in `brand-board.png` and `approved-reference.png`. The normalized artwork is the export source. Never substitute old compact animal drawings.
 
 ## File selection
 | Use | File |
 |---|---|
-| Main app/store icon | icons/app/asagi-lagoon-1024.png |
-| Dark app tile | icons/app/asagi-midnight-1024.png |
+| Main app/store icon | icons/app/asagi-main-1024.png |
+| Deep Asagi app tile | icons/app/asagi-deep-1024.png |
 | Snow app tile | icons/app/asagi-snow-1024.png |
 | Website/favicon | icons/web/ contents |
 | Header | lockups/asagi-horizontal.png or .svg |
@@ -40,20 +40,22 @@ Clear space is at least one ear diameter around the visible silhouette. Horizont
 ## Palette
 | Token | HEX | RGB | Use |
 |---|---|---|---|
-| Midnight | #162B46 | 22,43,70 | Ink, dark surfaces, text |
-| Lagoon | #087F8C | 8,127,140 | Main actions, app tile |
-| Seafoam | #61D4C5 | 97,212,197 | Highlights |
-| Apricot | #FFB582 | 255,181,130 | Video, warmth |
+| Ink | #243438 | 36,52,56 | Neutral text and outlines |
+| Asagi | #0095A9 | 0,149,169 | Main brand color, app tile |
+| Asagi Deep | #006F7D | 0,111,125 | Accessible actions with white labels |
+| Mizu | #6FCBC2 | 111,203,194 | Soft highlights |
+| Light Asagi | #BCE4E2 | 188,228,226 | Pale surfaces and fur shadow |
+| Warm Coral | #FAAD7D | 250,173,125 | Video tile and warmth |
 | Snow | #F7FAF8 | 247,250,248 | UI background |
 
-The palette SVG also uses #BDE3E4 for pale fur shadow and #FFFFFF for white fur. Raster illustration contains soft shading, so its individual pixels are not restricted to token values. Use exact tokens for UI and backgrounds. Approximate layout ratio: 70% neutral, 20% midnight/lagoon, 10% accents.
+The palette SVG uses #BCE4E2 for pale fur shadow and #FFFFFF for white fur. Raster illustration contains soft shading, so its individual pixels are not restricted to token values. Asagi #0095A9 is the requested screen color inspired by DIC-N881 浅葱色; printed color and screen RGB are not exact equivalents. Use Asagi Deep for white text and controls that need 4.5:1 contrast. Approximate layout ratio: 70% neutral, 20% Asagi, 10% accents.
 
-sRGB contrast: snow/midnight 13.61:1; snow/lagoon 4.52:1; midnight/apricot 8.30:1; midnight/seafoam 7.99:1. White play on apricot and pale fur shading are decorative brand details, not accessible controls. A real play control should use midnight on apricot. Text and interactive states must pass contrast independently.
+sRGB contrast: snow/ink 12.31:1; snow/Asagi 3.40:1; snow/Asagi Deep 5.60:1; ink/warm-coral 6.37:1; ink/Mizu 6.64:1. Use Asagi for large decorative areas and icon tiles, and Asagi Deep for white text on interactive controls. White play on warm coral and pale fur shading are decorative brand details, not accessible controls. A real play control should use ink on warm coral. Text and interactive states must pass contrast independently.
 
 Print: convert through the printer's ICC profile and proof. These RGB assets do not claim universal CMYK or Pantone matches. Fine fur and whiskers are unsuitable for small embroidery.
 
 ## Typography
-The English wordmark is supplied artwork, not a font to retype. Its raster version retains the lagoon i-dot; the outlined version is intentionally single ink. Japanese ズミ in the horizontal vector lockup uses Noto Sans CJK JP converted to paths. Proposed interface families: Noto Sans and Noto Sans Arabic, with system sans fallback. Font binaries are not bundled; include their licenses if packaging them later.
+The English wordmark source is editable SVG text set in Rubik Bold Italic; exported SVG artwork is converted to paths. 浅葱 in the horizontal lockup means Asagi and is converted to paths by Inkscape. Proposed interface families: Noto Sans and Noto Sans Arabic, with system sans fallback. Font binaries are not bundled; include their licenses if packaging them later.
 
 Body 16px / line height 1.5; labels 14px; section titles 24px; screen titles 28–32px. Use RTL layout for Arabic. Spacing scale 4/8/12/16/24/32/48. Button radius 16, card radius 24.
 

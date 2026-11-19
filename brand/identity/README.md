@@ -1,5 +1,5 @@
 # Asagi — current identity
-Start with **brand-board.png**. The app icon and hero now use the same approved character.
+Start with **brand-board.png**. The app icon and hero use the same approved character with the Asagi-inspired blue-green palette.
 
 - `masters/`: transparent raster and matching palette-vector artwork.
 - `lockups/`: horizontal, stacked and dark combinations.
@@ -16,4 +16,4 @@ The detailed hero and optical favicon cut are related drawings. The vector palet
 
 
 ## Additional mascot states
-Six matching transparent 1024px illustrations added in `mascot/`: welcome, empty, analyzing, paused, error and share. Existing ready, working and done files remain unchanged. See `mascot/README.md`, `mascot/extra-states.json`, and `mascot/extra-states-overview.png`.
+Six matching transparent 1024px illustrations are in `mascot/`: welcome, empty, analyzing, paused, error and share. All mascot states now use the neutral ink and Asagi palette. See `mascot/README.md`, `mascot/extra-states.json`, and `mascot/extra-states-overview.png`.
