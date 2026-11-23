@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$CompressionState {
 
- CompressionPhase get phase; SelectedVideo? get video; double get targetMb; CompressionPreferences get preferences; CompressionPlan? get previewPlan; bool get planning; double get progress; CompressionOutput? get output; String? get error; List<CompressionRecord> get history; int get interruptedJobs; List<InterruptedCompressionJob> get recoverableJobs; List<SharePreset> get presets; SharePresetId? get selectedPresetId; SharePresetPlan? get resolvedPresetPlan;
+ CompressionPhase get phase; SelectedVideo? get video; double get targetMb; CompressionPreferences get preferences; CompressionPlan? get previewPlan; bool get planning; double get progress; CompressionStep get step; CompressionOutput? get output; String? get error; List<CompressionRecord> get history; int get interruptedJobs; List<InterruptedCompressionJob> get recoverableJobs; List<SharePreset> get presets; SharePresetId? get selectedPresetId; SharePresetPlan? get resolvedPresetPlan;
 /// Create a copy of CompressionState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -27,20 +27,20 @@ $CompressionStateCopyWith<CompressionState> get copyWith => _$CompressionStateCo
 @override
 bool operator ==(Object other) {
   final _this = this as CompressionState;
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CompressionState&&(identical(other.phase, _this.phase) || other.phase == _this.phase)&&(identical(other.video, _this.video) || other.video == _this.video)&&(identical(other.targetMb, _this.targetMb) || other.targetMb == _this.targetMb)&&(identical(other.preferences, _this.preferences) || other.preferences == _this.preferences)&&(identical(other.previewPlan, _this.previewPlan) || other.previewPlan == _this.previewPlan)&&(identical(other.planning, _this.planning) || other.planning == _this.planning)&&(identical(other.progress, _this.progress) || other.progress == _this.progress)&&(identical(other.output, _this.output) || other.output == _this.output)&&(identical(other.error, _this.error) || other.error == _this.error)&&const DeepCollectionEquality().equals(other.history, _this.history)&&(identical(other.interruptedJobs, _this.interruptedJobs) || other.interruptedJobs == _this.interruptedJobs)&&const DeepCollectionEquality().equals(other.recoverableJobs, _this.recoverableJobs)&&const DeepCollectionEquality().equals(other.presets, _this.presets)&&(identical(other.selectedPresetId, _this.selectedPresetId) || other.selectedPresetId == _this.selectedPresetId)&&(identical(other.resolvedPresetPlan, _this.resolvedPresetPlan) || other.resolvedPresetPlan == _this.resolvedPresetPlan));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CompressionState&&(identical(other.phase, _this.phase) || other.phase == _this.phase)&&(identical(other.video, _this.video) || other.video == _this.video)&&(identical(other.targetMb, _this.targetMb) || other.targetMb == _this.targetMb)&&(identical(other.preferences, _this.preferences) || other.preferences == _this.preferences)&&(identical(other.previewPlan, _this.previewPlan) || other.previewPlan == _this.previewPlan)&&(identical(other.planning, _this.planning) || other.planning == _this.planning)&&(identical(other.progress, _this.progress) || other.progress == _this.progress)&&(identical(other.step, _this.step) || other.step == _this.step)&&(identical(other.output, _this.output) || other.output == _this.output)&&(identical(other.error, _this.error) || other.error == _this.error)&&const DeepCollectionEquality().equals(other.history, _this.history)&&(identical(other.interruptedJobs, _this.interruptedJobs) || other.interruptedJobs == _this.interruptedJobs)&&const DeepCollectionEquality().equals(other.recoverableJobs, _this.recoverableJobs)&&const DeepCollectionEquality().equals(other.presets, _this.presets)&&(identical(other.selectedPresetId, _this.selectedPresetId) || other.selectedPresetId == _this.selectedPresetId)&&(identical(other.resolvedPresetPlan, _this.resolvedPresetPlan) || other.resolvedPresetPlan == _this.resolvedPresetPlan));
 }
 
 
 @override
 int get hashCode {
   final _this = this as CompressionState;
-  return Object.hash(runtimeType,_this.phase,_this.video,_this.targetMb,_this.preferences,_this.previewPlan,_this.planning,_this.progress,_this.output,_this.error,const DeepCollectionEquality().hash(_this.history),_this.interruptedJobs,const DeepCollectionEquality().hash(_this.recoverableJobs),const DeepCollectionEquality().hash(_this.presets),_this.selectedPresetId,_this.resolvedPresetPlan);
+  return Object.hash(runtimeType,_this.phase,_this.video,_this.targetMb,_this.preferences,_this.previewPlan,_this.planning,_this.progress,_this.step,_this.output,_this.error,const DeepCollectionEquality().hash(_this.history),_this.interruptedJobs,const DeepCollectionEquality().hash(_this.recoverableJobs),const DeepCollectionEquality().hash(_this.presets),_this.selectedPresetId,_this.resolvedPresetPlan);
 }
 
 @override
 String toString() {
   final _this = this as CompressionState;
-  return 'CompressionState(phase: ${_this.phase}, video: ${_this.video}, targetMb: ${_this.targetMb}, preferences: ${_this.preferences}, previewPlan: ${_this.previewPlan}, planning: ${_this.planning}, progress: ${_this.progress}, output: ${_this.output}, error: ${_this.error}, history: ${_this.history}, interruptedJobs: ${_this.interruptedJobs}, recoverableJobs: ${_this.recoverableJobs}, presets: ${_this.presets}, selectedPresetId: ${_this.selectedPresetId}, resolvedPresetPlan: ${_this.resolvedPresetPlan})';
+  return 'CompressionState(phase: ${_this.phase}, video: ${_this.video}, targetMb: ${_this.targetMb}, preferences: ${_this.preferences}, previewPlan: ${_this.previewPlan}, planning: ${_this.planning}, progress: ${_this.progress}, step: ${_this.step}, output: ${_this.output}, error: ${_this.error}, history: ${_this.history}, interruptedJobs: ${_this.interruptedJobs}, recoverableJobs: ${_this.recoverableJobs}, presets: ${_this.presets}, selectedPresetId: ${_this.selectedPresetId}, resolvedPresetPlan: ${_this.resolvedPresetPlan})';
 }
 
 
@@ -51,7 +51,7 @@ abstract mixin class $CompressionStateCopyWith<$Res>  {
   factory $CompressionStateCopyWith(CompressionState value, $Res Function(CompressionState) _then) = _$CompressionStateCopyWithImpl;
 @useResult
 $Res call({
- CompressionPhase phase, SelectedVideo? video, double targetMb, CompressionPreferences preferences, CompressionPlan? previewPlan, bool planning, double progress, CompressionOutput? output, String? error, List<CompressionRecord> history, int interruptedJobs, List<InterruptedCompressionJob> recoverableJobs, List<SharePreset> presets, SharePresetId? selectedPresetId, SharePresetPlan? resolvedPresetPlan
+ CompressionPhase phase, SelectedVideo? video, double targetMb, CompressionPreferences preferences, CompressionPlan? previewPlan, bool planning, double progress, CompressionStep step, CompressionOutput? output, String? error, List<CompressionRecord> history, int interruptedJobs, List<InterruptedCompressionJob> recoverableJobs, List<SharePreset> presets, SharePresetId? selectedPresetId, SharePresetPlan? resolvedPresetPlan
 });
 
 
@@ -68,7 +68,7 @@ class _$CompressionStateCopyWithImpl<$Res>
 
 /// Create a copy of CompressionState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? phase = null,Object? video = freezed,Object? targetMb = null,Object? preferences = null,Object? previewPlan = freezed,Object? planning = null,Object? progress = null,Object? output = freezed,Object? error = freezed,Object? history = null,Object? interruptedJobs = null,Object? recoverableJobs = null,Object? presets = null,Object? selectedPresetId = freezed,Object? resolvedPresetPlan = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? phase = null,Object? video = freezed,Object? targetMb = null,Object? preferences = null,Object? previewPlan = freezed,Object? planning = null,Object? progress = null,Object? step = null,Object? output = freezed,Object? error = freezed,Object? history = null,Object? interruptedJobs = null,Object? recoverableJobs = null,Object? presets = null,Object? selectedPresetId = freezed,Object? resolvedPresetPlan = freezed,}) {
   return _then(CompressionState(
 phase: null == phase ? _self.phase : phase // ignore: cast_nullable_to_non_nullable
 as CompressionPhase,video: freezed == video ? _self.video : video // ignore: cast_nullable_to_non_nullable
@@ -77,7 +77,8 @@ as double,preferences: null == preferences ? _self.preferences : preferences // 
 as CompressionPreferences,previewPlan: freezed == previewPlan ? _self.previewPlan : previewPlan // ignore: cast_nullable_to_non_nullable
 as CompressionPlan?,planning: null == planning ? _self.planning : planning // ignore: cast_nullable_to_non_nullable
 as bool,progress: null == progress ? _self.progress : progress // ignore: cast_nullable_to_non_nullable
-as double,output: freezed == output ? _self.output : output // ignore: cast_nullable_to_non_nullable
+as double,step: null == step ? _self.step : step // ignore: cast_nullable_to_non_nullable
+as CompressionStep,output: freezed == output ? _self.output : output // ignore: cast_nullable_to_non_nullable
 as CompressionOutput?,error: freezed == error ? _self.error : error // ignore: cast_nullable_to_non_nullable
 as String?,history: null == history ? _self.history : history // ignore: cast_nullable_to_non_nullable
 as List<CompressionRecord>,interruptedJobs: null == interruptedJobs ? _self.interruptedJobs : interruptedJobs // ignore: cast_nullable_to_non_nullable
@@ -167,10 +168,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( CompressionPhase phase,  SelectedVideo? video,  double targetMb,  CompressionPreferences preferences,  CompressionPlan? previewPlan,  bool planning,  double progress,  CompressionOutput? output,  String? error,  List<CompressionRecord> history,  int interruptedJobs,  List<InterruptedCompressionJob> recoverableJobs,  List<SharePreset> presets,  SharePresetId? selectedPresetId,  SharePresetPlan? resolvedPresetPlan)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( CompressionPhase phase,  SelectedVideo? video,  double targetMb,  CompressionPreferences preferences,  CompressionPlan? previewPlan,  bool planning,  double progress,  CompressionStep step,  CompressionOutput? output,  String? error,  List<CompressionRecord> history,  int interruptedJobs,  List<InterruptedCompressionJob> recoverableJobs,  List<SharePreset> presets,  SharePresetId? selectedPresetId,  SharePresetPlan? resolvedPresetPlan)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CompressionState() when $default != null:
-return $default(_that.phase,_that.video,_that.targetMb,_that.preferences,_that.previewPlan,_that.planning,_that.progress,_that.output,_that.error,_that.history,_that.interruptedJobs,_that.recoverableJobs,_that.presets,_that.selectedPresetId,_that.resolvedPresetPlan);case _:
+return $default(_that.phase,_that.video,_that.targetMb,_that.preferences,_that.previewPlan,_that.planning,_that.progress,_that.step,_that.output,_that.error,_that.history,_that.interruptedJobs,_that.recoverableJobs,_that.presets,_that.selectedPresetId,_that.resolvedPresetPlan);case _:
   return orElse();
 
 }
@@ -188,10 +189,10 @@ return $default(_that.phase,_that.video,_that.targetMb,_that.preferences,_that.p
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( CompressionPhase phase,  SelectedVideo? video,  double targetMb,  CompressionPreferences preferences,  CompressionPlan? previewPlan,  bool planning,  double progress,  CompressionOutput? output,  String? error,  List<CompressionRecord> history,  int interruptedJobs,  List<InterruptedCompressionJob> recoverableJobs,  List<SharePreset> presets,  SharePresetId? selectedPresetId,  SharePresetPlan? resolvedPresetPlan)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( CompressionPhase phase,  SelectedVideo? video,  double targetMb,  CompressionPreferences preferences,  CompressionPlan? previewPlan,  bool planning,  double progress,  CompressionStep step,  CompressionOutput? output,  String? error,  List<CompressionRecord> history,  int interruptedJobs,  List<InterruptedCompressionJob> recoverableJobs,  List<SharePreset> presets,  SharePresetId? selectedPresetId,  SharePresetPlan? resolvedPresetPlan)  $default,) {final _that = this;
 switch (_that) {
 case _CompressionState():
-return $default(_that.phase,_that.video,_that.targetMb,_that.preferences,_that.previewPlan,_that.planning,_that.progress,_that.output,_that.error,_that.history,_that.interruptedJobs,_that.recoverableJobs,_that.presets,_that.selectedPresetId,_that.resolvedPresetPlan);}
+return $default(_that.phase,_that.video,_that.targetMb,_that.preferences,_that.previewPlan,_that.planning,_that.progress,_that.step,_that.output,_that.error,_that.history,_that.interruptedJobs,_that.recoverableJobs,_that.presets,_that.selectedPresetId,_that.resolvedPresetPlan);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -205,10 +206,10 @@ return $default(_that.phase,_that.video,_that.targetMb,_that.preferences,_that.p
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( CompressionPhase phase,  SelectedVideo? video,  double targetMb,  CompressionPreferences preferences,  CompressionPlan? previewPlan,  bool planning,  double progress,  CompressionOutput? output,  String? error,  List<CompressionRecord> history,  int interruptedJobs,  List<InterruptedCompressionJob> recoverableJobs,  List<SharePreset> presets,  SharePresetId? selectedPresetId,  SharePresetPlan? resolvedPresetPlan)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( CompressionPhase phase,  SelectedVideo? video,  double targetMb,  CompressionPreferences preferences,  CompressionPlan? previewPlan,  bool planning,  double progress,  CompressionStep step,  CompressionOutput? output,  String? error,  List<CompressionRecord> history,  int interruptedJobs,  List<InterruptedCompressionJob> recoverableJobs,  List<SharePreset> presets,  SharePresetId? selectedPresetId,  SharePresetPlan? resolvedPresetPlan)?  $default,) {final _that = this;
 switch (_that) {
 case _CompressionState() when $default != null:
-return $default(_that.phase,_that.video,_that.targetMb,_that.preferences,_that.previewPlan,_that.planning,_that.progress,_that.output,_that.error,_that.history,_that.interruptedJobs,_that.recoverableJobs,_that.presets,_that.selectedPresetId,_that.resolvedPresetPlan);case _:
+return $default(_that.phase,_that.video,_that.targetMb,_that.preferences,_that.previewPlan,_that.planning,_that.progress,_that.step,_that.output,_that.error,_that.history,_that.interruptedJobs,_that.recoverableJobs,_that.presets,_that.selectedPresetId,_that.resolvedPresetPlan);case _:
   return null;
 
 }
@@ -220,7 +221,7 @@ return $default(_that.phase,_that.video,_that.targetMb,_that.preferences,_that.p
 
 
 class _CompressionState implements CompressionState {
-  const _CompressionState({this.phase = CompressionPhase.idle, this.video, this.targetMb = 16, this.preferences = const CompressionPreferences(), this.previewPlan, this.planning = false, this.progress = 0, this.output, this.error,  List<CompressionRecord> history = const <CompressionRecord>[], this.interruptedJobs = 0,  List<InterruptedCompressionJob> recoverableJobs = const <InterruptedCompressionJob>[],  List<SharePreset> presets = const <SharePreset>[], this.selectedPresetId = SharePresetId.whatsapp, this.resolvedPresetPlan}): _history = history,_recoverableJobs = recoverableJobs,_presets = presets;
+  const _CompressionState({this.phase = CompressionPhase.idle, this.video, this.targetMb = 16, this.preferences = const CompressionPreferences(), this.previewPlan, this.planning = false, this.progress = 0, this.step = CompressionStep.preparing, this.output, this.error,  List<CompressionRecord> history = const <CompressionRecord>[], this.interruptedJobs = 0,  List<InterruptedCompressionJob> recoverableJobs = const <InterruptedCompressionJob>[],  List<SharePreset> presets = const <SharePreset>[], this.selectedPresetId = SharePresetId.whatsapp, this.resolvedPresetPlan}): _history = history,_recoverableJobs = recoverableJobs,_presets = presets;
   
 
 @override@JsonKey() final  CompressionPhase phase;
@@ -230,6 +231,7 @@ class _CompressionState implements CompressionState {
 @override final  CompressionPlan? previewPlan;
 @override@JsonKey() final  bool planning;
 @override@JsonKey() final  double progress;
+@override@JsonKey() final  CompressionStep step;
 @override final  CompressionOutput? output;
 @override final  String? error;
  final  List<CompressionRecord> _history;
@@ -267,18 +269,18 @@ _$CompressionStateCopyWith<_CompressionState> get copyWith => __$CompressionStat
 
 @override
 bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType&&other is _CompressionState&&(identical(other.phase, phase) || other.phase == phase)&&(identical(other.video, video) || other.video == video)&&(identical(other.targetMb, targetMb) || other.targetMb == targetMb)&&(identical(other.preferences, preferences) || other.preferences == preferences)&&(identical(other.previewPlan, previewPlan) || other.previewPlan == previewPlan)&&(identical(other.planning, planning) || other.planning == planning)&&(identical(other.progress, progress) || other.progress == progress)&&(identical(other.output, output) || other.output == output)&&(identical(other.error, error) || other.error == error)&&const DeepCollectionEquality().equals(other.history, _history)&&(identical(other.interruptedJobs, interruptedJobs) || other.interruptedJobs == interruptedJobs)&&const DeepCollectionEquality().equals(other.recoverableJobs, _recoverableJobs)&&const DeepCollectionEquality().equals(other.presets, _presets)&&(identical(other.selectedPresetId, selectedPresetId) || other.selectedPresetId == selectedPresetId)&&(identical(other.resolvedPresetPlan, resolvedPresetPlan) || other.resolvedPresetPlan == resolvedPresetPlan));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _CompressionState&&(identical(other.phase, phase) || other.phase == phase)&&(identical(other.video, video) || other.video == video)&&(identical(other.targetMb, targetMb) || other.targetMb == targetMb)&&(identical(other.preferences, preferences) || other.preferences == preferences)&&(identical(other.previewPlan, previewPlan) || other.previewPlan == previewPlan)&&(identical(other.planning, planning) || other.planning == planning)&&(identical(other.progress, progress) || other.progress == progress)&&(identical(other.step, step) || other.step == step)&&(identical(other.output, output) || other.output == output)&&(identical(other.error, error) || other.error == error)&&const DeepCollectionEquality().equals(other.history, _history)&&(identical(other.interruptedJobs, interruptedJobs) || other.interruptedJobs == interruptedJobs)&&const DeepCollectionEquality().equals(other.recoverableJobs, _recoverableJobs)&&const DeepCollectionEquality().equals(other.presets, _presets)&&(identical(other.selectedPresetId, selectedPresetId) || other.selectedPresetId == selectedPresetId)&&(identical(other.resolvedPresetPlan, resolvedPresetPlan) || other.resolvedPresetPlan == resolvedPresetPlan));
 }
 
 
 @override
 int get hashCode {
-    return Object.hash(runtimeType,phase,video,targetMb,preferences,previewPlan,planning,progress,output,error,const DeepCollectionEquality().hash(_history),interruptedJobs,const DeepCollectionEquality().hash(_recoverableJobs),const DeepCollectionEquality().hash(_presets),selectedPresetId,resolvedPresetPlan);
+    return Object.hash(runtimeType,phase,video,targetMb,preferences,previewPlan,planning,progress,step,output,error,const DeepCollectionEquality().hash(_history),interruptedJobs,const DeepCollectionEquality().hash(_recoverableJobs),const DeepCollectionEquality().hash(_presets),selectedPresetId,resolvedPresetPlan);
 }
 
 @override
 String toString() {
-    return 'CompressionState(phase: $phase, video: $video, targetMb: $targetMb, preferences: $preferences, previewPlan: $previewPlan, planning: $planning, progress: $progress, output: $output, error: $error, history: $history, interruptedJobs: $interruptedJobs, recoverableJobs: $recoverableJobs, presets: $presets, selectedPresetId: $selectedPresetId, resolvedPresetPlan: $resolvedPresetPlan)';
+    return 'CompressionState(phase: $phase, video: $video, targetMb: $targetMb, preferences: $preferences, previewPlan: $previewPlan, planning: $planning, progress: $progress, step: $step, output: $output, error: $error, history: $history, interruptedJobs: $interruptedJobs, recoverableJobs: $recoverableJobs, presets: $presets, selectedPresetId: $selectedPresetId, resolvedPresetPlan: $resolvedPresetPlan)';
 }
 
 
@@ -289,7 +291,7 @@ abstract mixin class _$CompressionStateCopyWith<$Res> implements $CompressionSta
   factory _$CompressionStateCopyWith(_CompressionState value, $Res Function(_CompressionState) _then) = __$CompressionStateCopyWithImpl;
 @override @useResult
 $Res call({
- CompressionPhase phase, SelectedVideo? video, double targetMb, CompressionPreferences preferences, CompressionPlan? previewPlan, bool planning, double progress, CompressionOutput? output, String? error, List<CompressionRecord> history, int interruptedJobs, List<InterruptedCompressionJob> recoverableJobs, List<SharePreset> presets, SharePresetId? selectedPresetId, SharePresetPlan? resolvedPresetPlan
+ CompressionPhase phase, SelectedVideo? video, double targetMb, CompressionPreferences preferences, CompressionPlan? previewPlan, bool planning, double progress, CompressionStep step, CompressionOutput? output, String? error, List<CompressionRecord> history, int interruptedJobs, List<InterruptedCompressionJob> recoverableJobs, List<SharePreset> presets, SharePresetId? selectedPresetId, SharePresetPlan? resolvedPresetPlan
 });
 
 
@@ -306,7 +308,7 @@ class __$CompressionStateCopyWithImpl<$Res>
 
 /// Create a copy of CompressionState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? phase = null,Object? video = freezed,Object? targetMb = null,Object? preferences = null,Object? previewPlan = freezed,Object? planning = null,Object? progress = null,Object? output = freezed,Object? error = freezed,Object? history = null,Object? interruptedJobs = null,Object? recoverableJobs = null,Object? presets = null,Object? selectedPresetId = freezed,Object? resolvedPresetPlan = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? phase = null,Object? video = freezed,Object? targetMb = null,Object? preferences = null,Object? previewPlan = freezed,Object? planning = null,Object? progress = null,Object? step = null,Object? output = freezed,Object? error = freezed,Object? history = null,Object? interruptedJobs = null,Object? recoverableJobs = null,Object? presets = null,Object? selectedPresetId = freezed,Object? resolvedPresetPlan = freezed,}) {
   return _then(_CompressionState(
 phase: null == phase ? _self.phase : phase // ignore: cast_nullable_to_non_nullable
 as CompressionPhase,video: freezed == video ? _self.video : video // ignore: cast_nullable_to_non_nullable
@@ -315,7 +317,8 @@ as double,preferences: null == preferences ? _self.preferences : preferences // 
 as CompressionPreferences,previewPlan: freezed == previewPlan ? _self.previewPlan : previewPlan // ignore: cast_nullable_to_non_nullable
 as CompressionPlan?,planning: null == planning ? _self.planning : planning // ignore: cast_nullable_to_non_nullable
 as bool,progress: null == progress ? _self.progress : progress // ignore: cast_nullable_to_non_nullable
-as double,output: freezed == output ? _self.output : output // ignore: cast_nullable_to_non_nullable
+as double,step: null == step ? _self.step : step // ignore: cast_nullable_to_non_nullable
+as CompressionStep,output: freezed == output ? _self.output : output // ignore: cast_nullable_to_non_nullable
 as CompressionOutput?,error: freezed == error ? _self.error : error // ignore: cast_nullable_to_non_nullable
 as String?,history: null == history ? _self._history : history // ignore: cast_nullable_to_non_nullable
 as List<CompressionRecord>,interruptedJobs: null == interruptedJobs ? _self.interruptedJobs : interruptedJobs // ignore: cast_nullable_to_non_nullable

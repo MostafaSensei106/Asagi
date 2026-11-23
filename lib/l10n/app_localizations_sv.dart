@@ -183,6 +183,9 @@ class AppLocalizationsSv extends AppLocalizations {
   String get chooseAVideo => 'Välj en video';
 
   @override
+  String get preparingSelectedVideo => 'Getting your video ready';
+
+  @override
   String get pickAVideoFromYourGalleryToStartCompressing =>
       'Välj en video från ditt galleri för att börja komprimera.';
 
@@ -2416,6 +2419,14 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get encodingHardwareLive =>
       'Encoding and optimizing video with native hardware…';
+
+  @override
+  String get verifyingCompressedVideo =>
+      'Checking the compressed video and its audio…';
+
+  @override
+  String get savingCompressedVideo =>
+      'Saving the compressed video on this device…';
 
   @override
   String get compressionCompletedSuccessfully =>

@@ -8,6 +8,7 @@ export 'domain/contracts/video_encoder.dart';
 export 'domain/models/compression_output.dart';
 export 'domain/models/compression_plan.dart';
 export 'domain/models/compression_preferences.dart';
+export 'domain/models/compression_step.dart';
 export 'domain/models/encode_request.dart';
 export 'domain/models/share_preset.dart';
 export 'domain/models/video_metadata.dart';

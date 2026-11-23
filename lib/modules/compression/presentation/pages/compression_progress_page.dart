@@ -34,6 +34,7 @@ final class CompressionProgressPage extends StatelessWidget {
             final statusText = switch (state.phase) {
               CompressionPhase.running => l10n.encodingHardwareLive,
               CompressionPhase.paused => l10n.pause,
+              CompressionPhase.saving => l10n.savingCompressedVideo,
               CompressionPhase.completed =>
                 l10n.compressionCompletedSuccessfully,
               CompressionPhase.cancelled => l10n.compressionCancelled,

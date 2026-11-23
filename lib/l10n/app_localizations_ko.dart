@@ -177,6 +177,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get chooseAVideo => '동영상 선택';
 
   @override
+  String get preparingSelectedVideo => 'Getting your video ready';
+
+  @override
   String get pickAVideoFromYourGalleryToStartCompressing =>
       '갤러리에서 동영상을 선택하여 압축을 시작하세요.';
 
@@ -2388,6 +2391,14 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get encodingHardwareLive =>
       'Encoding and optimizing video with native hardware…';
+
+  @override
+  String get verifyingCompressedVideo =>
+      'Checking the compressed video and its audio…';
+
+  @override
+  String get savingCompressedVideo =>
+      'Saving the compressed video on this device…';
 
   @override
   String get compressionCompletedSuccessfully =>

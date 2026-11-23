@@ -3,19 +3,25 @@ import 'dart:io';
 
 import 'package:bloc_signals_flutter/bloc_signals_flutter.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:share_plus/share_plus.dart';
 
+import '../../../../core/constants/asagi_icons.dart';
+import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/di/di.dart';
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/router/app_router.dart';
 import '../../../../core/services/share/base_share_service.dart';
-import '../../../../core/widgets/navigation/app_bar/app_bar_component.dart';
+import '../../../../core/widgets/widgets.dart';
 import '../../../compression/presentation/cubit/compression_cubit.dart';
 import '../../../compression/presentation/cubit/compression_state.dart';
 import '../../../compression/presentation/widgets/compression_advanced_controls.dart';
 import '../../../compression/presentation/widgets/compression_error_text.dart';
 import '../../../compression/presentation/widgets/compression_plan_summary.dart';
-import '../../../compression/presentation/widgets/video_preview.dart';
+import '../widgets/compression_activity_panel.dart';
+import '../widgets/home_video_state_cards.dart';
+import '../widgets/home_welcome_card.dart';
 
 /// Select, configure, and preview a compression job on the home tab.
 final class HomePage extends HookWidget {
@@ -27,24 +33,21 @@ final class HomePage extends HookWidget {
     final targetController = useTextEditingController();
     final validTarget = useState(true);
     final showAfter = useState(true);
-    final dialogOpen = useRef(false);
-
-    void start() {
-      if (dialogOpen.value) return;
-      dialogOpen.value = true;
-      unawaited(
-        context.dialog
-            .showDialog<void>(
-              title: Text(context.localeKeys.compressing),
-              content: _CompressionRunningDialog(cubit: cubit),
-              actions: const [],
-            )
-            .whenComplete(() => dialogOpen.value = false),
-      );
-    }
+    void start() => unawaited(cubit.start());
+    void openAssistant() => unawaited(context.push(const AiChatRoute()));
 
     return Scaffold(
-      appBar: AppBarComponent(title: context.localeKeys.asagi),
+      appBar: AppBarComponent(
+        title: context.localeKeys.asagi,
+        actions: [
+          IconButtonComponent(
+            icon: AsagiIcons.ai,
+            variant: IconButtonVariant.tonal,
+            tooltip: context.localeKeys.asagiAssistant,
+            onPressed: openAssistant,
+          ),
+        ],
+      ),
       body: BlocSignalBuilder<CompressionCubit, CompressionState>(
         bloc: cubit,
         buildWhen: (previous, current) =>
@@ -56,6 +59,8 @@ final class HomePage extends HookWidget {
             previous.preferences != current.preferences ||
             previous.previewPlan != current.previewPlan ||
             previous.planning != current.planning ||
+            previous.progress != current.progress ||
+            previous.step != current.step ||
             previous.interruptedJobs != current.interruptedJobs,
         builder: (context, state) {
           final l10n = context.localeKeys;
@@ -63,12 +68,16 @@ final class HomePage extends HookWidget {
           final output = state.output;
           final completed =
               state.phase == CompressionPhase.completed && output != null;
+          final isCompressionActive =
+              state.phase == CompressionPhase.running ||
+              state.phase == CompressionPhase.paused ||
+              state.phase == CompressionPhase.saving;
           return SafeArea(
             child: CustomScrollView(
               physics: const AlwaysScrollableScrollPhysics(),
               slivers: [
                 SliverPadding(
-                  padding: const EdgeInsets.all(24),
+                  padding: const EdgeInsets.all(AppSpacing.large),
                   sliver: SliverToBoxAdapter(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -117,8 +126,7 @@ final class HomePage extends HookWidget {
                                           TextButton(
                                             onPressed:
                                                 !job.sourceAvailable ||
-                                                    state.phase ==
-                                                        CompressionPhase.running
+                                                    isCompressionActive
                                                 ? null
                                                 : () => unawaited(
                                                     cubit.resumeInterrupted(
@@ -129,9 +137,13 @@ final class HomePage extends HookWidget {
                                           ),
                                           IconButton(
                                             tooltip: l10n.deleteInterruptedJob,
-                                            onPressed: () => unawaited(
-                                              cubit.discardInterrupted(job.id),
-                                            ),
+                                            onPressed: isCompressionActive
+                                                ? null
+                                                : () => unawaited(
+                                                    cubit.discardInterrupted(
+                                                      job.id,
+                                                    ),
+                                                  ),
                                             icon: const Icon(
                                               Icons.delete_outline,
                                             ),
@@ -143,23 +155,36 @@ final class HomePage extends HookWidget {
                               ),
                             ),
                           ),
-                        if (video == null) ...[
-                          const SizedBox(height: 80),
-                          const Icon(Icons.video_library_outlined, size: 72),
-                          const SizedBox(height: 16),
-                          Text(
-                            context
-                                .localeKeys
-                                .compressVideosPrivatelyOnYourDevice,
-                            textAlign: TextAlign.center,
-                            style: Theme.of(context).textTheme.titleMedium,
+                        if (state.phase == CompressionPhase.picking) ...[
+                          const Gap(AppSpacing.large),
+                          const HomeVideoPickingCard(),
+                        ] else if (state.phase == CompressionPhase.running ||
+                            state.phase == CompressionPhase.paused ||
+                            state.phase == CompressionPhase.saving) ...[
+                          if (video != null) ...[
+                            HomeSelectedVideoCard(
+                              key: ValueKey(video.path),
+                              name: video.name,
+                              path: video.path,
+                              previewTitle: context.localeKeys.originalPreview,
+                              sizeDetails:
+                                  '${context.localeKeys.originalSize}: '
+                                  '${(video.metadata.fileSizeBytes / 1000000).toStringAsFixed(1)} MB',
+                            ),
+                          ],
+                          const Gap(AppSpacing.medium),
+                          CompressionActivityPanel(
+                            state: state,
+                            onPause: () => unawaited(cubit.pause()),
+                            onResume: () => unawaited(cubit.resume()),
+                            onCancel: () => unawaited(cubit.cancel()),
+                          ),
+                        ] else if (video == null) ...[
+                          const Gap(AppSpacing.large),
+                          HomeWelcomeCard(
+                            onPickVideo: () => unawaited(cubit.pickVideo()),
                           ),
                         ] else ...[
-                          Text(
-                            video.name,
-                            style: Theme.of(context).textTheme.titleLarge,
-                          ),
-                          const SizedBox(height: 16),
                           if (completed) ...[
                             Text(
                               context.localeKeys.compressionResult,
@@ -187,23 +212,22 @@ final class HomePage extends HookWidget {
                             ),
                             const SizedBox(height: 12),
                           ],
-                          VideoPreview(
+                          HomeSelectedVideoCard(
                             key: ValueKey(
                               completed && showAfter.value
                                   ? output.path
                                   : video.path,
                             ),
+                            name: video.name,
                             path: completed && showAfter.value
                                 ? output.path
                                 : video.path,
-                            title: completed && showAfter.value
+                            previewTitle: completed && showAfter.value
                                 ? context.localeKeys.compressedPreview
                                 : context.localeKeys.originalPreview,
-                          ),
-                          const SizedBox(height: 16),
-                          Text(
-                            '${context.localeKeys.originalSize}: '
-                            '${(video.metadata.fileSizeBytes / 1000000).toStringAsFixed(1)} MB',
+                            sizeDetails:
+                                '${context.localeKeys.originalSize}: '
+                                '${(video.metadata.fileSizeBytes / 1000000).toStringAsFixed(1)} MB',
                           ),
                           if (completed) ...[
                             Text(
@@ -343,20 +367,19 @@ final class HomePage extends HookWidget {
                           ],
                         ],
                         const SizedBox(height: 20),
-                        FilledButton.icon(
-                          onPressed:
-                              state.phase == CompressionPhase.picking ||
-                                  state.phase == CompressionPhase.running ||
-                                  state.phase == CompressionPhase.paused
-                              ? null
-                              : () => unawaited(cubit.pickVideo()),
-                          icon: const Icon(Icons.video_file_outlined),
-                          label: Text(
-                            state.phase == CompressionPhase.picking
-                                ? context.localeKeys.pleaseWait
-                                : context.localeKeys.pickVideo,
+                        if (video != null &&
+                            state.phase != CompressionPhase.picking &&
+                            state.phase != CompressionPhase.running &&
+                            state.phase != CompressionPhase.paused &&
+                            state.phase != CompressionPhase.saving) ...[
+                          const Gap(AppSpacing.medium),
+                          FilledButtonComponent.icon(
+                            expand: true,
+                            icon: AsagiIcons.videoSelect,
+                            label: context.localeKeys.pickVideo,
+                            onPressed: () => unawaited(cubit.pickVideo()),
                           ),
-                        ),
+                        ],
                         if (video == null &&
                             state.phase == CompressionPhase.failure)
                           _CompressionError(error: state.error),
@@ -368,70 +391,6 @@ final class HomePage extends HookWidget {
             ),
           );
         },
-      ),
-    );
-  }
-}
-
-final class _CompressionRunningDialog extends HookWidget {
-  const _CompressionRunningDialog({required this.cubit});
-  final CompressionCubit cubit;
-
-  @override
-  Widget build(BuildContext context) {
-    useEffect(() {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (context.mounted) unawaited(cubit.start());
-      });
-      return null;
-    }, [cubit]);
-
-    return BlocSignalListener<CompressionCubit, CompressionState>(
-      bloc: cubit,
-      listenWhen: (previous, current) =>
-          previous.phase != current.phase &&
-          (current.phase == CompressionPhase.completed ||
-              current.phase == CompressionPhase.failure ||
-              current.phase == CompressionPhase.cancelled),
-      listener: (context, state) =>
-          Navigator.of(context, rootNavigator: true).pop(),
-      child: BlocSignalBuilder<CompressionCubit, CompressionState>(
-        bloc: cubit,
-        builder: (context, state) => Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const SizedBox(height: 16),
-            LinearProgressIndicator(value: state.progress),
-            const SizedBox(height: 12),
-            Text('${(state.progress * 100).round()}%'),
-            const SizedBox(height: 12),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextButton(
-                  onPressed: state.phase == CompressionPhase.running
-                      ? () => unawaited(cubit.pause())
-                      : state.phase == CompressionPhase.paused
-                      ? () => unawaited(cubit.resume())
-                      : null,
-                  child: Text(
-                    state.phase == CompressionPhase.paused
-                        ? context.localeKeys.resume
-                        : context.localeKeys.pause,
-                  ),
-                ),
-                TextButton(
-                  onPressed:
-                      state.phase == CompressionPhase.running ||
-                          state.phase == CompressionPhase.paused
-                      ? () => unawaited(cubit.cancel())
-                      : null,
-                  child: Text(context.localeKeys.cancel),
-                ),
-              ],
-            ),
-          ],
-        ),
       ),
     );
   }

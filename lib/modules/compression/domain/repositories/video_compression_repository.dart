@@ -1,6 +1,7 @@
 import '../../../../core/compression/domain/models/compression_output.dart';
 import '../../../../core/compression/domain/models/compression_plan.dart';
 import '../../../../core/compression/domain/models/compression_preferences.dart';
+import '../../../../core/compression/domain/models/compression_step.dart';
 import '../../../../core/compression/domain/models/interrupted_compression_job.dart';
 import '../../../../core/compression/domain/models/share_preset.dart';
 import '../models/compression_record.dart';
@@ -16,6 +17,7 @@ abstract interface class VideoCompressionRepository {
     double targetMb,
     CompressionPreferences preferences, {
     SharePresetId? presetId,
+    void Function(CompressionStep step)? onStep,
   });
   Future<CompressionPlan> previewPlan(
     SelectedVideo video,
@@ -27,7 +29,11 @@ abstract interface class VideoCompressionRepository {
   Future<List<CompressionRecord>> history();
   Future<void> clearHistory();
   Future<List<InterruptedCompressionJob>> recoverInterrupted();
-  Future<ResumedCompression> resumeInterrupted(InterruptedCompressionJob job);
+  Future<ResumedCompression> resumeInterrupted(
+    InterruptedCompressionJob job, {
+    void Function(CompressionStep step)? onStep,
+    void Function(SelectedVideo video)? onVideoReady,
+  });
   Future<void> discardInterrupted(String jobId);
   Future<double> defaultTargetMb();
   Future<void> setDefaultTargetMb(double targetMb);

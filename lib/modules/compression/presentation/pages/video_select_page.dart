@@ -31,7 +31,8 @@ final class VideoSelectPage extends StatelessWidget {
             final isBusy =
                 state.phase == CompressionPhase.picking ||
                 state.phase == CompressionPhase.running ||
-                state.phase == CompressionPhase.paused;
+                state.phase == CompressionPhase.paused ||
+                state.phase == CompressionPhase.saving;
 
             return Center(
               child: SingleChildScrollView(

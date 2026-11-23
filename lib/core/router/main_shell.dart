@@ -19,11 +19,6 @@ final class _MainShell extends StatelessWidget {
           pageWrapper: AppRouter._cupertinoPage,
         ),
         KaiselBranchSpec<AppRoute>(
-          initial: AiChatRoute(),
-          builder: AppRouter._buildPage,
-          pageWrapper: AppRouter._cupertinoPage,
-        ),
-        KaiselBranchSpec<AppRoute>(
           initial: CompressionHistoryRoute(),
           builder: AppRouter._buildPage,
           pageWrapper: AppRouter._cupertinoPage,
@@ -74,7 +69,6 @@ final class _ShellChrome extends HookWidget {
 
     final items = [
       AppNavItem(label: context.localeKeys.asagi, icon: AsagiIcons.home),
-      AppNavItem(label: context.localeKeys.asagiAssistant, icon: AsagiIcons.ai),
       AppNavItem(
         label: context.localeKeys.compressionHistory,
         icon: AsagiIcons.compressionHistory,

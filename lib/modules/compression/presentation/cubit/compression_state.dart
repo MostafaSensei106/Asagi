@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import '../../../../core/compression/domain/models/compression_output.dart';
 import '../../../../core/compression/domain/models/compression_plan.dart';
 import '../../../../core/compression/domain/models/compression_preferences.dart';
+import '../../../../core/compression/domain/models/compression_step.dart';
 import '../../../../core/compression/domain/models/interrupted_compression_job.dart';
 import '../../../../core/compression/domain/models/share_preset.dart';
 import '../../domain/models/compression_record.dart';
@@ -16,6 +17,7 @@ enum CompressionPhase {
   ready,
   running,
   paused,
+  saving,
   completed,
   cancelled,
   failure,
@@ -31,6 +33,7 @@ sealed class CompressionState with _$CompressionState {
     CompressionPlan? previewPlan,
     @Default(false) bool planning,
     @Default(0) double progress,
+    @Default(CompressionStep.preparing) CompressionStep step,
     CompressionOutput? output,
     String? error,
     @Default(<CompressionRecord>[]) List<CompressionRecord> history,

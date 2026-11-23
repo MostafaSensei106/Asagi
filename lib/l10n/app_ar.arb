@@ -228,6 +228,7 @@
     "description": "Login page description"
   },
   "chooseAVideo": "اختر فيديو",
+  "preparingSelectedVideo": "جارٍ تجهيز الفيديو",
   "@chooseAVideo": {
     "description": "Video picker page title"
   },
@@ -1401,6 +1402,8 @@
   "percentSmaller": "أصغر بنسبة {percent}%",
   "percentSaved": "-{percent}%",
   "encodingHardwareLive": "جاري ترميز وتحسين الفيديو بواسطة العتاد المحلي…",
+  "verifyingCompressedVideo": "جارٍ التحقق من الفيديو المضغوط والصوت…",
+  "savingCompressedVideo": "جارٍ حفظ الفيديو المضغوط على هذا الجهاز…",
   "compressionCompletedSuccessfully": "اكتمل ضغط الفيديو بنجاح!",
   "compressionStrictness": "دقة وهامش الضغط",
   "strictnessDefault": "افتراضي (93%)",

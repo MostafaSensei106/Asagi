@@ -461,6 +461,12 @@ abstract class AppLocalizations {
   /// **'Choose a video'**
   String get chooseAVideo;
 
+  /// No description provided for @preparingSelectedVideo.
+  ///
+  /// In en, this message translates to:
+  /// **'Getting your video ready'**
+  String get preparingSelectedVideo;
+
   /// Video picker page description
   ///
   /// In en, this message translates to:
@@ -4274,6 +4280,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Encoding and optimizing video with native hardware…'**
   String get encodingHardwareLive;
+
+  /// No description provided for @verifyingCompressedVideo.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking the compressed video and its audio…'**
+  String get verifyingCompressedVideo;
+
+  /// No description provided for @savingCompressedVideo.
+  ///
+  /// In en, this message translates to:
+  /// **'Saving the compressed video on this device…'**
+  String get savingCompressedVideo;
 
   /// No description provided for @compressionCompletedSuccessfully.
   ///

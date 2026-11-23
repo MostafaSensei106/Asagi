@@ -226,6 +226,7 @@
     "description": "Login page description"
   },
   "chooseAVideo": "Choose a video",
+  "preparingSelectedVideo": "Getting your video ready",
   "@chooseAVideo": {
     "description": "Video picker page title"
   },
@@ -1592,6 +1593,8 @@
   "percentSmaller": "{percent}% smaller",
   "percentSaved": "-{percent}%",
   "encodingHardwareLive": "Encoding and optimizing video with native hardware…",
+  "verifyingCompressedVideo": "Checking the compressed video and its audio…",
+  "savingCompressedVideo": "Saving the compressed video on this device…",
   "compressionCompletedSuccessfully": "Compression finished successfully!",
   "compressionStrictness": "Compression Strictness",
   "strictnessDefault": "Default (93%)",

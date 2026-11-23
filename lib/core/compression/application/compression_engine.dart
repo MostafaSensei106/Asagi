@@ -4,6 +4,7 @@ import '../domain/contracts/video_encoder.dart';
 import '../domain/models/compression_output.dart';
 import '../domain/models/compression_plan.dart';
 import '../domain/models/compression_preferences.dart';
+import '../domain/models/compression_step.dart';
 import '../domain/models/encode_request.dart';
 import '../domain/models/share_preset.dart';
 import '../domain/models/video_metadata.dart';
@@ -39,8 +40,10 @@ final class CompressionEngine {
     CompressionPreferences preferences = const CompressionPreferences(),
     String? sourceName,
     SharePresetId? presetId,
+    void Function(CompressionStep step)? onStep,
   }) async {
     preferences.validate();
+    onStep?.call(CompressionStep.preparing);
     final effectiveHdrMode = hdrMode ?? preferences.hdrMode;
     _control.begin();
     CompressionWorkspace? job;
@@ -98,6 +101,7 @@ final class CompressionEngine {
         final path = job.pathForAttempt(attempt);
         _control.encoding = true;
         try {
+          onStep?.call(CompressionStep.encoding);
           await encoder.encode(
             EncodeRequest(
               inputPath: source,
@@ -115,6 +119,7 @@ final class CompressionEngine {
         }
         await _control.checkpoint();
         await saveJobState('verifying', attempt);
+        onStep?.call(CompressionStep.verifying);
         final encoded = await encoder.inspect(path);
         final durationTolerance = info.durationSecs * 0.05 > 1
             ? info.durationSecs * 0.05

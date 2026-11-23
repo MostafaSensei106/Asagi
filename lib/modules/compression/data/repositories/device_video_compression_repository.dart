@@ -65,10 +65,12 @@ final class DeviceVideoCompressionRepository
     double targetMb,
     CompressionPreferences preferences, {
     SharePresetId? presetId,
+    void Function(CompressionStep step)? onStep,
   }) async {
     if (!targetMb.isFinite || targetMb <= 0) {
       throw ArgumentError.value(targetMb, 'targetMb');
     }
+    onStep?.call(CompressionStep.preparing);
     await _ensureRust();
     final cache = await getTemporaryDirectory();
     final workspacePath = '${cache.path}/compression';
@@ -140,6 +142,7 @@ final class DeviceVideoCompressionRepository
                   source.durationSecs,
                   bytes,
                 ),
+          onStep: onStep,
         );
         break;
       } catch (error) {
@@ -152,6 +155,7 @@ final class DeviceVideoCompressionRepository
       }
     }
     final verifiedOutput = output!;
+    onStep?.call(CompressionStep.saving);
 
     try {
       if (Platform.isAndroid &&
@@ -363,8 +367,10 @@ final class DeviceVideoCompressionRepository
 
   @override
   Future<ResumedCompression> resumeInterrupted(
-    InterruptedCompressionJob job,
-  ) async {
+    InterruptedCompressionJob job, {
+    void Function(CompressionStep step)? onStep,
+    void Function(SelectedVideo video)? onVideoReady,
+  }) async {
     final source = File(job.sourcePath);
     if (!await source.exists()) throw StateError('E_RESUME_SOURCE_UNAVAILABLE');
     final metadata = await _encoder.inspect(source.path);
@@ -373,7 +379,13 @@ final class DeviceVideoCompressionRepository
       name: job.sourceName,
       metadata: metadata,
     );
-    final output = await compress(video, job.targetMb, job.preferences);
+    onVideoReady?.call(video);
+    final output = await compress(
+      video,
+      job.targetMb,
+      job.preferences,
+      onStep: onStep,
+    );
     await discardInterrupted(job.id);
     return ResumedCompression(video: video, output: output);
   }

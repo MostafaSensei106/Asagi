@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc_signals/bloc_signals.dart';
 
 import '../../../../core/compression/domain/models/compression_preferences.dart';
+import '../../../../core/compression/domain/models/compression_step.dart';
 import '../../../../core/compression/domain/models/interrupted_compression_job.dart';
 import '../../../../core/compression/domain/models/share_preset.dart';
 import '../../domain/repositories/video_compression_repository.dart';
@@ -26,7 +27,8 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
 
   Future<bool> pickVideo() async {
     if (stateValue.phase == CompressionPhase.running ||
-        stateValue.phase == CompressionPhase.paused) {
+        stateValue.phase == CompressionPhase.paused ||
+        stateValue.phase == CompressionPhase.saving) {
       return false;
     }
     final previous = stateValue;
@@ -217,7 +219,12 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
   Future<void> start() async {
     final current = stateValue;
     final video = current.video;
-    if (video == null || current.phase == CompressionPhase.running) return;
+    if (video == null ||
+        current.phase == CompressionPhase.running ||
+        current.phase == CompressionPhase.paused ||
+        current.phase == CompressionPhase.saving) {
+      return;
+    }
     if (current.planning || current.previewPlan == null) return;
     if (current.previewPlan!.isInfeasible) {
       emit(
@@ -229,7 +236,13 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
       return;
     }
     await _progressSubscription?.cancel();
-    emit(current.copyWith(phase: CompressionPhase.running, progress: 0));
+    emit(
+      current.copyWith(
+        phase: CompressionPhase.running,
+        progress: 0,
+        step: CompressionStep.preparing,
+      ),
+    );
     _progressSubscription = repository.progress.listen((value) {
       if (isClosed || stateValue.phase == CompressionPhase.cancelled) return;
       // Native 100% means encoding ended; verification and saving still follow.
@@ -241,12 +254,25 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
         current.targetMb,
         current.preferences,
         presetId: current.selectedPresetId,
+        onStep: (step) {
+          if (!isClosed && stateValue.phase == CompressionPhase.running) {
+            emit(
+              stateValue.copyWith(
+                step: step,
+                phase: step == CompressionStep.saving
+                    ? CompressionPhase.saving
+                    : stateValue.phase,
+              ),
+            );
+          }
+        },
       );
       if (isClosed || stateValue.phase == CompressionPhase.cancelled) return;
       emit(
         stateValue.copyWith(
           phase: CompressionPhase.completed,
           progress: 1,
+          step: CompressionStep.saving,
           output: output,
         ),
       );
@@ -263,7 +289,10 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
   }
 
   Future<void> pause() async {
-    if (stateValue.phase != CompressionPhase.running) return;
+    if (stateValue.phase != CompressionPhase.running ||
+        stateValue.step != CompressionStep.encoding) {
+      return;
+    }
     await repository.pause();
     if (!isClosed) emit(stateValue.copyWith(phase: CompressionPhase.paused));
   }
@@ -279,6 +308,7 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
         stateValue.phase != CompressionPhase.paused) {
       return;
     }
+    if (stateValue.step == CompressionStep.saving) return;
     emit(stateValue.copyWith(phase: CompressionPhase.cancelled));
     await repository.cancel();
   }
@@ -315,7 +345,8 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
 
   Future<void> resumeInterrupted(InterruptedCompressionJob job) async {
     if (stateValue.phase == CompressionPhase.running ||
-        stateValue.phase == CompressionPhase.paused) {
+        stateValue.phase == CompressionPhase.paused ||
+        stateValue.phase == CompressionPhase.saving) {
       return;
     }
     await _progressSubscription?.cancel();
@@ -325,16 +356,38 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
         targetMb: job.targetMb,
         preferences: job.preferences,
         progress: 0,
+        step: CompressionStep.preparing,
         error: null,
       ),
     );
     _progressSubscription = repository.progress.listen((value) {
-      if (!isClosed && stateValue.phase == CompressionPhase.running) {
+      if (!isClosed &&
+          (stateValue.phase == CompressionPhase.running ||
+              stateValue.phase == CompressionPhase.saving)) {
         emit(stateValue.copyWith(progress: value.clamp(0.0, 0.95)));
       }
     });
     try {
-      final result = await repository.resumeInterrupted(job);
+      final result = await repository.resumeInterrupted(
+        job,
+        onVideoReady: (video) {
+          if (!isClosed && stateValue.phase == CompressionPhase.running) {
+            emit(stateValue.copyWith(video: video));
+          }
+        },
+        onStep: (step) {
+          if (!isClosed && stateValue.phase == CompressionPhase.running) {
+            emit(
+              stateValue.copyWith(
+                step: step,
+                phase: step == CompressionStep.saving
+                    ? CompressionPhase.saving
+                    : stateValue.phase,
+              ),
+            );
+          }
+        },
+      );
       if (isClosed) return;
       final remaining = stateValue.recoverableJobs
           .where((candidate) => candidate.id != job.id)
@@ -345,13 +398,14 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
           video: result.video,
           output: result.output,
           progress: 1,
+          step: CompressionStep.saving,
           recoverableJobs: remaining,
           interruptedJobs: remaining.length,
         ),
       );
       await loadHistory();
     } catch (error) {
-      if (!isClosed) {
+      if (!isClosed && stateValue.phase != CompressionPhase.cancelled) {
         emit(
           stateValue.copyWith(phase: CompressionPhase.failure, error: '$error'),
         );
