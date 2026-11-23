@@ -87,23 +87,29 @@ final class _FeedbackCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(AppRadii.large),
         border: Border.all(color: color.withValues(alpha: 0.25)),
       ),
-      child: Row(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(
-            isError ? Icons.error_outline : Icons.check_circle_outline,
-            color: color,
-            size: 20,
-          ),
-          const Gap.horizontal(AppSpacing.small),
-          Expanded(
-            child: Text(
-              message,
-              style: context.textTheme.bodyMedium?.copyWith(color: color),
-            ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(
+                isError ? Icons.error_outline : Icons.check_circle_outline,
+                color: color,
+                size: 20,
+              ),
+              const Gap.horizontal(AppSpacing.small),
+              Expanded(
+                child: Text(
+                  message,
+                  style: context.textTheme.bodyMedium?.copyWith(color: color),
+                ),
+              ),
+            ],
           ),
           if (action != null) ...[
-            const Gap.horizontal(AppSpacing.small),
-            action!,
+            const Gap(AppSpacing.small),
+            Align(alignment: AlignmentDirectional.centerEnd, child: action),
           ],
         ],
       ),

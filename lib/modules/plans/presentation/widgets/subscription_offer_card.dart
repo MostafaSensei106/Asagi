@@ -6,9 +6,15 @@ import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/widgets/widgets.dart';
 import '../../logic/subscription_cubit.dart';
+import 'plan_expressive_container.dart';
 
 typedef _ProFeature = ({String text});
-typedef _ProFeatureGroup = ({String title, List<_ProFeature> features});
+typedef _ProFeatureGroup = ({
+  String title,
+  IconData icon,
+  ExpressiveIconShape shape,
+  List<_ProFeature> features,
+});
 
 final class SubscriptionOfferCard extends StatelessWidget {
   const SubscriptionOfferCard({
@@ -38,6 +44,8 @@ final class SubscriptionOfferCard extends StatelessWidget {
     final groups = <_ProFeatureGroup>[
       (
         title: l10n.proCustomCompressionGroup,
+        icon: LucideIcons.slidersHorizontal,
+        shape: ExpressiveIconShape.gem,
         features: [
           (text: l10n.proCustomSizeBenefit),
           (text: l10n.proResolutionBenefit),
@@ -48,6 +56,8 @@ final class SubscriptionOfferCard extends StatelessWidget {
       ),
       (
         title: l10n.proSharingPresetsGroup,
+        icon: LucideIcons.share2,
+        shape: ExpressiveIconShape.clover,
         features: [
           (text: l10n.proDiscordBenefit),
           (text: l10n.proYouTubeShortsBenefit),
@@ -55,13 +65,20 @@ final class SubscriptionOfferCard extends StatelessWidget {
       ),
       (
         title: l10n.proAiGroupTitle,
+        icon: LucideIcons.sparkles,
+        shape: ExpressiveIconShape.softBurst,
         features: [
           (text: l10n.proAiAssistantBenefit),
           (text: l10n.proAiSceneBenefit),
           (text: l10n.proAiTranscriptionBenefit),
         ],
       ),
-      (title: l10n.proLoyaltyGroup, features: [(text: l10n.proLoyaltyBenefit)]),
+      (
+        title: l10n.proLoyaltyGroup,
+        icon: LucideIcons.crown,
+        shape: ExpressiveIconShape.sunny,
+        features: [(text: l10n.proLoyaltyBenefit)],
+      ),
     ];
 
     return ClipRRect(
@@ -69,7 +86,6 @@ final class SubscriptionOfferCard extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           color: scheme.surfaceContainerLow,
-          border: Border.all(color: scheme.outlineVariant),
           borderRadius: BorderRadius.circular(AppRadii.xLarge),
         ),
         child: Column(
@@ -94,7 +110,9 @@ final class SubscriptionOfferCard extends StatelessWidget {
                           icon: AsagiIcons.plans,
                           shape: ExpressiveIconShape.gem,
                           size: 56,
-                          backgroundColor: scheme.surface.withValues(alpha: 0.72),
+                          backgroundColor: scheme.surface.withValues(
+                            alpha: 0.72,
+                          ),
                           foregroundColor: scheme.onPrimaryContainer,
                         ),
                         const Gap.horizontal(AppSpacing.medium),
@@ -104,10 +122,11 @@ final class SubscriptionOfferCard extends StatelessWidget {
                             children: [
                               Text(
                                 l10n.asagiProTitle,
-                                style: context.textTheme.headlineSmall?.copyWith(
-                                  fontWeight: FontWeight.w800,
-                                  color: scheme.onPrimaryContainer,
-                                ),
+                                style: context.textTheme.headlineSmall
+                                    ?.copyWith(
+                                      fontWeight: FontWeight.w800,
+                                      color: scheme.onPrimaryContainer,
+                                    ),
                               ),
                               const Gap(AppSpacing.small),
                               _StatusPill(isActive: state.isActive),
@@ -133,7 +152,7 @@ final class SubscriptionOfferCard extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(AppSpacing.large),
+              padding: const EdgeInsets.all(4),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -144,13 +163,14 @@ final class SubscriptionOfferCard extends StatelessWidget {
                     ),
                   ),
                   const Gap(AppSpacing.small),
-                  for (var index = 0; index < groups.length; index++) ...[
-                    if (index > 0) ...[
-                      const Gap(AppSpacing.small),
-                      Divider(color: scheme.outlineVariant),
-                    ],
-                    const Gap(AppSpacing.small),
-                    _FeatureGroup(group: groups[index]),
+                  for (final group in groups) ...[
+                    const Gap(AppSpacing.medium),
+                    PlanExpressiveContainer(
+                      title: group.title,
+                      icon: group.icon,
+                      shape: group.shape,
+                      child: _FeatureGroup(group: group),
+                    ),
                   ],
                   const Gap(AppSpacing.large),
                   FilledButtonComponent.icon(
@@ -166,36 +186,27 @@ final class SubscriptionOfferCard extends StatelessWidget {
                     onPressed: canSubscribe ? onSubscribe : null,
                   ),
                   const Gap(AppSpacing.medium),
-                  Row(
-                    children: [
-                      Icon(
-                        LucideIcons.shieldCheck,
-                        size: 17,
-                        color: scheme.onSurfaceVariant,
-                      ),
-                      const Gap.horizontal(AppSpacing.small),
-                      Expanded(
-                        child: Text(
-                          l10n.subscriptionSecureBilling,
+                  PlanExpressiveContainer(
+                    title: l10n.subscriptionSecureBilling,
+                    icon: LucideIcons.shieldCheck,
+                    shape: ExpressiveIconShape.gem,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          l10n.proPlatformAvailabilityNote,
                           style: context.textTheme.bodySmall?.copyWith(
                             color: scheme.onSurfaceVariant,
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                  const Gap(AppSpacing.small),
-                  Text(
-                    l10n.proPlatformAvailabilityNote,
-                    style: context.textTheme.bodySmall?.copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  ),
-                  const Gap(AppSpacing.small),
-                  Text(
-                    l10n.proAiAvailabilityNote,
-                    style: context.textTheme.bodySmall?.copyWith(
-                      color: scheme.onSurfaceVariant,
+                        const Gap(AppSpacing.small),
+                        Text(
+                          l10n.proAiAvailabilityNote,
+                          style: context.textTheme.bodySmall?.copyWith(
+                            color: scheme.onSurfaceVariant,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -218,14 +229,6 @@ final class _FeatureGroup extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          group.title,
-          style: context.textTheme.titleSmall?.copyWith(
-            fontWeight: FontWeight.w800,
-            color: context.colorScheme.onSurface,
-          ),
-        ),
-        const Gap(AppSpacing.xSmall),
         for (final feature in group.features) _FeatureRow(feature: feature),
       ],
     );
