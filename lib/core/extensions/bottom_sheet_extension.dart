@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 

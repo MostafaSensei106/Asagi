@@ -2,7 +2,9 @@ import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../constants/app_config.dart';
+import '../../../constants/design_system/tokens/tokens.dart';
 import '../../../extensions/extensions.dart';
+import '../../layout/gap.dart';
 import 'list_tile_group.dart';
 
 enum ListTileGroupType { top, middle, bottom, single }
@@ -101,11 +103,15 @@ final class ListTileComponent extends StatelessWidget {
         effectiveRadius = BorderRadius.only(
           topLeft: borderRadius.topLeft,
           topRight: borderRadius.topRight,
+          bottomLeft: const Radius.circular(AppRadii.small),
+          bottomRight: const Radius.circular(AppRadii.small),
         );
       case ListTileGroupType.middle:
-        effectiveRadius = BorderRadius.zero;
+        effectiveRadius = BorderRadius.circular(AppRadii.small);
       case ListTileGroupType.bottom:
         effectiveRadius = BorderRadius.only(
+          topLeft: const Radius.circular(AppRadii.small),
+          topRight: const Radius.circular(AppRadii.small),
           bottomLeft: borderRadius.bottomLeft,
           bottomRight: borderRadius.bottomRight,
         );
@@ -155,7 +161,7 @@ final class ListTileComponent extends StatelessWidget {
         ),
         if (groupType == ListTileGroupType.top ||
             groupType == ListTileGroupType.middle)
-          const Divider(height: 1),
+          const Gap(2),
       ],
     );
   }

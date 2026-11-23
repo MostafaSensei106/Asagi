@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:cupertino_modal_sheet/cupertino_modal_sheet.dart';
+import 'package:flutter/services.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -21,6 +24,7 @@ final class InfoBottomSheetComponent {
   }) {
     final scheme = context.colorScheme;
     final textTheme = context.textTheme;
+    unawaited(HapticFeedback.vibrate());
 
     return showCupertinoModalSheet<void>(
       context: context,
