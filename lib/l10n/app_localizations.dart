@@ -4287,6 +4287,24 @@ abstract class AppLocalizations {
   /// **'Checking the compressed video and its audio…'**
   String get verifyingCompressedVideo;
 
+  /// No description provided for @retryingCompression.
+  ///
+  /// In en, this message translates to:
+  /// **'Adjusting settings for another compression pass…'**
+  String get retryingCompression;
+
+  /// No description provided for @targetSizeNotReachedOutputIs.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not reach the target size. Output size: {size} MB.'**
+  String targetSizeNotReachedOutputIs(String size);
+
+  /// No description provided for @targetMayNotBeReachedBestEffort.
+  ///
+  /// In en, this message translates to:
+  /// **'The selected size may not be reachable. The export will use the best available settings, and its final size will be shown.'**
+  String get targetMayNotBeReachedBestEffort;
+
   /// No description provided for @savingCompressedVideo.
   ///
   /// In en, this message translates to:

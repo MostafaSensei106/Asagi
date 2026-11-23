@@ -18,6 +18,7 @@ abstract interface class VideoCompressionRepository {
     CompressionPreferences preferences, {
     SharePresetId? presetId,
     void Function(CompressionStep step)? onStep,
+    void Function(double start, double end)? onAttemptRange,
   });
   Future<CompressionPlan> previewPlan(
     SelectedVideo video,
@@ -32,6 +33,7 @@ abstract interface class VideoCompressionRepository {
   Future<ResumedCompression> resumeInterrupted(
     InterruptedCompressionJob job, {
     void Function(CompressionStep step)? onStep,
+    void Function(double start, double end)? onAttemptRange,
     void Function(SelectedVideo video)? onVideoReady,
   });
   Future<void> discardInterrupted(String jobId);

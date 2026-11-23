@@ -122,7 +122,13 @@ final class _CompressionAdvancedControlsState
         ),
         shape: const Border(),
         collapsedShape: const Border(),
-        leading: const Icon(LucideIcons.slidersHorizontal),
+        leading: ExpressiveIcon(
+          icon: LucideIcons.slidersHorizontal,
+          shape: ExpressiveIconShape.gem,
+          size: 40,
+          backgroundColor: colorScheme.secondaryContainer,
+          foregroundColor: colorScheme.onSecondaryContainer,
+        ),
         title: Text(
           l10n.advancedControls,
           style: textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
@@ -141,15 +147,15 @@ final class _CompressionAdvancedControlsState
         ),
         expandedCrossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Divider(),
           const Gap(AppSpacing.medium),
 
           // Maximum Resolution
-          Text(
+          _sectionHeading(
+            context,
+            LucideIcons.maximize,
             l10n.maximumResolution,
-            style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
           ),
-          const Gap(AppSpacing.small),
+          const Gap(AppSpacing.medium),
           Wrap(
             spacing: AppSpacing.small,
             runSpacing: AppSpacing.small,
@@ -209,11 +215,8 @@ final class _CompressionAdvancedControlsState
           const Gap(AppSpacing.large),
 
           // Maximum Frame Rate
-          Text(
-            l10n.maximumFrameRate,
-            style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
-          ),
-          const Gap(AppSpacing.small),
+          _sectionHeading(context, LucideIcons.gauge, l10n.maximumFrameRate),
+          const Gap(AppSpacing.medium),
           Wrap(
             spacing: AppSpacing.small,
             runSpacing: AppSpacing.small,
@@ -233,11 +236,8 @@ final class _CompressionAdvancedControlsState
           const Gap(AppSpacing.large),
 
           // Audio Bitrate
-          Text(
-            l10n.audioBitrate,
-            style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
-          ),
-          const Gap(AppSpacing.small),
+          _sectionHeading(context, LucideIcons.audioLines, l10n.audioBitrate),
+          const Gap(AppSpacing.medium),
           Wrap(
             spacing: AppSpacing.small,
             runSpacing: AppSpacing.small,
@@ -265,11 +265,12 @@ final class _CompressionAdvancedControlsState
           const Gap(AppSpacing.large),
 
           // Video Bitrate Ceiling
-          Text(
+          _sectionHeading(
+            context,
+            LucideIcons.gauge,
             l10n.videoBitrateCeilingKbps,
-            style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
           ),
-          const Gap(AppSpacing.small),
+          const Gap(AppSpacing.medium),
           TextField(
             controller: _videoBitrate,
             keyboardType: TextInputType.number,
@@ -297,21 +298,22 @@ final class _CompressionAdvancedControlsState
           const Gap(AppSpacing.large),
 
           // Safety Margin (Compression Strictness)
-          Text(
+          _sectionHeading(
+            context,
+            LucideIcons.slidersHorizontal,
             l10n.compressionStrictness,
-            style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
           ),
-          const Gap(AppSpacing.small),
+          const Gap(AppSpacing.medium),
           Wrap(
             spacing: AppSpacing.small,
             runSpacing: AppSpacing.small,
             children: [
               ChoiceChip(
                 label: Text(l10n.strictnessDefault),
-                selected: p.safetyMargin == null || p.safetyMargin == 0.93,
+                selected: p.safetyMargin == null || p.safetyMargin == 0.98,
                 onSelected: (_) {
                   unawaited(HapticFeedback.selectionClick());
-                  widget.onChanged(p.copyWith(safetyMargin: 0.93));
+                  widget.onChanged(p.copyWith(safetyMargin: 0.98));
                 },
               ),
               ChoiceChip(
@@ -336,11 +338,8 @@ final class _CompressionAdvancedControlsState
           const Gap(AppSpacing.large),
 
           // HDR Handling
-          Text(
-            l10n.hdrHandling,
-            style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
-          ),
-          const Gap(AppSpacing.small),
+          _sectionHeading(context, LucideIcons.sun, l10n.hdrHandling),
+          const Gap(AppSpacing.medium),
           SegmentedButton<HdrMode>(
             segments: [
               ButtonSegment(
@@ -362,4 +361,30 @@ final class _CompressionAdvancedControlsState
       ),
     );
   }
+}
+
+Widget _sectionHeading(BuildContext context, IconData icon, String title) {
+  final scheme = context.colorScheme;
+  return Row(
+    children: [
+      Container(
+        width: 30,
+        height: 30,
+        decoration: BoxDecoration(
+          color: scheme.secondaryContainer,
+          borderRadius: BorderRadius.circular(AppRadii.medium),
+        ),
+        child: Icon(icon, size: 16, color: scheme.onSecondaryContainer),
+      ),
+      const Gap.horizontal(AppSpacing.small),
+      Expanded(
+        child: Text(
+          title,
+          style: context.textTheme.titleSmall?.copyWith(
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+      ),
+    ],
+  );
 }

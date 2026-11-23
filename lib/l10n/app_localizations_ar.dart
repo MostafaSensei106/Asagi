@@ -2405,6 +2405,18 @@ class AppLocalizationsAr extends AppLocalizations {
       'جارٍ التحقق من الفيديو المضغوط والصوت…';
 
   @override
+  String get retryingCompression => 'جارٍ تعديل الإعدادات لإعادة محاولة الضغط…';
+
+  @override
+  String targetSizeNotReachedOutputIs(String size) {
+    return 'تعذّر الوصول للحجم المستهدف. الحجم الناتج: $size م.ب.';
+  }
+
+  @override
+  String get targetMayNotBeReachedBestEffort =>
+      'قد يتعذر الوصول للحجم المحدد. سنستخدم أفضل إعدادات متاحة، وسيظهر الحجم الفعلي بعد الضغط.';
+
+  @override
   String get savingCompressedVideo =>
       'جارٍ حفظ الفيديو المضغوط على هذا الجهاز…';
 

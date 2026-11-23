@@ -41,6 +41,7 @@ final class CompressionEngine {
     String? sourceName,
     SharePresetId? presetId,
     void Function(CompressionStep step)? onStep,
+    void Function(double start, double end)? onAttemptRange,
   }) async {
     preferences.validate();
     onStep?.call(CompressionStep.preparing);
@@ -101,6 +102,10 @@ final class CompressionEngine {
         final path = job.pathForAttempt(attempt);
         _control.encoding = true;
         try {
+          onAttemptRange?.call(
+            (attempt - 1) / plan.maxAttempts,
+            attempt / plan.maxAttempts,
+          );
           onStep?.call(CompressionStep.encoding);
           await encoder.encode(
             EncodeRequest(
@@ -146,6 +151,7 @@ final class CompressionEngine {
             // Calibration is best-effort; a verified encode remains valid.
           }
         }
+        if (bytes <= 0) throw StateError('E_INVALID_OUTPUT');
         // A stricter planning target can be used to compensate for hardware
         // bitrate overshoot while retaining the user's original hard limit.
         if (acceptedMaxBytes != null &&
@@ -154,14 +160,41 @@ final class CompressionEngine {
           await _control.checkpoint();
           await saveJobState('complete', attempt);
           await job.commit();
-          return CompressionOutput(path, bytes, attempt, plan.warningMessage);
+          return CompressionOutput(
+            path,
+            bytes,
+            attempt,
+            plan.warningMessage == 'TARGET_SIZE_UNREACHABLE'
+                ? null
+                : plan.warningMessage,
+          );
         }
-        final next = await planner.verify(
-          bytes,
-          info.durationSecs,
-          plan,
-          attempt,
-        );
+        if (attempt == plan.maxAttempts) {
+          await _control.checkpoint();
+          await saveJobState('complete', attempt);
+          await job.commit();
+          return CompressionOutput(
+            path,
+            bytes,
+            attempt,
+            'TARGET_SIZE_UNREACHABLE',
+          );
+        }
+        late final int next;
+        try {
+          next = await planner.verify(bytes, info.durationSecs, plan, attempt);
+        } catch (error) {
+          if (!'$error'.contains('E_TARGET_INFEASIBLE')) rethrow;
+          await _control.checkpoint();
+          await saveJobState('complete', attempt);
+          await job.commit();
+          return CompressionOutput(
+            path,
+            bytes,
+            attempt,
+            'TARGET_SIZE_UNREACHABLE',
+          );
+        }
         await _control.checkpoint();
         if (next == 0) {
           await saveJobState('complete', attempt);
@@ -169,6 +202,7 @@ final class CompressionEngine {
           return CompressionOutput(path, bytes, attempt, plan.warningMessage);
         }
         await job.discard(path);
+        onStep?.call(CompressionStep.replanning);
         plan = plan.withVideoBitrate(next);
       }
       throw StateError('E_TARGET_EXCEEDED');

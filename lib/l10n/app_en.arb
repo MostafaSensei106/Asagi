@@ -1594,6 +1594,16 @@
   "percentSaved": "-{percent}%",
   "encodingHardwareLive": "Encoding and optimizing video with native hardware…",
   "verifyingCompressedVideo": "Checking the compressed video and its audio…",
+  "retryingCompression": "Adjusting settings for another compression pass…",
+  "targetSizeNotReachedOutputIs": "Could not reach the target size. Output size: {size} MB.",
+  "@targetSizeNotReachedOutputIs": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "targetMayNotBeReachedBestEffort": "The selected size may not be reachable. The export will use the best available settings, and its final size will be shown.",
   "savingCompressedVideo": "Saving the compressed video on this device…",
   "compressionCompletedSuccessfully": "Compression finished successfully!",
   "compressionStrictness": "Compression Strictness",

@@ -2384,6 +2384,19 @@ class AppLocalizationsZh extends AppLocalizations {
       'Checking the compressed video and its audio…';
 
   @override
+  String get retryingCompression =>
+      'Adjusting settings for another compression pass…';
+
+  @override
+  String targetSizeNotReachedOutputIs(String size) {
+    return 'Could not reach the target size. Output size: $size MB.';
+  }
+
+  @override
+  String get targetMayNotBeReachedBestEffort =>
+      'The selected size may not be reachable. The export will use the best available settings, and its final size will be shown.';
+
+  @override
   String get savingCompressedVideo =>
       'Saving the compressed video on this device…';
 

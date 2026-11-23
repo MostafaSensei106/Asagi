@@ -1403,6 +1403,16 @@
   "percentSaved": "-{percent}%",
   "encodingHardwareLive": "جاري ترميز وتحسين الفيديو بواسطة العتاد المحلي…",
   "verifyingCompressedVideo": "جارٍ التحقق من الفيديو المضغوط والصوت…",
+  "retryingCompression": "جارٍ تعديل الإعدادات لإعادة محاولة الضغط…",
+  "targetSizeNotReachedOutputIs": "تعذّر الوصول للحجم المستهدف. الحجم الناتج: {size} م.ب.",
+  "@targetSizeNotReachedOutputIs": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "targetMayNotBeReachedBestEffort": "قد يتعذر الوصول للحجم المحدد. سنستخدم أفضل إعدادات متاحة، وسيظهر الحجم الفعلي بعد الضغط.",
   "savingCompressedVideo": "جارٍ حفظ الفيديو المضغوط على هذا الجهاز…",
   "compressionCompletedSuccessfully": "اكتمل ضغط الفيديو بنجاح!",
   "compressionStrictness": "دقة وهامش الضغط",

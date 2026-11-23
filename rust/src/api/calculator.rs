@@ -22,7 +22,7 @@ pub fn calculate_compression_plan(
         (target_size_mb * 1_000_000.0) as u64,
         custom_k_factor
             .map(|k| (f64::from(k) * 1_000_000.0).round() / 1_000_000.0)
-            .unwrap_or(0.93),
+            .unwrap_or(0.98),
     )
 }
 
@@ -47,7 +47,7 @@ pub fn calculate_custom_compression_plan(
         (target_size_mb * 1_000_000.0) as u64,
         custom_k_factor
             .map(|k| (f64::from(k) * 1_000_000.0).round() / 1_000_000.0)
-            .unwrap_or(0.93),
+            .unwrap_or(0.98),
         &preferences,
     )
 }
@@ -146,7 +146,7 @@ fn authorize_pro_receipt(
 /// Invalid values are passed through so `resolve` reports `E_INVALID_PREFERENCES`
 /// instead of being silently replaced by a default.
 fn safety_margin(custom_k_factor: Option<f32>) -> f64 {
-    custom_k_factor.map_or(0.93, f64::from)
+    custom_k_factor.map_or(0.98, f64::from)
 }
 
 #[cfg(test)]

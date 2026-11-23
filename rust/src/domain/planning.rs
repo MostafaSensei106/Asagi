@@ -107,12 +107,25 @@ impl TargetSizePolicy {
         let allowed = |r: &&(u32, u32, u32)| {
             preferences.max_short_edge == 0 || r.0 <= preferences.max_short_edge
         };
-        let chosen = ladder
+        let budget_fit = ladder
             .iter()
             .filter(|r| r.0 >= 480)
             .filter(allowed)
             .find(|r| video >= r.2)
             .or_else(|| ladder.iter().filter(allowed).find(|r| video >= r.1));
+        // When the requested size cannot fund the minimum usable bitrate,
+        // still produce the smallest supported rendition as a best effort.
+        // The result carries a warning and the UI reports its actual size.
+        let missed_target = !skip && budget_fit.is_none();
+        let chosen = budget_fit.or_else(|| ladder.iter().filter(allowed).last());
+        if missed_target {
+            if let Some((_, minimum, _)) = chosen {
+                video = video.max(*minimum).max(150_000);
+                if preferences.video_bitrate_ceiling_bps > 0 {
+                    video = video.min(preferences.video_bitrate_ceiling_bps);
+                }
+            }
+        }
         let low = chosen.is_some_and(|r| video < r.2);
         let (w, h) = if skip {
             (
@@ -144,6 +157,8 @@ impl TargetSizePolicy {
             is_infeasible: !skip && chosen.is_none(),
             warning_message: if skip {
                 Some("ALREADY_WITHIN_LIMIT".into())
+            } else if missed_target {
+                Some("TARGET_SIZE_UNREACHABLE".into())
             } else if low {
                 Some("LOW_QUALITY".into())
             } else {
@@ -194,12 +209,15 @@ mod tests {
         assert!(p.warning_message.is_some());
     }
     #[test]
-    fn impossible() {
-        assert!(
-            TargetSizePolicy
-                .plan(&input(600.0), 16000000, 0.93)
-                .unwrap()
-                .is_infeasible
+    fn unreachable_size_returns_best_effort_plan() {
+        let plan = TargetSizePolicy
+            .plan(&input(600.0), 16000000, 0.93)
+            .unwrap();
+        assert!(!plan.is_infeasible);
+        assert!(plan.target_width > 0 && plan.target_height > 0);
+        assert_eq!(
+            plan.warning_message.as_deref(),
+            Some("TARGET_SIZE_UNREACHABLE")
         );
     }
     #[test]

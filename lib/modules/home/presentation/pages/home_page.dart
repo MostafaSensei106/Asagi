@@ -20,6 +20,7 @@ import '../../../compression/presentation/widgets/compression_advanced_controls.
 import '../../../compression/presentation/widgets/compression_error_text.dart';
 import '../../../compression/presentation/widgets/compression_plan_summary.dart';
 import '../widgets/compression_activity_panel.dart';
+import '../widgets/home_target_size_card.dart';
 import '../widgets/home_video_state_cards.dart';
 import '../widgets/home_welcome_card.dart';
 
@@ -234,7 +235,16 @@ final class HomePage extends HookWidget {
                               '${context.localeKeys.outputSize}: '
                               '${(output.bytes / 1000000).toStringAsFixed(1)} MB',
                             ),
-                            if (output.warning != null) Text(output.warning!),
+                            if (output.warning != null)
+                              Text(
+                                output.warning == 'TARGET_SIZE_UNREACHABLE'
+                                    ? context.localeKeys
+                                          .targetSizeNotReachedOutputIs(
+                                            (output.bytes / 1000000)
+                                                .toStringAsFixed(1),
+                                          )
+                                    : output.warning!,
+                              ),
                             const SizedBox(height: 24),
                             FilledButton.icon(
                               onPressed: () async {
@@ -281,46 +291,17 @@ final class HomePage extends HookWidget {
                               label: Text(context.localeKeys.shareVideo),
                             ),
                           ] else ...[
-                            const SizedBox(height: 24),
-                            Text(
-                              context.localeKeys.targetPreset,
-                              style: Theme.of(context).textTheme.titleMedium,
-                            ),
-                            const SizedBox(height: 8),
-                            Wrap(
-                              spacing: 8,
-                              children: [
-                                for (final preset in const [8.0, 16.0, 25.0])
-                                  ChoiceChip(
-                                    label: Text('${preset.toInt()} MB'),
-                                    selected: state.targetMb == preset,
-                                    onSelected: (_) {
-                                      targetController.text =
-                                          '${preset.toInt()}';
-                                      validTarget.value = true;
-                                      cubit.setTargetMb(preset);
-                                    },
-                                  ),
-                              ],
-                            ),
-                            const SizedBox(height: 12),
-                            TextField(
+                            const Gap(AppSpacing.large),
+                            HomeTargetSizeCard(
+                              targetMb: state.targetMb,
                               controller: targetController,
-                              keyboardType:
-                                  const TextInputType.numberWithOptions(
-                                    decimal: true,
-                                  ),
-                              decoration: InputDecoration(
-                                labelText: context.localeKeys.targetSizeMB,
-                                hintText: '${state.targetMb}',
-                                errorText: validTarget.value
-                                    ? null
-                                    : context
-                                          .localeKeys
-                                          .enterATargetSizeGreaterThanZero,
-                                border: const OutlineInputBorder(),
-                              ),
-                              onChanged: (text) {
+                              isValid: validTarget.value,
+                              onPresetSelected: (preset) {
+                                targetController.text = '${preset.toInt()}';
+                                validTarget.value = true;
+                                cubit.setTargetMb(preset);
+                              },
+                              onCustomSizeChanged: (text) {
                                 final value = double.tryParse(
                                   text.replaceAll(',', '.'),
                                 );
@@ -333,10 +314,14 @@ final class HomePage extends HookWidget {
                                 }
                               },
                             ),
-                            if (state.phase == CompressionPhase.failure)
+                            if (state.phase == CompressionPhase.failure) ...[
+                              const Gap(AppSpacing.medium),
                               _CompressionError(error: state.error),
-                            if (state.phase == CompressionPhase.cancelled)
+                            ],
+                            if (state.phase == CompressionPhase.cancelled) ...[
+                              const Gap(AppSpacing.medium),
                               Text(context.localeKeys.compressionCancelled),
+                            ],
                             if (Platform.isAndroid)
                               CompressionAdvancedControls(
                                 preferences: state.preferences,
@@ -347,22 +332,28 @@ final class HomePage extends HookWidget {
                                 onChanged: (value) =>
                                     unawaited(cubit.setPreferences(value)),
                               ),
+                            const Gap(AppSpacing.medium),
                             CompressionPlanSummary(
                               plan: state.previewPlan,
                               isLoading: state.planning,
                               hasAudio: video.metadata.hasAudio,
                             ),
-                            const SizedBox(height: 24),
-                            FilledButton.icon(
-                              onPressed:
+                            const Gap(AppSpacing.large),
+                            FilledButtonComponent.icon(
+                              expand: true,
+                              icon: AsagiIcons.compressionSetup,
+                              label: state.planning
+                                  ? context
+                                        .localeKeys
+                                        .calculatingCompressionPlan
+                                  : context.localeKeys.startCompression,
+                              isLoading: state.planning,
+                              isEnabled:
                                   validTarget.value &&
-                                      !state.planning &&
-                                      state.previewPlan != null &&
-                                      !state.previewPlan!.isInfeasible
-                                  ? start
-                                  : null,
-                              icon: const Icon(Icons.compress),
-                              label: Text(context.localeKeys.startCompression),
+                                  !state.planning &&
+                                  state.previewPlan != null &&
+                                  !state.previewPlan!.isInfeasible,
+                              onPressed: start,
                             ),
                           ],
                         ],

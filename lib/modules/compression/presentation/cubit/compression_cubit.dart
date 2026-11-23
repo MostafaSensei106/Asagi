@@ -236,6 +236,8 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
       return;
     }
     await _progressSubscription?.cancel();
+    var attemptStart = 0.0;
+    var attemptEnd = 1.0;
     emit(
       current.copyWith(
         phase: CompressionPhase.running,
@@ -245,8 +247,13 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
     );
     _progressSubscription = repository.progress.listen((value) {
       if (isClosed || stateValue.phase == CompressionPhase.cancelled) return;
-      // Native 100% means encoding ended; verification and saving still follow.
-      emit(stateValue.copyWith(progress: value.clamp(0.0, 0.95)));
+      final localProgress = value.clamp(0.0, 1.0).toDouble();
+      final candidate =
+          (attemptStart + (attemptEnd - attemptStart) * localProgress) * 0.95;
+      final progress = candidate > stateValue.progress
+          ? candidate
+          : stateValue.progress;
+      emit(stateValue.copyWith(progress: progress));
     });
     try {
       final output = await repository.compress(
@@ -254,6 +261,10 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
         current.targetMb,
         current.preferences,
         presetId: current.selectedPresetId,
+        onAttemptRange: (start, end) {
+          attemptStart = start;
+          attemptEnd = end;
+        },
         onStep: (step) {
           if (!isClosed && stateValue.phase == CompressionPhase.running) {
             emit(
@@ -350,6 +361,8 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
       return;
     }
     await _progressSubscription?.cancel();
+    var attemptStart = 0.0;
+    var attemptEnd = 1.0;
     emit(
       stateValue.copyWith(
         phase: CompressionPhase.running,
@@ -364,12 +377,22 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
       if (!isClosed &&
           (stateValue.phase == CompressionPhase.running ||
               stateValue.phase == CompressionPhase.saving)) {
-        emit(stateValue.copyWith(progress: value.clamp(0.0, 0.95)));
+        final localProgress = value.clamp(0.0, 1.0).toDouble();
+        final candidate =
+            (attemptStart + (attemptEnd - attemptStart) * localProgress) * 0.95;
+        final progress = candidate > stateValue.progress
+            ? candidate
+            : stateValue.progress;
+        emit(stateValue.copyWith(progress: progress));
       }
     });
     try {
       final result = await repository.resumeInterrupted(
         job,
+        onAttemptRange: (start, end) {
+          attemptStart = start;
+          attemptEnd = end;
+        },
         onVideoReady: (video) {
           if (!isClosed && stateValue.phase == CompressionPhase.running) {
             emit(stateValue.copyWith(video: video));

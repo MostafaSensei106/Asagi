@@ -25,12 +25,19 @@ final class CompressionActivityPanel extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.localeKeys;
     final scheme = context.colorScheme;
+    final isReplanning = state.step == CompressionStep.replanning;
     final steps = <(CompressionStep, String)>[
       (CompressionStep.preparing, l10n.calculatingCompressionPlan),
-      (CompressionStep.encoding, l10n.encodingHardwareLive),
+      (
+        CompressionStep.encoding,
+        isReplanning ? l10n.retryingCompression : l10n.encodingHardwareLive,
+      ),
       (CompressionStep.verifying, l10n.verifyingCompressedVideo),
       (CompressionStep.saving, l10n.savingCompressedVideo),
     ];
+    final currentStepLabel = isReplanning
+        ? l10n.retryingCompression
+        : steps.firstWhere((step) => step.$1 == state.step).$2;
     final progress = state.progress.clamp(0.0, 1.0).toDouble();
     final isRunning = state.phase == CompressionPhase.running;
     final isPaused = state.phase == CompressionPhase.paused;
@@ -87,7 +94,7 @@ final class CompressionActivityPanel extends StatelessWidget {
           const Gap(AppSpacing.large),
           Semantics(
             liveRegion: true,
-            label: steps[state.step.index].$2,
+            label: currentStepLabel,
             value: '${(progress * 100).round()}%',
             child: ClipRRect(
               borderRadius: BorderRadius.circular(AppRadii.pill),
@@ -102,8 +109,21 @@ final class CompressionActivityPanel extends StatelessWidget {
           for (final (step, label) in steps)
             _CompressionStepRow(
               label: label,
-              isComplete: step.index < state.step.index,
-              isCurrent: step == state.step,
+              isComplete: switch (step) {
+                CompressionStep.preparing =>
+                  state.step != CompressionStep.preparing,
+                CompressionStep.encoding =>
+                  state.step == CompressionStep.verifying ||
+                      state.step == CompressionStep.replanning ||
+                      state.step == CompressionStep.saving,
+                CompressionStep.verifying =>
+                  state.step == CompressionStep.replanning ||
+                      state.step == CompressionStep.saving,
+                CompressionStep.replanning || CompressionStep.saving => false,
+              },
+              isCurrent:
+                  step == state.step ||
+                  (isReplanning && step == CompressionStep.encoding),
               isPaused: state.phase == CompressionPhase.paused,
             ),
           const Gap(AppSpacing.medium),

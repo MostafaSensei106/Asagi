@@ -200,7 +200,13 @@ final class CompressionResultPage extends HookWidget {
                         const Gap(AppSpacing.small),
                         Expanded(
                           child: Text(
-                            output.warning!,
+                            output.warning == 'TARGET_SIZE_UNREACHABLE'
+                                ? l10n.targetSizeNotReachedOutputIs(
+                                    (compressedBytes / 1000000).toStringAsFixed(
+                                      1,
+                                    ),
+                                  )
+                                : output.warning!,
                             style: textTheme.bodySmall?.copyWith(
                               color: colorScheme.onSurfaceVariant,
                             ),

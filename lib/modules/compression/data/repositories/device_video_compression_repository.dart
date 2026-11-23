@@ -66,6 +66,7 @@ final class DeviceVideoCompressionRepository
     CompressionPreferences preferences, {
     SharePresetId? presetId,
     void Function(CompressionStep step)? onStep,
+    void Function(double start, double end)? onAttemptRange,
   }) async {
     if (!targetMb.isFinite || targetMb <= 0) {
       throw ArgumentError.value(targetMb, 'targetMb');
@@ -114,12 +115,8 @@ final class DeviceVideoCompressionRepository
       );
       if (learnedPlan.isInfeasible) learnedFactor = 1.0;
     }
-    final factors = <double>[
-      if (learnedFactor < 0.99) learnedFactor,
-      if (learnedFactor == 1.0) 1.0,
-      if (learnedFactor > 0.8) 0.8,
-      if (learnedFactor > 0.65) 0.65,
-    ];
+    final factors = <double>[learnedFactor];
+    if (learnedFactor > 0.8) factors.add(0.8);
     // Some hardware encoders exceed their requested bitrate. Re-plan with a
     // smaller budget before reporting that the requested file size is impossible.
     CompressionOutput? output;
@@ -143,6 +140,10 @@ final class DeviceVideoCompressionRepository
                   bytes,
                 ),
           onStep: onStep,
+          onAttemptRange: (start, end) => onAttemptRange?.call(
+            (index + start) / factors.length,
+            (index + end) / factors.length,
+          ),
         );
         break;
       } catch (error) {
@@ -152,6 +153,7 @@ final class DeviceVideoCompressionRepository
         if (index == factors.length - 1 || infeasible) {
           throw StateError('E_TARGET_EXCEEDED');
         }
+        onStep?.call(CompressionStep.replanning);
       }
     }
     final verifiedOutput = output!;
@@ -369,6 +371,7 @@ final class DeviceVideoCompressionRepository
   Future<ResumedCompression> resumeInterrupted(
     InterruptedCompressionJob job, {
     void Function(CompressionStep step)? onStep,
+    void Function(double start, double end)? onAttemptRange,
     void Function(SelectedVideo video)? onVideoReady,
   }) async {
     final source = File(job.sourcePath);
@@ -385,6 +388,7 @@ final class DeviceVideoCompressionRepository
       job.targetMb,
       job.preferences,
       onStep: onStep,
+      onAttemptRange: onAttemptRange,
     );
     await discardInterrupted(job.id);
     return ResumedCompression(video: video, output: output);
