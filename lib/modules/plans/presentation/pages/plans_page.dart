@@ -19,28 +19,30 @@ final class PlansPage extends StatelessWidget {
       buildWhen: (before, after) => before != after,
       builder: (context, state) {
         final cubit = context.read<SubscriptionCubit>();
-        return ListView(
-          padding: const EdgeInsets.symmetric(
-            horizontal: AppSpacing.large,
-            vertical: AppSpacing.small,
-          ),
-          children: [
-            SubscriptionOfferCard(state: state, onSubscribe: cubit.purchase),
-            const Gap(AppSpacing.large),
-            SubscriptionFeedback(state: state, onRetry: cubit.load),
-            const Gap(AppSpacing.small),
-            Center(
-              child: SizedBox(
-                width: double.infinity,
-                child: OutlinedButtonComponent.icon(
-                  icon: AsagiIcons.restorePurchases,
-                  label: context.localeKeys.restorePurchases,
-                  //  isEnable: !state.isPurchasing,
-                  onPressed: !state.isPurchasing ? cubit.restore : null,
+        return SafeArea(
+          child: ListView(
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.large,
+              vertical: AppSpacing.small,
+            ),
+            children: [
+              SubscriptionOfferCard(state: state, onSubscribe: cubit.purchase),
+              const Gap(AppSpacing.large),
+              SubscriptionFeedback(state: state, onRetry: cubit.load),
+              const Gap(AppSpacing.small),
+              Center(
+                child: SizedBox(
+                  width: double.infinity,
+                  child: OutlinedButtonComponent.icon(
+                    icon: AsagiIcons.restorePurchases,
+                    label: context.localeKeys.restorePurchases,
+                    //  isEnable: !state.isPurchasing,
+                    onPressed: !state.isPurchasing ? cubit.restore : null,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         );
       },
     ),

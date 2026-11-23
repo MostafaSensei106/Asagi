@@ -68,118 +68,140 @@ final class SubscriptionOfferCard extends StatelessWidget {
       borderRadius: BorderRadius.circular(AppRadii.xLarge),
       child: DecoratedBox(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: AlignmentDirectional.topStart,
-            end: AlignmentDirectional.bottomEnd,
-            colors: [scheme.primaryContainer, scheme.secondaryContainer],
-          ),
+          color: scheme.surfaceContainerLow,
+          border: Border.all(color: scheme.outlineVariant),
+          borderRadius: BorderRadius.circular(AppRadii.xLarge),
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(AppSpacing.small),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  ExpressiveIcon(
-                    icon: AsagiIcons.plans,
-                    shape: ExpressiveIconShape.gem,
-                    size: 68,
-                    backgroundColor: scheme.surface.withValues(alpha: 0.72),
-                    foregroundColor: scheme.onPrimaryContainer,
-                  ),
-                  const Gap.horizontal(AppSpacing.large),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            DecoratedBox(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: AlignmentDirectional.topStart,
+                  end: AlignmentDirectional.bottomEnd,
+                  colors: [scheme.primaryContainer, scheme.secondaryContainer],
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(AppSpacing.large),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
                       children: [
-                        Text(
-                          l10n.asagiProTitle,
-                          style: context.textTheme.headlineSmall?.copyWith(
-                            fontWeight: FontWeight.w800,
-                            color: scheme.onPrimaryContainer,
+                        ExpressiveIcon(
+                          icon: AsagiIcons.plans,
+                          shape: ExpressiveIconShape.gem,
+                          size: 56,
+                          backgroundColor: scheme.surface.withValues(alpha: 0.72),
+                          foregroundColor: scheme.onPrimaryContainer,
+                        ),
+                        const Gap.horizontal(AppSpacing.medium),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                l10n.asagiProTitle,
+                                style: context.textTheme.headlineSmall?.copyWith(
+                                  fontWeight: FontWeight.w800,
+                                  color: scheme.onPrimaryContainer,
+                                ),
+                              ),
+                              const Gap(AppSpacing.small),
+                              _StatusPill(isActive: state.isActive),
+                            ],
                           ),
                         ),
-                        const Gap(AppSpacing.small),
-                        _StatusPill(isActive: state.isActive),
                       ],
                     ),
-                  ),
-                ],
-              ),
-              const Gap(AppSpacing.large),
-              Text(
-                priceLabel,
-                style: context.textTheme.headlineSmall?.copyWith(
-                  fontWeight: FontWeight.w800,
-                  color: scheme.onPrimaryContainer,
+                    const Gap(AppSpacing.large),
+                    Text(
+                      priceLabel,
+                      style: context.textTheme.headlineMedium?.copyWith(
+                        fontWeight: FontWeight.w800,
+                        color: scheme.onPrimaryContainer,
+                      ),
+                    ),
+                    if (state.isLoading && offer == null) ...[
+                      const Gap(AppSpacing.small),
+                      const LinearProgressIndicator(),
+                    ],
+                  ],
                 ),
               ),
-              if (state.isLoading && offer == null) ...[
-                const Gap(AppSpacing.small),
-                const LinearProgressIndicator(),
-              ],
-              const Gap(AppSpacing.large),
-              Text(
-                l10n.proBenefitsTitle,
-                style: context.textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.w800,
-                ),
-              ),
-              for (final group in groups) ...[
-                const Gap(AppSpacing.medium),
-                _FeatureGroup(group: group),
-              ],
-              const Gap(AppSpacing.large),
-              FilledButtonComponent.icon(
-                expand: true,
-                icon: state.isActive ? LucideIcons.check : AsagiIcons.plans,
-                label: state.isActive
-                    ? l10n.subscriptionActive
-                    : state.isPurchasing
-                    ? l10n.pleaseWait
-                    : l10n.subscribe,
-                isEnabled: canSubscribe,
-                isLoading: state.isPurchasing,
-                onPressed: canSubscribe ? onSubscribe : null,
-              ),
-              const Gap(AppSpacing.medium),
-              Row(
+            ),
+            Padding(
+              padding: const EdgeInsets.all(AppSpacing.large),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Icon(
-                    LucideIcons.shieldCheck,
-                    size: 17,
-                    color: scheme.onPrimaryContainer.withValues(alpha: 0.78),
+                  Text(
+                    l10n.proBenefitsTitle,
+                    style: context.textTheme.titleLarge?.copyWith(
+                      fontWeight: FontWeight.w800,
+                    ),
                   ),
-                  const Gap.horizontal(AppSpacing.small),
-                  Expanded(
-                    child: Text(
-                      l10n.subscriptionSecureBilling,
-                      style: context.textTheme.bodySmall?.copyWith(
-                        color: scheme.onPrimaryContainer.withValues(
-                          alpha: 0.78,
+                  const Gap(AppSpacing.small),
+                  for (var index = 0; index < groups.length; index++) ...[
+                    if (index > 0) ...[
+                      const Gap(AppSpacing.small),
+                      Divider(color: scheme.outlineVariant),
+                    ],
+                    const Gap(AppSpacing.small),
+                    _FeatureGroup(group: groups[index]),
+                  ],
+                  const Gap(AppSpacing.large),
+                  FilledButtonComponent.icon(
+                    expand: true,
+                    icon: state.isActive ? LucideIcons.check : AsagiIcons.plans,
+                    label: state.isActive
+                        ? l10n.subscriptionActive
+                        : state.isPurchasing
+                        ? l10n.pleaseWait
+                        : l10n.subscribe,
+                    isEnabled: canSubscribe,
+                    isLoading: state.isPurchasing,
+                    onPressed: canSubscribe ? onSubscribe : null,
+                  ),
+                  const Gap(AppSpacing.medium),
+                  Row(
+                    children: [
+                      Icon(
+                        LucideIcons.shieldCheck,
+                        size: 17,
+                        color: scheme.onSurfaceVariant,
+                      ),
+                      const Gap.horizontal(AppSpacing.small),
+                      Expanded(
+                        child: Text(
+                          l10n.subscriptionSecureBilling,
+                          style: context.textTheme.bodySmall?.copyWith(
+                            color: scheme.onSurfaceVariant,
+                          ),
                         ),
                       ),
+                    ],
+                  ),
+                  const Gap(AppSpacing.small),
+                  Text(
+                    l10n.proPlatformAvailabilityNote,
+                    style: context.textTheme.bodySmall?.copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                  const Gap(AppSpacing.small),
+                  Text(
+                    l10n.proAiAvailabilityNote,
+                    style: context.textTheme.bodySmall?.copyWith(
+                      color: scheme.onSurfaceVariant,
                     ),
                   ),
                 ],
               ),
-              const Gap(AppSpacing.small),
-              Text(
-                l10n.proPlatformAvailabilityNote,
-                style: context.textTheme.bodySmall?.copyWith(
-                  color: scheme.onPrimaryContainer.withValues(alpha: 0.78),
-                ),
-              ),
-              const Gap(AppSpacing.small),
-              Text(
-                l10n.proAiAvailabilityNote,
-                style: context.textTheme.bodySmall?.copyWith(
-                  color: scheme.onPrimaryContainer.withValues(alpha: 0.78),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -200,7 +222,7 @@ final class _FeatureGroup extends StatelessWidget {
           group.title,
           style: context.textTheme.titleSmall?.copyWith(
             fontWeight: FontWeight.w800,
-            color: context.colorScheme.onPrimaryContainer,
+            color: context.colorScheme.onSurface,
           ),
         ),
         const Gap(AppSpacing.xSmall),
@@ -225,9 +247,7 @@ final class _FeatureRow extends StatelessWidget {
           width: 22,
           height: 22,
           decoration: BoxDecoration(
-            color: context.colorScheme.onPrimaryContainer.withValues(
-              alpha: 0.12,
-            ),
+            color: context.colorScheme.primaryContainer,
             shape: BoxShape.circle,
           ),
           child: Icon(
@@ -241,7 +261,7 @@ final class _FeatureRow extends StatelessWidget {
           child: Text(
             feature.text,
             style: context.textTheme.bodyMedium?.copyWith(
-              color: context.colorScheme.onPrimaryContainer,
+              color: context.colorScheme.onSurface,
               height: 1.35,
             ),
           ),
