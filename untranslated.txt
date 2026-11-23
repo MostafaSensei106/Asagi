@@ -404,7 +404,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "de_DE": [
@@ -812,7 +822,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "es": [
@@ -1220,7 +1240,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "es_ES": [
@@ -1628,7 +1658,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "fr": [
@@ -2036,7 +2076,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "id": [
@@ -2444,7 +2494,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "id_ID": [
@@ -2852,7 +2912,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "it": [
@@ -3260,7 +3330,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "it_IT": [
@@ -3668,7 +3748,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "ja": [
@@ -4076,7 +4166,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "ja_JP": [
@@ -4484,7 +4584,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "ko": [
@@ -4892,7 +5002,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "ko_KR": [
@@ -5300,7 +5420,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "nl": [
@@ -5708,7 +5838,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "nl_BE": [
@@ -6116,7 +6256,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "pl": [
@@ -6524,7 +6674,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "pl_PL": [
@@ -6932,7 +7092,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "pt": [
@@ -7340,7 +7510,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "pt_BR": [
@@ -7748,7 +7928,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "ru": [
@@ -8156,7 +8346,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "ru_RU": [
@@ -8564,7 +8764,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "sv": [
@@ -8972,7 +9182,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "sv_SE": [
@@ -9380,7 +9600,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "th": [
@@ -9788,7 +10018,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "th_TH": [
@@ -10196,7 +10436,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "tr": [
@@ -10604,7 +10854,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "tr_TR": [
@@ -11012,7 +11272,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "vi": [
@@ -11420,7 +11690,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "zh": [
@@ -11828,7 +12108,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "zh_CN": [
@@ -12236,7 +12526,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "zh_HK": [
@@ -12644,7 +12944,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "zh_SG": [
@@ -13052,7 +13362,17 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ],
 
   "zh_TW": [
@@ -13460,6 +13780,16 @@
     "digitalWalletsDetails",
     "storeProtectedPurchases",
     "storeProtectedPurchasesSummary",
-    "storeProtectedPurchasesDetails"
+    "storeProtectedPurchasesDetails",
+    "megabytesShort",
+    "percentSmaller",
+    "percentSaved",
+    "encodingHardwareLive",
+    "compressionCompletedSuccessfully",
+    "compressionStrictness",
+    "strictnessDefault",
+    "strictnessSafe",
+    "strictnessAggressive",
+    "historySummarySubtitle"
   ]
 }

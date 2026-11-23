@@ -125,7 +125,7 @@ final class ListTileIconComponent extends StatelessWidget {
       onTap: onTap == null
           ? null
           : () {
-              unawaited(HapticFeedback.selectionClick());
+              unawaited(HapticFeedback.vibrate());
               onTap!();
             },
     );

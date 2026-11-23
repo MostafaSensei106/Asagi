@@ -1,10 +1,14 @@
+import 'dart:async';
+
+import 'package:flutter/services.dart';
+import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/compression/domain/models/compression_preferences.dart';
 import '../../../../core/compression/domain/models/encode_request.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/widgets/design_system/tokens/tokens.dart';
-import '../../../../core/widgets/display/expressive_section_header.dart';
+import '../../../../core/widgets/widgets.dart';
 
 /// Controls that the Android compression pipeline can actually honor.
 final class CompressionAdvancedControls extends StatefulWidget {
@@ -81,7 +85,7 @@ final class _CompressionAdvancedControlsState
     final value = int.tryParse(_videoBitrate.text.trim());
     final valid =
         _videoBitrate.text.trim().isEmpty ||
-        (value != null && value >= 150 && value <= 500000);
+        (value != null && value >= 50 && value <= 500000);
     setState(() => _invalidBitrate = !valid);
     if (!valid) return;
     widget.onChanged(
@@ -95,8 +99,12 @@ final class _CompressionAdvancedControlsState
   @override
   Widget build(BuildContext context) {
     final p = widget.preferences;
+    final l10n = context.localeKeys;
+    final colorScheme = context.colorScheme;
+    final textTheme = context.textTheme;
     final source = widget.sourceShortEdge & ~1;
     final resolutions = <int>{
+      480,
       720,
       1080,
       1440,
@@ -104,131 +112,254 @@ final class _CompressionAdvancedControlsState
       4320,
       source,
     }.where((value) => value >= 240 && value <= source).toList()..sort();
-    return ExpansionTile(
-      title: ExpressiveSectionHeader(
-        title: context.localeKeys.advancedControls,
+
+    return CardComponent.filled(
+      padding: EdgeInsets.zero,
+      child: ExpansionTile(
+        tilePadding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.large,
+          vertical: AppSpacing.small,
+        ),
+        shape: const Border(),
+        collapsedShape: const Border(),
+        leading: const Icon(LucideIcons.slidersHorizontal),
+        title: Text(
+          l10n.advancedControls,
+          style: textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+        ),
+        subtitle: Text(
+          l10n.defaultResolutionBitrateAndOutputFormat,
+          style: textTheme.bodySmall?.copyWith(
+            color: colorScheme.onSurfaceVariant,
+          ),
+        ),
+        childrenPadding: const EdgeInsets.fromLTRB(
+          AppSpacing.large,
+          0,
+          AppSpacing.large,
+          AppSpacing.large,
+        ),
+        expandedCrossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Divider(),
+          const Gap(AppSpacing.medium),
+
+          // Maximum Resolution
+          Text(
+            l10n.maximumResolution,
+            style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
+          ),
+          const Gap(AppSpacing.small),
+          Wrap(
+            spacing: AppSpacing.small,
+            runSpacing: AppSpacing.small,
+            children: [
+              ChoiceChip(
+                label: Text(l10n.automatic),
+                selected: p.maxShortEdge == null,
+                onSelected: (_) {
+                  unawaited(HapticFeedback.selectionClick());
+                  widget.onChanged(p.copyWith(clearMaxShortEdge: true));
+                },
+              ),
+              for (final value in resolutions.reversed)
+                ChoiceChip(
+                  label: Text(
+                    value == source
+                        ? '${l10n.originalResolution} ($value)'
+                        : value == 2160
+                        ? '4K'
+                        : value == 4320
+                        ? '8K'
+                        : '${value}p',
+                  ),
+                  selected: p.maxShortEdge == value,
+                  onSelected: (_) {
+                    unawaited(HapticFeedback.selectionClick());
+                    widget.onChanged(p.copyWith(maxShortEdge: value));
+                  },
+                ),
+            ],
+          ),
+          const Gap(AppSpacing.medium),
+          TextField(
+            controller: _resolution,
+            keyboardType: TextInputType.number,
+            decoration: InputDecoration(
+              labelText: l10n.maximumResolution,
+              hintText: l10n.automatic,
+              errorText: _invalidResolution
+                  ? l10n.enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic
+                  : null,
+              contentPadding: const EdgeInsets.symmetric(
+                horizontal: AppSpacing.medium,
+                vertical: AppSpacing.small,
+              ),
+              filled: true,
+              fillColor: colorScheme.surfaceContainer,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(AppRadii.medium),
+                borderSide: BorderSide.none,
+              ),
+            ),
+            onSubmitted: (_) => _applyResolution(),
+            onEditingComplete: _applyResolution,
+          ),
+
+          const Gap(AppSpacing.large),
+
+          // Maximum Frame Rate
+          Text(
+            l10n.maximumFrameRate,
+            style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
+          ),
+          const Gap(AppSpacing.small),
+          Wrap(
+            spacing: AppSpacing.small,
+            runSpacing: AppSpacing.small,
+            children: [
+              for (final fps in const [24, 30, 60, 120])
+                ChoiceChip(
+                  label: Text('$fps fps'),
+                  selected: p.maxFrameRate == fps,
+                  onSelected: (_) {
+                    unawaited(HapticFeedback.selectionClick());
+                    widget.onChanged(p.copyWith(maxFrameRate: fps));
+                  },
+                ),
+            ],
+          ),
+
+          const Gap(AppSpacing.large),
+
+          // Audio Bitrate
+          Text(
+            l10n.audioBitrate,
+            style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
+          ),
+          const Gap(AppSpacing.small),
+          Wrap(
+            spacing: AppSpacing.small,
+            runSpacing: AppSpacing.small,
+            children: [
+              ChoiceChip(
+                label: Text(l10n.automatic),
+                selected: p.audioBitrateKbps == null,
+                onSelected: (_) {
+                  unawaited(HapticFeedback.selectionClick());
+                  widget.onChanged(p.copyWith(clearAudioBitrate: true));
+                },
+              ),
+              for (final rate in const [0, 48, 64, 96, 128, 160, 192, 256, 320])
+                ChoiceChip(
+                  label: Text(rate == 0 ? l10n.removeAudio : '$rate kbps'),
+                  selected: p.audioBitrateKbps == rate,
+                  onSelected: (_) {
+                    unawaited(HapticFeedback.selectionClick());
+                    widget.onChanged(p.copyWith(audioBitrateKbps: rate));
+                  },
+                ),
+            ],
+          ),
+
+          const Gap(AppSpacing.large),
+
+          // Video Bitrate Ceiling
+          Text(
+            l10n.videoBitrateCeilingKbps,
+            style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
+          ),
+          const Gap(AppSpacing.small),
+          TextField(
+            controller: _videoBitrate,
+            keyboardType: TextInputType.number,
+            decoration: InputDecoration(
+              labelText: l10n.videoBitrateCeilingKbps,
+              hintText: l10n.automatic,
+              errorText: _invalidBitrate
+                  ? l10n.enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic
+                  : null,
+              contentPadding: const EdgeInsets.symmetric(
+                horizontal: AppSpacing.medium,
+                vertical: AppSpacing.small,
+              ),
+              filled: true,
+              fillColor: colorScheme.surfaceContainer,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(AppRadii.medium),
+                borderSide: BorderSide.none,
+              ),
+            ),
+            onSubmitted: (_) => _applyVideoBitrate(),
+            onEditingComplete: _applyVideoBitrate,
+          ),
+
+          const Gap(AppSpacing.large),
+
+          // Safety Margin (Compression Strictness)
+          Text(
+            l10n.compressionStrictness,
+            style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
+          ),
+          const Gap(AppSpacing.small),
+          Wrap(
+            spacing: AppSpacing.small,
+            runSpacing: AppSpacing.small,
+            children: [
+              ChoiceChip(
+                label: Text(l10n.strictnessDefault),
+                selected: p.safetyMargin == null || p.safetyMargin == 0.93,
+                onSelected: (_) {
+                  unawaited(HapticFeedback.selectionClick());
+                  widget.onChanged(p.copyWith(safetyMargin: 0.93));
+                },
+              ),
+              ChoiceChip(
+                label: Text(l10n.strictnessSafe),
+                selected: p.safetyMargin == 0.90,
+                onSelected: (_) {
+                  unawaited(HapticFeedback.selectionClick());
+                  widget.onChanged(p.copyWith(safetyMargin: 0.90));
+                },
+              ),
+              ChoiceChip(
+                label: Text(l10n.strictnessAggressive),
+                selected: p.safetyMargin == 0.96,
+                onSelected: (_) {
+                  unawaited(HapticFeedback.selectionClick());
+                  widget.onChanged(p.copyWith(safetyMargin: 0.96));
+                },
+              ),
+            ],
+          ),
+
+          const Gap(AppSpacing.large),
+
+          // HDR Handling
+          Text(
+            l10n.hdrHandling,
+            style: textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
+          ),
+          const Gap(AppSpacing.small),
+          SegmentedButton<HdrMode>(
+            segments: [
+              ButtonSegment(
+                value: HdrMode.toneMapToSdr,
+                label: Text(l10n.convertToSDR),
+              ),
+              ButtonSegment(
+                value: HdrMode.preserve,
+                label: Text(l10n.keepHDRWhenSupported),
+              ),
+            ],
+            selected: {p.hdrMode},
+            onSelectionChanged: (selection) {
+              unawaited(HapticFeedback.selectionClick());
+              widget.onChanged(p.copyWith(hdrMode: selection.first));
+            },
+          ),
+        ],
       ),
-      childrenPadding: const EdgeInsets.all(AppSpacing.large),
-      expandedCrossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(context.localeKeys.maximumResolution),
-        const SizedBox(height: AppSpacing.small),
-        Wrap(
-          spacing: AppSpacing.small,
-          runSpacing: AppSpacing.small,
-          children: [
-            ChoiceChip(
-              label: Text(context.localeKeys.automatic),
-              selected: p.maxShortEdge == null,
-              onSelected: (_) =>
-                  widget.onChanged(p.copyWith(clearMaxShortEdge: true)),
-            ),
-            for (final value in resolutions.reversed)
-              ChoiceChip(
-                label: Text(
-                  value == source
-                      ? '${context.localeKeys.originalResolution} ($value)'
-                      : value == 2160
-                      ? '4K'
-                      : value == 4320
-                      ? '8K'
-                      : '${value}p',
-                ),
-                selected: p.maxShortEdge == value,
-                onSelected: (_) =>
-                    widget.onChanged(p.copyWith(maxShortEdge: value)),
-              ),
-          ],
-        ),
-        const SizedBox(height: AppSpacing.medium),
-        TextField(
-          controller: _resolution,
-          keyboardType: TextInputType.number,
-          decoration: InputDecoration(
-            labelText: context.localeKeys.maximumResolution,
-            hintText: context.localeKeys.automatic,
-            errorText: _invalidResolution
-                ? context
-                      .localeKeys
-                      .enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic
-                : null,
-          ),
-          onSubmitted: (_) => _applyResolution(),
-          onEditingComplete: _applyResolution,
-        ),
-        const SizedBox(height: AppSpacing.xLarge),
-        Text(context.localeKeys.maximumFrameRate),
-        const SizedBox(height: AppSpacing.small),
-        Wrap(
-          spacing: AppSpacing.small,
-          children: [
-            for (final fps in const [24, 30, 60, 120])
-              ChoiceChip(
-                label: Text('$fps fps'),
-                selected: p.maxFrameRate == fps,
-                onSelected: (_) =>
-                    widget.onChanged(p.copyWith(maxFrameRate: fps)),
-              ),
-          ],
-        ),
-        const SizedBox(height: AppSpacing.xLarge),
-        Text(context.localeKeys.audioBitrate),
-        const SizedBox(height: AppSpacing.small),
-        Wrap(
-          spacing: AppSpacing.small,
-          children: [
-            ChoiceChip(
-              label: Text(context.localeKeys.automatic),
-              selected: p.audioBitrateKbps == null,
-              onSelected: (_) =>
-                  widget.onChanged(p.copyWith(clearAudioBitrate: true)),
-            ),
-            for (final rate in const [0, 48, 64, 96, 128])
-              ChoiceChip(
-                label: Text(
-                  rate == 0 ? context.localeKeys.removeAudio : '$rate kbps',
-                ),
-                selected: p.audioBitrateKbps == rate,
-                onSelected: (_) =>
-                    widget.onChanged(p.copyWith(audioBitrateKbps: rate)),
-              ),
-          ],
-        ),
-        const SizedBox(height: AppSpacing.xLarge),
-        TextField(
-          controller: _videoBitrate,
-          keyboardType: TextInputType.number,
-          decoration: InputDecoration(
-            labelText: context.localeKeys.videoBitrateCeilingKbps,
-            hintText: context.localeKeys.automatic,
-            errorText: _invalidBitrate
-                ? context
-                      .localeKeys
-                      .enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic
-                : null,
-          ),
-          onSubmitted: (_) => _applyVideoBitrate(),
-          onEditingComplete: _applyVideoBitrate,
-        ),
-        const SizedBox(height: AppSpacing.xLarge),
-        Text(context.localeKeys.hdrHandling),
-        const SizedBox(height: AppSpacing.small),
-        SegmentedButton<HdrMode>(
-          segments: [
-            ButtonSegment(
-              value: HdrMode.toneMapToSdr,
-              label: Text(context.localeKeys.convertToSDR),
-            ),
-            ButtonSegment(
-              value: HdrMode.preserve,
-              label: Text(context.localeKeys.keepHDRWhenSupported),
-            ),
-          ],
-          selected: {p.hdrMode},
-          onSelectionChanged: (selection) =>
-              widget.onChanged(p.copyWith(hdrMode: selection.first)),
-        ),
-      ],
     );
   }
 }

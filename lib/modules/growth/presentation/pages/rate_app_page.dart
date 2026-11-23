@@ -24,12 +24,12 @@ final class _RateAppPageState extends State<RateAppPage> {
   int _rating = 5;
 
   void _onRateTap(int stars) {
-    unawaited(HapticFeedback.selectionClick());
+    unawaited(HapticFeedback.vibrate());
     setState(() => _rating = stars);
   }
 
   void _submitRating() {
-    unawaited(HapticFeedback.mediumImpact());
+    unawaited(HapticFeedback.vibrate());
     if (_rating >= 4) {
       context.toast.showSuccess(
         context,

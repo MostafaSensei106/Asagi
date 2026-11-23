@@ -2401,6 +2401,44 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String get storeProtectedPurchasesDetails =>
       'Asagi never sees or retains your financial billing data. Google Play or Apple App Store authenticates and encrypts every transaction. You can cancel anytime through your store account, without hidden fees.';
+
+  @override
+  String get megabytesShort => 'MB';
+
+  @override
+  String percentSmaller(Object percent) {
+    return '$percent% smaller';
+  }
+
+  @override
+  String percentSaved(Object percent) {
+    return '-$percent%';
+  }
+
+  @override
+  String get encodingHardwareLive =>
+      'Encoding and optimizing video with native hardware…';
+
+  @override
+  String get compressionCompletedSuccessfully =>
+      'Compression finished successfully!';
+
+  @override
+  String get compressionStrictness => 'Compression Strictness';
+
+  @override
+  String get strictnessDefault => 'Default (93%)';
+
+  @override
+  String get strictnessSafe => 'Safe (90%)';
+
+  @override
+  String get strictnessAggressive => 'Aggressive (96%)';
+
+  @override
+  String historySummarySubtitle(Object count, Object savedMb) {
+    return '$count videos compressed • $savedMb MB saved';
+  }
 }
 
 /// The translations for Indonesian, as used in Indonesia (`id_ID`).

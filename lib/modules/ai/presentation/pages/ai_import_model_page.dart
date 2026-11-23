@@ -21,7 +21,7 @@ final class _AiImportModelPageState extends State<AiImportModelPage> {
   bool _isValidating = false;
 
   void _pickModelFile() {
-    unawaited(HapticFeedback.selectionClick());
+    unawaited(HapticFeedback.vibrate());
     setState(() {
       _selectedFileName = 'custom-compression-v1.gguf (214 MB)';
     });
@@ -30,7 +30,7 @@ final class _AiImportModelPageState extends State<AiImportModelPage> {
 
   Future<void> _validateAndImport() async {
     setState(() => _isValidating = true);
-    unawaited(HapticFeedback.mediumImpact());
+    unawaited(HapticFeedback.vibrate());
     await Future<void>.delayed(const Duration(milliseconds: 750));
     if (!mounted) return;
     setState(() => _isValidating = false);

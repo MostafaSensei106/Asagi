@@ -2379,6 +2379,43 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get storeProtectedPurchasesDetails =>
       'لا يطّلع Asagi على بيانات الدفع ولا يحتفظ بها. يتحقق Google Play أو Apple App Store من كل معاملة ويشفّرها. يمكنك الإلغاء في أي وقت من حساب المتجر دون رسوم مخفية.';
+
+  @override
+  String get megabytesShort => 'م.ب';
+
+  @override
+  String percentSmaller(Object percent) {
+    return 'أصغر بنسبة $percent%';
+  }
+
+  @override
+  String percentSaved(Object percent) {
+    return '-$percent%';
+  }
+
+  @override
+  String get encodingHardwareLive =>
+      'جاري ترميز وتحسين الفيديو بواسطة العتاد المحلي…';
+
+  @override
+  String get compressionCompletedSuccessfully => 'اكتمل ضغط الفيديو بنجاح!';
+
+  @override
+  String get compressionStrictness => 'دقة وهامش الضغط';
+
+  @override
+  String get strictnessDefault => 'افتراضي (93%)';
+
+  @override
+  String get strictnessSafe => 'آمن (90%)';
+
+  @override
+  String get strictnessAggressive => 'أعلى جودة (96%)';
+
+  @override
+  String historySummarySubtitle(Object count, Object savedMb) {
+    return 'تم ضغط $count فيديو • توفير $savedMb م.ب';
+  }
 }
 
 /// The translations for Arabic, as used in Egypt (`ar_EG`).

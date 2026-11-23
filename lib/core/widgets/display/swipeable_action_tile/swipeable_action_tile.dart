@@ -139,7 +139,7 @@ class SwipeableActionTile extends HookWidget {
       if (isReady != isTriggerReady.value) {
         isTriggerReady.value = isReady;
         if (isReady && style.enableHaptics) {
-          HapticFeedback.mediumImpact(); // Dynamic haptic tick when trigger is active
+          HapticFeedback.vibrate(); // Dynamic haptic tick when trigger is active
         }
       }
     }

@@ -53,7 +53,7 @@ final class _AiMediaPageState extends State<AiMediaPage> {
                   trailing: SwitchComponent(
                     value: _analyzeThumbnails,
                     onChanged: (val) {
-                      unawaited(HapticFeedback.selectionClick());
+                      unawaited(HapticFeedback.vibrate());
                       setState(() => _analyzeThumbnails = val);
                     },
                   ),
@@ -119,7 +119,7 @@ final class _AiMediaPageState extends State<AiMediaPage> {
                   trailing: SwitchComponent(
                     value: _transcribeAudio,
                     onChanged: (val) {
-                      unawaited(HapticFeedback.selectionClick());
+                      unawaited(HapticFeedback.vibrate());
                       setState(() => _transcribeAudio = val);
                     },
                   ),
@@ -141,7 +141,7 @@ final class _AiMediaPageState extends State<AiMediaPage> {
                   trailing: SwitchComponent(
                     value: _autoLang,
                     onChanged: (val) {
-                      unawaited(HapticFeedback.selectionClick());
+                      unawaited(HapticFeedback.vibrate());
                       setState(() => _autoLang = val);
                     },
                   ),

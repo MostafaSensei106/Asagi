@@ -10,8 +10,8 @@ impl AttemptVerifier for HardLimitVerifier {
         plan: &CalculationPlan,
         attempt: u8,
     ) -> Result<u32, String> {
-        if !(0.90..=0.95).contains(&plan.safety_margin)
-            || !(1..=2).contains(&plan.max_attempts)
+        if !(0.85..=0.98).contains(&plan.safety_margin)
+            || !(1..=5).contains(&plan.max_attempts)
             || plan.hard_limit_bytes == 0
             || actual_bytes == 0
             || !duration_secs.is_finite()

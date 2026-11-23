@@ -32,6 +32,7 @@ final class RustCompressionPlanner implements CompressionPlanner {
     final p = await rust.calculateCustomCompressionPlan(
       info: _toWireMetadata(info),
       targetSizeMb: targetMb,
+      customKFactor: preferences.safetyMargin,
       preferences: wire.PlanningPreferences(
         forceEncode:
             (preferences.maxShortEdge != null &&

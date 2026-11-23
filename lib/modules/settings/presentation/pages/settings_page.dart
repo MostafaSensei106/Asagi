@@ -20,37 +20,39 @@ final class SettingsPage extends StatelessWidget {
 
   /// Section order shown in the hub.
   static const _sections = <AppRouteSection>[
-    AppRouteSection.appearance,
     AppRouteSection.compression,
     AppRouteSection.ai,
+    AppRouteSection.appearance,
     AppRouteSection.privacy,
     AppRouteSection.plans,
+    AppRouteSection.help,
     AppRouteSection.about,
     AppRouteSection.legal,
-    AppRouteSection.help,
   ];
 
   /// Every destination advertised in the hub, in display order.
   static const _routes = <AppRoute>[
-    AppearanceSettingsRoute(),
-    LanguageSettingsRoute(),
     CompressionDefaultsRoute(),
+    CompressionHistoryRoute(),
     StorageSettingsRoute(),
     AiSettingsRoute(),
+    AppearanceSettingsRoute(),
+    LanguageSettingsRoute(),
     NotificationsSettingsRoute(),
     PrivacySettingsRoute(),
     PlansRoute(),
     PurchaseMethodsRoute(),
     RestorePurchasesRoute(),
+    FaqRoute(),
+    SupportRoute(),
+    FeedbackRoute(),
     AppInfoRoute(),
     DeveloperRoute(),
+    LicensesRoute(),
     PrivacyPolicyRoute(),
     TermsRoute(),
     DataSafetyRoute(),
     PermissionsRoute(),
-    FaqRoute(),
-    SupportRoute(),
-    FeedbackRoute(),
   ];
 
   @override
@@ -166,14 +168,14 @@ final class SettingsPage extends StatelessWidget {
   /// Each section gets its own shape treatment so the hub reads as a set of
   /// distinct, expressive groups rather than a flat list.
   ExpressiveIconShape _shapeFor(AppRouteSection section) => switch (section) {
-    AppRouteSection.appearance => ExpressiveIconShape.blossom,
     AppRouteSection.compression => ExpressiveIconShape.gem,
     AppRouteSection.ai => ExpressiveIconShape.softBurst,
+    AppRouteSection.appearance => ExpressiveIconShape.blossom,
     AppRouteSection.privacy => ExpressiveIconShape.clover,
     AppRouteSection.plans => ExpressiveIconShape.diamond,
-    AppRouteSection.about => ExpressiveIconShape.sunny,
-    AppRouteSection.legal => ExpressiveIconShape.pentagon,
-    AppRouteSection.help => ExpressiveIconShape.softBurst,
+    AppRouteSection.help => ExpressiveIconShape.sunny,
+    AppRouteSection.about => ExpressiveIconShape.pentagon,
+    AppRouteSection.legal => ExpressiveIconShape.softBurst,
     AppRouteSection.core => ExpressiveIconShape.blossom,
   };
 

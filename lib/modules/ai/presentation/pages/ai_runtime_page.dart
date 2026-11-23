@@ -25,7 +25,7 @@ final class _AiRuntimePageState extends State<AiRuntimePage> {
 
   Future<void> _runBenchmark() async {
     setState(() => _isBenchmarking = true);
-    unawaited(HapticFeedback.mediumImpact());
+    unawaited(HapticFeedback.vibrate());
     await Future<void>.delayed(const Duration(milliseconds: 800));
     if (!mounted) return;
     setState(() => _isBenchmarking = false);
@@ -140,14 +140,14 @@ final class _AiRuntimePageState extends State<AiRuntimePage> {
                 ),
                 subtitle: l10n.batterySaverDescription,
                 onTap: () {
-                  unawaited(HapticFeedback.selectionClick());
+                  unawaited(HapticFeedback.vibrate());
                   setState(() => _lowPowerMode = !_lowPowerMode);
                 },
                 showChevron: false,
                 trailing: SwitchComponent(
                   value: _lowPowerMode,
                   onChanged: (val) {
-                    unawaited(HapticFeedback.selectionClick());
+                    unawaited(HapticFeedback.vibrate());
                     setState(() => _lowPowerMode = val);
                   },
                 ),

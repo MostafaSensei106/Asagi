@@ -25,7 +25,7 @@ final class _PrivacySettingsPageState extends State<PrivacySettingsPage> {
   bool _isClearingCache = false;
 
   void _onToggle(String name, bool value, VoidCallback apply) {
-    unawaited(HapticFeedback.selectionClick());
+    unawaited(HapticFeedback.vibrate());
     setState(apply);
     context.toast.showInfo(
       context,

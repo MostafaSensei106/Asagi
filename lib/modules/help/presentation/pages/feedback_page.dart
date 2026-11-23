@@ -49,7 +49,7 @@ final class _FeedbackPageState extends State<FeedbackPage> {
     }
 
     setState(() => _isSubmitting = true);
-    unawaited(HapticFeedback.mediumImpact());
+    unawaited(HapticFeedback.vibrate());
     await Future<void>.delayed(const Duration(milliseconds: 700));
 
     if (!mounted) return;
@@ -126,7 +126,7 @@ final class _FeedbackPageState extends State<FeedbackPage> {
                     label: cat,
                     selected: _category == cat,
                     onPressed: () {
-                      unawaited(HapticFeedback.selectionClick());
+                      unawaited(HapticFeedback.vibrate());
                       setState(() => _category = cat);
                     },
                   ),
@@ -152,7 +152,7 @@ final class _FeedbackPageState extends State<FeedbackPage> {
                       size: 28,
                     ),
                     onPressed: () {
-                      unawaited(HapticFeedback.selectionClick());
+                      unawaited(HapticFeedback.vibrate());
                       setState(() => _rating = starIndex);
                     },
                   );
@@ -188,7 +188,7 @@ final class _FeedbackPageState extends State<FeedbackPage> {
                   trailing: SwitchComponent(
                     value: _includeDiagnostics,
                     onChanged: (val) {
-                      unawaited(HapticFeedback.selectionClick());
+                      unawaited(HapticFeedback.vibrate());
                       setState(() => _includeDiagnostics = val);
                     },
                   ),

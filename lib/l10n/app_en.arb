@@ -1587,5 +1587,15 @@
   "digitalWalletsDetails": "Your store may offer Google Pay, Apple Pay, PayPal, or regional payment methods. Available options depend on your account, device, and region.",
   "storeProtectedPurchases": "Store-Protected Purchases",
   "storeProtectedPurchasesSummary": "Billing stays with stores",
-  "storeProtectedPurchasesDetails": "Asagi never sees or retains your financial billing data. Google Play or Apple App Store authenticates and encrypts every transaction. You can cancel anytime through your store account, without hidden fees."
+  "storeProtectedPurchasesDetails": "Asagi never sees or retains your financial billing data. Google Play or Apple App Store authenticates and encrypts every transaction. You can cancel anytime through your store account, without hidden fees.",
+  "megabytesShort": "MB",
+  "percentSmaller": "{percent}% smaller",
+  "percentSaved": "-{percent}%",
+  "encodingHardwareLive": "Encoding and optimizing video with native hardware…",
+  "compressionCompletedSuccessfully": "Compression finished successfully!",
+  "compressionStrictness": "Compression Strictness",
+  "strictnessDefault": "Default (93%)",
+  "strictnessSafe": "Safe (90%)",
+  "strictnessAggressive": "Aggressive (96%)",
+  "historySummarySubtitle": "{count} videos compressed • {savedMb} MB saved"
 }

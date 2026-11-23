@@ -51,7 +51,7 @@ final class _AiChatSettingsPageState extends State<AiChatSettingsPage> {
                 trailing: SwitchComponent(
                   value: _streaming,
                   onChanged: (val) {
-                    unawaited(HapticFeedback.selectionClick());
+                    unawaited(HapticFeedback.vibrate());
                     setState(() => _streaming = val);
                   },
                 ),
@@ -72,7 +72,7 @@ final class _AiChatSettingsPageState extends State<AiChatSettingsPage> {
                 trailing: SwitchComponent(
                   value: _showThinking,
                   onChanged: (val) {
-                    unawaited(HapticFeedback.selectionClick());
+                    unawaited(HapticFeedback.vibrate());
                     setState(() => _showThinking = val);
                   },
                 ),
@@ -95,7 +95,7 @@ final class _AiChatSettingsPageState extends State<AiChatSettingsPage> {
                 divisions: 9,
                 label: _temperature.toStringAsFixed(1),
                 onChanged: (val) => {
-                  HapticFeedback.selectionClick(),
+                  HapticFeedback.vibrate(),
                   setState(() => _temperature = val),
                 },
               ),

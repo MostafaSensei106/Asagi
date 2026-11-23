@@ -143,6 +143,7 @@ final class LicensesRoute extends AppRoute {
     path: '/about/licenses',
     section: AppRouteSection.about,
     icon: AsagiIcons.licenses,
+    showInSettingsHub: true,
   );
 }
 

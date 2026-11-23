@@ -34,7 +34,7 @@ final class _OnboardingPageState extends State<OnboardingPage> {
   }
 
   void _finishOnboarding() {
-    unawaited(HapticFeedback.mediumImpact());
+    unawaited(HapticFeedback.vibrate());
     if (Navigator.of(context).canPop()) {
       Navigator.of(context).pop();
     } else {

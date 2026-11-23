@@ -23,7 +23,7 @@ final class _AiToolsPageState extends State<AiToolsPage> {
   bool _sandboxScratchpad = true;
 
   void _onToggle(String name, bool val, void Function() apply) {
-    unawaited(HapticFeedback.selectionClick());
+    unawaited(HapticFeedback.vibrate());
     setState(apply);
     context.toast.showInfo(
       context,

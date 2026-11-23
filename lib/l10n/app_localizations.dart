@@ -4250,6 +4250,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Asagi never sees or retains your financial billing data. Google Play or Apple App Store authenticates and encrypts every transaction. You can cancel anytime through your store account, without hidden fees.'**
   String get storeProtectedPurchasesDetails;
+
+  /// No description provided for @megabytesShort.
+  ///
+  /// In en, this message translates to:
+  /// **'MB'**
+  String get megabytesShort;
+
+  /// No description provided for @percentSmaller.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% smaller'**
+  String percentSmaller(Object percent);
+
+  /// No description provided for @percentSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'-{percent}%'**
+  String percentSaved(Object percent);
+
+  /// No description provided for @encodingHardwareLive.
+  ///
+  /// In en, this message translates to:
+  /// **'Encoding and optimizing video with native hardware…'**
+  String get encodingHardwareLive;
+
+  /// No description provided for @compressionCompletedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Compression finished successfully!'**
+  String get compressionCompletedSuccessfully;
+
+  /// No description provided for @compressionStrictness.
+  ///
+  /// In en, this message translates to:
+  /// **'Compression Strictness'**
+  String get compressionStrictness;
+
+  /// No description provided for @strictnessDefault.
+  ///
+  /// In en, this message translates to:
+  /// **'Default (93%)'**
+  String get strictnessDefault;
+
+  /// No description provided for @strictnessSafe.
+  ///
+  /// In en, this message translates to:
+  /// **'Safe (90%)'**
+  String get strictnessSafe;
+
+  /// No description provided for @strictnessAggressive.
+  ///
+  /// In en, this message translates to:
+  /// **'Aggressive (96%)'**
+  String get strictnessAggressive;
+
+  /// No description provided for @historySummarySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} videos compressed • {savedMb} MB saved'**
+  String historySummarySubtitle(Object count, Object savedMb);
 }
 
 class _AppLocalizationsDelegate

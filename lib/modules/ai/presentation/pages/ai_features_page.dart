@@ -23,7 +23,7 @@ final class _AiFeaturesPageState extends State<AiFeaturesPage> {
   bool _facePriority = true;
 
   void _onToggle(String name, bool val, void Function() apply) {
-    unawaited(HapticFeedback.selectionClick());
+    unawaited(HapticFeedback.vibrate());
     setState(apply);
     context.toast.showInfo(
       context,

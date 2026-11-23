@@ -262,6 +262,7 @@ final class DeviceVideoCompressionRepository
         hdrMode: json['hdrMode'] == 'preserve'
             ? HdrMode.preserve
             : HdrMode.toneMapToSdr,
+        safetyMargin: (json['safetyMargin'] as num?)?.toDouble(),
       );
       result.validate();
       return result;
@@ -282,6 +283,7 @@ final class DeviceVideoCompressionRepository
         'audioBitrateKbps': preferences.audioBitrateKbps,
         'videoBitrateCeilingKbps': preferences.videoBitrateCeilingKbps,
         'hdrMode': preferences.hdrMode.name,
+        'safetyMargin': preferences.safetyMargin,
       }),
     );
   }

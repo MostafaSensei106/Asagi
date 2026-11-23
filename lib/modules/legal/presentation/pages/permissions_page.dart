@@ -149,7 +149,7 @@ final class PermissionsPage extends StatelessWidget {
                     label: 'Manage in System Settings',
                     expand: true,
                     onPressed: () {
-                      unawaited(HapticFeedback.selectionClick());
+                      unawaited(HapticFeedback.vibrate());
                       context.toast.showInfo(
                         context,
                         'Please check your device system app settings',

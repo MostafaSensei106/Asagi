@@ -139,7 +139,7 @@ final class _AiModelsPageState extends State<AiModelsPage> {
                             label: l10n.setActive,
                             useInBorderRadius: true,
                             onPressed: () {
-                              unawaited(HapticFeedback.selectionClick());
+                              unawaited(HapticFeedback.vibrate());
                               setState(() => _activeModelId = model.id);
                               context.toast.showSuccess(
                                 context,
@@ -157,7 +157,7 @@ final class _AiModelsPageState extends State<AiModelsPage> {
                           label: l10n.downloadModel(model.size),
                           useInBorderRadius: true,
                           onPressed: () {
-                            unawaited(HapticFeedback.mediumImpact());
+                            unawaited(HapticFeedback.vibrate());
                             context.toast.showInfo(
                               context,
                               l10n.modelDownloadQueued(

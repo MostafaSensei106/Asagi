@@ -29,7 +29,7 @@ final class _NotificationsSettingsPageState
   bool _savingsDigest = true;
 
   void _onToggle(String label, bool value, VoidCallback apply) {
-    unawaited(HapticFeedback.selectionClick());
+    unawaited(HapticFeedback.vibrate());
     setState(apply);
     context.toast.showInfo(
       context,

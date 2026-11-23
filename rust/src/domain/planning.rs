@@ -14,9 +14,10 @@ impl TargetSizePolicy {
             && (preferences.max_short_edge < 240
                 || preferences.max_short_edge > 16384
                 || !preferences.max_short_edge.is_multiple_of(2))
-            || ![-1, 0, 48000, 64000, 96000, 128000].contains(&preferences.audio_bitrate_bps)
+            || !(preferences.audio_bitrate_bps == -1
+                || (0..=320_000).contains(&preferences.audio_bitrate_bps))
             || preferences.video_bitrate_ceiling_bps != 0
-                && preferences.video_bitrate_ceiling_bps < 150000
+                && preferences.video_bitrate_ceiling_bps < 50000
         {
             return Err("E_INVALID_PREFERENCES".into());
         }
@@ -40,7 +41,7 @@ impl TargetSizePolicy {
             || i.file_size_bytes == 0
             || ![0, 90, 180, 270].contains(&i.rotation)
             || limit == 0
-            || !(0.90..=0.95).contains(&safety)
+            || !(0.85..=0.98).contains(&safety)
         {
             return Err("E_INVALID_INPUT".into());
         }

@@ -1396,5 +1396,15 @@
   "digitalWalletsDetails": "قد يوفّر متجرك Google Pay أو Apple Pay أو PayPal أو طرق دفع محلية. تعتمد الخيارات المتاحة على حسابك وجهازك ومنطقتك.",
   "storeProtectedPurchases": "مشتريات محمية عبر المتجر",
   "storeProtectedPurchasesSummary": "الفوترة لدى المتجر",
-  "storeProtectedPurchasesDetails": "لا يطّلع Asagi على بيانات الدفع ولا يحتفظ بها. يتحقق Google Play أو Apple App Store من كل معاملة ويشفّرها. يمكنك الإلغاء في أي وقت من حساب المتجر دون رسوم مخفية."
+  "storeProtectedPurchasesDetails": "لا يطّلع Asagi على بيانات الدفع ولا يحتفظ بها. يتحقق Google Play أو Apple App Store من كل معاملة ويشفّرها. يمكنك الإلغاء في أي وقت من حساب المتجر دون رسوم مخفية.",
+  "megabytesShort": "م.ب",
+  "percentSmaller": "أصغر بنسبة {percent}%",
+  "percentSaved": "-{percent}%",
+  "encodingHardwareLive": "جاري ترميز وتحسين الفيديو بواسطة العتاد المحلي…",
+  "compressionCompletedSuccessfully": "اكتمل ضغط الفيديو بنجاح!",
+  "compressionStrictness": "دقة وهامش الضغط",
+  "strictnessDefault": "افتراضي (93%)",
+  "strictnessSafe": "آمن (90%)",
+  "strictnessAggressive": "أعلى جودة (96%)",
+  "historySummarySubtitle": "تم ضغط {count} فيديو • توفير {savedMb} م.ب"
 }

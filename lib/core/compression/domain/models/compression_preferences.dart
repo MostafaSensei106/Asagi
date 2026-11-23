@@ -8,6 +8,7 @@ final class CompressionPreferences {
     this.audioBitrateKbps,
     this.videoBitrateCeilingKbps,
     this.hdrMode = HdrMode.toneMapToSdr,
+    this.safetyMargin,
   });
 
   /// Null lets the planner select a resolution. Values use displayed pixels.
@@ -21,6 +22,9 @@ final class CompressionPreferences {
   final int? videoBitrateCeilingKbps;
   final HdrMode hdrMode;
 
+  /// Null uses default 0.93 safety margin. Range is 0.85 to 0.98.
+  final double? safetyMargin;
+
   CompressionPreferences copyWith({
     int? maxShortEdge,
     bool clearMaxShortEdge = false,
@@ -30,6 +34,8 @@ final class CompressionPreferences {
     int? videoBitrateCeilingKbps,
     bool clearVideoBitrate = false,
     HdrMode? hdrMode,
+    double? safetyMargin,
+    bool clearSafetyMargin = false,
   }) => CompressionPreferences(
     maxShortEdge: clearMaxShortEdge ? null : maxShortEdge ?? this.maxShortEdge,
     maxFrameRate: maxFrameRate ?? this.maxFrameRate,
@@ -40,6 +46,7 @@ final class CompressionPreferences {
         ? null
         : videoBitrateCeilingKbps ?? this.videoBitrateCeilingKbps,
     hdrMode: hdrMode ?? this.hdrMode,
+    safetyMargin: clearSafetyMargin ? null : safetyMargin ?? this.safetyMargin,
   );
 
   void validate() {
@@ -51,15 +58,30 @@ final class CompressionPreferences {
       throw ArgumentError.value(maxFrameRate, 'maxFrameRate');
     }
     if (audioBitrateKbps != null &&
-        !{0, 48, 64, 96, 128}.contains(audioBitrateKbps)) {
+        !{
+          0,
+          32,
+          48,
+          64,
+          96,
+          128,
+          160,
+          192,
+          256,
+          320,
+        }.contains(audioBitrateKbps)) {
       throw ArgumentError.value(audioBitrateKbps, 'audioBitrateKbps');
     }
     if (videoBitrateCeilingKbps != null &&
-        (videoBitrateCeilingKbps! < 150 || videoBitrateCeilingKbps! > 500000)) {
+        (videoBitrateCeilingKbps! < 50 || videoBitrateCeilingKbps! > 500000)) {
       throw ArgumentError.value(
         videoBitrateCeilingKbps,
         'videoBitrateCeilingKbps',
       );
+    }
+    if (safetyMargin != null &&
+        (safetyMargin! < 0.85 || safetyMargin! > 0.98)) {
+      throw ArgumentError.value(safetyMargin, 'safetyMargin');
     }
   }
 }

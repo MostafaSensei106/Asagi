@@ -23,7 +23,7 @@ final class _AiSearchPageState extends State<AiSearchPage> {
   Future<void> _rebuildIndex() async {
     final l10n = context.localeKeys;
     setState(() => _isRebuilding = true);
-    unawaited(HapticFeedback.mediumImpact());
+    unawaited(HapticFeedback.vibrate());
     await Future<void>.delayed(const Duration(milliseconds: 700));
     if (!mounted) return;
     setState(() => _isRebuilding = false);
@@ -95,14 +95,14 @@ final class _AiSearchPageState extends State<AiSearchPage> {
                 ),
                 subtitle: l10n.semanticSearchDescription,
                 onTap: () {
-                  unawaited(HapticFeedback.selectionClick());
+                  unawaited(HapticFeedback.vibrate());
                   setState(() => _semanticIndexing = !_semanticIndexing);
                 },
                 showChevron: false,
                 trailing: SwitchComponent(
                   value: _semanticIndexing,
                   onChanged: (val) {
-                    unawaited(HapticFeedback.selectionClick());
+                    unawaited(HapticFeedback.vibrate());
                     setState(() => _semanticIndexing = val);
                   },
                 ),
@@ -118,14 +118,14 @@ final class _AiSearchPageState extends State<AiSearchPage> {
                 ),
                 subtitle: l10n.indexChargingDescription,
                 onTap: () {
-                  unawaited(HapticFeedback.selectionClick());
+                  unawaited(HapticFeedback.vibrate());
                   setState(() => _indexWhileCharging = !_indexWhileCharging);
                 },
                 showChevron: false,
                 trailing: SwitchComponent(
                   value: _indexWhileCharging,
                   onChanged: (val) {
-                    unawaited(HapticFeedback.selectionClick());
+                    unawaited(HapticFeedback.vibrate());
                     setState(() => _indexWhileCharging = val);
                   },
                 ),
