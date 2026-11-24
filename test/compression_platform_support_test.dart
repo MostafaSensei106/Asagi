@@ -6,8 +6,8 @@ import 'package:asagi/modules/compression/data/repositories/device_video_compres
 import 'package:asagi/modules/compression/presentation/pages/video_select_page.dart';
 import 'package:asagi/modules/compression/presentation/widgets/unsupported_compression_page.dart';
 import 'package:flutter/foundation.dart';
-import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart';
 
 Widget app(Widget home) => MaterialApp(
   localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -23,7 +23,6 @@ void main() {
   testWidgets('non-Android selection shows localized unsupported state', (
     tester,
   ) async {
-    debugDefaultTargetPlatformOverride = TargetPlatform.iOS;
     await tester.pumpWidget(app(const VideoSelectPage()));
     await tester.pumpAndSettle();
     expect(
@@ -32,7 +31,7 @@ void main() {
     );
     expect(find.byType(UnsupportedCompressionPage), findsOneWidget);
     expect(find.byType(FilledButton), findsNothing);
-  });
+  }, variant: TargetPlatformVariant.only(TargetPlatform.iOS));
 
   test('Android enables compression and other platforms do not', () {
     for (final platform in TargetPlatform.values) {
