@@ -4,22 +4,22 @@ import '../../../../core/constants/types/type_def.dart';
 import '../../../../core/error/failures.dart';
 import '../../../../core/utils/result/result.dart';
 import '../../../../core/utils/use_case/use_case_base.dart';
-import '../models/notification_access.dart';
+import '../entities/notification_access.dart';
 import '../repositories/notification_repository.dart';
 
 @lazySingleton
-final class ReadNotificationAccess
+final class RequestNotificationAccess
     implements UseCaseBase<NotificationAccess, NoParams> {
-  const ReadNotificationAccess(this._repository);
+  const RequestNotificationAccess(this._repository);
   final NotificationRepository _repository;
   @override
   Future<ApiResult<NotificationAccess>> call(NoParams params) =>
       Result.tryCatching(
         action: () async => NotificationAccess(
-          permission: await _repository.permission(),
+          permission: await _repository.requestPermission(),
           blockedChannels: await _repository.blockedChannels(),
         ),
         onError: (error, stackTrace) =>
-            const UnknownFailure('E_NOTIFICATION_ACCESS'),
+            const UnknownFailure('E_NOTIFICATION_PERMISSION'),
       );
 }

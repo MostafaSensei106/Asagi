@@ -5,7 +5,7 @@ import '../../../../core/error/failures.dart';
 import '../../../../core/utils/result/result.dart';
 import '../../../../core/utils/use_case/use_case_base.dart';
 import '../../../compression/domain/repositories/video_compression_repository.dart';
-import '../models/notification_insights.dart';
+import '../entities/notification_insights.dart';
 
 final class NotificationInsightsWindow {
   const NotificationInsightsWindow({required this.since, required this.until});

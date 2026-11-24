@@ -6,7 +6,7 @@ import 'package:permission_handler/permission_handler.dart';
 import '../../../../core/services/notifications/base_local_notification_service.dart';
 import '../../../../core/services/notifications/notification_request.dart';
 import '../../../../core/services/permissions/base_permission_service.dart';
-import '../../domain/repositories/notification_repository.dart';
+import '../../logic/repositories/notification_repository.dart';
 
 @LazySingleton(as: NotificationRepository)
 final class DeviceNotificationRepository implements NotificationRepository {

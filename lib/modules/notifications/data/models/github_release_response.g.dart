@@ -6,9 +6,9 @@ part of 'github_release_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GitHubReleaseResponse _$GitHubReleaseResponseFromJson(
+GitHubReleaseResponse _$GitHubReleaseResponseFromJson(
   Map<String, dynamic> json,
-) => _GitHubReleaseResponse(
+) => GitHubReleaseResponse(
   id: (json['id'] as num).toInt(),
   tagName: json['tag_name'] as String,
   htmlUrl: json['html_url'] as String,
@@ -22,7 +22,7 @@ _GitHubReleaseResponse _$GitHubReleaseResponseFromJson(
 );
 
 Map<String, dynamic> _$GitHubReleaseResponseToJson(
-  _GitHubReleaseResponse instance,
+  GitHubReleaseResponse instance,
 ) => <String, dynamic>{
   'id': instance.id,
   'tag_name': instance.tagName,

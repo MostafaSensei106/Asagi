@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../domain/models/notification_data.dart';
-import '../../domain/repositories/notification_repository.dart';
+import '../entities/notification_data.dart';
+import '../repositories/notification_repository.dart';
 
 part 'notifications_state.freezed.dart';
 

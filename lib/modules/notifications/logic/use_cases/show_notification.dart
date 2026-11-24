@@ -2,7 +2,7 @@ import 'package:injectable/injectable.dart';
 
 import '../../../../core/constants/types/type_def.dart';
 import '../../../../core/error/failures.dart';
-import '../../../../core/notifications/domain/models/notification_request.dart';
+import '../../../../core/notifications/domain/entities/notification_request.dart';
 import '../../../../core/utils/result/result.dart';
 import '../../../../core/utils/use_case/use_case_base.dart';
 import '../repositories/notification_repository.dart';

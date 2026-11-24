@@ -1,4 +1,4 @@
-import '../../../../core/notifications/domain/models/notification_request.dart';
+import '../../../../core/notifications/domain/entities/notification_request.dart';
 
 enum NotificationPermission { granted, denied, permanentlyDenied, unsupported }
 

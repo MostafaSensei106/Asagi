@@ -1,11 +1,11 @@
 import 'package:injectable/injectable.dart';
 import 'package:pub_semver/pub_semver.dart';
 
-import '../../../../core/constants/types/type_def.dart';
-import '../../../../core/utils/result/result.dart';
-import '../../../../core/utils/use_case/use_case_base.dart';
-import '../models/app_release.dart';
-import '../repositories/release_repository.dart';
+import '../../../core/constants/types/type_def.dart';
+import '../../../core/utils/result/result.dart';
+import '../../../core/utils/use_case/use_case_base.dart';
+import 'entities/app_release.dart';
+import 'repositories/release_repository.dart';
 
 @lazySingleton
 final class CheckAppUpdate implements UseCaseBase<AppRelease?, String> {

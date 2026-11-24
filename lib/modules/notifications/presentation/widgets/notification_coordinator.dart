@@ -11,8 +11,8 @@ import '../../../../core/services/url_launcher/base_url_launcher_services.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../../compression/presentation/cubit/compression_cubit.dart';
 import '../../../compression/presentation/cubit/compression_state.dart';
-import '../../domain/models/notification_event.dart';
-import '../../domain/models/notification_target.dart';
+import '../../logic/entities/notification_event.dart';
+import '../../logic/entities/notification_target.dart';
 import '../../logic/cubit/notifications_cubit.dart';
 
 /// Shell-lifetime bridge: services publish events; only presentation navigates.

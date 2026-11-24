@@ -1,6 +1,6 @@
 import 'package:asagi/modules/notifications/data/mappers/notification_payload_codec.dart';
-import 'package:asagi/modules/notifications/data/models/notification_preferences_dto.dart';
-import 'package:asagi/modules/notifications/domain/models/notification_target.dart';
+import 'package:asagi/modules/notifications/data/mappers/notification_preferences_codec.dart';
+import 'package:asagi/modules/notifications/logic/entities/notification_target.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -38,7 +38,7 @@ void main() {
     }
   });
   test('legacy haptics migrate to five independent settings; runtime permission is not persisted', () {
-    final data = NotificationPreferencesDto.decode({
+    final data = NotificationPreferencesCodec.decode({
       'settings': {'hapticFeedback': false},
     })!;
     expect(data.settings.buttonHaptics, isFalse);
@@ -50,17 +50,17 @@ void main() {
       settings: data.settings.copyWith(selectionHaptics: true),
     );
     expect(
-      NotificationPreferencesDto.decode(
-        NotificationPreferencesDto.encode(updated),
+      NotificationPreferencesCodec.decode(
+        NotificationPreferencesCodec.encode(updated),
       ),
       updated,
     );
     expect(
-      NotificationPreferencesDto.encode(updated).containsKey('permission'),
+      NotificationPreferencesCodec.encode(updated).containsKey('permission'),
       isFalse,
     );
     expect(
-      NotificationPreferencesDto.decode({
+      NotificationPreferencesCodec.decode({
         'settings': {'jobCompletion': 'bad'},
       }),
       isNull,

@@ -9,8 +9,8 @@ import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
-import '../../domain/models/notification_settings.dart';
-import '../../domain/repositories/notification_repository.dart';
+import '../../logic/entities/notification_settings.dart';
+import '../../logic/repositories/notification_repository.dart';
 import '../../logic/cubit/notifications_cubit.dart';
 import '../../logic/cubit/notifications_state.dart';
 

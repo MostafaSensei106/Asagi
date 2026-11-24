@@ -10,19 +10,19 @@ import '../../../../core/services/notifications/notification_request.dart';
 import '../../../../core/utils/use_case/use_case_base.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../data/mappers/notification_payload_codec.dart';
-import '../../data/models/notification_preferences_dto.dart';
-import '../../domain/models/notification_data.dart';
-import '../../domain/models/notification_event.dart';
-import '../../domain/models/notification_insights.dart';
-import '../../domain/models/notification_settings.dart';
-import '../../domain/models/notification_target.dart';
-import '../../domain/repositories/notification_repository.dart';
-import '../../domain/use_cases/check_app_update.dart';
-import '../../domain/use_cases/initialize_notifications.dart';
-import '../../domain/use_cases/read_notification_access.dart';
-import '../../domain/use_cases/read_notification_insights.dart';
-import '../../domain/use_cases/request_notification_access.dart';
-import '../../domain/use_cases/show_notification.dart';
+import '../../data/mappers/notification_preferences_codec.dart';
+import '../entities/notification_data.dart';
+import '../entities/notification_event.dart';
+import '../entities/notification_insights.dart';
+import '../entities/notification_settings.dart';
+import '../entities/notification_target.dart';
+import '../repositories/notification_repository.dart';
+import '../check_app_update.dart';
+import '../use_cases/initialize_notifications.dart';
+import '../use_cases/read_notification_access.dart';
+import '../use_cases/read_notification_insights.dart';
+import '../use_cases/request_notification_access.dart';
+import '../use_cases/show_notification.dart';
 import '../../presentation/notification_message_factory.dart';
 import 'notifications_state.dart';
 
@@ -70,13 +70,13 @@ final class NotificationsCubit extends HydratedCubitSignal<NotificationsState> {
   NotificationSettings get settings => stateValue.data.settings;
   @override
   NotificationsState? fromJson(dynamic json) {
-    final data = NotificationPreferencesDto.decode(json);
+    final data = NotificationPreferencesCodec.decode(json);
     return data == null ? null : NotificationsState.initializing(data: data);
   }
 
   @override
   Map<String, dynamic> toJson(NotificationsState state) =>
-      NotificationPreferencesDto.encode(state.data);
+      NotificationPreferencesCodec.encode(state.data);
 
   Future<void> initialize(AppLocalizations text) {
     _messages = NotificationMessageFactory(text);

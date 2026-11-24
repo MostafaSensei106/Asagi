@@ -231,7 +231,7 @@ not recolored.
 Notification business actions implement the project's `UseCaseBase<T, Params>`
 interface and return its existing `Result<T, Failures>`. Repositories execute
 Retrofit calls through `ApiExecutor` and `RequestDeduplicator`; response-model
-extensions map backend fields to domain entities. Only backend data models use
-JSON code generation. Local hydration uses a data-boundary codec, while domain
+extensions map backend fields to domain entities. JSON code generation lives exclusively in data models, including persistence
+payloads. Local hydration uses generated models through a data-boundary codec, while domain
 entities and feature state remain independent of JSON and Dio. No legacy ERP
 session/token/pinning configuration is applied to GitHub requests.

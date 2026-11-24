@@ -2,9 +2,9 @@ import '../../../core/services/notifications/notification_request.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../compression/presentation/widgets/compression_error_text.dart';
 import '../data/mappers/notification_payload_codec.dart';
-import '../domain/models/notification_event.dart';
-import '../domain/models/notification_settings.dart';
-import '../domain/models/notification_target.dart';
+import '../logic/entities/notification_event.dart';
+import '../logic/entities/notification_settings.dart';
+import '../logic/entities/notification_target.dart';
 
 final class NotificationMessageFactory {
   const NotificationMessageFactory(this.text);

@@ -9,17 +9,18 @@ void main() {
     ).list(recursive: true)) {
       if (file is! File ||
           !file.path.endsWith('.dart') ||
-          file.path.endsWith('.freezed.dart'))
+          file.path.endsWith('.freezed.dart')) {
         continue;
+      }
       final source = await file.readAsString();
       for (final marker in [
         'fromJson(',
         'toJson(',
         '@JsonSerializable',
         '@JsonKey',
-        "package:dio/",
-        "package:retrofit/",
-        "../../data/",
+        'package:dio/',
+        'package:retrofit/',
+        '../../data/',
       ]) {
         expect(source, isNot(contains(marker)), reason: file.path);
       }

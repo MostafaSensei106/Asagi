@@ -1,11 +1,11 @@
 import 'package:pub_semver/pub_semver.dart';
 
 import '../../../../core/network/api_client_config.dart';
-import '../../domain/models/app_release.dart';
+import '../../logic/entities/app_release.dart';
 import '../models/github_release_response.dart';
 
 extension GitHubReleaseResponseMapping on GitHubReleaseResponse {
-  AppRelease? toEntity() {
+  AppRelease toEntity() {
     if (draft || prerelease || publishedAt == null) return null;
     final Version parsedVersion;
     try {
