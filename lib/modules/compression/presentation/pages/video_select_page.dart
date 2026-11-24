@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:bloc_signals_flutter/bloc_signals_flutter.dart';
-import 'package:flutter/services.dart';
 import 'package:kaisel/kaisel.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
@@ -9,11 +8,11 @@ import 'package:material_ui/material_ui.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/router/app_router.dart';
+import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
 import '../cubit/compression_cubit.dart';
 import '../cubit/compression_state.dart';
 import '../widgets/compression_error_text.dart';
-
 import '../widgets/unsupported_compression_page.dart';
 
 final class VideoSelectPage extends StatelessWidget {
@@ -89,7 +88,7 @@ final class VideoSelectPage extends StatelessWidget {
                         isLoading: state.phase == CompressionPhase.picking,
                         isEnabled: !isBusy,
                         onPressed: () async {
-                          unawaited(HapticFeedback.mediumImpact());
+                          unawaited(AppHaptics.button());
                           final cubit = BlocSignalProvider.of<CompressionCubit>(
                             context,
                           );

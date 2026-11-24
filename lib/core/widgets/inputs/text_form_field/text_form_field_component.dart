@@ -5,6 +5,7 @@ import 'package:material_ui/material_ui.dart';
 
 import '../../../constants/app_config.dart';
 import '../../../extensions/extensions.dart';
+import '../../../services/haptics/haptics_service.dart';
 
 final class TextFormFieldComponent extends StatelessWidget {
   const TextFormFieldComponent({
@@ -95,7 +96,7 @@ final class TextFormFieldComponent extends StatelessWidget {
       onTapOutside: (event) => FocusScope.of(context).unfocus(),
       textDirection: textDirection,
       onTap: () {
-        unawaited(HapticFeedback.vibrate());
+        unawaited(AppHaptics.button());
         onTap?.call();
       },
       decoration: InputDecoration(

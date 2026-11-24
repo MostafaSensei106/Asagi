@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../constants/app_config.dart';
 import '../../../extensions/extensions.dart';
+import '../../../services/haptics/haptics_service.dart';
 
 final class DropdownButtonFormFieldComponent<T> extends StatelessWidget {
   const DropdownButtonFormFieldComponent({
@@ -39,7 +39,7 @@ final class DropdownButtonFormFieldComponent<T> extends StatelessWidget {
     onChanged: onChanged,
     elevation: 0,
     onTap: () {
-      unawaited(HapticFeedback.vibrate());
+      unawaited(AppHaptics.selection());
       onTap?.call();
     },
     borderRadius: useInBorderRadius

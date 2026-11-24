@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
 import '../../../../l10n/app_localizations.dart';
 
@@ -139,7 +139,7 @@ final class _AiModelsPageState extends State<AiModelsPage> {
                             label: l10n.setActive,
                             useInBorderRadius: true,
                             onPressed: () {
-                              unawaited(HapticFeedback.vibrate());
+                              unawaited(AppHaptics.button());
                               setState(() => _activeModelId = model.id);
                               context.toast.showSuccess(
                                 context,
@@ -157,7 +157,7 @@ final class _AiModelsPageState extends State<AiModelsPage> {
                           label: l10n.downloadModel(model.size),
                           useInBorderRadius: true,
                           onPressed: () {
-                            unawaited(HapticFeedback.vibrate());
+                            unawaited(AppHaptics.button());
                             context.toast.showInfo(
                               context,
                               l10n.modelDownloadQueued(

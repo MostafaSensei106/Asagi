@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../constants/app_config.dart';
+import '../../../services/haptics/haptics_service.dart';
 
 /// Text (tertiary) action button.
 ///
@@ -68,7 +68,7 @@ final class TextButtonComponent extends StatelessWidget {
     final enabled = isEnable && !isLoading && onPressed != null;
     final callback = enabled
         ? () {
-            unawaited(HapticFeedback.vibrate());
+            unawaited(AppHaptics.button());
             onPressed!();
           }
         : null;

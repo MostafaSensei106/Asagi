@@ -9,10 +9,16 @@ sealed class CompressionRecord with _$CompressionRecord {
     required String sourceName,
     required int bytes,
     required DateTime createdAt,
+    @Default('') String id,
+    String? warning,
     @Default(0) int originalBytes,
     @Default(0) double targetMb,
     @Default(0) int width,
     @Default(0) int height,
     @Default(0) int attempts,
   }) = _CompressionRecord;
+
+  const CompressionRecord._();
+
+  String get jobId => id.isEmpty ? path.split(RegExp(r'[/\\]')).last : id;
 }

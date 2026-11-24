@@ -3,7 +3,7 @@ import 'package:material_ui/material_ui.dart';
 import '../../constants/app_config.dart';
 import 'generated_color_schemes.dart';
 
-/// Brand palettes generated offline by matugen from Asagi's identity colors.
+/// Complete palettes generated offline from Asagi's single HCT source color.
 enum AsagiColorSchemeVariant {
   auto,
   tonalSpot,
@@ -60,6 +60,21 @@ final class AppTheme {
     scaffoldBackgroundColor: colorScheme.surface,
     canvasColor: colorScheme.surface,
     fontFamily: fontFamily,
+    cardTheme: CardThemeData(
+      color: colorScheme.surfaceContainerLow,
+      elevation: 0,
+    ),
+    dividerTheme: DividerThemeData(color: colorScheme.outlineVariant),
+    inputDecorationTheme: InputDecorationThemeData(
+      filled: true,
+      fillColor: colorScheme.surfaceContainerHigh,
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: colorScheme.outline),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: colorScheme.primary, width: 2),
+      ),
+    ),
     appBarTheme: const AppBarTheme(
       elevation: 0,
       scrolledUnderElevation: 0,

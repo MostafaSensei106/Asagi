@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:bloc_signals_flutter/bloc_signals_flutter.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
@@ -10,6 +9,7 @@ import 'package:share_plus/share_plus.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/di/di.dart';
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/services/share/base_share_service.dart';
 import '../../../../core/widgets/widgets.dart';
 import '../cubit/compression_cubit.dart';
@@ -120,7 +120,7 @@ final class CompressionResultPage extends HookWidget {
                         ],
                         selected: {showAfter.value},
                         onSelectionChanged: (val) {
-                          unawaited(HapticFeedback.selectionClick());
+                          unawaited(AppHaptics.selection());
                           showAfter.value = val.first;
                         },
                       ),
@@ -224,7 +224,7 @@ final class CompressionResultPage extends HookWidget {
                   label: l10n.saveToGallery,
                   expand: true,
                   onPressed: () async {
-                    unawaited(HapticFeedback.vibrate());
+                    unawaited(AppHaptics.button());
                     try {
                       await BlocSignalProvider.of<CompressionCubit>(context)
                           .saveToGallery();
@@ -247,7 +247,7 @@ final class CompressionResultPage extends HookWidget {
                   label: l10n.shareVideo,
                   expand: true,
                   onPressed: () async {
-                    unawaited(HapticFeedback.selectionClick());
+                    unawaited(AppHaptics.selection());
                     try {
                       await getIt<BaseShareService>().shareFile(
                         file: XFile(output.path),

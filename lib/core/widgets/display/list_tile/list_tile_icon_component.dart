@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../extensions/extensions.dart';
+import '../../../services/haptics/haptics_service.dart';
 import '../expressive_icon.dart';
 import 'list_tile_component.dart';
 
@@ -20,6 +20,7 @@ final class ListTileIconComponent extends StatelessWidget {
     this.selected,
     this.shape = ExpressiveIconShape.blossom,
     this.showChevron = true,
+    this.hapticCategory = HapticCategory.buttons,
   }) : groupType = ListTileGroupType.single;
 
   const ListTileIconComponent.single({
@@ -34,6 +35,7 @@ final class ListTileIconComponent extends StatelessWidget {
     this.selected,
     this.shape = ExpressiveIconShape.blossom,
     this.showChevron = true,
+    this.hapticCategory = HapticCategory.buttons,
   }) : groupType = ListTileGroupType.single;
 
   const ListTileIconComponent.top({
@@ -48,6 +50,7 @@ final class ListTileIconComponent extends StatelessWidget {
     this.selected,
     this.shape = ExpressiveIconShape.blossom,
     this.showChevron = true,
+    this.hapticCategory = HapticCategory.buttons,
   }) : groupType = ListTileGroupType.top;
 
   const ListTileIconComponent.middle({
@@ -62,6 +65,7 @@ final class ListTileIconComponent extends StatelessWidget {
     this.selected,
     this.shape = ExpressiveIconShape.blossom,
     this.showChevron = true,
+    this.hapticCategory = HapticCategory.buttons,
   }) : groupType = ListTileGroupType.middle;
 
   const ListTileIconComponent.bottom({
@@ -76,8 +80,10 @@ final class ListTileIconComponent extends StatelessWidget {
     this.selected,
     this.shape = ExpressiveIconShape.blossom,
     this.showChevron = true,
+    this.hapticCategory = HapticCategory.buttons,
   }) : groupType = ListTileGroupType.bottom;
 
+  final HapticCategory hapticCategory;
   final ExpressiveIconShape shape;
   final bool showChevron;
   final String title;
@@ -125,7 +131,7 @@ final class ListTileIconComponent extends StatelessWidget {
       onTap: onTap == null
           ? null
           : () {
-              unawaited(HapticFeedback.vibrate());
+              unawaited(AppHaptics.feedback(hapticCategory));
               onTap!();
             },
     );

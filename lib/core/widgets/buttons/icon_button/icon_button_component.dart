@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../constants/app_config.dart';
+import '../../../services/haptics/haptics_service.dart';
 
 enum IconButtonVariant { standard, filled, tonal, outlined }
 
@@ -50,7 +50,7 @@ final class IconButtonComponent extends StatelessWidget {
     final callback = onPressed == null
         ? null
         : () {
-            unawaited(HapticFeedback.vibrate());
+            unawaited(AppHaptics.button());
             onPressed!();
           };
 

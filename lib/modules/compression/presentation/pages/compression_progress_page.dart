@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:bloc_signals_flutter/bloc_signals_flutter.dart';
-import 'package:flutter/services.dart';
 import 'package:kaisel/kaisel.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
@@ -9,6 +8,7 @@ import 'package:material_ui/material_ui.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/router/app_router.dart';
+import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
 import '../cubit/compression_cubit.dart';
 import '../cubit/compression_state.dart';
@@ -118,7 +118,7 @@ final class CompressionProgressPage extends StatelessWidget {
                                 icon: LucideIcons.pause,
                                 label: l10n.pause,
                                 onPressed: () {
-                                  unawaited(HapticFeedback.selectionClick());
+                                  unawaited(AppHaptics.selection());
                                   unawaited(cubit.pause());
                                 },
                               ),
@@ -130,7 +130,7 @@ final class CompressionProgressPage extends StatelessWidget {
                                 label: l10n.cancel,
                                 isDestructive: true,
                                 onPressed: () {
-                                  unawaited(HapticFeedback.selectionClick());
+                                  unawaited(AppHaptics.selection());
                                   unawaited(cubit.cancel());
                                 },
                               ),
@@ -146,7 +146,7 @@ final class CompressionProgressPage extends StatelessWidget {
                                 icon: LucideIcons.play,
                                 label: l10n.resume,
                                 onPressed: () {
-                                  unawaited(HapticFeedback.selectionClick());
+                                  unawaited(AppHaptics.selection());
                                   unawaited(cubit.resume());
                                 },
                               ),
@@ -158,7 +158,7 @@ final class CompressionProgressPage extends StatelessWidget {
                                 label: l10n.cancel,
                                 isDestructive: true,
                                 onPressed: () {
-                                  unawaited(HapticFeedback.selectionClick());
+                                  unawaited(AppHaptics.selection());
                                   unawaited(cubit.cancel());
                                 },
                               ),
@@ -172,7 +172,7 @@ final class CompressionProgressPage extends StatelessWidget {
                           label: l10n.viewResult,
                           expand: true,
                           onPressed: () {
-                            unawaited(HapticFeedback.vibrate());
+                            unawaited(AppHaptics.button());
                             unawaited(
                               context.push(const CompressionResultRoute()),
                             );
@@ -185,7 +185,7 @@ final class CompressionProgressPage extends StatelessWidget {
                           label: l10n.retry,
                           expand: true,
                           onPressed: () {
-                            unawaited(HapticFeedback.selectionClick());
+                            unawaited(AppHaptics.selection());
                             unawaited(cubit.start());
                           },
                         ),
@@ -196,7 +196,7 @@ final class CompressionProgressPage extends StatelessWidget {
                           label: l10n.cancel,
                           expand: true,
                           onPressed: () {
-                            unawaited(HapticFeedback.selectionClick());
+                            unawaited(AppHaptics.selection());
                             Navigator.of(context).pop();
                           },
                         ),

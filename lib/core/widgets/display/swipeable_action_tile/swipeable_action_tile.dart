@@ -1,10 +1,10 @@
 // ignore_for_file: discarded_futures
 
 import 'package:flutter/physics.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../services/haptics/haptics_service.dart';
 import 'models/swipe_action.dart';
 import 'models/swipeable_action_tile_style.dart';
 
@@ -91,7 +91,7 @@ class SwipeableActionTile extends HookWidget {
 
     void close() {
       if (style.enableHaptics) {
-        HapticFeedback.lightImpact();
+        AppHaptics.gesture();
       }
       runSpringSimulation(0, 0);
     }
@@ -139,7 +139,7 @@ class SwipeableActionTile extends HookWidget {
       if (isReady != isTriggerReady.value) {
         isTriggerReady.value = isReady;
         if (isReady && style.enableHaptics) {
-          HapticFeedback.vibrate(); // Dynamic haptic tick when trigger is active
+          AppHaptics.gesture(); // Dynamic haptic tick when trigger is active
         }
       }
     }
@@ -177,7 +177,7 @@ class SwipeableActionTile extends HookWidget {
       }
 
       if (targetOffset != 0 && style.enableHaptics) {
-        HapticFeedback.lightImpact();
+        AppHaptics.gesture();
       }
 
       runSpringSimulation(velocity, targetOffset);
@@ -328,13 +328,11 @@ class SwipeableActionTile extends HookWidget {
     }).toList();
 
     // Interpolate card background color
-    final idleColor = style.idleCardColor;
-    final Color currentColor;
-    if (idleColor != null) {
-      currentColor = Color.lerp(idleColor, style.cardColor, dragProgress)!;
-    } else {
-      currentColor = style.cardColor;
-    }
+    final activeColor =
+        style.cardColor ?? Theme.of(context).colorScheme.surfaceContainerHigh;
+    final idleColor =
+        style.idleCardColor ?? Theme.of(context).colorScheme.surfaceContainer;
+    final currentColor = Color.lerp(idleColor, activeColor, dragProgress)!;
 
     return Stack(
       clipBehavior: Clip.none,
@@ -398,7 +396,7 @@ class SwipeableActionTile extends HookWidget {
                 close();
               } else if (onTap != null) {
                 if (style.enableHaptics) {
-                  HapticFeedback.lightImpact();
+                  AppHaptics.gesture();
                 }
                 onTap!();
               }

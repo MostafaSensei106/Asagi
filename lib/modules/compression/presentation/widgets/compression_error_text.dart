@@ -1,10 +1,14 @@
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/extensions/extensions.dart';
+import '../../../../l10n/app_localizations.dart';
 
 /// Converts stable error codes into localized messages without exposing paths.
 String compressionErrorText(BuildContext context, String? error) {
-  final l10n = context.localeKeys;
+  return compressionErrorMessage(context.localeKeys, error);
+}
+
+String compressionErrorMessage(AppLocalizations l10n, String? error) {
   if (error == null) {
     return l10n.compressionCouldNotBeCompletedTryAnotherSettingOrVideo;
   }

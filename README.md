@@ -183,3 +183,55 @@ Follow `AGENTS.md`, preserve the existing feature/domain boundaries, format Dart
 changes, and run the analyzer plus relevant Dart and Kotlin tests. Keep generated
 Pigeon and localization files synchronized with their sources. Package license
 notices are available through Flutter's license screen.
+
+
+## Notification preferences and haptics
+
+Notification preferences are persisted by the singleton `NotificationsCubit`,
+provided by the main shell. No notification permission prompt is shown on startup:
+the settings-page banner requests permission only when tapped, or opens Android
+settings after permanent denial. The original icon-tile layout is retained;
+short subtitles explain each switch, and long presses open illustrated details.
+
+Haptics have independent controls for buttons, selections, gestures, successful
+completion, and errors. Shared widgets use `HapticsService`; duplicate pulses for
+the same interaction are suppressed. The foreground compression service keeps
+its required notification even when detailed background status is disabled.
+
+The GitHub Releases client uses Dio and generated Retrofit DTOs, with domain
+mapping and typed failures. Public stable releases from `MostafaSensei106/Asagi`
+are checked at most daily while the app is used. Weekly savings summaries are
+computed on opening from new compression-history records; no background scheduler
+or Firebase is required. Notification taps queue until the shell is ready and
+resolve saved result identifiers after a cold start.
+
+## Generated Material palettes
+
+All ten palette choices are generated as complete schemes from Asagi `#0095A9`.
+Auto uses Vibrant; named alternatives retain their own algorithms, including
+Monochrome. Each has light/dark and standard/high contrast variants (40 total).
+
+Use Python **3.11+** and Matugen **4.2.0**, then run:
+
+```bash
+python3 tool/generate_asagi_schemes.py
+python3 tool/generate_asagi_schemes.py --check
+python3 -m unittest discover -s tool/tests
+```
+
+The generator supports `--seed RRGGBB` and `--output path.dart`. It invokes Matugen
+with `--dry-run`, so user wallpaper/template hooks are not executed. All roles,
+foreground contrast pairs, and surface-container ordering are verified before
+writing output. The accompanying `.audit.json` records HEX values, CIELAB L*
+(HCT Tone), contrast ratios, seed, and Matugen version. Generated files are
+committed; runtime needs neither Python nor Matugen. Original brand artwork is
+not recolored.
+
+
+Notification business actions implement the project's `UseCaseBase<T, Params>`
+interface and return its existing `Result<T, Failures>`. Repositories execute
+Retrofit calls through `ApiExecutor` and `RequestDeduplicator`; response-model
+extensions map backend fields to domain entities. Only backend data models use
+JSON code generation. Local hydration uses a data-boundary codec, while domain
+entities and feature state remain independent of JSON and Dio. No legacy ERP
+session/token/pinning configuration is applied to GitHub requests.

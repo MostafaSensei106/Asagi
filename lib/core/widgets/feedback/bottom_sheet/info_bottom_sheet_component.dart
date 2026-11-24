@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:cupertino_modal_sheet/cupertino_modal_sheet.dart';
-import 'package:flutter/services.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../extensions/extensions.dart';
+import '../../../services/haptics/haptics_service.dart';
 import '../../design_system/tokens/tokens.dart';
 import '../../layout/gap.dart';
 import '../../navigation/app_bar/side_page_app_bar_component.dart';
@@ -24,7 +24,7 @@ final class InfoBottomSheetComponent {
   }) {
     final scheme = context.colorScheme;
     final textTheme = context.textTheme;
-    unawaited(HapticFeedback.vibrate());
+    unawaited(AppHaptics.button());
 
     return showCupertinoModalSheet<void>(
       context: context,
@@ -36,8 +36,7 @@ final class InfoBottomSheetComponent {
               horizontal: AppSpacing.large,
               vertical: AppSpacing.small,
             ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
+            child: ListView(
               children: [
                 InfoBottomSheetIllustration(icon: icon, kind: illustrationKind),
                 const Gap(AppSpacing.large),

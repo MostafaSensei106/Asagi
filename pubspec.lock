@@ -410,7 +410,7 @@ packages:
     source: hosted
     version: "0.4.1"
   dio:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: dio
       sha256: "852ec3b48cc431ac04fff978413c541502b67ffc3e26921e74e3d994694192c1"
@@ -538,18 +538,18 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_edge_ai
-      sha256: "860a5721c90fa5d2fb1edb23924cef94d4e7fbff21d22e24e10ece3a60f0706e"
+      sha256: "9f1d3d2aaaf287a19c01ab88aa06a2ab79b765cdbfc875e5d9ed299760689b25"
       url: "https://pub.dev"
     source: hosted
-    version: "2.7.1"
+    version: "2.7.2"
   flutter_edge_ai_litertlm:
     dependency: "direct main"
     description:
       name: flutter_edge_ai_litertlm
-      sha256: "5c9c6dc29e2a0406ad251c8c5739655294ae84bf22a3c00ec37417a6dcc11543"
+      sha256: "6d9f361edc376ff93d3861e9165fcc01c53c795834775ff06abfd8eaee45e9b4"
       url: "https://pub.dev"
     source: hosted
-    version: "1.21.0"
+    version: "1.21.1"
   flutter_hooks:
     dependency: "direct main"
     description:
@@ -574,6 +574,46 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.0"
+  flutter_local_notifications:
+    dependency: "direct main"
+    description:
+      name: flutter_local_notifications
+      sha256: "2b7579556c117b535ef83835798a7f3c4003dc892a888a4a99f2107bca7b6675"
+      url: "https://pub.dev"
+    source: hosted
+    version: "23.0.4"
+  flutter_local_notifications_linux:
+    dependency: transitive
+    description:
+      name: flutter_local_notifications_linux
+      sha256: bcbcf3c15e33b6866805092308f5f6ef27e1191874f6a92ef59213a0812a79a2
+      url: "https://pub.dev"
+    source: hosted
+    version: "9.0.0"
+  flutter_local_notifications_platform_interface:
+    dependency: transitive
+    description:
+      name: flutter_local_notifications_platform_interface
+      sha256: "4a49db4ce3d633ebc85c85b5fa959572600ec10bd097419c454579444308a0a0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "13.0.0"
+  flutter_local_notifications_web:
+    dependency: transitive
+    description:
+      name: flutter_local_notifications_web
+      sha256: ef117694fbfcd82308ab0e324cfc9282fa50c192e24ec54a58173ae327ebc544
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
+  flutter_local_notifications_windows:
+    dependency: transitive
+    description:
+      name: flutter_local_notifications_windows
+      sha256: "8e80ac29433c71e267493b397457e3a8430c5c1d9c76bb58a6971c016cdba3d7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.0.1"
   flutter_localizations:
     dependency: "direct main"
     description: flutter
@@ -966,7 +1006,7 @@ packages:
     source: hosted
     version: "1.1.31"
   json_annotation:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: json_annotation
       sha256: "2a743920d81b7910627f68ee2c9ac1fc0bfee32b9fc3403587d7c6791ca12f80"
@@ -1073,10 +1113,10 @@ packages:
     dependency: transitive
     description:
       name: litertlm_dart
-      sha256: "7b8a4d2b608e655573f8f49dd414c6a721735eb9df902b175c303227b069f051"
+      sha256: "105174268962a7a5e8d4e0df94957772e241645b450bd8c0d43a8190fbf1dfe9"
       url: "https://pub.dev"
     source: hosted
-    version: "0.19.1+1"
+    version: "0.19.1+2"
   logging:
     dependency: transitive
     description:
@@ -1414,7 +1454,7 @@ packages:
     source: hosted
     version: "6.1.0"
   pub_semver:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: pub_semver
       sha256: "261236774e8b1d69cfc6b9eabbc96c40f25e7a2d6b171f3385d4f65d5734fb24"
@@ -1454,7 +1494,7 @@ packages:
     source: hosted
     version: "1.1.1"
   retrofit:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: retrofit
       sha256: d700c1e7599bc6327cbe19ec7a2c87b595f6063ce888e8015f30cab655972331
@@ -1706,6 +1746,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.20"
+  timezone:
+    dependency: transitive
+    description:
+      name: timezone
+      sha256: "9f4e5a1a0e4fef7dd3424842c0575db01bfb7a11730e8d55753fcd5c5c98767b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.11.2"
   toastification:
     dependency: "direct main"
     description:

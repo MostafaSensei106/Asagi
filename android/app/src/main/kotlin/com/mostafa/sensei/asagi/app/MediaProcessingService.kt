@@ -19,6 +19,12 @@ class MediaProcessingService : Service() {
         private const val CHANNEL = "asagi_media_processing"
         private const val NOTIFICATION_ID = 3101
         private var active: MediaProcessingService? = null
+        private var configuration: Map<String, Any?> = emptyMap()
+
+        fun configure(value: Map<String, Any?>) {
+            configuration = value.toMap()
+            active?.let { service -> service.showProgress(service.lastProgress.coerceAtLeast(0), force = true) }
+        }
         var onTimeout: (() -> Unit)? = null
 
         fun start(context: Context) {
@@ -45,7 +51,7 @@ class MediaProcessingService : Service() {
         manager.createNotificationChannel(
             NotificationChannel(
                 CHANNEL,
-                getString(R.string.compression_notification_channel),
+                configuration["channelName"] as? String ?: getString(R.string.compression_notification_channel),
                 NotificationManager.IMPORTANCE_LOW,
             ),
         )
@@ -61,22 +67,25 @@ class MediaProcessingService : Service() {
 
     private fun notification(progress: Int): Notification {
         val intent = Intent(this, MainActivity::class.java)
+            .addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            .putExtra(NotificationBridge.PAYLOAD, configuration["payload"] as? String)
         val pending = PendingIntent.getActivity(
             this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
         )
-        return Notification.Builder(this, CHANNEL)
-            .setSmallIcon(android.R.drawable.stat_sys_upload)
-            .setContentTitle(getString(R.string.compression_notification_title))
-            .setContentText(getString(R.string.compression_notification_text))
+        val builder = Notification.Builder(this, CHANNEL)
+            .setSmallIcon(R.drawable.ic_notification)
+            .setContentTitle(configuration["title"] as? String ?: getString(R.string.compression_notification_title))
+            .setContentText(configuration["body"] as? String ?: getString(R.string.compression_notification_text))
             .setContentIntent(pending)
             .setOnlyAlertOnce(true)
             .setOngoing(true)
-            .setProgress(100, progress, false)
-            .build()
+
+        if (configuration["showDetails"] != false) builder.setProgress(100, progress, false)
+        return builder.build()
     }
 
-    private fun showProgress(progress: Int) {
-        if (progress == lastProgress) return
+    private fun showProgress(progress: Int, force: Boolean = false) {
+        if (!force && progress == lastProgress) return
         lastProgress = progress
         getSystemService(NotificationManager::class.java).notify(
             NOTIFICATION_ID, notification(progress),

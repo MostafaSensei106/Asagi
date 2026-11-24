@@ -1,54 +1,42 @@
 #!/usr/bin/env python3
-"""Generate Flutter ColorSchemes with matugen from Asagi's complete palette."""
+"""Generate and audit complete Material palettes with Matugen 4.2.0.
 
+No templates, wallpaper changes, or user hooks are run. Only verified output is
+written; --check compares deterministic artifacts without changing them.
+"""
+
+import argparse
 import json
+import math
+import re
 import subprocess
+import sys
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "lib/core/utils/theme/generated_color_schemes.dart"
+EXPECTED_VERSION = "4.2.0"
+DEFAULT_SEED = "0095A9"
 VARIANTS = {
-    "auto": "scheme-smart",
+    "auto": "scheme-vibrant",
     "tonalSpot": "scheme-tonal-spot",
+    "fidelity": "scheme-fidelity",
     "content": "scheme-content",
     "expressive": "scheme-expressive",
-    "fidelity": "scheme-fidelity",
     "fruitSalad": "scheme-fruit-salad",
     "monochrome": "scheme-monochrome",
     "neutral": "scheme-neutral",
     "rainbow": "scheme-rainbow",
     "vibrant": "scheme-vibrant",
 }
-SEEDS = {
-    "asagi": "0095A9",
-    "deep": "006F7D",
-    "mizu": "6FCBC2",
-    "lightAsagi": "BCE4E2",
-    "coral": "FAAD7D",
-    "ink": "243438",
-    "snow": "F7FAF8",
-}
 
-ACCENT_ROLES = (
-    "primary",
-    "on_primary",
-    "primary_container",
-    "on_primary_container",
-    "primary_fixed",
-    "primary_fixed_dim",
-    "on_primary_fixed",
-    "on_primary_fixed_variant",
-)
-SECONDARY_ROLES = tuple(role.replace("primary", "secondary") for role in ACCENT_ROLES)
-TERTIARY_ROLES = tuple(role.replace("primary", "tertiary") for role in ACCENT_ROLES)
 CONSTRUCTOR_ROLES = {
-    "background": "background",
     "error": "error",
     "error_container": "errorContainer",
     "inverse_on_surface": "onInverseSurface",
     "inverse_primary": "inversePrimary",
     "inverse_surface": "inverseSurface",
-    "on_background": "onBackground",
     "on_error": "onError",
     "on_error_container": "onErrorContainer",
     "on_primary": "onPrimary",
@@ -86,7 +74,6 @@ CONSTRUCTOR_ROLES = {
     "surface_container_lowest": "surfaceContainerLowest",
     "surface_dim": "surfaceDim",
     "surface_tint": "surfaceTint",
-    "surface_variant": "surfaceVariant",
     "tertiary": "tertiary",
     "tertiary_container": "tertiaryContainer",
     "tertiary_fixed": "tertiaryFixed",
@@ -94,122 +81,178 @@ CONSTRUCTOR_ROLES = {
 }
 
 
-def generate(seed: str, scheme: str, mode: str, contrast: float) -> dict:
-    result = subprocess.run(
-        [
-            "matugen",
-            "color",
-            "hex",
-            seed,
-            "--type",
-            scheme,
-            "--mode",
-            mode,
-            "--contrast",
-            str(contrast),
-            "--json",
-            "hex",
-        ],
-        check=True,
-        capture_output=True,
-        text=True,
-    )
-    return json.loads(result.stdout)["colors"]
+def normalized_seed(value: str) -> str:
+    value = value.removeprefix("#")
+    if not re.fullmatch(r"[0-9a-fA-F]{6}", value):
+        raise ValueError("Seed must contain exactly six hexadecimal digits.")
+    return value.upper()
 
 
-def selected(colors: dict, role: str) -> str:
-    return colors[role]["default"]["color"]
+def run_matugen(arguments: list[str]) -> str:
+    try:
+        result = subprocess.run(["matugen", *arguments], check=True,
+                                capture_output=True, text=True, timeout=30)
+        return result.stdout
+    except FileNotFoundError as error:
+        raise ValueError("Matugen is missing. Install Matugen 4.2.0.") from error
+    except subprocess.TimeoutExpired as error:
+        raise ValueError("Matugen timed out.") from error
+    except subprocess.CalledProcessError as error:
+        raise ValueError(f"Matugen failed: {error.stderr.strip()}") from error
 
 
-def dart_color(hex_color: str) -> str:
-    return f"Color(0xFF{hex_color.removeprefix('#').upper()})"
+def generate(seed: str, scheme: str, mode: str, contrast: float) -> dict[str, str]:
+    raw = json.loads(run_matugen([
+        "color", "hex", seed, "--type", scheme, "--mode", mode,
+        "--contrast", str(contrast), "--json", "hex", "--dry-run",
+    ]))
+    colors = {}
+    for role in CONSTRUCTOR_ROLES:
+        try:
+            value = raw["colors"][role][mode]["color"]
+        except (KeyError, TypeError) as error:
+            raise ValueError(f"Missing or malformed Matugen role: {role}") from error
+        if not isinstance(value, str) or not re.fullmatch(r"#[0-9a-fA-F]{6}", value):
+            raise ValueError(f"Invalid HEX for {role}: {value!r}")
+        colors[role] = value.upper()
+    return colors
 
 
-def main() -> None:
-    schemes = []
-    for variant, matugen_type in VARIANTS.items():
-        for mode in ("light", "dark"):
-            for high_contrast, contrast in ((False, 0.0), (True, 1.0)):
-                palettes = {
-                    name: generate(seed, matugen_type, mode, contrast)
-                    for name, seed in SEEDS.items()
-                }
-                colors = palettes["asagi"]
-                # Brand hues become Material's three coordinated accent groups.
-                for source, roles in (
-                    ("mizu", SECONDARY_ROLES),
-                    ("coral", TERTIARY_ROLES),
-                ):
-                    for target_role in roles:
-                        source_role = target_role.replace(
-                            "secondary", "primary"
-                        ).replace("tertiary", "primary")
-                        colors[target_role] = palettes[source][source_role]
+def luminance(color: str) -> float:
+    channels = [int(color[i:i + 2], 16) / 255.0 for i in (1, 3, 5)]
+    linear = [v / 12.92 if v <= 0.04045 else ((v + 0.055) / 1.055) ** 2.4
+              for v in channels]
+    return sum(v * weight for v, weight in zip(linear, (0.2126, 0.7152, 0.0722)))
 
-                # The full brand palette also informs neutral surfaces, outlines,
-                # pale containers, and the inverse action accent.
-                neutral_source = (
-                    palettes["snow"] if mode == "light" else palettes["ink"]
-                )
-                for role in (
-                    "background",
-                    "on_background",
-                    "on_surface",
-                    "on_surface_variant",
-                    "outline",
-                    "outline_variant",
-                    "surface",
-                    "surface_bright",
-                    "surface_container",
-                    "surface_container_high",
-                    "surface_container_highest",
-                    "surface_container_low",
-                    "surface_container_lowest",
-                    "surface_dim",
-                    "surface_variant",
-                ):
-                    colors[role] = neutral_source[role]
-                colors["primary_container"] = palettes["lightAsagi"][
-                    "primary_container"
-                ]
-                colors["on_primary_container"] = palettes["deep"][
-                    "on_primary_container"
-                ]
-                colors["inverse_primary"] = palettes["deep"]["inverse_primary"]
 
-                args = [f"brightness: Brightness.{mode}"]
-                for source_role, constructor_role in CONSTRUCTOR_ROLES.items():
-                    color = selected(colors, source_role)
-                    args.append(f"{constructor_role}: {dart_color(color)}")
-                schemes.append(
-                    f"  '{variant}|{mode}|{str(high_contrast).lower()}': ColorScheme(\n    "
-                    + ",\n    ".join(args)
-                    + ",\n  ),"
-                )
+def tone(color: str) -> float:
+    # HCT's Tone is CIELAB L*, derived from relative luminance Y.
+    y = luminance(color)
+    return 116 * math.cbrt(y) - 16 if y > 216 / 24389 else y * 24389 / 27
 
-    generated = (
-        """// Generated by tool/generate_asagi_schemes.py using matugen.
+
+def contrast_ratio(first: str, second: str) -> float:
+    lighter, darker = sorted((luminance(first), luminance(second)), reverse=True)
+    return (lighter + 0.05) / (darker + 0.05)
+
+
+def foreground_pairs() -> list[tuple[str, str]]:
+    pairs = [("on_surface", role) for role in (
+        "surface", "surface_container_lowest", "surface_container_low",
+        "surface_container", "surface_container_high", "surface_container_highest")]
+    pairs += [("on_surface_variant", "surface_container_highest"),
+              ("inverse_on_surface", "inverse_surface")]
+    for accent in ("primary", "secondary", "tertiary", "error"):
+        pairs += [(f"on_{accent}", accent),
+                  (f"on_{accent}_container", f"{accent}_container")]
+        if accent != "error":
+            pairs += [(f"on_{accent}_fixed", f"{accent}_fixed"),
+                      (f"on_{accent}_fixed", f"{accent}_fixed_dim"),
+                      (f"on_{accent}_fixed_variant", f"{accent}_fixed"),
+                      (f"on_{accent}_fixed_variant", f"{accent}_fixed_dim")]
+    return pairs
+
+
+def audit(colors: dict[str, str], mode: str, high_contrast: bool) -> dict:
+    pairs = {}
+    for foreground, background in foreground_pairs():
+        ratio = contrast_ratio(colors[foreground], colors[background])
+        # Fixed roles intentionally retain their standard tones in high contrast.
+        minimum = 7.0 if high_contrast and "fixed" not in foreground else 4.5
+        if ratio < minimum:
+            raise ValueError(f"{foreground}/{background}: {ratio:.4f}:1 < {minimum}:1")
+        pairs[f"{foreground}/{background}"] = round(ratio, 4)
+    levels = [tone(colors[role]) for role in (
+        "surface_container_lowest", "surface_container_low", "surface_container",
+        "surface_container_high", "surface_container_highest")]
+    ordered = sorted(levels, reverse=mode == "light")
+    if levels != ordered:
+        raise ValueError(f"Surface container tones are out of order: {levels}")
+    outline = contrast_ratio(colors["outline"], colors["surface"])
+    if outline < 3.0:
+        raise ValueError(f"Interactive outline contrast is too low: {outline:.4f}:1")
+    return {"roles": {role: {"hex": value, "tone": round(tone(value), 4)}
+                      for role, value in colors.items()},
+            "contrast": pairs, "outlineContrast": round(outline, 4)}
+
+
+def render(seed: str, schemes: dict[str, dict[str, str]]) -> str:
+    header = f"""// Generated by tool/generate_asagi_schemes.py using Matugen {EXPECTED_VERSION}.
 // Do not edit by hand. Regenerate with: python3 tool/generate_asagi_schemes.py
 import 'package:material_ui/material_ui.dart';
 
-// ignore_for_file: deprecated_member_use
+const Color asagiSeedColor = Color(0xFF{seed});
 
-ColorScheme matugenColorScheme({
+ColorScheme matugenColorScheme({{
   required String variant,
   required Brightness brightness,
   required bool highContrast,
-}) => _schemes[
-  '$variant|${brightness.name}|$highContrast'
-]!;
+}}) => _schemes['$variant|${{brightness.name}}|$highContrast']!;
 
-const Map<String, ColorScheme> _schemes = {
+const Map<String, ColorScheme> _schemes = {{
 """
-        + "\n".join(schemes)
-        + "\n};\n"
-    )
-    OUTPUT.write_text(generated)
-    print(f"Generated {len(schemes)} matugen ColorSchemes at {OUTPUT}")
+    entries = []
+    for key, colors in schemes.items():
+        mode = key.split("|")[1]
+        args = [f"brightness: Brightness.{mode}"]
+        args += [f"{CONSTRUCTOR_ROLES[role]}: Color(0xFF{value[1:]})"
+                 for role, value in colors.items()]
+        entries.append(f"  '{key}': ColorScheme(\n    " + ",\n    ".join(args) + ",\n  ),")
+    return header + "\n".join(entries) + "\n};\n"
+
+
+def write_artifact(path: Path, content: str, check: bool) -> None:
+    if check:
+        if not path.exists() or path.read_text() != content:
+            raise ValueError(f"Generated artifact is stale: {path}")
+        return
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.NamedTemporaryFile(mode="w", dir=path.parent, delete=False) as temporary:
+        temporary.write(content)
+        temporary_path = Path(temporary.name)
+    temporary_path.replace(path)
+
+
+def main(arguments: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--seed", default=DEFAULT_SEED)
+    parser.add_argument("--output", type=Path, default=OUTPUT)
+    parser.add_argument("--check", action="store_true")
+    args = parser.parse_args(arguments)
+    try:
+        seed = normalized_seed(args.seed)
+        version = run_matugen(["--version"]).strip()
+        if version != f"matugen {EXPECTED_VERSION}":
+            raise ValueError(f"Expected Matugen {EXPECTED_VERSION}, found {version!r}.")
+        schemes, report = {}, {}
+        for variant, scheme in VARIANTS.items():
+            for mode in ("light", "dark"):
+                for high_contrast, contrast in ((False, 0.0), (True, 1.0)):
+                    key = f"{variant}|{mode}|{str(high_contrast).lower()}"
+                    colors = generate(seed, scheme, mode, contrast)
+                    try:
+                        report[key] = audit(colors, mode, high_contrast)
+                    except ValueError as error:
+                        raise ValueError(f"{key}: {error}") from error
+                    schemes[key] = colors
+        dart = render(seed, schemes)
+        report_text = json.dumps({"seed": f"#{seed}", "matugenVersion": EXPECTED_VERSION,
+            "schemes": report}, indent=2) + "\n"
+        output = args.output.resolve()
+        report_path = output.with_suffix(".audit.json")
+        # All generation and audits finish before any destination is replaced.
+        if args.check:
+            write_artifact(output, dart, True)
+            write_artifact(report_path, report_text, True)
+        else:
+            write_artifact(output, dart, False)
+            write_artifact(report_path, report_text, False)
+        print(f"{'Verified' if args.check else 'Generated'} {len(schemes)} schemes: {output}")
+        return 0
+    except (ValueError, json.JSONDecodeError) as error:
+        print(f"Color generation failed: {error}", file=sys.stderr)
+        return 1
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

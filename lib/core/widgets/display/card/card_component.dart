@@ -71,15 +71,8 @@ final class CardComponent extends StatelessWidget {
         border: Border.all(color: colorScheme.outlineVariant),
       ),
       CardVariant.elevated => BoxDecoration(
-        color: color ?? colorScheme.surfaceContainerLow,
+        color: color ?? colorScheme.surfaceContainerHigh,
         borderRadius: radius,
-        boxShadow: [
-          BoxShadow(
-            color: colorScheme.shadow.withValues(alpha: 0.08),
-            blurRadius: 12,
-            offset: const Offset(0, 4),
-          ),
-        ],
       ),
     };
 

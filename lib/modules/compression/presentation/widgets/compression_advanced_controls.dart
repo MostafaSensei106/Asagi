@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/compression/domain/models/compression_preferences.dart';
 import '../../../../core/compression/domain/models/encode_request.dart';
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/design_system/tokens/tokens.dart';
 import '../../../../core/widgets/widgets.dart';
 
@@ -164,7 +164,7 @@ final class _CompressionAdvancedControlsState
                 label: Text(l10n.automatic),
                 selected: p.maxShortEdge == null,
                 onSelected: (_) {
-                  unawaited(HapticFeedback.selectionClick());
+                  unawaited(AppHaptics.selection());
                   widget.onChanged(p.copyWith(clearMaxShortEdge: true));
                 },
               ),
@@ -181,7 +181,7 @@ final class _CompressionAdvancedControlsState
                   ),
                   selected: p.maxShortEdge == value,
                   onSelected: (_) {
-                    unawaited(HapticFeedback.selectionClick());
+                    unawaited(AppHaptics.selection());
                     widget.onChanged(p.copyWith(maxShortEdge: value));
                   },
                 ),
@@ -226,7 +226,7 @@ final class _CompressionAdvancedControlsState
                   label: Text('$fps fps'),
                   selected: p.maxFrameRate == fps,
                   onSelected: (_) {
-                    unawaited(HapticFeedback.selectionClick());
+                    unawaited(AppHaptics.selection());
                     widget.onChanged(p.copyWith(maxFrameRate: fps));
                   },
                 ),
@@ -246,7 +246,7 @@ final class _CompressionAdvancedControlsState
                 label: Text(l10n.automatic),
                 selected: p.audioBitrateKbps == null,
                 onSelected: (_) {
-                  unawaited(HapticFeedback.selectionClick());
+                  unawaited(AppHaptics.selection());
                   widget.onChanged(p.copyWith(clearAudioBitrate: true));
                 },
               ),
@@ -255,7 +255,7 @@ final class _CompressionAdvancedControlsState
                   label: Text(rate == 0 ? l10n.removeAudio : '$rate kbps'),
                   selected: p.audioBitrateKbps == rate,
                   onSelected: (_) {
-                    unawaited(HapticFeedback.selectionClick());
+                    unawaited(AppHaptics.selection());
                     widget.onChanged(p.copyWith(audioBitrateKbps: rate));
                   },
                 ),
@@ -312,7 +312,7 @@ final class _CompressionAdvancedControlsState
                 label: Text(l10n.strictnessDefault),
                 selected: p.safetyMargin == null || p.safetyMargin == 0.98,
                 onSelected: (_) {
-                  unawaited(HapticFeedback.selectionClick());
+                  unawaited(AppHaptics.selection());
                   widget.onChanged(p.copyWith(safetyMargin: 0.98));
                 },
               ),
@@ -320,7 +320,7 @@ final class _CompressionAdvancedControlsState
                 label: Text(l10n.strictnessSafe),
                 selected: p.safetyMargin == 0.90,
                 onSelected: (_) {
-                  unawaited(HapticFeedback.selectionClick());
+                  unawaited(AppHaptics.selection());
                   widget.onChanged(p.copyWith(safetyMargin: 0.90));
                 },
               ),
@@ -328,7 +328,7 @@ final class _CompressionAdvancedControlsState
                 label: Text(l10n.strictnessAggressive),
                 selected: p.safetyMargin == 0.96,
                 onSelected: (_) {
-                  unawaited(HapticFeedback.selectionClick());
+                  unawaited(AppHaptics.selection());
                   widget.onChanged(p.copyWith(safetyMargin: 0.96));
                 },
               ),
@@ -353,7 +353,7 @@ final class _CompressionAdvancedControlsState
             ],
             selected: {p.hdrMode},
             onSelectionChanged: (selection) {
-              unawaited(HapticFeedback.selectionClick());
+              unawaited(AppHaptics.selection());
               widget.onChanged(p.copyWith(hdrMode: selection.first));
             },
           ),

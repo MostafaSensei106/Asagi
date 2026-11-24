@@ -2,10 +2,10 @@
 
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../constants/app_config.dart';
+import '../../../services/haptics/haptics_service.dart';
 
 final class CheckboxListTileComponent extends StatelessWidget {
   const CheckboxListTileComponent({
@@ -27,7 +27,7 @@ final class CheckboxListTileComponent extends StatelessWidget {
     title: Text(title),
     value: value,
     onChanged: (value) {
-      unawaited(HapticFeedback.vibrate());
+      unawaited(AppHaptics.selection());
       onChanged(value);
     },
     shape: RoundedRectangleBorder(

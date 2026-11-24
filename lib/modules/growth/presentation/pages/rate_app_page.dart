@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:kaisel/kaisel.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
@@ -9,6 +8,7 @@ import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/router/app_router.dart';
+import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
 
 /// Rating and review screen prompting users to review Asagi on the store
@@ -24,12 +24,12 @@ final class _RateAppPageState extends State<RateAppPage> {
   int _rating = 5;
 
   void _onRateTap(int stars) {
-    unawaited(HapticFeedback.vibrate());
+    unawaited(AppHaptics.button());
     setState(() => _rating = stars);
   }
 
   void _submitRating() {
-    unawaited(HapticFeedback.vibrate());
+    unawaited(AppHaptics.button());
     if (_rating >= 4) {
       context.toast.showSuccess(
         context,

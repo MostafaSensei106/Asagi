@@ -1,12 +1,12 @@
-abstract class BaseLocalNotificationService {
-  /// Initializes the local notification service (settings, channels, callback listeners).
-  Future<void> initialize();
+import 'notification_request.dart';
 
-  /// Displays a local notification with the given id, title, and body.
-  Future<void> showNotification({
-    required int id,
-    required String? title,
-    required String? body,
-    String? payload,
-  });
+abstract interface class BaseLocalNotificationService {
+  Stream<void> get interactions;
+  List<String> takePendingInteractions();
+  Future<void> initialize();
+  Future<bool> show(LocalNotificationRequest request);
+  Future<Set<String>> blockedChannels();
+  Future<bool> enabled();
+  Future<void> openChannelSettings(String channelId);
+  Future<void> configureProgress(Map<String, Object?> configuration);
 }

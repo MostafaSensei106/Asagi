@@ -34,3 +34,12 @@ class OfflineFailure extends Failures {
 class LocalStorageFailure extends Failures {
   const LocalStorageFailure(super.message);
 }
+
+final class RequestCancelledFailure extends Failures {
+  const RequestCancelledFailure(super.message);
+}
+
+final class RateLimitFailure extends Failures {
+  const RateLimitFailure(super.message, {this.retryAt});
+  final DateTime? retryAt;
+}

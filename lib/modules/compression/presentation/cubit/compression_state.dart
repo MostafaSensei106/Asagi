@@ -28,6 +28,7 @@ sealed class CompressionState with _$CompressionState {
   const factory CompressionState({
     @Default(CompressionPhase.idle) CompressionPhase phase,
     SelectedVideo? video,
+    String? jobId,
     @Default(16) double targetMb,
     @Default(CompressionPreferences()) CompressionPreferences preferences,
     CompressionPlan? previewPlan,

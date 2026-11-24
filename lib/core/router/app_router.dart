@@ -8,17 +8,21 @@ import '../../modules/about/about.dart';
 import '../../modules/ai/ai.dart';
 import '../../modules/appearance/appearance.dart';
 import '../../modules/compression/compression.dart';
+import '../../modules/compression/domain/repositories/video_compression_repository.dart';
 import '../../modules/growth/growth.dart';
 import '../../modules/help/help.dart';
 import '../../modules/home/home.dart';
 import '../../modules/language/language.dart';
 import '../../modules/legal/legal.dart';
+import '../../modules/notifications/logic/cubit/notifications_cubit.dart';
 import '../../modules/notifications/notifications.dart';
+import '../../modules/notifications/presentation/widgets/notification_coordinator.dart';
 import '../../modules/onboarding/onboarding.dart';
 import '../../modules/privacy/privacy.dart';
 import '../../modules/settings/settings.dart';
 import '../../modules/storage/storage.dart';
 import '../constants/asagi_icons.dart';
+import '../di/di.dart';
 import '../extensions/extensions.dart';
 import '../widgets/navigation/bottom_nav_bar/bottom_nav_bar_component.dart';
 import 'observers/app_navigator_observer.dart';
@@ -89,7 +93,10 @@ final class AppRouter {
         VideoSelectRoute() => const VideoSelectPage(),
         CompressionSetupRoute() => const CompressionSetupPage(),
         CompressionProgressRoute() => const CompressionProgressPage(),
-        CompressionResultRoute() => const CompressionResultPage(),
+        CompressionResultRoute(:final jobId) =>
+          jobId == null
+              ? const CompressionResultPage()
+              : SavedCompressionResultPage(jobId: jobId),
         CompressionHistoryRoute() => const CompressionHistoryPage(),
         AiChatRoute() => const AiChatPage(),
 

@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../constants/app_config.dart';
+import '../../../services/haptics/haptics_service.dart';
 
 /// Filled (primary) action button.
 ///
@@ -78,7 +78,7 @@ final class FilledButtonComponent extends StatelessWidget {
     final enabled = isEnabled && !isLoading && onPressed != null;
     final callback = enabled
         ? () {
-            unawaited(HapticFeedback.vibrate());
+            unawaited(AppHaptics.button());
             onPressed!();
           }
         : null;

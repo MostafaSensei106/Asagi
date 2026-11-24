@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -8,6 +7,7 @@ import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/router/app_router.dart';
+import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
 
 /// First-run onboarding experience introducing Asagi's on-device compression
@@ -34,7 +34,7 @@ final class _OnboardingPageState extends State<OnboardingPage> {
   }
 
   void _finishOnboarding() {
-    unawaited(HapticFeedback.vibrate());
+    unawaited(AppHaptics.button());
     if (Navigator.of(context).canPop()) {
       Navigator.of(context).pop();
     } else {

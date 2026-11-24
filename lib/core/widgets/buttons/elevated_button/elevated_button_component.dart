@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../constants/app_config.dart';
+import '../../../services/haptics/haptics_service.dart';
 
 final class ElevatedButtonComponent extends StatelessWidget {
   const ElevatedButtonComponent({
@@ -41,7 +41,7 @@ final class ElevatedButtonComponent extends StatelessWidget {
   Widget build(BuildContext context) => icon == null
       ? ElevatedButton(
           onPressed: () {
-            unawaited(HapticFeedback.vibrate());
+            unawaited(AppHaptics.button());
             onPressed();
           },
           style: _getButtonStyle(context),
@@ -49,7 +49,7 @@ final class ElevatedButtonComponent extends StatelessWidget {
         )
       : ElevatedButton.icon(
           onPressed: () {
-            unawaited(HapticFeedback.vibrate());
+            unawaited(AppHaptics.button());
             onPressed();
           },
           style: _getButtonStyle(context),

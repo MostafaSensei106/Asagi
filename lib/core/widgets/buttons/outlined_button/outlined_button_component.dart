@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../constants/app_config.dart';
+import '../../../services/haptics/haptics_service.dart';
 
 /// Outlined (secondary) action button.
 ///
@@ -74,7 +74,7 @@ final class OutlinedButtonComponent extends StatelessWidget {
     final enabled = isEnabled && !isLoading && onPressed != null;
     final callback = enabled
         ? () {
-            unawaited(HapticFeedback.vibrate());
+            unawaited(AppHaptics.button());
             onPressed!();
           }
         : null;

@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
 
 /// Interactive feedback form allowing users to report issues or suggest
@@ -49,7 +49,7 @@ final class _FeedbackPageState extends State<FeedbackPage> {
     }
 
     setState(() => _isSubmitting = true);
-    unawaited(HapticFeedback.vibrate());
+    unawaited(AppHaptics.button());
     await Future<void>.delayed(const Duration(milliseconds: 700));
 
     if (!mounted) return;
@@ -126,7 +126,7 @@ final class _FeedbackPageState extends State<FeedbackPage> {
                     label: cat,
                     selected: _category == cat,
                     onPressed: () {
-                      unawaited(HapticFeedback.vibrate());
+                      unawaited(AppHaptics.button());
                       setState(() => _category = cat);
                     },
                   ),
@@ -152,7 +152,7 @@ final class _FeedbackPageState extends State<FeedbackPage> {
                       size: 28,
                     ),
                     onPressed: () {
-                      unawaited(HapticFeedback.vibrate());
+                      unawaited(AppHaptics.button());
                       setState(() => _rating = starIndex);
                     },
                   );
@@ -188,7 +188,7 @@ final class _FeedbackPageState extends State<FeedbackPage> {
                   trailing: SwitchComponent(
                     value: _includeDiagnostics,
                     onChanged: (val) {
-                      unawaited(HapticFeedback.vibrate());
+                      unawaited(AppHaptics.button());
                       setState(() => _includeDiagnostics = val);
                     },
                   ),

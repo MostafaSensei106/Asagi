@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
 
 /// Details why Asagi requests specific device runtime permissions and how they
@@ -149,7 +149,7 @@ final class PermissionsPage extends StatelessWidget {
                     label: 'Manage in System Settings',
                     expand: true,
                     onPressed: () {
-                      unawaited(HapticFeedback.vibrate());
+                      unawaited(AppHaptics.button());
                       context.toast.showInfo(
                         context,
                         'Please check your device system app settings',

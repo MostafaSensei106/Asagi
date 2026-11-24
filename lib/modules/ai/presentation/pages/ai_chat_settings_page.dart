@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
 
 final class AiChatSettingsPage extends StatefulWidget {
@@ -51,7 +51,7 @@ final class _AiChatSettingsPageState extends State<AiChatSettingsPage> {
                 trailing: SwitchComponent(
                   value: _streaming,
                   onChanged: (val) {
-                    unawaited(HapticFeedback.vibrate());
+                    unawaited(AppHaptics.button());
                     setState(() => _streaming = val);
                   },
                 ),
@@ -72,7 +72,7 @@ final class _AiChatSettingsPageState extends State<AiChatSettingsPage> {
                 trailing: SwitchComponent(
                   value: _showThinking,
                   onChanged: (val) {
-                    unawaited(HapticFeedback.vibrate());
+                    unawaited(AppHaptics.button());
                     setState(() => _showThinking = val);
                   },
                 ),
@@ -95,7 +95,7 @@ final class _AiChatSettingsPageState extends State<AiChatSettingsPage> {
                 divisions: 9,
                 label: _temperature.toStringAsFixed(1),
                 onChanged: (val) => {
-                  HapticFeedback.vibrate(),
+                  AppHaptics.button(),
                   setState(() => _temperature = val),
                 },
               ),
@@ -134,7 +134,7 @@ final class _AiChatSettingsPageState extends State<AiChatSettingsPage> {
                   ),
                 ],
                 onChanged: (val) {
-                  HapticFeedback.vibrate;
+                  AppHaptics.button;
                   setState(() => _maxTokens = val!);
                 },
               ),

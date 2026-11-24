@@ -1,7 +1,11 @@
 // ignore_for_file: avoid_positional_boolean_parameters
 
+import 'dart:async';
+
 import 'package:lucide_icons_flutter/lucide_icons_500.dart';
 import 'package:material_ui/material_ui.dart';
+
+import '../../../services/haptics/haptics_service.dart';
 
 final class SwitchComponent extends StatelessWidget {
   const SwitchComponent({
@@ -15,7 +19,10 @@ final class SwitchComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Switch(
     value: value,
-    onChanged: onChanged,
+    onChanged: (next) {
+      onChanged(next);
+      unawaited(AppHaptics.selection());
+    },
     activeTrackColor: Theme.of(context).colorScheme.primary,
     thumbIcon: WidgetStateProperty.resolveWith<Icon?>((states) {
       if (states.contains(WidgetState.selected)) {

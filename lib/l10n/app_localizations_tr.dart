@@ -2064,6 +2064,183 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get compressionAndroidOnly =>
       'Video sıkıştırma şu anda yalnızca Android üzerinde kullanılabilir.';
+
+  @override
+  String get notificationPermissionTitle => 'Enable notifications';
+
+  @override
+  String get notificationPermissionBody =>
+      'Tap to allow compression alerts and updates.';
+
+  @override
+  String get notificationPermissionSettingsBody =>
+      'Notifications are blocked. Tap to open system settings.';
+
+  @override
+  String get notificationUnavailable =>
+      'Notifications are currently supported on Android.';
+
+  @override
+  String get notificationSetupFailed =>
+      'Notification settings could not be applied. Tap to retry.';
+
+  @override
+  String get notificationChannelBlocked =>
+      'A notification channel is blocked in system settings.';
+
+  @override
+  String get notificationProgressDetails =>
+      'Show progress details in the background. A basic service notification remains while compression runs.';
+
+  @override
+  String get notificationProgressTitle => 'Compressing video';
+
+  @override
+  String get notificationProgressBody => 'Tap to view your compression job.';
+
+  @override
+  String get notificationPausedTitle => 'Compression paused';
+
+  @override
+  String get notificationSavingTitle => 'Saving compressed video';
+
+  @override
+  String get notificationCompletedTitle => 'Video ready';
+
+  @override
+  String notificationCompletedBody(String name, String size, String saved) {
+    return '$name · $size MB · Saved $saved MB';
+  }
+
+  @override
+  String notificationCompletedWarningBody(String name, String size) {
+    return '$name · $size MB · Review the result warning';
+  }
+
+  @override
+  String get notificationFailedTitle => 'Compression interrupted';
+
+  @override
+  String notificationInterruptedBody(String count) {
+    return '$count interrupted jobs are available to review.';
+  }
+
+  @override
+  String notificationReleaseTitle(String version) {
+    return 'Asagi $version is available';
+  }
+
+  @override
+  String get notificationSavingsTitle => 'Your weekly storage savings';
+
+  @override
+  String notificationSavingsBody(String count, String saved) {
+    return '$count videos · $saved MB saved';
+  }
+
+  @override
+  String get hapticsButtons => 'Buttons and taps';
+
+  @override
+  String get hapticsButtonsDescription =>
+      'Plays a light pulse when you press an action button. This setting applies across the app; selection changes and swipe gestures have their own controls.';
+
+  @override
+  String get hapticsSelections => 'Selection changes';
+
+  @override
+  String get hapticsSelectionsDescription =>
+      'Plays a brief tick when you change a switch, checkbox, or selected value. Disable it to adjust preferences without vibration while keeping button feedback unchanged.';
+
+  @override
+  String get hapticsGestures => 'Gestures';
+
+  @override
+  String get hapticsGesturesDescription =>
+      'Plays a light pulse when a swipe reaches the point that reveals or triggers an action. It helps you feel the action threshold without vibrating throughout the drag.';
+
+  @override
+  String get hapticsSuccess => 'Successful completion';
+
+  @override
+  String get hapticsSuccessDescription =>
+      'Plays a confirmation pulse when video compression finishes. In the background the completion notification provides the vibration, so the same result does not vibrate twice. Sound on completion is controlled separately.';
+
+  @override
+  String get hapticsErrors => 'Errors and interruptions';
+
+  @override
+  String get hapticsErrorsDescription =>
+      'Plays a stronger pulse if compression fails or is interrupted. In the background this follows the error notification. Cancelling a job yourself does not trigger an error pulse.';
+
+  @override
+  String get notificationJobUnavailable =>
+      'This job is no longer available. Your history is shown instead.';
+
+  @override
+  String get notificationRecoveryHint =>
+      'Review interrupted jobs from the home screen.';
+
+  @override
+  String get notificationProgressChannel => 'Compression status';
+
+  @override
+  String get notificationCompletionChannel => 'Completed videos';
+
+  @override
+  String get notificationErrorChannel => 'Compression problems';
+
+  @override
+  String get notificationReleaseChannel => 'App releases';
+
+  @override
+  String get notificationSavingsChannel => 'Storage savings';
+
+  @override
+  String get automaticColorSchemeDescription =>
+      'Auto uses a vivid Asagi palette. Each option previews its own accent colors.';
+
+  @override
+  String get colorSchemeTonalSpot => 'Tonal spot';
+
+  @override
+  String get colorSchemeFidelity => 'Fidelity';
+
+  @override
+  String get colorSchemeContent => 'Content';
+
+  @override
+  String get colorSchemeExpressive => 'Expressive';
+
+  @override
+  String get colorSchemeFruitSalad => 'Fruit salad';
+
+  @override
+  String get colorSchemeMonochrome => 'Monochrome';
+
+  @override
+  String get colorSchemeNeutral => 'Neutral';
+
+  @override
+  String get colorSchemeRainbow => 'Rainbow';
+
+  @override
+  String get colorSchemeVibrant => 'Vibrant';
+
+  @override
+  String get hapticsButtonsShort => 'Button press feedback';
+
+  @override
+  String get hapticsSelectionsShort => 'Feedback when choices change';
+
+  @override
+  String get hapticsGesturesShort => 'Swipe action feedback';
+
+  @override
+  String get hapticsSuccessShort => 'A pulse when a video is ready';
+
+  @override
+  String get hapticsErrorsShort => 'Feedback when a job fails';
 }
 
 /// The translations for Turkish, as used in Turkey (`tr_TR`).

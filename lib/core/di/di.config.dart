@@ -13,6 +13,7 @@
 import 'package:asagi/core/compression/domain/contracts/artifact_store.dart'
     as _i0;
 import 'package:asagi/core/di/injection_module.dart' as _i938;
+import 'package:asagi/core/network/request_deduplicator.dart' as _i965;
 import 'package:asagi/core/services/ai/ai_model_service.dart' as _i491;
 import 'package:asagi/core/services/ai/interface/base_ai_model_service.dart'
     as _i454;
@@ -27,7 +28,12 @@ import 'package:asagi/core/services/file_opener/base_file_opener_service.dart'
     as _i1039;
 import 'package:asagi/core/services/file_opener/url_file_opener_service.dart'
     as _i283;
+import 'package:asagi/core/services/haptics/haptics_service.dart' as _i207;
 import 'package:asagi/core/services/l10n/l10n_service.dart' as _i843;
+import 'package:asagi/core/services/notifications/base_local_notification_service.dart'
+    as _i547;
+import 'package:asagi/core/services/notifications/local_notification_service.dart'
+    as _i1010;
 import 'package:asagi/core/services/permissions/base_permission_service.dart'
     as _i415;
 import 'package:asagi/core/services/permissions/permission_handler_service.dart'
@@ -71,13 +77,40 @@ import 'package:asagi/modules/about/data/about_app_repsitory.dart' as _i382;
 import 'package:asagi/modules/about/data/base_about_app_repository.dart'
     as _i812;
 import 'package:asagi/modules/about/logic/cubit/about_app_cubit.dart' as _i188;
+import 'package:asagi/modules/compression/domain/repositories/video_compression_repository.dart'
+    as _i425;
+import 'package:asagi/modules/notifications/data/data_sources/github_releases_api.dart'
+    as _i732;
+import 'package:asagi/modules/notifications/data/repositories/device_notification_repository.dart'
+    as _i546;
+import 'package:asagi/modules/notifications/data/repositories/github_release_repository.dart'
+    as _i701;
+import 'package:asagi/modules/notifications/domain/repositories/notification_repository.dart'
+    as _i583;
+import 'package:asagi/modules/notifications/domain/repositories/release_repository.dart'
+    as _i105;
+import 'package:asagi/modules/notifications/domain/use_cases/check_app_update.dart'
+    as _i584;
+import 'package:asagi/modules/notifications/domain/use_cases/initialize_notifications.dart'
+    as _i616;
+import 'package:asagi/modules/notifications/domain/use_cases/read_notification_access.dart'
+    as _i987;
+import 'package:asagi/modules/notifications/domain/use_cases/read_notification_insights.dart'
+    as _i309;
+import 'package:asagi/modules/notifications/domain/use_cases/request_notification_access.dart'
+    as _i317;
+import 'package:asagi/modules/notifications/domain/use_cases/show_notification.dart'
+    as _i837;
+import 'package:asagi/modules/notifications/logic/cubit/notifications_cubit.dart'
+    as _i376;
 import 'package:asagi/modules/storage/data/repositories/file_storage_repository.dart'
     as _i806;
 import 'package:asagi/modules/storage/domain/repositories/storage_repository.dart'
-    as _i547;
+    as _i548;
 import 'package:asagi/modules/storage/logic/storage_settings_cubit.dart'
     as _i633;
 import 'package:connectivity_plus/connectivity_plus.dart' as _i895;
+import 'package:dio/dio.dart' as _i361;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as _i558;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
@@ -101,12 +134,19 @@ extension GetItInjectableX on _i174.GetIt {
       () => injectionModule.packageInfo,
       preResolve: true,
     );
+    gh.lazySingleton<_i425.VideoCompressionRepository>(
+      () => injectionModule.videoCompressionRepository,
+    );
     gh.lazySingleton<_i558.FlutterSecureStorage>(
       () => injectionModule.secureStorage,
     );
     gh.lazySingleton<_i998.SharePlus>(() => injectionModule.sharePlus);
     gh.lazySingleton<_i895.Connectivity>(() => injectionModule.connectivity);
     gh.lazySingleton<_i0.ArtifactStore>(() => injectionModule.artifactStore);
+    gh.lazySingleton<_i965.RequestDeduplicator>(
+      () => _i965.RequestDeduplicator(),
+    );
+    gh.lazySingleton<_i207.HapticsService>(() => _i207.HapticsService());
     gh.lazySingleton<_i843.L10nService>(() => _i843.L10nService());
     gh.lazySingleton<_i264.ThemeService>(() => _i264.ThemeService());
     gh.lazySingleton<_i866.CacheManager>(() => _i866.CacheManager());
@@ -125,8 +165,15 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i415.BasePermissionService>(
       () => const _i47.PermissionHandlerService(),
     );
+    gh.lazySingleton<_i361.Dio>(
+      () => injectionModule.githubDio,
+      instanceName: 'github',
+    );
     gh.lazySingleton<_i550.BaseShareService>(
       () => _i770.SharePlusService(gh<_i998.SharePlus>()),
+    );
+    gh.lazySingleton<_i547.BaseLocalNotificationService>(
+      () => _i1010.LocalNotificationService(),
     );
     gh.lazySingleton<_i630.BaseToastService>(
       () => _i885.ToastificationService(gh<_i264.ThemeService>()),
@@ -134,7 +181,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i559.SecureStorageService>(
       () => _i559.SecureStorageService(gh<_i558.FlutterSecureStorage>()),
     );
-    gh.lazySingleton<_i547.StorageRepository>(
+    gh.lazySingleton<_i548.StorageRepository>(
       () => _i806.FileStorageRepository(gh<_i0.ArtifactStore>()),
     );
     gh.lazySingleton<_i883.SharedPrefsService>(
@@ -149,11 +196,27 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i295.NetworkCubit>(
       () => _i295.NetworkCubit(gh<_i895.Connectivity>()),
     );
+    gh.lazySingleton<_i732.GitHubReleasesApi>(
+      () => injectionModule.githubReleasesApi(
+        gh<_i361.Dio>(instanceName: 'github'),
+      ),
+    );
+    gh.lazySingleton<_i583.NotificationRepository>(
+      () => _i546.DeviceNotificationRepository(
+        gh<_i547.BaseLocalNotificationService>(),
+        gh<_i415.BasePermissionService>(),
+      ),
+    );
     gh.lazySingleton<_i752.BaseAppInfoService>(
       () => _i822.AppInfoService(gh<_i615.BasePackageInfoAdapter>()),
     );
+    gh.lazySingleton<_i309.ReadNotificationInsights>(
+      () => _i309.ReadNotificationInsights(
+        gh<_i425.VideoCompressionRepository>(),
+      ),
+    );
     gh.factory<_i633.StorageSettingsCubit>(
-      () => _i633.StorageSettingsCubit(gh<_i547.StorageRepository>()),
+      () => _i633.StorageSettingsCubit(gh<_i548.StorageRepository>()),
     );
     gh.lazySingleton<_i586.BaseClipboardGuardService>(
       () => _i586.ClipboardGuardService(gh<_i619.BaseAuditLogger>()),
@@ -173,11 +236,32 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i812.BaseAboutAppRepository>(
       () => _i382.AboutAppRepsitory(gh<_i752.BaseAppInfoService>()),
     );
+    gh.lazySingleton<_i616.InitializeNotifications>(
+      () => _i616.InitializeNotifications(gh<_i583.NotificationRepository>()),
+    );
+    gh.lazySingleton<_i987.ReadNotificationAccess>(
+      () => _i987.ReadNotificationAccess(gh<_i583.NotificationRepository>()),
+    );
+    gh.lazySingleton<_i317.RequestNotificationAccess>(
+      () => _i317.RequestNotificationAccess(gh<_i583.NotificationRepository>()),
+    );
+    gh.lazySingleton<_i837.ShowNotification>(
+      () => _i837.ShowNotification(gh<_i583.NotificationRepository>()),
+    );
+    gh.lazySingleton<_i105.ReleaseRepository>(
+      () => _i701.GitHubReleaseRepository(
+        gh<_i732.GitHubReleasesApi>(),
+        gh<_i965.RequestDeduplicator>(),
+      ),
+    );
     gh.lazySingleton<_i960.StorageFacade>(
       () => injectionModule.storageFacade(gh<_i896.BasePrefStorageService>()),
     );
     gh.factory<_i188.AboutAppCubit>(
       () => _i188.AboutAppCubit(gh<_i812.BaseAboutAppRepository>()),
+    );
+    gh.lazySingleton<_i584.CheckAppUpdate>(
+      () => _i584.CheckAppUpdate(gh<_i105.ReleaseRepository>()),
     );
     gh.lazySingleton<_i604.BaseLocalizationRepository>(
       () => _i676.LocalizationRepository(
@@ -188,8 +272,26 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i849.UserSessionServiceBase>(
       () => _i849.UserSessionService(gh<_i960.StorageFacade>()),
     );
+    gh.lazySingleton<_i376.NotificationsCubit>(
+      () => _i376.NotificationsCubit(
+        gh<_i583.NotificationRepository>(),
+        gh<_i584.CheckAppUpdate>(),
+        gh<_i207.HapticsService>(),
+        gh<_i309.ReadNotificationInsights>(),
+        gh<_i615.BasePackageInfoAdapter>(),
+        gh<_i616.InitializeNotifications>(),
+        gh<_i987.ReadNotificationAccess>(),
+        gh<_i317.RequestNotificationAccess>(),
+        gh<_i837.ShowNotification>(),
+      ),
+    );
     return this;
   }
+
+  _i965.RequestDeduplicator get requestDeduplicator =>
+      get<_i965.RequestDeduplicator>();
+
+  _i207.HapticsService get hapticsService => get<_i207.HapticsService>();
 
   _i843.L10nService get l10nService => get<_i843.L10nService>();
 
@@ -217,6 +319,9 @@ extension GetItInjectableX on _i174.GetIt {
 
   _i770.SharePlusService get sharePlusService => get<_i770.SharePlusService>();
 
+  _i1010.LocalNotificationService get localNotificationService =>
+      get<_i1010.LocalNotificationService>();
+
   _i885.ToastificationService get toastificationService =>
       get<_i885.ToastificationService>();
 
@@ -234,7 +339,13 @@ extension GetItInjectableX on _i174.GetIt {
 
   _i295.NetworkCubit get networkCubit => get<_i295.NetworkCubit>();
 
+  _i546.DeviceNotificationRepository get deviceNotificationRepository =>
+      get<_i546.DeviceNotificationRepository>();
+
   _i822.AppInfoService get appInfoService => get<_i822.AppInfoService>();
+
+  _i309.ReadNotificationInsights get readNotificationInsights =>
+      get<_i309.ReadNotificationInsights>();
 
   _i633.StorageSettingsCubit get storageSettingsCubit =>
       get<_i633.StorageSettingsCubit>();
@@ -250,13 +361,32 @@ extension GetItInjectableX on _i174.GetIt {
   _i382.AboutAppRepsitory get aboutAppRepsitory =>
       get<_i382.AboutAppRepsitory>();
 
+  _i616.InitializeNotifications get initializeNotifications =>
+      get<_i616.InitializeNotifications>();
+
+  _i987.ReadNotificationAccess get readNotificationAccess =>
+      get<_i987.ReadNotificationAccess>();
+
+  _i317.RequestNotificationAccess get requestNotificationAccess =>
+      get<_i317.RequestNotificationAccess>();
+
+  _i837.ShowNotification get showNotification => get<_i837.ShowNotification>();
+
+  _i701.GitHubReleaseRepository get gitHubReleaseRepository =>
+      get<_i701.GitHubReleaseRepository>();
+
   _i188.AboutAppCubit get aboutAppCubit => get<_i188.AboutAppCubit>();
+
+  _i584.CheckAppUpdate get checkAppUpdate => get<_i584.CheckAppUpdate>();
 
   _i676.LocalizationRepository get localizationRepository =>
       get<_i676.LocalizationRepository>();
 
   _i849.UserSessionService get userSessionService =>
       get<_i849.UserSessionService>();
+
+  _i376.NotificationsCubit get notificationsCubit =>
+      get<_i376.NotificationsCubit>();
 }
 
 class _$InjectionModule extends _i938.InjectionModule {}

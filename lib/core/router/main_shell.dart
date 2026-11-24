@@ -5,8 +5,13 @@ final class _MainShell extends StatelessWidget {
   const _MainShell();
 
   @override
-  Widget build(BuildContext context) => BlocSignalProvider<CompressionCubit>(
-    create: (_) => CompressionCubit(DeviceVideoCompressionRepository()),
+  Widget build(BuildContext context) => MultiBlocSignalProvider(
+    providers: [
+      BlocSignalProvider.value(value: getIt<NotificationsCubit>()),
+      BlocSignalProvider(
+        create: (_) => CompressionCubit(getIt<VideoCompressionRepository>()),
+      ),
+    ],
     child: KaiselBranchedShell.specs(
       branches: const [
         KaiselBranchSpec<AppRoute>(
@@ -26,10 +31,12 @@ final class _MainShell extends StatelessWidget {
         ),
       ],
       branchContentBuilder: (context, activeBranch, branches, switchBranch) =>
-          _ShellChrome(
-            activeBranch: activeBranch,
-            branches: branches,
-            switchBranch: switchBranch,
+          NotificationCoordinator(
+            child: _ShellChrome(
+              activeBranch: activeBranch,
+              branches: branches,
+              switchBranch: switchBranch,
+            ),
           ),
       chromeBuilder: (context, activeBranch, content, switchBranch) => content,
     ),

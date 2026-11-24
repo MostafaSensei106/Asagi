@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
 
 final class AiRuntimePage extends StatefulWidget {
@@ -25,7 +25,7 @@ final class _AiRuntimePageState extends State<AiRuntimePage> {
 
   Future<void> _runBenchmark() async {
     setState(() => _isBenchmarking = true);
-    unawaited(HapticFeedback.vibrate());
+    unawaited(AppHaptics.button());
     await Future<void>.delayed(const Duration(milliseconds: 800));
     if (!mounted) return;
     setState(() => _isBenchmarking = false);
@@ -140,14 +140,14 @@ final class _AiRuntimePageState extends State<AiRuntimePage> {
                 ),
                 subtitle: l10n.batterySaverDescription,
                 onTap: () {
-                  unawaited(HapticFeedback.vibrate());
+                  unawaited(AppHaptics.button());
                   setState(() => _lowPowerMode = !_lowPowerMode);
                 },
                 showChevron: false,
                 trailing: SwitchComponent(
                   value: _lowPowerMode,
                   onChanged: (val) {
-                    unawaited(HapticFeedback.vibrate());
+                    unawaited(AppHaptics.button());
                     setState(() => _lowPowerMode = val);
                   },
                 ),

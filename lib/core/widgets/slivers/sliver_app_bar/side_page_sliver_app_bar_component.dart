@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../constants/app_config.dart';
+import '../../../services/haptics/haptics_service.dart';
 import '../../buttons/icon_button/icon_button_component.dart';
 
 final class SidePageSliverAppBarComponent extends StatelessWidget {
@@ -40,7 +40,7 @@ final class SidePageSliverAppBarComponent extends StatelessWidget {
 
   /// Navigates back to the previous screen with haptic feedback.
   void leave(BuildContext context) {
-    unawaited(HapticFeedback.vibrate());
+    unawaited(AppHaptics.button());
     Navigator.of(context).pop();
   }
 

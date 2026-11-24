@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:cupertino_ui/cupertino_ui.dart';
-import 'package:flutter/services.dart';
 
 import '../../../extensions/extensions.dart';
+import '../../../services/haptics/haptics_service.dart';
 
 final class DialogComponent extends StatelessWidget {
   const DialogComponent({
@@ -42,7 +42,7 @@ final class DialogComponent extends StatelessWidget {
         actions: [
           CupertinoDialogAction(
             onPressed: () async {
-              await HapticFeedback.vibrate();
+              await AppHaptics.button();
               if (context.mounted) Navigator.of(context).pop();
             },
             child: Text(
@@ -55,7 +55,7 @@ final class DialogComponent extends StatelessWidget {
           CupertinoDialogAction(
             isDestructiveAction: true,
             onPressed: () async {
-              await HapticFeedback.vibrate();
+              await AppHaptics.button();
               if (context.mounted) Navigator.of(context).pop();
               onConfirm();
             },
@@ -91,7 +91,7 @@ final class DialogComponent extends StatelessWidget {
         actions: [
           CupertinoDialogAction(
             onPressed: () async {
-              await HapticFeedback.vibrate();
+              await AppHaptics.button();
               if (dialogContext.mounted) dialogContext.pop(false);
             },
             child: Text(
@@ -105,7 +105,7 @@ final class DialogComponent extends StatelessWidget {
             isDestructiveAction: isDestructive,
             isDefaultAction: !isDestructive,
             onPressed: () async {
-              await HapticFeedback.vibrate();
+              await AppHaptics.button();
               if (dialogContext.mounted) dialogContext.pop(true);
             },
             child: Text(
@@ -160,7 +160,7 @@ final class DialogComponent extends StatelessWidget {
           CupertinoDialogAction(
             isDefaultAction: true,
             onPressed: () async {
-              await HapticFeedback.vibrate();
+              await AppHaptics.button();
               if (context.mounted) Navigator.pop(context);
             },
             child: Text(
@@ -187,7 +187,7 @@ final class DialogComponent extends StatelessWidget {
           CupertinoDialogAction(
             isDefaultAction: true,
             onPressed: () async {
-              await HapticFeedback.vibrate();
+              await AppHaptics.button();
               if (context.mounted) Navigator.pop(context);
             },
             child: Text(

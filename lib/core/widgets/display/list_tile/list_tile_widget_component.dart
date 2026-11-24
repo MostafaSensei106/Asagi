@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../services/haptics/haptics_service.dart';
 import 'list_tile_component.dart';
 
 final class ListTileWidgetComponent extends StatelessWidget {
@@ -71,7 +71,7 @@ final class ListTileWidgetComponent extends StatelessWidget {
           selected: selected,
           useinBorderRadius: useinBorderRadius,
           onTap: () {
-            unawaited(HapticFeedback.vibrate());
+            unawaited(AppHaptics.button());
             onTap?.call();
           },
         );
@@ -84,7 +84,7 @@ final class ListTileWidgetComponent extends StatelessWidget {
           selected: selected,
           useinBorderRadius: useinBorderRadius,
           onTap: () {
-            unawaited(HapticFeedback.vibrate());
+            unawaited(AppHaptics.button());
             onTap?.call();
           },
         );
@@ -97,7 +97,7 @@ final class ListTileWidgetComponent extends StatelessWidget {
           selected: selected,
           useinBorderRadius: useinBorderRadius,
           onTap: () {
-            unawaited(HapticFeedback.vibrate());
+            unawaited(AppHaptics.button());
             onTap?.call();
           },
         );
@@ -110,7 +110,7 @@ final class ListTileWidgetComponent extends StatelessWidget {
           selected: selected,
           useinBorderRadius: useinBorderRadius,
           onTap: () {
-            unawaited(HapticFeedback.vibrate());
+            unawaited(AppHaptics.button());
             onTap?.call();
           },
         );

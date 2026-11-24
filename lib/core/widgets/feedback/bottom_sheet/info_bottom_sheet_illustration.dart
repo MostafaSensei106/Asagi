@@ -4,6 +4,9 @@ import 'package:material_ui/material_ui.dart';
 
 import '../../../constants/design_system/tokens/tokens.dart';
 import '../../display/expressive_icon.dart';
+import '../../layout/gap.dart';
+
+part 'notification_haptic_scenes.dart';
 
 /// The kind of visual story used to explain a feature.
 enum InfoIllustrationKind {
@@ -57,6 +60,11 @@ enum InfoIllustrationKind {
   speechRecognition,
   subtitleGeneration,
   mediaSearch,
+  hapticButtons,
+  hapticSelections,
+  hapticGestures,
+  hapticSuccess,
+  hapticErrors,
 }
 
 /// A themed, animated illustration built from widgets for explanation sheets.
@@ -167,6 +175,11 @@ final class _IllustrationScene extends StatelessWidget {
         _NotificationProductUpdateScene(accent: accent, secondary: secondary),
       InfoIllustrationKind.notificationStorageSavings =>
         _NotificationStorageSavingsScene(accent: accent, secondary: secondary),
+      InfoIllustrationKind.hapticButtons ||
+      InfoIllustrationKind.hapticSelections ||
+      InfoIllustrationKind.hapticGestures ||
+      InfoIllustrationKind.hapticSuccess ||
+      InfoIllustrationKind.hapticErrors => _HapticSettingScene(kind: kind),
       InfoIllustrationKind.general => _GeneralScene(
         accent: accent,
         secondary: secondary,
@@ -179,10 +192,16 @@ final class _IllustrationScene extends StatelessWidget {
     };
 
     return Align(
-      child: scene
-          .animate()
-          .fadeIn(duration: 350.ms)
-          .slideY(begin: 0.12, duration: 420.ms, curve: Curves.easeOutCubic),
+      child: MediaQuery.disableAnimationsOf(context)
+          ? scene
+          : scene
+                .animate()
+                .fadeIn(duration: 350.ms)
+                .slideY(
+                  begin: 0.12,
+                  duration: 420.ms,
+                  curve: Curves.easeOutCubic,
+                ),
     );
   }
 }

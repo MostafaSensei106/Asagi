@@ -14,7 +14,11 @@ class MaintenanceModePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(Icons.build, size: 80, color: Colors.orange),
+              Icon(
+                Icons.build,
+                size: 80,
+                color: Theme.of(context).colorScheme.tertiary,
+              ),
               const SizedBox(height: 24),
               Text(
                 context.localeKeys.maintenanceInProgress,

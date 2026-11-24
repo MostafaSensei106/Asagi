@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:bloc_signals_flutter/bloc_signals_flutter.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:kaisel/kaisel.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
@@ -11,6 +10,7 @@ import 'package:material_ui/material_ui.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/router/app_router.dart';
+import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
 import '../cubit/compression_cubit.dart';
 import '../cubit/compression_state.dart';
@@ -130,7 +130,7 @@ final class CompressionSetupPage extends HookWidget {
                 PlatformPresetsBar(
                   selectedPresetId: state.selectedPresetId,
                   onPresetSelected: (id) {
-                    unawaited(HapticFeedback.selectionClick());
+                    unawaited(AppHaptics.selection());
                     valid.value = true;
                     cubit.selectPreset(id);
                   },
@@ -230,7 +230,7 @@ final class CompressionSetupPage extends HookWidget {
                   expand: true,
                   isEnabled: isActionEnabled,
                   onPressed: () {
-                    unawaited(HapticFeedback.mediumImpact());
+                    unawaited(AppHaptics.button());
                     unawaited(cubit.start());
                     unawaited(context.push(const CompressionProgressRoute()));
                   },

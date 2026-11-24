@@ -187,6 +187,7 @@ final class DeviceVideoCompressionRepository
       }
       final record = CompressionRecord(
         path: saved.path,
+        id: saved.path.split(Platform.pathSeparator).last,
         sourceName: video.name,
         bytes: await saved.length(),
         createdAt: DateTime.now(),
@@ -217,7 +218,7 @@ final class DeviceVideoCompressionRepository
         // A saved result must remain usable even if detail extraction fails.
       }
       try {
-        await _appendHistory(completeRecord);
+        await _appendHistory(completeRecord.copyWith(warning: warning));
       } catch (_) {
         // The verified video remains usable even when history storage fails.
       }
@@ -226,6 +227,7 @@ final class DeviceVideoCompressionRepository
         record.bytes,
         verifiedOutput.attempts,
         warning,
+        jobId: record.jobId,
       );
     } finally {
       if (verifiedOutput.attempts > 0) {
@@ -311,6 +313,8 @@ final class DeviceVideoCompressionRepository
       0,
       jsonEncode({
         'path': record.path,
+        'id': record.jobId,
+        'warning': record.warning,
         'sourceName': record.sourceName,
         'bytes': record.bytes,
         'createdAt': record.createdAt.toIso8601String(),
@@ -337,6 +341,8 @@ final class DeviceVideoCompressionRepository
         records.add(
           CompressionRecord(
             path: path,
+            id: data['id'] as String? ?? '',
+            warning: data['warning'] as String?,
             sourceName: data['sourceName'] as String,
             bytes: data['bytes'] as int,
             createdAt: DateTime.parse(data['createdAt'] as String),

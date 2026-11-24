@@ -9,9 +9,11 @@ final class ColorSchemeSection extends StatelessWidget {
   const ColorSchemeSection({
     required this.selectedVariant,
     required this.onChanged,
+    this.highContrast = false,
     super.key,
   });
 
+  final bool highContrast;
   final AsagiColorSchemeVariant selectedVariant;
   final ValueChanged<AsagiColorSchemeVariant> onChanged;
 
@@ -20,6 +22,10 @@ final class ColorSchemeSection extends StatelessWidget {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       ExpressiveSectionHeader(title: context.localeKeys.colorScheme),
+      Text(
+        context.localeKeys.automaticColorSchemeDescription,
+        style: Theme.of(context).textTheme.bodySmall,
+      ),
       const Gap(AppSpacing.small),
       LayoutBuilder(
         builder: (context, constraints) {
@@ -34,7 +40,17 @@ final class ColorSchemeSection extends StatelessWidget {
                 SizedBox(
                   width: itemWidth,
                   child: ChoiceChip(
-                    avatar: Icon(_icon(variant), size: 18),
+                    avatar: _PalettePreview(
+                      scheme: Theme.of(context).brightness == Brightness.dark
+                          ? AppTheme.dark(
+                              variant: variant,
+                              highContrast: highContrast,
+                            ).colorScheme
+                          : AppTheme.light(
+                              variant: variant,
+                              highContrast: highContrast,
+                            ).colorScheme,
+                    ),
                     showCheckmark: false,
                     label: SizedBox(
                       width: double.infinity,
@@ -75,27 +91,52 @@ final class ColorSchemeSection extends StatelessWidget {
     ],
   );
 
-  IconData _icon(AsagiColorSchemeVariant variant) => switch (variant) {
-    AsagiColorSchemeVariant.auto => Icons.auto_awesome,
-    AsagiColorSchemeVariant.tonalSpot => Icons.palette_outlined,
-    AsagiColorSchemeVariant.fidelity => Icons.center_focus_strong,
-    AsagiColorSchemeVariant.content => Icons.layers_outlined,
-    AsagiColorSchemeVariant.expressive => Icons.auto_awesome_outlined,
-    AsagiColorSchemeVariant.fruitSalad => Icons.eco_outlined,
-    AsagiColorSchemeVariant.monochrome => Icons.contrast,
-    AsagiColorSchemeVariant.neutral => Icons.circle_outlined,
-    AsagiColorSchemeVariant.rainbow => Icons.gradient,
-    AsagiColorSchemeVariant.vibrant => Icons.water_drop_outlined,
-  };
-
   String _label(BuildContext context, AsagiColorSchemeVariant variant) {
     if (variant == AsagiColorSchemeVariant.auto) {
       return context.localeKeys.automaticColorScheme;
     }
-    final words = variant.name.replaceAllMapped(
-      RegExp(r'[A-Z]'),
-      (match) => ' ${match.group(0)!.toLowerCase()}',
-    );
-    return words[0].toUpperCase() + words.substring(1);
+    return switch (variant) {
+      AsagiColorSchemeVariant.auto => context.localeKeys.automaticColorScheme,
+      AsagiColorSchemeVariant.tonalSpot =>
+        context.localeKeys.colorSchemeTonalSpot,
+      AsagiColorSchemeVariant.fidelity =>
+        context.localeKeys.colorSchemeFidelity,
+      AsagiColorSchemeVariant.content => context.localeKeys.colorSchemeContent,
+      AsagiColorSchemeVariant.expressive =>
+        context.localeKeys.colorSchemeExpressive,
+      AsagiColorSchemeVariant.fruitSalad =>
+        context.localeKeys.colorSchemeFruitSalad,
+      AsagiColorSchemeVariant.monochrome =>
+        context.localeKeys.colorSchemeMonochrome,
+      AsagiColorSchemeVariant.neutral => context.localeKeys.colorSchemeNeutral,
+      AsagiColorSchemeVariant.rainbow => context.localeKeys.colorSchemeRainbow,
+      AsagiColorSchemeVariant.vibrant => context.localeKeys.colorSchemeVibrant,
+    };
   }
+}
+
+final class _PalettePreview extends StatelessWidget {
+  const _PalettePreview({required this.scheme});
+  final ColorScheme scheme;
+
+  @override
+  Widget build(BuildContext context) => ExcludeSemantics(
+    child: SizedBox.square(
+      dimension: 22,
+      child: ClipOval(
+        child: Row(
+          children: [
+            for (final color in [
+              scheme.primary,
+              scheme.secondary,
+              scheme.tertiary,
+            ])
+              Expanded(
+                child: ColoredBox(color: color, child: const SizedBox.expand()),
+              ),
+          ],
+        ),
+      ),
+    ),
+  );
 }

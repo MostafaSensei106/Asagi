@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
 import '../widgets/privacy_storage_section.dart';
 import '../widgets/privacy_telemetry_section.dart';
@@ -25,7 +25,7 @@ final class _PrivacySettingsPageState extends State<PrivacySettingsPage> {
   bool _isClearingCache = false;
 
   void _onToggle(String name, bool value, VoidCallback apply) {
-    unawaited(HapticFeedback.vibrate());
+    unawaited(AppHaptics.button());
     setState(apply);
     context.toast.showInfo(
       context,

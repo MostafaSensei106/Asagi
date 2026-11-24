@@ -2049,6 +2049,182 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get compressionAndroidOnly =>
       'ضغط الفيديو متاح حاليًا على أندرويد فقط.';
+
+  @override
+  String get notificationPermissionTitle => 'فعّل الإشعارات';
+
+  @override
+  String get notificationPermissionBody =>
+      'اضغط للسماح بتنبيهات الضغط والتحديثات.';
+
+  @override
+  String get notificationPermissionSettingsBody =>
+      'الإشعارات محظورة. اضغط لفتح إعدادات النظام.';
+
+  @override
+  String get notificationUnavailable => 'الإشعارات متاحة حاليًا على أندرويد.';
+
+  @override
+  String get notificationSetupFailed =>
+      'تعذّر تطبيق إعدادات الإشعارات. اضغط لإعادة المحاولة.';
+
+  @override
+  String get notificationChannelBlocked =>
+      'إحدى قنوات الإشعارات محظورة في إعدادات النظام.';
+
+  @override
+  String get notificationProgressDetails =>
+      'اعرض تفاصيل التقدم في الخلفية. يظل إشعار الخدمة الأساسي ظاهرًا أثناء الضغط.';
+
+  @override
+  String get notificationProgressTitle => 'جارٍ ضغط الفيديو';
+
+  @override
+  String get notificationProgressBody => 'اضغط لعرض عملية الضغط.';
+
+  @override
+  String get notificationPausedTitle => 'الضغط متوقف مؤقتًا';
+
+  @override
+  String get notificationSavingTitle => 'جارٍ حفظ الفيديو المضغوط';
+
+  @override
+  String get notificationCompletedTitle => 'الفيديو جاهز';
+
+  @override
+  String notificationCompletedBody(String name, String size, String saved) {
+    return '$name · $size م.ب · تم توفير $saved م.ب';
+  }
+
+  @override
+  String notificationCompletedWarningBody(String name, String size) {
+    return '$name · $size م.ب · راجع تنبيه النتيجة';
+  }
+
+  @override
+  String get notificationFailedTitle => 'انقطعت عملية الضغط';
+
+  @override
+  String notificationInterruptedBody(String count) {
+    return 'توجد $count عمليات منقطعة يمكنك مراجعتها.';
+  }
+
+  @override
+  String notificationReleaseTitle(String version) {
+    return 'إصدار Asagi $version متاح';
+  }
+
+  @override
+  String get notificationSavingsTitle => 'ملخص توفير المساحة الأسبوعي';
+
+  @override
+  String notificationSavingsBody(String count, String saved) {
+    return '$count فيديو · تم توفير $saved م.ب';
+  }
+
+  @override
+  String get hapticsButtons => 'الأزرار والضغطات';
+
+  @override
+  String get hapticsButtonsDescription =>
+      'يشغّل نبضة خفيفة عند الضغط على أزرار الإجراءات في التطبيق. تغيير الاختيارات وإيماءات السحب لهما إعدادان مستقلان.';
+
+  @override
+  String get hapticsSelections => 'تغيير الاختيارات';
+
+  @override
+  String get hapticsSelectionsDescription =>
+      'يشغّل نبضة قصيرة عند تغيير سويتش أو مربع اختيار أو قيمة محددة. يمكنك إيقافه لتغيير الإعدادات دون اهتزاز مع إبقاء استجابة الأزرار مستقلة.';
+
+  @override
+  String get hapticsGestures => 'الإيماءات';
+
+  @override
+  String get hapticsGesturesDescription =>
+      'يشغّل نبضة خفيفة عند وصول السحب إلى حد إظهار الإجراء أو تنفيذه. يساعدك على الإحساس بنقطة التنفيذ دون اهتزاز مستمر أثناء السحب.';
+
+  @override
+  String get hapticsSuccess => 'اكتمال العملية بنجاح';
+
+  @override
+  String get hapticsSuccessDescription =>
+      'يشغّل نبضة تأكيد عند اكتمال ضغط الفيديو. في الخلفية يتولى إشعار الاكتمال الاهتزاز حتى لا تتكرر النبضة لنفس النتيجة. صوت الاكتمال له إعداد مستقل.';
+
+  @override
+  String get hapticsErrors => 'الأخطاء والانقطاع';
+
+  @override
+  String get hapticsErrorsDescription =>
+      'يشغّل نبضة أوضح عند فشل الضغط أو انقطاعه. في الخلفية يتبع الاهتزاز إشعار الخطأ. إلغاء العملية بنفسك لا يشغّل نبضة خطأ.';
+
+  @override
+  String get notificationJobUnavailable =>
+      'هذه العملية لم تعد متاحة. يمكنك مراجعة السجل بدلًا منها.';
+
+  @override
+  String get notificationRecoveryHint =>
+      'راجع العمليات المنقطعة من الشاشة الرئيسية.';
+
+  @override
+  String get notificationProgressChannel => 'حالة الضغط';
+
+  @override
+  String get notificationCompletionChannel => 'الفيديوهات المكتملة';
+
+  @override
+  String get notificationErrorChannel => 'مشكلات الضغط';
+
+  @override
+  String get notificationReleaseChannel => 'إصدارات التطبيق';
+
+  @override
+  String get notificationSavingsChannel => 'توفير المساحة';
+
+  @override
+  String get automaticColorSchemeDescription =>
+      'الوضع التلقائي يستخدم ألوان Asagi الحيوية. تعرض كل عينة ألوان مخططها.';
+
+  @override
+  String get colorSchemeTonalSpot => 'درجات ناعمة';
+
+  @override
+  String get colorSchemeFidelity => 'وفاء للون';
+
+  @override
+  String get colorSchemeContent => 'المحتوى';
+
+  @override
+  String get colorSchemeExpressive => 'تعبيري';
+
+  @override
+  String get colorSchemeFruitSalad => 'ألوان مرحة';
+
+  @override
+  String get colorSchemeMonochrome => 'أحادي اللون';
+
+  @override
+  String get colorSchemeNeutral => 'محايد';
+
+  @override
+  String get colorSchemeRainbow => 'قوس قزح';
+
+  @override
+  String get colorSchemeVibrant => 'حيوي';
+
+  @override
+  String get hapticsButtonsShort => 'استجابة ضغط الأزرار';
+
+  @override
+  String get hapticsSelectionsShort => 'استجابة تغيير الاختيارات';
+
+  @override
+  String get hapticsGesturesShort => 'استجابة إيماءات السحب';
+
+  @override
+  String get hapticsSuccessShort => 'نبضة عند اكتمال الفيديو';
+
+  @override
+  String get hapticsErrorsShort => 'استجابة عند فشل العملية';
 }
 
 /// The translations for Arabic, as used in Egypt (`ar_EG`).

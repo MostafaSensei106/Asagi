@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
 
 final class AiMediaPage extends StatefulWidget {
@@ -53,7 +53,7 @@ final class _AiMediaPageState extends State<AiMediaPage> {
                   trailing: SwitchComponent(
                     value: _analyzeThumbnails,
                     onChanged: (val) {
-                      unawaited(HapticFeedback.vibrate());
+                      unawaited(AppHaptics.button());
                       setState(() => _analyzeThumbnails = val);
                     },
                   ),
@@ -91,7 +91,7 @@ final class _AiMediaPageState extends State<AiMediaPage> {
                       ),
                     ],
                     onChanged: (val) {
-                      HapticFeedback.vibrate;
+                      AppHaptics.button;
                       setState(() => _sampleRate = val!);
                     },
                   ),
@@ -119,7 +119,7 @@ final class _AiMediaPageState extends State<AiMediaPage> {
                   trailing: SwitchComponent(
                     value: _transcribeAudio,
                     onChanged: (val) {
-                      unawaited(HapticFeedback.vibrate());
+                      unawaited(AppHaptics.button());
                       setState(() => _transcribeAudio = val);
                     },
                   ),
@@ -141,7 +141,7 @@ final class _AiMediaPageState extends State<AiMediaPage> {
                   trailing: SwitchComponent(
                     value: _autoLang,
                     onChanged: (val) {
-                      unawaited(HapticFeedback.vibrate());
+                      unawaited(AppHaptics.button());
                       setState(() => _autoLang = val);
                     },
                   ),

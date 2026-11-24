@@ -40,6 +40,7 @@ final class AppearanceSettingsPage extends StatelessWidget {
               const Gap(AppSpacing.small),
               ColorSchemeSection(
                 selectedVariant: state.colorSchemeVariant,
+                highContrast: state.highContrast,
                 onChanged: cubit.changeColorSchemeVariant,
               ),
               const Gap(AppSpacing.small),

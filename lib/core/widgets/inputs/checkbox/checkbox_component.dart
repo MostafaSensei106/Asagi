@@ -1,7 +1,8 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
+
+import '../../../services/haptics/haptics_service.dart';
 
 final class CheckboxComponent extends StatelessWidget {
   const CheckboxComponent({
@@ -18,7 +19,7 @@ final class CheckboxComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        unawaited(HapticFeedback.vibrate());
+        unawaited(AppHaptics.selection());
         onChanged(!value);
       },
       child: Row(
@@ -26,7 +27,7 @@ final class CheckboxComponent extends StatelessWidget {
           Checkbox(
             value: value,
             onChanged: (v) {
-              unawaited(HapticFeedback.vibrate());
+              unawaited(AppHaptics.selection());
               onChanged(v);
             },
           ),

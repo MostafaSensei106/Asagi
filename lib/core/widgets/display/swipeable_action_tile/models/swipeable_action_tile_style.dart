@@ -13,11 +13,9 @@ class SwipeableActionTileStyle {
     this.actionWidth = 80.0,
     this.cornerRadius = 0.0,
     this.swipeThreshold = 0.5,
-    this.tileShadow = const [
-      BoxShadow(color: Color(0x1A000000), blurRadius: 10, offset: Offset(0, 4)),
-    ],
+    this.tileShadow = const [],
     this.actionButtonSize = 48.0,
-    this.cardColor = Colors.white,
+    this.cardColor,
     this.idleCardColor,
   });
 
@@ -37,7 +35,7 @@ class SwipeableActionTileStyle {
   final double swipeThreshold;
 
   /// The background color of the card when it is swiped/active.
-  final Color cardColor;
+  final Color? cardColor;
 
   /// The background color of the card when idle (matches list background to hide dividers cleanly).
   /// If null, it defaults to [cardColor].

@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
 
 final class HomeTargetSizeCard extends StatelessWidget {
@@ -89,7 +89,7 @@ final class HomeTargetSizeCard extends StatelessWidget {
                   label: Text('${preset.toInt()} MB'),
                   selected: targetMb == preset,
                   onSelected: (_) {
-                    unawaited(HapticFeedback.selectionClick());
+                    unawaited(AppHaptics.selection());
                     onPresetSelected(preset);
                   },
                 ),

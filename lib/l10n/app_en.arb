@@ -1436,5 +1436,103 @@
   "compressionHelpDescription": "Answers to common questions about video compression.",
   "appSupportDescription": "Get help using Asagi.",
   "appTermsDescription": "Terms for using the free, open source Asagi app.",
-  "compressionAndroidOnly": "Video compression is currently available only on Android."
+  "compressionAndroidOnly": "Video compression is currently available only on Android.",
+  "notificationPermissionTitle": "Enable notifications",
+  "notificationPermissionBody": "Tap to allow compression alerts and updates.",
+  "notificationPermissionSettingsBody": "Notifications are blocked. Tap to open system settings.",
+  "notificationUnavailable": "Notifications are currently supported on Android.",
+  "notificationSetupFailed": "Notification settings could not be applied. Tap to retry.",
+  "notificationChannelBlocked": "A notification channel is blocked in system settings.",
+  "notificationProgressDetails": "Show progress details in the background. A basic service notification remains while compression runs.",
+  "notificationProgressTitle": "Compressing video",
+  "notificationProgressBody": "Tap to view your compression job.",
+  "notificationPausedTitle": "Compression paused",
+  "notificationSavingTitle": "Saving compressed video",
+  "notificationCompletedTitle": "Video ready",
+  "notificationCompletedBody": "{name} · {size} MB · Saved {saved} MB",
+  "notificationCompletedWarningBody": "{name} · {size} MB · Review the result warning",
+  "notificationFailedTitle": "Compression interrupted",
+  "notificationInterruptedBody": "{count} interrupted jobs are available to review.",
+  "notificationReleaseTitle": "Asagi {version} is available",
+  "notificationSavingsTitle": "Your weekly storage savings",
+  "notificationSavingsBody": "{count} videos · {saved} MB saved",
+  "hapticsButtons": "Buttons and taps",
+  "hapticsButtonsDescription": "Plays a light pulse when you press an action button. This setting applies across the app; selection changes and swipe gestures have their own controls.",
+  "hapticsSelections": "Selection changes",
+  "hapticsSelectionsDescription": "Plays a brief tick when you change a switch, checkbox, or selected value. Disable it to adjust preferences without vibration while keeping button feedback unchanged.",
+  "hapticsGestures": "Gestures",
+  "hapticsGesturesDescription": "Plays a light pulse when a swipe reaches the point that reveals or triggers an action. It helps you feel the action threshold without vibrating throughout the drag.",
+  "hapticsSuccess": "Successful completion",
+  "hapticsSuccessDescription": "Plays a confirmation pulse when video compression finishes. In the background the completion notification provides the vibration, so the same result does not vibrate twice. Sound on completion is controlled separately.",
+  "hapticsErrors": "Errors and interruptions",
+  "hapticsErrorsDescription": "Plays a stronger pulse if compression fails or is interrupted. In the background this follows the error notification. Cancelling a job yourself does not trigger an error pulse.",
+  "notificationJobUnavailable": "This job is no longer available. Your history is shown instead.",
+  "notificationRecoveryHint": "Review interrupted jobs from the home screen.",
+  "notificationProgressChannel": "Compression status",
+  "notificationCompletionChannel": "Completed videos",
+  "notificationErrorChannel": "Compression problems",
+  "notificationReleaseChannel": "App releases",
+  "notificationSavingsChannel": "Storage savings",
+  "@notificationCompletedBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "size": {
+        "type": "String"
+      },
+      "saved": {
+        "type": "String"
+      }
+    }
+  },
+  "@notificationCompletedWarningBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "@notificationInterruptedBody": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@notificationReleaseTitle": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@notificationSavingsBody": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      },
+      "saved": {
+        "type": "String"
+      }
+    }
+  },
+  "automaticColorSchemeDescription": "Auto uses a vivid Asagi palette. Each option previews its own accent colors.",
+  "colorSchemeTonalSpot": "Tonal spot",
+  "colorSchemeFidelity": "Fidelity",
+  "colorSchemeContent": "Content",
+  "colorSchemeExpressive": "Expressive",
+  "colorSchemeFruitSalad": "Fruit salad",
+  "colorSchemeMonochrome": "Monochrome",
+  "colorSchemeNeutral": "Neutral",
+  "colorSchemeRainbow": "Rainbow",
+  "colorSchemeVibrant": "Vibrant",
+  "hapticsButtonsShort": "Button press feedback",
+  "hapticsSelectionsShort": "Feedback when choices change",
+  "hapticsGesturesShort": "Swipe action feedback",
+  "hapticsSuccessShort": "A pulse when a video is ready",
+  "hapticsErrorsShort": "Feedback when a job fails"
 }

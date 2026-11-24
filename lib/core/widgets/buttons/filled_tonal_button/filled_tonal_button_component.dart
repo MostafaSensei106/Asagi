@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../constants/app_config.dart';
+import '../../../services/haptics/haptics_service.dart';
 
 /// Tonal (secondary) action button.
 ///
@@ -48,7 +48,7 @@ final class FilledTonalButtonComponent extends StatelessWidget {
   Widget build(BuildContext context) => icon == null
       ? FilledButton.tonal(
           onPressed: () {
-            unawaited(HapticFeedback.vibrate());
+            unawaited(AppHaptics.button());
             onPressed();
           },
           style: _getButtonStyle(context),
@@ -56,7 +56,7 @@ final class FilledTonalButtonComponent extends StatelessWidget {
         )
       : FilledButton.tonalIcon(
           onPressed: () {
-            unawaited(HapticFeedback.vibrate());
+            unawaited(AppHaptics.button());
             onPressed();
           },
           style: _getButtonStyle(context),

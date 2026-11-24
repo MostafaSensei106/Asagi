@@ -259,6 +259,7 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
     emit(
       current.copyWith(
         phase: CompressionPhase.running,
+        jobId: DateTime.now().microsecondsSinceEpoch.toString(),
         progress: 0,
         step: CompressionStep.preparing,
         output: null,
@@ -302,6 +303,7 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
       emit(
         stateValue.copyWith(
           phase: CompressionPhase.completed,
+          jobId: output.jobId ?? stateValue.jobId,
           progress: 1,
           step: CompressionStep.saving,
           output: output,
@@ -386,6 +388,7 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
     emit(
       stateValue.copyWith(
         phase: CompressionPhase.running,
+        jobId: job.id,
         targetMb: job.targetMb,
         preferences: job.preferences,
         progress: 0,
@@ -440,6 +443,7 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
           phase: CompressionPhase.completed,
           video: result.video,
           output: result.output,
+          jobId: result.output.jobId ?? job.id,
           progress: 1,
           step: CompressionStep.saving,
           recoverableJobs: remaining,

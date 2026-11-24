@@ -3672,6 +3672,312 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Video compression is currently available only on Android.'**
   String get compressionAndroidOnly;
+
+  /// No description provided for @notificationPermissionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable notifications'**
+  String get notificationPermissionTitle;
+
+  /// No description provided for @notificationPermissionBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to allow compression alerts and updates.'**
+  String get notificationPermissionBody;
+
+  /// No description provided for @notificationPermissionSettingsBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications are blocked. Tap to open system settings.'**
+  String get notificationPermissionSettingsBody;
+
+  /// No description provided for @notificationUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications are currently supported on Android.'**
+  String get notificationUnavailable;
+
+  /// No description provided for @notificationSetupFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification settings could not be applied. Tap to retry.'**
+  String get notificationSetupFailed;
+
+  /// No description provided for @notificationChannelBlocked.
+  ///
+  /// In en, this message translates to:
+  /// **'A notification channel is blocked in system settings.'**
+  String get notificationChannelBlocked;
+
+  /// No description provided for @notificationProgressDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Show progress details in the background. A basic service notification remains while compression runs.'**
+  String get notificationProgressDetails;
+
+  /// No description provided for @notificationProgressTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Compressing video'**
+  String get notificationProgressTitle;
+
+  /// No description provided for @notificationProgressBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to view your compression job.'**
+  String get notificationProgressBody;
+
+  /// No description provided for @notificationPausedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Compression paused'**
+  String get notificationPausedTitle;
+
+  /// No description provided for @notificationSavingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Saving compressed video'**
+  String get notificationSavingTitle;
+
+  /// No description provided for @notificationCompletedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Video ready'**
+  String get notificationCompletedTitle;
+
+  /// No description provided for @notificationCompletedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} · {size} MB · Saved {saved} MB'**
+  String notificationCompletedBody(String name, String size, String saved);
+
+  /// No description provided for @notificationCompletedWarningBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} · {size} MB · Review the result warning'**
+  String notificationCompletedWarningBody(String name, String size);
+
+  /// No description provided for @notificationFailedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Compression interrupted'**
+  String get notificationFailedTitle;
+
+  /// No description provided for @notificationInterruptedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} interrupted jobs are available to review.'**
+  String notificationInterruptedBody(String count);
+
+  /// No description provided for @notificationReleaseTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Asagi {version} is available'**
+  String notificationReleaseTitle(String version);
+
+  /// No description provided for @notificationSavingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your weekly storage savings'**
+  String get notificationSavingsTitle;
+
+  /// No description provided for @notificationSavingsBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} videos · {saved} MB saved'**
+  String notificationSavingsBody(String count, String saved);
+
+  /// No description provided for @hapticsButtons.
+  ///
+  /// In en, this message translates to:
+  /// **'Buttons and taps'**
+  String get hapticsButtons;
+
+  /// No description provided for @hapticsButtonsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Plays a light pulse when you press an action button. This setting applies across the app; selection changes and swipe gestures have their own controls.'**
+  String get hapticsButtonsDescription;
+
+  /// No description provided for @hapticsSelections.
+  ///
+  /// In en, this message translates to:
+  /// **'Selection changes'**
+  String get hapticsSelections;
+
+  /// No description provided for @hapticsSelectionsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Plays a brief tick when you change a switch, checkbox, or selected value. Disable it to adjust preferences without vibration while keeping button feedback unchanged.'**
+  String get hapticsSelectionsDescription;
+
+  /// No description provided for @hapticsGestures.
+  ///
+  /// In en, this message translates to:
+  /// **'Gestures'**
+  String get hapticsGestures;
+
+  /// No description provided for @hapticsGesturesDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Plays a light pulse when a swipe reaches the point that reveals or triggers an action. It helps you feel the action threshold without vibrating throughout the drag.'**
+  String get hapticsGesturesDescription;
+
+  /// No description provided for @hapticsSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Successful completion'**
+  String get hapticsSuccess;
+
+  /// No description provided for @hapticsSuccessDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Plays a confirmation pulse when video compression finishes. In the background the completion notification provides the vibration, so the same result does not vibrate twice. Sound on completion is controlled separately.'**
+  String get hapticsSuccessDescription;
+
+  /// No description provided for @hapticsErrors.
+  ///
+  /// In en, this message translates to:
+  /// **'Errors and interruptions'**
+  String get hapticsErrors;
+
+  /// No description provided for @hapticsErrorsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Plays a stronger pulse if compression fails or is interrupted. In the background this follows the error notification. Cancelling a job yourself does not trigger an error pulse.'**
+  String get hapticsErrorsDescription;
+
+  /// No description provided for @notificationJobUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'This job is no longer available. Your history is shown instead.'**
+  String get notificationJobUnavailable;
+
+  /// No description provided for @notificationRecoveryHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Review interrupted jobs from the home screen.'**
+  String get notificationRecoveryHint;
+
+  /// No description provided for @notificationProgressChannel.
+  ///
+  /// In en, this message translates to:
+  /// **'Compression status'**
+  String get notificationProgressChannel;
+
+  /// No description provided for @notificationCompletionChannel.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed videos'**
+  String get notificationCompletionChannel;
+
+  /// No description provided for @notificationErrorChannel.
+  ///
+  /// In en, this message translates to:
+  /// **'Compression problems'**
+  String get notificationErrorChannel;
+
+  /// No description provided for @notificationReleaseChannel.
+  ///
+  /// In en, this message translates to:
+  /// **'App releases'**
+  String get notificationReleaseChannel;
+
+  /// No description provided for @notificationSavingsChannel.
+  ///
+  /// In en, this message translates to:
+  /// **'Storage savings'**
+  String get notificationSavingsChannel;
+
+  /// No description provided for @automaticColorSchemeDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto uses a vivid Asagi palette. Each option previews its own accent colors.'**
+  String get automaticColorSchemeDescription;
+
+  /// No description provided for @colorSchemeTonalSpot.
+  ///
+  /// In en, this message translates to:
+  /// **'Tonal spot'**
+  String get colorSchemeTonalSpot;
+
+  /// No description provided for @colorSchemeFidelity.
+  ///
+  /// In en, this message translates to:
+  /// **'Fidelity'**
+  String get colorSchemeFidelity;
+
+  /// No description provided for @colorSchemeContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Content'**
+  String get colorSchemeContent;
+
+  /// No description provided for @colorSchemeExpressive.
+  ///
+  /// In en, this message translates to:
+  /// **'Expressive'**
+  String get colorSchemeExpressive;
+
+  /// No description provided for @colorSchemeFruitSalad.
+  ///
+  /// In en, this message translates to:
+  /// **'Fruit salad'**
+  String get colorSchemeFruitSalad;
+
+  /// No description provided for @colorSchemeMonochrome.
+  ///
+  /// In en, this message translates to:
+  /// **'Monochrome'**
+  String get colorSchemeMonochrome;
+
+  /// No description provided for @colorSchemeNeutral.
+  ///
+  /// In en, this message translates to:
+  /// **'Neutral'**
+  String get colorSchemeNeutral;
+
+  /// No description provided for @colorSchemeRainbow.
+  ///
+  /// In en, this message translates to:
+  /// **'Rainbow'**
+  String get colorSchemeRainbow;
+
+  /// No description provided for @colorSchemeVibrant.
+  ///
+  /// In en, this message translates to:
+  /// **'Vibrant'**
+  String get colorSchemeVibrant;
+
+  /// No description provided for @hapticsButtonsShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Button press feedback'**
+  String get hapticsButtonsShort;
+
+  /// No description provided for @hapticsSelectionsShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Feedback when choices change'**
+  String get hapticsSelectionsShort;
+
+  /// No description provided for @hapticsGesturesShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Swipe action feedback'**
+  String get hapticsGesturesShort;
+
+  /// No description provided for @hapticsSuccessShort.
+  ///
+  /// In en, this message translates to:
+  /// **'A pulse when a video is ready'**
+  String get hapticsSuccessShort;
+
+  /// No description provided for @hapticsErrorsShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Feedback when a job fails'**
+  String get hapticsErrorsShort;
 }
 
 class _AppLocalizationsDelegate

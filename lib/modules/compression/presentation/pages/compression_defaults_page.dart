@@ -2,13 +2,13 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:bloc_signals_flutter/bloc_signals_flutter.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
 import '../cubit/compression_cubit.dart';
 import '../cubit/compression_state.dart';
@@ -120,7 +120,7 @@ final class CompressionDefaultsPage extends HookWidget {
                           avatar: const Icon(LucideIcons.sparkles, size: 14),
                           label: Text('$size ${l10n.megabytesShort}'),
                           onPressed: () {
-                            unawaited(HapticFeedback.selectionClick());
+                            unawaited(AppHaptics.selection());
                             targetController.text = '$size';
                             valid.value = true;
                           },
@@ -154,7 +154,7 @@ final class CompressionDefaultsPage extends HookWidget {
               expand: true,
               isEnabled: valid.value,
               onPressed: () async {
-                unawaited(HapticFeedback.vibrate());
+                unawaited(AppHaptics.button());
                 final value = double.parse(
                   targetController.text.replaceAll(',', '.'),
                 );

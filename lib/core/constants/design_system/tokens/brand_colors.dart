@@ -1,7 +1,8 @@
 import 'dart:ui' show Color;
 
-final class AppBrandColors {
-  AppBrandColors._();
+import '../../../utils/theme/generated_color_schemes.dart' show asagiSeedColor;
 
-  static const Color primary = Color(0xFFFF8A00);
+/// Brand artwork seed; interactive UI colors come from the active ColorScheme.
+abstract final class AppBrandColors {
+  static const Color primary = asagiSeedColor;
 }

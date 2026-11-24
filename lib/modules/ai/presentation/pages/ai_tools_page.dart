@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
 
 final class AiToolsPage extends StatefulWidget {
@@ -23,7 +23,7 @@ final class _AiToolsPageState extends State<AiToolsPage> {
   bool _sandboxScratchpad = true;
 
   void _onToggle(String name, bool val, void Function() apply) {
-    unawaited(HapticFeedback.vibrate());
+    unawaited(AppHaptics.button());
     setState(apply);
     context.toast.showInfo(
       context,
