@@ -6,7 +6,7 @@ import 'package:asagi/modules/compression/data/repositories/device_video_compres
 import 'package:asagi/modules/compression/presentation/pages/video_select_page.dart';
 import 'package:asagi/modules/compression/presentation/widgets/unsupported_compression_page.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 Widget app(Widget home) => MaterialApp(
@@ -16,13 +16,20 @@ Widget app(Widget home) => MaterialApp(
 );
 
 void main() {
-  tearDown(() { debugDefaultTargetPlatformOverride = null; });
+  tearDown(() {
+    debugDefaultTargetPlatformOverride = null;
+  });
 
-  testWidgets('non-Android selection shows localized unsupported state', (tester) async {
+  testWidgets('non-Android selection shows localized unsupported state', (
+    tester,
+  ) async {
     debugDefaultTargetPlatformOverride = TargetPlatform.iOS;
     await tester.pumpWidget(app(const VideoSelectPage()));
     await tester.pumpAndSettle();
-    expect(find.text('Video compression is currently available only on Android.'), findsOneWidget);
+    expect(
+      find.text('Video compression is currently available only on Android.'),
+      findsOneWidget,
+    );
     expect(find.byType(UnsupportedCompressionPage), findsOneWidget);
     expect(find.byType(FilledButton), findsNothing);
   });
@@ -34,14 +41,22 @@ void main() {
     }
   });
 
-  test('repository rejects unsupported picking and planning before native calls', () async {
-    if (Platform.isAndroid) return;
-    final repository = DeviceVideoCompressionRepository();
-    await expectLater(repository.pickVideo(), throwsA(isA<UnsupportedError>()));
-    await expectLater(repository.presets(), throwsA(isA<UnsupportedError>()));
-  });
+  test(
+    'repository rejects unsupported picking and planning before native calls',
+    () async {
+      if (Platform.isAndroid) return;
+      final repository = DeviceVideoCompressionRepository();
+      await expectLater(
+        repository.pickVideo(),
+        throwsA(isA<UnsupportedError>()),
+      );
+      await expectLater(repository.presets(), throwsA(isA<UnsupportedError>()));
+    },
+  );
 
-  testWidgets('license route renders package notices without FFmpeg assets', (tester) async {
+  testWidgets('license route renders package notices without FFmpeg assets', (
+    tester,
+  ) async {
     await tester.pumpWidget(app(const LicensesPage()));
     await tester.pumpAndSettle();
     expect(find.byType(LicensePage), findsOneWidget);

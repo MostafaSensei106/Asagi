@@ -1,6 +1,6 @@
 # ADR 001 — Android-first v1.0 with an LGPL FFmpeg decode path
 
-- **Status:** Accepted
+- **Status:** Superseded by ADR 002
 - **Date:** 2026-11-16
 - **Deciders:** Project maintainer, engineering
 - **Scope:** Platform support for v1.0, third-party media licensing, software decode fallback

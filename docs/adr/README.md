@@ -4,7 +4,9 @@ Short, dated records of decisions that are expensive to reverse. Each one states
 
 | Number | Title | Status |
 | --- | --- | --- |
-| [001](001-android-ffmpeg-lgpl.md) | Android-first v1.0 with an LGPL FFmpeg decode path | Accepted |
+| [001](001-android-ffmpeg-lgpl.md) | Android-first v1.0 with an LGPL FFmpeg decode path | Superseded by ADR 002 |
+
+| [002](002-kotlin-planner.md) | Kotlin planner and platform codecs | Accepted |
 
 ## Writing a new record
 

@@ -1,116 +1,72 @@
 # Compression core
 
-`compression_engine.dart` is a public export barrel. The implementation is divided
-by responsibility, with dependencies pointing toward the domain:
+The public `compression_engine.dart` barrel exposes domain contracts, models,
+application orchestration, and infrastructure adapters.
 
-```
-application/       CompressionEngine + per-job EncodingControl
-       ↓
-domain/contracts/  CompressionPlanner, VideoEncoder, ArtifactStore
-                   CompressionWorkspace, EncodingProgressSource
- domain/models/    immutable platform-independent inputs and outputs
- domain/policies/  HdrPolicy
-       ↑
-infrastructure/    rust/, native/, storage/ adapters
-```
+- `domain/`: immutable metadata, plans, preferences, output, contracts, and HDR policy.
+- `application/`: compression/retry orchestration and serialized encoding controls.
+- `infrastructure/native/`: Pigeon mappings for the Kotlin planner and Media3 encoder.
+- `infrastructure/storage/`: artifact workspaces, recovery, and MP4 checks.
 
-Domain and application import neither Flutter nor Pigeon, FRB, or dart:io.
-Transport DTOs are mapped at the adapter boundary. A new platform implements
-VideoEncoder (optionally EncodingProgressSource). Alternative planners, storage
-and HDR validation policies can be injected independently. No UI/state-management
-or DI framework is involved. Tests enforce the inward dependency boundary.
+Domain and application import neither Flutter nor native transport types or
+`dart:io`. Tests enforce this dependency boundary. Platform DTOs are mapped by
+adapters; alternative planners, encoders, and storage implementations can be
+injected independently.
+
+## Native planning
+
+Android's pure Kotlin `app/planning/` classes own target-size arithmetic, the
+resolution ladder, preset policy, and output-size retry decisions. They have no
+Android or Flutter imports. `NativeCompressionPlanner` implements the generated
+`NativeCompressionPlannerApi` and maps validation failures to stable error codes.
+
+The Dart `PlatformCompressionPlanner` implements `CompressionPlanner`, maps
+metadata/preferences/plans, and caches the preset table. Public domain types and
+application orchestration remain independent of Kotlin or Pigeon.
 
 ## Wiring
-
-Initialize `RustLib.init()` once, then wire the contracts manually:
 
 ```dart
 final encoder = PlatformVideoEncoder(NativeMediaApi());
 final engine = CompressionEngine(
-  planner: RustCompressionPlanner(),
+  planner: PlatformCompressionPlanner(NativeCompressionPlannerApi()),
   encoder: encoder,
   artifacts: const FileArtifactStore(),
 );
 final result = await engine.compress(
   source: localPath,
   targetMb: 16,
-  workspacePath: cacheDirectory.path,
-  hdrMode: HdrMode.preserve, // or toneMapToSdr (default)
+  workspacePath: cachePath,
+  preferences: const CompressionPreferences(hdrMode: HdrMode.preserve),
 );
 ```
 
-Subscribe to `encoder.progress`. Use `engine.pause()`, `engine.resume()` and
-`engine.cancel()` while the returned compression Future is pending. These are
-process-local controls, not recovery after process termination.
+Android registers both host APIs during Flutter engine configuration; no separate
+initialization is required. Compression is Android-only. Other platforms are
+gated in presentation and rejected by the device repository.
 
-The verified result belongs to the caller: move/share/save it, then delete its
-job directory. A source already within the target is returned directly unless HDR
-to SDR conversion was explicitly requested. Never delete that source as temporary
-output. At startup, call `FileArtifactStore.cleanupInterrupted(cachePath,
-Duration(hours: 12))` to remove marked interrupted jobs.
+Subscribe to encoder progress and use `engine.pause()`, `resume()`, and `cancel()`
+while compression is active. The caller saves/shares the verified output before
+cleaning the job directory. A source returned untouched with zero attempts must
+never be deleted as temporary output.
 
-## Native modules
+## Media behavior
 
-Kotlin: `contracts/` defines platform-independent models and ports;
-`MetadataExtractor` reads track metadata; `media3/AndroidHdrPolicy` checks HDR
-capabilities; `Media3Configuration` builds encoder settings/compositions;
-`Media3VideoEncoder` owns export lifetime and controls; `NativeVideoEngine` only
-adapts Pigeon and EventChannel.
+Media3 handles encoding, HDR capability checks, and its own encoder fallback.
+Unsupported video/audio decoders produce localized errors. The application
+verifies size, HDR behavior, output dimensions, and MP4 streaming readiness.
+Device-specific encoder overshoot calibration remains in the app repository.
 
-Swift: `VideoContracts` defines models and ports; `AVVideoMetadataReader`,
-`AVHdrPolicy`, `AVPipelineFactory`, `AVTrackPump`, `AVEncodingSession` and
-`AVFoundationVideoEncoder` separate metadata, policy, graph construction, sample
-transport, lifetime and command serialization. `NativeVideoEngine` is the channel
-adapter. These source files are registered in the Xcode target.
+Pause retains Media3 checkpoints; resume can restart when a checkpoint is unusable.
+Cancel removes temporary work through application orchestration. The Android
+foreground service tracks active media work. Device validation remains necessary
+for HDR colors, A/V sync, orientation, codec support, and interruption behavior.
 
-Rust: `domain/models`, `contracts`, `planning`, `verification` separate entities,
-traits and policy implementations. `api/calculator` only converts API arguments
-and delegates to domain traits. Video buffers never pass through Dart/Rust.
+The iOS AVFoundation encoder source is retained for future platform support;
+there is currently no iOS planner implementation.
 
-## HDR and pause semantics
+## Verification
 
-- `preserve`: HDR HLG/PQ selects HEVC/Main10 and matching BT.2020 transfer/color
-  properties. Android requires API 33+ and a Main10 encoder; unsupported devices
-  fail. iOS uses 10-bit pixel buffers and copies available static HDR metadata.
-- `toneMapToSdr`: Media3 OpenGL tone mapping on Android; AVFoundation composition
-  converts to BT.709/8-bit H.264 on iOS. Device-level visual validation is required.
-- Re-encoding with preservation of Dolby Vision dynamic metadata is not supported:
-  it fails explicitly instead of silently losing that metadata. SDR conversion can
-  be requested. An untouched already-small source retains its original metadata.
-- The application inspects HDR output before publishing it. A preservation failure
-  or failed SDR conversion removes the artifact and throws an error.
-- Android pause cancels native export while retaining checkpoints. Resume uses
-  Media3's resume API for continuous audio/video. Media3 may restart if a checkpoint
-  is unusable; video-only inputs restart the current attempt. Resumed progress is
-  unavailable in Media3 1.5.1 until completion. Checkpoints are cleaned up.
-- iOS pause stops reader/writer sample pumps at their current positions. Resume
-  restarts those pumps without shifting media timestamps. Commands run between
-  bounded batches so pause/cancel cannot starve behind a large sample loop.
-- Android can temporarily require additional output-sized disk space to resume.
-  Paused iOS sessions retain codec resources. Background execution is separate.
-
-## Verification and remaining platform work
-
-Rust handles decimal MB budgets, safety margin, audio/container reserve, source
-bitrate caps, source-aware resolution selection (including 4K/8K when the budget
-and encoder permit), manual ceilings and bounded size retries. Dart tests cover retries,
-cleanup, pause/resume/cancel and HDR policy failures through substituted contracts.
-The documented 180-second/8MB example takes priority over the conflicting
-comfortable-240p rule: 360p is selected with a quality warning.
-
-Still requires device validation for HDR color accuracy, encoder
-support, A/V sync and orientation. Android uses a media-processing foreground
-service while encoding, but persistent resume after process death is not supported.
-Android selects a system software encoder when no hardware encoder accepts the
-requested dimensions/rate, and verifies MP4 faststart before saving encoded
-output. Offline encoder overshoot calibration is stored per Android device and
-format bucket. SAR/VFR detection, complete audio-timeline normalization and
-persistent resume remain pending. Gallery saving is available
-in the app flow. Swift compilation requires macOS/Xcode.
-
-Regenerate contracts after changing them:
-
-```
-flutter_rust_bridge_codegen generate
-dart run pigeon --input pigeons/messages.dart
-```
+Run `flutter analyze` and `flutter test` at the repository root, and
+`./gradlew :app:testDebugUnitTest -Ptarget-platform=android-arm64` in `android/`.
+Regenerate Pigeon contracts with `dart run pigeon --input pigeons/messages.dart`.

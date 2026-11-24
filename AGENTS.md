@@ -6,14 +6,14 @@ Act as a senior Flutter engineer. Read the surrounding feature and shared code b
 
 ## Project Structure & Module Organization
 
-Asagi is a Flutter app with a Rust compression core and native Android/iOS integrations. Most Dart code lives in `lib/`: shared platform services and widgets are under `lib/core/`, feature screens and flows are grouped in `lib/modules/<feature>/`, and translations are in `lib/l10n/`. Tests are in `test/`. Images, icons, and generated launcher assets are under `assets/`. Rust source is in `rust/src/`; the Flutter Rust bridge plugin and build support are in `rust_builder/`. Platform projects are in `android/`, `ios/`, and `web/`.
+Asagi is a Flutter app with a Kotlin compression planner and Android Media3 encoding. Compression is currently supported on Android only; the iOS encoder source is retained. Most Dart code lives in `lib/`: shared platform services and widgets are under `lib/core/`, feature screens and flows are grouped in `lib/modules/<feature>/`, and translations are in `lib/l10n/`. Tests are in `test/`. Images, icons, and generated launcher assets are under `assets/`. Pure Kotlin planning policies are in `android/app/src/main/kotlin/com/mostafa/sensei/asagi/app/planning/`. Platform projects are in `android/`, `ios/`, and `web/`.
 
 ## Clean Architecture & Dependency Direction
 
 - Keep each feature in `lib/modules/<feature>/`. For features with business logic or data access, use `presentation/`, `domain/`, and `data/`: presentation holds pages, small widgets, and state management; domain holds entities, value objects, use cases when needed, and abstract repository contracts; data holds repository implementations, data sources, and DTOs. A purely presentational feature does not need empty layers.
 - Make dependencies point inward: presentation depends on domain contracts; data implements those contracts and maps external DTOs to domain entities; domain must not depend on Flutter widgets, plugins, platform APIs, or data implementations. Keep the repository interface in `domain/` and its concrete implementation in `data/`. Inject dependencies through constructors or the existing `lib/core/di/` setup instead of creating them inside UI widgets.
 - Define new immutable domain entities and value objects with `@freezed sealed class` by default so equality and copying stay consistent; use a regular class only when behavior or identity makes that clearer. Keep transport and persistence fields in data models; map them at the data/domain boundary. Do not expose a plugin response or raw DTO as a domain entity.
-- Keep shared, platform-independent compression rules in `lib/core/compression/domain/` and orchestration in `lib/core/compression/application/`. Keep Rust, native encoder, and file storage adapters in `lib/core/compression/infrastructure/`. Platform-specific code belongs at the boundary.
+- Keep shared, platform-independent compression rules in `lib/core/compression/domain/` and orchestration in `lib/core/compression/application/`. Keep native planner, native encoder, and file storage adapters in `lib/core/compression/infrastructure/`. Platform-specific code belongs at the boundary.
 - Keep widgets focused on rendering and user interaction. Put asynchronous workflows and state transitions in the feature's state manager, and keep persistence and native calls in repositories or adapters. Choose Cubit for straightforward commands and state changes; choose Bloc when explicit events, event sequencing, or event handling make the feature clearer. Follow the existing `bloc_signals` pattern where it applies.
 - Use `@freezed` with `sealed class` for feature state and, when using Bloc, its event types. Represent distinct loading, success, empty, and failure cases explicitly when they need different behavior; keep the state shape appropriate to the feature. Handle cancellation, retries, stale async results, and errors where relevant. Do not move feature-specific behavior into `lib/core/` merely to share it within one feature.
 
@@ -29,9 +29,9 @@ Asagi is a Flutter app with a Rust compression core and native Android/iOS integ
 - `flutter run` launches the app on a connected device or configured emulator.
 - `flutter analyze` runs the analyzer using `analysis_options.yaml` and Flutter lints.
 - `flutter test` runs the Dart unit, architecture, and widget tests in `test/`.
-- `cargo test --manifest-path rust/Cargo.toml` runs Rust core tests.
+- From `android/`, `./gradlew :app:testDebugUnitTest` runs Kotlin planner tests.
 
-Run commands from the repository root. Native builds require the relevant Android SDK or Xcode setup. When changing Rust bridge APIs, keep generated bindings and their source definitions in sync.
+Run commands from the repository root. Native builds require the relevant Android SDK or Xcode setup. When changing Pigeon APIs, regenerate the Dart, Kotlin, and Swift bindings from `pigeons/messages.dart`.
 
 ## Coding Style & Naming Conventions
 
@@ -39,11 +39,11 @@ Follow `analysis_options.yaml`: use two-space Dart indentation, single-quoted st
 
 Split code into focused files and small widgets at natural responsibility boundaries so it is easy to read and change. Avoid repeated logic, oversized pages or state managers, and abstractions that add complexity without solving a real problem. Keep straightforward code straightforward while covering important edge cases. Before adding a third-party package, check whether an existing dependency or SDK API already solves the need; if a new one is justified, choose a compatible package published on [pub.dev](https://pub.dev), declare it in `pubspec.yaml`, and commit the resulting lockfile change when applicable. Keep generated Freezed files in sync with their source declarations.
 
-Rust code should follow standard `rustfmt` formatting and Rust naming conventions (`snake_case` functions/modules, `UpperCamelCase` types). Keep platform-independent compression decisions in the Rust domain layer; native code should handle platform encoding and metadata.
+Keep Kotlin planning policies independent of Android and Flutter types. Map Pigeon DTOs in the native adapter, and keep encoding and metadata access behind the existing native contracts.
 
 ## Testing Guidelines
 
-Add or update tests under `test/` for Dart behavior; name files `*_test.dart`. Keep planner, retry, and verification behavior covered at the relevant layer. Rust tests belong beside the implementation or in Rust test modules and run with the command above. Run the analyzer and the relevant test suites before submitting changes.
+Add or update tests under `test/` for Dart behavior; name files `*_test.dart`. Keep planner, retry, and verification behavior covered at the relevant layer. Kotlin policy tests belong in `android/app/src/test/kotlin/` and run with the Gradle command above. Run the analyzer and the relevant test suites before submitting changes.
 
 ## Commit & Pull Request Guidelines
 

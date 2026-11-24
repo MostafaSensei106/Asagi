@@ -1,3 +1,5 @@
+> Historical specification: removed from the application by ADR 002.
+
 # Staged fallback video (`.zf`) format
 
 Version 1 stores filtered **video only**. It does not contain audio, encode a
