@@ -43,6 +43,8 @@ final class SettingsPage extends StatelessWidget {
     SupportRoute(),
     FeedbackRoute(),
     AppInfoRoute(),
+    AppUpdatesRoute(),
+    WhatsNewRoute(),
     DeveloperRoute(),
     LicensesRoute(),
     PrivacyPolicyRoute(),
@@ -197,6 +199,8 @@ final class SettingsPage extends StatelessWidget {
         'settings_notifications' =>
           context.localeKeys.completionAndUpdateAlerts,
         'settings_privacy' => context.localeKeys.yourDataStaysLocal,
+        'about_updates' => context.localeKeys.appUpdatesDescription,
+        'about_whats_new' => context.localeKeys.whatsNewDescription,
         'about_app' => context.localeKeys.versionAndBuildDetails,
         'about_developer' => context.localeKeys.theDeveloperBehindAsagi,
         'about_licenses' => context.localeKeys.openSourcePackageLicenses,
@@ -212,6 +216,8 @@ final class SettingsPage extends StatelessWidget {
 
   String _routeTitleFor(BuildContext context, AppRoute route) =>
       switch (route.metadata.name) {
+        'about_updates' => context.localeKeys.appUpdatesTitle,
+        'about_whats_new' => context.localeKeys.whatsNewTitle,
         'settings_appearance' => context.localeKeys.appearance,
         'settings_language' => context.localeKeys.language,
         'settings_compression' => context.localeKeys.compressionDefaults,

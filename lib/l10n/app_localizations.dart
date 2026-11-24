@@ -3978,6 +3978,90 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Feedback when a job fails'**
   String get hapticsErrorsShort;
+
+  /// No description provided for @appUpdatesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'App updates'**
+  String get appUpdatesTitle;
+
+  /// No description provided for @whatsNewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What’s new'**
+  String get whatsNewTitle;
+
+  /// No description provided for @appUpdatesDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Check for a new version'**
+  String get appUpdatesDescription;
+
+  /// No description provided for @whatsNewDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Changes in your installed version'**
+  String get whatsNewDescription;
+
+  /// No description provided for @installedVersionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Installed version'**
+  String get installedVersionLabel;
+
+  /// No description provided for @updateAvailableLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'A new version is available'**
+  String get updateAvailableLabel;
+
+  /// No description provided for @noUpdatesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'No newer stable release is available'**
+  String get noUpdatesLabel;
+
+  /// No description provided for @releaseNotesEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No release notes are available for this version.'**
+  String get releaseNotesEmpty;
+
+  /// No description provided for @releaseLoadFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load release information. Try again when you are connected.'**
+  String get releaseLoadFailed;
+
+  /// No description provided for @releaseCachedNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not refresh. Showing the saved release notes.'**
+  String get releaseCachedNotice;
+
+  /// No description provided for @openReleaseLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Open release on GitHub'**
+  String get openReleaseLabel;
+
+  /// No description provided for @checkUpdatesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Check for updates'**
+  String get checkUpdatesLabel;
+
+  /// No description provided for @reloadReleaseLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh release notes'**
+  String get reloadReleaseLabel;
+
+  /// No description provided for @releaseOpenFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not open the release. Please try again.'**
+  String get releaseOpenFailed;
 }
 
 class _AppLocalizationsDelegate

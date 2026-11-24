@@ -2225,6 +2225,50 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get hapticsErrorsShort => 'استجابة عند فشل العملية';
+
+  @override
+  String get appUpdatesTitle => 'تحديثات التطبيق';
+
+  @override
+  String get whatsNewTitle => 'ما الجديد';
+
+  @override
+  String get appUpdatesDescription => 'البحث عن إصدار جديد';
+
+  @override
+  String get whatsNewDescription => 'التغييرات في الإصدار المثبت';
+
+  @override
+  String get installedVersionLabel => 'الإصدار المثبت';
+
+  @override
+  String get updateAvailableLabel => 'يتوفر إصدار جديد';
+
+  @override
+  String get noUpdatesLabel => 'لا يتوفر إصدار مستقر أحدث';
+
+  @override
+  String get releaseNotesEmpty => 'لا توجد ملاحظات إصدار متاحة لهذا الإصدار.';
+
+  @override
+  String get releaseLoadFailed =>
+      'تعذر تحميل معلومات الإصدار. أعد المحاولة عند الاتصال بالإنترنت.';
+
+  @override
+  String get releaseCachedNotice =>
+      'تعذر التحديث. نعرض ملاحظات الإصدار المحفوظة.';
+
+  @override
+  String get openReleaseLabel => 'فتح الإصدار على GitHub';
+
+  @override
+  String get checkUpdatesLabel => 'البحث عن تحديثات';
+
+  @override
+  String get reloadReleaseLabel => 'تحديث ملاحظات الإصدار';
+
+  @override
+  String get releaseOpenFailed => 'تعذر فتح الإصدار. أعد المحاولة.';
 }
 
 /// The translations for Arabic, as used in Egypt (`ar_EG`).

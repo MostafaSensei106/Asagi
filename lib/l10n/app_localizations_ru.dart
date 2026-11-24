@@ -2247,6 +2247,52 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get hapticsErrorsShort => 'Feedback when a job fails';
+
+  @override
+  String get appUpdatesTitle => 'App updates';
+
+  @override
+  String get whatsNewTitle => 'What’s new';
+
+  @override
+  String get appUpdatesDescription => 'Check for a new version';
+
+  @override
+  String get whatsNewDescription => 'Changes in your installed version';
+
+  @override
+  String get installedVersionLabel => 'Installed version';
+
+  @override
+  String get updateAvailableLabel => 'A new version is available';
+
+  @override
+  String get noUpdatesLabel => 'No newer stable release is available';
+
+  @override
+  String get releaseNotesEmpty =>
+      'No release notes are available for this version.';
+
+  @override
+  String get releaseLoadFailed =>
+      'Could not load release information. Try again when you are connected.';
+
+  @override
+  String get releaseCachedNotice =>
+      'Could not refresh. Showing the saved release notes.';
+
+  @override
+  String get openReleaseLabel => 'Open release on GitHub';
+
+  @override
+  String get checkUpdatesLabel => 'Check for updates';
+
+  @override
+  String get reloadReleaseLabel => 'Refresh release notes';
+
+  @override
+  String get releaseOpenFailed =>
+      'Could not open the release. Please try again.';
 }
 
 /// The translations for Russian, as used in Russian Federation (`ru_RU`).

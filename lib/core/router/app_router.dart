@@ -14,13 +14,15 @@ import '../../modules/help/help.dart';
 import '../../modules/home/home.dart';
 import '../../modules/language/language.dart';
 import '../../modules/legal/legal.dart';
-import '../../modules/notifications/logic/cubit/notifications_cubit.dart';
 import '../../modules/notifications/notifications.dart';
+import '../../modules/notifications/presentation/cubit/notification_access_cubit.dart';
+import '../../modules/notifications/presentation/cubit/notifications_cubit.dart';
 import '../../modules/notifications/presentation/widgets/notification_coordinator.dart';
 import '../../modules/onboarding/onboarding.dart';
 import '../../modules/privacy/privacy.dart';
 import '../../modules/settings/settings.dart';
 import '../../modules/storage/storage.dart';
+import '../../modules/updates/presentation/pages/releases_page.dart';
 import '../constants/asagi_icons.dart';
 import '../di/di.dart';
 import '../extensions/extensions.dart';
@@ -102,6 +104,8 @@ final class AppRouter {
 
         // Settings.
         SettingsRoute() => const SettingsPage(),
+        AppUpdatesRoute() => const ReleasesPage(),
+        WhatsNewRoute() => const ReleasesPage(installed: true),
         AppearanceSettingsRoute() => const AppearanceSettingsPage(),
         LanguageSettingsRoute() => const LanguageSettingsPage(),
         CompressionDefaultsRoute() => const CompressionDefaultsPage(),

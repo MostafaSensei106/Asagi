@@ -7,12 +7,12 @@ import 'package:material_ui/material_ui.dart';
 import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/preferences/domain/entities/notification_settings.dart';
 import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
-import '../../logic/entities/notification_settings.dart';
-import '../../logic/repositories/notification_repository.dart';
-import '../../logic/cubit/notifications_cubit.dart';
-import '../../logic/cubit/notifications_state.dart';
+import '../cubit/notifications_cubit.dart';
+import '../cubit/notifications_state.dart';
+import '../widgets/notification_permission_notices.dart';
 
 final class NotificationsSettingsPage extends StatelessWidget {
   const NotificationsSettingsPage({super.key});
@@ -25,7 +25,7 @@ final class NotificationsSettingsPage extends StatelessWidget {
       appBar: SidePageAppBarComponent(title: text.notifications),
       body: BlocSignalBuilder<NotificationsCubit, NotificationsState>(
         builder: (context, state) {
-          final settings = state.data.settings;
+          final settings = state.settings;
           Widget tile({
             required String title,
             required String subtitle,
@@ -33,7 +33,8 @@ final class NotificationsSettingsPage extends StatelessWidget {
             required ListTileGroupType group,
             required IconData icon,
             required bool value,
-            required NotificationSettings Function(bool) change,
+            required NotificationSettings Function(NotificationSettings, bool)
+            change,
             required InfoIllustrationKind illustration,
           }) => _NotificationPreferenceTile(
             title: title,
@@ -43,7 +44,9 @@ final class NotificationsSettingsPage extends StatelessWidget {
             icon: icon,
             value: value,
             onChanged: (value) {
-              unawaited(cubit.updateSettings(change(value)));
+              unawaited(
+                cubit.updateSettings((current) => change(current, value)),
+              );
               unawaited(AppHaptics.selection());
             },
             illustration: illustration,
@@ -58,34 +61,11 @@ final class NotificationsSettingsPage extends StatelessWidget {
                 if (state is NotificationsInitializing)
                   const LinearProgressIndicator(),
                 if (state is NotificationsFailure)
-                  _Notice(
+                  NotificationNotice(
                     text: text.notificationSetupFailed,
-                    onTap: () => unawaited(
-                      cubit.initialize(text).then((_) => cubit.refresh()),
-                    ),
+                    onTap: () => unawaited(cubit.initialize()),
                   ),
-                if (state.permission == NotificationPermission.unsupported)
-                  _Notice(text: text.notificationUnavailable),
-                if (state.permission == NotificationPermission.denied ||
-                    state.permission ==
-                        NotificationPermission.permanentlyDenied)
-                  _Notice(
-                    title: text.notificationPermissionTitle,
-                    text:
-                        state.permission ==
-                            NotificationPermission.permanentlyDenied
-                        ? text.notificationPermissionSettingsBody
-                        : text.notificationPermissionBody,
-                    busy: state is NotificationsRequestingPermission,
-                    onTap: state is NotificationsRequestingPermission
-                        ? null
-                        : () => unawaited(cubit.requestPermission()),
-                  ),
-                for (final channel in state.blockedChannels)
-                  _Notice(
-                    text: text.notificationChannelBlocked,
-                    onTap: () => unawaited(cubit.openChannelSettings(channel)),
-                  ),
+                const NotificationPermissionNotices(),
                 ExpressiveSectionHeader(title: text.compressionAlerts),
                 ListTileGroup(
                   children: [
@@ -96,7 +76,8 @@ final class NotificationsSettingsPage extends StatelessWidget {
                       description: text.jobCompletedDetails,
                       icon: LucideIcons.check,
                       value: settings.jobCompletion,
-                      change: (v) => settings.copyWith(jobCompletion: v),
+                      change: (current, v) =>
+                          current.copyWith(jobCompletion: v),
                       illustration:
                           InfoIllustrationKind.notificationJobCompletion,
                     ),
@@ -107,7 +88,8 @@ final class NotificationsSettingsPage extends StatelessWidget {
                       description: text.notificationProgressDetails,
                       icon: LucideIcons.activity,
                       value: settings.backgroundStatus,
-                      change: (v) => settings.copyWith(backgroundStatus: v),
+                      change: (current, v) =>
+                          current.copyWith(backgroundStatus: v),
                       illustration:
                           InfoIllustrationKind.notificationBackgroundStatus,
                     ),
@@ -118,7 +100,7 @@ final class NotificationsSettingsPage extends StatelessWidget {
                       description: text.interruptionErrorDetails,
                       icon: LucideIcons.bell,
                       value: settings.errorAlerts,
-                      change: (v) => settings.copyWith(errorAlerts: v),
+                      change: (current, v) => current.copyWith(errorAlerts: v),
                       illustration:
                           InfoIllustrationKind.notificationInterruptionAlert,
                     ),
@@ -135,7 +117,8 @@ final class NotificationsSettingsPage extends StatelessWidget {
                       description: text.completionSoundDetails,
                       icon: LucideIcons.audioLines,
                       value: settings.completionSound,
-                      change: (v) => settings.copyWith(completionSound: v),
+                      change: (current, v) =>
+                          current.copyWith(completionSound: v),
                       illustration:
                           InfoIllustrationKind.notificationCompletionSound,
                     ),
@@ -145,8 +128,10 @@ final class NotificationsSettingsPage extends StatelessWidget {
                       group: ListTileGroupType.middle,
                       description: text.hapticsButtonsDescription,
                       icon: LucideIcons.mousePointer2,
-                      value: settings.buttonHaptics,
-                      change: (v) => settings.copyWith(buttonHaptics: v),
+                      value: settings.haptics.buttons,
+                      change: (current, v) => current.copyWith(
+                        haptics: current.haptics.copyWith(buttons: v),
+                      ),
                       illustration: InfoIllustrationKind.hapticButtons,
                     ),
                     tile(
@@ -155,8 +140,10 @@ final class NotificationsSettingsPage extends StatelessWidget {
                       group: ListTileGroupType.middle,
                       description: text.hapticsSelectionsDescription,
                       icon: LucideIcons.listChecks,
-                      value: settings.selectionHaptics,
-                      change: (v) => settings.copyWith(selectionHaptics: v),
+                      value: settings.haptics.selections,
+                      change: (current, v) => current.copyWith(
+                        haptics: current.haptics.copyWith(selections: v),
+                      ),
                       illustration: InfoIllustrationKind.hapticSelections,
                     ),
                     tile(
@@ -165,8 +152,10 @@ final class NotificationsSettingsPage extends StatelessWidget {
                       group: ListTileGroupType.middle,
                       description: text.hapticsGesturesDescription,
                       icon: LucideIcons.hand,
-                      value: settings.gestureHaptics,
-                      change: (v) => settings.copyWith(gestureHaptics: v),
+                      value: settings.haptics.gestures,
+                      change: (current, v) => current.copyWith(
+                        haptics: current.haptics.copyWith(gestures: v),
+                      ),
                       illustration: InfoIllustrationKind.hapticGestures,
                     ),
                     tile(
@@ -175,8 +164,10 @@ final class NotificationsSettingsPage extends StatelessWidget {
                       group: ListTileGroupType.middle,
                       description: text.hapticsSuccessDescription,
                       icon: LucideIcons.check,
-                      value: settings.successHaptics,
-                      change: (v) => settings.copyWith(successHaptics: v),
+                      value: settings.haptics.success,
+                      change: (current, v) => current.copyWith(
+                        haptics: current.haptics.copyWith(success: v),
+                      ),
                       illustration: InfoIllustrationKind.hapticSuccess,
                     ),
                     tile(
@@ -185,8 +176,10 @@ final class NotificationsSettingsPage extends StatelessWidget {
                       group: ListTileGroupType.bottom,
                       description: text.hapticsErrorsDescription,
                       icon: LucideIcons.triangleAlert,
-                      value: settings.errorHaptics,
-                      change: (v) => settings.copyWith(errorHaptics: v),
+                      value: settings.haptics.errors,
+                      change: (current, v) => current.copyWith(
+                        haptics: current.haptics.copyWith(errors: v),
+                      ),
                       illustration: InfoIllustrationKind.hapticErrors,
                     ),
                   ],
@@ -202,7 +195,8 @@ final class NotificationsSettingsPage extends StatelessWidget {
                       description: text.productUpdatesDetails,
                       icon: LucideIcons.sparkles,
                       value: settings.productUpdates,
-                      change: (v) => settings.copyWith(productUpdates: v),
+                      change: (current, v) =>
+                          current.copyWith(productUpdates: v),
                       illustration:
                           InfoIllustrationKind.notificationProductUpdate,
                     ),
@@ -213,7 +207,8 @@ final class NotificationsSettingsPage extends StatelessWidget {
                       description: text.savingsDigestDetails,
                       icon: AsagiIcons.storage,
                       value: settings.savingsDigest,
-                      change: (v) => settings.copyWith(savingsDigest: v),
+                      change: (current, v) =>
+                          current.copyWith(savingsDigest: v),
                       illustration:
                           InfoIllustrationKind.notificationStorageSavings,
                     ),
@@ -272,68 +267,4 @@ final class _NotificationPreferenceTile extends StatelessWidget {
       trailing: SwitchComponent(value: value, onChanged: onChanged),
     );
   }
-}
-
-final class _Notice extends StatelessWidget {
-  const _Notice({
-    required this.text,
-    this.title,
-    this.onTap,
-    this.busy = false,
-  });
-  final String text;
-  final String? title;
-  final VoidCallback? onTap;
-  final bool busy;
-
-  @override
-  Widget build(BuildContext context) => Padding(
-    padding: const EdgeInsets.only(bottom: AppSpacing.medium),
-    child: Material(
-      color: context.colorScheme.secondaryContainer,
-      borderRadius: BorderRadius.circular(AppSpacing.medium),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(AppSpacing.medium),
-        onTap: onTap,
-        child: Padding(
-          padding: const EdgeInsets.all(AppSpacing.medium),
-          child: Row(
-            children: [
-              if (busy)
-                const SizedBox.square(
-                  dimension: 24,
-                  child: CircularProgressIndicator(strokeWidth: 2),
-                )
-              else
-                Icon(
-                  LucideIcons.bell,
-                  color: context.colorScheme.onSecondaryContainer,
-                ),
-              const Gap(AppSpacing.medium),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    if (title != null)
-                      Text(
-                        title!,
-                        style: context.textTheme.titleSmall?.copyWith(
-                          color: context.colorScheme.onSecondaryContainer,
-                        ),
-                      ),
-                    Text(
-                      text,
-                      style: TextStyle(
-                        color: context.colorScheme.onSecondaryContainer,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    ),
-  );
 }

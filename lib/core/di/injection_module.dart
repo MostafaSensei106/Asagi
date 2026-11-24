@@ -8,7 +8,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../modules/compression/data/repositories/device_video_compression_repository.dart';
 import '../../modules/compression/domain/repositories/video_compression_repository.dart';
-import '../../modules/notifications/data/data_sources/github_releases_api.dart';
+import '../../modules/notifications/application/notification_dispatcher.dart';
+import '../../modules/notifications/domain/repositories/notification_delivery.dart';
+import '../../modules/updates/data/data_sources/github_releases_api.dart';
 import '../compression/domain/contracts/artifact_store.dart';
 import '../compression/infrastructure/storage/file_artifact_store.dart';
 import '../network/dio_factory.dart';
@@ -17,6 +19,10 @@ import '../services/shared_prefs/storage_facade.dart';
 
 @module
 abstract class InjectionModule {
+  @lazySingleton
+  NotificationDelivery notificationDelivery(
+    NotificationDispatcher dispatcher,
+  ) => dispatcher;
   @lazySingleton
   @Named('github')
   Dio get githubDio => DioFactory.github();

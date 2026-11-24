@@ -7,11 +7,13 @@ import 'package:asagi/core/network/dio_factory.dart';
 import 'package:asagi/core/network/network_failure_mapper.dart';
 import 'package:asagi/core/network/request_deduplicator.dart';
 import 'package:asagi/core/utils/result/result.dart';
-import 'package:asagi/modules/notifications/data/data_sources/github_releases_api.dart';
-import 'package:asagi/modules/notifications/data/repositories/github_release_repository.dart';
-import 'package:asagi/modules/notifications/domain/use_cases/check_app_update.dart';
+import 'package:asagi/modules/updates/data/data_sources/github_releases_api.dart';
+import 'package:asagi/modules/updates/data/repositories/github_release_repository.dart';
+import 'package:asagi/modules/updates/domain/use_cases/check_app_update.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
+
+import 'support/memory_preference_storage.dart';
 
 class ResponseAdapter implements HttpClientAdapter {
   int status = 200;
@@ -56,16 +58,19 @@ void main() {
   late Dio dio;
   late ResponseAdapter adapter;
   late GitHubReleaseRepository repository;
-  late CheckAppUpdate check;
+  late CheckAppUpdateUseCase check;
+  late MemoryPreferenceStorage storage;
   setUp(() {
     dio = DioFactory.github(retryTransientFailures: false);
     adapter = ResponseAdapter();
     dio.httpClientAdapter = adapter;
+    storage = MemoryPreferenceStorage();
     repository = GitHubReleaseRepository(
       GitHubReleasesApi(dio),
       RequestDeduplicator(),
+      storage,
     );
-    check = CheckAppUpdate(repository);
+    check = CheckAppUpdateUseCase(repository);
   });
   tearDown(() => dio.close());
 
@@ -85,6 +90,44 @@ void main() {
     expect(adapter.request!.headers.containsKey('Authorization'), isFalse);
   });
 
+  test(
+    'installed version fetch uses tag endpoint and caches the model',
+    () async {
+      final result = await repository.byVersion('2.0.0');
+      expect(result.dataOrNull?.version, '2.0.0');
+      expect(adapter.request!.uri.path, endsWith('/releases/tags/v2.0.0'));
+      expect((await repository.cached('2.0.0'))?.notes, 'Real release notes');
+      expect(await repository.cached('1.0.0'), isNull);
+    },
+  );
+  test(
+    'missing installed tag tries both tag conventions then returns empty',
+    () async {
+      adapter.status = 404;
+      expect((await repository.byVersion('1.0.0')).isSuccess, isTrue);
+      expect(adapter.calls, 2);
+      expect(adapter.request!.uri.path, endsWith('/releases/tags/1.0.0'));
+    },
+  );
+  test(
+    'manual retry honors a server rate limit without another request',
+    () async {
+      adapter.status = 429;
+      adapter.headers['retry-after'] = ['60'];
+      await repository.latest();
+      await repository.latest();
+      expect(adapter.calls, 1);
+    },
+  );
+
+  test('rate limits survive a new repository instance', () async {
+    adapter.status = 429;
+    adapter.headers['retry-after'] = ['60'];
+    await repository.latest();
+    final restored = GitHubReleaseRepository(GitHubReleasesApi(dio), RequestDeduplicator(), storage);
+    expect((await restored.latest()).errorOrNull, isA<RateLimitFailure>());
+    expect(adapter.calls, 1);
+  });
   test('same/older versions, prereleases, drafts, invalid tags and foreign URLs do not notify', () async {
     expect((await check('2.0.0')).dataOrNull, isNull);
     expect((await check('3.0.0')).dataOrNull, isNull);

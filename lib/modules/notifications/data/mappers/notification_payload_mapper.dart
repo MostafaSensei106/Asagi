@@ -1,5 +1,5 @@
 import '../../../../core/network/api_client_config.dart';
-import '../../logic/entities/notification_target.dart';
+import '../../domain/entities/notification_target.dart';
 import '../models/notification_payload_model.dart';
 
 extension NotificationTargetMapping on NotificationTarget {

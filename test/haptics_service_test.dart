@@ -1,6 +1,9 @@
+import 'package:asagi/core/preferences/data/repositories/shared_notification_preferences.dart';
 import 'package:asagi/core/services/haptics/haptics_service.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+
+import 'support/memory_preference_storage.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +25,7 @@ void main() {
 
   test('all five categories can be enabled independently', () async {
     for (final selected in HapticCategory.values) {
-      final service = HapticsService();
+      final service = HapticsService.fallback();
       service.configure({
         for (final category in HapticCategory.values)
           category: category == selected,
@@ -35,9 +38,32 @@ void main() {
     }
   });
   test('a shared control and its caller produce only one pulse', () async {
-    final service = HapticsService();
+    final service = HapticsService.fallback();
     await service.play(HapticCategory.buttons);
     await service.play(HapticCategory.buttons);
     expect(calls, ['HapticFeedbackType.lightImpact']);
   });
+
+  test(
+    'haptics read persisted preferences without an instantiated settings cubit',
+    () async {
+      final preferences = SharedNotificationPreferences(
+        MemoryPreferenceStorage(),
+      );
+      await preferences.update(
+        (current) =>
+            current.copyWith(haptics: current.haptics.copyWith(buttons: false)),
+      );
+      final service = HapticsService(preferences);
+      await service.play(HapticCategory.buttons);
+      expect(calls, isEmpty);
+      await preferences.update(
+        (current) =>
+            current.copyWith(haptics: current.haptics.copyWith(buttons: true)),
+      );
+      await service.play(HapticCategory.buttons);
+      expect(calls, ['HapticFeedbackType.lightImpact']);
+      await preferences.dispose();
+    },
+  );
 }

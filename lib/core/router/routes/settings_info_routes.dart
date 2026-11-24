@@ -252,3 +252,27 @@ final class FeedbackRoute extends AppRoute {
     showInSettingsHub: true,
   );
 }
+
+final class AppUpdatesRoute extends AppRoute {
+  const AppUpdatesRoute();
+  @override
+  AppRouteMetadata get metadata => const AppRouteMetadata(
+    name: 'about_updates',
+    path: '/about/updates',
+    section: AppRouteSection.about,
+    icon: AsagiIcons.notifications,
+    showInSettingsHub: true,
+  );
+}
+
+final class WhatsNewRoute extends AppRoute {
+  const WhatsNewRoute();
+  @override
+  AppRouteMetadata get metadata => const AppRouteMetadata(
+    name: 'about_whats_new',
+    path: '/about/whats-new',
+    section: AppRouteSection.about,
+    icon: AsagiIcons.appInfo,
+    showInSettingsHub: true,
+  );
+}

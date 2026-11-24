@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import '../../logic/entities/notification_target.dart';
+import '../../domain/entities/notification_target.dart';
 import '../models/notification_payload_model.dart';
 import 'notification_payload_mapper.dart';
 

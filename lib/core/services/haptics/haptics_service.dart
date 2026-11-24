@@ -2,11 +2,16 @@ import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../di/di.dart';
+import '../../preferences/domain/repositories/notification_preferences_repository.dart';
 
 enum HapticCategory { buttons, selections, gestures, success, errors }
 
 @lazySingleton
 class HapticsService {
+  HapticsService(NotificationPreferencesRepository preferences)
+    : _preferences = preferences;
+  HapticsService.fallback() : _preferences = null;
+  final NotificationPreferencesRepository? _preferences;
   Map<HapticCategory, bool> _enabled = {};
   final Stopwatch _clock = Stopwatch()..start();
   int? _lastFeedback;
@@ -15,6 +20,23 @@ class HapticsService {
       _enabled = Map.unmodifiable(enabled);
 
   Future<void> play(HapticCategory category) async {
+    final preferences = _preferences;
+    if (preferences != null) {
+      try {
+        await preferences.load();
+      } on Object {
+        return;
+      }
+      final settings = preferences.current;
+      final enabled = switch (category) {
+        HapticCategory.buttons => settings.haptics.buttons,
+        HapticCategory.selections => settings.haptics.selections,
+        HapticCategory.gestures => settings.haptics.gestures,
+        HapticCategory.success => settings.haptics.success,
+        HapticCategory.errors => settings.haptics.errors,
+      };
+      if (!enabled) return;
+    }
     if (_enabled[category] == false) return;
     final now = _clock.elapsedMilliseconds;
     // Shared controls and their callers can describe the same interaction.
@@ -37,7 +59,7 @@ class HapticsService {
 
 /// Shared widgets remain usable in previews/tests before dependency injection.
 abstract final class AppHaptics {
-  static final _fallback = HapticsService();
+  static final _fallback = HapticsService.fallback();
   static HapticsService get _service => getIt.isRegistered<HapticsService>()
       ? getIt<HapticsService>()
       : _fallback;

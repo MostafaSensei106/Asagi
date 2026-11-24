@@ -1296,5 +1296,19 @@
   "hapticsSelectionsShort": "استجابة تغيير الاختيارات",
   "hapticsGesturesShort": "استجابة إيماءات السحب",
   "hapticsSuccessShort": "نبضة عند اكتمال الفيديو",
-  "hapticsErrorsShort": "استجابة عند فشل العملية"
+  "hapticsErrorsShort": "استجابة عند فشل العملية",
+  "appUpdatesTitle": "تحديثات التطبيق",
+  "whatsNewTitle": "ما الجديد",
+  "appUpdatesDescription": "البحث عن إصدار جديد",
+  "whatsNewDescription": "التغييرات في الإصدار المثبت",
+  "installedVersionLabel": "الإصدار المثبت",
+  "updateAvailableLabel": "يتوفر إصدار جديد",
+  "noUpdatesLabel": "لا يتوفر إصدار مستقر أحدث",
+  "releaseNotesEmpty": "لا توجد ملاحظات إصدار متاحة لهذا الإصدار.",
+  "releaseLoadFailed": "تعذر تحميل معلومات الإصدار. أعد المحاولة عند الاتصال بالإنترنت.",
+  "releaseCachedNotice": "تعذر التحديث. نعرض ملاحظات الإصدار المحفوظة.",
+  "openReleaseLabel": "فتح الإصدار على GitHub",
+  "checkUpdatesLabel": "البحث عن تحديثات",
+  "reloadReleaseLabel": "تحديث ملاحظات الإصدار",
+  "releaseOpenFailed": "تعذر فتح الإصدار. أعد المحاولة."
 }

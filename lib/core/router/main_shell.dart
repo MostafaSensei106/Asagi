@@ -8,6 +8,7 @@ final class _MainShell extends StatelessWidget {
   Widget build(BuildContext context) => MultiBlocSignalProvider(
     providers: [
       BlocSignalProvider.value(value: getIt<NotificationsCubit>()),
+      BlocSignalProvider.value(value: getIt<NotificationAccessCubit>()),
       BlocSignalProvider(
         create: (_) => CompressionCubit(getIt<VideoCompressionRepository>()),
       ),

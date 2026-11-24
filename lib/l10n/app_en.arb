@@ -1534,5 +1534,19 @@
   "hapticsSelectionsShort": "Feedback when choices change",
   "hapticsGesturesShort": "Swipe action feedback",
   "hapticsSuccessShort": "A pulse when a video is ready",
-  "hapticsErrorsShort": "Feedback when a job fails"
+  "hapticsErrorsShort": "Feedback when a job fails",
+  "appUpdatesTitle": "App updates",
+  "whatsNewTitle": "What’s new",
+  "appUpdatesDescription": "Check for a new version",
+  "whatsNewDescription": "Changes in your installed version",
+  "installedVersionLabel": "Installed version",
+  "updateAvailableLabel": "A new version is available",
+  "noUpdatesLabel": "No newer stable release is available",
+  "releaseNotesEmpty": "No release notes are available for this version.",
+  "releaseLoadFailed": "Could not load release information. Try again when you are connected.",
+  "releaseCachedNotice": "Could not refresh. Showing the saved release notes.",
+  "openReleaseLabel": "Open release on GitHub",
+  "checkUpdatesLabel": "Check for updates",
+  "reloadReleaseLabel": "Refresh release notes",
+  "releaseOpenFailed": "Could not open the release. Please try again."
 }

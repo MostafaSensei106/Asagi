@@ -1,6 +1,6 @@
+import 'package:asagi/core/preferences/data/mappers/notification_preferences_codec.dart';
 import 'package:asagi/modules/notifications/data/mappers/notification_payload_codec.dart';
-import 'package:asagi/modules/notifications/data/mappers/notification_preferences_codec.dart';
-import 'package:asagi/modules/notifications/logic/entities/notification_target.dart';
+import 'package:asagi/modules/notifications/domain/entities/notification_target.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -41,13 +41,13 @@ void main() {
     final data = NotificationPreferencesCodec.decode({
       'settings': {'hapticFeedback': false},
     })!;
-    expect(data.settings.buttonHaptics, isFalse);
-    expect(data.settings.selectionHaptics, isFalse);
-    expect(data.settings.gestureHaptics, isFalse);
-    expect(data.settings.successHaptics, isFalse);
-    expect(data.settings.errorHaptics, isFalse);
+    expect(data.settings.haptics.buttons, isFalse);
+    expect(data.settings.haptics.selections, isFalse);
+    expect(data.settings.haptics.gestures, isFalse);
+    expect(data.settings.haptics.success, isFalse);
+    expect(data.settings.haptics.errors, isFalse);
     final updated = data.copyWith(
-      settings: data.settings.copyWith(selectionHaptics: true),
+      settings: data.settings.copyWith(haptics: data.settings.haptics.copyWith(selections: true)),
     );
     expect(
       NotificationPreferencesCodec.decode(

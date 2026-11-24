@@ -370,7 +370,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "de_DE": [
@@ -744,7 +758,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "es": [
@@ -1118,7 +1146,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "es_ES": [
@@ -1492,7 +1534,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "fr": [
@@ -1866,7 +1922,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "id": [
@@ -2240,7 +2310,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "id_ID": [
@@ -2614,7 +2698,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "it": [
@@ -2988,7 +3086,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "it_IT": [
@@ -3362,7 +3474,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "ja": [
@@ -3736,7 +3862,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "ja_JP": [
@@ -4110,7 +4250,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "ko": [
@@ -4484,7 +4638,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "ko_KR": [
@@ -4858,7 +5026,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "nl": [
@@ -5232,7 +5414,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "nl_BE": [
@@ -5606,7 +5802,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "pl": [
@@ -5980,7 +6190,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "pl_PL": [
@@ -6354,7 +6578,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "pt": [
@@ -6728,7 +6966,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "pt_BR": [
@@ -7102,7 +7354,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "ru": [
@@ -7476,7 +7742,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "ru_RU": [
@@ -7850,7 +8130,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "sv": [
@@ -8224,7 +8518,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "sv_SE": [
@@ -8598,7 +8906,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "th": [
@@ -8972,7 +9294,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "th_TH": [
@@ -9346,7 +9682,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "tr": [
@@ -9720,7 +10070,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "tr_TR": [
@@ -10094,7 +10458,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "vi": [
@@ -10468,7 +10846,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "zh": [
@@ -10842,7 +11234,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "zh_CN": [
@@ -11216,7 +11622,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "zh_HK": [
@@ -11590,7 +12010,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "zh_SG": [
@@ -11964,7 +12398,21 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ],
 
   "zh_TW": [
@@ -12338,6 +12786,20 @@
     "hapticsSelectionsShort",
     "hapticsGesturesShort",
     "hapticsSuccessShort",
-    "hapticsErrorsShort"
+    "hapticsErrorsShort",
+    "appUpdatesTitle",
+    "whatsNewTitle",
+    "appUpdatesDescription",
+    "whatsNewDescription",
+    "installedVersionLabel",
+    "updateAvailableLabel",
+    "noUpdatesLabel",
+    "releaseNotesEmpty",
+    "releaseLoadFailed",
+    "releaseCachedNotice",
+    "openReleaseLabel",
+    "checkUpdatesLabel",
+    "reloadReleaseLabel",
+    "releaseOpenFailed"
   ]
 }

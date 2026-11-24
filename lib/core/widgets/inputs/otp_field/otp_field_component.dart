@@ -1,8 +1,8 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:pinput/pinput.dart';
 
-import '../../../../core/extensions/extensions.dart';
 import '../../../constants/app_config.dart';
+import '../../../extensions/extensions.dart';
 
 class OtpFieldComponent extends StatelessWidget {
   const OtpFieldComponent({
