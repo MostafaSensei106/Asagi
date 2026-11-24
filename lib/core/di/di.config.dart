@@ -70,13 +70,7 @@ import 'package:asagi/core/utils/theme/logic/cubit/theme_cubit.dart' as _i664;
 import 'package:asagi/modules/about/data/about_app_repsitory.dart' as _i382;
 import 'package:asagi/modules/about/data/base_about_app_repository.dart'
     as _i812;
-import 'package:asagi/modules/about/data/repositories/asset_open_source_license_repository.dart'
-    as _i560;
-import 'package:asagi/modules/about/domain/repositories/open_source_license_repository.dart'
-    as _i433;
 import 'package:asagi/modules/about/logic/cubit/about_app_cubit.dart' as _i188;
-import 'package:asagi/modules/about/logic/open_source_licenses_cubit.dart'
-    as _i37;
 import 'package:asagi/modules/storage/data/repositories/file_storage_repository.dart'
     as _i806;
 import 'package:asagi/modules/storage/domain/repositories/storage_repository.dart'
@@ -134,9 +128,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i550.BaseShareService>(
       () => _i770.SharePlusService(gh<_i998.SharePlus>()),
     );
-    gh.lazySingleton<_i433.OpenSourceLicenseRepository>(
-      () => _i560.AssetOpenSourceLicenseRepository(),
-    );
     gh.lazySingleton<_i630.BaseToastService>(
       () => _i885.ToastificationService(gh<_i264.ThemeService>()),
     );
@@ -166,10 +157,6 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i586.BaseClipboardGuardService>(
       () => _i586.ClipboardGuardService(gh<_i619.BaseAuditLogger>()),
-    );
-    gh.factory<_i37.OpenSourceLicensesCubit>(
-      () =>
-          _i37.OpenSourceLicensesCubit(gh<_i433.OpenSourceLicenseRepository>()),
     );
     gh.lazySingleton<_i896.BasePrefStorageService>(
       () => _i960.StorageFacade(
@@ -230,9 +217,6 @@ extension GetItInjectableX on _i174.GetIt {
 
   _i770.SharePlusService get sharePlusService => get<_i770.SharePlusService>();
 
-  _i560.AssetOpenSourceLicenseRepository get assetOpenSourceLicenseRepository =>
-      get<_i560.AssetOpenSourceLicenseRepository>();
-
   _i885.ToastificationService get toastificationService =>
       get<_i885.ToastificationService>();
 
@@ -257,9 +241,6 @@ extension GetItInjectableX on _i174.GetIt {
 
   _i586.ClipboardGuardService get clipboardGuardService =>
       get<_i586.ClipboardGuardService>();
-
-  _i37.OpenSourceLicensesCubit get openSourceLicensesCubit =>
-      get<_i37.OpenSourceLicensesCubit>();
 
   _i960.StorageFacade get storageFacade => get<_i960.StorageFacade>();
 

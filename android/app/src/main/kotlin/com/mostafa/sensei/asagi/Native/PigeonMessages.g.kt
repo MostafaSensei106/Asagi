@@ -211,6 +211,41 @@ enum class NativeHdrMode(val raw: Int) {
   }
 }
 
+enum class NativeSharePresetId(val raw: Int) {
+  WHATSAPP(0),
+  WHATSAPP_HD(1),
+  DISCORD(2),
+  INSTAGRAM_REELS(3),
+  TIK_TOK(4),
+  FACEBOOK(5),
+  X(6),
+  YOU_TUBE_SHORTS(7),
+  EMAIL(8);
+
+  companion object {
+    private val pigeonValues = values()
+
+    fun ofRaw(raw: Int): NativeSharePresetId? {
+      return pigeonValues.getOrNull(raw)
+    }
+  }
+}
+
+enum class NativeSharePresetTier(val raw: Int) {
+  EXACT(0),
+  REDUCED_QUALITY(1),
+  RELAXED_SIZE(2),
+  UNSATISFIABLE(3);
+
+  companion object {
+    private val pigeonValues = values()
+
+    fun ofRaw(raw: Int): NativeSharePresetTier? {
+      return pigeonValues.getOrNull(raw)
+    }
+  }
+}
+
 /** Generated class from Pigeon that represents data sent in messages. */
 data class NativeVideoMetadata (
   val path: String? = null,
@@ -356,6 +391,299 @@ data class NativeCompressRequest (
     return "NativeCompressRequest(inputPath=$inputPath, outputPath=$outputPath, targetVideoBitrateBps=$targetVideoBitrateBps, targetAudioBitrateBps=$targetAudioBitrateBps, targetWidth=$targetWidth, targetHeight=$targetHeight, frameRate=$frameRate, hdrMode=$hdrMode)"
   }
 }
+
+/** Generated class from Pigeon that represents data sent in messages. */
+data class NativePlanningMetadata (
+  val durationSecs: Double,
+  val width: Long,
+  val height: Long,
+  val rotation: Long,
+  val bitrateBps: Long,
+  val fileSizeBytes: Long,
+  val hasAudio: Boolean,
+  val pixelAspectRatio: Double
+)
+ {
+  companion object {
+    fun fromList(pigeonVar_list: List<Any?>): NativePlanningMetadata {
+      val durationSecs = pigeonVar_list[0] as Double
+      val width = pigeonVar_list[1] as Long
+      val height = pigeonVar_list[2] as Long
+      val rotation = pigeonVar_list[3] as Long
+      val bitrateBps = pigeonVar_list[4] as Long
+      val fileSizeBytes = pigeonVar_list[5] as Long
+      val hasAudio = pigeonVar_list[6] as Boolean
+      val pixelAspectRatio = pigeonVar_list[7] as Double
+      return NativePlanningMetadata(durationSecs, width, height, rotation, bitrateBps, fileSizeBytes, hasAudio, pixelAspectRatio)
+    }
+  }
+  fun toList(): List<Any?> {
+    return listOf(
+      durationSecs,
+      width,
+      height,
+      rotation,
+      bitrateBps,
+      fileSizeBytes,
+      hasAudio,
+      pixelAspectRatio,
+    )
+  }
+  override fun equals(other: Any?): Boolean {
+    if (other == null || other.javaClass != javaClass) {
+      return false
+    }
+    if (this === other) {
+      return true
+    }
+    val other = other as NativePlanningMetadata
+    return PigeonMessagesPigeonUtils.deepEquals(this.durationSecs, other.durationSecs) && PigeonMessagesPigeonUtils.deepEquals(this.width, other.width) && PigeonMessagesPigeonUtils.deepEquals(this.height, other.height) && PigeonMessagesPigeonUtils.deepEquals(this.rotation, other.rotation) && PigeonMessagesPigeonUtils.deepEquals(this.bitrateBps, other.bitrateBps) && PigeonMessagesPigeonUtils.deepEquals(this.fileSizeBytes, other.fileSizeBytes) && PigeonMessagesPigeonUtils.deepEquals(this.hasAudio, other.hasAudio) && PigeonMessagesPigeonUtils.deepEquals(this.pixelAspectRatio, other.pixelAspectRatio)
+  }
+
+  override fun hashCode(): Int {
+    var result = javaClass.hashCode()
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.durationSecs)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.width)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.height)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.rotation)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.bitrateBps)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.fileSizeBytes)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.hasAudio)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.pixelAspectRatio)
+    return result
+  }
+  override fun toString(): String {
+    return "NativePlanningMetadata(durationSecs=$durationSecs, width=$width, height=$height, rotation=$rotation, bitrateBps=$bitrateBps, fileSizeBytes=$fileSizeBytes, hasAudio=$hasAudio, pixelAspectRatio=$pixelAspectRatio)"
+  }
+}
+
+/** Generated class from Pigeon that represents data sent in messages. */
+data class NativePlanningPreferences (
+  val forceEncode: Boolean,
+  val maxShortEdge: Long,
+  val audioBitrateBps: Long,
+  val videoBitrateCeilingBps: Long
+)
+ {
+  companion object {
+    fun fromList(pigeonVar_list: List<Any?>): NativePlanningPreferences {
+      val forceEncode = pigeonVar_list[0] as Boolean
+      val maxShortEdge = pigeonVar_list[1] as Long
+      val audioBitrateBps = pigeonVar_list[2] as Long
+      val videoBitrateCeilingBps = pigeonVar_list[3] as Long
+      return NativePlanningPreferences(forceEncode, maxShortEdge, audioBitrateBps, videoBitrateCeilingBps)
+    }
+  }
+  fun toList(): List<Any?> {
+    return listOf(
+      forceEncode,
+      maxShortEdge,
+      audioBitrateBps,
+      videoBitrateCeilingBps,
+    )
+  }
+  override fun equals(other: Any?): Boolean {
+    if (other == null || other.javaClass != javaClass) {
+      return false
+    }
+    if (this === other) {
+      return true
+    }
+    val other = other as NativePlanningPreferences
+    return PigeonMessagesPigeonUtils.deepEquals(this.forceEncode, other.forceEncode) && PigeonMessagesPigeonUtils.deepEquals(this.maxShortEdge, other.maxShortEdge) && PigeonMessagesPigeonUtils.deepEquals(this.audioBitrateBps, other.audioBitrateBps) && PigeonMessagesPigeonUtils.deepEquals(this.videoBitrateCeilingBps, other.videoBitrateCeilingBps)
+  }
+
+  override fun hashCode(): Int {
+    var result = javaClass.hashCode()
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.forceEncode)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.maxShortEdge)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.audioBitrateBps)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.videoBitrateCeilingBps)
+    return result
+  }
+  override fun toString(): String {
+    return "NativePlanningPreferences(forceEncode=$forceEncode, maxShortEdge=$maxShortEdge, audioBitrateBps=$audioBitrateBps, videoBitrateCeilingBps=$videoBitrateCeilingBps)"
+  }
+}
+
+/** Generated class from Pigeon that represents data sent in messages. */
+data class NativeCompressionPlan (
+  val targetVideoBitrateBps: Long,
+  val targetAudioBitrateBps: Long,
+  val targetWidth: Long,
+  val targetHeight: Long,
+  val hardLimitBytes: Long,
+  val safetyMargin: Double,
+  val maxAttempts: Long,
+  val isInfeasible: Boolean,
+  val warningMessage: String? = null
+)
+ {
+  companion object {
+    fun fromList(pigeonVar_list: List<Any?>): NativeCompressionPlan {
+      val targetVideoBitrateBps = pigeonVar_list[0] as Long
+      val targetAudioBitrateBps = pigeonVar_list[1] as Long
+      val targetWidth = pigeonVar_list[2] as Long
+      val targetHeight = pigeonVar_list[3] as Long
+      val hardLimitBytes = pigeonVar_list[4] as Long
+      val safetyMargin = pigeonVar_list[5] as Double
+      val maxAttempts = pigeonVar_list[6] as Long
+      val isInfeasible = pigeonVar_list[7] as Boolean
+      val warningMessage = pigeonVar_list[8] as String?
+      return NativeCompressionPlan(targetVideoBitrateBps, targetAudioBitrateBps, targetWidth, targetHeight, hardLimitBytes, safetyMargin, maxAttempts, isInfeasible, warningMessage)
+    }
+  }
+  fun toList(): List<Any?> {
+    return listOf(
+      targetVideoBitrateBps,
+      targetAudioBitrateBps,
+      targetWidth,
+      targetHeight,
+      hardLimitBytes,
+      safetyMargin,
+      maxAttempts,
+      isInfeasible,
+      warningMessage,
+    )
+  }
+  override fun equals(other: Any?): Boolean {
+    if (other == null || other.javaClass != javaClass) {
+      return false
+    }
+    if (this === other) {
+      return true
+    }
+    val other = other as NativeCompressionPlan
+    return PigeonMessagesPigeonUtils.deepEquals(this.targetVideoBitrateBps, other.targetVideoBitrateBps) && PigeonMessagesPigeonUtils.deepEquals(this.targetAudioBitrateBps, other.targetAudioBitrateBps) && PigeonMessagesPigeonUtils.deepEquals(this.targetWidth, other.targetWidth) && PigeonMessagesPigeonUtils.deepEquals(this.targetHeight, other.targetHeight) && PigeonMessagesPigeonUtils.deepEquals(this.hardLimitBytes, other.hardLimitBytes) && PigeonMessagesPigeonUtils.deepEquals(this.safetyMargin, other.safetyMargin) && PigeonMessagesPigeonUtils.deepEquals(this.maxAttempts, other.maxAttempts) && PigeonMessagesPigeonUtils.deepEquals(this.isInfeasible, other.isInfeasible) && PigeonMessagesPigeonUtils.deepEquals(this.warningMessage, other.warningMessage)
+  }
+
+  override fun hashCode(): Int {
+    var result = javaClass.hashCode()
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.targetVideoBitrateBps)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.targetAudioBitrateBps)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.targetWidth)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.targetHeight)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.hardLimitBytes)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.safetyMargin)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.maxAttempts)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.isInfeasible)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.warningMessage)
+    return result
+  }
+  override fun toString(): String {
+    return "NativeCompressionPlan(targetVideoBitrateBps=$targetVideoBitrateBps, targetAudioBitrateBps=$targetAudioBitrateBps, targetWidth=$targetWidth, targetHeight=$targetHeight, hardLimitBytes=$hardLimitBytes, safetyMargin=$safetyMargin, maxAttempts=$maxAttempts, isInfeasible=$isInfeasible, warningMessage=$warningMessage)"
+  }
+}
+
+/** Generated class from Pigeon that represents data sent in messages. */
+data class NativeSharePreset (
+  val id: NativeSharePresetId,
+  val targetMb: Long,
+  val relaxedTargetMb: Long,
+  val maxShortEdge: Long,
+  val maxFps: Long,
+  val bitrateCapBps: Long,
+  val requireFaststart: Boolean,
+  val verifiedOn: String
+)
+ {
+  companion object {
+    fun fromList(pigeonVar_list: List<Any?>): NativeSharePreset {
+      val id = pigeonVar_list[0] as NativeSharePresetId
+      val targetMb = pigeonVar_list[1] as Long
+      val relaxedTargetMb = pigeonVar_list[2] as Long
+      val maxShortEdge = pigeonVar_list[3] as Long
+      val maxFps = pigeonVar_list[4] as Long
+      val bitrateCapBps = pigeonVar_list[5] as Long
+      val requireFaststart = pigeonVar_list[6] as Boolean
+      val verifiedOn = pigeonVar_list[7] as String
+      return NativeSharePreset(id, targetMb, relaxedTargetMb, maxShortEdge, maxFps, bitrateCapBps, requireFaststart, verifiedOn)
+    }
+  }
+  fun toList(): List<Any?> {
+    return listOf(
+      id,
+      targetMb,
+      relaxedTargetMb,
+      maxShortEdge,
+      maxFps,
+      bitrateCapBps,
+      requireFaststart,
+      verifiedOn,
+    )
+  }
+  override fun equals(other: Any?): Boolean {
+    if (other == null || other.javaClass != javaClass) {
+      return false
+    }
+    if (this === other) {
+      return true
+    }
+    val other = other as NativeSharePreset
+    return PigeonMessagesPigeonUtils.deepEquals(this.id, other.id) && PigeonMessagesPigeonUtils.deepEquals(this.targetMb, other.targetMb) && PigeonMessagesPigeonUtils.deepEquals(this.relaxedTargetMb, other.relaxedTargetMb) && PigeonMessagesPigeonUtils.deepEquals(this.maxShortEdge, other.maxShortEdge) && PigeonMessagesPigeonUtils.deepEquals(this.maxFps, other.maxFps) && PigeonMessagesPigeonUtils.deepEquals(this.bitrateCapBps, other.bitrateCapBps) && PigeonMessagesPigeonUtils.deepEquals(this.requireFaststart, other.requireFaststart) && PigeonMessagesPigeonUtils.deepEquals(this.verifiedOn, other.verifiedOn)
+  }
+
+  override fun hashCode(): Int {
+    var result = javaClass.hashCode()
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.id)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.targetMb)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.relaxedTargetMb)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.maxShortEdge)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.maxFps)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.bitrateCapBps)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.requireFaststart)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.verifiedOn)
+    return result
+  }
+  override fun toString(): String {
+    return "NativeSharePreset(id=$id, targetMb=$targetMb, relaxedTargetMb=$relaxedTargetMb, maxShortEdge=$maxShortEdge, maxFps=$maxFps, bitrateCapBps=$bitrateCapBps, requireFaststart=$requireFaststart, verifiedOn=$verifiedOn)"
+  }
+}
+
+/** Generated class from Pigeon that represents data sent in messages. */
+data class NativeSharePresetPlan (
+  val tier: NativeSharePresetTier,
+  val effectiveTargetMb: Long,
+  val plan: NativeCompressionPlan
+)
+ {
+  companion object {
+    fun fromList(pigeonVar_list: List<Any?>): NativeSharePresetPlan {
+      val tier = pigeonVar_list[0] as NativeSharePresetTier
+      val effectiveTargetMb = pigeonVar_list[1] as Long
+      val plan = pigeonVar_list[2] as NativeCompressionPlan
+      return NativeSharePresetPlan(tier, effectiveTargetMb, plan)
+    }
+  }
+  fun toList(): List<Any?> {
+    return listOf(
+      tier,
+      effectiveTargetMb,
+      plan,
+    )
+  }
+  override fun equals(other: Any?): Boolean {
+    if (other == null || other.javaClass != javaClass) {
+      return false
+    }
+    if (this === other) {
+      return true
+    }
+    val other = other as NativeSharePresetPlan
+    return PigeonMessagesPigeonUtils.deepEquals(this.tier, other.tier) && PigeonMessagesPigeonUtils.deepEquals(this.effectiveTargetMb, other.effectiveTargetMb) && PigeonMessagesPigeonUtils.deepEquals(this.plan, other.plan)
+  }
+
+  override fun hashCode(): Int {
+    var result = javaClass.hashCode()
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.tier)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.effectiveTargetMb)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.plan)
+    return result
+  }
+  override fun toString(): String {
+    return "NativeSharePresetPlan(tier=$tier, effectiveTargetMb=$effectiveTargetMb, plan=$plan)"
+  }
+}
 private open class PigeonMessagesPigeonCodec : StandardMessageCodec() {
   override fun readValueOfType(type: Byte, buffer: ByteBuffer): Any? {
     return when (type) {
@@ -365,13 +693,48 @@ private open class PigeonMessagesPigeonCodec : StandardMessageCodec() {
         }
       }
       130.toByte() -> {
+        (readValue(buffer) as Long?)?.let {
+          NativeSharePresetId.ofRaw(it.toInt())
+        }
+      }
+      131.toByte() -> {
+        (readValue(buffer) as Long?)?.let {
+          NativeSharePresetTier.ofRaw(it.toInt())
+        }
+      }
+      132.toByte() -> {
         (readValue(buffer) as? List<Any?>)?.let {
           NativeVideoMetadata.fromList(it)
         }
       }
-      131.toByte() -> {
+      133.toByte() -> {
         (readValue(buffer) as? List<Any?>)?.let {
           NativeCompressRequest.fromList(it)
+        }
+      }
+      134.toByte() -> {
+        (readValue(buffer) as? List<Any?>)?.let {
+          NativePlanningMetadata.fromList(it)
+        }
+      }
+      135.toByte() -> {
+        (readValue(buffer) as? List<Any?>)?.let {
+          NativePlanningPreferences.fromList(it)
+        }
+      }
+      136.toByte() -> {
+        (readValue(buffer) as? List<Any?>)?.let {
+          NativeCompressionPlan.fromList(it)
+        }
+      }
+      137.toByte() -> {
+        (readValue(buffer) as? List<Any?>)?.let {
+          NativeSharePreset.fromList(it)
+        }
+      }
+      138.toByte() -> {
+        (readValue(buffer) as? List<Any?>)?.let {
+          NativeSharePresetPlan.fromList(it)
         }
       }
       else -> super.readValueOfType(type, buffer)
@@ -383,12 +746,40 @@ private open class PigeonMessagesPigeonCodec : StandardMessageCodec() {
         stream.write(129)
         writeValue(stream, value.raw.toLong())
       }
-      is NativeVideoMetadata -> {
+      is NativeSharePresetId -> {
         stream.write(130)
+        writeValue(stream, value.raw.toLong())
+      }
+      is NativeSharePresetTier -> {
+        stream.write(131)
+        writeValue(stream, value.raw.toLong())
+      }
+      is NativeVideoMetadata -> {
+        stream.write(132)
         writeValue(stream, value.toList())
       }
       is NativeCompressRequest -> {
-        stream.write(131)
+        stream.write(133)
+        writeValue(stream, value.toList())
+      }
+      is NativePlanningMetadata -> {
+        stream.write(134)
+        writeValue(stream, value.toList())
+      }
+      is NativePlanningPreferences -> {
+        stream.write(135)
+        writeValue(stream, value.toList())
+      }
+      is NativeCompressionPlan -> {
+        stream.write(136)
+        writeValue(stream, value.toList())
+      }
+      is NativeSharePreset -> {
+        stream.write(137)
+        writeValue(stream, value.toList())
+      }
+      is NativeSharePresetPlan -> {
+        stream.write(138)
         writeValue(stream, value.toList())
       }
       else -> super.writeValue(stream, value)
@@ -404,7 +795,6 @@ interface NativeMediaApi {
   suspend fun pauseEncoding()
   suspend fun resumeEncoding()
   suspend fun startHardwareEncoding(request: NativeCompressRequest): Boolean
-  suspend fun compressStagedFallback(stagedPath: String, request: NativeCompressRequest): Boolean
 
   companion object {
     /** The codec used by NativeMediaApi. */
@@ -507,21 +897,93 @@ interface NativeMediaApi {
           channel.setMessageHandler(null)
         }
       }
+    }
+  }
+}
+/** Generated interface from Pigeon that represents a handler of messages from Flutter. */
+interface NativeCompressionPlannerApi {
+  fun plan(info: NativePlanningMetadata, targetMb: Double, safetyMargin: Double?, preferences: NativePlanningPreferences): NativeCompressionPlan
+  fun verify(bytes: Long, duration: Double, plan: NativeCompressionPlan, attempt: Long): Long
+  fun presets(): List<NativeSharePreset>
+  fun resolvePreset(info: NativePlanningMetadata, id: NativeSharePresetId): NativeSharePresetPlan
+
+  companion object {
+    /** The codec used by NativeCompressionPlannerApi. */
+    val codec: MessageCodec<Any?> by lazy {
+      PigeonMessagesPigeonCodec()
+    }
+    /** Sets up an instance of `NativeCompressionPlannerApi` to handle messages through the `binaryMessenger`. */
+    @JvmOverloads
+    fun setUp(binaryMessenger: BinaryMessenger, api: NativeCompressionPlannerApi?, messageChannelSuffix: String = "") {
+      val separatedMessageChannelSuffix = if (messageChannelSuffix.isNotEmpty()) ".$messageChannelSuffix" else ""
       run {
-        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.asagi.NativeMediaApi.compressStagedFallback$separatedMessageChannelSuffix", codec)
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.asagi.NativeCompressionPlannerApi.plan$separatedMessageChannelSuffix", codec)
         if (api != null) {
           channel.setMessageHandler { message, reply ->
             val args = message as List<Any?>
-            val stagedPathArg = args[0] as String
-            val requestArg = args[1] as NativeCompressRequest
-            CoroutineScope(Dispatchers.Main).launch {
-              val wrapped: List<Any?> = try {
-                listOf(api.compressStagedFallback(stagedPathArg, requestArg))
-              } catch (exception: Throwable) {
-                PigeonMessagesPigeonUtils.wrapError(exception)
-              }
-              reply.reply(wrapped)
+            val infoArg = args[0] as NativePlanningMetadata
+            val targetMbArg = args[1] as Double
+            val safetyMarginArg = args[2] as Double?
+            val preferencesArg = args[3] as NativePlanningPreferences
+            val wrapped: List<Any?> = try {
+              listOf(api.plan(infoArg, targetMbArg, safetyMarginArg, preferencesArg))
+            } catch (exception: Throwable) {
+              PigeonMessagesPigeonUtils.wrapError(exception)
             }
+            reply.reply(wrapped)
+          }
+        } else {
+          channel.setMessageHandler(null)
+        }
+      }
+      run {
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.asagi.NativeCompressionPlannerApi.verify$separatedMessageChannelSuffix", codec)
+        if (api != null) {
+          channel.setMessageHandler { message, reply ->
+            val args = message as List<Any?>
+            val bytesArg = args[0] as Long
+            val durationArg = args[1] as Double
+            val planArg = args[2] as NativeCompressionPlan
+            val attemptArg = args[3] as Long
+            val wrapped: List<Any?> = try {
+              listOf(api.verify(bytesArg, durationArg, planArg, attemptArg))
+            } catch (exception: Throwable) {
+              PigeonMessagesPigeonUtils.wrapError(exception)
+            }
+            reply.reply(wrapped)
+          }
+        } else {
+          channel.setMessageHandler(null)
+        }
+      }
+      run {
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.asagi.NativeCompressionPlannerApi.presets$separatedMessageChannelSuffix", codec)
+        if (api != null) {
+          channel.setMessageHandler { _, reply ->
+            val wrapped: List<Any?> = try {
+              listOf(api.presets())
+            } catch (exception: Throwable) {
+              PigeonMessagesPigeonUtils.wrapError(exception)
+            }
+            reply.reply(wrapped)
+          }
+        } else {
+          channel.setMessageHandler(null)
+        }
+      }
+      run {
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.asagi.NativeCompressionPlannerApi.resolvePreset$separatedMessageChannelSuffix", codec)
+        if (api != null) {
+          channel.setMessageHandler { message, reply ->
+            val args = message as List<Any?>
+            val infoArg = args[0] as NativePlanningMetadata
+            val idArg = args[1] as NativeSharePresetId
+            val wrapped: List<Any?> = try {
+              listOf(api.resolvePreset(infoArg, idArg))
+            } catch (exception: Throwable) {
+              PigeonMessagesPigeonUtils.wrapError(exception)
+            }
+            reply.reply(wrapped)
           }
         } else {
           channel.setMessageHandler(null)

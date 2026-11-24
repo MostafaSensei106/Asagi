@@ -1861,66 +1861,6 @@ abstract class AppLocalizations {
   /// **'Open Source Licenses'**
   String get openSourceLicenses;
 
-  /// No description provided for @ffmpegLicenseTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'FFmpeg LGPL 2.1 license text'**
-  String get ffmpegLicenseTitle;
-
-  /// No description provided for @ffmpegLicense.
-  ///
-  /// In en, this message translates to:
-  /// **'License: {license}'**
-  String ffmpegLicense(Object license);
-
-  /// No description provided for @ffmpegVersion.
-  ///
-  /// In en, this message translates to:
-  /// **'Version: {version}'**
-  String ffmpegVersion(Object version);
-
-  /// No description provided for @ffmpegLinkage.
-  ///
-  /// In en, this message translates to:
-  /// **'Linkage: {linkage}'**
-  String ffmpegLinkage(Object linkage);
-
-  /// No description provided for @ffmpegBuiltAbis.
-  ///
-  /// In en, this message translates to:
-  /// **'Built ABIs: {abis}'**
-  String ffmpegBuiltAbis(Object abis);
-
-  /// No description provided for @ffmpegSource.
-  ///
-  /// In en, this message translates to:
-  /// **'Source: {source}'**
-  String ffmpegSource(Object source);
-
-  /// No description provided for @thirdPartyLicenses.
-  ///
-  /// In en, this message translates to:
-  /// **'Flutter and Dart packages'**
-  String get thirdPartyLicenses;
-
-  /// No description provided for @thirdPartyLicensesDescription.
-  ///
-  /// In en, this message translates to:
-  /// **'Open their third-party license notices.'**
-  String get thirdPartyLicensesDescription;
-
-  /// No description provided for @fullFfmpegLicenseFallback.
-  ///
-  /// In en, this message translates to:
-  /// **'Full license text is shipped in the app\'s LGPL license asset.'**
-  String get fullFfmpegLicenseFallback;
-
-  /// No description provided for @ffmpegName.
-  ///
-  /// In en, this message translates to:
-  /// **'FFmpeg'**
-  String get ffmpegName;
-
   /// No description provided for @storageJobsLoadFailed.
   ///
   /// In en, this message translates to:
@@ -1932,18 +1872,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The interrupted files could not be cleaned.'**
   String get cleanupInterruptedJobsFailed;
-
-  /// No description provided for @ffmpegBuildMetadataUnavailable.
-  ///
-  /// In en, this message translates to:
-  /// **'FFmpeg build metadata is unavailable.'**
-  String get ffmpegBuildMetadataUnavailable;
-
-  /// No description provided for @openSourceLicensesLoadFailed.
-  ///
-  /// In en, this message translates to:
-  /// **'Open source license notices could not be loaded.'**
-  String get openSourceLicensesLoadFailed;
 
   /// No description provided for @languageName.
   ///
@@ -2009,15 +1937,14 @@ abstract class AppLocalizations {
   /// Onboarding engine slide title
   ///
   /// In en, this message translates to:
-  /// **'Native Rust engine speed'**
-  String get nativeRustEngineSpeed;
+  /// **'Native compression engine'**
+  String get nativeEngineSpeed;
 
   /// Onboarding engine slide tagline
   ///
   /// In en, this message translates to:
-  /// **'Engineered with Rust and native GPU acceleration for lightning-fast compression and low battery draw.'**
-  String
-  get engineeredWithRustAndNativeGpuAccelerationForLightningFastCompressionAndLowBatteryDraw;
+  /// **'Uses Android’s native media engine to compress videos on your device.'**
+  String get nativeEngineDescription;
 
   /// Onboarding engine slide chip
   ///
@@ -3739,6 +3666,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Terms for using the free, open source Asagi app.'**
   String get appTermsDescription;
+
+  /// No description provided for @compressionAndroidOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Video compression is currently available only on Android.'**
+  String get compressionAndroidOnly;
 }
 
 class _AppLocalizationsDelegate

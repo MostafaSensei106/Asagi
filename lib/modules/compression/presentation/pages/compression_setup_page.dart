@@ -18,6 +18,7 @@ import '../widgets/asagi_preset_feedback_card.dart';
 import '../widgets/compression_advanced_controls.dart';
 import '../widgets/compression_plan_summary.dart';
 import '../widgets/platform_presets_bar.dart';
+import '../widgets/unsupported_compression_page.dart';
 import '../widgets/video_preview.dart';
 
 final class CompressionSetupPage extends HookWidget {
@@ -34,6 +35,8 @@ final class CompressionSetupPage extends HookWidget {
     final l10n = context.localeKeys;
     final colorScheme = context.colorScheme;
     final textTheme = context.textTheme;
+
+    if (!supportsVideoCompression) return const UnsupportedCompressionPage();
 
     return Scaffold(
       appBar: SidePageAppBarComponent(title: l10n.compressionSetup),

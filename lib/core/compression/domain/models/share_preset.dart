@@ -4,7 +4,7 @@ import 'compression_preferences.dart';
 /// A destination-specific size and quality target, such as a chat app's media
 /// limit.
 ///
-/// The table lives in Rust so the platform limits have one source of truth.
+/// The table lives in the native planner so the platform limits have one source of truth.
 /// This mirrors it without exposing generated bridge types to the domain.
 final class SharePreset {
   const SharePreset({

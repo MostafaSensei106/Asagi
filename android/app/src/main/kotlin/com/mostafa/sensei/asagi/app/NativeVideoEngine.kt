@@ -49,32 +49,6 @@ class NativeVideoEngine private constructor(
             withContext(Dispatchers.Main) { MediaProcessingService.stop(context) }
         }
     }
-    override suspend fun compressStagedFallback(
-        stagedPath: String,
-        request: NativeCompressRequest
-    ): Boolean {
-        val configuration = EncodeConfiguration(
-            requireNotNull(request.inputPath), requireNotNull(request.outputPath),
-            requireNotNull(request.targetVideoBitrateBps), requireNotNull(request.targetAudioBitrateBps),
-            requireNotNull(request.targetWidth), requireNotNull(request.targetHeight), request.frameRate ?: 30.0,
-            if (request.hdrMode == NativeHdrMode.PRESERVE) HdrMode.PRESERVE else HdrMode.TONE_MAP_TO_SDR,
-        )
-        val context = appContext
-        withContext(Dispatchers.Main) {
-            MediaProcessingService.onTimeout = {
-                CoroutineScope(Dispatchers.Main).launch { backend.cancel() }
-            }
-            MediaProcessingService.start(context)
-        }
-        return try {
-            backend.encodeStagedFallback(stagedPath, configuration)
-        } catch (error: Exception) {
-            val code = error.message?.takeIf { it.startsWith("E_") } ?: "E_STAGED_FALLBACK_FAILED"
-            throw FlutterError(code, error.message ?: code, null)
-        } finally {
-            withContext(Dispatchers.Main) { MediaProcessingService.stop(context) }
-        }
-    }
     override suspend fun pauseEncoding() = backend.pause()
     override suspend fun resumeEncoding() = backend.resume()
     override suspend fun cancelEncoding() = backend.cancel()

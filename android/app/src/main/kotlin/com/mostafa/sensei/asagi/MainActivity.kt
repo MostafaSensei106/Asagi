@@ -8,6 +8,7 @@ import com.mostafa.sensei.asagi.app.NativeVideoEngine
 class MainActivity : FlutterActivity() {
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
+        NativeCompressionPlannerApi.setUp(flutterEngine.dartExecutor.binaryMessenger, com.mostafa.sensei.asagi.app.NativeCompressionPlanner())
         val native = NativeVideoEngine(applicationContext)
         NativeMediaApi.setUp(flutterEngine.dartExecutor.binaryMessenger, native)
         io.flutter.plugin.common.EventChannel(flutterEngine.dartExecutor.binaryMessenger, "asagi/encoding_progress").setStreamHandler(native)

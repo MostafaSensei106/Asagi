@@ -964,61 +964,11 @@ class AppLocalizationsEs extends AppLocalizations {
   String get openSourceLicenses => 'Licencias de código abierto';
 
   @override
-  String get ffmpegLicenseTitle => 'FFmpeg LGPL 2.1 license text';
-
-  @override
-  String ffmpegLicense(Object license) {
-    return 'License: $license';
-  }
-
-  @override
-  String ffmpegVersion(Object version) {
-    return 'Version: $version';
-  }
-
-  @override
-  String ffmpegLinkage(Object linkage) {
-    return 'Linkage: $linkage';
-  }
-
-  @override
-  String ffmpegBuiltAbis(Object abis) {
-    return 'Built ABIs: $abis';
-  }
-
-  @override
-  String ffmpegSource(Object source) {
-    return 'Source: $source';
-  }
-
-  @override
-  String get thirdPartyLicenses => 'Flutter and Dart packages';
-
-  @override
-  String get thirdPartyLicensesDescription =>
-      'Open their third-party license notices.';
-
-  @override
-  String get fullFfmpegLicenseFallback =>
-      'Full license text is shipped in the app\'s LGPL license asset.';
-
-  @override
-  String get ffmpegName => 'FFmpeg';
-
-  @override
   String get storageJobsLoadFailed => 'Interrupted jobs could not be loaded.';
 
   @override
   String get cleanupInterruptedJobsFailed =>
       'The interrupted files could not be cleaned.';
-
-  @override
-  String get ffmpegBuildMetadataUnavailable =>
-      'FFmpeg build metadata is unavailable.';
-
-  @override
-  String get openSourceLicensesLoadFailed =>
-      'Open source license notices could not be loaded.';
 
   @override
   String get languageName => 'Español';
@@ -1108,12 +1058,11 @@ class AppLocalizationsEs extends AppLocalizations {
   String get zeroCloudServers => 'Zero cloud servers';
 
   @override
-  String get nativeRustEngineSpeed => 'Native Rust engine speed';
+  String get nativeEngineSpeed => 'Native compression engine';
 
   @override
-  String
-  get engineeredWithRustAndNativeGpuAccelerationForLightningFastCompressionAndLowBatteryDraw =>
-      'Engineered with Rust and native GPU acceleration for lightning-fast compression and low battery draw.';
+  String get nativeEngineDescription =>
+      'Uses Android’s native media engine to compress videos on your device.';
 
   @override
   String get h264AndHevc => 'H.264 & HEVC';
@@ -2123,6 +2072,10 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get appTermsDescription =>
       'Terms for using the free, open source Asagi app.';
+
+  @override
+  String get compressionAndroidOnly =>
+      'La compresión de vídeo solo está disponible en Android por el momento.';
 }
 
 /// The translations for Spanish Castilian, as used in Spain (`es_ES`).
@@ -3073,4 +3026,8 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
   @override
   String get appTermsDescription =>
       'Terms for using the free, open source Asagi app.';
+
+  @override
+  String get compressionAndroidOnly =>
+      'La compresión de vídeo solo está disponible en Android por el momento.';
 }

@@ -99,6 +99,20 @@ int _deepHash(Object? value) {
 
 enum NativeHdrMode { preserve, toneMapToSdr }
 
+enum NativeSharePresetId {
+  whatsapp,
+  whatsappHd,
+  discord,
+  instagramReels,
+  tikTok,
+  facebook,
+  x,
+  youTubeShorts,
+  email,
+}
+
+enum NativeSharePresetTier { exact, reducedQuality, relaxedSize, unsatisfiable }
+
 class NativeVideoMetadata {
   NativeVideoMetadata({
     this.path,
@@ -299,6 +313,395 @@ class NativeCompressRequest {
   }
 }
 
+class NativePlanningMetadata {
+  NativePlanningMetadata({
+    required this.durationSecs,
+    required this.width,
+    required this.height,
+    required this.rotation,
+    required this.bitrateBps,
+    required this.fileSizeBytes,
+    required this.hasAudio,
+    required this.pixelAspectRatio,
+  });
+
+  double durationSecs;
+
+  int width;
+
+  int height;
+
+  int rotation;
+
+  int bitrateBps;
+
+  int fileSizeBytes;
+
+  bool hasAudio;
+
+  double pixelAspectRatio;
+
+  List<Object?> _toList() {
+    return <Object?>[
+      durationSecs,
+      width,
+      height,
+      rotation,
+      bitrateBps,
+      fileSizeBytes,
+      hasAudio,
+      pixelAspectRatio,
+    ];
+  }
+
+  Object encode() {
+    return _toList();
+  }
+
+  static NativePlanningMetadata decode(Object result) {
+    result as List<Object?>;
+    return NativePlanningMetadata(
+      durationSecs: result[0]! as double,
+      width: result[1]! as int,
+      height: result[2]! as int,
+      rotation: result[3]! as int,
+      bitrateBps: result[4]! as int,
+      fileSizeBytes: result[5]! as int,
+      hasAudio: result[6]! as bool,
+      pixelAspectRatio: result[7]! as double,
+    );
+  }
+
+  @override
+  // ignore: avoid_equals_and_hash_code_on_mutable_classes
+  bool operator ==(Object other) {
+    if (other is! NativePlanningMetadata || other.runtimeType != runtimeType) {
+      return false;
+    }
+    if (identical(this, other)) {
+      return true;
+    }
+    return _deepEquals(durationSecs, other.durationSecs) &&
+        _deepEquals(width, other.width) &&
+        _deepEquals(height, other.height) &&
+        _deepEquals(rotation, other.rotation) &&
+        _deepEquals(bitrateBps, other.bitrateBps) &&
+        _deepEquals(fileSizeBytes, other.fileSizeBytes) &&
+        _deepEquals(hasAudio, other.hasAudio) &&
+        _deepEquals(pixelAspectRatio, other.pixelAspectRatio);
+  }
+
+  @override
+  // ignore: avoid_equals_and_hash_code_on_mutable_classes
+  int get hashCode => _deepHash(<Object?>[runtimeType, ..._toList()]);
+
+  @override
+  String toString() {
+    return 'NativePlanningMetadata(durationSecs: $durationSecs, width: $width, height: $height, rotation: $rotation, bitrateBps: $bitrateBps, fileSizeBytes: $fileSizeBytes, hasAudio: $hasAudio, pixelAspectRatio: $pixelAspectRatio)';
+  }
+}
+
+class NativePlanningPreferences {
+  NativePlanningPreferences({
+    required this.forceEncode,
+    required this.maxShortEdge,
+    required this.audioBitrateBps,
+    required this.videoBitrateCeilingBps,
+  });
+
+  bool forceEncode;
+
+  int maxShortEdge;
+
+  int audioBitrateBps;
+
+  int videoBitrateCeilingBps;
+
+  List<Object?> _toList() {
+    return <Object?>[
+      forceEncode,
+      maxShortEdge,
+      audioBitrateBps,
+      videoBitrateCeilingBps,
+    ];
+  }
+
+  Object encode() {
+    return _toList();
+  }
+
+  static NativePlanningPreferences decode(Object result) {
+    result as List<Object?>;
+    return NativePlanningPreferences(
+      forceEncode: result[0]! as bool,
+      maxShortEdge: result[1]! as int,
+      audioBitrateBps: result[2]! as int,
+      videoBitrateCeilingBps: result[3]! as int,
+    );
+  }
+
+  @override
+  // ignore: avoid_equals_and_hash_code_on_mutable_classes
+  bool operator ==(Object other) {
+    if (other is! NativePlanningPreferences ||
+        other.runtimeType != runtimeType) {
+      return false;
+    }
+    if (identical(this, other)) {
+      return true;
+    }
+    return _deepEquals(forceEncode, other.forceEncode) &&
+        _deepEquals(maxShortEdge, other.maxShortEdge) &&
+        _deepEquals(audioBitrateBps, other.audioBitrateBps) &&
+        _deepEquals(videoBitrateCeilingBps, other.videoBitrateCeilingBps);
+  }
+
+  @override
+  // ignore: avoid_equals_and_hash_code_on_mutable_classes
+  int get hashCode => _deepHash(<Object?>[runtimeType, ..._toList()]);
+
+  @override
+  String toString() {
+    return 'NativePlanningPreferences(forceEncode: $forceEncode, maxShortEdge: $maxShortEdge, audioBitrateBps: $audioBitrateBps, videoBitrateCeilingBps: $videoBitrateCeilingBps)';
+  }
+}
+
+class NativeCompressionPlan {
+  NativeCompressionPlan({
+    required this.targetVideoBitrateBps,
+    required this.targetAudioBitrateBps,
+    required this.targetWidth,
+    required this.targetHeight,
+    required this.hardLimitBytes,
+    required this.safetyMargin,
+    required this.maxAttempts,
+    required this.isInfeasible,
+    this.warningMessage,
+  });
+
+  int targetVideoBitrateBps;
+
+  int targetAudioBitrateBps;
+
+  int targetWidth;
+
+  int targetHeight;
+
+  int hardLimitBytes;
+
+  double safetyMargin;
+
+  int maxAttempts;
+
+  bool isInfeasible;
+
+  String? warningMessage;
+
+  List<Object?> _toList() {
+    return <Object?>[
+      targetVideoBitrateBps,
+      targetAudioBitrateBps,
+      targetWidth,
+      targetHeight,
+      hardLimitBytes,
+      safetyMargin,
+      maxAttempts,
+      isInfeasible,
+      warningMessage,
+    ];
+  }
+
+  Object encode() {
+    return _toList();
+  }
+
+  static NativeCompressionPlan decode(Object result) {
+    result as List<Object?>;
+    return NativeCompressionPlan(
+      targetVideoBitrateBps: result[0]! as int,
+      targetAudioBitrateBps: result[1]! as int,
+      targetWidth: result[2]! as int,
+      targetHeight: result[3]! as int,
+      hardLimitBytes: result[4]! as int,
+      safetyMargin: result[5]! as double,
+      maxAttempts: result[6]! as int,
+      isInfeasible: result[7]! as bool,
+      warningMessage: result[8] as String?,
+    );
+  }
+
+  @override
+  // ignore: avoid_equals_and_hash_code_on_mutable_classes
+  bool operator ==(Object other) {
+    if (other is! NativeCompressionPlan || other.runtimeType != runtimeType) {
+      return false;
+    }
+    if (identical(this, other)) {
+      return true;
+    }
+    return _deepEquals(targetVideoBitrateBps, other.targetVideoBitrateBps) &&
+        _deepEquals(targetAudioBitrateBps, other.targetAudioBitrateBps) &&
+        _deepEquals(targetWidth, other.targetWidth) &&
+        _deepEquals(targetHeight, other.targetHeight) &&
+        _deepEquals(hardLimitBytes, other.hardLimitBytes) &&
+        _deepEquals(safetyMargin, other.safetyMargin) &&
+        _deepEquals(maxAttempts, other.maxAttempts) &&
+        _deepEquals(isInfeasible, other.isInfeasible) &&
+        _deepEquals(warningMessage, other.warningMessage);
+  }
+
+  @override
+  // ignore: avoid_equals_and_hash_code_on_mutable_classes
+  int get hashCode => _deepHash(<Object?>[runtimeType, ..._toList()]);
+
+  @override
+  String toString() {
+    return 'NativeCompressionPlan(targetVideoBitrateBps: $targetVideoBitrateBps, targetAudioBitrateBps: $targetAudioBitrateBps, targetWidth: $targetWidth, targetHeight: $targetHeight, hardLimitBytes: $hardLimitBytes, safetyMargin: $safetyMargin, maxAttempts: $maxAttempts, isInfeasible: $isInfeasible, warningMessage: $warningMessage)';
+  }
+}
+
+class NativeSharePreset {
+  NativeSharePreset({
+    required this.id,
+    required this.targetMb,
+    required this.relaxedTargetMb,
+    required this.maxShortEdge,
+    required this.maxFps,
+    required this.bitrateCapBps,
+    required this.requireFaststart,
+    required this.verifiedOn,
+  });
+
+  NativeSharePresetId id;
+
+  int targetMb;
+
+  int relaxedTargetMb;
+
+  int maxShortEdge;
+
+  int maxFps;
+
+  int bitrateCapBps;
+
+  bool requireFaststart;
+
+  String verifiedOn;
+
+  List<Object?> _toList() {
+    return <Object?>[
+      id,
+      targetMb,
+      relaxedTargetMb,
+      maxShortEdge,
+      maxFps,
+      bitrateCapBps,
+      requireFaststart,
+      verifiedOn,
+    ];
+  }
+
+  Object encode() {
+    return _toList();
+  }
+
+  static NativeSharePreset decode(Object result) {
+    result as List<Object?>;
+    return NativeSharePreset(
+      id: result[0]! as NativeSharePresetId,
+      targetMb: result[1]! as int,
+      relaxedTargetMb: result[2]! as int,
+      maxShortEdge: result[3]! as int,
+      maxFps: result[4]! as int,
+      bitrateCapBps: result[5]! as int,
+      requireFaststart: result[6]! as bool,
+      verifiedOn: result[7]! as String,
+    );
+  }
+
+  @override
+  // ignore: avoid_equals_and_hash_code_on_mutable_classes
+  bool operator ==(Object other) {
+    if (other is! NativeSharePreset || other.runtimeType != runtimeType) {
+      return false;
+    }
+    if (identical(this, other)) {
+      return true;
+    }
+    return _deepEquals(id, other.id) &&
+        _deepEquals(targetMb, other.targetMb) &&
+        _deepEquals(relaxedTargetMb, other.relaxedTargetMb) &&
+        _deepEquals(maxShortEdge, other.maxShortEdge) &&
+        _deepEquals(maxFps, other.maxFps) &&
+        _deepEquals(bitrateCapBps, other.bitrateCapBps) &&
+        _deepEquals(requireFaststart, other.requireFaststart) &&
+        _deepEquals(verifiedOn, other.verifiedOn);
+  }
+
+  @override
+  // ignore: avoid_equals_and_hash_code_on_mutable_classes
+  int get hashCode => _deepHash(<Object?>[runtimeType, ..._toList()]);
+
+  @override
+  String toString() {
+    return 'NativeSharePreset(id: $id, targetMb: $targetMb, relaxedTargetMb: $relaxedTargetMb, maxShortEdge: $maxShortEdge, maxFps: $maxFps, bitrateCapBps: $bitrateCapBps, requireFaststart: $requireFaststart, verifiedOn: $verifiedOn)';
+  }
+}
+
+class NativeSharePresetPlan {
+  NativeSharePresetPlan({
+    required this.tier,
+    required this.effectiveTargetMb,
+    required this.plan,
+  });
+
+  NativeSharePresetTier tier;
+
+  int effectiveTargetMb;
+
+  NativeCompressionPlan plan;
+
+  List<Object?> _toList() {
+    return <Object?>[tier, effectiveTargetMb, plan];
+  }
+
+  Object encode() {
+    return _toList();
+  }
+
+  static NativeSharePresetPlan decode(Object result) {
+    result as List<Object?>;
+    return NativeSharePresetPlan(
+      tier: result[0]! as NativeSharePresetTier,
+      effectiveTargetMb: result[1]! as int,
+      plan: result[2]! as NativeCompressionPlan,
+    );
+  }
+
+  @override
+  // ignore: avoid_equals_and_hash_code_on_mutable_classes
+  bool operator ==(Object other) {
+    if (other is! NativeSharePresetPlan || other.runtimeType != runtimeType) {
+      return false;
+    }
+    if (identical(this, other)) {
+      return true;
+    }
+    return _deepEquals(tier, other.tier) &&
+        _deepEquals(effectiveTargetMb, other.effectiveTargetMb) &&
+        _deepEquals(plan, other.plan);
+  }
+
+  @override
+  // ignore: avoid_equals_and_hash_code_on_mutable_classes
+  int get hashCode => _deepHash(<Object?>[runtimeType, ..._toList()]);
+
+  @override
+  String toString() {
+    return 'NativeSharePresetPlan(tier: $tier, effectiveTargetMb: $effectiveTargetMb, plan: $plan)';
+  }
+}
+
 class _PigeonCodec extends StandardMessageCodec {
   const _PigeonCodec();
   @override
@@ -309,11 +712,32 @@ class _PigeonCodec extends StandardMessageCodec {
     } else if (value is NativeHdrMode) {
       buffer.putUint8(129);
       writeValue(buffer, value.index);
-    } else if (value is NativeVideoMetadata) {
+    } else if (value is NativeSharePresetId) {
       buffer.putUint8(130);
+      writeValue(buffer, value.index);
+    } else if (value is NativeSharePresetTier) {
+      buffer.putUint8(131);
+      writeValue(buffer, value.index);
+    } else if (value is NativeVideoMetadata) {
+      buffer.putUint8(132);
       writeValue(buffer, value.encode());
     } else if (value is NativeCompressRequest) {
-      buffer.putUint8(131);
+      buffer.putUint8(133);
+      writeValue(buffer, value.encode());
+    } else if (value is NativePlanningMetadata) {
+      buffer.putUint8(134);
+      writeValue(buffer, value.encode());
+    } else if (value is NativePlanningPreferences) {
+      buffer.putUint8(135);
+      writeValue(buffer, value.encode());
+    } else if (value is NativeCompressionPlan) {
+      buffer.putUint8(136);
+      writeValue(buffer, value.encode());
+    } else if (value is NativeSharePreset) {
+      buffer.putUint8(137);
+      writeValue(buffer, value.encode());
+    } else if (value is NativeSharePresetPlan) {
+      buffer.putUint8(138);
       writeValue(buffer, value.encode());
     } else {
       super.writeValue(buffer, value);
@@ -327,9 +751,25 @@ class _PigeonCodec extends StandardMessageCodec {
         final value = readValue(buffer) as int?;
         return value == null ? null : NativeHdrMode.values[value];
       case 130:
-        return NativeVideoMetadata.decode(readValue(buffer)!);
+        final value = readValue(buffer) as int?;
+        return value == null ? null : NativeSharePresetId.values[value];
       case 131:
+        final value = readValue(buffer) as int?;
+        return value == null ? null : NativeSharePresetTier.values[value];
+      case 132:
+        return NativeVideoMetadata.decode(readValue(buffer)!);
+      case 133:
         return NativeCompressRequest.decode(readValue(buffer)!);
+      case 134:
+        return NativePlanningMetadata.decode(readValue(buffer)!);
+      case 135:
+        return NativePlanningPreferences.decode(readValue(buffer)!);
+      case 136:
+        return NativeCompressionPlan.decode(readValue(buffer)!);
+      case 137:
+        return NativeSharePreset.decode(readValue(buffer)!);
+      case 138:
+        return NativeSharePresetPlan.decode(readValue(buffer)!);
       default:
         return super.readValueOfType(type, buffer);
     }
@@ -443,20 +883,40 @@ class NativeMediaApi {
     );
     return pigeonVar_replyValue! as bool;
   }
+}
 
-  Future<bool> compressStagedFallback(
-    String stagedPath,
-    NativeCompressRequest request,
+class NativeCompressionPlannerApi {
+  /// Constructor for [NativeCompressionPlannerApi]. The [binaryMessenger] named argument is
+  /// available for dependency injection. If it is left null, the default
+  /// BinaryMessenger will be used which routes to the host platform.
+  NativeCompressionPlannerApi({
+    BinaryMessenger? binaryMessenger,
+    String messageChannelSuffix = '',
+  }) : pigeonVar_binaryMessenger = binaryMessenger,
+       pigeonVar_messageChannelSuffix = messageChannelSuffix.isNotEmpty
+           ? '.$messageChannelSuffix'
+           : '';
+
+  final BinaryMessenger? pigeonVar_binaryMessenger;
+  static const MessageCodec<Object?> pigeonChannelCodec = _PigeonCodec();
+
+  final String pigeonVar_messageChannelSuffix;
+
+  Future<NativeCompressionPlan> plan(
+    NativePlanningMetadata info,
+    double targetMb,
+    double? safetyMargin,
+    NativePlanningPreferences preferences,
   ) async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.asagi.NativeMediaApi.compressStagedFallback$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.asagi.NativeCompressionPlannerApi.plan$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
       binaryMessenger: pigeonVar_binaryMessenger,
     );
     final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(
-      <Object?>[stagedPath, request],
+      <Object?>[info, targetMb, safetyMargin, preferences],
     );
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     final Object? pigeonVar_replyValue = _extractReplyValueOrThrow(
@@ -464,6 +924,72 @@ class NativeMediaApi {
       pigeonVar_channelName,
       isNullValid: false,
     );
-    return pigeonVar_replyValue! as bool;
+    return pigeonVar_replyValue! as NativeCompressionPlan;
+  }
+
+  Future<int> verify(
+    int bytes,
+    double duration,
+    NativeCompressionPlan plan,
+    int attempt,
+  ) async {
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.asagi.NativeCompressionPlannerApi.verify$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channel = BasicMessageChannel<Object?>(
+      pigeonVar_channelName,
+      pigeonChannelCodec,
+      binaryMessenger: pigeonVar_binaryMessenger,
+    );
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(
+      <Object?>[bytes, duration, plan, attempt],
+    );
+    final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
+    final Object? pigeonVar_replyValue = _extractReplyValueOrThrow(
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: false,
+    );
+    return pigeonVar_replyValue! as int;
+  }
+
+  Future<List<NativeSharePreset>> presets() async {
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.asagi.NativeCompressionPlannerApi.presets$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channel = BasicMessageChannel<Object?>(
+      pigeonVar_channelName,
+      pigeonChannelCodec,
+      binaryMessenger: pigeonVar_binaryMessenger,
+    );
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(null);
+    final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
+    final Object? pigeonVar_replyValue = _extractReplyValueOrThrow(
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: false,
+    );
+    return (pigeonVar_replyValue! as List<Object?>).cast<NativeSharePreset>();
+  }
+
+  Future<NativeSharePresetPlan> resolvePreset(
+    NativePlanningMetadata info,
+    NativeSharePresetId id,
+  ) async {
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.asagi.NativeCompressionPlannerApi.resolvePreset$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channel = BasicMessageChannel<Object?>(
+      pigeonVar_channelName,
+      pigeonChannelCodec,
+      binaryMessenger: pigeonVar_binaryMessenger,
+    );
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(
+      <Object?>[info, id],
+    );
+    final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
+    final Object? pigeonVar_replyValue = _extractReplyValueOrThrow(
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: false,
+    );
+    return pigeonVar_replyValue! as NativeSharePresetPlan;
   }
 }

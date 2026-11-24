@@ -182,7 +182,7 @@ final class _FeedbackPageState extends State<FeedbackPage> {
                 ListTileComponent.single(
                   title: const Text('Include Device & Codec Specs'),
                   subtitle: const Text(
-                    'Attaches non-identifying platform info (OS, Rust build) to help solve bugs',
+                    'Attaches non-identifying platform info (OS, app version) to help solve bugs',
                   ),
                   showChevron: false,
                   trailing: SwitchComponent(

@@ -86,10 +86,9 @@ final class _OnboardingPageState extends State<OnboardingPage> {
       _OnboardingSlide(
         icon: AsagiIcons.aiRuntime,
         shape: ExpressiveIconShape.burst,
-        title: l10n.nativeRustEngineSpeed,
+        title: l10n.nativeEngineSpeed,
         subtitle: l10n.chooseResolutionBitrateAndOutputFormatBeforeYouStart,
-        tagline: l10n
-            .engineeredWithRustAndNativeGpuAccelerationForLightningFastCompressionAndLowBatteryDraw,
+        tagline: l10n.nativeEngineDescription,
         chips: [l10n.h264AndHevc, l10n.av1Support, l10n.batchQueuing],
       ),
     ];

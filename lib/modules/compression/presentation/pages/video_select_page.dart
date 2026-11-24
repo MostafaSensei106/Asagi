@@ -14,6 +14,8 @@ import '../cubit/compression_cubit.dart';
 import '../cubit/compression_state.dart';
 import '../widgets/compression_error_text.dart';
 
+import '../widgets/unsupported_compression_page.dart';
+
 final class VideoSelectPage extends StatelessWidget {
   const VideoSelectPage({super.key});
 
@@ -22,6 +24,8 @@ final class VideoSelectPage extends StatelessWidget {
     final l10n = context.localeKeys;
     final colorScheme = context.colorScheme;
     final textTheme = context.textTheme;
+
+    if (!supportsVideoCompression) return const UnsupportedCompressionPage();
 
     return Scaffold(
       appBar: SidePageAppBarComponent(title: l10n.chooseAVideo),

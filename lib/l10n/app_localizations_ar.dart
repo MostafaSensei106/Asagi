@@ -947,60 +947,11 @@ class AppLocalizationsAr extends AppLocalizations {
   String get openSourceLicenses => 'تراخيص مفتوحة المصدر';
 
   @override
-  String get ffmpegLicenseTitle => 'نص ترخيص FFmpeg LGPL 2.1';
-
-  @override
-  String ffmpegLicense(Object license) {
-    return 'الترخيص: $license';
-  }
-
-  @override
-  String ffmpegVersion(Object version) {
-    return 'الإصدار: $version';
-  }
-
-  @override
-  String ffmpegLinkage(Object linkage) {
-    return 'نوع الربط: $linkage';
-  }
-
-  @override
-  String ffmpegBuiltAbis(Object abis) {
-    return 'المعماريات المبنية: $abis';
-  }
-
-  @override
-  String ffmpegSource(Object source) {
-    return 'المصدر: $source';
-  }
-
-  @override
-  String get thirdPartyLicenses => 'حزم Flutter وDart';
-
-  @override
-  String get thirdPartyLicensesDescription =>
-      'اعرض إشعارات تراخيص الجهات الخارجية.';
-
-  @override
-  String get fullFfmpegLicenseFallback =>
-      'نص الترخيص الكامل مضمّن في ملف ترخيص LGPL داخل التطبيق.';
-
-  @override
-  String get ffmpegName => 'FFmpeg';
-
-  @override
   String get storageJobsLoadFailed => 'تعذر تحميل المهام المتوقفة.';
 
   @override
   String get cleanupInterruptedJobsFailed =>
       'تعذر تنظيف ملفات المهام المتوقفة.';
-
-  @override
-  String get ffmpegBuildMetadataUnavailable => 'بيانات بناء FFmpeg غير متاحة.';
-
-  @override
-  String get openSourceLicensesLoadFailed =>
-      'تعذر تحميل إشعارات تراخيص المصادر المفتوحة.';
 
   @override
   String get languageName => 'العربية';
@@ -1090,12 +1041,11 @@ class AppLocalizationsAr extends AppLocalizations {
   String get zeroCloudServers => 'صفر خوادم سحابية';
 
   @override
-  String get nativeRustEngineSpeed => 'سرعة محرك Rust الأصلي';
+  String get nativeEngineSpeed => 'محرك ضغط أصلي';
 
   @override
-  String
-  get engineeredWithRustAndNativeGpuAccelerationForLightningFastCompressionAndLowBatteryDraw =>
-      'مبني بلغة Rust مع تسريع GPU أصلي لضغط فائق السرعة واستهلاك منخفض للبطارية.';
+  String get nativeEngineDescription =>
+      'يستخدم محرك الوسائط الأصلي في أندرويد لضغط الفيديو على جهازك.';
 
   @override
   String get h264AndHevc => 'H.264 و HEVC';
@@ -2095,6 +2045,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get appTermsDescription => 'شروط استخدام Asagi المجاني ومفتوح المصدر.';
+
+  @override
+  String get compressionAndroidOnly =>
+      'ضغط الفيديو متاح حاليًا على أندرويد فقط.';
 }
 
 /// The translations for Arabic, as used in Egypt (`ar_EG`).
@@ -2141,4 +2095,8 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
   @override
   String get appTermsDescription =>
       'Terms for using the free, open source Asagi app.';
+
+  @override
+  String get compressionAndroidOnly =>
+      'ضغط الفيديو متاح حاليًا على أندرويد فقط.';
 }

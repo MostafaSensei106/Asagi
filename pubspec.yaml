@@ -9,11 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  rust_lib_asagi:
-    path: rust_builder
   flutter_localizations:
     sdk: flutter
-  flutter_rust_bridge: 2.13.0
   flutter_edge_ai: ^2.6.0
   flutter_edge_ai_litertlm: ^1.20.0
   bloc_signals_flutter: ^1.5.0
@@ -80,8 +77,6 @@ flutter:
   uses-material-design: true
   assets:
   - assets/icons/play_store_512.png
-  - android/app/src/main/assets/licenses/ffmpeg/LICENSE.LGPLv2.1
-  - android/app/src/main/assets/licenses/ffmpeg/SOURCE_INFO.json
 
   fonts:
   # Google Sans static instances. Registering each weight/style lets Flutter

@@ -1,5 +1,5 @@
 import 'package:asagi/core/compression/domain/contracts/compression_planner.dart';
-import 'package:asagi/core/compression/infrastructure/rust/rust_compression_planner.dart';
+import 'package:asagi/core/compression/infrastructure/native/platform_compression_planner.dart';
 import 'package:asagi/core/native/pigeon_messages.g.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -20,6 +20,9 @@ void main() {
     expect(decoded.targetHeight, 1280);
     expect(decoded.frameRate, 30);
     expect(decoded.hdrMode, NativeHdrMode.preserve);
-    expect(RustCompressionPlanner(), isA<CompressionPlanner>());
+    expect(
+      PlatformCompressionPlanner(NativeCompressionPlannerApi()),
+      isA<CompressionPlanner>(),
+    );
   });
 }

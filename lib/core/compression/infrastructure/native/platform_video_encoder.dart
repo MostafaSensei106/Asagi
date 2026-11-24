@@ -1,9 +1,6 @@
-import 'dart:io';
-
 import 'package:flutter/services.dart';
 
 import '../../../native/pigeon_messages.g.dart' as wire;
-import '../../../native/rust/api.dart' as rust;
 import '../../domain/contracts/video_encoder.dart';
 import '../../domain/models/encode_request.dart';
 import '../../domain/models/video_metadata.dart';
@@ -55,26 +52,7 @@ final class PlatformVideoEncoder
         HdrMode.toneMapToSdr => wire.NativeHdrMode.toneMapToSdr,
       },
     );
-    late final bool success;
-    try {
-      success = await api.startHardwareEncoding(nativeRequest);
-    } on PlatformException catch (error) {
-      if (!Platform.isAndroid ||
-          error.code != 'E_VIDEO_DECODER_UNSUPPORTED' ||
-          request.isHdr) {
-        rethrow;
-      }
-      final stagedPath = '${request.outputPath}.fallback.zf';
-      await rust.stageFallbackVideo(
-        inputPath: request.inputPath,
-        stagedPath: stagedPath,
-        outputWidth: p.targetWidth,
-        outputHeight: p.targetHeight,
-        maxFps: request.frameRate.round(),
-        toneMapHdr: false,
-      );
-      success = await api.compressStagedFallback(stagedPath, nativeRequest);
-    }
+    final success = await api.startHardwareEncoding(nativeRequest);
     if (!success) throw StateError('E_ENCODING');
   }
 

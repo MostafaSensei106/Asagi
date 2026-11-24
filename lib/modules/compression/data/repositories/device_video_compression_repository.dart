@@ -11,7 +11,6 @@ import '../../../../core/compression/compression_engine.dart';
 import '../../../../core/compression/domain/models/interrupted_compression_job.dart';
 import '../../../../core/compression/infrastructure/storage/mp4_faststart_validator.dart';
 import '../../../../core/native/pigeon_messages.g.dart';
-import '../../../../core/native/rust/frb_generated.dart';
 import '../../domain/models/compression_record.dart';
 import '../../domain/models/resumed_compression.dart';
 import '../../domain/models/selected_video.dart';
@@ -23,7 +22,7 @@ final class DeviceVideoCompressionRepository
   DeviceVideoCompressionRepository({ImagePicker? picker})
     : _picker = picker ?? ImagePicker(),
       _encoder = PlatformVideoEncoder(NativeMediaApi()),
-      _planner = RustCompressionPlanner() {
+      _planner = PlatformCompressionPlanner(NativeCompressionPlannerApi()) {
     _engine = CompressionEngine(
       planner: _planner,
       encoder: _encoder,
@@ -38,15 +37,17 @@ final class DeviceVideoCompressionRepository
   final PlatformVideoEncoder _encoder;
   final CompressionPlanner _planner;
   late final CompressionEngine _engine;
-  Future<void>? _rustReady;
 
   @override
   Stream<double> get progress => _encoder.progress;
 
-  Future<void> _ensureRust() => _rustReady ??= RustLib.init();
+  void _ensureSupported() {
+    if (!Platform.isAndroid) throw UnsupportedError('E_PLATFORM_UNSUPPORTED');
+  }
 
   @override
   Future<SelectedVideo?> pickVideo() async {
+    _ensureSupported();
     final file = await _picker.pickVideo(source: ImageSource.gallery);
     if (file == null) return null;
     final metadata = await _encoder.inspect(file.path);
@@ -69,7 +70,7 @@ final class DeviceVideoCompressionRepository
       throw ArgumentError.value(targetMb, 'targetMb');
     }
     onStep?.call(CompressionStep.preparing);
-    await _ensureRust();
+    _ensureSupported();
     final cache = await getTemporaryDirectory();
     final workspacePath = '${cache.path}/compression';
     EncoderCalibrationStore? calibration;
@@ -243,13 +244,13 @@ final class DeviceVideoCompressionRepository
     CompressionPreferences preferences,
   ) async {
     preferences.validate();
-    await _ensureRust();
+    _ensureSupported();
     return _planner.plan(video.metadata, targetMb, preferences: preferences);
   }
 
   @override
   Future<List<SharePreset>> presets() async {
-    await _ensureRust();
+    _ensureSupported();
     return _planner.presets();
   }
 
@@ -258,7 +259,7 @@ final class DeviceVideoCompressionRepository
     SelectedVideo video,
     SharePresetId id,
   ) async {
-    await _ensureRust();
+    _ensureSupported();
     return _planner.resolvePreset(video.metadata, id);
   }
 
@@ -383,6 +384,7 @@ final class DeviceVideoCompressionRepository
     void Function(double start, double end)? onAttemptRange,
     void Function(SelectedVideo video)? onVideoReady,
   }) async {
+    _ensureSupported();
     final source = File(job.sourcePath);
     if (!await source.exists()) throw StateError('E_RESUME_SOURCE_UNAVAILABLE');
     final metadata = await _encoder.inspect(source.path);

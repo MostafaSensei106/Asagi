@@ -189,6 +189,25 @@ enum NativeHdrMode: Int, CaseIterable {
   case toneMapToSdr = 1
 }
 
+enum NativeSharePresetId: Int, CaseIterable {
+  case whatsapp = 0
+  case whatsappHd = 1
+  case discord = 2
+  case instagramReels = 3
+  case tikTok = 4
+  case facebook = 5
+  case x = 6
+  case youTubeShorts = 7
+  case email = 8
+}
+
+enum NativeSharePresetTier: Int, CaseIterable {
+  case exact = 0
+  case reducedQuality = 1
+  case relaxedSize = 2
+  case unsatisfiable = 3
+}
+
 /// Generated class from Pigeon that represents data sent in messages.
 struct NativeVideoMetadata: Hashable, CustomStringConvertible {
   var path: String? = nil
@@ -349,6 +368,316 @@ struct NativeCompressRequest: Hashable, CustomStringConvertible {
   }
 }
 
+/// Generated class from Pigeon that represents data sent in messages.
+struct NativePlanningMetadata: Hashable, CustomStringConvertible {
+  var durationSecs: Double
+  var width: Int64
+  var height: Int64
+  var rotation: Int64
+  var bitrateBps: Int64
+  var fileSizeBytes: Int64
+  var hasAudio: Bool
+  var pixelAspectRatio: Double
+
+
+  // swift-format-ignore: AlwaysUseLowerCamelCase
+  static func fromList(_ pigeonVar_list: [Any?]) -> NativePlanningMetadata? {
+    let durationSecs = pigeonVar_list[0] as! Double
+    let width = pigeonVar_list[1] as! Int64
+    let height = pigeonVar_list[2] as! Int64
+    let rotation = pigeonVar_list[3] as! Int64
+    let bitrateBps = pigeonVar_list[4] as! Int64
+    let fileSizeBytes = pigeonVar_list[5] as! Int64
+    let hasAudio = pigeonVar_list[6] as! Bool
+    let pixelAspectRatio = pigeonVar_list[7] as! Double
+
+    return NativePlanningMetadata(
+      durationSecs: durationSecs,
+      width: width,
+      height: height,
+      rotation: rotation,
+      bitrateBps: bitrateBps,
+      fileSizeBytes: fileSizeBytes,
+      hasAudio: hasAudio,
+      pixelAspectRatio: pixelAspectRatio
+    )
+  }
+  func toList() -> [Any?] {
+    return [
+      durationSecs,
+      width,
+      height,
+      rotation,
+      bitrateBps,
+      fileSizeBytes,
+      hasAudio,
+      pixelAspectRatio,
+    ]
+  }
+  static func == (lhs: NativePlanningMetadata, rhs: NativePlanningMetadata) -> Bool {
+    if Swift.type(of: lhs) != Swift.type(of: rhs) {
+      return false
+    }
+    return PigeonMessagesPigeonInternal.deepEquals(lhs.durationSecs, rhs.durationSecs) && PigeonMessagesPigeonInternal.deepEquals(lhs.width, rhs.width) && PigeonMessagesPigeonInternal.deepEquals(lhs.height, rhs.height) && PigeonMessagesPigeonInternal.deepEquals(lhs.rotation, rhs.rotation) && PigeonMessagesPigeonInternal.deepEquals(lhs.bitrateBps, rhs.bitrateBps) && PigeonMessagesPigeonInternal.deepEquals(lhs.fileSizeBytes, rhs.fileSizeBytes) && PigeonMessagesPigeonInternal.deepEquals(lhs.hasAudio, rhs.hasAudio) && PigeonMessagesPigeonInternal.deepEquals(lhs.pixelAspectRatio, rhs.pixelAspectRatio)
+  }
+
+  func hash(into hasher: inout Hasher) {
+    hasher.combine("NativePlanningMetadata")
+    PigeonMessagesPigeonInternal.deepHash(value: durationSecs, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: width, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: height, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: rotation, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: bitrateBps, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: fileSizeBytes, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: hasAudio, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: pixelAspectRatio, hasher: &hasher)
+  }
+
+  public var description: String {
+    return "NativePlanningMetadata(durationSecs: \(String(describing: durationSecs)), width: \(String(describing: width)), height: \(String(describing: height)), rotation: \(String(describing: rotation)), bitrateBps: \(String(describing: bitrateBps)), fileSizeBytes: \(String(describing: fileSizeBytes)), hasAudio: \(String(describing: hasAudio)), pixelAspectRatio: \(String(describing: pixelAspectRatio)))"
+  }
+}
+
+/// Generated class from Pigeon that represents data sent in messages.
+struct NativePlanningPreferences: Hashable, CustomStringConvertible {
+  var forceEncode: Bool
+  var maxShortEdge: Int64
+  var audioBitrateBps: Int64
+  var videoBitrateCeilingBps: Int64
+
+
+  // swift-format-ignore: AlwaysUseLowerCamelCase
+  static func fromList(_ pigeonVar_list: [Any?]) -> NativePlanningPreferences? {
+    let forceEncode = pigeonVar_list[0] as! Bool
+    let maxShortEdge = pigeonVar_list[1] as! Int64
+    let audioBitrateBps = pigeonVar_list[2] as! Int64
+    let videoBitrateCeilingBps = pigeonVar_list[3] as! Int64
+
+    return NativePlanningPreferences(
+      forceEncode: forceEncode,
+      maxShortEdge: maxShortEdge,
+      audioBitrateBps: audioBitrateBps,
+      videoBitrateCeilingBps: videoBitrateCeilingBps
+    )
+  }
+  func toList() -> [Any?] {
+    return [
+      forceEncode,
+      maxShortEdge,
+      audioBitrateBps,
+      videoBitrateCeilingBps,
+    ]
+  }
+  static func == (lhs: NativePlanningPreferences, rhs: NativePlanningPreferences) -> Bool {
+    if Swift.type(of: lhs) != Swift.type(of: rhs) {
+      return false
+    }
+    return PigeonMessagesPigeonInternal.deepEquals(lhs.forceEncode, rhs.forceEncode) && PigeonMessagesPigeonInternal.deepEquals(lhs.maxShortEdge, rhs.maxShortEdge) && PigeonMessagesPigeonInternal.deepEquals(lhs.audioBitrateBps, rhs.audioBitrateBps) && PigeonMessagesPigeonInternal.deepEquals(lhs.videoBitrateCeilingBps, rhs.videoBitrateCeilingBps)
+  }
+
+  func hash(into hasher: inout Hasher) {
+    hasher.combine("NativePlanningPreferences")
+    PigeonMessagesPigeonInternal.deepHash(value: forceEncode, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: maxShortEdge, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: audioBitrateBps, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: videoBitrateCeilingBps, hasher: &hasher)
+  }
+
+  public var description: String {
+    return "NativePlanningPreferences(forceEncode: \(String(describing: forceEncode)), maxShortEdge: \(String(describing: maxShortEdge)), audioBitrateBps: \(String(describing: audioBitrateBps)), videoBitrateCeilingBps: \(String(describing: videoBitrateCeilingBps)))"
+  }
+}
+
+/// Generated class from Pigeon that represents data sent in messages.
+struct NativeCompressionPlan: Hashable, CustomStringConvertible {
+  var targetVideoBitrateBps: Int64
+  var targetAudioBitrateBps: Int64
+  var targetWidth: Int64
+  var targetHeight: Int64
+  var hardLimitBytes: Int64
+  var safetyMargin: Double
+  var maxAttempts: Int64
+  var isInfeasible: Bool
+  var warningMessage: String? = nil
+
+
+  // swift-format-ignore: AlwaysUseLowerCamelCase
+  static func fromList(_ pigeonVar_list: [Any?]) -> NativeCompressionPlan? {
+    let targetVideoBitrateBps = pigeonVar_list[0] as! Int64
+    let targetAudioBitrateBps = pigeonVar_list[1] as! Int64
+    let targetWidth = pigeonVar_list[2] as! Int64
+    let targetHeight = pigeonVar_list[3] as! Int64
+    let hardLimitBytes = pigeonVar_list[4] as! Int64
+    let safetyMargin = pigeonVar_list[5] as! Double
+    let maxAttempts = pigeonVar_list[6] as! Int64
+    let isInfeasible = pigeonVar_list[7] as! Bool
+    let warningMessage: String? = nilOrValue(pigeonVar_list[8])
+
+    return NativeCompressionPlan(
+      targetVideoBitrateBps: targetVideoBitrateBps,
+      targetAudioBitrateBps: targetAudioBitrateBps,
+      targetWidth: targetWidth,
+      targetHeight: targetHeight,
+      hardLimitBytes: hardLimitBytes,
+      safetyMargin: safetyMargin,
+      maxAttempts: maxAttempts,
+      isInfeasible: isInfeasible,
+      warningMessage: warningMessage
+    )
+  }
+  func toList() -> [Any?] {
+    return [
+      targetVideoBitrateBps,
+      targetAudioBitrateBps,
+      targetWidth,
+      targetHeight,
+      hardLimitBytes,
+      safetyMargin,
+      maxAttempts,
+      isInfeasible,
+      warningMessage,
+    ]
+  }
+  static func == (lhs: NativeCompressionPlan, rhs: NativeCompressionPlan) -> Bool {
+    if Swift.type(of: lhs) != Swift.type(of: rhs) {
+      return false
+    }
+    return PigeonMessagesPigeonInternal.deepEquals(lhs.targetVideoBitrateBps, rhs.targetVideoBitrateBps) && PigeonMessagesPigeonInternal.deepEquals(lhs.targetAudioBitrateBps, rhs.targetAudioBitrateBps) && PigeonMessagesPigeonInternal.deepEquals(lhs.targetWidth, rhs.targetWidth) && PigeonMessagesPigeonInternal.deepEquals(lhs.targetHeight, rhs.targetHeight) && PigeonMessagesPigeonInternal.deepEquals(lhs.hardLimitBytes, rhs.hardLimitBytes) && PigeonMessagesPigeonInternal.deepEquals(lhs.safetyMargin, rhs.safetyMargin) && PigeonMessagesPigeonInternal.deepEquals(lhs.maxAttempts, rhs.maxAttempts) && PigeonMessagesPigeonInternal.deepEquals(lhs.isInfeasible, rhs.isInfeasible) && PigeonMessagesPigeonInternal.deepEquals(lhs.warningMessage, rhs.warningMessage)
+  }
+
+  func hash(into hasher: inout Hasher) {
+    hasher.combine("NativeCompressionPlan")
+    PigeonMessagesPigeonInternal.deepHash(value: targetVideoBitrateBps, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: targetAudioBitrateBps, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: targetWidth, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: targetHeight, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: hardLimitBytes, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: safetyMargin, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: maxAttempts, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: isInfeasible, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: warningMessage, hasher: &hasher)
+  }
+
+  public var description: String {
+    return "NativeCompressionPlan(targetVideoBitrateBps: \(String(describing: targetVideoBitrateBps)), targetAudioBitrateBps: \(String(describing: targetAudioBitrateBps)), targetWidth: \(String(describing: targetWidth)), targetHeight: \(String(describing: targetHeight)), hardLimitBytes: \(String(describing: hardLimitBytes)), safetyMargin: \(String(describing: safetyMargin)), maxAttempts: \(String(describing: maxAttempts)), isInfeasible: \(String(describing: isInfeasible)), warningMessage: \(String(describing: warningMessage)))"
+  }
+}
+
+/// Generated class from Pigeon that represents data sent in messages.
+struct NativeSharePreset: Hashable, CustomStringConvertible {
+  var id: NativeSharePresetId
+  var targetMb: Int64
+  var relaxedTargetMb: Int64
+  var maxShortEdge: Int64
+  var maxFps: Int64
+  var bitrateCapBps: Int64
+  var requireFaststart: Bool
+  var verifiedOn: String
+
+
+  // swift-format-ignore: AlwaysUseLowerCamelCase
+  static func fromList(_ pigeonVar_list: [Any?]) -> NativeSharePreset? {
+    let id = pigeonVar_list[0] as! NativeSharePresetId
+    let targetMb = pigeonVar_list[1] as! Int64
+    let relaxedTargetMb = pigeonVar_list[2] as! Int64
+    let maxShortEdge = pigeonVar_list[3] as! Int64
+    let maxFps = pigeonVar_list[4] as! Int64
+    let bitrateCapBps = pigeonVar_list[5] as! Int64
+    let requireFaststart = pigeonVar_list[6] as! Bool
+    let verifiedOn = pigeonVar_list[7] as! String
+
+    return NativeSharePreset(
+      id: id,
+      targetMb: targetMb,
+      relaxedTargetMb: relaxedTargetMb,
+      maxShortEdge: maxShortEdge,
+      maxFps: maxFps,
+      bitrateCapBps: bitrateCapBps,
+      requireFaststart: requireFaststart,
+      verifiedOn: verifiedOn
+    )
+  }
+  func toList() -> [Any?] {
+    return [
+      id,
+      targetMb,
+      relaxedTargetMb,
+      maxShortEdge,
+      maxFps,
+      bitrateCapBps,
+      requireFaststart,
+      verifiedOn,
+    ]
+  }
+  static func == (lhs: NativeSharePreset, rhs: NativeSharePreset) -> Bool {
+    if Swift.type(of: lhs) != Swift.type(of: rhs) {
+      return false
+    }
+    return PigeonMessagesPigeonInternal.deepEquals(lhs.id, rhs.id) && PigeonMessagesPigeonInternal.deepEquals(lhs.targetMb, rhs.targetMb) && PigeonMessagesPigeonInternal.deepEquals(lhs.relaxedTargetMb, rhs.relaxedTargetMb) && PigeonMessagesPigeonInternal.deepEquals(lhs.maxShortEdge, rhs.maxShortEdge) && PigeonMessagesPigeonInternal.deepEquals(lhs.maxFps, rhs.maxFps) && PigeonMessagesPigeonInternal.deepEquals(lhs.bitrateCapBps, rhs.bitrateCapBps) && PigeonMessagesPigeonInternal.deepEquals(lhs.requireFaststart, rhs.requireFaststart) && PigeonMessagesPigeonInternal.deepEquals(lhs.verifiedOn, rhs.verifiedOn)
+  }
+
+  func hash(into hasher: inout Hasher) {
+    hasher.combine("NativeSharePreset")
+    PigeonMessagesPigeonInternal.deepHash(value: id, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: targetMb, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: relaxedTargetMb, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: maxShortEdge, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: maxFps, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: bitrateCapBps, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: requireFaststart, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: verifiedOn, hasher: &hasher)
+  }
+
+  public var description: String {
+    return "NativeSharePreset(id: \(String(describing: id)), targetMb: \(String(describing: targetMb)), relaxedTargetMb: \(String(describing: relaxedTargetMb)), maxShortEdge: \(String(describing: maxShortEdge)), maxFps: \(String(describing: maxFps)), bitrateCapBps: \(String(describing: bitrateCapBps)), requireFaststart: \(String(describing: requireFaststart)), verifiedOn: \(String(describing: verifiedOn)))"
+  }
+}
+
+/// Generated class from Pigeon that represents data sent in messages.
+struct NativeSharePresetPlan: Hashable, CustomStringConvertible {
+  var tier: NativeSharePresetTier
+  var effectiveTargetMb: Int64
+  var plan: NativeCompressionPlan
+
+
+  // swift-format-ignore: AlwaysUseLowerCamelCase
+  static func fromList(_ pigeonVar_list: [Any?]) -> NativeSharePresetPlan? {
+    let tier = pigeonVar_list[0] as! NativeSharePresetTier
+    let effectiveTargetMb = pigeonVar_list[1] as! Int64
+    let plan = pigeonVar_list[2] as! NativeCompressionPlan
+
+    return NativeSharePresetPlan(
+      tier: tier,
+      effectiveTargetMb: effectiveTargetMb,
+      plan: plan
+    )
+  }
+  func toList() -> [Any?] {
+    return [
+      tier,
+      effectiveTargetMb,
+      plan,
+    ]
+  }
+  static func == (lhs: NativeSharePresetPlan, rhs: NativeSharePresetPlan) -> Bool {
+    if Swift.type(of: lhs) != Swift.type(of: rhs) {
+      return false
+    }
+    return PigeonMessagesPigeonInternal.deepEquals(lhs.tier, rhs.tier) && PigeonMessagesPigeonInternal.deepEquals(lhs.effectiveTargetMb, rhs.effectiveTargetMb) && PigeonMessagesPigeonInternal.deepEquals(lhs.plan, rhs.plan)
+  }
+
+  func hash(into hasher: inout Hasher) {
+    hasher.combine("NativeSharePresetPlan")
+    PigeonMessagesPigeonInternal.deepHash(value: tier, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: effectiveTargetMb, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: plan, hasher: &hasher)
+  }
+
+  public var description: String {
+    return "NativeSharePresetPlan(tier: \(String(describing: tier)), effectiveTargetMb: \(String(describing: effectiveTargetMb)), plan: \(String(describing: plan)))"
+  }
+}
+
 private class PigeonMessagesPigeonCodecReader: FlutterStandardReader {
   override func readValue(ofType type: UInt8) -> Any? {
     switch type {
@@ -359,9 +688,31 @@ private class PigeonMessagesPigeonCodecReader: FlutterStandardReader {
       }
       return nil
     case 130:
-      return NativeVideoMetadata.fromList(self.readValue() as! [Any?])
+      let enumResultAsInt: Int? = nilOrValue(self.readValue() as! Int?)
+      if let enumResultAsInt = enumResultAsInt {
+        return NativeSharePresetId(rawValue: enumResultAsInt)
+      }
+      return nil
     case 131:
+      let enumResultAsInt: Int? = nilOrValue(self.readValue() as! Int?)
+      if let enumResultAsInt = enumResultAsInt {
+        return NativeSharePresetTier(rawValue: enumResultAsInt)
+      }
+      return nil
+    case 132:
+      return NativeVideoMetadata.fromList(self.readValue() as! [Any?])
+    case 133:
       return NativeCompressRequest.fromList(self.readValue() as! [Any?])
+    case 134:
+      return NativePlanningMetadata.fromList(self.readValue() as! [Any?])
+    case 135:
+      return NativePlanningPreferences.fromList(self.readValue() as! [Any?])
+    case 136:
+      return NativeCompressionPlan.fromList(self.readValue() as! [Any?])
+    case 137:
+      return NativeSharePreset.fromList(self.readValue() as! [Any?])
+    case 138:
+      return NativeSharePresetPlan.fromList(self.readValue() as! [Any?])
     default:
       return super.readValue(ofType: type)
     }
@@ -373,11 +724,32 @@ private class PigeonMessagesPigeonCodecWriter: FlutterStandardWriter {
     if let value = value as? NativeHdrMode {
       super.writeByte(129)
       super.writeValue(value.rawValue)
-    } else if let value = value as? NativeVideoMetadata {
+    } else if let value = value as? NativeSharePresetId {
       super.writeByte(130)
+      super.writeValue(value.rawValue)
+    } else if let value = value as? NativeSharePresetTier {
+      super.writeByte(131)
+      super.writeValue(value.rawValue)
+    } else if let value = value as? NativeVideoMetadata {
+      super.writeByte(132)
       super.writeValue(value.toList())
     } else if let value = value as? NativeCompressRequest {
-      super.writeByte(131)
+      super.writeByte(133)
+      super.writeValue(value.toList())
+    } else if let value = value as? NativePlanningMetadata {
+      super.writeByte(134)
+      super.writeValue(value.toList())
+    } else if let value = value as? NativePlanningPreferences {
+      super.writeByte(135)
+      super.writeValue(value.toList())
+    } else if let value = value as? NativeCompressionPlan {
+      super.writeByte(136)
+      super.writeValue(value.toList())
+    } else if let value = value as? NativeSharePreset {
+      super.writeByte(137)
+      super.writeValue(value.toList())
+    } else if let value = value as? NativeSharePresetPlan {
+      super.writeByte(138)
       super.writeValue(value.toList())
     } else {
       super.writeValue(value)
@@ -407,7 +779,6 @@ protocol NativeMediaApi {
   func pauseEncoding() async throws
   func resumeEncoding() async throws
   func startHardwareEncoding(request: NativeCompressRequest) async throws -> Bool
-  func compressStagedFallback(stagedPath: String, request: NativeCompressRequest) async throws -> Bool
 }
 
 /// Generated setup class from Pigeon to handle messages through the `binaryMessenger`.
@@ -495,23 +866,86 @@ class NativeMediaApiSetup {
     } else {
       startHardwareEncodingChannel.setMessageHandler(nil)
     }
-    let compressStagedFallbackChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.asagi.NativeMediaApi.compressStagedFallback\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
+  }
+}
+/// Generated protocol from Pigeon that represents a handler of messages from Flutter.
+protocol NativeCompressionPlannerApi {
+  func plan(info: NativePlanningMetadata, targetMb: Double, safetyMargin: Double?, preferences: NativePlanningPreferences) throws -> NativeCompressionPlan
+  func verify(bytes: Int64, duration: Double, plan: NativeCompressionPlan, attempt: Int64) throws -> Int64
+  func presets() throws -> [NativeSharePreset]
+  func resolvePreset(info: NativePlanningMetadata, id: NativeSharePresetId) throws -> NativeSharePresetPlan
+}
+
+/// Generated setup class from Pigeon to handle messages through the `binaryMessenger`.
+class NativeCompressionPlannerApiSetup {
+  static var codec: FlutterStandardMessageCodec { PigeonMessagesPigeonCodec.shared }
+  /// Sets up an instance of `NativeCompressionPlannerApi` to handle messages through the `binaryMessenger`.
+  static func setUp(binaryMessenger: FlutterBinaryMessenger, api: NativeCompressionPlannerApi?, messageChannelSuffix: String = "") {
+    let channelSuffix = messageChannelSuffix.count > 0 ? ".\(messageChannelSuffix)" : ""
+    let planChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.asagi.NativeCompressionPlannerApi.plan\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
     if let api = api {
-      compressStagedFallbackChannel.setMessageHandler { message, reply in
+      planChannel.setMessageHandler { message, reply in
         let args = message as! [Any?]
-        let stagedPathArg = args[0] as! String
-        let requestArg = args[1] as! NativeCompressRequest
-        Task { @MainActor in
-          do {
-            let result = try await api.compressStagedFallback(stagedPath: stagedPathArg, request: requestArg)
-            reply(wrapResult(result))
-          } catch {
-            reply(wrapError(error))
-          }
+        let infoArg = args[0] as! NativePlanningMetadata
+        let targetMbArg = args[1] as! Double
+        let safetyMarginArg: Double? = nilOrValue(args[2])
+        let preferencesArg = args[3] as! NativePlanningPreferences
+        do {
+          let result = try api.plan(info: infoArg, targetMb: targetMbArg, safetyMargin: safetyMarginArg, preferences: preferencesArg)
+          reply(wrapResult(result))
+        } catch {
+          reply(wrapError(error))
         }
       }
     } else {
-      compressStagedFallbackChannel.setMessageHandler(nil)
+      planChannel.setMessageHandler(nil)
+    }
+    let verifyChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.asagi.NativeCompressionPlannerApi.verify\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
+    if let api = api {
+      verifyChannel.setMessageHandler { message, reply in
+        let args = message as! [Any?]
+        let bytesArg = args[0] as! Int64
+        let durationArg = args[1] as! Double
+        let planArg = args[2] as! NativeCompressionPlan
+        let attemptArg = args[3] as! Int64
+        do {
+          let result = try api.verify(bytes: bytesArg, duration: durationArg, plan: planArg, attempt: attemptArg)
+          reply(wrapResult(result))
+        } catch {
+          reply(wrapError(error))
+        }
+      }
+    } else {
+      verifyChannel.setMessageHandler(nil)
+    }
+    let presetsChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.asagi.NativeCompressionPlannerApi.presets\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
+    if let api = api {
+      presetsChannel.setMessageHandler { _, reply in
+        do {
+          let result = try api.presets()
+          reply(wrapResult(result))
+        } catch {
+          reply(wrapError(error))
+        }
+      }
+    } else {
+      presetsChannel.setMessageHandler(nil)
+    }
+    let resolvePresetChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.asagi.NativeCompressionPlannerApi.resolvePreset\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
+    if let api = api {
+      resolvePresetChannel.setMessageHandler { message, reply in
+        let args = message as! [Any?]
+        let infoArg = args[0] as! NativePlanningMetadata
+        let idArg = args[1] as! NativeSharePresetId
+        do {
+          let result = try api.resolvePreset(info: infoArg, id: idArg)
+          reply(wrapResult(result))
+        } catch {
+          reply(wrapError(error))
+        }
+      }
+    } else {
+      resolvePresetChannel.setMessageHandler(nil)
     }
   }
 }

@@ -26,7 +26,7 @@ final class SupportPage extends StatelessWidget {
     const specs = '''
 Asagi Diagnostics:
 - App Version: 1.0.0 (Build 1)
-- Engine: Rust Native Planner + Platform Encoders
+- Engine: Kotlin Planner + Android Media3
 - Codecs: H.264 (HW), HEVC (HW), AV1 (SW/HW)
 - Storage Mode: Local Sandboxed Storage
 - OS Platform: Linux / Android / iOS
@@ -135,7 +135,7 @@ Asagi Diagnostics:
                   const Gap(AppSpacing.medium),
                   const _DiagRow(
                     label: 'Engine',
-                    value: 'Rust Compression Planner',
+                    value: 'Kotlin Compression Planner',
                   ),
                   const _DiagRow(label: 'App Build', value: '1.0.0 (1)'),
                   const _DiagRow(

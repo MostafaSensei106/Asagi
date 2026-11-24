@@ -19,6 +19,7 @@ import '../../../compression/presentation/cubit/compression_state.dart';
 import '../../../compression/presentation/widgets/compression_advanced_controls.dart';
 import '../../../compression/presentation/widgets/compression_error_text.dart';
 import '../../../compression/presentation/widgets/compression_plan_summary.dart';
+import '../../../compression/presentation/widgets/unsupported_compression_page.dart';
 import '../widgets/compression_activity_panel.dart';
 import '../widgets/home_target_size_card.dart';
 import '../widgets/home_video_state_cards.dart';
@@ -36,6 +37,8 @@ final class HomePage extends HookWidget {
     final showAfter = useState(true);
     void start() => unawaited(cubit.start());
     void openAssistant() => unawaited(context.push(const AiChatRoute()));
+
+    if (!supportsVideoCompression) return const UnsupportedCompressionPage();
 
     return Scaffold(
       appBar: AppBarComponent(

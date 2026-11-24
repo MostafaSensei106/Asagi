@@ -8,6 +8,9 @@ String compressionErrorText(BuildContext context, String? error) {
   if (error == null) {
     return l10n.compressionCouldNotBeCompletedTryAnotherSettingOrVideo;
   }
+  if (error.contains('E_PLATFORM_UNSUPPORTED')) {
+    return l10n.compressionAndroidOnly;
+  }
   if (error.contains('E_TARGET_EXCEEDED')) {
     return l10n.thisVideoCouldNotReachTheSelectedSizeTryALargerTargetSize;
   }

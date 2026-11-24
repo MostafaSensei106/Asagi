@@ -133,34 +133,6 @@ class Media3VideoEncoder(
         }
     }
 
-    override suspend fun encodeStagedFallback(
-        stagedPath: String,
-        request: EncodeConfiguration
-    ): Boolean = withContext(Dispatchers.Main) {
-        check(transformer == null && !preparing) { "E_BUSY" }
-        require(java.io.File(stagedPath).isFile) { "E_STAGED_FALLBACK_MISSING" }
-        require(request.outputPath != request.inputPath && !java.io.File(request.outputPath).exists()) { "E_INVALID_OUTPUT" }
-        require(request.targetVideoBitrateBps > 0 && request.targetAudioBitrateBps >= 0) { "E_INVALID_INPUT" }
-        paused = false
-        val operation = ++generation
-        preparing = true
-        try {
-            withContext(Dispatchers.IO) {
-                val metadata = metadataReader.read(request.inputPath)
-                val requiredBytes = ((request.targetVideoBitrateBps + request.targetAudioBitrateBps).toDouble() *
-                    metadata.durationSeconds / 8 * 1.2 + 50_000_000).toLong()
-                val parent = requireNotNull(java.io.File(request.outputPath).parentFile)
-                check(android.os.StatFs(parent.path).availableBytes >= requiredBytes) { "E_NO_SPACE" }
-                StagedFallbackMuxer(context, { fraction ->
-                    handler.post { if (operation == generation) onProgress(fraction) }
-                }, { operation != generation }, { paused })
-                    .encode(stagedPath, request)
-            }.also { check(operation == generation) { "E_CANCELLED" } }
-        } finally {
-            if (operation == generation) preparing = false
-        }
-    }
-
     override suspend fun pause() = withContext(Dispatchers.Main) {
         if (!paused && (preparing || transformer != null)) {
             paused = true
