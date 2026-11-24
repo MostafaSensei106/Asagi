@@ -40,7 +40,15 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
         emit(previous);
         return false;
       }
-      emit(stateValue.copyWith(video: video, phase: CompressionPhase.ready));
+      emit(
+        stateValue.copyWith(
+          video: video,
+          phase: CompressionPhase.ready,
+          output: null,
+          error: null,
+          progress: 0,
+        ),
+      );
       unawaited(refreshPlan());
       return true;
     } catch (error) {
@@ -90,6 +98,11 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
     emit(
       stateValue.copyWith(
         targetMb: value,
+        phase: stateValue.video == null
+            ? CompressionPhase.idle
+            : CompressionPhase.ready,
+        output: null,
+        error: null,
         selectedPresetId: null,
         resolvedPresetPlan: null,
       ),
@@ -130,6 +143,11 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
     emit(
       stateValue.copyWith(
         preferences: preferences,
+        phase: stateValue.video == null
+            ? CompressionPhase.idle
+            : CompressionPhase.ready,
+        output: null,
+        error: null,
         selectedPresetId: null,
         resolvedPresetPlan: null,
       ),
@@ -156,7 +174,7 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
     final video = stateValue.video;
     if (video == null || stateValue.targetMb <= 0) return;
     final version = ++_planVersion;
-    emit(stateValue.copyWith(planning: true, previewPlan: null));
+    emit(stateValue.copyWith(planning: true, previewPlan: null, error: null));
     try {
       final presetId = stateValue.selectedPresetId;
       if (presetId != null) {
@@ -243,6 +261,8 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
         phase: CompressionPhase.running,
         progress: 0,
         step: CompressionStep.preparing,
+        output: null,
+        error: null,
       ),
     );
     _progressSubscription = repository.progress.listen((value) {

@@ -449,12 +449,6 @@ abstract class AppLocalizations {
   /// **'Sign in'**
   String get signIn;
 
-  /// Login page description
-  ///
-  /// In en, this message translates to:
-  /// **'Sign in to sync your plan and keep your purchases available on every device.'**
-  String get signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice;
-
   /// Video picker page title
   ///
   /// In en, this message translates to:
@@ -767,12 +761,6 @@ abstract class AppLocalizations {
   /// **'Terms of service'**
   String get termsOfService;
 
-  /// Terms page description
-  ///
-  /// In en, this message translates to:
-  /// **'The terms that apply to Asagi and its purchases.'**
-  String get theTermsThatApplyToAsagiAndItsPurchases;
-
   /// Data safety page title
   ///
   /// In en, this message translates to:
@@ -803,23 +791,11 @@ abstract class AppLocalizations {
   /// **'FAQ'**
   String get faq;
 
-  /// FAQ page description
-  ///
-  /// In en, this message translates to:
-  /// **'Answers to common questions about compression and billing.'**
-  String get answersToCommonQuestionsAboutCompressionAndBilling;
-
   /// Support page title
   ///
   /// In en, this message translates to:
   /// **'Support'**
   String get support;
-
-  /// Support page description
-  ///
-  /// In en, this message translates to:
-  /// **'Get help with your account or a purchase.'**
-  String get getHelpWithYourAccountOrAPurchase;
 
   /// Feedback page title
   ///
@@ -833,65 +809,11 @@ abstract class AppLocalizations {
   /// **'Report a problem or suggest an improvement.'**
   String get reportAProblemOrSuggestAnImprovement;
 
-  /// Plans page title
-  ///
-  /// In en, this message translates to:
-  /// **'Plans'**
-  String get plans;
-
-  /// Plans page description
-  ///
-  /// In en, this message translates to:
-  /// **'Compare plans and see what each one unlocks.'**
-  String get comparePlansAndSeeWhatEachOneUnlocks;
-
-  /// Plan details page title
-  ///
-  /// In en, this message translates to:
-  /// **'Plan details'**
-  String get planDetails;
-
-  /// Plan details page description
-  ///
-  /// In en, this message translates to:
-  /// **'Benefits, limits, and pricing for this plan.'**
-  String get benefitsLimitsAndPricingForThisPlan;
-
-  /// Purchase methods page title
-  ///
-  /// In en, this message translates to:
-  /// **'Payment methods'**
-  String get paymentMethods;
-
-  /// Purchase methods page description
-  ///
-  /// In en, this message translates to:
-  /// **'Supported ways to pay, including store billing.'**
-  String get supportedWaysToPayIncludingStoreBilling;
-
-  /// Restore purchases page title
-  ///
-  /// In en, this message translates to:
-  /// **'Restore purchases'**
-  String get restorePurchases;
-
-  /// Restore purchases page description
-  ///
-  /// In en, this message translates to:
-  /// **'Re-apply a purchase made on another device.'**
-  String get reApplyAPurchaseMadeOnAnotherDevice;
-
   /// Profile page title
   ///
   /// In en, this message translates to:
   /// **'Profile'**
   String get profile;
-
-  /// Profile page description
-  ///
-  /// In en, this message translates to:
-  /// **'Your identity, plan status, and account preferences.'**
-  String get yourIdentityPlanStatusAndAccountPreferences;
 
   /// Delete account page title
   ///
@@ -952,12 +874,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Notifications & privacy'**
   String get notificationsPrivacy;
-
-  /// Settings hub section label
-  ///
-  /// In en, this message translates to:
-  /// **'Plans & purchases'**
-  String get plansPurchases;
 
   /// Settings hub section label
   ///
@@ -1230,24 +1146,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your data stays local'**
   String get yourDataStaysLocal;
-
-  /// Settings hub row summary
-  ///
-  /// In en, this message translates to:
-  /// **'Compare plans and upgrade'**
-  String get comparePlansAndUpgrade;
-
-  /// Settings hub row summary
-  ///
-  /// In en, this message translates to:
-  /// **'Payment methods and billing'**
-  String get paymentMethodsAndBilling;
-
-  /// Settings hub row summary
-  ///
-  /// In en, this message translates to:
-  /// **'Restore your previous purchase'**
-  String get restoreYourPreviousPurchase;
 
   /// Settings hub row summary
   ///
@@ -1891,377 +1789,17 @@ abstract class AppLocalizations {
   /// **'Coming soon'**
   String get comingSoon;
 
-  /// No description provided for @asagiProTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Asagi Pro'**
-  String get asagiProTitle;
-
-  /// No description provided for @subscriptionPerMonth.
-  ///
-  /// In en, this message translates to:
-  /// **'{price} / month'**
-  String subscriptionPerMonth(Object price);
-
-  /// No description provided for @planUnavailable.
-  ///
-  /// In en, this message translates to:
-  /// **'Unavailable'**
-  String get planUnavailable;
-
   /// No description provided for @loading.
   ///
   /// In en, this message translates to:
   /// **'Loading…'**
   String get loading;
 
-  /// No description provided for @subscriptionActive.
-  ///
-  /// In en, this message translates to:
-  /// **'Active subscription'**
-  String get subscriptionActive;
-
-  /// No description provided for @proFeaturesDescription.
-  ///
-  /// In en, this message translates to:
-  /// **'Custom compression, sharing presets, on-device AI tools, and loyalty savings.'**
-  String get proFeaturesDescription;
-
   /// Please wait dialog text
   ///
   /// In en, this message translates to:
   /// **'Please wait…'**
   String get pleaseWait;
-
-  /// No description provided for @subscribe.
-  ///
-  /// In en, this message translates to:
-  /// **'Subscribe'**
-  String get subscribe;
-
-  /// No description provided for @currentLoyaltyDiscount.
-  ///
-  /// In en, this message translates to:
-  /// **'Loyalty discount: {percent}%'**
-  String currentLoyaltyDiscount(Object percent);
-
-  /// No description provided for @nextMonthLoyaltyPrice.
-  ///
-  /// In en, this message translates to:
-  /// **'Next month: {percent}% loyalty discount — estimated {price}'**
-  String nextMonthLoyaltyPrice(Object percent, Object price);
-
-  /// No description provided for @nextMonthLoyaltyDiscount.
-  ///
-  /// In en, this message translates to:
-  /// **'Next month: {percent}% loyalty discount'**
-  String nextMonthLoyaltyDiscount(Object percent);
-
-  /// No description provided for @loyaltyCancellationWarning.
-  ///
-  /// In en, this message translates to:
-  /// **'Cancelling resets your accumulated loyalty discount to the base price. If you subscribe again, loyalty starts again at 2%.'**
-  String get loyaltyCancellationWarning;
-
-  /// No description provided for @proBenefitsTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Pro features'**
-  String get proBenefitsTitle;
-
-  /// No description provided for @proCustomCompressionGroup.
-  ///
-  /// In en, this message translates to:
-  /// **'Custom compression'**
-  String get proCustomCompressionGroup;
-
-  /// No description provided for @proSharingPresetsGroup.
-  ///
-  /// In en, this message translates to:
-  /// **'Exclusive sharing presets'**
-  String get proSharingPresetsGroup;
-
-  /// No description provided for @proAiGroupTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'On-device AI toolkit'**
-  String get proAiGroupTitle;
-
-  /// No description provided for @proLoyaltyGroup.
-  ///
-  /// In en, this message translates to:
-  /// **'Loyalty savings'**
-  String get proLoyaltyGroup;
-
-  /// No description provided for @proCustomSizeBenefit.
-  ///
-  /// In en, this message translates to:
-  /// **'Set a precise maximum size for every video export.'**
-  String get proCustomSizeBenefit;
-
-  /// No description provided for @proResolutionBenefit.
-  ///
-  /// In en, this message translates to:
-  /// **'Choose output resolution from 240p to source quality.'**
-  String get proResolutionBenefit;
-
-  /// No description provided for @proFrameRateBenefit.
-  ///
-  /// In en, this message translates to:
-  /// **'Cap exports at 24, 30, 60, or 120 fps.'**
-  String get proFrameRateBenefit;
-
-  /// No description provided for @proVideoBitrateBenefit.
-  ///
-  /// In en, this message translates to:
-  /// **'Control the maximum video bitrate on Android.'**
-  String get proVideoBitrateBenefit;
-
-  /// No description provided for @proAudioBitrateBenefit.
-  ///
-  /// In en, this message translates to:
-  /// **'Choose audio bitrate or remove audio entirely.'**
-  String get proAudioBitrateBenefit;
-
-  /// No description provided for @proDiscordBenefit.
-  ///
-  /// In en, this message translates to:
-  /// **'Export videos within Discord size and encoding limits.'**
-  String get proDiscordBenefit;
-
-  /// No description provided for @proYouTubeShortsBenefit.
-  ///
-  /// In en, this message translates to:
-  /// **'Prepare vertical videos for YouTube Shorts limits.'**
-  String get proYouTubeShortsBenefit;
-
-  /// No description provided for @proAiAssistantBenefit.
-  ///
-  /// In en, this message translates to:
-  /// **'Get AI guidance for compression and app features.'**
-  String get proAiAssistantBenefit;
-
-  /// No description provided for @proAiSceneBenefit.
-  ///
-  /// In en, this message translates to:
-  /// **'Understand video scenes with on-device AI analysis.'**
-  String get proAiSceneBenefit;
-
-  /// No description provided for @proAiTranscriptionBenefit.
-  ///
-  /// In en, this message translates to:
-  /// **'Transcribe speech and find moments by meaning.'**
-  String get proAiTranscriptionBenefit;
-
-  /// No description provided for @proLoyaltyBenefit.
-  ///
-  /// In en, this message translates to:
-  /// **'Earn monthly loyalty discounts up to thirty percent.'**
-  String get proLoyaltyBenefit;
-
-  /// No description provided for @proCustomSizeTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Choose a target file size'**
-  String get proCustomSizeTitle;
-
-  /// No description provided for @proCustomSizeDetails.
-  ///
-  /// In en, this message translates to:
-  /// **'Set a precise size ceiling for each custom compression.'**
-  String get proCustomSizeDetails;
-
-  /// No description provided for @proResolutionTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Set maximum resolution'**
-  String get proResolutionTitle;
-
-  /// No description provided for @proResolutionDetails.
-  ///
-  /// In en, this message translates to:
-  /// **'Limit output resolution from 240p up to the source size.'**
-  String get proResolutionDetails;
-
-  /// No description provided for @proFrameRateTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Control maximum frame rate'**
-  String get proFrameRateTitle;
-
-  /// No description provided for @proFrameRateDetails.
-  ///
-  /// In en, this message translates to:
-  /// **'Choose a 24, 30, 60, or 120 fps output cap on Android.'**
-  String get proFrameRateDetails;
-
-  /// No description provided for @proVideoBitrateTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Set a video bitrate ceiling'**
-  String get proVideoBitrateTitle;
-
-  /// No description provided for @proVideoBitrateDetails.
-  ///
-  /// In en, this message translates to:
-  /// **'Set the maximum video bitrate on Android.'**
-  String get proVideoBitrateDetails;
-
-  /// No description provided for @proAudioBitrateTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Choose audio quality'**
-  String get proAudioBitrateTitle;
-
-  /// No description provided for @proAudioBitrateDetails.
-  ///
-  /// In en, this message translates to:
-  /// **'Pick an audio bitrate or remove audio on Android.'**
-  String get proAudioBitrateDetails;
-
-  /// No description provided for @proDiscordTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Discord-targeted export'**
-  String get proDiscordTitle;
-
-  /// No description provided for @proDiscordDetails.
-  ///
-  /// In en, this message translates to:
-  /// **'Use a preset tuned to Discord size and encoding limits.'**
-  String get proDiscordDetails;
-
-  /// No description provided for @proYouTubeShortsTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'YouTube Shorts export'**
-  String get proYouTubeShortsTitle;
-
-  /// No description provided for @proYouTubeShortsDetails.
-  ///
-  /// In en, this message translates to:
-  /// **'Use Shorts size, resolution, and frame-rate limits.'**
-  String get proYouTubeShortsDetails;
-
-  /// No description provided for @proAiAssistantTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'AI assistant'**
-  String get proAiAssistantTitle;
-
-  /// No description provided for @proAiAssistantDetails.
-  ///
-  /// In en, this message translates to:
-  /// **'Get help with video compression and app features.'**
-  String get proAiAssistantDetails;
-
-  /// No description provided for @proAiSceneTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Scene understanding'**
-  String get proAiSceneTitle;
-
-  /// No description provided for @proAiSceneDetails.
-  ///
-  /// In en, this message translates to:
-  /// **'Explore video content with on-device AI analysis.'**
-  String get proAiSceneDetails;
-
-  /// No description provided for @proAiTranscriptionTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Transcription and search'**
-  String get proAiTranscriptionTitle;
-
-  /// No description provided for @proAiTranscriptionDetails.
-  ///
-  /// In en, this message translates to:
-  /// **'Transcribe speech and find moments by meaning.'**
-  String get proAiTranscriptionDetails;
-
-  /// No description provided for @proLoyaltyTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Monthly loyalty discount'**
-  String get proLoyaltyTitle;
-
-  /// No description provided for @proLoyaltyDetails.
-  ///
-  /// In en, this message translates to:
-  /// **'Earn 2% per consecutive month, up to 30%.'**
-  String get proLoyaltyDetails;
-
-  /// No description provided for @proPlatformAvailabilityNote.
-  ///
-  /// In en, this message translates to:
-  /// **'Advanced resolution, frame-rate, and bitrate controls are available on Android. Export limits depend on device support.'**
-  String get proPlatformAvailabilityNote;
-
-  /// No description provided for @proAiAvailabilityNote.
-  ///
-  /// In en, this message translates to:
-  /// **'AI features require a compatible on-device model.'**
-  String get proAiAvailabilityNote;
-
-  /// No description provided for @loyaltySavingsTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Loyalty savings'**
-  String get loyaltySavingsTitle;
-
-  /// No description provided for @loyaltyProgressLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Progress toward your next discount'**
-  String get loyaltyProgressLabel;
-
-  /// No description provided for @subscriptionSecureBilling.
-  ///
-  /// In en, this message translates to:
-  /// **'Secure billing through your app store'**
-  String get subscriptionSecureBilling;
-
-  /// No description provided for @purchaseCancelled.
-  ///
-  /// In en, this message translates to:
-  /// **'Purchase cancelled.'**
-  String get purchaseCancelled;
-
-  /// No description provided for @purchaseVerified.
-  ///
-  /// In en, this message translates to:
-  /// **'Purchase verified.'**
-  String get purchaseVerified;
-
-  /// No description provided for @purchasesRestored.
-  ///
-  /// In en, this message translates to:
-  /// **'Purchases restored.'**
-  String get purchasesRestored;
-
-  /// No description provided for @noActivePurchaseFound.
-  ///
-  /// In en, this message translates to:
-  /// **'No active purchase found.'**
-  String get noActivePurchaseFound;
-
-  /// No description provided for @restorePurchaseDescription.
-  ///
-  /// In en, this message translates to:
-  /// **'Restore purchases made with this Google Play account.'**
-  String get restorePurchaseDescription;
-
-  /// No description provided for @asagiProActive.
-  ///
-  /// In en, this message translates to:
-  /// **'Asagi Pro is active'**
-  String get asagiProActive;
-
-  /// No description provided for @checking.
-  ///
-  /// In en, this message translates to:
-  /// **'Checking…'**
-  String get checking;
 
   /// No description provided for @interruptedCompressionJobs.
   ///
@@ -2376,30 +1914,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Full license text is shipped in the app\'s LGPL license asset.'**
   String get fullFfmpegLicenseFallback;
-
-  /// No description provided for @billingUnavailable.
-  ///
-  /// In en, this message translates to:
-  /// **'Subscription details are unavailable right now.'**
-  String get billingUnavailable;
-
-  /// No description provided for @purchaseFailed.
-  ///
-  /// In en, this message translates to:
-  /// **'The purchase could not be completed.'**
-  String get purchaseFailed;
-
-  /// No description provided for @restoreFailed.
-  ///
-  /// In en, this message translates to:
-  /// **'Purchases could not be restored.'**
-  String get restoreFailed;
-
-  /// No description provided for @receiptVerificationFailed.
-  ///
-  /// In en, this message translates to:
-  /// **'The purchase receipt could not be verified.'**
-  String get receiptVerificationFailed;
 
   /// No description provided for @ffmpegName.
   ///
@@ -2762,7 +2276,7 @@ abstract class AppLocalizations {
   /// Full Terms of Service text copied to the clipboard
   ///
   /// In en, this message translates to:
-  /// **'1. Acceptance of Terms\nBy downloading, accessing, or using Asagi (\"the Application\"), you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you must discontinue using the application.\n\n2. Personal License\nWe grant you a personal, revocable, non-exclusive, non-transferable license to use Asagi strictly for your personal, non-commercial, or internal creative media compression workflows on compatible devices.\n\n3. On-Device Execution & Content Ownership\nAsagi executes compression pipelines exclusively on your device hardware using local encoders. You retain 100% of all intellectual property rights and copyrights in and to your video files and media. Asagi never uploads, hosts, replicates, or claims ownership over any videos you select or process. You are solely responsible for ensuring you have all requisite permissions and licenses for any media you compress.\n\n4. In-App Subscriptions & Billing\nOptional premium features (such as Asagi Pro) may be offered as recurring subscriptions or one-time unlock purchases. All billing, renewals, cancellations, and tax collections are processed exclusively through the official platform store (Google Play or Apple App Store). Subscriptions renew automatically unless cancelled at least 24 hours prior to the conclusion of the active billing cycle.\n\n5. Disclaimer of Warranties\nThe Application is provided \"as is\" and \"as available,\" without warranty of any kind, express or implied. While we employ rigorous testing and standard-compliant codecs, we do not guarantee that media compression will achieve specific file reduction percentages without visual changes for every source codec.\n'**
+  /// **'Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.'**
   String get termsOfServiceFullText;
 
   /// Confirmation toast after copying the terms
@@ -2780,7 +2294,7 @@ abstract class AppLocalizations {
   /// Terms section body
   ///
   /// In en, this message translates to:
-  /// **'By using Asagi, you agree to these Terms. We grant you a personal, non-exclusive, non-transferable license to compress media locally on your devices.'**
+  /// **'Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices.'**
   String get termsAcceptanceLicenseBody;
 
   /// Terms section title
@@ -2806,18 +2320,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'All compression pipelines run completely on your device hardware without external server dependencies or remote media processing.'**
   String get termsLocalOnDeviceProcessingBody;
-
-  /// Terms section title
-  ///
-  /// In en, this message translates to:
-  /// **'4. Subscriptions & Billing'**
-  String get termsSubscriptionsAndBillingTitle;
-
-  /// Terms section body
-  ///
-  /// In en, this message translates to:
-  /// **'Purchases and subscriptions are managed securely via official Google Play and Apple App Store billing. Cancellations can be performed anytime in your store account.'**
-  String get termsSubscriptionsAndBillingBody;
 
   /// Terms section title
   ///
@@ -2849,19 +2351,6 @@ abstract class AppLocalizations {
   /// **'Processed exclusively on-device. Media files are never transmitted to external servers or third-party platforms.'**
   String
   get processedExclusivelyOnDeviceMediaFilesAreNeverTransmittedToExternalServersOrThirdPartyPlatforms;
-
-  /// Data safety category
-  ///
-  /// In en, this message translates to:
-  /// **'Financial Info & Payment'**
-  String get financialInfoAndPayment;
-
-  /// Data safety category details
-  ///
-  /// In en, this message translates to:
-  /// **'All payment details are handled directly by Google Play Store or Apple App Store. Asagi never accesses card details.'**
-  String
-  get allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreAsagiNeverAccessesCardDetails;
 
   /// Data safety category
   ///
@@ -2906,12 +2395,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No user data collected for advertising'**
   String get noUserDataCollectedForAdvertising;
-
-  /// Data safety affirmative row
-  ///
-  /// In en, this message translates to:
-  /// **'Data encrypted in transit (store purchases)'**
-  String get dataEncryptedInTransitStorePurchases;
 
   /// Data safety affirmative row
   ///
@@ -3020,18 +2503,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You may optionally enable anonymous crash reporting to help us identify and fix bugs. These reports contain only non-identifying operating system versions, device models, and exception stack traces, never media content.'**
   String get optionalDiagnosticsBody;
-
-  /// Privacy policy section title
-  ///
-  /// In en, this message translates to:
-  /// **'4. Third-Party Store Payments'**
-  String get thirdPartyStorePaymentsTitle;
-
-  /// Privacy policy section body
-  ///
-  /// In en, this message translates to:
-  /// **'Subscription and in-app purchase operations are executed directly through the official Apple App Store or Google Play Store. Asagi does not process or retain your credit card or financial billing information.'**
-  String get thirdPartyStorePaymentsBody;
 
   /// Privacy policy section title
   ///
@@ -4155,108 +3626,6 @@ abstract class AppLocalizations {
   /// **'Why Asagi needs access'**
   String get permissionsSummary;
 
-  /// No description provided for @supportedPaymentOptions.
-  ///
-  /// In en, this message translates to:
-  /// **'Supported Payment Options'**
-  String get supportedPaymentOptions;
-
-  /// No description provided for @paymentProtectionTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Protection & Safety Guarantee'**
-  String get paymentProtectionTitle;
-
-  /// No description provided for @storeBillingTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'App Store / Google Play Billing'**
-  String get storeBillingTitle;
-
-  /// No description provided for @storeBillingSummary.
-  ///
-  /// In en, this message translates to:
-  /// **'Secure store checkout'**
-  String get storeBillingSummary;
-
-  /// No description provided for @storeBillingDetails.
-  ///
-  /// In en, this message translates to:
-  /// **'Purchases are completed securely through your device’s official app store account. Payment is authenticated using the security options configured on your device.'**
-  String get storeBillingDetails;
-
-  /// No description provided for @creditDebitCardsTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Credit & Debit Cards'**
-  String get creditDebitCardsTitle;
-
-  /// No description provided for @creditDebitCardsSummary.
-  ///
-  /// In en, this message translates to:
-  /// **'Cards through your store'**
-  String get creditDebitCardsSummary;
-
-  /// No description provided for @creditDebitCardsDetails.
-  ///
-  /// In en, this message translates to:
-  /// **'Use a card saved to your Google Play or Apple App Store account. The store processes the payment, so Asagi never receives your card number.'**
-  String get creditDebitCardsDetails;
-
-  /// No description provided for @storeBalanceGiftCardsTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Store Balance & Gift Cards'**
-  String get storeBalanceGiftCardsTitle;
-
-  /// No description provided for @storeBalanceGiftCardsSummary.
-  ///
-  /// In en, this message translates to:
-  /// **'Redeem store credit'**
-  String get storeBalanceGiftCardsSummary;
-
-  /// No description provided for @storeBalanceGiftCardsDetails.
-  ///
-  /// In en, this message translates to:
-  /// **'Use eligible store balance, redeemed gift cards, or promotional credit toward an Asagi subscription. Availability depends on your store and region.'**
-  String get storeBalanceGiftCardsDetails;
-
-  /// No description provided for @digitalWalletsTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Digital Wallets & Local Methods'**
-  String get digitalWalletsTitle;
-
-  /// No description provided for @digitalWalletsSummary.
-  ///
-  /// In en, this message translates to:
-  /// **'Store-supported payment methods'**
-  String get digitalWalletsSummary;
-
-  /// No description provided for @digitalWalletsDetails.
-  ///
-  /// In en, this message translates to:
-  /// **'Your store may offer Google Pay, Apple Pay, PayPal, or regional payment methods. Available options depend on your account, device, and region.'**
-  String get digitalWalletsDetails;
-
-  /// No description provided for @storeProtectedPurchases.
-  ///
-  /// In en, this message translates to:
-  /// **'Store-Protected Purchases'**
-  String get storeProtectedPurchases;
-
-  /// No description provided for @storeProtectedPurchasesSummary.
-  ///
-  /// In en, this message translates to:
-  /// **'Billing stays with stores'**
-  String get storeProtectedPurchasesSummary;
-
-  /// No description provided for @storeProtectedPurchasesDetails.
-  ///
-  /// In en, this message translates to:
-  /// **'Asagi never sees or retains your financial billing data. Google Play or Apple App Store authenticates and encrypts every transaction. You can cancel anytime through your store account, without hidden fees.'**
-  String get storeProtectedPurchasesDetails;
-
   /// No description provided for @megabytesShort.
   ///
   /// In en, this message translates to:
@@ -4305,6 +3674,12 @@ abstract class AppLocalizations {
   /// **'The selected size may not be reachable. The export will use the best available settings, and its final size will be shown.'**
   String get targetMayNotBeReachedBestEffort;
 
+  /// No description provided for @requestedSettingsUnavailableBestQualityIs.
+  ///
+  /// In en, this message translates to:
+  /// **'The requested settings cannot be applied. Best available quality is {width} × {height}; the final file size will be shown after compression.'**
+  String requestedSettingsUnavailableBestQualityIs(String width, String height);
+
   /// No description provided for @savingCompressedVideo.
   ///
   /// In en, this message translates to:
@@ -4346,6 +3721,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{count} videos compressed • {savedMb} MB saved'**
   String historySummarySubtitle(Object count, Object savedMb);
+
+  /// No description provided for @compressionHelpDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Answers to common questions about video compression.'**
+  String get compressionHelpDescription;
+
+  /// No description provided for @appSupportDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Get help using Asagi.'**
+  String get appSupportDescription;
+
+  /// No description provided for @appTermsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms for using the free, open source Asagi app.'**
+  String get appTermsDescription;
 }
 
 class _AppLocalizationsDelegate

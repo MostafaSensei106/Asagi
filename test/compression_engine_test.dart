@@ -128,21 +128,20 @@ void main() {
       expect(measurements, [120, 90]);
     },
   );
-  test('exhausted retries remove partial output', () async {
+  test('exhausted retries preserve valid output with a size warning', () async {
     final engine = CompressionEngine(
       artifacts: const FileArtifactStore(),
       planner: Planner(),
       encoder: Encoder([120, 110]),
     );
-    await expectLater(
-      engine.compress(
-        source: 'input',
-        targetMb: 1,
-        workspacePath: directory.path,
-      ),
-      throwsStateError,
+    final result = await engine.compress(
+      source: 'input',
+      targetMb: 1,
+      workspacePath: directory.path,
     );
-    expect(await directory.list().length, 0);
+    expect(result.bytes, 110);
+    expect(result.warning, 'TARGET_SIZE_UNREACHABLE');
+    expect(await File(result.path).exists(), isTrue);
   });
   test('invalid encoded media is never published as a result', () async {
     final engine = CompressionEngine(

@@ -23,11 +23,6 @@ import 'package:asagi/core/services/app_info/interface/base_package_info_adapter
     as _i615;
 import 'package:asagi/core/services/app_info/package_info_plus_adapter.dart'
     as _i132;
-import 'package:asagi/core/services/billing/billing_service.dart' as _i521;
-import 'package:asagi/core/services/billing/google_play_billing_service.dart'
-    as _i296;
-import 'package:asagi/core/services/billing/in_memory_purchase_proof_store.dart'
-    as _i183;
 import 'package:asagi/core/services/file_opener/base_file_opener_service.dart'
     as _i1039;
 import 'package:asagi/core/services/file_opener/url_file_opener_service.dart'
@@ -82,7 +77,6 @@ import 'package:asagi/modules/about/domain/repositories/open_source_license_repo
 import 'package:asagi/modules/about/logic/cubit/about_app_cubit.dart' as _i188;
 import 'package:asagi/modules/about/logic/open_source_licenses_cubit.dart'
     as _i37;
-import 'package:asagi/modules/plans/logic/subscription_cubit.dart' as _i184;
 import 'package:asagi/modules/storage/data/repositories/file_storage_repository.dart'
     as _i806;
 import 'package:asagi/modules/storage/domain/repositories/storage_repository.dart'
@@ -137,9 +131,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i415.BasePermissionService>(
       () => const _i47.PermissionHandlerService(),
     );
-    gh.lazySingleton<_i521.PurchaseProofStore>(
-      () => _i183.InMemoryPurchaseProofStore(),
-    );
     gh.lazySingleton<_i550.BaseShareService>(
       () => _i770.SharePlusService(gh<_i998.SharePlus>()),
     );
@@ -148,9 +139,6 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i630.BaseToastService>(
       () => _i885.ToastificationService(gh<_i264.ThemeService>()),
-    );
-    gh.lazySingleton<_i521.BillingService>(
-      () => _i296.GooglePlayBillingService(),
     );
     gh.lazySingleton<_i559.SecureStorageService>(
       () => _i559.SecureStorageService(gh<_i558.FlutterSecureStorage>()),
@@ -201,12 +189,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i960.StorageFacade>(
       () => injectionModule.storageFacade(gh<_i896.BasePrefStorageService>()),
     );
-    gh.factory<_i184.SubscriptionCubit>(
-      () => _i184.SubscriptionCubit(
-        gh<_i521.BillingService>(),
-        gh<_i521.PurchaseProofStore>(),
-      ),
-    );
     gh.factory<_i188.AboutAppCubit>(
       () => _i188.AboutAppCubit(gh<_i812.BaseAboutAppRepository>()),
     );
@@ -246,9 +228,6 @@ extension GetItInjectableX on _i174.GetIt {
   _i47.PermissionHandlerService get permissionHandlerService =>
       get<_i47.PermissionHandlerService>();
 
-  _i183.InMemoryPurchaseProofStore get inMemoryPurchaseProofStore =>
-      get<_i183.InMemoryPurchaseProofStore>();
-
   _i770.SharePlusService get sharePlusService => get<_i770.SharePlusService>();
 
   _i560.AssetOpenSourceLicenseRepository get assetOpenSourceLicenseRepository =>
@@ -256,9 +235,6 @@ extension GetItInjectableX on _i174.GetIt {
 
   _i885.ToastificationService get toastificationService =>
       get<_i885.ToastificationService>();
-
-  _i296.GooglePlayBillingService get googlePlayBillingService =>
-      get<_i296.GooglePlayBillingService>();
 
   _i559.SecureStorageService get secureStorageService =>
       get<_i559.SecureStorageService>();
@@ -292,9 +268,6 @@ extension GetItInjectableX on _i174.GetIt {
 
   _i382.AboutAppRepsitory get aboutAppRepsitory =>
       get<_i382.AboutAppRepsitory>();
-
-  _i184.SubscriptionCubit get subscriptionCubit =>
-      get<_i184.SubscriptionCubit>();
 
   _i188.AboutAppCubit get aboutAppCubit => get<_i188.AboutAppCubit>();
 

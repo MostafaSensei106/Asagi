@@ -25,14 +25,6 @@ final class DataSafetyPage extends StatelessWidget {
             .processedExclusivelyOnDeviceMediaFilesAreNeverTransmittedToExternalServersOrThirdPartyPlatforms,
       ),
       (
-        category: l10n.financialInfoAndPayment,
-        icon: AsagiIcons.purchaseMethods,
-        collected: false,
-        shared: false,
-        details: l10n
-            .allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreAsagiNeverAccessesCardDetails,
-      ),
-      (
         category: l10n.appPerformanceAndCrashLogs,
         icon: AsagiIcons.developer,
         collected: true,
@@ -124,11 +116,6 @@ final class DataSafetyPage extends StatelessWidget {
                   const Gap(AppSpacing.small),
                   _SafetyRow(
                     label: l10n.noUserDataCollectedForAdvertising,
-                    isAffirmative: true,
-                  ),
-                  const Gap(AppSpacing.small),
-                  _SafetyRow(
-                    label: l10n.dataEncryptedInTransitStorePurchases,
                     isAffirmative: true,
                   ),
                   const Gap(AppSpacing.small),

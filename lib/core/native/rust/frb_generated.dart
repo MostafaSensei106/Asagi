@@ -69,7 +69,7 @@ class RustLib extends BaseEntrypoint<RustLibApi, RustLibApiImpl, RustLibWire> {
   String get codegenVersion => '2.13.0';
 
   @override
-  int get rustContentHash => 1952142890;
+  int get rustContentHash => -1626523300;
 
   static const kDefaultExternalLibraryLoaderConfig =
       ExternalLibraryLoaderConfig(
@@ -84,9 +84,6 @@ abstract class RustLibApi extends BaseApi {
     required InputMetadata info,
     required double targetSizeMb,
     double? customKFactor,
-    String? originalJson,
-    Uint8List? signatureBytes,
-    String? loyaltyToken,
   });
 
   Future<CalculationPlan> crateApiCalculatorCalculateCustomCompressionPlan({
@@ -94,9 +91,6 @@ abstract class RustLibApi extends BaseApi {
     required double targetSizeMb,
     required PlanningPreferences preferences,
     double? customKFactor,
-    String? originalJson,
-    Uint8List? signatureBytes,
-    String? loyaltyToken,
   });
 
   Future<List<PlatformPreset>> crateApiCalculatorPlatformPresets();
@@ -105,9 +99,6 @@ abstract class RustLibApi extends BaseApi {
     required InputMetadata info,
     required PresetId presetId,
     double? customKFactor,
-    String? originalJson,
-    Uint8List? signatureBytes,
-    String? loyaltyToken,
   });
 
   Future<BigInt> crateApiStageFallbackVideo({
@@ -125,12 +116,6 @@ abstract class RustLibApi extends BaseApi {
     required CalculationPlan plan,
     required int attempt,
   });
-
-  Future<LoyaltyStatus> crateApiVerifySubscriptionReceipt({
-    required String originalJson,
-    required List<int> signatureBytes,
-    String? loyaltyToken,
-  });
 }
 
 class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
@@ -146,9 +131,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
     required InputMetadata info,
     required double targetSizeMb,
     double? customKFactor,
-    String? originalJson,
-    Uint8List? signatureBytes,
-    String? loyaltyToken,
   }) {
     return handler.executeNormal(
       NormalTask(
@@ -157,9 +139,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           sse_encode_box_autoadd_input_metadata(info, serializer);
           sse_encode_f_64(targetSizeMb, serializer);
           sse_encode_opt_box_autoadd_f_32(customKFactor, serializer);
-          sse_encode_opt_String(originalJson, serializer);
-          sse_encode_opt_list_prim_u_8_strict(signatureBytes, serializer);
-          sse_encode_opt_String(loyaltyToken, serializer);
           pdeCallFfi(
             generalizedFrbRustBinding,
             serializer,
@@ -172,14 +151,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           decodeErrorData: sse_decode_String,
         ),
         constMeta: kCrateApiCalculatorCalculateCompressionPlanConstMeta,
-        argValues: [
-          info,
-          targetSizeMb,
-          customKFactor,
-          originalJson,
-          signatureBytes,
-          loyaltyToken,
-        ],
+        argValues: [info, targetSizeMb, customKFactor],
         apiImpl: this,
       ),
     );
@@ -188,14 +160,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   TaskConstMeta get kCrateApiCalculatorCalculateCompressionPlanConstMeta =>
       const TaskConstMeta(
         debugName: 'calculate_compression_plan',
-        argNames: [
-          'info',
-          'targetSizeMb',
-          'customKFactor',
-          'originalJson',
-          'signatureBytes',
-          'loyaltyToken',
-        ],
+        argNames: ['info', 'targetSizeMb', 'customKFactor'],
       );
 
   @override
@@ -204,9 +169,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
     required double targetSizeMb,
     required PlanningPreferences preferences,
     double? customKFactor,
-    String? originalJson,
-    Uint8List? signatureBytes,
-    String? loyaltyToken,
   }) {
     return handler.executeNormal(
       NormalTask(
@@ -216,9 +178,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           sse_encode_f_64(targetSizeMb, serializer);
           sse_encode_opt_box_autoadd_f_32(customKFactor, serializer);
           sse_encode_box_autoadd_planning_preferences(preferences, serializer);
-          sse_encode_opt_String(originalJson, serializer);
-          sse_encode_opt_list_prim_u_8_strict(signatureBytes, serializer);
-          sse_encode_opt_String(loyaltyToken, serializer);
           pdeCallFfi(
             generalizedFrbRustBinding,
             serializer,
@@ -231,15 +190,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           decodeErrorData: sse_decode_String,
         ),
         constMeta: kCrateApiCalculatorCalculateCustomCompressionPlanConstMeta,
-        argValues: [
-          info,
-          targetSizeMb,
-          customKFactor,
-          preferences,
-          originalJson,
-          signatureBytes,
-          loyaltyToken,
-        ],
+        argValues: [info, targetSizeMb, customKFactor, preferences],
         apiImpl: this,
       ),
     );
@@ -249,15 +200,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   get kCrateApiCalculatorCalculateCustomCompressionPlanConstMeta =>
       const TaskConstMeta(
         debugName: 'calculate_custom_compression_plan',
-        argNames: [
-          'info',
-          'targetSizeMb',
-          'customKFactor',
-          'preferences',
-          'originalJson',
-          'signatureBytes',
-          'loyaltyToken',
-        ],
+        argNames: ['info', 'targetSizeMb', 'customKFactor', 'preferences'],
       );
 
   @override
@@ -292,9 +235,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
     required InputMetadata info,
     required PresetId presetId,
     double? customKFactor,
-    String? originalJson,
-    Uint8List? signatureBytes,
-    String? loyaltyToken,
   }) {
     return handler.executeNormal(
       NormalTask(
@@ -303,9 +243,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           sse_encode_box_autoadd_input_metadata(info, serializer);
           sse_encode_preset_id(presetId, serializer);
           sse_encode_opt_box_autoadd_f_32(customKFactor, serializer);
-          sse_encode_opt_String(originalJson, serializer);
-          sse_encode_opt_list_prim_u_8_strict(signatureBytes, serializer);
-          sse_encode_opt_String(loyaltyToken, serializer);
           pdeCallFfi(
             generalizedFrbRustBinding,
             serializer,
@@ -318,14 +255,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
           decodeErrorData: sse_decode_String,
         ),
         constMeta: kCrateApiCalculatorResolvePlatformPresetConstMeta,
-        argValues: [
-          info,
-          presetId,
-          customKFactor,
-          originalJson,
-          signatureBytes,
-          loyaltyToken,
-        ],
+        argValues: [info, presetId, customKFactor],
         apiImpl: this,
       ),
     );
@@ -334,14 +264,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   TaskConstMeta get kCrateApiCalculatorResolvePlatformPresetConstMeta =>
       const TaskConstMeta(
         debugName: 'resolve_platform_preset',
-        argNames: [
-          'info',
-          'presetId',
-          'customKFactor',
-          'originalJson',
-          'signatureBytes',
-          'loyaltyToken',
-        ],
+        argNames: ['info', 'presetId', 'customKFactor'],
       );
 
   @override
@@ -437,43 +360,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       const TaskConstMeta(
         debugName: 'verify_attempt',
         argNames: ['actualBytes', 'durationSecs', 'plan', 'attempt'],
-      );
-
-  @override
-  Future<LoyaltyStatus> crateApiVerifySubscriptionReceipt({
-    required String originalJson,
-    required List<int> signatureBytes,
-    String? loyaltyToken,
-  }) {
-    return handler.executeNormal(
-      NormalTask(
-        callFfi: (port_) {
-          final serializer = SseSerializer(generalizedFrbRustBinding);
-          sse_encode_String(originalJson, serializer);
-          sse_encode_list_prim_u_8_loose(signatureBytes, serializer);
-          sse_encode_opt_String(loyaltyToken, serializer);
-          pdeCallFfi(
-            generalizedFrbRustBinding,
-            serializer,
-            funcId: 7,
-            port: port_,
-          );
-        },
-        codec: SseCodec(
-          decodeSuccessData: sse_decode_loyalty_status,
-          decodeErrorData: sse_decode_String,
-        ),
-        constMeta: kCrateApiVerifySubscriptionReceiptConstMeta,
-        argValues: [originalJson, signatureBytes, loyaltyToken],
-        apiImpl: this,
-      ),
-    );
-  }
-
-  TaskConstMeta get kCrateApiVerifySubscriptionReceiptConstMeta =>
-      const TaskConstMeta(
-        debugName: 'verify_subscription_receipt',
-        argNames: ['originalJson', 'signatureBytes', 'loyaltyToken'],
       );
 
   @protected
@@ -574,30 +460,9 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
-  List<int> dco_decode_list_prim_u_8_loose(dynamic raw) {
-    // Codec=Dco (DartCObject based), see doc to use other codecs
-    return raw as List<int>;
-  }
-
-  @protected
   Uint8List dco_decode_list_prim_u_8_strict(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return raw as Uint8List;
-  }
-
-  @protected
-  LoyaltyStatus dco_decode_loyalty_status(dynamic raw) {
-    // Codec=Dco (DartCObject based), see doc to use other codecs
-    final arr = raw as List<dynamic>;
-    if (arr.length != 5)
-      throw Exception('unexpected arr length: expect 5 but see ${arr.length}');
-    return LoyaltyStatus(
-      isActive: dco_decode_bool(arr[0]),
-      consecutiveMonths: dco_decode_u_32(arr[1]),
-      currentDiscountPercent: dco_decode_u_8(arr[2]),
-      nextMonthDiscountPercent: dco_decode_u_8(arr[3]),
-      isWinbackEligible: dco_decode_bool(arr[4]),
-    );
   }
 
   @protected
@@ -610,12 +475,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   double? dco_decode_opt_box_autoadd_f_32(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return raw == null ? null : dco_decode_box_autoadd_f_32(raw);
-  }
-
-  @protected
-  Uint8List? dco_decode_opt_list_prim_u_8_strict(dynamic raw) {
-    // Codec=Dco (DartCObject based), see doc to use other codecs
-    return raw == null ? null : dco_decode_list_prim_u_8_strict(raw);
   }
 
   @protected
@@ -823,34 +682,10 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
-  List<int> sse_decode_list_prim_u_8_loose(SseDeserializer deserializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    final len_ = sse_decode_i_32(deserializer);
-    return deserializer.buffer.getUint8List(len_);
-  }
-
-  @protected
   Uint8List sse_decode_list_prim_u_8_strict(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     final len_ = sse_decode_i_32(deserializer);
     return deserializer.buffer.getUint8List(len_);
-  }
-
-  @protected
-  LoyaltyStatus sse_decode_loyalty_status(SseDeserializer deserializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    final var_isActive = sse_decode_bool(deserializer);
-    final var_consecutiveMonths = sse_decode_u_32(deserializer);
-    final var_currentDiscountPercent = sse_decode_u_8(deserializer);
-    final var_nextMonthDiscountPercent = sse_decode_u_8(deserializer);
-    final var_isWinbackEligible = sse_decode_bool(deserializer);
-    return LoyaltyStatus(
-      isActive: var_isActive,
-      consecutiveMonths: var_consecutiveMonths,
-      currentDiscountPercent: var_currentDiscountPercent,
-      nextMonthDiscountPercent: var_nextMonthDiscountPercent,
-      isWinbackEligible: var_isWinbackEligible,
-    );
   }
 
   @protected
@@ -870,17 +705,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
 
     if (sse_decode_bool(deserializer)) {
       return (sse_decode_box_autoadd_f_32(deserializer));
-    } else {
-      return null;
-    }
-  }
-
-  @protected
-  Uint8List? sse_decode_opt_list_prim_u_8_strict(SseDeserializer deserializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-
-    if (sse_decode_bool(deserializer)) {
-      return (sse_decode_list_prim_u_8_strict(deserializer));
     } else {
       return null;
     }
@@ -1082,18 +906,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
-  void sse_encode_list_prim_u_8_loose(
-    List<int> self,
-    SseSerializer serializer,
-  ) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    sse_encode_i_32(self.length, serializer);
-    serializer.buffer.putUint8List(
-      self is Uint8List ? self : Uint8List.fromList(self),
-    );
-  }
-
-  @protected
   void sse_encode_list_prim_u_8_strict(
     Uint8List self,
     SseSerializer serializer,
@@ -1101,16 +913,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
     // Codec=Sse (Serialization based), see doc to use other codecs
     sse_encode_i_32(self.length, serializer);
     serializer.buffer.putUint8List(self);
-  }
-
-  @protected
-  void sse_encode_loyalty_status(LoyaltyStatus self, SseSerializer serializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    sse_encode_bool(self.isActive, serializer);
-    sse_encode_u_32(self.consecutiveMonths, serializer);
-    sse_encode_u_8(self.currentDiscountPercent, serializer);
-    sse_encode_u_8(self.nextMonthDiscountPercent, serializer);
-    sse_encode_bool(self.isWinbackEligible, serializer);
   }
 
   @protected
@@ -1130,19 +932,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
     sse_encode_bool(self != null, serializer);
     if (self != null) {
       sse_encode_box_autoadd_f_32(self, serializer);
-    }
-  }
-
-  @protected
-  void sse_encode_opt_list_prim_u_8_strict(
-    Uint8List? self,
-    SseSerializer serializer,
-  ) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-
-    sse_encode_bool(self != null, serializer);
-    if (self != null) {
-      sse_encode_list_prim_u_8_strict(self, serializer);
     }
   }
 

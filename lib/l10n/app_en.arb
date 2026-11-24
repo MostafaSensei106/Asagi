@@ -221,10 +221,6 @@
   "@signIn": {
     "description": "Login page title"
   },
-  "signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": "Sign in to sync your plan and keep your purchases available on every device.",
-  "@signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": {
-    "description": "Login page description"
-  },
   "chooseAVideo": "Choose a video",
   "preparingSelectedVideo": "Getting your video ready",
   "@chooseAVideo": {
@@ -427,10 +423,6 @@
   "@termsOfService": {
     "description": "Terms page title"
   },
-  "theTermsThatApplyToAsagiAndItsPurchases": "The terms that apply to Asagi and its purchases.",
-  "@theTermsThatApplyToAsagiAndItsPurchases": {
-    "description": "Terms page description"
-  },
   "dataSafety": "Data safety",
   "@dataSafety": {
     "description": "Data safety page title"
@@ -451,17 +443,9 @@
   "@faq": {
     "description": "FAQ page title"
   },
-  "answersToCommonQuestionsAboutCompressionAndBilling": "Answers to common questions about compression and billing.",
-  "@answersToCommonQuestionsAboutCompressionAndBilling": {
-    "description": "FAQ page description"
-  },
   "support": "Support",
   "@support": {
     "description": "Support page title"
-  },
-  "getHelpWithYourAccountOrAPurchase": "Get help with your account or a purchase.",
-  "@getHelpWithYourAccountOrAPurchase": {
-    "description": "Support page description"
   },
   "sendFeedback": "Send feedback",
   "@sendFeedback": {
@@ -471,45 +455,9 @@
   "@reportAProblemOrSuggestAnImprovement": {
     "description": "Feedback page description"
   },
-  "plans": "Plans",
-  "@plans": {
-    "description": "Plans page title"
-  },
-  "comparePlansAndSeeWhatEachOneUnlocks": "Compare plans and see what each one unlocks.",
-  "@comparePlansAndSeeWhatEachOneUnlocks": {
-    "description": "Plans page description"
-  },
-  "planDetails": "Plan details",
-  "@planDetails": {
-    "description": "Plan details page title"
-  },
-  "benefitsLimitsAndPricingForThisPlan": "Benefits, limits, and pricing for this plan.",
-  "@benefitsLimitsAndPricingForThisPlan": {
-    "description": "Plan details page description"
-  },
-  "paymentMethods": "Payment methods",
-  "@paymentMethods": {
-    "description": "Purchase methods page title"
-  },
-  "supportedWaysToPayIncludingStoreBilling": "Supported ways to pay, including store billing.",
-  "@supportedWaysToPayIncludingStoreBilling": {
-    "description": "Purchase methods page description"
-  },
-  "restorePurchases": "Restore purchases",
-  "@restorePurchases": {
-    "description": "Restore purchases page title"
-  },
-  "reApplyAPurchaseMadeOnAnotherDevice": "Re-apply a purchase made on another device.",
-  "@reApplyAPurchaseMadeOnAnotherDevice": {
-    "description": "Restore purchases page description"
-  },
   "profile": "Profile",
   "@profile": {
     "description": "Profile page title"
-  },
-  "yourIdentityPlanStatusAndAccountPreferences": "Your identity, plan status, and account preferences.",
-  "@yourIdentityPlanStatusAndAccountPreferences": {
-    "description": "Profile page description"
   },
   "deleteAccount": "Delete account",
   "@deleteAccount": {
@@ -549,10 +497,6 @@
   },
   "notificationsPrivacy": "Notifications & privacy",
   "@notificationsPrivacy": {
-    "description": "Settings hub section label"
-  },
-  "plansPurchases": "Plans & purchases",
-  "@plansPurchases": {
     "description": "Settings hub section label"
   },
   "about": "About",
@@ -630,18 +574,6 @@
   },
   "yourDataStaysLocal": "Your data stays local",
   "@yourDataStaysLocal": {
-    "description": "Settings hub row summary"
-  },
-  "comparePlansAndUpgrade": "Compare plans and upgrade",
-  "@comparePlansAndUpgrade": {
-    "description": "Settings hub row summary"
-  },
-  "paymentMethodsAndBilling": "Payment methods and billing",
-  "@paymentMethodsAndBilling": {
-    "description": "Settings hub row summary"
-  },
-  "restoreYourPreviousPurchase": "Restore your previous purchase",
-  "@restoreYourPreviousPurchase": {
     "description": "Settings hub row summary"
   },
   "versionAndBuildDetails": "Version and build details",
@@ -783,68 +715,8 @@
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"
   },
-  "asagiProTitle": "Asagi Pro",
-  "subscriptionPerMonth": "{price} / month",
-  "planUnavailable": "Unavailable",
   "loading": "Loading…",
-  "subscriptionActive": "Active subscription",
-  "proFeaturesDescription": "Custom compression, sharing presets, on-device AI tools, and loyalty savings.",
   "pleaseWait": "Please wait…",
-  "subscribe": "Subscribe",
-  "currentLoyaltyDiscount": "Loyalty discount: {percent}%",
-  "nextMonthLoyaltyPrice": "Next month: {percent}% loyalty discount — estimated {price}",
-  "nextMonthLoyaltyDiscount": "Next month: {percent}% loyalty discount",
-  "loyaltyCancellationWarning": "Cancelling resets your accumulated loyalty discount to the base price. If you subscribe again, loyalty starts again at 2%.",
-  "proBenefitsTitle": "Pro features",
-  "proCustomCompressionGroup": "Custom compression",
-  "proSharingPresetsGroup": "Exclusive sharing presets",
-  "proAiGroupTitle": "On-device AI toolkit",
-  "proLoyaltyGroup": "Loyalty savings",
-  "proCustomSizeBenefit": "Set a precise maximum size for every video export.",
-  "proResolutionBenefit": "Choose output resolution from 240p to source quality.",
-  "proFrameRateBenefit": "Cap exports at 24, 30, 60, or 120 fps.",
-  "proVideoBitrateBenefit": "Control the maximum video bitrate on Android.",
-  "proAudioBitrateBenefit": "Choose audio bitrate or remove audio entirely.",
-  "proDiscordBenefit": "Export videos within Discord size and encoding limits.",
-  "proYouTubeShortsBenefit": "Prepare vertical videos for YouTube Shorts limits.",
-  "proAiAssistantBenefit": "Get AI guidance for compression and app features.",
-  "proAiSceneBenefit": "Understand video scenes with on-device AI analysis.",
-  "proAiTranscriptionBenefit": "Transcribe speech and find moments by meaning.",
-  "proLoyaltyBenefit": "Earn monthly loyalty discounts up to thirty percent.",
-  "proCustomSizeTitle": "Choose a target file size",
-  "proCustomSizeDetails": "Set a precise size ceiling for each custom compression.",
-  "proResolutionTitle": "Set maximum resolution",
-  "proResolutionDetails": "Limit output resolution from 240p up to the source size.",
-  "proFrameRateTitle": "Control maximum frame rate",
-  "proFrameRateDetails": "Choose a 24, 30, 60, or 120 fps output cap on Android.",
-  "proVideoBitrateTitle": "Set a video bitrate ceiling",
-  "proVideoBitrateDetails": "Set the maximum video bitrate on Android.",
-  "proAudioBitrateTitle": "Choose audio quality",
-  "proAudioBitrateDetails": "Pick an audio bitrate or remove audio on Android.",
-  "proDiscordTitle": "Discord-targeted export",
-  "proDiscordDetails": "Use a preset tuned to Discord size and encoding limits.",
-  "proYouTubeShortsTitle": "YouTube Shorts export",
-  "proYouTubeShortsDetails": "Use Shorts size, resolution, and frame-rate limits.",
-  "proAiAssistantTitle": "AI assistant",
-  "proAiAssistantDetails": "Get help with video compression and app features.",
-  "proAiSceneTitle": "Scene understanding",
-  "proAiSceneDetails": "Explore video content with on-device AI analysis.",
-  "proAiTranscriptionTitle": "Transcription and search",
-  "proAiTranscriptionDetails": "Transcribe speech and find moments by meaning.",
-  "proLoyaltyTitle": "Monthly loyalty discount",
-  "proLoyaltyDetails": "Earn 2% per consecutive month, up to 30%.",
-  "proPlatformAvailabilityNote": "Advanced resolution, frame-rate, and bitrate controls are available on Android. Export limits depend on device support.",
-  "proAiAvailabilityNote": "AI features require a compatible on-device model.",
-  "loyaltySavingsTitle": "Loyalty savings",
-  "loyaltyProgressLabel": "Progress toward your next discount",
-  "subscriptionSecureBilling": "Secure billing through your app store",
-  "purchaseCancelled": "Purchase cancelled.",
-  "purchaseVerified": "Purchase verified.",
-  "purchasesRestored": "Purchases restored.",
-  "noActivePurchaseFound": "No active purchase found.",
-  "restorePurchaseDescription": "Restore purchases made with this Google Play account.",
-  "asagiProActive": "Asagi Pro is active",
-  "checking": "Checking…",
   "interruptedCompressionJobs": "Interrupted compression jobs",
   "interruptedJobsDescription": "You can resume these jobs from compression. Cleanup removes their temporary files and saved job state.",
   "noInterruptedJobs": "No interrupted jobs found.",
@@ -864,10 +736,6 @@
   "thirdPartyLicenses": "Flutter and Dart packages",
   "thirdPartyLicensesDescription": "Open their third-party license notices.",
   "fullFfmpegLicenseFallback": "Full license text is shipped in the app's LGPL license asset.",
-  "billingUnavailable": "Subscription details are unavailable right now.",
-  "purchaseFailed": "The purchase could not be completed.",
-  "restoreFailed": "Purchases could not be restored.",
-  "receiptVerificationFailed": "The purchase receipt could not be verified.",
   "ffmpegName": "FFmpeg",
   "storageJobsLoadFailed": "Interrupted jobs could not be loaded.",
   "cleanupInterruptedJobsFailed": "The interrupted files could not be cleaned.",
@@ -1116,7 +984,7 @@
   "@setAutomaticallyForThePlatformChangingTheNumberSwitchesToCustomMode": {
     "description": "Helper text under the target size field"
   },
-  "termsOfServiceFullText": "1. Acceptance of Terms\nBy downloading, accessing, or using Asagi (\"the Application\"), you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you must discontinue using the application.\n\n2. Personal License\nWe grant you a personal, revocable, non-exclusive, non-transferable license to use Asagi strictly for your personal, non-commercial, or internal creative media compression workflows on compatible devices.\n\n3. On-Device Execution & Content Ownership\nAsagi executes compression pipelines exclusively on your device hardware using local encoders. You retain 100% of all intellectual property rights and copyrights in and to your video files and media. Asagi never uploads, hosts, replicates, or claims ownership over any videos you select or process. You are solely responsible for ensuring you have all requisite permissions and licenses for any media you compress.\n\n4. In-App Subscriptions & Billing\nOptional premium features (such as Asagi Pro) may be offered as recurring subscriptions or one-time unlock purchases. All billing, renewals, cancellations, and tax collections are processed exclusively through the official platform store (Google Play or Apple App Store). Subscriptions renew automatically unless cancelled at least 24 hours prior to the conclusion of the active billing cycle.\n\n5. Disclaimer of Warranties\nThe Application is provided \"as is\" and \"as available,\" without warranty of any kind, express or implied. While we employ rigorous testing and standard-compliant codecs, we do not guarantee that media compression will achieve specific file reduction percentages without visual changes for every source codec.\n",
+  "termsOfServiceFullText": "Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.",
   "@termsOfServiceFullText": {
     "description": "Full Terms of Service text copied to the clipboard"
   },
@@ -1128,7 +996,7 @@
   "@termsAcceptanceLicenseTitle": {
     "description": "Terms section title"
   },
-  "termsAcceptanceLicenseBody": "By using Asagi, you agree to these Terms. We grant you a personal, non-exclusive, non-transferable license to compress media locally on your devices.",
+  "termsAcceptanceLicenseBody": "Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices.",
   "@termsAcceptanceLicenseBody": {
     "description": "Terms section body"
   },
@@ -1146,14 +1014,6 @@
   },
   "termsLocalOnDeviceProcessingBody": "All compression pipelines run completely on your device hardware without external server dependencies or remote media processing.",
   "@termsLocalOnDeviceProcessingBody": {
-    "description": "Terms section body"
-  },
-  "termsSubscriptionsAndBillingTitle": "4. Subscriptions & Billing",
-  "@termsSubscriptionsAndBillingTitle": {
-    "description": "Terms section title"
-  },
-  "termsSubscriptionsAndBillingBody": "Purchases and subscriptions are managed securely via official Google Play and Apple App Store billing. Cancellations can be performed anytime in your store account.",
-  "@termsSubscriptionsAndBillingBody": {
     "description": "Terms section body"
   },
   "termsDisclaimersAndFairUseTitle": "5. Disclaimers & Fair Use",
@@ -1174,14 +1034,6 @@
   },
   "processedExclusivelyOnDeviceMediaFilesAreNeverTransmittedToExternalServersOrThirdPartyPlatforms": "Processed exclusively on-device. Media files are never transmitted to external servers or third-party platforms.",
   "@processedExclusivelyOnDeviceMediaFilesAreNeverTransmittedToExternalServersOrThirdPartyPlatforms": {
-    "description": "Data safety category details"
-  },
-  "financialInfoAndPayment": "Financial Info & Payment",
-  "@financialInfoAndPayment": {
-    "description": "Data safety category"
-  },
-  "allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreAsagiNeverAccessesCardDetails": "All payment details are handled directly by Google Play Store or Apple App Store. Asagi never accesses card details.",
-  "@allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreAsagiNeverAccessesCardDetails": {
     "description": "Data safety category details"
   },
   "appPerformanceAndCrashLogs": "App Performance & Crash Logs",
@@ -1210,10 +1062,6 @@
   },
   "noUserDataCollectedForAdvertising": "No user data collected for advertising",
   "@noUserDataCollectedForAdvertising": {
-    "description": "Data safety affirmative row"
-  },
-  "dataEncryptedInTransitStorePurchases": "Data encrypted in transit (store purchases)",
-  "@dataEncryptedInTransitStorePurchases": {
     "description": "Data safety affirmative row"
   },
   "youCanRequestDataDeletionAtAnyTime": "You can request data deletion at any time",
@@ -1286,14 +1134,6 @@
   },
   "optionalDiagnosticsBody": "You may optionally enable anonymous crash reporting to help us identify and fix bugs. These reports contain only non-identifying operating system versions, device models, and exception stack traces, never media content.",
   "@optionalDiagnosticsBody": {
-    "description": "Privacy policy section body"
-  },
-  "thirdPartyStorePaymentsTitle": "4. Third-Party Store Payments",
-  "@thirdPartyStorePaymentsTitle": {
-    "description": "Privacy policy section title"
-  },
-  "thirdPartyStorePaymentsBody": "Subscription and in-app purchase operations are executed directly through the official Apple App Store or Google Play Store. Asagi does not process or retain your credit card or financial billing information.",
-  "@thirdPartyStorePaymentsBody": {
     "description": "Privacy policy section body"
   },
   "dataDeletionAndStorageHygieneTitle": "5. Data Deletion & Storage Hygiene",
@@ -1572,23 +1412,6 @@
   "privacyPolicySummary": "How Asagi handles data",
   "dataSafetySummary": "Collected data and purpose",
   "permissionsSummary": "Why Asagi needs access",
-  "supportedPaymentOptions": "Supported Payment Options",
-  "paymentProtectionTitle": "Protection & Safety Guarantee",
-  "storeBillingTitle": "App Store / Google Play Billing",
-  "storeBillingSummary": "Secure store checkout",
-  "storeBillingDetails": "Purchases are completed securely through your device’s official app store account. Payment is authenticated using the security options configured on your device.",
-  "creditDebitCardsTitle": "Credit & Debit Cards",
-  "creditDebitCardsSummary": "Cards through your store",
-  "creditDebitCardsDetails": "Use a card saved to your Google Play or Apple App Store account. The store processes the payment, so Asagi never receives your card number.",
-  "storeBalanceGiftCardsTitle": "Store Balance & Gift Cards",
-  "storeBalanceGiftCardsSummary": "Redeem store credit",
-  "storeBalanceGiftCardsDetails": "Use eligible store balance, redeemed gift cards, or promotional credit toward an Asagi subscription. Availability depends on your store and region.",
-  "digitalWalletsTitle": "Digital Wallets & Local Methods",
-  "digitalWalletsSummary": "Store-supported payment methods",
-  "digitalWalletsDetails": "Your store may offer Google Pay, Apple Pay, PayPal, or regional payment methods. Available options depend on your account, device, and region.",
-  "storeProtectedPurchases": "Store-Protected Purchases",
-  "storeProtectedPurchasesSummary": "Billing stays with stores",
-  "storeProtectedPurchasesDetails": "Asagi never sees or retains your financial billing data. Google Play or Apple App Store authenticates and encrypts every transaction. You can cancel anytime through your store account, without hidden fees.",
   "megabytesShort": "MB",
   "percentSmaller": "{percent}% smaller",
   "percentSaved": "-{percent}%",
@@ -1604,11 +1427,25 @@
     }
   },
   "targetMayNotBeReachedBestEffort": "The selected size may not be reachable. The export will use the best available settings, and its final size will be shown.",
+  "requestedSettingsUnavailableBestQualityIs": "The requested settings cannot be applied. Best available quality is {width} × {height}; the final file size will be shown after compression.",
+  "@requestedSettingsUnavailableBestQualityIs": {
+    "placeholders": {
+      "width": {
+        "type": "String"
+      },
+      "height": {
+        "type": "String"
+      }
+    }
+  },
   "savingCompressedVideo": "Saving the compressed video on this device…",
   "compressionCompletedSuccessfully": "Compression finished successfully!",
   "compressionStrictness": "Compression Strictness",
   "strictnessDefault": "Default (93%)",
   "strictnessSafe": "Safe (90%)",
   "strictnessAggressive": "Aggressive (96%)",
-  "historySummarySubtitle": "{count} videos compressed • {savedMb} MB saved"
+  "historySummarySubtitle": "{count} videos compressed • {savedMb} MB saved",
+  "compressionHelpDescription": "Answers to common questions about video compression.",
+  "appSupportDescription": "Get help using Asagi.",
+  "appTermsDescription": "Terms for using the free, open source Asagi app."
 }

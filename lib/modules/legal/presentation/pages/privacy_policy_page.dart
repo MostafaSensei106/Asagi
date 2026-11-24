@@ -51,10 +51,6 @@ final class PrivacyPolicyPage extends StatelessWidget {
         content: l10n.optionalDiagnosticsBody,
       ),
       (
-        title: l10n.thirdPartyStorePaymentsTitle,
-        content: l10n.thirdPartyStorePaymentsBody,
-      ),
-      (
         title: l10n.dataDeletionAndStorageHygieneTitle,
         content: l10n.dataDeletionAndStorageHygieneBody,
       ),

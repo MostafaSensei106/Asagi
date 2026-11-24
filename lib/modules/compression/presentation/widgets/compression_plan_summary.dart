@@ -5,18 +5,21 @@ import '../../../../core/compression/domain/models/compression_plan.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/widgets/widgets.dart';
+import 'compression_error_text.dart';
 
 final class CompressionPlanSummary extends StatelessWidget {
   const CompressionPlanSummary({
     required this.plan,
     required this.isLoading,
     required this.hasAudio,
+    this.error,
     super.key,
   });
 
   final CompressionPlan? plan;
   final bool isLoading;
   final bool hasAudio;
+  final String? error;
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +84,7 @@ final class CompressionPlanSummary extends StatelessWidget {
           else if (current == null)
             _notice(
               context,
-              l10n.compressionCouldNotBeCompletedTryAnotherSettingOrVideo,
+              compressionErrorText(context, error),
               isError: true,
             )
           else ...[
@@ -138,7 +141,10 @@ final class CompressionPlanSummary extends StatelessWidget {
                           'ALREADY_WITHIN_LIMIT' =>
                             l10n.theSourceIsAlreadyWithinTheSizeLimit,
                           'TARGET_SIZE_UNREACHABLE' =>
-                            l10n.targetMayNotBeReachedBestEffort,
+                            l10n.requestedSettingsUnavailableBestQualityIs(
+                              current.targetWidth.toString(),
+                              current.targetHeight.toString(),
+                            ),
                           _ => l10n.theSelectedTargetMayReduceVideoQuality,
                         },
                   isError: current.isInfeasible,

@@ -27,7 +27,6 @@ final class _FaqPageState extends State<FaqPage> {
     'Compression',
     'Quality & Formats',
     'Privacy',
-    'Pro & Billing',
   ];
 
   static const _allFaqs = [
@@ -56,16 +55,6 @@ final class _FaqPageState extends State<FaqPage> {
       category: 'Compression',
       question: 'Why does compression take longer on some files?',
       answer: 'Duration depends on your video resolution (e.g. 4K takes significantly longer than 1080p), source bitrate, the target codec selected, and whether your device hardware encoder supports that codec natively.',
-    ),
-    (
-      category: 'Pro & Billing',
-      question: 'Can I cancel my Asagi Pro subscription anytime?',
-      answer: 'Yes, you have complete control. You can cancel, pause, or modify your subscription at any time via your Google Play Store or Apple App Store account settings.',
-    ),
-    (
-      category: 'Pro & Billing',
-      question: 'How do I restore my purchase on a new device?',
-      answer: 'Go to Settings > Plans & Purchases > Restore Purchases, and tap "Restore". As long as you are logged into the same store account, your purchase will automatically activate.',
     ),
   ];
 
@@ -124,7 +113,7 @@ final class _FaqPageState extends State<FaqPage> {
                         ),
                         const Gap(AppSpacing.xSmall),
                         Text(
-                          l10n.answersToCommonQuestionsAboutCompressionAndBilling,
+                          l10n.compressionHelpDescription,
                           style: context.textTheme.bodySmall?.copyWith(
                             color: colorScheme.onSurfaceVariant,
                           ),

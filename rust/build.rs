@@ -13,17 +13,6 @@ fn main() {
     println!("cargo:rerun-if-env-changed=TARGET");
     println!("cargo:rerun-if-env-changed=FFMPEG_INCLUDE_DIR");
     println!("cargo:rerun-if-env-changed=FFMPEG_DLL_PATH");
-    println!("cargo:rerun-if-env-changed=ASAGI_PLAY_RSA_PUBLIC_KEY_PEM");
-    println!("cargo:rerun-if-env-changed=ASAGI_LOYALTY_RSA_PUBLIC_KEY_PEM");
-    println!(
-        "cargo:rustc-env=ASAGI_PLAY_RSA_PUBLIC_KEY_PEM={}",
-        env::var("ASAGI_PLAY_RSA_PUBLIC_KEY_PEM").unwrap_or_default()
-    );
-    println!(
-        "cargo:rustc-env=ASAGI_LOYALTY_RSA_PUBLIC_KEY_PEM={}",
-        env::var("ASAGI_LOYALTY_RSA_PUBLIC_KEY_PEM").unwrap_or_default()
-    );
-
     let target = env::var("TARGET").unwrap_or_default();
     let abi = match target.as_str() {
         "aarch64-linux-android" => "arm64-v8a",

@@ -223,10 +223,6 @@
   "@signIn": {
     "description": "Login page title"
   },
-  "signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": "سجّل الدخول لمزامنة خطتك والحفاظ على مشترياتك على كل أجهزتك.",
-  "@signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": {
-    "description": "Login page description"
-  },
   "chooseAVideo": "اختر فيديو",
   "preparingSelectedVideo": "جارٍ تجهيز الفيديو",
   "@chooseAVideo": {
@@ -428,10 +424,6 @@
   "@termsOfService": {
     "description": "Terms page title"
   },
-  "theTermsThatApplyToAsagiAndItsPurchases": "الشروط التي تنطبق على Asagi ومشترياته.",
-  "@theTermsThatApplyToAsagiAndItsPurchases": {
-    "description": "Terms page description"
-  },
   "dataSafety": "أمان البيانات",
   "@dataSafety": {
     "description": "Data safety page title"
@@ -452,17 +444,9 @@
   "@faq": {
     "description": "FAQ page title"
   },
-  "answersToCommonQuestionsAboutCompressionAndBilling": "إجابات عن الأسئلة الشائعة حول الضغط والاشتراكات.",
-  "@answersToCommonQuestionsAboutCompressionAndBilling": {
-    "description": "FAQ page description"
-  },
   "support": "الدعم الفني",
   "@support": {
     "description": "Support page title"
-  },
-  "getHelpWithYourAccountOrAPurchase": "احصل على مساعدة بشأن حسابك أو مشترياتك.",
-  "@getHelpWithYourAccountOrAPurchase": {
-    "description": "Support page description"
   },
   "sendFeedback": "إرسال ملاحظات",
   "@sendFeedback": {
@@ -472,45 +456,9 @@
   "@reportAProblemOrSuggestAnImprovement": {
     "description": "Feedback page description"
   },
-  "plans": "الخطط والترقيات",
-  "@plans": {
-    "description": "Plans page title"
-  },
-  "comparePlansAndSeeWhatEachOneUnlocks": "قارن بين الخطط واكتشف الميزات المتاحة.",
-  "@comparePlansAndSeeWhatEachOneUnlocks": {
-    "description": "Plans page description"
-  },
-  "planDetails": "تفاصيل الخطة",
-  "@planDetails": {
-    "description": "Plan details page title"
-  },
-  "benefitsLimitsAndPricingForThisPlan": "الميزات والحدود والأسعار لهذه الخطة.",
-  "@benefitsLimitsAndPricingForThisPlan": {
-    "description": "Plan details page description"
-  },
-  "paymentMethods": "طرق الشراء والدفع",
-  "@paymentMethods": {
-    "description": "Purchase methods page title"
-  },
-  "supportedWaysToPayIncludingStoreBilling": "طرق الدفع المعتمدة بما فيها متجر جوجل بلاي وطرق أخرى.",
-  "@supportedWaysToPayIncludingStoreBilling": {
-    "description": "Purchase methods page description"
-  },
-  "restorePurchases": "استعادة المشتريات",
-  "@restorePurchases": {
-    "description": "Restore purchases page title"
-  },
-  "reApplyAPurchaseMadeOnAnotherDevice": "استعادة مشتريات سابقة على جهاز آخر.",
-  "@reApplyAPurchaseMadeOnAnotherDevice": {
-    "description": "Restore purchases page description"
-  },
   "profile": "الملف الشخصي",
   "@profile": {
     "description": "Profile page title"
-  },
-  "yourIdentityPlanStatusAndAccountPreferences": "بياناتك، حالة اشتراكك، وتفضيلات الحساب.",
-  "@yourIdentityPlanStatusAndAccountPreferences": {
-    "description": "Profile page description"
   },
   "deleteAccount": "حذف الحساب",
   "@deleteAccount": {
@@ -550,10 +498,6 @@
   },
   "notificationsPrivacy": "الإشعارات والخصوصية",
   "@notificationsPrivacy": {
-    "description": "Settings hub section label"
-  },
-  "plansPurchases": "الخطط والمشتريات",
-  "@plansPurchases": {
     "description": "Settings hub section label"
   },
   "about": "حول التطبيق",
@@ -631,18 +575,6 @@
   },
   "yourDataStaysLocal": "بياناتك تبقى على جهازك",
   "@yourDataStaysLocal": {
-    "description": "Settings hub row summary"
-  },
-  "comparePlansAndUpgrade": "قارن الخطط وارتقِ الآن",
-  "@comparePlansAndUpgrade": {
-    "description": "Settings hub row summary"
-  },
-  "paymentMethodsAndBilling": "طرق الدفع وإدارة الفواتير",
-  "@paymentMethodsAndBilling": {
-    "description": "Settings hub row summary"
-  },
-  "restoreYourPreviousPurchase": "استعد عملية الشراء السابقة",
-  "@restoreYourPreviousPurchase": {
     "description": "Settings hub row summary"
   },
   "versionAndBuildDetails": "رقم الإصدار وتفاصيل البناء",
@@ -784,68 +716,8 @@
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"
   },
-  "asagiProTitle": "Asagi Pro",
-  "subscriptionPerMonth": "{price} / شهرياً",
-  "planUnavailable": "غير متاح",
   "loading": "جارٍ التحميل…",
-  "subscriptionActive": "الاشتراك مفعّل",
-  "proFeaturesDescription": "ضغط مخصص، وإعدادات مشاركة، وأدوات ذكاء اصطناعي، وخصومات ولاء.",
   "pleaseWait": "جارٍ المعالجة…",
-  "subscribe": "اشترك",
-  "currentLoyaltyDiscount": "خصم الولاء الحالي: {percent}%",
-  "nextMonthLoyaltyPrice": "الشهر القادم: خصم ولاء {percent}% — السعر المتوقع {price}",
-  "nextMonthLoyaltyDiscount": "الشهر القادم: خصم ولاء {percent}%",
-  "loyaltyCancellationWarning": "إلغاء الاشتراك يعيد السعر الأساسي ويفقدك الخصم المتراكم. عند الاشتراك مجدداً يبدأ الخصم من 2%.",
-  "proBenefitsTitle": "مزايا Pro",
-  "proCustomCompressionGroup": "ضغط مخصص",
-  "proSharingPresetsGroup": "إعدادات مشاركة حصرية",
-  "proAiGroupTitle": "أدوات ذكاء اصطناعي محلية",
-  "proLoyaltyGroup": "خصومات الولاء",
-  "proCustomSizeBenefit": "حدد الحجم الأقصى لكل فيديو قبل تصديره بدقة.",
-  "proResolutionBenefit": "اختر دقة الفيديو من 240p حتى دقة المصدر.",
-  "proFrameRateBenefit": "حدد معدل الإطارات المناسب لكل فيديو مضغوط.",
-  "proVideoBitrateBenefit": "تحكم في الحد الأقصى لمعدل بت الفيديو.",
-  "proAudioBitrateBenefit": "اختر جودة الصوت أو احذفه من الفيديو.",
-  "proDiscordBenefit": "صدّر فيديوهات مناسبة لحدود Discord وحجمها.",
-  "proYouTubeShortsBenefit": "جهز فيديوهات عمودية تناسب حدود YouTube Shorts.",
-  "proAiAssistantBenefit": "احصل على مساعدة ذكية لضغط الفيديو وميزات التطبيق.",
-  "proAiSceneBenefit": "حلل مشاهد الفيديو محليًا باستخدام الذكاء الاصطناعي.",
-  "proAiTranscriptionBenefit": "فرّغ الكلام وابحث عن اللحظات حسب معناها.",
-  "proLoyaltyBenefit": "اجمع خصم ولاء شهريًا يصل إلى ثلاثين بالمئة.",
-  "proCustomSizeTitle": "اختر حجم الملف المستهدف",
-  "proCustomSizeDetails": "حدد سقفًا دقيقًا لحجم كل عملية ضغط مخصصة.",
-  "proResolutionTitle": "حدد أقصى دقة",
-  "proResolutionDetails": "حدد دقة الإخراج من 240p حتى حجم المصدر.",
-  "proFrameRateTitle": "تحكم في معدل الإطارات",
-  "proFrameRateDetails": "اختر حدًا أقصى قدره 24 أو 30 أو 60 أو 120 إطارًا على Android.",
-  "proVideoBitrateTitle": "حدد سقف معدل بت الفيديو",
-  "proVideoBitrateDetails": "حدد أقصى معدل بت للفيديو على Android.",
-  "proAudioBitrateTitle": "اختر جودة الصوت",
-  "proAudioBitrateDetails": "اختر معدل بت الصوت أو احذفه على Android.",
-  "proDiscordTitle": "تصدير مضبوط لـ Discord",
-  "proDiscordDetails": "استخدم إعدادًا يلائم حدود الحجم والترميز في Discord.",
-  "proYouTubeShortsTitle": "تصدير YouTube Shorts",
-  "proYouTubeShortsDetails": "استخدم حدود Shorts للحجم والدقة ومعدل الإطارات.",
-  "proAiAssistantTitle": "مساعد الذكاء الاصطناعي",
-  "proAiAssistantDetails": "احصل على مساعدة في ضغط الفيديو وميزات التطبيق.",
-  "proAiSceneTitle": "فهم المشاهد",
-  "proAiSceneDetails": "استكشف محتوى الفيديو بتحليل الذكاء الاصطناعي المحلي.",
-  "proAiTranscriptionTitle": "تفريغ وبحث ذكي",
-  "proAiTranscriptionDetails": "فرّغ الكلام وابحث عن اللحظات حسب معناها.",
-  "proLoyaltyTitle": "خصم ولاء شهري",
-  "proLoyaltyDetails": "اكسب 2% عن كل شهر متتالٍ، بحد أقصى 30%.",
-  "proPlatformAvailabilityNote": "تتوفر أدوات الدقة ومعدل الإطارات والبت المتقدمة على Android. وتعتمد الحدود على دعم الجهاز.",
-  "proAiAvailabilityNote": "تتطلب ميزات الذكاء الاصطناعي نموذجًا محليًا متوافقًا.",
-  "loyaltySavingsTitle": "توفير الولاء",
-  "loyaltyProgressLabel": "التقدم نحو الخصم التالي",
-  "subscriptionSecureBilling": "فوترة آمنة عبر متجر التطبيقات",
-  "purchaseCancelled": "تم إلغاء الشراء.",
-  "purchaseVerified": "تم التحقق من الشراء.",
-  "purchasesRestored": "تمت استعادة المشتريات.",
-  "noActivePurchaseFound": "لم يتم العثور على شراء نشط.",
-  "restorePurchaseDescription": "استعد المشتريات المرتبطة بحساب Google Play هذا.",
-  "asagiProActive": "اشتراك Asagi Pro مفعّل",
-  "checking": "جارٍ التحقق…",
   "interruptedCompressionJobs": "مهام الضغط المتوقفة",
   "interruptedJobsDescription": "يمكنك استئناف هذه المهام من شاشة الضغط. ينظف الإجراء الملفات المؤقتة وملف حالة المهمة.",
   "noInterruptedJobs": "لا توجد مهام متوقفة.",
@@ -864,10 +736,6 @@
   "thirdPartyLicenses": "حزم Flutter وDart",
   "thirdPartyLicensesDescription": "اعرض إشعارات تراخيص الجهات الخارجية.",
   "fullFfmpegLicenseFallback": "نص الترخيص الكامل مضمّن في ملف ترخيص LGPL داخل التطبيق.",
-  "billingUnavailable": "تفاصيل الاشتراك غير متاحة حالياً.",
-  "purchaseFailed": "تعذر إكمال عملية الشراء.",
-  "restoreFailed": "تعذرت استعادة المشتريات.",
-  "receiptVerificationFailed": "تعذر التحقق من إيصال الشراء.",
   "ffmpegName": "FFmpeg",
   "storageJobsLoadFailed": "تعذر تحميل المهام المتوقفة.",
   "cleanupInterruptedJobsFailed": "تعذر تنظيف ملفات المهام المتوقفة.",
@@ -925,7 +793,7 @@
   "exactMatch": "تطابق تام",
   "targetPlatformOrSize": "المنصة المستهدفة أو الحجم",
   "setAutomaticallyForThePlatformChangingTheNumberSwitchesToCustomMode": "تم الضبط تلقائياً للمنصة (تغيير الرقم يحول للوضع المخصص)",
-  "termsOfServiceFullText": "1. قبول الشروط\nبتحميلك أو وصولك إلى Asagi (\"التطبيق\") أو استخدامه، فإنك توافق على الالتزام بشروط الخدمة هذه. وإذا كنت لا توافق على أي جزء من هذه الشروط، فيجب عليك التوقف عن استخدام التطبيق.\n\n2. ترخيص شخصي\nنمنحك ترخيصاً شخصياً وقابلاً للإلغاء وغير حصري وغير قابل للتحويل لاستخدام Asagi بشكل صارم في مهام ضغط الوسائط الإبداعية الشخصية أو غير التجارية أو الداخلية على الأجهزة المتوافقة.\n\n3. التنفيذ على الجهاز وملكية المحتوى\nينفّذ Asagi خطوط ضغط الوسائط حصرياً على عتاد جهازك باستخدام مُرمِّزات محلية. وتحتفظ بنسبة 100% من جميع حقوق الملكية الفكرية وحقوق النشر في ملفات الفيديو والوسائط الخاصة بك. ولا يقوم Asagi أبداً برفع أو استضافة أو نسخ أو المطالبة بملكية أي فيديوهات تختارها أو تعالجها. وأنت وحدك المسؤول عن ضمان حصولك على جميع الأذونات والتراخيص اللازمة لأي وسائط تضغطها.\n\n4. الاشتراكات داخل التطبيق والفوترة\nقد تُقدَّم الميزات المميزة الاختيارية (مثل Asagi Pro) كاشتراكات متكررة أو عمليات شراء لمرة واحدة. تتم جميع عمليات الفوترة والتجديد والإلغاء وتحصيل الضرائب حصرياً عبر متجر المنصة الرسمي (Google Play أو Apple App Store). تتجدد الاشتراكات تلقائياً ما لم يتم إلغاؤها قبل 24 ساعة على الأقل من انتهاء دورة الفوترة النشطة.\n\n5. إخلاء المسؤولية عن الضمانات\nيُقدَّم التطبيق \"كما هو\" و\"حسب توافره\"، دون أي ضمان من أي نوع، صريحاً أو ضمنياً. ورغم أننا نجري اختبارات صارمة ونستخدم مُرمِّزات متوافقة مع المعايير، فإننا لا نضمن أن يحقق ضغط الوسائط نسب تقليل محددة للملف دون تغييرات بصرية لكل مُرمِّز مصدري.\n",
+  "termsOfServiceFullText": "Asagi تطبيق مجاني ومفتوح المصدر. تتم معالجة الفيديو على جهازك. تظل ملكية المحتوى لك. يُقدّم التطبيق دون ضمان تحقيق حجم أو جودة محددة.",
   "@termsOfServiceFullText": {
     "description": "Full Terms of Service text copied to the clipboard"
   },
@@ -937,7 +805,7 @@
   "@termsAcceptanceLicenseTitle": {
     "description": "Terms section title"
   },
-  "termsAcceptanceLicenseBody": "باستخدامك Asagi، فإنك توافق على هذه الشروط. نمنحك ترخيصاً شخصياً وغير حصري وغير قابل للتحويل لضغط الوسائط محلياً على أجهزتك.",
+  "termsAcceptanceLicenseBody": "Asagi تطبيق مجاني ومفتوح المصدر. كل ميزاته متاحة للجميع، وتتم معالجة الفيديو محليًا على أجهزتك.",
   "@termsAcceptanceLicenseBody": {
     "description": "Terms section body"
   },
@@ -955,14 +823,6 @@
   },
   "termsLocalOnDeviceProcessingBody": "تعمل جميع خطوط الضغط بالكامل على عتاد جهازك دون الاعتماد على خوادم خارجية أو معالجة وسائط عن بُعد.",
   "@termsLocalOnDeviceProcessingBody": {
-    "description": "Terms section body"
-  },
-  "termsSubscriptionsAndBillingTitle": "4. الاشتراكات والفوترة",
-  "@termsSubscriptionsAndBillingTitle": {
-    "description": "Terms section title"
-  },
-  "termsSubscriptionsAndBillingBody": "تُدار عمليات الشراء والاشتراكات بأمان عبر فوترة Google Play وApple App Store الرسمية. ويمكن الإلغاء في أي وقت من حساب المتجر الخاص بك.",
-  "@termsSubscriptionsAndBillingBody": {
     "description": "Terms section body"
   },
   "termsDisclaimersAndFairUseTitle": "5. إخلاء المسؤولية والاستخدام العادل",
@@ -983,14 +843,6 @@
   },
   "processedExclusivelyOnDeviceMediaFilesAreNeverTransmittedToExternalServersOrThirdPartyPlatforms": "تُعالَج حصرياً على الجهاز. لا تُنقل ملفات الوسائط أبداً إلى خوادم خارجية أو منصات طرف ثالث.",
   "@processedExclusivelyOnDeviceMediaFilesAreNeverTransmittedToExternalServersOrThirdPartyPlatforms": {
-    "description": "Data safety category details"
-  },
-  "financialInfoAndPayment": "المعلومات المالية والدفع",
-  "@financialInfoAndPayment": {
-    "description": "Data safety category"
-  },
-  "allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreAsagiNeverAccessesCardDetails": "يتولى Google Play Store أو Apple App Store التعامل مع جميع تفاصيل الدفع مباشرة. ولا يطّلع Asagi أبداً على بيانات البطاقة.",
-  "@allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreAsagiNeverAccessesCardDetails": {
     "description": "Data safety category details"
   },
   "appPerformanceAndCrashLogs": "أداء التطبيق وسجلات الأعطال",
@@ -1019,10 +871,6 @@
   },
   "noUserDataCollectedForAdvertising": "لا يتم جمع بيانات المستخدم للإعلانات",
   "@noUserDataCollectedForAdvertising": {
-    "description": "Data safety affirmative row"
-  },
-  "dataEncryptedInTransitStorePurchases": "البيانات مشفّرة أثناء النقل (مشتريات المتجر)",
-  "@dataEncryptedInTransitStorePurchases": {
     "description": "Data safety affirmative row"
   },
   "youCanRequestDataDeletionAtAnyTime": "يمكنك طلب حذف البيانات في أي وقت",
@@ -1095,14 +943,6 @@
   },
   "optionalDiagnosticsBody": "يمكنك اختيارياً تفعيل الإبلاغ المجهول عن الأعطال لمساعدتنا في تحديد الأخطاء وإصلاحها. وتحتوي هذه التقارير على إصدارات نظام التشغيل غير المعرِّفة، وطرازات الأجهزة، وتتبّعات مكدّس الاستثناءات فقط، ولا تحتوي أبداً على محتوى الوسائط.",
   "@optionalDiagnosticsBody": {
-    "description": "Privacy policy section body"
-  },
-  "thirdPartyStorePaymentsTitle": "4. مدفوعات المتاجر التابعة لجهات خارجية",
-  "@thirdPartyStorePaymentsTitle": {
-    "description": "Privacy policy section title"
-  },
-  "thirdPartyStorePaymentsBody": "تُنفَّذ عمليات الاشتراك والشراء داخل التطبيق مباشرة عبر Apple App Store أو Google Play Store الرسمي. ولا يقوم Asagi بمعالجة أو الاحتفاظ بمعلومات بطاقتك الائتمانية أو الفوترة المالية.",
-  "@thirdPartyStorePaymentsBody": {
     "description": "Privacy policy section body"
   },
   "dataDeletionAndStorageHygieneTitle": "5. حذف البيانات ونظافة التخزين",
@@ -1381,23 +1221,6 @@
   "privacyPolicySummary": "طريقة حماية بياناتك",
   "dataSafetySummary": "البيانات وأسباب جمعها",
   "permissionsSummary": "سبب طلب الأذونات",
-  "supportedPaymentOptions": "خيارات الدفع المتاحة",
-  "paymentProtectionTitle": "ضمان الحماية والأمان",
-  "storeBillingTitle": "الدفع عبر App Store أو Google Play",
-  "storeBillingSummary": "دفع آمن عبر المتجر",
-  "storeBillingDetails": "تُستكمل عمليات الشراء بأمان عبر حساب المتجر الرسمي على جهازك. ويجري التحقق من الدفع باستخدام خيارات الأمان المفعّلة على جهازك.",
-  "creditDebitCardsTitle": "بطاقات الائتمان والخصم",
-  "creditDebitCardsSummary": "بطاقات عبر متجرك",
-  "creditDebitCardsDetails": "استخدم بطاقة محفوظة في حساب Google Play أو Apple App Store. يتولى المتجر معالجة الدفع، لذلك لا يصل رقم بطاقتك إلى Asagi.",
-  "storeBalanceGiftCardsTitle": "رصيد المتجر وبطاقات الهدايا",
-  "storeBalanceGiftCardsSummary": "استخدم رصيد المتجر",
-  "storeBalanceGiftCardsDetails": "استخدم رصيد المتجر أو بطاقة هدايا مستردة أو رصيدًا ترويجيًا مؤهلًا لاشتراك Asagi. يعتمد التوفر على المتجر والمنطقة.",
-  "digitalWalletsTitle": "المحافظ الرقمية وطرق الدفع المحلية",
-  "digitalWalletsSummary": "طرق دفع يدعمها المتجر",
-  "digitalWalletsDetails": "قد يوفّر متجرك Google Pay أو Apple Pay أو PayPal أو طرق دفع محلية. تعتمد الخيارات المتاحة على حسابك وجهازك ومنطقتك.",
-  "storeProtectedPurchases": "مشتريات محمية عبر المتجر",
-  "storeProtectedPurchasesSummary": "الفوترة لدى المتجر",
-  "storeProtectedPurchasesDetails": "لا يطّلع Asagi على بيانات الدفع ولا يحتفظ بها. يتحقق Google Play أو Apple App Store من كل معاملة ويشفّرها. يمكنك الإلغاء في أي وقت من حساب المتجر دون رسوم مخفية.",
   "megabytesShort": "م.ب",
   "percentSmaller": "أصغر بنسبة {percent}%",
   "percentSaved": "-{percent}%",
@@ -1413,11 +1236,25 @@
     }
   },
   "targetMayNotBeReachedBestEffort": "قد يتعذر الوصول للحجم المحدد. سنستخدم أفضل إعدادات متاحة، وسيظهر الحجم الفعلي بعد الضغط.",
+  "requestedSettingsUnavailableBestQualityIs": "مش قادر أطبق الحجم المستهدف بالإعدادات دي. أفضل جودة متاحة هي {width} × {height}، وهعرضلك الحجم النهائي بعد الضغط.",
+  "@requestedSettingsUnavailableBestQualityIs": {
+    "placeholders": {
+      "width": {
+        "type": "String"
+      },
+      "height": {
+        "type": "String"
+      }
+    }
+  },
   "savingCompressedVideo": "جارٍ حفظ الفيديو المضغوط على هذا الجهاز…",
   "compressionCompletedSuccessfully": "اكتمل ضغط الفيديو بنجاح!",
   "compressionStrictness": "دقة وهامش الضغط",
   "strictnessDefault": "افتراضي (93%)",
   "strictnessSafe": "آمن (90%)",
   "strictnessAggressive": "أعلى جودة (96%)",
-  "historySummarySubtitle": "تم ضغط {count} فيديو • توفير {savedMb} م.ب"
+  "historySummarySubtitle": "تم ضغط {count} فيديو • توفير {savedMb} م.ب",
+  "compressionHelpDescription": "إجابات الأسئلة الشائعة عن ضغط الفيديو.",
+  "appSupportDescription": "احصل على مساعدة في استخدام Asagi.",
+  "appTermsDescription": "شروط استخدام Asagi المجاني ومفتوح المصدر."
 }

@@ -237,13 +237,11 @@ final class HomePage extends HookWidget {
                             ),
                             if (output.warning != null)
                               Text(
-                                output.warning == 'TARGET_SIZE_UNREACHABLE'
-                                    ? context.localeKeys
-                                          .targetSizeNotReachedOutputIs(
-                                            (output.bytes / 1000000)
-                                                .toStringAsFixed(1),
-                                          )
-                                    : output.warning!,
+                                compressionWarningText(
+                                  context,
+                                  output.warning!,
+                                  output.bytes,
+                                ),
                               ),
                             const SizedBox(height: 24),
                             FilledButton.icon(
@@ -335,6 +333,7 @@ final class HomePage extends HookWidget {
                             const Gap(AppSpacing.medium),
                             CompressionPlanSummary(
                               plan: state.previewPlan,
+                              error: state.error,
                               isLoading: state.planning,
                               hasAudio: video.metadata.hasAudio,
                             ),

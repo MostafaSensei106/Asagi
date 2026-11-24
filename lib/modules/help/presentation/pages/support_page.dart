@@ -73,7 +73,7 @@ Asagi Diagnostics:
                         ),
                         const Gap(AppSpacing.xSmall),
                         Text(
-                          l10n.getHelpWithYourAccountOrAPurchase,
+                          l10n.appSupportDescription,
                           style: context.textTheme.bodySmall?.copyWith(
                             color: colorScheme.onSurfaceVariant,
                           ),
@@ -106,8 +106,7 @@ Asagi Diagnostics:
                 ListTileIconComponent.bottom(
                   shape: ExpressiveIconShape.fan,
                   title: l10n.faq,
-                  subtitle:
-                      l10n.answersToCommonQuestionsAboutCompressionAndBilling,
+                  subtitle: l10n.compressionHelpDescription,
                   leading: AsagiIcons.faq,
                   onTap: () => unawaited(context.push(const FaqRoute())),
                 ),

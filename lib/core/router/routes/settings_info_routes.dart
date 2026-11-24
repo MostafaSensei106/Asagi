@@ -165,7 +165,7 @@ final class PrivacyPolicyRoute extends AppRoute {
   );
 }
 
-/// Terms of service for the application and its purchases.
+/// Terms of service for the free application.
 final class TermsRoute extends AppRoute {
   const TermsRoute();
 
@@ -211,7 +211,7 @@ final class PermissionsRoute extends AppRoute {
 // Help.
 // ---------------------------------------------------------------------------
 
-/// Frequently asked questions about compression and billing.
+/// Frequently asked questions about video compression.
 final class FaqRoute extends AppRoute {
   const FaqRoute();
 
@@ -225,7 +225,7 @@ final class FaqRoute extends AppRoute {
   );
 }
 
-/// Contact channel for account and purchase help.
+/// Contact channel for app support.
 final class SupportRoute extends AppRoute {
   const SupportRoute();
 

@@ -57,11 +57,6 @@ enum InfoIllustrationKind {
   speechRecognition,
   subtitleGeneration,
   mediaSearch,
-  storeBilling,
-  creditDebitCard,
-  storeBalanceGiftCard,
-  digitalWallet,
-  purchaseProtection,
 }
 
 /// A themed, animated illustration built from widgets for explanation sheets.

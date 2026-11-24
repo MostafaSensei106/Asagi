@@ -45,3 +45,25 @@ String compressionErrorText(BuildContext context, String? error) {
   }
   return l10n.compressionCouldNotBeCompletedTryAnotherSettingOrVideo;
 }
+
+String compressionWarningText(BuildContext context, String warning, int bytes) {
+  if (warning == 'TARGET_SIZE_UNREACHABLE') {
+    return context.localeKeys.targetSizeNotReachedOutputIs(
+      (bytes / 1000000).toStringAsFixed(1),
+    );
+  }
+  final fields = warning.split(':');
+  if (fields.length == 3 && fields.first == 'OUTPUT_QUALITY_ADJUSTED') {
+    return context.localeKeys.requestedSettingsUnavailableBestQualityIs(
+      fields[1],
+      fields[2],
+    );
+  }
+  if (warning == 'LOW_QUALITY') {
+    return context.localeKeys.theSelectedTargetMayReduceVideoQuality;
+  }
+  if (warning == 'ALREADY_WITHIN_LIMIT') {
+    return context.localeKeys.theSourceIsAlreadyWithinTheSizeLimit;
+  }
+  return warning;
+}

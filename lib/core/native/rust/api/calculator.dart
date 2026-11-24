@@ -9,22 +9,16 @@ import '../domain/models.dart';
 import '../domain/presets.dart';
 import '../frb_generated.dart';
 
-// These functions are ignored because they are not marked as `pub`: `authorize_pro_receipt`, `safety_margin`
+// These functions are ignored because they are not marked as `pub`: `safety_margin`
 
 Future<CalculationPlan> calculateCompressionPlan({
   required InputMetadata info,
   required double targetSizeMb,
   double? customKFactor,
-  String? originalJson,
-  Uint8List? signatureBytes,
-  String? loyaltyToken,
 }) => RustLib.instance.api.crateApiCalculatorCalculateCompressionPlan(
   info: info,
   targetSizeMb: targetSizeMb,
   customKFactor: customKFactor,
-  originalJson: originalJson,
-  signatureBytes: signatureBytes,
-  loyaltyToken: loyaltyToken,
 );
 
 Future<CalculationPlan> calculateCustomCompressionPlan({
@@ -32,17 +26,11 @@ Future<CalculationPlan> calculateCustomCompressionPlan({
   required double targetSizeMb,
   required PlanningPreferences preferences,
   double? customKFactor,
-  String? originalJson,
-  Uint8List? signatureBytes,
-  String? loyaltyToken,
 }) => RustLib.instance.api.crateApiCalculatorCalculateCustomCompressionPlan(
   info: info,
   targetSizeMb: targetSizeMb,
   customKFactor: customKFactor,
   preferences: preferences,
-  originalJson: originalJson,
-  signatureBytes: signatureBytes,
-  loyaltyToken: loyaltyToken,
 );
 
 /// Zero means accept. A positive bitrate requests another attempt. Errors never
@@ -73,14 +61,8 @@ Future<PresetPlan> resolvePlatformPreset({
   required InputMetadata info,
   required PresetId presetId,
   double? customKFactor,
-  String? originalJson,
-  Uint8List? signatureBytes,
-  String? loyaltyToken,
 }) => RustLib.instance.api.crateApiCalculatorResolvePlatformPreset(
   info: info,
   presetId: presetId,
   customKFactor: customKFactor,
-  originalJson: originalJson,
-  signatureBytes: signatureBytes,
-  loyaltyToken: loyaltyToken,
 );

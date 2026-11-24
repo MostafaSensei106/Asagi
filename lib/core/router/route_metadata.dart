@@ -10,7 +10,6 @@ enum AppRouteSection {
   compression,
   ai,
   privacy,
-  plans,
   about,
   legal,
   help,

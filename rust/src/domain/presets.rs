@@ -97,25 +97,6 @@ fn preset(
 }
 
 impl PlatformPreset {
-    /// Whether choosing this destination requires an active Pro entitlement.
-    pub fn is_pro_only(&self) -> bool {
-        matches!(self.id, PresetId::Discord | PresetId::YouTubeShorts)
-    }
-
-    /// Resolve only after the caller has supplied the verified entitlement
-    /// state. Custom plans use the same licensing policy outside this table.
-    pub fn resolve_for_subscription(
-        &self,
-        input: &InputMetadata,
-        safety: f64,
-        subscription_active: bool,
-    ) -> Result<PresetPlan, String> {
-        if self.is_pro_only() && !subscription_active {
-            return Err("E_PRO_REQUIRED".into());
-        }
-        self.resolve(input, safety)
-    }
-
     /// Every preset, in the order the picker shows them.
     pub fn all() -> Vec<Self> {
         vec![
@@ -166,7 +147,7 @@ impl PlatformPreset {
     pub fn resolve(&self, input: &InputMetadata, safety: f64) -> Result<PresetPlan, String> {
         // Guard the caller-supplied margin here so it cannot be confused with a
         // malformed source; `plan_internal` would report it as `E_INVALID_INPUT`.
-        if !(0.90..=0.95).contains(&safety) {
+        if !(0.90..=0.98).contains(&safety) {
             return Err("E_INVALID_PREFERENCES".into());
         }
         let policy = TargetSizePolicy;
@@ -194,7 +175,9 @@ impl PlatformPreset {
                 safety,
                 &preferences,
             )?;
-            if plan.is_infeasible {
+            if plan.is_infeasible
+                || plan.warning_message.as_deref() == Some("TARGET_SIZE_UNREACHABLE")
+            {
                 last = Some(plan);
                 continue;
             }
@@ -339,7 +322,11 @@ mod tests {
         let preset = PlatformPreset::by_id(PresetId::Email);
         let resolved = preset.resolve(&input(28_800.0, 1920, 1080), 0.93).unwrap();
         assert_eq!(resolved.tier, PresetTier::Unsatisfiable);
-        assert!(resolved.plan.is_infeasible);
+        assert!(!resolved.plan.is_infeasible);
+        assert_eq!(
+            resolved.plan.warning_message.as_deref(),
+            Some("TARGET_SIZE_UNREACHABLE")
+        );
     }
 
     #[test]
@@ -354,10 +341,18 @@ mod tests {
     }
 
     #[test]
+    fn default_api_margin_is_accepted_by_every_preset() {
+        let source = input(60.0, 1920, 1080);
+        for preset in PlatformPreset::all() {
+            assert!(preset.resolve(&source, 0.98).is_ok());
+        }
+    }
+
+    #[test]
     fn invalid_safety_margin_is_a_preferences_error() {
         let preset = PlatformPreset::by_id(PresetId::Whatsapp);
         let source = input(60.0, 1920, 1080);
-        for safety in [f64::NAN, 0.0, 0.89, 0.96, f64::INFINITY] {
+        for safety in [f64::NAN, 0.0, 0.89, 0.99, f64::INFINITY] {
             assert_eq!(
                 preset.resolve(&source, safety).unwrap_err(),
                 "E_INVALID_PREFERENCES"

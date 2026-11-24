@@ -178,10 +178,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get signIn => 'تسجيل الدخول';
 
   @override
-  String get signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice =>
-      'سجّل الدخول لمزامنة خطتك والحفاظ على مشترياتك على كل أجهزتك.';
-
-  @override
   String get chooseAVideo => 'اختر فيديو';
 
   @override
@@ -352,10 +348,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get termsOfService => 'شروط الخدمة';
 
   @override
-  String get theTermsThatApplyToAsagiAndItsPurchases =>
-      'الشروط التي تنطبق على Asagi ومشترياته.';
-
-  @override
   String get dataSafety => 'أمان البيانات';
 
   @override
@@ -373,15 +365,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get faq => 'الأسئلة الشائعة';
 
   @override
-  String get answersToCommonQuestionsAboutCompressionAndBilling =>
-      'إجابات عن الأسئلة الشائعة حول الضغط والاشتراكات.';
-
-  @override
   String get support => 'الدعم الفني';
-
-  @override
-  String get getHelpWithYourAccountOrAPurchase =>
-      'احصل على مساعدة بشأن حسابك أو مشترياتك.';
 
   @override
   String get sendFeedback => 'إرسال ملاحظات';
@@ -391,39 +375,7 @@ class AppLocalizationsAr extends AppLocalizations {
       'أبلغ عن مشكلة أو اقترح تحسينات.';
 
   @override
-  String get plans => 'الخطط والترقيات';
-
-  @override
-  String get comparePlansAndSeeWhatEachOneUnlocks =>
-      'قارن بين الخطط واكتشف الميزات المتاحة.';
-
-  @override
-  String get planDetails => 'تفاصيل الخطة';
-
-  @override
-  String get benefitsLimitsAndPricingForThisPlan =>
-      'الميزات والحدود والأسعار لهذه الخطة.';
-
-  @override
-  String get paymentMethods => 'طرق الشراء والدفع';
-
-  @override
-  String get supportedWaysToPayIncludingStoreBilling =>
-      'طرق الدفع المعتمدة بما فيها متجر جوجل بلاي وطرق أخرى.';
-
-  @override
-  String get restorePurchases => 'استعادة المشتريات';
-
-  @override
-  String get reApplyAPurchaseMadeOnAnotherDevice =>
-      'استعادة مشتريات سابقة على جهاز آخر.';
-
-  @override
   String get profile => 'الملف الشخصي';
-
-  @override
-  String get yourIdentityPlanStatusAndAccountPreferences =>
-      'بياناتك، حالة اشتراكك، وتفضيلات الحساب.';
 
   @override
   String get deleteAccount => 'حذف الحساب';
@@ -456,9 +408,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get notificationsPrivacy => 'الإشعارات والخصوصية';
-
-  @override
-  String get plansPurchases => 'الخطط والمشتريات';
 
   @override
   String get about => 'حول التطبيق';
@@ -612,15 +561,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get yourDataStaysLocal => 'بياناتك تبقى على جهازك';
-
-  @override
-  String get comparePlansAndUpgrade => 'قارن الخطط وارتقِ الآن';
-
-  @override
-  String get paymentMethodsAndBilling => 'طرق الدفع وإدارة الفواتير';
-
-  @override
-  String get restoreYourPreviousPurchase => 'استعد عملية الشراء السابقة';
 
   @override
   String get versionAndBuildDetails => 'رقم الإصدار وتفاصيل البناء';
@@ -969,217 +909,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get comingSoon => 'قريباً';
 
   @override
-  String get asagiProTitle => 'Asagi Pro';
-
-  @override
-  String subscriptionPerMonth(Object price) {
-    return '$price / شهرياً';
-  }
-
-  @override
-  String get planUnavailable => 'غير متاح';
-
-  @override
   String get loading => 'جارٍ التحميل…';
 
   @override
-  String get subscriptionActive => 'الاشتراك مفعّل';
-
-  @override
-  String get proFeaturesDescription =>
-      'ضغط مخصص، وإعدادات مشاركة، وأدوات ذكاء اصطناعي، وخصومات ولاء.';
-
-  @override
   String get pleaseWait => 'جارٍ المعالجة…';
-
-  @override
-  String get subscribe => 'اشترك';
-
-  @override
-  String currentLoyaltyDiscount(Object percent) {
-    return 'خصم الولاء الحالي: $percent%';
-  }
-
-  @override
-  String nextMonthLoyaltyPrice(Object percent, Object price) {
-    return 'الشهر القادم: خصم ولاء $percent% — السعر المتوقع $price';
-  }
-
-  @override
-  String nextMonthLoyaltyDiscount(Object percent) {
-    return 'الشهر القادم: خصم ولاء $percent%';
-  }
-
-  @override
-  String get loyaltyCancellationWarning =>
-      'إلغاء الاشتراك يعيد السعر الأساسي ويفقدك الخصم المتراكم. عند الاشتراك مجدداً يبدأ الخصم من 2%.';
-
-  @override
-  String get proBenefitsTitle => 'مزايا Pro';
-
-  @override
-  String get proCustomCompressionGroup => 'ضغط مخصص';
-
-  @override
-  String get proSharingPresetsGroup => 'إعدادات مشاركة حصرية';
-
-  @override
-  String get proAiGroupTitle => 'أدوات ذكاء اصطناعي محلية';
-
-  @override
-  String get proLoyaltyGroup => 'خصومات الولاء';
-
-  @override
-  String get proCustomSizeBenefit =>
-      'حدد الحجم الأقصى لكل فيديو قبل تصديره بدقة.';
-
-  @override
-  String get proResolutionBenefit => 'اختر دقة الفيديو من 240p حتى دقة المصدر.';
-
-  @override
-  String get proFrameRateBenefit =>
-      'حدد معدل الإطارات المناسب لكل فيديو مضغوط.';
-
-  @override
-  String get proVideoBitrateBenefit => 'تحكم في الحد الأقصى لمعدل بت الفيديو.';
-
-  @override
-  String get proAudioBitrateBenefit => 'اختر جودة الصوت أو احذفه من الفيديو.';
-
-  @override
-  String get proDiscordBenefit => 'صدّر فيديوهات مناسبة لحدود Discord وحجمها.';
-
-  @override
-  String get proYouTubeShortsBenefit =>
-      'جهز فيديوهات عمودية تناسب حدود YouTube Shorts.';
-
-  @override
-  String get proAiAssistantBenefit =>
-      'احصل على مساعدة ذكية لضغط الفيديو وميزات التطبيق.';
-
-  @override
-  String get proAiSceneBenefit =>
-      'حلل مشاهد الفيديو محليًا باستخدام الذكاء الاصطناعي.';
-
-  @override
-  String get proAiTranscriptionBenefit =>
-      'فرّغ الكلام وابحث عن اللحظات حسب معناها.';
-
-  @override
-  String get proLoyaltyBenefit => 'اجمع خصم ولاء شهريًا يصل إلى ثلاثين بالمئة.';
-
-  @override
-  String get proCustomSizeTitle => 'اختر حجم الملف المستهدف';
-
-  @override
-  String get proCustomSizeDetails =>
-      'حدد سقفًا دقيقًا لحجم كل عملية ضغط مخصصة.';
-
-  @override
-  String get proResolutionTitle => 'حدد أقصى دقة';
-
-  @override
-  String get proResolutionDetails => 'حدد دقة الإخراج من 240p حتى حجم المصدر.';
-
-  @override
-  String get proFrameRateTitle => 'تحكم في معدل الإطارات';
-
-  @override
-  String get proFrameRateDetails =>
-      'اختر حدًا أقصى قدره 24 أو 30 أو 60 أو 120 إطارًا على Android.';
-
-  @override
-  String get proVideoBitrateTitle => 'حدد سقف معدل بت الفيديو';
-
-  @override
-  String get proVideoBitrateDetails => 'حدد أقصى معدل بت للفيديو على Android.';
-
-  @override
-  String get proAudioBitrateTitle => 'اختر جودة الصوت';
-
-  @override
-  String get proAudioBitrateDetails =>
-      'اختر معدل بت الصوت أو احذفه على Android.';
-
-  @override
-  String get proDiscordTitle => 'تصدير مضبوط لـ Discord';
-
-  @override
-  String get proDiscordDetails =>
-      'استخدم إعدادًا يلائم حدود الحجم والترميز في Discord.';
-
-  @override
-  String get proYouTubeShortsTitle => 'تصدير YouTube Shorts';
-
-  @override
-  String get proYouTubeShortsDetails =>
-      'استخدم حدود Shorts للحجم والدقة ومعدل الإطارات.';
-
-  @override
-  String get proAiAssistantTitle => 'مساعد الذكاء الاصطناعي';
-
-  @override
-  String get proAiAssistantDetails =>
-      'احصل على مساعدة في ضغط الفيديو وميزات التطبيق.';
-
-  @override
-  String get proAiSceneTitle => 'فهم المشاهد';
-
-  @override
-  String get proAiSceneDetails =>
-      'استكشف محتوى الفيديو بتحليل الذكاء الاصطناعي المحلي.';
-
-  @override
-  String get proAiTranscriptionTitle => 'تفريغ وبحث ذكي';
-
-  @override
-  String get proAiTranscriptionDetails =>
-      'فرّغ الكلام وابحث عن اللحظات حسب معناها.';
-
-  @override
-  String get proLoyaltyTitle => 'خصم ولاء شهري';
-
-  @override
-  String get proLoyaltyDetails => 'اكسب 2% عن كل شهر متتالٍ، بحد أقصى 30%.';
-
-  @override
-  String get proPlatformAvailabilityNote =>
-      'تتوفر أدوات الدقة ومعدل الإطارات والبت المتقدمة على Android. وتعتمد الحدود على دعم الجهاز.';
-
-  @override
-  String get proAiAvailabilityNote =>
-      'تتطلب ميزات الذكاء الاصطناعي نموذجًا محليًا متوافقًا.';
-
-  @override
-  String get loyaltySavingsTitle => 'توفير الولاء';
-
-  @override
-  String get loyaltyProgressLabel => 'التقدم نحو الخصم التالي';
-
-  @override
-  String get subscriptionSecureBilling => 'فوترة آمنة عبر متجر التطبيقات';
-
-  @override
-  String get purchaseCancelled => 'تم إلغاء الشراء.';
-
-  @override
-  String get purchaseVerified => 'تم التحقق من الشراء.';
-
-  @override
-  String get purchasesRestored => 'تمت استعادة المشتريات.';
-
-  @override
-  String get noActivePurchaseFound => 'لم يتم العثور على شراء نشط.';
-
-  @override
-  String get restorePurchaseDescription =>
-      'استعد المشتريات المرتبطة بحساب Google Play هذا.';
-
-  @override
-  String get asagiProActive => 'اشتراك Asagi Pro مفعّل';
-
-  @override
-  String get checking => 'جارٍ التحقق…';
 
   @override
   String get interruptedCompressionJobs => 'مهام الضغط المتوقفة';
@@ -1251,18 +984,6 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get fullFfmpegLicenseFallback =>
       'نص الترخيص الكامل مضمّن في ملف ترخيص LGPL داخل التطبيق.';
-
-  @override
-  String get billingUnavailable => 'تفاصيل الاشتراك غير متاحة حالياً.';
-
-  @override
-  String get purchaseFailed => 'تعذر إكمال عملية الشراء.';
-
-  @override
-  String get restoreFailed => 'تعذرت استعادة المشتريات.';
-
-  @override
-  String get receiptVerificationFailed => 'تعذر التحقق من إيصال الشراء.';
 
   @override
   String get ffmpegName => 'FFmpeg';
@@ -1539,7 +1260,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get termsOfServiceFullText =>
-      '1. قبول الشروط\nبتحميلك أو وصولك إلى Asagi (\"التطبيق\") أو استخدامه، فإنك توافق على الالتزام بشروط الخدمة هذه. وإذا كنت لا توافق على أي جزء من هذه الشروط، فيجب عليك التوقف عن استخدام التطبيق.\n\n2. ترخيص شخصي\nنمنحك ترخيصاً شخصياً وقابلاً للإلغاء وغير حصري وغير قابل للتحويل لاستخدام Asagi بشكل صارم في مهام ضغط الوسائط الإبداعية الشخصية أو غير التجارية أو الداخلية على الأجهزة المتوافقة.\n\n3. التنفيذ على الجهاز وملكية المحتوى\nينفّذ Asagi خطوط ضغط الوسائط حصرياً على عتاد جهازك باستخدام مُرمِّزات محلية. وتحتفظ بنسبة 100% من جميع حقوق الملكية الفكرية وحقوق النشر في ملفات الفيديو والوسائط الخاصة بك. ولا يقوم Asagi أبداً برفع أو استضافة أو نسخ أو المطالبة بملكية أي فيديوهات تختارها أو تعالجها. وأنت وحدك المسؤول عن ضمان حصولك على جميع الأذونات والتراخيص اللازمة لأي وسائط تضغطها.\n\n4. الاشتراكات داخل التطبيق والفوترة\nقد تُقدَّم الميزات المميزة الاختيارية (مثل Asagi Pro) كاشتراكات متكررة أو عمليات شراء لمرة واحدة. تتم جميع عمليات الفوترة والتجديد والإلغاء وتحصيل الضرائب حصرياً عبر متجر المنصة الرسمي (Google Play أو Apple App Store). تتجدد الاشتراكات تلقائياً ما لم يتم إلغاؤها قبل 24 ساعة على الأقل من انتهاء دورة الفوترة النشطة.\n\n5. إخلاء المسؤولية عن الضمانات\nيُقدَّم التطبيق \"كما هو\" و\"حسب توافره\"، دون أي ضمان من أي نوع، صريحاً أو ضمنياً. ورغم أننا نجري اختبارات صارمة ونستخدم مُرمِّزات متوافقة مع المعايير، فإننا لا نضمن أن يحقق ضغط الوسائط نسب تقليل محددة للملف دون تغييرات بصرية لكل مُرمِّز مصدري.\n';
+      'Asagi تطبيق مجاني ومفتوح المصدر. تتم معالجة الفيديو على جهازك. تظل ملكية المحتوى لك. يُقدّم التطبيق دون ضمان تحقيق حجم أو جودة محددة.';
 
   @override
   String get termsCopiedToClipboard => 'تم نسخ الشروط إلى الحافظة';
@@ -1549,7 +1270,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get termsAcceptanceLicenseBody =>
-      'باستخدامك Asagi، فإنك توافق على هذه الشروط. نمنحك ترخيصاً شخصياً وغير حصري وغير قابل للتحويل لضغط الوسائط محلياً على أجهزتك.';
+      'Asagi تطبيق مجاني ومفتوح المصدر. كل ميزاته متاحة للجميع، وتتم معالجة الفيديو محليًا على أجهزتك.';
 
   @override
   String get termsContentOwnershipTitle => '2. ملكية المحتوى 100%';
@@ -1565,13 +1286,6 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get termsLocalOnDeviceProcessingBody =>
       'تعمل جميع خطوط الضغط بالكامل على عتاد جهازك دون الاعتماد على خوادم خارجية أو معالجة وسائط عن بُعد.';
-
-  @override
-  String get termsSubscriptionsAndBillingTitle => '4. الاشتراكات والفوترة';
-
-  @override
-  String get termsSubscriptionsAndBillingBody =>
-      'تُدار عمليات الشراء والاشتراكات بأمان عبر فوترة Google Play وApple App Store الرسمية. ويمكن الإلغاء في أي وقت من حساب المتجر الخاص بك.';
 
   @override
   String get termsDisclaimersAndFairUseTitle =>
@@ -1591,14 +1305,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String
   get processedExclusivelyOnDeviceMediaFilesAreNeverTransmittedToExternalServersOrThirdPartyPlatforms =>
       'تُعالَج حصرياً على الجهاز. لا تُنقل ملفات الوسائط أبداً إلى خوادم خارجية أو منصات طرف ثالث.';
-
-  @override
-  String get financialInfoAndPayment => 'المعلومات المالية والدفع';
-
-  @override
-  String
-  get allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreAsagiNeverAccessesCardDetails =>
-      'يتولى Google Play Store أو Apple App Store التعامل مع جميع تفاصيل الدفع مباشرة. ولا يطّلع Asagi أبداً على بيانات البطاقة.';
 
   @override
   String get appPerformanceAndCrashLogs => 'أداء التطبيق وسجلات الأعطال';
@@ -1626,10 +1332,6 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get noUserDataCollectedForAdvertising =>
       'لا يتم جمع بيانات المستخدم للإعلانات';
-
-  @override
-  String get dataEncryptedInTransitStorePurchases =>
-      'البيانات مشفّرة أثناء النقل (مشتريات المتجر)';
 
   @override
   String get youCanRequestDataDeletionAtAnyTime =>
@@ -1691,14 +1393,6 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get optionalDiagnosticsBody =>
       'يمكنك اختيارياً تفعيل الإبلاغ المجهول عن الأعطال لمساعدتنا في تحديد الأخطاء وإصلاحها. وتحتوي هذه التقارير على إصدارات نظام التشغيل غير المعرِّفة، وطرازات الأجهزة، وتتبّعات مكدّس الاستثناءات فقط، ولا تحتوي أبداً على محتوى الوسائط.';
-
-  @override
-  String get thirdPartyStorePaymentsTitle =>
-      '4. مدفوعات المتاجر التابعة لجهات خارجية';
-
-  @override
-  String get thirdPartyStorePaymentsBody =>
-      'تُنفَّذ عمليات الاشتراك والشراء داخل التطبيق مباشرة عبر Apple App Store أو Google Play Store الرسمي. ولا يقوم Asagi بمعالجة أو الاحتفاظ بمعلومات بطاقتك الائتمانية أو الفوترة المالية.';
 
   @override
   String get dataDeletionAndStorageHygieneTitle =>
@@ -2328,62 +2022,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get permissionsSummary => 'سبب طلب الأذونات';
 
   @override
-  String get supportedPaymentOptions => 'خيارات الدفع المتاحة';
-
-  @override
-  String get paymentProtectionTitle => 'ضمان الحماية والأمان';
-
-  @override
-  String get storeBillingTitle => 'الدفع عبر App Store أو Google Play';
-
-  @override
-  String get storeBillingSummary => 'دفع آمن عبر المتجر';
-
-  @override
-  String get storeBillingDetails =>
-      'تُستكمل عمليات الشراء بأمان عبر حساب المتجر الرسمي على جهازك. ويجري التحقق من الدفع باستخدام خيارات الأمان المفعّلة على جهازك.';
-
-  @override
-  String get creditDebitCardsTitle => 'بطاقات الائتمان والخصم';
-
-  @override
-  String get creditDebitCardsSummary => 'بطاقات عبر متجرك';
-
-  @override
-  String get creditDebitCardsDetails =>
-      'استخدم بطاقة محفوظة في حساب Google Play أو Apple App Store. يتولى المتجر معالجة الدفع، لذلك لا يصل رقم بطاقتك إلى Asagi.';
-
-  @override
-  String get storeBalanceGiftCardsTitle => 'رصيد المتجر وبطاقات الهدايا';
-
-  @override
-  String get storeBalanceGiftCardsSummary => 'استخدم رصيد المتجر';
-
-  @override
-  String get storeBalanceGiftCardsDetails =>
-      'استخدم رصيد المتجر أو بطاقة هدايا مستردة أو رصيدًا ترويجيًا مؤهلًا لاشتراك Asagi. يعتمد التوفر على المتجر والمنطقة.';
-
-  @override
-  String get digitalWalletsTitle => 'المحافظ الرقمية وطرق الدفع المحلية';
-
-  @override
-  String get digitalWalletsSummary => 'طرق دفع يدعمها المتجر';
-
-  @override
-  String get digitalWalletsDetails =>
-      'قد يوفّر متجرك Google Pay أو Apple Pay أو PayPal أو طرق دفع محلية. تعتمد الخيارات المتاحة على حسابك وجهازك ومنطقتك.';
-
-  @override
-  String get storeProtectedPurchases => 'مشتريات محمية عبر المتجر';
-
-  @override
-  String get storeProtectedPurchasesSummary => 'الفوترة لدى المتجر';
-
-  @override
-  String get storeProtectedPurchasesDetails =>
-      'لا يطّلع Asagi على بيانات الدفع ولا يحتفظ بها. يتحقق Google Play أو Apple App Store من كل معاملة ويشفّرها. يمكنك الإلغاء في أي وقت من حساب المتجر دون رسوم مخفية.';
-
-  @override
   String get megabytesShort => 'م.ب';
 
   @override
@@ -2417,6 +2055,14 @@ class AppLocalizationsAr extends AppLocalizations {
       'قد يتعذر الوصول للحجم المحدد. سنستخدم أفضل إعدادات متاحة، وسيظهر الحجم الفعلي بعد الضغط.';
 
   @override
+  String requestedSettingsUnavailableBestQualityIs(
+    String width,
+    String height,
+  ) {
+    return 'مش قادر أطبق الحجم المستهدف بالإعدادات دي. أفضل جودة متاحة هي $width × $height، وهعرضلك الحجم النهائي بعد الضغط.';
+  }
+
+  @override
   String get savingCompressedVideo =>
       'جارٍ حفظ الفيديو المضغوط على هذا الجهاز…';
 
@@ -2439,6 +2085,16 @@ class AppLocalizationsAr extends AppLocalizations {
   String historySummarySubtitle(Object count, Object savedMb) {
     return 'تم ضغط $count فيديو • توفير $savedMb م.ب';
   }
+
+  @override
+  String get compressionHelpDescription =>
+      'إجابات الأسئلة الشائعة عن ضغط الفيديو.';
+
+  @override
+  String get appSupportDescription => 'احصل على مساعدة في استخدام Asagi.';
+
+  @override
+  String get appTermsDescription => 'شروط استخدام Asagi المجاني ومفتوح المصدر.';
 }
 
 /// The translations for Arabic, as used in Egypt (`ar_EG`).
@@ -2466,4 +2122,23 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
 
   @override
   String get countryCode => 'EG';
+
+  @override
+  String get termsOfServiceFullText =>
+      'Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.';
+
+  @override
+  String get termsAcceptanceLicenseBody =>
+      'Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices.';
+
+  @override
+  String get compressionHelpDescription =>
+      'Answers to common questions about video compression.';
+
+  @override
+  String get appSupportDescription => 'Get help using Asagi.';
+
+  @override
+  String get appTermsDescription =>
+      'Terms for using the free, open source Asagi app.';
 }

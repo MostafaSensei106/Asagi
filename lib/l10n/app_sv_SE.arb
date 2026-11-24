@@ -223,10 +223,6 @@
   "@signIn": {
     "description": "Login page title"
   },
-  "signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": "Logga in för att synkronisera din plan och hålla dina köp tillgängliga på alla enheter.",
-  "@signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": {
-    "description": "Login page description"
-  },
   "chooseAVideo": "Välj en video",
   "@chooseAVideo": {
     "description": "Video picker page title"
@@ -355,10 +351,6 @@
   "@termsOfService": {
     "description": "Terms page title"
   },
-  "theTermsThatApplyToAsagiAndItsPurchases": "Villkoren som gäller för Asagi och dess köp.",
-  "@theTermsThatApplyToAsagiAndItsPurchases": {
-    "description": "Terms page description"
-  },
   "dataSafety": "Datasäkerhet",
   "@dataSafety": {
     "description": "Data safety page title"
@@ -379,17 +371,9 @@
   "@faq": {
     "description": "FAQ page title"
   },
-  "answersToCommonQuestionsAboutCompressionAndBilling": "Svar på vanliga frågor om komprimering och fakturering.",
-  "@answersToCommonQuestionsAboutCompressionAndBilling": {
-    "description": "FAQ page description"
-  },
   "support": "Support",
   "@support": {
     "description": "Support page title"
-  },
-  "getHelpWithYourAccountOrAPurchase": "Få hjälp med ditt konto eller ett köp.",
-  "@getHelpWithYourAccountOrAPurchase": {
-    "description": "Support page description"
   },
   "sendFeedback": "Skicka feedback",
   "@sendFeedback": {
@@ -399,45 +383,9 @@
   "@reportAProblemOrSuggestAnImprovement": {
     "description": "Feedback page description"
   },
-  "plans": "Planer",
-  "@plans": {
-    "description": "Plans page title"
-  },
-  "comparePlansAndSeeWhatEachOneUnlocks": "Jämför planer och se vad varje låser upp.",
-  "@comparePlansAndSeeWhatEachOneUnlocks": {
-    "description": "Plans page description"
-  },
-  "planDetails": "Plandetaljer",
-  "@planDetails": {
-    "description": "Plan details page title"
-  },
-  "benefitsLimitsAndPricingForThisPlan": "Fördelar, begränsningar och prissättning för denna plan.",
-  "@benefitsLimitsAndPricingForThisPlan": {
-    "description": "Plan details page description"
-  },
-  "paymentMethods": "Betalningsmetoder",
-  "@paymentMethods": {
-    "description": "Purchase methods page title"
-  },
-  "supportedWaysToPayIncludingStoreBilling": "Stödda betalningssätt, inklusive butikens fakturering.",
-  "@supportedWaysToPayIncludingStoreBilling": {
-    "description": "Purchase methods page description"
-  },
-  "restorePurchases": "Återställ köp",
-  "@restorePurchases": {
-    "description": "Restore purchases page title"
-  },
-  "reApplyAPurchaseMadeOnAnotherDevice": "Återanvänd ett köp gjort på en annan enhet.",
-  "@reApplyAPurchaseMadeOnAnotherDevice": {
-    "description": "Restore purchases page description"
-  },
   "profile": "Profil",
   "@profile": {
     "description": "Profile page title"
-  },
-  "yourIdentityPlanStatusAndAccountPreferences": "Din identitet, planstatus och kontoinställningar.",
-  "@yourIdentityPlanStatusAndAccountPreferences": {
-    "description": "Profile page description"
   },
   "deleteAccount": "Radera konto",
   "@deleteAccount": {
@@ -477,10 +425,6 @@
   },
   "notificationsPrivacy": "Notiser och integritet",
   "@notificationsPrivacy": {
-    "description": "Settings hub section label"
-  },
-  "plansPurchases": "Planer och köp",
-  "@plansPurchases": {
     "description": "Settings hub section label"
   },
   "about": "Om",
@@ -558,18 +502,6 @@
   },
   "yourDataStaysLocal": "Din data stannar lokalt",
   "@yourDataStaysLocal": {
-    "description": "Settings hub row summary"
-  },
-  "comparePlansAndUpgrade": "Jämför planer och uppgradera",
-  "@comparePlansAndUpgrade": {
-    "description": "Settings hub row summary"
-  },
-  "paymentMethodsAndBilling": "Betalningsmetoder och fakturering",
-  "@paymentMethodsAndBilling": {
-    "description": "Settings hub row summary"
-  },
-  "restoreYourPreviousPurchase": "Återställ ditt tidigare köp",
-  "@restoreYourPreviousPurchase": {
     "description": "Settings hub row summary"
   },
   "versionAndBuildDetails": "Versions- och byggdetaljer",
@@ -721,5 +653,10 @@
   },
   "languageName": "Svenska",
   "countryCode": "SE",
-  "countryName": "{countryCode, select, AE{Förenade Arabemiraten} AT{Österrike} AU{Australien} BE{Belgien} BH{Bahrain} BR{Brasilien} CA{Kanada} CH{Schweiz} CN{Kina} DE{Tyskland} DJ{Djibouti} DZ{Algeriet} EG{Egypten} ES{Spanien} FR{Frankrike} GB{Storbritannien} HK{Hongkong SAR} ID{Indonesien} IQ{Irak} IT{Italien} JO{Jordanien} JP{Japan} KM{Komorerna} KR{Sydkorea} KW{Kuwait} LB{Libanon} LY{Libyen} MA{Marocko} MR{Mauretanien} MX{Mexiko} NL{Nederländerna} OM{Oman} PL{Polen} PS{Palestinska territorierna} PT{Portugal} QA{Qatar} RU{Ryssland} SA{Saudiarabien} SD{Sudan} SE{Sverige} SG{Singapore} SO{Somalia} SY{Syrien} TH{Thailand} TN{Tunisien} TR{Turkiet} TW{Taiwan} US{USA} VN{Vietnam} YE{Jemen} other{Land}}"
+  "countryName": "{countryCode, select, AE{Förenade Arabemiraten} AT{Österrike} AU{Australien} BE{Belgien} BH{Bahrain} BR{Brasilien} CA{Kanada} CH{Schweiz} CN{Kina} DE{Tyskland} DJ{Djibouti} DZ{Algeriet} EG{Egypten} ES{Spanien} FR{Frankrike} GB{Storbritannien} HK{Hongkong SAR} ID{Indonesien} IQ{Irak} IT{Italien} JO{Jordanien} JP{Japan} KM{Komorerna} KR{Sydkorea} KW{Kuwait} LB{Libanon} LY{Libyen} MA{Marocko} MR{Mauretanien} MX{Mexiko} NL{Nederländerna} OM{Oman} PL{Polen} PS{Palestinska territorierna} PT{Portugal} QA{Qatar} RU{Ryssland} SA{Saudiarabien} SD{Sudan} SE{Sverige} SG{Singapore} SO{Somalia} SY{Syrien} TH{Thailand} TN{Tunisien} TR{Turkiet} TW{Taiwan} US{USA} VN{Vietnam} YE{Jemen} other{Land}}",
+  "compressionHelpDescription": "Answers to common questions about video compression.",
+  "appSupportDescription": "Get help using Asagi.",
+  "appTermsDescription": "Terms for using the free, open source Asagi app.",
+  "termsOfServiceFullText": "Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.",
+  "termsAcceptanceLicenseBody": "Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices."
 }

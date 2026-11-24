@@ -168,10 +168,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get signIn => '登录';
 
   @override
-  String get signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice =>
-      '登录以同步您的计划并让您的购买在每台设备上可用。';
-
-  @override
   String get chooseAVideo => '选择视频';
 
   @override
@@ -332,9 +328,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get termsOfService => '服务条款';
 
   @override
-  String get theTermsThatApplyToAsagiAndItsPurchases => '适用于 Asagi 及其购买内容的条款。';
-
-  @override
   String get dataSafety => '数据安全';
 
   @override
@@ -351,14 +344,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get faq => '常见问题';
 
   @override
-  String get answersToCommonQuestionsAboutCompressionAndBilling =>
-      '关于压缩和计费的常见问题解答。';
-
-  @override
   String get support => '支持';
-
-  @override
-  String get getHelpWithYourAccountOrAPurchase => '获取有关您的账户或购买的帮助。';
 
   @override
   String get sendFeedback => '发送反馈';
@@ -367,34 +353,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get reportAProblemOrSuggestAnImprovement => '报告问题或提出改进建议。';
 
   @override
-  String get plans => '计划';
-
-  @override
-  String get comparePlansAndSeeWhatEachOneUnlocks => '比较计划并查看每个计划解锁的内容。';
-
-  @override
-  String get planDetails => '计划详情';
-
-  @override
-  String get benefitsLimitsAndPricingForThisPlan => '该计划的福利、限制和定价。';
-
-  @override
-  String get paymentMethods => '支付方式';
-
-  @override
-  String get supportedWaysToPayIncludingStoreBilling => '支持的支付方式，包括商店账单。';
-
-  @override
-  String get restorePurchases => '恢复购买';
-
-  @override
-  String get reApplyAPurchaseMadeOnAnotherDevice => '重新应用在其他设备上购买的内容。';
-
-  @override
   String get profile => '个人资料';
-
-  @override
-  String get yourIdentityPlanStatusAndAccountPreferences => '您的身份、计划状态和账户偏好。';
 
   @override
   String get deleteAccount => '删除账户';
@@ -427,9 +386,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get notificationsPrivacy => '通知与隐私';
-
-  @override
-  String get plansPurchases => '计划与购买';
 
   @override
   String get about => '关于';
@@ -580,15 +536,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get yourDataStaysLocal => '您的数据保持本地';
-
-  @override
-  String get comparePlansAndUpgrade => '比较计划并升级';
-
-  @override
-  String get paymentMethodsAndBilling => '付款方式和账单';
-
-  @override
-  String get restoreYourPreviousPurchase => '恢复您以前的购买';
 
   @override
   String get versionAndBuildDetails => '版本和构建详情';
@@ -932,224 +879,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get comingSoon => '即将到来';
 
   @override
-  String get asagiProTitle => 'Asagi Pro';
-
-  @override
-  String subscriptionPerMonth(Object price) {
-    return '$price / month';
-  }
-
-  @override
-  String get planUnavailable => 'Unavailable';
-
-  @override
   String get loading => 'Loading…';
 
   @override
-  String get subscriptionActive => 'Active subscription';
-
-  @override
-  String get proFeaturesDescription =>
-      'Custom compression, sharing presets, on-device AI tools, and loyalty savings.';
-
-  @override
   String get pleaseWait => '请稍候...';
-
-  @override
-  String get subscribe => 'Subscribe';
-
-  @override
-  String currentLoyaltyDiscount(Object percent) {
-    return 'Loyalty discount: $percent%';
-  }
-
-  @override
-  String nextMonthLoyaltyPrice(Object percent, Object price) {
-    return 'Next month: $percent% loyalty discount — estimated $price';
-  }
-
-  @override
-  String nextMonthLoyaltyDiscount(Object percent) {
-    return 'Next month: $percent% loyalty discount';
-  }
-
-  @override
-  String get loyaltyCancellationWarning =>
-      'Cancelling resets your accumulated loyalty discount to the base price. If you subscribe again, loyalty starts again at 2%.';
-
-  @override
-  String get proBenefitsTitle => 'Pro features';
-
-  @override
-  String get proCustomCompressionGroup => 'Custom compression';
-
-  @override
-  String get proSharingPresetsGroup => 'Exclusive sharing presets';
-
-  @override
-  String get proAiGroupTitle => 'On-device AI toolkit';
-
-  @override
-  String get proLoyaltyGroup => 'Loyalty savings';
-
-  @override
-  String get proCustomSizeBenefit =>
-      'Set a precise maximum size for every video export.';
-
-  @override
-  String get proResolutionBenefit =>
-      'Choose output resolution from 240p to source quality.';
-
-  @override
-  String get proFrameRateBenefit => 'Cap exports at 24, 30, 60, or 120 fps.';
-
-  @override
-  String get proVideoBitrateBenefit =>
-      'Control the maximum video bitrate on Android.';
-
-  @override
-  String get proAudioBitrateBenefit =>
-      'Choose audio bitrate or remove audio entirely.';
-
-  @override
-  String get proDiscordBenefit =>
-      'Export videos within Discord size and encoding limits.';
-
-  @override
-  String get proYouTubeShortsBenefit =>
-      'Prepare vertical videos for YouTube Shorts limits.';
-
-  @override
-  String get proAiAssistantBenefit =>
-      'Get AI guidance for compression and app features.';
-
-  @override
-  String get proAiSceneBenefit =>
-      'Understand video scenes with on-device AI analysis.';
-
-  @override
-  String get proAiTranscriptionBenefit =>
-      'Transcribe speech and find moments by meaning.';
-
-  @override
-  String get proLoyaltyBenefit =>
-      'Earn monthly loyalty discounts up to thirty percent.';
-
-  @override
-  String get proCustomSizeTitle => 'Choose a target file size';
-
-  @override
-  String get proCustomSizeDetails =>
-      'Set a precise size ceiling for each custom compression.';
-
-  @override
-  String get proResolutionTitle => 'Set maximum resolution';
-
-  @override
-  String get proResolutionDetails =>
-      'Limit output resolution from 240p up to the source size.';
-
-  @override
-  String get proFrameRateTitle => 'Control maximum frame rate';
-
-  @override
-  String get proFrameRateDetails =>
-      'Choose a 24, 30, 60, or 120 fps output cap on Android.';
-
-  @override
-  String get proVideoBitrateTitle => 'Set a video bitrate ceiling';
-
-  @override
-  String get proVideoBitrateDetails =>
-      'Set the maximum video bitrate on Android.';
-
-  @override
-  String get proAudioBitrateTitle => 'Choose audio quality';
-
-  @override
-  String get proAudioBitrateDetails =>
-      'Pick an audio bitrate or remove audio on Android.';
-
-  @override
-  String get proDiscordTitle => 'Discord-targeted export';
-
-  @override
-  String get proDiscordDetails =>
-      'Use a preset tuned to Discord size and encoding limits.';
-
-  @override
-  String get proYouTubeShortsTitle => 'YouTube Shorts export';
-
-  @override
-  String get proYouTubeShortsDetails =>
-      'Use Shorts size, resolution, and frame-rate limits.';
-
-  @override
-  String get proAiAssistantTitle => 'AI assistant';
-
-  @override
-  String get proAiAssistantDetails =>
-      'Get help with video compression and app features.';
-
-  @override
-  String get proAiSceneTitle => 'Scene understanding';
-
-  @override
-  String get proAiSceneDetails =>
-      'Explore video content with on-device AI analysis.';
-
-  @override
-  String get proAiTranscriptionTitle => 'Transcription and search';
-
-  @override
-  String get proAiTranscriptionDetails =>
-      'Transcribe speech and find moments by meaning.';
-
-  @override
-  String get proLoyaltyTitle => 'Monthly loyalty discount';
-
-  @override
-  String get proLoyaltyDetails => 'Earn 2% per consecutive month, up to 30%.';
-
-  @override
-  String get proPlatformAvailabilityNote =>
-      'Advanced resolution, frame-rate, and bitrate controls are available on Android. Export limits depend on device support.';
-
-  @override
-  String get proAiAvailabilityNote =>
-      'AI features require a compatible on-device model.';
-
-  @override
-  String get loyaltySavingsTitle => 'Loyalty savings';
-
-  @override
-  String get loyaltyProgressLabel => 'Progress toward your next discount';
-
-  @override
-  String get subscriptionSecureBilling =>
-      'Secure billing through your app store';
-
-  @override
-  String get purchaseCancelled => 'Purchase cancelled.';
-
-  @override
-  String get purchaseVerified => 'Purchase verified.';
-
-  @override
-  String get purchasesRestored => 'Purchases restored.';
-
-  @override
-  String get noActivePurchaseFound => 'No active purchase found.';
-
-  @override
-  String get restorePurchaseDescription =>
-      'Restore purchases made with this Google Play account.';
-
-  @override
-  String get asagiProActive => 'Asagi Pro is active';
-
-  @override
-  String get checking => 'Checking…';
 
   @override
   String get interruptedCompressionJobs => 'Interrupted compression jobs';
@@ -1221,20 +954,6 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String get fullFfmpegLicenseFallback =>
       'Full license text is shipped in the app\'s LGPL license asset.';
-
-  @override
-  String get billingUnavailable =>
-      'Subscription details are unavailable right now.';
-
-  @override
-  String get purchaseFailed => 'The purchase could not be completed.';
-
-  @override
-  String get restoreFailed => 'Purchases could not be restored.';
-
-  @override
-  String get receiptVerificationFailed =>
-      'The purchase receipt could not be verified.';
 
   @override
   String get ffmpegName => 'FFmpeg';
@@ -1512,7 +1231,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get termsOfServiceFullText =>
-      '1. Acceptance of Terms\nBy downloading, accessing, or using Asagi (\"the Application\"), you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you must discontinue using the application.\n\n2. Personal License\nWe grant you a personal, revocable, non-exclusive, non-transferable license to use Asagi strictly for your personal, non-commercial, or internal creative media compression workflows on compatible devices.\n\n3. On-Device Execution & Content Ownership\nAsagi executes compression pipelines exclusively on your device hardware using local encoders. You retain 100% of all intellectual property rights and copyrights in and to your video files and media. Asagi never uploads, hosts, replicates, or claims ownership over any videos you select or process. You are solely responsible for ensuring you have all requisite permissions and licenses for any media you compress.\n\n4. In-App Subscriptions & Billing\nOptional premium features (such as Asagi Pro) may be offered as recurring subscriptions or one-time unlock purchases. All billing, renewals, cancellations, and tax collections are processed exclusively through the official platform store (Google Play or Apple App Store). Subscriptions renew automatically unless cancelled at least 24 hours prior to the conclusion of the active billing cycle.\n\n5. Disclaimer of Warranties\nThe Application is provided \"as is\" and \"as available,\" without warranty of any kind, express or implied. While we employ rigorous testing and standard-compliant codecs, we do not guarantee that media compression will achieve specific file reduction percentages without visual changes for every source codec.\n';
+      'Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.';
 
   @override
   String get termsCopiedToClipboard => 'Terms copied to clipboard';
@@ -1522,7 +1241,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get termsAcceptanceLicenseBody =>
-      'By using Asagi, you agree to these Terms. We grant you a personal, non-exclusive, non-transferable license to compress media locally on your devices.';
+      'Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices.';
 
   @override
   String get termsContentOwnershipTitle => '2. 100% Content Ownership';
@@ -1538,13 +1257,6 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String get termsLocalOnDeviceProcessingBody =>
       'All compression pipelines run completely on your device hardware without external server dependencies or remote media processing.';
-
-  @override
-  String get termsSubscriptionsAndBillingTitle => '4. Subscriptions & Billing';
-
-  @override
-  String get termsSubscriptionsAndBillingBody =>
-      'Purchases and subscriptions are managed securely via official Google Play and Apple App Store billing. Cancellations can be performed anytime in your store account.';
 
   @override
   String get termsDisclaimersAndFairUseTitle => '5. Disclaimers & Fair Use';
@@ -1563,14 +1275,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String
   get processedExclusivelyOnDeviceMediaFilesAreNeverTransmittedToExternalServersOrThirdPartyPlatforms =>
       'Processed exclusively on-device. Media files are never transmitted to external servers or third-party platforms.';
-
-  @override
-  String get financialInfoAndPayment => 'Financial Info & Payment';
-
-  @override
-  String
-  get allPaymentDetailsAreHandledDirectlyByGooglePlayStoreOrAppleAppStoreAsagiNeverAccessesCardDetails =>
-      'All payment details are handled directly by Google Play Store or Apple App Store. Asagi never accesses card details.';
 
   @override
   String get appPerformanceAndCrashLogs => 'App Performance & Crash Logs';
@@ -1598,10 +1302,6 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String get noUserDataCollectedForAdvertising =>
       'No user data collected for advertising';
-
-  @override
-  String get dataEncryptedInTransitStorePurchases =>
-      'Data encrypted in transit (store purchases)';
 
   @override
   String get youCanRequestDataDeletionAtAnyTime =>
@@ -1664,13 +1364,6 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String get optionalDiagnosticsBody =>
       'You may optionally enable anonymous crash reporting to help us identify and fix bugs. These reports contain only non-identifying operating system versions, device models, and exception stack traces, never media content.';
-
-  @override
-  String get thirdPartyStorePaymentsTitle => '4. Third-Party Store Payments';
-
-  @override
-  String get thirdPartyStorePaymentsBody =>
-      'Subscription and in-app purchase operations are executed directly through the official Apple App Store or Google Play Store. Asagi does not process or retain your credit card or financial billing information.';
 
   @override
   String get dataDeletionAndStorageHygieneTitle =>
@@ -2307,62 +2000,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get permissionsSummary => 'Why Asagi needs access';
 
   @override
-  String get supportedPaymentOptions => 'Supported Payment Options';
-
-  @override
-  String get paymentProtectionTitle => 'Protection & Safety Guarantee';
-
-  @override
-  String get storeBillingTitle => 'App Store / Google Play Billing';
-
-  @override
-  String get storeBillingSummary => 'Secure store checkout';
-
-  @override
-  String get storeBillingDetails =>
-      'Purchases are completed securely through your device’s official app store account. Payment is authenticated using the security options configured on your device.';
-
-  @override
-  String get creditDebitCardsTitle => 'Credit & Debit Cards';
-
-  @override
-  String get creditDebitCardsSummary => 'Cards through your store';
-
-  @override
-  String get creditDebitCardsDetails =>
-      'Use a card saved to your Google Play or Apple App Store account. The store processes the payment, so Asagi never receives your card number.';
-
-  @override
-  String get storeBalanceGiftCardsTitle => 'Store Balance & Gift Cards';
-
-  @override
-  String get storeBalanceGiftCardsSummary => 'Redeem store credit';
-
-  @override
-  String get storeBalanceGiftCardsDetails =>
-      'Use eligible store balance, redeemed gift cards, or promotional credit toward an Asagi subscription. Availability depends on your store and region.';
-
-  @override
-  String get digitalWalletsTitle => 'Digital Wallets & Local Methods';
-
-  @override
-  String get digitalWalletsSummary => 'Store-supported payment methods';
-
-  @override
-  String get digitalWalletsDetails =>
-      'Your store may offer Google Pay, Apple Pay, PayPal, or regional payment methods. Available options depend on your account, device, and region.';
-
-  @override
-  String get storeProtectedPurchases => 'Store-Protected Purchases';
-
-  @override
-  String get storeProtectedPurchasesSummary => 'Billing stays with stores';
-
-  @override
-  String get storeProtectedPurchasesDetails =>
-      'Asagi never sees or retains your financial billing data. Google Play or Apple App Store authenticates and encrypts every transaction. You can cancel anytime through your store account, without hidden fees.';
-
-  @override
   String get megabytesShort => 'MB';
 
   @override
@@ -2397,6 +2034,14 @@ class AppLocalizationsZh extends AppLocalizations {
       'The selected size may not be reachable. The export will use the best available settings, and its final size will be shown.';
 
   @override
+  String requestedSettingsUnavailableBestQualityIs(
+    String width,
+    String height,
+  ) {
+    return 'The requested settings cannot be applied. Best available quality is $width × $height; the final file size will be shown after compression.';
+  }
+
+  @override
   String get savingCompressedVideo =>
       'Saving the compressed video on this device…';
 
@@ -2420,6 +2065,17 @@ class AppLocalizationsZh extends AppLocalizations {
   String historySummarySubtitle(Object count, Object savedMb) {
     return '$count videos compressed • $savedMb MB saved';
   }
+
+  @override
+  String get compressionHelpDescription =>
+      'Answers to common questions about video compression.';
+
+  @override
+  String get appSupportDescription => 'Get help using Asagi.';
+
+  @override
+  String get appTermsDescription =>
+      'Terms for using the free, open source Asagi app.';
 }
 
 /// The translations for Chinese, as used in China (`zh_CN`).
@@ -2585,10 +2241,6 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get signIn => '登录';
 
   @override
-  String get signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice =>
-      '登录以同步您的计划并让您的购买在每台设备上可用。';
-
-  @override
   String get chooseAVideo => '选择视频';
 
   @override
@@ -2686,9 +2338,6 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get termsOfService => '服务条款';
 
   @override
-  String get theTermsThatApplyToAsagiAndItsPurchases => '适用于 Asagi 及其购买内容的条款。';
-
-  @override
   String get dataSafety => '数据安全';
 
   @override
@@ -2705,14 +2354,7 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get faq => '常见问题';
 
   @override
-  String get answersToCommonQuestionsAboutCompressionAndBilling =>
-      '关于压缩和计费的常见问题解答。';
-
-  @override
   String get support => '支持';
-
-  @override
-  String get getHelpWithYourAccountOrAPurchase => '获取有关您的账户或购买的帮助。';
 
   @override
   String get sendFeedback => '发送反馈';
@@ -2721,34 +2363,7 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get reportAProblemOrSuggestAnImprovement => '报告问题或提出改进建议。';
 
   @override
-  String get plans => '计划';
-
-  @override
-  String get comparePlansAndSeeWhatEachOneUnlocks => '比较计划并查看每个计划解锁的内容。';
-
-  @override
-  String get planDetails => '计划详情';
-
-  @override
-  String get benefitsLimitsAndPricingForThisPlan => '该计划的福利、限制和定价。';
-
-  @override
-  String get paymentMethods => '支付方式';
-
-  @override
-  String get supportedWaysToPayIncludingStoreBilling => '支持的支付方式，包括商店账单。';
-
-  @override
-  String get restorePurchases => '恢复购买';
-
-  @override
-  String get reApplyAPurchaseMadeOnAnotherDevice => '重新应用在其他设备上购买的内容。';
-
-  @override
   String get profile => '个人资料';
-
-  @override
-  String get yourIdentityPlanStatusAndAccountPreferences => '您的身份、计划状态和账户偏好。';
 
   @override
   String get deleteAccount => '删除账户';
@@ -2781,9 +2396,6 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get notificationsPrivacy => '通知与隐私';
-
-  @override
-  String get plansPurchases => '计划与购买';
 
   @override
   String get about => '关于';
@@ -2934,15 +2546,6 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get yourDataStaysLocal => '您的数据保持本地';
-
-  @override
-  String get comparePlansAndUpgrade => '比较计划并升级';
-
-  @override
-  String get paymentMethodsAndBilling => '付款方式和账单';
-
-  @override
-  String get restoreYourPreviousPurchase => '恢复您以前的购买';
 
   @override
   String get versionAndBuildDetails => '版本和构建详情';
@@ -3357,6 +2960,25 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
     });
     return '$_temp0';
   }
+
+  @override
+  String get termsOfServiceFullText =>
+      'Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.';
+
+  @override
+  String get termsAcceptanceLicenseBody =>
+      'Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices.';
+
+  @override
+  String get compressionHelpDescription =>
+      'Answers to common questions about video compression.';
+
+  @override
+  String get appSupportDescription => 'Get help using Asagi.';
+
+  @override
+  String get appTermsDescription =>
+      'Terms for using the free, open source Asagi app.';
 }
 
 /// The translations for Chinese, as used in Hong Kong (`zh_HK`).
@@ -3522,10 +3144,6 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
   String get signIn => '登入';
 
   @override
-  String get signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice =>
-      '登入以同步您的計畫，並在每個裝置上保留已購買內容。';
-
-  @override
   String get chooseAVideo => '選擇影片';
 
   @override
@@ -3624,9 +3242,6 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
   String get termsOfService => '服務條款';
 
   @override
-  String get theTermsThatApplyToAsagiAndItsPurchases => '適用於 Asagi 及其購買項目的條款。';
-
-  @override
   String get dataSafety => '資料安全';
 
   @override
@@ -3643,14 +3258,7 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
   String get faq => '常見問題';
 
   @override
-  String get answersToCommonQuestionsAboutCompressionAndBilling =>
-      '有關壓縮和計費的常見問題解答。';
-
-  @override
   String get support => '支援';
-
-  @override
-  String get getHelpWithYourAccountOrAPurchase => '獲得帳戶或購買相關的幫助。';
 
   @override
   String get sendFeedback => '發送回饋意見';
@@ -3659,34 +3267,7 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
   String get reportAProblemOrSuggestAnImprovement => '回報問題或建議改進。';
 
   @override
-  String get plans => '方案';
-
-  @override
-  String get comparePlansAndSeeWhatEachOneUnlocks => '比較方案及查看每個方案解鎖的功能。';
-
-  @override
-  String get planDetails => '方案詳情';
-
-  @override
-  String get benefitsLimitsAndPricingForThisPlan => '此方案的好處、限制和價格。';
-
-  @override
-  String get paymentMethods => '付款方式';
-
-  @override
-  String get supportedWaysToPayIncludingStoreBilling => '支援的支付方式，包括商店付款。';
-
-  @override
-  String get restorePurchases => '恢復購買';
-
-  @override
-  String get reApplyAPurchaseMadeOnAnotherDevice => '重新套用在其他裝置上購買的項目。';
-
-  @override
   String get profile => '個人資料';
-
-  @override
-  String get yourIdentityPlanStatusAndAccountPreferences => '您的身份、方案狀態和帳戶偏好。';
 
   @override
   String get deleteAccount => '刪除帳戶';
@@ -3719,9 +3300,6 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
 
   @override
   String get notificationsPrivacy => '通知與隱私';
-
-  @override
-  String get plansPurchases => '方案與購買';
 
   @override
   String get about => '關於';
@@ -3872,15 +3450,6 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
 
   @override
   String get yourDataStaysLocal => '您的資料保持本地';
-
-  @override
-  String get comparePlansAndUpgrade => '比較方案並升級';
-
-  @override
-  String get paymentMethodsAndBilling => '付款方式和帳單';
-
-  @override
-  String get restoreYourPreviousPurchase => '恢復您之前的購買';
 
   @override
   String get versionAndBuildDetails => '版本和建置詳情';
@@ -4295,6 +3864,25 @@ class AppLocalizationsZhHk extends AppLocalizationsZh {
     });
     return '$_temp0';
   }
+
+  @override
+  String get termsOfServiceFullText =>
+      'Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.';
+
+  @override
+  String get termsAcceptanceLicenseBody =>
+      'Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices.';
+
+  @override
+  String get compressionHelpDescription =>
+      'Answers to common questions about video compression.';
+
+  @override
+  String get appSupportDescription => 'Get help using Asagi.';
+
+  @override
+  String get appTermsDescription =>
+      'Terms for using the free, open source Asagi app.';
 }
 
 /// The translations for Chinese, as used in Singapore (`zh_SG`).
@@ -4460,10 +4048,6 @@ class AppLocalizationsZhSg extends AppLocalizationsZh {
   String get signIn => '登录';
 
   @override
-  String get signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice =>
-      '登录以同步您的计划并让您的购买在每台设备上可用。';
-
-  @override
   String get chooseAVideo => '选择视频';
 
   @override
@@ -4561,9 +4145,6 @@ class AppLocalizationsZhSg extends AppLocalizationsZh {
   String get termsOfService => '服务条款';
 
   @override
-  String get theTermsThatApplyToAsagiAndItsPurchases => '适用于 Asagi 及其购买内容的条款。';
-
-  @override
   String get dataSafety => '数据安全';
 
   @override
@@ -4580,14 +4161,7 @@ class AppLocalizationsZhSg extends AppLocalizationsZh {
   String get faq => '常见问题';
 
   @override
-  String get answersToCommonQuestionsAboutCompressionAndBilling =>
-      '关于压缩和计费的常见问题解答。';
-
-  @override
   String get support => '支持';
-
-  @override
-  String get getHelpWithYourAccountOrAPurchase => '获取有关您的账户或购买的帮助。';
 
   @override
   String get sendFeedback => '发送反馈';
@@ -4596,34 +4170,7 @@ class AppLocalizationsZhSg extends AppLocalizationsZh {
   String get reportAProblemOrSuggestAnImprovement => '报告问题或提出改进建议。';
 
   @override
-  String get plans => '计划';
-
-  @override
-  String get comparePlansAndSeeWhatEachOneUnlocks => '比较计划并查看每个计划解锁的内容。';
-
-  @override
-  String get planDetails => '计划详情';
-
-  @override
-  String get benefitsLimitsAndPricingForThisPlan => '该计划的福利、限制和定价。';
-
-  @override
-  String get paymentMethods => '支付方式';
-
-  @override
-  String get supportedWaysToPayIncludingStoreBilling => '支持的支付方式，包括商店账单。';
-
-  @override
-  String get restorePurchases => '恢复购买';
-
-  @override
-  String get reApplyAPurchaseMadeOnAnotherDevice => '重新应用在其他设备上购买的内容。';
-
-  @override
   String get profile => '个人资料';
-
-  @override
-  String get yourIdentityPlanStatusAndAccountPreferences => '您的身份、计划状态和账户偏好。';
 
   @override
   String get deleteAccount => '删除账户';
@@ -4656,9 +4203,6 @@ class AppLocalizationsZhSg extends AppLocalizationsZh {
 
   @override
   String get notificationsPrivacy => '通知与隐私';
-
-  @override
-  String get plansPurchases => '计划与购买';
 
   @override
   String get about => '关于';
@@ -4809,15 +4353,6 @@ class AppLocalizationsZhSg extends AppLocalizationsZh {
 
   @override
   String get yourDataStaysLocal => '您的数据保持本地';
-
-  @override
-  String get comparePlansAndUpgrade => '比较计划并升级';
-
-  @override
-  String get paymentMethodsAndBilling => '付款方式和账单';
-
-  @override
-  String get restoreYourPreviousPurchase => '恢复您以前的购买';
 
   @override
   String get versionAndBuildDetails => '版本和构建详情';
@@ -5232,6 +4767,25 @@ class AppLocalizationsZhSg extends AppLocalizationsZh {
     });
     return '$_temp0';
   }
+
+  @override
+  String get termsOfServiceFullText =>
+      'Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.';
+
+  @override
+  String get termsAcceptanceLicenseBody =>
+      'Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices.';
+
+  @override
+  String get compressionHelpDescription =>
+      'Answers to common questions about video compression.';
+
+  @override
+  String get appSupportDescription => 'Get help using Asagi.';
+
+  @override
+  String get appTermsDescription =>
+      'Terms for using the free, open source Asagi app.';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -5397,10 +4951,6 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get signIn => '登入';
 
   @override
-  String get signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice =>
-      '登入以同步您的計畫，並在每個裝置上保留已購買內容。';
-
-  @override
   String get chooseAVideo => '選擇影片';
 
   @override
@@ -5499,9 +5049,6 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get termsOfService => '服務條款';
 
   @override
-  String get theTermsThatApplyToAsagiAndItsPurchases => '適用於 Asagi 及其購買項目的條款。';
-
-  @override
   String get dataSafety => '資料安全';
 
   @override
@@ -5518,14 +5065,7 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get faq => '常見問題';
 
   @override
-  String get answersToCommonQuestionsAboutCompressionAndBilling =>
-      '有關壓縮和計費的常見問題解答。';
-
-  @override
   String get support => '支援';
-
-  @override
-  String get getHelpWithYourAccountOrAPurchase => '獲得帳戶或購買相關的幫助。';
 
   @override
   String get sendFeedback => '發送回饋意見';
@@ -5534,34 +5074,7 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get reportAProblemOrSuggestAnImprovement => '回報問題或建議改進。';
 
   @override
-  String get plans => '方案';
-
-  @override
-  String get comparePlansAndSeeWhatEachOneUnlocks => '比較方案及查看每個方案解鎖的功能。';
-
-  @override
-  String get planDetails => '方案詳情';
-
-  @override
-  String get benefitsLimitsAndPricingForThisPlan => '此方案的好處、限制和價格。';
-
-  @override
-  String get paymentMethods => '付款方式';
-
-  @override
-  String get supportedWaysToPayIncludingStoreBilling => '支援的支付方式，包括商店付款。';
-
-  @override
-  String get restorePurchases => '恢復購買';
-
-  @override
-  String get reApplyAPurchaseMadeOnAnotherDevice => '重新套用在其他裝置上購買的項目。';
-
-  @override
   String get profile => '個人資料';
-
-  @override
-  String get yourIdentityPlanStatusAndAccountPreferences => '您的身份、方案狀態和帳戶偏好。';
 
   @override
   String get deleteAccount => '刪除帳戶';
@@ -5594,9 +5107,6 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get notificationsPrivacy => '通知與隱私';
-
-  @override
-  String get plansPurchases => '方案與購買';
 
   @override
   String get about => '關於';
@@ -5747,15 +5257,6 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get yourDataStaysLocal => '您的資料保持本地';
-
-  @override
-  String get comparePlansAndUpgrade => '比較方案並升級';
-
-  @override
-  String get paymentMethodsAndBilling => '付款方式和帳單';
-
-  @override
-  String get restoreYourPreviousPurchase => '恢復您之前的購買';
 
   @override
   String get versionAndBuildDetails => '版本和建置詳情';
@@ -6170,4 +5671,23 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
     });
     return '$_temp0';
   }
+
+  @override
+  String get termsOfServiceFullText =>
+      'Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.';
+
+  @override
+  String get termsAcceptanceLicenseBody =>
+      'Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices.';
+
+  @override
+  String get compressionHelpDescription =>
+      'Answers to common questions about video compression.';
+
+  @override
+  String get appSupportDescription => 'Get help using Asagi.';
+
+  @override
+  String get appTermsDescription =>
+      'Terms for using the free, open source Asagi app.';
 }

@@ -1,6 +1,5 @@
 //! Pure domain modules; no platform or bridge dependencies.
 pub mod contracts;
-pub mod licensing;
 pub mod models;
 mod planning;
 pub mod presets;

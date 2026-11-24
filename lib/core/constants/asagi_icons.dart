@@ -63,12 +63,6 @@ abstract final class AsagiIcons {
   static const IconData support = LucideIcons.lifeBuoy;
   static const IconData feedback = LucideIcons.messageSquareText;
 
-  // Plans and purchases.
-  static const IconData plans = LucideIcons.crown;
-  static const IconData planDetails = LucideIcons.sparkle;
-  static const IconData purchaseMethods = LucideIcons.creditCard;
-  static const IconData restorePurchases = LucideIcons.refreshCcw;
-
   // Account.
   static const IconData profile = LucideIcons.user;
   static const IconData deleteAccount = LucideIcons.userX;

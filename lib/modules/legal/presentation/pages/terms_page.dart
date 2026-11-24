@@ -11,7 +11,7 @@ import '../../../../core/router/app_router.dart';
 import '../../../../core/widgets/widgets.dart';
 
 /// Terms of Service explaining personal licensing, content ownership,
-/// on-device operation, and store subscription policies.
+/// on-device operation, and free use.
 final class TermsPage extends StatelessWidget {
   const TermsPage({super.key});
 
@@ -40,10 +40,6 @@ final class TermsPage extends StatelessWidget {
       (
         title: l10n.termsLocalOnDeviceProcessingTitle,
         body: l10n.termsLocalOnDeviceProcessingBody,
-      ),
-      (
-        title: l10n.termsSubscriptionsAndBillingTitle,
-        body: l10n.termsSubscriptionsAndBillingBody,
       ),
       (
         title: l10n.termsDisclaimersAndFairUseTitle,
@@ -84,7 +80,7 @@ final class TermsPage extends StatelessWidget {
                         ),
                         const Gap(AppSpacing.xSmall),
                         Text(
-                          l10n.theTermsThatApplyToAsagiAndItsPurchases,
+                          l10n.appTermsDescription,
                           style: context.textTheme.bodySmall?.copyWith(
                             color: colorScheme.onSurfaceVariant,
                           ),

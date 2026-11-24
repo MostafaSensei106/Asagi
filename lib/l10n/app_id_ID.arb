@@ -223,10 +223,6 @@
   "@signIn": {
     "description": "Login page title"
   },
-  "signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": "Masuk untuk menyinkronkan rencana Anda dan menjaga pembelian tetap tersedia di setiap perangkat.",
-  "@signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": {
-    "description": "Login page description"
-  },
   "chooseAVideo": "Pilih video",
   "@chooseAVideo": {
     "description": "Video picker page title"
@@ -355,10 +351,6 @@
   "@termsOfService": {
     "description": "Terms page title"
   },
-  "theTermsThatApplyToAsagiAndItsPurchases": "Ketentuan yang berlaku untuk Asagi dan pembeliannya.",
-  "@theTermsThatApplyToAsagiAndItsPurchases": {
-    "description": "Terms page description"
-  },
   "dataSafety": "Keamanan data",
   "@dataSafety": {
     "description": "Data safety page title"
@@ -379,17 +371,9 @@
   "@faq": {
     "description": "FAQ page title"
   },
-  "answersToCommonQuestionsAboutCompressionAndBilling": "Jawaban atas pertanyaan umum tentang kompresi dan penagihan.",
-  "@answersToCommonQuestionsAboutCompressionAndBilling": {
-    "description": "FAQ page description"
-  },
   "support": "Dukungan",
   "@support": {
     "description": "Support page title"
-  },
-  "getHelpWithYourAccountOrAPurchase": "Dapatkan bantuan untuk akun atau pembelian Anda.",
-  "@getHelpWithYourAccountOrAPurchase": {
-    "description": "Support page description"
   },
   "sendFeedback": "Kirim masukan",
   "@sendFeedback": {
@@ -399,45 +383,9 @@
   "@reportAProblemOrSuggestAnImprovement": {
     "description": "Feedback page description"
   },
-  "plans": "Rencana",
-  "@plans": {
-    "description": "Plans page title"
-  },
-  "comparePlansAndSeeWhatEachOneUnlocks": "Bandingkan rencana dan lihat apa yang dapat dibuka oleh masing-masing.",
-  "@comparePlansAndSeeWhatEachOneUnlocks": {
-    "description": "Plans page description"
-  },
-  "planDetails": "Detail rencana",
-  "@planDetails": {
-    "description": "Plan details page title"
-  },
-  "benefitsLimitsAndPricingForThisPlan": "Manfaat, batasan, dan harga untuk rencana ini.",
-  "@benefitsLimitsAndPricingForThisPlan": {
-    "description": "Plan details page description"
-  },
-  "paymentMethods": "Metode pembayaran",
-  "@paymentMethods": {
-    "description": "Purchase methods page title"
-  },
-  "supportedWaysToPayIncludingStoreBilling": "Cara pembayaran yang didukung, termasuk penagihan melalui toko.",
-  "@supportedWaysToPayIncludingStoreBilling": {
-    "description": "Purchase methods page description"
-  },
-  "restorePurchases": "Pulihkan pembelian",
-  "@restorePurchases": {
-    "description": "Restore purchases page title"
-  },
-  "reApplyAPurchaseMadeOnAnotherDevice": "Terapkan kembali pembelian yang dilakukan di perangkat lain.",
-  "@reApplyAPurchaseMadeOnAnotherDevice": {
-    "description": "Restore purchases page description"
-  },
   "profile": "Profil",
   "@profile": {
     "description": "Profile page title"
-  },
-  "yourIdentityPlanStatusAndAccountPreferences": "Identitas, status paket, dan preferensi akun Anda.",
-  "@yourIdentityPlanStatusAndAccountPreferences": {
-    "description": "Profile page description"
   },
   "deleteAccount": "Hapus akun",
   "@deleteAccount": {
@@ -477,10 +425,6 @@
   },
   "notificationsPrivacy": "Notifikasi & privasi",
   "@notificationsPrivacy": {
-    "description": "Settings hub section label"
-  },
-  "plansPurchases": "Paket & pembelian",
-  "@plansPurchases": {
     "description": "Settings hub section label"
   },
   "about": "Tentang",
@@ -558,18 +502,6 @@
   },
   "yourDataStaysLocal": "Data Anda tetap lokal",
   "@yourDataStaysLocal": {
-    "description": "Settings hub row summary"
-  },
-  "comparePlansAndUpgrade": "Bandingkan paket dan tingkatkan",
-  "@comparePlansAndUpgrade": {
-    "description": "Settings hub row summary"
-  },
-  "paymentMethodsAndBilling": "Metode pembayaran dan tagihan",
-  "@paymentMethodsAndBilling": {
-    "description": "Settings hub row summary"
-  },
-  "restoreYourPreviousPurchase": "Pulihkan pembelian sebelumnya",
-  "@restoreYourPreviousPurchase": {
     "description": "Settings hub row summary"
   },
   "versionAndBuildDetails": "Detail versi dan build",
@@ -721,5 +653,10 @@
   },
   "languageName": "Bahasa Indonesia",
   "countryCode": "ID",
-  "countryName": "{countryCode, select, AE{Uni Emirat Arab} AT{Austria} AU{Australia} BE{Belgia} BH{Bahrain} BR{Brasil} CA{Kanada} CH{Swiss} CN{Tiongkok} DE{Jerman} DJ{Jibuti} DZ{Aljazair} EG{Mesir} ES{Spanyol} FR{Prancis} GB{Inggris Raya} HK{Hong Kong DAK Tiongkok} ID{Indonesia} IQ{Irak} IT{Italia} JO{Yordania} JP{Jepang} KM{Komoro} KR{Korea Selatan} KW{Kuwait} LB{Lebanon} LY{Libya} MA{Maroko} MR{Mauritania} MX{Meksiko} NL{Belanda} OM{Oman} PL{Polandia} PS{Wilayah Palestina} PT{Portugal} QA{Qatar} RU{Rusia} SA{Arab Saudi} SD{Sudan} SE{Swedia} SG{Singapura} SO{Somalia} SY{Suriah} TH{Thailand} TN{Tunisia} TR{Turki} TW{Taiwan} US{Amerika Serikat} VN{Vietnam} YE{Yaman} other{Negara}}"
+  "countryName": "{countryCode, select, AE{Uni Emirat Arab} AT{Austria} AU{Australia} BE{Belgia} BH{Bahrain} BR{Brasil} CA{Kanada} CH{Swiss} CN{Tiongkok} DE{Jerman} DJ{Jibuti} DZ{Aljazair} EG{Mesir} ES{Spanyol} FR{Prancis} GB{Inggris Raya} HK{Hong Kong DAK Tiongkok} ID{Indonesia} IQ{Irak} IT{Italia} JO{Yordania} JP{Jepang} KM{Komoro} KR{Korea Selatan} KW{Kuwait} LB{Lebanon} LY{Libya} MA{Maroko} MR{Mauritania} MX{Meksiko} NL{Belanda} OM{Oman} PL{Polandia} PS{Wilayah Palestina} PT{Portugal} QA{Qatar} RU{Rusia} SA{Arab Saudi} SD{Sudan} SE{Swedia} SG{Singapura} SO{Somalia} SY{Suriah} TH{Thailand} TN{Tunisia} TR{Turki} TW{Taiwan} US{Amerika Serikat} VN{Vietnam} YE{Yaman} other{Negara}}",
+  "compressionHelpDescription": "Answers to common questions about video compression.",
+  "appSupportDescription": "Get help using Asagi.",
+  "appTermsDescription": "Terms for using the free, open source Asagi app.",
+  "termsOfServiceFullText": "Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.",
+  "termsAcceptanceLicenseBody": "Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices."
 }

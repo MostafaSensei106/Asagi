@@ -12,7 +12,6 @@ import '../../../../core/compression/domain/models/interrupted_compression_job.d
 import '../../../../core/compression/infrastructure/storage/mp4_faststart_validator.dart';
 import '../../../../core/native/pigeon_messages.g.dart';
 import '../../../../core/native/rust/frb_generated.dart';
-import '../../../../core/services/billing/billing_service.dart';
 import '../../domain/models/compression_record.dart';
 import '../../domain/models/resumed_compression.dart';
 import '../../domain/models/selected_video.dart';
@@ -21,12 +20,10 @@ import 'encoder_calibration_store.dart';
 
 final class DeviceVideoCompressionRepository
     implements VideoCompressionRepository {
-  DeviceVideoCompressionRepository({
-    ImagePicker? picker,
-    PurchaseProofStore? purchaseProofs,
-  }) : _picker = picker ?? ImagePicker(),
-       _encoder = PlatformVideoEncoder(NativeMediaApi()),
-       _planner = RustCompressionPlanner(purchaseProofs: purchaseProofs) {
+  DeviceVideoCompressionRepository({ImagePicker? picker})
+    : _picker = picker ?? ImagePicker(),
+      _encoder = PlatformVideoEncoder(NativeMediaApi()),
+      _planner = RustCompressionPlanner() {
     _engine = CompressionEngine(
       planner: _planner,
       encoder: _encoder,
@@ -197,8 +194,20 @@ final class DeviceVideoCompressionRepository
         attempts: verifiedOutput.attempts,
       );
       var completeRecord = record;
+      var warning = verifiedOutput.warning;
       try {
         final savedMetadata = await _encoder.inspect(saved.path);
+        final planned = await _planner.plan(
+          video.metadata,
+          targetMb,
+          preferences: preferences,
+          presetId: presetId,
+        );
+        if (savedMetadata.width != planned.targetWidth ||
+            savedMetadata.height != planned.targetHeight) {
+          warning =
+              'OUTPUT_QUALITY_ADJUSTED:${savedMetadata.width}:${savedMetadata.height}';
+        }
         completeRecord = record.copyWith(
           width: savedMetadata.width,
           height: savedMetadata.height,
@@ -215,7 +224,7 @@ final class DeviceVideoCompressionRepository
         saved.path,
         record.bytes,
         verifiedOutput.attempts,
-        verifiedOutput.warning,
+        warning,
       );
     } finally {
       if (verifiedOutput.attempts > 0) {

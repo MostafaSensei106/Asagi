@@ -223,10 +223,6 @@
   "@signIn": {
     "description": "Login page title"
   },
-  "signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": "登入以同步您的計畫，並在每個裝置上保留已購買內容。",
-  "@signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": {
-    "description": "Login page description"
-  },
   "chooseAVideo": "選擇影片",
   "@chooseAVideo": {
     "description": "Video picker page title"
@@ -355,10 +351,6 @@
   "@termsOfService": {
     "description": "Terms page title"
   },
-  "theTermsThatApplyToAsagiAndItsPurchases": "適用於 Asagi 及其購買項目的條款。",
-  "@theTermsThatApplyToAsagiAndItsPurchases": {
-    "description": "Terms page description"
-  },
   "dataSafety": "資料安全",
   "@dataSafety": {
     "description": "Data safety page title"
@@ -379,17 +371,9 @@
   "@faq": {
     "description": "FAQ page title"
   },
-  "answersToCommonQuestionsAboutCompressionAndBilling": "有關壓縮和計費的常見問題解答。",
-  "@answersToCommonQuestionsAboutCompressionAndBilling": {
-    "description": "FAQ page description"
-  },
   "support": "支援",
   "@support": {
     "description": "Support page title"
-  },
-  "getHelpWithYourAccountOrAPurchase": "獲得帳戶或購買相關的幫助。",
-  "@getHelpWithYourAccountOrAPurchase": {
-    "description": "Support page description"
   },
   "sendFeedback": "發送回饋意見",
   "@sendFeedback": {
@@ -399,45 +383,9 @@
   "@reportAProblemOrSuggestAnImprovement": {
     "description": "Feedback page description"
   },
-  "plans": "方案",
-  "@plans": {
-    "description": "Plans page title"
-  },
-  "comparePlansAndSeeWhatEachOneUnlocks": "比較方案及查看每個方案解鎖的功能。",
-  "@comparePlansAndSeeWhatEachOneUnlocks": {
-    "description": "Plans page description"
-  },
-  "planDetails": "方案詳情",
-  "@planDetails": {
-    "description": "Plan details page title"
-  },
-  "benefitsLimitsAndPricingForThisPlan": "此方案的好處、限制和價格。",
-  "@benefitsLimitsAndPricingForThisPlan": {
-    "description": "Plan details page description"
-  },
-  "paymentMethods": "付款方式",
-  "@paymentMethods": {
-    "description": "Purchase methods page title"
-  },
-  "supportedWaysToPayIncludingStoreBilling": "支援的支付方式，包括商店付款。",
-  "@supportedWaysToPayIncludingStoreBilling": {
-    "description": "Purchase methods page description"
-  },
-  "restorePurchases": "恢復購買",
-  "@restorePurchases": {
-    "description": "Restore purchases page title"
-  },
-  "reApplyAPurchaseMadeOnAnotherDevice": "重新套用在其他裝置上購買的項目。",
-  "@reApplyAPurchaseMadeOnAnotherDevice": {
-    "description": "Restore purchases page description"
-  },
   "profile": "個人資料",
   "@profile": {
     "description": "Profile page title"
-  },
-  "yourIdentityPlanStatusAndAccountPreferences": "您的身份、方案狀態和帳戶偏好。",
-  "@yourIdentityPlanStatusAndAccountPreferences": {
-    "description": "Profile page description"
   },
   "deleteAccount": "刪除帳戶",
   "@deleteAccount": {
@@ -477,10 +425,6 @@
   },
   "notificationsPrivacy": "通知與隱私",
   "@notificationsPrivacy": {
-    "description": "Settings hub section label"
-  },
-  "plansPurchases": "方案與購買",
-  "@plansPurchases": {
     "description": "Settings hub section label"
   },
   "about": "關於",
@@ -558,18 +502,6 @@
   },
   "yourDataStaysLocal": "您的資料保持本地",
   "@yourDataStaysLocal": {
-    "description": "Settings hub row summary"
-  },
-  "comparePlansAndUpgrade": "比較方案並升級",
-  "@comparePlansAndUpgrade": {
-    "description": "Settings hub row summary"
-  },
-  "paymentMethodsAndBilling": "付款方式和帳單",
-  "@paymentMethodsAndBilling": {
-    "description": "Settings hub row summary"
-  },
-  "restoreYourPreviousPurchase": "恢復您之前的購買",
-  "@restoreYourPreviousPurchase": {
     "description": "Settings hub row summary"
   },
   "versionAndBuildDetails": "版本和建置詳情",
@@ -721,5 +653,10 @@
   },
   "languageName": "繁體中文",
   "countryCode": "HK",
-  "countryName": "{countryCode, select, AE{阿拉伯聯合酋長國} AT{奧地利} AU{澳洲} BE{比利時} BH{巴林} BR{巴西} CA{加拿大} CH{瑞士} CN{中國} DE{德國} DJ{吉布提} DZ{阿爾及利亞} EG{埃及} ES{西班牙} FR{法國} GB{英國} HK{中國香港特別行政區} ID{印尼} IQ{伊拉克} IT{意大利} JO{約旦} JP{日本} KM{科摩羅} KR{南韓} KW{科威特} LB{黎巴嫩} LY{利比亞} MA{摩洛哥} MR{毛里塔尼亞} MX{墨西哥} NL{荷蘭} OM{阿曼} PL{波蘭} PS{巴勒斯坦領土} PT{葡萄牙} QA{卡塔爾} RU{俄羅斯} SA{沙地阿拉伯} SD{蘇丹} SE{瑞典} SG{新加坡} SO{索馬里} SY{敘利亞} TH{泰國} TN{突尼西亞} TR{土耳其} TW{台灣} US{美國} VN{越南} YE{也門} other{國家}}"
+  "countryName": "{countryCode, select, AE{阿拉伯聯合酋長國} AT{奧地利} AU{澳洲} BE{比利時} BH{巴林} BR{巴西} CA{加拿大} CH{瑞士} CN{中國} DE{德國} DJ{吉布提} DZ{阿爾及利亞} EG{埃及} ES{西班牙} FR{法國} GB{英國} HK{中國香港特別行政區} ID{印尼} IQ{伊拉克} IT{意大利} JO{約旦} JP{日本} KM{科摩羅} KR{南韓} KW{科威特} LB{黎巴嫩} LY{利比亞} MA{摩洛哥} MR{毛里塔尼亞} MX{墨西哥} NL{荷蘭} OM{阿曼} PL{波蘭} PS{巴勒斯坦領土} PT{葡萄牙} QA{卡塔爾} RU{俄羅斯} SA{沙地阿拉伯} SD{蘇丹} SE{瑞典} SG{新加坡} SO{索馬里} SY{敘利亞} TH{泰國} TN{突尼西亞} TR{土耳其} TW{台灣} US{美國} VN{越南} YE{也門} other{國家}}",
+  "compressionHelpDescription": "Answers to common questions about video compression.",
+  "appSupportDescription": "Get help using Asagi.",
+  "appTermsDescription": "Terms for using the free, open source Asagi app.",
+  "termsOfServiceFullText": "Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.",
+  "termsAcceptanceLicenseBody": "Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices."
 }

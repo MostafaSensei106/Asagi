@@ -15,15 +15,11 @@ import '../../modules/language/language.dart';
 import '../../modules/legal/legal.dart';
 import '../../modules/notifications/notifications.dart';
 import '../../modules/onboarding/onboarding.dart';
-import '../../modules/plans/logic/subscription_cubit.dart';
-import '../../modules/plans/plans.dart';
 import '../../modules/privacy/privacy.dart';
 import '../../modules/settings/settings.dart';
 import '../../modules/storage/storage.dart';
 import '../constants/asagi_icons.dart';
-import '../di/di.dart';
 import '../extensions/extensions.dart';
-import '../services/billing/billing_service.dart';
 import '../widgets/navigation/bottom_nav_bar/bottom_nav_bar_component.dart';
 import 'observers/app_navigator_observer.dart';
 import 'route_metadata.dart';
@@ -130,15 +126,6 @@ final class AppRouter {
         FaqRoute() => const FaqPage(),
         SupportRoute() => const SupportPage(),
         FeedbackRoute() => const FeedbackPage(),
-
-        // Plans and purchases.
-        PlansRoute() => BlocSignalProvider<SubscriptionCubit>(
-          create: (_) => getIt<SubscriptionCubit>(),
-          child: const PlansPage(),
-        ),
-        PlanDetailsRoute() => const PlanDetailsPage(),
-        PurchaseMethodsRoute() => const PurchaseMethodsPage(),
-        RestorePurchasesRoute() => const RestorePurchasesPage(),
 
         // Growth.
         RateAppRoute() => const RateAppPage(),

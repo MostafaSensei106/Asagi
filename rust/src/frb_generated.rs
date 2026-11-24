@@ -39,7 +39,7 @@ flutter_rust_bridge::frb_generated_boilerplate!(
     default_rust_auto_opaque = RustAutoOpaqueMoi,
 );
 pub(crate) const FLUTTER_RUST_BRIDGE_CODEGEN_VERSION: &str = "2.13.0";
-pub(crate) const FLUTTER_RUST_BRIDGE_CODEGEN_CONTENT_HASH: i32 = 1952142890;
+pub(crate) const FLUTTER_RUST_BRIDGE_CODEGEN_CONTENT_HASH: i32 = -1626523300;
 
 // Section: executor
 
@@ -72,9 +72,6 @@ fn wire__crate__api__calculator__calculate_compression_plan_impl(
             let api_info = <crate::domain::models::InputMetadata>::sse_decode(&mut deserializer);
             let api_target_size_mb = <f64>::sse_decode(&mut deserializer);
             let api_custom_k_factor = <Option<f32>>::sse_decode(&mut deserializer);
-            let api_original_json = <Option<String>>::sse_decode(&mut deserializer);
-            let api_signature_bytes = <Option<Vec<u8>>>::sse_decode(&mut deserializer);
-            let api_loyalty_token = <Option<String>>::sse_decode(&mut deserializer);
             deserializer.end();
             move |context| {
                 transform_result_sse::<_, String>((move || {
@@ -82,9 +79,6 @@ fn wire__crate__api__calculator__calculate_compression_plan_impl(
                         api_info,
                         api_target_size_mb,
                         api_custom_k_factor,
-                        api_original_json,
-                        api_signature_bytes,
-                        api_loyalty_token,
                     )?;
                     std::result::Result::Ok(output_ok)
                 })())
@@ -119,9 +113,6 @@ fn wire__crate__api__calculator__calculate_custom_compression_plan_impl(
             let api_custom_k_factor = <Option<f32>>::sse_decode(&mut deserializer);
             let api_preferences =
                 <crate::domain::models::PlanningPreferences>::sse_decode(&mut deserializer);
-            let api_original_json = <Option<String>>::sse_decode(&mut deserializer);
-            let api_signature_bytes = <Option<Vec<u8>>>::sse_decode(&mut deserializer);
-            let api_loyalty_token = <Option<String>>::sse_decode(&mut deserializer);
             deserializer.end();
             move |context| {
                 transform_result_sse::<_, String>((move || {
@@ -130,9 +121,6 @@ fn wire__crate__api__calculator__calculate_custom_compression_plan_impl(
                         api_target_size_mb,
                         api_custom_k_factor,
                         api_preferences,
-                        api_original_json,
-                        api_signature_bytes,
-                        api_loyalty_token,
                     )?;
                     std::result::Result::Ok(output_ok)
                 })())
@@ -197,9 +185,6 @@ fn wire__crate__api__calculator__resolve_platform_preset_impl(
             let api_info = <crate::domain::models::InputMetadata>::sse_decode(&mut deserializer);
             let api_preset_id = <crate::domain::presets::PresetId>::sse_decode(&mut deserializer);
             let api_custom_k_factor = <Option<f32>>::sse_decode(&mut deserializer);
-            let api_original_json = <Option<String>>::sse_decode(&mut deserializer);
-            let api_signature_bytes = <Option<Vec<u8>>>::sse_decode(&mut deserializer);
-            let api_loyalty_token = <Option<String>>::sse_decode(&mut deserializer);
             deserializer.end();
             move |context| {
                 transform_result_sse::<_, String>((move || {
@@ -207,9 +192,6 @@ fn wire__crate__api__calculator__resolve_platform_preset_impl(
                         api_info,
                         api_preset_id,
                         api_custom_k_factor,
-                        api_original_json,
-                        api_signature_bytes,
-                        api_loyalty_token,
                     )?;
                     std::result::Result::Ok(output_ok)
                 })())
@@ -296,45 +278,6 @@ fn wire__crate__api__calculator__verify_attempt_impl(
                         api_duration_secs,
                         api_plan,
                         api_attempt,
-                    )?;
-                    std::result::Result::Ok(output_ok)
-                })())
-            }
-        },
-    )
-}
-fn wire__crate__api__verify_subscription_receipt_impl(
-    port_: flutter_rust_bridge::for_generated::MessagePort,
-    ptr_: flutter_rust_bridge::for_generated::PlatformGeneralizedUint8ListPtr,
-    rust_vec_len_: i32,
-    data_len_: i32,
-) {
-    FLUTTER_RUST_BRIDGE_HANDLER.wrap_normal::<flutter_rust_bridge::for_generated::SseCodec, _, _>(
-        flutter_rust_bridge::for_generated::TaskInfo {
-            debug_name: "verify_subscription_receipt",
-            port: Some(port_),
-            mode: flutter_rust_bridge::for_generated::FfiCallMode::Normal,
-        },
-        move || {
-            let message = unsafe {
-                flutter_rust_bridge::for_generated::Dart2RustMessageSse::from_wire(
-                    ptr_,
-                    rust_vec_len_,
-                    data_len_,
-                )
-            };
-            let mut deserializer =
-                flutter_rust_bridge::for_generated::SseDeserializer::new(message);
-            let api_original_json = <String>::sse_decode(&mut deserializer);
-            let api_signature_bytes = <Vec<u8>>::sse_decode(&mut deserializer);
-            let api_loyalty_token = <Option<String>>::sse_decode(&mut deserializer);
-            deserializer.end();
-            move |context| {
-                transform_result_sse::<_, String>((move || {
-                    let output_ok = crate::api::verify_subscription_receipt(
-                        api_original_json,
-                        api_signature_bytes,
-                        api_loyalty_token,
                     )?;
                     std::result::Result::Ok(output_ok)
                 })())
@@ -457,24 +400,6 @@ impl SseDecode for Vec<u8> {
     }
 }
 
-impl SseDecode for crate::api::LoyaltyStatus {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    fn sse_decode(deserializer: &mut flutter_rust_bridge::for_generated::SseDeserializer) -> Self {
-        let mut var_isActive = <bool>::sse_decode(deserializer);
-        let mut var_consecutiveMonths = <u32>::sse_decode(deserializer);
-        let mut var_currentDiscountPercent = <u8>::sse_decode(deserializer);
-        let mut var_nextMonthDiscountPercent = <u8>::sse_decode(deserializer);
-        let mut var_isWinbackEligible = <bool>::sse_decode(deserializer);
-        return crate::api::LoyaltyStatus {
-            is_active: var_isActive,
-            consecutive_months: var_consecutiveMonths,
-            current_discount_percent: var_currentDiscountPercent,
-            next_month_discount_percent: var_nextMonthDiscountPercent,
-            is_winback_eligible: var_isWinbackEligible,
-        };
-    }
-}
-
 impl SseDecode for Option<String> {
     // Codec=Sse (Serialization based), see doc to use other codecs
     fn sse_decode(deserializer: &mut flutter_rust_bridge::for_generated::SseDeserializer) -> Self {
@@ -491,17 +416,6 @@ impl SseDecode for Option<f32> {
     fn sse_decode(deserializer: &mut flutter_rust_bridge::for_generated::SseDeserializer) -> Self {
         if (<bool>::sse_decode(deserializer)) {
             return Some(<f32>::sse_decode(deserializer));
-        } else {
-            return None;
-        }
-    }
-}
-
-impl SseDecode for Option<Vec<u8>> {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    fn sse_decode(deserializer: &mut flutter_rust_bridge::for_generated::SseDeserializer) -> Self {
-        if (<bool>::sse_decode(deserializer)) {
-            return Some(<Vec<u8>>::sse_decode(deserializer));
         } else {
             return None;
         }
@@ -651,7 +565,6 @@ fn pde_ffi_dispatcher_primary_impl(
         ),
         5 => wire__crate__api__stage_fallback_video_impl(port, ptr, rust_vec_len, data_len),
         6 => wire__crate__api__calculator__verify_attempt_impl(port, ptr, rust_vec_len, data_len),
-        7 => wire__crate__api__verify_subscription_receipt_impl(port, ptr, rust_vec_len, data_len),
         _ => unreachable!(),
     }
 }
@@ -722,27 +635,6 @@ impl flutter_rust_bridge::IntoIntoDart<crate::domain::models::InputMetadata>
     for crate::domain::models::InputMetadata
 {
     fn into_into_dart(self) -> crate::domain::models::InputMetadata {
-        self
-    }
-}
-// Codec=Dco (DartCObject based), see doc to use other codecs
-impl flutter_rust_bridge::IntoDart for crate::api::LoyaltyStatus {
-    fn into_dart(self) -> flutter_rust_bridge::for_generated::DartAbi {
-        [
-            self.is_active.into_into_dart().into_dart(),
-            self.consecutive_months.into_into_dart().into_dart(),
-            self.current_discount_percent.into_into_dart().into_dart(),
-            self.next_month_discount_percent
-                .into_into_dart()
-                .into_dart(),
-            self.is_winback_eligible.into_into_dart().into_dart(),
-        ]
-        .into_dart()
-    }
-}
-impl flutter_rust_bridge::for_generated::IntoDartExceptPrimitive for crate::api::LoyaltyStatus {}
-impl flutter_rust_bridge::IntoIntoDart<crate::api::LoyaltyStatus> for crate::api::LoyaltyStatus {
-    fn into_into_dart(self) -> crate::api::LoyaltyStatus {
         self
     }
 }
@@ -954,17 +846,6 @@ impl SseEncode for Vec<u8> {
     }
 }
 
-impl SseEncode for crate::api::LoyaltyStatus {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    fn sse_encode(self, serializer: &mut flutter_rust_bridge::for_generated::SseSerializer) {
-        <bool>::sse_encode(self.is_active, serializer);
-        <u32>::sse_encode(self.consecutive_months, serializer);
-        <u8>::sse_encode(self.current_discount_percent, serializer);
-        <u8>::sse_encode(self.next_month_discount_percent, serializer);
-        <bool>::sse_encode(self.is_winback_eligible, serializer);
-    }
-}
-
 impl SseEncode for Option<String> {
     // Codec=Sse (Serialization based), see doc to use other codecs
     fn sse_encode(self, serializer: &mut flutter_rust_bridge::for_generated::SseSerializer) {
@@ -981,16 +862,6 @@ impl SseEncode for Option<f32> {
         <bool>::sse_encode(self.is_some(), serializer);
         if let Some(value) = self {
             <f32>::sse_encode(value, serializer);
-        }
-    }
-}
-
-impl SseEncode for Option<Vec<u8>> {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    fn sse_encode(self, serializer: &mut flutter_rust_bridge::for_generated::SseSerializer) {
-        <bool>::sse_encode(self.is_some(), serializer);
-        if let Some(value) = self {
-            <Vec<u8>>::sse_encode(value, serializer);
         }
     }
 }

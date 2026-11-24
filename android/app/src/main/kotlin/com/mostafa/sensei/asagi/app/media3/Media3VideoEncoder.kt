@@ -80,15 +80,12 @@ class Media3VideoEncoder(
                 runCatching {
                     val capabilities = codec.getCapabilitiesForType(mimeType).videoCapabilities
                     capabilities != null &&
-                        capabilities.areSizeAndRateSupported(
-                            request.targetWidth.toInt(), request.targetHeight.toInt(), request.frameRate
-                        ) && capabilities.bitrateRange.contains(request.targetVideoBitrateBps.toInt())
+                        capabilities.supportedWidths.upper >= 2 && capabilities.supportedHeights.upper >= 2
                 }.getOrDefault(false)
             }
         }
         check(eligible.isNotEmpty()) { "E_ENCODER_UNSUPPORTED" }
-        val hardware = eligible.filter { EncoderUtil.isHardwareAccelerated(it, mimeType) }
-        val encoderNames = (hardware.ifEmpty { eligible }).map { it.name }.toSet()
+        val encoderNames = eligible.map { it.name }.toSet()
         suspendCancellableCoroutine { continuation ->
             pending = continuation
             try {
@@ -98,6 +95,7 @@ class Media3VideoEncoder(
                     .setVideoMimeType(mimeType).setAudioMimeType(MimeTypes.AUDIO_AAC)
                     .addListener(object : Transformer.Listener {
                         override fun onCompleted(composition: Composition, exportResult: ExportResult) {
+                            if (operation != generation || pending !== continuation) return
                             try {
                                 val actual = activeOutput
                                 if (actual != null && actual != output) {
@@ -114,11 +112,17 @@ class Media3VideoEncoder(
                             }
                         }
                         override fun onError(composition: Composition, exportResult: ExportResult, exportException: ExportException) {
+                            if (operation != generation || pending !== continuation) return
                             clearOperation()
                             if (continuation.isActive) continuation.resumeWithException(exportException)
                         }
                     }).build()
-                continuation.invokeOnCancellation { android.os.Handler(android.os.Looper.getMainLooper()).post { transformer?.cancel(); clearOperation() } }
+                continuation.invokeOnCancellation { handler.post {
+                    if (operation == generation && pending === continuation) {
+                        transformer?.cancel()
+                        clearOperation()
+                    }
+                } }
                 composition = planned; destination = output; activeOutput = output
                 canResume = metadata.hasAudio == true
                 if (!paused) { transformer!!.start(planned, output); handler.post(progress) }

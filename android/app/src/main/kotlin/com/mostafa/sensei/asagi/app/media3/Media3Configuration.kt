@@ -14,11 +14,11 @@ import com.mostafa.sensei.asagi.app.contracts.EncodeConfiguration
 object Media3Configuration {
     fun encoderFactory(context: Context, request: EncodeConfiguration, encoderNames: Set<String>): Codec.EncoderFactory {
         val builder = DefaultEncoderFactory.Builder(context)
-            .setEnableFallback(false)
+            .setEnableFallback(true)
             .setRequestedVideoEncoderSettings(VideoEncoderSettings.Builder()
                 .setBitrate(request.targetVideoBitrateBps.toInt()).setiFrameIntervalSeconds(2f).build())
             .setRequestedAudioEncoderSettings(AudioEncoderSettings.Builder()
-                .setBitrate(request.targetAudioBitrateBps.coerceAtLeast(48000).toInt()).build())
+                .setBitrate(request.targetAudioBitrateBps.coerceAtLeast(32000).toInt()).build())
         builder.setVideoEncoderSelector { mimeType ->
             ImmutableList.copyOf(EncoderUtil.getSupportedEncoders(mimeType).filter {
                 it.name in encoderNames

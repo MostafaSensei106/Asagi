@@ -93,9 +93,9 @@ class AsagiPresetFeedbackCard extends StatelessWidget {
     if (plan != null &&
         (plan.plan.isInfeasible ||
             plan.tier == SharePresetTier.unsatisfiable)) {
-      // Infeasible
+      final bestEffort = plan.plan.warningMessage == 'TARGET_SIZE_UNREACHABLE';
       return Card(
-        color: scheme.errorContainer,
+        color: bestEffort ? scheme.tertiaryContainer : scheme.errorContainer,
         child: Padding(
           padding: const EdgeInsets.all(AppSpacing.medium),
           child: Row(
@@ -108,23 +108,34 @@ class AsagiPresetFeedbackCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      l10n.asagiIsPuzzledAnImpossibleTargetForTheNameCap(
-                        descriptor.name,
-                      ),
+                      bestEffort
+                          ? l10n.asagiAlertProtectingQualityFromDistortion
+                          : l10n.asagiIsPuzzledAnImpossibleTargetForTheNameCap(
+                              descriptor.name,
+                            ),
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 13,
-                        color: scheme.onErrorContainer,
+                        color: bestEffort
+                            ? scheme.onTertiaryContainer
+                            : scheme.onErrorContainer,
                       ),
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      l10n.theVideoIsTooLongToFitWithinTheSizeCapWithoutSevereDistortionWeSuggestTrimmingTheVideoOrChoosingAnotherPlatformWithAHigherCap(
-                        descriptor.sizeBadge,
-                      ),
+                      bestEffort
+                          ? l10n.requestedSettingsUnavailableBestQualityIs(
+                              plan.plan.targetWidth.toString(),
+                              plan.plan.targetHeight.toString(),
+                            )
+                          : l10n.theVideoIsTooLongToFitWithinTheSizeCapWithoutSevereDistortionWeSuggestTrimmingTheVideoOrChoosingAnotherPlatformWithAHigherCap(
+                              descriptor.sizeBadge,
+                            ),
                       style: TextStyle(
                         fontSize: 12,
-                        color: scheme.onErrorContainer,
+                        color: bestEffort
+                            ? scheme.onTertiaryContainer
+                            : scheme.onErrorContainer,
                       ),
                     ),
                   ],

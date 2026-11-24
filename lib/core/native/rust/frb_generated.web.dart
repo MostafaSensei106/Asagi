@@ -62,22 +62,13 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   List<PlatformPreset> dco_decode_list_platform_preset(dynamic raw);
 
   @protected
-  List<int> dco_decode_list_prim_u_8_loose(dynamic raw);
-
-  @protected
   Uint8List dco_decode_list_prim_u_8_strict(dynamic raw);
-
-  @protected
-  LoyaltyStatus dco_decode_loyalty_status(dynamic raw);
 
   @protected
   String? dco_decode_opt_String(dynamic raw);
 
   @protected
   double? dco_decode_opt_box_autoadd_f_32(dynamic raw);
-
-  @protected
-  Uint8List? dco_decode_opt_list_prim_u_8_strict(dynamic raw);
 
   @protected
   PlanningPreferences dco_decode_planning_preferences(dynamic raw);
@@ -151,22 +142,13 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   );
 
   @protected
-  List<int> sse_decode_list_prim_u_8_loose(SseDeserializer deserializer);
-
-  @protected
   Uint8List sse_decode_list_prim_u_8_strict(SseDeserializer deserializer);
-
-  @protected
-  LoyaltyStatus sse_decode_loyalty_status(SseDeserializer deserializer);
 
   @protected
   String? sse_decode_opt_String(SseDeserializer deserializer);
 
   @protected
   double? sse_decode_opt_box_autoadd_f_32(SseDeserializer deserializer);
-
-  @protected
-  Uint8List? sse_decode_opt_list_prim_u_8_strict(SseDeserializer deserializer);
 
   @protected
   PlanningPreferences sse_decode_planning_preferences(
@@ -249,28 +231,16 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   );
 
   @protected
-  void sse_encode_list_prim_u_8_loose(List<int> self, SseSerializer serializer);
-
-  @protected
   void sse_encode_list_prim_u_8_strict(
     Uint8List self,
     SseSerializer serializer,
   );
 
   @protected
-  void sse_encode_loyalty_status(LoyaltyStatus self, SseSerializer serializer);
-
-  @protected
   void sse_encode_opt_String(String? self, SseSerializer serializer);
 
   @protected
   void sse_encode_opt_box_autoadd_f_32(double? self, SseSerializer serializer);
-
-  @protected
-  void sse_encode_opt_list_prim_u_8_strict(
-    Uint8List? self,
-    SseSerializer serializer,
-  );
 
   @protected
   void sse_encode_planning_preferences(

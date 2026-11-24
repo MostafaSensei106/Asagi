@@ -1,6 +1,5 @@
 pub mod api;
 mod domain;
-pub use domain::licensing;
 mod frb_generated;
 #[cfg(all(
     target_os = "android",

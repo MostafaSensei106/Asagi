@@ -223,10 +223,6 @@
   "@signIn": {
     "description": "Login page title"
   },
-  "signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": "Melden Sie sich an, um Ihren Plan zu synchronisieren und Ihre Käufe auf jedem Gerät verfügbar zu halten.",
-  "@signInToSyncYourPlanAndKeepYourPurchasesAvailableOnEveryDevice": {
-    "description": "Login page description"
-  },
   "chooseAVideo": "Wählen Sie ein Video",
   "@chooseAVideo": {
     "description": "Video picker page title"
@@ -355,10 +351,6 @@
   "@termsOfService": {
     "description": "Terms page title"
   },
-  "theTermsThatApplyToAsagiAndItsPurchases": "Die Bedingungen, die für Asagi und seine Käufe gelten.",
-  "@theTermsThatApplyToAsagiAndItsPurchases": {
-    "description": "Terms page description"
-  },
   "dataSafety": "Datensicherheit",
   "@dataSafety": {
     "description": "Data safety page title"
@@ -379,17 +371,9 @@
   "@faq": {
     "description": "FAQ page title"
   },
-  "answersToCommonQuestionsAboutCompressionAndBilling": "Antworten auf häufig gestellte Fragen zu Komprimierung und Abrechnung.  ",
-  "@answersToCommonQuestionsAboutCompressionAndBilling": {
-    "description": "FAQ page description"
-  },
   "support": "Support  ",
   "@support": {
     "description": "Support page title"
-  },
-  "getHelpWithYourAccountOrAPurchase": "Hilfe zu Ihrem Konto oder einem Kauf erhalten.  ",
-  "@getHelpWithYourAccountOrAPurchase": {
-    "description": "Support page description"
   },
   "sendFeedback": "Feedback senden  ",
   "@sendFeedback": {
@@ -399,45 +383,9 @@
   "@reportAProblemOrSuggestAnImprovement": {
     "description": "Feedback page description"
   },
-  "plans": "Pläne  ",
-  "@plans": {
-    "description": "Plans page title"
-  },
-  "comparePlansAndSeeWhatEachOneUnlocks": "Pläne vergleichen und sehen, was jeder freischaltet.  ",
-  "@comparePlansAndSeeWhatEachOneUnlocks": {
-    "description": "Plans page description"
-  },
-  "planDetails": "Details zum Plan  ",
-  "@planDetails": {
-    "description": "Plan details page title"
-  },
-  "benefitsLimitsAndPricingForThisPlan": "Vorteile, Limits und Preise dieses Plans.  ",
-  "@benefitsLimitsAndPricingForThisPlan": {
-    "description": "Plan details page description"
-  },
-  "paymentMethods": "Zahlungsmethoden  ",
-  "@paymentMethods": {
-    "description": "Purchase methods page title"
-  },
-  "supportedWaysToPayIncludingStoreBilling": "Unterstützte Zahlungsmethoden, einschließlich Abrechnung über den Store.  ",
-  "@supportedWaysToPayIncludingStoreBilling": {
-    "description": "Purchase methods page description"
-  },
-  "restorePurchases": "Käufe wiederherstellen",
-  "@restorePurchases": {
-    "description": "Restore purchases page title"
-  },
-  "reApplyAPurchaseMadeOnAnotherDevice": "Kauf, der auf einem anderen Gerät getätigt wurde, erneut anwenden.",
-  "@reApplyAPurchaseMadeOnAnotherDevice": {
-    "description": "Restore purchases page description"
-  },
   "profile": "Profil",
   "@profile": {
     "description": "Profile page title"
-  },
-  "yourIdentityPlanStatusAndAccountPreferences": "Ihre Identität, Planstatus und Kontoeinstellungen.",
-  "@yourIdentityPlanStatusAndAccountPreferences": {
-    "description": "Profile page description"
   },
   "deleteAccount": "Konto löschen",
   "@deleteAccount": {
@@ -477,10 +425,6 @@
   },
   "notificationsPrivacy": "Benachrichtigungen & Datenschutz",
   "@notificationsPrivacy": {
-    "description": "Settings hub section label"
-  },
-  "plansPurchases": "Pläne & Käufe",
-  "@plansPurchases": {
     "description": "Settings hub section label"
   },
   "about": "Über",
@@ -558,18 +502,6 @@
   },
   "yourDataStaysLocal": "Ihre Daten bleiben lokal",
   "@yourDataStaysLocal": {
-    "description": "Settings hub row summary"
-  },
-  "comparePlansAndUpgrade": "Pläne vergleichen und upgraden",
-  "@comparePlansAndUpgrade": {
-    "description": "Settings hub row summary"
-  },
-  "paymentMethodsAndBilling": "Zahlungsmethoden und Abrechnung",
-  "@paymentMethodsAndBilling": {
-    "description": "Settings hub row summary"
-  },
-  "restoreYourPreviousPurchase": "Ihre vorherigen Käufe wiederherstellen",
-  "@restoreYourPreviousPurchase": {
     "description": "Settings hub row summary"
   },
   "versionAndBuildDetails": "Versions- und Build-Details",
@@ -713,5 +645,10 @@
   },
   "languageName": "Deutsch",
   "countryCode": "DE",
-  "countryName": "{countryCode, select, AE{Vereinigte Arabische Emirate} AT{Österreich} AU{Australien} BE{Belgien} BH{Bahrain} BR{Brasilien} CA{Kanada} CH{Schweiz} CN{China} DE{Deutschland} DJ{Dschibuti} DZ{Algerien} EG{Ägypten} ES{Spanien} FR{Frankreich} GB{Vereinigtes Königreich} HK{Sonderverwaltungsregion Hongkong} ID{Indonesien} IQ{Irak} IT{Italien} JO{Jordanien} JP{Japan} KM{Komoren} KR{Südkorea} KW{Kuwait} LB{Libanon} LY{Libyen} MA{Marokko} MR{Mauretanien} MX{Mexiko} NL{Niederlande} OM{Oman} PL{Polen} PS{Palästinensische Autonomiegebiete} PT{Portugal} QA{Katar} RU{Russland} SA{Saudi-Arabien} SD{Sudan} SE{Schweden} SG{Singapur} SO{Somalia} SY{Syrien} TH{Thailand} TN{Tunesien} TR{Türkei} TW{Taiwan} US{Vereinigte Staaten} VN{Vietnam} YE{Jemen} other{Land}}"
+  "countryName": "{countryCode, select, AE{Vereinigte Arabische Emirate} AT{Österreich} AU{Australien} BE{Belgien} BH{Bahrain} BR{Brasilien} CA{Kanada} CH{Schweiz} CN{China} DE{Deutschland} DJ{Dschibuti} DZ{Algerien} EG{Ägypten} ES{Spanien} FR{Frankreich} GB{Vereinigtes Königreich} HK{Sonderverwaltungsregion Hongkong} ID{Indonesien} IQ{Irak} IT{Italien} JO{Jordanien} JP{Japan} KM{Komoren} KR{Südkorea} KW{Kuwait} LB{Libanon} LY{Libyen} MA{Marokko} MR{Mauretanien} MX{Mexiko} NL{Niederlande} OM{Oman} PL{Polen} PS{Palästinensische Autonomiegebiete} PT{Portugal} QA{Katar} RU{Russland} SA{Saudi-Arabien} SD{Sudan} SE{Schweden} SG{Singapur} SO{Somalia} SY{Syrien} TH{Thailand} TN{Tunesien} TR{Türkei} TW{Taiwan} US{Vereinigte Staaten} VN{Vietnam} YE{Jemen} other{Land}}",
+  "compressionHelpDescription": "Answers to common questions about video compression.",
+  "appSupportDescription": "Get help using Asagi.",
+  "appTermsDescription": "Terms for using the free, open source Asagi app.",
+  "termsOfServiceFullText": "Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.",
+  "termsAcceptanceLicenseBody": "Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices."
 }

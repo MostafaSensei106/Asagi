@@ -5,11 +5,7 @@ pub fn calculate_compression_plan(
     info: InputMetadata,
     target_size_mb: f64,
     custom_k_factor: Option<f32>,
-    original_json: Option<String>,
-    signature_bytes: Option<Vec<u8>>,
-    loyalty_token: Option<String>,
 ) -> Result<CalculationPlan, String> {
-    authorize_pro_receipt(None, true, original_json, signature_bytes, loyalty_token)?;
     use crate::domain::CompressionPolicy;
     if !target_size_mb.is_finite()
         || target_size_mb <= 0.0
@@ -31,11 +27,7 @@ pub fn calculate_custom_compression_plan(
     target_size_mb: f64,
     custom_k_factor: Option<f32>,
     preferences: PlanningPreferences,
-    original_json: Option<String>,
-    signature_bytes: Option<Vec<u8>>,
-    loyalty_token: Option<String>,
 ) -> Result<CalculationPlan, String> {
-    authorize_pro_receipt(None, true, original_json, signature_bytes, loyalty_token)?;
     if !target_size_mb.is_finite()
         || target_size_mb <= 0.0
         || target_size_mb * 1_000_000.0 > u64::MAX as f64
@@ -79,67 +71,8 @@ pub fn resolve_platform_preset(
     info: InputMetadata,
     preset_id: PresetId,
     custom_k_factor: Option<f32>,
-    original_json: Option<String>,
-    signature_bytes: Option<Vec<u8>>,
-    loyalty_token: Option<String>,
 ) -> Result<PresetPlan, String> {
-    authorize_pro_receipt(
-        Some(preset_id),
-        false,
-        original_json,
-        signature_bytes,
-        loyalty_token,
-    )?;
     PlatformPreset::by_id(preset_id).resolve(&info, safety_margin(custom_k_factor))
-}
-
-fn authorize_pro_receipt(
-    preset_id: Option<PresetId>,
-    is_custom: bool,
-    original_json: Option<String>,
-    signature_bytes: Option<Vec<u8>>,
-    loyalty_token: Option<String>,
-) -> Result<(), String> {
-    if !crate::domain::licensing::preset_requires_pro(preset_id, is_custom) {
-        return Ok(());
-    }
-    let original_json = original_json.ok_or_else(|| "E_PRO_SUBSCRIPTION_REQUIRED".to_owned())?;
-    let signature_bytes =
-        signature_bytes.ok_or_else(|| "E_PRO_SUBSCRIPTION_REQUIRED".to_owned())?;
-    let public_key = option_env!("ASAGI_PLAY_RSA_PUBLIC_KEY_PEM")
-        .filter(|key| !key.trim().is_empty())
-        .ok_or_else(|| "E_PRO_SUBSCRIPTION_REQUIRED".to_owned())?;
-    let purchase = crate::domain::licensing::verify_google_play_purchase(
-        &original_json,
-        &signature_bytes,
-        public_key.as_bytes(),
-    )
-    .map_err(|_| "E_PRO_SUBSCRIPTION_REQUIRED".to_owned())?;
-    if let Some(token) = loyalty_token {
-        let loyalty_key = option_env!("ASAGI_LOYALTY_RSA_PUBLIC_KEY_PEM")
-            .filter(|key| !key.trim().is_empty())
-            .ok_or_else(|| "E_LOYALTY_RECEIPT_INVALID".to_owned())?;
-        crate::domain::licensing::verify_loyalty_token(&token, &purchase, loyalty_key.as_bytes())
-            .map_err(|_| "E_LOYALTY_RECEIPT_INVALID".to_owned())?;
-    }
-    let json: serde_json::Value = serde_json::from_str(&original_json)
-        .map_err(|_| "E_PRO_SUBSCRIPTION_REQUIRED".to_owned())?;
-    let active = json
-        .get("purchaseState")
-        .and_then(serde_json::Value::as_i64)
-        == Some(0)
-        && json
-            .get("autoRenewing")
-            .and_then(serde_json::Value::as_bool)
-            .unwrap_or(true)
-        && json
-            .get("productId")
-            .and_then(serde_json::Value::as_str)
-            .is_some_and(|id| id == "asagi_pro_monthly");
-    if !active || purchase.purchase_token.trim().is_empty() {
-        return Err("E_PRO_SUBSCRIPTION_REQUIRED".into());
-    }
-    Ok(())
 }
 
 /// Single place that turns the optional float margin into the domain's `f64`.
@@ -153,25 +86,37 @@ fn safety_margin(custom_k_factor: Option<f32>) -> f64 {
 mod tests {
     use super::*;
 
-    #[test]
-    fn ffis_fail_closed_for_each_pro_plan_kind_without_a_receipt() {
-        for (preset, custom) in [
-            (Some(PresetId::Discord), false),
-            (Some(PresetId::YouTubeShorts), false),
-            (None, true),
-        ] {
-            assert_eq!(
-                authorize_pro_receipt(preset, custom, None, None, None),
-                Err("E_PRO_SUBSCRIPTION_REQUIRED".into()),
-            );
+    fn video() -> InputMetadata {
+        InputMetadata {
+            duration_secs: 60.0,
+            width: 1920,
+            height: 1080,
+            rotation: 0,
+            bitrate_bps: 16_000_000,
+            file_size_bytes: 120_000_000,
+            has_audio: true,
+            pixel_aspect_ratio: 1.0,
         }
     }
 
     #[test]
-    fn free_presets_do_not_require_a_subscription_proof() {
-        assert_eq!(
-            authorize_pro_receipt(Some(PresetId::Whatsapp), false, None, None, None),
-            Ok(()),
-        );
+    fn custom_settings_are_available_without_an_account() {
+        let preferences = PlanningPreferences {
+            force_encode: true,
+            max_short_edge: 480,
+            audio_bitrate_bps: 64_000,
+            video_bitrate_ceiling_bps: 800_000,
+        };
+        let plan = calculate_custom_compression_plan(video(), 16.0, None, preferences).unwrap();
+        assert!(plan.target_width.min(plan.target_height) <= 480);
+        assert_eq!(plan.target_audio_bitrate_bps, 64_000);
+        assert!(plan.target_video_bitrate_bps <= 800_000);
+    }
+
+    #[test]
+    fn every_destination_is_available_without_an_account() {
+        for preset in PlatformPreset::all() {
+            assert!(resolve_platform_preset(video(), preset.id, None).is_ok());
+        }
     }
 }

@@ -213,6 +213,7 @@ final class CompressionSetupPage extends HookWidget {
                 // Engine Plan Summary
                 CompressionPlanSummary(
                   plan: state.previewPlan,
+                  error: state.error,
                   isLoading: state.planning,
                   hasAudio: video.metadata.hasAudio,
                 ),

@@ -14,6 +14,7 @@ import '../../../../core/services/share/base_share_service.dart';
 import '../../../../core/widgets/widgets.dart';
 import '../cubit/compression_cubit.dart';
 import '../cubit/compression_state.dart';
+import '../widgets/compression_error_text.dart';
 import '../widgets/video_preview.dart';
 
 final class CompressionResultPage extends HookWidget {
@@ -200,13 +201,11 @@ final class CompressionResultPage extends HookWidget {
                         const Gap(AppSpacing.small),
                         Expanded(
                           child: Text(
-                            output.warning == 'TARGET_SIZE_UNREACHABLE'
-                                ? l10n.targetSizeNotReachedOutputIs(
-                                    (compressedBytes / 1000000).toStringAsFixed(
-                                      1,
-                                    ),
-                                  )
-                                : output.warning!,
+                            compressionWarningText(
+                              context,
+                              output.warning!,
+                              output.bytes,
+                            ),
                             style: textTheme.bodySmall?.copyWith(
                               color: colorScheme.onSurfaceVariant,
                             ),

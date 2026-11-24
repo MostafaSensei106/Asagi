@@ -22,7 +22,7 @@ final class CompressionPreferences {
   final int? videoBitrateCeilingKbps;
   final HdrMode hdrMode;
 
-  /// Null uses default 0.93 safety margin. Range is 0.85 to 0.98.
+  /// Null uses the planner's default 0.98 safety margin. Range is 0.85 to 0.98.
   final double? safetyMargin;
 
   CompressionPreferences copyWith({
