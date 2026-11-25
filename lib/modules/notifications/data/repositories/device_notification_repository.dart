@@ -13,8 +13,10 @@ final class DeviceNotificationRepository implements NotificationRepository {
   DeviceNotificationRepository(this._service, this._permissions);
   final BaseLocalNotificationService _service;
   final BasePermissionService _permissions;
+
   @override
   Stream<void> get interactions => _service.interactions;
+
   @override
   List<String> takePendingInteractions() => _service.takePendingInteractions();
   @override

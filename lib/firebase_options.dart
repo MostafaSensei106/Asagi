@@ -56,7 +56,6 @@ class DefaultFirebaseOptions {
     projectId: 'kuymo-acd09',
     storageBucket: 'kuymo-acd09.firebasestorage.app',
   );
-
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyC2UmXBdEJNTR-STNbqrD_l1vF8Z8U_2c4',
     appId: '1:359617533113:ios:33b76bff5b514c5fc63768',
