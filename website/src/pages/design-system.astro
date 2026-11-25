@@ -1,0 +1,209 @@
+---
+import ProductLayout from '@/features/product/ProductLayout.astro';
+import ActionLink from '@/components/site/ActionLink.astro';
+import StatusBadge from '@/components/site/StatusBadge.astro';
+import SectionHeading from '@/components/site/SectionHeading.astro';
+import { withBase } from '@/lib/paths';
+const swatches = [
+  { name: 'Warm paper · 60%', token: '--ds-paper', hex: '#F5F1E8' },
+  { name: 'Ink indigo · 30%', token: '--kuymo-indigo', hex: '#283D50' },
+  { name: 'Vermilion · 10%', token: '--kuymo-vermilion', hex: '#C64B36' },
+];
+const fonts = [
+  { name: 'Display', family: 'Google Sans Flex', token: '--font-display' },
+  { name: 'Body', family: 'Google Sans', token: '--font-body' },
+  { name: 'Mono', family: 'Google Sans Code', token: '--font-mono' },
+  { name: 'Japanese', family: 'Yuji Boku / Noto Sans JP', token: '--font-jp' },
+];
+---
+
+<ProductLayout
+  locale="en"
+  section="about"
+  title="Kuymo design system"
+  description="The reusable foundations, components and interaction patterns behind Kuymo's product website."
+  noindex
+>
+  <div class="shell page-intro">
+    <p class="eyebrow">KUYMO / DESIGN SYSTEM / V1</p>
+    <h1>
+      Expressive spirit.
+      <br />A precise frame.
+    </h1>
+    <p>
+      A small system for a small independent product. Paper, ink and vermilion; sharp editorial
+      structure; natural, restrained interaction.
+    </p>
+  </div>
+  <section class="shell system-section">
+    <SectionHeading
+      title="One palette. Clear roles."
+      eyebrow="01 / FOUNDATIONS"
+      description="60–30–10 is a visual guide. Semantic colors retain their meaning; accessible tone variants serve dark and light modes."
+    />
+    <div class="system-swatches">
+      {swatches.map((swatch) => (
+        <div>
+          <div class="system-color" style={`--swatch:var(${swatch.token})`}></div>
+          <h3>{swatch.name}</h3>
+          <p class="mono">{swatch.hex}</p>
+          <code>{swatch.token}</code>
+        </div>
+      ))}
+    </div>
+  </section>
+  <section class="shell system-section">
+    <SectionHeading title="Type with room to breathe." eyebrow="02 / TYPOGRAPHY" />
+    <div class="system-type">
+      {fonts.map((font) => (
+        <div>
+          <p class="mono">
+            {font.name} / {font.family}
+          </p>
+          <p
+            class="type-specimen"
+            style={`font-family:var(${font.token})`}
+            lang={font.name === 'Japanese' ? 'ja' : 'en'}
+          >
+            {font.name === 'Japanese' ? '余白' : 'More room. 012345'}
+          </p>
+        </div>
+      ))}
+      <div lang="ar" dir="rtl">
+        <p class="mono">Noto Sans Arabic</p>
+        <p class="type-specimen">مساحة أكبر للحظاتك.</p>
+      </div>
+    </div>
+    <p>
+      Display 48–104px · Heading 32–68px · Body 16px · Label 12px. Arabic keeps natural line height
+      and no artificial tracking. All fonts are self-hosted with font-display: swap.
+    </p>
+  </section>
+  <section class="shell system-section">
+    <SectionHeading title="A useful set of parts." eyebrow="03 / COMPONENTS" />
+    <div class="system-controls">
+      <ActionLink href={withBase('/screenshots/')}>Explore the app</ActionLink>
+      <ActionLink href={withBase('/download/')} variant="outline">
+        Follow the release
+      </ActionLink>
+      <ActionLink href={withBase('/about/')} variant="text">
+        About Kuymo
+      </ActionLink>
+      <StatusBadge label="Coming soon on Google Play" />
+    </div>
+    <div class="system-grid">
+      <div class="system-example">
+        <h3>Loading an image</h3>
+        <div class="system-skeleton" aria-label="Example placeholder, not an active request"></div>
+        <p>Reserve the image ratio. Native lazy loading; no artificial delay.</p>
+      </div>
+      <div class="system-example">
+        <h3>Empty collection</h3>
+        <p>No screenshots in this example.</p>
+        <a class="inline-link" href={withBase('/screenshots/')}>
+          View available screenshots ↗
+        </a>
+      </div>
+      <div class="system-example">
+        <h3>Image failure</h3>
+        <p>This screenshot could not load.</p>
+        <p>Retry only the affected image. Keep the rest of the page available.</p>
+      </div>
+      <div class="system-example">
+        <h3>Loaded / selected</h3>
+        <p>
+          Show the actual image. A selected filter has both aria-pressed and a visible filled state.
+        </p>
+        <StatusBadge label="Example: image ready" quiet />
+      </div>
+    </div>
+  </section>
+  <section class="shell system-section">
+    <SectionHeading title="Precision, with a little give." eyebrow="04 / MOTION & SPACE" />
+    <p>
+      4px spacing base · 4px control corners · 44px minimum hit area · 48px action height.
+      Phone-shaped screenshots are content frames, not a second control shape system.
+    </p>
+    <p>
+      One shared spring: entrance 450ms with restrained bounce; press 220ms. The fixed floating
+      navbar keeps a safe offset from the viewport. Reduced motion completes active animation and
+      removes future animated feedback.
+    </p>
+    <div class="system-controls">
+      <ActionLink href={withBase('/screenshots/')}>Try the gallery</ActionLink>
+      <ActionLink variant="outline" href={withBase('/ar/')}>
+        Preview Arabic RTL
+      </ActionLink>
+    </div>
+  </section>
+</ProductLayout>
+<style>
+  .system-section {
+    padding-block: var(--ds-space-12);
+    border-top: 1px solid var(--ds-line);
+  }
+  .system-section > p {
+    max-width: 75ch;
+    line-height: 1.9;
+    margin-block: var(--ds-space-5);
+    color: var(--ds-muted);
+  }
+  .system-swatches {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--ds-space-6);
+  }
+  .system-color {
+    height: 160px;
+    background: var(--swatch);
+    border: 1px solid var(--ds-line);
+    margin-bottom: var(--ds-space-5);
+  }
+  .system-swatches h3 {
+    font-size: var(--ds-title);
+    margin-block: var(--ds-space-3);
+  }
+  .system-type > div {
+    border-bottom: 1px solid var(--ds-line);
+    padding-block: var(--ds-space-6);
+  }
+  .type-specimen {
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-top: var(--ds-space-4);
+  }
+  .system-controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--ds-space-6);
+    margin-block: var(--ds-space-8);
+  }
+  .system-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--ds-space-6);
+  }
+  .system-example {
+    border: 1px solid var(--ds-line);
+    padding: var(--ds-space-6);
+  }
+  .system-example h3 {
+    font-size: var(--ds-title);
+    margin-bottom: var(--ds-space-5);
+  }
+  .system-example p {
+    margin-block: var(--ds-space-4);
+    line-height: 1.8;
+    color: var(--ds-muted);
+  }
+  .system-skeleton {
+    height: 80px;
+    background: var(--ds-wash);
+  }
+  @media (max-width: 700px) {
+    .system-swatches,
+    .system-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,33 @@
+---
+import SectionHeading from '@/components/site/SectionHeading.astro';
+import { content } from '../locales';
+const { locale } = Astro.props;
+const { t, copy } = content(locale);
+const steps = [
+  { title: 'pickVideo', body: 'pickAVideoFromYourGalleryToStartCompressing' },
+  { title: 'targetSizeMB', body: 'chooseResolutionBitrateAndOutputFormatBeforeYouStart' },
+  { title: 'saveToGallery', body: 'compareTheBeforeAndAfterSizeThenSaveOrShareTheResult' },
+];
+---
+
+<section class="workflow-section">
+  <div class="shell" data-reveal>
+    <SectionHeading
+      title={copy.how}
+      eyebrow="03 / YOUR NEXT SHARE"
+      description={t('learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone')}
+    />
+    <ol class="workflow">
+      {steps.map((step, index) => (
+        <li>
+          <span class="step-number mono">
+            0{index + 1}
+            <span aria-hidden="true">↘</span>
+          </span>
+          <h3>{t(step.title)}</h3>
+          <p>{t(step.body)}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

@@ -76,7 +76,7 @@ export default defineConfig({
         const pathname = new URL(page).pathname.replace(/\/+$/, '');
         const relative = pathname.replace(base === '/' ? '' : base, '').replace(/^\//, '');
 
-        return relative !== '404' && !draftPaths.has(relative);
+        return relative !== '404' && relative !== 'design-system' && !draftPaths.has(relative);
       },
     }),
   ],

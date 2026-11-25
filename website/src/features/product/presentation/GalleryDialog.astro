@@ -1,0 +1,29 @@
+---
+import { X, ArrowLeft, ArrowRight } from '@lucide/astro';
+import { siteCopy } from '../data/site-copy';
+const copy = siteCopy(Astro.props.locale);
+---
+
+<dialog class="gallery-dialog" id="screenshot-dialog" aria-labelledby="dialog-caption">
+  <div class="dialog-toolbar">
+    <p id="dialog-caption" data-dialog-caption></p>
+    <button type="button" data-dialog-close aria-label={copy.close} class="icon-button">
+      <X size={22} aria-hidden="true" />
+    </button>
+  </div>
+  <div class="dialog-stage">
+    <img data-dialog-image alt="" width="390" height="844" />
+    <p data-dialog-error hidden role="status">
+      {copy.imageError}
+    </p>
+  </div>
+  <div class="dialog-navigation">
+    <button type="button" data-dialog-previous class="icon-button" aria-label={copy.previous}>
+      <ArrowLeft size={22} aria-hidden="true" />
+    </button>
+    <span class="mono" data-dialog-count aria-live="polite"></span>
+    <button type="button" data-dialog-next class="icon-button" aria-label={copy.next}>
+      <ArrowRight size={22} aria-hidden="true" />
+    </button>
+  </div>
+</dialog>

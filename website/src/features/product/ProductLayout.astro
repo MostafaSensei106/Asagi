@@ -1,8 +1,10 @@
 ---
-import { Moon, Sun, ArrowUpRight, Menu } from '@lucide/astro';
 import Seo from '@/components/seo/Seo.astro';
-import { absoluteUrl, withBase } from '@/lib/paths';
-import { content, locales, localeName, localePath, type Section } from './locales';
+import { absoluteUrl } from '@/lib/paths';
+import { content, locales, localePath, type Section } from './locales';
+import ProductHeader from './presentation/ProductHeader.astro';
+import ProductFooter from './presentation/ProductFooter.astro';
+import GalleryDialog from './presentation/GalleryDialog.astro';
 import '@/styles/global.css';
 import './product.css';
 interface Props {
@@ -10,13 +12,10 @@ interface Props {
   section: Section;
   title: string;
   description: string;
+  noindex?: boolean;
 }
-const { locale, section, title, description } = Astro.props;
-const { t, copy, rtl } = content(locale);
-const links = [
-  { title: copy.features, section: 'features' as const },
-  { title: copy.download, section: 'download' as const },
-];
+const { locale, section, title, description, noindex = false } = Astro.props;
+const { copy, rtl } = content(locale);
 ---
 
 <!doctype html>
@@ -25,21 +24,40 @@ const links = [
     <Seo
       title={title}
       description={description}
-      path={localePath(locale, section)}
+      path={noindex ? '/design-system/' : localePath(locale, section)}
       locale={locale}
+      noindex={noindex}
+      jsonLd={
+        noindex
+          ? []
+          : [
+              {
+                '@type': 'SoftwareApplication',
+                name: 'Kuymo',
+                operatingSystem: 'Android 11+',
+                applicationCategory: 'MultimediaApplication',
+                description,
+                isAccessibleForFree: true,
+              },
+            ]
+      }
     />
-    {locales.map((language) => (
-      <link
-        rel="alternate"
-        hreflang={language}
-        href={absoluteUrl(localePath(language, section), Astro.site)}
-      />
-    ))}
-    <link
-      rel="alternate"
-      hreflang="x-default"
-      href={absoluteUrl(localePath('en', section), Astro.site)}
-    />
+    {!noindex && (
+      <>
+        {locales.map((language) => (
+          <link
+            rel="alternate"
+            hreflang={language}
+            href={absoluteUrl(localePath(language, section), Astro.site)}
+          />
+        ))}
+        <link
+          rel="alternate"
+          hreflang="x-default"
+          href={absoluteUrl(localePath('en', section), Astro.site)}
+        />
+      </>
+    )}
     <script is:inline>
       try {
         const saved = localStorage.getItem('kuymo-theme');
@@ -49,7 +67,7 @@ const links = [
         document.documentElement.classList.toggle('dark', dark);
         document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
       } catch {
-        /* The light theme works when storage is unavailable. */
+        /* The light theme stays usable when storage is blocked. */
       }
     </script>
   </head>
@@ -57,149 +75,19 @@ const links = [
     <a href="#main-content" class="skip-link">
       {copy.skip}
     </a>
-    <header class="product-header">
-      <div class="product-shell header-row">
-        <a href={withBase(localePath(locale))} aria-label="Kuymo" class="product-logo">
-          <img
-            src={withBase('/branding/kuymo-horizontal.svg')}
-            alt="Kuymo"
-            width="658"
-            height="256"
-            class="dark:hidden"
-          />
-          <img
-            src={withBase('/branding/kuymo-horizontal-white.svg')}
-            alt="Kuymo"
-            width="658"
-            height="256"
-            class="hidden dark:block"
-          />
-        </a>
-        <nav class="desktop-nav" aria-label={copy.features}>
-          {links.map((link) => (
-            <a
-              href={withBase(localePath(locale, link.section))}
-              aria-current={section === link.section ? 'page' : undefined}
-            >
-              {link.title}
-            </a>
-          ))}
-          <a href={withBase('/legal/')}>{copy.legal}</a>
-        </nav>
-        <div class="header-controls">
-          <details class="language-picker">
-            <summary aria-label={t('language')}>
-              <span aria-hidden="true">◎</span> <span lang={locale}>{localeName(locale)}</span>
-            </summary>
-            <nav aria-label={t('language')} class="language-list">
-              {locales.map((language) => (
-                <a
-                  href={withBase(localePath(language, section))}
-                  lang={language}
-                  hreflang={language}
-                  aria-current={locale === language ? 'true' : undefined}
-                >
-                  {localeName(language)}
-                </a>
-              ))}
-            </nav>
-          </details>
-          <button
-            class="theme-button"
-            data-product-theme
-            aria-label={t('theme')}
-            aria-pressed="false"
-            title={t('theme')}
-          >
-            <Sun size={18} class="dark:hidden" aria-hidden="true" />
-            <Moon size={18} class="hidden dark:block" aria-hidden="true" />
-          </button>
-          <details class="mobile-nav">
-            <summary aria-label={copy.features}>
-              <Menu size={20} aria-hidden="true" />
-            </summary>
-            <nav aria-label={copy.features}>
-              {links.map((link) => (
-                <a href={withBase(localePath(locale, link.section))}>{link.title}</a>
-              ))}
-              <a href={withBase('/legal/')}>{copy.legal}</a>
-            </nav>
-          </details>
-        </div>
-      </div>
-    </header>
+    <ProductHeader locale={locale} section={section} />
     <main id="main-content">
       <slot />
     </main>
-    <footer class="product-footer product-shell">
-      <div>
-        <a href={withBase(localePath(locale))} class="footer-wordmark">
-          Kuymo<span aria-hidden="true">◼</span>
-        </a>
-        <p>{t('brandTagline')}</p>
-      </div>
-      <nav aria-label={copy.legal}>
-        <a href={withBase('/kuymo/privacy')}>
-          {t('privacyPolicy')} <span lang="en">(English)</span>
-        </a>
-        <a href={withBase('/kuymo/terms')}>
-          {t('termsOfService')} <span lang="en">(English)</span>
-        </a>
-        <a href="https://github.com/MostafaSensei106/Kuymo">
-          {copy.source}
-          <ArrowUpRight size={14} aria-hidden="true" />
-        </a>
-      </nav>
-      <div class="footer-bottom">
-        <span>© {new Date().getFullYear()} Kuymo</span>
-        <span>Google Sans · Noto Sans Arabic</span>
-      </div>
-    </footer>
+    <ProductFooter locale={locale} />
+    <GalleryDialog locale={locale} />
     <script>
-      const root = document.documentElement;
-      const button = document.querySelector<HTMLButtonElement>('[data-product-theme]');
-      const sync = () =>
-        button?.setAttribute('aria-pressed', String(root.classList.contains('dark')));
-      button?.addEventListener('click', () => {
-        const dark = root.classList.toggle('dark');
-        root.style.colorScheme = dark ? 'dark' : 'light';
-        try {
-          localStorage.setItem('kuymo-theme', dark ? 'dark' : 'light');
-        } catch {
-          /* Optional persistence. */
-        }
-        sync();
-      });
-      sync();
-      const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-      if (!reduced.matches && 'IntersectionObserver' in window) {
-        const observer = new IntersectionObserver(
-          (entries) =>
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('revealed');
-                observer.unobserve(entry.target);
-              }
-            }),
-          { threshold: 0.08 },
-        );
-        document.querySelectorAll('[data-reveal]').forEach((node) => {
-          node.classList.add('will-reveal');
-          observer.observe(node);
-        });
-        reduced.addEventListener('change', () =>
-          document
-            .querySelectorAll('.will-reveal')
-            .forEach((node) => node.classList.add('revealed')),
-        );
-      }
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape')
-          document.querySelectorAll<HTMLDetailsElement>('details[open]').forEach((node) => {
-            node.open = false;
-            node.querySelector('summary')?.focus();
-          });
-      });
+      import { initTheme } from './scripts/theme';
+      import { initGallery } from './scripts/gallery';
+      import { initMotion } from '@/design-system/motion';
+      initTheme();
+      initGallery();
+      initMotion();
     </script>
   </body>
 </html>

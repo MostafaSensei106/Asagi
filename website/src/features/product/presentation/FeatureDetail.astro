@@ -1,0 +1,38 @@
+---
+import type { Feature } from '../domain/product';
+import { siteCopy } from '../data/site-copy';
+import { content } from '../locales';
+import CompressionDemo from '../CompressionDemo.astro';
+import AppScreenshot from './AppScreenshot.astro';
+import { heroScreenshots } from '../data/screenshots';
+interface Props {
+  locale: string;
+  feature: Feature;
+}
+const { locale, feature } = Astro.props;
+const { t } = content(locale);
+const site = siteCopy(locale);
+---
+
+<section class="shell feature-detail" data-reveal>
+  <div>
+    <p class="eyebrow">KUYMO / {feature.id}</p>
+    <h2>{site[feature.body]}</h2>
+    <p>{feature.id === 'on-device' ? site.localAnswer : site.sizeAnswer}</p>
+    {feature.id === 'sharing' && (
+      <ul class="platform-list">
+        {['WhatsApp', 'Discord', 'Instagram Reels', 'TikTok', 'YouTube Shorts'].map((platform) => (
+          <li>{platform}</li>
+        ))}
+      </ul>
+    )}
+    <p>{t('compareTheBeforeAndAfterSizeThenSaveOrShareTheResult')}</p>
+  </div>
+  <div class="detail-visual">
+    {feature.id === 'target-size' ? (
+      <CompressionDemo locale={locale} />
+    ) : (
+      <AppScreenshot locale={locale} shot={heroScreenshots(locale)[0]!} priority />
+    )}
+  </div>
+</section>

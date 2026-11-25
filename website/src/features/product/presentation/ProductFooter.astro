@@ -1,0 +1,49 @@
+---
+import { ArrowUpRight } from '@lucide/astro';
+import { withBase } from '@/lib/paths';
+import { content, localePath } from '../locales';
+import { siteCopy } from '../data/site-copy';
+import { product } from '../data/product';
+const { locale } = Astro.props;
+const { t, copy } = content(locale);
+const site = siteCopy(locale);
+---
+
+<footer class="site-footer shell" data-slot="site-footer">
+  <div class="footer-top">
+    <div>
+      <a href={withBase(localePath(locale))} class="footer-wordmark">
+        Kuymo<span>.</span>
+      </a>
+      <p>{t('brandTagline')}</p>
+      <p class="mono">{site.free}</p>
+    </div>
+    <nav aria-label={site.about}>
+      <a href={withBase(localePath(locale, 'screenshots'))}>{site.screens}</a>
+      <a href={withBase(localePath(locale, 'about'))}>{site.about}</a>
+      <a href={withBase(localePath(locale, 'developer'))}>{site.developer}</a>
+      <a href={product.issues}>
+        {site.support}
+        <ArrowUpRight size={16} aria-hidden="true" />
+      </a>
+    </nav>
+    <nav aria-label={copy.legal}>
+      <a href={withBase('/kuymo/privacy')}>
+        {t('privacyPolicy')} <small lang="en">(English)</small>
+      </a>
+      <a href={withBase('/kuymo/terms')}>
+        {t('termsOfService')} <small lang="en">(English)</small>
+      </a>
+      <a href={product.repository}>
+        {copy.source}
+        <ArrowUpRight size={16} aria-hidden="true" />
+      </a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <span>
+      © {new Date().getFullYear()} {product.developer} / Kuymo
+    </span>
+    <span class="mono">余白 — MORE ROOM.</span>
+  </div>
+</footer>

@@ -1,0 +1,19 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { ArrowUpRight } from '@lucide/astro';
+type Props = HTMLAttributes<'a'> & {
+  href: string;
+  variant?: 'primary' | 'outline' | 'text';
+  arrow?: boolean;
+};
+const { variant = 'primary', arrow = true, class: className, ...attrs } = Astro.props;
+---
+
+<a
+  {...attrs}
+  class:list={['ds-action', `ds-action--${variant}`, className]}
+  data-slot="action-link"
+>
+  <slot />
+  {arrow && <ArrowUpRight size={18} stroke-width={1.7} aria-hidden="true" />}
+</a>

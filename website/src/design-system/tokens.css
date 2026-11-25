@@ -13,6 +13,7 @@
   --ds-paper: var(--kuymo-paper);
   --ds-ink: var(--kuymo-indigo);
   --ds-accent: var(--kuymo-vermilion);
+  --ds-accent-text: #a73926;
   --ds-accent-hover: #a73926;
   --ds-on-accent: #fff;
   --ds-wash: #e3e8eb;
@@ -22,9 +23,9 @@
   --ds-muted: #53616b;
   --ds-success: #296344;
   --ds-error: #a12a22;
-  --ds-space-1: .25rem;
-  --ds-space-2: .5rem;
-  --ds-space-3: .75rem;
+  --ds-space-1: 0.25rem;
+  --ds-space-2: 0.5rem;
+  --ds-space-3: 0.75rem;
   --ds-space-4: 1rem;
   --ds-space-5: 1.25rem;
   --ds-space-6: 1.5rem;
@@ -44,11 +45,11 @@
   --ds-heading: clamp(2rem, 4.2vw, 4.25rem);
   --ds-title: clamp(1.25rem, 2vw, 1.75rem);
   --ds-body: 1rem;
-  --ds-small: .875rem;
-  --ds-label: .75rem;
+  --ds-small: 0.875rem;
+  --ds-label: 0.75rem;
   --ds-shadow: 5px 5px 0 var(--ds-line);
   --ds-shadow-hover: 8px 8px 0 var(--ds-line);
-  --ds-ease: cubic-bezier(.2, .8, .2, 1);
+  --ds-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   --ds-duration-fast: 160ms;
   --ds-duration-normal: 260ms;
   --ds-z-nav: 30;
@@ -59,6 +60,7 @@
 .dark {
   --ds-ink: #f5f1e8;
   --ds-accent: #ffb5a4;
+  --ds-accent-text: #ffb5a4;
   --ds-accent-hover: #ffd1c6;
   --ds-on-accent: #391006;
   --ds-wash: #263b4c;
@@ -72,7 +74,12 @@
   --font-display: 'Noto Sans Arabic', sans-serif;
   --font-body: 'Noto Sans Arabic', sans-serif;
 }
-:lang(ja) { --font-body: var(--font-jp-google), sans-serif; }
-@media(prefers-reduced-motion:reduce) {
-  :root { --ds-duration-fast: 0ms; --ds-duration-normal: 0ms; }
+:lang(ja) {
+  --font-body: var(--font-jp-google), sans-serif;
+}
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --ds-duration-fast: 0ms;
+    --ds-duration-normal: 0ms;
+  }
 }

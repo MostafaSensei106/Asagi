@@ -1,28 +1,13 @@
 # Kuymo product website
 
-Static Astro site with product, feature and download pages. Existing legal URLs
-remain available at `/kuymo/privacy`, `/kuymo/terms` and the app indexes; `/legal/`
-is the legal directory. Legal documents remain in their published language.
+Astro product site with an Expressive × Retro Japanese design system, real app
+screenshots and a floating navbar. The website is currently **English and Arabic
+only**; the application's other locales are unchanged. Google Play is coming
+soon; the site does not imply an available store download.
 
-## Languages
+## Run and verify
 
-`src/features/product/locales.ts` reads every base and regional ARB in
-`../lib/l10n` at build time. English lives at `/`; other locales use BCP 47 paths
-such as `/ar-EG/` and `/zh-TW/`. Each locale has the same six product routes.
-The language picker preserves the current route. Canonical and alternate links
-respect `BASE_PATH`; English is the x-default locale.
-
-Product labels come from merged base/regional app catalogs. Website-specific
-marketing copy lives in `copy.ts`, and missing app messages are translated in
-`messages.ts`. New languages require both catalogs; a missing translation fails
-the build rather than silently presenting an English page. Regional variants
-inherit their language's marketing copy, with Brazilian Portuguese and
-Traditional Chinese overrides. Native-speaker editorial review is recommended.
-App captures are English and Arabic and are illustrations of the actual UI.
-
-## Develop and verify
-
-Use Node >=22.12 and the pinned pnpm version in package.json:
+Use Node >=22.12 and pnpm 10.34.9 (pinned in package.json):
 
 ```sh
 pnpm install --frozen-lockfile
@@ -31,25 +16,78 @@ pnpm verify
 pnpm test:e2e
 ```
 
-The browser suite uses the installed Chrome at `/opt/google/chrome/chrome` when
-present; otherwise install Playwright Chromium with `pnpm test:e2e:install`.
-Tests cover every locale/feature route, locale-preserving navigation, existing
-legal links, mobile overflow, loaded images, the illustrative size slider,
-theme persistence, reduced motion and light/dark WCAG AA checks.
+If pnpm is not on PATH, use `npx --yes pnpm@10.34.9` in its place. Browser tests
+use local Chrome at `/opt/google/chrome/chrome` if available; otherwise install
+Playwright Chromium with `pnpm test:e2e:install`.
 
 ```sh
 BASE_PATH=/Kuymo pnpm build
 BASE_PATH=/Kuymo pnpm exec playwright test
 ```
 
-Set `SITE_URL` to the final origin at deployment. The repository's existing
-placeholder origin is retained until a real deployment domain is chosen.
-No site has been deployed by this change. Compression never runs in the website;
-the interactive preview is explicitly labelled as an illustration.
+Set `SITE_URL` to the real origin before deployment. The old placeholder origin
+has deliberately not been replaced with an invented domain. No deployment or
+external campaign is part of this change.
 
-## Brand assets
+## Product routes
 
-Run `python3 tool/refresh_brand_delivery.py` from the app root after regenerating
-identity masters and Flutter captures. See `../brand/kuymo/README.md` for the full
-sequence. This refreshes favicons, social artwork and screenshots without
-recreating removed Flutter web assets.
+English lives at `/`; Arabic at `/ar/`. Each has features, three feature detail
+pages, screenshots, about, developer and download pages. The language picker
+preserves the current section. Existing `/kuymo/privacy`, `/kuymo/terms`, app
+indexes and `/legal/` remain available in their published language.
+
+`/design-system/` is a noindex component/foundation reference, excluded from the
+sitemap. It shares actual production components rather than a separate mock UI.
+
+## Responsibility boundaries
+
+- `src/design-system/`: semantic tokens and shared motion personality.
+- `src/components/site/`: reusable site primitives.
+- `src/features/product/domain/`: framework-free product and image contracts.
+- `src/features/product/data/`: product/launch policy, ARB catalogs, EN/AR copy,
+  and screenshot manifest. The active locale allowlist is explicit.
+- `src/features/product/presentation/`: independently composable page sections.
+- `src/features/product/scripts/`: theme, menu and gallery behavior.
+- `src/features/product/styles/`: focused navigation, layout, gallery and demo styles.
+
+Application ARBs are read via a build-time glob. Locale availability is broader
+than the active website list; adding a language requires complete website copy
+and review, not just a new dropdown option. Marketing claims do not depend on
+app settings copy being suitable as advertising language.
+
+## Assets, fonts and launch
+
+The screenshot manifest imports source PNGs from `src/assets/product/`. Astro
+emits WebP/srcset and preserves original image links. Current images represent
+the welcome screen only, in English/Arabic and light/dark. Add real source
+images and metadata to expand the gallery; do not fabricate feature captures.
+
+Fonts are self-hosted WOFF2 with unicode-range subsets. To intentionally refresh
+them, run `python3 scripts/vendor_fonts.py`; this is not a build/network hook.
+Google Fonts OFL files and existing font licenses are retained. Visitors make no
+Google Fonts requests. The brush font is subset to the decorative 余白 phrase.
+
+`data/product.ts` is the single launch-state switch. Only set it to live after
+verifying the official Play listing. The URL validator requires the Kuymo app
+ID. Before that, the primary action explores screenshots and the secondary
+path follows releases. No email signup, tracking, fake ratings or pricing tiers
+are introduced.
+
+## Reference and review
+
+- [Design-system guide](docs/design-system.md)
+- [Capability/claim audit](docs/capabilities-audit.md)
+- [Marketing context](docs/marketing/product-marketing-context.md)
+- [12-month marketing plan — draft](docs/marketing/final_plan.md)
+- [Ethical choice architecture](docs/marketing/persuasion.md)
+
+For visual/performance review against a running preview:
+
+```sh
+node scripts/review-site.mjs
+```
+
+`REVIEW_ORIGIN` defaults to `http://127.0.0.1:4388`; `BASE_PATH` is supported.
+The script writes screenshots and measured browser-lab data to `docs/previews/`.
+Read the report's conditions before interpreting a metric; these are local lab
+observations, not field INP or a guaranteed mobile-network result.

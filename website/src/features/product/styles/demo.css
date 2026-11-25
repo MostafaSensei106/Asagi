@@ -1,0 +1,121 @@
+/* The size planner is an explicitly labelled illustration, never a compression promise. */
+.compression-demo {
+  border: 1px solid var(--ds-ink);
+  border-radius: var(--ds-radius);
+  padding: var(--ds-space-6);
+  background: var(--ui-surface);
+  color: var(--ds-ink);
+}
+.demo-top,
+.demo-target,
+.demo-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--ds-space-4);
+  font-size: var(--ds-small);
+}
+.demo-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--ds-accent);
+}
+.landscape {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  height: 150px;
+  background: var(--ds-wash);
+  margin-block: var(--ds-space-5);
+}
+.sun-disc {
+  position: absolute;
+  inset-inline-end: var(--ds-space-10);
+  top: var(--ds-space-5);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--ds-accent);
+}
+.mountain {
+  position: absolute;
+  bottom: -80px;
+  width: 200px;
+  height: 160px;
+  transform: rotate(45deg);
+  background: var(--ds-inverse);
+}
+.mountain-back {
+  inset-inline-end: -20px;
+  opacity: 0.55;
+}
+.mountain-front {
+  inset-inline-start: -10px;
+}
+.landscape-frame {
+  position: absolute;
+  bottom: var(--ds-space-3);
+  inset-inline-start: var(--ds-space-3);
+  color: var(--ds-on-inverse);
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+}
+.demo-file {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+  margin-block: var(--ds-space-6);
+}
+.demo-file strong {
+  display: block;
+  font-size: var(--ds-small);
+}
+.demo-file div > span {
+  display: block;
+  font-size: var(--ds-label);
+  color: var(--ds-muted);
+}
+.file-symbol {
+  background: var(--ds-wash);
+  padding: var(--ds-space-2) var(--ds-space-3);
+}
+.file-type {
+  margin-inline-start: auto;
+  font-family: var(--font-mono);
+  font-size: var(--ds-label);
+}
+.demo-target output {
+  font-weight: 700;
+  color: var(--ds-accent);
+}
+.compression-demo input {
+  width: 100%;
+  min-height: var(--ds-control-small);
+  accent-color: var(--ds-accent);
+  margin-block: var(--ds-space-2);
+}
+.size-bars {
+  display: grid;
+  gap: var(--ds-space-2);
+}
+.size-bars span {
+  display: block;
+  height: 4px;
+  background: var(--ds-wash);
+}
+.size-bars span + span {
+  background: var(--ds-accent);
+}
+.demo-bottom {
+  margin-top: var(--ds-space-4);
+  font-size: var(--ds-label);
+  color: var(--ds-muted);
+}
+.demo-note {
+  margin-top: var(--ds-space-4);
+  padding-top: var(--ds-space-4);
+  border-top: 1px solid var(--ds-line);
+  font-size: var(--ds-label);
+  line-height: 1.7;
+  color: var(--ds-muted);
+}

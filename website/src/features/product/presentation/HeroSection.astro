@@ -1,0 +1,71 @@
+---
+import { ArrowDown } from '@lucide/astro';
+import ActionLink from '@/components/site/ActionLink.astro';
+import StatusBadge from '@/components/site/StatusBadge.astro';
+import { withBase } from '@/lib/paths';
+import { content, localePath } from '../locales';
+import { siteCopy } from '../data/site-copy';
+import { heroScreenshots } from '../data/screenshots';
+import AppScreenshot from './AppScreenshot.astro';
+const { locale } = Astro.props;
+const { t, copy } = content(locale);
+const site = siteCopy(locale);
+---
+
+<section class="shell hero" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <p class="eyebrow">
+      <span class="accent-line" aria-hidden="true"></span>
+      {copy.eyebrow}
+    </p>
+    <h1 id="hero-title">{t('brandTagline')}</h1>
+    <p class="hero-description">{t('compressVideosPrivatelyOnYourDevice')}</p>
+    <div class="hero-actions">
+      <ActionLink href={withBase(localePath(locale, 'screenshots'))}>{site.screens}</ActionLink>
+      <ActionLink variant="text" href={withBase(localePath(locale, 'features'))}>
+        {copy.features}
+      </ActionLink>
+    </div>
+    <StatusBadge label={site.coming} />
+    <div class="hero-footnote">
+      <span class="mono">01 / KUYMO</span>
+      <span>{site.free}</span>
+      <ArrowDown size={18} aria-hidden="true" />
+    </div>
+  </div>
+  <div class="hero-stage">
+    <div class="stage-heading mono" aria-hidden="true">
+      <span>THE LITTLE ROOM / VOL. 01</span>
+      <span>ANDROID</span>
+    </div>
+    <span class="brush-mark" aria-hidden="true" lang="ja">
+      余白
+    </span>
+    <div class="hero-phones">
+      {heroScreenshots(locale).map((shot, index) => (
+        <div class:list={['hero-phone', `hero-phone--${index + 1}`]}>
+          <AppScreenshot shot={shot} locale={locale} priority={index === 0} hero />
+        </div>
+      ))}
+    </div>
+    <div class="stage-footer">
+      <span class="tile-stamp" aria-hidden="true"></span>
+      <p>{copy.moments}</p>
+      <span class="mono" aria-hidden="true">
+        ↳ 001
+      </span>
+    </div>
+  </div>
+</section>
+<div class="promise-strip">
+  <div class="shell">
+    {[t('targetSize'), t('onDeviceProcessingLabel'), site.free].map((label, index) => (
+      <span>
+        <b class="mono" aria-hidden="true">
+          0{index + 1}
+        </b>
+        {label}
+      </span>
+    ))}
+  </div>
+</div>

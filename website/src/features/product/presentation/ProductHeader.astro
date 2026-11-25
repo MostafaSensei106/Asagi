@@ -1,0 +1,101 @@
+---
+import { Moon, Sun, Menu, Languages } from '@lucide/astro';
+import { withBase } from '@/lib/paths';
+import { content, localeName, localePath, locales, type Section } from '../locales';
+import { siteCopy } from '../data/site-copy';
+import ActionLink from '@/components/site/ActionLink.astro';
+interface Props {
+  locale: string;
+  section: Section;
+}
+const { locale, section } = Astro.props;
+const { t, copy } = content(locale);
+const site = siteCopy(locale);
+const links: { section: Section; label: string }[] = [
+  { section: 'features', label: copy.features },
+  { section: 'screenshots', label: site.screens },
+  { section: 'about', label: site.about },
+];
+---
+
+<header class="floating-header" data-slot="floating-navigation">
+  <div class="floating-bar">
+    <a href={withBase(localePath(locale))} class="brand-lockup" aria-label="Kuymo">
+      <img
+        src={withBase('/branding/kuymo-symbol.svg')}
+        alt=""
+        width="40"
+        height="40"
+        class="brand-light"
+      />
+      <img
+        src={withBase('/branding/kuymo-symbol-white.svg')}
+        alt=""
+        width="40"
+        height="40"
+        class="brand-dark"
+      />
+      <span>
+        Kuymo<span class="brand-punctuation">.</span>
+      </span>
+    </a>
+    <nav class="desktop-nav" aria-label={site.about}>
+      {links.map((link) => (
+        <a
+          href={withBase(localePath(locale, link.section))}
+          aria-current={section === link.section ? 'page' : undefined}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+    <div class="header-controls">
+      <details class="language-picker">
+        <summary aria-label={t('language')}>
+          <Languages size={18} aria-hidden="true" />
+          <span class="language-current">{localeName(locale)}</span>
+        </summary>
+        <nav class="language-list" aria-label={t('language')}>
+          {locales.map((language) => (
+            <a
+              href={withBase(localePath(language, section))}
+              lang={language}
+              hreflang={language}
+              aria-current={locale === language ? 'true' : undefined}
+            >
+              {localeName(language)}
+            </a>
+          ))}
+        </nav>
+      </details>
+      <button
+        type="button"
+        class="icon-button"
+        data-product-theme
+        aria-label={t('theme')}
+        title={t('theme')}
+        aria-pressed="false"
+      >
+        <Sun size={19} class="brand-light" aria-hidden="true" />
+        <Moon size={19} class="brand-dark" aria-hidden="true" />
+      </button>
+      <div class="header-cta">
+        <ActionLink href={withBase(localePath(locale, 'download'))} variant="outline" arrow={false}>
+          {site.follow}
+        </ActionLink>
+      </div>
+      <details class="mobile-nav">
+        <summary class="icon-button" aria-label={site.screens}>
+          <Menu size={22} aria-hidden="true" />
+        </summary>
+        <nav aria-label={copy.features}>
+          {links.map((link) => (
+            <a href={withBase(localePath(locale, link.section))}>{link.label}</a>
+          ))}
+          <a href={withBase(localePath(locale, 'developer'))}>{site.developer}</a>
+          <a href={withBase(localePath(locale, 'download'))}>{site.follow}</a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>

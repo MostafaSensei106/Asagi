@@ -1,0 +1,44 @@
+---
+import { ScanLine, SlidersHorizontal, ShieldCheck, ArrowUpRight } from '@lucide/astro';
+import SectionHeading from '@/components/site/SectionHeading.astro';
+import { withBase } from '@/lib/paths';
+import { content, localePath } from '../locales';
+import { features } from '../data/product';
+import { siteCopy } from '../data/site-copy';
+const { locale } = Astro.props;
+const { t, copy } = content(locale);
+const site = siteCopy(locale);
+const icons = { 'target-size': ScanLine, sharing: SlidersHorizontal, 'on-device': ShieldCheck };
+---
+
+<section class="shell feature-section" data-reveal aria-labelledby="features-title">
+  <SectionHeading
+    title={copy.calm}
+    eyebrow="01 / LESS GUESSWORK"
+    description={site.aboutBody}
+    id="features-title"
+  />
+  <div class="feature-grid">
+    {features.map((feature, index) => {
+      const Icon = icons[feature.id];
+      return (
+        <a
+          href={withBase(localePath(locale, feature.route))}
+          class="feature-card"
+          data-slot="feature-card"
+        >
+          <div class="feature-card-top">
+            <Icon size={32} stroke-width={1.5} aria-hidden="true" />
+            <span class="mono">0{index + 1}</span>
+          </div>
+          <h3>{t(feature.titleKey)}</h3>
+          <p>{site[feature.body]}</p>
+          <span class="card-foot">
+            <span class="mono">KUYMO / 0{index + 1}</span>
+            <ArrowUpRight size={22} aria-hidden="true" />
+          </span>
+        </a>
+      );
+    })}
+  </div>
+</section>

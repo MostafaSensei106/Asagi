@@ -18,6 +18,6 @@ export default defineConfig({
   webServer: {
     command: 'node_modules/.bin/astro preview --host 127.0.0.1 --port 4387 --ignore-lock',
     url: `http://127.0.0.1:4387/${basePath ? `${basePath}/` : ''}`,
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: false,
   },
 });

@@ -1,0 +1,64 @@
+---
+import { screenshots } from '../data/screenshots';
+import { siteCopy } from '../data/site-copy';
+import { content } from '../locales';
+import AppScreenshot from './AppScreenshot.astro';
+import SectionHeading from '@/components/site/SectionHeading.astro';
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const copy = siteCopy(locale);
+const { t } = content(locale);
+const filters = [
+  { id: 'all', label: copy.all },
+  { id: 'en', label: 'English' },
+  { id: 'ar', label: 'العربية' },
+  { id: 'light', label: t('light') },
+  { id: 'dark', label: t('dark') },
+];
+---
+
+<section
+  class="shell gallery-section"
+  id="screenshots"
+  data-gallery
+  data-reveal
+  aria-labelledby="gallery-title"
+>
+  <SectionHeading
+    title={copy.screens}
+    eyebrow="02 / INSIDE KUYMO"
+    description={copy.galleryBody}
+    id="gallery-title"
+  />
+  <div class="gallery-toolbar" data-gallery-controls hidden role="group" aria-label={copy.screens}>
+    {filters.map((filter) => (
+      <button type="button" data-gallery-filter={filter.id} aria-pressed={filter.id === 'all'}>
+        {filter.label}
+      </button>
+    ))}
+    <output class="gallery-count" aria-live="polite" data-gallery-count>
+      04 / 04
+    </output>
+  </div>
+  <div class="gallery-grid">
+    {screenshots.map((shot, index) => (
+      <figure data-gallery-item data-language={shot.locale} data-theme={shot.theme}>
+        <div class="screenshot-mat">
+          <AppScreenshot shot={shot} locale={locale} />
+        </div>
+        <figcaption>
+          <span class="mono">0{index + 1}</span>
+          <span>
+            {t('welcomeToKuymo')}
+            <small>
+              <bdi lang={shot.locale}>{shot.locale === 'ar' ? 'العربية' : 'English'}</bdi> /{' '}
+              {t(shot.theme)}
+            </small>
+          </span>
+        </figcaption>
+      </figure>
+    ))}
+  </div>
+</section>

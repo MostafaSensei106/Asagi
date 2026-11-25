@@ -1,0 +1,12 @@
+---
+interface Props {
+  label: string;
+  quiet?: boolean;
+}
+const { label, quiet = false } = Astro.props;
+---
+
+<span class:list={['status-badge', { 'status-badge--quiet': quiet }]} data-slot="status-badge">
+  <span aria-hidden="true"></span>
+  {label}
+</span>

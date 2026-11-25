@@ -1,6 +1,16 @@
 /** Framework-free product contracts shared by build-time data and presentation. */
-export const sections = ['', 'features', 'features/target-size', 'features/sharing', 'features/on-device', 'screenshots', 'about', 'developer', 'download'] as const;
-export type Section = typeof sections[number];
+export const sections = [
+  '',
+  'features',
+  'features/target-size',
+  'features/sharing',
+  'features/on-device',
+  'screenshots',
+  'about',
+  'developer',
+  'download',
+] as const;
+export type Section = (typeof sections)[number];
 export type FeatureId = 'target-size' | 'sharing' | 'on-device';
 export interface Screenshot {
   readonly id: string;
@@ -20,4 +30,7 @@ export interface Feature {
 }
 export type Launch =
   | { readonly status: 'prelaunch'; readonly playStoreUrl?: never }
-  | { readonly status: 'live'; readonly playStoreUrl: `https://play.google.com/store/apps/details?${string}` };
+  | {
+      readonly status: 'live';
+      readonly playStoreUrl: `https://play.google.com/store/apps/details?${string}`;
+    };

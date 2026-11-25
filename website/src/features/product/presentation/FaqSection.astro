@@ -1,0 +1,50 @@
+---
+import SectionHeading from '@/components/site/SectionHeading.astro';
+import { content } from '../locales';
+import { siteCopy } from '../data/site-copy';
+const { locale } = Astro.props;
+const { t } = content(locale);
+const site = siteCopy(locale);
+const faqs = [
+  { q: site.sizeQuestion, a: site.sizeAnswer },
+  { q: site.localQuestion, a: site.localAnswer },
+  { q: site.playQuestion, a: site.playAnswer },
+];
+---
+
+<section class="shell faq-section" data-reveal>
+  <SectionHeading
+    title={t('faq')}
+    description={t('compressionHelpDescription')}
+    eyebrow="05 / GOOD TO KNOW"
+  />
+  <div class="faq-list">
+    {faqs.map((faq, index) => (
+      <details>
+        <summary>
+          <span class="mono" aria-hidden="true">
+            0{index + 1}
+          </span>
+          {faq.q}
+          <span class="faq-indicator" aria-hidden="true">
+            +
+          </span>
+        </summary>
+        <p>{faq.a}</p>
+      </details>
+    ))}
+  </div>
+</section>
+<script
+  type="application/ld+json"
+  is:inline
+  set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    })),
+  })}
+/>

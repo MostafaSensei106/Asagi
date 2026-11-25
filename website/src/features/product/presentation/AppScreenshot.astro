@@ -1,0 +1,47 @@
+---
+import { Image } from 'astro:assets';
+import { content } from '../locales';
+import type { screenshots } from '../data/screenshots';
+import { siteCopy } from '../data/site-copy';
+interface Props {
+  shot: (typeof screenshots)[number];
+  locale: string;
+  priority?: boolean;
+  hero?: boolean;
+}
+const { shot, locale, priority = false, hero = false } = Astro.props;
+const { t } = content(locale);
+const copy = siteCopy(locale);
+const alt = `${t(shot.altKey)} · ${shot.locale === 'ar' ? 'العربية' : 'English'} · ${t(shot.theme)}`;
+---
+
+<div class:list={['screenshot', { 'screenshot--hero': hero }]} data-screenshot>
+  <a
+    href={shot.src}
+    data-gallery-link
+    data-image-label={alt}
+    aria-label={`${copy.openImage}: ${alt}`}
+    class="screenshot-link"
+  >
+    <Image
+      src={shot.image}
+      width={shot.width}
+      widths={[220, 330, shot.width]}
+      sizes="(max-width: 720px) 65vw, (max-width: 1100px) 28vw, 260px"
+      format="webp"
+      alt={alt}
+      loading={priority ? 'eager' : 'lazy'}
+      fetchpriority={priority ? 'high' : 'auto'}
+      decoding="async"
+    />
+    <span class="screenshot-zoom" aria-hidden="true">
+      ↗
+    </span>
+  </a>
+  <div class="image-failure" hidden role="status">
+    <p>{copy.imageError}</p>
+    <button type="button" data-retry-image class="ds-action ds-action--outline">
+      {copy.retry}
+    </button>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+---
+import ActionLink from '@/components/site/ActionLink.astro';
+import StatusBadge from '@/components/site/StatusBadge.astro';
+import { withBase } from '@/lib/paths';
+import { siteCopy } from '../data/site-copy';
+import { content, localePath } from '../locales';
+import { launch, product, storeUrl } from '../data/product';
+const { locale, full = false } = Astro.props;
+const { t } = content(locale);
+const site = siteCopy(locale);
+const liveUrl = storeUrl(launch);
+---
+
+<section class:list={['shell launch-section', { 'launch-section--full': full }]} data-reveal>
+  <div>
+    <p class="eyebrow">KUYMO / ANDROID 11+</p>
+    <h2>{t('brandTagline')}</h2>
+    <StatusBadge label={liveUrl ? site.free : site.coming} />
+    {full && <p>{site.playAnswer}</p>}
+  </div>
+  <div class="launch-actions">
+    <ActionLink href={liveUrl || product.releases}>
+      {liveUrl ? 'Google Play' : site.follow}
+    </ActionLink>
+    <ActionLink href={withBase(localePath(locale, 'screenshots'))} variant="text">
+      {site.screens}
+    </ActionLink>
+  </div>
+  <span class="launch-brush" aria-hidden="true" lang="ja">
+    余白
+  </span>
+</section>

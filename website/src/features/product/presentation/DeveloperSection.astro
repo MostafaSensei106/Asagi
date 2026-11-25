@@ -1,0 +1,55 @@
+---
+import { CodeXml, ArrowUpRight } from '@lucide/astro';
+import { withBase } from '@/lib/paths';
+import ActionLink from '@/components/site/ActionLink.astro';
+import { siteCopy } from '../data/site-copy';
+import { content, localePath } from '../locales';
+import { product } from '../data/product';
+const { locale, full = false } = Astro.props;
+const site = siteCopy(locale);
+const { copy } = content(locale);
+---
+
+<section class="shell developer-section" data-reveal>
+  <div class="developer-stamp" aria-hidden="true">
+    <span class="mono">INDEPENDENT / OPEN SOURCE</span>
+    <CodeXml size={100} stroke-width={1} />
+    <span class="brush-mark" lang="ja">
+      余白
+    </span>
+  </div>
+  <div>
+    <p class="eyebrow">04 / {site.developer}</p>
+    <h2>
+      {product.developer}
+      <span class="accent-punctuation">.</span>
+    </h2>
+    <p>{site.developerBody}</p>
+    <div class="developer-links">
+      <ActionLink
+        href={full ? product.profile : withBase(localePath(locale, 'developer'))}
+        variant="outline"
+      >
+        {full ? 'GitHub' : site.developer}
+      </ActionLink>
+      <a href={product.issues} class="inline-link">
+        {site.support}
+        <ArrowUpRight size={18} aria-hidden="true" />
+      </a>
+    </div>
+    {full && (
+      <div class="developer-facts">
+        <p>
+          <span class="mono">01</span> {site.free} / {product.license}
+        </p>
+        <a href={product.repository}>
+          {copy.source}
+          <ArrowUpRight size={18} aria-hidden="true" />
+        </a>
+        <p>
+          <span class="mono">02</span> Flutter / Kotlin / Android
+        </p>
+      </div>
+    )}
+  </div>
+</section>

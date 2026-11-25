@@ -1,19 +1,24 @@
 import type { Section } from '../domain/product';
-import { readdirSync, readFileSync } from 'node:fs';
 import { marketingCopy } from '../copy';
 import { websiteMessages } from '../messages';
 
-const directory = new URL('../../../../../lib/l10n/', import.meta.url);
-const files = readdirSync(directory).filter((file) =>
-  /^app_[a-z]{2}(?:_[A-Z]{2})?\.arb$/.test(file),
-);
+// Resolve ARBs at build time; avoid source-relative filesystem paths in bundled code.
+const sources = import.meta.glob<string>('../../../../../lib/l10n/app_*.arb', {
+  eager: true,
+  query: '?raw',
+  import: 'default',
+});
 const catalogs = Object.fromEntries(
-  files.map((file) => [
-    file.slice(4, -4).replace('_', '-'),
-    JSON.parse(readFileSync(new URL(file, directory), 'utf8')) as Record<string, string>,
-  ]),
+  Object.entries(sources).flatMap(([path, source]) => {
+    const match = /app_([a-z]{2}(?:_[A-Z]{2})?)\.arb$/.exec(path);
+    return match
+      ? [[match[1]!.replace('_', '-'), JSON.parse(source) as Record<string, string>]]
+      : [];
+  }),
 );
-export const locales = Object.keys(catalogs).sort();
+export const availableAppLocales = Object.keys(catalogs).sort();
+/** Launch the website in two editorially maintained languages; the app is unchanged. */
+export const locales = ['en', 'ar'] as const;
 export { sections } from '../domain/product';
 export type { Section } from '../domain/product';
 export function localePath(locale: string, section: Section = ''): string {
