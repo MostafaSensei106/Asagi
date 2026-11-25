@@ -12,7 +12,7 @@ void main() {
       const NotificationTarget.recovery(),
       NotificationTarget.release(
         Uri.parse(
-          'https://github.com/MostafaSensei106/Asagi/releases/tag/v2.0.0',
+          'https://github.com/MostafaSensei106/Kuymo/releases/tag/v2.0.0',
         ),
       ),
     ];
@@ -47,7 +47,9 @@ void main() {
     expect(data.settings.haptics.success, isFalse);
     expect(data.settings.haptics.errors, isFalse);
     final updated = data.copyWith(
-      settings: data.settings.copyWith(haptics: data.settings.haptics.copyWith(selections: true)),
+      settings: data.settings.copyWith(
+        haptics: data.settings.haptics.copyWith(selections: true),
+      ),
     );
     expect(
       NotificationPreferencesCodec.decode(

@@ -1,7 +1,7 @@
 import Foundation
 
 final class AVFoundationVideoEncoder: VideoEncodingBackend {
-  private let queue = DispatchQueue(label: "asagi.encoding")
+  private let queue = DispatchQueue(label: "kuymo.encoding")
   private let factory: EncodingPipelineFactory
   private let onProgress: (Double) -> Void
   private var session: AVEncodingSession?

@@ -107,9 +107,11 @@ foreground and monochrome variants; splash artwork has separate light/dark cuts.
 Android adaptive artwork keeps the symbol within the central 66 dp safe circle;
 web maskable artwork has a separate, more inset composition.
 
-Existing native application IDs, notification channels, persisted preferences,
-temporary-job directories and the real GitHub repository name remain compatible.
-They are not display branding. Historical artwork is retained as reference.
+Native application IDs, package paths, notification channels, restoration and
+workspace prefixes use Kuymo throughout. The application ID is
+`com.mostafa.sensei.kuymo` on Android and iOS. This is a new install identity;
+existing data from a differently identified installation is not migrated.
+The GitHub source and release links use the verified Kuymo repository.
 
 ## Regenerate and verify
 

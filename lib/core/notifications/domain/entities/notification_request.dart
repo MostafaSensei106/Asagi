@@ -27,11 +27,11 @@ final class LocalNotificationRequest {
 }
 
 abstract final class NotificationChannels {
-  static const progress = 'asagi_media_processing';
-  static const release = 'asagi_releases_v1';
-  static const savings = 'asagi_savings_v1';
+  static const progress = 'kuymo_media_processing';
+  static const release = 'kuymo_releases_v1';
+  static const savings = 'kuymo_savings_v1';
   static String completion({required bool sound, required bool vibration}) =>
-      'asagi_completion_s${sound ? 1 : 0}_v${vibration ? 1 : 0}_v1';
+      'kuymo_completion_s${sound ? 1 : 0}_v${vibration ? 1 : 0}_v1';
   static String error({required bool vibration}) =>
-      'asagi_errors_v${vibration ? 1 : 0}_v1';
+      'kuymo_errors_v${vibration ? 1 : 0}_v1';
 }

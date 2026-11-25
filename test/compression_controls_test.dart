@@ -71,7 +71,7 @@ void main() {
   late ControlledEncoder encoder;
   late CompressionEngine engine;
   setUp(() async {
-    directory = await Directory.systemTemp.createTemp('asagi-control-');
+    directory = await Directory.systemTemp.createTemp('kuymo-control-');
     encoder = ControlledEncoder();
     engine = CompressionEngine(
       planner: Planner(),

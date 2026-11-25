@@ -3,8 +3,8 @@ import 'package:pigeon/pigeon.dart';
 @ConfigurePigeon(
   PigeonOptions(
     dartOut: 'lib/core/native/pigeon_messages.g.dart',
-    kotlinOut: 'android/app/src/main/kotlin/com/mostafa/sensei/asagi/Native/PigeonMessages.g.kt',
-    kotlinOptions: KotlinOptions(package: 'com.mostafa.sensei.asagi'),
+    kotlinOut: 'android/app/src/main/kotlin/com/mostafa/sensei/kuymo/Native/PigeonMessages.g.kt',
+    kotlinOptions: KotlinOptions(package: 'com.mostafa.sensei.kuymo'),
     swiftOut: 'ios/Runner/Native/PigeonMessages.g.swift',
   ),
 )

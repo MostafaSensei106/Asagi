@@ -79,7 +79,7 @@ class Encoder implements VideoEncoder {
 void main() {
   late Directory directory;
   setUp(() async {
-    directory = await Directory.systemTemp.createTemp('asagi-test-');
+    directory = await Directory.systemTemp.createTemp('kuymo-test-');
   });
   tearDown(() async {
     await directory.delete(recursive: true);
@@ -182,13 +182,13 @@ void main() {
   test(
     'stale cleanup leaves unmarked directories and source files alone',
     () async {
-      final stale = await Directory('${directory.path}/asagi-stale').create();
+      final stale = await Directory('${directory.path}/kuymo-stale').create();
       final marker = await File('${stale.path}/.inprogress')
           .writeAsString('{}');
       await marker.setLastModified(
         DateTime.now().subtract(const Duration(days: 1)),
       );
-      await Directory('${directory.path}/asagi-unmarked').create();
+      await Directory('${directory.path}/kuymo-unmarked').create();
       await File('${directory.path}/source.mp4').writeAsString('original');
       expect(
         await const FileArtifactStore().cleanupInterrupted(
@@ -198,7 +198,7 @@ void main() {
         1,
       );
       expect(
-        await Directory('${directory.path}/asagi-unmarked').exists(),
+        await Directory('${directory.path}/kuymo-unmarked').exists(),
         isTrue,
       );
       expect(

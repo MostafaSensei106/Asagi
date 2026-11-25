@@ -28,7 +28,7 @@ if (releaseTasksRequested && requiredSigningProperties.any { keyProperties.getPr
 }
 
 android {
-    namespace = "com.mostafa.sensei.asagi"
+    namespace = "com.mostafa.sensei.kuymo"
     compileSdk = 37
     ndkVersion = flutter.ndkVersion
 
@@ -39,7 +39,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.mostafa.sensei.asagi"
+        applicationId = "com.mostafa.sensei.kuymo"
         minSdk = maxOf(30, flutter.minSdkVersion)
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode

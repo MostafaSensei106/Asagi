@@ -11,8 +11,8 @@
   schemes match the generator and pass its contrast audit. Auto now uses Tonal
   Spot; selectable alternatives and high-contrast modes remain available.
 - Android arm64 debug APK built successfully. APK badging confirms the public
-  label `Kuymo`, the adaptive launcher resource, and the existing application ID
-  `com.mostafa.sensei.asagi`.
+  label `Kuymo`, the adaptive launcher resource, and the new application ID
+  `com.mostafa.sensei.kuymo`.
 - `git diff --check`: passed.
 
 Actual Flutter widget captures are in `presentation/screens/`. They use bundled
@@ -46,8 +46,8 @@ real encoding session, store submission, remote repository rename or publication
 Google Sans and Noto Sans Arabic font files have bundled OFL notices. Notices
 are included as app assets and registered for the in-app license registry. No
 new runtime package dependency was introduced. Main product name: Kuymo;
-Kuymo AI is the optional assistant signature. Historical native IDs and source
-links are deliberately retained for compatibility and accurate destinations.
+Kuymo AI is the optional assistant signature. All native identifiers now use the Kuymo namespace. Source links target the
+verified Kuymo repository. This is a new install identity without data migration.
 
 ## Native appearance follow-up
 

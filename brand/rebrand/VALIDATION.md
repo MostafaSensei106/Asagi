@@ -11,8 +11,8 @@
   notifications, AI placeholder pages and all current theme variants.
 - `flutter build apk --debug --no-pub --target-platform android-arm64`:
   **succeeded** after the final Japanese localization fix.
-- APK badging inspection reports `application-label: 'Kuymo'`; installed
-  application ID remains `com.mostafa.sensei.asagi` for update compatibility.
+- APK badging inspection reports `application-label: 'Kuymo'`; new
+  application ID is `com.mostafa.sensei.kuymo` for the new install identity.
 - `git diff --check`: passed.
 
 The test run found old Zumi wording in Japanese onboarding, which was replaced

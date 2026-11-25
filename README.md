@@ -25,6 +25,13 @@ Android uses installed platform codecs through Media3, including its encoder
 fallbacks. Sources whose video or audio codec cannot be decoded fail with a clear
 message. There is no bundled FFmpeg decoder fallback.
 
+## Application identity
+
+Android namespace/application ID and iOS bundle ID: `com.mostafa.sensei.kuymo`.
+Native notification and encoding channels, Kotlin source packages, restoration
+and compression workspace prefixes also use Kuymo. This installs separately
+from builds with a different application ID; their local data is not migrated.
+
 ## Architecture
 
 | Layer | Responsibility |
@@ -50,7 +57,7 @@ lib/core/compression/
   infrastructure/  native adapters and file storage
 lib/modules/compression/  app repository, state management, and screens
 pigeons/messages.dart     source native API contracts
-android/app/src/main/kotlin/com/mostafa/sensei/asagi/app/
+android/app/src/main/kotlin/com/mostafa/sensei/kuymo/app/
   planning/        pure Kotlin planning, presets, and verification
   media3/          Android encoding and codec support
   contracts/       native media models and interfaces
@@ -202,7 +209,7 @@ the same interaction are suppressed. The foreground compression service keeps
 its required notification even when detailed background status is disabled.
 
 The GitHub Releases client uses Dio and generated Retrofit DTOs, with domain
-mapping and typed failures. Public stable releases from `MostafaSensei106/Asagi`
+mapping and typed failures. Public stable releases from `MostafaSensei106/Kuymo`
 are checked at most daily while the app is used. Weekly savings summaries are
 computed on opening from new compression-history records; no background scheduler
 or Firebase is required. Notification taps queue until the shell is ready and

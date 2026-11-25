@@ -13,7 +13,7 @@ List<int> box(String type, {int size = 8}) => [
 
 void main() {
   test('accepts moov before mdat and skips free boxes', () async {
-    final directory = await Directory.systemTemp.createTemp('asagi-mp4-test-');
+    final directory = await Directory.systemTemp.createTemp('kuymo-mp4-test-');
     try {
       final file = File('${directory.path}/fast.mp4');
       await file.writeAsBytes([
@@ -32,7 +32,7 @@ void main() {
   });
 
   test('rejects late moov and truncated box sizes', () async {
-    final directory = await Directory.systemTemp.createTemp('asagi-mp4-test-');
+    final directory = await Directory.systemTemp.createTemp('kuymo-mp4-test-');
     try {
       final file = File('${directory.path}/late.mp4');
       await file.writeAsBytes([...box('ftyp'), ...box('mdat'), ...box('moov')]);

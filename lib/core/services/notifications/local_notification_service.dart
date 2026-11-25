@@ -12,7 +12,7 @@ import 'notification_request.dart';
 final class LocalNotificationService implements BaseLocalNotificationService {
   LocalNotificationService();
   final _plugin = FlutterLocalNotificationsPlugin();
-  static const _native = MethodChannel('asagi/notifications');
+  static const _native = MethodChannel('kuymo/notifications');
   final _interactions = StreamController<void>.broadcast();
   final List<String> _pending = [];
   Future<void>? _initialization;

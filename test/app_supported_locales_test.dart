@@ -11,7 +11,7 @@ void main() {
       expect(strings.kuymo, 'Kuymo', reason: '$locale');
       expect(strings.welcomeToKuymo, contains('Kuymo'), reason: '$locale');
       expect(strings.kuymoAssistant, contains('Kuymo'), reason: '$locale');
-      expect(strings.aboutKuymo, isNot(contains('Asagi')), reason: '$locale');
+      expect(strings.aboutKuymo, contains('Kuymo'), reason: '$locale');
     }
   });
 

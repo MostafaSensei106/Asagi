@@ -60,7 +60,7 @@ AppRelease release(String version) => AppRelease(
   title: 'Release $version',
   notes: 'Changes',
   url: Uri.parse(
-    'https://github.com/MostafaSensei106/Asagi/releases/tag/v$version',
+    'https://github.com/MostafaSensei106/Kuymo/releases/tag/v$version',
   ),
   publishedAt: DateTime.utc(2026),
 );

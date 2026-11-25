@@ -12,10 +12,10 @@ import UIKit
 
   func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
     GeneratedPluginRegistrant.register(with: engineBridge.pluginRegistry)
-    if let registrar = engineBridge.pluginRegistry.registrar(forPlugin: "AsagiNativeVideo") {
+    if let registrar = engineBridge.pluginRegistry.registrar(forPlugin: "KuymoNativeVideo") {
       let native = NativeVideoEngine()
       NativeMediaApiSetup.setUp(binaryMessenger: registrar.messenger(), api: native)
-      FlutterEventChannel(name: "asagi/encoding_progress", binaryMessenger: registrar.messenger()).setStreamHandler(native)
+      FlutterEventChannel(name: "kuymo/encoding_progress", binaryMessenger: registrar.messenger()).setStreamHandler(native)
     }
   }
 }

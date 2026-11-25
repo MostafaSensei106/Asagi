@@ -7,7 +7,7 @@
 
 ## Context
 
-Asagi compresses video on device. Today every byte of media work happens in two places:
+Kuymo compresses video on device. Today every byte of media work happens in two places:
 
 - **Rust** (`rust/src/`) decides the plan: target resolution, bitrate, frame cadence, and post-encode verification.
 - **Platform encoders** (`android/.../MetadataExtractor.kt`, `lib/core/compression/infrastructure/native/platform_video_encoder.dart`) do the actual decode, scale, and encode through MediaCodec and Media3.

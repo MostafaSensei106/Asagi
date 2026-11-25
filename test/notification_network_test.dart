@@ -23,7 +23,7 @@ class ResponseAdapter implements HttpClientAdapter {
     'id': 10,
     'tag_name': 'v2.0.0',
     'name': 'New codecs',
-    'html_url': 'https://github.com/MostafaSensei106/Asagi/releases/tag/v2.0.0',
+    'html_url': 'https://github.com/MostafaSensei106/Kuymo/releases/tag/v2.0.0',
     'published_at': '2026-11-24T00:00:00Z',
     'body': 'Real release notes',
     'draft': false,
@@ -83,7 +83,7 @@ void main() {
     expect(release.notes, 'Real release notes');
     expect(
       adapter.request!.uri.toString(),
-      'https://api.github.com/repos/MostafaSensei106/Asagi/releases/latest',
+      'https://api.github.com/repos/MostafaSensei106/Kuymo/releases/latest',
     );
     expect(adapter.request!.data, isNull);
     expect(adapter.request!.headers['Accept'], 'application/vnd.github+json');
@@ -124,7 +124,11 @@ void main() {
     adapter.status = 429;
     adapter.headers['retry-after'] = ['60'];
     await repository.latest();
-    final restored = GitHubReleaseRepository(GitHubReleasesApi(dio), RequestDeduplicator(), storage);
+    final restored = GitHubReleaseRepository(
+      GitHubReleasesApi(dio),
+      RequestDeduplicator(),
+      storage,
+    );
     expect((await restored.latest()).errorOrNull, isA<RateLimitFailure>());
     expect(adapter.calls, 1);
   });

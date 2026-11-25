@@ -11,5 +11,3 @@ The app is **Kuymo**; **Kuymo AI** is the optional assistant descriptor.
 - [Naming research](rebrand/NAMING.md)
 - [Earlier concept studies](rebrand/CONCEPTS.md)
 
-`identity/` and `Icon-Output/` contain historical Asagi artwork. Their previous
-approval labels apply only to that legacy identity.

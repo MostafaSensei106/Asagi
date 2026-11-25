@@ -6,7 +6,7 @@ Act as a senior Flutter engineer. Read the surrounding feature and shared code b
 
 ## Project Structure & Module Organization
 
-Asagi is a Flutter app with a Kotlin compression planner and Android Media3 encoding. Compression is currently supported on Android only; the iOS encoder source is retained. Most Dart code lives in `lib/`: shared platform services and widgets are under `lib/core/`, feature screens and flows are grouped in `lib/modules/<feature>/`, and translations are in `lib/l10n/`. Tests are in `test/`. Images, icons, and generated launcher assets are under `assets/`. Pure Kotlin planning policies are in `android/app/src/main/kotlin/com/mostafa/sensei/asagi/app/planning/`. Platform projects are in `android/`, `ios/`, and `web/`.
+Kuymo is a Flutter app with a Kotlin compression planner and Android Media3 encoding. Compression is currently supported on Android only; the iOS encoder source is retained. Most Dart code lives in `lib/`: shared platform services and widgets are under `lib/core/`, feature screens and flows are grouped in `lib/modules/<feature>/`, and translations are in `lib/l10n/`. Tests are in `test/`. Images, icons, and generated launcher assets are under `assets/`. Pure Kotlin planning policies are in `android/app/src/main/kotlin/com/mostafa/sensei/kuymo/app/planning/`. Platform projects are in `android/`, `ios/`, and `web/`.
 
 ## Clean Architecture & Dependency Direction
 

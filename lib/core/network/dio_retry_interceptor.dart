@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 final class DioRetryInterceptor extends Interceptor {
   DioRetryInterceptor({required this.dio});
   final Dio dio;
-  static const _attemptKey = 'asagi.retryAttempt';
+  static const _attemptKey = 'kuymo.retryAttempt';
   static const _delays = [Duration(milliseconds: 300), Duration(seconds: 1)];
 
   @override

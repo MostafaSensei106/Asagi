@@ -359,7 +359,7 @@ void main() {
       title: 'New codecs',
       notes: '',
       url: Uri.parse(
-        'https://github.com/MostafaSensei106/Asagi/releases/tag/v2.0.0',
+        'https://github.com/MostafaSensei106/Kuymo/releases/tag/v2.0.0',
       ),
       publishedAt: DateTime.now(),
     );
