@@ -1,4 +1,4 @@
-# Kuymo — Marketing Plan v1
+# Kuymo  Marketing Plan v1
 
 **Prepared for:** MostafaSensei / Kuymo  
 **Date:** 26 November 2026  
@@ -40,7 +40,7 @@ The first 90 days should establish a credible product surface and a sustainable 
 
 Voice is calm, capable and direct. The Retro Japanese frame gives the project personality; it must not make instructions cryptic. English and Arabic are the maintained website languages. Other application languages are not silently advertised as published website locales. Do not use the Japanese motif to imply a Japanese founder or a translation of the name.
 
-## 3. Current state — scored from materials
+## 3. Current state  scored from materials
 
 These are qualitative readiness scores, not performance metrics. A 0 means no evidence in supplied materials, not proof that no work exists. The baseline is the repository at the start of this redesign. An intentional non-channel receives N/A rather than a failure score.
 
@@ -66,7 +66,7 @@ These are qualitative readiness scores, not performance metrics. A 0 means no ev
 
 The shape is a useful product with a developing presentation and little measured distribution. The binding constraints are verified availability, task evidence and time. Do not add more acquisition channels until the listing and first-use story are coherent.
 
-## 4. Acquisition — strangers become aware
+## 4. Acquisition  strangers become aware
 
 **Primary surface:** the eventual Google Play listing and a clear product website. **One active distribution lane:** founder-led helpful explanations, in the language/community where the founder can answer questions. English is the reusable source asset; Arabic gets a natural companion version when time permits. Do not create seven social accounts to cross-post the same link.
 
@@ -78,7 +78,7 @@ At publication, use a store title/short description that describes the job, then
 
 **Tools:** Astro website, existing screenshot manifest, Google Play Console after access/publication, Search Console after a real domain is configured, GitHub releases/issues. **Skills:** landing-page-generator, product-marketing-context, ux-copy and marketing-psychology. No account connection, campaign or external message was executed by this work.
 
-## 5. Activation — first useful outcome
+## 5. Activation  first useful outcome
 
 For this product activation is not signup: there is no required account flow. The intended first useful outcome is a completed compression whose result the user can inspect and save/share. This is a product-value definition, not an existing analytics event.
 
@@ -90,7 +90,7 @@ Two or three focused sessions can reveal an obvious misunderstanding; they canno
 
 **Tools/skills:** manual notes, issue templates, existing app tests; ux-design-from-scratch, ui-review, ux-feedback. Runtime event instrumentation is a separate product/privacy decision, not silently included in the website.
 
-## 6. Retention — being useful again
+## 6. Retention  being useful again
 
 This is an episodic utility. A person may need to compress a video occasionally, so daily active use is a poor default success target. Do not send repetitive reminders to manufacture app opens. Reliable saved results, understandable errors and a predictable next session are more useful than a lifecycle notification campaign.
 
@@ -100,7 +100,7 @@ Measure observed repeat use only when there is an authorized, privacy-appropriat
 
 **Now:** support and changelog hygiene. **Later:** optional, owner-approved feedback collection if the manual loop cannot answer an important question. **Skipped:** email sequences, push reactivation, win-back offers and subscriptions.
 
-## 7. Referral — useful recommendations
+## 7. Referral  useful recommendations
 
 The natural referral is a person who successfully prepared a video telling someone facing the same problem. Make the app/site identity and release URL easy to share; do not watermark personal videos with marketing material or require a referral to unlock compression.
 
@@ -172,7 +172,7 @@ No GA4, Stripe, email platform or Play Console MCP is assumed to be connected. T
 
 Store the content model, launch switch, screenshot manifest, design tokens and translated copy in their existing dedicated layers. Keep marketing decisions out of visual components. One release-status setting should control CTA behavior, so the website does not claim “coming soon” in one place and “download now” in another.
 
-## 12. Tactical idea bank — prioritized, not an invented catalog
+## 12. Tactical idea bank  prioritized, not an invented catalog
 
 The installed marketing-ideas file omits the complete library despite naming it. We cannot map 139/140 missing entries or invent their IDs. This is a Kuymo-specific shortlist with transparent scoring: **MFS = Impact + Fit + Speed − Effort − Cost**, each dimension 1–5. Scores are subjective planning estimates, not measured effects.
 

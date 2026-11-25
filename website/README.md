@@ -79,7 +79,7 @@ are introduced.
 - [Capability/claim audit](docs/capabilities-audit.md)
 - [إضافة الصور ورابط Google Play](docs/screenshot-editing.md)
 - [Marketing context](docs/marketing/product-marketing-context.md)
-- [12-month marketing plan — draft](docs/marketing/final_plan.md)
+- [12-month marketing plan  draft](docs/marketing/final_plan.md)
 - [Ethical choice architecture](docs/marketing/persuasion.md)
 
 For visual/performance review against a running preview:

@@ -1,9 +1,9 @@
 ---
-import { ArrowUpRight } from '@lucide/astro';
 import { withBase } from '@/lib/paths';
-import { content, localePath } from '../locales';
-import { siteCopy } from '../data/site-copy';
+import { ArrowUpRight } from '@lucide/astro';
 import { product } from '../data/product';
+import { siteCopy } from '../data/site-copy';
+import { content, localePath } from '../locales';
 const { locale } = Astro.props;
 const { t, copy } = content(locale);
 const site = siteCopy(locale);
@@ -44,6 +44,6 @@ const site = siteCopy(locale);
     <span>
       © {new Date().getFullYear()} {product.developer} / Kuymo
     </span>
-    <span class="mono">余白 — MORE ROOM.</span>
+    <span class="mono">余白  MORE ROOM.</span>
   </div>
 </footer>

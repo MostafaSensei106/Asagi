@@ -1,4 +1,4 @@
-# Kuymo — Ethical choice architecture
+# Kuymo  Ethical choice architecture
 
 Behavior: understand the product → explore current screenshots → optionally follow releases before Play publication. The task is simple and the visitor may have low readiness. Remove uncertainty before asking for commitment.
 

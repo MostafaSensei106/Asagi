@@ -1,4 +1,4 @@
-# Kuymo — Research record
+# Kuymo  Research record
 
 26 November 2026. Sources were read from the working tree and the official sources linked below. This is an evidence record, not customer research.
 

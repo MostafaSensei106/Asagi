@@ -1,4 +1,4 @@
-# Kuymo website — design and validation review
+# Kuymo website  design and validation review
 
 26 November 2026. **Score: Pass for the completed website checks.** Owner-supplied screenshot assets and marketing-plan editorial approval remain intentionally pending.
 

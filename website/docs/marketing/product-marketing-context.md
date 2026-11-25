@@ -1,4 +1,4 @@
-# Kuymo — Product marketing context
+# Kuymo  Product marketing context
 
 Last updated: 26 November 2026. Status: **Draft v1 for owner review**.
 Canonical website context lives here because the workspace's `.agents/` directory is read-only. Marketing documents reference this file; it does not claim automatic discovery by other tools.
