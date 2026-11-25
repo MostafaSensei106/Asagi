@@ -1,7 +1,7 @@
 ---
 app: Ejary Pro
 appDescription: An upcoming app by MostafaSensei106. Its legal documents are still being prepared.
-description: Draft terms scaffold for Ejary Pro. Not in force — no binding terms have been published for this app yet.
+description: Draft terms scaffold for Ejary Pro. Not in force  no binding terms have been published for this app yet.
 summary: >-
   This page is a placeholder. Ejary Pro has no published terms of service yet, so nothing here
   creates an agreement, grants a licence, or describes obligations for you or the developer.

@@ -43,8 +43,8 @@ content you have the right to use, and respect the rights, privacy, and consent 
 appearing in or owning that content. Keep your own copies of original files: compression is
 lossy and cannot be undone.
 
-You are also responsible for how you share exported files. Once a file leaves Kuymo — through
-your gallery, a messaging app, a cloud drive, or any other destination — that destination's terms
+You are also responsible for how you share exported files. Once a file leaves Kuymo  through
+your gallery, a messaging app, a cloud drive, or any other destination  that destination's terms
 and privacy practices apply.
 
 ## 4. Acceptable use
@@ -96,7 +96,7 @@ excluded, including liability for intent or gross negligence.
 ## 11. Ending these terms
 
 You may stop using Kuymo at any time by uninstalling it. These terms end when you stop using the
-app, except for provisions that by their nature survive — including those on licence, warranty,
+app, except for provisions that by their nature survive  including those on licence, warranty,
 and liability.
 
 ## 12. Contact

@@ -1,7 +1,7 @@
 ---
 app: Ejary Pro
 appDescription: An upcoming app by MostafaSensei106. Its legal documents are still being prepared.
-description: Draft privacy policy scaffold for Ejary Pro. Not in force — the app's real data practices have not been documented yet.
+description: Draft privacy policy scaffold for Ejary Pro. Not in force  the app's real data practices have not been documented yet.
 summary: >-
   This page is a placeholder. Ejary Pro has no published privacy policy yet, so nothing here
   describes how the app handles data, and nothing here is binding.

@@ -4,7 +4,7 @@
  */
 export const siteConfig = {
   name: 'Kuymo Legal',
-  title: 'Kuymo Legal — Privacy & Terms',
+  title: 'Kuymo Legal  Privacy & Terms',
   description:
     'Privacy policies and terms for Kuymo and other apps by MostafaSensei106. On-device processing, plain language, no accounts.',
   locale: 'en',
