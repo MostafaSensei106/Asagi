@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "359617533113",
+    "project_id": "kuymo-acd09",
+    "storage_bucket": "kuymo-acd09.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:359617533113:android:c48b4ae0165c92e6c63768",
+        "android_client_info": {
+          "package_name": "com.mostafa.sensei.kuymo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkWKaPSjoUhr98oj_kDfJv-zjsXeWtyVw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
