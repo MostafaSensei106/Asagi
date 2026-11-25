@@ -25,7 +25,11 @@ const copy = siteCopy(locale);
       src={image}
       width={image.width}
       widths={[220, 330, image.width]}
-      sizes="(max-width: 720px) 65vw, (max-width: 1100px) 28vw, 260px"
+      sizes={
+        hero
+          ? '(max-width: 760px) 65vw, 320px'
+          : '(max-width: 720px) 65vw, (max-width: 1100px) 28vw, 260px'
+      }
       format="webp"
       alt={alt}
       loading={priority ? 'eager' : 'lazy'}

@@ -92,3 +92,28 @@ node scripts/review-site.mjs
 The script writes screenshots and measured browser-lab data to `docs/previews/`.
 Read the report's conditions before interpreting a metric; these are local lab
 observations, not field INP or a guaranteed mobile-network result.
+
+## GitHub Pages deployment
+
+The workflow is at **`.github/workflows/deploy-website.yml` in the repository
+root**. It runs on relevant pushes to `main` and can also be started manually
+from Actions. Manual runs from other branches build but do not publish.
+
+One-time setup on GitHub: **Settings → Pages → Build and deployment → Source →
+GitHub Actions**. Then push the workflow and website files to `main`, or run
+“Deploy Kuymo website to GitHub Pages” from the Actions tab.
+
+The workflow uses Node 24, the pnpm version pinned in `website/package.json`,
+locked dependency installation, format/lint/type checks and an Astro static
+build. It uploads only `website/dist` and publishes through the `github-pages`
+environment using the normal repository token; no personal token is required.
+
+`SITE_URL` and `BASE_PATH` come from GitHub's `configure-pages` outputs, so the
+actual repository name (currently `Zumi` in the local origin), user-site hosting
+or a configured custom domain is handled without hardcoding `/Kuymo/`. For the
+current project-site layout the expected address is
+`https://mostafasensei106.github.io/Zumi/`; the deployed URL is shown on the
+workflow's deployment summary. This change creates the workflow locally; it does
+not itself push commits or trigger a remote deployment.
+
+Reference: [GitHub's Pages deployment setup](https://docs.github.com/en/get-started/start-your-journey/deploying-your-website-automatically).

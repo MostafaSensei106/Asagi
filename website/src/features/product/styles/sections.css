@@ -75,16 +75,13 @@
   min-height: 400px;
 }
 .hero-phone {
-  width: 44%;
+  width: 74%;
+  max-width: 320px;
   min-width: 0;
 }
 .hero-phone--1 {
   transform: rotate(-5deg);
   margin-bottom: var(--ds-space-12);
-}
-.hero-phone--2 {
-  transform: rotate(5deg);
-  margin-top: var(--ds-space-10);
 }
 .stage-footer {
   display: flex;
@@ -468,14 +465,8 @@
     min-height: 0;
     padding-block: var(--ds-space-10) var(--ds-space-8);
   }
-  .hero-phone {
-    max-width: 190px;
-  }
   .hero-phone--1 {
     margin-bottom: var(--ds-space-8);
-  }
-  .hero-phone--2 {
-    margin-top: var(--ds-space-6);
   }
   .promise-strip > div {
     grid-template-columns: 1fr;
@@ -654,9 +645,7 @@
 }
 
 .hero-phone--1 {
-  width: 56%;
-  max-width: 220px;
-  transform: rotate(-4deg);
+  transform: rotate(-3deg);
   margin-block: var(--ds-space-4);
 }
 .store-action {
