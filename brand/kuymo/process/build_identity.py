@@ -128,9 +128,14 @@ def main():
         (MASTERS / f'kuymo-wordmark{suffix}.svg').write_text(svg('Kuymo', word, round(width + 48), 156))
     app = f'<path fill="{MIST}" d="M0 0H1024V1024H0Z"/><g transform="scale(4)">{symbol()}</g>'
     (MASTERS / 'kuymo-app-icon.svg').write_text(svg('Kuymo app icon', app, 1024, 1024))
+    # iOS 18 appearance variants preserve placement and let the OS style them.
+    dark_icon = f'<g transform="scale(4)">{symbol(MIST, "reverse")}</g>'
+    (MASTERS / 'kuymo-app-icon-ios-dark.svg').write_text(svg('Kuymo dark icon', dark_icon, 1024, 1024))
+    tinted_icon = '<path fill="#000000" d="M0 0H1024V1024H0Z"/>' + f'<g transform="scale(4)">{symbol("#FFFFFF", "reverse")}</g>'
+    (MASTERS / 'kuymo-app-icon-ios-tinted.svg').write_text(svg('Kuymo tinted icon', tinted_icon, 1024, 1024))
     maskable = f'<path fill="{MIST}" d="M0 0H1024V1024H0Z"/><g transform="translate(64 64) scale(3.5)">{symbol()}</g>'
     (MASTERS / 'kuymo-maskable-icon.svg').write_text(svg('Kuymo maskable icon', maskable, 1024, 1024))
-    foreground = f'<g transform="translate(68.8 68.8) scale(1.15)">{symbol()}</g>'
+    foreground = f'<g transform="translate(75.2 75.2) scale(1.1)">{symbol()}</g>'
     (MASTERS / 'kuymo-adaptive-foreground.svg').write_text(svg('Kuymo adaptive foreground', foreground, 432, 432))
     for suffix, color in (('', PINE), ('-dark', '#FFFFFF')):
         (MASTERS / f'kuymo-splash{suffix}.svg').write_text(svg('Kuymo', symbol(color, 'reverse' if suffix else 'standard')))

@@ -2,12 +2,17 @@
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
+  # iOS 18+ appearance selection belongs to the user's Home Screen settings.
+  image_path_ios_dark_transparent: "assets/brand/kuymo-app-icon-ios-dark.png"
+  image_path_ios_tinted_grayscale: "assets/brand/kuymo-app-icon-ios-tinted.png"
+  # The default App Store icon stays opaque; dark artwork keeps transparency.
   remove_alpha_ios: true
   image_path: "assets/brand/kuymo-app-icon-1024.png"
-  min_sdk_android: 21
+  min_sdk_android: 30
   adaptive_icon_foreground_inset: 0
   adaptive_icon_background: "#DDE9C6"
   adaptive_icon_foreground: "assets/icons/ic_launcher_foreground.png"
+  # Android 13+ launchers recolor this layer when themed icons are enabled.
   adaptive_icon_monochrome: "assets/icons/ic_launcher_monochrome.png"
   web:
     generate: false

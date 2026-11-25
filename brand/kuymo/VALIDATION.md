@@ -48,3 +48,11 @@ are included as app assets and registered for the in-app license registry. No
 new runtime package dependency was introduced. Main product name: Kuymo;
 Kuymo AI is the optional assistant signature. Historical native IDs and source
 links are deliberately retained for compatibility and accurate destinations.
+
+## Native appearance follow-up
+
+Added official iOS 18 dark/tinted launcher inputs and generated appearance
+catalogs. Splash source sizes are now 768 px at 4x and 1152 px for Android 12.
+Light/dark background colors match across Android versions. Pixel-level checks
+verify both safe circles, including the corrected adaptive inset. Details and
+platform limitations: [native setup](NATIVE_APPEARANCES.md).

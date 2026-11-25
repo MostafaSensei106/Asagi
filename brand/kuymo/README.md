@@ -94,6 +94,9 @@ progress indicator. Motion must respect reduced-motion preferences if added.
 These artwork values are sRGB. For print, convert using the printer's actual
 ICC profile and approve a proof; no Pantone or universal CMYK match is claimed.
 
+See [native light/dark setup](NATIVE_APPEARANCES.md) for platform behavior,
+official sources and regeneration.
+
 ## Application integration
 
 `BrandMark` is the accessible, theme-aware reusable symbol; `BrandLogo` places it
