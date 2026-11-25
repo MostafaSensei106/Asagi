@@ -1,7 +1,7 @@
-> The owner selected **B — A little room**. The [production kit](../kuymo/README.md)
+> The owner selected **B  A little room**. The [production kit](../kuymo/README.md)
 > supersedes the exploratory recommendations below.
 
-# Kuymo — concept brief
+# Kuymo  concept brief
 
 Name approved by the owner: **Kuymo**, 2026-11-25. The core brand uses no AI
 suffix. **Kuymo AI** may identify an assistant context later; it is not a second

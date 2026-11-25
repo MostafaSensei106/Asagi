@@ -243,7 +243,7 @@ final class _AboutContent extends StatelessWidget {
       value == null || value.isEmpty ? fallback : value;
 
   String _version(String? version, String? channel) {
-    final value = _value(version, '—');
+    final value = _value(version, '');
     return channel == null || channel.isEmpty ? value : '$value ($channel)';
   }
 

@@ -1,6 +1,6 @@
 # Kuymo brand
 
-**B — A little room** is the approved identity. Start with the
+**B  A little room** is the approved identity. Start with the
 [final brand kit](kuymo/README.md) or [identity board](kuymo/presentation/brand-board.png).
 The app is **Kuymo**; **Kuymo AI** is the optional assistant descriptor.
 

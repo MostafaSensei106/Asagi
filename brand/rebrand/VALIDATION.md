@@ -1,7 +1,7 @@
 > Historical name-migration/concept checks. The owner subsequently chose B.
 > Current identity verification: [final validation](../kuymo/VALIDATION.md).
 
-# Kuymo — validation, 2026-11-25
+# Kuymo  validation, 2026-11-25
 
 ## Application
 
@@ -45,7 +45,7 @@ At 16 px the silhouette is the recognition cue; the folded tile detail and
 mascot expression are less legible. Choose the direction before preparing its
 final optical cut, reversed drawing, palette and production exports.
 
-Current recommendation: **A — Fold K**. The final concept overview is
+Current recommendation: **A  Fold K**. The final concept overview is
 `concepts/round-2.png`; `round-1.png` is the earlier comparison.
 
 These results do not approve a logo, establish trademark rights, verify font

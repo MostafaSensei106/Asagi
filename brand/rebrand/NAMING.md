@@ -1,4 +1,4 @@
-# فحص الأسماء — الجولة الأولى
+# فحص الأسماء  الجولة الأولى
 
 تاريخ البحث: 2026-11-25. **اعتمد المستخدم Kuymo بعد هذه الجولة**؛ السجل أدناه يوثق الفحص السابق والبدائل المرفوضة. لا تعني نتيجة البحث السلبية أن الاسم متاح قانونيًا أو غير مستخدم في كل بلد؛ لا تزال مراجعة العلامات التجارية والنطاقات خارج نتائج هذه الجولة.
 
@@ -12,7 +12,7 @@ Nagimoru وNagisumo مرفوضان بسبب الطول وصعوبة التذكر
 
 حُسم شرط التفرد مع المستخدم: التطبيق أو المنتج أو العلامة التجارية المنشورة تستبعد الاسم، لكن الاسم الشخصي أو الحساب الشخصي وحده لا يستبعده. لم تُغير أصول التطبيق.
 
-## المرشح الحالي بعد فلتر القِصر: Kuymo — كويمو
+## المرشح الحالي بعد فلتر القِصر: Kuymo  كويمو
 
 الحالة: اختاره المستخدم. اسم مبتكر من خمسة حروف؛ النطق المقترح كُويْ–مو (koy-mo). الإيقاع الياباني اقتراح إبداعي وليس ادعاء بأصل أو معنى ياباني موثق. لا يُضاف كانجي للهوية بناءً على هذا الاسم.
 
@@ -20,16 +20,16 @@ Nagimoru وNagisumo مرفوضان بسبب الطول وصعوبة التذكر
 
 الفحص الفعلي بتاريخ الجولة:
 
-- [Google Play — US](https://play.google.com/store/search?q=Kuymo&c=apps&hl=en&gl=US) و[مصر](https://play.google.com/store/search?q=Kuymo&c=apps&hl=en&gl=EG): النص الظاهر في HTML المسترجع بنجاح يقول «No results for Kuymo».
-- [Google Play بالعربية — مصر](https://play.google.com/store/search?q=%D9%83%D9%88%D9%8A%D9%85%D9%88&c=apps&hl=ar&gl=EG): اقتراحات تقريبية منها MeYo وKimo وWaymo؛ لا عنوان مطابق ظاهر في النص المقروء.
-- [Apple Search API — مصر](https://itunes.apple.com/search?term=Kuymo&entity=software&country=eg&limit=200): استجابة JSON ناجحة resultCount=0.
-- [Apple Search API — US](https://itunes.apple.com/search?term=Kuymo&entity=software&country=us&limit=200): مهلة اتصال بعد 15 ثانية؛ ليست نتيجة سلبية ولا يُدعى اكتمال الفحص الأمريكي.
+- [Google Play  US](https://play.google.com/store/search?q=Kuymo&c=apps&hl=en&gl=US) و[مصر](https://play.google.com/store/search?q=Kuymo&c=apps&hl=en&gl=EG): النص الظاهر في HTML المسترجع بنجاح يقول «No results for Kuymo».
+- [Google Play بالعربية  مصر](https://play.google.com/store/search?q=%D9%83%D9%88%D9%8A%D9%85%D9%88&c=apps&hl=ar&gl=EG): اقتراحات تقريبية منها MeYo وKimo وWaymo؛ لا عنوان مطابق ظاهر في النص المقروء.
+- [Apple Search API  مصر](https://itunes.apple.com/search?term=Kuymo&entity=software&country=eg&limit=200): استجابة JSON ناجحة resultCount=0.
+- [Apple Search API  US](https://itunes.apple.com/search?term=Kuymo&entity=software&country=us&limit=200): مهلة اتصال بعد 15 ثانية؛ ليست نتيجة سلبية ولا يُدعى اكتمال الفحص الأمريكي.
 - بحث الويب بالاسم وحده ومع app وsoftware وbrand وcompany وtrademark، وبالعربية كويمو: لم يظهر منتج أو علامة مطابقة واضحة ضمن النتائج المقروءة. ظهرت حسابات شخصية، واسم كاتب في فهرس كتاب، وكلمات في نصوص. [مثال حساب شخصي](https://www.planetminecraft.com/skin/creep-3062243/)؛ لا يمنع الترشيح حسب التوضيح الأخير.
 - البحث بكاتاكانا تقريبية クイモ مع アプリ أظهر اقتراح تسمية أطول لخدمة طعام؛ لم يُثبت استخدام مطابق كعلامة منشورة. لا تمثل هذه الصيغة كتابة براند معتمدة.
 
 النتيجة الدقيقة: لم يُعثر على تعارض تجاري واضح في المصادر المفحوصة. لا يوجد ضمان حصري أو فحص قانوني مكتمل أو تحقق من ملكية النطاق. يجب إعادة الفحص قبل الإطلاق واستكمال App Store US. اختيار المستخدم يجيز تحديث الاسم الظاهر في التطبيق، لكنه لا يثبت ملكية نطاق أو علامة.
 
-أسماء قصيرة إضافية استُبعدت: Keivu لالتباس النطق العربي مع [Kivo — كيفو](https://play.google.com/store/apps/details?hl=ar&id=com.maptriks.kivoproai)؛ Kuyro بسبب علامة [CUERO — كويرو في نشرة مصر الرسمية](https://www.itda.gov.eg/TMD/963/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%20%D8%B9%D9%86%20%D9%82%D8%A8%D9%88%D9%84%20%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D9%85%D8%A9%20-%202.pdf) واستخدام منشور لمنتدى بنفس الاسم؛ Yumki بسبب [منتج شوكولاتة منشور](https://www.recheio.co.mz/en-mz/products/chocolate-yumki-28g-chocolisso)؛ Yumro بسبب خادم لعبة منشور سابقًا؛ Ruyto بسبب شركة منشورة بنفس الاسم. وجود أسماء قصيرة مقبولة صوتيًا وحده لا يتجاوز شرط التفرد.
+أسماء قصيرة إضافية استُبعدت: Keivu لالتباس النطق العربي مع [Kivo  كيفو](https://play.google.com/store/apps/details?hl=ar&id=com.maptriks.kivoproai)؛ Kuyro بسبب علامة [CUERO  كويرو في نشرة مصر الرسمية](https://www.itda.gov.eg/TMD/963/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%20%D8%B9%D9%86%20%D9%82%D8%A8%D9%88%D9%84%20%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D9%85%D8%A9%20-%202.pdf) واستخدام منشور لمنتدى بنفس الاسم؛ Yumki بسبب [منتج شوكولاتة منشور](https://www.recheio.co.mz/en-mz/products/chocolate-yumki-28g-chocolisso)؛ Yumro بسبب خادم لعبة منشور سابقًا؛ Ruyto بسبب شركة منشورة بنفس الاسم. وجود أسماء قصيرة مقبولة صوتيًا وحده لا يتجاوز شرط التفرد.
 
 ## سجل المرشحين الطويلين المرفوضين
 
@@ -46,12 +46,12 @@ Nagimoru وNagisumo مرفوضان بسبب الطول وصعوبة التذكر
 
 جرى تنزيل صفحات Google Play العامة بنجاح باستخدام curl، ثم قراءة النص الظاهر والروابط. تعذر فتح الصفحات بأداة الويب أولًا؛ الفحص المباشر هنا تم عبر HTML المسترجع. صفحات Play تختلف حسب الدولة والحساب وقد تقترح نتائج تقريبية؛ وجود النتائج لا يعني تطابق الاسم.
 
-- [Nagimoru — Play US](https://play.google.com/store/search?q=Nagimoru&c=apps&hl=en&gl=US): النص الظاهر «No results for Nagimoru».
-- [Nagimoru — Play EG](https://play.google.com/store/search?q=Nagimoru&c=apps&hl=ar&gl=EG): النص الظاهر «لا تتوفّر أي نتائج للبحث عن Nagimoru».
-- [Nagisumo — Play US](https://play.google.com/store/search?q=Nagisumo&c=apps&hl=en&gl=US): اقتراحات منها NAOS وNARUTO: Ninja Cards؛ لا عنوان مطابق ظاهر.
-- [Nagisumo — Play EG](https://play.google.com/store/search?q=Nagisumo&c=apps&hl=ar&gl=EG): اقتراحات تقريبية؛ لا عنوان مطابق ظاهر.
-- [Nagisumo — Apple Search API US](https://itunes.apple.com/search?term=Nagisumo&entity=software&country=us&limit=200): 131 نتيجة؛ لا trackName مطابق باللاتينية عند القراءة.
-- [Nagimoru — Apple Search API US](https://itunes.apple.com/search?term=Nagimoru&entity=software&country=us&limit=200): انتهت المحاولة بمهلة اتصال 25 ثانية؛ ليست نتيجة سلبية.
+- [Nagimoru  Play US](https://play.google.com/store/search?q=Nagimoru&c=apps&hl=en&gl=US): النص الظاهر «No results for Nagimoru».
+- [Nagimoru  Play EG](https://play.google.com/store/search?q=Nagimoru&c=apps&hl=ar&gl=EG): النص الظاهر «لا تتوفّر أي نتائج للبحث عن Nagimoru».
+- [Nagisumo  Play US](https://play.google.com/store/search?q=Nagisumo&c=apps&hl=en&gl=US): اقتراحات منها NAOS وNARUTO: Ninja Cards؛ لا عنوان مطابق ظاهر.
+- [Nagisumo  Play EG](https://play.google.com/store/search?q=Nagisumo&c=apps&hl=ar&gl=EG): اقتراحات تقريبية؛ لا عنوان مطابق ظاهر.
+- [Nagisumo  Apple Search API US](https://itunes.apple.com/search?term=Nagisumo&entity=software&country=us&limit=200): 131 نتيجة؛ لا trackName مطابق باللاتينية عند القراءة.
+- [Nagimoru  Apple Search API US](https://itunes.apple.com/search?term=Nagimoru&entity=software&country=us&limit=200): انتهت المحاولة بمهلة اتصال 25 ثانية؛ ليست نتيجة سلبية.
 
 صيغ بحث الويب: الاسم اللاتيني بين علامتي اقتباس، ثم الاسم مع app/software/brand، ثم site:play.google.com وsite:apps.apple.com. لا تُعتبر هذه فحصًا لكل تهجئة ممكنة أو لكل واجهات المتجر الإقليمية.
 
@@ -64,7 +64,7 @@ Nagimoru وNagisumo مرفوضان بسبب الطول وصعوبة التذكر
 | Orumio | [شركة ومنتجات برمجية قائمة](https://orumio.com/) و[تطبيق Shopify منشور](https://apps.shopify.com/standing-orders-for-b2b) | مستبعد |
 | Karuvo | [نشرة رسمية إندونيسية تتضمن العلامة KARUVO](https://dgip.go.id/berita-resmi/2778/download) | مستبعد |
 | Suyori | [مطعم منشور بنفس الاسم](https://restaurants.umai.io/pt/restaurants/suyori-sushi-ramen) | مستبعد |
-| Harumo | ظهرت نتيجة لتطبيق Harumo — Hair Loss Tracker على موقع فهرسة APK، com.toynine.harumo | مستبعد احترازيًا؛ لم يُثبت وضع نشره الحالي من المتجر |
+| Harumo | ظهرت نتيجة لتطبيق Harumo  Hair Loss Tracker على موقع فهرسة APK، com.toynine.harumo | مستبعد احترازيًا؛ لم يُثبت وضع نشره الحالي من المتجر |
 | Karune / Nagiru / Nagimio / Karunagi / Karumeya / Orisayu / Orunowa / Karuseno / Tomerui | ظهرت استخدامات أو أسماء أو كلمات منشورة؛ لم تُستكمل فحوص متاجرها | لا تُرشح في هذه الجولة وفق شرط التفرد الصارم |
 | Karumio / Karunowa | ظهرت نفس السلسلة في نصوص منشورة؛ لا ادعاء بتوفرها | لا تُرشح في هذه الجولة |
 

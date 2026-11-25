@@ -1,4 +1,4 @@
-# Kuymo B — validation, 2026-11-25
+# Kuymo B  validation, 2026-11-25
 
 ## Application checks
 

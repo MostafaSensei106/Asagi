@@ -50,7 +50,6 @@ app.*.map.json
 # Widget Preview related
 .widget_preview/
 docs.md
-/docs/**
 
 # Keep the current compression architecture decision reviewable.
 !/docs/adr/

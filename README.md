@@ -1,7 +1,7 @@
 <h1 align="center">Kuymo</h1>
 
 <p align="center">
-  <img src="brand/kuymo/presentation/readme-banner.png" alt="Kuymo — More room for your moments. Pick a video. Choose a size. Keep it on your device." width="100%">
+  <img src="brand/kuymo/presentation/readme-banner.png" alt="Kuymo  More room for your moments. Pick a video. Choose a size. Keep it on your device." width="100%">
 </p>
 
 <p align="center">
@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="#download"><img src="https://img.shields.io/badge/Google_Play-Coming_Soon-527A46?style=for-the-badge&amp;logo=googleplay&amp;logoColor=white&amp;labelColor=284B3B" alt="Google Play — download link coming soon" height="40"></a>
+  <a href="#download"><img src="https://img.shields.io/badge/Google_Play-Coming_Soon-527A46?style=for-the-badge&amp;logo=googleplay&amp;logoColor=white&amp;labelColor=284B3B" alt="Google Play  download link coming soon" height="40"></a>
 </p>
 
 <p align="center">
@@ -30,13 +30,13 @@
   <a href="#faq">💡 FAQ</a>
 </p>
 
-> **Early preview · `0.0.1-dev.1`** — Video compression currently supports **Android 11+**. The Google Play link is a placeholder. **Kuymo AI is coming soon.**
+> **Early preview · `0.0.1-dev.1`**  Video compression currently supports **Android 11+**. The Google Play link is a placeholder. **Kuymo AI is coming soon.**
 
 <a id="why-kuymo"></a>
 
 ## 🍃 Make room for the video you want to share
 
-A clip from your trip. A family moment. Something you made. It is ready to send—until the file is too large.
+A clip from your trip. A family moment. Something you made. It is ready to senduntil the file is too large.
 
 Kuymo starts with a simple question: **how small do you need it to be?** Set a target size or choose a sharing preset, review the planned output, and let Kuymo handle the compression on your device.
 
@@ -107,7 +107,7 @@ Re-encoding is lossy. A smaller size budget can mean reduced resolution or quali
 
 <!-- GOOGLE_PLAY_URL_PLACEHOLDER: Replace with the verified public listing URL before launch. -->
 <p align="center">
-  <a href="https://play.google.com/store/apps/details?id=com.mostafa.sensei.kuymo"><img src="https://img.shields.io/badge/Google_Play-Coming_Soon-527A46?style=for-the-badge&amp;logo=googleplay&amp;logoColor=white&amp;labelColor=284B3B" alt="Google Play — placeholder store link, not a verified live listing" height="40"></a>
+  <a href="https://play.google.com/store/apps/details?id=com.mostafa.sensei.kuymo"><img src="https://img.shields.io/badge/Google_Play-Coming_Soon-527A46?style=for-the-badge&amp;logo=googleplay&amp;logoColor=white&amp;labelColor=284B3B" alt="Google Play  placeholder store link, not a verified live listing" height="40"></a>
 </p>
 
 <p align="center">
@@ -226,7 +226,7 @@ For a video issue, include your Android version, device model, app version, chos
 
 ## ⚖️ Open source, with room to grow
 
-Kuymo is licensed under the **GNU General Public License, version 3.0** — **SPDX: `GPL-3.0-only`**. Read the complete terms in [LICENSE](LICENSE).
+Kuymo is licensed under the **GNU General Public License, version 3.0**  **SPDX: `GPL-3.0-only`**. Read the complete terms in [LICENSE](LICENSE).
 
 Fonts and third-party dependencies retain their own licenses. Google Sans and Noto Sans Arabic use the SIL Open Font License; their notices are included under [assets/fonts](assets/fonts) and registered for the app's license screen.
 

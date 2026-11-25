@@ -17,7 +17,7 @@ capped at 15 as specified by the marketing-psychology skill.
 
 ## Mental Model: Jobs to Be Done
 
-**PLFS: +15** — leverage 5, fit 5, speed 3, ethics 5, cost 3.
+**PLFS: +15**  leverage 5, fit 5, speed 3, ethics 5, cost 3.
 
 - **Why it works:** the reader recognizes the everyday task of sharing a video
   that is too large before being asked to evaluate technical controls.
@@ -34,7 +34,7 @@ capped at 15 as specified by the marketing-psychology skill.
 
 ## Mental Model: Choice Reduction
 
-**PLFS: +14** — leverage 4, fit 5, speed 3, ethics 5, cost 3.
+**PLFS: +14**  leverage 4, fit 5, speed 3, ethics 5, cost 3.
 
 - **Why it works:** one primary destination is easier to locate than competing
   technical links, install commands, and several unrelated actions.
@@ -50,7 +50,7 @@ capped at 15 as specified by the marketing-psychology skill.
 
 ## Mental Model: Risk Reduction
 
-**PLFS: +13** — leverage 4, fit 5, speed 2, ethics 5, cost 3.
+**PLFS: +13**  leverage 4, fit 5, speed 2, ethics 5, cost 3.
 
 - **Why it works:** concrete answers about privacy, platform support, quality,
   and feature readiness reduce uncertainty before installation.

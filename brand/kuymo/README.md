@@ -1,4 +1,4 @@
-# Kuymo — A little room
+# Kuymo  A little room
 
 Direction **B**, selected by the owner on 25 November 2026. This is the current
 identity. The older `brand/rebrand/concepts/` files document the exploration.
