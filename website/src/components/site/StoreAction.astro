@@ -1,0 +1,41 @@
+---
+import { Play, ArrowUpRight } from '@lucide/astro';
+import { launch, storeUrl } from '@/features/product/data/product';
+import { siteCopy } from '@/features/product/data/site-copy';
+interface Props {
+  locale: string;
+  variant?: 'primary' | 'outline';
+  compact?: boolean;
+}
+const { locale, variant = 'primary', compact = false } = Astro.props;
+const url = storeUrl(launch);
+const copy = siteCopy(locale);
+---
+
+{url ? (
+  <a
+    href={url}
+    class:list={['ds-action', `ds-action--${variant}`, 'store-action']}
+    data-slot="google-play-action"
+  >
+    <Play size={20} stroke-width={1.5} aria-hidden="true" />
+    <span>Google Play</span>
+    <ArrowUpRight size={18} aria-hidden="true" />
+  </a>
+) : (
+  <span class:list={['store-action-wrap', { 'store-action-wrap--compact': compact }]}>
+    <button
+      type="button"
+      disabled
+      class:list={['ds-action', `ds-action--${variant}`, 'store-action', 'store-action--pending']}
+      title={copy.coming}
+      aria-label={copy.coming}
+      data-slot="google-play-action"
+    >
+      <Play size={20} stroke-width={1.5} aria-hidden="true" />
+      <span>
+        Google Play<small>{locale === 'ar' ? 'قريبًا' : 'Coming soon'}</small>
+      </span>
+    </button>
+  </span>
+)}

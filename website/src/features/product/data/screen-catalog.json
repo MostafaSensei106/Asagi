@@ -1,0 +1,805 @@
+[
+  {
+    "id": "home",
+    "group": "core",
+    "title": {
+      "en": "Home",
+      "ar": "الرئيسية"
+    },
+    "subtitle": {
+      "en": "Start with your next video",
+      "ar": "ابدأ بالفيديو القادم"
+    },
+    "description": {
+      "en": "The main starting point for choosing a video and entering the compression workflow.",
+      "ar": "نقطة البداية لاختيار الفيديو والدخول إلى مسار الضغط."
+    },
+    "image": "home-en-light.png",
+    "imageAr": "home-ar-light.png",
+    "preview": false,
+    "sources": ["lib/modules/home/presentation/pages/home_page.dart"]
+  },
+  {
+    "id": "onboarding",
+    "group": "core",
+    "title": {
+      "en": "Welcome to Kuymo",
+      "ar": "مرحبًا بك في Kuymo"
+    },
+    "subtitle": {
+      "en": "A first look at the workflow",
+      "ar": "تعرف على طريقة الاستخدام"
+    },
+    "description": {
+      "en": "An introduction to preparing a video and understanding the local-processing approach.",
+      "ar": "مقدمة لتحضير الفيديو وفهم أسلوب المعالجة المحلية."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/onboarding/presentation/pages/onboarding_page.dart"]
+  },
+  {
+    "id": "video-select",
+    "group": "compression",
+    "title": {
+      "en": "Choose a video",
+      "ar": "اختيار الفيديو"
+    },
+    "subtitle": {
+      "en": "Select the source",
+      "ar": "حدد الملف الأصلي"
+    },
+    "description": {
+      "en": "Pick a video through the device selection flow before choosing its target settings.",
+      "ar": "اختر الفيديو من مسار الاختيار على الجهاز قبل تحديد إعدادات الناتج."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/compression/presentation/pages/video_select_page.dart"]
+  },
+  {
+    "id": "compression-setup",
+    "group": "compression",
+    "title": {
+      "en": "Compression setup",
+      "ar": "إعداد الضغط"
+    },
+    "subtitle": {
+      "en": "Size, picture and sound",
+      "ar": "الحجم والصورة والصوت"
+    },
+    "description": {
+      "en": "Review the target, planned output and supported manual controls before starting a job.",
+      "ar": "راجع الهدف وخطة الناتج وخيارات التحكم المدعومة قبل بدء المهمة."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/compression/presentation/pages/compression_setup_page.dart"]
+  },
+  {
+    "id": "compression-progress",
+    "group": "compression",
+    "title": {
+      "en": "Compression progress",
+      "ar": "تقدم الضغط"
+    },
+    "subtitle": {
+      "en": "Follow the active job",
+      "ar": "تابع المهمة الحالية"
+    },
+    "description": {
+      "en": "See the current stage and use pause, resume or cancellation when supported.",
+      "ar": "شوف المرحلة الحالية واستخدم الإيقاف المؤقت أو الاستكمال أو الإلغاء عند دعمها."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/compression/presentation/pages/compression_progress_page.dart"]
+  },
+  {
+    "id": "compression-result",
+    "group": "compression",
+    "title": {
+      "en": "Compression result",
+      "ar": "نتيجة الضغط"
+    },
+    "subtitle": {
+      "en": "Inspect before sharing",
+      "ar": "راجع قبل المشاركة"
+    },
+    "description": {
+      "en": "Compare actual output with the source and review warnings before saving or sharing.",
+      "ar": "قارن الناتج الفعلي بالأصل وراجع التحذيرات قبل الحفظ أو المشاركة."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/compression/presentation/pages/compression_result_page.dart"]
+  },
+  {
+    "id": "saved-result",
+    "group": "compression",
+    "title": {
+      "en": "Saved result",
+      "ar": "النتيجة المحفوظة"
+    },
+    "subtitle": {
+      "en": "Return to a completed file",
+      "ar": "ارجع لملف مكتمل"
+    },
+    "description": {
+      "en": "Open an existing result from history and review its available actions and file status.",
+      "ar": "افتح نتيجة موجودة في السجل وراجع حالة الملف والإجراءات المتاحة."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/compression/presentation/pages/saved_compression_result_page.dart"]
+  },
+  {
+    "id": "history",
+    "group": "compression",
+    "title": {
+      "en": "Compression history",
+      "ar": "سجل الضغط"
+    },
+    "subtitle": {
+      "en": "Find your results again",
+      "ar": "اعثر على نتائجك من جديد"
+    },
+    "description": {
+      "en": "A local record of compression work with output details and save/share paths.",
+      "ar": "سجل محلي لعمليات الضغط وتفاصيل الناتج ومسارات الحفظ والمشاركة."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/compression/presentation/pages/compression_history_page.dart"]
+  },
+  {
+    "id": "settings",
+    "group": "settings",
+    "title": {
+      "en": "Settings",
+      "ar": "الإعدادات"
+    },
+    "subtitle": {
+      "en": "One place for preferences",
+      "ar": "مكان واحد لتفضيلاتك"
+    },
+    "description": {
+      "en": "Navigate compression, appearance, language, privacy and help settings from the grouped hub.",
+      "ar": "انتقل لإعدادات الضغط والمظهر واللغة والخصوصية والمساعدة من مكان منظم."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/settings/presentation/pages/settings_page.dart"]
+  },
+  {
+    "id": "compression-defaults",
+    "group": "settings",
+    "title": {
+      "en": "Compression defaults",
+      "ar": "إعدادات الضغط الافتراضية"
+    },
+    "subtitle": {
+      "en": "A starting point for new jobs",
+      "ar": "نقطة بداية للمهام الجديدة"
+    },
+    "description": {
+      "en": "Manage preferred compression choices, then review the actual plan for each source video.",
+      "ar": "أدر اختيارات الضغط المفضلة ثم راجع الخطة الفعلية لكل فيديو."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/compression/presentation/pages/compression_defaults_page.dart"]
+  },
+  {
+    "id": "storage",
+    "group": "settings",
+    "title": {
+      "en": "Storage and saving",
+      "ar": "التخزين والحفظ"
+    },
+    "subtitle": {
+      "en": "Manage local space",
+      "ar": "أدر المساحة المحلية"
+    },
+    "description": {
+      "en": "Review local storage and cleanup choices. Available controls depend on the current build.",
+      "ar": "راجع التخزين المحلي وخيارات التنظيف. تختلف الخيارات المتاحة حسب الإصدار الحالي."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/storage/presentation/pages/storage_settings_page.dart"]
+  },
+  {
+    "id": "appearance",
+    "group": "settings",
+    "title": {
+      "en": "Appearance",
+      "ar": "المظهر"
+    },
+    "subtitle": {
+      "en": "Make the interface comfortable",
+      "ar": "واجهة مريحة لك"
+    },
+    "description": {
+      "en": "Choose light/dark appearance, palette variants and available contrast preferences.",
+      "ar": "اختر المظهر الفاتح أو الداكن ولوحات الألوان وتفضيلات التباين المتاحة."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/appearance/presentation/pages/appearance_settings_page.dart"]
+  },
+  {
+    "id": "language",
+    "group": "settings",
+    "title": {
+      "en": "Language",
+      "ar": "اللغة"
+    },
+    "subtitle": {
+      "en": "Language and text direction",
+      "ar": "لغة العرض واتجاه النص"
+    },
+    "description": {
+      "en": "Choose from the app's available languages, including right-to-left layouts. Website language coverage is separate.",
+      "ar": "اختر من لغات التطبيق المتاحة مع دعم اتجاه RTL. لغات الموقع منفصلة عن لغات التطبيق."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/language/presentation/pages/language_settings_page.dart"]
+  },
+  {
+    "id": "notifications",
+    "group": "settings",
+    "title": {
+      "en": "Notifications",
+      "ar": "الإشعارات"
+    },
+    "subtitle": {
+      "en": "Task updates on your terms",
+      "ar": "تحديثات المهام باختيارك"
+    },
+    "description": {
+      "en": "Review notification preferences and Android permission status; active work has its service notification.",
+      "ar": "راجع تفضيلات الإشعارات وإذن أندرويد؛ للعمل النشط إشعار الخدمة الخاص به."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/notifications/presentation/pages/notifications_settings_page.dart"]
+  },
+  {
+    "id": "privacy-settings",
+    "group": "settings",
+    "title": {
+      "en": "Privacy settings",
+      "ar": "إعدادات الخصوصية"
+    },
+    "subtitle": {
+      "en": "Understand local data choices",
+      "ar": "افهم اختيارات البيانات المحلية"
+    },
+    "description": {
+      "en": "Review privacy-related controls and the distinction between compression, sharing and optional connections.",
+      "ar": "راجع خيارات الخصوصية والفرق بين الضغط والمشاركة والاتصالات الاختيارية."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/privacy/presentation/pages/privacy_settings_page.dart"]
+  },
+  {
+    "id": "ai-chat",
+    "group": "ai",
+    "title": {
+      "en": "Kuymo AI",
+      "ar": "Kuymo AI"
+    },
+    "subtitle": {
+      "en": "Assistant preview",
+      "ar": "معاينة المساعد"
+    },
+    "description": {
+      "en": "An existing assistant page in the app. Release-validated model behavior is still being confirmed; this is a preview, not an availability promise.",
+      "ar": "صفحة مساعد موجودة داخل التطبيق. جارٍ تأكيد سلوك النماذج في الإصدار؛ هذه معاينة وليست وعدًا بالتوفر."
+    },
+    "image": "assistant-en-light.png",
+    "imageAr": "assistant-ar-light.png",
+    "preview": true,
+    "sources": ["lib/modules/ai/presentation/pages/ai_chat_page.dart"]
+  },
+  {
+    "id": "ai-settings",
+    "group": "ai",
+    "title": {
+      "en": "AI settings",
+      "ar": "إعدادات الذكاء الاصطناعي"
+    },
+    "subtitle": {
+      "en": "The local AI control center",
+      "ar": "مركز إعدادات الذكاء المحلي"
+    },
+    "description": {
+      "en": "A grouped entry point to existing AI configuration pages. Preview status and device/model requirements apply.",
+      "ar": "مدخل منظم لصفحات إعداد الذكاء الموجودة. تنطبق حالة المعاينة ومتطلبات الجهاز والنموذج."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": true,
+    "sources": ["lib/modules/ai/presentation/pages/ai_settings_page.dart"]
+  },
+  {
+    "id": "ai-models",
+    "group": "ai",
+    "title": {
+      "en": "AI models",
+      "ar": "نماذج الذكاء الاصطناعي"
+    },
+    "subtitle": {
+      "en": "Model selection and management",
+      "ar": "اختيار النماذج وإدارتها"
+    },
+    "description": {
+      "en": "Explore the model-management interface. A page in the catalog does not confirm that a model is installed or works on every device.",
+      "ar": "استعرض واجهة إدارة النماذج. وجود الصفحة لا يؤكد تثبيت نموذج أو عمله على كل الأجهزة."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": true,
+    "sources": ["lib/modules/ai/presentation/pages/ai_models_page.dart"]
+  },
+  {
+    "id": "ai-import",
+    "group": "ai",
+    "title": {
+      "en": "Import a model",
+      "ar": "استيراد نموذج"
+    },
+    "subtitle": {
+      "en": "Bring a compatible model",
+      "ar": "اختيار نموذج متوافق"
+    },
+    "description": {
+      "en": "The interface for local model import and its validation states, subject to compatible formats and runtime support.",
+      "ar": "واجهة استيراد نموذج محلي وحالات التحقق منه، حسب توافق الصيغ ودعم التشغيل."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": true,
+    "sources": ["lib/modules/ai/presentation/pages/ai_import_model_page.dart"]
+  },
+  {
+    "id": "ai-features",
+    "group": "ai",
+    "title": {
+      "en": "AI features",
+      "ar": "ميزات الذكاء الاصطناعي"
+    },
+    "subtitle": {
+      "en": "Choose available assistance",
+      "ar": "اختيار المساعدة المتاحة"
+    },
+    "description": {
+      "en": "Review the existing feature-preference screen. Each capability remains subject to release and model validation.",
+      "ar": "راجع شاشة تفضيلات الميزات الموجودة. تظل كل قدرة خاضعة للتحقق من الإصدار والنموذج."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": true,
+    "sources": ["lib/modules/ai/presentation/pages/ai_features_page.dart"]
+  },
+  {
+    "id": "ai-conversation",
+    "group": "ai",
+    "title": {
+      "en": "Conversation settings",
+      "ar": "إعدادات المحادثة"
+    },
+    "subtitle": {
+      "en": "Tune the conversation",
+      "ar": "ضبط المحادثة"
+    },
+    "description": {
+      "en": "An existing screen for conversation and generation preferences in the local AI area.",
+      "ar": "شاشة موجودة لتفضيلات المحادثة والتوليد داخل قسم الذكاء المحلي."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": true,
+    "sources": ["lib/modules/ai/presentation/pages/ai_chat_settings_page.dart"]
+  },
+  {
+    "id": "ai-media",
+    "group": "ai",
+    "title": {
+      "en": "AI media input",
+      "ar": "مدخلات الوسائط للذكاء"
+    },
+    "subtitle": {
+      "en": "Image and audio preferences",
+      "ar": "تفضيلات الصور والصوت"
+    },
+    "description": {
+      "en": "Review existing media-input settings. Actual multimodal support depends on the selected model and device.",
+      "ar": "راجع إعدادات مدخلات الوسائط الموجودة. الدعم الفعلي يعتمد على النموذج المختار والجهاز."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": true,
+    "sources": ["lib/modules/ai/presentation/pages/ai_media_page.dart"]
+  },
+  {
+    "id": "ai-search",
+    "group": "ai",
+    "title": {
+      "en": "Local AI search",
+      "ar": "البحث المحلي بالذكاء"
+    },
+    "subtitle": {
+      "en": "Search configuration preview",
+      "ar": "معاينة إعدادات البحث"
+    },
+    "description": {
+      "en": "The existing local-search settings interface; semantic search behavior needs release-specific validation.",
+      "ar": "واجهة إعداد البحث المحلي الموجودة؛ سلوك البحث الدلالي يحتاج تحققًا خاصًا بالإصدار."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": true,
+    "sources": ["lib/modules/ai/presentation/pages/ai_search_page.dart"]
+  },
+  {
+    "id": "ai-tools",
+    "group": "ai",
+    "title": {
+      "en": "AI tools",
+      "ar": "أدوات الذكاء الاصطناعي"
+    },
+    "subtitle": {
+      "en": "Review tool permissions",
+      "ar": "راجع صلاحيات الأدوات"
+    },
+    "description": {
+      "en": "Explore the existing tool configuration screen without assuming every tool is enabled or validated in a release.",
+      "ar": "استعرض شاشة إعداد الأدوات دون افتراض تفعيل كل أداة أو التحقق منها في الإصدار."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": true,
+    "sources": ["lib/modules/ai/presentation/pages/ai_tools_page.dart"]
+  },
+  {
+    "id": "ai-runtime",
+    "group": "ai",
+    "title": {
+      "en": "AI runtime",
+      "ar": "تشغيل الذكاء الاصطناعي"
+    },
+    "subtitle": {
+      "en": "Device and runtime preferences",
+      "ar": "تفضيلات التشغيل والجهاز"
+    },
+    "description": {
+      "en": "An existing runtime-settings page. Memory, backend and model compatibility can affect availability.",
+      "ar": "صفحة إعدادات تشغيل موجودة؛ الذاكرة ومسار التشغيل وتوافق النموذج قد تؤثر على الإتاحة."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": true,
+    "sources": ["lib/modules/ai/presentation/pages/ai_runtime_page.dart"]
+  },
+  {
+    "id": "updates",
+    "group": "about",
+    "title": {
+      "en": "App updates",
+      "ar": "تحديثات التطبيق"
+    },
+    "subtitle": {
+      "en": "Check published releases",
+      "ar": "راجع الإصدارات المنشورة"
+    },
+    "description": {
+      "en": "View release information and update-check results. Only published release assets can be downloaded.",
+      "ar": "اعرض معلومات الإصدارات ونتائج فحص التحديثات. يمكن تنزيل الأصول المنشورة فعلًا فقط."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/updates/presentation/pages/releases_page.dart"]
+  },
+  {
+    "id": "whats-new",
+    "group": "about",
+    "title": {
+      "en": "What's new",
+      "ar": "ما الجديد"
+    },
+    "subtitle": {
+      "en": "Changes in the installed version",
+      "ar": "تغييرات النسخة المثبتة"
+    },
+    "description": {
+      "en": "The release-notes view for the installed build, separate from checking for a newer release.",
+      "ar": "عرض ملاحظات النسخة المثبتة، منفصل عن البحث عن إصدار أحدث."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/updates/presentation/pages/releases_page.dart"]
+  },
+  {
+    "id": "about",
+    "group": "about",
+    "title": {
+      "en": "About Kuymo",
+      "ar": "عن Kuymo"
+    },
+    "subtitle": {
+      "en": "The app and its version",
+      "ar": "التطبيق وإصداره"
+    },
+    "description": {
+      "en": "App identity, version/build information and links to project information and help.",
+      "ar": "هوية التطبيق ورقم النسخة والبناء وروابط معلومات المشروع والمساعدة."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": [
+      "lib/modules/about/presentation/pages/app_info_page.dart",
+      "lib/modules/about/presentation/pages/about_app_page.dart"
+    ]
+  },
+  {
+    "id": "about-developer",
+    "group": "about",
+    "title": {
+      "en": "The developer",
+      "ar": "المطور"
+    },
+    "subtitle": {
+      "en": "Meet MostafaSensei",
+      "ar": "تعرف على MostafaSensei"
+    },
+    "description": {
+      "en": "A short introduction and the verified public GitHub profile, without invented biography details.",
+      "ar": "تعريف مختصر ورابط GitHub العام المؤكد، دون تفاصيل سيرة غير موثقة."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/about/presentation/pages/developer_page.dart"]
+  },
+  {
+    "id": "licenses",
+    "group": "about",
+    "title": {
+      "en": "Open-source licenses",
+      "ar": "تراخيص المصادر المفتوحة"
+    },
+    "subtitle": {
+      "en": "Credits behind the app",
+      "ar": "تقدير لمن ساهم في التطبيق"
+    },
+    "description": {
+      "en": "Browse acknowledgements and software license information for dependencies used by the app.",
+      "ar": "تصفح الشكر ومعلومات تراخيص البرمجيات والمكتبات المستخدمة داخل التطبيق."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/about/presentation/pages/licenses_page.dart"]
+  },
+  {
+    "id": "privacy-policy",
+    "group": "legal",
+    "title": {
+      "en": "Privacy policy",
+      "ar": "سياسة الخصوصية"
+    },
+    "subtitle": {
+      "en": "Read the data practices",
+      "ar": "اقرأ ممارسات البيانات"
+    },
+    "description": {
+      "en": "Access the published privacy document describing local processing and optional data connections.",
+      "ar": "افتح وثيقة الخصوصية المنشورة التي تشرح المعالجة المحلية والاتصالات الاختيارية."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/legal/presentation/pages/privacy_policy_page.dart"]
+  },
+  {
+    "id": "terms",
+    "group": "legal",
+    "title": {
+      "en": "Terms of use",
+      "ar": "شروط الاستخدام"
+    },
+    "subtitle": {
+      "en": "Understand the terms",
+      "ar": "افهم شروط الاستخدام"
+    },
+    "description": {
+      "en": "Read the app's published terms. This page preview is not a substitute for the legal document.",
+      "ar": "اقرأ شروط التطبيق المنشورة. معاينة الصفحة ليست بديلًا عن الوثيقة القانونية."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/legal/presentation/pages/terms_page.dart"]
+  },
+  {
+    "id": "data-safety",
+    "group": "legal",
+    "title": {
+      "en": "Data safety",
+      "ar": "أمان البيانات"
+    },
+    "subtitle": {
+      "en": "Understand data handling",
+      "ar": "افهم التعامل مع البيانات"
+    },
+    "description": {
+      "en": "Review the app's data-safety explanation and related privacy information.",
+      "ar": "راجع شرح أمان البيانات داخل التطبيق ومعلومات الخصوصية المرتبطة به."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/legal/presentation/pages/data_safety_page.dart"]
+  },
+  {
+    "id": "permissions",
+    "group": "legal",
+    "title": {
+      "en": "Permissions",
+      "ar": "الأذونات"
+    },
+    "subtitle": {
+      "en": "Know why access is requested",
+      "ar": "اعرف سبب طلب الوصول"
+    },
+    "description": {
+      "en": "An explanation of relevant runtime permissions and their role in media and notifications.",
+      "ar": "شرح أذونات التشغيل ذات الصلة ودورها في الوسائط والإشعارات."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/legal/presentation/pages/permissions_page.dart"]
+  },
+  {
+    "id": "faq",
+    "group": "help",
+    "title": {
+      "en": "Frequently asked questions",
+      "ar": "الأسئلة الشائعة"
+    },
+    "subtitle": {
+      "en": "Practical answers",
+      "ar": "إجابات عملية"
+    },
+    "description": {
+      "en": "Find guidance about targets, quality, supported media, saving and interrupted work.",
+      "ar": "اعثر على إرشادات للحجم والجودة والوسائط المدعومة والحفظ والعمل المنقطع."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/help/presentation/pages/faq_page.dart"]
+  },
+  {
+    "id": "support",
+    "group": "help",
+    "title": {
+      "en": "Support",
+      "ar": "الدعم"
+    },
+    "subtitle": {
+      "en": "Get help with a problem",
+      "ar": "احصل على مساعدة"
+    },
+    "description": {
+      "en": "Open the support entry point and find the project's available help links.",
+      "ar": "افتح مدخل الدعم واعثر على روابط المساعدة المتاحة للمشروع."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/help/presentation/pages/support_page.dart"]
+  },
+  {
+    "id": "feedback",
+    "group": "help",
+    "title": {
+      "en": "Send feedback",
+      "ar": "إرسال ملاحظات"
+    },
+    "subtitle": {
+      "en": "Help improve the workflow",
+      "ar": "ساعد في تحسين التجربة"
+    },
+    "description": {
+      "en": "Report an issue or suggest an improvement. Share media only if you are comfortable making it public.",
+      "ar": "أبلغ عن مشكلة أو اقترح تحسينًا. لا تشارك وسائط إلا لو كنت موافقًا على نشرها."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/help/presentation/pages/feedback_page.dart"]
+  },
+  {
+    "id": "rate",
+    "group": "help",
+    "title": {
+      "en": "Rate the app",
+      "ar": "تقييم التطبيق"
+    },
+    "subtitle": {
+      "en": "Store-rating entry point",
+      "ar": "مدخل تقييم المتجر"
+    },
+    "description": {
+      "en": "An existing app page for rating-related actions. A Google Play listing is not yet confirmed publicly available.",
+      "ar": "صفحة موجودة لإجراءات التقييم. لم يتأكد بعد توفر قائمة Google Play للعامة."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/growth/presentation/pages/rate_app_page.dart"]
+  },
+  {
+    "id": "share-app",
+    "group": "help",
+    "title": {
+      "en": "Share Kuymo",
+      "ar": "مشاركة Kuymo"
+    },
+    "subtitle": {
+      "en": "Pass the project along",
+      "ar": "شارك المشروع مع غيرك"
+    },
+    "description": {
+      "en": "The app-sharing entry point, distinct from sharing a compressed video file.",
+      "ar": "مدخل مشاركة التطبيق، وهو مختلف عن مشاركة ملف فيديو مضغوط."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/growth/presentation/pages/share_app_page.dart"]
+  },
+  {
+    "id": "maintenance",
+    "group": "core",
+    "title": {
+      "en": "Maintenance state",
+      "ar": "حالة الصيانة"
+    },
+    "subtitle": {
+      "en": "An internal service state",
+      "ar": "حالة داخلية للتطبيق"
+    },
+    "description": {
+      "en": "The existing maintenance-state page, shown here as a page inventory entry rather than a normal navigation destination.",
+      "ar": "صفحة حالة الصيانة الموجودة، معروضة هنا ضمن سجل الصفحات وليست وجهة تنقل عادية."
+    },
+    "image": null,
+    "imageAr": null,
+    "preview": false,
+    "sources": ["lib/modules/about/presentation/pages/maintenance_mode_page.dart"]
+  }
+]

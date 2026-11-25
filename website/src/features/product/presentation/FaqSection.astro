@@ -1,4 +1,5 @@
 ---
+import { richContent } from '../data/rich-content';
 import SectionHeading from '@/components/site/SectionHeading.astro';
 import { content } from '../locales';
 import { siteCopy } from '../data/site-copy';
@@ -6,6 +7,7 @@ const { locale } = Astro.props;
 const { t } = content(locale);
 const site = siteCopy(locale);
 const faqs = [
+  ...richContent(locale).faqs,
   { q: site.sizeQuestion, a: site.sizeAnswer },
   { q: site.localQuestion, a: site.localAnswer },
   { q: site.playQuestion, a: site.playAnswer },

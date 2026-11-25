@@ -65,13 +65,22 @@ for (const route of ['', 'ar/']) {
     });
     await session.send('Emulation.setCPUThrottlingRate', { rate: 4 });
     await sample.addInitScript(() => {
-      window.__kuymoMetrics = { lcp: 0, cls: 0 };
+      window.__kuymoMetrics = { lcp: 0, cls: 0, shifts: [] };
       new PerformanceObserver((list) => {
         for (const entry of list.getEntries()) window.__kuymoMetrics.lcp = entry.startTime;
       }).observe({ type: 'largest-contentful-paint', buffered: true });
       new PerformanceObserver((list) => {
         for (const entry of list.getEntries())
-          if (!entry.hadRecentInput) window.__kuymoMetrics.cls += entry.value;
+          if (!entry.hadRecentInput) {
+            window.__kuymoMetrics.cls += entry.value;
+            window.__kuymoMetrics.shifts.push({
+              value: entry.value,
+              time: entry.startTime,
+              sources: entry.sources.map(
+                (source) => source.node?.className || source.node?.nodeName,
+              ),
+            });
+          }
       }).observe({ type: 'layout-shift', buffered: true });
     });
     await sample.goto(url(route), { waitUntil: 'networkidle' });

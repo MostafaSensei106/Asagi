@@ -1,4 +1,5 @@
 ---
+import ContentCollection from './presentation/ContentCollection.astro';
 import ProductLayout from './ProductLayout.astro';
 import HeroSection from './presentation/HeroSection.astro';
 import FeatureGrid from './presentation/FeatureGrid.astro';
@@ -52,17 +53,27 @@ const description = selected
       <p>{description}</p>
     </section>
   )}
+  {['', 'about'].includes(section) && <ContentCollection locale={locale} kind="useCases" />}
   {selected ? (
     <FeatureDetail feature={selected} locale={locale} />
   ) : (
     <>
       {['', 'features', 'about'].includes(section) && <FeatureGrid locale={locale} />}
-      {['', 'screenshots'].includes(section) && <ScreenshotGallery locale={locale} />}
+      {['', 'screenshots'].includes(section) && (
+        <ScreenshotGallery locale={locale} compact={section !== 'screenshots'} />
+      )}
       {['', 'about'].includes(section) && <WorkflowSection locale={locale} />}
       {['', 'about', 'developer'].includes(section) && (
         <DeveloperSection locale={locale} full={section === 'developer'} />
       )}
     </>
+  )}
+  {['', 'features'].includes(section) && <ContentCollection locale={locale} kind="capabilities" />}
+  {['', 'about', 'features/target-size'].includes(section) && (
+    <ContentCollection locale={locale} kind="reliability" />
+  )}
+  {['about', 'features', 'features/on-device'].includes(section) && (
+    <ContentCollection locale={locale} kind="formats" />
   )}
   {section !== 'screenshots' && <FaqSection locale={locale} />}
   <LaunchSection locale={locale} full={section === 'download'} />

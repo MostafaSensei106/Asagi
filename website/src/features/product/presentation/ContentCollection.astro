@@ -1,0 +1,49 @@
+---
+import SectionHeading from '@/components/site/SectionHeading.astro';
+import { richContent } from '../data/rich-content';
+interface Props {
+  locale: string;
+  kind: 'useCases' | 'capabilities' | 'reliability' | 'formats';
+}
+const { locale, kind } = Astro.props;
+const rich = richContent(locale);
+const title = rich[`${kind}Title`];
+const intro = kind === 'formats' ? undefined : rich[`${kind}Intro`];
+const items = rich[kind];
+---
+
+<section class:list={['content-collection', `content-collection--${kind}`]} data-reveal>
+  <div class="shell">
+    <SectionHeading title={title} description={intro ?? ''} />
+    {kind === 'capabilities' ? (
+      <div class="capability-list">
+        {items.map((item, index) => (
+          <details>
+            <summary>
+              <span class="mono" aria-hidden="true">
+                0{index + 1}
+              </span>
+              {item.title}
+              <span class="faq-indicator" aria-hidden="true">
+                +
+              </span>
+            </summary>
+            <p>{item.body}</p>
+          </details>
+        ))}
+      </div>
+    ) : (
+      <div class="content-grid">
+        {items.map((item, index) => (
+          <article>
+            <span class="mono" aria-hidden="true">
+              0{index + 1}
+            </span>
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </article>
+        ))}
+      </div>
+    )}
+  </div>
+</section>

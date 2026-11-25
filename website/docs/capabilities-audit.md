@@ -17,3 +17,9 @@
 | Website localization         | Owner's latest instruction limits website to EN/AR                                         | Only EN/AR routes/hreflang; app ARBs unchanged                                                                  |
 
 The README/privacy disagreement around AI remains an explicit release-documentation task. Neither document is silently rewritten as part of visual website work. No new testimonial, ranking, percentage improvement, user count, lossless claim or countdown is added.
+
+## README/docs.md content expansion
+
+The owner requested deeper feature content from both files. The website now explains use cases, eight capability topics, verification/recovery, supported formats, longer feature detail and practical FAQs in EN/AR. `docs.md` is a historic extended specification, not a shipping feature list: it still mentions FitVid/Zumi, Rust planning and Android 8/iOS support. Current repository guidance and `lib/core/compression/README.md` instead identify Kotlin planning, Android-only compression and Android 11+. The public site follows current implementation evidence. Trimming, splitting, audio extraction, MKV output, a mascot, universal H.265 support and numeric quality/speed scenarios are not promoted as shipped merely because the old specification mentions them.
+
+The app page inventory now covers 40 existing Dart page files through 40 entries (the about wrapper and its content share a single entry; installed release notes have their own entry). One screenshot per page is shown when available, with a title, subtitle and description. Home and AI-preview captures exist; the remaining 38 entries have explicit image placeholders. AI page presence is not a release-availability claim.

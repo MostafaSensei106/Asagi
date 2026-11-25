@@ -3,7 +3,7 @@ import { Moon, Sun, Menu, Languages } from '@lucide/astro';
 import { withBase } from '@/lib/paths';
 import { content, localeName, localePath, locales, type Section } from '../locales';
 import { siteCopy } from '../data/site-copy';
-import ActionLink from '@/components/site/ActionLink.astro';
+import StoreAction from '@/components/site/StoreAction.astro';
 interface Props {
   locale: string;
   section: Section;
@@ -80,9 +80,7 @@ const links: { section: Section; label: string }[] = [
         <Moon size={19} class="brand-dark" aria-hidden="true" />
       </button>
       <div class="header-cta">
-        <ActionLink href={withBase(localePath(locale, 'download'))} variant="outline" arrow={false}>
-          {site.follow}
-        </ActionLink>
+        <StoreAction locale={locale} variant="outline" compact />
       </div>
       <details class="mobile-nav">
         <summary class="icon-button" aria-label={site.screens}>
@@ -93,7 +91,7 @@ const links: { section: Section; label: string }[] = [
             <a href={withBase(localePath(locale, link.section))}>{link.label}</a>
           ))}
           <a href={withBase(localePath(locale, 'developer'))}>{site.developer}</a>
-          <a href={withBase(localePath(locale, 'download'))}>{site.follow}</a>
+          <a href={withBase(localePath(locale, 'download'))}>{site.coming}</a>
         </nav>
       </details>
     </div>

@@ -1,4 +1,5 @@
 ---
+import BrushMark from '@/components/site/BrushMark.astro';
 import { CodeXml, ArrowUpRight } from '@lucide/astro';
 import { withBase } from '@/lib/paths';
 import ActionLink from '@/components/site/ActionLink.astro';
@@ -14,9 +15,7 @@ const { copy } = content(locale);
   <div class="developer-stamp" aria-hidden="true">
     <span class="mono">INDEPENDENT / OPEN SOURCE</span>
     <CodeXml size={100} stroke-width={1} />
-    <span class="brush-mark" lang="ja">
-      余白
-    </span>
+    <BrushMark class="brush-mark" />
   </div>
   <div>
     <p class="eyebrow">04 / {site.developer}</p>

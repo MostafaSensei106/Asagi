@@ -4,6 +4,7 @@ import re
 import urllib.request
 from pathlib import Path
 from fontTools.ttLib import TTFont
+from fontTools import subset
 
 ROOT = Path(__file__).resolve().parents[1]
 DEST = ROOT / 'src/assets/fonts/vendor'
@@ -20,6 +21,21 @@ def fetch(url: str) -> bytes:
     request = urllib.request.Request(url, headers={'User-Agent': AGENT})
     with urllib.request.urlopen(request, timeout=40) as response:
         return response.read()
+
+
+def write_local_font(source: Path, destination: Path, family: str) -> None:
+    """Keep required EN/AR glyphs and shaping closure instead of all font scripts."""
+    ranges = [(0x0000, 0x024F), (0x2000, 0x206F), (0x20A0, 0x20CF), (0x2190, 0x21FF)]
+    if family == 'Noto Sans Arabic':
+        ranges += [(0x0600, 0x06FF), (0x0750, 0x077F), (0x08A0, 0x08FF), (0xFB50, 0xFDFF), (0xFE70, 0xFEFF)]
+    font = TTFont(source)
+    options = subset.Options()
+    options.layout_features = ['*']
+    subsetter = subset.Subsetter(options=options)
+    subsetter.populate(unicodes={code for start, end in ranges for code in range(start, end + 1)})
+    subsetter.subset(font)
+    font.flavor = 'woff2'
+    font.save(destination)
 
 
 def main() -> None:
@@ -45,9 +61,7 @@ def main() -> None:
     ]:
         for weight, name in weights:
             filename = name.replace('.ttf', '.woff2')
-            font = TTFont(source / name)
-            font.flavor = 'woff2'
-            font.save(DEST / filename)
+            write_local_font(source / name, DEST / filename, family)
             styles.append(f"@font-face {{font-family: '{family}';src:url('../assets/fonts/vendor/{filename}') format('woff2');font-style:normal;font-weight:{weight};font-display:swap;}}")
     (ROOT / 'src/styles/fonts.css').write_text('\n'.join(styles) + '\n')
     print(f'Vendored {len(list(DEST.glob("*.woff2")))} WOFF2 subsets and family licenses.')

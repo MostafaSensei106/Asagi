@@ -1,4 +1,6 @@
 ---
+import BrushMark from '@/components/site/BrushMark.astro';
+import StoreAction from '@/components/site/StoreAction.astro';
 import ActionLink from '@/components/site/ActionLink.astro';
 import StatusBadge from '@/components/site/StatusBadge.astro';
 import { withBase } from '@/lib/paths';
@@ -16,17 +18,18 @@ const liveUrl = storeUrl(launch);
     <p class="eyebrow">KUYMO / ANDROID 11+</p>
     <h2>{t('brandTagline')}</h2>
     <StatusBadge label={liveUrl ? site.free : site.coming} />
-    {full && <p>{site.playAnswer}</p>}
+    {full && <p>{liveUrl ? site.localBody : site.playAnswer}</p>}
   </div>
   <div class="launch-actions">
-    <ActionLink href={liveUrl || product.releases}>
-      {liveUrl ? 'Google Play' : site.follow}
-    </ActionLink>
+    <StoreAction locale={locale} />
     <ActionLink href={withBase(localePath(locale, 'screenshots'))} variant="text">
       {site.screens}
     </ActionLink>
   </div>
-  <span class="launch-brush" aria-hidden="true" lang="ja">
-    余白
-  </span>
+  {full && (
+    <a class="inline-link release-follow" href={product.releases}>
+      {site.follow} / GitHub
+    </a>
+  )}
+  <BrushMark class="launch-brush" />
 </section>

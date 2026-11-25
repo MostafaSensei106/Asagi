@@ -1,0 +1,17 @@
+---
+import { withBase } from '@/lib/paths';
+interface Props {
+  class?: string;
+}
+const { class: className } = Astro.props;
+---
+
+<img
+  class={className}
+  src={withBase('/branding/kuymo-space-brush.svg')}
+  width="512"
+  height="256"
+  alt=""
+  aria-hidden="true"
+  loading="lazy"
+/>

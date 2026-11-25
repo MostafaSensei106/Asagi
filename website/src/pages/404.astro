@@ -1,0 +1,39 @@
+---
+import ProductLayout from '@/features/product/ProductLayout.astro';
+import ActionLink from '@/components/site/ActionLink.astro';
+import { withBase } from '@/lib/paths';
+---
+
+<ProductLayout
+  locale="en"
+  section=""
+  title="Page not found"
+  description="This page could not be found. Return to Kuymo or explore the app screens."
+  noindex
+  path="/404/"
+>
+  <section class="shell page-intro">
+    <p class="eyebrow">KUYMO / 404</p>
+    <h1>
+      A little lost?
+      <br />
+      There is room here.
+    </h1>
+    <p>
+      The page you requested is not available. Find the app, its features and current release
+      information below.
+    </p>
+    <p lang="ar" dir="rtl">
+      الصفحة المطلوبة غير موجودة. تقدر ترجع للرئيسية أو تستعرض صفحات التطبيق.
+    </p>
+    <div class="hero-actions">
+      <ActionLink href={withBase('/')}>Return to Kuymo home</ActionLink>
+      <ActionLink href={withBase('/screenshots/')} variant="outline">
+        Explore every app screen
+      </ActionLink>
+      <ActionLink href={withBase('/ar/')} variant="text">
+        افتح موقع Kuymo بالعربية
+      </ActionLink>
+    </div>
+  </section>
+</ProductLayout>

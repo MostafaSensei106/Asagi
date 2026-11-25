@@ -27,8 +27,7 @@ export function initGallery(): void {
         const filter = button.dataset.galleryFilter;
         buttons.forEach((other) => other.setAttribute('aria-pressed', String(other === button)));
         items.forEach((item) => {
-          item.hidden =
-            filter !== 'all' && item.dataset.language !== filter && item.dataset.theme !== filter;
+          item.hidden = filter !== 'all' && item.dataset.group !== filter;
         });
         const output = gallery.querySelector<HTMLOutputElement>('[data-gallery-count]');
         if (output)

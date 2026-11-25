@@ -11,7 +11,7 @@
 
 Kuymo should win its first users by making one everyday job understandable: prepare a video for sharing when its file is too large. Lead with a size-first workflow, show real interface screenshots, and explain the quality trade-off instead of promising magical compression. The product has an independent voice and a clear local-processing story; neither requires invented download counts or a large paid acquisition machine.
 
-The immediate constraint is public availability and evidence, not reach at any cost. A visitor should understand what Kuymo does, see the current interface, learn that Google Play is not yet available, and have a straightforward way to follow published releases. After the listing is verified, the same journey can lead to the official store. Before that point a disabled store badge or a misleading download button would spend trust that the project has not earned.
+The immediate constraint is public availability and evidence, not reach at any cost. A visitor should understand what Kuymo does, see the current interface, learn that Google Play is not yet available, and have a straightforward way to follow published releases. After the listing is verified, the same journey can lead to the official store. Before that point, keep the visible Google Play action explicitly labelled Coming soon and inactive; never disguise a GitHub redirect as a store download.
 
 **Three ranked bets:**
 
@@ -82,7 +82,7 @@ At publication, use a store title/short description that describes the job, then
 
 For this product activation is not signup: there is no required account flow. The intended first useful outcome is a completed compression whose result the user can inspect and save/share. This is a product-value definition, not an existing analytics event.
 
-The website reduces pre-install uncertainty through actual screens, a short three-step explanation and honest answers about size and quality. The current gallery shows only the welcome screen; it should say that openly. When the owner supplies workflow captures, replace them through the manifest with accurate captions. A simulated planner is explicitly labelled as an illustration and is not used as proof of compression performance.
+The website reduces pre-install uncertainty through actual screens, a short three-step explanation and honest answers about size and quality. The current gallery inventories all 40 pages, with welcome/AI-preview captures and explicit placeholders; it should say that openly. When the owner supplies workflow captures, replace them through the manifest with accurate captions. A simulated planner is explicitly labelled as an illustration and is not used as proof of compression performance.
 
 Run small voluntary usability sessions after a build is available. Ask a participant to prepare their own non-sensitive sample or a supplied test clip for a particular sharing need. Observe what they think the target means, whether they understand adjustments, and whether they can find save/share. Never ask people to upload private media for marketing research. Record the task, confusion and outcome, not the video.
 

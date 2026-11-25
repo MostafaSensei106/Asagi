@@ -1,32 +1,30 @@
 ---
+import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
-import { content } from '../locales';
-import type { screenshots } from '../data/screenshots';
 import { siteCopy } from '../data/site-copy';
 interface Props {
-  shot: (typeof screenshots)[number];
+  image: ImageMetadata;
+  alt: string;
   locale: string;
   priority?: boolean;
   hero?: boolean;
 }
-const { shot, locale, priority = false, hero = false } = Astro.props;
-const { t } = content(locale);
+const { image, alt, locale, priority = false, hero = false } = Astro.props;
 const copy = siteCopy(locale);
-const alt = `${t(shot.altKey)} · ${shot.locale === 'ar' ? 'العربية' : 'English'} · ${t(shot.theme)}`;
 ---
 
 <div class:list={['screenshot', { 'screenshot--hero': hero }]} data-screenshot>
   <a
-    href={shot.src}
+    href={image.src}
     data-gallery-link
     data-image-label={alt}
     aria-label={`${copy.openImage}: ${alt}`}
     class="screenshot-link"
   >
     <Image
-      src={shot.image}
-      width={shot.width}
-      widths={[220, 330, shot.width]}
+      src={image}
+      width={image.width}
+      widths={[220, 330, image.width]}
       sizes="(max-width: 720px) 65vw, (max-width: 1100px) 28vw, 260px"
       format="webp"
       alt={alt}

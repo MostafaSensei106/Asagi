@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import screenCatalog from '../../src/features/product/data/screen-catalog.json' with { type: 'json' };
 import { launch, storeUrl } from '../../src/features/product/data/product';
 
 const locales = ['en', 'ar'];
@@ -63,6 +64,8 @@ for (const locale of locales) {
       );
       await expect(page.locator('.hero-actions .ds-action').first()).toBeInViewport();
       await page.locator('.gallery-section').scrollIntoViewIfNeeded();
+      for (const image of await page.locator('.gallery-grid img').all())
+        await image.scrollIntoViewIfNeeded();
       await expect
         .poll(() =>
           page
@@ -95,9 +98,11 @@ for (const locale of locales) {
     }
     await page.reload();
     await expect(page.locator('html')).toHaveClass(/dark/);
-    await page.locator('[data-gallery-filter="ar"]').click();
-    await expect(page.locator('[data-gallery-item]:visible')).toHaveCount(2);
-    await expect(page.locator('[data-gallery-count]')).toHaveText('02 / 04');
+    await page.locator('[data-gallery-filter="compression"]').click();
+    await expect(page.locator('[data-gallery-item]:visible')).toHaveCount(7);
+    await page.locator('[data-gallery-filter="all"]').click();
+    await expect(page.locator('[data-gallery-item]:visible')).toHaveCount(40);
+    await expect(page.locator('[data-gallery-count]')).toHaveText('40 / 40');
     const first = page.locator('[data-gallery-item]:visible [data-gallery-link]').first();
     await first.click();
     await expect(page.locator('dialog')).toBeVisible();
@@ -133,7 +138,7 @@ test('image failure is local and the retry action can recover', async ({ page })
   let fail = true;
   await page.route(/home-en-light.*\.webp/, (route) => (fail ? route.abort() : route.continue()));
   await page.goto(path('en', 'screenshots/'));
-  const card = page.locator('[data-gallery-item][data-language=en][data-theme=light]');
+  const card = page.locator('[data-gallery-item][data-screen-id=home]');
   await card.scrollIntoViewIfNeeded();
   await expect(card.locator('.image-failure')).toBeVisible();
   expect(await page.locator('.image-failure:visible').count()).toBe(1);
@@ -170,7 +175,7 @@ test('core content and image sources remain usable without JavaScript', async ({
   await page.locator('.hero-actions .ds-action').first().click();
   await expect(page).toHaveURL(/\/screenshots\/?$/);
   await expect(page.locator('[data-gallery-controls]')).not.toBeVisible();
-  await expect(page.locator('[data-gallery-item]')).toHaveCount(4);
+  await expect(page.locator('[data-gallery-item]')).toHaveCount(40);
   expect(await page.locator('[data-gallery-link]').first().getAttribute('href')).toContain('.png');
   await context.close();
 });
@@ -208,3 +213,33 @@ for (const locale of locales) {
     });
   }
 }
+
+test('screen inventory covers the existing app page files and uses explicit placeholders', async ({
+  page,
+}) => {
+  const { readdirSync } = await import('node:fs');
+  const files = readdirSync(new URL('../../../lib/modules/', import.meta.url), {
+    recursive: true,
+  }) as string[];
+  const pages = files
+    .filter((file) => file.includes('/pages/') && file.endsWith('_page.dart'))
+    .map((file) => `lib/modules/${file}`);
+  const covered = new Set(screenCatalog.flatMap((screen) => screen.sources));
+  expect(pages.filter((file) => !covered.has(file))).toEqual([]);
+  await page.goto(path('en', 'screenshots/'));
+  await expect(page.locator('[data-screen-placeholder]')).toHaveCount(38);
+  await expect(page.locator('[data-gallery-link]')).toHaveCount(2);
+  await expect(page.locator('[data-screen-id=ai-chat] .preview-label')).toBeVisible();
+  await page.goto(path('en', 'download/'));
+  await expect(page.locator('.launch-actions [data-slot=google-play-action]')).toBeDisabled();
+  await expect(page.locator('.launch-actions [data-slot=google-play-action]')).toContainText(
+    'Google Play',
+  );
+});
+
+test('missing pages have descriptive recovery links and no Astro boilerplate', async ({ page }) => {
+  const response = await page.goto(`${base}/not-a-kuymo-page/`);
+  expect(response?.status()).toBe(404);
+  await expect(page.getByRole('link', { name: 'Return to Kuymo home', exact: true })).toBeVisible();
+  await expect(page.locator('a[href*="docs.astro.build"]')).toHaveCount(0);
+});

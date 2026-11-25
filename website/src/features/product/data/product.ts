@@ -12,7 +12,14 @@ export const product = {
 } as const;
 
 /** Change only after the store listing has been verified as publicly available. */
-export const launch: Launch = { status: 'prelaunch' };
+// Paste the verified public Google Play URL here when ready. Leave empty for now.
+export const playStoreUrl: string = '';
+export const launch: Launch = playStoreUrl
+  ? {
+      status: 'live',
+      playStoreUrl: playStoreUrl as `https://play.google.com/store/apps/details?${string}`,
+    }
+  : { status: 'prelaunch' };
 export function storeUrl(state: Launch): string | undefined {
   if (state.status !== 'live') return undefined;
   const url = new URL(state.playStoreUrl);

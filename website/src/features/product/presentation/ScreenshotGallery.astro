@@ -1,22 +1,36 @@
 ---
-import { screenshots } from '../data/screenshots';
+import { ImagePlus } from '@lucide/astro';
+import { screenCatalog, screenImage, screenText, galleryGroups } from '../data/screen-catalog';
 import { siteCopy } from '../data/site-copy';
-import { content } from '../locales';
+import { localePath } from '../locales';
+import { withBase } from '@/lib/paths';
 import AppScreenshot from './AppScreenshot.astro';
 import SectionHeading from '@/components/site/SectionHeading.astro';
+import ActionLink from '@/components/site/ActionLink.astro';
 interface Props {
   locale: string;
+  compact?: boolean;
 }
-const { locale } = Astro.props;
+const { locale, compact = false } = Astro.props;
 const copy = siteCopy(locale);
-const { t } = content(locale);
-const filters = [
-  { id: 'all', label: copy.all },
-  { id: 'en', label: 'English' },
-  { id: 'ar', label: 'العربية' },
-  { id: 'light', label: t('light') },
-  { id: 'dark', label: t('dark') },
+const groups = galleryGroups[locale as 'en' | 'ar'];
+const highlighted = [
+  'home',
+  'compression-setup',
+  'compression-progress',
+  'compression-result',
+  'history',
+  'ai-chat',
 ];
+const screens = compact
+  ? screenCatalog.filter((screen) => highlighted.includes(screen.id))
+  : screenCatalog;
+const placeholder = locale === 'ar' ? 'مكان لصورة هذه الشاشة' : 'Screenshot to be added';
+const preview = locale === 'ar' ? 'معاينة' : 'Preview';
+const intro =
+  locale === 'ar'
+    ? 'استعرض صفحات التطبيق، كل صفحة بعنوان ووصف مستقل. اللقطات المتاحة تظهر مرة واحدة، وباقي المساحات تنتظر صورها الفعلية.'
+    : 'Explore the app page by page, each with its own title and description. Available captures appear once; the remaining frames await their actual screenshots.';
 ---
 
 <section
@@ -29,36 +43,76 @@ const filters = [
   <SectionHeading
     title={copy.screens}
     eyebrow="02 / INSIDE KUYMO"
-    description={copy.galleryBody}
+    description={intro}
     id="gallery-title"
   />
-  <div class="gallery-toolbar" data-gallery-controls hidden role="group" aria-label={copy.screens}>
-    {filters.map((filter) => (
-      <button type="button" data-gallery-filter={filter.id} aria-pressed={filter.id === 'all'}>
-        {filter.label}
-      </button>
-    ))}
-    <output class="gallery-count" aria-live="polite" data-gallery-count>
-      04 / 04
-    </output>
-  </div>
+  {!compact && (
+    <div
+      class="gallery-toolbar"
+      data-gallery-controls
+      hidden
+      role="group"
+      aria-label={copy.screens}
+    >
+      {Object.entries(groups).map(([id, label]) => (
+        <button type="button" data-gallery-filter={id} aria-pressed={id === 'all'}>
+          {label}
+        </button>
+      ))}
+      <output class="gallery-count" aria-live="polite" data-gallery-count>
+        {screens.length} / {screens.length}
+      </output>
+    </div>
+  )}
   <div class="gallery-grid">
-    {screenshots.map((shot, index) => (
-      <figure data-gallery-item data-language={shot.locale} data-theme={shot.theme}>
-        <div class="screenshot-mat">
-          <AppScreenshot shot={shot} locale={locale} />
-        </div>
-        <figcaption>
-          <span class="mono">0{index + 1}</span>
-          <span>
-            {t('welcomeToKuymo')}
-            <small>
-              <bdi lang={shot.locale}>{shot.locale === 'ar' ? 'العربية' : 'English'}</bdi> /{' '}
-              {t(shot.theme)}
-            </small>
-          </span>
-        </figcaption>
-      </figure>
-    ))}
+    {screens.map((screen, index) => {
+      const image = screenImage(screen, locale);
+      const text = screenText(screen, locale);
+      return (
+        <figure data-gallery-item data-group={screen.group} data-screen-id={screen.id}>
+          <div class:list={['screenshot-mat', { 'screenshot-mat--placeholder': !image }]}>
+            {image ? (
+              <AppScreenshot image={image} alt={text.title} locale={locale} />
+            ) : (
+              <div
+                class="screen-placeholder"
+                data-screen-placeholder
+                aria-label={`${text.title}: ${placeholder}`}
+              >
+                <div class="placeholder-top mono">
+                  <span>KUYMO</span>
+                  <span>0{index + 1}</span>
+                </div>
+                <ImagePlus size={36} stroke-width={1.2} aria-hidden="true" />
+                <span>{placeholder}</span>
+                <span class="mono" aria-hidden="true">
+                  {screen.id}
+                </span>
+              </div>
+            )}
+          </div>
+          <figcaption>
+            <span class="mono">{String(index + 1).padStart(2, '0')}</span>
+            <div>
+              <h3>{text.title}</h3>
+              <p class="screen-subtitle">
+                {text.subtitle}
+                {screen.preview && <span class="preview-label">{preview}</span>}
+              </p>
+              <p class="screen-description">{text.description}</p>
+            </div>
+          </figcaption>
+        </figure>
+      );
+    })}
   </div>
+  {compact && (
+    <div class="gallery-more">
+      <ActionLink href={withBase(localePath(locale, 'screenshots'))} variant="outline">
+        {locale === 'ar'
+          ? `استعرض كل الصفحات (${screenCatalog.length})`
+          : `Explore all ${screenCatalog.length} pages`}
+      </ActionLink>
+    </div>
+  )}
 </section>

@@ -74,3 +74,11 @@ Loading images retain their final geometry. Empty/error/ready examples are visib
 Run format, lint, Astro check/build and Playwright. Cover EN/AR at 375, 768, 1024 and 1440px; light/dark contrast; dialog keyboard/focus; failed image/retry; reduced motion; no-JS links; local fonts; root and subpath deployments. Browser lab performance data lives in the review report with its test conditions, not an unexplained “fast” claim.
 
 Do not change the legal text to resolve a release-state disagreement. Record the discrepancy, verify the release, and keep marketing conservative until evidence exists. Maintain the capabilities audit alongside the product context.
+
+## Owner-editable screenshot catalog and store button
+
+`src/features/product/data/screen-catalog.json` is the complete page inventory. Each entry has an id, category, EN/AR title/subtitle/description, optional image filename and optional Arabic image filename, preview status and source references. Drop an actual image into `src/assets/product/`, then replace `image: null` with its exact filename. `imageAr` optionally supplies an Arabic capture; otherwise the shared image is used. Leave missing images null: the site shows an honest placeholder, not a broken image. Captures are listed once per page; there is no light/dark duplicate gallery. The homepage shows six highlighted entries and links to the full catalog. Category filters preserve the complete no-JS list.
+
+The owner requested a distinct Google Play action even before adding the URL. `playStoreUrl` in `data/product.ts` starts as an empty string. The site renders an explicitly disabled, clearly labelled Coming soon button, never a hidden GitHub redirect. Paste the verified public listing URL into that one field to activate the store action; validation checks the official app ID. GitHub remains a secondary source/releases link.
+
+Decorative brush text is outlined into SVG paths by `scripts/build_brush.py`. It stays decorative and avoids presenting low-contrast letterforms as readable content. The live brush font remains available in the typography reference. The custom 404 has descriptive recovery links and replaces Astro's development-oriented default content.

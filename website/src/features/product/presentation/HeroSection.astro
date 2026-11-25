@@ -1,5 +1,7 @@
 ---
+import BrushMark from '@/components/site/BrushMark.astro';
 import { ArrowDown } from '@lucide/astro';
+import StoreAction from '@/components/site/StoreAction.astro';
 import ActionLink from '@/components/site/ActionLink.astro';
 import StatusBadge from '@/components/site/StatusBadge.astro';
 import { withBase } from '@/lib/paths';
@@ -22,9 +24,7 @@ const site = siteCopy(locale);
     <p class="hero-description">{t('compressVideosPrivatelyOnYourDevice')}</p>
     <div class="hero-actions">
       <ActionLink href={withBase(localePath(locale, 'screenshots'))}>{site.screens}</ActionLink>
-      <ActionLink variant="text" href={withBase(localePath(locale, 'features'))}>
-        {copy.features}
-      </ActionLink>
+      <StoreAction locale={locale} variant="outline" />
     </div>
     <StatusBadge label={site.coming} />
     <div class="hero-footnote">
@@ -38,15 +38,21 @@ const site = siteCopy(locale);
       <span>THE LITTLE ROOM / VOL. 01</span>
       <span>ANDROID</span>
     </div>
-    <span class="brush-mark" aria-hidden="true" lang="ja">
-      余白
-    </span>
+    <BrushMark class="brush-mark" />
     <div class="hero-phones">
-      {heroScreenshots(locale).map((shot, index) => (
-        <div class:list={['hero-phone', `hero-phone--${index + 1}`]}>
-          <AppScreenshot shot={shot} locale={locale} priority={index === 0} hero />
-        </div>
-      ))}
+      {heroScreenshots(locale)
+        .slice(0, 1)
+        .map((shot, index) => (
+          <div class:list={['hero-phone', `hero-phone--${index + 1}`]}>
+            <AppScreenshot
+              image={shot.image}
+              alt={t(shot.altKey)}
+              locale={locale}
+              priority={index === 0}
+              hero
+            />
+          </div>
+        ))}
     </div>
     <div class="stage-footer">
       <span class="tile-stamp" aria-hidden="true"></span>

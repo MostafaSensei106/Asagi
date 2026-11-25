@@ -1,4 +1,6 @@
 ---
+import arabicBold from '../../assets/fonts/vendor/NotoSansArabic-Bold.woff2?url';
+import arabicRegular from '../../assets/fonts/vendor/NotoSansArabic-Regular.woff2?url';
 import Seo from '@/components/seo/Seo.astro';
 import { absoluteUrl } from '@/lib/paths';
 import { content, locales, localePath, type Section } from './locales';
@@ -13,18 +15,32 @@ interface Props {
   title: string;
   description: string;
   noindex?: boolean;
+  path?: string;
 }
-const { locale, section, title, description, noindex = false } = Astro.props;
+const {
+  locale,
+  section,
+  title,
+  description,
+  noindex = false,
+  path: canonicalOverride,
+} = Astro.props;
 const { copy, rtl } = content(locale);
 ---
 
 <!doctype html>
 <html lang={locale} dir={rtl ? 'rtl' : 'ltr'}>
   <head>
+    {locale === 'ar' && (
+      <>
+        <link rel="preload" href={arabicBold} as="font" type="font/woff2" crossorigin />
+        <link rel="preload" href={arabicRegular} as="font" type="font/woff2" crossorigin />
+      </>
+    )}
     <Seo
       title={title}
       description={description}
-      path={noindex ? '/design-system/' : localePath(locale, section)}
+      path={canonicalOverride ?? (noindex ? '/design-system/' : localePath(locale, section))}
       locale={locale}
       noindex={noindex}
       jsonLd={

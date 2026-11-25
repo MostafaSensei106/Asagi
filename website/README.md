@@ -58,8 +58,7 @@ app settings copy being suitable as advertising language.
 ## Assets, fonts and launch
 
 The screenshot manifest imports source PNGs from `src/assets/product/`. Astro
-emits WebP/srcset and preserves original image links. Current images represent
-the welcome screen only, in English/Arabic and light/dark. Add real source
+emits WebP/srcset and preserves original image links. Current images represent the welcome screen and an AI preview. The gallery has 40 page entries, one image per page, and clear placeholders for missing images. Add real source
 images and metadata to expand the gallery; do not fabricate feature captures.
 
 Fonts are self-hosted WOFF2 with unicode-range subsets. To intentionally refresh
