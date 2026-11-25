@@ -22,7 +22,16 @@ final class NotificationsSettingsPage extends StatelessWidget {
     final text = context.localeKeys;
     final cubit = BlocSignalProvider.of<NotificationsCubit>(context);
     return Scaffold(
-      appBar: SidePageAppBarComponent(title: text.notifications),
+      appBar: SidePageAppBarComponent(
+        title: text.notifications,
+        actions: [
+          IconButtonComponent(
+            icon: KuymoIcons.settingsReset,
+            tooltip: text.resetSettingsGroup,
+            onPressed: () => unawaited(cubit.reset()),
+          ),
+        ],
+      ),
       body: BlocSignalBuilder<NotificationsCubit, NotificationsState>(
         builder: (context, state) {
           final settings = state.settings;

@@ -5,6 +5,7 @@ abstract interface class NotificationPreferencesRepository {
   Stream<NotificationSettings> get changes;
   Future<NotificationSettings> load();
   Future<void> dispose();
+  Future<NotificationSettings> reset();
   Future<NotificationSettings> update(
     NotificationSettings Function(NotificationSettings current) change,
   );

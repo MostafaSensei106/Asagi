@@ -1,13 +1,16 @@
 import 'dart:async';
 
+import 'package:bloc_signals_flutter/bloc_signals_flutter.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/constants/kuymo_icons.dart';
+import '../../../../core/di/di.dart';
 import '../../../../core/extensions/extensions.dart';
-import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
+import '../../domain/repositories/ai_model_repository.dart';
+import '../cubit/ai_import_cubit.dart';
 
 final class AiImportModelPage extends StatefulWidget {
   const AiImportModelPage({super.key});
@@ -17,31 +20,42 @@ final class AiImportModelPage extends StatefulWidget {
 }
 
 final class _AiImportModelPageState extends State<AiImportModelPage> {
-  String? _selectedFileName;
-  bool _isValidating = false;
-
-  void _pickModelFile() {
-    unawaited(AppHaptics.button());
-    setState(() {
-      _selectedFileName = 'custom-compression-v1.gguf (214 MB)';
-    });
-    context.toast.showInfo(context, context.localeKeys.modelFileSelected);
-  }
-
-  Future<void> _validateAndImport() async {
-    setState(() => _isValidating = true);
-    unawaited(AppHaptics.button());
-    await Future<void>.delayed(const Duration(milliseconds: 750));
-    if (!mounted) return;
-    setState(() => _isValidating = false);
-    context.toast.showSuccess(
-      context,
-      context.localeKeys.modelImportedVerified,
-    );
+  late final AiImportCubit _cubit;
+  @override
+  void initState() {
+    super.initState();
+    _cubit = AiImportCubit(getIt<AiModelRepository>());
   }
 
   @override
-  Widget build(BuildContext context) {
+  void dispose() {
+    unawaited(_cubit.close());
+    super.dispose();
+  }
+
+  String? get _selectedFileName => _cubit.stateValue.document?.name;
+  bool get _isValidating => _cubit.stateValue.busy;
+  void _pickModelFile() => unawaited(_cubit.pick());
+  Future<void> _validateAndImport() async {
+    await _cubit.importFile();
+    if (!mounted) return;
+    if (_cubit.stateValue.failed) {
+      context.toast.showError(context, context.localeKeys.aiOperationFailed);
+    } else if (_cubit.stateValue.imported != null) {
+      context.toast.showSuccess(context, context.localeKeys.modelImportedVerified);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) => BlocSignalProvider.value(
+    value: _cubit,
+    child: BlocSignalListener<AiImportCubit, AiImportState>(
+      listenWhen: (previous, current) => !previous.failed && current.failed,
+      listener: (context, _) => context.toast.showError(context, context.localeKeys.aiOperationFailed),
+      child: BlocSignalBuilder<AiImportCubit, AiImportState>(builder: (context, state) => _buildPage(context))),
+  );
+
+  Widget _buildPage(BuildContext context) {
     final l10n = context.localeKeys;
     final colorScheme = context.colorScheme;
 
@@ -78,7 +92,7 @@ final class _AiImportModelPageState extends State<AiImportModelPage> {
                 FilledTonalButtonComponent.icon(
                   icon: LucideIcons.folderOpen,
                   label: l10n.browseFiles,
-                  onPressed: _pickModelFile,
+                  onPressed: _isValidating ? null : _pickModelFile,
                 ),
               ],
             ),
@@ -94,17 +108,17 @@ final class _AiImportModelPageState extends State<AiImportModelPage> {
               children: [
                 _ChecklistRow(
                   label: l10n.formatQuantizationChecklist,
-                  isValid: _selectedFileName != null,
+                  isValid: _cubit.stateValue.imported != null,
                 ),
                 const Gap(AppSpacing.small),
                 _ChecklistRow(
                   label: l10n.memoryCapVerification,
-                  isValid: _selectedFileName != null,
+                  isValid: _cubit.stateValue.imported != null,
                 ),
                 const Gap(AppSpacing.small),
                 _ChecklistRow(
                   label: l10n.architectureCompatibility,
-                  isValid: _selectedFileName != null,
+                  isValid: _cubit.stateValue.imported != null,
                 ),
               ],
             ),

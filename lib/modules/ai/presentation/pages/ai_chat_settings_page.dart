@@ -4,9 +4,14 @@ import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/design_system/tokens/tokens.dart';
+import '../../../../core/di/di.dart';
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/preferences/domain/repositories/settings_repository.dart';
+import '../../../../core/preferences/presentation/settings_page_state.dart';
+import '../../../../core/preferences/presentation/settings_view.dart';
 import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
+import '../../domain/entities/ai_settings.dart';
 
 final class AiChatSettingsPage extends StatefulWidget {
   const AiChatSettingsPage({super.key});
@@ -15,17 +20,33 @@ final class AiChatSettingsPage extends StatefulWidget {
   State<AiChatSettingsPage> createState() => _AiChatSettingsPageState();
 }
 
-final class _AiChatSettingsPageState extends State<AiChatSettingsPage> {
-  bool _streaming = true;
-  bool _showThinking = true;
-  double _temperature = 0.7;
-  String _maxTokens = '1024';
+final class _AiChatSettingsPageState
+    extends SettingsPageState<AiChatSettingsPage, AiChatSettings> {
+  @override
+  SettingsRepository<AiChatSettings> get repository =>
+      getIt<SettingsRepository<AiChatSettings>>();
+
+  bool get _streaming => settings.streaming;
+  set _streaming(bool value) =>
+      updateSettings((s) => s.copyWith(streaming: value));
+  bool get _showThinking => settings.showThinking;
+  set _showThinking(bool value) =>
+      updateSettings((s) => s.copyWith(showThinking: value));
+  double get _temperature => settings.temperature;
+  set _temperature(double value) =>
+      updateSettings((s) => s.copyWith(temperature: value));
+  String get _maxTokens => settings.maxTokens.toString();
+  set _maxTokens(String value) =>
+      updateSettings((s) => s.copyWith(maxTokens: int.parse(value)));
 
   @override
-  Widget build(BuildContext context) {
+  Widget buildSettings(BuildContext context) {
     final l10n = context.localeKeys;
     return Scaffold(
-      appBar: SidePageAppBarComponent(title: l10n.conversationSettings),
+      appBar: SidePageAppBarComponent(
+        title: l10n.conversationSettings,
+        actions: const [SettingsResetAction<AiChatSettings>()],
+      ),
       body: ListView(
         padding: const EdgeInsets.symmetric(
           horizontal: AppSpacing.large,
@@ -95,11 +116,12 @@ final class _AiChatSettingsPageState extends State<AiChatSettingsPage> {
                 divisions: 9,
                 label: _temperature.toStringAsFixed(1),
                 onChanged: (val) => {
-                  AppHaptics.button(),
+                  unawaited(AppHaptics.button()),
                   setState(() => _temperature = val),
                 },
               ),
               DropdownButtonFormField<String>(
+                key: ValueKey(_maxTokens),
                 initialValue: _maxTokens,
                 elevation: 0,
                 borderRadius: BorderRadius.circular(AppSpacing.large),
@@ -134,7 +156,7 @@ final class _AiChatSettingsPageState extends State<AiChatSettingsPage> {
                   ),
                 ],
                 onChanged: (val) {
-                  AppHaptics.button;
+                  unawaited(AppHaptics.button());
                   setState(() => _maxTokens = val!);
                 },
               ),

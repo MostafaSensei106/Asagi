@@ -222,7 +222,7 @@ return $default(_that.phase,_that.video,_that.jobId,_that.targetMb,_that.prefere
 
 
 class _CompressionState implements CompressionState {
-  const _CompressionState({this.phase = CompressionPhase.idle, this.video, this.jobId, this.targetMb = 16, this.preferences = const CompressionPreferences(), this.previewPlan, this.planning = false, this.progress = 0, this.step = CompressionStep.preparing, this.output, this.error,  List<CompressionRecord> history = const <CompressionRecord>[], this.interruptedJobs = 0,  List<InterruptedCompressionJob> recoverableJobs = const <InterruptedCompressionJob>[],  List<SharePreset> presets = const <SharePreset>[], this.selectedPresetId = SharePresetId.whatsapp, this.resolvedPresetPlan}): _history = history,_recoverableJobs = recoverableJobs,_presets = presets;
+  const _CompressionState({this.phase = CompressionPhase.idle, this.video, this.jobId, this.targetMb = 16, this.preferences = const CompressionPreferences(), this.previewPlan, this.planning = false, this.progress = 0, this.step = CompressionStep.preparing, this.output, this.error,  List<CompressionRecord> history = const <CompressionRecord>[], this.interruptedJobs = 0,  List<InterruptedCompressionJob> recoverableJobs = const <InterruptedCompressionJob>[],  List<SharePreset> presets = const <SharePreset>[], this.selectedPresetId, this.resolvedPresetPlan}): _history = history,_recoverableJobs = recoverableJobs,_presets = presets;
   
 
 @override@JsonKey() final  CompressionPhase phase;
@@ -258,7 +258,7 @@ class _CompressionState implements CompressionState {
   return EqualUnmodifiableListView(_presets);
 }
 
-@override@JsonKey() final  SharePresetId? selectedPresetId;
+@override final  SharePresetId? selectedPresetId;
 @override final  SharePresetPlan? resolvedPresetPlan;
 
 /// Create a copy of CompressionState

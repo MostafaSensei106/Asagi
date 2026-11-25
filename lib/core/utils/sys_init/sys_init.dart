@@ -1,4 +1,4 @@
-// ignore_for_file: dead_code, discarded_futures
+import 'dart:async';
 
 import 'package:bloc_signals/bloc_signals.dart';
 import 'package:bloc_signals_hydrate/bloc_signals_hydrate.dart';
@@ -7,7 +7,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
+import '../../../modules/ai/data/repositories/ai_runtime_lifecycle.dart';
 import '../../di/di.dart' as di;
+import '../../preferences/application/telemetry_consent_coordinator.dart';
+import '../../preferences/domain/entities/language_settings.dart';
+import '../../preferences/domain/repositories/settings_repository.dart';
 import '../bloc/bloc_observer.dart';
 import 'hydrated_boot.dart';
 
@@ -37,22 +41,44 @@ final class SysInit {
     HydratedStorage.storage = await _buildHydratedStorage();
 
     await di.configureDependencies();
+    try {
+      await di.getIt<SettingsRepository<LanguageSettings>>().load();
+    } on Object {
+      /* Render using the system locale if local storage is unavailable. */
+    }
 
     //  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
     // Install fatal handlers early so crashes during deferred startup are
     // captured.
     if (kReleaseMode) {
-      FlutterError.onError = FlutterError.presentError;
+      FlutterError.onError = (details) {
+        FlutterError.presentError(details);
+        unawaited(
+          di.getIt<TelemetryConsentCoordinator>().recordFailure(
+            'E_FLUTTER_FATAL',
+            fatal: true,
+          ),
+        );
+      };
 
-      PlatformDispatcher.instance.onError = (error, stack) => true;
+      PlatformDispatcher.instance.onError = (error, stack) {
+        unawaited(
+          di.getIt<TelemetryConsentCoordinator>().recordFailure(
+            'E_PLATFORM_FATAL',
+            fatal: true,
+          ),
+        );
+        return false;
+      };
     }
   }
 
   /// Defers non-critical startup work until after the app is already visible.
   static Future<void> initializeDeferredServices() async {
     try {
-      // wait di.getIt<BaseNotificationService>().initialize();
+      di.getIt<AiRuntimeLifecycle>().start();
+      await di.getIt<TelemetryConsentCoordinator>().initialize();
     } catch (_) {
       // Startup must never crash the app. Failures here are non-critical.
     }

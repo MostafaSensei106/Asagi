@@ -19,6 +19,8 @@ abstract final class KuymoIcons {
   static const IconData compressionHistory = LucideIcons.history;
 
   // Settings.
+  static const IconData settingsRetry = LucideIcons.refreshCw;
+  static const IconData settingsReset = LucideIcons.rotateCcw;
   static const IconData settings = LucideIcons.settings;
   static const IconData appearance = LucideIcons.monitorSmartphone;
   static const IconData language = LucideIcons.languages;

@@ -50,6 +50,8 @@ final class NotificationsCubit extends CubitSignal<NotificationsState> {
     );
   }
 
+  Future<void> reset() => updateSettings((_) => const NotificationSettings());
+
   @override
   Future<void> close() async {
     await _subscription.cancel();

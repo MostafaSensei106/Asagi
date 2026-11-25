@@ -10,7 +10,11 @@ final class _MainShell extends StatelessWidget {
       BlocSignalProvider.value(value: getIt<NotificationsCubit>()),
       BlocSignalProvider.value(value: getIt<NotificationAccessCubit>()),
       BlocSignalProvider(
-        create: (_) => CompressionCubit(getIt<VideoCompressionRepository>()),
+        create: (_) => CompressionCubit(
+          getIt<VideoCompressionRepository>(),
+          defaults: getIt<SettingsRepository<CompressionDefaults>>(),
+          advisor: getIt<VideoAdviceRepository>(),
+        ),
       ),
     ],
     child: KaiselBranchedShell.specs(

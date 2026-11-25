@@ -80,8 +80,30 @@ final class CompressionPreferences {
       );
     }
     if (safetyMargin != null &&
-        (safetyMargin! < 0.85 || safetyMargin! > 0.98)) {
+        (!safetyMargin!.isFinite ||
+            safetyMargin! < 0.85 ||
+            safetyMargin! > 0.98)) {
       throw ArgumentError.value(safetyMargin, 'safetyMargin');
     }
   }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is CompressionPreferences &&
+          other.maxShortEdge == maxShortEdge &&
+          other.maxFrameRate == maxFrameRate &&
+          other.audioBitrateKbps == audioBitrateKbps &&
+          other.videoBitrateCeilingKbps == videoBitrateCeilingKbps &&
+          other.hdrMode == hdrMode &&
+          other.safetyMargin == safetyMargin;
+  @override
+  int get hashCode => Object.hash(
+    maxShortEdge,
+    maxFrameRate,
+    audioBitrateKbps,
+    videoBitrateCeilingKbps,
+    hdrMode,
+    safetyMargin,
+  );
 }

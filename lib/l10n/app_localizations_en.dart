@@ -2321,6 +2321,110 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get kuymoAi => 'Kuymo AI';
+
+  @override
+  String get settingsSaveFailed =>
+      'Could not load or save settings. Your last saved values are retained.';
+
+  @override
+  String get settingsRecovered =>
+      'Saved settings could not be read. Safe defaults are being used.';
+
+  @override
+  String get resetSettingsGroup => 'Reset these settings';
+
+  @override
+  String get settingsApplyFailed =>
+      'Could not apply settings to the service. Tap to retry.';
+
+  @override
+  String get saveAiChatHistory => 'Save AI conversations on this device';
+
+  @override
+  String get permissionGranted => 'Granted';
+
+  @override
+  String get permissionLimited => 'Limited access';
+
+  @override
+  String get permissionDenied => 'Not granted. Tap to request access.';
+
+  @override
+  String get permissionPermanentlyDenied =>
+      'Denied. Tap to open device settings.';
+
+  @override
+  String get permissionRestricted => 'Restricted by the device';
+
+  @override
+  String get permissionUnsupported => 'Unavailable on this platform';
+
+  @override
+  String get selectedFilesAccess =>
+      'Kuymo uses the system file picker. It accesses only files you choose; it does not require access to your entire media library.';
+
+  @override
+  String get aiOperationFailed =>
+      'Could not finish. Check the selected model, device support, storage and memory budget. Connect power if indexing requires charging, then retry.';
+
+  @override
+  String get noAiModelsAvailable => 'No compatible models are available.';
+
+  @override
+  String get aiMessageHint => 'Ask about your videos';
+
+  @override
+  String aiBenchmarkElapsed(int milliseconds) {
+    return 'Benchmark finished in $milliseconds ms';
+  }
+
+  @override
+  String get aiSend => 'Send';
+
+  @override
+  String get aiDelete => 'Delete';
+
+  @override
+  String get aiDownload => 'Download';
+
+  @override
+  String get aiSearch => 'Search';
+
+  @override
+  String aiSelectedDocuments(int count) {
+    return 'Selected files: $count';
+  }
+
+  @override
+  String get aiToolCreatesCopy =>
+      'Tools create a new file and keep your original. Quiet audio reduction and silence trimming apply when enabled.';
+
+  @override
+  String get aiTrimStart => 'Start time (seconds)';
+
+  @override
+  String get aiTrimEnd => 'End time (seconds, empty for full length)';
+
+  @override
+  String aiOutputSaved(String path) {
+    return 'Saved on this device: $path';
+  }
+
+  @override
+  String get aiChatWelcome =>
+      'Your assistant runs on this device. Choose a model in AI settings to get started.';
+
+  @override
+  String get backendGpu => 'GPU';
+
+  @override
+  String get aiAndroidOnly =>
+      'Local AI features are currently available on Android.';
+
+  @override
+  String aiEmbeddingStorageUsage(String megabytes) {
+    return 'Index storage: $megabytes MB';
+  }
 }
 
 /// The translations for English, as used in the United Kingdom (`en_GB`).
@@ -3260,4 +3364,108 @@ class AppLocalizationsEnGb extends AppLocalizationsEn {
   @override
   String get compressionAndroidOnly =>
       'Video compression is currently available only on Android.';
+
+  @override
+  String get settingsSaveFailed =>
+      'Could not load or save settings. Your last saved values are retained.';
+
+  @override
+  String get settingsRecovered =>
+      'Saved settings could not be read. Safe defaults are being used.';
+
+  @override
+  String get resetSettingsGroup => 'Reset these settings';
+
+  @override
+  String get settingsApplyFailed =>
+      'Could not apply settings to the service. Tap to retry.';
+
+  @override
+  String get saveAiChatHistory => 'Save AI conversations on this device';
+
+  @override
+  String get permissionGranted => 'Granted';
+
+  @override
+  String get permissionLimited => 'Limited access';
+
+  @override
+  String get permissionDenied => 'Not granted. Tap to request access.';
+
+  @override
+  String get permissionPermanentlyDenied =>
+      'Denied. Tap to open device settings.';
+
+  @override
+  String get permissionRestricted => 'Restricted by the device';
+
+  @override
+  String get permissionUnsupported => 'Unavailable on this platform';
+
+  @override
+  String get selectedFilesAccess =>
+      'Kuymo uses the system file picker. It accesses only files you choose; it does not require access to your entire media library.';
+
+  @override
+  String get aiOperationFailed =>
+      'Could not finish. Check the selected model, device support, storage and memory budget. Connect power if indexing requires charging, then retry.';
+
+  @override
+  String get noAiModelsAvailable => 'No compatible models are available.';
+
+  @override
+  String get aiMessageHint => 'Ask about your videos';
+
+  @override
+  String aiBenchmarkElapsed(int milliseconds) {
+    return 'Benchmark finished in $milliseconds ms';
+  }
+
+  @override
+  String get aiSend => 'Send';
+
+  @override
+  String get aiDelete => 'Delete';
+
+  @override
+  String get aiDownload => 'Download';
+
+  @override
+  String get aiSearch => 'Search';
+
+  @override
+  String aiSelectedDocuments(int count) {
+    return 'Selected files: $count';
+  }
+
+  @override
+  String get aiToolCreatesCopy =>
+      'Tools create a new file and keep your original. Quiet audio reduction and silence trimming apply when enabled.';
+
+  @override
+  String get aiTrimStart => 'Start time (seconds)';
+
+  @override
+  String get aiTrimEnd => 'End time (seconds, empty for full length)';
+
+  @override
+  String aiOutputSaved(String path) {
+    return 'Saved on this device: $path';
+  }
+
+  @override
+  String get aiChatWelcome =>
+      'Your assistant runs on this device. Choose a model in AI settings to get started.';
+
+  @override
+  String get backendGpu => 'GPU';
+
+  @override
+  String get aiAndroidOnly =>
+      'Local AI features are currently available on Android.';
+
+  @override
+  String aiEmbeddingStorageUsage(String megabytes) {
+    return 'Index storage: $megabytes MB';
+  }
 }

@@ -39,7 +39,16 @@ final class CompressionSetupPage extends HookWidget {
     if (!supportsVideoCompression) return const UnsupportedCompressionPage();
 
     return Scaffold(
-      appBar: SidePageAppBarComponent(title: l10n.compressionSetup),
+      appBar: SidePageAppBarComponent(
+        title: l10n.compressionSetup,
+        actions: [
+          IconButtonComponent(
+            icon: LucideIcons.sparkles,
+            tooltip: l10n.smartBitrateRecommender,
+            onPressed: () => unawaited(cubit.suggestPreferences()),
+          ),
+        ],
+      ),
       body: SafeArea(
         child: BlocSignalBuilder<CompressionCubit, CompressionState>(
           builder: (context, state) {

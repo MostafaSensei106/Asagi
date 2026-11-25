@@ -702,6 +702,163 @@ class NativeSharePresetPlan {
   }
 }
 
+class NativePickedDocument {
+  NativePickedDocument({
+    required this.uri,
+    required this.name,
+    required this.sizeBytes,
+  });
+
+  String uri;
+
+  String name;
+
+  int sizeBytes;
+
+  List<Object?> _toList() {
+    return <Object?>[uri, name, sizeBytes];
+  }
+
+  Object encode() {
+    return _toList();
+  }
+
+  static NativePickedDocument decode(Object result) {
+    result as List<Object?>;
+    return NativePickedDocument(
+      uri: result[0]! as String,
+      name: result[1]! as String,
+      sizeBytes: result[2]! as int,
+    );
+  }
+
+  @override
+  // ignore: avoid_equals_and_hash_code_on_mutable_classes
+  bool operator ==(Object other) {
+    if (other is! NativePickedDocument || other.runtimeType != runtimeType) {
+      return false;
+    }
+    if (identical(this, other)) {
+      return true;
+    }
+    return _deepEquals(uri, other.uri) &&
+        _deepEquals(name, other.name) &&
+        _deepEquals(sizeBytes, other.sizeBytes);
+  }
+
+  @override
+  // ignore: avoid_equals_and_hash_code_on_mutable_classes
+  int get hashCode => _deepHash(<Object?>[runtimeType, ..._toList()]);
+
+  @override
+  String toString() {
+    return 'NativePickedDocument(uri: $uri, name: $name, sizeBytes: $sizeBytes)';
+  }
+}
+
+class NativeAiResources {
+  NativeAiResources({
+    required this.availableMemoryBytes,
+    required this.charging,
+  });
+
+  int availableMemoryBytes;
+
+  bool charging;
+
+  List<Object?> _toList() {
+    return <Object?>[availableMemoryBytes, charging];
+  }
+
+  Object encode() {
+    return _toList();
+  }
+
+  static NativeAiResources decode(Object result) {
+    result as List<Object?>;
+    return NativeAiResources(
+      availableMemoryBytes: result[0]! as int,
+      charging: result[1]! as bool,
+    );
+  }
+
+  @override
+  // ignore: avoid_equals_and_hash_code_on_mutable_classes
+  bool operator ==(Object other) {
+    if (other is! NativeAiResources || other.runtimeType != runtimeType) {
+      return false;
+    }
+    if (identical(this, other)) {
+      return true;
+    }
+    return _deepEquals(availableMemoryBytes, other.availableMemoryBytes) &&
+        _deepEquals(charging, other.charging);
+  }
+
+  @override
+  // ignore: avoid_equals_and_hash_code_on_mutable_classes
+  int get hashCode => _deepHash(<Object?>[runtimeType, ..._toList()]);
+
+  @override
+  String toString() {
+    return 'NativeAiResources(availableMemoryBytes: $availableMemoryBytes, charging: $charging)';
+  }
+}
+
+class NativeAiMediaSamples {
+  NativeAiMediaSamples({
+    required this.imagePaths,
+    required this.audioPaths,
+    required this.durationSeconds,
+  });
+
+  List<String> imagePaths;
+
+  List<String> audioPaths;
+
+  double durationSeconds;
+
+  List<Object?> _toList() {
+    return <Object?>[imagePaths, audioPaths, durationSeconds];
+  }
+
+  Object encode() {
+    return _toList();
+  }
+
+  static NativeAiMediaSamples decode(Object result) {
+    result as List<Object?>;
+    return NativeAiMediaSamples(
+      imagePaths: (result[0]! as List<Object?>).cast<String>(),
+      audioPaths: (result[1]! as List<Object?>).cast<String>(),
+      durationSeconds: result[2]! as double,
+    );
+  }
+
+  @override
+  // ignore: avoid_equals_and_hash_code_on_mutable_classes
+  bool operator ==(Object other) {
+    if (other is! NativeAiMediaSamples || other.runtimeType != runtimeType) {
+      return false;
+    }
+    if (identical(this, other)) {
+      return true;
+    }
+    return _deepEquals(imagePaths, other.imagePaths) &&
+        _deepEquals(audioPaths, other.audioPaths) &&
+        _deepEquals(durationSeconds, other.durationSeconds);
+  }
+
+  @override
+  // ignore: avoid_equals_and_hash_code_on_mutable_classes
+  int get hashCode => _deepHash(<Object?>[runtimeType, ..._toList()]);
+
+  @override
+  String toString() {
+    return 'NativeAiMediaSamples(imagePaths: $imagePaths, audioPaths: $audioPaths, durationSeconds: $durationSeconds)';
+  }
+}
+
 class _PigeonCodec extends StandardMessageCodec {
   const _PigeonCodec();
   @override
@@ -739,6 +896,15 @@ class _PigeonCodec extends StandardMessageCodec {
     } else if (value is NativeSharePresetPlan) {
       buffer.putUint8(138);
       writeValue(buffer, value.encode());
+    } else if (value is NativePickedDocument) {
+      buffer.putUint8(139);
+      writeValue(buffer, value.encode());
+    } else if (value is NativeAiResources) {
+      buffer.putUint8(140);
+      writeValue(buffer, value.encode());
+    } else if (value is NativeAiMediaSamples) {
+      buffer.putUint8(141);
+      writeValue(buffer, value.encode());
     } else {
       super.writeValue(buffer, value);
     }
@@ -770,6 +936,12 @@ class _PigeonCodec extends StandardMessageCodec {
         return NativeSharePreset.decode(readValue(buffer)!);
       case 138:
         return NativeSharePresetPlan.decode(readValue(buffer)!);
+      case 139:
+        return NativePickedDocument.decode(readValue(buffer)!);
+      case 140:
+        return NativeAiResources.decode(readValue(buffer)!);
+      case 141:
+        return NativeAiMediaSamples.decode(readValue(buffer)!);
       default:
         return super.readValueOfType(type, buffer);
     }
@@ -991,5 +1163,214 @@ class NativeCompressionPlannerApi {
       isNullValid: false,
     );
     return pigeonVar_replyValue! as NativeSharePresetPlan;
+  }
+}
+
+class NativeAiFilesApi {
+  /// Constructor for [NativeAiFilesApi]. The [binaryMessenger] named argument is
+  /// available for dependency injection. If it is left null, the default
+  /// BinaryMessenger will be used which routes to the host platform.
+  NativeAiFilesApi({
+    BinaryMessenger? binaryMessenger,
+    String messageChannelSuffix = '',
+  }) : pigeonVar_binaryMessenger = binaryMessenger,
+       pigeonVar_messageChannelSuffix = messageChannelSuffix.isNotEmpty
+           ? '.$messageChannelSuffix'
+           : '';
+
+  final BinaryMessenger? pigeonVar_binaryMessenger;
+  static const MessageCodec<Object?> pigeonChannelCodec = _PigeonCodec();
+
+  final String pigeonVar_messageChannelSuffix;
+
+  Future<List<NativePickedDocument>> pickDocuments(bool modelsOnly) async {
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeAiFilesApi.pickDocuments$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channel = BasicMessageChannel<Object?>(
+      pigeonVar_channelName,
+      pigeonChannelCodec,
+      binaryMessenger: pigeonVar_binaryMessenger,
+    );
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(
+      <Object?>[modelsOnly],
+    );
+    final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
+    final Object? pigeonVar_replyValue = _extractReplyValueOrThrow(
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: false,
+    );
+    return (pigeonVar_replyValue! as List<Object?>)
+        .cast<NativePickedDocument>();
+  }
+
+  Future<void> copyDocument(String uri, String destination) async {
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeAiFilesApi.copyDocument$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channel = BasicMessageChannel<Object?>(
+      pigeonVar_channelName,
+      pigeonChannelCodec,
+      binaryMessenger: pigeonVar_binaryMessenger,
+    );
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(
+      <Object?>[uri, destination],
+    );
+    final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
+    _extractReplyValueOrThrow(
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: true,
+    );
+  }
+
+  Future<NativeAiResources> resources() async {
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeAiFilesApi.resources$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channel = BasicMessageChannel<Object?>(
+      pigeonVar_channelName,
+      pigeonChannelCodec,
+      binaryMessenger: pigeonVar_binaryMessenger,
+    );
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(null);
+    final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
+    final Object? pigeonVar_replyValue = _extractReplyValueOrThrow(
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: false,
+    );
+    return pigeonVar_replyValue! as NativeAiResources;
+  }
+
+  Future<bool> canReadDocument(String uri) async {
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeAiFilesApi.canReadDocument$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channel = BasicMessageChannel<Object?>(
+      pigeonVar_channelName,
+      pigeonChannelCodec,
+      binaryMessenger: pigeonVar_binaryMessenger,
+    );
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(
+      <Object?>[uri],
+    );
+    final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
+    final Object? pigeonVar_replyValue = _extractReplyValueOrThrow(
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: false,
+    );
+    return pigeonVar_replyValue! as bool;
+  }
+}
+
+class NativeAiMediaApi {
+  /// Constructor for [NativeAiMediaApi]. The [binaryMessenger] named argument is
+  /// available for dependency injection. If it is left null, the default
+  /// BinaryMessenger will be used which routes to the host platform.
+  NativeAiMediaApi({
+    BinaryMessenger? binaryMessenger,
+    String messageChannelSuffix = '',
+  }) : pigeonVar_binaryMessenger = binaryMessenger,
+       pigeonVar_messageChannelSuffix = messageChannelSuffix.isNotEmpty
+           ? '.$messageChannelSuffix'
+           : '';
+
+  final BinaryMessenger? pigeonVar_binaryMessenger;
+  static const MessageCodec<Object?> pigeonChannelCodec = _PigeonCodec();
+
+  final String pigeonVar_messageChannelSuffix;
+
+  Future<void> cancelSample() async {
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeAiMediaApi.cancelSample$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channel = BasicMessageChannel<Object?>(
+      pigeonVar_channelName,
+      pigeonChannelCodec,
+      binaryMessenger: pigeonVar_binaryMessenger,
+    );
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(null);
+    final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
+    _extractReplyValueOrThrow(
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: true,
+    );
+  }
+
+  Future<NativeAiMediaSamples> sample(
+    String uri,
+    String workspace,
+    int intervalSeconds,
+    int maxFrames,
+  ) async {
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeAiMediaApi.sample$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channel = BasicMessageChannel<Object?>(
+      pigeonVar_channelName,
+      pigeonChannelCodec,
+      binaryMessenger: pigeonVar_binaryMessenger,
+    );
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(
+      <Object?>[uri, workspace, intervalSeconds, maxFrames],
+    );
+    final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
+    final Object? pigeonVar_replyValue = _extractReplyValueOrThrow(
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: false,
+    );
+    return pigeonVar_replyValue! as NativeAiMediaSamples;
+  }
+
+  Future<void> cancelExport() async {
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeAiMediaApi.cancelExport$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channel = BasicMessageChannel<Object?>(
+      pigeonVar_channelName,
+      pigeonChannelCodec,
+      binaryMessenger: pigeonVar_binaryMessenger,
+    );
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(null);
+    final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
+    _extractReplyValueOrThrow(
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: true,
+    );
+  }
+
+  Future<String> exportMedia(
+    String uri,
+    String workspace,
+    String operation,
+    int startMs,
+    int endMs,
+    bool reduceNoise,
+    bool trimSilence,
+  ) async {
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeAiMediaApi.exportMedia$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channel = BasicMessageChannel<Object?>(
+      pigeonVar_channelName,
+      pigeonChannelCodec,
+      binaryMessenger: pigeonVar_binaryMessenger,
+    );
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(
+      <Object?>[
+        uri,
+        workspace,
+        operation,
+        startMs,
+        endMs,
+        reduceNoise,
+        trimSilence,
+      ],
+    );
+    final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
+    final Object? pigeonVar_replyValue = _extractReplyValueOrThrow(
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: false,
+    );
+    return pigeonVar_replyValue! as String;
   }
 }

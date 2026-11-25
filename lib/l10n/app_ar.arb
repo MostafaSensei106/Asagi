@@ -1329,5 +1329,62 @@
   "whyChooseKuymo": "لماذا تختار Kuymo",
   "projectSupportLink": "نسخ رابط دعم المشروع",
   "brandTagline": "مساحة أكبر للحظاتك.",
-  "kuymoAi": "Kuymo AI"
+  "kuymoAi": "Kuymo AI",
+  "settingsSaveFailed": "تعذر تحميل الإعدادات أو حفظها. تم الاحتفاظ بآخر قيم محفوظة.",
+  "settingsRecovered": "تعذرت قراءة الإعدادات المحفوظة. يتم استخدام قيم آمنة.",
+  "resetSettingsGroup": "إعادة ضبط هذه الإعدادات",
+  "settingsApplyFailed": "تعذر تطبيق الإعدادات على الخدمة. اضغط لإعادة المحاولة.",
+  "saveAiChatHistory": "حفظ محادثات الذكاء الاصطناعي على الجهاز",
+  "permissionGranted": "مسموح",
+  "permissionLimited": "وصول محدود",
+  "permissionDenied": "غير مسموح. اضغط لطلب الإذن.",
+  "permissionPermanentlyDenied": "مرفوض. اضغط لفتح إعدادات الجهاز.",
+  "permissionRestricted": "مقيّد بواسطة الجهاز",
+  "permissionUnsupported": "غير متاح على هذه المنصة",
+  "selectedFilesAccess": "يستخدم Kuymo منتقي ملفات النظام للوصول للملفات التي تختارها فقط، بدون طلب الوصول لمكتبة الوسائط كاملة.",
+  "aiOperationFailed": "تعذر إكمال العملية. تحقق من الموديل ودعم الجهاز والمساحة وميزانية الذاكرة، ووصل الشاحن إذا كانت الفهرسة تتطلب ذلك، ثم أعد المحاولة.",
+  "noAiModelsAvailable": "لا توجد موديلات متوافقة متاحة.",
+  "aiMessageHint": "اسأل عن فيديوهاتك",
+  "aiBenchmarkElapsed": "اكتمل قياس الأداء في {milliseconds} مللي ثانية",
+  "@aiBenchmarkElapsed": {
+    "placeholders": {
+      "milliseconds": {
+        "type": "int"
+      }
+    }
+  },
+  "aiSend": "إرسال",
+  "aiDelete": "حذف",
+  "aiDownload": "تنزيل",
+  "aiSearch": "بحث",
+  "aiSelectedDocuments": "الملفات المختارة: {count}",
+  "aiToolCreatesCopy": "تنتج الأدوات ملفًا جديدًا وتحتفظ بالأصل. يتم تقليل الضوضاء وقص الصمت عند تفعيلهما.",
+  "aiTrimStart": "وقت البداية بالثواني",
+  "aiTrimEnd": "وقت النهاية بالثواني، اتركه فارغًا للنهاية",
+  "aiOutputSaved": "تم الحفظ على الجهاز: {path}",
+  "@aiSelectedDocuments": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@aiOutputSaved": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "aiChatWelcome": "مساعدك يعمل على الجهاز. اختر موديلًا من إعدادات الذكاء الاصطناعي للبدء.",
+  "backendGpu": "معالج الرسوميات (GPU)",
+  "aiAndroidOnly": "وظائف الذكاء الاصطناعي المحلية متاحة حاليًا على Android.",
+  "aiEmbeddingStorageUsage": "مساحة الفهرس: {megabytes} ميجابايت",
+  "@aiEmbeddingStorageUsage": {
+    "placeholders": {
+      "megabytes": {
+        "type": "String"
+      }
+    }
+  }
 }

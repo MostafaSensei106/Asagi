@@ -1,6 +1,7 @@
 import 'package:bloc_signals_flutter/bloc_signals_flutter.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../core/constants/kuymo_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/utils/theme/logic/cubit/theme_cubit.dart';
 import '../../../../core/widgets/design_system/tokens/tokens.dart';
@@ -19,7 +20,16 @@ final class AppearanceSettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SidePageAppBarComponent(title: context.localeKeys.appearance),
+      appBar: SidePageAppBarComponent(
+        title: context.localeKeys.appearance,
+        actions: [
+          IconButtonComponent(
+            icon: KuymoIcons.settingsReset,
+            tooltip: context.localeKeys.resetSettingsGroup,
+            onPressed: () => context.read<ThemeCubit>().resetSettings(),
+          ),
+        ],
+      ),
       body: BlocSignalBuilder<ThemeCubit, ThemeState>(
         buildWhen: (previous, current) => previous != current,
         builder: (context, state) {

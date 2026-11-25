@@ -35,7 +35,7 @@ final class FilledTonalButtonComponent extends StatelessWidget {
     this.foregroundColor,
   });
   final String label;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final bool expand;
   final bool useInBorderRadius;
   final IconData? icon;
@@ -47,18 +47,22 @@ final class FilledTonalButtonComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) => icon == null
       ? FilledButton.tonal(
-          onPressed: () {
-            unawaited(AppHaptics.button());
-            onPressed();
-          },
+          onPressed: onPressed == null
+              ? null
+              : () {
+                  unawaited(AppHaptics.button());
+                  onPressed!();
+                },
           style: _getButtonStyle(context),
           child: Text(label),
         )
       : FilledButton.tonalIcon(
-          onPressed: () {
-            unawaited(AppHaptics.button());
-            onPressed();
-          },
+          onPressed: onPressed == null
+              ? null
+              : () {
+                  unawaited(AppHaptics.button());
+                  onPressed!();
+                },
           style: _getButtonStyle(context),
           icon: Icon(icon, size: AppConfig.iconSize),
           label: Text(label),

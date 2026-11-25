@@ -25,8 +25,6 @@ abstract interface class VideoCompressionRepository {
     double targetMb,
     CompressionPreferences preferences,
   );
-  Future<CompressionPreferences> loadPreferences();
-  Future<void> savePreferences(CompressionPreferences preferences);
   Future<List<CompressionRecord>> history();
   Future<void> clearHistory();
   Future<List<InterruptedCompressionJob>> recoverInterrupted();
@@ -37,8 +35,6 @@ abstract interface class VideoCompressionRepository {
     void Function(SelectedVideo video)? onVideoReady,
   });
   Future<void> discardInterrupted(String jobId);
-  Future<double> defaultTargetMb();
-  Future<void> setDefaultTargetMb(double targetMb);
   Future<List<SharePreset>> presets();
   Future<SharePresetPlan> resolvePreset(SelectedVideo video, SharePresetId id);
   Future<void> pause();

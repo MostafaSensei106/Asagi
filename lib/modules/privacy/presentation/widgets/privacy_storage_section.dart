@@ -2,6 +2,7 @@ import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/kuymo_icons.dart';
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/widgets/design_system/tokens/tokens.dart';
 import '../../../../core/widgets/widgets.dart';
 
 final class PrivacyStorageSection extends StatelessWidget {
@@ -12,9 +13,13 @@ final class PrivacyStorageSection extends StatelessWidget {
     required this.onPreserveMetadataChanged,
     required this.onAutoWipeChanged,
     required this.onClearCache,
+    this.saveChatHistory = false,
+    this.onSaveChatHistoryChanged,
     super.key,
   });
 
+  final bool saveChatHistory;
+  final ValueChanged<bool>? onSaveChatHistoryChanged;
   final bool preserveMetadata;
   final bool autoWipeTempCache;
   final bool isClearingCache;
@@ -82,6 +87,23 @@ final class PrivacyStorageSection extends StatelessWidget {
             ),
           ],
         ),
+        if (onSaveChatHistoryChanged != null) ...[
+          const Gap(AppSpacing.small),
+          ListTileGroup(
+            children: [
+              ListTileIconComponent.single(
+                leading: KuymoIcons.aiChatSettings,
+                title: l10n.saveAiChatHistory,
+                onTap: () => onSaveChatHistoryChanged!(!saveChatHistory),
+                showChevron: false,
+                trailing: SwitchComponent(
+                  value: saveChatHistory,
+                  onChanged: onSaveChatHistoryChanged!,
+                ),
+              ),
+            ],
+          ),
+        ],
       ],
     );
   }

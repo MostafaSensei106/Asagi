@@ -4,9 +4,14 @@ import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/design_system/tokens/tokens.dart';
+import '../../../../core/di/di.dart';
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/preferences/domain/repositories/settings_repository.dart';
+import '../../../../core/preferences/presentation/settings_page_state.dart';
+import '../../../../core/preferences/presentation/settings_view.dart';
 import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
+import '../../domain/entities/ai_settings.dart';
 
 final class AiFeaturesPage extends StatefulWidget {
   const AiFeaturesPage({super.key});
@@ -15,28 +20,42 @@ final class AiFeaturesPage extends StatefulWidget {
   State<AiFeaturesPage> createState() => _AiFeaturesPageState();
 }
 
-final class _AiFeaturesPageState extends State<AiFeaturesPage> {
-  bool _bitrateRecommender = true;
-  bool _sceneKeyframes = true;
-  bool _noiseReduction = true;
-  bool _silentTrim = false;
-  bool _facePriority = true;
+final class _AiFeaturesPageState
+    extends SettingsPageState<AiFeaturesPage, AiFeatureSettings> {
+  @override
+  SettingsRepository<AiFeatureSettings> get repository =>
+      getIt<SettingsRepository<AiFeatureSettings>>();
+
+  bool get _bitrateRecommender => settings.bitrateRecommender;
+  set _bitrateRecommender(bool value) =>
+      updateSettings((s) => s.copyWith(bitrateRecommender: value));
+  bool get _sceneKeyframes => settings.sceneKeyframes;
+  set _sceneKeyframes(bool value) =>
+      updateSettings((s) => s.copyWith(sceneKeyframes: value));
+  bool get _noiseReduction => settings.noiseReduction;
+  set _noiseReduction(bool value) =>
+      updateSettings((s) => s.copyWith(noiseReduction: value));
+  bool get _silentTrim => settings.silentTrim;
+  set _silentTrim(bool value) =>
+      updateSettings((s) => s.copyWith(silentTrim: value));
+  bool get _facePriority => settings.facePriority;
+  set _facePriority(bool value) =>
+      updateSettings((s) => s.copyWith(facePriority: value));
 
   void _onToggle(String name, bool val, void Function() apply) {
     unawaited(AppHaptics.button());
     setState(apply);
-    context.toast.showInfo(
-      context,
-      '$name ${val ? context.localeKeys.enabled : context.localeKeys.disabled}',
-    );
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget buildSettings(BuildContext context) {
     final l10n = context.localeKeys;
 
     return Scaffold(
-      appBar: SidePageAppBarComponent(title: l10n.smartFeatures),
+      appBar: SidePageAppBarComponent(
+        title: l10n.smartFeatures,
+        actions: const [SettingsResetAction<AiFeatureSettings>()],
+      ),
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.symmetric(

@@ -4,9 +4,15 @@ import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/design_system/tokens/tokens.dart';
+import '../../../../core/di/di.dart';
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/preferences/domain/repositories/settings_repository.dart';
+import '../../../../core/preferences/presentation/settings_page_state.dart';
+import '../../../../core/preferences/presentation/settings_view.dart';
 import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
+import '../../domain/entities/ai_settings.dart';
+import '../widgets/ai_tools_workbench.dart';
 
 final class AiToolsPage extends StatefulWidget {
   const AiToolsPage({super.key});
@@ -15,28 +21,56 @@ final class AiToolsPage extends StatefulWidget {
   State<AiToolsPage> createState() => _AiToolsPageState();
 }
 
-final class _AiToolsPageState extends State<AiToolsPage> {
-  bool _trimTool = true;
-  bool _audioExtractTool = true;
-  bool _metadataStripTool = true;
-  bool _confirmDestructive = true;
-  bool _sandboxScratchpad = true;
+final class _AiToolsPageState
+    extends SettingsPageState<AiToolsPage, AiToolSettings> {
+  @override
+  SettingsRepository<AiToolSettings> get repository =>
+      getIt<SettingsRepository<AiToolSettings>>();
+
+  bool get _trimTool => settings.trimTool;
+  set _trimTool(bool value) =>
+      updateSettings((s) => s.copyWith(trimTool: value));
+  bool get _audioExtractTool => settings.audioExtractTool;
+  set _audioExtractTool(bool value) =>
+      updateSettings((s) => s.copyWith(audioExtractTool: value));
+  bool get _metadataStripTool => settings.metadataStripTool;
+  set _metadataStripTool(bool value) =>
+      updateSettings((s) => s.copyWith(metadataStripTool: value));
+  bool get _confirmDestructive => settings.confirmDestructive;
+  set _confirmDestructive(bool value) =>
+      updateSettings((s) => s.copyWith(confirmDestructive: value));
+  bool get _sandboxScratchpad => settings.sandboxScratchpad;
+  set _sandboxScratchpad(bool value) =>
+      updateSettings((s) => s.copyWith(sandboxScratchpad: value));
 
   void _onToggle(String name, bool val, void Function() apply) {
     unawaited(AppHaptics.button());
     setState(apply);
-    context.toast.showInfo(
-      context,
-      '$name ${val ? context.localeKeys.enabled : context.localeKeys.disabled}',
-    );
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget buildSettings(BuildContext context) {
     final l10n = context.localeKeys;
 
     return Scaffold(
-      appBar: SidePageAppBarComponent(title: l10n.toolsAndStructuredOutput),
+      appBar: SidePageAppBarComponent(
+        title: l10n.toolsAndStructuredOutput,
+        actions: [
+          const SettingsResetAction<AiToolSettings>(),
+          IconButtonComponent(
+            icon: LucideIcons.workflow,
+            tooltip: l10n.toolsAndStructuredOutput,
+            onPressed: () => unawaited(
+              BottomSheetComponent.show<void>(
+                context: context,
+                child: SingleChildScrollView(
+                  child: AiToolsWorkbench(settings: settings),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
       body: ListView(
         padding: const EdgeInsets.symmetric(
           horizontal: AppSpacing.large,

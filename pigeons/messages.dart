@@ -135,3 +135,56 @@ abstract class NativeCompressionPlannerApi {
     NativeSharePresetId id,
   );
 }
+
+final class NativePickedDocument {
+  late String uri;
+  late String name;
+  late int sizeBytes;
+}
+
+final class NativeAiResources {
+  late int availableMemoryBytes;
+  late bool charging;
+}
+
+@HostApi()
+abstract class NativeAiFilesApi {
+  @async
+  List<NativePickedDocument> pickDocuments(bool modelsOnly);
+  @async
+  void copyDocument(String uri, String destination);
+  NativeAiResources resources();
+  @async
+  bool canReadDocument(String uri);
+}
+
+final class NativeAiMediaSamples {
+  late List<String> imagePaths;
+  late List<String> audioPaths;
+  late double durationSeconds;
+}
+
+@HostApi()
+abstract class NativeAiMediaApi {
+  @async
+  void cancelSample();
+  @async
+  NativeAiMediaSamples sample(
+    String uri,
+    String workspace,
+    int intervalSeconds,
+    int maxFrames,
+  );
+  @async
+  void cancelExport();
+  @async
+  String exportMedia(
+    String uri,
+    String workspace,
+    String operation,
+    int startMs,
+    int endMs,
+    bool reduceNoise,
+    bool trimSilence,
+  );
+}

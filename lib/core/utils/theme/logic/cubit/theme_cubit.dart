@@ -42,6 +42,8 @@ class ThemeCubit extends HydratedCubitSignal<ThemeState> {
     'colorSchemeVariant': state.colorSchemeVariant.name,
   };
 
+  void resetSettings() => emit(const ThemeState());
+
   void changeTheme(ThemeMode newMode) {
     if (state.value.themeMode == newMode) return;
     emit(state.value.copyWith(themeMode: newMode));

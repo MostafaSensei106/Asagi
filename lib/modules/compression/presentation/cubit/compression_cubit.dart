@@ -6,11 +6,14 @@ import '../../../../core/compression/domain/models/compression_preferences.dart'
 import '../../../../core/compression/domain/models/compression_step.dart';
 import '../../../../core/compression/domain/models/interrupted_compression_job.dart';
 import '../../../../core/compression/domain/models/share_preset.dart';
+import '../../../../core/preferences/domain/entities/compression_defaults.dart';
+import '../../../../core/preferences/domain/repositories/settings_repository.dart';
+import '../../domain/repositories/video_advice_repository.dart';
 import '../../domain/repositories/video_compression_repository.dart';
 import 'compression_state.dart';
 
 final class CompressionCubit extends CubitSignal<CompressionState> {
-  CompressionCubit(this.repository)
+  CompressionCubit(this.repository, {required this._defaults, this._advisor})
     : super(initialState: const CompressionState()) {
     unawaited(loadDefaultTarget());
     unawaited(loadPreferences());
@@ -19,9 +22,10 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
   }
 
   final VideoCompressionRepository repository;
+  final VideoAdviceRepository? _advisor;
+  final SettingsRepository<CompressionDefaults> _defaults;
   StreamSubscription<double>? _progressSubscription;
   int _planVersion = 0;
-  Future<void> _preferencesSave = Future<void>.value();
   bool _preferencesModified = false;
   bool _targetModified = false;
 
@@ -40,8 +44,19 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
         emit(previous);
         return false;
       }
+      CompressionDefaults? defaults;
+      try {
+        defaults = await _defaults.load();
+      } on Object {
+        /* Existing session choices remain usable. */
+      }
+      if (isClosed) return false;
       emit(
         stateValue.copyWith(
+          targetMb: defaults?.targetMb ?? stateValue.targetMb,
+          preferences: defaults?.preferences ?? stateValue.preferences,
+          selectedPresetId: null,
+          resolvedPresetPlan: null,
           video: video,
           phase: CompressionPhase.ready,
           output: null,
@@ -61,7 +76,14 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
     }
   }
 
+  bool get _canTune => !{
+    CompressionPhase.running,
+    CompressionPhase.paused,
+    CompressionPhase.saving,
+  }.contains(stateValue.phase);
+
   void selectPreset(SharePresetId? id) {
+    if (!_canTune) return;
     if (stateValue.selectedPresetId == id) return;
     _targetModified = true;
     if (id == null) {
@@ -93,6 +115,7 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
   }
 
   void setTargetMb(double value) {
+    if (!_canTune) return;
     if (!value.isFinite || value <= 0) return;
     _targetModified = true;
     emit(
@@ -126,7 +149,7 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
 
   Future<void> loadPreferences() async {
     try {
-      final preferences = await repository.loadPreferences();
+      final preferences = (await _defaults.load()).preferences;
       if (!isClosed && !_preferencesModified) {
         emit(stateValue.copyWith(preferences: preferences));
         await refreshPlan();
@@ -137,6 +160,7 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
   }
 
   Future<void> setPreferences(CompressionPreferences preferences) async {
+    if (!_canTune) return;
     preferences.validate();
     if (isClosed) return;
     _preferencesModified = true;
@@ -152,22 +176,40 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
         resolvedPresetPlan: null,
       ),
     );
-    _preferencesSave = _preferencesSave.then((_) async {
-      try {
-        await repository.savePreferences(preferences);
-      } catch (error) {
-        if (!isClosed) {
-          emit(
-            stateValue.copyWith(
-              phase: CompressionPhase.failure,
-              error: '$error',
-            ),
-          );
-        }
-      }
-    });
     unawaited(refreshPlan());
-    await _preferencesSave;
+  }
+
+  Future<void> suggestPreferences() async {
+    final advisor = _advisor;
+    final current = stateValue;
+    final video = current.video;
+    if (advisor == null ||
+        video == null ||
+        current.planning ||
+        current.phase == CompressionPhase.running ||
+        current.phase == CompressionPhase.paused) {
+      return;
+    }
+    final version = ++_planVersion;
+    emit(current.copyWith(planning: true, error: null));
+    try {
+      final preferences = await advisor.advise(
+        video,
+        current.targetMb,
+        current.preferences,
+      );
+      if (isClosed ||
+          version != _planVersion ||
+          stateValue.video?.path != video.path) {
+        return;
+      }
+      emit(stateValue.copyWith(planning: false));
+      await setPreferences(preferences);
+    } on Object {
+      if (!isClosed && version == _planVersion) {
+        emit(stateValue.copyWith(planning: false, error: 'E_AI_ADVICE'));
+      }
+    }
   }
 
   Future<void> refreshPlan() async {
@@ -221,17 +263,15 @@ final class CompressionCubit extends CubitSignal<CompressionState> {
   }
 
   Future<void> loadDefaultTarget() async {
-    final target = await repository.defaultTargetMb();
-    if (!isClosed && !_targetModified && stateValue.video == null) {
-      emit(stateValue.copyWith(targetMb: target));
-      await refreshPlan();
+    try {
+      final target = (await _defaults.load()).targetMb;
+      if (!isClosed && !_targetModified && stateValue.video == null) {
+        emit(stateValue.copyWith(targetMb: target));
+        await refreshPlan();
+      }
+    } on Object {
+      /* Preserve session defaults when storage is unavailable. */
     }
-  }
-
-  Future<void> saveDefaultTarget(double value) async {
-    if (!value.isFinite || value <= 0) return;
-    await repository.setDefaultTargetMb(value);
-    if (!isClosed) emit(stateValue.copyWith(targetMb: value));
   }
 
   Future<void> start() async {

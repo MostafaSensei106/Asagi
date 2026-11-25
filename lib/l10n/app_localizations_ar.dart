@@ -2306,6 +2306,109 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get kuymoAi => 'Kuymo AI';
+
+  @override
+  String get settingsSaveFailed =>
+      'تعذر تحميل الإعدادات أو حفظها. تم الاحتفاظ بآخر قيم محفوظة.';
+
+  @override
+  String get settingsRecovered =>
+      'تعذرت قراءة الإعدادات المحفوظة. يتم استخدام قيم آمنة.';
+
+  @override
+  String get resetSettingsGroup => 'إعادة ضبط هذه الإعدادات';
+
+  @override
+  String get settingsApplyFailed =>
+      'تعذر تطبيق الإعدادات على الخدمة. اضغط لإعادة المحاولة.';
+
+  @override
+  String get saveAiChatHistory => 'حفظ محادثات الذكاء الاصطناعي على الجهاز';
+
+  @override
+  String get permissionGranted => 'مسموح';
+
+  @override
+  String get permissionLimited => 'وصول محدود';
+
+  @override
+  String get permissionDenied => 'غير مسموح. اضغط لطلب الإذن.';
+
+  @override
+  String get permissionPermanentlyDenied => 'مرفوض. اضغط لفتح إعدادات الجهاز.';
+
+  @override
+  String get permissionRestricted => 'مقيّد بواسطة الجهاز';
+
+  @override
+  String get permissionUnsupported => 'غير متاح على هذه المنصة';
+
+  @override
+  String get selectedFilesAccess =>
+      'يستخدم Kuymo منتقي ملفات النظام للوصول للملفات التي تختارها فقط، بدون طلب الوصول لمكتبة الوسائط كاملة.';
+
+  @override
+  String get aiOperationFailed =>
+      'تعذر إكمال العملية. تحقق من الموديل ودعم الجهاز والمساحة وميزانية الذاكرة، ووصل الشاحن إذا كانت الفهرسة تتطلب ذلك، ثم أعد المحاولة.';
+
+  @override
+  String get noAiModelsAvailable => 'لا توجد موديلات متوافقة متاحة.';
+
+  @override
+  String get aiMessageHint => 'اسأل عن فيديوهاتك';
+
+  @override
+  String aiBenchmarkElapsed(int milliseconds) {
+    return 'اكتمل قياس الأداء في $milliseconds مللي ثانية';
+  }
+
+  @override
+  String get aiSend => 'إرسال';
+
+  @override
+  String get aiDelete => 'حذف';
+
+  @override
+  String get aiDownload => 'تنزيل';
+
+  @override
+  String get aiSearch => 'بحث';
+
+  @override
+  String aiSelectedDocuments(int count) {
+    return 'الملفات المختارة: $count';
+  }
+
+  @override
+  String get aiToolCreatesCopy =>
+      'تنتج الأدوات ملفًا جديدًا وتحتفظ بالأصل. يتم تقليل الضوضاء وقص الصمت عند تفعيلهما.';
+
+  @override
+  String get aiTrimStart => 'وقت البداية بالثواني';
+
+  @override
+  String get aiTrimEnd => 'وقت النهاية بالثواني، اتركه فارغًا للنهاية';
+
+  @override
+  String aiOutputSaved(String path) {
+    return 'تم الحفظ على الجهاز: $path';
+  }
+
+  @override
+  String get aiChatWelcome =>
+      'مساعدك يعمل على الجهاز. اختر موديلًا من إعدادات الذكاء الاصطناعي للبدء.';
+
+  @override
+  String get backendGpu => 'معالج الرسوميات (GPU)';
+
+  @override
+  String get aiAndroidOnly =>
+      'وظائف الذكاء الاصطناعي المحلية متاحة حاليًا على Android.';
+
+  @override
+  String aiEmbeddingStorageUsage(String megabytes) {
+    return 'مساحة الفهرس: $megabytes ميجابايت';
+  }
 }
 
 /// The translations for Arabic, as used in Egypt (`ar_EG`).
@@ -2362,4 +2465,107 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
 
   @override
   String get kuymoAi => 'Kuymo AI';
+
+  @override
+  String get settingsSaveFailed =>
+      'تعذر تحميل الإعدادات أو حفظها. تم الاحتفاظ بآخر قيم محفوظة.';
+
+  @override
+  String get settingsRecovered =>
+      'تعذرت قراءة الإعدادات المحفوظة. يتم استخدام قيم آمنة.';
+
+  @override
+  String get resetSettingsGroup => 'إعادة ضبط هذه الإعدادات';
+
+  @override
+  String get settingsApplyFailed =>
+      'تعذر تطبيق الإعدادات على الخدمة. اضغط لإعادة المحاولة.';
+
+  @override
+  String get saveAiChatHistory => 'حفظ محادثات الذكاء الاصطناعي على الجهاز';
+
+  @override
+  String get permissionGranted => 'مسموح';
+
+  @override
+  String get permissionLimited => 'وصول محدود';
+
+  @override
+  String get permissionDenied => 'غير مسموح. اضغط لطلب الإذن.';
+
+  @override
+  String get permissionPermanentlyDenied => 'مرفوض. اضغط لفتح إعدادات الجهاز.';
+
+  @override
+  String get permissionRestricted => 'مقيّد بواسطة الجهاز';
+
+  @override
+  String get permissionUnsupported => 'غير متاح على هذه المنصة';
+
+  @override
+  String get selectedFilesAccess =>
+      'يستخدم Kuymo منتقي ملفات النظام للوصول للملفات التي تختارها فقط، بدون طلب الوصول لمكتبة الوسائط كاملة.';
+
+  @override
+  String get aiOperationFailed =>
+      'تعذر إكمال العملية. تحقق من الموديل ودعم الجهاز والمساحة وميزانية الذاكرة، ووصل الشاحن إذا كانت الفهرسة تتطلب ذلك، ثم أعد المحاولة.';
+
+  @override
+  String get noAiModelsAvailable => 'لا توجد موديلات متوافقة متاحة.';
+
+  @override
+  String get aiMessageHint => 'اسأل عن فيديوهاتك';
+
+  @override
+  String aiBenchmarkElapsed(int milliseconds) {
+    return 'اكتمل قياس الأداء في $milliseconds مللي ثانية';
+  }
+
+  @override
+  String get aiSend => 'إرسال';
+
+  @override
+  String get aiDelete => 'حذف';
+
+  @override
+  String get aiDownload => 'تنزيل';
+
+  @override
+  String get aiSearch => 'بحث';
+
+  @override
+  String aiSelectedDocuments(int count) {
+    return 'الملفات المختارة: $count';
+  }
+
+  @override
+  String get aiToolCreatesCopy =>
+      'تنتج الأدوات ملفًا جديدًا وتحتفظ بالأصل. يتم تقليل الضوضاء وقص الصمت عند تفعيلهما.';
+
+  @override
+  String get aiTrimStart => 'وقت البداية بالثواني';
+
+  @override
+  String get aiTrimEnd => 'وقت النهاية بالثواني، اتركه فارغًا للنهاية';
+
+  @override
+  String aiOutputSaved(String path) {
+    return 'تم الحفظ على الجهاز: $path';
+  }
+
+  @override
+  String get aiChatWelcome =>
+      'مساعدك يعمل على الجهاز. اختر موديلًا من إعدادات الذكاء الاصطناعي للبدء.';
+
+  @override
+  String get backendGpu => 'معالج الرسوميات (GPU)';
+
+  @override
+  String get aiAndroidOnly =>
+      'وظائف الذكاء الاصطناعي المحلية متاحة حاليًا على Android.';
+
+  @override
+  String aiEmbeddingStorageUsage(String megabytes) {
+    return 'مساحة الفهرس: $megabytes ميجابايت';
+  }
 }

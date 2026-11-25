@@ -5,12 +5,15 @@ import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kuymo/core/di/di.dart';
 import 'package:kuymo/core/utils/theme/app_theme.dart';
 import 'package:kuymo/core/widgets/widgets.dart';
 import 'package:kuymo/l10n/app_localizations.dart';
 import 'package:kuymo/modules/ai/presentation/pages/ai_chat_page.dart';
 import 'package:kuymo/modules/home/presentation/widgets/home_welcome_card.dart';
 import 'package:material_ui/material_ui.dart';
+
+import 'support/fake_ai_services.dart';
 
 const capture = bool.fromEnvironment('KUYMO_CAPTURE');
 final boundaryKey = GlobalKey();
@@ -68,6 +71,12 @@ Future<void> screenshot(WidgetTester tester, String name) async {
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
+  setUp(() async {
+    await registerFakeAiDependencies();
+  });
+  tearDown(() async {
+    await getIt.reset();
+  });
   setUpAll(() async {
     if (!capture) return;
     for (final font in [
@@ -114,7 +123,7 @@ void main() {
         expect(find.byType(BrandMark), findsOneWidget);
         expect(tester.takeException(), isNull);
       });
-      testWidgets('assistant explains availability in $name', (tester) async {
+      testWidgets('assistant stays usable in $name', (tester) async {
         await pumpBrand(
           tester,
           const AiChatPage(),
@@ -125,7 +134,7 @@ void main() {
         await screenshot(tester, 'assistant-$name');
         final context = tester.element(find.byType(AiChatPage));
         expect(
-          find.text(AppLocalizations.of(context)!.comingSoon),
+          find.text(AppLocalizations.of(context)!.localModels),
           findsOneWidget,
         );
         expect(find.byType(TextField), findsNothing);

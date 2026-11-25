@@ -109,6 +109,10 @@ final class SharedNotificationPreferences
   }
 
   @override
+  Future<NotificationSettings> reset() =>
+      update((_) => const NotificationSettings());
+
+  @override
   @disposeMethod
   Future<void> dispose() => _changes.close();
 }

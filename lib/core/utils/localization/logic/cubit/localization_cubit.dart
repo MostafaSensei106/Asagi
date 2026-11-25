@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'dart:ui' as ui;
 
-import 'package:bloc_signals_hydrate/bloc_signals_hydrate.dart';
+import 'package:bloc_signals/bloc_signals.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../../preferences/domain/entities/language_settings.dart';
+import '../../../../preferences/domain/repositories/settings_repository.dart';
 import '../../../../services/l10n/l10n_service.dart';
 import '../../app_supported_locales.dart';
 
@@ -12,10 +14,36 @@ part 'localization_cubit.freezed.dart';
 part 'localization_state.dart';
 
 @lazySingleton
-class LocalizationCubit extends HydratedCubitSignal<LocalizationState> {
-  LocalizationCubit({required L10nService l10nService})
-    : _l10nService = l10nService,
-      super(initialState: _getInitialState(l10nService));
+class LocalizationCubit extends CubitSignal<LocalizationState> {
+  LocalizationCubit({
+    required L10nService l10nService,
+    required this._repository,
+  }) : _l10nService = l10nService,
+       super(initialState: _getInitialState(l10nService)) {
+    _subscription = _repository.changes.listen(_apply);
+    _apply(_repository.current);
+    unawaited(_load());
+  }
+  final SettingsRepository<LanguageSettings> _repository;
+  late final StreamSubscription<LanguageSettings> _subscription;
+  Future<void> _load() async {
+    try {
+      _apply(await _repository.load());
+    } on Object {
+      if (!isClosed) emit(stateValue.copyWith(failed: true));
+    }
+  }
+
+  void _apply(LanguageSettings settings) {
+    if (isClosed) return;
+    final code = settings.localeCode;
+    final resolved = code == null ? null : _resolveLocaleCode(code);
+    emit(
+      resolved == null
+          ? _getInitialState(_l10nService)
+          : LocalizationState(langCode: resolved),
+    );
+  }
 
   final L10nService _l10nService;
 
@@ -46,6 +74,14 @@ class LocalizationCubit extends HydratedCubitSignal<LocalizationState> {
     //    await getIt<CacheManager>().refreshAllCache();
   }
 
+  Future<void> resetSettings() async {
+    try {
+      await _repository.reset();
+    } on Object {
+      if (!isClosed) emit(stateValue.copyWith(failed: true));
+    }
+  }
+
   Future<void> toggleLanguage() async {
     final supportedLocales = _l10nService.supportedLocales;
     if (supportedLocales.isEmpty) return;
@@ -58,17 +94,8 @@ class LocalizationCubit extends HydratedCubitSignal<LocalizationState> {
   }
 
   @override
-  LocalizationState? fromJson(dynamic json) {
-    if (json is! Map<String, dynamic>) return null;
-    final langCode = json['langCode'] as String?;
-    if (langCode == null || langCode.isEmpty) return null;
-    final resolvedCode = _resolveLocaleCode(langCode);
-    if (resolvedCode == null) return null;
-    return LocalizationState(langCode: resolvedCode);
-  }
-
-  @override
-  Map<String, dynamic>? toJson(LocalizationState state) {
-    return {'langCode': state.langCode};
+  Future<void> close() async {
+    await _subscription.cancel();
+    return super.close();
   }
 }

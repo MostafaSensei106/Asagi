@@ -1,17 +1,61 @@
 import 'dart:async';
 
+import 'package:bloc_signals/bloc_signals.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/design_system/tokens/tokens.dart';
 import '../../../../core/constants/kuymo_icons.dart';
+import '../../../../core/di/di.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
+import '../../../permissions/domain/repositories/permission_repository.dart';
+import '../../../permissions/presentation/cubit/permissions_cubit.dart';
 
 /// Details why Kuymo requests specific device runtime permissions and how they
 /// are strictly used.
-final class PermissionsPage extends StatelessWidget {
+final class PermissionsPage extends StatefulWidget {
   const PermissionsPage({super.key});
+
+  @override
+  State<PermissionsPage> createState() => _PermissionsPageState();
+}
+
+final class _PermissionsPageState extends State<PermissionsPage>
+    with WidgetsBindingObserver {
+  late final PermissionsCubit _cubit;
+  StreamSubscription<PermissionsState>? _changes;
+  @override
+  void initState() {
+    super.initState();
+    _cubit = PermissionsCubit(getIt<PermissionRepository>());
+    WidgetsBinding.instance.addObserver(this);
+    _changes = _cubit.stream.listen((state) {
+      if (mounted) {
+        setState(() {});
+        if (state.failed) {
+          context.toast.showError(
+            context,
+            context.localeKeys.settingsApplyFailed,
+          );
+        }
+      }
+    });
+    unawaited(_cubit.refresh());
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) unawaited(_cubit.refresh());
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    unawaited(_changes?.cancel());
+    unawaited(_cubit.close());
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,15 +65,17 @@ final class PermissionsPage extends StatelessWidget {
     final permissions = [
       (
         title: 'Photos & Videos (Media Access)',
-        purpose: 'Needed to browse and select video files for compression, and to save the compressed videos directly to your camera roll or downloads folder.',
+        purpose: l10n.selectedFilesAccess,
         type: 'Essential',
         icon: KuymoIcons.videoSelect,
         isEssential: true,
       ),
       (
-        title: 'Notifications',
+        title: l10n.notifications,
         purpose: 'Allows Kuymo to alert you when a long video compression task finishes in the background, or if a task encounters an error.',
-        type: 'Optional',
+        type: _cubit.stateValue.notification == AppPermissionStatus.granted
+            ? l10n.enabled
+            : l10n.disabled,
         icon: KuymoIcons.notifications,
         isEssential: false,
       ),
@@ -93,6 +139,9 @@ final class PermissionsPage extends StatelessWidget {
             const Gap(AppSpacing.small),
             for (final perm in permissions) ...[
               CardComponent.outlined(
+                onTap: perm.icon == KuymoIcons.notifications
+                    ? () => unawaited(_cubit.request())
+                    : null,
                 padding: const EdgeInsets.all(AppSpacing.large),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -150,10 +199,7 @@ final class PermissionsPage extends StatelessWidget {
                     expand: true,
                     onPressed: () {
                       unawaited(AppHaptics.button());
-                      context.toast.showInfo(
-                        context,
-                        'Please check your device system app settings',
-                      );
+                      unawaited(_cubit.openSystemSettings());
                     },
                   ),
                 ],

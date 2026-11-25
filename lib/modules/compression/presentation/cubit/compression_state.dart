@@ -42,7 +42,7 @@ sealed class CompressionState with _$CompressionState {
     @Default(<InterruptedCompressionJob>[])
     List<InterruptedCompressionJob> recoverableJobs,
     @Default(<SharePreset>[]) List<SharePreset> presets,
-    @Default(SharePresetId.whatsapp) SharePresetId? selectedPresetId,
+    SharePresetId? selectedPresetId,
     SharePresetPlan? resolvedPresetPlan,
   }) = _CompressionState;
 }

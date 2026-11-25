@@ -4,9 +4,14 @@ import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/design_system/tokens/tokens.dart';
+import '../../../../core/di/di.dart';
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/preferences/domain/repositories/settings_repository.dart';
+import '../../../../core/preferences/presentation/settings_page_state.dart';
+import '../../../../core/preferences/presentation/settings_view.dart';
 import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
+import '../../domain/entities/ai_settings.dart';
 
 final class AiMediaPage extends StatefulWidget {
   const AiMediaPage({super.key});
@@ -15,18 +20,34 @@ final class AiMediaPage extends StatefulWidget {
   State<AiMediaPage> createState() => _AiMediaPageState();
 }
 
-final class _AiMediaPageState extends State<AiMediaPage> {
-  bool _analyzeThumbnails = true;
-  bool _transcribeAudio = true;
-  int _sampleRate = 2;
-  bool _autoLang = true;
+final class _AiMediaPageState
+    extends SettingsPageState<AiMediaPage, AiMediaSettings> {
+  @override
+  SettingsRepository<AiMediaSettings> get repository =>
+      getIt<SettingsRepository<AiMediaSettings>>();
+
+  bool get _analyzeThumbnails => settings.analyzeThumbnails;
+  set _analyzeThumbnails(bool value) =>
+      updateSettings((s) => s.copyWith(analyzeThumbnails: value));
+  bool get _transcribeAudio => settings.transcribeAudio;
+  set _transcribeAudio(bool value) =>
+      updateSettings((s) => s.copyWith(transcribeAudio: value));
+  int get _sampleRate => settings.sampleRate;
+  set _sampleRate(int value) =>
+      updateSettings((s) => s.copyWith(sampleRate: value));
+  bool get _autoLang => settings.autoLang;
+  set _autoLang(bool value) =>
+      updateSettings((s) => s.copyWith(autoLang: value));
 
   @override
-  Widget build(BuildContext context) {
+  Widget buildSettings(BuildContext context) {
     final l10n = context.localeKeys;
 
     return Scaffold(
-      appBar: SidePageAppBarComponent(title: l10n.imagesAndAudio),
+      appBar: SidePageAppBarComponent(
+        title: l10n.imagesAndAudio,
+        actions: const [SettingsResetAction<AiMediaSettings>()],
+      ),
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.symmetric(
@@ -91,7 +112,7 @@ final class _AiMediaPageState extends State<AiMediaPage> {
                       ),
                     ],
                     onChanged: (val) {
-                      AppHaptics.button;
+                      unawaited(AppHaptics.button());
                       setState(() => _sampleRate = val!);
                     },
                   ),

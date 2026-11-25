@@ -684,6 +684,137 @@ data class NativeSharePresetPlan (
     return "NativeSharePresetPlan(tier=$tier, effectiveTargetMb=$effectiveTargetMb, plan=$plan)"
   }
 }
+
+/** Generated class from Pigeon that represents data sent in messages. */
+data class NativePickedDocument (
+  val uri: String,
+  val name: String,
+  val sizeBytes: Long
+)
+ {
+  companion object {
+    fun fromList(pigeonVar_list: List<Any?>): NativePickedDocument {
+      val uri = pigeonVar_list[0] as String
+      val name = pigeonVar_list[1] as String
+      val sizeBytes = pigeonVar_list[2] as Long
+      return NativePickedDocument(uri, name, sizeBytes)
+    }
+  }
+  fun toList(): List<Any?> {
+    return listOf(
+      uri,
+      name,
+      sizeBytes,
+    )
+  }
+  override fun equals(other: Any?): Boolean {
+    if (other == null || other.javaClass != javaClass) {
+      return false
+    }
+    if (this === other) {
+      return true
+    }
+    val other = other as NativePickedDocument
+    return PigeonMessagesPigeonUtils.deepEquals(this.uri, other.uri) && PigeonMessagesPigeonUtils.deepEquals(this.name, other.name) && PigeonMessagesPigeonUtils.deepEquals(this.sizeBytes, other.sizeBytes)
+  }
+
+  override fun hashCode(): Int {
+    var result = javaClass.hashCode()
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.uri)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.name)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.sizeBytes)
+    return result
+  }
+  override fun toString(): String {
+    return "NativePickedDocument(uri=$uri, name=$name, sizeBytes=$sizeBytes)"
+  }
+}
+
+/** Generated class from Pigeon that represents data sent in messages. */
+data class NativeAiResources (
+  val availableMemoryBytes: Long,
+  val charging: Boolean
+)
+ {
+  companion object {
+    fun fromList(pigeonVar_list: List<Any?>): NativeAiResources {
+      val availableMemoryBytes = pigeonVar_list[0] as Long
+      val charging = pigeonVar_list[1] as Boolean
+      return NativeAiResources(availableMemoryBytes, charging)
+    }
+  }
+  fun toList(): List<Any?> {
+    return listOf(
+      availableMemoryBytes,
+      charging,
+    )
+  }
+  override fun equals(other: Any?): Boolean {
+    if (other == null || other.javaClass != javaClass) {
+      return false
+    }
+    if (this === other) {
+      return true
+    }
+    val other = other as NativeAiResources
+    return PigeonMessagesPigeonUtils.deepEquals(this.availableMemoryBytes, other.availableMemoryBytes) && PigeonMessagesPigeonUtils.deepEquals(this.charging, other.charging)
+  }
+
+  override fun hashCode(): Int {
+    var result = javaClass.hashCode()
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.availableMemoryBytes)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.charging)
+    return result
+  }
+  override fun toString(): String {
+    return "NativeAiResources(availableMemoryBytes=$availableMemoryBytes, charging=$charging)"
+  }
+}
+
+/** Generated class from Pigeon that represents data sent in messages. */
+data class NativeAiMediaSamples (
+  val imagePaths: List<String>,
+  val audioPaths: List<String>,
+  val durationSeconds: Double
+)
+ {
+  companion object {
+    fun fromList(pigeonVar_list: List<Any?>): NativeAiMediaSamples {
+      val imagePaths = pigeonVar_list[0] as List<String>
+      val audioPaths = pigeonVar_list[1] as List<String>
+      val durationSeconds = pigeonVar_list[2] as Double
+      return NativeAiMediaSamples(imagePaths, audioPaths, durationSeconds)
+    }
+  }
+  fun toList(): List<Any?> {
+    return listOf(
+      imagePaths,
+      audioPaths,
+      durationSeconds,
+    )
+  }
+  override fun equals(other: Any?): Boolean {
+    if (other == null || other.javaClass != javaClass) {
+      return false
+    }
+    if (this === other) {
+      return true
+    }
+    val other = other as NativeAiMediaSamples
+    return PigeonMessagesPigeonUtils.deepEquals(this.imagePaths, other.imagePaths) && PigeonMessagesPigeonUtils.deepEquals(this.audioPaths, other.audioPaths) && PigeonMessagesPigeonUtils.deepEquals(this.durationSeconds, other.durationSeconds)
+  }
+
+  override fun hashCode(): Int {
+    var result = javaClass.hashCode()
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.imagePaths)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.audioPaths)
+    result = 31 * result + PigeonMessagesPigeonUtils.deepHash(this.durationSeconds)
+    return result
+  }
+  override fun toString(): String {
+    return "NativeAiMediaSamples(imagePaths=$imagePaths, audioPaths=$audioPaths, durationSeconds=$durationSeconds)"
+  }
+}
 private open class PigeonMessagesPigeonCodec : StandardMessageCodec() {
   override fun readValueOfType(type: Byte, buffer: ByteBuffer): Any? {
     return when (type) {
@@ -737,6 +868,21 @@ private open class PigeonMessagesPigeonCodec : StandardMessageCodec() {
           NativeSharePresetPlan.fromList(it)
         }
       }
+      139.toByte() -> {
+        (readValue(buffer) as? List<Any?>)?.let {
+          NativePickedDocument.fromList(it)
+        }
+      }
+      140.toByte() -> {
+        (readValue(buffer) as? List<Any?>)?.let {
+          NativeAiResources.fromList(it)
+        }
+      }
+      141.toByte() -> {
+        (readValue(buffer) as? List<Any?>)?.let {
+          NativeAiMediaSamples.fromList(it)
+        }
+      }
       else -> super.readValueOfType(type, buffer)
     }
   }
@@ -780,6 +926,18 @@ private open class PigeonMessagesPigeonCodec : StandardMessageCodec() {
       }
       is NativeSharePresetPlan -> {
         stream.write(138)
+        writeValue(stream, value.toList())
+      }
+      is NativePickedDocument -> {
+        stream.write(139)
+        writeValue(stream, value.toList())
+      }
+      is NativeAiResources -> {
+        stream.write(140)
+        writeValue(stream, value.toList())
+      }
+      is NativeAiMediaSamples -> {
+        stream.write(141)
         writeValue(stream, value.toList())
       }
       else -> super.writeValue(stream, value)
@@ -984,6 +1142,201 @@ interface NativeCompressionPlannerApi {
               PigeonMessagesPigeonUtils.wrapError(exception)
             }
             reply.reply(wrapped)
+          }
+        } else {
+          channel.setMessageHandler(null)
+        }
+      }
+    }
+  }
+}
+/** Generated interface from Pigeon that represents a handler of messages from Flutter. */
+interface NativeAiFilesApi {
+  suspend fun pickDocuments(modelsOnly: Boolean): List<NativePickedDocument>
+  suspend fun copyDocument(uri: String, destination: String)
+  fun resources(): NativeAiResources
+  suspend fun canReadDocument(uri: String): Boolean
+
+  companion object {
+    /** The codec used by NativeAiFilesApi. */
+    val codec: MessageCodec<Any?> by lazy {
+      PigeonMessagesPigeonCodec()
+    }
+    /** Sets up an instance of `NativeAiFilesApi` to handle messages through the `binaryMessenger`. */
+    @JvmOverloads
+    fun setUp(binaryMessenger: BinaryMessenger, api: NativeAiFilesApi?, messageChannelSuffix: String = "") {
+      val separatedMessageChannelSuffix = if (messageChannelSuffix.isNotEmpty()) ".$messageChannelSuffix" else ""
+      run {
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.kuymo.NativeAiFilesApi.pickDocuments$separatedMessageChannelSuffix", codec)
+        if (api != null) {
+          channel.setMessageHandler { message, reply ->
+            val args = message as List<Any?>
+            val modelsOnlyArg = args[0] as Boolean
+            CoroutineScope(Dispatchers.Main).launch {
+              val wrapped: List<Any?> = try {
+                listOf(api.pickDocuments(modelsOnlyArg))
+              } catch (exception: Throwable) {
+                PigeonMessagesPigeonUtils.wrapError(exception)
+              }
+              reply.reply(wrapped)
+            }
+          }
+        } else {
+          channel.setMessageHandler(null)
+        }
+      }
+      run {
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.kuymo.NativeAiFilesApi.copyDocument$separatedMessageChannelSuffix", codec)
+        if (api != null) {
+          channel.setMessageHandler { message, reply ->
+            val args = message as List<Any?>
+            val uriArg = args[0] as String
+            val destinationArg = args[1] as String
+            CoroutineScope(Dispatchers.Main).launch {
+              val wrapped: List<Any?> = try {
+                api.copyDocument(uriArg, destinationArg)
+                listOf(null)
+              } catch (exception: Throwable) {
+                PigeonMessagesPigeonUtils.wrapError(exception)
+              }
+              reply.reply(wrapped)
+            }
+          }
+        } else {
+          channel.setMessageHandler(null)
+        }
+      }
+      run {
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.kuymo.NativeAiFilesApi.resources$separatedMessageChannelSuffix", codec)
+        if (api != null) {
+          channel.setMessageHandler { _, reply ->
+            val wrapped: List<Any?> = try {
+              listOf(api.resources())
+            } catch (exception: Throwable) {
+              PigeonMessagesPigeonUtils.wrapError(exception)
+            }
+            reply.reply(wrapped)
+          }
+        } else {
+          channel.setMessageHandler(null)
+        }
+      }
+      run {
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.kuymo.NativeAiFilesApi.canReadDocument$separatedMessageChannelSuffix", codec)
+        if (api != null) {
+          channel.setMessageHandler { message, reply ->
+            val args = message as List<Any?>
+            val uriArg = args[0] as String
+            CoroutineScope(Dispatchers.Main).launch {
+              val wrapped: List<Any?> = try {
+                listOf(api.canReadDocument(uriArg))
+              } catch (exception: Throwable) {
+                PigeonMessagesPigeonUtils.wrapError(exception)
+              }
+              reply.reply(wrapped)
+            }
+          }
+        } else {
+          channel.setMessageHandler(null)
+        }
+      }
+    }
+  }
+}
+/** Generated interface from Pigeon that represents a handler of messages from Flutter. */
+interface NativeAiMediaApi {
+  suspend fun cancelSample()
+  suspend fun sample(uri: String, workspace: String, intervalSeconds: Long, maxFrames: Long): NativeAiMediaSamples
+  suspend fun cancelExport()
+  suspend fun exportMedia(uri: String, workspace: String, operation: String, startMs: Long, endMs: Long, reduceNoise: Boolean, trimSilence: Boolean): String
+
+  companion object {
+    /** The codec used by NativeAiMediaApi. */
+    val codec: MessageCodec<Any?> by lazy {
+      PigeonMessagesPigeonCodec()
+    }
+    /** Sets up an instance of `NativeAiMediaApi` to handle messages through the `binaryMessenger`. */
+    @JvmOverloads
+    fun setUp(binaryMessenger: BinaryMessenger, api: NativeAiMediaApi?, messageChannelSuffix: String = "") {
+      val separatedMessageChannelSuffix = if (messageChannelSuffix.isNotEmpty()) ".$messageChannelSuffix" else ""
+      run {
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.kuymo.NativeAiMediaApi.cancelSample$separatedMessageChannelSuffix", codec)
+        if (api != null) {
+          channel.setMessageHandler { _, reply ->
+            CoroutineScope(Dispatchers.Main).launch {
+              val wrapped: List<Any?> = try {
+                api.cancelSample()
+                listOf(null)
+              } catch (exception: Throwable) {
+                PigeonMessagesPigeonUtils.wrapError(exception)
+              }
+              reply.reply(wrapped)
+            }
+          }
+        } else {
+          channel.setMessageHandler(null)
+        }
+      }
+      run {
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.kuymo.NativeAiMediaApi.sample$separatedMessageChannelSuffix", codec)
+        if (api != null) {
+          channel.setMessageHandler { message, reply ->
+            val args = message as List<Any?>
+            val uriArg = args[0] as String
+            val workspaceArg = args[1] as String
+            val intervalSecondsArg = args[2] as Long
+            val maxFramesArg = args[3] as Long
+            CoroutineScope(Dispatchers.Main).launch {
+              val wrapped: List<Any?> = try {
+                listOf(api.sample(uriArg, workspaceArg, intervalSecondsArg, maxFramesArg))
+              } catch (exception: Throwable) {
+                PigeonMessagesPigeonUtils.wrapError(exception)
+              }
+              reply.reply(wrapped)
+            }
+          }
+        } else {
+          channel.setMessageHandler(null)
+        }
+      }
+      run {
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.kuymo.NativeAiMediaApi.cancelExport$separatedMessageChannelSuffix", codec)
+        if (api != null) {
+          channel.setMessageHandler { _, reply ->
+            CoroutineScope(Dispatchers.Main).launch {
+              val wrapped: List<Any?> = try {
+                api.cancelExport()
+                listOf(null)
+              } catch (exception: Throwable) {
+                PigeonMessagesPigeonUtils.wrapError(exception)
+              }
+              reply.reply(wrapped)
+            }
+          }
+        } else {
+          channel.setMessageHandler(null)
+        }
+      }
+      run {
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.kuymo.NativeAiMediaApi.exportMedia$separatedMessageChannelSuffix", codec)
+        if (api != null) {
+          channel.setMessageHandler { message, reply ->
+            val args = message as List<Any?>
+            val uriArg = args[0] as String
+            val workspaceArg = args[1] as String
+            val operationArg = args[2] as String
+            val startMsArg = args[3] as Long
+            val endMsArg = args[4] as Long
+            val reduceNoiseArg = args[5] as Boolean
+            val trimSilenceArg = args[6] as Boolean
+            CoroutineScope(Dispatchers.Main).launch {
+              val wrapped: List<Any?> = try {
+                listOf(api.exportMedia(uriArg, workspaceArg, operationArg, startMsArg, endMsArg, reduceNoiseArg, trimSilenceArg))
+              } catch (exception: Throwable) {
+                PigeonMessagesPigeonUtils.wrapError(exception)
+              }
+              reply.reply(wrapped)
+            }
           }
         } else {
           channel.setMessageHandler(null)

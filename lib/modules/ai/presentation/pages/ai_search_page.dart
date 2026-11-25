@@ -1,12 +1,22 @@
 import 'dart:async';
 
+import 'package:bloc_signals/bloc_signals.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/constants/design_system/tokens/tokens.dart';
+import '../../../../core/constants/kuymo_icons.dart';
+import '../../../../core/di/di.dart';
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/preferences/domain/repositories/settings_repository.dart';
+import '../../../../core/preferences/presentation/settings_page_state.dart';
+import '../../../../core/preferences/presentation/settings_view.dart';
 import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
+import '../../domain/entities/ai_settings.dart';
+import '../../domain/repositories/ai_search_repository.dart';
+import '../cubit/ai_search_cubit.dart';
+import '../widgets/ai_search_workbench.dart';
 
 final class AiSearchPage extends StatefulWidget {
   const AiSearchPage({super.key});
@@ -15,28 +25,79 @@ final class AiSearchPage extends StatefulWidget {
   State<AiSearchPage> createState() => _AiSearchPageState();
 }
 
-final class _AiSearchPageState extends State<AiSearchPage> {
-  bool _semanticIndexing = true;
-  bool _indexWhileCharging = true;
-  bool _isRebuilding = false;
-
-  Future<void> _rebuildIndex() async {
-    final l10n = context.localeKeys;
-    setState(() => _isRebuilding = true);
-    unawaited(AppHaptics.button());
-    await Future<void>.delayed(const Duration(milliseconds: 700));
-    if (!mounted) return;
-    setState(() => _isRebuilding = false);
-    context.toast.showSuccess(context, l10n.semanticIndexRebuilt);
+final class _AiSearchPageState
+    extends SettingsPageState<AiSearchPage, AiSearchSettings> {
+  @override
+  SettingsRepository<AiSearchSettings> get repository =>
+      getIt<SettingsRepository<AiSearchSettings>>();
+  late final AiSearchCubit _search;
+  StreamSubscription<AiSearchState>? _changes;
+  @override
+  void initState() {
+    super.initState();
+    _search = AiSearchCubit(getIt<AiSearchRepository>());
+    unawaited(_search.loadStatistics());
+    _changes = _search.stream.listen((_) {
+      if (mounted) setState(() {});
+    });
   }
 
   @override
-  Widget build(BuildContext context) {
+  void dispose() {
+    unawaited(_changes?.cancel());
+    unawaited(_search.close());
+    super.dispose();
+  }
+
+  bool get _semanticIndexing => settings.semanticIndexing;
+  set _semanticIndexing(bool value) {
+    if (!value) _search.cancel();
+    updateSettings((s) => s.copyWith(semanticIndexing: value));
+  }
+
+  bool get _indexWhileCharging => settings.indexWhileCharging;
+  set _indexWhileCharging(bool value) =>
+      updateSettings((s) => s.copyWith(indexWhileCharging: value));
+  bool get _isRebuilding => _search.stateValue.busy;
+  Future<void> _rebuildIndex() async {
+    await _search.rebuild();
+    await _search.loadStatistics();
+    if (!mounted) return;
+    if (_search.stateValue.failed) {
+      context.toast.showError(context, context.localeKeys.aiOperationFailed);
+    } else {
+      context.toast.showSuccess(
+        context,
+        context.localeKeys.semanticIndexRebuilt,
+      );
+    }
+  }
+
+  @override
+  Widget buildSettings(BuildContext context) {
     final l10n = context.localeKeys;
     final colorScheme = context.colorScheme;
 
     return Scaffold(
-      appBar: SidePageAppBarComponent(title: l10n.semanticSearch),
+      appBar: SidePageAppBarComponent(
+        title: l10n.semanticSearch,
+        actions: [
+          const SettingsResetAction<AiSearchSettings>(),
+          IconButtonComponent(
+            icon: KuymoIcons.aiSearch,
+            tooltip: l10n.semanticSearch,
+            onPressed: () => unawaited(
+              BottomSheetComponent.show<void>(
+                context: context,
+                child: SizedBox(
+                  height: MediaQuery.sizeOf(context).height * 0.75,
+                  child: const AiSearchWorkbench(),
+                ),
+              ).then((_) => _search.loadStatistics()),
+            ),
+          ),
+        ],
+      ),
       body: ListView(
         padding: const EdgeInsets.symmetric(
           horizontal: AppSpacing.large,
@@ -58,14 +119,18 @@ final class _AiSearchPageState extends State<AiSearchPage> {
                       ),
                     ),
                     ChipComponent(
-                      label: l10n.videosIndexed(142),
+                      label: l10n.videosIndexed(_search.stateValue.done),
                       showBorder: false,
                     ),
                   ],
                 ),
                 const Gap(AppSpacing.small),
                 Text(
-                  l10n.embeddingStorage,
+                  l10n.aiEmbeddingStorageUsage(
+                    (_search.stateValue.indexBytes / 1000000).toStringAsFixed(
+                      1,
+                    ),
+                  ),
                   style: context.textTheme.bodySmall?.copyWith(
                     color: colorScheme.onSurfaceVariant,
                   ),
@@ -74,7 +139,7 @@ final class _AiSearchPageState extends State<AiSearchPage> {
                 FilledTonalButtonComponent.icon(
                   icon: LucideIcons.refreshCw,
                   label: _isRebuilding ? l10n.rebuilding : l10n.rebuildIndex,
-                  onPressed: _isRebuilding ? () {} : _rebuildIndex,
+                  onPressed: _isRebuilding ? null : _rebuildIndex,
                 ),
               ],
             ),

@@ -678,6 +678,136 @@ struct NativeSharePresetPlan: Hashable, CustomStringConvertible {
   }
 }
 
+/// Generated class from Pigeon that represents data sent in messages.
+struct NativePickedDocument: Hashable, CustomStringConvertible {
+  var uri: String
+  var name: String
+  var sizeBytes: Int64
+
+
+  // swift-format-ignore: AlwaysUseLowerCamelCase
+  static func fromList(_ pigeonVar_list: [Any?]) -> NativePickedDocument? {
+    let uri = pigeonVar_list[0] as! String
+    let name = pigeonVar_list[1] as! String
+    let sizeBytes = pigeonVar_list[2] as! Int64
+
+    return NativePickedDocument(
+      uri: uri,
+      name: name,
+      sizeBytes: sizeBytes
+    )
+  }
+  func toList() -> [Any?] {
+    return [
+      uri,
+      name,
+      sizeBytes,
+    ]
+  }
+  static func == (lhs: NativePickedDocument, rhs: NativePickedDocument) -> Bool {
+    if Swift.type(of: lhs) != Swift.type(of: rhs) {
+      return false
+    }
+    return PigeonMessagesPigeonInternal.deepEquals(lhs.uri, rhs.uri) && PigeonMessagesPigeonInternal.deepEquals(lhs.name, rhs.name) && PigeonMessagesPigeonInternal.deepEquals(lhs.sizeBytes, rhs.sizeBytes)
+  }
+
+  func hash(into hasher: inout Hasher) {
+    hasher.combine("NativePickedDocument")
+    PigeonMessagesPigeonInternal.deepHash(value: uri, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: name, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: sizeBytes, hasher: &hasher)
+  }
+
+  public var description: String {
+    return "NativePickedDocument(uri: \(String(describing: uri)), name: \(String(describing: name)), sizeBytes: \(String(describing: sizeBytes)))"
+  }
+}
+
+/// Generated class from Pigeon that represents data sent in messages.
+struct NativeAiResources: Hashable, CustomStringConvertible {
+  var availableMemoryBytes: Int64
+  var charging: Bool
+
+
+  // swift-format-ignore: AlwaysUseLowerCamelCase
+  static func fromList(_ pigeonVar_list: [Any?]) -> NativeAiResources? {
+    let availableMemoryBytes = pigeonVar_list[0] as! Int64
+    let charging = pigeonVar_list[1] as! Bool
+
+    return NativeAiResources(
+      availableMemoryBytes: availableMemoryBytes,
+      charging: charging
+    )
+  }
+  func toList() -> [Any?] {
+    return [
+      availableMemoryBytes,
+      charging,
+    ]
+  }
+  static func == (lhs: NativeAiResources, rhs: NativeAiResources) -> Bool {
+    if Swift.type(of: lhs) != Swift.type(of: rhs) {
+      return false
+    }
+    return PigeonMessagesPigeonInternal.deepEquals(lhs.availableMemoryBytes, rhs.availableMemoryBytes) && PigeonMessagesPigeonInternal.deepEquals(lhs.charging, rhs.charging)
+  }
+
+  func hash(into hasher: inout Hasher) {
+    hasher.combine("NativeAiResources")
+    PigeonMessagesPigeonInternal.deepHash(value: availableMemoryBytes, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: charging, hasher: &hasher)
+  }
+
+  public var description: String {
+    return "NativeAiResources(availableMemoryBytes: \(String(describing: availableMemoryBytes)), charging: \(String(describing: charging)))"
+  }
+}
+
+/// Generated class from Pigeon that represents data sent in messages.
+struct NativeAiMediaSamples: Hashable, CustomStringConvertible {
+  var imagePaths: [String]
+  var audioPaths: [String]
+  var durationSeconds: Double
+
+
+  // swift-format-ignore: AlwaysUseLowerCamelCase
+  static func fromList(_ pigeonVar_list: [Any?]) -> NativeAiMediaSamples? {
+    let imagePaths = pigeonVar_list[0] as! [String]
+    let audioPaths = pigeonVar_list[1] as! [String]
+    let durationSeconds = pigeonVar_list[2] as! Double
+
+    return NativeAiMediaSamples(
+      imagePaths: imagePaths,
+      audioPaths: audioPaths,
+      durationSeconds: durationSeconds
+    )
+  }
+  func toList() -> [Any?] {
+    return [
+      imagePaths,
+      audioPaths,
+      durationSeconds,
+    ]
+  }
+  static func == (lhs: NativeAiMediaSamples, rhs: NativeAiMediaSamples) -> Bool {
+    if Swift.type(of: lhs) != Swift.type(of: rhs) {
+      return false
+    }
+    return PigeonMessagesPigeonInternal.deepEquals(lhs.imagePaths, rhs.imagePaths) && PigeonMessagesPigeonInternal.deepEquals(lhs.audioPaths, rhs.audioPaths) && PigeonMessagesPigeonInternal.deepEquals(lhs.durationSeconds, rhs.durationSeconds)
+  }
+
+  func hash(into hasher: inout Hasher) {
+    hasher.combine("NativeAiMediaSamples")
+    PigeonMessagesPigeonInternal.deepHash(value: imagePaths, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: audioPaths, hasher: &hasher)
+    PigeonMessagesPigeonInternal.deepHash(value: durationSeconds, hasher: &hasher)
+  }
+
+  public var description: String {
+    return "NativeAiMediaSamples(imagePaths: \(String(describing: imagePaths)), audioPaths: \(String(describing: audioPaths)), durationSeconds: \(String(describing: durationSeconds)))"
+  }
+}
+
 private class PigeonMessagesPigeonCodecReader: FlutterStandardReader {
   override func readValue(ofType type: UInt8) -> Any? {
     switch type {
@@ -713,6 +843,12 @@ private class PigeonMessagesPigeonCodecReader: FlutterStandardReader {
       return NativeSharePreset.fromList(self.readValue() as! [Any?])
     case 138:
       return NativeSharePresetPlan.fromList(self.readValue() as! [Any?])
+    case 139:
+      return NativePickedDocument.fromList(self.readValue() as! [Any?])
+    case 140:
+      return NativeAiResources.fromList(self.readValue() as! [Any?])
+    case 141:
+      return NativeAiMediaSamples.fromList(self.readValue() as! [Any?])
     default:
       return super.readValue(ofType: type)
     }
@@ -750,6 +886,15 @@ private class PigeonMessagesPigeonCodecWriter: FlutterStandardWriter {
       super.writeValue(value.toList())
     } else if let value = value as? NativeSharePresetPlan {
       super.writeByte(138)
+      super.writeValue(value.toList())
+    } else if let value = value as? NativePickedDocument {
+      super.writeByte(139)
+      super.writeValue(value.toList())
+    } else if let value = value as? NativeAiResources {
+      super.writeByte(140)
+      super.writeValue(value.toList())
+    } else if let value = value as? NativeAiMediaSamples {
+      super.writeByte(141)
       super.writeValue(value.toList())
     } else {
       super.writeValue(value)
@@ -946,6 +1091,176 @@ class NativeCompressionPlannerApiSetup {
       }
     } else {
       resolvePresetChannel.setMessageHandler(nil)
+    }
+  }
+}
+/// Generated protocol from Pigeon that represents a handler of messages from Flutter.
+protocol NativeAiFilesApi {
+  func pickDocuments(modelsOnly: Bool) async throws -> [NativePickedDocument]
+  func copyDocument(uri: String, destination: String) async throws
+  func resources() throws -> NativeAiResources
+  func canReadDocument(uri: String) async throws -> Bool
+}
+
+/// Generated setup class from Pigeon to handle messages through the `binaryMessenger`.
+class NativeAiFilesApiSetup {
+  static var codec: FlutterStandardMessageCodec { PigeonMessagesPigeonCodec.shared }
+  /// Sets up an instance of `NativeAiFilesApi` to handle messages through the `binaryMessenger`.
+  static func setUp(binaryMessenger: FlutterBinaryMessenger, api: NativeAiFilesApi?, messageChannelSuffix: String = "") {
+    let channelSuffix = messageChannelSuffix.count > 0 ? ".\(messageChannelSuffix)" : ""
+    let pickDocumentsChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.kuymo.NativeAiFilesApi.pickDocuments\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
+    if let api = api {
+      pickDocumentsChannel.setMessageHandler { message, reply in
+        let args = message as! [Any?]
+        let modelsOnlyArg = args[0] as! Bool
+        Task { @MainActor in
+          do {
+            let result = try await api.pickDocuments(modelsOnly: modelsOnlyArg)
+            reply(wrapResult(result))
+          } catch {
+            reply(wrapError(error))
+          }
+        }
+      }
+    } else {
+      pickDocumentsChannel.setMessageHandler(nil)
+    }
+    let copyDocumentChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.kuymo.NativeAiFilesApi.copyDocument\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
+    if let api = api {
+      copyDocumentChannel.setMessageHandler { message, reply in
+        let args = message as! [Any?]
+        let uriArg = args[0] as! String
+        let destinationArg = args[1] as! String
+        Task { @MainActor in
+          do {
+            try await api.copyDocument(uri: uriArg, destination: destinationArg)
+            reply(wrapResult(nil))
+          } catch {
+            reply(wrapError(error))
+          }
+        }
+      }
+    } else {
+      copyDocumentChannel.setMessageHandler(nil)
+    }
+    let resourcesChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.kuymo.NativeAiFilesApi.resources\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
+    if let api = api {
+      resourcesChannel.setMessageHandler { _, reply in
+        do {
+          let result = try api.resources()
+          reply(wrapResult(result))
+        } catch {
+          reply(wrapError(error))
+        }
+      }
+    } else {
+      resourcesChannel.setMessageHandler(nil)
+    }
+    let canReadDocumentChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.kuymo.NativeAiFilesApi.canReadDocument\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
+    if let api = api {
+      canReadDocumentChannel.setMessageHandler { message, reply in
+        let args = message as! [Any?]
+        let uriArg = args[0] as! String
+        Task { @MainActor in
+          do {
+            let result = try await api.canReadDocument(uri: uriArg)
+            reply(wrapResult(result))
+          } catch {
+            reply(wrapError(error))
+          }
+        }
+      }
+    } else {
+      canReadDocumentChannel.setMessageHandler(nil)
+    }
+  }
+}
+/// Generated protocol from Pigeon that represents a handler of messages from Flutter.
+protocol NativeAiMediaApi {
+  func cancelSample() async throws
+  func sample(uri: String, workspace: String, intervalSeconds: Int64, maxFrames: Int64) async throws -> NativeAiMediaSamples
+  func cancelExport() async throws
+  func exportMedia(uri: String, workspace: String, operation: String, startMs: Int64, endMs: Int64, reduceNoise: Bool, trimSilence: Bool) async throws -> String
+}
+
+/// Generated setup class from Pigeon to handle messages through the `binaryMessenger`.
+class NativeAiMediaApiSetup {
+  static var codec: FlutterStandardMessageCodec { PigeonMessagesPigeonCodec.shared }
+  /// Sets up an instance of `NativeAiMediaApi` to handle messages through the `binaryMessenger`.
+  static func setUp(binaryMessenger: FlutterBinaryMessenger, api: NativeAiMediaApi?, messageChannelSuffix: String = "") {
+    let channelSuffix = messageChannelSuffix.count > 0 ? ".\(messageChannelSuffix)" : ""
+    let cancelSampleChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.kuymo.NativeAiMediaApi.cancelSample\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
+    if let api = api {
+      cancelSampleChannel.setMessageHandler { _, reply in
+        Task { @MainActor in
+          do {
+            try await api.cancelSample()
+            reply(wrapResult(nil))
+          } catch {
+            reply(wrapError(error))
+          }
+        }
+      }
+    } else {
+      cancelSampleChannel.setMessageHandler(nil)
+    }
+    let sampleChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.kuymo.NativeAiMediaApi.sample\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
+    if let api = api {
+      sampleChannel.setMessageHandler { message, reply in
+        let args = message as! [Any?]
+        let uriArg = args[0] as! String
+        let workspaceArg = args[1] as! String
+        let intervalSecondsArg = args[2] as! Int64
+        let maxFramesArg = args[3] as! Int64
+        Task { @MainActor in
+          do {
+            let result = try await api.sample(uri: uriArg, workspace: workspaceArg, intervalSeconds: intervalSecondsArg, maxFrames: maxFramesArg)
+            reply(wrapResult(result))
+          } catch {
+            reply(wrapError(error))
+          }
+        }
+      }
+    } else {
+      sampleChannel.setMessageHandler(nil)
+    }
+    let cancelExportChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.kuymo.NativeAiMediaApi.cancelExport\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
+    if let api = api {
+      cancelExportChannel.setMessageHandler { _, reply in
+        Task { @MainActor in
+          do {
+            try await api.cancelExport()
+            reply(wrapResult(nil))
+          } catch {
+            reply(wrapError(error))
+          }
+        }
+      }
+    } else {
+      cancelExportChannel.setMessageHandler(nil)
+    }
+    let exportMediaChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.kuymo.NativeAiMediaApi.exportMedia\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
+    if let api = api {
+      exportMediaChannel.setMessageHandler { message, reply in
+        let args = message as! [Any?]
+        let uriArg = args[0] as! String
+        let workspaceArg = args[1] as! String
+        let operationArg = args[2] as! String
+        let startMsArg = args[3] as! Int64
+        let endMsArg = args[4] as! Int64
+        let reduceNoiseArg = args[5] as! Bool
+        let trimSilenceArg = args[6] as! Bool
+        Task { @MainActor in
+          do {
+            let result = try await api.exportMedia(uri: uriArg, workspace: workspaceArg, operation: operationArg, startMs: startMsArg, endMs: endMsArg, reduceNoise: reduceNoiseArg, trimSilence: trimSilenceArg)
+            reply(wrapResult(result))
+          } catch {
+            reply(wrapError(error))
+          }
+        }
+      }
+    } else {
+      exportMediaChannel.setMessageHandler(nil)
     }
   }
 }

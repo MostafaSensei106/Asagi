@@ -12,31 +12,23 @@ class SharedPrefsService implements BasePrefStorageService {
 
   @override
   Future<T?> getData<T>({required String key}) async {
-    try {
-      final value = _prefs.get(key);
-      if (value == null) return null;
-
-      if (value is T) return value as T;
-
-      // Handling String List specifically
-      if (value is List && T == <String>[].runtimeType) {
-        return value.cast<String>() as T;
-      }
-
-      // Handling JSON String decoding for Maps/Objects
-      if (value is String) {
-        try {
-          final decoded = jsonDecode(value);
-          if (decoded is T) return decoded;
-        } catch (_) {
-          // Not a JSON string, proceed to return null safely
-        }
-      }
-
-      return null;
-    } catch (_) {
-      return null;
+    final value = _prefs.get(key);
+    if (value == null) return null;
+    if (value is T) return value as T;
+    if (value is List &&
+        T == <String>[].runtimeType &&
+        value.every((v) => v is String)) {
+      return value.cast<String>() as T;
     }
+    if (value is String) {
+      try {
+        final decoded = jsonDecode(value);
+        if (decoded is T) return decoded;
+      } on FormatException {
+        /* A plain string is a valid preference too. */
+      }
+    }
+    return null;
   }
 
   @override

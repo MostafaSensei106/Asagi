@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -9,8 +10,13 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../core/compression/compression_engine.dart';
 import '../../../../core/compression/domain/models/interrupted_compression_job.dart';
+import '../../../../core/compression/infrastructure/storage/mp4_faststart_optimizer.dart';
 import '../../../../core/compression/infrastructure/storage/mp4_faststart_validator.dart';
 import '../../../../core/native/pigeon_messages.g.dart';
+import '../../../../core/preferences/application/media_work_scheduler.dart';
+import '../../../../core/preferences/domain/entities/privacy_settings.dart';
+import '../../../../core/preferences/domain/repositories/settings_repository.dart';
+import '../../../ai/domain/entities/ai_settings.dart';
 import '../../domain/models/compression_record.dart';
 import '../../domain/models/resumed_compression.dart';
 import '../../domain/models/selected_video.dart';
@@ -19,10 +25,14 @@ import 'encoder_calibration_store.dart';
 
 final class DeviceVideoCompressionRepository
     implements VideoCompressionRepository {
-  DeviceVideoCompressionRepository({ImagePicker? picker})
-    : _picker = picker ?? ImagePicker(),
-      _encoder = PlatformVideoEncoder(NativeMediaApi()),
-      _planner = PlatformCompressionPlanner(NativeCompressionPlannerApi()) {
+  DeviceVideoCompressionRepository({
+    ImagePicker? picker,
+    this._privacy,
+    this._scheduler,
+    this._aiFeatures,
+  }) : _picker = picker ?? ImagePicker(),
+       _encoder = PlatformVideoEncoder(NativeMediaApi()),
+       _planner = PlatformCompressionPlanner(NativeCompressionPlannerApi()) {
     _engine = CompressionEngine(
       planner: _planner,
       encoder: _encoder,
@@ -31,8 +41,13 @@ final class DeviceVideoCompressionRepository
   }
 
   static const _historyKey = 'compression_history_v1';
-  static const _defaultTargetKey = 'compression_default_target_mb_v1';
-  static const _preferencesKey = 'compression_preferences_v1';
+  final SettingsRepository<AiFeatureSettings>? _aiFeatures;
+  final SettingsRepository<PrivacySettings>? _privacy;
+  int _operationGeneration = 0;
+  bool _preprocessing = false;
+  bool _compressing = false;
+  Completer<void>? _operationCancellation;
+  final MediaWorkScheduler? _scheduler;
   final ImagePicker _picker;
   final PlatformVideoEncoder _encoder;
   final CompressionPlanner _planner;
@@ -63,6 +78,80 @@ final class DeviceVideoCompressionRepository
     double targetMb,
     CompressionPreferences preferences, {
     SharePresetId? presetId,
+    void Function(CompressionStep)? onStep,
+    void Function(double, double)? onAttemptRange,
+  }) async {
+    _ensureSupported();
+    if (_compressing) throw StateError('E_BUSY');
+    _compressing = true;
+    final generation = ++_operationGeneration;
+    final cancellation = Completer<void>();
+    _operationCancellation = cancellation;
+    MediaWorkLease? lease;
+    Directory? preparation;
+    try {
+      lease = await _scheduler?.acquire(priority: 0, cancelled: cancellation.future);
+      if (generation != _operationGeneration) throw StateError('E_CANCELLED');
+      final privacy = await _privacy?.load();
+      final features = await _aiFeatures?.load();
+      var source = video;
+      if (features != null &&
+          (features.noiseReduction || features.silentTrim)) {
+        onStep?.call(CompressionStep.preparing);
+        final cache = await getTemporaryDirectory();
+        final root = await Directory('${cache.path}/ai_preprocess')
+            .create(recursive: true);
+        preparation = await root.createTemp('job_');
+        _preprocessing = true;
+        final path = await NativeAiMediaApi().exportMedia(
+          Uri.file(video.path).toString(),
+          preparation.path,
+          'trim',
+          0,
+          0,
+          features.noiseReduction,
+          features.silentTrim,
+        );
+        _preprocessing = false;
+        source = SelectedVideo(
+          path: path,
+          name: video.name,
+          metadata: await _encoder.inspect(path),
+        );
+      }
+      if (generation != _operationGeneration) throw StateError('E_CANCELLED');
+      return await _compress(
+        source,
+        targetMb,
+        preferences,
+        presetId: presetId,
+        onStep: onStep,
+        onAttemptRange: onAttemptRange,
+        originalVideo: video,
+        preserveMetadata: privacy?.preserveMetadata ?? true,
+      );
+    } finally {
+      _preprocessing = false;
+      try {
+        if (preparation != null && await preparation.exists()) {
+          await preparation.delete(recursive: true);
+        }
+      } finally {
+        _compressing = false;
+        _operationCancellation = null;
+        if (!cancellation.isCompleted) cancellation.complete();
+        lease?.release();
+      }
+    }
+  }
+
+  Future<CompressionOutput> _compress(
+    SelectedVideo video,
+    double targetMb,
+    CompressionPreferences preferences, {
+    SharePresetId? presetId,
+    bool preserveMetadata = true,
+    SelectedVideo? originalVideo,
     void Function(CompressionStep step)? onStep,
     void Function(double start, double end)? onAttemptRange,
   }) async {
@@ -155,6 +244,8 @@ final class DeviceVideoCompressionRepository
       }
     }
     final verifiedOutput = output!;
+    preserveMetadata =
+        preserveMetadata && (_privacy?.current.preserveMetadata ?? true);
     onStep?.call(CompressionStep.saving);
 
     try {
@@ -172,6 +263,7 @@ final class DeviceVideoCompressionRepository
       final sourceExtension = video.path.split('.').last.toLowerCase();
       final extension =
           verifiedOutput.attempts == 0 &&
+              preserveMetadata &&
               RegExp(r'^[a-z0-9]{1,5}$').hasMatch(sourceExtension)
           ? sourceExtension
           : 'mp4';
@@ -179,7 +271,31 @@ final class DeviceVideoCompressionRepository
           '${savedDirectory.path}/kuymo_${DateTime.now().microsecondsSinceEpoch}.$extension';
       late final File saved;
       try {
-        saved = await File(verifiedOutput.path).copy(savedPath);
+        if (preserveMetadata) {
+          saved = await File(verifiedOutput.path).copy(savedPath);
+        } else {
+          final directory = await Directory('${cache.path}/metadata_cleanup')
+              .createTemp('job_');
+          try {
+            final stripped = await NativeAiMediaApi().exportMedia(
+              Uri.file(verifiedOutput.path).toString(),
+              directory.path,
+              'stripMetadata',
+              0,
+              0,
+              false,
+              false,
+            );
+            saved = await File(stripped).copy(savedPath);
+            await const Mp4FaststartOptimizer().optimize(savedPath);
+            if (await saved.length() > acceptedMaxBytes) {
+              await saved.delete();
+              throw StateError('E_TARGET_EXCEEDED');
+            }
+          } finally {
+            await directory.delete(recursive: true);
+          }
+        }
       } catch (_) {
         final partial = File(savedPath);
         if (await partial.exists()) await partial.delete();
@@ -191,7 +307,7 @@ final class DeviceVideoCompressionRepository
         sourceName: video.name,
         bytes: await saved.length(),
         createdAt: DateTime.now(),
-        originalBytes: video.metadata.fileSizeBytes,
+        originalBytes: (originalVideo ?? video).metadata.fileSizeBytes,
         targetMb: targetMb,
         attempts: verifiedOutput.attempts,
       );
@@ -263,47 +379,6 @@ final class DeviceVideoCompressionRepository
   ) async {
     _ensureSupported();
     return _planner.resolvePreset(video.metadata, id);
-  }
-
-  @override
-  Future<CompressionPreferences> loadPreferences() async {
-    final prefs = await SharedPreferences.getInstance();
-    final raw = prefs.getString(_preferencesKey);
-    if (raw == null) return const CompressionPreferences();
-    try {
-      final json = jsonDecode(raw) as Map<String, dynamic>;
-      final result = CompressionPreferences(
-        maxShortEdge: json['maxShortEdge'] as int?,
-        maxFrameRate: json['maxFrameRate'] as int? ?? 30,
-        audioBitrateKbps: json['audioBitrateKbps'] as int?,
-        videoBitrateCeilingKbps: json['videoBitrateCeilingKbps'] as int?,
-        hdrMode: json['hdrMode'] == 'preserve'
-            ? HdrMode.preserve
-            : HdrMode.toneMapToSdr,
-        safetyMargin: (json['safetyMargin'] as num?)?.toDouble(),
-      );
-      result.validate();
-      return result;
-    } catch (_) {
-      return const CompressionPreferences();
-    }
-  }
-
-  @override
-  Future<void> savePreferences(CompressionPreferences preferences) async {
-    preferences.validate();
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(
-      _preferencesKey,
-      jsonEncode({
-        'maxShortEdge': preferences.maxShortEdge,
-        'maxFrameRate': preferences.maxFrameRate,
-        'audioBitrateKbps': preferences.audioBitrateKbps,
-        'videoBitrateCeilingKbps': preferences.videoBitrateCeilingKbps,
-        'hdrMode': preferences.hdrMode.name,
-        'safetyMargin': preferences.safetyMargin,
-      }),
-    );
   }
 
   Future<void> _appendHistory(CompressionRecord record) async {
@@ -412,23 +487,18 @@ final class DeviceVideoCompressionRepository
   }
 
   @override
-  Future<double> defaultTargetMb() async {
-    final prefs = await SharedPreferences.getInstance();
-    return prefs.getDouble(_defaultTargetKey) ?? 16;
-  }
-
-  @override
-  Future<void> setDefaultTargetMb(double targetMb) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setDouble(_defaultTargetKey, targetMb);
-  }
-
-  @override
   Future<void> pause() => _engine.pause();
   @override
   Future<void> resume() => _engine.resume();
   @override
-  Future<void> cancel() => _engine.cancel();
+  Future<void> cancel() async {
+    ++_operationGeneration;
+    final cancellation = _operationCancellation;
+    if (cancellation != null && !cancellation.isCompleted) cancellation.complete();
+    if (_preprocessing) await NativeAiMediaApi().cancelExport();
+    await _engine.cancel();
+  }
+
   @override
   Future<void> saveToGallery(String path) => Gal.putVideo(path);
 }

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$LocalizationState {
 
- String get langCode;
+ String get langCode; bool get failed;
 /// Create a copy of LocalizationState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -27,20 +27,20 @@ $LocalizationStateCopyWith<LocalizationState> get copyWith => _$LocalizationStat
 @override
 bool operator ==(Object other) {
   final _this = this as LocalizationState;
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is LocalizationState&&(identical(other.langCode, _this.langCode) || other.langCode == _this.langCode));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LocalizationState&&(identical(other.langCode, _this.langCode) || other.langCode == _this.langCode)&&(identical(other.failed, _this.failed) || other.failed == _this.failed));
 }
 
 
 @override
 int get hashCode {
   final _this = this as LocalizationState;
-  return Object.hash(runtimeType,_this.langCode);
+  return Object.hash(runtimeType,_this.langCode,_this.failed);
 }
 
 @override
 String toString() {
   final _this = this as LocalizationState;
-  return 'LocalizationState(langCode: ${_this.langCode})';
+  return 'LocalizationState(langCode: ${_this.langCode}, failed: ${_this.failed})';
 }
 
 
@@ -51,7 +51,7 @@ abstract mixin class $LocalizationStateCopyWith<$Res>  {
   factory $LocalizationStateCopyWith(LocalizationState value, $Res Function(LocalizationState) _then) = _$LocalizationStateCopyWithImpl;
 @useResult
 $Res call({
- String langCode
+ String langCode, bool failed
 });
 
 
@@ -68,10 +68,11 @@ class _$LocalizationStateCopyWithImpl<$Res>
 
 /// Create a copy of LocalizationState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? langCode = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? langCode = null,Object? failed = null,}) {
   return _then(LocalizationState(
 langCode: null == langCode ? _self.langCode : langCode // ignore: cast_nullable_to_non_nullable
-as String,
+as String,failed: null == failed ? _self.failed : failed // ignore: cast_nullable_to_non_nullable
+as bool,
   ));
 }
 
@@ -153,10 +154,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String langCode)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String langCode,  bool failed)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _LocalizationState() when $default != null:
-return $default(_that.langCode);case _:
+return $default(_that.langCode,_that.failed);case _:
   return orElse();
 
 }
@@ -174,10 +175,10 @@ return $default(_that.langCode);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String langCode)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String langCode,  bool failed)  $default,) {final _that = this;
 switch (_that) {
 case _LocalizationState():
-return $default(_that.langCode);}
+return $default(_that.langCode,_that.failed);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -191,10 +192,10 @@ return $default(_that.langCode);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String langCode)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String langCode,  bool failed)?  $default,) {final _that = this;
 switch (_that) {
 case _LocalizationState() when $default != null:
-return $default(_that.langCode);case _:
+return $default(_that.langCode,_that.failed);case _:
   return null;
 
 }
@@ -206,10 +207,11 @@ return $default(_that.langCode);case _:
 
 
 class _LocalizationState implements LocalizationState {
-  const _LocalizationState({required this.langCode});
+  const _LocalizationState({required this.langCode, this.failed = false});
   
 
 @override final  String langCode;
+@override@JsonKey() final  bool failed;
 
 /// Create a copy of LocalizationState
 /// with the given fields replaced by the non-null parameter values.
@@ -221,18 +223,18 @@ _$LocalizationStateCopyWith<_LocalizationState> get copyWith => __$LocalizationS
 
 @override
 bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType&&other is _LocalizationState&&(identical(other.langCode, langCode) || other.langCode == langCode));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _LocalizationState&&(identical(other.langCode, langCode) || other.langCode == langCode)&&(identical(other.failed, failed) || other.failed == failed));
 }
 
 
 @override
 int get hashCode {
-    return Object.hash(runtimeType,langCode);
+    return Object.hash(runtimeType,langCode,failed);
 }
 
 @override
 String toString() {
-    return 'LocalizationState(langCode: $langCode)';
+    return 'LocalizationState(langCode: $langCode, failed: $failed)';
 }
 
 
@@ -243,7 +245,7 @@ abstract mixin class _$LocalizationStateCopyWith<$Res> implements $LocalizationS
   factory _$LocalizationStateCopyWith(_LocalizationState value, $Res Function(_LocalizationState) _then) = __$LocalizationStateCopyWithImpl;
 @override @useResult
 $Res call({
- String langCode
+ String langCode, bool failed
 });
 
 
@@ -260,10 +262,11 @@ class __$LocalizationStateCopyWithImpl<$Res>
 
 /// Create a copy of LocalizationState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? langCode = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? langCode = null,Object? failed = null,}) {
   return _then(_LocalizationState(
 langCode: null == langCode ? _self.langCode : langCode // ignore: cast_nullable_to_non_nullable
-as String,
+as String,failed: null == failed ? _self.failed : failed // ignore: cast_nullable_to_non_nullable
+as bool,
   ));
 }
 

@@ -4128,6 +4128,180 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Kuymo AI'**
   String get kuymoAi;
+
+  /// No description provided for @settingsSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load or save settings. Your last saved values are retained.'**
+  String get settingsSaveFailed;
+
+  /// No description provided for @settingsRecovered.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved settings could not be read. Safe defaults are being used.'**
+  String get settingsRecovered;
+
+  /// No description provided for @resetSettingsGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset these settings'**
+  String get resetSettingsGroup;
+
+  /// No description provided for @settingsApplyFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not apply settings to the service. Tap to retry.'**
+  String get settingsApplyFailed;
+
+  /// No description provided for @saveAiChatHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Save AI conversations on this device'**
+  String get saveAiChatHistory;
+
+  /// No description provided for @permissionGranted.
+  ///
+  /// In en, this message translates to:
+  /// **'Granted'**
+  String get permissionGranted;
+
+  /// No description provided for @permissionLimited.
+  ///
+  /// In en, this message translates to:
+  /// **'Limited access'**
+  String get permissionLimited;
+
+  /// No description provided for @permissionDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Not granted. Tap to request access.'**
+  String get permissionDenied;
+
+  /// No description provided for @permissionPermanentlyDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Denied. Tap to open device settings.'**
+  String get permissionPermanentlyDenied;
+
+  /// No description provided for @permissionRestricted.
+  ///
+  /// In en, this message translates to:
+  /// **'Restricted by the device'**
+  String get permissionRestricted;
+
+  /// No description provided for @permissionUnsupported.
+  ///
+  /// In en, this message translates to:
+  /// **'Unavailable on this platform'**
+  String get permissionUnsupported;
+
+  /// No description provided for @selectedFilesAccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Kuymo uses the system file picker. It accesses only files you choose; it does not require access to your entire media library.'**
+  String get selectedFilesAccess;
+
+  /// No description provided for @aiOperationFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not finish. Check the selected model, device support, storage and memory budget. Connect power if indexing requires charging, then retry.'**
+  String get aiOperationFailed;
+
+  /// No description provided for @noAiModelsAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No compatible models are available.'**
+  String get noAiModelsAvailable;
+
+  /// No description provided for @aiMessageHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask about your videos'**
+  String get aiMessageHint;
+
+  /// No description provided for @aiBenchmarkElapsed.
+  ///
+  /// In en, this message translates to:
+  /// **'Benchmark finished in {milliseconds} ms'**
+  String aiBenchmarkElapsed(int milliseconds);
+
+  /// No description provided for @aiSend.
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get aiSend;
+
+  /// No description provided for @aiDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get aiDelete;
+
+  /// No description provided for @aiDownload.
+  ///
+  /// In en, this message translates to:
+  /// **'Download'**
+  String get aiDownload;
+
+  /// No description provided for @aiSearch.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get aiSearch;
+
+  /// No description provided for @aiSelectedDocuments.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected files: {count}'**
+  String aiSelectedDocuments(int count);
+
+  /// No description provided for @aiToolCreatesCopy.
+  ///
+  /// In en, this message translates to:
+  /// **'Tools create a new file and keep your original. Quiet audio reduction and silence trimming apply when enabled.'**
+  String get aiToolCreatesCopy;
+
+  /// No description provided for @aiTrimStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Start time (seconds)'**
+  String get aiTrimStart;
+
+  /// No description provided for @aiTrimEnd.
+  ///
+  /// In en, this message translates to:
+  /// **'End time (seconds, empty for full length)'**
+  String get aiTrimEnd;
+
+  /// No description provided for @aiOutputSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved on this device: {path}'**
+  String aiOutputSaved(String path);
+
+  /// No description provided for @aiChatWelcome.
+  ///
+  /// In en, this message translates to:
+  /// **'Your assistant runs on this device. Choose a model in AI settings to get started.'**
+  String get aiChatWelcome;
+
+  /// No description provided for @backendGpu.
+  ///
+  /// In en, this message translates to:
+  /// **'GPU'**
+  String get backendGpu;
+
+  /// No description provided for @aiAndroidOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Local AI features are currently available on Android.'**
+  String get aiAndroidOnly;
+
+  /// No description provided for @aiEmbeddingStorageUsage.
+  ///
+  /// In en, this message translates to:
+  /// **'Index storage: {megabytes} MB'**
+  String aiEmbeddingStorageUsage(String megabytes);
 }
 
 class _AppLocalizationsDelegate

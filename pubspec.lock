@@ -1182,7 +1182,7 @@ packages:
     source: hosted
     version: "1.0.1"
   litertlm_dart:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: litertlm_dart
       sha256: e6f95167e44c1bd042f4e281304b71be7dfd80d6cf0d4b86fe4c73caef0cb464
