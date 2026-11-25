@@ -66,8 +66,9 @@ them, run `python3 scripts/vendor_fonts.py`; this is not a build/network hook.
 Google Fonts OFL files and existing font licenses are retained. Visitors make no
 Google Fonts requests. The brush font is subset to the decorative 余白 phrase.
 
-`data/product.ts` is the single launch-state switch. Only set it to live after
-verifying the official Play listing. The URL validator requires the Kuymo app
+`data/product.ts` contains the single editable `playStoreUrl` field. Paste the
+verified official listing URL there when ready; leave it empty for the explicit
+Coming soon button. The URL validator requires the Kuymo app
 ID. Before that, the primary action explores screenshots and the secondary
 path follows releases. No email signup, tracking, fake ratings or pricing tiers
 are introduced.
@@ -76,6 +77,7 @@ are introduced.
 
 - [Design-system guide](docs/design-system.md)
 - [Capability/claim audit](docs/capabilities-audit.md)
+- [إضافة الصور ورابط Google Play](docs/screenshot-editing.md)
 - [Marketing context](docs/marketing/product-marketing-context.md)
 - [12-month marketing plan — draft](docs/marketing/final_plan.md)
 - [Ethical choice architecture](docs/marketing/persuasion.md)

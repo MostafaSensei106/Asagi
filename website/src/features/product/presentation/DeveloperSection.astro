@@ -29,7 +29,11 @@ const { copy } = content(locale);
         href={full ? product.profile : withBase(localePath(locale, 'developer'))}
         variant="outline"
       >
-        {full ? 'GitHub' : site.developer}
+        {full
+          ? locale === 'ar'
+            ? 'صفحة MostafaSensei على GitHub'
+            : 'MostafaSensei on GitHub'
+          : site.developer}
       </ActionLink>
       <a href={product.issues} class="inline-link">
         {site.support}

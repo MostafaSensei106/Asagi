@@ -63,9 +63,6 @@ const description = selected
         <ScreenshotGallery locale={locale} compact={section !== 'screenshots'} />
       )}
       {['', 'about'].includes(section) && <WorkflowSection locale={locale} />}
-      {['', 'about', 'developer'].includes(section) && (
-        <DeveloperSection locale={locale} full={section === 'developer'} />
-      )}
     </>
   )}
   {['', 'features'].includes(section) && <ContentCollection locale={locale} kind="capabilities" />}
@@ -74,6 +71,9 @@ const description = selected
   )}
   {['about', 'features', 'features/on-device'].includes(section) && (
     <ContentCollection locale={locale} kind="formats" />
+  )}
+  {['', 'about', 'developer'].includes(section) && (
+    <DeveloperSection locale={locale} full={section === 'developer'} />
   )}
   {section !== 'screenshots' && <FaqSection locale={locale} />}
   <LaunchSection locale={locale} full={section === 'download'} />

@@ -99,7 +99,7 @@ for (const locale of locales) {
     await page.reload();
     await expect(page.locator('html')).toHaveClass(/dark/);
     await page.locator('[data-gallery-filter="compression"]').click();
-    await expect(page.locator('[data-gallery-item]:visible')).toHaveCount(7);
+    await expect(page.locator('[data-gallery-item]:visible')).toHaveCount(6);
     await page.locator('[data-gallery-filter="all"]').click();
     await expect(page.locator('[data-gallery-item]:visible')).toHaveCount(40);
     await expect(page.locator('[data-gallery-count]')).toHaveText('40 / 40');
@@ -242,4 +242,24 @@ test('missing pages have descriptive recovery links and no Astro boilerplate', a
   expect(response?.status()).toBe(404);
   await expect(page.getByRole('link', { name: 'Return to Kuymo home', exact: true })).toBeVisible();
   await expect(page.locator('a[href*="docs.astro.build"]')).toHaveCount(0);
+});
+
+test('public links have meaningful names rather than bare generic link text', async ({ page }) => {
+  for (const route of ['', 'developer/', 'download/', 'missing-page/']) {
+    await page.goto(path('en', route));
+    const vague = await page.locator('a').evaluateAll((links) =>
+      links
+        .filter((link) => {
+          const label = (
+            link.getAttribute('aria-label') ||
+            link.textContent ||
+            link.querySelector('img')?.alt ||
+            ''
+          ).trim();
+          return !label || /^(click here|learn more|read more|here|more|link|↗)$/i.test(label);
+        })
+        .map((link) => link.outerHTML),
+    );
+    expect(vague).toEqual([]);
+  }
 });

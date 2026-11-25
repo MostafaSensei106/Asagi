@@ -44,6 +44,8 @@ for (const [name, route, width, theme] of captures) {
   await page.evaluate(() => document.fonts.ready);
   await page.evaluate(() => scrollTo(0, 0));
   await page.screenshot({ path: `${output}/${name}.png`, fullPage: true });
+  if (name === 'home-en-desktop' || name === 'home-ar-mobile')
+    await page.locator('.hero').screenshot({ path: `${output}/${name}-hero.png` });
 }
 const measurements = [];
 for (const route of ['', 'ar/']) {

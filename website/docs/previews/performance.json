@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-25T22:52:07.087Z",
+  "date": "2026-11-25T23:11:12.456Z",
   "conditions": {
     "origin": "http://127.0.0.1:4388",
     "path": "/",
@@ -14,57 +14,135 @@
     {
       "locale": "en",
       "run": 1,
-      "lcp": 964,
-      "cls": 0.020831834000369462,
+      "lcp": 1264,
+      "cls": 0.01925326400590488,
+      "shifts": [
+        {
+          "value": 0.018670482990434795,
+          "time": 1819.3999999994412,
+          "sources": [
+            "hero-stage",
+            "hero-actions",
+            "status-badge"
+          ]
+        },
+        {
+          "value": 0.000006705996997095581,
+          "time": 1875.7999999998137,
+          "sources": [
+            {}
+          ]
+        },
+        {
+          "value": 0.000576075018472988,
+          "time": 2029.0999999996275,
+          "sources": [
+            "#text"
+          ]
+        }
+      ],
       "fonts": "loaded",
-      "transferred": 1388760
+      "transferred": 291189
     },
     {
       "locale": "en",
       "run": 2,
-      "lcp": 960,
-      "cls": 0.020831834000369462,
+      "lcp": 1252,
+      "cls": 0.01925326400590488,
+      "shifts": [
+        {
+          "value": 0.018670482990434795,
+          "time": 1803.7999999998137,
+          "sources": [
+            "hero-stage",
+            "hero-actions",
+            "status-badge"
+          ]
+        },
+        {
+          "value": 0.000006705996997095581,
+          "time": 1869.0999999996275,
+          "sources": [
+            {}
+          ]
+        },
+        {
+          "value": 0.000576075018472988,
+          "time": 2022.2999999998137,
+          "sources": [
+            "#text"
+          ]
+        }
+      ],
       "fonts": "loaded",
-      "transferred": 1388760
+      "transferred": 291189
     },
     {
       "locale": "en",
       "run": 3,
-      "lcp": 960,
-      "cls": 0.020831834000369462,
+      "lcp": 1352,
+      "cls": 0.01925326400590488,
+      "shifts": [
+        {
+          "value": 0.018670482990434795,
+          "time": 1811.2999999998137,
+          "sources": [
+            "hero-stage",
+            "hero-actions",
+            "status-badge"
+          ]
+        },
+        {
+          "value": 0.000006705996997095581,
+          "time": 1880.7999999998137,
+          "sources": [
+            {}
+          ]
+        },
+        {
+          "value": 0.000576075018472988,
+          "time": 2033.2999999998137,
+          "sources": [
+            "#text"
+          ]
+        }
+      ],
       "fonts": "loaded",
-      "transferred": 1388760
+      "transferred": 291189
     },
     {
       "locale": "ar",
       "run": 1,
-      "lcp": 968,
-      "cls": 0.16278055647191592,
+      "lcp": 1912,
+      "cls": 0,
+      "shifts": [],
       "fonts": "loaded",
-      "transferred": 479032
+      "transferred": 422551
     },
     {
       "locale": "ar",
       "run": 2,
-      "lcp": 940,
-      "cls": 0.16278055647191592,
+      "lcp": 1896,
+      "cls": 0,
+      "shifts": [],
       "fonts": "loaded",
-      "transferred": 479032
+      "transferred": 422551
     },
     {
       "locale": "ar",
       "run": 3,
-      "lcp": 940,
-      "cls": 0.16278055647191592,
+      "lcp": 1912,
+      "cls": 0,
+      "shifts": [],
       "fonts": "loaded",
-      "transferred": 479032
+      "transferred": 422551
     }
   ],
   "scripts": [
     {
-      "name": "ProductLayout.astro_astro_type_script_index_0_lang.DIQxGzJg.js",
-      "bytes": 16609,
-      "gzipBytes": 6310
+      "name": "ProductLayout.astro_astro_type_script_index_0_lang.B8tN5G8_.js",
+      "bytes": 16686,
+      "gzipBytes": 6332
     }
   ],
   "limitations": "Local browser-lab LCP/CLS, not field Core Web Vitals. No field INP is claimed. Layout shifts summed without recent input; inspect traces for further attribution."

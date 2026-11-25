@@ -4,3 +4,8 @@ node_modules/
 pnpm-lock.yaml
 playwright-report/
 test-results/
+
+# Generated browser measurements; preserve the review script output.
+docs/previews/*.json
+# Astro rewrites this JSON layout while syncing generated types.
+tsconfig.json

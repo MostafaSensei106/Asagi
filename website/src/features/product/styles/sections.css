@@ -709,3 +709,11 @@
   width: 200px;
   height: auto;
 }
+
+.hero-stage > .brush-mark {
+  filter: brightness(0) invert(1);
+}
+.dark .launch-brush,
+.dark .developer-stamp .brush-mark {
+  filter: brightness(0) invert(1);
+}

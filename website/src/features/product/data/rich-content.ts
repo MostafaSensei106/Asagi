@@ -97,7 +97,7 @@ const en: RichContent = {
   formats: [
     {
       title: 'Compatible output first',
-      body: 'The documented re-encoding path produces H.264 video with AAC audio in an MP4 container. Audio can be removed. Do not assume the app exports every container or codec mentioned in an older specification.',
+      body: 'The documented standard SDR path produces H.264 video with AAC audio in an MP4 container. HDR preservation can require different codec support. Audio can be removed. Do not assume the app exports every container or codec mentioned in an older specification.',
     },
     {
       title: 'Source and device matter',
@@ -263,7 +263,7 @@ const ar: RichContent = {
   formats: [
     {
       title: 'التوافق أولًا',
-      body: 'مسار إعادة الترميز الموثق ينتج فيديو H.264 وصوت AAC داخل ملف MP4، مع إمكانية حذف الصوت. لا يعني وجود صيغة أو ترميز في مواصفة قديمة أنه متاح حاليًا للتصدير.',
+      body: 'مسار SDR الافتراضي الموثق ينتج فيديو H.264 وصوت AAC داخل ملف MP4؛ وقد يحتاج الحفاظ على HDR دعمًا لترميز مختلف، مع إمكانية حذف الصوت. لا يعني وجود صيغة أو ترميز في مواصفة قديمة أنه متاح حاليًا للتصدير.',
     },
     {
       title: 'المصدر والجهاز يصنعان الفرق',

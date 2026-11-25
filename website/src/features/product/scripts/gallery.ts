@@ -55,6 +55,11 @@ export function initGallery(): void {
     image.alt = label;
     image.src = link.href;
     dialog.dataset.loading = 'true';
+    dialog
+      .querySelectorAll<HTMLButtonElement>('[data-dialog-previous], [data-dialog-next]')
+      .forEach((button) => {
+        button.disabled = links.length < 2;
+      });
   };
   const move = (step: number) => {
     index = (index + step + links.length) % links.length;

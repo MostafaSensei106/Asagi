@@ -63,6 +63,7 @@ for (const app of new Set(legalDocuments.map((document) => document.app))) {
 }
 
 export default defineConfig({
+  devToolbar: { enabled: false },
   site,
   base,
   output: 'static',
