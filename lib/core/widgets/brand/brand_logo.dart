@@ -1,20 +1,16 @@
 import 'package:material_ui/material_ui.dart';
 
-import '../../constants/app_metadata.dart';
-import '../../constants/assets_images.dart';
 import '../../constants/design_system/tokens/radii.dart';
 import '../../extensions/extensions.dart';
+import 'brand_mark.dart';
 
-/// The community's launcher icon, rendered as the in-app brand mark.
-///
-/// Used by the startup splash and the auth hero so the first thing a member
-/// sees is the actual GDG Benha logo instead of a generic glyph.
+/// Theme-aware tile for the approved Kuymo pocket mark.
 final class BrandLogo extends StatelessWidget {
   const BrandLogo({this.size = 88, this.elevated = true, super.key});
 
   final double size;
 
-  /// Adds the soft shadow used when the logo floats over the brand gradient.
+  /// Adds a subtle shadow when the logo floats over a surface.
   final bool elevated;
 
   @override
@@ -26,14 +22,19 @@ final class BrandLogo extends StatelessWidget {
       height: size,
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
-        color: scheme.surface,
+        color: scheme.primaryContainer,
         borderRadius: BorderRadius.circular(AppRadii.large),
+        boxShadow: elevated
+            ? [
+                BoxShadow(
+                  color: scheme.shadow.withValues(alpha: 0.08),
+                  blurRadius: 16,
+                  offset: const Offset(0, 4),
+                ),
+              ]
+            : null,
       ),
-      child: Image.asset(
-        AssetsImages.applogo,
-        fit: BoxFit.cover,
-        semanticLabel: AppMetadata.name,
-      ),
+      child: BrandMark(size: size, color: scheme.onPrimaryContainer),
     );
   }
 }

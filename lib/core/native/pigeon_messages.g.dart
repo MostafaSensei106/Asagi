@@ -795,7 +795,7 @@ class NativeMediaApi {
 
   Future<NativeVideoMetadata> extractVideoMetadata(String inputPath) async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.asagi.NativeMediaApi.extractVideoMetadata$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.kuymo.NativeMediaApi.extractVideoMetadata$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -815,7 +815,7 @@ class NativeMediaApi {
 
   Future<void> cancelEncoding() async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.asagi.NativeMediaApi.cancelEncoding$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.kuymo.NativeMediaApi.cancelEncoding$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -832,7 +832,7 @@ class NativeMediaApi {
 
   Future<void> pauseEncoding() async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.asagi.NativeMediaApi.pauseEncoding$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.kuymo.NativeMediaApi.pauseEncoding$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -849,7 +849,7 @@ class NativeMediaApi {
 
   Future<void> resumeEncoding() async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.asagi.NativeMediaApi.resumeEncoding$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.kuymo.NativeMediaApi.resumeEncoding$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -866,7 +866,7 @@ class NativeMediaApi {
 
   Future<bool> startHardwareEncoding(NativeCompressRequest request) async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.asagi.NativeMediaApi.startHardwareEncoding$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.kuymo.NativeMediaApi.startHardwareEncoding$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -909,7 +909,7 @@ class NativeCompressionPlannerApi {
     NativePlanningPreferences preferences,
   ) async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.asagi.NativeCompressionPlannerApi.plan$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.kuymo.NativeCompressionPlannerApi.plan$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -934,7 +934,7 @@ class NativeCompressionPlannerApi {
     int attempt,
   ) async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.asagi.NativeCompressionPlannerApi.verify$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.kuymo.NativeCompressionPlannerApi.verify$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -954,7 +954,7 @@ class NativeCompressionPlannerApi {
 
   Future<List<NativeSharePreset>> presets() async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.asagi.NativeCompressionPlannerApi.presets$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.kuymo.NativeCompressionPlannerApi.presets$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -975,7 +975,7 @@ class NativeCompressionPlannerApi {
     NativeSharePresetId id,
   ) async {
     final pigeonVar_channelName =
-        'dev.flutter.pigeon.asagi.NativeCompressionPlannerApi.resolvePreset$pigeonVar_messageChannelSuffix';
+        'dev.flutter.pigeon.kuymo.NativeCompressionPlannerApi.resolvePreset$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,

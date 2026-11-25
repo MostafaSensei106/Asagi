@@ -10,7 +10,7 @@ class AppLocalizationsId extends AppLocalizations {
   AppLocalizationsId([String locale = 'id']) : super(locale);
 
   @override
-  String get asagi => 'Asagi';
+  String get kuymo => 'Kuymo';
 
   @override
   String get downloadFile => 'Unduh File';
@@ -170,11 +170,11 @@ class AppLocalizationsId extends AppLocalizations {
       'Kompres video secara privat di perangkat Anda.';
 
   @override
-  String get welcomeToAsagi => 'Selamat datang di Asagi';
+  String get welcomeToKuymo => 'Selamat datang di Kuymo';
 
   @override
-  String get learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone =>
-      'Pelajari caran Asagi mengompres video Anda tanpa harus meninggalkan ponsel.';
+  String get learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone =>
+      'Pelajari caran Kuymo mengompres video Anda tanpa harus meninggalkan ponsel.';
 
   @override
   String get signIn => 'Masuk';
@@ -267,7 +267,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get sharperTextAndSurfaces => 'Pure black and white surfaces ';
 
   @override
-  String get asagiEngine => 'Asagi Engine';
+  String get kuymoEngine => 'Kuymo Engine';
 
   @override
   String get targetSizeOptimizer => 'Target-Size Video Optimizer';
@@ -322,7 +322,7 @@ class AppLocalizationsId extends AppLocalizations {
       'Pemrosesan di perangkat, log lokal, dan laporan kerusakan opsional.';
 
   @override
-  String get aboutAsagi => 'Tentang Asagi';
+  String get aboutKuymo => 'Tentang Kuymo';
 
   @override
   String get versionBuildNumberAndApplicationDetails =>
@@ -332,19 +332,19 @@ class AppLocalizationsId extends AppLocalizations {
   String get aboutTheDeveloper => 'Tentang pengembang';
 
   @override
-  String get theDeveloperAndToolsBehindAsagi =>
-      'Pengembang dan alat di balik Asagi.';
+  String get theDeveloperAndToolsBehindKuymo =>
+      'Pengembang dan alat di balik Kuymo.';
 
   @override
-  String get openSourcePackagesBundledWithAsagi =>
-      'Paket sumber terbuka yang disertakan dengan Asagi.';
+  String get openSourcePackagesBundledWithKuymo =>
+      'Paket sumber terbuka yang disertakan dengan Kuymo.';
 
   @override
   String get privacyPolicy => 'Kebijakan privasi';
 
   @override
-  String get howAsagiHandlesYourVideosAndData =>
-      'Bagaimanan Asagi menangani video dan data Anda.';
+  String get howKuymoHandlesYourVideosAndData =>
+      'Bagaimanan Kuymo menangani video dan data Anda.';
 
   @override
   String get termsOfService => 'Ketentuan layanan';
@@ -353,15 +353,15 @@ class AppLocalizationsId extends AppLocalizations {
   String get dataSafety => 'Keamanan data';
 
   @override
-  String get summaryOfTheDataAsagiCollectsAndWhy =>
-      'Ringkasan data yang dikumpulkan Asagi dan alasannya.';
+  String get summaryOfTheDataKuymoCollectsAndWhy =>
+      'Ringkasan data yang dikumpulkan Kuymo dan alasannya.';
 
   @override
   String get permissions => 'Izin';
 
   @override
-  String get runtimePermissionsAsagiRequestsAndWhyEachIsNeeded =>
-      'Izin runtime yang dimintan Asagi dan alasan setiap izin dibutuhkan.';
+  String get runtimePermissionsKuymoRequestsAndWhyEachIsNeeded =>
+      'Izin runtime yang dimintan Kuymo dan alasan setiap izin dibutuhkan.';
 
   @override
   String get faq => 'FAQ';
@@ -387,17 +387,17 @@ class AppLocalizationsId extends AppLocalizations {
       'Hapus akun Anda secara permanen beserta data sisi servernya.';
 
   @override
-  String get rateAsagi => 'Beri rating Asagi';
+  String get rateKuymo => 'Beri rating Kuymo';
 
   @override
-  String get tellOthersHowAsagiWorkedForYouOnTheStore =>
-      'Beritahu orang lain bagaimanan Asagi bekerja untuk Anda di toko.';
+  String get tellOthersHowKuymoWorkedForYouOnTheStore =>
+      'Beritahu orang lain bagaimanan Kuymo bekerja untuk Anda di toko.';
 
   @override
-  String get shareAsagi => 'Bagikan Asagi';
+  String get shareKuymo => 'Bagikan Kuymo';
 
   @override
-  String get recommendAsagiToAFriend => 'Rekomendasikan Asagi kepada teman.';
+  String get recommendKuymoToAFriend => 'Rekomendasikan Kuymo kepada teman.';
 
   @override
   String get appearanceLanguage => 'Tampilan & bahasa';
@@ -439,7 +439,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get aiSettings => 'Pengaturan AI';
 
   @override
-  String get asagiAssistant => 'Asisten Asagi';
+  String get kuymoAssistant => 'Asisten Kuymo';
 
   @override
   String
@@ -572,7 +572,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get versionAndBuildDetails => 'Detail versi dan build';
 
   @override
-  String get theDeveloperBehindAsagi => 'Pengembang di balik Asagi';
+  String get theDeveloperBehindKuymo => 'Pengembang di balik Kuymo';
 
   @override
   String get openSourcePackageLicenses => 'Lisensi paket sumber terbuka';
@@ -581,7 +581,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get howDataIsHandled => 'Bagaimana data ditangani';
 
   @override
-  String get rulesForUsingAsagi => 'Aturan penggunaan Asagi';
+  String get rulesForUsingKuymo => 'Aturan penggunaan Kuymo';
 
   @override
   String get whatDataWeCollect => 'Data apa yang kami kumpulkan';
@@ -862,13 +862,13 @@ class AppLocalizationsId extends AppLocalizations {
   String get githubRepository => 'Repositori GitHub';
 
   @override
-  String get viewAsagiSourceCode => 'Lihat kode sumber Asagi';
+  String get viewKuymoSourceCode => 'Lihat kode sumber Kuymo';
 
   @override
   String get readTheREADME => 'Baca README';
 
   @override
-  String get learnAboutAsagiOnGitHub => 'Pelajari tentang Asagi di GitHub';
+  String get learnAboutKuymoOnGitHub => 'Pelajari tentang Kuymo di GitHub';
 
   @override
   String get reportAnIssue => 'Laporkan masalah';
@@ -883,7 +883,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get viewReleasesAndDownloads => 'Lihat rilis dan unduhan';
 
   @override
-  String get supportAsagi => 'Dukung Asagi';
+  String get supportKuymo => 'Dukung Kuymo';
 
   @override
   String get openTheOfficialDonationPage => 'Buka halaman donasi resmi';
@@ -908,8 +908,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get maintenanceInProgress => 'Pemeliharaan sedang berlangsung';
 
   @override
-  String get asagiIsTemporarilyUnavailablePleaseTryAgainLater =>
-      'Asagi sementara tidak tersedia. Silakan coba lagi nanti.';
+  String get kuymoIsTemporarilyUnavailablePleaseTryAgainLater =>
+      'Kuymo sementara tidak tersedia. Silakan coba lagi nanti.';
 
   @override
   String get comingSoon => 'Segera hadir';
@@ -1147,8 +1147,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get manualControl => 'Manual control';
 
   @override
-  String get asagiIsStudyingThePlatformAlgorithmAndCalculatingTheBudget =>
-      '🐾 Asagi is studying the platform\'s algorithm and calculating the budget...';
+  String get kuymoIsStudyingThePlatformAlgorithmAndCalculatingTheBudget =>
+      '🐾 Kuymo is studying the platform\'s algorithm and calculating the budget...';
 
   @override
   String get customControlMode => 'Custom control mode';
@@ -1159,8 +1159,8 @@ class AppLocalizationsId extends AppLocalizations {
       'You set the target size manually. The engine will apply the highest possible resolution and quality within that cap.';
 
   @override
-  String asagiIsPuzzledAnImpossibleTargetForTheNameCap(String name) {
-    return 'Asagi is puzzled (impossible target for the $name cap)';
+  String kuymoIsPuzzledAnImpossibleTargetForTheNameCap(String name) {
+    return 'Kuymo is puzzled (impossible target for the $name cap)';
   }
 
   @override
@@ -1172,8 +1172,8 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
-  String get asagiAlertProtectingQualityFromDistortion =>
-      'Asagi alert: protecting quality from distortion';
+  String get kuymoAlertProtectingQualityFromDistortion =>
+      'Kuymo alert: protecting quality from distortion';
 
   @override
   String
@@ -1216,7 +1216,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get termsOfServiceFullText =>
-      'Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.';
+      'Kuymo is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.';
 
   @override
   String get termsCopiedToClipboard => 'Terms copied to clipboard';
@@ -1226,14 +1226,14 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get termsAcceptanceLicenseBody =>
-      'Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices.';
+      'Kuymo is free and open source. All features are available to everyone, and video processing runs locally on your devices.';
 
   @override
   String get termsContentOwnershipTitle => '2. 100% Content Ownership';
 
   @override
   String get termsContentOwnershipBody =>
-      'You retain all copyrights and ownership over your videos. Asagi does not transmit, store, or claim any rights to your media files.';
+      'You retain all copyrights and ownership over your videos. Kuymo does not transmit, store, or claim any rights to your media files.';
 
   @override
   String get termsLocalOnDeviceProcessingTitle =>
@@ -1333,7 +1333,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get videoProcessingCommitmentBody =>
-      'Asagi was built with a fundamental architectural guarantee: your videos, clips, and audio tracks are encoded exclusively on your device hardware using local native codecs. At no point is your media streamed, stored, or processed on external cloud infrastructure.';
+      'Kuymo was built with a fundamental architectural guarantee: your videos, clips, and audio tracks are encoded exclusively on your device hardware using local native codecs. At no point is your media streamed, stored, or processed on external cloud infrastructure.';
 
   @override
   String get informationWeNeverCollectTitle =>
@@ -1625,7 +1625,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get supportedOnDeviceModels => 'Supported On-Device Models';
 
   @override
-  String get asagiBitrateOptimizer => 'Asagi Bitrate Optimizer (0.2B)';
+  String get kuymoBitrateOptimizer => 'Kuymo Bitrate Optimizer (0.2B)';
 
   @override
   String get localRateControlDescription =>
@@ -1976,13 +1976,13 @@ class AppLocalizationsId extends AppLocalizations {
   String get scratchpadCleanupSummary => 'Remove cached preview files';
 
   @override
-  String get privacyPolicySummary => 'How Asagi handles data';
+  String get privacyPolicySummary => 'How Kuymo handles data';
 
   @override
   String get dataSafetySummary => 'Collected data and purpose';
 
   @override
-  String get permissionsSummary => 'Why Asagi needs access';
+  String get permissionsSummary => 'Why Kuymo needs access';
 
   @override
   String get megabytesShort => 'MB';
@@ -2056,11 +2056,11 @@ class AppLocalizationsId extends AppLocalizations {
       'Answers to common questions about video compression.';
 
   @override
-  String get appSupportDescription => 'Get help using Asagi.';
+  String get appSupportDescription => 'Get help using Kuymo.';
 
   @override
   String get appTermsDescription =>
-      'Terms for using the free, open source Asagi app.';
+      'Terms for using the free, open source Kuymo app.';
 
   @override
   String get compressionAndroidOnly =>
@@ -2128,7 +2128,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String notificationReleaseTitle(String version) {
-    return 'Asagi $version is available';
+    return 'Kuymo $version is available';
   }
 
   @override
@@ -2199,7 +2199,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get automaticColorSchemeDescription =>
-      'Auto uses a vivid Asagi palette. Each option previews its own accent colors.';
+      'Auto uses a vivid Kuymo palette. Each option previews its own accent colors.';
 
   @override
   String get colorSchemeTonalSpot => 'Tonal spot';
@@ -2288,6 +2288,43 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String get releaseOpenFailed =>
       'Could not open the release. Please try again.';
+
+  @override
+  String get appLinkCopied => 'Link copied to clipboard.';
+
+  @override
+  String get appInvitationCopied =>
+      'Invitation copied. Paste it into your messaging app.';
+
+  @override
+  String kuymoShareInvitation(String url) {
+    return 'Try Kuymo for on-device video compression: $url';
+  }
+
+  @override
+  String get onDeviceProcessingLabel => 'Video processing on your device';
+
+  @override
+  String get kuymoShareDescription =>
+      'Choose a target size and prepare your video to share. Video processing stays on your device.';
+
+  @override
+  String get copyAppLink => 'Copy app link';
+
+  @override
+  String get enjoyingKuymo => 'Enjoying Kuymo?';
+
+  @override
+  String get whyChooseKuymo => 'Why choose Kuymo';
+
+  @override
+  String get projectSupportLink => 'Copy project support link';
+
+  @override
+  String get brandTagline => 'More room for your moments.';
+
+  @override
+  String get kuymoAi => 'Kuymo AI';
 }
 
 /// The translations for Indonesian, as used in Indonesia (`id_ID`).
@@ -2295,7 +2332,7 @@ class AppLocalizationsIdId extends AppLocalizationsId {
   AppLocalizationsIdId() : super('id_ID');
 
   @override
-  String get asagi => 'Asagi';
+  String get kuymo => 'Kuymo';
 
   @override
   String get downloadFile => 'Unduh File';
@@ -2455,11 +2492,11 @@ class AppLocalizationsIdId extends AppLocalizationsId {
       'Kompres video secara privat di perangkat Anda.';
 
   @override
-  String get welcomeToAsagi => 'Selamat datang di Asagi';
+  String get welcomeToKuymo => 'Selamat datang di Kuymo';
 
   @override
-  String get learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone =>
-      'Pelajari caran Asagi mengompres video Anda tanpa harus meninggalkan ponsel.';
+  String get learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone =>
+      'Pelajari caran Kuymo mengompres video Anda tanpa harus meninggalkan ponsel.';
 
   @override
   String get signIn => 'Masuk';
@@ -2544,7 +2581,7 @@ class AppLocalizationsIdId extends AppLocalizationsId {
       'Pemrosesan di perangkat, log lokal, dan laporan kerusakan opsional.';
 
   @override
-  String get aboutAsagi => 'Tentang Asagi';
+  String get aboutKuymo => 'Tentang Kuymo';
 
   @override
   String get versionBuildNumberAndApplicationDetails =>
@@ -2554,19 +2591,19 @@ class AppLocalizationsIdId extends AppLocalizationsId {
   String get aboutTheDeveloper => 'Tentang pengembang';
 
   @override
-  String get theDeveloperAndToolsBehindAsagi =>
-      'Pengembang dan alat di balik Asagi.';
+  String get theDeveloperAndToolsBehindKuymo =>
+      'Pengembang dan alat di balik Kuymo.';
 
   @override
-  String get openSourcePackagesBundledWithAsagi =>
-      'Paket sumber terbuka yang disertakan dengan Asagi.';
+  String get openSourcePackagesBundledWithKuymo =>
+      'Paket sumber terbuka yang disertakan dengan Kuymo.';
 
   @override
   String get privacyPolicy => 'Kebijakan privasi';
 
   @override
-  String get howAsagiHandlesYourVideosAndData =>
-      'Bagaimanan Asagi menangani video dan data Anda.';
+  String get howKuymoHandlesYourVideosAndData =>
+      'Bagaimanan Kuymo menangani video dan data Anda.';
 
   @override
   String get termsOfService => 'Ketentuan layanan';
@@ -2575,15 +2612,15 @@ class AppLocalizationsIdId extends AppLocalizationsId {
   String get dataSafety => 'Keamanan data';
 
   @override
-  String get summaryOfTheDataAsagiCollectsAndWhy =>
-      'Ringkasan data yang dikumpulkan Asagi dan alasannya.';
+  String get summaryOfTheDataKuymoCollectsAndWhy =>
+      'Ringkasan data yang dikumpulkan Kuymo dan alasannya.';
 
   @override
   String get permissions => 'Izin';
 
   @override
-  String get runtimePermissionsAsagiRequestsAndWhyEachIsNeeded =>
-      'Izin runtime yang dimintan Asagi dan alasan setiap izin dibutuhkan.';
+  String get runtimePermissionsKuymoRequestsAndWhyEachIsNeeded =>
+      'Izin runtime yang dimintan Kuymo dan alasan setiap izin dibutuhkan.';
 
   @override
   String get faq => 'FAQ';
@@ -2609,17 +2646,17 @@ class AppLocalizationsIdId extends AppLocalizationsId {
       'Hapus akun Anda secara permanen beserta data sisi servernya.';
 
   @override
-  String get rateAsagi => 'Beri rating Asagi';
+  String get rateKuymo => 'Beri rating Kuymo';
 
   @override
-  String get tellOthersHowAsagiWorkedForYouOnTheStore =>
-      'Beritahu orang lain bagaimanan Asagi bekerja untuk Anda di toko.';
+  String get tellOthersHowKuymoWorkedForYouOnTheStore =>
+      'Beritahu orang lain bagaimanan Kuymo bekerja untuk Anda di toko.';
 
   @override
-  String get shareAsagi => 'Bagikan Asagi';
+  String get shareKuymo => 'Bagikan Kuymo';
 
   @override
-  String get recommendAsagiToAFriend => 'Rekomendasikan Asagi kepada teman.';
+  String get recommendKuymoToAFriend => 'Rekomendasikan Kuymo kepada teman.';
 
   @override
   String get appearanceLanguage => 'Tampilan & bahasa';
@@ -2661,7 +2698,7 @@ class AppLocalizationsIdId extends AppLocalizationsId {
   String get aiSettings => 'Pengaturan AI';
 
   @override
-  String get asagiAssistant => 'Asisten Asagi';
+  String get kuymoAssistant => 'Asisten Kuymo';
 
   @override
   String
@@ -2794,7 +2831,7 @@ class AppLocalizationsIdId extends AppLocalizationsId {
   String get versionAndBuildDetails => 'Detail versi dan build';
 
   @override
-  String get theDeveloperBehindAsagi => 'Pengembang di balik Asagi';
+  String get theDeveloperBehindKuymo => 'Pengembang di balik Kuymo';
 
   @override
   String get openSourcePackageLicenses => 'Lisensi paket sumber terbuka';
@@ -2803,7 +2840,7 @@ class AppLocalizationsIdId extends AppLocalizationsId {
   String get howDataIsHandled => 'Bagaimana data ditangani';
 
   @override
-  String get rulesForUsingAsagi => 'Aturan penggunaan Asagi';
+  String get rulesForUsingKuymo => 'Aturan penggunaan Kuymo';
 
   @override
   String get whatDataWeCollect => 'Data apa yang kami kumpulkan';
@@ -3084,13 +3121,13 @@ class AppLocalizationsIdId extends AppLocalizationsId {
   String get githubRepository => 'Repositori GitHub';
 
   @override
-  String get viewAsagiSourceCode => 'Lihat kode sumber Asagi';
+  String get viewKuymoSourceCode => 'Lihat kode sumber Kuymo';
 
   @override
   String get readTheREADME => 'Baca README';
 
   @override
-  String get learnAboutAsagiOnGitHub => 'Pelajari tentang Asagi di GitHub';
+  String get learnAboutKuymoOnGitHub => 'Pelajari tentang Kuymo di GitHub';
 
   @override
   String get reportAnIssue => 'Laporkan masalah';
@@ -3105,7 +3142,7 @@ class AppLocalizationsIdId extends AppLocalizationsId {
   String get viewReleasesAndDownloads => 'Lihat rilis dan unduhan';
 
   @override
-  String get supportAsagi => 'Dukung Asagi';
+  String get supportKuymo => 'Dukung Kuymo';
 
   @override
   String get openTheOfficialDonationPage => 'Buka halaman donasi resmi';
@@ -3130,8 +3167,8 @@ class AppLocalizationsIdId extends AppLocalizationsId {
   String get maintenanceInProgress => 'Pemeliharaan sedang berlangsung';
 
   @override
-  String get asagiIsTemporarilyUnavailablePleaseTryAgainLater =>
-      'Asagi sementara tidak tersedia. Silakan coba lagi nanti.';
+  String get kuymoIsTemporarilyUnavailablePleaseTryAgainLater =>
+      'Kuymo sementara tidak tersedia. Silakan coba lagi nanti.';
 
   @override
   String get comingSoon => 'Segera hadir';
@@ -3211,22 +3248,22 @@ class AppLocalizationsIdId extends AppLocalizationsId {
 
   @override
   String get termsOfServiceFullText =>
-      'Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.';
+      'Kuymo is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.';
 
   @override
   String get termsAcceptanceLicenseBody =>
-      'Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices.';
+      'Kuymo is free and open source. All features are available to everyone, and video processing runs locally on your devices.';
 
   @override
   String get compressionHelpDescription =>
       'Answers to common questions about video compression.';
 
   @override
-  String get appSupportDescription => 'Get help using Asagi.';
+  String get appSupportDescription => 'Get help using Kuymo.';
 
   @override
   String get appTermsDescription =>
-      'Terms for using the free, open source Asagi app.';
+      'Terms for using the free, open source Kuymo app.';
 
   @override
   String get compressionAndroidOnly =>

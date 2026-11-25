@@ -1,7 +1,10 @@
-# Asagi
+# Kuymo
 
 Offline target-size video compression for Android, built with Flutter, Kotlin,
 and Android Media3. Video processing stays on the device.
+
+The approved **B — A little room** identity, SVG masters, color and typography
+guidance are in the [Kuymo brand kit](brand/kuymo/README.md).
 
 ## Features
 
@@ -207,15 +210,16 @@ resolve saved result identifiers after a cold start.
 
 ## Generated Material palettes
 
-All ten palette choices are generated as complete schemes from Asagi `#0095A9`.
+All ten palette choices currently retain the existing seed `#0095A9` while
+Kuymo's new visual direction is being selected.
 Auto uses Vibrant; named alternatives retain their own algorithms, including
 Monochrome. Each has light/dark and standard/high contrast variants (40 total).
 
 Use Python **3.11+** and Matugen **4.2.0**, then run:
 
 ```bash
-python3 tool/generate_asagi_schemes.py
-python3 tool/generate_asagi_schemes.py --check
+python3 tool/generate_kuymo_schemes.py
+python3 tool/generate_kuymo_schemes.py --check
 python3 -m unittest discover -s tool/tests
 ```
 

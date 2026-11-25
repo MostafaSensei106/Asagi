@@ -1,14 +1,14 @@
-import 'package:asagi/core/utils/theme/app_theme.dart';
-import 'package:asagi/l10n/app_localizations.dart';
-import 'package:asagi/modules/ai/presentation/pages/ai_chat_settings_page.dart';
-import 'package:asagi/modules/ai/presentation/pages/ai_features_page.dart';
-import 'package:asagi/modules/ai/presentation/pages/ai_import_model_page.dart';
-import 'package:asagi/modules/ai/presentation/pages/ai_media_page.dart';
-import 'package:asagi/modules/ai/presentation/pages/ai_models_page.dart';
-import 'package:asagi/modules/ai/presentation/pages/ai_runtime_page.dart';
-import 'package:asagi/modules/ai/presentation/pages/ai_search_page.dart';
-import 'package:asagi/modules/ai/presentation/pages/ai_tools_page.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kuymo/core/utils/theme/app_theme.dart';
+import 'package:kuymo/l10n/app_localizations.dart';
+import 'package:kuymo/modules/ai/presentation/pages/ai_chat_settings_page.dart';
+import 'package:kuymo/modules/ai/presentation/pages/ai_features_page.dart';
+import 'package:kuymo/modules/ai/presentation/pages/ai_import_model_page.dart';
+import 'package:kuymo/modules/ai/presentation/pages/ai_media_page.dart';
+import 'package:kuymo/modules/ai/presentation/pages/ai_models_page.dart';
+import 'package:kuymo/modules/ai/presentation/pages/ai_runtime_page.dart';
+import 'package:kuymo/modules/ai/presentation/pages/ai_search_page.dart';
+import 'package:kuymo/modules/ai/presentation/pages/ai_tools_page.dart';
 import 'package:material_ui/material_ui.dart';
 
 /// Pumps [page] in a minimal app shell and returns the recorded exceptions.
@@ -51,6 +51,6 @@ void main() {
     // The active model shows the trailing "Active" chip; inactive near matches
     // would be a bug, so assert the count directly.
     expect(find.text('Active'), findsOneWidget);
-    expect(find.text('Asagi Bitrate Optimizer (0.2B)'), findsOneWidget);
+    expect(find.text('Kuymo Bitrate Optimizer (0.2B)'), findsOneWidget);
   });
 }

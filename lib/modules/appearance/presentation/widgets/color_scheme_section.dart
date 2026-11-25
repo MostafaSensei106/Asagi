@@ -14,8 +14,8 @@ final class ColorSchemeSection extends StatelessWidget {
   });
 
   final bool highContrast;
-  final AsagiColorSchemeVariant selectedVariant;
-  final ValueChanged<AsagiColorSchemeVariant> onChanged;
+  final KuymoColorSchemeVariant selectedVariant;
+  final ValueChanged<KuymoColorSchemeVariant> onChanged;
 
   @override
   Widget build(BuildContext context) => Column(
@@ -36,7 +36,7 @@ final class ColorSchemeSection extends StatelessWidget {
             spacing: spacing,
             runSpacing: spacing,
             children: [
-              for (final variant in AsagiColorSchemeVariant.values)
+              for (final variant in KuymoColorSchemeVariant.values)
                 SizedBox(
                   width: itemWidth,
                   child: ChoiceChip(
@@ -91,26 +91,26 @@ final class ColorSchemeSection extends StatelessWidget {
     ],
   );
 
-  String _label(BuildContext context, AsagiColorSchemeVariant variant) {
-    if (variant == AsagiColorSchemeVariant.auto) {
+  String _label(BuildContext context, KuymoColorSchemeVariant variant) {
+    if (variant == KuymoColorSchemeVariant.auto) {
       return context.localeKeys.automaticColorScheme;
     }
     return switch (variant) {
-      AsagiColorSchemeVariant.auto => context.localeKeys.automaticColorScheme,
-      AsagiColorSchemeVariant.tonalSpot =>
+      KuymoColorSchemeVariant.auto => context.localeKeys.automaticColorScheme,
+      KuymoColorSchemeVariant.tonalSpot =>
         context.localeKeys.colorSchemeTonalSpot,
-      AsagiColorSchemeVariant.fidelity =>
+      KuymoColorSchemeVariant.fidelity =>
         context.localeKeys.colorSchemeFidelity,
-      AsagiColorSchemeVariant.content => context.localeKeys.colorSchemeContent,
-      AsagiColorSchemeVariant.expressive =>
+      KuymoColorSchemeVariant.content => context.localeKeys.colorSchemeContent,
+      KuymoColorSchemeVariant.expressive =>
         context.localeKeys.colorSchemeExpressive,
-      AsagiColorSchemeVariant.fruitSalad =>
+      KuymoColorSchemeVariant.fruitSalad =>
         context.localeKeys.colorSchemeFruitSalad,
-      AsagiColorSchemeVariant.monochrome =>
+      KuymoColorSchemeVariant.monochrome =>
         context.localeKeys.colorSchemeMonochrome,
-      AsagiColorSchemeVariant.neutral => context.localeKeys.colorSchemeNeutral,
-      AsagiColorSchemeVariant.rainbow => context.localeKeys.colorSchemeRainbow,
-      AsagiColorSchemeVariant.vibrant => context.localeKeys.colorSchemeVibrant,
+      KuymoColorSchemeVariant.neutral => context.localeKeys.colorSchemeNeutral,
+      KuymoColorSchemeVariant.rainbow => context.localeKeys.colorSchemeRainbow,
+      KuymoColorSchemeVariant.vibrant => context.localeKeys.colorSchemeVibrant,
     };
   }
 }

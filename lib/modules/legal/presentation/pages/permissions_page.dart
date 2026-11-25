@@ -2,13 +2,13 @@ import 'dart:async';
 
 import 'package:material_ui/material_ui.dart';
 
-import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
+import '../../../../core/constants/kuymo_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
 
-/// Details why Asagi requests specific device runtime permissions and how they
+/// Details why Kuymo requests specific device runtime permissions and how they
 /// are strictly used.
 final class PermissionsPage extends StatelessWidget {
   const PermissionsPage({super.key});
@@ -23,21 +23,21 @@ final class PermissionsPage extends StatelessWidget {
         title: 'Photos & Videos (Media Access)',
         purpose: 'Needed to browse and select video files for compression, and to save the compressed videos directly to your camera roll or downloads folder.',
         type: 'Essential',
-        icon: AsagiIcons.videoSelect,
+        icon: KuymoIcons.videoSelect,
         isEssential: true,
       ),
       (
         title: 'Notifications',
-        purpose: 'Allows Asagi to alert you when a long video compression task finishes in the background, or if a task encounters an error.',
+        purpose: 'Allows Kuymo to alert you when a long video compression task finishes in the background, or if a task encounters an error.',
         type: 'Optional',
-        icon: AsagiIcons.notifications,
+        icon: KuymoIcons.notifications,
         isEssential: false,
       ),
       (
         title: 'Foreground Service & Wake Lock',
         purpose: 'Prevents the operating system from terminating high-bitrate video encoding when your screen turns off or while using another application.',
         type: 'Recommended',
-        icon: AsagiIcons.aiRuntime,
+        icon: KuymoIcons.aiRuntime,
         isEssential: false,
       ),
     ];
@@ -56,7 +56,7 @@ final class PermissionsPage extends StatelessWidget {
               child: Row(
                 children: [
                   ExpressiveIcon(
-                    icon: AsagiIcons.permissions,
+                    icon: KuymoIcons.permissions,
                     shape: ExpressiveIconShape.arch,
                     size: 52,
                     backgroundColor: colorScheme.primaryContainer,
@@ -75,7 +75,7 @@ final class PermissionsPage extends StatelessWidget {
                         ),
                         const Gap(AppSpacing.xSmall),
                         Text(
-                          l10n.runtimePermissionsAsagiRequestsAndWhyEachIsNeeded,
+                          l10n.runtimePermissionsKuymoRequestsAndWhyEachIsNeeded,
                           style: context.textTheme.bodySmall?.copyWith(
                             color: colorScheme.onSurfaceVariant,
                           ),
@@ -145,7 +145,7 @@ final class PermissionsPage extends StatelessWidget {
                   ),
                   const Gap(AppSpacing.medium),
                   FilledTonalButtonComponent.icon(
-                    icon: AsagiIcons.settings,
+                    icon: KuymoIcons.settings,
                     label: 'Manage in System Settings',
                     expand: true,
                     onPressed: () {

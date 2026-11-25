@@ -45,7 +45,7 @@ final class AppConfig {
 
   // Radii
   static const double inBorderRadius = AppRadii.medium;
-  static const double outBorderRadius = 16.0;
+  static const double outBorderRadius = AppRadii.large;
   static const double card = AppRadii.large;
   static const double pill = AppRadii.pill;
 

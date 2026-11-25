@@ -1,34 +1,15 @@
-# dart run flutter_native_splash:create
+# Regenerate with: dart run flutter_native_splash:create
 flutter_native_splash:
-  # Set the background color of the splash screen
-  color: "#ffffff"
-
-  # Add a logo image in the center of the splash screen
-  image_android: assets/icons/play_store_512.png
-
-  image: assets/icons/icon-512.png
-
-  # Position the logo image at the center of the screen
+  color: "#FAF8F1"
+  color_dark: "#1E2D24"
+  image: assets/brand/kuymo-splash.png
+  image_dark: assets/brand/kuymo-splash-dark.png
   android_gravity: center
-
-  # Add branding at the bottom of the screen
-  # branding: assets/images/MHlogo.png
-  # branding_mode: bottom
-  # branding_bottom_padding: 24
-
-  # Android 12 and later specific configuration
   android_12:
-    # Set the background color for Android 12+
-    color: "#ffffff"
-    image: assets/icons/ic_launcher_foreground.png
-
-  # Dark mode support
-  color_dark: "#ffffff"
-  # branding_dark: assets/images/MHlogo.png
-
-  # Disable splash screen generation for iOS and web
+    color: "#DDE9C6"
+    color_dark: "#1E2D24"
+    image: assets/brand/kuymo-splash-android12.png
+    image_dark: assets/brand/kuymo-splash-android12-dark.png
   ios: true
-  web: true
-
-  # Enable fullscreen mode to hide the notification bar on Android
+  web: false
   fullscreen: false

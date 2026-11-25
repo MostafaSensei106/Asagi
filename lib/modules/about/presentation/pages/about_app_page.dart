@@ -4,8 +4,8 @@ import 'package:bloc_signals_flutter/bloc_signals_flutter.dart';
 import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 
-import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
+import '../../../../core/constants/kuymo_icons.dart';
 import '../../../../core/di/di.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/router/app_router.dart';
@@ -22,7 +22,7 @@ final class AboutAppPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: SidePageAppBarComponent(title: context.localeKeys.aboutAsagi),
+    appBar: SidePageAppBarComponent(title: context.localeKeys.aboutKuymo),
     body: SafeArea(
       child: BlocSignalBuilder<AboutAppCubit, AboutAppState>(
         builder: (context, state) => state.maybeWhen(
@@ -83,136 +83,136 @@ final class _AboutContent extends StatelessWidget {
               const Gap(AppSpacing.large),
               AboutSection(
                 title: l10n.appIdentity,
-                icon: AsagiIcons.appInfo,
+                icon: KuymoIcons.appInfo,
                 shape: ExpressiveIconShape.blossom,
                 children: [
                   AboutRow(
                     title: l10n.appName,
                     subtitle: info.appName,
-                    icon: AsagiIcons.appInfo,
+                    icon: KuymoIcons.appInfo,
                   ),
                   AboutRow(
                     title: l10n.packageName,
                     subtitle: info.packageName,
-                    icon: AsagiIcons.package,
+                    icon: KuymoIcons.package,
                   ),
                   AboutRow(
                     title: l10n.version,
                     subtitle: info.version,
-                    icon: AsagiIcons.version,
+                    icon: KuymoIcons.version,
                   ),
                   AboutRow(
                     title: l10n.buildNumber,
                     subtitle: info.buildNumber,
-                    icon: AsagiIcons.build,
+                    icon: KuymoIcons.build,
                   ),
                 ],
               ),
               const Gap(AppSpacing.large),
               AboutSection(
                 title: l10n.deviceAndBuild,
-                icon: AsagiIcons.device,
+                icon: KuymoIcons.device,
                 shape: ExpressiveIconShape.gem,
                 children: [
                   AboutRow(
                     title: l10n.operatingSystem,
                     subtitle: info.operatingSystemName,
                     icon: switch (info.operatingSystemName.toLowerCase()) {
-                      'android' => AsagiIcons.android,
-                      'ios' => AsagiIcons.ios,
-                      _ => AsagiIcons.device,
+                      'android' => KuymoIcons.android,
+                      'ios' => KuymoIcons.ios,
+                      _ => KuymoIcons.device,
                     },
                   ),
                   AboutRow(
                     title: l10n.osVersion,
                     subtitle: info.operatingSystemVersion,
-                    icon: AsagiIcons.version,
+                    icon: KuymoIcons.version,
                   ),
                   AboutRow(
                     title: l10n.buildMode,
                     subtitle: info.isDebug ? l10n.debug : l10n.release,
-                    icon: AsagiIcons.build,
+                    icon: KuymoIcons.build,
                   ),
                 ],
               ),
               const Gap(AppSpacing.large),
               AboutSection(
                 title: l10n.builtWith,
-                icon: AsagiIcons.developer,
+                icon: KuymoIcons.developer,
                 shape: ExpressiveIconShape.clover,
                 children: [
                   AboutRow(
                     title: 'Dart',
                     subtitle: _version(info.dartVersion, info.dartChanal),
-                    icon: AsagiIcons.developer,
+                    icon: KuymoIcons.developer,
                   ),
                   AboutRow(
                     title: 'Flutter',
                     subtitle: _version(info.flutterVersion, info.flutterChanal),
-                    icon: AsagiIcons.developer,
+                    icon: KuymoIcons.developer,
                   ),
                 ],
               ),
               const Gap(AppSpacing.large),
               AboutSection(
                 title: l10n.installation,
-                icon: AsagiIcons.storage,
+                icon: KuymoIcons.storage,
                 shape: ExpressiveIconShape.diamond,
                 children: [
                   AboutRow(
                     title: l10n.installedFrom,
                     subtitle: _value(info.installerStore, l10n.unavailable),
-                    icon: AsagiIcons.storage,
+                    icon: KuymoIcons.storage,
                   ),
                   AboutRow(
                     title: l10n.installedOn,
                     subtitle: _date(info.installDate, l10n.unavailable),
-                    icon: AsagiIcons.calendar,
+                    icon: KuymoIcons.calendar,
                   ),
                   AboutRow(
                     title: l10n.updatedOn,
                     subtitle: _date(info.updateTime, l10n.unavailable),
-                    icon: AsagiIcons.calendar,
+                    icon: KuymoIcons.calendar,
                   ),
                 ],
               ),
               const Gap(AppSpacing.large),
               AboutSection(
                 title: l10n.projectAndSupport,
-                icon: AsagiIcons.repository,
+                icon: KuymoIcons.repository,
                 shape: ExpressiveIconShape.sunny,
                 children: [
                   AboutRow(
                     title: l10n.githubRepository,
-                    subtitle: l10n.viewAsagiSourceCode,
-                    icon: AsagiIcons.repository,
+                    subtitle: l10n.viewKuymoSourceCode,
+                    icon: KuymoIcons.repository,
                     onTap: () =>
                         unawaited(_open(context, AboutUrls.repository)),
                   ),
                   AboutRow(
                     title: l10n.readTheREADME,
-                    subtitle: l10n.learnAboutAsagiOnGitHub,
-                    icon: AsagiIcons.repository,
+                    subtitle: l10n.learnAboutKuymoOnGitHub,
+                    icon: KuymoIcons.repository,
                     onTap: () => unawaited(_open(context, AboutUrls.readme)),
                   ),
                   AboutRow(
                     title: l10n.reportAnIssue,
                     subtitle: l10n.viewAndCreateGitHubIssues,
-                    icon: AsagiIcons.issues,
+                    icon: KuymoIcons.issues,
                     onTap: () => unawaited(_open(context, AboutUrls.issues)),
                   ),
                   AboutRow(
                     title: l10n.latestRelease,
                     subtitle: l10n.viewReleasesAndDownloads,
-                    icon: AsagiIcons.release,
+                    icon: KuymoIcons.release,
                     onTap: () =>
                         unawaited(_open(context, AboutUrls.latestRelease)),
                   ),
                   if (AboutUrls.donations != null)
                     AboutRow(
-                      title: l10n.supportAsagi,
+                      title: l10n.supportKuymo,
                       subtitle: l10n.openTheOfficialDonationPage,
-                      icon: AsagiIcons.donate,
+                      icon: KuymoIcons.donate,
                       onTap: () =>
                           unawaited(_open(context, AboutUrls.donations!)),
                     ),
@@ -221,13 +221,13 @@ final class _AboutContent extends StatelessWidget {
               const Gap(AppSpacing.large),
               AboutSection(
                 title: l10n.openSourceLicenses,
-                icon: AsagiIcons.licenses,
+                icon: KuymoIcons.licenses,
                 shape: ExpressiveIconShape.pentagon,
                 children: [
                   AboutRow(
                     title: l10n.openSourceLicenses,
                     subtitle: l10n.openSourcePackageLicenses,
-                    icon: AsagiIcons.licenses,
+                    icon: KuymoIcons.licenses,
                     onTap: () => unawaited(context.push(const LicensesRoute())),
                   ),
                 ],

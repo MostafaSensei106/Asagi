@@ -1,7 +1,7 @@
 {
   "@@locale": "tr_TR",
-  "asagi": "Asagi",
-  "@asagi": {
+  "kuymo": "Kuymo",
+  "@kuymo": {
     "description": "Application name shown in the app and on the home page"
   },
   "downloadFile": "Dosyayı İndir",
@@ -211,12 +211,12 @@
   "@compressVideosPrivatelyOnYourDevice": {
     "description": "Home page description"
   },
-  "welcomeToAsagi": "Asagi'ye hoş geldiniz",
-  "@welcomeToAsagi": {
+  "welcomeToKuymo": "Kuymo'ye hoş geldiniz",
+  "@welcomeToKuymo": {
     "description": "Onboarding page title"
   },
-  "learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": "Asagi'nin videolarınızı telefonunuzu hiç terk etmeden nasıl sıkıştırdığını öğrenin.",
-  "@learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": {
+  "learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone": "Kuymo'nin videolarınızı telefonunuzu hiç terk etmeden nasıl sıkıştırdığını öğrenin.",
+  "@learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone": {
     "description": "Onboarding page description"
   },
   "signIn": "Giriş yap",
@@ -315,8 +315,8 @@
   "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
     "description": "Privacy settings page description"
   },
-  "aboutAsagi": "Asagi Hakkında",
-  "@aboutAsagi": {
+  "aboutKuymo": "Kuymo Hakkında",
+  "@aboutKuymo": {
     "description": "App info page title"
   },
   "versionBuildNumberAndApplicationDetails": "Sürüm, yapı numarası ve uygulama detayları.",
@@ -327,24 +327,24 @@
   "@aboutTheDeveloper": {
     "description": "Developer page title"
   },
-  "theDeveloperAndToolsBehindAsagi": "Asagi'nin arkasındaki geliştirici ve araçlar.",
-  "@theDeveloperAndToolsBehindAsagi": {
+  "theDeveloperAndToolsBehindKuymo": "Kuymo'nin arkasındaki geliştirici ve araçlar.",
+  "@theDeveloperAndToolsBehindKuymo": {
     "description": "Developer page description"
   },
   "openSourceLicenses": "Açık kaynak lisansları",
   "@openSourceLicenses": {
     "description": "Licenses page title"
   },
-  "openSourcePackagesBundledWithAsagi": "Asagi ile birlikte gelen açık kaynak paketler.",
-  "@openSourcePackagesBundledWithAsagi": {
+  "openSourcePackagesBundledWithKuymo": "Kuymo ile birlikte gelen açık kaynak paketler.",
+  "@openSourcePackagesBundledWithKuymo": {
     "description": "Licenses page description"
   },
   "privacyPolicy": "Gizlilik politikası",
   "@privacyPolicy": {
     "description": "Privacy policy page title"
   },
-  "howAsagiHandlesYourVideosAndData": "Asagi videolarınızı ve verilerinizi nasıl işliyor.",
-  "@howAsagiHandlesYourVideosAndData": {
+  "howKuymoHandlesYourVideosAndData": "Kuymo videolarınızı ve verilerinizi nasıl işliyor.",
+  "@howKuymoHandlesYourVideosAndData": {
     "description": "Privacy policy page description"
   },
   "termsOfService": "Hizmet şartları",
@@ -355,16 +355,16 @@
   "@dataSafety": {
     "description": "Data safety page title"
   },
-  "summaryOfTheDataAsagiCollectsAndWhy": "Asagi'nin topladığı verilerin özeti ve neden toplandığı.  ",
-  "@summaryOfTheDataAsagiCollectsAndWhy": {
+  "summaryOfTheDataKuymoCollectsAndWhy": "Kuymo'nin topladığı verilerin özeti ve neden toplandığı.  ",
+  "@summaryOfTheDataKuymoCollectsAndWhy": {
     "description": "Data safety page description"
   },
   "permissions": "İzinler  ",
   "@permissions": {
     "description": "Permissions page title"
   },
-  "runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": "Asagi'nin istediği çalışma zamanı izinleri ve her birinin neden gerekli olduğu.  ",
-  "@runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": {
+  "runtimePermissionsKuymoRequestsAndWhyEachIsNeeded": "Kuymo'nin istediği çalışma zamanı izinleri ve her birinin neden gerekli olduğu.  ",
+  "@runtimePermissionsKuymoRequestsAndWhyEachIsNeeded": {
     "description": "Permissions page description"
   },
   "faq": "SSS  ",
@@ -395,20 +395,20 @@
   "@permanentlyRemoveYourAccountAndItsServerSideData": {
     "description": "Delete account page description"
   },
-  "rateAsagi": "Asagi'yi değerlendirin",
-  "@rateAsagi": {
+  "rateKuymo": "Kuymo'yi değerlendirin",
+  "@rateKuymo": {
     "description": "Rate app page title"
   },
-  "tellOthersHowAsagiWorkedForYouOnTheStore": "Asagi'nin sizde nasıl çalıştığını başkalarına söyleyin.",
-  "@tellOthersHowAsagiWorkedForYouOnTheStore": {
+  "tellOthersHowKuymoWorkedForYouOnTheStore": "Kuymo'nin sizde nasıl çalıştığını başkalarına söyleyin.",
+  "@tellOthersHowKuymoWorkedForYouOnTheStore": {
     "description": "Rate app page description"
   },
-  "shareAsagi": "Asagi'yi paylaş",
-  "@shareAsagi": {
+  "shareKuymo": "Kuymo'yi paylaş",
+  "@shareKuymo": {
     "description": "Share app page title"
   },
-  "recommendAsagiToAFriend": "Asagi'yi bir arkadaşınıza önerin.",
-  "@recommendAsagiToAFriend": {
+  "recommendKuymoToAFriend": "Kuymo'yi bir arkadaşınıza önerin.",
+  "@recommendKuymoToAFriend": {
     "description": "Share app page description"
   },
   "appearanceLanguage": "Görünüm ve dil",
@@ -460,7 +460,7 @@
     "description": "Settings hub row summary"
   },
   "aiSettings": "AI ayarları",
-  "asagiAssistant": "Asagi Asistan",
+  "kuymoAssistant": "Kuymo Asistan",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "Videolarınız için özel bir asistan çok yakında geliyor. Buradan sıkıştırma, düzenleme ve kaydedilmiş videolar hakkında sorular sorabileceksiniz.",
   "localModelsAndSmartTools": "Yerel modeller ve akıllı araçlar",
   "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "Yerel modelleri ve gelecekteki AI araçlarını keşfedin. Bu seçenekler henüz aktif değil.",
@@ -508,8 +508,8 @@
   "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "theDeveloperBehindAsagi": "Asagi'nin arkasındaki geliştirici",
-  "@theDeveloperBehindAsagi": {
+  "theDeveloperBehindKuymo": "Kuymo'nin arkasındaki geliştirici",
+  "@theDeveloperBehindKuymo": {
     "description": "Settings hub row summary"
   },
   "openSourcePackageLicenses": "Açık kaynak paket lisansları",
@@ -520,8 +520,8 @@
   "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "rulesForUsingAsagi": "Asagi'yi kullanma kuralları",
-  "@rulesForUsingAsagi": {
+  "rulesForUsingKuymo": "Kuymo'yi kullanma kuralları",
+  "@rulesForUsingKuymo": {
     "description": "Settings hub row summary"
   },
   "whatDataWeCollect": "Hangi verileri topladığımız",
@@ -623,14 +623,14 @@
   "unavailable": "Kullanılamıyor",
   "projectAndSupport": "Proje ve destek",
   "githubRepository": "GitHub deposu",
-  "viewAsagiSourceCode": "Asagi kaynak kodunu görüntüle",
+  "viewKuymoSourceCode": "Kuymo kaynak kodunu görüntüle",
   "readTheREADME": "README dosyasını oku",
-  "learnAboutAsagiOnGitHub": "GitHub'dan Asagi hakkında bilgi edinin",
+  "learnAboutKuymoOnGitHub": "GitHub'dan Kuymo hakkında bilgi edinin",
   "reportAnIssue": "Bir sorun bildirin",
   "viewAndCreateGitHubIssues": "GitHub sorunlarını görüntüle ve oluştur",
   "latestRelease": "En son sürüm",
   "viewReleasesAndDownloads": "Sürümleri ve indirmeleri görüntüle",
-  "supportAsagi": "Asagi'yi destekleyin",
+  "supportKuymo": "Kuymo'yi destekleyin",
   "openTheOfficialDonationPage": "Resmî bağış sayfasını aç",
   "couldNotOpenTheLinkPleaseTryAgain": "Bağlantı açılamadı. Lütfen tekrar deneyin.",
   "developer": "Geliştirici",
@@ -638,7 +638,7 @@
   "githubProfile": "GitHub profili",
   "seeProjectsAndContactDetails": "Projeleri ve iletişim bilgilerini gör",
   "maintenanceInProgress": "Bakım devam ediyor",
-  "asagiIsTemporarilyUnavailablePleaseTryAgainLater": "Asagi geçici olarak kullanılamıyor. Lütfen daha sonra tekrar deneyin.",
+  "kuymoIsTemporarilyUnavailablePleaseTryAgainLater": "Kuymo geçici olarak kullanılamıyor. Lütfen daha sonra tekrar deneyin.",
   "comingSoon": "Yakında",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"
@@ -647,9 +647,9 @@
   "countryCode": "TR",
   "countryName": "{countryCode, select, AE{Birleşik Arap Emirlikleri} AT{Avusturya} AU{Avustralya} BE{Belçika} BH{Bahreyn} BR{Brezilya} CA{Kanada} CH{İsviçre} CN{Çin} DE{Almanya} DJ{Cibuti} DZ{Cezayir} EG{Mısır} ES{İspanya} FR{Fransa} GB{Birleşik Krallık} HK{Çin Hong Kong ÖİB} ID{Endonezya} IQ{Irak} IT{İtalya} JO{Ürdün} JP{Japonya} KM{Komorlar} KR{Güney Kore} KW{Kuveyt} LB{Lübnan} LY{Libya} MA{Fas} MR{Moritanya} MX{Meksika} NL{Hollanda} OM{Umman} PL{Polonya} PS{Filistin Bölgeleri} PT{Portekiz} QA{Katar} RU{Rusya} SA{Suudi Arabistan} SD{Sudan} SE{İsveç} SG{Singapur} SO{Somali} SY{Suriye} TH{Tayland} TN{Tunus} TR{Türkiye} TW{Tayvan} US{Amerika Birleşik Devletleri} VN{Vietnam} YE{Yemen} other{Ülke}}",
   "compressionHelpDescription": "Answers to common questions about video compression.",
-  "appSupportDescription": "Get help using Asagi.",
-  "appTermsDescription": "Terms for using the free, open source Asagi app.",
-  "termsOfServiceFullText": "Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.",
-  "termsAcceptanceLicenseBody": "Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices.",
+  "appSupportDescription": "Get help using Kuymo.",
+  "appTermsDescription": "Terms for using the free, open source Kuymo app.",
+  "termsOfServiceFullText": "Kuymo is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.",
+  "termsAcceptanceLicenseBody": "Kuymo is free and open source. All features are available to everyone, and video processing runs locally on your devices.",
   "compressionAndroidOnly": "Video sıkıştırma şu anda yalnızca Android üzerinde kullanılabilir."
 }

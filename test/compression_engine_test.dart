@@ -1,15 +1,15 @@
 import 'dart:io';
 
-import 'package:asagi/core/compression/application/compression_engine.dart';
-import 'package:asagi/core/compression/domain/contracts/compression_planner.dart';
-import 'package:asagi/core/compression/domain/contracts/video_encoder.dart';
-import 'package:asagi/core/compression/domain/models/compression_plan.dart';
-import 'package:asagi/core/compression/domain/models/compression_preferences.dart';
-import 'package:asagi/core/compression/domain/models/encode_request.dart';
-import 'package:asagi/core/compression/domain/models/share_preset.dart';
-import 'package:asagi/core/compression/domain/models/video_metadata.dart';
-import 'package:asagi/core/compression/infrastructure/storage/file_artifact_store.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kuymo/core/compression/application/compression_engine.dart';
+import 'package:kuymo/core/compression/domain/contracts/compression_planner.dart';
+import 'package:kuymo/core/compression/domain/contracts/video_encoder.dart';
+import 'package:kuymo/core/compression/domain/models/compression_plan.dart';
+import 'package:kuymo/core/compression/domain/models/compression_preferences.dart';
+import 'package:kuymo/core/compression/domain/models/encode_request.dart';
+import 'package:kuymo/core/compression/domain/models/share_preset.dart';
+import 'package:kuymo/core/compression/domain/models/video_metadata.dart';
+import 'package:kuymo/core/compression/infrastructure/storage/file_artifact_store.dart';
 
 class Planner implements CompressionPlanner {
   @override

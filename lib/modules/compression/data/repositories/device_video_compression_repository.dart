@@ -176,7 +176,7 @@ final class DeviceVideoCompressionRepository
           ? sourceExtension
           : 'mp4';
       final savedPath =
-          '${savedDirectory.path}/asagi_${DateTime.now().microsecondsSinceEpoch}.$extension';
+          '${savedDirectory.path}/kuymo_${DateTime.now().microsecondsSinceEpoch}.$extension';
       late final File saved;
       try {
         saved = await File(verifiedOutput.path).copy(savedPath);

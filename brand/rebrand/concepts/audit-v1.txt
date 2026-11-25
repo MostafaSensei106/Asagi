@@ -1,0 +1,21 @@
+
+=== a-fold-v1.svg  (359 bytes)
+viewBox 0 0 256 256 · aspect 1.0 (square)
+colours 1: #000000 · gradients 0 · anchors 19
+margins L48.0 R36.0 T32.0 B32.0 · bbox fill 0.504
+· INFO [off-centre-x] Horizontal margins differ (left 48.0, right 36.0). Intentional optical centring? Otherwise centre it.
+production-readiness score: 99/100 (heuristic)
+
+=== b-room-v1.svg  (494 bytes)
+viewBox 0 0 256 256 · aspect 1.0 (square)
+colours 1: #000000 · gradients 0 · anchors 26
+margins L40.0 R40.0 T40.0 B40.0 · bbox fill 0.473
+✔ no issues found
+production-readiness score: 100/100 (heuristic)
+
+=== c-companion-v1.svg  (530 bytes)
+viewBox 0 0 256 256 · aspect 1.0 (square)
+colours 1: #000000 · gradients 0 · anchors 21
+margins L34.6 R34.6 T34.4 B40.0 · bbox fill 0.518
+✔ no issues found
+production-readiness score: 100/100 (heuristic)

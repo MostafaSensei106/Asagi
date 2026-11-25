@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 
-import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
+import '../../../../core/constants/kuymo_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../../core/widgets/widgets.dart';
@@ -33,18 +33,18 @@ final class _FaqPageState extends State<FaqPage> {
     (
       category: 'Compression',
       question:
-          'How does Asagi compress videos without losing noticeable quality?',
-      answer: 'Asagi utilizes advanced two-pass rate control, scene-aware keyframe placement, and modern codecs (HEVC & AV1). By analyzing temporal motion and removing imperceptible redundancy, Asagi achieves dramatic file size reductions while keeping visual clarity crisp.',
+          'How does Kuymo compress videos without losing noticeable quality?',
+      answer: 'Kuymo utilizes advanced two-pass rate control, scene-aware keyframe placement, and modern codecs (HEVC & AV1). By analyzing temporal motion and removing imperceptible redundancy, Kuymo achieves dramatic file size reductions while keeping visual clarity crisp.',
     ),
     (
       category: 'Privacy',
       question: 'Are my videos uploaded to external cloud servers?',
-      answer: 'Never. All video compression, audio transcode, and preview generation happens 100% locally on your device hardware. Asagi does not own, run, or connect to any cloud processing servers.',
+      answer: 'Never. All video compression, audio transcode, and preview generation happens 100% locally on your device hardware. Kuymo does not own, run, or connect to any cloud processing servers.',
     ),
     (
       category: 'Quality & Formats',
       question: 'Which container formats and codecs are supported?',
-      answer: 'Asagi supports MP4, MKV, MOV, and WebM containers. Video codecs include H.264 (AVC), H.265 (HEVC), AV1, and VP9. Audio is encoded in standard high-efficiency AAC stereo or Opus.',
+      answer: 'Kuymo supports MP4, MKV, MOV, and WebM containers. Video codecs include H.264 (AVC), H.265 (HEVC), AV1, and VP9. Audio is encoded in standard high-efficiency AAC stereo or Opus.',
     ),
     (
       category: 'Quality & Formats',
@@ -94,7 +94,7 @@ final class _FaqPageState extends State<FaqPage> {
               child: Row(
                 children: [
                   ExpressiveIcon(
-                    icon: AsagiIcons.faq,
+                    icon: KuymoIcons.faq,
                     shape: ExpressiveIconShape.gem,
                     size: 52,
                     backgroundColor: colorScheme.primaryContainer,
@@ -153,7 +153,7 @@ final class _FaqPageState extends State<FaqPage> {
                 child: Column(
                   children: [
                     Icon(
-                      AsagiIcons.issues,
+                      KuymoIcons.issues,
                       size: 36,
                       color: colorScheme.onSurfaceVariant,
                     ),
@@ -189,7 +189,7 @@ final class _FaqPageState extends State<FaqPage> {
                         bottom: AppSpacing.xSmall,
                       ),
                       leading: ExpressiveIcon(
-                        icon: AsagiIcons.faq,
+                        icon: KuymoIcons.faq,
                         shape: ExpressiveIconShape.sunny,
                         size: 32,
                         backgroundColor: colorScheme.surfaceContainerHighest,
@@ -236,7 +236,7 @@ final class _FaqPageState extends State<FaqPage> {
                   ),
                   const Gap(AppSpacing.medium),
                   FilledButtonComponent.icon(
-                    icon: AsagiIcons.support,
+                    icon: KuymoIcons.support,
                     label: l10n.support,
                     onPressed: () =>
                         unawaited(context.push(const SupportRoute())),

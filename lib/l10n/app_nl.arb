@@ -1,7 +1,7 @@
 {
   "@@locale": "nl",
-  "asagi": "Asagi",
-  "@asagi": {
+  "kuymo": "Kuymo",
+  "@kuymo": {
     "description": "Application name shown in the app and on the home page"
   },
   "downloadFile": "Bestand downloaden",
@@ -211,12 +211,12 @@
   "@compressVideosPrivatelyOnYourDevice": {
     "description": "Home page description"
   },
-  "welcomeToAsagi": "Welkom bij Asagi",
-  "@welcomeToAsagi": {
+  "welcomeToKuymo": "Welkom bij Kuymo",
+  "@welcomeToKuymo": {
     "description": "Onboarding page title"
   },
-  "learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": "Leer hoe Asagi uw video's comprimeert zonder uw telefoon ooit te verlaten.",
-  "@learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": {
+  "learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone": "Leer hoe Kuymo uw video's comprimeert zonder uw telefoon ooit te verlaten.",
+  "@learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone": {
     "description": "Onboarding page description"
   },
   "signIn": "Inloggen",
@@ -315,8 +315,8 @@
   "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
     "description": "Privacy settings page description"
   },
-  "aboutAsagi": "Over Asagi",
-  "@aboutAsagi": {
+  "aboutKuymo": "Over Kuymo",
+  "@aboutKuymo": {
     "description": "App info page title"
   },
   "versionBuildNumberAndApplicationDetails": "Versie, buildnummer en applicatiedetails.",
@@ -327,24 +327,24 @@
   "@aboutTheDeveloper": {
     "description": "Developer page title"
   },
-  "theDeveloperAndToolsBehindAsagi": "De ontwikkelaar en tools achter Asagi.",
-  "@theDeveloperAndToolsBehindAsagi": {
+  "theDeveloperAndToolsBehindKuymo": "De ontwikkelaar en tools achter Kuymo.",
+  "@theDeveloperAndToolsBehindKuymo": {
     "description": "Developer page description"
   },
   "openSourceLicenses": "Open-source licenties",
   "@openSourceLicenses": {
     "description": "Licenses page title"
   },
-  "openSourcePackagesBundledWithAsagi": "Open-source pakketten die met Asagi worden meegeleverd.",
-  "@openSourcePackagesBundledWithAsagi": {
+  "openSourcePackagesBundledWithKuymo": "Open-source pakketten die met Kuymo worden meegeleverd.",
+  "@openSourcePackagesBundledWithKuymo": {
     "description": "Licenses page description"
   },
   "privacyPolicy": "Privacybeleid",
   "@privacyPolicy": {
     "description": "Privacy policy page title"
   },
-  "howAsagiHandlesYourVideosAndData": "Hoe Asagi met uw video's en gegevens omgaat.",
-  "@howAsagiHandlesYourVideosAndData": {
+  "howKuymoHandlesYourVideosAndData": "Hoe Kuymo met uw video's en gegevens omgaat.",
+  "@howKuymoHandlesYourVideosAndData": {
     "description": "Privacy policy page description"
   },
   "termsOfService": "Gebruiksvoorwaarden",
@@ -355,16 +355,16 @@
   "@dataSafety": {
     "description": "Data safety page title"
   },
-  "summaryOfTheDataAsagiCollectsAndWhy": "Samenvatting van de gegevens die Asagi verzamelt en waarom. ",
-  "@summaryOfTheDataAsagiCollectsAndWhy": {
+  "summaryOfTheDataKuymoCollectsAndWhy": "Samenvatting van de gegevens die Kuymo verzamelt en waarom. ",
+  "@summaryOfTheDataKuymoCollectsAndWhy": {
     "description": "Data safety page description"
   },
   "permissions": "Toestemmingen",
   "@permissions": {
     "description": "Permissions page title"
   },
-  "runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": "Runtime-permissies die Asagi aanvraagt en waarom elk nodig is. ",
-  "@runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": {
+  "runtimePermissionsKuymoRequestsAndWhyEachIsNeeded": "Runtime-permissies die Kuymo aanvraagt en waarom elk nodig is. ",
+  "@runtimePermissionsKuymoRequestsAndWhyEachIsNeeded": {
     "description": "Permissions page description"
   },
   "faq": "FAQ",
@@ -395,20 +395,20 @@
   "@permanentlyRemoveYourAccountAndItsServerSideData": {
     "description": "Delete account page description"
   },
-  "rateAsagi": "Beoordeel Asagi",
-  "@rateAsagi": {
+  "rateKuymo": "Beoordeel Kuymo",
+  "@rateKuymo": {
     "description": "Rate app page title"
   },
-  "tellOthersHowAsagiWorkedForYouOnTheStore": "Vertel anderen hoe Asagi voor u werkte in de winkel.",
-  "@tellOthersHowAsagiWorkedForYouOnTheStore": {
+  "tellOthersHowKuymoWorkedForYouOnTheStore": "Vertel anderen hoe Kuymo voor u werkte in de winkel.",
+  "@tellOthersHowKuymoWorkedForYouOnTheStore": {
     "description": "Rate app page description"
   },
-  "shareAsagi": "Deel Asagi",
-  "@shareAsagi": {
+  "shareKuymo": "Deel Kuymo",
+  "@shareKuymo": {
     "description": "Share app page title"
   },
-  "recommendAsagiToAFriend": "Beveel Asagi aan een vriend aan.",
-  "@recommendAsagiToAFriend": {
+  "recommendKuymoToAFriend": "Beveel Kuymo aan een vriend aan.",
+  "@recommendKuymoToAFriend": {
     "description": "Share app page description"
   },
   "appearanceLanguage": "Uiterlijk & taal",
@@ -460,7 +460,7 @@
     "description": "Settings hub row summary"
   },
   "aiSettings": "AI-instellingen",
-  "asagiAssistant": "Asagi Assistent",
+  "kuymoAssistant": "Kuymo Assistent",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "Een privé-assistent voor je video's komt binnenkort. Je kunt hier vragen stellen over compressie, organisatie en opgeslagen video's.",
   "localModelsAndSmartTools": "Lokale modellen en slimme tools",
   "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "Verken lokale modellen en toekomstige AI-tools. Deze opties zijn nog niet actief.",
@@ -508,8 +508,8 @@
   "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "theDeveloperBehindAsagi": "De ontwikkelaar achter Asagi",
-  "@theDeveloperBehindAsagi": {
+  "theDeveloperBehindKuymo": "De ontwikkelaar achter Kuymo",
+  "@theDeveloperBehindKuymo": {
     "description": "Settings hub row summary"
   },
   "openSourcePackageLicenses": "Open source pakketlicenties",
@@ -520,8 +520,8 @@
   "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "rulesForUsingAsagi": "Regels voor het gebruik van Asagi",
-  "@rulesForUsingAsagi": {
+  "rulesForUsingKuymo": "Regels voor het gebruik van Kuymo",
+  "@rulesForUsingKuymo": {
     "description": "Settings hub row summary"
   },
   "whatDataWeCollect": "Welke gegevens we verzamelen",
@@ -623,14 +623,14 @@
   "unavailable": "Niet beschikbaar",
   "projectAndSupport": "Project en ondersteuning",
   "githubRepository": "GitHub-repository",
-  "viewAsagiSourceCode": "Bekijk Asagi-broncode",
+  "viewKuymoSourceCode": "Bekijk Kuymo-broncode",
   "readTheREADME": "Lees de README",
-  "learnAboutAsagiOnGitHub": "Leer over Asagi op GitHub",
+  "learnAboutKuymoOnGitHub": "Leer over Kuymo op GitHub",
   "reportAnIssue": "Meld een probleem",
   "viewAndCreateGitHubIssues": "Bekijk en maak GitHub-issues",
   "latestRelease": "Laatste release",
   "viewReleasesAndDownloads": "Bekijk releases en downloads",
-  "supportAsagi": "Ondersteun Asagi",
+  "supportKuymo": "Ondersteun Kuymo",
   "openTheOfficialDonationPage": "Open de officiële donatiepagina",
   "couldNotOpenTheLinkPleaseTryAgain": "Kon de link niet openen. Probeer het opnieuw.",
   "developer": "Ontwikkelaar",
@@ -638,7 +638,7 @@
   "githubProfile": "GitHub-profiel",
   "seeProjectsAndContactDetails": "Bekijk projecten en contactgegevens",
   "maintenanceInProgress": "Onderhoud in uitvoering",
-  "asagiIsTemporarilyUnavailablePleaseTryAgainLater": "Asagi is tijdelijk niet beschikbaar. Probeer het later opnieuw.",
+  "kuymoIsTemporarilyUnavailablePleaseTryAgainLater": "Kuymo is tijdelijk niet beschikbaar. Probeer het later opnieuw.",
   "comingSoon": "Binnenkort beschikbaar",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"
@@ -647,9 +647,9 @@
   "countryCode": "NL",
   "countryName": "{countryCode, select, AE{Verenigde Arabische Emiraten} AT{Oostenrijk} AU{Australië} BE{België} BH{Bahrein} BR{Brazilië} CA{Canada} CH{Zwitserland} CN{China} DE{Duitsland} DJ{Djibouti} DZ{Algerije} EG{Egypte} ES{Spanje} FR{Frankrijk} GB{Verenigd Koninkrijk} HK{Hongkong SAR van China} ID{Indonesië} IQ{Irak} IT{Italië} JO{Jordanië} JP{Japan} KM{Comoren} KR{Zuid-Korea} KW{Koeweit} LB{Libanon} LY{Libië} MA{Marokko} MR{Mauritanië} MX{Mexico} NL{Nederland} OM{Oman} PL{Polen} PS{Palestijnse gebieden} PT{Portugal} QA{Qatar} RU{Rusland} SA{Saoedi-Arabië} SD{Soedan} SE{Zweden} SG{Singapore} SO{Somalië} SY{Syrië} TH{Thailand} TN{Tunesië} TR{Turkije} TW{Taiwan} US{Verenigde Staten} VN{Vietnam} YE{Jemen} other{Land}}",
   "compressionHelpDescription": "Answers to common questions about video compression.",
-  "appSupportDescription": "Get help using Asagi.",
-  "appTermsDescription": "Terms for using the free, open source Asagi app.",
-  "termsOfServiceFullText": "Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.",
-  "termsAcceptanceLicenseBody": "Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices.",
+  "appSupportDescription": "Get help using Kuymo.",
+  "appTermsDescription": "Terms for using the free, open source Kuymo app.",
+  "termsOfServiceFullText": "Kuymo is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.",
+  "termsAcceptanceLicenseBody": "Kuymo is free and open source. All features are available to everyone, and video processing runs locally on your devices.",
   "compressionAndroidOnly": "Videocompressie is momenteel alleen beschikbaar op Android."
 }

@@ -152,8 +152,8 @@ abstract class AppLocalizations {
   /// Application name shown in the app and on the home page
   ///
   /// In en, this message translates to:
-  /// **'Asagi'**
-  String get asagi;
+  /// **'Kuymo'**
+  String get kuymo;
 
   /// Title for download file dialog
   ///
@@ -434,14 +434,14 @@ abstract class AppLocalizations {
   /// Onboarding page title
   ///
   /// In en, this message translates to:
-  /// **'Welcome to Asagi'**
-  String get welcomeToAsagi;
+  /// **'Welcome to Kuymo'**
+  String get welcomeToKuymo;
 
   /// Onboarding page description
   ///
   /// In en, this message translates to:
-  /// **'Learn how Asagi compresses your videos without ever leaving your phone.'**
-  String get learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone;
+  /// **'Learn how Kuymo compresses your videos without ever leaving your phone.'**
+  String get learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone;
 
   /// Login page title
   ///
@@ -614,8 +614,8 @@ abstract class AppLocalizations {
   /// Engine title in theme preview card
   ///
   /// In en, this message translates to:
-  /// **'Asagi Engine'**
-  String get asagiEngine;
+  /// **'Kuymo Engine'**
+  String get kuymoEngine;
 
   /// Engine subtitle in theme preview card
   ///
@@ -716,8 +716,8 @@ abstract class AppLocalizations {
   /// App info page title
   ///
   /// In en, this message translates to:
-  /// **'About Asagi'**
-  String get aboutAsagi;
+  /// **'About Kuymo'**
+  String get aboutKuymo;
 
   /// App info page description
   ///
@@ -734,14 +734,14 @@ abstract class AppLocalizations {
   /// Developer page description
   ///
   /// In en, this message translates to:
-  /// **'The developer and tools behind Asagi.'**
-  String get theDeveloperAndToolsBehindAsagi;
+  /// **'The developer and tools behind Kuymo.'**
+  String get theDeveloperAndToolsBehindKuymo;
 
   /// Licenses page description
   ///
   /// In en, this message translates to:
-  /// **'Open-source packages bundled with Asagi.'**
-  String get openSourcePackagesBundledWithAsagi;
+  /// **'Open-source packages bundled with Kuymo.'**
+  String get openSourcePackagesBundledWithKuymo;
 
   /// Privacy policy page title
   ///
@@ -752,8 +752,8 @@ abstract class AppLocalizations {
   /// Privacy policy page description
   ///
   /// In en, this message translates to:
-  /// **'How Asagi handles your videos and data.'**
-  String get howAsagiHandlesYourVideosAndData;
+  /// **'How Kuymo handles your videos and data.'**
+  String get howKuymoHandlesYourVideosAndData;
 
   /// Terms page title
   ///
@@ -770,8 +770,8 @@ abstract class AppLocalizations {
   /// Data safety page description
   ///
   /// In en, this message translates to:
-  /// **'Summary of the datan Asagi collects and why.'**
-  String get summaryOfTheDataAsagiCollectsAndWhy;
+  /// **'Summary of the datan Kuymo collects and why.'**
+  String get summaryOfTheDataKuymoCollectsAndWhy;
 
   /// Permissions page title
   ///
@@ -782,8 +782,8 @@ abstract class AppLocalizations {
   /// Permissions page description
   ///
   /// In en, this message translates to:
-  /// **'Runtime permissions Asagi requests and why each is needed.'**
-  String get runtimePermissionsAsagiRequestsAndWhyEachIsNeeded;
+  /// **'Runtime permissions Kuymo requests and why each is needed.'**
+  String get runtimePermissionsKuymoRequestsAndWhyEachIsNeeded;
 
   /// FAQ page title
   ///
@@ -830,26 +830,26 @@ abstract class AppLocalizations {
   /// Rate app page title
   ///
   /// In en, this message translates to:
-  /// **'Rate Asagi'**
-  String get rateAsagi;
+  /// **'Rate Kuymo'**
+  String get rateKuymo;
 
   /// Rate app page description
   ///
   /// In en, this message translates to:
-  /// **'Tell others how Asagi worked for you on the store.'**
-  String get tellOthersHowAsagiWorkedForYouOnTheStore;
+  /// **'Tell others how Kuymo worked for you on the store.'**
+  String get tellOthersHowKuymoWorkedForYouOnTheStore;
 
   /// Share app page title
   ///
   /// In en, this message translates to:
-  /// **'Share Asagi'**
-  String get shareAsagi;
+  /// **'Share Kuymo'**
+  String get shareKuymo;
 
   /// Share app page description
   ///
   /// In en, this message translates to:
-  /// **'Recommend Asagi to a friend.'**
-  String get recommendAsagiToAFriend;
+  /// **'Recommend Kuymo to a friend.'**
+  String get recommendKuymoToAFriend;
 
   /// Settings hub section label
   ///
@@ -929,11 +929,11 @@ abstract class AppLocalizations {
   /// **'AI settings'**
   String get aiSettings;
 
-  /// No description provided for @asagiAssistant.
+  /// No description provided for @kuymoAssistant.
   ///
   /// In en, this message translates to:
-  /// **'Asagi Assistant'**
-  String get asagiAssistant;
+  /// **'Kuymo Assistant'**
+  String get kuymoAssistant;
 
   /// No description provided for @aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere.
   ///
@@ -1156,8 +1156,8 @@ abstract class AppLocalizations {
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
-  /// **'The developer behind Asagi'**
-  String get theDeveloperBehindAsagi;
+  /// **'The developer behind Kuymo'**
+  String get theDeveloperBehindKuymo;
 
   /// Settings hub row summary
   ///
@@ -1174,8 +1174,8 @@ abstract class AppLocalizations {
   /// Settings hub row summary
   ///
   /// In en, this message translates to:
-  /// **'Rules for using Asagi'**
-  String get rulesForUsingAsagi;
+  /// **'Rules for using Kuymo'**
+  String get rulesForUsingKuymo;
 
   /// Settings hub row summary
   ///
@@ -1687,11 +1687,11 @@ abstract class AppLocalizations {
   /// **'GitHub repository'**
   String get githubRepository;
 
-  /// No description provided for @viewAsagiSourceCode.
+  /// No description provided for @viewKuymoSourceCode.
   ///
   /// In en, this message translates to:
-  /// **'View Asagi source code'**
-  String get viewAsagiSourceCode;
+  /// **'View Kuymo source code'**
+  String get viewKuymoSourceCode;
 
   /// No description provided for @readTheREADME.
   ///
@@ -1699,11 +1699,11 @@ abstract class AppLocalizations {
   /// **'Read the README'**
   String get readTheREADME;
 
-  /// No description provided for @learnAboutAsagiOnGitHub.
+  /// No description provided for @learnAboutKuymoOnGitHub.
   ///
   /// In en, this message translates to:
-  /// **'Learn about Asagi on GitHub'**
-  String get learnAboutAsagiOnGitHub;
+  /// **'Learn about Kuymo on GitHub'**
+  String get learnAboutKuymoOnGitHub;
 
   /// No description provided for @reportAnIssue.
   ///
@@ -1729,11 +1729,11 @@ abstract class AppLocalizations {
   /// **'View releases and downloads'**
   String get viewReleasesAndDownloads;
 
-  /// No description provided for @supportAsagi.
+  /// No description provided for @supportKuymo.
   ///
   /// In en, this message translates to:
-  /// **'Support Asagi'**
-  String get supportAsagi;
+  /// **'Support Kuymo'**
+  String get supportKuymo;
 
   /// No description provided for @openTheOfficialDonationPage.
   ///
@@ -1777,11 +1777,11 @@ abstract class AppLocalizations {
   /// **'Maintenance in progress'**
   String get maintenanceInProgress;
 
-  /// No description provided for @asagiIsTemporarilyUnavailablePleaseTryAgainLater.
+  /// No description provided for @kuymoIsTemporarilyUnavailablePleaseTryAgainLater.
   ///
   /// In en, this message translates to:
-  /// **'Asagi is temporarily unavailable. Please try again later.'**
-  String get asagiIsTemporarilyUnavailablePleaseTryAgainLater;
+  /// **'Kuymo is temporarily unavailable. Please try again later.'**
+  String get kuymoIsTemporarilyUnavailablePleaseTryAgainLater;
 
   /// Badge shown on placeholder pages
   ///
@@ -2112,8 +2112,8 @@ abstract class AppLocalizations {
   /// Loading message while the preset plan is computed
   ///
   /// In en, this message translates to:
-  /// **'🐾 Asagi is studying the platform\'s algorithm and calculating the budget...'**
-  String get asagiIsStudyingThePlatformAlgorithmAndCalculatingTheBudget;
+  /// **'🐾 Kuymo is studying the platform\'s algorithm and calculating the budget...'**
+  String get kuymoIsStudyingThePlatformAlgorithmAndCalculatingTheBudget;
 
   /// Title of the custom mode feedback card
   ///
@@ -2131,8 +2131,8 @@ abstract class AppLocalizations {
   /// Infeasible plan title
   ///
   /// In en, this message translates to:
-  /// **'Asagi is puzzled (impossible target for the {name} cap)'**
-  String asagiIsPuzzledAnImpossibleTargetForTheNameCap(String name);
+  /// **'Kuymo is puzzled (impossible target for the {name} cap)'**
+  String kuymoIsPuzzledAnImpossibleTargetForTheNameCap(String name);
 
   /// Infeasible plan explanation
   ///
@@ -2146,8 +2146,8 @@ abstract class AppLocalizations {
   /// Reduced quality warning title
   ///
   /// In en, this message translates to:
-  /// **'Asagi alert: protecting quality from distortion'**
-  String get asagiAlertProtectingQualityFromDistortion;
+  /// **'Kuymo alert: protecting quality from distortion'**
+  String get kuymoAlertProtectingQualityFromDistortion;
 
   /// Reduced quality warning explanation
   ///
@@ -2203,7 +2203,7 @@ abstract class AppLocalizations {
   /// Full Terms of Service text copied to the clipboard
   ///
   /// In en, this message translates to:
-  /// **'Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.'**
+  /// **'Kuymo is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.'**
   String get termsOfServiceFullText;
 
   /// Confirmation toast after copying the terms
@@ -2221,7 +2221,7 @@ abstract class AppLocalizations {
   /// Terms section body
   ///
   /// In en, this message translates to:
-  /// **'Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices.'**
+  /// **'Kuymo is free and open source. All features are available to everyone, and video processing runs locally on your devices.'**
   String get termsAcceptanceLicenseBody;
 
   /// Terms section title
@@ -2233,7 +2233,7 @@ abstract class AppLocalizations {
   /// Terms section body
   ///
   /// In en, this message translates to:
-  /// **'You retain all copyrights and ownership over your videos. Asagi does not transmit, store, or claim any rights to your media files.'**
+  /// **'You retain all copyrights and ownership over your videos. Kuymo does not transmit, store, or claim any rights to your media files.'**
   String get termsContentOwnershipBody;
 
   /// Terms section title
@@ -2404,7 +2404,7 @@ abstract class AppLocalizations {
   /// Privacy policy section body
   ///
   /// In en, this message translates to:
-  /// **'Asagi was built with a fundamental architectural guarantee: your videos, clips, and audio tracks are encoded exclusively on your device hardware using local native codecs. At no point is your media streamed, stored, or processed on external cloud infrastructure.'**
+  /// **'Kuymo was built with a fundamental architectural guarantee: your videos, clips, and audio tracks are encoded exclusively on your device hardware using local native codecs. At no point is your media streamed, stored, or processed on external cloud infrastructure.'**
   String get videoProcessingCommitmentBody;
 
   /// Privacy policy section title
@@ -2929,11 +2929,11 @@ abstract class AppLocalizations {
   /// **'Supported On-Device Models'**
   String get supportedOnDeviceModels;
 
-  /// No description provided for @asagiBitrateOptimizer.
+  /// No description provided for @kuymoBitrateOptimizer.
   ///
   /// In en, this message translates to:
-  /// **'Asagi Bitrate Optimizer (0.2B)'**
-  String get asagiBitrateOptimizer;
+  /// **'Kuymo Bitrate Optimizer (0.2B)'**
+  String get kuymoBitrateOptimizer;
 
   /// No description provided for @localRateControlDescription.
   ///
@@ -3538,7 +3538,7 @@ abstract class AppLocalizations {
   /// No description provided for @privacyPolicySummary.
   ///
   /// In en, this message translates to:
-  /// **'How Asagi handles data'**
+  /// **'How Kuymo handles data'**
   String get privacyPolicySummary;
 
   /// No description provided for @dataSafetySummary.
@@ -3550,7 +3550,7 @@ abstract class AppLocalizations {
   /// No description provided for @permissionsSummary.
   ///
   /// In en, this message translates to:
-  /// **'Why Asagi needs access'**
+  /// **'Why Kuymo needs access'**
   String get permissionsSummary;
 
   /// No description provided for @megabytesShort.
@@ -3658,13 +3658,13 @@ abstract class AppLocalizations {
   /// No description provided for @appSupportDescription.
   ///
   /// In en, this message translates to:
-  /// **'Get help using Asagi.'**
+  /// **'Get help using Kuymo.'**
   String get appSupportDescription;
 
   /// No description provided for @appTermsDescription.
   ///
   /// In en, this message translates to:
-  /// **'Terms for using the free, open source Asagi app.'**
+  /// **'Terms for using the free, open source Kuymo app.'**
   String get appTermsDescription;
 
   /// No description provided for @compressionAndroidOnly.
@@ -3772,7 +3772,7 @@ abstract class AppLocalizations {
   /// No description provided for @notificationReleaseTitle.
   ///
   /// In en, this message translates to:
-  /// **'Asagi {version} is available'**
+  /// **'Kuymo {version} is available'**
   String notificationReleaseTitle(String version);
 
   /// No description provided for @notificationSavingsTitle.
@@ -3892,7 +3892,7 @@ abstract class AppLocalizations {
   /// No description provided for @automaticColorSchemeDescription.
   ///
   /// In en, this message translates to:
-  /// **'Auto uses a vivid Asagi palette. Each option previews its own accent colors.'**
+  /// **'Auto uses a vivid Kuymo palette. Each option previews its own accent colors.'**
   String get automaticColorSchemeDescription;
 
   /// No description provided for @colorSchemeTonalSpot.
@@ -4062,6 +4062,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Could not open the release. Please try again.'**
   String get releaseOpenFailed;
+
+  /// No description provided for @appLinkCopied.
+  ///
+  /// In en, this message translates to:
+  /// **'Link copied to clipboard.'**
+  String get appLinkCopied;
+
+  /// No description provided for @appInvitationCopied.
+  ///
+  /// In en, this message translates to:
+  /// **'Invitation copied. Paste it into your messaging app.'**
+  String get appInvitationCopied;
+
+  /// Invitation to share Kuymo using the current release URL
+  ///
+  /// In en, this message translates to:
+  /// **'Try Kuymo for on-device video compression: {url}'**
+  String kuymoShareInvitation(String url);
+
+  /// No description provided for @onDeviceProcessingLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Video processing on your device'**
+  String get onDeviceProcessingLabel;
+
+  /// No description provided for @kuymoShareDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a target size and prepare your video to share. Video processing stays on your device.'**
+  String get kuymoShareDescription;
+
+  /// No description provided for @copyAppLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy app link'**
+  String get copyAppLink;
+
+  /// No description provided for @enjoyingKuymo.
+  ///
+  /// In en, this message translates to:
+  /// **'Enjoying Kuymo?'**
+  String get enjoyingKuymo;
+
+  /// No description provided for @whyChooseKuymo.
+  ///
+  /// In en, this message translates to:
+  /// **'Why choose Kuymo'**
+  String get whyChooseKuymo;
+
+  /// No description provided for @projectSupportLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy project support link'**
+  String get projectSupportLink;
+
+  /// No description provided for @brandTagline.
+  ///
+  /// In en, this message translates to:
+  /// **'More room for your moments.'**
+  String get brandTagline;
+
+  /// No description provided for @kuymoAi.
+  ///
+  /// In en, this message translates to:
+  /// **'Kuymo AI'**
+  String get kuymoAi;
 }
 
 class _AppLocalizationsDelegate

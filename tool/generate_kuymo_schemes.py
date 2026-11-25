@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Generate and audit complete Material palettes with Matugen 4.2.0.
 
 No templates, wallpaper changes, or user hooks are run. Only verified output is
@@ -17,9 +16,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "lib/core/utils/theme/generated_color_schemes.dart"
 EXPECTED_VERSION = "4.2.0"
-DEFAULT_SEED = "0095A9"
+DEFAULT_SEED = "527A46"
 VARIANTS = {
-    "auto": "scheme-vibrant",
+    "auto": "scheme-tonal-spot",
     "tonalSpot": "scheme-tonal-spot",
     "fidelity": "scheme-fidelity",
     "content": "scheme-content",
@@ -90,8 +89,13 @@ def normalized_seed(value: str) -> str:
 
 def run_matugen(arguments: list[str]) -> str:
     try:
-        result = subprocess.run(["matugen", *arguments], check=True,
-                                capture_output=True, text=True, timeout=30)
+        result = subprocess.run(
+            ["matugen", *arguments],
+            check=True,
+            capture_output=True,
+            text=True,
+            timeout=30,
+        )
         return result.stdout
     except FileNotFoundError as error:
         raise ValueError("Matugen is missing. Install Matugen 4.2.0.") from error
@@ -102,10 +106,24 @@ def run_matugen(arguments: list[str]) -> str:
 
 
 def generate(seed: str, scheme: str, mode: str, contrast: float) -> dict[str, str]:
-    raw = json.loads(run_matugen([
-        "color", "hex", seed, "--type", scheme, "--mode", mode,
-        "--contrast", str(contrast), "--json", "hex", "--dry-run",
-    ]))
+    raw = json.loads(
+        run_matugen(
+            [
+                "color",
+                "hex",
+                seed,
+                "--type",
+                scheme,
+                "--mode",
+                mode,
+                "--contrast",
+                str(contrast),
+                "--json",
+                "hex",
+                "--dry-run",
+            ]
+        )
+    )
     colors = {}
     for role in CONSTRUCTOR_ROLES:
         try:
@@ -119,9 +137,10 @@ def generate(seed: str, scheme: str, mode: str, contrast: float) -> dict[str, st
 
 
 def luminance(color: str) -> float:
-    channels = [int(color[i:i + 2], 16) / 255.0 for i in (1, 3, 5)]
-    linear = [v / 12.92 if v <= 0.04045 else ((v + 0.055) / 1.055) ** 2.4
-              for v in channels]
+    channels = [int(color[i : i + 2], 16) / 255.0 for i in (1, 3, 5)]
+    linear = [
+        v / 12.92 if v <= 0.04045 else ((v + 0.055) / 1.055) ** 2.4 for v in channels
+    ]
     return sum(v * weight for v, weight in zip(linear, (0.2126, 0.7152, 0.0722)))
 
 
@@ -137,19 +156,33 @@ def contrast_ratio(first: str, second: str) -> float:
 
 
 def foreground_pairs() -> list[tuple[str, str]]:
-    pairs = [("on_surface", role) for role in (
-        "surface", "surface_container_lowest", "surface_container_low",
-        "surface_container", "surface_container_high", "surface_container_highest")]
-    pairs += [("on_surface_variant", "surface_container_highest"),
-              ("inverse_on_surface", "inverse_surface")]
+    pairs = [
+        ("on_surface", role)
+        for role in (
+            "surface",
+            "surface_container_lowest",
+            "surface_container_low",
+            "surface_container",
+            "surface_container_high",
+            "surface_container_highest",
+        )
+    ]
+    pairs += [
+        ("on_surface_variant", "surface_container_highest"),
+        ("inverse_on_surface", "inverse_surface"),
+    ]
     for accent in ("primary", "secondary", "tertiary", "error"):
-        pairs += [(f"on_{accent}", accent),
-                  (f"on_{accent}_container", f"{accent}_container")]
+        pairs += [
+            (f"on_{accent}", accent),
+            (f"on_{accent}_container", f"{accent}_container"),
+        ]
         if accent != "error":
-            pairs += [(f"on_{accent}_fixed", f"{accent}_fixed"),
-                      (f"on_{accent}_fixed", f"{accent}_fixed_dim"),
-                      (f"on_{accent}_fixed_variant", f"{accent}_fixed"),
-                      (f"on_{accent}_fixed_variant", f"{accent}_fixed_dim")]
+            pairs += [
+                (f"on_{accent}_fixed", f"{accent}_fixed"),
+                (f"on_{accent}_fixed", f"{accent}_fixed_dim"),
+                (f"on_{accent}_fixed_variant", f"{accent}_fixed"),
+                (f"on_{accent}_fixed_variant", f"{accent}_fixed_dim"),
+            ]
     return pairs
 
 
@@ -162,26 +195,38 @@ def audit(colors: dict[str, str], mode: str, high_contrast: bool) -> dict:
         if ratio < minimum:
             raise ValueError(f"{foreground}/{background}: {ratio:.4f}:1 < {minimum}:1")
         pairs[f"{foreground}/{background}"] = round(ratio, 4)
-    levels = [tone(colors[role]) for role in (
-        "surface_container_lowest", "surface_container_low", "surface_container",
-        "surface_container_high", "surface_container_highest")]
+    levels = [
+        tone(colors[role])
+        for role in (
+            "surface_container_lowest",
+            "surface_container_low",
+            "surface_container",
+            "surface_container_high",
+            "surface_container_highest",
+        )
+    ]
     ordered = sorted(levels, reverse=mode == "light")
     if levels != ordered:
         raise ValueError(f"Surface container tones are out of order: {levels}")
     outline = contrast_ratio(colors["outline"], colors["surface"])
     if outline < 3.0:
         raise ValueError(f"Interactive outline contrast is too low: {outline:.4f}:1")
-    return {"roles": {role: {"hex": value, "tone": round(tone(value), 4)}
-                      for role, value in colors.items()},
-            "contrast": pairs, "outlineContrast": round(outline, 4)}
+    return {
+        "roles": {
+            role: {"hex": value, "tone": round(tone(value), 4)}
+            for role, value in colors.items()
+        },
+        "contrast": pairs,
+        "outlineContrast": round(outline, 4),
+    }
 
 
 def render(seed: str, schemes: dict[str, dict[str, str]]) -> str:
-    header = f"""// Generated by tool/generate_asagi_schemes.py using Matugen {EXPECTED_VERSION}.
-// Do not edit by hand. Regenerate with: python3 tool/generate_asagi_schemes.py
+    header = f"""// Generated by tool/generate_kuymo_schemes.py using Matugen {EXPECTED_VERSION}.
+// Do not edit by hand. Regenerate with: python3 tool/generate_kuymo_schemes.py
 import 'package:material_ui/material_ui.dart';
 
-const Color asagiSeedColor = Color(0xFF{seed});
+const Color kuymoSeedColor = Color(0xFF{seed});
 
 ColorScheme matugenColorScheme({{
   required String variant,
@@ -195,9 +240,13 @@ const Map<String, ColorScheme> _schemes = {{
     for key, colors in schemes.items():
         mode = key.split("|")[1]
         args = [f"brightness: Brightness.{mode}"]
-        args += [f"{CONSTRUCTOR_ROLES[role]}: Color(0xFF{value[1:]})"
-                 for role, value in colors.items()]
-        entries.append(f"  '{key}': ColorScheme(\n    " + ",\n    ".join(args) + ",\n  ),")
+        args += [
+            f"{CONSTRUCTOR_ROLES[role]}: Color(0xFF{value[1:]})"
+            for role, value in colors.items()
+        ]
+        entries.append(
+            f"  '{key}': ColorScheme(\n    " + ",\n    ".join(args) + ",\n  ),"
+        )
     return header + "\n".join(entries) + "\n};\n"
 
 
@@ -207,7 +256,9 @@ def write_artifact(path: Path, content: str, check: bool) -> None:
             raise ValueError(f"Generated artifact is stale: {path}")
         return
     path.parent.mkdir(parents=True, exist_ok=True)
-    with tempfile.NamedTemporaryFile(mode="w", dir=path.parent, delete=False) as temporary:
+    with tempfile.NamedTemporaryFile(
+        mode="w", dir=path.parent, delete=False
+    ) as temporary:
         temporary.write(content)
         temporary_path = Path(temporary.name)
     temporary_path.replace(path)
@@ -236,8 +287,17 @@ def main(arguments: list[str] | None = None) -> int:
                         raise ValueError(f"{key}: {error}") from error
                     schemes[key] = colors
         dart = render(seed, schemes)
-        report_text = json.dumps({"seed": f"#{seed}", "matugenVersion": EXPECTED_VERSION,
-            "schemes": report}, indent=2) + "\n"
+        report_text = (
+            json.dumps(
+                {
+                    "seed": f"#{seed}",
+                    "matugenVersion": EXPECTED_VERSION,
+                    "schemes": report,
+                },
+                indent=2,
+            )
+            + "\n"
+        )
         output = args.output.resolve()
         report_path = output.with_suffix(".audit.json")
         # All generation and audits finish before any destination is replaced.
@@ -247,7 +307,9 @@ def main(arguments: list[str] | None = None) -> int:
         else:
             write_artifact(output, dart, False)
             write_artifact(report_path, report_text, False)
-        print(f"{'Verified' if args.check else 'Generated'} {len(schemes)} schemes: {output}")
+        print(
+            f"{'Verified' if args.check else 'Generated'} {len(schemes)} schemes: {output}"
+        )
         return 0
     except (ValueError, json.JSONDecodeError) as error:
         print(f"Color generation failed: {error}", file=sys.stderr)

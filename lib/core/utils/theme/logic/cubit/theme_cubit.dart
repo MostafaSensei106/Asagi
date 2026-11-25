@@ -23,9 +23,9 @@ class ThemeCubit extends HydratedCubitSignal<ThemeState> {
     );
     final highContrast = json['highContrast'];
     final variantName = json['colorSchemeVariant'];
-    final variant = AsagiColorSchemeVariant.values.firstWhere(
+    final variant = KuymoColorSchemeVariant.values.firstWhere(
       (value) => value.name == variantName,
-      orElse: () => AsagiColorSchemeVariant.auto,
+      orElse: () => KuymoColorSchemeVariant.auto,
     );
 
     return ThemeState(
@@ -52,7 +52,7 @@ class ThemeCubit extends HydratedCubitSignal<ThemeState> {
     emit(state.value.copyWith(highContrast: enabled));
   }
 
-  void changeColorSchemeVariant(AsagiColorSchemeVariant variant) {
+  void changeColorSchemeVariant(KuymoColorSchemeVariant variant) {
     if (state.value.colorSchemeVariant == variant) return;
     emit(state.value.copyWith(colorSchemeVariant: variant));
   }

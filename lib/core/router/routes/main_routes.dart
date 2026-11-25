@@ -9,7 +9,7 @@ final class MainRouteEntry extends AppRoute {
     name: 'home',
     path: '/',
     section: AppRouteSection.core,
-    icon: AsagiIcons.home,
+    icon: KuymoIcons.home,
   );
 }
 
@@ -22,11 +22,11 @@ final class HomeTabRoute extends AppRoute {
     name: 'home_tab',
     path: '/',
     section: AppRouteSection.core,
-    icon: AsagiIcons.home,
+    icon: KuymoIcons.home,
   );
 }
 
-/// First-run introduction to Asagi's compression workflow and privacy model.
+/// First-run introduction to Kuymo's compression workflow and privacy model.
 final class OnboardingRoute extends AppRoute {
   const OnboardingRoute();
 
@@ -35,6 +35,6 @@ final class OnboardingRoute extends AppRoute {
     name: 'onboarding',
     path: '/onboarding',
     section: AppRouteSection.core,
-    icon: AsagiIcons.onboarding,
+    icon: KuymoIcons.onboarding,
   );
 }

@@ -1,10 +1,20 @@
-import 'package:asagi/core/utils/localization/app_supported_locales.dart';
-import 'package:asagi/l10n/app_localizations.dart';
 import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kuymo/core/utils/localization/app_supported_locales.dart';
+import 'package:kuymo/l10n/app_localizations.dart';
 import 'package:material_ui/material_ui.dart';
 
 void main() {
+  test('all selectable locales use the approved Kuymo product name', () {
+    for (final locale in AppSupportedLocales.values) {
+      final strings = lookupAppLocalizations(locale);
+      expect(strings.kuymo, 'Kuymo', reason: '$locale');
+      expect(strings.welcomeToKuymo, contains('Kuymo'), reason: '$locale');
+      expect(strings.kuymoAssistant, contains('Kuymo'), reason: '$locale');
+      expect(strings.aboutKuymo, isNot(contains('Asagi')), reason: '$locale');
+    }
+  });
+
   test('language choices are unique country-specific locales', () {
     final locales = AppSupportedLocales.values;
     final tags = locales.map((locale) => locale.toString()).toList();

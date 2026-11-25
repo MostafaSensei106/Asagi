@@ -1,8 +1,7 @@
-import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
-import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
+import '../../../../core/constants/kuymo_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/widgets/widgets.dart';
 
@@ -16,23 +15,17 @@ final class HomeWelcomeCard extends StatelessWidget {
     final scheme = context.colorScheme;
 
     return CardComponent.filled(
-      color: scheme.primaryContainer,
+      color: scheme.surfaceContainerLow,
       padding: const EdgeInsets.all(AppSpacing.xLarge),
       child: Column(
         children: [
-          ExpressiveIcon(
-            icon: LucideIcons.video,
-            shape: ExpressiveIconShape.softBurst,
-            size: 76,
-            backgroundColor: scheme.surface,
-            foregroundColor: scheme.primary,
-          ),
+          const BrandLogo(size: 80, elevated: false),
           const Gap(AppSpacing.large),
           Text(
-            context.localeKeys.chooseAVideo,
+            context.localeKeys.brandTagline,
             textAlign: TextAlign.center,
             style: context.textTheme.headlineSmall?.copyWith(
-              color: scheme.onPrimaryContainer,
+              color: scheme.onSurface,
               fontWeight: FontWeight.w800,
             ),
           ),
@@ -41,13 +34,13 @@ final class HomeWelcomeCard extends StatelessWidget {
             context.localeKeys.compressVideosPrivatelyOnYourDevice,
             textAlign: TextAlign.center,
             style: context.textTheme.bodyMedium?.copyWith(
-              color: scheme.onPrimaryContainer,
+              color: scheme.onSurface,
             ),
           ),
           const Gap(AppSpacing.large),
           FilledButtonComponent.icon(
             expand: true,
-            icon: AsagiIcons.videoSelect,
+            icon: KuymoIcons.videoSelect,
             label: context.localeKeys.pickVideo,
             onPressed: onPickVideo,
           ),

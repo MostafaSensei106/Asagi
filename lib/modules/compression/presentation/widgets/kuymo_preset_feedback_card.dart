@@ -6,10 +6,10 @@ import '../../../../core/extensions/extensions.dart';
 import '../../../../core/widgets/design_system/tokens/tokens.dart';
 import 'platform_presets_bar.dart';
 
-/// Interactive Asagi Mascot Feedback Card that explains the algorithmic tuning
+/// Interactive Kuymo Mascot Feedback Card that explains the algorithmic tuning
 /// and warns about quality degradation or infeasible limits.
-class AsagiPresetFeedbackCard extends StatelessWidget {
-  const AsagiPresetFeedbackCard({
+class KuymoPresetFeedbackCard extends StatelessWidget {
+  const KuymoPresetFeedbackCard({
     required this.selectedPresetId,
     required this.presetPlan,
     required this.isLoading,
@@ -40,7 +40,7 @@ class AsagiPresetFeedbackCard extends StatelessWidget {
               const SizedBox(width: AppSpacing.medium),
               Expanded(
                 child: Text(
-                  l10n.asagiIsStudyingThePlatformAlgorithmAndCalculatingTheBudget,
+                  l10n.kuymoIsStudyingThePlatformAlgorithmAndCalculatingTheBudget,
                   style: const TextStyle(fontSize: 13),
                 ),
               ),
@@ -89,7 +89,7 @@ class AsagiPresetFeedbackCard extends StatelessWidget {
     final descriptor = PresetDescriptor.of(selectedPresetId!);
     final plan = presetPlan;
 
-    // Check Asagi expressions based on plan result
+    // Check Kuymo expressions based on plan result
     if (plan != null &&
         (plan.plan.isInfeasible ||
             plan.tier == SharePresetTier.unsatisfiable)) {
@@ -109,8 +109,8 @@ class AsagiPresetFeedbackCard extends StatelessWidget {
                   children: [
                     Text(
                       bestEffort
-                          ? l10n.asagiAlertProtectingQualityFromDistortion
-                          : l10n.asagiIsPuzzledAnImpossibleTargetForTheNameCap(
+                          ? l10n.kuymoAlertProtectingQualityFromDistortion
+                          : l10n.kuymoIsPuzzledAnImpossibleTargetForTheNameCap(
                               descriptor.name,
                             ),
                       style: TextStyle(
@@ -163,7 +163,7 @@ class AsagiPresetFeedbackCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      l10n.asagiAlertProtectingQualityFromDistortion,
+                      l10n.kuymoAlertProtectingQualityFromDistortion,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 13,
@@ -233,7 +233,7 @@ class AsagiPresetFeedbackCard extends StatelessWidget {
       );
     }
 
-    // Exact Match (Happy Asagi)
+    // Exact Match (Happy Kuymo)
     return Card(
       color: scheme.surfaceContainerLow,
       child: Padding(

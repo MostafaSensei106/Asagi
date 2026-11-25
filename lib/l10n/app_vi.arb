@@ -1,7 +1,7 @@
 {
   "@@locale": "vi",
-  "asagi": "Asagi",
-  "@asagi": {
+  "kuymo": "Kuymo",
+  "@kuymo": {
     "description": "Application name shown in the app and on the home page"
   },
   "downloadFile": "Tải xuống Tệp",
@@ -211,12 +211,12 @@
   "@compressVideosPrivatelyOnYourDevice": {
     "description": "Home page description"
   },
-  "welcomeToAsagi": "Chào mừng đến với Asagi",
-  "@welcomeToAsagi": {
+  "welcomeToKuymo": "Chào mừng đến với Kuymo",
+  "@welcomeToKuymo": {
     "description": "Onboarding page title"
   },
-  "learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": "Tìm hiểu cách Asagi nén video của bạn mà không cần rời khỏi điện thoại.",
-  "@learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": {
+  "learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone": "Tìm hiểu cách Kuymo nén video của bạn mà không cần rời khỏi điện thoại.",
+  "@learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone": {
     "description": "Onboarding page description"
   },
   "signIn": "Đăng nhập",
@@ -315,8 +315,8 @@
   "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
     "description": "Privacy settings page description"
   },
-  "aboutAsagi": "Về Asagi",
-  "@aboutAsagi": {
+  "aboutKuymo": "Về Kuymo",
+  "@aboutKuymo": {
     "description": "App info page title"
   },
   "versionBuildNumberAndApplicationDetails": "Phiên bản, số bản dựng và chi tiết ứng dụng.",
@@ -327,24 +327,24 @@
   "@aboutTheDeveloper": {
     "description": "Developer page title"
   },
-  "theDeveloperAndToolsBehindAsagi": "Nhà phát triển và các công cụ phía sau Asagi.",
-  "@theDeveloperAndToolsBehindAsagi": {
+  "theDeveloperAndToolsBehindKuymo": "Nhà phát triển và các công cụ phía sau Kuymo.",
+  "@theDeveloperAndToolsBehindKuymo": {
     "description": "Developer page description"
   },
   "openSourceLicenses": "Giấy phép mã nguồn mở",
   "@openSourceLicenses": {
     "description": "Licenses page title"
   },
-  "openSourcePackagesBundledWithAsagi": "Các gói mã nguồn mở đi kèm với Asagi.",
-  "@openSourcePackagesBundledWithAsagi": {
+  "openSourcePackagesBundledWithKuymo": "Các gói mã nguồn mở đi kèm với Kuymo.",
+  "@openSourcePackagesBundledWithKuymo": {
     "description": "Licenses page description"
   },
   "privacyPolicy": "Chính sách quyền riêng tư",
   "@privacyPolicy": {
     "description": "Privacy policy page title"
   },
-  "howAsagiHandlesYourVideosAndData": "Cách Asagi xử lý video và dữ liệu của bạn.",
-  "@howAsagiHandlesYourVideosAndData": {
+  "howKuymoHandlesYourVideosAndData": "Cách Kuymo xử lý video và dữ liệu của bạn.",
+  "@howKuymoHandlesYourVideosAndData": {
     "description": "Privacy policy page description"
   },
   "termsOfService": "Điều khoản dịch vụ",
@@ -355,16 +355,16 @@
   "@dataSafety": {
     "description": "Data safety page title"
   },
-  "summaryOfTheDataAsagiCollectsAndWhy": "Tóm tắt dữ liệu Asagi thu thập và lý do.",
-  "@summaryOfTheDataAsagiCollectsAndWhy": {
+  "summaryOfTheDataKuymoCollectsAndWhy": "Tóm tắt dữ liệu Kuymo thu thập và lý do.",
+  "@summaryOfTheDataKuymoCollectsAndWhy": {
     "description": "Data safety page description"
   },
   "permissions": "Quyền hạn",
   "@permissions": {
     "description": "Permissions page title"
   },
-  "runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": "Quyền hạn khi chạy mà Asagi yêu cầu và lý do cần thiết cho từng quyền.",
-  "@runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": {
+  "runtimePermissionsKuymoRequestsAndWhyEachIsNeeded": "Quyền hạn khi chạy mà Kuymo yêu cầu và lý do cần thiết cho từng quyền.",
+  "@runtimePermissionsKuymoRequestsAndWhyEachIsNeeded": {
     "description": "Permissions page description"
   },
   "faq": "Câu hỏi thường gặp",
@@ -395,20 +395,20 @@
   "@permanentlyRemoveYourAccountAndItsServerSideData": {
     "description": "Delete account page description"
   },
-  "rateAsagi": "Đánh giá Asagi",
-  "@rateAsagi": {
+  "rateKuymo": "Đánh giá Kuymo",
+  "@rateKuymo": {
     "description": "Rate app page title"
   },
-  "tellOthersHowAsagiWorkedForYouOnTheStore": "Cho người khác biết Asagi đã hoạt động như thế nào với bạn trên cửa hàng.",
-  "@tellOthersHowAsagiWorkedForYouOnTheStore": {
+  "tellOthersHowKuymoWorkedForYouOnTheStore": "Cho người khác biết Kuymo đã hoạt động như thế nào với bạn trên cửa hàng.",
+  "@tellOthersHowKuymoWorkedForYouOnTheStore": {
     "description": "Rate app page description"
   },
-  "shareAsagi": "Chia sẻ Asagi",
-  "@shareAsagi": {
+  "shareKuymo": "Chia sẻ Kuymo",
+  "@shareKuymo": {
     "description": "Share app page title"
   },
-  "recommendAsagiToAFriend": "Đề xuất Asagi cho một người bạn.",
-  "@recommendAsagiToAFriend": {
+  "recommendKuymoToAFriend": "Đề xuất Kuymo cho một người bạn.",
+  "@recommendKuymoToAFriend": {
     "description": "Share app page description"
   },
   "appearanceLanguage": "Giao diện & ngôn ngữ",
@@ -460,7 +460,7 @@
     "description": "Settings hub row summary"
   },
   "aiSettings": "Cài đặt AI",
-  "asagiAssistant": "Trợ lý Asagi",
+  "kuymoAssistant": "Trợ lý Kuymo",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "Một trợ lý cá nhân cho video của bạn sắp ra mắt. Bạn sẽ có thể hỏi về nén, tổ chức và các video đã lưu tại đây.",
   "localModelsAndSmartTools": "Mô hình cục bộ và công cụ thông minh",
   "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "Khám phá các mô hình cục bộ và công cụ AI tương lai. Những tùy chọn này vẫn chưa được kích hoạt.",
@@ -508,8 +508,8 @@
   "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "theDeveloperBehindAsagi": "Nhà phát triển đứng sau Asagi",
-  "@theDeveloperBehindAsagi": {
+  "theDeveloperBehindKuymo": "Nhà phát triển đứng sau Kuymo",
+  "@theDeveloperBehindKuymo": {
     "description": "Settings hub row summary"
   },
   "openSourcePackageLicenses": "Giấy phép gói mã nguồn mở",
@@ -520,8 +520,8 @@
   "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "rulesForUsingAsagi": "Quy tắc sử dụng Asagi",
-  "@rulesForUsingAsagi": {
+  "rulesForUsingKuymo": "Quy tắc sử dụng Kuymo",
+  "@rulesForUsingKuymo": {
     "description": "Settings hub row summary"
   },
   "whatDataWeCollect": "Dữ liệu chúng tôi thu thập",
@@ -623,14 +623,14 @@
   "unavailable": "Không có sẵn",
   "projectAndSupport": "Dự án và hỗ trợ",
   "githubRepository": "Kho lưu trữ GitHub",
-  "viewAsagiSourceCode": "Xem mã nguồn Asagi",
+  "viewKuymoSourceCode": "Xem mã nguồn Kuymo",
   "readTheREADME": "Đọc README",
-  "learnAboutAsagiOnGitHub": "Tìm hiểu về Asagi trên GitHub",
+  "learnAboutKuymoOnGitHub": "Tìm hiểu về Kuymo trên GitHub",
   "reportAnIssue": "Báo cáo sự cố",
   "viewAndCreateGitHubIssues": "Xem và tạo các vấn đề trên GitHub",
   "latestRelease": "Phiên bản mới nhất",
   "viewReleasesAndDownloads": "Xem các bản phát hành và tải xuống",
-  "supportAsagi": "Hỗ trợ Asagi",
+  "supportKuymo": "Hỗ trợ Kuymo",
   "openTheOfficialDonationPage": "Mở trang quyên góp chính thức",
   "couldNotOpenTheLinkPleaseTryAgain": "Không thể mở liên kết. Vui lòng thử lại.",
   "developer": "Nhà phát triển",
@@ -638,7 +638,7 @@
   "githubProfile": "Hồ sơ GitHub",
   "seeProjectsAndContactDetails": "Xem dự án và thông tin liên hệ",
   "maintenanceInProgress": "Đang bảo trì",
-  "asagiIsTemporarilyUnavailablePleaseTryAgainLater": "Asagi hiện tạm thời không khả dụng. Vui lòng thử lại sau.",
+  "kuymoIsTemporarilyUnavailablePleaseTryAgainLater": "Kuymo hiện tạm thời không khả dụng. Vui lòng thử lại sau.",
   "comingSoon": "Sắp ra mắt",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"
@@ -655,9 +655,9 @@
   "countryCode": "VN",
   "countryName": "{countryCode, select, AE{Các Tiểu Vương quốc Ả Rập Thống nhất} AT{Áo} AU{Úc} BE{Bỉ} BH{Bahrain} BR{Brazil} CA{Canada} CH{Thụy Sĩ} CN{Trung Quốc} DE{Đức} DJ{Djibouti} DZ{Algeria} EG{Ai Cập} ES{Tây Ban Nha} FR{Pháp} GB{Vương quốc Anh} HK{Đặc khu Hành chính Hồng Kông, Trung Quốc} ID{Indonesia} IQ{Iraq} IT{Italy} JO{Jordan} JP{Nhật Bản} KM{Comoros} KR{Hàn Quốc} KW{Kuwait} LB{Li-băng} LY{Libya} MA{Ma-rốc} MR{Mauritania} MX{Mexico} NL{Hà Lan} OM{Oman} PL{Ba Lan} PS{Lãnh thổ Palestine} PT{Bồ Đào Nha} QA{Qatar} RU{Nga} SA{Ả Rập Xê-út} SD{Sudan} SE{Thụy Điển} SG{Singapore} SO{Somalia} SY{Syria} TH{Thái Lan} TN{Tunisia} TR{Thổ Nhĩ Kỳ} TW{Đài Loan} US{Hoa Kỳ} VN{Việt Nam} YE{Yemen} other{Quốc gia}}",
   "compressionHelpDescription": "Answers to common questions about video compression.",
-  "appSupportDescription": "Get help using Asagi.",
-  "appTermsDescription": "Terms for using the free, open source Asagi app.",
-  "termsOfServiceFullText": "Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.",
-  "termsAcceptanceLicenseBody": "Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices.",
+  "appSupportDescription": "Get help using Kuymo.",
+  "appTermsDescription": "Terms for using the free, open source Kuymo app.",
+  "termsOfServiceFullText": "Kuymo is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.",
+  "termsAcceptanceLicenseBody": "Kuymo is free and open source. All features are available to everyone, and video processing runs locally on your devices.",
   "compressionAndroidOnly": "Tính năng nén video hiện chỉ có trên Android."
 }

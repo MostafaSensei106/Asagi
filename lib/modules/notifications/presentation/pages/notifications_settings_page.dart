@@ -4,8 +4,8 @@ import 'package:bloc_signals_flutter/bloc_signals_flutter.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
-import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
+import '../../../../core/constants/kuymo_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/preferences/domain/entities/notification_settings.dart';
 import '../../../../core/services/haptics/haptics_service.dart';
@@ -205,7 +205,7 @@ final class NotificationsSettingsPage extends StatelessWidget {
                       subtitle: text.savingsDigestShort,
                       group: ListTileGroupType.bottom,
                       description: text.savingsDigestDetails,
-                      icon: AsagiIcons.storage,
+                      icon: KuymoIcons.storage,
                       value: settings.savingsDigest,
                       change: (current, v) =>
                           current.copyWith(savingsDigest: v),

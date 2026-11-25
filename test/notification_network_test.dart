@@ -2,16 +2,16 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:asagi/core/error/failures.dart';
-import 'package:asagi/core/network/dio_factory.dart';
-import 'package:asagi/core/network/network_failure_mapper.dart';
-import 'package:asagi/core/network/request_deduplicator.dart';
-import 'package:asagi/core/utils/result/result.dart';
-import 'package:asagi/modules/updates/data/data_sources/github_releases_api.dart';
-import 'package:asagi/modules/updates/data/repositories/github_release_repository.dart';
-import 'package:asagi/modules/updates/domain/use_cases/check_app_update.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kuymo/core/error/failures.dart';
+import 'package:kuymo/core/network/dio_factory.dart';
+import 'package:kuymo/core/network/network_failure_mapper.dart';
+import 'package:kuymo/core/network/request_deduplicator.dart';
+import 'package:kuymo/core/utils/result/result.dart';
+import 'package:kuymo/modules/updates/data/data_sources/github_releases_api.dart';
+import 'package:kuymo/modules/updates/data/repositories/github_release_repository.dart';
+import 'package:kuymo/modules/updates/domain/use_cases/check_app_update.dart';
 
 import 'support/memory_preference_storage.dart';
 

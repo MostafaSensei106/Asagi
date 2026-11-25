@@ -1,26 +1,16 @@
-# To generate app icons, run:
-# dart run flutter_launcher_icons
-
+# Regenerate with: dart run flutter_launcher_icons
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
-  web:
-    generate: true
-    image_path: "assets/icons/icon-512.png"
-    background_color: "#1B487C"
-    theme_color: "#1B487C"
-    # windows:
-    #   generate: true
-    #   image_path: "assets/icons/play_store_512.png"
-    #  # icon_size: 48 # Optional. Default size is 48
-    # macos:
-    #   generate: flase
-    #   image_path: "assets/icons/play_store_512.png"
-    # linux:
-    #   generate: false
-    #   image_path: "assets/icons/play_store_512.png"
-  image_path: "assets/icons/play_store_512.png"
+  remove_alpha_ios: true
+  image_path: "assets/brand/kuymo-app-icon-1024.png"
   min_sdk_android: 21
-  adaptive_icon_background: "assets/icons/ic_launcher_background.png"
-  adaptive_icon_foreground: "assets/icons/play_store_512.png"
-  min_web_size: 48
+  adaptive_icon_foreground_inset: 0
+  adaptive_icon_background: "#DDE9C6"
+  adaptive_icon_foreground: "assets/icons/ic_launcher_foreground.png"
+  adaptive_icon_monochrome: "assets/icons/ic_launcher_monochrome.png"
+  web:
+    generate: false
+    image_path: "assets/brand/kuymo-app-icon-1024.png"
+    background_color: "#DDE9C6"
+    theme_color: "#284B3B"

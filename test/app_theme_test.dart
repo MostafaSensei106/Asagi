@@ -1,9 +1,9 @@
-import 'package:asagi/core/utils/theme/app_theme.dart';
-import 'package:asagi/core/utils/theme/generated_color_schemes.dart';
-import 'package:asagi/l10n/app_localizations.dart';
-import 'package:asagi/modules/appearance/presentation/widgets/color_scheme_section.dart';
 import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kuymo/core/utils/theme/app_theme.dart';
+import 'package:kuymo/core/utils/theme/generated_color_schemes.dart';
+import 'package:kuymo/l10n/app_localizations.dart';
+import 'package:kuymo/modules/appearance/presentation/widgets/color_scheme_section.dart';
 import 'package:material_ui/material_ui.dart';
 
 double ratio(Color a, Color b) {
@@ -18,7 +18,7 @@ void main() {
   test(
     'all forty schemes retain readable paired roles and ordered surfaces',
     () {
-      for (final variant in AsagiColorSchemeVariant.values) {
+      for (final variant in KuymoColorSchemeVariant.values) {
         for (final dark in [false, true]) {
           for (final high in [false, true]) {
             final theme = dark
@@ -69,8 +69,8 @@ void main() {
     },
   );
 
-  test('auto is the coherent Vibrant palette from the Asagi seed', () {
-    expect(asagiSeedColor, const Color(0xFF0095A9));
+  test('auto uses the approved Kuymo Matcha seed', () {
+    expect(kuymoSeedColor, const Color(0xFF527A46));
     for (final brightness in Brightness.values) {
       for (final high in [false, true]) {
         expect(
@@ -80,7 +80,7 @@ void main() {
             highContrast: high,
           ),
           matugenColorScheme(
-            variant: 'vibrant',
+            variant: 'tonalSpot',
             brightness: brightness,
             highContrast: high,
           ),
@@ -88,7 +88,7 @@ void main() {
       }
     }
     final monochrome = AppTheme.dark(
-      variant: AsagiColorSchemeVariant.monochrome,
+      variant: KuymoColorSchemeVariant.monochrome,
     ).colorScheme;
     expect(monochrome.primary.r, monochrome.primary.g);
     expect(monochrome.primary.g, monochrome.primary.b);
@@ -99,7 +99,7 @@ void main() {
       testWidgets(
         'palette choices lay out in ${locale.languageCode}, dark=$dark',
         (tester) async {
-          AsagiColorSchemeVariant? selected;
+          KuymoColorSchemeVariant? selected;
           await tester.pumpWidget(
             MaterialApp(
               locale: locale,
@@ -113,7 +113,7 @@ void main() {
               home: Scaffold(
                 body: SingleChildScrollView(
                   child: ColorSchemeSection(
-                    selectedVariant: AsagiColorSchemeVariant.auto,
+                    selectedVariant: KuymoColorSchemeVariant.auto,
                     onChanged: (value) => selected = value,
                   ),
                 ),
@@ -123,7 +123,7 @@ void main() {
           await tester.pumpAndSettle();
           expect(find.byType(ChoiceChip), findsNWidgets(10));
           await tester.tap(find.byType(ChoiceChip).at(1));
-          expect(selected, AsagiColorSchemeVariant.tonalSpot);
+          expect(selected, KuymoColorSchemeVariant.tonalSpot);
           expect(tester.takeException(), isNull);
         },
       );

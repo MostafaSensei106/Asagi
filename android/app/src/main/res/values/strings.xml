@@ -1,5 +1,5 @@
 <resources>
     <string name="compression_notification_channel">Video compression</string>
     <string name="compression_notification_title">Compressing video</string>
-    <string name="compression_notification_text">Asagi is processing your video on this device</string>
+    <string name="compression_notification_text">Kuymo is processing your video on this device</string>
 </resources>

@@ -14,9 +14,9 @@ import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
 import '../cubit/compression_cubit.dart';
 import '../cubit/compression_state.dart';
-import '../widgets/asagi_preset_feedback_card.dart';
 import '../widgets/compression_advanced_controls.dart';
 import '../widgets/compression_plan_summary.dart';
+import '../widgets/kuymo_preset_feedback_card.dart';
 import '../widgets/platform_presets_bar.dart';
 import '../widgets/unsupported_compression_page.dart';
 import '../widgets/video_preview.dart';
@@ -136,7 +136,7 @@ final class CompressionSetupPage extends HookWidget {
                   },
                 ),
                 const Gap(AppSpacing.small),
-                AsagiPresetFeedbackCard(
+                KuymoPresetFeedbackCard(
                   selectedPresetId: state.selectedPresetId,
                   presetPlan: state.resolvedPresetPlan,
                   isLoading: state.planning,

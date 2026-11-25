@@ -1,0 +1,35 @@
+
+=== kuymo-symbol.svg  (464 bytes)
+viewBox 0 0 256 256 · aspect 1.0 (square)
+colours 1: #284b3b · gradients 0 · anchors 26
+margins L40.0 R40.0 T40.0 B40.0 · bbox fill 0.473
+✔ no issues found
+production-readiness score: 100/100 (heuristic)
+
+=== kuymo-symbol-small.svg  (476 bytes)
+viewBox 0 0 256 256 · aspect 1.0 (square)
+colours 1: #284b3b · gradients 0 · anchors 26
+margins L40.0 R40.0 T40.0 B40.0 · bbox fill 0.473
+✔ no issues found
+production-readiness score: 100/100 (heuristic)
+
+=== kuymo-symbol-white.svg  (464 bytes)
+viewBox 0 0 256 256 · aspect 1.0 (square)
+colours 1: #ffffff · gradients 0 · anchors 26
+margins L40.0 R40.0 T40.0 B40.0 · bbox fill 0.473
+✔ no issues found
+production-readiness score: 100/100 (heuristic)
+
+=== kuymo-horizontal.svg  (2462 bytes)
+viewBox 0 0 658 256 · aspect 2.57 (horizontal)
+colours 1: #284b3b · gradients 0 · anchors 140
+margins L40.0 R43.7 T40.0 B40.0 · bbox fill 0.6
+✔ no issues found
+production-readiness score: 100/100 (heuristic)
+
+=== kuymo-wordmark.svg  (2041 bytes)
+viewBox 0 0 394 156 · aspect 2.526 (horizontal)
+colours 1: #284b3b · gradients 0 · anchors 114
+margins L32.0 R27.7 T36.0 B26.4 · bbox fill 0.509
+✔ no issues found
+production-readiness score: 100/100 (heuristic)

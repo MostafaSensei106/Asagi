@@ -1,21 +1,21 @@
 import 'dart:async';
 
-import 'package:asagi/core/constants/types/type_def.dart';
-import 'package:asagi/core/di/di.dart';
-import 'package:asagi/core/error/failures.dart';
-import 'package:asagi/core/services/app_info/interface/base_package_info_adapter.dart';
-import 'package:asagi/core/utils/result/result.dart';
-import 'package:asagi/l10n/app_localizations.dart';
-import 'package:asagi/modules/updates/domain/entities/app_release.dart';
-import 'package:asagi/modules/updates/domain/repositories/release_repository.dart';
-import 'package:asagi/modules/updates/domain/use_cases/read_cached_release.dart';
-import 'package:asagi/modules/updates/domain/use_cases/read_installed_release.dart';
-import 'package:asagi/modules/updates/domain/use_cases/read_latest_release.dart';
-import 'package:asagi/modules/updates/presentation/cubit/releases_cubit.dart';
-import 'package:asagi/modules/updates/presentation/cubit/releases_state.dart';
-import 'package:asagi/modules/updates/presentation/pages/releases_page.dart';
 import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kuymo/core/constants/types/type_def.dart';
+import 'package:kuymo/core/di/di.dart';
+import 'package:kuymo/core/error/failures.dart';
+import 'package:kuymo/core/services/app_info/interface/base_package_info_adapter.dart';
+import 'package:kuymo/core/utils/result/result.dart';
+import 'package:kuymo/l10n/app_localizations.dart';
+import 'package:kuymo/modules/updates/domain/entities/app_release.dart';
+import 'package:kuymo/modules/updates/domain/repositories/release_repository.dart';
+import 'package:kuymo/modules/updates/domain/use_cases/read_cached_release.dart';
+import 'package:kuymo/modules/updates/domain/use_cases/read_installed_release.dart';
+import 'package:kuymo/modules/updates/domain/use_cases/read_latest_release.dart';
+import 'package:kuymo/modules/updates/presentation/cubit/releases_cubit.dart';
+import 'package:kuymo/modules/updates/presentation/cubit/releases_state.dart';
+import 'package:kuymo/modules/updates/presentation/pages/releases_page.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
@@ -47,7 +47,7 @@ class ReleaseSource extends Fake implements ReleaseRepository {
 class InstalledPackage extends Fake implements BasePackageInfoAdapter {
   @override
   PackageInfo get packageInfo => PackageInfo(
-    appName: 'Asagi',
+    appName: 'Kuymo',
     packageName: 'test',
     version: '1.0.0',
     buildNumber: '1',

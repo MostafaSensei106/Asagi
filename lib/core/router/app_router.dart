@@ -23,7 +23,7 @@ import '../../modules/privacy/privacy.dart';
 import '../../modules/settings/settings.dart';
 import '../../modules/storage/storage.dart';
 import '../../modules/updates/presentation/pages/releases_page.dart';
-import '../constants/asagi_icons.dart';
+import '../constants/kuymo_icons.dart';
 import '../di/di.dart';
 import '../extensions/extensions.dart';
 import '../widgets/navigation/bottom_nav_bar/bottom_nav_bar_component.dart';

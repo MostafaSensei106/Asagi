@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
-import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
+import '../../../../core/constants/kuymo_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
@@ -84,7 +84,7 @@ final class _FeedbackPageState extends State<FeedbackPage> {
               child: Row(
                 children: [
                   ExpressiveIcon(
-                    icon: AsagiIcons.feedback,
+                    icon: KuymoIcons.feedback,
                     shape: ExpressiveIconShape.softBurst,
                     size: 52,
                     backgroundColor: colorScheme.primaryContainer,
@@ -144,7 +144,7 @@ final class _FeedbackPageState extends State<FeedbackPage> {
                   return IconButton(
                     icon: Icon(
                       starIndex <= _rating
-                          ? AsagiIcons.rateApp
+                          ? KuymoIcons.rateApp
                           : LucideIcons.star,
                       color: starIndex <= _rating
                           ? Colors.amber
@@ -199,7 +199,7 @@ final class _FeedbackPageState extends State<FeedbackPage> {
             FilledButtonComponent(
               expand: true,
               label: _isSubmitting ? 'Submitting…' : 'Submit Feedback',
-              icon: AsagiIcons.feedback,
+              icon: KuymoIcons.feedback,
               isLoading: _isSubmitting,
               onPressed: _isSubmitting ? null : _submitFeedback,
             ),

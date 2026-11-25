@@ -8,9 +8,11 @@
   "chooseAVideo": "اختار فيديو",
   "startCompression": "ابدأ الضغط",
   "compressionHelpDescription": "Answers to common questions about video compression.",
-  "appSupportDescription": "Get help using Asagi.",
-  "appTermsDescription": "Terms for using the free, open source Asagi app.",
-  "termsOfServiceFullText": "Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.",
-  "termsAcceptanceLicenseBody": "Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices.",
-  "compressionAndroidOnly": "ضغط الفيديو متاح حاليًا على أندرويد فقط."
+  "appSupportDescription": "Get help using Kuymo.",
+  "appTermsDescription": "Terms for using the free, open source Kuymo app.",
+  "termsOfServiceFullText": "Kuymo is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.",
+  "termsAcceptanceLicenseBody": "Kuymo is free and open source. All features are available to everyone, and video processing runs locally on your devices.",
+  "compressionAndroidOnly": "ضغط الفيديو متاح حاليًا على أندرويد فقط.",
+  "brandTagline": "مساحة أكتر للحظاتك.",
+  "kuymoAi": "Kuymo AI"
 }

@@ -12,8 +12,8 @@ import 'core/utils/theme/app_theme.dart';
 import 'core/utils/theme/logic/cubit/theme_cubit.dart';
 import 'l10n/app_localizations.dart';
 
-class AsagiApp extends StatelessWidget {
-  const AsagiApp({super.key});
+class KuymoApp extends StatelessWidget {
+  const KuymoApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,7 @@ class AsagiApp extends StatelessWidget {
                 orElse: () => AppSupportedLocales.values.first,
               ),
               scrollBehavior: const CupertinoScrollBehavior(),
-              restorationScopeId: '${AppMetadata.name}-restoration',
+              restorationScopeId: AppMetadata.restorationScopeId,
               localizationsDelegates: const [
                 GlobalMaterialLocalizations.delegate,
                 GlobalCupertinoLocalizations.delegate,

@@ -1,5 +1,5 @@
 <resources>
     <string name="compression_notification_channel">ضغط الفيديو</string>
     <string name="compression_notification_title">جارٍ ضغط الفيديو</string>
-    <string name="compression_notification_text">Asagi يعالج الفيديو على هذا الجهاز</string>
+    <string name="compression_notification_text">Kuymo يعالج الفيديو على هذا الجهاز</string>
 </resources>

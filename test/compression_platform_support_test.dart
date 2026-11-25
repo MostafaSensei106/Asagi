@@ -1,12 +1,12 @@
 import 'dart:io';
 
-import 'package:asagi/l10n/app_localizations.dart';
-import 'package:asagi/modules/about/presentation/pages/licenses_page.dart';
-import 'package:asagi/modules/compression/data/repositories/device_video_compression_repository.dart';
-import 'package:asagi/modules/compression/presentation/pages/video_select_page.dart';
-import 'package:asagi/modules/compression/presentation/widgets/unsupported_compression_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kuymo/l10n/app_localizations.dart';
+import 'package:kuymo/modules/about/presentation/pages/licenses_page.dart';
+import 'package:kuymo/modules/compression/data/repositories/device_video_compression_repository.dart';
+import 'package:kuymo/modules/compression/presentation/pages/video_select_page.dart';
+import 'package:kuymo/modules/compression/presentation/widgets/unsupported_compression_page.dart';
 import 'package:material_ui/material_ui.dart';
 
 Widget app(Widget home) => MaterialApp(

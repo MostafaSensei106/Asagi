@@ -10,7 +10,7 @@ import '../widgets/contrast_section.dart';
 import '../widgets/theme_mode_section.dart';
 import '../widgets/theme_preview_card.dart';
 
-/// Lets the user preview the theme and pick how Asagi resolves it.
+/// Lets the user preview the theme and pick how Kuymo resolves it.
 ///
 /// Lets the user choose the color palette, appearance mode, and contrast.
 final class AppearanceSettingsPage extends StatelessWidget {

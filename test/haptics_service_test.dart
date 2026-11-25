@@ -1,7 +1,7 @@
-import 'package:asagi/core/preferences/data/repositories/shared_notification_preferences.dart';
-import 'package:asagi/core/services/haptics/haptics_service.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kuymo/core/preferences/data/repositories/shared_notification_preferences.dart';
+import 'package:kuymo/core/services/haptics/haptics_service.dart';
 
 import 'support/memory_preference_storage.dart';
 

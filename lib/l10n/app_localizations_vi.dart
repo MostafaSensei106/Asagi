@@ -10,7 +10,7 @@ class AppLocalizationsVi extends AppLocalizations {
   AppLocalizationsVi([String locale = 'vi']) : super(locale);
 
   @override
-  String get asagi => 'Asagi';
+  String get kuymo => 'Kuymo';
 
   @override
   String get downloadFile => 'Tải xuống Tệp';
@@ -166,11 +166,11 @@ class AppLocalizationsVi extends AppLocalizations {
       'Nén video một cách riêng tư, ngay trên thiết bị của bạn.';
 
   @override
-  String get welcomeToAsagi => 'Chào mừng đến với Asagi';
+  String get welcomeToKuymo => 'Chào mừng đến với Kuymo';
 
   @override
-  String get learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone =>
-      'Tìm hiểu cách Asagi nén video của bạn mà không cần rời khỏi điện thoại.';
+  String get learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone =>
+      'Tìm hiểu cách Kuymo nén video của bạn mà không cần rời khỏi điện thoại.';
 
   @override
   String get signIn => 'Đăng nhập';
@@ -263,7 +263,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get sharperTextAndSurfaces => 'Pure black and white surfaces ';
 
   @override
-  String get asagiEngine => 'Asagi Engine';
+  String get kuymoEngine => 'Kuymo Engine';
 
   @override
   String get targetSizeOptimizer => 'Target-Size Video Optimizer';
@@ -319,7 +319,7 @@ class AppLocalizationsVi extends AppLocalizations {
       'Xử lý trên thiết bị, nhật ký cục bộ và báo cáo sự cố tùy chọn.';
 
   @override
-  String get aboutAsagi => 'Về Asagi';
+  String get aboutKuymo => 'Về Kuymo';
 
   @override
   String get versionBuildNumberAndApplicationDetails =>
@@ -329,19 +329,19 @@ class AppLocalizationsVi extends AppLocalizations {
   String get aboutTheDeveloper => 'Về nhà phát triển';
 
   @override
-  String get theDeveloperAndToolsBehindAsagi =>
-      'Nhà phát triển và các công cụ phía sau Asagi.';
+  String get theDeveloperAndToolsBehindKuymo =>
+      'Nhà phát triển và các công cụ phía sau Kuymo.';
 
   @override
-  String get openSourcePackagesBundledWithAsagi =>
-      'Các gói mã nguồn mở đi kèm với Asagi.';
+  String get openSourcePackagesBundledWithKuymo =>
+      'Các gói mã nguồn mở đi kèm với Kuymo.';
 
   @override
   String get privacyPolicy => 'Chính sách quyền riêng tư';
 
   @override
-  String get howAsagiHandlesYourVideosAndData =>
-      'Cách Asagi xử lý video và dữ liệu của bạn.';
+  String get howKuymoHandlesYourVideosAndData =>
+      'Cách Kuymo xử lý video và dữ liệu của bạn.';
 
   @override
   String get termsOfService => 'Điều khoản dịch vụ';
@@ -350,15 +350,15 @@ class AppLocalizationsVi extends AppLocalizations {
   String get dataSafety => 'An toàn dữ liệu';
 
   @override
-  String get summaryOfTheDataAsagiCollectsAndWhy =>
-      'Tóm tắt dữ liệu Asagi thu thập và lý do.';
+  String get summaryOfTheDataKuymoCollectsAndWhy =>
+      'Tóm tắt dữ liệu Kuymo thu thập và lý do.';
 
   @override
   String get permissions => 'Quyền hạn';
 
   @override
-  String get runtimePermissionsAsagiRequestsAndWhyEachIsNeeded =>
-      'Quyền hạn khi chạy mà Asagi yêu cầu và lý do cần thiết cho từng quyền.';
+  String get runtimePermissionsKuymoRequestsAndWhyEachIsNeeded =>
+      'Quyền hạn khi chạy mà Kuymo yêu cầu và lý do cần thiết cho từng quyền.';
 
   @override
   String get faq => 'Câu hỏi thường gặp';
@@ -384,17 +384,17 @@ class AppLocalizationsVi extends AppLocalizations {
       'Xóa vĩnh viễn tài khoản của bạn và dữ liệu phía máy chủ của nó.';
 
   @override
-  String get rateAsagi => 'Đánh giá Asagi';
+  String get rateKuymo => 'Đánh giá Kuymo';
 
   @override
-  String get tellOthersHowAsagiWorkedForYouOnTheStore =>
-      'Cho người khác biết Asagi đã hoạt động như thế nào với bạn trên cửa hàng.';
+  String get tellOthersHowKuymoWorkedForYouOnTheStore =>
+      'Cho người khác biết Kuymo đã hoạt động như thế nào với bạn trên cửa hàng.';
 
   @override
-  String get shareAsagi => 'Chia sẻ Asagi';
+  String get shareKuymo => 'Chia sẻ Kuymo';
 
   @override
-  String get recommendAsagiToAFriend => 'Đề xuất Asagi cho một người bạn.';
+  String get recommendKuymoToAFriend => 'Đề xuất Kuymo cho một người bạn.';
 
   @override
   String get appearanceLanguage => 'Giao diện & ngôn ngữ';
@@ -436,7 +436,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get aiSettings => 'Cài đặt AI';
 
   @override
-  String get asagiAssistant => 'Trợ lý Asagi';
+  String get kuymoAssistant => 'Trợ lý Kuymo';
 
   @override
   String
@@ -566,7 +566,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get versionAndBuildDetails => 'Chi tiết phiên bản và bản dựng';
 
   @override
-  String get theDeveloperBehindAsagi => 'Nhà phát triển đứng sau Asagi';
+  String get theDeveloperBehindKuymo => 'Nhà phát triển đứng sau Kuymo';
 
   @override
   String get openSourcePackageLicenses => 'Giấy phép gói mã nguồn mở';
@@ -575,7 +575,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get howDataIsHandled => 'Cách dữ liệu được xử lý';
 
   @override
-  String get rulesForUsingAsagi => 'Quy tắc sử dụng Asagi';
+  String get rulesForUsingKuymo => 'Quy tắc sử dụng Kuymo';
 
   @override
   String get whatDataWeCollect => 'Dữ liệu chúng tôi thu thập';
@@ -858,13 +858,13 @@ class AppLocalizationsVi extends AppLocalizations {
   String get githubRepository => 'Kho lưu trữ GitHub';
 
   @override
-  String get viewAsagiSourceCode => 'Xem mã nguồn Asagi';
+  String get viewKuymoSourceCode => 'Xem mã nguồn Kuymo';
 
   @override
   String get readTheREADME => 'Đọc README';
 
   @override
-  String get learnAboutAsagiOnGitHub => 'Tìm hiểu về Asagi trên GitHub';
+  String get learnAboutKuymoOnGitHub => 'Tìm hiểu về Kuymo trên GitHub';
 
   @override
   String get reportAnIssue => 'Báo cáo sự cố';
@@ -879,7 +879,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get viewReleasesAndDownloads => 'Xem các bản phát hành và tải xuống';
 
   @override
-  String get supportAsagi => 'Hỗ trợ Asagi';
+  String get supportKuymo => 'Hỗ trợ Kuymo';
 
   @override
   String get openTheOfficialDonationPage => 'Mở trang quyên góp chính thức';
@@ -904,8 +904,8 @@ class AppLocalizationsVi extends AppLocalizations {
   String get maintenanceInProgress => 'Đang bảo trì';
 
   @override
-  String get asagiIsTemporarilyUnavailablePleaseTryAgainLater =>
-      'Asagi hiện tạm thời không khả dụng. Vui lòng thử lại sau.';
+  String get kuymoIsTemporarilyUnavailablePleaseTryAgainLater =>
+      'Kuymo hiện tạm thời không khả dụng. Vui lòng thử lại sau.';
 
   @override
   String get comingSoon => 'Sắp ra mắt';
@@ -1143,8 +1143,8 @@ class AppLocalizationsVi extends AppLocalizations {
   String get manualControl => 'Manual control';
 
   @override
-  String get asagiIsStudyingThePlatformAlgorithmAndCalculatingTheBudget =>
-      '🐾 Asagi is studying the platform\'s algorithm and calculating the budget...';
+  String get kuymoIsStudyingThePlatformAlgorithmAndCalculatingTheBudget =>
+      '🐾 Kuymo is studying the platform\'s algorithm and calculating the budget...';
 
   @override
   String get customControlMode => 'Custom control mode';
@@ -1155,8 +1155,8 @@ class AppLocalizationsVi extends AppLocalizations {
       'You set the target size manually. The engine will apply the highest possible resolution and quality within that cap.';
 
   @override
-  String asagiIsPuzzledAnImpossibleTargetForTheNameCap(String name) {
-    return 'Asagi is puzzled (impossible target for the $name cap)';
+  String kuymoIsPuzzledAnImpossibleTargetForTheNameCap(String name) {
+    return 'Kuymo is puzzled (impossible target for the $name cap)';
   }
 
   @override
@@ -1168,8 +1168,8 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get asagiAlertProtectingQualityFromDistortion =>
-      'Asagi alert: protecting quality from distortion';
+  String get kuymoAlertProtectingQualityFromDistortion =>
+      'Kuymo alert: protecting quality from distortion';
 
   @override
   String
@@ -1212,7 +1212,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get termsOfServiceFullText =>
-      'Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.';
+      'Kuymo is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.';
 
   @override
   String get termsCopiedToClipboard => 'Terms copied to clipboard';
@@ -1222,14 +1222,14 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get termsAcceptanceLicenseBody =>
-      'Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices.';
+      'Kuymo is free and open source. All features are available to everyone, and video processing runs locally on your devices.';
 
   @override
   String get termsContentOwnershipTitle => '2. 100% Content Ownership';
 
   @override
   String get termsContentOwnershipBody =>
-      'You retain all copyrights and ownership over your videos. Asagi does not transmit, store, or claim any rights to your media files.';
+      'You retain all copyrights and ownership over your videos. Kuymo does not transmit, store, or claim any rights to your media files.';
 
   @override
   String get termsLocalOnDeviceProcessingTitle =>
@@ -1329,7 +1329,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get videoProcessingCommitmentBody =>
-      'Asagi was built with a fundamental architectural guarantee: your videos, clips, and audio tracks are encoded exclusively on your device hardware using local native codecs. At no point is your media streamed, stored, or processed on external cloud infrastructure.';
+      'Kuymo was built with a fundamental architectural guarantee: your videos, clips, and audio tracks are encoded exclusively on your device hardware using local native codecs. At no point is your media streamed, stored, or processed on external cloud infrastructure.';
 
   @override
   String get informationWeNeverCollectTitle =>
@@ -1621,7 +1621,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get supportedOnDeviceModels => 'Supported On-Device Models';
 
   @override
-  String get asagiBitrateOptimizer => 'Asagi Bitrate Optimizer (0.2B)';
+  String get kuymoBitrateOptimizer => 'Kuymo Bitrate Optimizer (0.2B)';
 
   @override
   String get localRateControlDescription =>
@@ -1972,13 +1972,13 @@ class AppLocalizationsVi extends AppLocalizations {
   String get scratchpadCleanupSummary => 'Remove cached preview files';
 
   @override
-  String get privacyPolicySummary => 'How Asagi handles data';
+  String get privacyPolicySummary => 'How Kuymo handles data';
 
   @override
   String get dataSafetySummary => 'Collected data and purpose';
 
   @override
-  String get permissionsSummary => 'Why Asagi needs access';
+  String get permissionsSummary => 'Why Kuymo needs access';
 
   @override
   String get megabytesShort => 'MB';
@@ -2052,11 +2052,11 @@ class AppLocalizationsVi extends AppLocalizations {
       'Answers to common questions about video compression.';
 
   @override
-  String get appSupportDescription => 'Get help using Asagi.';
+  String get appSupportDescription => 'Get help using Kuymo.';
 
   @override
   String get appTermsDescription =>
-      'Terms for using the free, open source Asagi app.';
+      'Terms for using the free, open source Kuymo app.';
 
   @override
   String get compressionAndroidOnly =>
@@ -2124,7 +2124,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String notificationReleaseTitle(String version) {
-    return 'Asagi $version is available';
+    return 'Kuymo $version is available';
   }
 
   @override
@@ -2195,7 +2195,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get automaticColorSchemeDescription =>
-      'Auto uses a vivid Asagi palette. Each option previews its own accent colors.';
+      'Auto uses a vivid Kuymo palette. Each option previews its own accent colors.';
 
   @override
   String get colorSchemeTonalSpot => 'Tonal spot';
@@ -2284,4 +2284,41 @@ class AppLocalizationsVi extends AppLocalizations {
   @override
   String get releaseOpenFailed =>
       'Could not open the release. Please try again.';
+
+  @override
+  String get appLinkCopied => 'Link copied to clipboard.';
+
+  @override
+  String get appInvitationCopied =>
+      'Invitation copied. Paste it into your messaging app.';
+
+  @override
+  String kuymoShareInvitation(String url) {
+    return 'Try Kuymo for on-device video compression: $url';
+  }
+
+  @override
+  String get onDeviceProcessingLabel => 'Video processing on your device';
+
+  @override
+  String get kuymoShareDescription =>
+      'Choose a target size and prepare your video to share. Video processing stays on your device.';
+
+  @override
+  String get copyAppLink => 'Copy app link';
+
+  @override
+  String get enjoyingKuymo => 'Enjoying Kuymo?';
+
+  @override
+  String get whyChooseKuymo => 'Why choose Kuymo';
+
+  @override
+  String get projectSupportLink => 'Copy project support link';
+
+  @override
+  String get brandTagline => 'More room for your moments.';
+
+  @override
+  String get kuymoAi => 'Kuymo AI';
 }

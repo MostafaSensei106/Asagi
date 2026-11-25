@@ -1,7 +1,7 @@
 {
   "@@locale": "en_GB",
-  "asagi": "Asagi",
-  "@asagi": {
+  "kuymo": "Kuymo",
+  "@kuymo": {
     "description": "Application name shown in the app and on the home page"
   },
   "downloadFile": "Download File",
@@ -211,12 +211,12 @@
   "@compressVideosPrivatelyOnYourDevice": {
     "description": "Home page description"
   },
-  "welcomeToAsagi": "Welcome to Asagi",
-  "@welcomeToAsagi": {
+  "welcomeToKuymo": "Welcome to Kuymo",
+  "@welcomeToKuymo": {
     "description": "Onboarding page title"
   },
-  "learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": "Learn how Asagi compresses your videos without ever leaving your phone.",
-  "@learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": {
+  "learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone": "Learn how Kuymo compresses your videos without ever leaving your phone.",
+  "@learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone": {
     "description": "Onboarding page description"
   },
   "signIn": "Sign in",
@@ -315,8 +315,8 @@
   "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
     "description": "Privacy settings page description"
   },
-  "aboutAsagi": "About Asagi",
-  "@aboutAsagi": {
+  "aboutKuymo": "About Kuymo",
+  "@aboutKuymo": {
     "description": "App info page title"
   },
   "versionBuildNumberAndApplicationDetails": "Version, build number, and application details.",
@@ -327,24 +327,24 @@
   "@aboutTheDeveloper": {
     "description": "Developer page title"
   },
-  "theDeveloperAndToolsBehindAsagi": "The developer and tools behind Asagi.",
-  "@theDeveloperAndToolsBehindAsagi": {
+  "theDeveloperAndToolsBehindKuymo": "The developer and tools behind Kuymo.",
+  "@theDeveloperAndToolsBehindKuymo": {
     "description": "Developer page description"
   },
   "openSourceLicenses": "Open-source licenses",
   "@openSourceLicenses": {
     "description": "Licenses page title"
   },
-  "openSourcePackagesBundledWithAsagi": "Open-source packages bundled with Asagi.",
-  "@openSourcePackagesBundledWithAsagi": {
+  "openSourcePackagesBundledWithKuymo": "Open-source packages bundled with Kuymo.",
+  "@openSourcePackagesBundledWithKuymo": {
     "description": "Licenses page description"
   },
   "privacyPolicy": "Privacy policy",
   "@privacyPolicy": {
     "description": "Privacy policy page title"
   },
-  "howAsagiHandlesYourVideosAndData": "How Asagi handles your videos and data.",
-  "@howAsagiHandlesYourVideosAndData": {
+  "howKuymoHandlesYourVideosAndData": "How Kuymo handles your videos and data.",
+  "@howKuymoHandlesYourVideosAndData": {
     "description": "Privacy policy page description"
   },
   "termsOfService": "Terms of service",
@@ -355,16 +355,16 @@
   "@dataSafety": {
     "description": "Data safety page title"
   },
-  "summaryOfTheDataAsagiCollectsAndWhy": "Summary of the datan Asagi collects and why.",
-  "@summaryOfTheDataAsagiCollectsAndWhy": {
+  "summaryOfTheDataKuymoCollectsAndWhy": "Summary of the datan Kuymo collects and why.",
+  "@summaryOfTheDataKuymoCollectsAndWhy": {
     "description": "Data safety page description"
   },
   "permissions": "Permissions",
   "@permissions": {
     "description": "Permissions page title"
   },
-  "runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": "Runtime permissions Asagi requests and why each is needed.",
-  "@runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": {
+  "runtimePermissionsKuymoRequestsAndWhyEachIsNeeded": "Runtime permissions Kuymo requests and why each is needed.",
+  "@runtimePermissionsKuymoRequestsAndWhyEachIsNeeded": {
     "description": "Permissions page description"
   },
   "faq": "FAQ",
@@ -395,20 +395,20 @@
   "@permanentlyRemoveYourAccountAndItsServerSideData": {
     "description": "Delete account page description"
   },
-  "rateAsagi": "Rate Asagi",
-  "@rateAsagi": {
+  "rateKuymo": "Rate Kuymo",
+  "@rateKuymo": {
     "description": "Rate app page title"
   },
-  "tellOthersHowAsagiWorkedForYouOnTheStore": "Tell others how Asagi worked for you on the store.",
-  "@tellOthersHowAsagiWorkedForYouOnTheStore": {
+  "tellOthersHowKuymoWorkedForYouOnTheStore": "Tell others how Kuymo worked for you on the store.",
+  "@tellOthersHowKuymoWorkedForYouOnTheStore": {
     "description": "Rate app page description"
   },
-  "shareAsagi": "Share Asagi",
-  "@shareAsagi": {
+  "shareKuymo": "Share Kuymo",
+  "@shareKuymo": {
     "description": "Share app page title"
   },
-  "recommendAsagiToAFriend": "Recommend Asagi to a friend.",
-  "@recommendAsagiToAFriend": {
+  "recommendKuymoToAFriend": "Recommend Kuymo to a friend.",
+  "@recommendKuymoToAFriend": {
     "description": "Share app page description"
   },
   "appearanceLanguage": "Appearance & language",
@@ -460,7 +460,7 @@
     "description": "Settings hub row summary"
   },
   "aiSettings": "AI settings",
-  "asagiAssistant": "Asagi Assistant",
+  "kuymoAssistant": "Kuymo Assistant",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "A private assistant for your videos is coming soon. You will be able to ask about compression, organisation, and saved videos here.",
   "localModelsAndSmartTools": "Local models and smart tools",
   "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "Explore local models and future AI tools. These options are not active yet.",
@@ -508,8 +508,8 @@
   "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "theDeveloperBehindAsagi": "The developer behind Asagi",
-  "@theDeveloperBehindAsagi": {
+  "theDeveloperBehindKuymo": "The developer behind Kuymo",
+  "@theDeveloperBehindKuymo": {
     "description": "Settings hub row summary"
   },
   "openSourcePackageLicenses": "Open source package licenses",
@@ -520,8 +520,8 @@
   "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "rulesForUsingAsagi": "Rules for using Asagi",
-  "@rulesForUsingAsagi": {
+  "rulesForUsingKuymo": "Rules for using Kuymo",
+  "@rulesForUsingKuymo": {
     "description": "Settings hub row summary"
   },
   "whatDataWeCollect": "What data we collect",
@@ -623,14 +623,14 @@
   "unavailable": "Unavailable",
   "projectAndSupport": "Project and support",
   "githubRepository": "GitHub repository",
-  "viewAsagiSourceCode": "View Asagi source code",
+  "viewKuymoSourceCode": "View Kuymo source code",
   "readTheREADME": "Read the README",
-  "learnAboutAsagiOnGitHub": "Learn about Asagi on GitHub",
+  "learnAboutKuymoOnGitHub": "Learn about Kuymo on GitHub",
   "reportAnIssue": "Report an issue",
   "viewAndCreateGitHubIssues": "View and create GitHub issues",
   "latestRelease": "Latest release",
   "viewReleasesAndDownloads": "View releases and downloads",
-  "supportAsagi": "Support Asagi",
+  "supportKuymo": "Support Kuymo",
   "openTheOfficialDonationPage": "Open the official donation page",
   "couldNotOpenTheLinkPleaseTryAgain": "Could not open the link. Please try again.",
   "developer": "Developer",
@@ -638,7 +638,7 @@
   "githubProfile": "GitHub profile",
   "seeProjectsAndContactDetails": "See projects and contact details",
   "maintenanceInProgress": "Maintenance in progress",
-  "asagiIsTemporarilyUnavailablePleaseTryAgainLater": "Asagi is temporarily unavailable. Please try again later.",
+  "kuymoIsTemporarilyUnavailablePleaseTryAgainLater": "Kuymo is temporarily unavailable. Please try again later.",
   "comingSoon": "Coming soon",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"
@@ -655,9 +655,9 @@
     }
   },
   "compressionHelpDescription": "Answers to common questions about video compression.",
-  "appSupportDescription": "Get help using Asagi.",
-  "appTermsDescription": "Terms for using the free, open source Asagi app.",
-  "termsOfServiceFullText": "Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.",
-  "termsAcceptanceLicenseBody": "Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices.",
+  "appSupportDescription": "Get help using Kuymo.",
+  "appTermsDescription": "Terms for using the free, open source Kuymo app.",
+  "termsOfServiceFullText": "Kuymo is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.",
+  "termsAcceptanceLicenseBody": "Kuymo is free and open source. All features are available to everyone, and video processing runs locally on your devices.",
   "compressionAndroidOnly": "Video compression is currently available only on Android."
 }

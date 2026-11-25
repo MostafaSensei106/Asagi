@@ -1,0 +1,52 @@
+{
+  "brand": "Kuymo",
+  "tagline": "More room for your moments.",
+  "brief": "On-device video tools that make space without making life complicated. Approved B identity: one open pocket, one folded tile.",
+  "adjectives": [
+    "simple",
+    "warm",
+    "capable"
+  ],
+  "criteria": "One-color recognition, readable small sizes, Arabic and English use, room for future video tools.",
+  "industry": "consumer-app",
+  "mockups": [
+    "app-icon",
+    "website",
+    "social",
+    "favicon-tab",
+    "sticker",
+    "readme"
+  ],
+  "nav": [
+    "Video tools",
+    "Privacy",
+    "Download"
+  ],
+  "brand_color": "#284B3B",
+  "tile_color": "#DDE9C6",
+  "greyscale": false,
+  "final": true,
+  "concepts": [
+    {
+      "name": "A little room",
+      "symbol": "../masters/kuymo-symbol.svg",
+      "lockup": "../masters/kuymo-horizontal.svg",
+      "stacked": "../masters/kuymo-stacked.svg",
+      "symbol_on_tile": "../masters/kuymo-symbol.svg",
+      "lockup_on_tile": "../masters/kuymo-horizontal.svg",
+      "symbol_on_dark": "../masters/kuymo-symbol-white.svg",
+      "lockup_on_dark": "../masters/kuymo-horizontal-white.svg",
+      "idea": "An open pocket makes room for one more possibility.",
+      "rationale": [
+        "A warm abstract identifier beyond video compression.",
+        "A separate folded tile adds a memorable detail.",
+        "A custom K echoes the tile fold in the wordmark."
+      ]
+    }
+  ],
+  "recommendation": "Approved direction B. Kuymo is the product; Kuymo AI is the assistant descriptor.",
+  "next_steps": [
+    "Use the supplied vector masters and semantic theme roles.",
+    "Keep legacy native identifiers for installed-app compatibility."
+  ]
+}

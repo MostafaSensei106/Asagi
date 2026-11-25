@@ -3,8 +3,8 @@ import 'package:material_ui/material_ui.dart';
 import '../../constants/app_config.dart';
 import 'generated_color_schemes.dart';
 
-/// Complete palettes generated offline from Asagi's single HCT source color.
-enum AsagiColorSchemeVariant {
+/// Complete palettes generated offline from Kuymo's single HCT source color.
+enum KuymoColorSchemeVariant {
   auto,
   tonalSpot,
   fidelity,
@@ -20,30 +20,30 @@ enum AsagiColorSchemeVariant {
 final class AppTheme {
   static const String fontFamily = 'GoogleSans';
 
-  static final Map<(Brightness, AsagiColorSchemeVariant, bool), ThemeData>
+  static final Map<(Brightness, KuymoColorSchemeVariant, bool), ThemeData>
   _cache = {};
 
   static ThemeData light({
-    AsagiColorSchemeVariant variant = AsagiColorSchemeVariant.auto,
+    KuymoColorSchemeVariant variant = KuymoColorSchemeVariant.auto,
     bool highContrast = false,
   }) => _theme(Brightness.light, variant, highContrast);
 
   static ThemeData dark({
-    AsagiColorSchemeVariant variant = AsagiColorSchemeVariant.auto,
+    KuymoColorSchemeVariant variant = KuymoColorSchemeVariant.auto,
     bool highContrast = false,
   }) => _theme(Brightness.dark, variant, highContrast);
 
   static ThemeData lightHighContrast({
-    AsagiColorSchemeVariant variant = AsagiColorSchemeVariant.auto,
+    KuymoColorSchemeVariant variant = KuymoColorSchemeVariant.auto,
   }) => light(variant: variant, highContrast: true);
 
   static ThemeData darkHighContrast({
-    AsagiColorSchemeVariant variant = AsagiColorSchemeVariant.auto,
+    KuymoColorSchemeVariant variant = KuymoColorSchemeVariant.auto,
   }) => dark(variant: variant, highContrast: true);
 
   static ThemeData _theme(
     Brightness brightness,
-    AsagiColorSchemeVariant variant,
+    KuymoColorSchemeVariant variant,
     bool highContrast,
   ) => _cache[(brightness, variant, highContrast)] ??= _build(
     matugenColorScheme(
@@ -60,6 +60,7 @@ final class AppTheme {
     scaffoldBackgroundColor: colorScheme.surface,
     canvasColor: colorScheme.surface,
     fontFamily: fontFamily,
+    fontFamilyFallback: const ['NotoSansArabic'],
     cardTheme: CardThemeData(
       color: colorScheme.surfaceContainerLow,
       elevation: 0,
@@ -69,9 +70,11 @@ final class AppTheme {
       filled: true,
       fillColor: colorScheme.surfaceContainerHigh,
       enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(AppConfig.outBorderRadius),
         borderSide: BorderSide(color: colorScheme.outline),
       ),
       focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(AppConfig.outBorderRadius),
         borderSide: BorderSide(color: colorScheme.primary, width: 2),
       ),
     ),

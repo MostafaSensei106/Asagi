@@ -1,7 +1,7 @@
 {
   "@@locale": "zh_SG",
-  "asagi": "Asagi",
-  "@asagi": {
+  "kuymo": "Kuymo",
+  "@kuymo": {
     "description": "Application name shown in the app and on the home page"
   },
   "downloadFile": "下载文件",
@@ -211,12 +211,12 @@
   "@compressVideosPrivatelyOnYourDevice": {
     "description": "Home page description"
   },
-  "welcomeToAsagi": "欢迎使用Asagi",
-  "@welcomeToAsagi": {
+  "welcomeToKuymo": "欢迎使用Kuymo",
+  "@welcomeToKuymo": {
     "description": "Onboarding page title"
   },
-  "learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": "了解Asagi如何在不离开手机的情况下压缩您的视频。",
-  "@learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": {
+  "learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone": "了解Kuymo如何在不离开手机的情况下压缩您的视频。",
+  "@learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone": {
     "description": "Onboarding page description"
   },
   "signIn": "登录",
@@ -315,8 +315,8 @@
   "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
     "description": "Privacy settings page description"
   },
-  "aboutAsagi": "关于 Asagi",
-  "@aboutAsagi": {
+  "aboutKuymo": "关于 Kuymo",
+  "@aboutKuymo": {
     "description": "App info page title"
   },
   "versionBuildNumberAndApplicationDetails": "版本、构建号和应用详情。",
@@ -327,24 +327,24 @@
   "@aboutTheDeveloper": {
     "description": "Developer page title"
   },
-  "theDeveloperAndToolsBehindAsagi": "Asagi 的开发者及工具。",
-  "@theDeveloperAndToolsBehindAsagi": {
+  "theDeveloperAndToolsBehindKuymo": "Kuymo 的开发者及工具。",
+  "@theDeveloperAndToolsBehindKuymo": {
     "description": "Developer page description"
   },
   "openSourceLicenses": "开源许可",
   "@openSourceLicenses": {
     "description": "Licenses page title"
   },
-  "openSourcePackagesBundledWithAsagi": "随 Asagi 打包的开源软件包。",
-  "@openSourcePackagesBundledWithAsagi": {
+  "openSourcePackagesBundledWithKuymo": "随 Kuymo 打包的开源软件包。",
+  "@openSourcePackagesBundledWithKuymo": {
     "description": "Licenses page description"
   },
   "privacyPolicy": "隐私政策",
   "@privacyPolicy": {
     "description": "Privacy policy page title"
   },
-  "howAsagiHandlesYourVideosAndData": "Asagi 如何处理您的视频和数据。",
-  "@howAsagiHandlesYourVideosAndData": {
+  "howKuymoHandlesYourVideosAndData": "Kuymo 如何处理您的视频和数据。",
+  "@howKuymoHandlesYourVideosAndData": {
     "description": "Privacy policy page description"
   },
   "termsOfService": "服务条款",
@@ -355,16 +355,16 @@
   "@dataSafety": {
     "description": "Data safety page title"
   },
-  "summaryOfTheDataAsagiCollectsAndWhy": "Asagi 收集的数据摘要及原因。",
-  "@summaryOfTheDataAsagiCollectsAndWhy": {
+  "summaryOfTheDataKuymoCollectsAndWhy": "Kuymo 收集的数据摘要及原因。",
+  "@summaryOfTheDataKuymoCollectsAndWhy": {
     "description": "Data safety page description"
   },
   "permissions": "权限",
   "@permissions": {
     "description": "Permissions page title"
   },
-  "runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": "Asagi 请求的运行时权限及每个权限的必要性。",
-  "@runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": {
+  "runtimePermissionsKuymoRequestsAndWhyEachIsNeeded": "Kuymo 请求的运行时权限及每个权限的必要性。",
+  "@runtimePermissionsKuymoRequestsAndWhyEachIsNeeded": {
     "description": "Permissions page description"
   },
   "faq": "常见问题",
@@ -395,20 +395,20 @@
   "@permanentlyRemoveYourAccountAndItsServerSideData": {
     "description": "Delete account page description"
   },
-  "rateAsagi": "评价 Asagi",
-  "@rateAsagi": {
+  "rateKuymo": "评价 Kuymo",
+  "@rateKuymo": {
     "description": "Rate app page title"
   },
-  "tellOthersHowAsagiWorkedForYouOnTheStore": "告诉其他人 Asagi 在商店中的使用体验。",
-  "@tellOthersHowAsagiWorkedForYouOnTheStore": {
+  "tellOthersHowKuymoWorkedForYouOnTheStore": "告诉其他人 Kuymo 在商店中的使用体验。",
+  "@tellOthersHowKuymoWorkedForYouOnTheStore": {
     "description": "Rate app page description"
   },
-  "shareAsagi": "分享 Asagi",
-  "@shareAsagi": {
+  "shareKuymo": "分享 Kuymo",
+  "@shareKuymo": {
     "description": "Share app page title"
   },
-  "recommendAsagiToAFriend": "推荐 Asagi 给朋友。",
-  "@recommendAsagiToAFriend": {
+  "recommendKuymoToAFriend": "推荐 Kuymo 给朋友。",
+  "@recommendKuymoToAFriend": {
     "description": "Share app page description"
   },
   "appearanceLanguage": "外观与语言",
@@ -460,7 +460,7 @@
     "description": "Settings hub row summary"
   },
   "aiSettings": "AI 设置",
-  "asagiAssistant": "Asagi 助手",
+  "kuymoAssistant": "Kuymo 助手",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "一个专用于你视频的私人助手即将到来。你将能够在这里询问有关压缩、组织和已保存视频的问题。",
   "localModelsAndSmartTools": "本地模型和智能工具",
   "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "探索本地模型和未来 AI 工具。这些选项尚未激活。",
@@ -508,8 +508,8 @@
   "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "theDeveloperBehindAsagi": "Asagi背后的开发者",
-  "@theDeveloperBehindAsagi": {
+  "theDeveloperBehindKuymo": "Kuymo背后的开发者",
+  "@theDeveloperBehindKuymo": {
     "description": "Settings hub row summary"
   },
   "openSourcePackageLicenses": "开源软件包许可证",
@@ -520,8 +520,8 @@
   "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "rulesForUsingAsagi": "使用Asagi的规则",
-  "@rulesForUsingAsagi": {
+  "rulesForUsingKuymo": "使用Kuymo的规则",
+  "@rulesForUsingKuymo": {
     "description": "Settings hub row summary"
   },
   "whatDataWeCollect": "我们收集的数据",
@@ -623,14 +623,14 @@
   "unavailable": "不可用",
   "projectAndSupport": "项目和支持",
   "githubRepository": "GitHub 仓库",
-  "viewAsagiSourceCode": "查看 Asagi 源代码",
+  "viewKuymoSourceCode": "查看 Kuymo 源代码",
   "readTheREADME": "阅读 README",
-  "learnAboutAsagiOnGitHub": "在 GitHub 上了解 Asagi",
+  "learnAboutKuymoOnGitHub": "在 GitHub 上了解 Kuymo",
   "reportAnIssue": "报告问题",
   "viewAndCreateGitHubIssues": "查看并创建 GitHub 问题",
   "latestRelease": "最新版本",
   "viewReleasesAndDownloads": "查看版本和下载",
-  "supportAsagi": "支持 Asagi",
+  "supportKuymo": "支持 Kuymo",
   "openTheOfficialDonationPage": "打开官方捐赠页面",
   "couldNotOpenTheLinkPleaseTryAgain": "无法打开链接。请重试。",
   "developer": "开发者",
@@ -638,7 +638,7 @@
   "githubProfile": "GitHub 个人资料",
   "seeProjectsAndContactDetails": "查看项目和联系方式",
   "maintenanceInProgress": "维护中",
-  "asagiIsTemporarilyUnavailablePleaseTryAgainLater": "Asagi 暂时不可用。请稍后再试。",
+  "kuymoIsTemporarilyUnavailablePleaseTryAgainLater": "Kuymo 暂时不可用。请稍后再试。",
   "comingSoon": "即将到来",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"
@@ -655,9 +655,9 @@
   "countryCode": "SG",
   "countryName": "{countryCode, select, AE{阿拉伯联合酋长国} AT{奥地利} AU{澳大利亚} BE{比利时} BH{巴林} BR{巴西} CA{加拿大} CH{瑞士} CN{中国} DE{德国} DJ{吉布提} DZ{阿尔及利亚} EG{埃及} ES{西班牙} FR{法国} GB{英国} HK{中国香港特别行政区} ID{印度尼西亚} IQ{伊拉克} IT{意大利} JO{约旦} JP{日本} KM{科摩罗} KR{韩国} KW{科威特} LB{黎巴嫩} LY{利比亚} MA{摩洛哥} MR{毛里塔尼亚} MX{墨西哥} NL{荷兰} OM{阿曼} PL{波兰} PS{巴勒斯坦领土} PT{葡萄牙} QA{卡塔尔} RU{俄罗斯} SA{沙特阿拉伯} SD{苏丹} SE{瑞典} SG{新加坡} SO{索马里} SY{叙利亚} TH{泰国} TN{突尼斯} TR{土耳其} TW{台湾} US{美国} VN{越南} YE{也门} other{国家}}",
   "compressionHelpDescription": "Answers to common questions about video compression.",
-  "appSupportDescription": "Get help using Asagi.",
-  "appTermsDescription": "Terms for using the free, open source Asagi app.",
-  "termsOfServiceFullText": "Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.",
-  "termsAcceptanceLicenseBody": "Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices.",
+  "appSupportDescription": "Get help using Kuymo.",
+  "appTermsDescription": "Terms for using the free, open source Kuymo app.",
+  "termsOfServiceFullText": "Kuymo is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.",
+  "termsAcceptanceLicenseBody": "Kuymo is free and open source. All features are available to everyone, and video processing runs locally on your devices.",
   "compressionAndroidOnly": "视频压缩目前仅适用于 Android。"
 }

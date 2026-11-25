@@ -806,7 +806,7 @@ interface NativeMediaApi {
     fun setUp(binaryMessenger: BinaryMessenger, api: NativeMediaApi?, messageChannelSuffix: String = "") {
       val separatedMessageChannelSuffix = if (messageChannelSuffix.isNotEmpty()) ".$messageChannelSuffix" else ""
       run {
-        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.asagi.NativeMediaApi.extractVideoMetadata$separatedMessageChannelSuffix", codec)
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.kuymo.NativeMediaApi.extractVideoMetadata$separatedMessageChannelSuffix", codec)
         if (api != null) {
           channel.setMessageHandler { message, reply ->
             val args = message as List<Any?>
@@ -825,7 +825,7 @@ interface NativeMediaApi {
         }
       }
       run {
-        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.asagi.NativeMediaApi.cancelEncoding$separatedMessageChannelSuffix", codec)
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.kuymo.NativeMediaApi.cancelEncoding$separatedMessageChannelSuffix", codec)
         if (api != null) {
           channel.setMessageHandler { _, reply ->
             CoroutineScope(Dispatchers.Main).launch {
@@ -843,7 +843,7 @@ interface NativeMediaApi {
         }
       }
       run {
-        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.asagi.NativeMediaApi.pauseEncoding$separatedMessageChannelSuffix", codec)
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.kuymo.NativeMediaApi.pauseEncoding$separatedMessageChannelSuffix", codec)
         if (api != null) {
           channel.setMessageHandler { _, reply ->
             CoroutineScope(Dispatchers.Main).launch {
@@ -861,7 +861,7 @@ interface NativeMediaApi {
         }
       }
       run {
-        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.asagi.NativeMediaApi.resumeEncoding$separatedMessageChannelSuffix", codec)
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.kuymo.NativeMediaApi.resumeEncoding$separatedMessageChannelSuffix", codec)
         if (api != null) {
           channel.setMessageHandler { _, reply ->
             CoroutineScope(Dispatchers.Main).launch {
@@ -879,7 +879,7 @@ interface NativeMediaApi {
         }
       }
       run {
-        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.asagi.NativeMediaApi.startHardwareEncoding$separatedMessageChannelSuffix", codec)
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.kuymo.NativeMediaApi.startHardwareEncoding$separatedMessageChannelSuffix", codec)
         if (api != null) {
           channel.setMessageHandler { message, reply ->
             val args = message as List<Any?>
@@ -917,7 +917,7 @@ interface NativeCompressionPlannerApi {
     fun setUp(binaryMessenger: BinaryMessenger, api: NativeCompressionPlannerApi?, messageChannelSuffix: String = "") {
       val separatedMessageChannelSuffix = if (messageChannelSuffix.isNotEmpty()) ".$messageChannelSuffix" else ""
       run {
-        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.asagi.NativeCompressionPlannerApi.plan$separatedMessageChannelSuffix", codec)
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.kuymo.NativeCompressionPlannerApi.plan$separatedMessageChannelSuffix", codec)
         if (api != null) {
           channel.setMessageHandler { message, reply ->
             val args = message as List<Any?>
@@ -937,7 +937,7 @@ interface NativeCompressionPlannerApi {
         }
       }
       run {
-        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.asagi.NativeCompressionPlannerApi.verify$separatedMessageChannelSuffix", codec)
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.kuymo.NativeCompressionPlannerApi.verify$separatedMessageChannelSuffix", codec)
         if (api != null) {
           channel.setMessageHandler { message, reply ->
             val args = message as List<Any?>
@@ -957,7 +957,7 @@ interface NativeCompressionPlannerApi {
         }
       }
       run {
-        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.asagi.NativeCompressionPlannerApi.presets$separatedMessageChannelSuffix", codec)
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.kuymo.NativeCompressionPlannerApi.presets$separatedMessageChannelSuffix", codec)
         if (api != null) {
           channel.setMessageHandler { _, reply ->
             val wrapped: List<Any?> = try {
@@ -972,7 +972,7 @@ interface NativeCompressionPlannerApi {
         }
       }
       run {
-        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.asagi.NativeCompressionPlannerApi.resolvePreset$separatedMessageChannelSuffix", codec)
+        val channel = BasicMessageChannel<Any?>(binaryMessenger, "dev.flutter.pigeon.kuymo.NativeCompressionPlannerApi.resolvePreset$separatedMessageChannelSuffix", codec)
         if (api != null) {
           channel.setMessageHandler { message, reply ->
             val args = message as List<Any?>

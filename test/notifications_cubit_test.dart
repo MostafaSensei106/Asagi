@@ -1,45 +1,45 @@
 import 'dart:async';
 
-import 'package:asagi/core/constants/types/type_def.dart';
-import 'package:asagi/core/preferences/data/repositories/shared_notification_preferences.dart';
-import 'package:asagi/core/preferences/domain/use_cases/load_notification_settings.dart';
-import 'package:asagi/core/preferences/domain/use_cases/save_notification_settings.dart';
-import 'package:asagi/core/services/app_info/interface/base_package_info_adapter.dart';
-import 'package:asagi/core/services/haptics/haptics_service.dart';
-import 'package:asagi/core/services/notifications/notification_request.dart';
-import 'package:asagi/core/utils/result/result.dart';
-import 'package:asagi/core/widgets/widgets.dart';
-import 'package:asagi/l10n/app_localizations.dart';
-import 'package:asagi/modules/compression/application/notifications/compression_insights_service.dart';
-import 'package:asagi/modules/compression/application/notifications/compression_notification_service.dart';
-import 'package:asagi/modules/compression/data/repositories/local_compression_alert_repository.dart';
-import 'package:asagi/modules/compression/domain/models/compression_record.dart';
-import 'package:asagi/modules/compression/domain/repositories/video_compression_repository.dart';
-import 'package:asagi/modules/compression/domain/use_cases/read_notification_insights.dart';
-import 'package:asagi/modules/notifications/application/notification_dispatcher.dart';
-import 'package:asagi/modules/notifications/application/notification_interactions.dart';
-import 'package:asagi/modules/notifications/data/mappers/notification_payload_codec.dart';
-import 'package:asagi/modules/notifications/domain/entities/notification_event.dart';
-import 'package:asagi/modules/notifications/domain/entities/notification_target.dart';
-import 'package:asagi/modules/notifications/domain/repositories/notification_repository.dart';
-import 'package:asagi/modules/notifications/domain/use_cases/initialize_notifications.dart';
-import 'package:asagi/modules/notifications/domain/use_cases/open_notification_channel.dart';
-import 'package:asagi/modules/notifications/domain/use_cases/read_notification_access.dart';
-import 'package:asagi/modules/notifications/domain/use_cases/request_notification_access.dart';
-import 'package:asagi/modules/notifications/domain/use_cases/show_notification.dart';
-import 'package:asagi/modules/notifications/presentation/cubit/notification_access_cubit.dart';
-import 'package:asagi/modules/notifications/presentation/cubit/notifications_cubit.dart';
-import 'package:asagi/modules/notifications/presentation/cubit/notifications_state.dart';
-import 'package:asagi/modules/notifications/presentation/pages/notifications_settings_page.dart';
-import 'package:asagi/modules/updates/application/app_update_service.dart';
-import 'package:asagi/modules/updates/data/repositories/local_update_check_repository.dart';
-import 'package:asagi/modules/updates/domain/entities/app_release.dart';
-import 'package:asagi/modules/updates/domain/repositories/release_repository.dart';
-import 'package:asagi/modules/updates/domain/use_cases/check_app_update.dart';
 import 'package:bloc_signals_flutter/bloc_signals_flutter.dart';
 import 'package:bloc_signals_hydrate/bloc_signals_hydrate.dart';
 import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kuymo/core/constants/types/type_def.dart';
+import 'package:kuymo/core/preferences/data/repositories/shared_notification_preferences.dart';
+import 'package:kuymo/core/preferences/domain/use_cases/load_notification_settings.dart';
+import 'package:kuymo/core/preferences/domain/use_cases/save_notification_settings.dart';
+import 'package:kuymo/core/services/app_info/interface/base_package_info_adapter.dart';
+import 'package:kuymo/core/services/haptics/haptics_service.dart';
+import 'package:kuymo/core/services/notifications/notification_request.dart';
+import 'package:kuymo/core/utils/result/result.dart';
+import 'package:kuymo/core/widgets/widgets.dart';
+import 'package:kuymo/l10n/app_localizations.dart';
+import 'package:kuymo/modules/compression/application/notifications/compression_insights_service.dart';
+import 'package:kuymo/modules/compression/application/notifications/compression_notification_service.dart';
+import 'package:kuymo/modules/compression/data/repositories/local_compression_alert_repository.dart';
+import 'package:kuymo/modules/compression/domain/models/compression_record.dart';
+import 'package:kuymo/modules/compression/domain/repositories/video_compression_repository.dart';
+import 'package:kuymo/modules/compression/domain/use_cases/read_notification_insights.dart';
+import 'package:kuymo/modules/notifications/application/notification_dispatcher.dart';
+import 'package:kuymo/modules/notifications/application/notification_interactions.dart';
+import 'package:kuymo/modules/notifications/data/mappers/notification_payload_codec.dart';
+import 'package:kuymo/modules/notifications/domain/entities/notification_event.dart';
+import 'package:kuymo/modules/notifications/domain/entities/notification_target.dart';
+import 'package:kuymo/modules/notifications/domain/repositories/notification_repository.dart';
+import 'package:kuymo/modules/notifications/domain/use_cases/initialize_notifications.dart';
+import 'package:kuymo/modules/notifications/domain/use_cases/open_notification_channel.dart';
+import 'package:kuymo/modules/notifications/domain/use_cases/read_notification_access.dart';
+import 'package:kuymo/modules/notifications/domain/use_cases/request_notification_access.dart';
+import 'package:kuymo/modules/notifications/domain/use_cases/show_notification.dart';
+import 'package:kuymo/modules/notifications/presentation/cubit/notification_access_cubit.dart';
+import 'package:kuymo/modules/notifications/presentation/cubit/notifications_cubit.dart';
+import 'package:kuymo/modules/notifications/presentation/cubit/notifications_state.dart';
+import 'package:kuymo/modules/notifications/presentation/pages/notifications_settings_page.dart';
+import 'package:kuymo/modules/updates/application/app_update_service.dart';
+import 'package:kuymo/modules/updates/data/repositories/local_update_check_repository.dart';
+import 'package:kuymo/modules/updates/domain/entities/app_release.dart';
+import 'package:kuymo/modules/updates/domain/repositories/release_repository.dart';
+import 'package:kuymo/modules/updates/domain/use_cases/check_app_update.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -51,8 +51,8 @@ class Videos extends Mock implements VideoCompressionRepository {}
 class PackageAdapter extends Fake implements BasePackageInfoAdapter {
   @override
   PackageInfo get packageInfo => PackageInfo(
-    appName: 'Asagi',
-    packageName: 'test.asagi',
+    appName: 'Kuymo',
+    packageName: 'test.kuymo',
     version: '1.0.0',
     buildNumber: '1',
   );
@@ -376,7 +376,7 @@ void main() {
   testWidgets(
     'permission banner prompts only on tap and exposes five haptic choices',
     (tester) async {
-      await initialize();
+      await tester.runAsync(initialize);
       await tester.pumpWidget(
         MultiBlocSignalProvider(
           providers: [
@@ -405,13 +405,15 @@ void main() {
       expect(find.text(text.hapticsButtons), findsOneWidget);
       await tester.scrollUntilVisible(find.text(text.hapticsErrors), 200);
       expect(find.text(text.hapticsErrors), findsOneWidget);
+      // Release widget subscriptions before tearDown closes their cubits.
+      await tester.pumpWidget(const SizedBox.shrink());
     },
   );
   testWidgets(
     'notification rows preserve icon tiles, short descriptions, and a distinct illustrated sheet',
     (tester) async {
       native.status = NotificationPermission.granted;
-      await initialize();
+      await tester.runAsync(initialize);
       await tester.pumpWidget(
         MultiBlocSignalProvider(
           providers: [
@@ -514,6 +516,7 @@ void main() {
             .pop();
         await tester.pumpAndSettle();
       }
+      await tester.pumpWidget(const SizedBox.shrink());
     },
   );
 }

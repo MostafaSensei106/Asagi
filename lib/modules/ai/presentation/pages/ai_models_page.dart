@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
-import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
+import '../../../../core/constants/kuymo_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
@@ -33,7 +33,7 @@ final class _AiModelsPageState extends State<AiModelsPage> {
   _models = [
     (
       id: 'compress_02b',
-      name: 'asagiBitrateOptimizer',
+      name: 'kuymoBitrateOptimizer',
       desc: 'localRateControlDescription',
       size: '48 MB',
       ram: '85 MB RAM',
@@ -88,7 +88,7 @@ final class _AiModelsPageState extends State<AiModelsPage> {
                   Row(
                     children: [
                       ExpressiveIcon(
-                        icon: AsagiIcons.ai,
+                        icon: KuymoIcons.ai,
                         shape: ExpressiveIconShape.cookie,
                         size: AppIconSizes.xlarge,
                         backgroundColor: _activeModelId == model.id
@@ -179,7 +179,7 @@ final class _AiModelsPageState extends State<AiModelsPage> {
   }
 
   String _localizedModelName(AppLocalizations l10n, String id) => switch (id) {
-    'compress_02b' => l10n.asagiBitrateOptimizer,
+    'compress_02b' => l10n.kuymoBitrateOptimizer,
     'scene_v4' => l10n.mobileNetSceneClassifier,
     'whisper_tiny' => l10n.whisperTinyTranscriber,
     'llama_1b' => l10n.llamaMobileAssistant,

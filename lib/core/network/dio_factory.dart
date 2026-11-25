@@ -49,7 +49,7 @@ abstract final class DioFactory {
       headers: {
         'Accept': 'application/vnd.github+json',
         'X-GitHub-Api-Version': '2026-03-10',
-        'User-Agent': 'Asagi',
+        'User-Agent': 'Kuymo',
       },
     );
     if (retryTransientFailures) {

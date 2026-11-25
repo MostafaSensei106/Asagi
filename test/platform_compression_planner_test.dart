@@ -1,10 +1,10 @@
-import 'package:asagi/core/compression/domain/models/compression_preferences.dart';
-import 'package:asagi/core/compression/domain/models/share_preset.dart';
-import 'package:asagi/core/compression/domain/models/video_metadata.dart';
-import 'package:asagi/core/compression/infrastructure/native/platform_compression_planner.dart';
-import 'package:asagi/core/native/pigeon_messages.g.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kuymo/core/compression/domain/models/compression_preferences.dart';
+import 'package:kuymo/core/compression/domain/models/share_preset.dart';
+import 'package:kuymo/core/compression/domain/models/video_metadata.dart';
+import 'package:kuymo/core/compression/infrastructure/native/platform_compression_planner.dart';
+import 'package:kuymo/core/native/pigeon_messages.g.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -33,7 +33,7 @@ void main() {
       TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger;
   final channels = <String>[];
   void handle(String method, Future<Object?> Function(Object?) callback) {
-    final name = 'dev.flutter.pigeon.asagi.NativeCompressionPlannerApi.$method';
+    final name = 'dev.flutter.pigeon.kuymo.NativeCompressionPlannerApi.$method';
     channels.add(name);
     messenger.setMockDecodedMessageHandler<Object?>(
       BasicMessageChannel<Object?>(

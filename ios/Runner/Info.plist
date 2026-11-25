@@ -61,7 +61,7 @@
 			<string>zh-TW</string>
 		</array>
 		<key>CFBundleDisplayName</key>
-		<string>Asagi</string>
+		<string>Kuymo</string>
 		<key>CFBundleExecutable</key>
 		<string>$(EXECUTABLE_NAME)</string>
 		<key>CFBundleIdentifier</key>
@@ -69,7 +69,7 @@
 		<key>CFBundleInfoDictionaryVersion</key>
 		<string>6.0</string>
 		<key>CFBundleName</key>
-		<string>asagi</string>
+		<string>Kuymo</string>
 		<key>NSPhotoLibraryUsageDescription</key>
 		<string>Select a video to compress on this device.</string>
 		<key>NSPhotoLibraryAddUsageDescription</key>

@@ -1,7 +1,7 @@
-import 'package:asagi/core/preferences/data/mappers/notification_preferences_codec.dart';
-import 'package:asagi/modules/notifications/data/mappers/notification_payload_codec.dart';
-import 'package:asagi/modules/notifications/domain/entities/notification_target.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kuymo/core/preferences/data/mappers/notification_preferences_codec.dart';
+import 'package:kuymo/modules/notifications/data/mappers/notification_payload_codec.dart';
+import 'package:kuymo/modules/notifications/domain/entities/notification_target.dart';
 
 void main() {
   test('all destinations survive serialization without file paths', () {

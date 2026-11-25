@@ -4,31 +4,32 @@ import 'package:flutter/services.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
-import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
+import '../../../../core/constants/kuymo_icons.dart';
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/network/api_client_config.dart';
 import '../../../../core/widgets/widgets.dart';
 
 /// Share screen allowing users to invite friends, copy app link,
-/// and share Asagi recommendations.
+/// and share Kuymo recommendations.
 final class ShareAppPage extends StatelessWidget {
   const ShareAppPage({super.key});
 
-  static const String _shareUrl = 'https://asagi.app/download';
-  static const String _shareMessage =
-      'Check out Asagi! It compresses videos up to 90% without quality loss, directly on your phone with 100% privacy: https://asagi.app/download';
+  static const String _shareUrl =
+      '${ApiClientConfig.githubRepositoryUrl}/releases';
 
   void _copyLink(BuildContext context) {
     unawaited(Clipboard.setData(const ClipboardData(text: _shareUrl)));
-    context.toast.showSuccess(context, 'Link copied to clipboard!');
+    context.toast.showSuccess(context, context.localeKeys.appLinkCopied);
   }
 
   void _shareViaSheet(BuildContext context) {
-    unawaited(Clipboard.setData(const ClipboardData(text: _shareMessage)));
-    context.toast.showSuccess(
-      context,
-      'Share text copied! Ready to paste into messaging apps.',
+    unawaited(
+      Clipboard.setData(
+        ClipboardData(text: context.localeKeys.kuymoShareInvitation(_shareUrl)),
+      ),
     );
+    context.toast.showSuccess(context, context.localeKeys.appInvitationCopied);
   }
 
   @override
@@ -37,7 +38,7 @@ final class ShareAppPage extends StatelessWidget {
     final colorScheme = context.colorScheme;
 
     return Scaffold(
-      appBar: SidePageAppBarComponent(title: l10n.shareAsagi),
+      appBar: SidePageAppBarComponent(title: l10n.shareKuymo),
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.symmetric(
@@ -50,7 +51,7 @@ final class ShareAppPage extends StatelessWidget {
               child: Column(
                 children: [
                   ExpressiveIcon(
-                    icon: AsagiIcons.shareApp,
+                    icon: KuymoIcons.shareApp,
                     shape: ExpressiveIconShape.heart,
                     size: 68,
                     backgroundColor: colorScheme.primaryContainer,
@@ -58,14 +59,14 @@ final class ShareAppPage extends StatelessWidget {
                   ),
                   const Gap(AppSpacing.large),
                   Text(
-                    l10n.shareAsagi,
+                    l10n.shareKuymo,
                     style: context.textTheme.headlineSmall?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   const Gap(AppSpacing.small),
                   Text(
-                    l10n.recommendAsagiToAFriend,
+                    l10n.recommendKuymoToAFriend,
                     textAlign: TextAlign.center,
                     style: context.textTheme.bodyMedium?.copyWith(
                       color: colorScheme.onSurfaceVariant,
@@ -89,13 +90,13 @@ final class ShareAppPage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Asagi Video Compressor',
+                              l10n.kuymo,
                               style: context.textTheme.titleMedium?.copyWith(
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             Text(
-                              'Private • Fast • On-Device',
+                              l10n.onDeviceProcessingLabel,
                               style: context.textTheme.bodySmall?.copyWith(
                                 color: colorScheme.primary,
                                 fontWeight: FontWeight.w600,
@@ -108,7 +109,7 @@ final class ShareAppPage extends StatelessWidget {
                   ),
                   const Gap(AppSpacing.medium),
                   Text(
-                    'Shrink large 4K & 1080p video files by up to 90% without losing visual quality. 100% offline and secure on your phone.',
+                    l10n.kuymoShareDescription,
                     style: context.textTheme.bodyMedium?.copyWith(
                       color: colorScheme.onSurfaceVariant,
                       height: 1.45,
@@ -151,15 +152,15 @@ final class ShareAppPage extends StatelessWidget {
             const Gap(AppSpacing.xLarge),
             FilledButtonComponent.icon(
               expand: true,
-              icon: AsagiIcons.shareApp,
-              label: 'Share Invitation Link',
+              icon: KuymoIcons.shareApp,
+              label: l10n.shareKuymo,
               onPressed: () => _shareViaSheet(context),
             ),
             const Gap(AppSpacing.medium),
             OutlinedButtonComponent.icon(
               expand: true,
               icon: LucideIcons.copy,
-              label: 'Copy Link to Clipboard',
+              label: l10n.copyAppLink,
               onPressed: () => _copyLink(context),
             ),
           ],

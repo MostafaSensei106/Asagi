@@ -31,7 +31,7 @@ class MaintenanceModePage extends StatelessWidget {
               Text(
                 context
                     .localeKeys
-                    .asagiIsTemporarilyUnavailablePleaseTryAgainLater,
+                    .kuymoIsTemporarilyUnavailablePleaseTryAgainLater,
                 textAlign: TextAlign.center,
                 style: const TextStyle(fontSize: 16),
               ),

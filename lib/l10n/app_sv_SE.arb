@@ -1,7 +1,7 @@
 {
   "@@locale": "sv_SE",
-  "asagi": "Asagi",
-  "@asagi": {
+  "kuymo": "Kuymo",
+  "@kuymo": {
     "description": "Application name shown in the app and on the home page"
   },
   "downloadFile": "Ladda ner fil",
@@ -211,12 +211,12 @@
   "@compressVideosPrivatelyOnYourDevice": {
     "description": "Home page description"
   },
-  "welcomeToAsagi": "Välkommen till Asagi",
-  "@welcomeToAsagi": {
+  "welcomeToKuymo": "Välkommen till Kuymo",
+  "@welcomeToKuymo": {
     "description": "Onboarding page title"
   },
-  "learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": "Lär dig hur Asagi komprimerar dina videor utan att någonsin lämna din telefon.",
-  "@learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": {
+  "learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone": "Lär dig hur Kuymo komprimerar dina videor utan att någonsin lämna din telefon.",
+  "@learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone": {
     "description": "Onboarding page description"
   },
   "signIn": "Logga in",
@@ -315,8 +315,8 @@
   "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
     "description": "Privacy settings page description"
   },
-  "aboutAsagi": "Om Asagi",
-  "@aboutAsagi": {
+  "aboutKuymo": "Om Kuymo",
+  "@aboutKuymo": {
     "description": "App info page title"
   },
   "versionBuildNumberAndApplicationDetails": "Version, byggnummer och applikationsdetaljer.",
@@ -327,24 +327,24 @@
   "@aboutTheDeveloper": {
     "description": "Developer page title"
   },
-  "theDeveloperAndToolsBehindAsagi": "Utvecklaren och verktygen bakom Asagi.",
-  "@theDeveloperAndToolsBehindAsagi": {
+  "theDeveloperAndToolsBehindKuymo": "Utvecklaren och verktygen bakom Kuymo.",
+  "@theDeveloperAndToolsBehindKuymo": {
     "description": "Developer page description"
   },
   "openSourceLicenses": "Öppen källkod-licenser",
   "@openSourceLicenses": {
     "description": "Licenses page title"
   },
-  "openSourcePackagesBundledWithAsagi": "Öppen källkodspaket som ingår i Asagi.",
-  "@openSourcePackagesBundledWithAsagi": {
+  "openSourcePackagesBundledWithKuymo": "Öppen källkodspaket som ingår i Kuymo.",
+  "@openSourcePackagesBundledWithKuymo": {
     "description": "Licenses page description"
   },
   "privacyPolicy": "Integritetspolicy",
   "@privacyPolicy": {
     "description": "Privacy policy page title"
   },
-  "howAsagiHandlesYourVideosAndData": "Hur Asagi hanterar dina videor och data.",
-  "@howAsagiHandlesYourVideosAndData": {
+  "howKuymoHandlesYourVideosAndData": "Hur Kuymo hanterar dina videor och data.",
+  "@howKuymoHandlesYourVideosAndData": {
     "description": "Privacy policy page description"
   },
   "termsOfService": "Användarvillkor",
@@ -355,16 +355,16 @@
   "@dataSafety": {
     "description": "Data safety page title"
   },
-  "summaryOfTheDataAsagiCollectsAndWhy": "Sammanfattning av de data som Asagi samlar in och varför.",
-  "@summaryOfTheDataAsagiCollectsAndWhy": {
+  "summaryOfTheDataKuymoCollectsAndWhy": "Sammanfattning av de data som Kuymo samlar in och varför.",
+  "@summaryOfTheDataKuymoCollectsAndWhy": {
     "description": "Data safety page description"
   },
   "permissions": "Behörigheter",
   "@permissions": {
     "description": "Permissions page title"
   },
-  "runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": "Körningstillstånd som Asagi begär och varför varje behövs.",
-  "@runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": {
+  "runtimePermissionsKuymoRequestsAndWhyEachIsNeeded": "Körningstillstånd som Kuymo begär och varför varje behövs.",
+  "@runtimePermissionsKuymoRequestsAndWhyEachIsNeeded": {
     "description": "Permissions page description"
   },
   "faq": "FAQ",
@@ -395,20 +395,20 @@
   "@permanentlyRemoveYourAccountAndItsServerSideData": {
     "description": "Delete account page description"
   },
-  "rateAsagi": "Betygsätt Asagi",
-  "@rateAsagi": {
+  "rateKuymo": "Betygsätt Kuymo",
+  "@rateKuymo": {
     "description": "Rate app page title"
   },
-  "tellOthersHowAsagiWorkedForYouOnTheStore": "Berätta för andra hur Asagi fungerade för dig i butiken.",
-  "@tellOthersHowAsagiWorkedForYouOnTheStore": {
+  "tellOthersHowKuymoWorkedForYouOnTheStore": "Berätta för andra hur Kuymo fungerade för dig i butiken.",
+  "@tellOthersHowKuymoWorkedForYouOnTheStore": {
     "description": "Rate app page description"
   },
-  "shareAsagi": "Delan Asagi",
-  "@shareAsagi": {
+  "shareKuymo": "Delan Kuymo",
+  "@shareKuymo": {
     "description": "Share app page title"
   },
-  "recommendAsagiToAFriend": "Rekommenderan Asagi till en vän.",
-  "@recommendAsagiToAFriend": {
+  "recommendKuymoToAFriend": "Rekommenderan Kuymo till en vän.",
+  "@recommendKuymoToAFriend": {
     "description": "Share app page description"
   },
   "appearanceLanguage": "Utseende och språk",
@@ -460,7 +460,7 @@
     "description": "Settings hub row summary"
   },
   "aiSettings": "AI-inställningar",
-  "asagiAssistant": "Asagi-assistent",
+  "kuymoAssistant": "Kuymo-assistent",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "En privat assistent för dina videor kommer snart. Du kommer att kunna fråga om komprimering, organisering och sparade videor här.",
   "localModelsAndSmartTools": "Lokala modeller och smarta verktyg",
   "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "Utforska lokala modeller och framtida AI-verktyg. Dessa alternativ är ännu inte aktiva.",
@@ -508,8 +508,8 @@
   "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "theDeveloperBehindAsagi": "Utvecklaren bakom Asagi",
-  "@theDeveloperBehindAsagi": {
+  "theDeveloperBehindKuymo": "Utvecklaren bakom Kuymo",
+  "@theDeveloperBehindKuymo": {
     "description": "Settings hub row summary"
   },
   "openSourcePackageLicenses": "Licenser för öppna källpaket",
@@ -520,8 +520,8 @@
   "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "rulesForUsingAsagi": "Regler för att användan Asagi",
-  "@rulesForUsingAsagi": {
+  "rulesForUsingKuymo": "Regler för att användan Kuymo",
+  "@rulesForUsingKuymo": {
     "description": "Settings hub row summary"
   },
   "whatDataWeCollect": "Vilken data vi samlar in",
@@ -623,14 +623,14 @@
   "unavailable": "Inte tillgänglig",
   "projectAndSupport": "Projekt och support",
   "githubRepository": "GitHub-förråd",
-  "viewAsagiSourceCode": "Visan Asagi-källkod",
+  "viewKuymoSourceCode": "Visan Kuymo-källkod",
   "readTheREADME": "Läs README",
-  "learnAboutAsagiOnGitHub": "Läs om Asagi på GitHub",
+  "learnAboutKuymoOnGitHub": "Läs om Kuymo på GitHub",
   "reportAnIssue": "Rapportera ett problem",
   "viewAndCreateGitHubIssues": "Visa och skapa GitHub-ärenden",
   "latestRelease": "Senaste version",
   "viewReleasesAndDownloads": "Visa releaser och nedladdningar",
-  "supportAsagi": "Supportan Asagi",
+  "supportKuymo": "Supportan Kuymo",
   "openTheOfficialDonationPage": "Öppna den officiella donationssidan",
   "couldNotOpenTheLinkPleaseTryAgain": "Kunde inte öppna länken. Försök igen.",
   "developer": "Utvecklare",
@@ -638,7 +638,7 @@
   "githubProfile": "GitHub-profil",
   "seeProjectsAndContactDetails": "Se projekt och kontaktinformation",
   "maintenanceInProgress": "Underhåll pågår",
-  "asagiIsTemporarilyUnavailablePleaseTryAgainLater": "Asagi är tillfälligt otillgänglig. Försök igen senare.",
+  "kuymoIsTemporarilyUnavailablePleaseTryAgainLater": "Kuymo är tillfälligt otillgänglig. Försök igen senare.",
   "comingSoon": "Kommer snart",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"
@@ -655,9 +655,9 @@
   "countryCode": "SE",
   "countryName": "{countryCode, select, AE{Förenade Arabemiraten} AT{Österrike} AU{Australien} BE{Belgien} BH{Bahrain} BR{Brasilien} CA{Kanada} CH{Schweiz} CN{Kina} DE{Tyskland} DJ{Djibouti} DZ{Algeriet} EG{Egypten} ES{Spanien} FR{Frankrike} GB{Storbritannien} HK{Hongkong SAR} ID{Indonesien} IQ{Irak} IT{Italien} JO{Jordanien} JP{Japan} KM{Komorerna} KR{Sydkorea} KW{Kuwait} LB{Libanon} LY{Libyen} MA{Marocko} MR{Mauretanien} MX{Mexiko} NL{Nederländerna} OM{Oman} PL{Polen} PS{Palestinska territorierna} PT{Portugal} QA{Qatar} RU{Ryssland} SA{Saudiarabien} SD{Sudan} SE{Sverige} SG{Singapore} SO{Somalia} SY{Syrien} TH{Thailand} TN{Tunisien} TR{Turkiet} TW{Taiwan} US{USA} VN{Vietnam} YE{Jemen} other{Land}}",
   "compressionHelpDescription": "Answers to common questions about video compression.",
-  "appSupportDescription": "Get help using Asagi.",
-  "appTermsDescription": "Terms for using the free, open source Asagi app.",
-  "termsOfServiceFullText": "Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.",
-  "termsAcceptanceLicenseBody": "Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices.",
+  "appSupportDescription": "Get help using Kuymo.",
+  "appTermsDescription": "Terms for using the free, open source Kuymo app.",
+  "termsOfServiceFullText": "Kuymo is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.",
+  "termsAcceptanceLicenseBody": "Kuymo is free and open source. All features are available to everyone, and video processing runs locally on your devices.",
   "compressionAndroidOnly": "Videokomprimering är för närvarande endast tillgänglig på Android."
 }

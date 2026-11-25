@@ -4,7 +4,7 @@ part of '../app_router.dart';
 // Growth.
 // ---------------------------------------------------------------------------
 
-/// Prompt to rate Asagi on the store after a successful compression.
+/// Prompt to rate Kuymo on the store after a successful compression.
 final class RateAppRoute extends AppRoute {
   const RateAppRoute();
 
@@ -13,11 +13,11 @@ final class RateAppRoute extends AppRoute {
     name: 'rate_app',
     path: '/rate',
     section: AppRouteSection.help,
-    icon: AsagiIcons.rateApp,
+    icon: KuymoIcons.rateApp,
   );
 }
 
-/// Share sheet for recommending Asagi to friends.
+/// Share sheet for recommending Kuymo to friends.
 final class ShareAppRoute extends AppRoute {
   const ShareAppRoute();
 
@@ -26,6 +26,6 @@ final class ShareAppRoute extends AppRoute {
     name: 'share_app',
     path: '/share',
     section: AppRouteSection.help,
-    icon: AsagiIcons.shareApp,
+    icon: KuymoIcons.shareApp,
   );
 }

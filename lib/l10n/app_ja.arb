@@ -1,7 +1,7 @@
 {
   "@@locale": "ja",
-  "asagi": "Asagi",
-  "@asagi": {
+  "kuymo": "Kuymo",
+  "@kuymo": {
     "description": "Application name shown in the app and on the home page"
   },
   "downloadFile": "ファイルをダウンロード",
@@ -211,12 +211,12 @@
   "@compressVideosPrivatelyOnYourDevice": {
     "description": "Home page description"
   },
-  "welcomeToAsagi": "ズミへようこそ",
-  "@welcomeToAsagi": {
+  "welcomeToKuymo": "Kuymoへようこそ",
+  "@welcomeToKuymo": {
     "description": "Onboarding page title"
   },
-  "learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": "ズミがどのようにして動画を電話を離さずに圧縮するかを学びましょう。",
-  "@learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": {
+  "learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone": "Kuymoがどのようにして動画を電話を離さずに圧縮するかを学びましょう。",
+  "@learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone": {
     "description": "Onboarding page description"
   },
   "signIn": "サインイン",
@@ -315,8 +315,8 @@
   "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
     "description": "Privacy settings page description"
   },
-  "aboutAsagi": "Asagiについて",
-  "@aboutAsagi": {
+  "aboutKuymo": "Kuymoについて",
+  "@aboutKuymo": {
     "description": "App info page title"
   },
   "versionBuildNumberAndApplicationDetails": "バージョン、ビルド番号、アプリケーションの詳細。",
@@ -327,24 +327,24 @@
   "@aboutTheDeveloper": {
     "description": "Developer page title"
   },
-  "theDeveloperAndToolsBehindAsagi": "Asagiの開発者と使用されているツール。",
-  "@theDeveloperAndToolsBehindAsagi": {
+  "theDeveloperAndToolsBehindKuymo": "Kuymoの開発者と使用されているツール。",
+  "@theDeveloperAndToolsBehindKuymo": {
     "description": "Developer page description"
   },
   "openSourceLicenses": "オープンソースライセンス",
   "@openSourceLicenses": {
     "description": "Licenses page title"
   },
-  "openSourcePackagesBundledWithAsagi": "Asagiに同梱されているオープンソースパッケージ。",
-  "@openSourcePackagesBundledWithAsagi": {
+  "openSourcePackagesBundledWithKuymo": "Kuymoに同梱されているオープンソースパッケージ。",
+  "@openSourcePackagesBundledWithKuymo": {
     "description": "Licenses page description"
   },
   "privacyPolicy": "プライバシーポリシー",
   "@privacyPolicy": {
     "description": "Privacy policy page title"
   },
-  "howAsagiHandlesYourVideosAndData": "Asagiがあなたのビデオやデータをどのように扱うか。",
-  "@howAsagiHandlesYourVideosAndData": {
+  "howKuymoHandlesYourVideosAndData": "Kuymoがあなたのビデオやデータをどのように扱うか。",
+  "@howKuymoHandlesYourVideosAndData": {
     "description": "Privacy policy page description"
   },
   "termsOfService": "利用規約",
@@ -355,16 +355,16 @@
   "@dataSafety": {
     "description": "Data safety page title"
   },
-  "summaryOfTheDataAsagiCollectsAndWhy": "Asagi が収集するデータの概要とその理由。",
-  "@summaryOfTheDataAsagiCollectsAndWhy": {
+  "summaryOfTheDataKuymoCollectsAndWhy": "Kuymo が収集するデータの概要とその理由。",
+  "@summaryOfTheDataKuymoCollectsAndWhy": {
     "description": "Data safety page description"
   },
   "permissions": "権限",
   "@permissions": {
     "description": "Permissions page title"
   },
-  "runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": "Asagi が要求する実行時権限とそれぞれの必要な理由。",
-  "@runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": {
+  "runtimePermissionsKuymoRequestsAndWhyEachIsNeeded": "Kuymo が要求する実行時権限とそれぞれの必要な理由。",
+  "@runtimePermissionsKuymoRequestsAndWhyEachIsNeeded": {
     "description": "Permissions page description"
   },
   "faq": "FAQ",
@@ -395,20 +395,20 @@
   "@permanentlyRemoveYourAccountAndItsServerSideData": {
     "description": "Delete account page description"
   },
-  "rateAsagi": "Asagiを評価",
-  "@rateAsagi": {
+  "rateKuymo": "Kuymoを評価",
+  "@rateKuymo": {
     "description": "Rate app page title"
   },
-  "tellOthersHowAsagiWorkedForYouOnTheStore": "ストアでAsagiがどのように役立ったか他の人に伝える。",
-  "@tellOthersHowAsagiWorkedForYouOnTheStore": {
+  "tellOthersHowKuymoWorkedForYouOnTheStore": "ストアでKuymoがどのように役立ったか他の人に伝える。",
+  "@tellOthersHowKuymoWorkedForYouOnTheStore": {
     "description": "Rate app page description"
   },
-  "shareAsagi": "Asagiを共有",
-  "@shareAsagi": {
+  "shareKuymo": "Kuymoを共有",
+  "@shareKuymo": {
     "description": "Share app page title"
   },
-  "recommendAsagiToAFriend": "友達にAsagiをおすすめする。",
-  "@recommendAsagiToAFriend": {
+  "recommendKuymoToAFriend": "友達にKuymoをおすすめする。",
+  "@recommendKuymoToAFriend": {
     "description": "Share app page description"
   },
   "appearanceLanguage": "外観と言語",
@@ -460,7 +460,7 @@
     "description": "Settings hub row summary"
   },
   "aiSettings": "AI設定",
-  "asagiAssistant": "Asagiアシスタント",
+  "kuymoAssistant": "Kuymoアシスタント",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "あなたのビデオのためのプライベートアシスタントがまもなく登場します。ここで圧縮、整理、保存されたビデオについて質問できるようになります。",
   "localModelsAndSmartTools": "ローカルモデルとスマートツール",
   "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "ローカルモデルや将来のAIツールを探索してください。これらのオプションはまだ有効ではありません。",
@@ -508,8 +508,8 @@
   "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "theDeveloperBehindAsagi": "Asagiの開発者",
-  "@theDeveloperBehindAsagi": {
+  "theDeveloperBehindKuymo": "Kuymoの開発者",
+  "@theDeveloperBehindKuymo": {
     "description": "Settings hub row summary"
   },
   "openSourcePackageLicenses": "オープンソースパッケージのライセンス",
@@ -520,8 +520,8 @@
   "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "rulesForUsingAsagi": "Asagi使用のルール",
-  "@rulesForUsingAsagi": {
+  "rulesForUsingKuymo": "Kuymo使用のルール",
+  "@rulesForUsingKuymo": {
     "description": "Settings hub row summary"
   },
   "whatDataWeCollect": "収集するデータ",
@@ -623,14 +623,14 @@
   "unavailable": "利用不可",
   "projectAndSupport": "プロジェクトとサポート",
   "githubRepository": "GitHubリポジトリ",
-  "viewAsagiSourceCode": "Asagiのソースコードを見る",
+  "viewKuymoSourceCode": "Kuymoのソースコードを見る",
   "readTheREADME": "READMEを読む",
-  "learnAboutAsagiOnGitHub": "GitHubでAsagiについて学ぶ",
+  "learnAboutKuymoOnGitHub": "GitHubでKuymoについて学ぶ",
   "reportAnIssue": "問題を報告する",
   "viewAndCreateGitHubIssues": "GitHubの問題を表示・作成する",
   "latestRelease": "最新リリース",
   "viewReleasesAndDownloads": "リリースとダウンロードを見る",
-  "supportAsagi": "Asagiをサポートする",
+  "supportKuymo": "Kuymoをサポートする",
   "openTheOfficialDonationPage": "公式寄付ページを開く",
   "couldNotOpenTheLinkPleaseTryAgain": "リンクを開けませんでした。もう一度お試しください。",
   "developer": "開発者",
@@ -638,7 +638,7 @@
   "githubProfile": "GitHubプロフィール",
   "seeProjectsAndContactDetails": "プロジェクトと連絡先の詳細を見る",
   "maintenanceInProgress": "メンテナンス中",
-  "asagiIsTemporarilyUnavailablePleaseTryAgainLater": "Asagiは一時的に利用できません。後でもう一度お試しください。",
+  "kuymoIsTemporarilyUnavailablePleaseTryAgainLater": "Kuymoは一時的に利用できません。後でもう一度お試しください。",
   "comingSoon": "近日公開",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"
@@ -647,9 +647,9 @@
   "countryCode": "JP",
   "countryName": "{countryCode, select, AE{アラブ首長国連邦} AT{オーストリア} AU{オーストラリア} BE{ベルギー} BH{バーレーン} BR{ブラジル} CA{カナダ} CH{スイス} CN{中国} DE{ドイツ} DJ{ジブチ} DZ{アルジェリア} EG{エジプト} ES{スペイン} FR{フランス} GB{イギリス} HK{中華人民共和国香港特別行政区} ID{インドネシア} IQ{イラク} IT{イタリア} JO{ヨルダン} JP{日本} KM{コモロ} KR{韓国} KW{クウェート} LB{レバノン} LY{リビア} MA{モロッコ} MR{モーリタニア} MX{メキシコ} NL{オランダ} OM{オマーン} PL{ポーランド} PS{パレスチナ自治区} PT{ポルトガル} QA{カタール} RU{ロシア} SA{サウジアラビア} SD{スーダン} SE{スウェーデン} SG{シンガポール} SO{ソマリア} SY{シリア} TH{タイ} TN{チュニジア} TR{トルコ} TW{台湾} US{アメリカ合衆国} VN{ベトナム} YE{イエメン} other{国}}",
   "compressionHelpDescription": "Answers to common questions about video compression.",
-  "appSupportDescription": "Get help using Asagi.",
-  "appTermsDescription": "Terms for using the free, open source Asagi app.",
-  "termsOfServiceFullText": "Asagi is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.",
-  "termsAcceptanceLicenseBody": "Asagi is free and open source. All features are available to everyone, and video processing runs locally on your devices.",
+  "appSupportDescription": "Get help using Kuymo.",
+  "appTermsDescription": "Terms for using the free, open source Kuymo app.",
+  "termsOfServiceFullText": "Kuymo is free and open source. Video processing runs on your device. You retain ownership of your content. The app is provided without a guarantee of any particular output size or quality.",
+  "termsAcceptanceLicenseBody": "Kuymo is free and open source. All features are available to everyone, and video processing runs locally on your devices.",
   "compressionAndroidOnly": "動画の圧縮は現在 Android でのみ利用できます。"
 }

@@ -4,8 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 
-import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
+import '../../../../core/constants/kuymo_icons.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../../core/widgets/widgets.dart';
@@ -61,7 +61,7 @@ final class TermsPage extends StatelessWidget {
               child: Row(
                 children: [
                   ExpressiveIcon(
-                    icon: AsagiIcons.terms,
+                    icon: KuymoIcons.terms,
                     shape: ExpressiveIconShape.pill,
                     size: 52,
                     backgroundColor: colorScheme.primaryContainer,
@@ -104,7 +104,7 @@ final class TermsPage extends StatelessWidget {
               children: [
                 Expanded(
                   child: OutlinedButtonComponent.icon(
-                    icon: AsagiIcons.repository,
+                    icon: KuymoIcons.repository,
                     label: l10n.copyTerms,
                     onPressed: () => _copyTerms(context),
                   ),
@@ -112,7 +112,7 @@ final class TermsPage extends StatelessWidget {
                 const Gap.horizontal(AppSpacing.medium),
                 Expanded(
                   child: FilledTonalButtonComponent.icon(
-                    icon: AsagiIcons.support,
+                    icon: KuymoIcons.support,
                     label: l10n.support,
                     onPressed: () =>
                         unawaited(context.push(const SupportRoute())),

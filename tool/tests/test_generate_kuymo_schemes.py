@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-SCRIPT = Path(__file__).resolve().parents[1] / 'generate_asagi_schemes.py'
+SCRIPT = Path(__file__).resolve().parents[1] / 'generate_kuymo_schemes.py'
 spec = importlib.util.spec_from_file_location('schemes', SCRIPT)
 schemes = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(schemes)

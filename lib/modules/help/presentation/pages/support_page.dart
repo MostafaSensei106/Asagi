@@ -4,9 +4,10 @@ import 'package:flutter/services.dart';
 import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 
-import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
+import '../../../../core/constants/kuymo_icons.dart';
 import '../../../../core/extensions/extensions.dart';
+import '../../../../core/network/api_client_config.dart';
 import '../../../../core/router/app_router.dart';
 import '../../../../core/widgets/widgets.dart';
 
@@ -15,16 +16,17 @@ import '../../../../core/widgets/widgets.dart';
 final class SupportPage extends StatelessWidget {
   const SupportPage({super.key});
 
-  static const String _supportEmail = 'support@asagi.app';
+  static const String _supportUrl =
+      '${ApiClientConfig.githubRepositoryUrl}/issues';
 
-  void _copyEmail(BuildContext context) {
-    unawaited(Clipboard.setData(const ClipboardData(text: _supportEmail)));
-    context.toast.showSuccess(context, 'Email copied: $_supportEmail');
+  void _copySupportLink(BuildContext context) {
+    unawaited(Clipboard.setData(const ClipboardData(text: _supportUrl)));
+    context.toast.showSuccess(context, context.localeKeys.appLinkCopied);
   }
 
   void _copyDiagnostics(BuildContext context) {
     const specs = '''
-Asagi Diagnostics:
+Kuymo Diagnostics:
 - App Version: 1.0.0 (Build 1)
 - Engine: Kotlin Planner + Android Media3
 - Codecs: H.264 (HW), HEVC (HW), AV1 (SW/HW)
@@ -54,7 +56,7 @@ Asagi Diagnostics:
               child: Row(
                 children: [
                   ExpressiveIcon(
-                    icon: AsagiIcons.support,
+                    icon: KuymoIcons.support,
                     shape: ExpressiveIconShape.sunny,
                     size: 52,
                     backgroundColor: colorScheme.primaryContainer,
@@ -91,23 +93,23 @@ Asagi Diagnostics:
               children: [
                 ListTileIconComponent.top(
                   shape: ExpressiveIconShape.gem,
-                  title: 'Email Support',
-                  subtitle: 'support@asagi.app • 24/7 assistance',
-                  leading: AsagiIcons.support,
-                  onTap: () => _copyEmail(context),
+                  title: l10n.projectSupportLink,
+                  subtitle: l10n.reportAProblemOrSuggestAnImprovement,
+                  leading: KuymoIcons.support,
+                  onTap: () => _copySupportLink(context),
                 ),
                 ListTileIconComponent.middle(
                   shape: ExpressiveIconShape.softBurst,
                   title: l10n.sendFeedback,
                   subtitle: l10n.reportAProblemOrSuggestAnImprovement,
-                  leading: AsagiIcons.feedback,
+                  leading: KuymoIcons.feedback,
                   onTap: () => unawaited(context.push(const FeedbackRoute())),
                 ),
                 ListTileIconComponent.bottom(
                   shape: ExpressiveIconShape.fan,
                   title: l10n.faq,
                   subtitle: l10n.compressionHelpDescription,
-                  leading: AsagiIcons.faq,
+                  leading: KuymoIcons.faq,
                   onTap: () => unawaited(context.push(const FaqRoute())),
                 ),
               ],
@@ -145,7 +147,7 @@ Asagi Diagnostics:
                   const _DiagRow(label: 'Privacy State', value: '100% Offline'),
                   const Gap(AppSpacing.medium),
                   FilledTonalButtonComponent.icon(
-                    icon: AsagiIcons.build,
+                    icon: KuymoIcons.build,
                     label: 'Copy Diagnostics for Support',
                     expand: true,
                     onPressed: () => _copyDiagnostics(context),

@@ -10,154 +10,156 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 
-import 'package:asagi/core/compression/domain/contracts/artifact_store.dart'
-    as _i0;
-import 'package:asagi/core/di/injection_module.dart' as _i938;
-import 'package:asagi/core/network/request_deduplicator.dart' as _i965;
-import 'package:asagi/core/preferences/data/repositories/shared_notification_preferences.dart'
-    as _i725;
-import 'package:asagi/core/preferences/domain/repositories/notification_preferences_repository.dart'
-    as _i211;
-import 'package:asagi/core/preferences/domain/use_cases/load_notification_settings.dart'
-    as _i872;
-import 'package:asagi/core/preferences/domain/use_cases/save_notification_settings.dart'
-    as _i542;
-import 'package:asagi/core/services/ai/ai_model_service.dart' as _i491;
-import 'package:asagi/core/services/ai/interface/base_ai_model_service.dart'
-    as _i454;
-import 'package:asagi/core/services/app_info/app_info_service.dart' as _i822;
-import 'package:asagi/core/services/app_info/interface/base_app_info_service.dart'
-    as _i752;
-import 'package:asagi/core/services/app_info/interface/base_package_info_adapter.dart'
-    as _i615;
-import 'package:asagi/core/services/app_info/package_info_plus_adapter.dart'
-    as _i132;
-import 'package:asagi/core/services/file_opener/base_file_opener_service.dart'
-    as _i1039;
-import 'package:asagi/core/services/file_opener/url_file_opener_service.dart'
-    as _i283;
-import 'package:asagi/core/services/haptics/haptics_service.dart' as _i207;
-import 'package:asagi/core/services/l10n/l10n_service.dart' as _i843;
-import 'package:asagi/core/services/notifications/base_local_notification_service.dart'
-    as _i547;
-import 'package:asagi/core/services/notifications/local_notification_service.dart'
-    as _i1010;
-import 'package:asagi/core/services/permissions/base_permission_service.dart'
-    as _i415;
-import 'package:asagi/core/services/permissions/permission_handler_service.dart'
-    as _i47;
-import 'package:asagi/core/services/security/audit/app_audit_logger.dart'
-    as _i923;
-import 'package:asagi/core/services/security/audit/base_audit_logger.dart'
-    as _i619;
-import 'package:asagi/core/services/security/clipboard_guard_service.dart'
-    as _i586;
-import 'package:asagi/core/services/security/secure_vault_service.dart'
-    as _i590;
-import 'package:asagi/core/services/session/user_session_service.dart' as _i849;
-import 'package:asagi/core/services/share/base_share_service.dart' as _i550;
-import 'package:asagi/core/services/share/share_plus_service.dart' as _i770;
-import 'package:asagi/core/services/shared_prefs/base_pref_storage_service.dart'
-    as _i896;
-import 'package:asagi/core/services/shared_prefs/secure_storage_service.dart'
-    as _i559;
-import 'package:asagi/core/services/shared_prefs/shared_prefs_service.dart'
-    as _i883;
-import 'package:asagi/core/services/shared_prefs/storage_facade.dart' as _i960;
-import 'package:asagi/core/services/theme/theme_service.dart' as _i264;
-import 'package:asagi/core/services/toast/base_toast_service.dart' as _i630;
-import 'package:asagi/core/services/toast/toastification_service.dart' as _i885;
-import 'package:asagi/core/services/url_launcher/base_url_launcher_services.dart'
-    as _i1073;
-import 'package:asagi/core/services/url_launcher/url_launcher_service.dart'
-    as _i31;
-import 'package:asagi/core/utils/cache/cache_manager.dart' as _i866;
-import 'package:asagi/core/utils/localization/data/base_localization_repository.dart'
-    as _i604;
-import 'package:asagi/core/utils/localization/data/localization_repository.dart'
-    as _i676;
-import 'package:asagi/core/utils/localization/logic/cubit/localization_cubit.dart'
-    as _i1040;
-import 'package:asagi/core/utils/network/logic/cubit/network_cubit.dart'
-    as _i295;
-import 'package:asagi/core/utils/theme/logic/cubit/theme_cubit.dart' as _i664;
-import 'package:asagi/modules/about/data/about_app_repsitory.dart' as _i382;
-import 'package:asagi/modules/about/data/base_about_app_repository.dart'
-    as _i812;
-import 'package:asagi/modules/about/logic/cubit/about_app_cubit.dart' as _i188;
-import 'package:asagi/modules/compression/application/notifications/compression_insights_service.dart'
-    as _i140;
-import 'package:asagi/modules/compression/application/notifications/compression_notification_service.dart'
-    as _i661;
-import 'package:asagi/modules/compression/data/repositories/local_compression_alert_repository.dart'
-    as _i284;
-import 'package:asagi/modules/compression/domain/repositories/compression_alert_repository.dart'
-    as _i736;
-import 'package:asagi/modules/compression/domain/repositories/video_compression_repository.dart'
-    as _i425;
-import 'package:asagi/modules/compression/domain/use_cases/has_saved_compression_result.dart'
-    as _i988;
-import 'package:asagi/modules/compression/domain/use_cases/read_notification_insights.dart'
-    as _i827;
-import 'package:asagi/modules/notifications/application/notification_dispatcher.dart'
-    as _i163;
-import 'package:asagi/modules/notifications/application/notification_interactions.dart'
-    as _i158;
-import 'package:asagi/modules/notifications/data/repositories/device_notification_repository.dart'
-    as _i546;
-import 'package:asagi/modules/notifications/domain/repositories/notification_delivery.dart'
-    as _i294;
-import 'package:asagi/modules/notifications/domain/repositories/notification_repository.dart'
-    as _i583;
-import 'package:asagi/modules/notifications/domain/use_cases/initialize_notifications.dart'
-    as _i616;
-import 'package:asagi/modules/notifications/domain/use_cases/open_notification_channel.dart'
-    as _i549;
-import 'package:asagi/modules/notifications/domain/use_cases/read_notification_access.dart'
-    as _i987;
-import 'package:asagi/modules/notifications/domain/use_cases/request_notification_access.dart'
-    as _i317;
-import 'package:asagi/modules/notifications/domain/use_cases/show_notification.dart'
-    as _i837;
-import 'package:asagi/modules/notifications/logic/use_cases/show_notification.dart'
-    as _i492;
-import 'package:asagi/modules/notifications/presentation/cubit/notification_access_cubit.dart'
-    as _i598;
-import 'package:asagi/modules/notifications/presentation/cubit/notifications_cubit.dart'
-    as _i597;
-import 'package:asagi/modules/storage/data/repositories/file_storage_repository.dart'
-    as _i806;
-import 'package:asagi/modules/storage/domain/repositories/storage_repository.dart'
-    as _i548;
-import 'package:asagi/modules/storage/logic/storage_settings_cubit.dart'
-    as _i633;
-import 'package:asagi/modules/updates/application/app_update_service.dart'
-    as _i715;
-import 'package:asagi/modules/updates/data/data_sources/github_releases_api.dart'
-    as _i204;
-import 'package:asagi/modules/updates/data/repositories/github_release_repository.dart'
-    as _i994;
-import 'package:asagi/modules/updates/data/repositories/local_update_check_repository.dart'
-    as _i159;
-import 'package:asagi/modules/updates/domain/repositories/release_repository.dart'
-    as _i139;
-import 'package:asagi/modules/updates/domain/repositories/update_check_repository.dart'
-    as _i465;
-import 'package:asagi/modules/updates/domain/use_cases/check_app_update.dart'
-    as _i318;
-import 'package:asagi/modules/updates/domain/use_cases/read_cached_release.dart'
-    as _i1016;
-import 'package:asagi/modules/updates/domain/use_cases/read_installed_release.dart'
-    as _i98;
-import 'package:asagi/modules/updates/domain/use_cases/read_latest_release.dart'
-    as _i407;
-import 'package:asagi/modules/updates/presentation/cubit/releases_cubit.dart'
-    as _i969;
 import 'package:connectivity_plus/connectivity_plus.dart' as _i895;
 import 'package:dio/dio.dart' as _i361;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as _i558;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
+import 'package:kuymo/core/compression/domain/contracts/artifact_store.dart'
+    as _i260;
+import 'package:kuymo/core/di/injection_module.dart' as _i1030;
+import 'package:kuymo/core/network/request_deduplicator.dart' as _i350;
+import 'package:kuymo/core/preferences/data/repositories/shared_notification_preferences.dart'
+    as _i468;
+import 'package:kuymo/core/preferences/domain/repositories/notification_preferences_repository.dart'
+    as _i145;
+import 'package:kuymo/core/preferences/domain/use_cases/load_notification_settings.dart'
+    as _i501;
+import 'package:kuymo/core/preferences/domain/use_cases/save_notification_settings.dart'
+    as _i436;
+import 'package:kuymo/core/services/ai/ai_model_service.dart' as _i674;
+import 'package:kuymo/core/services/ai/interface/base_ai_model_service.dart'
+    as _i965;
+import 'package:kuymo/core/services/app_info/app_info_service.dart' as _i449;
+import 'package:kuymo/core/services/app_info/interface/base_app_info_service.dart'
+    as _i1006;
+import 'package:kuymo/core/services/app_info/interface/base_package_info_adapter.dart'
+    as _i700;
+import 'package:kuymo/core/services/app_info/package_info_plus_adapter.dart'
+    as _i93;
+import 'package:kuymo/core/services/file_opener/base_file_opener_service.dart'
+    as _i211;
+import 'package:kuymo/core/services/file_opener/url_file_opener_service.dart'
+    as _i701;
+import 'package:kuymo/core/services/haptics/haptics_service.dart' as _i369;
+import 'package:kuymo/core/services/l10n/l10n_service.dart' as _i726;
+import 'package:kuymo/core/services/notifications/base_local_notification_service.dart'
+    as _i373;
+import 'package:kuymo/core/services/notifications/local_notification_service.dart'
+    as _i282;
+import 'package:kuymo/core/services/permissions/base_permission_service.dart'
+    as _i430;
+import 'package:kuymo/core/services/permissions/permission_handler_service.dart'
+    as _i446;
+import 'package:kuymo/core/services/security/audit/app_audit_logger.dart'
+    as _i796;
+import 'package:kuymo/core/services/security/audit/base_audit_logger.dart'
+    as _i928;
+import 'package:kuymo/core/services/security/clipboard_guard_service.dart'
+    as _i48;
+import 'package:kuymo/core/services/security/secure_vault_service.dart'
+    as _i170;
+import 'package:kuymo/core/services/session/user_session_service.dart' as _i783;
+import 'package:kuymo/core/services/share/base_share_service.dart' as _i576;
+import 'package:kuymo/core/services/share/share_plus_service.dart' as _i966;
+import 'package:kuymo/core/services/shared_prefs/base_pref_storage_service.dart'
+    as _i156;
+import 'package:kuymo/core/services/shared_prefs/secure_storage_service.dart'
+    as _i619;
+import 'package:kuymo/core/services/shared_prefs/shared_prefs_service.dart'
+    as _i152;
+import 'package:kuymo/core/services/shared_prefs/storage_facade.dart' as _i1034;
+import 'package:kuymo/core/services/theme/theme_service.dart' as _i266;
+import 'package:kuymo/core/services/toast/base_toast_service.dart' as _i235;
+import 'package:kuymo/core/services/toast/toastification_service.dart' as _i926;
+import 'package:kuymo/core/services/url_launcher/base_url_launcher_services.dart'
+    as _i799;
+import 'package:kuymo/core/services/url_launcher/url_launcher_service.dart'
+    as _i587;
+import 'package:kuymo/core/utils/cache/cache_manager.dart' as _i856;
+import 'package:kuymo/core/utils/localization/data/base_localization_repository.dart'
+    as _i315;
+import 'package:kuymo/core/utils/localization/data/localization_repository.dart'
+    as _i254;
+import 'package:kuymo/core/utils/localization/logic/cubit/localization_cubit.dart'
+    as _i696;
+import 'package:kuymo/core/utils/network/logic/cubit/network_cubit.dart'
+    as _i479;
+import 'package:kuymo/core/utils/theme/logic/cubit/theme_cubit.dart' as _i623;
+import 'package:kuymo/modules/about/data/about_app_repsitory.dart' as _i472;
+import 'package:kuymo/modules/about/data/base_about_app_repository.dart'
+    as _i517;
+import 'package:kuymo/modules/about/logic/cubit/about_app_cubit.dart' as _i17;
+import 'package:kuymo/modules/compression/application/notifications/compression_insights_service.dart'
+    as _i906;
+import 'package:kuymo/modules/compression/application/notifications/compression_notification_service.dart'
+    as _i159;
+import 'package:kuymo/modules/compression/data/repositories/local_compression_alert_repository.dart'
+    as _i63;
+import 'package:kuymo/modules/compression/domain/repositories/compression_alert_repository.dart'
+    as _i721;
+import 'package:kuymo/modules/compression/domain/repositories/video_compression_repository.dart'
+    as _i859;
+import 'package:kuymo/modules/compression/domain/use_cases/has_saved_compression_result.dart'
+    as _i378;
+import 'package:kuymo/modules/compression/domain/use_cases/read_notification_insights.dart'
+    as _i1004;
+import 'package:kuymo/modules/notifications/application/notification_dispatcher.dart'
+    as _i648;
+import 'package:kuymo/modules/notifications/application/notification_interactions.dart'
+    as _i382;
+import 'package:kuymo/modules/notifications/data/repositories/device_notification_repository.dart'
+    as _i16;
+import 'package:kuymo/modules/notifications/domain/repositories/notification_delivery.dart'
+    as _i849;
+import 'package:kuymo/modules/notifications/domain/repositories/notification_repository.dart'
+    as _i686;
+import 'package:kuymo/modules/notifications/domain/use_cases/initialize_notifications.dart'
+    as _i683;
+import 'package:kuymo/modules/notifications/domain/use_cases/open_notification_channel.dart'
+    as _i984;
+import 'package:kuymo/modules/notifications/domain/use_cases/read_notification_access.dart'
+    as _i213;
+import 'package:kuymo/modules/notifications/domain/use_cases/request_notification_access.dart'
+    as _i238;
+import 'package:kuymo/modules/notifications/domain/use_cases/show_notification.dart'
+    as _i539;
+import 'package:kuymo/modules/notifications/logic/use_cases/read_notification_insights.dart'
+    as _i279;
+import 'package:kuymo/modules/notifications/logic/use_cases/show_notification.dart'
+    as _i289;
+import 'package:kuymo/modules/notifications/presentation/cubit/notification_access_cubit.dart'
+    as _i907;
+import 'package:kuymo/modules/notifications/presentation/cubit/notifications_cubit.dart'
+    as _i498;
+import 'package:kuymo/modules/storage/data/repositories/file_storage_repository.dart'
+    as _i1057;
+import 'package:kuymo/modules/storage/domain/repositories/storage_repository.dart'
+    as _i54;
+import 'package:kuymo/modules/storage/logic/storage_settings_cubit.dart'
+    as _i285;
+import 'package:kuymo/modules/updates/application/app_update_service.dart'
+    as _i60;
+import 'package:kuymo/modules/updates/data/data_sources/github_releases_api.dart'
+    as _i242;
+import 'package:kuymo/modules/updates/data/repositories/github_release_repository.dart'
+    as _i53;
+import 'package:kuymo/modules/updates/data/repositories/local_update_check_repository.dart'
+    as _i219;
+import 'package:kuymo/modules/updates/domain/repositories/release_repository.dart'
+    as _i514;
+import 'package:kuymo/modules/updates/domain/repositories/update_check_repository.dart'
+    as _i136;
+import 'package:kuymo/modules/updates/domain/use_cases/check_app_update.dart'
+    as _i681;
+import 'package:kuymo/modules/updates/domain/use_cases/read_cached_release.dart'
+    as _i384;
+import 'package:kuymo/modules/updates/domain/use_cases/read_installed_release.dart'
+    as _i527;
+import 'package:kuymo/modules/updates/domain/use_cases/read_latest_release.dart'
+    as _i84;
+import 'package:kuymo/modules/updates/presentation/cubit/releases_cubit.dart'
+    as _i119;
 import 'package:package_info_plus/package_info_plus.dart' as _i655;
 import 'package:share_plus/share_plus.dart' as _i998;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
@@ -178,7 +180,7 @@ extension GetItInjectableX on _i174.GetIt {
       () => injectionModule.packageInfo,
       preResolve: true,
     );
-    gh.lazySingleton<_i425.VideoCompressionRepository>(
+    gh.lazySingleton<_i859.VideoCompressionRepository>(
       () => injectionModule.videoCompressionRepository,
     );
     gh.lazySingleton<_i558.FlutterSecureStorage>(
@@ -186,416 +188,424 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i998.SharePlus>(() => injectionModule.sharePlus);
     gh.lazySingleton<_i895.Connectivity>(() => injectionModule.connectivity);
-    gh.lazySingleton<_i0.ArtifactStore>(() => injectionModule.artifactStore);
-    gh.lazySingleton<_i965.RequestDeduplicator>(
-      () => _i965.RequestDeduplicator(),
+    gh.lazySingleton<_i260.ArtifactStore>(() => injectionModule.artifactStore);
+    gh.lazySingleton<_i350.RequestDeduplicator>(
+      () => _i350.RequestDeduplicator(),
     );
-    gh.lazySingleton<_i843.L10nService>(() => _i843.L10nService());
-    gh.lazySingleton<_i264.ThemeService>(() => _i264.ThemeService());
-    gh.lazySingleton<_i866.CacheManager>(() => _i866.CacheManager());
-    gh.lazySingleton<_i664.ThemeCubit>(() => _i664.ThemeCubit());
-    gh.lazySingleton<_i1040.LocalizationCubit>(
-      () => _i1040.LocalizationCubit(l10nService: gh<_i843.L10nService>()),
+    gh.lazySingleton<_i726.L10nService>(() => _i726.L10nService());
+    gh.lazySingleton<_i266.ThemeService>(() => _i266.ThemeService());
+    gh.lazySingleton<_i856.CacheManager>(() => _i856.CacheManager());
+    gh.lazySingleton<_i623.ThemeCubit>(() => _i623.ThemeCubit());
+    gh.lazySingleton<_i576.BaseShareService>(
+      () => _i966.SharePlusService(gh<_i998.SharePlus>()),
     );
-    gh.lazySingleton<_i454.BaseAiModelService>(() => _i491.AiModelService());
-    gh.lazySingleton<_i619.BaseAuditLogger>(() => const _i923.AppAuditLogger());
-    gh.lazySingleton<_i1073.BaseUrlLauncherServices>(
-      () => _i31.UrlLauncherService(gh<_i619.BaseAuditLogger>()),
+    gh.lazySingleton<_i696.LocalizationCubit>(
+      () => _i696.LocalizationCubit(l10nService: gh<_i726.L10nService>()),
     );
-    gh.lazySingleton<_i615.BasePackageInfoAdapter>(
-      () => _i132.PackageInfoPlusAdapter(gh<_i655.PackageInfo>()),
+    gh.lazySingleton<_i54.StorageRepository>(
+      () => _i1057.FileStorageRepository(gh<_i260.ArtifactStore>()),
     );
-    gh.lazySingleton<_i415.BasePermissionService>(
-      () => const _i47.PermissionHandlerService(),
+    gh.lazySingleton<_i928.BaseAuditLogger>(() => const _i796.AppAuditLogger());
+    gh.lazySingleton<_i373.BaseLocalNotificationService>(
+      () => _i282.LocalNotificationService(),
     );
     gh.lazySingleton<_i361.Dio>(
       () => injectionModule.githubDio,
       instanceName: 'github',
     );
-    gh.lazySingleton<_i550.BaseShareService>(
-      () => _i770.SharePlusService(gh<_i998.SharePlus>()),
+    gh.factory<_i285.StorageSettingsCubit>(
+      () => _i285.StorageSettingsCubit(gh<_i54.StorageRepository>()),
     );
-    gh.lazySingleton<_i547.BaseLocalNotificationService>(
-      () => _i1010.LocalNotificationService(),
+    gh.lazySingleton<_i700.BasePackageInfoAdapter>(
+      () => _i93.PackageInfoPlusAdapter(gh<_i655.PackageInfo>()),
     );
-    gh.lazySingleton<_i630.BaseToastService>(
-      () => _i885.ToastificationService(gh<_i264.ThemeService>()),
+    gh.lazySingleton<_i235.BaseToastService>(
+      () => _i926.ToastificationService(gh<_i266.ThemeService>()),
     );
-    gh.lazySingleton<_i559.SecureStorageService>(
-      () => _i559.SecureStorageService(gh<_i558.FlutterSecureStorage>()),
+    gh.lazySingleton<_i430.BasePermissionService>(
+      () => const _i446.PermissionHandlerService(),
     );
-    gh.lazySingleton<_i548.StorageRepository>(
-      () => _i806.FileStorageRepository(gh<_i0.ArtifactStore>()),
+    gh.lazySingleton<_i965.BaseAiModelService>(() => _i674.AiModelService());
+    gh.lazySingleton<_i619.SecureStorageService>(
+      () => _i619.SecureStorageService(gh<_i558.FlutterSecureStorage>()),
     );
-    gh.lazySingleton<_i883.SharedPrefsService>(
-      () => _i883.SharedPrefsService(gh<_i460.SharedPreferences>()),
+    gh.lazySingleton<_i152.SharedPrefsService>(
+      () => _i152.SharedPrefsService(gh<_i460.SharedPreferences>()),
     );
-    gh.lazySingleton<_i590.BaseSecureVaultService>(
-      () => _i590.SecureVaultService(
+    gh.lazySingleton<_i170.BaseSecureVaultService>(
+      () => _i170.SecureVaultService(
         gh<_i558.FlutterSecureStorage>(),
-        gh<_i619.BaseAuditLogger>(),
+        gh<_i928.BaseAuditLogger>(),
       ),
     );
-    gh.lazySingleton<_i295.NetworkCubit>(
-      () => _i295.NetworkCubit(gh<_i895.Connectivity>()),
+    gh.lazySingleton<_i479.NetworkCubit>(
+      () => _i479.NetworkCubit(gh<_i895.Connectivity>()),
     );
-    gh.lazySingleton<_i204.GitHubReleasesApi>(
+    gh.lazySingleton<_i242.GitHubReleasesApi>(
       () => injectionModule.githubReleasesApi(
         gh<_i361.Dio>(instanceName: 'github'),
       ),
     );
-    gh.lazySingleton<_i583.NotificationRepository>(
-      () => _i546.DeviceNotificationRepository(
-        gh<_i547.BaseLocalNotificationService>(),
-        gh<_i415.BasePermissionService>(),
+    gh.lazySingleton<_i378.HasSavedCompressionResultUseCase>(
+      () => _i378.HasSavedCompressionResultUseCase(
+        gh<_i859.VideoCompressionRepository>(),
       ),
     );
-    gh.lazySingleton<_i752.BaseAppInfoService>(
-      () => _i822.AppInfoService(gh<_i615.BasePackageInfoAdapter>()),
-    );
-    gh.lazySingleton<_i988.HasSavedCompressionResultUseCase>(
-      () => _i988.HasSavedCompressionResultUseCase(
-        gh<_i425.VideoCompressionRepository>(),
+    gh.lazySingleton<_i1004.ReadNotificationInsightsUseCase>(
+      () => _i1004.ReadNotificationInsightsUseCase(
+        gh<_i859.VideoCompressionRepository>(),
       ),
     );
-    gh.lazySingleton<_i827.ReadNotificationInsightsUseCase>(
-      () => _i827.ReadNotificationInsightsUseCase(
-        gh<_i425.VideoCompressionRepository>(),
+    gh.lazySingleton<_i279.ReadNotificationInsights>(
+      () => _i279.ReadNotificationInsights(
+        gh<_i859.VideoCompressionRepository>(),
       ),
     );
-    gh.factory<_i633.StorageSettingsCubit>(
-      () => _i633.StorageSettingsCubit(gh<_i548.StorageRepository>()),
+    gh.lazySingleton<_i1006.BaseAppInfoService>(
+      () => _i449.AppInfoService(gh<_i700.BasePackageInfoAdapter>()),
     );
-    gh.lazySingleton<_i586.BaseClipboardGuardService>(
-      () => _i586.ClipboardGuardService(gh<_i619.BaseAuditLogger>()),
-    );
-    gh.lazySingleton<_i896.BasePrefStorageService>(
-      () => _i960.StorageFacade(
-        sharedPrefsService: gh<_i883.SharedPrefsService>(),
-        secureStorageService: gh<_i559.SecureStorageService>(),
+    gh.lazySingleton<_i156.BasePrefStorageService>(
+      () => _i1034.StorageFacade(
+        sharedPrefsService: gh<_i152.SharedPrefsService>(),
+        secureStorageService: gh<_i619.SecureStorageService>(),
       ),
     );
-    gh.factory<_i1039.BaseFileOpenerService>(
-      () => _i283.UrlFileOpenerService(
-        gh<_i1073.BaseUrlLauncherServices>(),
-        gh<_i619.BaseAuditLogger>(),
+    gh.lazySingleton<_i48.BaseClipboardGuardService>(
+      () => _i48.ClipboardGuardService(gh<_i928.BaseAuditLogger>()),
+    );
+    gh.lazySingleton<_i799.BaseUrlLauncherServices>(
+      () => _i587.UrlLauncherService(gh<_i928.BaseAuditLogger>()),
+    );
+    gh.lazySingleton<_i686.NotificationRepository>(
+      () => _i16.DeviceNotificationRepository(
+        gh<_i373.BaseLocalNotificationService>(),
+        gh<_i430.BasePermissionService>(),
       ),
     );
-    gh.lazySingleton<_i812.BaseAboutAppRepository>(
-      () => _i382.AboutAppRepsitory(gh<_i752.BaseAppInfoService>()),
-    );
-    gh.lazySingleton<_i736.CompressionAlertRepository>(
-      () => _i284.LocalCompressionAlertRepository(
-        gh<_i896.BasePrefStorageService>(),
+    gh.lazySingleton<_i721.CompressionAlertRepository>(
+      () => _i63.LocalCompressionAlertRepository(
+        gh<_i156.BasePrefStorageService>(),
       ),
     );
-    gh.lazySingleton<_i211.NotificationPreferencesRepository>(
-      () => _i725.SharedNotificationPreferences(
-        gh<_i896.BasePrefStorageService>(),
+    gh.lazySingleton<_i315.BaseLocalizationRepository>(
+      () => _i254.LocalizationRepository(
+        storage: gh<_i156.BasePrefStorageService>(),
+        l10nService: gh<_i726.L10nService>(),
+      ),
+    );
+    gh.lazySingleton<_i145.NotificationPreferencesRepository>(
+      () => _i468.SharedNotificationPreferences(
+        gh<_i156.BasePrefStorageService>(),
       ),
       dispose: (i) => i.dispose(),
     );
-    gh.lazySingleton<_i616.InitializeNotificationsUseCase>(
-      () => _i616.InitializeNotificationsUseCase(
-        gh<_i583.NotificationRepository>(),
-      ),
+    gh.lazySingleton<_i517.BaseAboutAppRepository>(
+      () => _i472.AboutAppRepsitory(gh<_i1006.BaseAppInfoService>()),
     );
-    gh.lazySingleton<_i549.OpenNotificationChannelUseCase>(
-      () => _i549.OpenNotificationChannelUseCase(
-        gh<_i583.NotificationRepository>(),
-      ),
-    );
-    gh.lazySingleton<_i987.ReadNotificationAccessUseCase>(
-      () => _i987.ReadNotificationAccessUseCase(
-        gh<_i583.NotificationRepository>(),
-      ),
-    );
-    gh.lazySingleton<_i317.RequestNotificationAccessUseCase>(
-      () => _i317.RequestNotificationAccessUseCase(
-        gh<_i583.NotificationRepository>(),
-      ),
-    );
-    gh.lazySingleton<_i837.ShowNotificationUseCase>(
-      () => _i837.ShowNotificationUseCase(gh<_i583.NotificationRepository>()),
-    );
-    gh.lazySingleton<_i492.ShowNotification>(
-      () => _i492.ShowNotification(gh<_i583.NotificationRepository>()),
-    );
-    gh.lazySingleton<_i598.NotificationAccessCubit>(
-      () => _i598.NotificationAccessCubit(
-        gh<_i987.ReadNotificationAccessUseCase>(),
-        gh<_i317.RequestNotificationAccessUseCase>(),
-        gh<_i549.OpenNotificationChannelUseCase>(),
-      ),
-    );
-    gh.lazySingleton<_i465.UpdateCheckRepository>(
+    gh.lazySingleton<_i136.UpdateCheckRepository>(
       () =>
-          _i159.LocalUpdateCheckRepository(gh<_i896.BasePrefStorageService>()),
+          _i219.LocalUpdateCheckRepository(gh<_i156.BasePrefStorageService>()),
     );
-    gh.lazySingleton<_i960.StorageFacade>(
-      () => injectionModule.storageFacade(gh<_i896.BasePrefStorageService>()),
-    );
-    gh.lazySingleton<_i139.ReleaseRepository>(
-      () => _i994.GitHubReleaseRepository(
-        gh<_i204.GitHubReleasesApi>(),
-        gh<_i965.RequestDeduplicator>(),
-        gh<_i896.BasePrefStorageService>(),
+    gh.lazySingleton<_i683.InitializeNotificationsUseCase>(
+      () => _i683.InitializeNotificationsUseCase(
+        gh<_i686.NotificationRepository>(),
       ),
     );
-    gh.factory<_i188.AboutAppCubit>(
-      () => _i188.AboutAppCubit(gh<_i812.BaseAboutAppRepository>()),
+    gh.lazySingleton<_i984.OpenNotificationChannelUseCase>(
+      () => _i984.OpenNotificationChannelUseCase(
+        gh<_i686.NotificationRepository>(),
+      ),
     );
-    gh.lazySingleton<_i158.NotificationInteractions>(
-      () => _i158.NotificationInteractions(
-        gh<_i583.NotificationRepository>(),
-        gh<_i616.InitializeNotificationsUseCase>(),
+    gh.lazySingleton<_i213.ReadNotificationAccessUseCase>(
+      () => _i213.ReadNotificationAccessUseCase(
+        gh<_i686.NotificationRepository>(),
+      ),
+    );
+    gh.lazySingleton<_i238.RequestNotificationAccessUseCase>(
+      () => _i238.RequestNotificationAccessUseCase(
+        gh<_i686.NotificationRepository>(),
+      ),
+    );
+    gh.lazySingleton<_i539.ShowNotificationUseCase>(
+      () => _i539.ShowNotificationUseCase(gh<_i686.NotificationRepository>()),
+    );
+    gh.lazySingleton<_i289.ShowNotification>(
+      () => _i289.ShowNotification(gh<_i686.NotificationRepository>()),
+    );
+    gh.factory<_i211.BaseFileOpenerService>(
+      () => _i701.UrlFileOpenerService(
+        gh<_i799.BaseUrlLauncherServices>(),
+        gh<_i928.BaseAuditLogger>(),
+      ),
+    );
+    gh.lazySingleton<_i382.NotificationInteractions>(
+      () => _i382.NotificationInteractions(
+        gh<_i686.NotificationRepository>(),
+        gh<_i683.InitializeNotificationsUseCase>(),
       ),
       dispose: (i) => i.dispose(),
     );
-    gh.lazySingleton<_i207.HapticsService>(
-      () => _i207.HapticsService(gh<_i211.NotificationPreferencesRepository>()),
+    gh.lazySingleton<_i1034.StorageFacade>(
+      () => injectionModule.storageFacade(gh<_i156.BasePrefStorageService>()),
     );
-    gh.lazySingleton<_i604.BaseLocalizationRepository>(
-      () => _i676.LocalizationRepository(
-        storage: gh<_i896.BasePrefStorageService>(),
-        l10nService: gh<_i843.L10nService>(),
+    gh.lazySingleton<_i907.NotificationAccessCubit>(
+      () => _i907.NotificationAccessCubit(
+        gh<_i213.ReadNotificationAccessUseCase>(),
+        gh<_i238.RequestNotificationAccessUseCase>(),
+        gh<_i984.OpenNotificationChannelUseCase>(),
       ),
     );
-    gh.lazySingleton<_i849.UserSessionServiceBase>(
-      () => _i849.UserSessionService(gh<_i960.StorageFacade>()),
-    );
-    gh.lazySingleton<_i872.LoadNotificationSettingsUseCase>(
-      () => _i872.LoadNotificationSettingsUseCase(
-        gh<_i211.NotificationPreferencesRepository>(),
+    gh.lazySingleton<_i514.ReleaseRepository>(
+      () => _i53.GitHubReleaseRepository(
+        gh<_i242.GitHubReleasesApi>(),
+        gh<_i350.RequestDeduplicator>(),
+        gh<_i156.BasePrefStorageService>(),
       ),
     );
-    gh.lazySingleton<_i542.SaveNotificationSettingsUseCase>(
-      () => _i542.SaveNotificationSettingsUseCase(
-        gh<_i211.NotificationPreferencesRepository>(),
+    gh.factory<_i17.AboutAppCubit>(
+      () => _i17.AboutAppCubit(gh<_i517.BaseAboutAppRepository>()),
+    );
+    gh.lazySingleton<_i501.LoadNotificationSettingsUseCase>(
+      () => _i501.LoadNotificationSettingsUseCase(
+        gh<_i145.NotificationPreferencesRepository>(),
       ),
     );
-    gh.lazySingleton<_i318.CheckAppUpdateUseCase>(
-      () => _i318.CheckAppUpdateUseCase(gh<_i139.ReleaseRepository>()),
-    );
-    gh.lazySingleton<_i1016.ReadCachedReleaseUseCase>(
-      () => _i1016.ReadCachedReleaseUseCase(gh<_i139.ReleaseRepository>()),
-    );
-    gh.lazySingleton<_i98.ReadInstalledReleaseUseCase>(
-      () => _i98.ReadInstalledReleaseUseCase(gh<_i139.ReleaseRepository>()),
-    );
-    gh.lazySingleton<_i407.ReadLatestReleaseUseCase>(
-      () => _i407.ReadLatestReleaseUseCase(gh<_i139.ReleaseRepository>()),
-    );
-    gh.factory<_i969.ReleasesCubit>(
-      () => _i969.ReleasesCubit(
-        gh<_i407.ReadLatestReleaseUseCase>(),
-        gh<_i98.ReadInstalledReleaseUseCase>(),
-        gh<_i1016.ReadCachedReleaseUseCase>(),
-        gh<_i615.BasePackageInfoAdapter>(),
+    gh.lazySingleton<_i436.SaveNotificationSettingsUseCase>(
+      () => _i436.SaveNotificationSettingsUseCase(
+        gh<_i145.NotificationPreferencesRepository>(),
       ),
     );
-    gh.lazySingleton<_i163.NotificationDispatcher>(
-      () => _i163.NotificationDispatcher(
-        gh<_i211.NotificationPreferencesRepository>(),
-        gh<_i987.ReadNotificationAccessUseCase>(),
-        gh<_i837.ShowNotificationUseCase>(),
-        gh<_i207.HapticsService>(),
+    gh.lazySingleton<_i369.HapticsService>(
+      () => _i369.HapticsService(gh<_i145.NotificationPreferencesRepository>()),
+    );
+    gh.lazySingleton<_i681.CheckAppUpdateUseCase>(
+      () => _i681.CheckAppUpdateUseCase(gh<_i514.ReleaseRepository>()),
+    );
+    gh.lazySingleton<_i384.ReadCachedReleaseUseCase>(
+      () => _i384.ReadCachedReleaseUseCase(gh<_i514.ReleaseRepository>()),
+    );
+    gh.lazySingleton<_i527.ReadInstalledReleaseUseCase>(
+      () => _i527.ReadInstalledReleaseUseCase(gh<_i514.ReleaseRepository>()),
+    );
+    gh.lazySingleton<_i84.ReadLatestReleaseUseCase>(
+      () => _i84.ReadLatestReleaseUseCase(gh<_i514.ReleaseRepository>()),
+    );
+    gh.factory<_i119.ReleasesCubit>(
+      () => _i119.ReleasesCubit(
+        gh<_i84.ReadLatestReleaseUseCase>(),
+        gh<_i527.ReadInstalledReleaseUseCase>(),
+        gh<_i384.ReadCachedReleaseUseCase>(),
+        gh<_i700.BasePackageInfoAdapter>(),
       ),
     );
-    gh.lazySingleton<_i294.NotificationDelivery>(
+    gh.lazySingleton<_i783.UserSessionServiceBase>(
+      () => _i783.UserSessionService(gh<_i1034.StorageFacade>()),
+    );
+    gh.lazySingleton<_i648.NotificationDispatcher>(
+      () => _i648.NotificationDispatcher(
+        gh<_i145.NotificationPreferencesRepository>(),
+        gh<_i213.ReadNotificationAccessUseCase>(),
+        gh<_i539.ShowNotificationUseCase>(),
+        gh<_i369.HapticsService>(),
+      ),
+    );
+    gh.lazySingleton<_i849.NotificationDelivery>(
       () => injectionModule.notificationDelivery(
-        gh<_i163.NotificationDispatcher>(),
+        gh<_i648.NotificationDispatcher>(),
       ),
     );
-    gh.lazySingleton<_i597.NotificationsCubit>(
-      () => _i597.NotificationsCubit(
-        gh<_i211.NotificationPreferencesRepository>(),
-        gh<_i872.LoadNotificationSettingsUseCase>(),
-        gh<_i542.SaveNotificationSettingsUseCase>(),
-      ),
-    );
-    gh.lazySingleton<_i715.AppUpdateService>(
-      () => _i715.AppUpdateService(
-        gh<_i211.NotificationPreferencesRepository>(),
-        gh<_i465.UpdateCheckRepository>(),
-        gh<_i318.CheckAppUpdateUseCase>(),
-        gh<_i615.BasePackageInfoAdapter>(),
-        gh<_i294.NotificationDelivery>(),
+    gh.lazySingleton<_i159.CompressionNotificationService>(
+      () => _i159.CompressionNotificationService(
+        gh<_i145.NotificationPreferencesRepository>(),
+        gh<_i686.NotificationRepository>(),
+        gh<_i849.NotificationDelivery>(),
       ),
       dispose: (i) => i.dispose(),
     );
-    gh.lazySingleton<_i140.CompressionInsightsService>(
-      () => _i140.CompressionInsightsService(
-        gh<_i211.NotificationPreferencesRepository>(),
-        gh<_i736.CompressionAlertRepository>(),
-        gh<_i827.ReadNotificationInsightsUseCase>(),
-        gh<_i294.NotificationDelivery>(),
+    gh.lazySingleton<_i498.NotificationsCubit>(
+      () => _i498.NotificationsCubit(
+        gh<_i145.NotificationPreferencesRepository>(),
+        gh<_i501.LoadNotificationSettingsUseCase>(),
+        gh<_i436.SaveNotificationSettingsUseCase>(),
+      ),
+    );
+    gh.lazySingleton<_i60.AppUpdateService>(
+      () => _i60.AppUpdateService(
+        gh<_i145.NotificationPreferencesRepository>(),
+        gh<_i136.UpdateCheckRepository>(),
+        gh<_i681.CheckAppUpdateUseCase>(),
+        gh<_i700.BasePackageInfoAdapter>(),
+        gh<_i849.NotificationDelivery>(),
       ),
       dispose: (i) => i.dispose(),
     );
-    gh.lazySingleton<_i661.CompressionNotificationService>(
-      () => _i661.CompressionNotificationService(
-        gh<_i211.NotificationPreferencesRepository>(),
-        gh<_i583.NotificationRepository>(),
-        gh<_i294.NotificationDelivery>(),
+    gh.lazySingleton<_i906.CompressionInsightsService>(
+      () => _i906.CompressionInsightsService(
+        gh<_i145.NotificationPreferencesRepository>(),
+        gh<_i721.CompressionAlertRepository>(),
+        gh<_i1004.ReadNotificationInsightsUseCase>(),
+        gh<_i849.NotificationDelivery>(),
       ),
       dispose: (i) => i.dispose(),
     );
     return this;
   }
 
-  _i965.RequestDeduplicator get requestDeduplicator =>
-      get<_i965.RequestDeduplicator>();
+  _i350.RequestDeduplicator get requestDeduplicator =>
+      get<_i350.RequestDeduplicator>();
 
-  _i843.L10nService get l10nService => get<_i843.L10nService>();
+  _i726.L10nService get l10nService => get<_i726.L10nService>();
 
-  _i264.ThemeService get themeService => get<_i264.ThemeService>();
+  _i266.ThemeService get themeService => get<_i266.ThemeService>();
 
-  _i866.CacheManager get cacheManager => get<_i866.CacheManager>();
+  _i856.CacheManager get cacheManager => get<_i856.CacheManager>();
 
-  _i664.ThemeCubit get themeCubit => get<_i664.ThemeCubit>();
+  _i623.ThemeCubit get themeCubit => get<_i623.ThemeCubit>();
 
-  _i1040.LocalizationCubit get localizationCubit =>
-      get<_i1040.LocalizationCubit>();
+  _i966.SharePlusService get sharePlusService => get<_i966.SharePlusService>();
 
-  _i491.AiModelService get aiModelService => get<_i491.AiModelService>();
+  _i696.LocalizationCubit get localizationCubit =>
+      get<_i696.LocalizationCubit>();
 
-  _i923.AppAuditLogger get appAuditLogger => get<_i923.AppAuditLogger>();
+  _i1057.FileStorageRepository get fileStorageRepository =>
+      get<_i1057.FileStorageRepository>();
 
-  _i31.UrlLauncherService get urlLauncherService =>
-      get<_i31.UrlLauncherService>();
+  _i796.AppAuditLogger get appAuditLogger => get<_i796.AppAuditLogger>();
 
-  _i132.PackageInfoPlusAdapter get packageInfoPlusAdapter =>
-      get<_i132.PackageInfoPlusAdapter>();
+  _i282.LocalNotificationService get localNotificationService =>
+      get<_i282.LocalNotificationService>();
 
-  _i47.PermissionHandlerService get permissionHandlerService =>
-      get<_i47.PermissionHandlerService>();
+  _i285.StorageSettingsCubit get storageSettingsCubit =>
+      get<_i285.StorageSettingsCubit>();
 
-  _i770.SharePlusService get sharePlusService => get<_i770.SharePlusService>();
+  _i93.PackageInfoPlusAdapter get packageInfoPlusAdapter =>
+      get<_i93.PackageInfoPlusAdapter>();
 
-  _i1010.LocalNotificationService get localNotificationService =>
-      get<_i1010.LocalNotificationService>();
+  _i926.ToastificationService get toastificationService =>
+      get<_i926.ToastificationService>();
 
-  _i885.ToastificationService get toastificationService =>
-      get<_i885.ToastificationService>();
+  _i446.PermissionHandlerService get permissionHandlerService =>
+      get<_i446.PermissionHandlerService>();
 
-  _i559.SecureStorageService get secureStorageService =>
-      get<_i559.SecureStorageService>();
+  _i674.AiModelService get aiModelService => get<_i674.AiModelService>();
 
-  _i806.FileStorageRepository get fileStorageRepository =>
-      get<_i806.FileStorageRepository>();
+  _i619.SecureStorageService get secureStorageService =>
+      get<_i619.SecureStorageService>();
 
-  _i883.SharedPrefsService get sharedPrefsService =>
-      get<_i883.SharedPrefsService>();
+  _i152.SharedPrefsService get sharedPrefsService =>
+      get<_i152.SharedPrefsService>();
 
-  _i590.SecureVaultService get secureVaultService =>
-      get<_i590.SecureVaultService>();
+  _i170.SecureVaultService get secureVaultService =>
+      get<_i170.SecureVaultService>();
 
-  _i295.NetworkCubit get networkCubit => get<_i295.NetworkCubit>();
+  _i479.NetworkCubit get networkCubit => get<_i479.NetworkCubit>();
 
-  _i546.DeviceNotificationRepository get deviceNotificationRepository =>
-      get<_i546.DeviceNotificationRepository>();
+  _i378.HasSavedCompressionResultUseCase get hasSavedCompressionResultUseCase =>
+      get<_i378.HasSavedCompressionResultUseCase>();
 
-  _i822.AppInfoService get appInfoService => get<_i822.AppInfoService>();
+  _i1004.ReadNotificationInsightsUseCase get readNotificationInsightsUseCase =>
+      get<_i1004.ReadNotificationInsightsUseCase>();
 
-  _i988.HasSavedCompressionResultUseCase get hasSavedCompressionResultUseCase =>
-      get<_i988.HasSavedCompressionResultUseCase>();
+  _i279.ReadNotificationInsights get readNotificationInsights =>
+      get<_i279.ReadNotificationInsights>();
 
-  _i827.ReadNotificationInsightsUseCase get readNotificationInsightsUseCase =>
-      get<_i827.ReadNotificationInsightsUseCase>();
+  _i449.AppInfoService get appInfoService => get<_i449.AppInfoService>();
 
-  _i633.StorageSettingsCubit get storageSettingsCubit =>
-      get<_i633.StorageSettingsCubit>();
+  _i1034.StorageFacade get storageFacade => get<_i1034.StorageFacade>();
 
-  _i586.ClipboardGuardService get clipboardGuardService =>
-      get<_i586.ClipboardGuardService>();
+  _i48.ClipboardGuardService get clipboardGuardService =>
+      get<_i48.ClipboardGuardService>();
 
-  _i960.StorageFacade get storageFacade => get<_i960.StorageFacade>();
+  _i587.UrlLauncherService get urlLauncherService =>
+      get<_i587.UrlLauncherService>();
 
-  _i283.UrlFileOpenerService get urlFileOpenerService =>
-      get<_i283.UrlFileOpenerService>();
+  _i16.DeviceNotificationRepository get deviceNotificationRepository =>
+      get<_i16.DeviceNotificationRepository>();
 
-  _i382.AboutAppRepsitory get aboutAppRepsitory =>
-      get<_i382.AboutAppRepsitory>();
+  _i63.LocalCompressionAlertRepository get localCompressionAlertRepository =>
+      get<_i63.LocalCompressionAlertRepository>();
 
-  _i284.LocalCompressionAlertRepository get localCompressionAlertRepository =>
-      get<_i284.LocalCompressionAlertRepository>();
+  _i254.LocalizationRepository get localizationRepository =>
+      get<_i254.LocalizationRepository>();
 
-  _i725.SharedNotificationPreferences get sharedNotificationPreferences =>
-      get<_i725.SharedNotificationPreferences>();
+  _i468.SharedNotificationPreferences get sharedNotificationPreferences =>
+      get<_i468.SharedNotificationPreferences>();
 
-  _i616.InitializeNotificationsUseCase get initializeNotificationsUseCase =>
-      get<_i616.InitializeNotificationsUseCase>();
+  _i472.AboutAppRepsitory get aboutAppRepsitory =>
+      get<_i472.AboutAppRepsitory>();
 
-  _i549.OpenNotificationChannelUseCase get openNotificationChannelUseCase =>
-      get<_i549.OpenNotificationChannelUseCase>();
+  _i219.LocalUpdateCheckRepository get localUpdateCheckRepository =>
+      get<_i219.LocalUpdateCheckRepository>();
 
-  _i987.ReadNotificationAccessUseCase get readNotificationAccessUseCase =>
-      get<_i987.ReadNotificationAccessUseCase>();
+  _i683.InitializeNotificationsUseCase get initializeNotificationsUseCase =>
+      get<_i683.InitializeNotificationsUseCase>();
 
-  _i317.RequestNotificationAccessUseCase get requestNotificationAccessUseCase =>
-      get<_i317.RequestNotificationAccessUseCase>();
+  _i984.OpenNotificationChannelUseCase get openNotificationChannelUseCase =>
+      get<_i984.OpenNotificationChannelUseCase>();
 
-  _i837.ShowNotificationUseCase get showNotificationUseCase =>
-      get<_i837.ShowNotificationUseCase>();
+  _i213.ReadNotificationAccessUseCase get readNotificationAccessUseCase =>
+      get<_i213.ReadNotificationAccessUseCase>();
 
-  _i492.ShowNotification get showNotification => get<_i492.ShowNotification>();
+  _i238.RequestNotificationAccessUseCase get requestNotificationAccessUseCase =>
+      get<_i238.RequestNotificationAccessUseCase>();
 
-  _i598.NotificationAccessCubit get notificationAccessCubit =>
-      get<_i598.NotificationAccessCubit>();
+  _i539.ShowNotificationUseCase get showNotificationUseCase =>
+      get<_i539.ShowNotificationUseCase>();
 
-  _i159.LocalUpdateCheckRepository get localUpdateCheckRepository =>
-      get<_i159.LocalUpdateCheckRepository>();
+  _i289.ShowNotification get showNotification => get<_i289.ShowNotification>();
 
-  _i994.GitHubReleaseRepository get gitHubReleaseRepository =>
-      get<_i994.GitHubReleaseRepository>();
+  _i701.UrlFileOpenerService get urlFileOpenerService =>
+      get<_i701.UrlFileOpenerService>();
 
-  _i188.AboutAppCubit get aboutAppCubit => get<_i188.AboutAppCubit>();
+  _i382.NotificationInteractions get notificationInteractions =>
+      get<_i382.NotificationInteractions>();
 
-  _i158.NotificationInteractions get notificationInteractions =>
-      get<_i158.NotificationInteractions>();
+  _i907.NotificationAccessCubit get notificationAccessCubit =>
+      get<_i907.NotificationAccessCubit>();
 
-  _i207.HapticsService get hapticsService => get<_i207.HapticsService>();
+  _i53.GitHubReleaseRepository get gitHubReleaseRepository =>
+      get<_i53.GitHubReleaseRepository>();
 
-  _i676.LocalizationRepository get localizationRepository =>
-      get<_i676.LocalizationRepository>();
+  _i17.AboutAppCubit get aboutAppCubit => get<_i17.AboutAppCubit>();
 
-  _i849.UserSessionService get userSessionService =>
-      get<_i849.UserSessionService>();
+  _i501.LoadNotificationSettingsUseCase get loadNotificationSettingsUseCase =>
+      get<_i501.LoadNotificationSettingsUseCase>();
 
-  _i872.LoadNotificationSettingsUseCase get loadNotificationSettingsUseCase =>
-      get<_i872.LoadNotificationSettingsUseCase>();
+  _i436.SaveNotificationSettingsUseCase get saveNotificationSettingsUseCase =>
+      get<_i436.SaveNotificationSettingsUseCase>();
 
-  _i542.SaveNotificationSettingsUseCase get saveNotificationSettingsUseCase =>
-      get<_i542.SaveNotificationSettingsUseCase>();
+  _i369.HapticsService get hapticsService => get<_i369.HapticsService>();
 
-  _i318.CheckAppUpdateUseCase get checkAppUpdateUseCase =>
-      get<_i318.CheckAppUpdateUseCase>();
+  _i681.CheckAppUpdateUseCase get checkAppUpdateUseCase =>
+      get<_i681.CheckAppUpdateUseCase>();
 
-  _i1016.ReadCachedReleaseUseCase get readCachedReleaseUseCase =>
-      get<_i1016.ReadCachedReleaseUseCase>();
+  _i384.ReadCachedReleaseUseCase get readCachedReleaseUseCase =>
+      get<_i384.ReadCachedReleaseUseCase>();
 
-  _i98.ReadInstalledReleaseUseCase get readInstalledReleaseUseCase =>
-      get<_i98.ReadInstalledReleaseUseCase>();
+  _i527.ReadInstalledReleaseUseCase get readInstalledReleaseUseCase =>
+      get<_i527.ReadInstalledReleaseUseCase>();
 
-  _i407.ReadLatestReleaseUseCase get readLatestReleaseUseCase =>
-      get<_i407.ReadLatestReleaseUseCase>();
+  _i84.ReadLatestReleaseUseCase get readLatestReleaseUseCase =>
+      get<_i84.ReadLatestReleaseUseCase>();
 
-  _i969.ReleasesCubit get releasesCubit => get<_i969.ReleasesCubit>();
+  _i119.ReleasesCubit get releasesCubit => get<_i119.ReleasesCubit>();
 
-  _i163.NotificationDispatcher get notificationDispatcher =>
-      get<_i163.NotificationDispatcher>();
+  _i783.UserSessionService get userSessionService =>
+      get<_i783.UserSessionService>();
 
-  _i597.NotificationsCubit get notificationsCubit =>
-      get<_i597.NotificationsCubit>();
+  _i648.NotificationDispatcher get notificationDispatcher =>
+      get<_i648.NotificationDispatcher>();
 
-  _i715.AppUpdateService get appUpdateService => get<_i715.AppUpdateService>();
+  _i159.CompressionNotificationService get compressionNotificationService =>
+      get<_i159.CompressionNotificationService>();
 
-  _i140.CompressionInsightsService get compressionInsightsService =>
-      get<_i140.CompressionInsightsService>();
+  _i498.NotificationsCubit get notificationsCubit =>
+      get<_i498.NotificationsCubit>();
 
-  _i661.CompressionNotificationService get compressionNotificationService =>
-      get<_i661.CompressionNotificationService>();
+  _i60.AppUpdateService get appUpdateService => get<_i60.AppUpdateService>();
+
+  _i906.CompressionInsightsService get compressionInsightsService =>
+      get<_i906.CompressionInsightsService>();
 }
 
-class _$InjectionModule extends _i938.InjectionModule {}
+class _$InjectionModule extends _i1030.InjectionModule {}

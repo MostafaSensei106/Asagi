@@ -1,14 +1,14 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:asagi/core/compression/application/compression_engine.dart';
-import 'package:asagi/core/compression/domain/contracts/video_encoder.dart';
-import 'package:asagi/core/compression/domain/models/compression_output.dart';
-import 'package:asagi/core/compression/domain/models/compression_preferences.dart';
-import 'package:asagi/core/compression/domain/models/encode_request.dart';
-import 'package:asagi/core/compression/domain/models/video_metadata.dart';
-import 'package:asagi/core/compression/infrastructure/storage/file_artifact_store.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kuymo/core/compression/application/compression_engine.dart';
+import 'package:kuymo/core/compression/domain/contracts/video_encoder.dart';
+import 'package:kuymo/core/compression/domain/models/compression_output.dart';
+import 'package:kuymo/core/compression/domain/models/compression_preferences.dart';
+import 'package:kuymo/core/compression/domain/models/encode_request.dart';
+import 'package:kuymo/core/compression/domain/models/video_metadata.dart';
+import 'package:kuymo/core/compression/infrastructure/storage/file_artifact_store.dart';
 
 import 'compression_engine_test.dart' show Planner;
 

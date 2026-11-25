@@ -1,9 +1,9 @@
 {
   "@@locale": "ar",
-  "asagi": "Asagi",
+  "kuymo": "Kuymo",
   "colorScheme": "نمط الألوان",
   "automaticColorScheme": "تلقائي",
-  "@asagi": {
+  "@kuymo": {
     "description": "Application name shown in the app and on the home page"
   },
   "downloadFile": "تحميل الملف",
@@ -211,12 +211,12 @@
   "@compressVideosPrivatelyOnYourDevice": {
     "description": "Home page description"
   },
-  "welcomeToAsagi": "مرحباً بك في Asagi",
-  "@welcomeToAsagi": {
+  "welcomeToKuymo": "مرحباً بك في Kuymo",
+  "@welcomeToKuymo": {
     "description": "Onboarding page title"
   },
-  "learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": "تعرف على كيفية قيام Asagi بضغط فيديوهاتك دون أن تغادر هاتفك أبداً.",
-  "@learnHowAsagiCompressesYourVideosWithoutEverLeavingYourPhone": {
+  "learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone": "تعرف على كيفية قيام Kuymo بضغط فيديوهاتك دون أن تغادر هاتفك أبداً.",
+  "@learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone": {
     "description": "Onboarding page description"
   },
   "signIn": "تسجيل الدخول",
@@ -320,8 +320,8 @@
   "@sharperTextAndSurfaces": {
     "description": "High contrast mode toggle subtitle"
   },
-  "asagiEngine": "محرك Asagi",
-  "@asagiEngine": {
+  "kuymoEngine": "محرك Kuymo",
+  "@kuymoEngine": {
     "description": "Engine title in theme preview card"
   },
   "targetSizeOptimizer": "مُحسِّن الفيديو للحجم المستهدف",
@@ -388,8 +388,8 @@
   "@onDeviceProcessingLocalLogsAndOptionalCrashReports": {
     "description": "Privacy settings page description"
   },
-  "aboutAsagi": "عن Asagi",
-  "@aboutAsagi": {
+  "aboutKuymo": "عن Kuymo",
+  "@aboutKuymo": {
     "description": "App info page title"
   },
   "versionBuildNumberAndApplicationDetails": "رقم الإصدار وتفاصيل التطبيق.",
@@ -400,24 +400,24 @@
   "@aboutTheDeveloper": {
     "description": "Developer page title"
   },
-  "theDeveloperAndToolsBehindAsagi": "المطور والأدوات المستخدمة في بناء Asagi.",
-  "@theDeveloperAndToolsBehindAsagi": {
+  "theDeveloperAndToolsBehindKuymo": "المطور والأدوات المستخدمة في بناء Kuymo.",
+  "@theDeveloperAndToolsBehindKuymo": {
     "description": "Developer page description"
   },
   "openSourceLicenses": "تراخيص مفتوحة المصدر",
   "@openSourceLicenses": {
     "description": "Licenses page title"
   },
-  "openSourcePackagesBundledWithAsagi": "حزم البرمجيات مفتوحة المصدر المستخدمة في Asagi.",
-  "@openSourcePackagesBundledWithAsagi": {
+  "openSourcePackagesBundledWithKuymo": "حزم البرمجيات مفتوحة المصدر المستخدمة في Kuymo.",
+  "@openSourcePackagesBundledWithKuymo": {
     "description": "Licenses page description"
   },
   "privacyPolicy": "سياسة الخصوصية",
   "@privacyPolicy": {
     "description": "Privacy policy page title"
   },
-  "howAsagiHandlesYourVideosAndData": "كيف يتعامل Asagi مع فيديوهاتك وبياناتك.",
-  "@howAsagiHandlesYourVideosAndData": {
+  "howKuymoHandlesYourVideosAndData": "كيف يتعامل Kuymo مع فيديوهاتك وبياناتك.",
+  "@howKuymoHandlesYourVideosAndData": {
     "description": "Privacy policy page description"
   },
   "termsOfService": "شروط الخدمة",
@@ -428,16 +428,16 @@
   "@dataSafety": {
     "description": "Data safety page title"
   },
-  "summaryOfTheDataAsagiCollectsAndWhy": "ملخص البيانات التي يجمعها Asagi ولماذا.",
-  "@summaryOfTheDataAsagiCollectsAndWhy": {
+  "summaryOfTheDataKuymoCollectsAndWhy": "ملخص البيانات التي يجمعها Kuymo ولماذا.",
+  "@summaryOfTheDataKuymoCollectsAndWhy": {
     "description": "Data safety page description"
   },
   "permissions": "الأذونات",
   "@permissions": {
     "description": "Permissions page title"
   },
-  "runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": "الأذونات التي يطلبها Asagi وسبب طلب كل منها.",
-  "@runtimePermissionsAsagiRequestsAndWhyEachIsNeeded": {
+  "runtimePermissionsKuymoRequestsAndWhyEachIsNeeded": "الأذونات التي يطلبها Kuymo وسبب طلب كل منها.",
+  "@runtimePermissionsKuymoRequestsAndWhyEachIsNeeded": {
     "description": "Permissions page description"
   },
   "faq": "الأسئلة الشائعة",
@@ -468,20 +468,20 @@
   "@permanentlyRemoveYourAccountAndItsServerSideData": {
     "description": "Delete account page description"
   },
-  "rateAsagi": "تقييم التطبيق",
-  "@rateAsagi": {
+  "rateKuymo": "تقييم التطبيق",
+  "@rateKuymo": {
     "description": "Rate app page title"
   },
-  "tellOthersHowAsagiWorkedForYouOnTheStore": "شارك رأيك في Asagi على المتجر لمساعدتنا.",
-  "@tellOthersHowAsagiWorkedForYouOnTheStore": {
+  "tellOthersHowKuymoWorkedForYouOnTheStore": "شارك رأيك في Kuymo على المتجر لمساعدتنا.",
+  "@tellOthersHowKuymoWorkedForYouOnTheStore": {
     "description": "Rate app page description"
   },
-  "shareAsagi": "مشاركة التطبيق",
-  "@shareAsagi": {
+  "shareKuymo": "مشاركة التطبيق",
+  "@shareKuymo": {
     "description": "Share app page title"
   },
-  "recommendAsagiToAFriend": "رشّح Asagi لأصدقائك وزملائك.",
-  "@recommendAsagiToAFriend": {
+  "recommendKuymoToAFriend": "رشّح Kuymo لأصدقائك وزملائك.",
+  "@recommendKuymoToAFriend": {
     "description": "Share app page description"
   },
   "appearanceLanguage": "المظهر و الالوان",
@@ -533,7 +533,7 @@
     "description": "Settings hub row summary"
   },
   "aiSettings": "الذكاء الاصطناعي",
-  "asagiAssistant": "مساعد Asagi",
+  "kuymoAssistant": "مساعد Kuymo",
   "aPrivateAssistantForYourVideosIsComingSoonYouWillBeAbleToAskAboutCompressionOrganizationAndSavedVideosHere": "مساعد خاص لفيديوهاتك قادم قريبًا. ستتمكن من السؤال عن الضغط والتنظيم والفيديوهات المحفوظة هنا.",
   "localModelsAndSmartTools": "نماذج محلية وأدوات ذكية",
   "exploreLocalModelsAndFutureAIToolsTheseOptionsAreNotActiveYet": "تعرّف على النماذج المحلية والأدوات الذكية القادمة. هذه الخيارات غير مفعّلة بعد.",
@@ -581,8 +581,8 @@
   "@versionAndBuildDetails": {
     "description": "Settings hub row summary"
   },
-  "theDeveloperBehindAsagi": "المطور الذي بنى Asagi",
-  "@theDeveloperBehindAsagi": {
+  "theDeveloperBehindKuymo": "المطور الذي بنى Kuymo",
+  "@theDeveloperBehindKuymo": {
     "description": "Settings hub row summary"
   },
   "openSourcePackageLicenses": "تراخيص الحزم مفتوحة المصدر",
@@ -593,8 +593,8 @@
   "@howDataIsHandled": {
     "description": "Settings hub row summary"
   },
-  "rulesForUsingAsagi": "قواعد استخدام تطبيق Asagi",
-  "@rulesForUsingAsagi": {
+  "rulesForUsingKuymo": "قواعد استخدام تطبيق Kuymo",
+  "@rulesForUsingKuymo": {
     "description": "Settings hub row summary"
   },
   "whatDataWeCollect": "البيانات التي نجمعها منك",
@@ -696,14 +696,14 @@
   "unavailable": "غير متاح",
   "projectAndSupport": "المشروع والدعم",
   "githubRepository": "مستودع GitHub",
-  "viewAsagiSourceCode": "استعرض كود Asagi",
+  "viewKuymoSourceCode": "استعرض كود Kuymo",
   "readTheREADME": "اقرأ ملف README",
-  "learnAboutAsagiOnGitHub": "تعرف على Asagi في GitHub",
+  "learnAboutKuymoOnGitHub": "تعرف على Kuymo في GitHub",
   "reportAnIssue": "الإبلاغ عن مشكلة",
   "viewAndCreateGitHubIssues": "عرض مشكلات GitHub وإنشاء بلاغ",
   "latestRelease": "آخر إصدار",
   "viewReleasesAndDownloads": "استعرض الإصدارات والتنزيلات",
-  "supportAsagi": "ادعم Asagi",
+  "supportKuymo": "ادعم Kuymo",
   "openTheOfficialDonationPage": "افتح صفحة التبرعات الرسمية",
   "couldNotOpenTheLinkPleaseTryAgain": "تعذر فتح الرابط. حاول مرة أخرى.",
   "developer": "المطوّر",
@@ -711,7 +711,7 @@
   "githubProfile": "حساب GitHub",
   "seeProjectsAndContactDetails": "المشاريع وبيانات التواصل",
   "maintenanceInProgress": "التطبيق قيد الصيانة",
-  "asagiIsTemporarilyUnavailablePleaseTryAgainLater": "Asagi غير متاح مؤقتًا. حاول مرة أخرى لاحقًا.",
+  "kuymoIsTemporarilyUnavailablePleaseTryAgainLater": "Kuymo غير متاح مؤقتًا. حاول مرة أخرى لاحقًا.",
   "comingSoon": "قريباً",
   "@comingSoon": {
     "description": "Badge shown on placeholder pages"
@@ -768,12 +768,12 @@
   "emailPresetDescription": "حل جذري لمشكلة تجاوز سقف مرفقات البريد الإلكتروني.",
   "anySize": "أي حجم",
   "manualControl": "تحكم يدوي",
-  "asagiIsStudyingThePlatformAlgorithmAndCalculatingTheBudget": "🐾 Asagi يقوم بدراسة خوارزمية المنصة وحساب الميزانية...",
+  "kuymoIsStudyingThePlatformAlgorithmAndCalculatingTheBudget": "🐾 Kuymo يقوم بدراسة خوارزمية المنصة وحساب الميزانية...",
   "customControlMode": "وضع التحكم المخصص",
   "youSetTheTargetSizeManuallyTheEngineWillApplyTheHighestPossibleQualityWithinThatCap": "أنت تحدد حجم الهدف يدوياً. سيطبق المحرك أقصى دقة وجودة ممكنة داخل هذا السقف.",
-  "asagiIsPuzzledAnImpossibleTargetForTheNameCap": "Asagi في حيرة (هدف غير ممكن لسقف {name})",
+  "kuymoIsPuzzledAnImpossibleTargetForTheNameCap": "Kuymo في حيرة (هدف غير ممكن لسقف {name})",
   "theVideoIsTooLongToFitWithinTheSizeCapWithoutSevereDistortionWeSuggestTrimmingTheVideoOrChoosingAnotherPlatformWithAHigherCap": "مدة الفيديو طويلة جداً بحيث لا يمكن استيعابها في سقف {size} دون تشويه تام للصورة. ننصح بقص الفيديو أو اختيار منصة أخرى بسقف أعلى.",
-  "asagiAlertProtectingQualityFromDistortion": "تنبيه Asagi: حماية الجودة من التشوّه",
+  "kuymoAlertProtectingQualityFromDistortion": "تنبيه Kuymo: حماية الجودة من التشوّه",
   "theNameBudgetIsTightForThisDurationSoWeLoweredTheResolutionToWidthHeightToPreventPixelScatterAndEnsureSmoothPlayback": "حجم ميزانية {name} ضيق بالنسبة للمدة، لذا خفّضنا الدقة إلى {width}×{height} لمنع تشتت البكسلات ولضمان سلاسة العرض.",
   "adjustingTheCapForName": "تعديل السقف لـ {name}",
   "theBaseCapIsVeryTightSoTheTargetWasAutomaticallyRaisedToTargetMbMbToProduceAClearAcceptableVideo": "السقف الأساسي ضيق جداً، فتم رفع الهدف تلقائياً إلى {targetMb} MB لتحقيق فيديو واضح ومقبول.",
@@ -781,7 +781,7 @@
   "exactMatch": "تطابق تام",
   "targetPlatformOrSize": "المنصة المستهدفة أو الحجم",
   "setAutomaticallyForThePlatformChangingTheNumberSwitchesToCustomMode": "تم الضبط تلقائياً للمنصة (تغيير الرقم يحول للوضع المخصص)",
-  "termsOfServiceFullText": "Asagi تطبيق مجاني ومفتوح المصدر. تتم معالجة الفيديو على جهازك. تظل ملكية المحتوى لك. يُقدّم التطبيق دون ضمان تحقيق حجم أو جودة محددة.",
+  "termsOfServiceFullText": "Kuymo تطبيق مجاني ومفتوح المصدر. تتم معالجة الفيديو على جهازك. تظل ملكية المحتوى لك. يُقدّم التطبيق دون ضمان تحقيق حجم أو جودة محددة.",
   "@termsOfServiceFullText": {
     "description": "Full Terms of Service text copied to the clipboard"
   },
@@ -793,7 +793,7 @@
   "@termsAcceptanceLicenseTitle": {
     "description": "Terms section title"
   },
-  "termsAcceptanceLicenseBody": "Asagi تطبيق مجاني ومفتوح المصدر. كل ميزاته متاحة للجميع، وتتم معالجة الفيديو محليًا على أجهزتك.",
+  "termsAcceptanceLicenseBody": "Kuymo تطبيق مجاني ومفتوح المصدر. كل ميزاته متاحة للجميع، وتتم معالجة الفيديو محليًا على أجهزتك.",
   "@termsAcceptanceLicenseBody": {
     "description": "Terms section body"
   },
@@ -801,7 +801,7 @@
   "@termsContentOwnershipTitle": {
     "description": "Terms section title"
   },
-  "termsContentOwnershipBody": "تحتفظ بجميع حقوق النشر والملكية لفيديوهاتك. لا يقوم Asagi بنقل أو تخزين أو المطالبة بأي حقوق في ملفات الوسائط الخاصة بك.",
+  "termsContentOwnershipBody": "تحتفظ بجميع حقوق النشر والملكية لفيديوهاتك. لا يقوم Kuymo بنقل أو تخزين أو المطالبة بأي حقوق في ملفات الوسائط الخاصة بك.",
   "@termsContentOwnershipBody": {
     "description": "Terms section body"
   },
@@ -913,7 +913,7 @@
   "@videoProcessingCommitmentTitle": {
     "description": "Privacy policy section title"
   },
-  "videoProcessingCommitmentBody": "بُني Asagi على ضمان معماري أساسي: تتم ترميز فيديوهاتك ومقاطعك ومسارات الصوت حصرياً على عتاد جهازك باستخدام مُرمِّزات أصلية محلية. ولا يتم بث وسائطك أو تخزينها أو معالجتها على بنية سحابية خارجية في أي مرحلة.",
+  "videoProcessingCommitmentBody": "بُني Kuymo على ضمان معماري أساسي: تتم ترميز فيديوهاتك ومقاطعك ومسارات الصوت حصرياً على عتاد جهازك باستخدام مُرمِّزات أصلية محلية. ولا يتم بث وسائطك أو تخزينها أو معالجتها على بنية سحابية خارجية في أي مرحلة.",
   "@videoProcessingCommitmentBody": {
     "description": "Privacy policy section body"
   },
@@ -1074,7 +1074,7 @@
   "enabled": "مفعّل",
   "disabled": "معطّل",
   "supportedOnDeviceModels": "النماذج المدعومة على الجهاز",
-  "asagiBitrateOptimizer": "محسّن معدل البت من Asagi (0.2B)",
+  "kuymoBitrateOptimizer": "محسّن معدل البت من Kuymo (0.2B)",
   "localRateControlDescription": "نموذج محلي لضبط معدل البت واختيار جودة المشاهد.",
   "mobileNetSceneClassifier": "مصنّف المشاهد MobileNetV4",
   "sceneClassifierDescription": "يكتشف الحركة السريعة وتغييرات الكاميرا لتحديد الإطارات المفتاحية.",
@@ -1243,8 +1243,8 @@
   "strictnessAggressive": "أعلى جودة (96%)",
   "historySummarySubtitle": "تم ضغط {count} فيديو • توفير {savedMb} م.ب",
   "compressionHelpDescription": "إجابات الأسئلة الشائعة عن ضغط الفيديو.",
-  "appSupportDescription": "احصل على مساعدة في استخدام Asagi.",
-  "appTermsDescription": "شروط استخدام Asagi المجاني ومفتوح المصدر.",
+  "appSupportDescription": "احصل على مساعدة في استخدام Kuymo.",
+  "appTermsDescription": "شروط استخدام Kuymo المجاني ومفتوح المصدر.",
   "compressionAndroidOnly": "ضغط الفيديو متاح حاليًا على أندرويد فقط.",
   "notificationPermissionTitle": "فعّل الإشعارات",
   "notificationPermissionBody": "اضغط للسماح بتنبيهات الضغط والتحديثات.",
@@ -1262,7 +1262,7 @@
   "notificationCompletedWarningBody": "{name} · {size} م.ب · راجع تنبيه النتيجة",
   "notificationFailedTitle": "انقطعت عملية الضغط",
   "notificationInterruptedBody": "توجد {count} عمليات منقطعة يمكنك مراجعتها.",
-  "notificationReleaseTitle": "إصدار Asagi {version} متاح",
+  "notificationReleaseTitle": "إصدار Kuymo {version} متاح",
   "notificationSavingsTitle": "ملخص توفير المساحة الأسبوعي",
   "notificationSavingsBody": "{count} فيديو · تم توفير {saved} م.ب",
   "hapticsButtons": "الأزرار والضغطات",
@@ -1282,7 +1282,7 @@
   "notificationErrorChannel": "مشكلات الضغط",
   "notificationReleaseChannel": "إصدارات التطبيق",
   "notificationSavingsChannel": "توفير المساحة",
-  "automaticColorSchemeDescription": "الوضع التلقائي يستخدم ألوان Asagi الحيوية. تعرض كل عينة ألوان مخططها.",
+  "automaticColorSchemeDescription": "الوضع التلقائي يستخدم ألوان Kuymo الحيوية. تعرض كل عينة ألوان مخططها.",
   "colorSchemeTonalSpot": "درجات ناعمة",
   "colorSchemeFidelity": "وفاء للون",
   "colorSchemeContent": "المحتوى",
@@ -1310,5 +1310,24 @@
   "openReleaseLabel": "فتح الإصدار على GitHub",
   "checkUpdatesLabel": "البحث عن تحديثات",
   "reloadReleaseLabel": "تحديث ملاحظات الإصدار",
-  "releaseOpenFailed": "تعذر فتح الإصدار. أعد المحاولة."
+  "releaseOpenFailed": "تعذر فتح الإصدار. أعد المحاولة.",
+  "appLinkCopied": "تم نسخ الرابط.",
+  "appInvitationCopied": "تم نسخ الدعوة. يمكنك لصقها في تطبيق المراسلة.",
+  "kuymoShareInvitation": "جرّب Kuymo لضغط الفيديو على جهازك: {url}",
+  "@kuymoShareInvitation": {
+    "description": "Invitation to share Kuymo using the current release URL",
+    "placeholders": {
+      "url": {
+        "type": "String"
+      }
+    }
+  },
+  "onDeviceProcessingLabel": "معالجة الفيديو على جهازك",
+  "kuymoShareDescription": "اختر الحجم المطلوب وجهّز فيديوهاتك للمشاركة. تتم معالجة الفيديو على جهازك.",
+  "copyAppLink": "نسخ رابط التطبيق",
+  "enjoyingKuymo": "هل أعجبك Kuymo؟",
+  "whyChooseKuymo": "لماذا تختار Kuymo",
+  "projectSupportLink": "نسخ رابط دعم المشروع",
+  "brandTagline": "مساحة أكبر للحظاتك.",
+  "kuymoAi": "Kuymo AI"
 }

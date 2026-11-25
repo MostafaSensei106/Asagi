@@ -1,6 +1,6 @@
-import 'package:asagi/core/compression/domain/models/compression_plan.dart';
-import 'package:asagi/modules/compression/data/repositories/encoder_calibration_store.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kuymo/core/compression/domain/models/compression_plan.dart';
+import 'package:kuymo/modules/compression/data/repositories/encoder_calibration_store.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 const plan = CompressionPlan(

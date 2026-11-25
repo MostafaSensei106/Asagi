@@ -13,7 +13,7 @@ final class SettingsRoute extends AppRoute {
     name: 'settings',
     path: '/settings',
     section: AppRouteSection.core,
-    icon: AsagiIcons.settings,
+    icon: KuymoIcons.settings,
   );
 }
 
@@ -26,7 +26,7 @@ final class AppearanceSettingsRoute extends AppRoute {
     name: 'settings_appearance',
     path: '/settings/appearance',
     section: AppRouteSection.appearance,
-    icon: AsagiIcons.appearance,
+    icon: KuymoIcons.appearance,
     showInSettingsHub: true,
   );
 }
@@ -40,7 +40,7 @@ final class LanguageSettingsRoute extends AppRoute {
     name: 'settings_language',
     path: '/settings/language',
     section: AppRouteSection.appearance,
-    icon: AsagiIcons.language,
+    icon: KuymoIcons.language,
     showInSettingsHub: true,
   );
 }
@@ -54,7 +54,7 @@ final class CompressionDefaultsRoute extends AppRoute {
     name: 'settings_compression',
     path: '/settings/compression',
     section: AppRouteSection.compression,
-    icon: AsagiIcons.compressionDefaults,
+    icon: KuymoIcons.compressionDefaults,
     showInSettingsHub: true,
   );
 }
@@ -68,7 +68,7 @@ final class StorageSettingsRoute extends AppRoute {
     name: 'settings_storage',
     path: '/settings/storage',
     section: AppRouteSection.compression,
-    icon: AsagiIcons.storage,
+    icon: KuymoIcons.storage,
     showInSettingsHub: true,
   );
 }
@@ -82,7 +82,7 @@ final class NotificationsSettingsRoute extends AppRoute {
     name: 'settings_notifications',
     path: '/settings/notifications',
     section: AppRouteSection.privacy,
-    icon: AsagiIcons.notifications,
+    icon: KuymoIcons.notifications,
     showInSettingsHub: true,
   );
 }
@@ -96,7 +96,7 @@ final class PrivacySettingsRoute extends AppRoute {
     name: 'settings_privacy',
     path: '/settings/privacy',
     section: AppRouteSection.privacy,
-    icon: AsagiIcons.privacy,
+    icon: KuymoIcons.privacy,
     showInSettingsHub: true,
   );
 }
@@ -114,12 +114,12 @@ final class AppInfoRoute extends AppRoute {
     name: 'about_app',
     path: '/about/app',
     section: AppRouteSection.about,
-    icon: AsagiIcons.appInfo,
+    icon: KuymoIcons.appInfo,
     showInSettingsHub: true,
   );
 }
 
-/// Information about the people and tools behind Asagi.
+/// Information about the people and tools behind Kuymo.
 final class DeveloperRoute extends AppRoute {
   const DeveloperRoute();
 
@@ -128,7 +128,7 @@ final class DeveloperRoute extends AppRoute {
     name: 'about_developer',
     path: '/about/developer',
     section: AppRouteSection.about,
-    icon: AsagiIcons.developer,
+    icon: KuymoIcons.developer,
     showInSettingsHub: true,
   );
 }
@@ -142,7 +142,7 @@ final class LicensesRoute extends AppRoute {
     name: 'about_licenses',
     path: '/about/licenses',
     section: AppRouteSection.about,
-    icon: AsagiIcons.licenses,
+    icon: KuymoIcons.licenses,
     showInSettingsHub: true,
   );
 }
@@ -160,7 +160,7 @@ final class PrivacyPolicyRoute extends AppRoute {
     name: 'legal_privacy_policy',
     path: '/legal/privacy',
     section: AppRouteSection.legal,
-    icon: AsagiIcons.privacyPolicy,
+    icon: KuymoIcons.privacyPolicy,
     showInSettingsHub: true,
   );
 }
@@ -174,7 +174,7 @@ final class TermsRoute extends AppRoute {
     name: 'legal_terms',
     path: '/legal/terms',
     section: AppRouteSection.legal,
-    icon: AsagiIcons.terms,
+    icon: KuymoIcons.terms,
     showInSettingsHub: true,
   );
 }
@@ -188,12 +188,12 @@ final class DataSafetyRoute extends AppRoute {
     name: 'legal_data_safety',
     path: '/legal/data-safety',
     section: AppRouteSection.legal,
-    icon: AsagiIcons.dataSafety,
+    icon: KuymoIcons.dataSafety,
     showInSettingsHub: true,
   );
 }
 
-/// Runtime permissions Asagi requests and why each one is needed.
+/// Runtime permissions Kuymo requests and why each one is needed.
 final class PermissionsRoute extends AppRoute {
   const PermissionsRoute();
 
@@ -202,7 +202,7 @@ final class PermissionsRoute extends AppRoute {
     name: 'legal_permissions',
     path: '/legal/permissions',
     section: AppRouteSection.legal,
-    icon: AsagiIcons.permissions,
+    icon: KuymoIcons.permissions,
     showInSettingsHub: true,
   );
 }
@@ -220,7 +220,7 @@ final class FaqRoute extends AppRoute {
     name: 'help_faq',
     path: '/help/faq',
     section: AppRouteSection.help,
-    icon: AsagiIcons.faq,
+    icon: KuymoIcons.faq,
     showInSettingsHub: true,
   );
 }
@@ -234,7 +234,7 @@ final class SupportRoute extends AppRoute {
     name: 'help_support',
     path: '/help/support',
     section: AppRouteSection.help,
-    icon: AsagiIcons.support,
+    icon: KuymoIcons.support,
     showInSettingsHub: true,
   );
 }
@@ -248,7 +248,7 @@ final class FeedbackRoute extends AppRoute {
     name: 'help_feedback',
     path: '/help/feedback',
     section: AppRouteSection.help,
-    icon: AsagiIcons.feedback,
+    icon: KuymoIcons.feedback,
     showInSettingsHub: true,
   );
 }
@@ -260,7 +260,7 @@ final class AppUpdatesRoute extends AppRoute {
     name: 'about_updates',
     path: '/about/updates',
     section: AppRouteSection.about,
-    icon: AsagiIcons.notifications,
+    icon: KuymoIcons.notifications,
     showInSettingsHub: true,
   );
 }
@@ -272,7 +272,7 @@ final class WhatsNewRoute extends AppRoute {
     name: 'about_whats_new',
     path: '/about/whats-new',
     section: AppRouteSection.about,
-    icon: AsagiIcons.appInfo,
+    icon: KuymoIcons.appInfo,
     showInSettingsHub: true,
   );
 }

@@ -7,8 +7,8 @@ import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:share_plus/share_plus.dart';
 
-import '../../../../core/constants/asagi_icons.dart';
 import '../../../../core/constants/design_system/tokens/tokens.dart';
+import '../../../../core/constants/kuymo_icons.dart';
 import '../../../../core/di/di.dart';
 import '../../../../core/extensions/extensions.dart';
 import '../../../../core/router/app_router.dart';
@@ -42,12 +42,16 @@ final class HomePage extends HookWidget {
 
     return Scaffold(
       appBar: AppBarComponent(
-        title: context.localeKeys.asagi,
+        title: context.localeKeys.kuymo,
+        leading: const Padding(
+          padding: EdgeInsets.all(AppSpacing.small),
+          child: BrandMark(decorative: true),
+        ),
         actions: [
           IconButtonComponent(
-            icon: AsagiIcons.ai,
+            icon: KuymoIcons.ai,
             variant: IconButtonVariant.tonal,
-            tooltip: context.localeKeys.asagiAssistant,
+            tooltip: context.localeKeys.kuymoAssistant,
             onPressed: openAssistant,
           ),
         ],
@@ -343,7 +347,7 @@ final class HomePage extends HookWidget {
                             const Gap(AppSpacing.large),
                             FilledButtonComponent.icon(
                               expand: true,
-                              icon: AsagiIcons.compressionSetup,
+                              icon: KuymoIcons.compressionSetup,
                               label: state.planning
                                   ? context
                                         .localeKeys
@@ -368,7 +372,7 @@ final class HomePage extends HookWidget {
                           const Gap(AppSpacing.medium),
                           FilledButtonComponent.icon(
                             expand: true,
-                            icon: AsagiIcons.videoSelect,
+                            icon: KuymoIcons.videoSelect,
                             label: context.localeKeys.pickVideo,
                             onPressed: () => unawaited(cubit.pickVideo()),
                           ),

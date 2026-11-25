@@ -1,4 +1,4 @@
-import 'package:asagi/core/services/shared_prefs/base_pref_storage_service.dart';
+import 'package:kuymo/core/services/shared_prefs/base_pref_storage_service.dart';
 
 final class MemoryPreferenceStorage implements BasePrefStorageService {
   final values = <String, Object>{};
