@@ -1,55 +1,33 @@
 ---
 import { CalendarClock, ShieldAlert } from '@lucide/astro';
-
-import Badge from '@/components/ui/Badge.astro';
-
 interface Props {
   effectiveDate: Date;
   updatedDate: Date;
   draft: boolean;
 }
-
 const { effectiveDate, updatedDate, draft } = Astro.props;
-
-const dateFormatter = new Intl.DateTimeFormat('en', {
-  dateStyle: 'long',
-  timeZone: 'UTC',
-});
-
-const formatDate = (date: Date): string => dateFormatter.format(date);
+const formatter = new Intl.DateTimeFormat('en', { dateStyle: 'long', timeZone: 'UTC' });
 ---
 
-<div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted">
-  <span class="inline-flex items-center gap-2">
-    <CalendarClock class="size-4" stroke-width={1.75} aria-hidden="true" />
-    <span>
-      {draft ? 'Prepared' : 'Effective'}{' '}
-      <time datetime={effectiveDate.toISOString()}>{formatDate(effectiveDate)}</time>
-    </span>
+<div class="document-meta">
+  <span>
+    <CalendarClock size={16} stroke-width={1.5} aria-hidden="true" />
+    {draft ? 'Prepared' : 'Effective'}{' '}
+    <time datetime={effectiveDate.toISOString()}>{formatter.format(effectiveDate)}</time>
   </span>
-  <span class="inline-flex items-center gap-2">
-    <span class="size-1.5 rounded-full bg-border-strong" aria-hidden="true"></span>
-    <span>
-      Updated <time datetime={updatedDate.toISOString()}>{formatDate(updatedDate)}</time>
-    </span>
+  <span>
+    Updated <time datetime={updatedDate.toISOString()}>{formatter.format(updatedDate)}</time>
   </span>
 </div>
-
 {draft && (
-  <div class="mt-5 flex items-start gap-3 rounded-lg border border-apricot bg-apricot/25 p-4 text-sm text-fg">
-    <ShieldAlert
-      class="mt-0.5 size-5 shrink-0 text-highlight-fg"
-      stroke-width={1.75}
-      aria-hidden="true"
-    />
+  <aside class="legal-draft">
+    <ShieldAlert size={22} stroke-width={1.5} aria-hidden="true" />
     <div>
-      <Badge tone="highlight" class="mb-2 align-middle">
-        Draft
-      </Badge>
+      <strong>Draft — not in force</strong>
       <p>
         This document is a placeholder for an upcoming app. It is not in force yet, is excluded from
         search engines and the sitemap, and is not linked from public listings.
       </p>
     </div>
-  </div>
+  </aside>
 )}

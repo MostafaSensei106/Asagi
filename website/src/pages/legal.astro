@@ -3,7 +3,7 @@ import { FileCheck, Lock, Smartphone } from '@lucide/astro';
 
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import AppCard from '@/features/home/AppCard.astro';
-import { absoluteUrl, withBase } from '@/lib/paths';
+import { absoluteUrl } from '@/lib/paths';
 import { getLegalApps } from '@/lib/legal';
 import { siteConfig } from '@/config/site';
 
@@ -61,122 +61,38 @@ const jsonLd = [
   path="/legal/"
   jsonLd={jsonLd}
 >
-  <section class="relative overflow-hidden border-b border-border-base bg-surface">
-    <div
-      class="pointer-events-none absolute -end-24 -top-24 size-72 rounded-full bg-mist-200/60 blur-3xl dark:bg-matcha-700/20"
-      aria-hidden="true"
-    ></div>
-    <div
-      class="pointer-events-none absolute -start-32 bottom-0 size-80 rounded-full bg-apricot/30 blur-3xl dark:bg-apricot/10"
-      aria-hidden="true"
-    ></div>
-
-    <div class="page-shell relative py-16 sm:py-20 lg:py-24">
-      <p class="eyebrow">
-        <span class="size-1.5 rounded-full bg-matcha-500" aria-hidden="true"></span>
-        Legal &amp; policies
+  <div class="shell legal-shell">
+    <header class="legal-heading">
+      <p class="eyebrow">Legal &amp; policies</p>
+      <h1>Understand what happens to your data.</h1>
+      <p class="legal-description">
+        Every document here describes real behaviour: what stays on your device, what leaves it, and
+        why. Read the full policies below.
       </p>
-
-      <div class="mt-6 grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
-        <div class="max-w-2xl">
-          <h1 class="text-4xl font-semibold sm:text-5xl">
-            Understand exactly what our apps do with your data.
-          </h1>
-          <p class="mt-5 text-lg leading-8 text-muted">
-            Every document here describes real behaviour: what stays on your device, what leaves it,
-            and why. No summaries that hide the details.
-          </p>
-
-          <div class="mt-8 flex flex-wrap gap-3">
-            {publishedApps.map((app) => (
-              <a
-                href={withBase(`/${app.appId}`)}
-                class="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-fg transition-colors hover:bg-primary-hover"
-              >
-                {app.name} policies
-              </a>
-            ))}
-            <a
-              href={siteConfig.repository}
-              class="inline-flex items-center gap-2 rounded-md border border-border-strong px-4 py-2.5 text-sm font-medium text-fg transition-colors hover:bg-surface-muted"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              View source
-              <span class="sr-only">(opens in a new tab)</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="hidden lg:block" aria-hidden="true">
-          <img
-            src={withBase('/branding/kuymo-symbol.svg')}
-            alt=""
-            width="256"
-            height="256"
-            class="size-40 opacity-90 dark:hidden"
-            loading="eager"
-            decoding="async"
-          />
-          <img
-            src={withBase('/branding/kuymo-symbol-white.svg')}
-            alt=""
-            width="256"
-            height="256"
-            class="hidden size-40 opacity-90 dark:block"
-            loading="eager"
-            decoding="async"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="page-shell py-14 sm:py-16" aria-labelledby="apps-heading">
-    <div class="flex flex-wrap items-end justify-between gap-4">
-      <div>
-        <h2 id="apps-heading" class="text-2xl font-semibold sm:text-3xl">
-          Apps
-        </h2>
-        <p class="mt-2 text-sm text-muted">Pick an app to read its privacy policy and terms.</p>
-      </div>
-      <p class="text-sm text-muted">
-        {publishedApps.length} {publishedApps.length === 1 ? 'app' : 'apps'} published
-      </p>
-    </div>
-
-    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {publishedApps.map((app) => (
-        <AppCard app={app} />
-      ))}
-    </div>
-
-    {publishedApps.length === 0 && (
-      <p class="mt-8 rounded-lg border border-dashed border-border-strong p-8 text-center text-sm text-muted">
-        Legal documents are being prepared. Check back soon.
-      </p>
-    )}
-  </section>
-
-  <section class="border-t border-border-base bg-surface" aria-labelledby="principles-heading">
-    <div class="page-shell py-14 sm:py-16">
-      <h2 id="principles-heading" class="text-2xl font-semibold sm:text-3xl">
-        How these apps handle data
-      </h2>
-      <div class="mt-8 grid gap-6 sm:grid-cols-3">
-        {principles.map((principle) => (
-          <div class="rounded-lg border border-border-base bg-canvas p-5">
-            <span
-              class="inline-flex size-10 items-center justify-center rounded-md bg-accent text-accent-fg"
-              aria-hidden="true"
-            >
-              <principle.icon class="size-5" stroke-width={1.75} />
-            </span>
-            <h3 class="mt-4 text-base font-semibold">{principle.title}</h3>
-            <p class="mt-1.5 text-sm leading-6 text-muted">{principle.body}</p>
-          </div>
+      <a class="inline-link" href={siteConfig.repository}>
+        View the project source
+      </a>
+    </header>
+    <section aria-labelledby="apps-heading">
+      <h2 id="apps-heading">Apps &amp; policies</h2>
+      <div class="legal-cards">
+        {publishedApps.map((app) => (
+          <AppCard app={app} />
         ))}
       </div>
-    </div>
-  </section>
+      {publishedApps.length === 0 && <p>Legal documents are being prepared. Check back soon.</p>}
+    </section>
+    <section class="legal-principles" aria-labelledby="principles-heading">
+      <h2 id="principles-heading">How these apps handle data</h2>
+      <div class="legal-cards">
+        {principles.map((principle) => (
+          <article class="legal-card">
+            <principle.icon size={28} stroke-width={1.5} aria-hidden="true" />
+            <h3>{principle.title}</h3>
+            <p>{principle.body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  </div>
 </BaseLayout>

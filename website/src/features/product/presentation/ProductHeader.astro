@@ -7,8 +7,9 @@ import StoreAction from '@/components/site/StoreAction.astro';
 interface Props {
   locale: string;
   section: Section;
+  documentPath?: string | undefined;
 }
-const { locale, section } = Astro.props;
+const { locale, section, documentPath } = Astro.props;
 const { t, copy } = content(locale);
 const site = siteCopy(locale);
 const links: { section: Section; label: string }[] = [
@@ -18,7 +19,7 @@ const links: { section: Section; label: string }[] = [
 ];
 ---
 
-<header class="floating-header" data-slot="floating-navigation">
+<header class="floating-header no-print" data-slot="floating-navigation">
   <div class="floating-bar">
     <a href={withBase(localePath(locale))} class="brand-lockup" aria-label="Kuymo">
       <img
@@ -58,12 +59,15 @@ const links: { section: Section; label: string }[] = [
         <nav class="language-list" aria-label={t('language')}>
           {locales.map((language) => (
             <a
-              href={withBase(localePath(language, section))}
+              href={withBase(
+                documentPath && language === 'en' ? documentPath : localePath(language, section),
+              )}
               lang={language}
               hreflang={language}
               aria-current={locale === language ? 'true' : undefined}
             >
               {localeName(language)}
+              {documentPath && language === 'ar' ? ' — الموقع' : ''}
             </a>
           ))}
         </nav>

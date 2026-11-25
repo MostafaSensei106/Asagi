@@ -9,7 +9,7 @@ const { t, copy } = content(locale);
 const site = siteCopy(locale);
 ---
 
-<footer class="site-footer shell" data-slot="site-footer">
+<footer class="site-footer shell no-print" data-slot="site-footer">
   <div class="footer-top">
     <div>
       <a href={withBase(localePath(locale))} class="footer-wordmark">
@@ -44,6 +44,6 @@ const site = siteCopy(locale);
     <span>
       © {new Date().getFullYear()} {product.developer} / Kuymo
     </span>
-    <span class="mono">余白  MORE ROOM.</span>
+    <span class="mono">余白 MORE ROOM.</span>
   </div>
 </footer>

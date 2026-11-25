@@ -16,6 +16,14 @@ interface Props {
   description: string;
   noindex?: boolean;
   path?: string;
+  image?: string | undefined;
+  type?: 'website' | 'article' | undefined;
+  publishedTime?: Date | undefined;
+  modifiedTime?: Date | undefined;
+  jsonLd?: Record<string, unknown>[] | undefined;
+  bodyClass?: string;
+  legal?: boolean;
+  showAlternates?: boolean;
 }
 const {
   locale,
@@ -24,6 +32,14 @@ const {
   description,
   noindex = false,
   path: canonicalOverride,
+  image,
+  type,
+  publishedTime,
+  modifiedTime,
+  jsonLd = [],
+  bodyClass = '',
+  legal = false,
+  showAlternates = true,
 } = Astro.props;
 const { copy, rtl } = content(locale);
 ---
@@ -42,23 +58,30 @@ const { copy, rtl } = content(locale);
       description={description}
       path={canonicalOverride ?? (noindex ? '/design-system/' : localePath(locale, section))}
       locale={locale}
+      image={image}
+      type={type}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
       noindex={noindex}
       jsonLd={
-        noindex
-          ? []
-          : [
-              {
-                '@type': 'SoftwareApplication',
-                name: 'Kuymo',
-                operatingSystem: 'Android 11+',
-                applicationCategory: 'MultimediaApplication',
-                description,
-                isAccessibleForFree: true,
-              },
-            ]
+        legal
+          ? jsonLd
+          : noindex
+            ? []
+            : [
+                {
+                  '@type': 'SoftwareApplication',
+                  name: 'Kuymo',
+                  operatingSystem: 'Android 11+',
+                  applicationCategory: 'MultimediaApplication',
+                  description,
+                  isAccessibleForFree: true,
+                },
+                ...jsonLd,
+              ]
       }
     />
-    {!noindex && (
+    {!noindex && showAlternates && (
       <>
         {locales.map((language) => (
           <link
@@ -87,16 +110,20 @@ const { copy, rtl } = content(locale);
       }
     </script>
   </head>
-  <body class="product-site">
+  <body class:list={['product-site', bodyClass]}>
     <a href="#main-content" class="skip-link">
       {copy.skip}
     </a>
-    <ProductHeader locale={locale} section={section} />
+    <ProductHeader
+      locale={locale}
+      section={section}
+      documentPath={legal ? canonicalOverride : undefined}
+    />
     <main id="main-content">
       <slot />
     </main>
     <ProductFooter locale={locale} />
-    <GalleryDialog locale={locale} />
+    {!legal && <GalleryDialog locale={locale} />}
     <script>
       import { initTheme } from './scripts/theme';
       import { initGallery } from './scripts/gallery';

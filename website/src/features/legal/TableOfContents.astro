@@ -4,31 +4,23 @@ interface Heading {
   slug: string;
   text: string;
 }
-
 interface Props {
   headings: Heading[];
 }
-
-const { headings } = Astro.props;
-const items = headings.filter((heading) => heading.depth === 2);
+const items = Astro.props.headings.filter((heading) => heading.depth === 2);
 ---
 
 {items.length > 0 && (
-  <nav aria-labelledby="toc-heading" class="text-sm">
-    <h2 id="toc-heading" class="text-xs font-semibold tracking-[0.14em] text-muted uppercase">
-      On this page
-    </h2>
-    <ol class="mt-4 space-y-1 border-s border-border-base ps-4">
+  <nav aria-labelledby="toc-heading" class="document-toc">
+    <h2 id="toc-heading">On this page</h2>
+    <ol>
       {items.map((heading, index) => (
         <li>
-          <a
-            href={`#${heading.slug}`}
-            class="flex gap-2 rounded-sm py-1 text-muted transition-colors hover:text-fg"
-          >
-            <span class="tabular-nums text-2xs text-border-strong pt-1" aria-hidden="true">
+          <a href={`#${heading.slug}`}>
+            <span class="mono" aria-hidden="true">
               {String(index + 1).padStart(2, '0')}
             </span>
-            <span>{heading.text}</span>
+            <span>{heading.text.replace(/^\d+[.)]\s*/, '')}</span>
           </a>
         </li>
       ))}

@@ -1,14 +1,9 @@
 ---
-import Seo from '@/components/seo/Seo.astro';
-import SiteFooter from '@/components/navigation/SiteFooter.astro';
-import SiteHeader from '@/components/navigation/SiteHeader.astro';
-import { getLegalApps } from '@/lib/legal';
-import '@/styles/global.css';
-
+import ProductLayout from '@/features/product/ProductLayout.astro';
+import '@/features/legal/legal.css';
 interface Props {
   title: string;
   description: string;
-  /** Site-root-relative path used for the canonical URL. */
   path: string;
   image?: string;
   type?: 'website' | 'article';
@@ -18,68 +13,16 @@ interface Props {
   jsonLd?: Record<string, unknown>[];
   bodyClass?: string;
 }
-
-const {
-  title,
-  description,
-  path,
-  image,
-  type,
-  noindex,
-  publishedTime,
-  modifiedTime,
-  jsonLd,
-  bodyClass = '',
-} = Astro.props;
-
-const apps = await getLegalApps();
-const navApps = apps.map((app) => ({ appId: app.appId, name: app.name }));
+const props = Astro.props;
 ---
 
-<!doctype html>
-<html lang="en" dir="ltr">
-  <head>
-    <Seo
-      title={title}
-      description={description}
-      path={path}
-      image={image}
-      type={type}
-      noindex={noindex}
-      publishedTime={publishedTime}
-      modifiedTime={modifiedTime}
-      jsonLd={jsonLd}
-    />
-    <script is:inline>
-      (() => {
-        try {
-          const stored = localStorage.getItem('kuymo-theme');
-          const dark =
-            stored === 'dark' ||
-            (stored === null && window.matchMedia('(prefers-color-scheme: dark)').matches);
-
-          document.documentElement.classList.toggle('dark', dark);
-          document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
-        } catch {
-          // Ignore unavailable storage; the default light theme still applies.
-        }
-      })();
-    </script>
-  </head>
-  <body class={bodyClass}>
-    <a
-      href="#main-content"
-      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-primary-fg"
-    >
-      Skip to content
-    </a>
-
-    <div class="flex min-h-dvh flex-col">
-      <SiteHeader apps={navApps} />
-      <main id="main-content" class="flex-1">
-        <slot />
-      </main>
-      <SiteFooter apps={apps} />
-    </div>
-  </body>
-</html>
+<ProductLayout
+  {...props}
+  locale="en"
+  section=""
+  legal
+  showAlternates={false}
+  bodyClass={`legal-site ${props.bodyClass ?? ''}`}
+>
+  <slot />
+</ProductLayout>
