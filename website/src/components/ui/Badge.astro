@@ -1,0 +1,25 @@
+---
+interface Props {
+  tone?: 'neutral' | 'accent' | 'highlight' | 'outline';
+  class?: string;
+}
+
+const { tone = 'neutral', class: className = '' } = Astro.props;
+
+const tones: Record<string, string> = {
+  neutral: 'border-border-base bg-surface-muted text-muted',
+  accent: 'border-matcha-300 bg-mist-200 text-pine-800 dark:border-matcha-700 dark:bg-accent dark:text-accent-fg',
+  highlight: 'border-apricot bg-apricot text-highlight-fg',
+  outline: 'border-border-strong bg-transparent text-muted',
+};
+---
+
+<span
+  class:list={[
+    'inline-flex items-center gap-1 rounded-full border px-2.5 py-0.5 text-2xs font-semibold tracking-wide uppercase',
+    tones[tone],
+    className,
+  ]}
+>
+  <slot />
+</span>

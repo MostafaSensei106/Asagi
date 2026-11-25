@@ -1,0 +1,53 @@
+---
+import { Moon, Sun } from '@lucide/astro';
+---
+
+<button
+  type="button"
+  data-theme-toggle
+  aria-pressed="false"
+  aria-label="Switch to dark theme"
+  title="Switch theme"
+  class="inline-flex size-10 items-center justify-center rounded-md border border-border-base bg-surface text-fg transition-colors hover:border-border-strong hover:bg-surface-muted"
+>
+  <Sun class="size-5 dark:hidden" stroke-width={1.75} aria-hidden="true" />
+  <Moon class="hidden size-5 dark:block" stroke-width={1.75} aria-hidden="true" />
+</button>
+
+<script>
+  const STORAGE_KEY = 'kuymo-theme';
+  const root = document.documentElement;
+  const button = document.querySelector<HTMLButtonElement>('[data-theme-toggle]');
+
+  function isDark(): boolean {
+    return root.classList.contains('dark');
+  }
+
+  function syncButton(): void {
+    if (!button) return;
+
+    const dark = isDark();
+    button.setAttribute('aria-pressed', String(dark));
+    button.setAttribute(
+      'aria-label',
+      dark ? 'Switch to light theme' : 'Switch to dark theme',
+    );
+  }
+
+  button?.addEventListener('click', () => {
+    const dark = !isDark();
+
+    root.classList.toggle('dark', dark);
+    root.style.colorScheme = dark ? 'dark' : 'light';
+
+    try {
+      localStorage.setItem(STORAGE_KEY, dark ? 'dark' : 'light');
+    } catch {
+      // Storage can be unavailable in private modes; the toggle still works.
+    }
+
+    syncButton();
+  });
+
+  syncButton();
+</script>

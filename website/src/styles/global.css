@@ -1,0 +1,399 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+/*
+ * Kuymo brand tokens, mirrored from `brand/kuymo/tokens.json`.
+ * Keep the palette here as the single source of truth for the site.
+ */
+@theme {
+  --color-pine-50: #eef4f0;
+  --color-pine-100: #d9e6de;
+  --color-pine-200: #b4cbbd;
+  --color-pine-300: #8bad9a;
+  --color-pine-400: #5f8a72;
+  --color-pine-500: #3e6b54;
+  --color-pine-600: #284b3b;
+  --color-pine-700: #213d30;
+  --color-pine-800: #1a3026;
+  --color-pine-900: #14241d;
+  --color-pine-950: #0c1712;
+
+  --color-matcha-50: #f2f6ee;
+  --color-matcha-100: #e2ecd9;
+  --color-matcha-200: #c6dab5;
+  --color-matcha-300: #a3c38b;
+  --color-matcha-400: #7ea864;
+  --color-matcha-500: #5f8b47;
+  --color-matcha-600: #4a6d37;
+  --color-matcha-700: #3b562d;
+
+  --color-mist-50: #f6f9ef;
+  --color-mist-100: #eef4e2;
+  --color-mist-200: #dde9c6;
+  --color-mist-300: #c9dda8;
+  --color-mist-400: #b2cc86;
+
+  --color-paper: #faf8f1;
+  --color-apricot: #f4bc95;
+  --color-ink: #1e2d24;
+
+  --font-sans:
+    'Google Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --font-arabic: 'Noto Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+  --font-mono:
+    ui-monospace, 'SFMono-Regular', 'SF Mono', Menlo, Consolas, 'Liberation Mono',
+    monospace;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+
+  --spacing: 0.25rem;
+
+  --text-2xs: 0.6875rem;
+  --text-2xs--line-height: 1rem;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.125rem;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5rem;
+  --text-base: 1rem;
+  --text-base--line-height: 1.7;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.75rem;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.75rem;
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 2rem;
+  --text-3xl: 1.875rem;
+  --text-3xl--line-height: 2.375rem;
+  --text-4xl: 2.375rem;
+  --text-4xl--line-height: 2.75rem;
+  --text-5xl: 3rem;
+  --text-5xl--line-height: 3.25rem;
+  --text-6xl: 3.75rem;
+  --text-6xl--line-height: 4rem;
+
+  --shadow-soft: 0 1px 2px rgb(30 45 36 / 0.06), 0 8px 24px -12px rgb(30 45 36 / 0.18);
+  --shadow-lifted: 0 2px 4px rgb(30 45 36 / 0.08), 0 18px 40px -18px rgb(30 45 36 / 0.28);
+}
+
+/* Dark mode is opt-in through a `.dark` class on <html>. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  src: url('../assets/fonts/NotoSansArabic-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  src: url('../assets/fonts/NotoSansArabic-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  src: url('../assets/fonts/NotoSansArabic-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
+ * Semantic colours. Values live in custom properties so components use
+ * intent-based utilities (`bg-surface`, `text-muted`) instead of raw hex codes
+ * and dark mode only has to swap the variables.
+ */
+:root {
+  color-scheme: light;
+
+  --ui-canvas: var(--color-paper);
+  --ui-surface: #fffdf7;
+  --ui-surface-muted: #f1eddf;
+  --ui-border: #e3dfce;
+  --ui-border-strong: #cfc9b2;
+  --ui-fg: var(--color-ink);
+  --ui-fg-muted: #55665b;
+  --ui-primary: var(--color-pine-600);
+  --ui-primary-hover: var(--color-pine-700);
+  --ui-primary-fg: #f8fbf5;
+  --ui-accent: var(--color-mist-200);
+  --ui-accent-fg: #24371f;
+  --ui-highlight: var(--color-apricot);
+  --ui-highlight-fg: #3b1f0c;
+  --ui-ring: var(--color-matcha-500);
+  --ui-code-bg: #f1eddf;
+}
+
+.dark {
+  color-scheme: dark;
+
+  --ui-canvas: #0d1712;
+  --ui-surface: #142219;
+  --ui-surface-muted: #1a2b20;
+  --ui-border: #2a3f32;
+  --ui-border-strong: #3d5947;
+  --ui-fg: #e9f0e7;
+  --ui-fg-muted: #a7bcaa;
+  --ui-primary: #b3d7a0;
+  --ui-primary-hover: #c9e5b8;
+  --ui-primary-fg: #122015;
+  --ui-accent: #2b4434;
+  --ui-accent-fg: #dcecd1;
+  --ui-highlight: #f4bc95;
+  --ui-highlight-fg: #3b1f0c;
+  --ui-ring: #9fc78c;
+  --ui-code-bg: #1a2b20;
+}
+
+@theme inline {
+  --color-canvas: var(--ui-canvas);
+  --color-surface: var(--ui-surface);
+  --color-surface-muted: var(--ui-surface-muted);
+  --color-border-base: var(--ui-border);
+  --color-border-strong: var(--ui-border-strong);
+  --color-fg: var(--ui-fg);
+  --color-muted: var(--ui-fg-muted);
+  --color-primary: var(--ui-primary);
+  --color-primary-hover: var(--ui-primary-hover);
+  --color-primary-fg: var(--ui-primary-fg);
+  --color-accent: var(--ui-accent);
+  --color-accent-fg: var(--ui-accent-fg);
+  --color-highlight: var(--ui-highlight);
+  --color-highlight-fg: var(--ui-highlight-fg);
+  --color-ring: var(--ui-ring);
+  --color-code-bg: var(--ui-code-bg);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Keep anchored headings clear of the sticky header. */
+    scroll-padding-top: 6.5rem;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    min-height: 100dvh;
+    background-color: var(--ui-canvas);
+    color: var(--ui-fg);
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  :where(h1, h2, h3, h4, h5, h6) {
+    color: var(--ui-fg);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :where(a) {
+    color: var(--ui-primary);
+    text-underline-offset: 0.2em;
+  }
+
+  :where(a:hover) {
+    color: var(--ui-primary-hover);
+  }
+
+  :where(strong, b) {
+    font-weight: 600;
+  }
+
+  /* Visible, consistent keyboard focus on every interactive element. */
+  :where(a, button, summary, input, select, textarea, [tabindex]):focus-visible {
+    outline: 3px solid var(--ui-ring);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  :where(img, svg, video) {
+    max-width: 100%;
+    height: auto;
+  }
+
+  ::selection {
+    background-color: var(--ui-accent);
+    color: var(--ui-accent-fg);
+  }
+
+  :where([dir='rtl']) body,
+  :where([lang='ar']) {
+    font-family: var(--font-arabic);
+    letter-spacing: 0;
+  }
+
+  :where([dir='rtl']) {
+    text-align: start;
+  }
+}
+
+@layer components {
+  /* Section rhythm shared by the page shells. */
+  .page-shell {
+    width: 100%;
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .page-shell {
+      padding-inline: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .page-shell {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  /* Small uppercase eyebrow used above headings. */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ui-fg-muted);
+  }
+
+  /* Anchor targets need breathing room below the sticky header. */
+  .prose :where(h2, h3, h4) {
+    scroll-margin-top: 6.5rem;
+  }
+
+  .prose {
+    --tw-prose-body: var(--ui-fg);
+    --tw-prose-headings: var(--ui-fg);
+    --tw-prose-lead: var(--ui-fg-muted);
+    --tw-prose-links: var(--ui-primary);
+    --tw-prose-bold: var(--ui-fg);
+    --tw-prose-counters: var(--ui-fg-muted);
+    --tw-prose-bullets: var(--ui-border-strong);
+    --tw-prose-hr: var(--ui-border);
+    --tw-prose-quotes: var(--ui-fg);
+    --tw-prose-quote-borders: var(--ui-primary);
+    --tw-prose-captions: var(--ui-fg-muted);
+    --tw-prose-code: var(--ui-fg);
+    --tw-prose-pre-code: var(--ui-fg);
+    --tw-prose-pre-bg: var(--ui-code-bg);
+    --tw-prose-th-borders: var(--ui-border-strong);
+    --tw-prose-td-borders: var(--ui-border);
+
+    max-width: 72ch;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+
+  .prose :where(h2) {
+    margin-top: 2.75em;
+    margin-bottom: 0.75em;
+    padding-top: 0.35em;
+    font-size: var(--text-2xl);
+    line-height: 1.25;
+  }
+
+  .prose :where(h3) {
+    margin-top: 2em;
+    font-size: var(--text-xl);
+  }
+
+  .prose :where(table) {
+    display: block;
+    overflow-x: auto;
+    font-size: var(--text-sm);
+  }
+
+  .prose :where(code)::before,
+  .prose :where(code)::after {
+    content: '';
+  }
+
+  .prose :where(code) {
+    border-radius: 0.375rem;
+    background-color: var(--ui-code-bg);
+    padding: 0.15em 0.4em;
+    font-weight: 500;
+  }
+
+  .prose :where(a) {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
+
+  /* In-text heading links added by the legal layout. */
+  .heading-anchor {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .heading-anchor:hover {
+    color: var(--ui-primary);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    background: #fff;
+    color: #111;
+  }
+
+  :where(.no-print) {
+    display: none !important;
+  }
+
+  .prose {
+    max-width: none;
+    font-size: 11pt;
+  }
+
+  .prose a {
+    color: #111;
+    text-decoration: underline;
+  }
+
+  .prose a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.8em;
+    word-break: break-all;
+  }
+}

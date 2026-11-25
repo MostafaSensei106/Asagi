@@ -1,0 +1,70 @@
+---
+import { ArrowRight, FileText } from '@lucide/astro';
+
+import Badge from '@/components/ui/Badge.astro';
+import type { LegalApp } from '@/lib/legal';
+import { withBase } from '@/lib/paths';
+
+interface Props {
+  app: LegalApp;
+}
+
+const { app } = Astro.props;
+
+const initial = app.name.trim().charAt(0).toUpperCase();
+
+const newestUpdate = app.documents.reduce<Date | undefined>((latest, document) => {
+  const updated = document.entry.data.updatedDate;
+
+  return latest === undefined || updated > latest ? updated : latest;
+}, undefined);
+
+const updatedLabel = newestUpdate
+  ? new Intl.DateTimeFormat('en', { dateStyle: 'medium', timeZone: 'UTC' }).format(newestUpdate)
+  : undefined;
+---
+
+<article
+  class="group relative flex h-full flex-col rounded-xl border border-border-base bg-surface p-6 shadow-soft transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-0.5 hover:border-border-strong hover:shadow-lifted motion-reduce:hover:translate-y-0"
+>
+  <div class="flex items-start justify-between gap-4">
+    <span
+      class="inline-flex size-12 items-center justify-center rounded-lg bg-accent text-lg font-semibold text-accent-fg"
+      aria-hidden="true"
+    >
+      {initial}
+    </span>
+    {app.draft && <Badge tone="highlight">Draft</Badge>}
+  </div>
+
+  <h2 class="mt-5 text-xl font-semibold">
+    <a href={withBase(`/${app.appId}`)} class="after:absolute after:inset-0 after:content-['']">
+      {app.name}
+    </a>
+  </h2>
+  <p class="mt-2 text-sm leading-6 text-muted">{app.description}</p>
+
+  <div class="mt-6 flex-1">
+    <ul class="space-y-1 border-t border-border-base pt-4">
+      {
+        app.documents.map((document) => (
+          <li class="flex items-center gap-2 text-sm text-muted">
+            <FileText class="size-4 shrink-0" stroke-width={1.75} aria-hidden="true" />
+            <span>{document.label}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <div class="mt-5 flex items-center justify-between gap-3">
+    <span class="text-xs text-muted">{updatedLabel ? `Updated ${updatedLabel}` : 'Coming soon'}</span>
+    <span
+      class="inline-flex items-center gap-1 text-sm font-medium text-primary transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:group-hover:translate-x-0"
+      aria-hidden="true"
+    >
+      Open
+      <ArrowRight class="size-4" stroke-width={2} />
+    </span>
+  </div>
+</article>

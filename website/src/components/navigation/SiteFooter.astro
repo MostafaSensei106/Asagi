@@ -1,0 +1,126 @@
+---
+import type { LegalApp } from '@/lib/legal';
+import { withBase } from '@/lib/paths';
+import { siteConfig } from '@/config/site';
+
+interface Props {
+  apps?: LegalApp[];
+}
+
+const { apps = [] } = Astro.props;
+
+const year = new Date().getFullYear();
+const publishedApps = apps.filter((app) => !app.draft);
+---
+
+<footer class="no-print mt-24 border-t border-border-base bg-surface">
+  <div class="page-shell grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="sm:col-span-2 lg:col-span-1">
+      <a href={withBase('/')} class="inline-flex items-center gap-2" aria-label="Kuymo Legal — home">
+        <img
+          src={withBase('/branding/kuymo-horizontal.svg')}
+          alt="Kuymo"
+          width="658"
+          height="256"
+          class="h-7 w-auto dark:hidden"
+          loading="lazy"
+          decoding="async"
+        />
+        <img
+          src={withBase('/branding/kuymo-horizontal-white.svg')}
+          alt=""
+          aria-hidden="true"
+          width="658"
+          height="256"
+          class="hidden h-7 w-auto dark:block"
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+      <p class="mt-4 max-w-xs text-sm leading-6 text-muted">
+        Plain-language privacy policies and terms for apps by
+        {siteConfig.author.name}.
+      </p>
+      <p class="mt-4 text-xs text-muted">
+        This site is static: no cookies, no analytics, no trackers.
+      </p>
+    </div>
+
+    {
+      publishedApps.map((app) => (
+        <nav aria-labelledby={`footer-${app.appId}`}>
+          <h2 id={`footer-${app.appId}`} class="text-xs font-semibold tracking-[0.14em] text-muted uppercase">
+            {app.name}
+          </h2>
+          <ul class="mt-4 space-y-2.5">
+            <li>
+              <a href={withBase(`/${app.appId}`)} class="text-sm text-muted transition-colors hover:text-fg">
+                Overview
+              </a>
+            </li>
+            {app.documents.map((document) => (
+              <li>
+                <a
+                  href={withBase(document.href)}
+                  class="text-sm text-muted transition-colors hover:text-fg"
+                >
+                  {document.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      ))
+    }
+
+    <nav aria-labelledby="footer-project">
+      <h2 id="footer-project" class="text-xs font-semibold tracking-[0.14em] text-muted uppercase">
+        Project
+      </h2>
+      <ul class="mt-4 space-y-2.5">
+        <li>
+          <a
+            href={siteConfig.repository}
+            class="text-sm text-muted transition-colors hover:text-fg"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Source code
+            <span class="sr-only">(opens in a new tab)</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href={siteConfig.author.url}
+            class="text-sm text-muted transition-colors hover:text-fg"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {siteConfig.author.name}
+            <span class="sr-only">(opens in a new tab)</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href={siteConfig.license.url}
+            class="text-sm text-muted transition-colors hover:text-fg"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {siteConfig.license.name} licence
+            <span class="sr-only">(opens in a new tab)</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="border-t border-border-base">
+    <div
+      class="page-shell flex flex-col gap-2 py-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between"
+    >
+      <p>&copy; {year} {siteConfig.author.name}. Content is provided for transparency, not legal advice.</p>
+      <p>Last reviewed when each document was updated.</p>
+    </div>
+  </div>
+</footer>

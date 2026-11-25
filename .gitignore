@@ -51,6 +51,7 @@ app.*.map.json
 .widget_preview/
 docs.md
 
+website/node_modules/**
 # Keep the current compression architecture decision reviewable.
 !/docs/adr/
 !/docs/adr/002-kotlin-planner.md

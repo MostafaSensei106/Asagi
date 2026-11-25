@@ -1,0 +1,138 @@
+---
+import { ArrowUpRight, Menu } from '@lucide/astro';
+
+import ThemeToggle from '@/components/navigation/ThemeToggle.astro';
+import { withBase } from '@/lib/paths';
+
+export interface NavApp {
+  appId: string;
+  name: string;
+}
+
+interface Props {
+  apps?: NavApp[];
+}
+
+const { apps = [] } = Astro.props;
+
+const links = [
+  { label: 'All apps', href: '/' },
+  ...apps.map((app) => ({ label: app.name, href: `/${app.appId}` })),
+];
+
+const currentPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const isActive = (href: string): boolean => {
+  const target = href.replace(/\/+$/, '') || '/';
+
+  return target === '/' ? currentPath === withBase('/').replace(/\/+$/, '') : currentPath.startsWith(withBase(target));
+};
+---
+
+<header
+  class="sticky top-0 z-50 border-b border-border-base bg-canvas/85 backdrop-blur-md supports-[backdrop-filter]:bg-canvas/70"
+>
+  <div class="page-shell flex h-16 items-center justify-between gap-4">
+    <a
+      href={withBase('/')}
+      class="inline-flex items-center gap-2 rounded-md py-1"
+      aria-label="Kuymo Legal — home"
+    >
+      <img
+        src={withBase('/branding/kuymo-horizontal.svg')}
+        alt="Kuymo"
+        width="658"
+        height="256"
+        class="h-7 w-auto dark:hidden"
+        loading="eager"
+        decoding="async"
+      />
+      <img
+        src={withBase('/branding/kuymo-horizontal-white.svg')}
+        alt=""
+        aria-hidden="true"
+        width="658"
+        height="256"
+        class="hidden h-7 w-auto dark:block"
+        loading="eager"
+        decoding="async"
+      />
+      <span class="text-sm font-medium text-muted">Legal</span>
+    </a>
+
+    <nav class="hidden items-center gap-1 md:flex" aria-label="Primary">
+      {
+        links.map((link) => (
+          <a
+            href={withBase(link.href)}
+            aria-current={isActive(link.href) ? 'page' : undefined}
+            class:list={[
+              'rounded-md px-3 py-2 text-sm font-medium transition-colors',
+              isActive(link.href)
+                ? 'bg-accent text-accent-fg'
+                : 'text-muted hover:bg-surface-muted hover:text-fg',
+            ]}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a
+        href="https://github.com/MostafaSensei106/Kuymo"
+        class="ml-1 inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium text-muted transition-colors hover:bg-surface-muted hover:text-fg"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        GitHub
+        <ArrowUpRight class="size-3.5" stroke-width={2} aria-hidden="true" />
+        <span class="sr-only">(opens in a new tab)</span>
+      </a>
+      <div class="ml-2">
+        <ThemeToggle />
+      </div>
+    </nav>
+
+    <div class="flex items-center gap-2 md:hidden">
+      <ThemeToggle />
+      <details class="group relative">
+        <summary
+          class="inline-flex size-10 cursor-pointer list-none items-center justify-center rounded-md border border-border-base bg-surface text-fg transition-colors hover:border-border-strong hover:bg-surface-muted [&::-webkit-details-marker]:hidden"
+          aria-label="Open menu"
+        >
+          <Menu class="size-5" stroke-width={1.75} aria-hidden="true" />
+        </summary>
+        <div
+          class="absolute end-0 top-12 z-50 w-60 rounded-lg border border-border-base bg-surface p-2 shadow-lifted"
+        >
+          <nav aria-label="Mobile" class="flex flex-col">
+            {
+              links.map((link) => (
+                <a
+                  href={withBase(link.href)}
+                  aria-current={isActive(link.href) ? 'page' : undefined}
+                  class:list={[
+                    'rounded-md px-3 py-2 text-sm font-medium transition-colors',
+                    isActive(link.href)
+                      ? 'bg-accent text-accent-fg'
+                      : 'text-muted hover:bg-surface-muted hover:text-fg',
+                  ]}
+                >
+                  {link.label}
+                </a>
+              ))
+            }
+            <a
+              href="https://github.com/MostafaSensei106/Kuymo"
+              class="mt-1 flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium text-muted transition-colors hover:bg-surface-muted hover:text-fg"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              GitHub
+              <ArrowUpRight class="size-4" stroke-width={2} aria-hidden="true" />
+              <span class="sr-only">(opens in a new tab)</span>
+            </a>
+          </nav>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,93 @@
+---
+import { siteConfig } from '@/config/site';
+import { absoluteUrl, canonicalPath, withBase } from '@/lib/paths';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Site-root-relative canonical path, e.g. `/kuymo/privacy`. */
+  path: string;
+  image?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+  publishedTime?: Date;
+  modifiedTime?: Date;
+  /** Extra JSON-LD nodes appended to the default `WebPage` graph. */
+  jsonLd?: Record<string, unknown>[];
+}
+
+const {
+  title,
+  description,
+  path,
+  image = siteConfig.defaultOgImage,
+  type = 'website',
+  noindex = false,
+  publishedTime,
+  modifiedTime,
+  jsonLd = [],
+} = Astro.props;
+
+const canonical = absoluteUrl(canonicalPath(path), Astro.site);
+const imageUrl = absoluteUrl(image, Astro.site);
+const fullTitle = title.includes(siteConfig.name)
+  ? title
+  : `${title} · ${siteConfig.name}`;
+
+const graph = [
+  {
+    '@type': 'WebPage',
+    '@id': `${canonical}#webpage`,
+    url: canonical,
+    name: fullTitle,
+    description,
+    inLanguage: siteConfig.locale,
+    isPartOf: { '@id': `${absoluteUrl('/', Astro.site)}#website` },
+    ...(publishedTime ? { datePublished: publishedTime.toISOString() } : {}),
+    ...(modifiedTime ? { dateModified: modifiedTime.toISOString() } : {}),
+  },
+  ...jsonLd,
+];
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+<meta name="color-scheme" content="light dark" />
+<meta name="theme-color" content="#faf8f1" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#0d1712" media="(prefers-color-scheme: dark)" />
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<meta
+  name="robots"
+  content={noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large'}
+/>
+
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={siteConfig.name} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content={siteConfig.locale} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+
+<link rel="icon" href={withBase('/branding/favicon.svg')} type="image/svg+xml" />
+<link rel="icon" href={withBase('/branding/icon-192.png')} type="image/png" sizes="192x192" />
+<link rel="apple-touch-icon" href={withBase('/branding/apple-touch-icon.png')} />
+<link rel="manifest" href={withBase('/site.webmanifest')} />
+<link rel="sitemap" href={withBase('/sitemap-index.xml')} />
+
+<script
+  type="application/ld+json"
+  is:inline
+  set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })}
+/>

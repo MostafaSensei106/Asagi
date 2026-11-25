@@ -1,0 +1,54 @@
+---
+import { ArrowUpRight, Mail } from '@lucide/astro';
+
+interface Props {
+  name: string;
+  repository: string;
+  issues?: string;
+}
+
+const { name, repository, issues } = Astro.props;
+---
+
+<section
+  aria-labelledby="contact-heading"
+  class="no-print mt-12 rounded-lg border border-border-base bg-surface p-6 shadow-soft sm:p-8"
+>
+  <div class="flex items-start gap-4">
+    <span
+      class="inline-flex size-11 shrink-0 items-center justify-center rounded-md bg-accent text-accent-fg"
+      aria-hidden="true"
+    >
+      <Mail class="size-5" stroke-width={1.75} />
+    </span>
+    <div class="min-w-0">
+      <h2 id="contact-heading" class="text-lg font-semibold">Questions about this document?</h2>
+      <p class="mt-1.5 text-sm leading-6 text-muted">
+        Contact {name} through the project issue tracker. Please avoid posting personal
+        data in a public issue.
+      </p>
+      <div class="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
+        <a
+          href={issues ?? `${repository}/issues`}
+          class="inline-flex items-center gap-1.5"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Open an issue
+          <ArrowUpRight class="size-3.5" stroke-width={2} aria-hidden="true" />
+          <span class="sr-only">(opens in a new tab)</span>
+        </a>
+        <a
+          href={repository}
+          class="inline-flex items-center gap-1.5 text-muted hover:text-fg"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          View the repository
+          <ArrowUpRight class="size-3.5" stroke-width={2} aria-hidden="true" />
+          <span class="sr-only">(opens in a new tab)</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -3,9 +3,9 @@ import 'dart:convert';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kuymo/core/di/di.dart';
 import 'package:kuymo/core/preferences/domain/entities/compression_defaults.dart';
-import 'package:kuymo/core/widgets/widgets.dart';
 import 'package:kuymo/core/preferences/domain/repositories/settings_repository.dart';
 import 'package:kuymo/core/utils/theme/app_theme.dart';
+import 'package:kuymo/core/widgets/widgets.dart';
 import 'package:kuymo/l10n/app_localizations.dart';
 import 'package:kuymo/modules/ai/domain/entities/ai_settings.dart';
 import 'package:kuymo/modules/ai/presentation/pages/ai_chat_settings_page.dart';
@@ -104,18 +104,20 @@ void main() {
         findsOneWidget,
       );
       await tester.scrollUntilVisible(
-        find.text('30'),
+        find.text('24 fps'),
         150,
         scrollable: scrollable,
       );
-      await tester.tap(find.text('30'));
+      await tester.ensureVisible(find.text('24 fps'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('24 fps'));
       await tester.pumpAndSettle();
       expect(
         getIt<SettingsRepository<CompressionDefaults>>()
             .current
             .preferences
-            .maxFps,
-        30,
+            .maxFrameRate,
+        24,
       );
       await tester.scrollUntilVisible(
         find.text(l10n.hdrHandling),

@@ -319,7 +319,7 @@ final class _CompressionAdvancedControlsState
     ];
     if (!widget.collapsible) {
       return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           for (var index = 0; index < sections.length; index++) ...[
             ExpressiveSectionHeader(title: sections[index].title),
