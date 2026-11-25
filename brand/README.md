@@ -10,4 +10,3 @@ The app is **Kuymo**; **Kuymo AI** is the optional assistant descriptor.
 - [Implementation and validation](kuymo/VALIDATION.md)
 - [Naming research](rebrand/NAMING.md)
 - [Earlier concept studies](rebrand/CONCEPTS.md)
-

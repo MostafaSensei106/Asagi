@@ -56,3 +56,22 @@ catalogs. Splash source sizes are now 768 px at 4x and 1152 px for Android 12.
 Light/dark background colors match across Android versions. Pixel-level checks
 verify both safe circles, including the corrected adaptive inset. Details and
 platform limitations: [native setup](NATIVE_APPEARANCES.md).
+
+## Complete namespace replacement
+
+The Android namespace/application ID and all iOS build configurations now use
+`com.mostafa.sensei.kuymo`. Main and test Kotlin packages were moved to the
+matching directory tree. Manual native channels, notification identifiers,
+plugin registration, restoration and compression job prefixes use Kuymo.
+Pigeon Dart/Kotlin/Swift bindings were regenerated together.
+
+Obsolete artwork was removed. A content/path/archive scan of project files
+(excluding Git history, dependency caches and generated build directories)
+found zero matches for the previous name, including within the brand ZIP.
+The existing GitHub repository was verified as `MostafaSensei106/Kuymo`, and
+release, support and source destinations use it.
+
+Verification: analyzer clean; 91 Flutter tests, 10 Kotlin planner tests and
+8 palette-generator tests passed. Android arm64 debug APK built with the new
+application ID. iOS configuration was updated without a Linux-side Xcode build.
+This is a new installation identity; prior app data is not migrated.
