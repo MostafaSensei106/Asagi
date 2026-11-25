@@ -7,13 +7,13 @@ interface Props {
   description: string;
   /** Site-root-relative canonical path, e.g. `/kuymo/privacy`. */
   path: string;
-  image?: string;
-  type?: 'website' | 'article';
-  noindex?: boolean;
-  publishedTime?: Date;
-  modifiedTime?: Date;
+  image?: string | undefined;
+  type?: 'website' | 'article' | undefined;
+  noindex?: boolean | undefined;
+  publishedTime?: Date | undefined;
+  modifiedTime?: Date | undefined;
   /** Extra JSON-LD nodes appended to the default `WebPage` graph. */
-  jsonLd?: Record<string, unknown>[];
+  jsonLd?: Record<string, unknown>[] | undefined;
 }
 
 const {

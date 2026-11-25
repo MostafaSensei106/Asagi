@@ -1,0 +1,41 @@
+# Build output
+dist/
+.astro/
+
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+.playwright/
+playwright/.cache/
+
+# Environment and local configuration
+.env
+.env.*
+!.env.example
+.envrc
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editors and OS files
+.DS_Store
+Thumbs.db
+.idea/
+# .vscode/ is tracked on purpose in some teams; uncomment to ignore it here.
+#.vscode/
+
+# Cache and temporary files
+.cache/
+*.tsbuildinfo
+.eslintcache
+coverage/
+tmp/

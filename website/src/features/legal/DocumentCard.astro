@@ -1,0 +1,54 @@
+---
+import { ArrowRight, FileText, Scale } from '@lucide/astro';
+
+import Badge from '@/components/ui/Badge.astro';
+import type { LegalDocument } from '@/lib/legal';
+import { withBase } from '@/lib/paths';
+
+interface Props {
+  document: LegalDocument;
+}
+
+const { document } = Astro.props;
+const { data } = document.entry;
+
+const updatedLabel = new Intl.DateTimeFormat('en', {
+  dateStyle: 'medium',
+  timeZone: 'UTC',
+}).format(data.updatedDate);
+
+const Icon = document.documentId === 'terms' ? Scale : FileText;
+---
+
+<article class="group relative flex h-full flex-col rounded-xl border border-border-base bg-surface p-6 shadow-soft transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-0.5 hover:border-border-strong hover:shadow-lifted motion-reduce:hover:translate-y-0">
+  <div class="flex items-start justify-between gap-4">
+    <span
+      class="inline-flex size-11 items-center justify-center rounded-md bg-accent text-accent-fg"
+      aria-hidden="true"
+    >
+      <Icon class="size-5" stroke-width={1.75} />
+    </span>
+    {data.draft && <Badge tone="outline">Draft</Badge>}
+  </div>
+
+  <h3 class="mt-5 text-lg font-semibold">
+    <a href={withBase(document.href)} class="after:absolute after:inset-0 hover:no-underline">
+      {document.label}
+    </a>
+  </h3>
+  <p class="mt-2 flex-1 text-sm leading-6 text-muted">{data.description}</p>
+
+  <div class="mt-6 flex items-center justify-between gap-3 border-t border-border-base pt-4 text-sm">
+    <span class="text-muted">
+      Updated <time datetime={data.updatedDate.toISOString()}>{updatedLabel}</time>
+    </span>
+    <span class="inline-flex items-center gap-1.5 font-medium text-primary">
+      Read
+      <ArrowRight
+        class="size-4 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none"
+        stroke-width={2}
+        aria-hidden="true"
+      />
+    </span>
+  </div>
+</article>

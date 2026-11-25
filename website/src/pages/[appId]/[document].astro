@@ -1,0 +1,32 @@
+---
+import LegalLayout from '@/layouts/LegalLayout.astro';
+import { getLegalDocuments, type LegalDocument } from '@/lib/legal';
+
+export async function getStaticPaths() {
+  const documents = await getLegalDocuments({ includeDrafts: true });
+
+  return documents.map((document) => {
+    const siblings = documents.filter((candidate) => candidate.appId === document.appId);
+
+    return {
+      params: { appId: document.appId, document: document.documentId },
+      props: { document, siblings },
+    };
+  });
+}
+
+interface Props {
+  document: LegalDocument;
+  siblings: LegalDocument[];
+}
+
+const { document, siblings } = Astro.props;
+const { data } = document.entry;
+---
+
+<LegalLayout
+  document={document}
+  siblings={siblings}
+  appName={data.app}
+  appDescription={data.appDescription}
+/>

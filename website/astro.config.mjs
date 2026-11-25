@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 import sitemap from '@astrojs/sitemap';
@@ -18,31 +18,48 @@ const contentDirectory = fileURLToPath(new URL('./src/content/legal/', import.me
 
 /**
  * Collect legal documents marked as drafts so they can be kept out of the
- * sitemap while still being built for preview.
+ * sitemap while still being built for preview. An app whose documents are all
+ * drafts gets its index page excluded as well.
  */
-function collectDraftPaths(directory = contentDirectory, prefix = '') {
-  const paths = new Set();
+function collectLegalDocuments(directory = contentDirectory, prefix = '') {
+  const documents = [];
+
+  if (!existsSync(directory)) return documents;
 
   for (const entry of readdirSync(directory, { withFileTypes: true })) {
     if (entry.isDirectory()) {
-      for (const nested of collectDraftPaths(`${directory}${entry.name}/`, `${prefix}${entry.name}/`)) {
-        paths.add(nested);
-      }
+      documents.push(
+        ...collectLegalDocuments(`${directory}${entry.name}/`, `${prefix}${entry.name}/`),
+      );
       continue;
     }
 
     if (!entry.name.endsWith('.md')) continue;
 
     const source = readFileSync(`${directory}${entry.name}`, 'utf8');
-    if (/^draft:\s*true$/m.test(source)) {
-      paths.add(`${prefix}${entry.name.replace(/\.md$/, '')}`);
-    }
+
+    documents.push({
+      app: prefix.replace(/\/$/, ''),
+      path: `${prefix}${entry.name.replace(/\.md$/, '')}`,
+      draft: /^draft:\s*true$/m.test(source),
+    });
   }
 
-  return paths;
+  return documents;
 }
 
-const draftPaths = collectDraftPaths();
+const legalDocuments = collectLegalDocuments();
+const draftPaths = new Set(
+  legalDocuments.filter((document) => document.draft).map((document) => document.path),
+);
+
+for (const app of new Set(legalDocuments.map((document) => document.app))) {
+  const documents = legalDocuments.filter((document) => document.app === app);
+
+  if (documents.length > 0 && documents.every((document) => document.draft)) {
+    draftPaths.add(app);
+  }
+}
 
 export default defineConfig({
   site,
@@ -69,5 +86,12 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    resolve: {
+      // Mirror the `@/*` path mapping from tsconfig.json so Vite resolves the
+      // alias in Astro components, scripts, and tests alike.
+      alias: {
+        '@': fileURLToPath(new URL('./src/', import.meta.url)),
+      },
+    },
   },
 });

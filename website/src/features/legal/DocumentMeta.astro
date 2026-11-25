@@ -23,7 +23,8 @@ const formatDate = (date: Date): string => dateFormatter.format(date);
   <span class="inline-flex items-center gap-2">
     <CalendarClock class="size-4" stroke-width={1.75} aria-hidden="true" />
     <span>
-      Effective <time datetime={effectiveDate.toISOString()}>{formatDate(effectiveDate)}</time>
+      {draft ? 'Prepared' : 'Effective'}{' '}
+      <time datetime={effectiveDate.toISOString()}>{formatDate(effectiveDate)}</time>
     </span>
   </span>
   <span class="inline-flex items-center gap-2">

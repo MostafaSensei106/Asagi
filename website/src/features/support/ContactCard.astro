@@ -4,7 +4,7 @@ import { ArrowUpRight, Mail } from '@lucide/astro';
 interface Props {
   name: string;
   repository: string;
-  issues?: string;
+  issues?: string | undefined;
 }
 
 const { name, repository, issues } = Astro.props;
