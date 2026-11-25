@@ -10,12 +10,12 @@ flutter_launcher_icons:
   image_path: "assets/brand/kuymo-app-icon-1024.png"
   min_sdk_android: 30
   adaptive_icon_foreground_inset: 0
-  adaptive_icon_background: "#DDE9C6"
+  adaptive_icon_background: "#E3E8EB"
   adaptive_icon_foreground: "assets/icons/ic_launcher_foreground.png"
   # Android 13+ launchers recolor this layer when themed icons are enabled.
   adaptive_icon_monochrome: "assets/icons/ic_launcher_monochrome.png"
   web:
     generate: false
     image_path: "assets/brand/kuymo-app-icon-1024.png"
-    background_color: "#DDE9C6"
-    theme_color: "#284B3B"
+    background_color: "#E3E8EB"
+    theme_color: "#283D50"

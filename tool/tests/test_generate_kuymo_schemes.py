@@ -58,6 +58,17 @@ class SchemeGeneratorTest(unittest.TestCase):
         self.assertEqual(schemes.render('0095A9', value), schemes.render('0095A9', value))
         self.assertNotIn('background:', schemes.render('0095A9', value))
 
+    def test_brand_roles_keep_all_four_modes_accessible(self):
+        for mode in ('light', 'dark'):
+            for high in (False, True):
+                colors = schemes.brand_scheme(mode, 1.0 if high else 0.0)
+                schemes.audit(colors, mode, high)
+                self.assertNotEqual(colors['primary'], colors['secondary'])
+                if mode == 'light' and not high:
+                    self.assertEqual(colors['surface'], '#F5F1E8')
+                    self.assertEqual(colors['on_surface'], '#283D50')
+                    self.assertEqual(colors['primary'], '#C64B36')
+
     def test_generated_outputs_match(self):
         self.assertEqual(schemes.main(['--check']), 0)
 

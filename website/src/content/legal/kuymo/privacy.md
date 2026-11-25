@@ -97,12 +97,12 @@ processing or AI inference.
 When crash reporting and related diagnostic collection are enabled, Crashlytics and its
 supporting Firebase libraries may transmit the following technical information:
 
-| Information                                                                                                                                                        | Purpose                                                                                                 |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------- |
-| Crash reports, exception details, and stack traces                                                                                                                 | Locate and diagnose software failures.                                                                  |
-| Device and app metadata, including device model, operating system, app version, network connection type, and relevant application state                             | Understand the environment in which failures occur.                                                     |
-| Crashlytics installation UUID and Firebase installation identifiers                                                                                                | Distinguish app installations and measure the impact of failures without requiring a user account.      |
-| Session and reliability metrics, such as session start information, collected by supporting Firebase SDKs where active                                               | Measure stability and provide crash and quality metrics.                                                |
+| Information                                                                                                                             | Purpose                                                                                            |
+| --------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Crash reports, exception details, and stack traces                                                                                      | Locate and diagnose software failures.                                                             |
+| Device and app metadata, including device model, operating system, app version, network connection type, and relevant application state | Understand the environment in which failures occur.                                                |
+| Crashlytics installation UUID and Firebase installation identifiers                                                                     | Distinguish app installations and measure the impact of failures without requiring a user account. |
+| Session and reliability metrics, such as session start information, collected by supporting Firebase SDKs where active                  | Measure stability and provide crash and quality metrics.                                           |
 
 These records are not intended to include your video contents, AI conversation contents,
 passwords, or other unrelated personal information. Error details may contain contextual
@@ -219,8 +219,7 @@ the safeguards provided by the relevant service providers.
 
 ## 11. Children and teenagers
 
-Kuymo is intended for a general audience aged 13 and above, not specifically for children under
-13. Kuymo does not require users to create accounts, provide their date of birth, or submit
+Kuymo is intended for a general audience aged 13 and above, not specifically for children under 13. Kuymo does not require users to create accounts, provide their date of birth, or submit
 identifying information to use its local features. The developer does not knowingly solicit
 personal information from children under 13.
 

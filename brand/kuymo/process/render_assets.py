@@ -26,10 +26,10 @@ def main():
     render(MASTERS / 'kuymo-adaptive-foreground.svg', ROOT / 'assets/icons/ic_launcher_foreground.png', 432)
     foreground = (MASTERS / 'kuymo-adaptive-foreground.svg').read_text()
     mono = MASTERS / 'kuymo-adaptive-monochrome.svg'
-    mono.write_text(foreground.replace('#284B3B', '#000000'))
+    mono.write_text(foreground.replace('#283D50', '#000000'))
     render(mono, ROOT / 'assets/icons/ic_launcher_monochrome.png', 432)
     background = MASTERS / 'kuymo-icon-background.svg'
-    background.write_text('<svg xmlns="http://www.w3.org/2000/svg" width="432" height="432" viewBox="0 0 432 432"><path fill="#DDE9C6" d="M0 0H432V432H0Z"/></svg>')
+    background.write_text('<svg xmlns="http://www.w3.org/2000/svg" width="432" height="432" viewBox="0 0 432 432"><path fill="#E3E8EB" d="M0 0H432V432H0Z"/></svg>')
     render(background, ROOT / 'assets/icons/ic_launcher_background.png', 432)
     for name in ['kuymo-splash', 'kuymo-splash-dark']:
         render(MASTERS / f'{name}.svg', ROOT / f'assets/brand/{name}.png', 768)
@@ -44,11 +44,8 @@ def main():
         if 'adaptive' in source.stem or 'background' in source.stem:
             continue
         render(source, KIT / f'exports/{source.stem}-1024.png', 1024)
-    for size in [192, 512]:
-        render(MASTERS / 'kuymo-app-icon.svg', ROOT / f'web/icons/Icon-{size}.png', size)
-        render(MASTERS / 'kuymo-maskable-icon.svg', ROOT / f'web/icons/Icon-maskable-{size}.png', size)
+    # Flutter web assets have intentionally been removed; do not recreate them.
     render(MASTERS / 'kuymo-maskable-icon.svg', KIT / 'exports/web/maskable-512.png', 512)
-    shutil.copy(KIT / 'exports/web/favicon-32.png', ROOT / 'web/favicon.png')
 
 
 if __name__ == '__main__':

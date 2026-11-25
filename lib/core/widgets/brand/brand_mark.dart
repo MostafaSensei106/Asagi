@@ -24,7 +24,7 @@ final class BrandMark extends StatelessWidget {
     width: size,
     height: size,
     colorFilter: ColorFilter.mode(
-      color ?? Theme.of(context).colorScheme.primary,
+      color ?? Theme.of(context).colorScheme.onSurface,
       BlendMode.srcIn,
     ),
     semanticsLabel: decorative ? null : AppMetadata.name,

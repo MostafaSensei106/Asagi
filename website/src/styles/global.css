@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import '../../../brand/kuymo/tokens.css';
 @plugin '@tailwindcss/typography';
 
 /*
@@ -6,44 +7,43 @@
  * Keep the palette here as the single source of truth for the site.
  */
 @theme {
-  --color-pine-50: #eef4f0;
-  --color-pine-100: #d9e6de;
-  --color-pine-200: #b4cbbd;
-  --color-pine-300: #8bad9a;
-  --color-pine-400: #5f8a72;
-  --color-pine-500: #3e6b54;
-  --color-pine-600: #284b3b;
-  --color-pine-700: #213d30;
-  --color-pine-800: #1a3026;
-  --color-pine-900: #14241d;
-  --color-pine-950: #0c1712;
+  --color-pine-50: #f0f3f5;
+  --color-pine-100: #e3e8eb;
+  --color-pine-200: #c4cfd6;
+  --color-pine-300: #a1b2be;
+  --color-pine-400: #738d9f;
+  --color-pine-500: #49677e;
+  --color-pine-600: #283d50;
+  --color-pine-700: #1c303f;
+  --color-pine-800: #1a2b38;
+  --color-pine-900: #172530;
+  --color-pine-950: #101a22;
 
-  --color-matcha-50: #f2f6ee;
-  --color-matcha-100: #e2ecd9;
-  --color-matcha-200: #c6dab5;
-  --color-matcha-300: #a3c38b;
-  --color-matcha-400: #7ea864;
-  --color-matcha-500: #5f8b47;
-  --color-matcha-600: #4a6d37;
-  --color-matcha-700: #3b562d;
+  --color-matcha-50: #fdf2ee;
+  --color-matcha-100: #fbe0d8;
+  --color-matcha-200: #f4bfb0;
+  --color-matcha-300: #e99680;
+  --color-matcha-400: #d9755c;
+  --color-matcha-500: #c64b36;
+  --color-matcha-600: #a73c2a;
+  --color-matcha-700: #883020;
 
-  --color-mist-50: #f6f9ef;
-  --color-mist-100: #eef4e2;
-  --color-mist-200: #dde9c6;
-  --color-mist-300: #c9dda8;
-  --color-mist-400: #b2cc86;
+  --color-mist-50: #f7f8f9;
+  --color-mist-100: #eff2f4;
+  --color-mist-200: #e3e8eb;
+  --color-mist-300: #c4cfd6;
+  --color-mist-400: #a1b2be;
 
-  --color-paper: #faf8f1;
-  --color-apricot: #f4bc95;
-  --color-ink: #1e2d24;
+  --color-paper: #f5f1e8;
+  --color-apricot: #c64b36;
+  --color-ink: #283d50;
 
   --font-sans:
-    'Google Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, sans-serif;
+    'Google Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif;
   --font-arabic: 'Noto Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
   --font-mono:
-    ui-monospace, 'SFMono-Regular', 'SF Mono', Menlo, Consolas, 'Liberation Mono',
-    monospace;
+    ui-monospace, 'SFMono-Regular', 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -83,6 +83,18 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @font-face {
+  font-family: 'Google Sans';
+  src: url('../../assets/fonts/GoogleSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Google Sans';
+  src: url('../../assets/fonts/GoogleSans-Bold.ttf') format('truetype');
+  font-weight: 600 800;
+  font-display: swap;
+}
+@font-face {
   font-family: 'Noto Sans Arabic';
   src: url('../assets/fonts/NotoSansArabic-Regular.ttf') format('truetype');
   font-weight: 400;
@@ -114,43 +126,43 @@
 :root {
   color-scheme: light;
 
-  --ui-canvas: var(--color-paper);
-  --ui-surface: #fffdf7;
-  --ui-surface-muted: #f1eddf;
-  --ui-border: #e3dfce;
-  --ui-border-strong: #cfc9b2;
+  --ui-canvas: var(--kuymo-paper);
+  --ui-surface: #fffdf8;
+  --ui-surface-muted: #ece8df;
+  --ui-border: #ded9cf;
+  --ui-border-strong: #bdb6a9;
   --ui-fg: var(--color-ink);
-  --ui-fg-muted: #55665b;
+  --ui-fg-muted: #53616b;
   --ui-primary: var(--color-pine-600);
   --ui-primary-hover: var(--color-pine-700);
   --ui-primary-fg: #f8fbf5;
   --ui-accent: var(--color-mist-200);
-  --ui-accent-fg: #24371f;
+  --ui-accent-fg: #283d50;
   --ui-highlight: var(--color-apricot);
-  --ui-highlight-fg: #3b1f0c;
+  --ui-highlight-fg: #ffffff;
   --ui-ring: var(--color-matcha-500);
-  --ui-code-bg: #f1eddf;
+  --ui-code-bg: #ece8df;
 }
 
 .dark {
   color-scheme: dark;
 
-  --ui-canvas: #0d1712;
-  --ui-surface: #142219;
-  --ui-surface-muted: #1a2b20;
-  --ui-border: #2a3f32;
-  --ui-border-strong: #3d5947;
-  --ui-fg: #e9f0e7;
-  --ui-fg-muted: #a7bcaa;
-  --ui-primary: #b3d7a0;
-  --ui-primary-hover: #c9e5b8;
-  --ui-primary-fg: #122015;
-  --ui-accent: #2b4434;
-  --ui-accent-fg: #dcecd1;
-  --ui-highlight: #f4bc95;
-  --ui-highlight-fg: #3b1f0c;
-  --ui-ring: #9fc78c;
-  --ui-code-bg: #1a2b20;
+  --ui-canvas: #141e27;
+  --ui-surface: #1c2934;
+  --ui-surface-muted: #263541;
+  --ui-border: #3b4b58;
+  --ui-border-strong: #71808b;
+  --ui-fg: #f5f1e8;
+  --ui-fg-muted: #bbc6cc;
+  --ui-primary: #ffb5a4;
+  --ui-primary-hover: #ffd0c5;
+  --ui-primary-fg: #391006;
+  --ui-accent: #2d4252;
+  --ui-accent-fg: #e3e8eb;
+  --ui-highlight: #c64b36;
+  --ui-highlight-fg: #ffffff;
+  --ui-ring: #ffb5a4;
+  --ui-code-bg: #263541;
 }
 
 @theme inline {

@@ -46,32 +46,36 @@ const publishedApps = apps.filter((app) => !app.draft);
       </p>
     </div>
 
-    {
-      publishedApps.map((app) => (
-        <nav aria-labelledby={`footer-${app.appId}`}>
-          <h2 id={`footer-${app.appId}`} class="text-xs font-semibold tracking-[0.14em] text-muted uppercase">
-            {app.name}
-          </h2>
-          <ul class="mt-4 space-y-2.5">
+    {publishedApps.map((app) => (
+      <nav aria-labelledby={`footer-${app.appId}`}>
+        <h2
+          id={`footer-${app.appId}`}
+          class="text-xs font-semibold tracking-[0.14em] text-muted uppercase"
+        >
+          {app.name}
+        </h2>
+        <ul class="mt-4 space-y-2.5">
+          <li>
+            <a
+              href={withBase(`/${app.appId}`)}
+              class="text-sm text-muted transition-colors hover:text-fg"
+            >
+              Overview
+            </a>
+          </li>
+          {app.documents.map((document) => (
             <li>
-              <a href={withBase(`/${app.appId}`)} class="text-sm text-muted transition-colors hover:text-fg">
-                Overview
+              <a
+                href={withBase(document.href)}
+                class="text-sm text-muted transition-colors hover:text-fg"
+              >
+                {document.label}
               </a>
             </li>
-            {app.documents.map((document) => (
-              <li>
-                <a
-                  href={withBase(document.href)}
-                  class="text-sm text-muted transition-colors hover:text-fg"
-                >
-                  {document.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      ))
-    }
+          ))}
+        </ul>
+      </nav>
+    ))}
 
     <nav aria-labelledby="footer-project">
       <h2 id="footer-project" class="text-xs font-semibold tracking-[0.14em] text-muted uppercase">
@@ -116,10 +120,11 @@ const publishedApps = apps.filter((app) => !app.draft);
   </div>
 
   <div class="border-t border-border-base">
-    <div
-      class="page-shell flex flex-col gap-2 py-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between"
-    >
-      <p>&copy; {year} {siteConfig.author.name}. Content is provided for transparency, not legal advice.</p>
+    <div class="page-shell flex flex-col gap-2 py-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+      <p>
+        &copy; {year} {siteConfig.author.name}. Content is provided for transparency, not legal
+        advice.
+      </p>
       <p>Last reviewed when each document was updated.</p>
     </div>
   </div>

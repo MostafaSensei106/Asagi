@@ -12,7 +12,8 @@ const site = (process.env.SITE_URL ?? 'https://legal.yourdomain.com').replace(/\
  * Sub-path the site is served from. Keep `/` for a dedicated domain and use
  * `/repository-name` for a GitHub Pages project site.
  */
-const base = `/${(process.env.BASE_PATH ?? '').replace(/^\/+|\/+$/g, '')}`.replace(/\/$/, '') || '/';
+const base =
+  `/${(process.env.BASE_PATH ?? '').replace(/^\/+|\/+$/g, '')}`.replace(/\/$/, '') || '/';
 
 const contentDirectory = fileURLToPath(new URL('./src/content/legal/', import.meta.url));
 

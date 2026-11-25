@@ -1,8 +1,10 @@
 :root {
-  --kuymo-pine: #284B3B;
-  --kuymo-matcha: #527A46;
-  --kuymo-mist: #DDE9C6;
-  --kuymo-paper: #FAF8F1;
-  --kuymo-apricot: #F4BC95;
-  --kuymo-ink: #1E2D24;
+  --kuymo-pine: #283D50;
+  --kuymo-matcha: #C64B36;
+  --kuymo-mist: #E3E8EB;
+  --kuymo-paper: #F5F1E8;
+  --kuymo-apricot: #C64B36;
+  --kuymo-ink: #283D50;
+  --kuymo-indigo: #283D50;
+  --kuymo-vermilion: #C64B36;
 }

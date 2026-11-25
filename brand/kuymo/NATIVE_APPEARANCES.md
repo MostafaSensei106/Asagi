@@ -8,7 +8,7 @@ was needed.
 | --- | --- | --- |
 | Android launcher | Ordinary icon; Android 13+ themed icon when enabled in a compatible launcher | Opaque square, adaptive layers and monochrome layer |
 | iOS launcher | User's Home Screen appearance; dark/tinted on iOS 18+ | Opaque default, transparent dark, grayscale tinted |
-| Android native splash | Device light/dark setting, including separate Android 12+ resources | Pine on Paper / white on Ink |
+| Android native splash | Device light/dark setting, including separate Android 12+ resources | Indigo on warm paper / white on indigo |
 | iOS native splash | Device light/dark setting | Light/dark images and background asset appearances |
 
 The native splash precedes Flutter and cannot read the app's saved theme setting
@@ -37,6 +37,7 @@ transparency for the system background, and the tinted cut is already grayscale.
 ```sh
 python3 brand/kuymo/process/build_identity.py
 python3 brand/kuymo/process/render_assets.py
+python3 tool/refresh_brand_delivery.py
 dart run flutter_launcher_icons
 dart run flutter_native_splash:create
 python3 tool/verify_native_branding.py

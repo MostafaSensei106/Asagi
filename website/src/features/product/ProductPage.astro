@@ -1,0 +1,296 @@
+---
+import {
+  ArrowUpRight,
+  ArrowRight,
+  ScanLine,
+  SlidersHorizontal,
+  ShieldCheck,
+  MoveDown,
+  Check,
+} from '@lucide/astro';
+import ProductLayout from './ProductLayout.astro';
+import CompressionDemo from './CompressionDemo.astro';
+import { content, localePath, type Section } from './locales';
+import { withBase } from '@/lib/paths';
+interface Props {
+  locale: string;
+  section: Section;
+}
+const { locale, section } = Astro.props;
+const { t, copy, rtl } = content(locale);
+const features = [
+  {
+    slug: 'features/target-size' as const,
+    icon: ScanLine,
+    title: t('targetSizeOptimizer'),
+    body:
+      locale.startsWith('en') || locale.startsWith('ar')
+        ? t('chooseResolutionBitrateAndOutputFormatBeforeYouStart')
+        : t('youSetTheTargetSizeManuallyTheEngineWillApplyTheHighestPossibleQualityWithinThatCap'),
+    detail: t('theSelectedTargetMayReduceVideoQuality'),
+    number: '01',
+  },
+  {
+    slug: 'features/sharing' as const,
+    icon: SlidersHorizontal,
+    title: t('targetPlatformOrSize'),
+    body: t('chooseResolutionBitrateAndOutputFormatBeforeYouStart'),
+    detail: t('compareTheBeforeAndAfterSizeThenSaveOrShareTheResult'),
+    number: '02',
+  },
+  {
+    slug: 'features/on-device' as const,
+    icon: ShieldCheck,
+    title: t('onDeviceProcessingLabel'),
+    body: t('learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone'),
+    detail: t('yourCompressedVideoHistory'),
+    number: '03',
+  },
+];
+const selected = features.find((feature) => feature.slug === section);
+const download = section === 'download';
+const home = section === '';
+const title =
+  selected?.title ?? (download ? copy.download : home ? t('brandTagline') : copy.features);
+const description = selected?.body ?? t('compressVideosPrivatelyOnYourDevice');
+const steps = [t('pickVideo'), t('targetSizeMB'), t('saveToGallery')];
+---
+
+<ProductLayout locale={locale} section={section} title={title} description={description}>
+  {home ? (
+    <>
+      <section class="product-shell hero">
+        <div class="hero-copy">
+          <p class="product-eyebrow">
+            <span></span>
+            {copy.eyebrow}
+          </p>
+          <h1>{t('brandTagline')}</h1>
+          <p class="hero-description">{t('compressVideosPrivatelyOnYourDevice')}</p>
+          <div class="hero-actions">
+            <a class="product-button" href={withBase(localePath(locale, 'download'))}>
+              {copy.download}
+              <ArrowUpRight size={20} aria-hidden="true" />
+            </a>
+            <a class="text-link" href={withBase(localePath(locale, 'features'))}>
+              {copy.features}
+              <ArrowRight size={18} class={rtl ? 'rtl-arrow' : ''} aria-hidden="true" />
+            </a>
+          </div>
+          <p class="release-note">
+            <span aria-hidden="true">◉</span> {copy.preview}
+          </p>
+          <div class="hero-index" aria-hidden="true">
+            <span>01 — 03</span>
+            <span class="index-line"></span>
+            <MoveDown size={17} />
+          </div>
+        </div>
+        <div class="hero-art">
+          <span class="orbit-label" aria-hidden="true">
+            余白 / KUYMO
+          </span>
+          <CompressionDemo locale={locale} />
+          <div class="art-caption">
+            <span aria-hidden="true">↳</span>
+            <p>{copy.moments}</p>
+          </div>
+        </div>
+      </section>
+      <div class="promise-strip">
+        <div class="product-shell">
+          {[t('targetSize'), t('onDeviceProcessingLabel'), t('saveToGallery')].map((label) => (
+            <span>
+              <Check size={16} aria-hidden="true" />
+              {label}
+            </span>
+          ))}
+        </div>
+      </div>
+    </>
+  ) : (
+    <section class="product-shell page-intro">
+      <p class="product-eyebrow">
+        <span></span>KUYMO / {selected?.number ?? (download ? '04' : '01 — 03')}
+      </p>
+      <h1>{title}</h1>
+      <p>{download ? copy.releases : description}</p>
+    </section>
+  )}
+
+  {download ? (
+    <section class="product-shell download-section" data-reveal>
+      <div class="download-tile">
+        <img src={withBase('/branding/icon-192.png')} alt="Kuymo" width="120" height="120" />
+        <p class="product-eyebrow">ANDROID 11+</p>
+        <h2>{copy.calm}</h2>
+        <p>{t('compressionAndroidOnly')}</p>
+        <a class="product-button" href="https://github.com/MostafaSensei106/Kuymo/releases">
+          GitHub Releases
+          <ArrowUpRight size={20} aria-hidden="true" />
+        </a>
+        <p class="release-note">{copy.preview}</p>
+      </div>
+      <div class="download-info">
+        <h2>{copy.how}</h2>
+        <p>{copy.releases}</p>
+        <p>{t('theSelectedTargetMayReduceVideoQuality')}</p>
+        <a class="text-link" href={withBase(localePath(locale, 'features'))}>
+          {copy.features}
+          <ArrowRight size={18} aria-hidden="true" />
+        </a>
+      </div>
+    </section>
+  ) : selected ? (
+    <>
+      <section class="product-shell detail-grid" data-reveal>
+        <div>
+          <h2>{selected.body}</h2>
+          <p>{selected.detail}</p>
+          {section === 'features/sharing' && (
+            <div class="platform-list">
+              {['WhatsApp', 'Discord', 'Instagram Reels', 'TikTok', 'YouTube Shorts', 'Email'].map(
+                (platform) => (
+                  <span>{platform}</span>
+                ),
+              )}
+            </div>
+          )}
+          {section === 'features/on-device' && (
+            <p>{t('compareTheBeforeAndAfterSizeThenSaveOrShareTheResult')}</p>
+          )}
+          <p>{t('theSelectedTargetMayReduceVideoQuality')}</p>
+          <a class="product-button" href={withBase(localePath(locale, 'download'))}>
+            {copy.download}
+            <ArrowUpRight size={18} aria-hidden="true" />
+          </a>
+        </div>
+        <CompressionDemo locale={locale} />
+      </section>
+    </>
+  ) : (
+    <section class="product-shell features-section" data-reveal>
+      <div class="section-heading">
+        <div>
+          <p class="product-eyebrow">01 / KUYMO</p>
+          <h2>{copy.calm}</h2>
+        </div>
+        <p>{copy.moments}</p>
+      </div>
+      <div class="feature-grid">
+        {features.map((feature) => (
+          <a class="feature-card" href={withBase(localePath(locale, feature.slug))}>
+            <div class="feature-top">
+              <feature.icon size={28} stroke-width={1.3} aria-hidden="true" />
+              <span>{feature.number}</span>
+            </div>
+            <h3>{feature.title}</h3>
+            <p>{feature.body}</p>
+            <span class="card-arrow" aria-hidden="true">
+              ↗
+            </span>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {!download && (
+    <>
+      <section class="workflow-section">
+        <div class="product-shell" data-reveal>
+          <div class="section-heading">
+            <div>
+              <p class="product-eyebrow">02 / KUYMO</p>
+              <h2>{copy.how}</h2>
+            </div>
+            <p>{t('learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone')}</p>
+          </div>
+          <ol class="workflow">
+            {steps.map((step, index) => (
+              <li>
+                <span class="step-number">0{index + 1}</span>
+                <h3>{step}</h3>
+                <p>
+                  {
+                    [
+                      t('pickAVideoFromYourGalleryToStartCompressing'),
+                      t('theSelectedTargetMayReduceVideoQuality'),
+                      t('compareTheBeforeAndAfterSizeThenSaveOrShareTheResult'),
+                    ][index]
+                  }
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+      {home && (
+        <section class="product-shell screen-section" data-reveal>
+          <div class="screen-stack">
+            <img
+              src={withBase(`/product/home-${rtl ? 'ar' : 'en'}-light.png`)}
+              alt={t('welcomeToKuymo')}
+              width="390"
+              height="844"
+              loading="lazy"
+              class="screen-light"
+            />
+            <img
+              src={withBase(`/product/home-${rtl ? 'ar' : 'en'}-dark.png`)}
+              alt={t('welcomeToKuymo')}
+              width="390"
+              height="844"
+              loading="lazy"
+              class="screen-dark"
+            />
+          </div>
+          <div>
+            <p class="product-eyebrow">03 / KUYMO</p>
+            <h2>{copy.moments}</h2>
+            <p>{t('themeAndAppLanguage')}</p>
+            <p>{t('appLanguageAndTextDirection')}</p>
+            <a class="text-link" href={withBase(localePath(locale, 'features/on-device'))}>
+              {t('onDeviceProcessingLabel')}
+              <ArrowUpRight size={18} aria-hidden="true" />
+            </a>
+          </div>
+        </section>
+      )}
+      <section class="product-shell faq-section" data-reveal>
+        <div class="section-heading">
+          <h2>{t('faq')}</h2>
+          <p>{t('compressionHelpDescription')}</p>
+        </div>
+        <details>
+          <summary>{t('targetSize')}</summary>
+          <p>{t('theSelectedTargetMayReduceVideoQuality')}</p>
+        </details>
+        <details>
+          <summary>{t('onDeviceProcessingLabel')}</summary>
+          <p>{t('learnHowKuymoCompressesYourVideosWithoutEverLeavingYourPhone')}</p>
+        </details>
+        <details>
+          <summary>{copy.download}</summary>
+          <p>
+            {t('compressionAndroidOnly')} {copy.releases}
+          </p>
+        </details>
+      </section>
+      <section class="product-shell cta-section" data-reveal>
+        <span class="cta-seal" aria-hidden="true">
+          余白
+        </span>
+        <div>
+          <p class="product-eyebrow">KUYMO</p>
+          <h2>{t('brandTagline')}</h2>
+          <p>{copy.preview}</p>
+        </div>
+        <a class="product-button" href={withBase(localePath(locale, 'download'))}>
+          {copy.download}
+          <ArrowUpRight size={20} aria-hidden="true" />
+        </a>
+      </section>
+    </>
+  )}
+</ProductLayout>

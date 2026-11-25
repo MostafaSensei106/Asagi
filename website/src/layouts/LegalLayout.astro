@@ -53,7 +53,9 @@ const jsonLd = [
     <nav aria-label="Breadcrumb" class="no-print mb-8">
       <ol class="flex flex-wrap items-center gap-1.5 text-sm text-muted">
         <li>
-          <a href={withBase('/')} class="transition-colors hover:text-fg">All apps</a>
+          <a href={withBase('/')} class="transition-colors hover:text-fg">
+            All apps
+          </a>
         </li>
         <li aria-hidden="true">
           <ChevronRight class="size-4 text-border-strong" stroke-width={2} />
@@ -66,7 +68,9 @@ const jsonLd = [
         <li aria-hidden="true">
           <ChevronRight class="size-4 text-border-strong" stroke-width={2} />
         </li>
-        <li aria-current="page" class="font-medium text-fg">{doc.label}</li>
+        <li aria-current="page" class="font-medium text-fg">
+          {doc.label}
+        </li>
       </ol>
     </nav>
 
@@ -106,20 +110,18 @@ const jsonLd = [
           </div>
         </header>
 
-        {
-          data.summary && (
-            <aside
-              aria-label="At a glance"
-              class="mt-8 rounded-lg border border-matcha-300/70 bg-mist-100 p-5 text-sm leading-6 text-pine-800 dark:border-matcha-700 dark:bg-accent dark:text-accent-fg sm:p-6"
-            >
-              <h2 class="flex items-center gap-2 text-xs font-semibold tracking-[0.14em] uppercase">
-                <FileText class="size-4" stroke-width={2} aria-hidden="true" />
-                At a glance
-              </h2>
-              <p class="mt-2 text-[0.95rem] leading-7">{data.summary}</p>
-            </aside>
-          )
-        }
+        {data.summary && (
+          <aside
+            aria-label="At a glance"
+            class="mt-8 rounded-lg border border-matcha-300/70 bg-mist-100 p-5 text-sm leading-6 text-pine-800 dark:border-matcha-700 dark:bg-accent dark:text-accent-fg sm:p-6"
+          >
+            <h2 class="flex items-center gap-2 text-xs font-semibold tracking-[0.14em] uppercase">
+              <FileText class="size-4" stroke-width={2} aria-hidden="true" />
+              At a glance
+            </h2>
+            <p class="mt-2 text-[0.95rem] leading-7">{data.summary}</p>
+          </aside>
+        )}
 
         <div class="prose mt-8">
           <Content />
@@ -135,37 +137,35 @@ const jsonLd = [
       <aside class="min-w-0 xl:sticky xl:top-24 xl:self-start">
         <TableOfContents headings={headings} />
 
-        {
-          otherDocuments.length > 0 && (
-            <div class="no-print mt-10 border-t border-border-base pt-6">
-              <h2 class="text-xs font-semibold tracking-[0.14em] text-muted uppercase">
-                Also for {appName}
-              </h2>
-              <ul class="mt-4 space-y-2">
-                {otherDocuments.map((sibling) => (
-                  <li>
-                    <a
-                      href={withBase(sibling.href)}
-                      class="inline-flex items-center gap-2 text-sm font-medium"
-                    >
-                      {sibling.label}
-                      <ChevronRight class="size-4" stroke-width={2} aria-hidden="true" />
-                    </a>
-                  </li>
-                ))}
+        {otherDocuments.length > 0 && (
+          <div class="no-print mt-10 border-t border-border-base pt-6">
+            <h2 class="text-xs font-semibold tracking-[0.14em] text-muted uppercase">
+              Also for {appName}
+            </h2>
+            <ul class="mt-4 space-y-2">
+              {otherDocuments.map((sibling) => (
                 <li>
                   <a
-                    href={withBase(`/${doc.appId}`)}
-                    class="inline-flex items-center gap-2 text-sm font-medium text-muted hover:text-fg"
+                    href={withBase(sibling.href)}
+                    class="inline-flex items-center gap-2 text-sm font-medium"
                   >
-                    All {appName} documents
+                    {sibling.label}
                     <ChevronRight class="size-4" stroke-width={2} aria-hidden="true" />
                   </a>
                 </li>
-              </ul>
-            </div>
-          )
-        }
+              ))}
+              <li>
+                <a
+                  href={withBase(`/${doc.appId}`)}
+                  class="inline-flex items-center gap-2 text-sm font-medium text-muted hover:text-fg"
+                >
+                  All {appName} documents
+                  <ChevronRight class="size-4" stroke-width={2} aria-hidden="true" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        )}
       </aside>
     </div>
   </div>

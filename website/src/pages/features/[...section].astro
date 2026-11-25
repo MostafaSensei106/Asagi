@@ -1,0 +1,15 @@
+---
+import ProductPage from '@/features/product/ProductPage.astro';
+import { sections } from '@/features/product/locales';
+export function getStaticPaths() {
+  return sections
+    .filter((section) => section.startsWith('features'))
+    .map((section) => ({
+      params: { section: section.replace(/^features\/?/, '') || undefined },
+      props: { section },
+    }));
+}
+const { section } = Astro.props;
+---
+
+<ProductPage locale="en" section={section} />

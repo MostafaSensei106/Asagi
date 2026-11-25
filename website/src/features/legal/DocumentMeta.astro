@@ -35,18 +35,21 @@ const formatDate = (date: Date): string => dateFormatter.format(date);
   </span>
 </div>
 
-{
-  draft && (
-    <div class="mt-5 flex items-start gap-3 rounded-lg border border-apricot bg-apricot/25 p-4 text-sm text-fg">
-      <ShieldAlert class="mt-0.5 size-5 shrink-0 text-highlight-fg" stroke-width={1.75} aria-hidden="true" />
-      <div>
-        <Badge tone="highlight" class="mb-2 align-middle">Draft</Badge>
-        <p>
-          This document is a placeholder for an upcoming app. It is not in force yet, is
-          excluded from search engines and the sitemap, and is not linked from public
-          listings.
-        </p>
-      </div>
+{draft && (
+  <div class="mt-5 flex items-start gap-3 rounded-lg border border-apricot bg-apricot/25 p-4 text-sm text-fg">
+    <ShieldAlert
+      class="mt-0.5 size-5 shrink-0 text-highlight-fg"
+      stroke-width={1.75}
+      aria-hidden="true"
+    />
+    <div>
+      <Badge tone="highlight" class="mb-2 align-middle">
+        Draft
+      </Badge>
+      <p>
+        This document is a placeholder for an upcoming app. It is not in force yet, is excluded from
+        search engines and the sitemap, and is not linked from public listings.
+      </p>
     </div>
-  )
-}
+  </div>
+)}

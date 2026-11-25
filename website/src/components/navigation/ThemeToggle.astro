@@ -28,10 +28,7 @@ import { Moon, Sun } from '@lucide/astro';
 
     const dark = isDark();
     button.setAttribute('aria-pressed', String(dark));
-    button.setAttribute(
-      'aria-label',
-      dark ? 'Switch to light theme' : 'Switch to dark theme',
-    );
+    button.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
   }
 
   button?.addEventListener('click', () => {

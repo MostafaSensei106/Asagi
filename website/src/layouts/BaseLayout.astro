@@ -56,8 +56,7 @@ const navApps = apps.map((app) => ({ appId: app.appId, name: app.name }));
           const stored = localStorage.getItem('kuymo-theme');
           const dark =
             stored === 'dark' ||
-            (stored === null &&
-              window.matchMedia('(prefers-color-scheme: dark)').matches);
+            (stored === null && window.matchMedia('(prefers-color-scheme: dark)').matches);
 
           document.documentElement.classList.toggle('dark', dark);
           document.documentElement.style.colorScheme = dark ? 'dark' : 'light';

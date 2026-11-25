@@ -64,38 +64,25 @@ the application's corner radius; store icons are delivered as opaque squares.
 
 ## Color and typography
 
-| Token | sRGB | Use |
+| Family | sRGB | Use |
 | --- | --- | --- |
-| Pine | #284B3B | Main artwork and dark brand panels |
-| Matcha | #527A46 | Material color generation seed |
-| Mist | #DDE9C6 | Brand tile and icon background |
-| Paper | #FAF8F1 | Presentation background |
-| Apricot | #F4BC95 | Supporting illustration accent |
-| Ink | #1E2D24 | Brand text and dark splash |
+| Warm paper | #F5F1E8 | About 60%: calm light backgrounds |
+| Ink indigo | #283D50 | About 30%: logo, type, structure |
+| Vermilion | #C64B36 | About 10%: primary actions and highlights |
 
-Use Pine on Mist/Paper and white on Pine for brand art. Apricot is a supporting
-surface, not a text or status color. UI controls use semantic ColorScheme roles
-rather than fixed artwork hex values. The default Auto palette uses Tonal Spot for a softer Matcha treatment.
-All 40 existing Material palette/brightness/
-contrast combinations were regenerated from Matcha; user choices remain available.
-Use semantic error/warning/success signals rather than brand color alone.
+The 60–30–10 split is a visual guide, not a pixel quota. Pale blue-grey
+#E3E8EB supports icon tiles. Use white on vermilion buttons, ink on paper,
+and warm paper on indigo panels. Never use the accent as the only status cue.
+Legacy token names (`pine`, `matcha`, `mist`, `apricot`) remain compatible aliases;
+they now refer to the Japanese palette, not green families.
 
-UI: Google Sans regular 400, medium 500, semibold 600, bold 700. Arabic fallback:
-Noto Sans Arabic regular 400, medium 500, bold 700. Use sentence case, clear
-headings and comfortable line spacing. Allow text scaling and RTL wrapping;
-do not force Latin tracking onto Arabic. Both fonts ship with their SIL OFL
-licenses under `assets/fonts/`; wordmark outlines have no runtime font dependency.
+Auto combines separately generated vermilion primary roles, indigo secondary
+roles and warm neutral surfaces. Each family keeps its paired foregrounds,
+fixed tones and high-contrast values. Other Material variants retain their IDs
+and are regenerated from the indigo seed; saved preferences remain compatible.
 
-Spacing: 4, 8, 12, 16, 24, 32, 48 px. Corners: 8, 12, 20, 24 px. Preserve at
-least 48 px touch targets. A folded tile pattern may support empty states or
-marketing surfaces; keep it behind content and avoid turning it into a fake
-progress indicator. Motion must respect reduced-motion preferences if added.
-
-These artwork values are sRGB. For print, convert using the printer's actual
-ICC profile and approve a proof; no Pantone or universal CMYK match is claimed.
-
-See [native light/dark setup](NATIVE_APPEARANCES.md) for platform behavior,
-official sources and regeneration.
+Google Sans and Noto Sans Arabic remain unchanged. The OFL licenses ship with
+the fonts. Small marks, reversed artwork and monochrome geometry are unchanged.
 
 ## Application integration
 
@@ -119,20 +106,22 @@ From the repository root:
 
 ```sh
 python3 brand/kuymo/process/build_identity.py
+python3 brand/kuymo/process/render_assets.py
 python3 tool/generate_kuymo_schemes.py
 python3 -m unittest discover -s tool/tests
-flutter gen-l10n
 dart run flutter_launcher_icons
 dart run flutter_native_splash:create
 flutter analyze
 flutter test --no-pub
 flutter test --no-pub test/brand_identity_test.dart --dart-define=KUYMO_CAPTURE=true
+python3 brand/kuymo/process/build_readme_banner.py
+python3 tool/refresh_brand_delivery.py
 ```
 
 The vector builder creates SVG masters and portable tokens. Runtime PNG assets
 must also be rendered from those masters before running platform generators;
-see `process/render_assets.py`. Web metadata/icons are maintained manually
-because this repository currently has no web index entrypoint.
+see `process/render_assets.py`. The delivery refresher synchronizes website icons, social artwork and app
+captures. It does not recreate the removed Flutter web assets.
 
 Read [validation](VALIDATION.md) for checks and platform limits. Naming research
 is in [NAMING.md](../rebrand/NAMING.md); it is research, not trademark clearance.

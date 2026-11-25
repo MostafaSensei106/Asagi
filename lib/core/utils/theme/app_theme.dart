@@ -3,7 +3,7 @@ import 'package:material_ui/material_ui.dart';
 import '../../constants/app_config.dart';
 import 'generated_color_schemes.dart';
 
-/// Complete palettes generated offline from Kuymo's single HCT source color.
+/// Offline Material palettes; Auto combines Kuymo's three brand families.
 enum KuymoColorSchemeVariant {
   auto,
   tonalSpot,

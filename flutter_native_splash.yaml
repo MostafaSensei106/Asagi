@@ -1,19 +1,19 @@
 # Regenerate with: dart run flutter_native_splash:create
 flutter_native_splash:
-  color: "#FAF8F1"
-  # color_dark: "#1E2D24"
+  color: "#F5F1E8"
+  color_dark: "#283D50"
   image: assets/brand/kuymo-splash.png
-  # image_dark: assets/brand/kuymo-splash-dark.png
+  image_dark: assets/brand/kuymo-splash-dark.png
   # 768px artwork is a 192 logical-pixel canvas at 4x density.
   android_gravity: center
   ios_content_mode: center
   android: true
   # No icon background: 1152px canvas, content inside a 768px circle.
   android_12:
-    color: "#FAF8F1"
-    #   color_dark: "#1E2D24"
+    color: "#F5F1E8"
+    color_dark: "#283D50"
     image: assets/brand/kuymo-splash-android12.png
-  #  image_dark: assets/brand/kuymo-splash-android12-dark.png
+    image_dark: assets/brand/kuymo-splash-android12-dark.png
   ios: true
   web: false
   fullscreen: false

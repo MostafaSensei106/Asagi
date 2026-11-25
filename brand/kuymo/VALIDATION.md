@@ -75,3 +75,21 @@ Verification: analyzer clean; 91 Flutter tests, 10 Kotlin planner tests and
 8 palette-generator tests passed. Android arm64 debug APK built with the new
 application ID. iOS configuration was updated without a Linux-side Xcode build.
 This is a new installation identity; prior app data is not migrated.
+
+## Japanese palette and product website — 26 November 2026
+
+- Kept the approved mark geometry and type. Updated paper/indigo/vermilion
+  artwork, portable tokens, Android/iOS icons and light/dark splash resources.
+- All 40 generated Material palettes pass pair/outline contrast and ordered
+  surface audits. Nine generator tests and 14 Flutter theme/brand tests pass.
+- Flutter analyzer passes; Android arm64 debug APK builds successfully.
+- Native asset verifier passes (safe circles, iOS dark/tinted and splash selectors).
+- Astro builds 229 static pages covering all 37 ARB locales, including regional
+  variants. Existing legal links remain available.
+- 43 product browser tests pass on both `/` and `/Kuymo`; they cover each locale and feature route, mobile overflow,
+  images, theme persistence, slider interaction, reduced motion and WCAG AA
+  checks in light/dark English, Arabic, Japanese and Traditional Chinese.
+- Desktop, Arabic-mobile and Japanese-mobile captures are in `presentation/`.
+  Artwork and small/reversed mark inspection sheets were refreshed.
+- iOS assets were verified on Linux; Xcode/device validation was not performed.
+  Website translations have not had native-speaker editorial review.

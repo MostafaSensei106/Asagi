@@ -16,7 +16,8 @@ interface Props {
 const { apps = [] } = Astro.props;
 
 const links = [
-  { label: 'All apps', href: '/' },
+  { label: 'Product', href: '/' },
+  { label: 'Legal', href: '/legal/' },
   ...apps.map((app) => ({ label: app.name, href: `/${app.appId}` })),
 ];
 
@@ -24,13 +25,13 @@ const currentPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
 const isActive = (href: string): boolean => {
   const target = href.replace(/\/+$/, '') || '/';
 
-  return target === '/' ? currentPath === withBase('/').replace(/\/+$/, '') : currentPath.startsWith(withBase(target));
+  return target === '/'
+    ? currentPath === withBase('/').replace(/\/+$/, '')
+    : currentPath.startsWith(withBase(target));
 };
 ---
 
-<header
-  class="sticky top-0 z-50 border-b border-border-base bg-canvas/85 backdrop-blur-md supports-[backdrop-filter]:bg-canvas/70"
->
+<header class="sticky top-0 z-50 border-b border-border-base bg-canvas/85 backdrop-blur-md supports-[backdrop-filter]:bg-canvas/70">
   <div class="page-shell flex h-16 items-center justify-between gap-4">
     <a
       href={withBase('/')}
@@ -60,22 +61,20 @@ const isActive = (href: string): boolean => {
     </a>
 
     <nav class="hidden items-center gap-1 md:flex" aria-label="Primary">
-      {
-        links.map((link) => (
-          <a
-            href={withBase(link.href)}
-            aria-current={isActive(link.href) ? 'page' : undefined}
-            class:list={[
-              'rounded-md px-3 py-2 text-sm font-medium transition-colors',
-              isActive(link.href)
-                ? 'bg-accent text-accent-fg'
-                : 'text-muted hover:bg-surface-muted hover:text-fg',
-            ]}
-          >
-            {link.label}
-          </a>
-        ))
-      }
+      {links.map((link) => (
+        <a
+          href={withBase(link.href)}
+          aria-current={isActive(link.href) ? 'page' : undefined}
+          class:list={[
+            'rounded-md px-3 py-2 text-sm font-medium transition-colors',
+            isActive(link.href)
+              ? 'bg-accent text-accent-fg'
+              : 'text-muted hover:bg-surface-muted hover:text-fg',
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
       <a
         href="https://github.com/MostafaSensei106/Kuymo"
         class="ml-1 inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium text-muted transition-colors hover:bg-surface-muted hover:text-fg"
@@ -100,26 +99,22 @@ const isActive = (href: string): boolean => {
         >
           <Menu class="size-5" stroke-width={1.75} aria-hidden="true" />
         </summary>
-        <div
-          class="absolute end-0 top-12 z-50 w-60 rounded-lg border border-border-base bg-surface p-2 shadow-lifted"
-        >
+        <div class="absolute end-0 top-12 z-50 w-60 rounded-lg border border-border-base bg-surface p-2 shadow-lifted">
           <nav aria-label="Mobile" class="flex flex-col">
-            {
-              links.map((link) => (
-                <a
-                  href={withBase(link.href)}
-                  aria-current={isActive(link.href) ? 'page' : undefined}
-                  class:list={[
-                    'rounded-md px-3 py-2 text-sm font-medium transition-colors',
-                    isActive(link.href)
-                      ? 'bg-accent text-accent-fg'
-                      : 'text-muted hover:bg-surface-muted hover:text-fg',
-                  ]}
-                >
-                  {link.label}
-                </a>
-              ))
-            }
+            {links.map((link) => (
+              <a
+                href={withBase(link.href)}
+                aria-current={isActive(link.href) ? 'page' : undefined}
+                class:list={[
+                  'rounded-md px-3 py-2 text-sm font-medium transition-colors',
+                  isActive(link.href)
+                    ? 'bg-accent text-accent-fg'
+                    : 'text-muted hover:bg-surface-muted hover:text-fg',
+                ]}
+              >
+                {link.label}
+              </a>
+            ))}
             <a
               href="https://github.com/MostafaSensei106/Kuymo"
               class="mt-1 flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium text-muted transition-colors hover:bg-surface-muted hover:text-fg"

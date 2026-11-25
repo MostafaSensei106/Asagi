@@ -69,24 +69,20 @@ void main() {
     },
   );
 
-  test('auto uses the approved Kuymo Matcha seed', () {
-    expect(kuymoSeedColor, const Color(0xFF527A46));
-    for (final brightness in Brightness.values) {
-      for (final high in [false, true]) {
-        expect(
-          matugenColorScheme(
-            variant: 'auto',
-            brightness: brightness,
-            highContrast: high,
-          ),
-          matugenColorScheme(
-            variant: 'tonalSpot',
-            brightness: brightness,
-            highContrast: high,
-          ),
-        );
-      }
-    }
+  test('auto uses the Japanese palette with independently paired accents', () {
+    expect(kuymoSeedColor, const Color(0xFF283D50));
+    final light = AppTheme.light().colorScheme;
+    expect(light.surface, const Color(0xFFF5F1E8));
+    expect(light.primary, const Color(0xFFC64B36));
+    expect(light.onSurface, const Color(0xFF283D50));
+    expect(
+      light.primary,
+      isNot(
+        AppTheme.light(variant: KuymoColorSchemeVariant.tonalSpot)
+            .colorScheme
+            .primary,
+      ),
+    );
     final monochrome = AppTheme.dark(
       variant: KuymoColorSchemeVariant.monochrome,
     ).colorScheme;

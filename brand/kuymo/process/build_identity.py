@@ -10,12 +10,12 @@ from fontTools.ttLib import TTFont
 ROOT = Path(__file__).resolve().parents[3]
 KIT = ROOT / 'brand/kuymo'
 MASTERS = KIT / 'masters'
-PINE = '#284B3B'
-MATCHA = '#527A46'
-MIST = '#DDE9C6'
-PAPER = '#FAF8F1'
-APRICOT = '#F4BC95'
-INK = '#1E2D24'
+PINE = '#283D50'
+MATCHA = '#C64B36'
+MIST = '#E3E8EB'
+PAPER = '#F5F1E8'
+APRICOT = '#C64B36'
+INK = '#283D50'
 
 
 def svg(title, art, width=256, height=256):
@@ -145,7 +145,7 @@ def main():
         for col in range(6):
             pattern += f'<g transform="translate({col * 144 - 24} {row * 144 - 24})">{tile.format(color=MIST)}</g>'
     (MASTERS / 'kuymo-tile-pattern.svg').write_text(svg('Kuymo folded-tile pattern', pattern, 768, 512))
-    colors = {'pine': PINE, 'matcha': MATCHA, 'mist': MIST, 'paper': PAPER, 'apricot': APRICOT, 'ink': INK}
+    colors = {'pine': PINE, 'matcha': MATCHA, 'mist': MIST, 'paper': PAPER, 'apricot': APRICOT, 'ink': INK, 'indigo': PINE, 'vermilion': MATCHA}
     (KIT / 'tokens.json').write_text(json.dumps({'brand': 'Kuymo', 'colors': colors, 'type': {'latin': 'Google Sans', 'arabic': 'Noto Sans Arabic'}, 'spacing': [4, 8, 12, 16, 24, 32, 48], 'radii': {'small': 8, 'medium': 12, 'large': 20, 'xLarge': 24}}, indent=2) + '\n')
     (KIT / 'tokens.css').write_text(':root {\n' + ''.join(f'  --kuymo-{key}: {value};\n' for key, value in colors.items()) + '}\n')
 
@@ -165,15 +165,15 @@ def main():
     board += f'<g transform="translate(1136 260) scale(1.1)">{symbol("#FFFFFF", "reverse")}</g>'
     board += label(1082, 578, 'Simple at every size.', 27, '#FFFFFF', 500)
     board += label(72, 704, 'THE PALETTE', 18, PINE, 700)
-    for index, (name, color) in enumerate(colors.items()):
-        x = 72 + index * 246
-        board += f'<rect x="{x}" y="734" width="224" height="120" rx="20" fill="{color}" stroke="{PINE}" stroke-opacity="0.12"/>'
-        board += label(x, 892, name.title(), 23, INK, 600) + label(x, 924, color.upper(), 19)
+    for index, (name, color) in enumerate([('Warm paper / 60%', PAPER), ('Ink indigo / 30%', PINE), ('Vermilion / 10%', MATCHA)]):
+        x = 72 + index * 492
+        board += f'<rect x="{x}" y="734" width="468" height="120" rx="20" fill="{color}" stroke="{PINE}" stroke-opacity="0.12"/>'
+        board += label(x, 892, name, 23, INK, 600) + label(x, 924, color.upper(), 19)
     board += label(72, 1004, 'GOOGLE SANS + NOTO SANS ARABIC', 18, PINE, 700)
     board += label(72, 1066, 'Clear. Capable. A little warmer.', 36, INK, 600)
     board += f'<text x="1528" y="1134" text-anchor="start" fill="{INK}" font-family="Noto Sans Arabic" font-size="38" direction="rtl">مساحة أكبر للحظاتك.</text>'
     board += label(72, 1228, 'Kuymo is the product. Kuymo AI is the assistant descriptor.', 23)
-    board += label(72, 1272, 'Approved B direction / flat vector masters / light + dark / Arabic + English', 18, PINE)
+    board += label(72, 1272, 'Approved B direction / flat vector masters / light + dark / 37 app locales', 18, PINE)
     (KIT / 'presentation/brand-board.svg').write_text(svg('Kuymo identity board', board, 1600, 1320))
 
 

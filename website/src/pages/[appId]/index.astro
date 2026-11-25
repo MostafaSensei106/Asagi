@@ -45,24 +45,22 @@ const jsonLd = [
 ];
 ---
 
-<BaseLayout
-  title={title}
-  description={description}
-  path={path}
-  noindex={app.draft}
-  jsonLd={jsonLd}
->
+<BaseLayout title={title} description={description} path={path} noindex={app.draft} jsonLd={jsonLd}>
   <section class="border-b border-border-base bg-surface">
     <div class="page-shell py-12 sm:py-16">
       <nav aria-label="Breadcrumb" class="mb-8">
         <ol class="flex flex-wrap items-center gap-1.5 text-sm text-muted">
           <li>
-            <a href={withBase('/')} class="transition-colors hover:text-fg">All apps</a>
+            <a href={withBase('/')} class="transition-colors hover:text-fg">
+              All apps
+            </a>
           </li>
           <li aria-hidden="true">
             <ChevronRight class="size-4 text-border-strong" stroke-width={2} />
           </li>
-          <li aria-current="page" class="font-medium text-fg">{app.name}</li>
+          <li aria-current="page" class="font-medium text-fg">
+            {app.name}
+          </li>
         </ol>
       </nav>
 
@@ -79,34 +77,34 @@ const jsonLd = [
   </section>
 
   <section class="page-shell py-12 sm:py-16" aria-labelledby="documents-heading">
-    <h2 id="documents-heading" class="sr-only">Documents</h2>
+    <h2 id="documents-heading" class="sr-only">
+      Documents
+    </h2>
 
-    {
-      app.draft && (
-        <p class="mb-8 flex items-start gap-3 rounded-lg border border-dashed border-border-strong bg-surface p-5 text-sm leading-6 text-muted">
-          <ShieldAlert
-            class="mt-0.5 size-5 shrink-0 text-highlight-fg dark:text-highlight"
-            stroke-width={1.75}
-            aria-hidden="true"
-          />
-          <span>
-            These documents are a draft and are not yet in force. They are published here
-            for preview only and are excluded from search engines.
-          </span>
-        </p>
-      )
-    }
+    {app.draft && (
+      <p class="mb-8 flex items-start gap-3 rounded-lg border border-dashed border-border-strong bg-surface p-5 text-sm leading-6 text-muted">
+        <ShieldAlert
+          class="mt-0.5 size-5 shrink-0 text-highlight-fg dark:text-highlight"
+          stroke-width={1.75}
+          aria-hidden="true"
+        />
+        <span>
+          These documents are a draft and are not yet in force. They are published here for preview
+          only and are excluded from search engines.
+        </span>
+      </p>
+    )}
 
     <div class="grid gap-6 sm:grid-cols-2">
-      {app.documents.map((document) => <DocumentCard document={document} />)}
+      {app.documents.map((document) => (
+        <DocumentCard document={document} />
+      ))}
     </div>
 
-    {
-      app.documents.length === 0 && (
-        <p class="rounded-lg border border-dashed border-border-strong p-8 text-center text-sm text-muted">
-          Documents for {app.name} are being prepared. Check back soon.
-        </p>
-      )
-    }
+    {app.documents.length === 0 && (
+      <p class="rounded-lg border border-dashed border-border-strong p-8 text-center text-sm text-muted">
+        Documents for {app.name} are being prepared. Check back soon.
+      </p>
+    )}
   </section>
 </BaseLayout>

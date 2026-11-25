@@ -1,0 +1,17 @@
+---
+import ProductPage from '@/features/product/ProductPage.astro';
+import { locales, sections } from '@/features/product/locales';
+export function getStaticPaths() {
+  return locales
+    .filter((locale) => locale !== 'en')
+    .flatMap((locale) =>
+      sections.map((section) => ({
+        params: { locale, section: section || undefined },
+        props: { locale, section },
+      })),
+    );
+}
+const { locale, section } = Astro.props;
+---
+
+<ProductPage locale={locale} section={section} />

@@ -16,7 +16,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "lib/core/utils/theme/generated_color_schemes.dart"
 EXPECTED_VERSION = "4.2.0"
-DEFAULT_SEED = "527A46"
+BRAND_COLORS = json.loads((ROOT / "brand/kuymo/tokens.json").read_text())["colors"]
+DEFAULT_SEED = BRAND_COLORS["indigo"].removeprefix("#")
 VARIANTS = {
     "auto": "scheme-tonal-spot",
     "tonalSpot": "scheme-tonal-spot",
@@ -133,6 +134,32 @@ def generate(seed: str, scheme: str, mode: str, contrast: float) -> dict[str, st
         if not isinstance(value, str) or not re.fullmatch(r"#[0-9a-fA-F]{6}", value):
             raise ValueError(f"Invalid HEX for {role}: {value!r}")
         colors[role] = value.upper()
+    return colors
+
+
+def brand_scheme(mode: str, contrast: float) -> dict[str, str]:
+    """Use independently generated accent families and warm neutral surfaces.
+
+    Each role family retains Matugen's paired foreground and fixed tones. This
+    avoids recoloring individual roles after their contrast has been audited.
+    """
+    colors = generate(BRAND_COLORS["vermilion"].removeprefix("#"), "scheme-fidelity", mode, contrast)
+    indigo = generate(DEFAULT_SEED, "scheme-fidelity", mode, contrast)
+    paper = generate("A99578", "scheme-neutral", mode, contrast)
+    for role in CONSTRUCTOR_ROLES:
+        if "secondary" in role:
+            colors[role] = indigo[role.replace("secondary", "primary")]
+        elif "tertiary" in role:
+            colors[role] = paper[role.replace("tertiary", "primary")]
+        elif "surface" in role or role in ("outline", "outline_variant", "shadow", "scrim"):
+            colors[role] = paper[role]
+    if mode == "light":
+        colors["surface"] = BRAND_COLORS["paper"]
+        colors["on_surface"] = BRAND_COLORS["indigo"] if contrast == 0 else "#162431"
+        colors["on_surface_variant"] = "#394A58" if contrast == 0 else "#162431"
+        if contrast == 0:
+            colors["primary"] = BRAND_COLORS["vermilion"]
+            colors["on_primary"] = "#FFFFFF"
     return colors
 
 
@@ -280,7 +307,8 @@ def main(arguments: list[str] | None = None) -> int:
             for mode in ("light", "dark"):
                 for high_contrast, contrast in ((False, 0.0), (True, 1.0)):
                     key = f"{variant}|{mode}|{str(high_contrast).lower()}"
-                    colors = generate(seed, scheme, mode, contrast)
+                    colors = (brand_scheme(mode, contrast) if variant == "auto"
+                              else generate(seed, scheme, mode, contrast))
                     try:
                         report[key] = audit(colors, mode, high_contrast)
                     except ValueError as error:

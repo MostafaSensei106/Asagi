@@ -99,9 +99,7 @@ export async function getLegalDocuments(
 }
 
 /** Group documents into the apps they belong to. */
-export async function getLegalApps(
-  options: { includeDrafts?: boolean } = {},
-): Promise<LegalApp[]> {
+export async function getLegalApps(options: { includeDrafts?: boolean } = {}): Promise<LegalApp[]> {
   const documents = await getLegalDocuments(options);
   const apps = new Map<string, LegalApp>();
 

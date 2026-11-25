@@ -3,10 +3,10 @@
  * `src/content/legal/` so that adding an app never requires touching this file.
  */
 export const siteConfig = {
-  name: 'Kuymo Legal',
-  title: 'Kuymo Legal  Privacy & Terms',
+  name: 'Kuymo',
+  title: 'Kuymo · More room for your moments.',
   description:
-    'Privacy policies and terms for Kuymo and other apps by MostafaSensei106. On-device processing, plain language, no accounts.',
+    'Kuymo helps you compress videos on your Android device, choose a target size, and make room for your moments.',
   locale: 'en',
   author: {
     name: 'MostafaSensei106',

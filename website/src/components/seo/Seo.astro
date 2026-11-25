@@ -3,6 +3,7 @@ import { siteConfig } from '@/config/site';
 import { absoluteUrl, canonicalPath, withBase } from '@/lib/paths';
 
 interface Props {
+  locale?: string;
   title: string;
   description: string;
   /** Site-root-relative canonical path, e.g. `/kuymo/privacy`. */
@@ -17,6 +18,7 @@ interface Props {
 }
 
 const {
+  locale = siteConfig.locale,
   title,
   description,
   path,
@@ -30,9 +32,7 @@ const {
 
 const canonical = absoluteUrl(canonicalPath(path), Astro.site);
 const imageUrl = absoluteUrl(image, Astro.site);
-const fullTitle = title.includes(siteConfig.name)
-  ? title
-  : `${title} · ${siteConfig.name}`;
+const fullTitle = title.includes(siteConfig.name) ? title : `${title} · ${siteConfig.name}`;
 
 const graph = [
   {
@@ -41,7 +41,7 @@ const graph = [
     url: canonical,
     name: fullTitle,
     description,
-    inLanguage: siteConfig.locale,
+    inLanguage: locale,
     isPartOf: { '@id': `${absoluteUrl('/', Astro.site)}#website` },
     ...(publishedTime ? { datePublished: publishedTime.toISOString() } : {}),
     ...(modifiedTime ? { dateModified: modifiedTime.toISOString() } : {}),
@@ -54,8 +54,8 @@ const graph = [
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
 <meta name="color-scheme" content="light dark" />
-<meta name="theme-color" content="#faf8f1" media="(prefers-color-scheme: light)" />
-<meta name="theme-color" content="#0d1712" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#f5f1e8" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#141e27" media="(prefers-color-scheme: dark)" />
 
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
@@ -73,7 +73,7 @@ const graph = [
 <meta property="og:image" content={imageUrl} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:locale" content={siteConfig.locale} />
+<meta property="og:locale" content={locale.replace('-', '_')} />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={fullTitle} />
@@ -83,7 +83,7 @@ const graph = [
 <link rel="icon" href={withBase('/branding/favicon.svg')} type="image/svg+xml" />
 <link rel="icon" href={withBase('/branding/icon-192.png')} type="image/png" sizes="192x192" />
 <link rel="apple-touch-icon" href={withBase('/branding/apple-touch-icon.png')} />
-<link rel="manifest" href={withBase('/site.webmanifest')} />
+<link rel="manifest" href={withBase('/branding/site.webmanifest')} />
 <link rel="sitemap" href={withBase('/sitemap-index.xml')} />
 
 <script

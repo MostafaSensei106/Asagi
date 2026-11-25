@@ -22,7 +22,7 @@ final class BrandLogo extends StatelessWidget {
       height: size,
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
-        color: scheme.primaryContainer,
+        color: scheme.secondaryContainer,
         borderRadius: BorderRadius.circular(AppRadii.large),
         boxShadow: elevated
             ? [
@@ -34,7 +34,7 @@ final class BrandLogo extends StatelessWidget {
               ]
             : null,
       ),
-      child: BrandMark(size: size, color: scheme.onPrimaryContainer),
+      child: BrandMark(size: size, color: scheme.onSecondaryContainer),
     );
   }
 }
