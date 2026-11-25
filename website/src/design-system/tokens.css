@@ -1,0 +1,78 @@
+/* Kuymo Expressive × Retro: one vocabulary shared by all site components. */
+:root {
+  --font-display-google: 'Google Sans Flex';
+  --font-body-google: 'Google Sans';
+  --font-mono-google: 'Google Sans Code';
+  --font-jp-google: 'Noto Sans JP';
+  --font-jp-brush-google: 'Yuji Boku';
+  --font-display: var(--font-display-google), var(--font-jp-google), sans-serif;
+  --font-body: var(--font-body-google), system-ui, sans-serif;
+  --font-mono: var(--font-mono-google), ui-monospace, monospace;
+  --font-jp: var(--font-jp-brush-google), var(--font-jp-google), sans-serif;
+  --font-jp-brush: var(--font-jp-brush-google), var(--font-jp-google), serif;
+  --ds-paper: var(--kuymo-paper);
+  --ds-ink: var(--kuymo-indigo);
+  --ds-accent: var(--kuymo-vermilion);
+  --ds-accent-hover: #a73926;
+  --ds-on-accent: #fff;
+  --ds-wash: #e3e8eb;
+  --ds-inverse: #283d50;
+  --ds-on-inverse: #f5f1e8;
+  --ds-line: #b7b3a9;
+  --ds-muted: #53616b;
+  --ds-success: #296344;
+  --ds-error: #a12a22;
+  --ds-space-1: .25rem;
+  --ds-space-2: .5rem;
+  --ds-space-3: .75rem;
+  --ds-space-4: 1rem;
+  --ds-space-5: 1.25rem;
+  --ds-space-6: 1.5rem;
+  --ds-space-8: 2rem;
+  --ds-space-10: 2.5rem;
+  --ds-space-12: 3rem;
+  --ds-space-16: 4rem;
+  --ds-space-20: 5rem;
+  --ds-space-24: 6rem;
+  --ds-radius: 4px;
+  --ds-stroke: 1px;
+  --ds-control: 48px;
+  --ds-control-small: 44px;
+  --ds-page-width: 1280px;
+  --ds-gutter: clamp(1.25rem, 4vw, 4rem);
+  --ds-display: clamp(3rem, 6.5vw, 6.5rem);
+  --ds-heading: clamp(2rem, 4.2vw, 4.25rem);
+  --ds-title: clamp(1.25rem, 2vw, 1.75rem);
+  --ds-body: 1rem;
+  --ds-small: .875rem;
+  --ds-label: .75rem;
+  --ds-shadow: 5px 5px 0 var(--ds-line);
+  --ds-shadow-hover: 8px 8px 0 var(--ds-line);
+  --ds-ease: cubic-bezier(.2, .8, .2, 1);
+  --ds-duration-fast: 160ms;
+  --ds-duration-normal: 260ms;
+  --ds-z-nav: 30;
+  --ds-z-menu: 40;
+  --ds-z-skip: 50;
+  --ds-nav-offset: 112px;
+}
+.dark {
+  --ds-ink: #f5f1e8;
+  --ds-accent: #ffb5a4;
+  --ds-accent-hover: #ffd1c6;
+  --ds-on-accent: #391006;
+  --ds-wash: #263b4c;
+  --ds-inverse: #283d50;
+  --ds-line: #5b6c79;
+  --ds-muted: #bbc6cc;
+  --ds-success: #a2d3b2;
+  --ds-error: #ffb4a9;
+}
+:lang(ar) {
+  --font-display: 'Noto Sans Arabic', sans-serif;
+  --font-body: 'Noto Sans Arabic', sans-serif;
+}
+:lang(ja) { --font-body: var(--font-jp-google), sans-serif; }
+@media(prefers-reduced-motion:reduce) {
+  :root { --ds-duration-fast: 0ms; --ds-duration-normal: 0ms; }
+}
