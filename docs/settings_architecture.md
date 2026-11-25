@@ -6,6 +6,10 @@ Each durable preference group has one repository. Screens observe that repositor
 
 Keep the established page compositions, cards, grouped tiles, spacing and typography. Reset is an `IconButtonComponent` in the page app-bar actions, not a content tile or footer. Added workbenches use the existing bottom-sheet, form-field, button and card components.
 
+Home is the root route of one navigator. Settings and compression history open from home app-bar actions. Shared compression and notification state is provided above the navigator, so opening or closing these pages preserves the current job. There is no branched shell or bottom navigation bar.
+
+Compression Defaults intentionally uses separate visible cards for resolution, frame rate, audio, video bitrate, strictness and HDR. The single-video setup retains its existing collapsible advanced controls.
+
 ## Storage and state ownership
 
 - `LocalSettingsRepository<T>` owns a loaded immutable snapshot, deduplicates loads, serializes functional updates, and emits only after a successful write.

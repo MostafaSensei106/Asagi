@@ -16,7 +16,7 @@ import '../cubit/notification_access_cubit.dart';
 import '../cubit/notifications_cubit.dart';
 import 'notification_navigation_listener.dart';
 
-/// Shell lifetime and platform lifecycle only; policies belong to the services.
+/// Home-route lifetime and platform lifecycle only; policies belong to the services.
 final class NotificationCoordinator extends StatefulWidget {
   const NotificationCoordinator({required this.child, super.key});
   final Widget child;

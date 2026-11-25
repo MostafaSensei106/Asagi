@@ -16,11 +16,13 @@ final class CompressionAdvancedControls extends StatefulWidget {
     required this.preferences,
     required this.sourceShortEdge,
     required this.onChanged,
+    this.collapsible = true,
     super.key,
   });
 
   final CompressionPreferences preferences;
-  final int sourceShortEdge;
+  final int? sourceShortEdge;
+  final bool collapsible;
   final ValueChanged<CompressionPreferences> onChanged;
 
   @override
@@ -102,7 +104,7 @@ final class _CompressionAdvancedControlsState
     final l10n = context.localeKeys;
     final colorScheme = context.colorScheme;
     final textTheme = context.textTheme;
-    final source = widget.sourceShortEdge & ~1;
+    final source = (widget.sourceShortEdge ?? 16384) & ~1;
     final resolutions = <int>{
       480,
       720,
@@ -110,52 +112,14 @@ final class _CompressionAdvancedControlsState
       1440,
       2160,
       4320,
-      source,
+      if (widget.sourceShortEdge != null) source,
     }.where((value) => value >= 240 && value <= source).toList()..sort();
 
-    return CardComponent.filled(
-      padding: EdgeInsets.zero,
-      child: ExpansionTile(
-        tilePadding: const EdgeInsets.symmetric(
-          horizontal: AppSpacing.large,
-          vertical: AppSpacing.small,
-        ),
-        shape: const Border(),
-        collapsedShape: const Border(),
-        leading: ExpressiveIcon(
-          icon: LucideIcons.slidersHorizontal,
-          shape: ExpressiveIconShape.gem,
-          size: 40,
-          backgroundColor: colorScheme.secondaryContainer,
-          foregroundColor: colorScheme.onSecondaryContainer,
-        ),
-        title: Text(
-          l10n.advancedControls,
-          style: textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
-        ),
-        subtitle: Text(
-          l10n.defaultResolutionBitrateAndOutputFormat,
-          style: textTheme.bodySmall?.copyWith(
-            color: colorScheme.onSurfaceVariant,
-          ),
-        ),
-        childrenPadding: const EdgeInsets.fromLTRB(
-          AppSpacing.large,
-          0,
-          AppSpacing.large,
-          AppSpacing.large,
-        ),
-        expandedCrossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Gap(AppSpacing.medium),
-
-          // Maximum Resolution
-          _sectionHeading(
-            context,
-            LucideIcons.maximize,
-            l10n.maximumResolution,
-          ),
-          const Gap(AppSpacing.medium),
+    final sections = [
+      (
+        icon: LucideIcons.maximize,
+        title: l10n.maximumResolution,
+        controls: <Widget>[
           Wrap(
             spacing: AppSpacing.small,
             runSpacing: AppSpacing.small,
@@ -211,12 +175,12 @@ final class _CompressionAdvancedControlsState
             onSubmitted: (_) => _applyResolution(),
             onEditingComplete: _applyResolution,
           ),
-
-          const Gap(AppSpacing.large),
-
-          // Maximum Frame Rate
-          _sectionHeading(context, LucideIcons.gauge, l10n.maximumFrameRate),
-          const Gap(AppSpacing.medium),
+        ],
+      ),
+      (
+        icon: LucideIcons.gauge,
+        title: l10n.maximumFrameRate,
+        controls: <Widget>[
           Wrap(
             spacing: AppSpacing.small,
             runSpacing: AppSpacing.small,
@@ -232,12 +196,12 @@ final class _CompressionAdvancedControlsState
                 ),
             ],
           ),
-
-          const Gap(AppSpacing.large),
-
-          // Audio Bitrate
-          _sectionHeading(context, LucideIcons.audioLines, l10n.audioBitrate),
-          const Gap(AppSpacing.medium),
+        ],
+      ),
+      (
+        icon: LucideIcons.audioLines,
+        title: l10n.audioBitrate,
+        controls: <Widget>[
           Wrap(
             spacing: AppSpacing.small,
             runSpacing: AppSpacing.small,
@@ -261,16 +225,12 @@ final class _CompressionAdvancedControlsState
                 ),
             ],
           ),
-
-          const Gap(AppSpacing.large),
-
-          // Video Bitrate Ceiling
-          _sectionHeading(
-            context,
-            LucideIcons.gauge,
-            l10n.videoBitrateCeilingKbps,
-          ),
-          const Gap(AppSpacing.medium),
+        ],
+      ),
+      (
+        icon: LucideIcons.gauge,
+        title: l10n.videoBitrateCeilingKbps,
+        controls: <Widget>[
           TextField(
             controller: _videoBitrate,
             keyboardType: TextInputType.number,
@@ -294,16 +254,12 @@ final class _CompressionAdvancedControlsState
             onSubmitted: (_) => _applyVideoBitrate(),
             onEditingComplete: _applyVideoBitrate,
           ),
-
-          const Gap(AppSpacing.large),
-
-          // Safety Margin (Compression Strictness)
-          _sectionHeading(
-            context,
-            LucideIcons.slidersHorizontal,
-            l10n.compressionStrictness,
-          ),
-          const Gap(AppSpacing.medium),
+        ],
+      ),
+      (
+        icon: LucideIcons.slidersHorizontal,
+        title: l10n.compressionStrictness,
+        controls: <Widget>[
           Wrap(
             spacing: AppSpacing.small,
             runSpacing: AppSpacing.small,
@@ -334,13 +290,14 @@ final class _CompressionAdvancedControlsState
               ),
             ],
           ),
-
-          const Gap(AppSpacing.large),
-
-          // HDR Handling
-          _sectionHeading(context, LucideIcons.sun, l10n.hdrHandling),
-          const Gap(AppSpacing.medium),
+        ],
+      ),
+      (
+        icon: LucideIcons.sun,
+        title: l10n.hdrHandling,
+        controls: <Widget>[
           SegmentedButton<HdrMode>(
+            direction: widget.collapsible ? Axis.horizontal : Axis.vertical,
             segments: [
               ButtonSegment(
                 value: HdrMode.toneMapToSdr,
@@ -357,6 +314,74 @@ final class _CompressionAdvancedControlsState
               widget.onChanged(p.copyWith(hdrMode: selection.first));
             },
           ),
+        ],
+      ),
+    ];
+    if (!widget.collapsible) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          for (var index = 0; index < sections.length; index++) ...[
+            ExpressiveSectionHeader(title: sections[index].title),
+            const Gap(AppSpacing.small),
+            CardComponent.filled(
+              padding: const EdgeInsets.all(AppSpacing.large),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: sections[index].controls,
+              ),
+            ),
+            if (index < sections.length - 1) const Gap(AppSpacing.large),
+          ],
+        ],
+      );
+    }
+
+    return CardComponent.filled(
+      padding: EdgeInsets.zero,
+      child: ExpansionTile(
+        tilePadding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.large,
+          vertical: AppSpacing.small,
+        ),
+        shape: const Border(),
+        collapsedShape: const Border(),
+        leading: ExpressiveIcon(
+          icon: LucideIcons.slidersHorizontal,
+          shape: ExpressiveIconShape.gem,
+          size: 40,
+          backgroundColor: colorScheme.secondaryContainer,
+          foregroundColor: colorScheme.onSecondaryContainer,
+        ),
+        title: Text(
+          l10n.advancedControls,
+          style: textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+        ),
+        subtitle: Text(
+          l10n.defaultResolutionBitrateAndOutputFormat,
+          style: textTheme.bodySmall?.copyWith(
+            color: colorScheme.onSurfaceVariant,
+          ),
+        ),
+        childrenPadding: const EdgeInsets.fromLTRB(
+          AppSpacing.large,
+          0,
+          AppSpacing.large,
+          AppSpacing.large,
+        ),
+        expandedCrossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Gap(AppSpacing.medium),
+          for (var index = 0; index < sections.length; index++) ...[
+            _sectionHeading(
+              context,
+              sections[index].icon,
+              sections[index].title,
+            ),
+            const Gap(AppSpacing.medium),
+            ...sections[index].controls,
+            if (index < sections.length - 1) const Gap(AppSpacing.large),
+          ],
         ],
       ),
     );

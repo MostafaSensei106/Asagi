@@ -52,7 +52,6 @@ dependencies:
   device_info_plus: ^13.3.0
   cupertino_ui: ^1.1.6
   country_flags: ^4.1.2
-  google_nav_bar: ^5.0.7
   cupertino_modal_sheet: ^1.1.0
   dio: ^5.11.1
   retrofit: ^4.10.0

@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kuymo/core/di/di.dart';
+import 'package:kuymo/core/preferences/domain/entities/compression_defaults.dart';
+import 'package:kuymo/core/widgets/widgets.dart';
 import 'package:kuymo/core/preferences/domain/repositories/settings_repository.dart';
 import 'package:kuymo/core/utils/theme/app_theme.dart';
 import 'package:kuymo/l10n/app_localizations.dart';
@@ -78,6 +80,50 @@ void main() {
       await _pumpPage(tester, const AiModelsPage());
       expect(find.text('Active'), findsOneWidget);
       expect(find.text('Installed test model'), findsOneWidget);
+    },
+  );
+  testWidgets(
+    'compression defaults expose advanced sections without expanding',
+    (tester) async {
+      await _pumpPage(tester, const CompressionDefaultsPage());
+      expect(find.byType(ExpansionTile), findsNothing);
+      final scrollable = find.byType(Scrollable).first;
+      final l10n = AppLocalizations.of(
+        tester.element(find.byType(CompressionDefaultsPage)),
+      )!;
+      await tester.scrollUntilVisible(
+        find.text(l10n.maximumFrameRate),
+        300,
+        scrollable: scrollable,
+      );
+      expect(
+        find.ancestor(
+          of: find.text(l10n.maximumFrameRate),
+          matching: find.byType(ExpressiveSectionHeader),
+        ),
+        findsOneWidget,
+      );
+      await tester.scrollUntilVisible(
+        find.text('30'),
+        150,
+        scrollable: scrollable,
+      );
+      await tester.tap(find.text('30'));
+      await tester.pumpAndSettle();
+      expect(
+        getIt<SettingsRepository<CompressionDefaults>>()
+            .current
+            .preferences
+            .maxFps,
+        30,
+      );
+      await tester.scrollUntilVisible(
+        find.text(l10n.hdrHandling),
+        300,
+        scrollable: scrollable,
+      );
+      expect(find.text(l10n.hdrHandling), findsOneWidget);
+      expect(find.byType(ExpansionTile), findsNothing);
     },
   );
   testWidgets('AI preferences survive leaving and reopening the page', (

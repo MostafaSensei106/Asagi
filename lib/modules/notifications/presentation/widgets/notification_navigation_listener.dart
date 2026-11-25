@@ -83,7 +83,8 @@ final class _NotificationNavigationListenerState
         } else {
           await compression.recoverInterrupted();
           if (mounted) {
-            unawaited(context.push(const HomeTabRoute()));
+            await AppRouter.showHome(context);
+            if (!mounted) return;
             context.toast.showInfo(
               context,
               context.localeKeys.notificationRecoveryHint,
@@ -93,7 +94,8 @@ final class _NotificationNavigationListenerState
       case NotificationRecoveryTarget():
         await compression.recoverInterrupted();
         if (mounted) {
-          unawaited(context.push(const HomeTabRoute()));
+          await AppRouter.showHome(context);
+          if (!mounted) return;
           context.toast.showInfo(
             context,
             context.localeKeys.notificationRecoveryHint,

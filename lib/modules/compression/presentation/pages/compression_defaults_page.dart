@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
@@ -14,6 +13,7 @@ import '../../../../core/preferences/presentation/settings_view.dart';
 import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/widgets.dart';
 import '../widgets/compression_advanced_controls.dart';
+import '../widgets/unsupported_compression_page.dart';
 
 final class _CompressionDefaultsBody extends HookWidget {
   const _CompressionDefaultsBody({
@@ -149,12 +149,11 @@ final class _CompressionDefaultsBody extends HookWidget {
             const Gap(AppSpacing.large),
 
             // Advanced Engine Tuning
-            if (Platform.isAndroid) ...[
-              ExpressiveSectionHeader(title: l10n.advancedControls),
-              const Gap(AppSpacing.small),
+            if (supportsVideoCompression) ...[
               CompressionAdvancedControls(
                 preferences: defaults.preferences,
-                sourceShortEdge: 16384,
+                sourceShortEdge: null,
+                collapsible: false,
                 onChanged: (value) =>
                     unawaited(update((s) => s.copyWith(preferences: value))),
               ),

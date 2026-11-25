@@ -52,7 +52,6 @@ export 'layout/gap.dart';
 export 'navigation/app_bar/app_bar_component.dart';
 export 'navigation/app_bar/side_page_app_bar_component.dart';
 export 'navigation/app_page_scaffold.dart';
-export 'navigation/bottom_nav_bar/bottom_nav_bar_component.dart';
 export 'navigation/sliver_tab_bar.dart';
 export 'navigation/tab_bar/tab_bar_component.dart';
 export 'slivers/sliver_app_bar/side_page_sliver_app_bar_component.dart';

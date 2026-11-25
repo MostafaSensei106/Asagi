@@ -1,6 +1,3 @@
-import 'package:bloc_signals_flutter/bloc_signals_flutter.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:kaisel/kaisel.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -8,16 +5,12 @@ import '../../modules/about/about.dart';
 import '../../modules/ai/ai.dart';
 import '../../modules/appearance/appearance.dart';
 import '../../modules/compression/compression.dart';
-import '../../modules/compression/domain/repositories/video_advice_repository.dart';
-import '../../modules/compression/domain/repositories/video_compression_repository.dart';
 import '../../modules/growth/growth.dart';
 import '../../modules/help/help.dart';
 import '../../modules/home/home.dart';
 import '../../modules/language/language.dart';
 import '../../modules/legal/legal.dart';
 import '../../modules/notifications/notifications.dart';
-import '../../modules/notifications/presentation/cubit/notification_access_cubit.dart';
-import '../../modules/notifications/presentation/cubit/notifications_cubit.dart';
 import '../../modules/notifications/presentation/widgets/notification_coordinator.dart';
 import '../../modules/onboarding/onboarding.dart';
 import '../../modules/privacy/privacy.dart';
@@ -25,15 +18,9 @@ import '../../modules/settings/settings.dart';
 import '../../modules/storage/storage.dart';
 import '../../modules/updates/presentation/pages/releases_page.dart';
 import '../constants/kuymo_icons.dart';
-import '../di/di.dart';
-import '../extensions/extensions.dart';
-import '../preferences/domain/entities/compression_defaults.dart';
-import '../preferences/domain/repositories/settings_repository.dart';
-import '../widgets/navigation/bottom_nav_bar/bottom_nav_bar_component.dart';
 import 'observers/app_navigator_observer.dart';
 import 'route_metadata.dart';
 
-part 'main_shell.dart';
 part 'routes/ai_routes.dart';
 part 'routes/compression_routes.dart';
 part 'routes/main_routes.dart';
@@ -69,6 +56,14 @@ final class AppRouter {
     _initialRoute = route;
   }
 
+  static Future<void> showHome(BuildContext context) {
+    final router = context.router<AppRoute>();
+    if (router.stack.any((route) => route is MainRouteEntry)) {
+      return router.popUntil((route) => route is MainRouteEntry);
+    }
+    return router.set(const [MainRouteEntry()]);
+  }
+
   static final config = KaiselRouterConfig<AppRoute>(
     navigatorKey: navigatorKey,
     initial: _initialRoute,
@@ -90,8 +85,7 @@ final class AppRouter {
   static Widget _buildPage(BuildContext context, AppRoute route) =>
       switch (route) {
         // Core.
-        MainRouteEntry() => const _MainShell(),
-        HomeTabRoute() => const HomePage(),
+        MainRouteEntry() => const NotificationCoordinator(child: HomePage()),
         OnboardingRoute() => const OnboardingPage(),
 
         // Compression.

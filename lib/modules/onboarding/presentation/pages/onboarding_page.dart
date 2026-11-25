@@ -38,7 +38,7 @@ final class _OnboardingPageState extends State<OnboardingPage> {
     if (Navigator.of(context).canPop()) {
       Navigator.of(context).pop();
     } else {
-      unawaited(context.push(const HomeTabRoute()));
+      unawaited(context.replaceTop(const MainRouteEntry()));
     }
   }
 

@@ -56,7 +56,7 @@ final class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarComponent(title: context.localeKeys.settings),
+      appBar: SidePageAppBarComponent(title: context.localeKeys.settings),
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
