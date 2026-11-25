@@ -3,11 +3,13 @@ import AxeBuilder from '@axe-core/playwright';
 
 const base = `/${process.env.BASE_PATH?.replace(/^\/+|\/+$/g, '') ?? ''}`.replace(/\/$/, '');
 
-for (const document of ['privacy', 'terms']) {
-  test(`${document}: product chrome, accessible reading, contents and print`, async ({ page }) => {
+for (const documentId of ['privacy', 'terms']) {
+  test(`${documentId}: product chrome, accessible reading, contents and print`, async ({
+    page,
+  }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.emulateMedia({ reducedMotion: 'reduce', colorScheme: 'light' });
-    await page.goto(`${base}/kuymo/${document}/`);
+    await page.goto(`${base}/kuymo/${documentId}/`);
     await expect(page.locator('.floating-header')).toBeVisible();
     await expect(page.locator('.site-footer')).toHaveCount(1);
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
@@ -46,7 +48,7 @@ for (const document of ['privacy', 'terms']) {
     await page.locator('.language-picker summary').click();
     await expect(page.locator('.language-list a[lang=en]')).toHaveAttribute(
       'href',
-      `${base}/kuymo/${document}`,
+      `${base}/kuymo/${documentId}`,
     );
     await page.locator('.language-list a[lang=ar]').click();
     await expect(page.locator('html')).toHaveAttribute('lang', 'ar');
