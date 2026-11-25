@@ -1,17 +1,17 @@
 ---
+import { withBase } from '@/lib/paths';
 import {
-  ArrowUpRight,
-  ArrowRight,
-  ScanLine,
-  SlidersHorizontal,
-  ShieldCheck,
-  MoveDown,
-  Check,
+ArrowRight,
+ArrowUpRight,
+Check,
+MoveDown,
+ScanLine,
+ShieldCheck,
+SlidersHorizontal,
 } from '@lucide/astro';
-import ProductLayout from './ProductLayout.astro';
 import CompressionDemo from './CompressionDemo.astro';
 import { content, localePath, type Section } from './locales';
-import { withBase } from '@/lib/paths';
+import ProductLayout from './ProductLayout.astro';
 interface Props {
   locale: string;
   section: Section;
@@ -81,7 +81,7 @@ const steps = [t('pickVideo'), t('targetSizeMB'), t('saveToGallery')];
             <span aria-hidden="true">◉</span> {copy.preview}
           </p>
           <div class="hero-index" aria-hidden="true">
-            <span>01 — 03</span>
+            <span>01  03</span>
             <span class="index-line"></span>
             <MoveDown size={17} />
           </div>
@@ -111,7 +111,7 @@ const steps = [t('pickVideo'), t('targetSizeMB'), t('saveToGallery')];
   ) : (
     <section class="product-shell page-intro">
       <p class="product-eyebrow">
-        <span></span>KUYMO / {selected?.number ?? (download ? '04' : '01 — 03')}
+        <span></span>KUYMO / {selected?.number ?? (download ? '04' : '01  03')}
       </p>
       <h1>{title}</h1>
       <p>{download ? copy.releases : description}</p>

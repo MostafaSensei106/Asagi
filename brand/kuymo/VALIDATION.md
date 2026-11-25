@@ -76,7 +76,7 @@ Verification: analyzer clean; 91 Flutter tests, 10 Kotlin planner tests and
 application ID. iOS configuration was updated without a Linux-side Xcode build.
 This is a new installation identity; prior app data is not migrated.
 
-## Japanese palette and product website — 26 November 2026
+## Japanese palette and product website  26 November 2026
 
 - Kept the approved mark geometry and type. Updated paper/indigo/vermilion
   artwork, portable tokens, Android/iOS icons and light/dark splash resources.
