@@ -60,7 +60,6 @@ final class AppTheme {
     scaffoldBackgroundColor: colorScheme.surface,
     canvasColor: colorScheme.surface,
     fontFamily: fontFamily,
-    fontFamilyFallback: const ['NotoSansArabic'],
     cardTheme: CardThemeData(
       color: colorScheme.surfaceContainerLow,
       elevation: 0,
