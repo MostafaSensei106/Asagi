@@ -1177,10 +1177,10 @@ packages:
     dependency: "direct main"
     description:
       name: litertlm_dart
-      sha256: "74d16d0ca301f444e221c442e768e2828eb250f02f3b9dd1fb93d5e1d77918c5"
+      sha256: a1a186bb09b1d5d61df933400792eb51f5a0a90556c7f5844bda1614ca465ed6
       url: "https://pub.dev"
     source: hosted
-    version: "0.20.0+1"
+    version: "0.20.0+2"
   logging:
     dependency: transitive
     description:
