@@ -1,4 +1,3 @@
-import 'package:bloc_signals_hydrate/bloc_signals_hydrate.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
@@ -9,13 +8,4 @@ final GetIt getIt = GetIt.instance;
 @InjectableInit(generateAccessors: true)
 Future<void> configureDependencies() async {
   await getIt.init();
-}
-
-Future<void> resetUserSession() async {
-  // Clear hydrated bloc states for session-specific cubits from disk.
-  try {
-    await HydratedStorage.storage?.clear();
-  } catch (_) {
-    // Catch when storage is not initialized (e.g. in unit tests).
-  }
 }

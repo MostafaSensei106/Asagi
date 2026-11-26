@@ -10,7 +10,6 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 
-import 'package:connectivity_plus/connectivity_plus.dart' as _i895;
 import 'package:dio/dio.dart' as _i361;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as _i558;
 import 'package:get_it/get_it.dart' as _i174;
@@ -59,10 +58,6 @@ import 'package:kuymo/core/services/app_info/interface/base_package_info_adapter
     as _i701;
 import 'package:kuymo/core/services/app_info/package_info_plus_adapter.dart'
     as _i93;
-import 'package:kuymo/core/services/file_opener/base_file_opener_service.dart'
-    as _i211;
-import 'package:kuymo/core/services/file_opener/url_file_opener_service.dart'
-    as _i702;
 import 'package:kuymo/core/services/haptics/haptics_service.dart' as _i369;
 import 'package:kuymo/core/services/l10n/l10n_service.dart' as _i726;
 import 'package:kuymo/core/services/notifications/base_local_notification_service.dart'
@@ -77,11 +72,6 @@ import 'package:kuymo/core/services/security/audit/app_audit_logger.dart'
     as _i796;
 import 'package:kuymo/core/services/security/audit/base_audit_logger.dart'
     as _i928;
-import 'package:kuymo/core/services/security/clipboard_guard_service.dart'
-    as _i48;
-import 'package:kuymo/core/services/security/secure_vault_service.dart'
-    as _i170;
-import 'package:kuymo/core/services/session/user_session_service.dart' as _i783;
 import 'package:kuymo/core/services/share/base_share_service.dart' as _i576;
 import 'package:kuymo/core/services/share/share_plus_service.dart' as _i966;
 import 'package:kuymo/core/services/shared_prefs/base_pref_storage_service.dart'
@@ -98,15 +88,12 @@ import 'package:kuymo/core/services/url_launcher/base_url_launcher_services.dart
     as _i799;
 import 'package:kuymo/core/services/url_launcher/url_launcher_service.dart'
     as _i587;
-import 'package:kuymo/core/utils/cache/cache_manager.dart' as _i856;
 import 'package:kuymo/core/utils/localization/data/base_localization_repository.dart'
     as _i315;
 import 'package:kuymo/core/utils/localization/data/localization_repository.dart'
     as _i254;
 import 'package:kuymo/core/utils/localization/logic/cubit/localization_cubit.dart'
     as _i696;
-import 'package:kuymo/core/utils/network/logic/cubit/network_cubit.dart'
-    as _i479;
 import 'package:kuymo/core/utils/theme/logic/cubit/theme_cubit.dart' as _i623;
 import 'package:kuymo/modules/about/data/about_app_repsitory.dart' as _i472;
 import 'package:kuymo/modules/about/data/base_about_app_repository.dart'
@@ -249,7 +236,6 @@ extension GetItInjectableX on _i174.GetIt {
       () => injectionModule.secureStorage,
     );
     gh.lazySingleton<_i998.SharePlus>(() => injectionModule.sharePlus);
-    gh.lazySingleton<_i895.Connectivity>(() => injectionModule.connectivity);
     gh.lazySingleton<_i260.ArtifactStore>(() => injectionModule.artifactStore);
     gh.lazySingleton<_i350.RequestDeduplicator>(
       () => _i350.RequestDeduplicator(),
@@ -259,7 +245,6 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i726.L10nService>(() => _i726.L10nService());
     gh.lazySingleton<_i266.ThemeService>(() => _i266.ThemeService());
-    gh.lazySingleton<_i856.CacheManager>(() => _i856.CacheManager());
     gh.lazySingleton<_i623.ThemeCubit>(() => _i623.ThemeCubit());
     gh.lazySingleton<_i576.BaseShareService>(
       () => _i966.SharePlusService(gh<_i998.SharePlus>()),
@@ -303,15 +288,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i152.SharedPrefsService>(
       () => _i152.SharedPrefsService(gh<_i460.SharedPreferences>()),
     );
-    gh.lazySingleton<_i170.BaseSecureVaultService>(
-      () => _i170.SecureVaultService(
-        gh<_i558.FlutterSecureStorage>(),
-        gh<_i928.BaseAuditLogger>(),
-      ),
-    );
-    gh.lazySingleton<_i479.NetworkCubit>(
-      () => _i479.NetworkCubit(gh<_i895.Connectivity>()),
-    );
     gh.lazySingleton<_i242.GitHubReleasesApi>(
       () => injectionModule.githubReleasesApi(
         gh<_i361.Dio>(instanceName: 'github'),
@@ -325,9 +301,6 @@ extension GetItInjectableX on _i174.GetIt {
         sharedPrefsService: gh<_i152.SharedPrefsService>(),
         secureStorageService: gh<_i619.SecureStorageService>(),
       ),
-    );
-    gh.lazySingleton<_i48.BaseClipboardGuardService>(
-      () => _i48.ClipboardGuardService(gh<_i928.BaseAuditLogger>()),
     );
     gh.lazySingleton<_i799.BaseUrlLauncherServices>(
       () => _i587.UrlLauncherService(gh<_i928.BaseAuditLogger>()),
@@ -434,12 +407,6 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i156.BasePrefStorageService>(),
       ),
       dispose: (i) => i.dispose(),
-    );
-    gh.factory<_i211.BaseFileOpenerService>(
-      () => _i702.UrlFileOpenerService(
-        gh<_i799.BaseUrlLauncherServices>(),
-        gh<_i928.BaseAuditLogger>(),
-      ),
     );
     gh.lazySingleton<_i335.TelemetryConsentCoordinator>(
       () => _i335.TelemetryConsentCoordinator(
@@ -565,9 +532,6 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i447.MediaWorkScheduler>(),
       ),
     );
-    gh.lazySingleton<_i783.UserSessionServiceBase>(
-      () => _i783.UserSessionService(gh<_i1034.StorageFacade>()),
-    );
     gh.lazySingleton<_i648.NotificationDispatcher>(
       () => _i648.NotificationDispatcher(
         gh<_i145.NotificationPreferencesRepository>(),
@@ -665,8 +629,6 @@ extension GetItInjectableX on _i174.GetIt {
 
   _i266.ThemeService get themeService => get<_i266.ThemeService>();
 
-  _i856.CacheManager get cacheManager => get<_i856.CacheManager>();
-
   _i623.ThemeCubit get themeCubit => get<_i623.ThemeCubit>();
 
   _i966.SharePlusService get sharePlusService => get<_i966.SharePlusService>();
@@ -708,17 +670,9 @@ extension GetItInjectableX on _i174.GetIt {
   _i152.SharedPrefsService get sharedPrefsService =>
       get<_i152.SharedPrefsService>();
 
-  _i170.SecureVaultService get secureVaultService =>
-      get<_i170.SecureVaultService>();
-
-  _i479.NetworkCubit get networkCubit => get<_i479.NetworkCubit>();
-
   _i449.AppInfoService get appInfoService => get<_i449.AppInfoService>();
 
   _i1034.StorageFacade get storageFacade => get<_i1034.StorageFacade>();
-
-  _i48.ClipboardGuardService get clipboardGuardService =>
-      get<_i48.ClipboardGuardService>();
 
   _i587.UrlLauncherService get urlLauncherService =>
       get<_i587.UrlLauncherService>();
@@ -790,9 +744,6 @@ extension GetItInjectableX on _i174.GetIt {
   _i725.CompressionDefaultsRepository get compressionDefaultsRepository =>
       get<_i725.CompressionDefaultsRepository>();
 
-  _i702.UrlFileOpenerService get urlFileOpenerService =>
-      get<_i702.UrlFileOpenerService>();
-
   _i335.TelemetryConsentCoordinator get telemetryConsentCoordinator =>
       get<_i335.TelemetryConsentCoordinator>();
 
@@ -846,9 +797,6 @@ extension GetItInjectableX on _i174.GetIt {
 
   _i586.DeviceAiMediaRepository get deviceAiMediaRepository =>
       get<_i586.DeviceAiMediaRepository>();
-
-  _i783.UserSessionService get userSessionService =>
-      get<_i783.UserSessionService>();
 
   _i648.NotificationDispatcher get notificationDispatcher =>
       get<_i648.NotificationDispatcher>();

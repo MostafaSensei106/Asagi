@@ -81,9 +81,8 @@ dependencies {
     implementation("androidx.media3:media3-effect:1.9.2")
     implementation("androidx.media3:media3-common:1.9.2")
 
-    // Coroutines & Lifecycle
+    // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
 }
 
 kotlin {

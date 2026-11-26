@@ -71,7 +71,6 @@ class LocalizationCubit extends CubitSignal<LocalizationState> {
     final resolvedCode = _resolveLocaleCode(localeCode);
     if (resolvedCode == null || state.value.langCode == resolvedCode) return;
     emit(LocalizationState(langCode: resolvedCode));
-    //    await getIt<CacheManager>().refreshAllCache();
   }
 
   Future<void> resetSettings() async {

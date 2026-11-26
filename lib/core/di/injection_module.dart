@@ -1,4 +1,3 @@
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:injectable/injectable.dart';
@@ -57,12 +56,6 @@ abstract class InjectionModule {
 
   @lazySingleton
   SharePlus get sharePlus => SharePlus.instance;
-
-  @lazySingleton
-  Connectivity get connectivity => Connectivity();
-
-  // @lazySingleton
-  // FirebaseMessaging get firebaseMessaging => FirebaseMessaging.instance;
 
   @lazySingleton
   StorageFacade storageFacade(BasePrefStorageService service) =>
