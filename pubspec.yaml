@@ -85,9 +85,7 @@ flutter:
   uses-material-design: true
   assets:
   - assets/icons/play_store_512.png
-  - assets/brand/
   - assets/fonts/Google_Sans/OFL.txt
-  - assets/fonts/Noto_Sans_Arabic/OFL.txt
 
   fonts:
   # Google Sans static instances. Registering each weight/style lets Flutter
