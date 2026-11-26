@@ -1,19 +1,20 @@
 # Regenerate with: dart run flutter_native_splash:create
 flutter_native_splash:
-  color: "#B3433"
-  color_dark: "#B3433"
-  image: assets/brand/kuymo-splash.png
-  #  image_dark: assets/brand/kuymo-splash-dark.png
+  color: "#BC4733"
+  color_dark: "#BC4733"
+  image: assets/icons/splash.png
+  # Dark mode uses the same red artwork, so both themes show the same splash.
+  image_dark: assets/icons/splash.png
   # 768px artwork is a 192 logical-pixel canvas at 4x density.
   android_gravity: center
   ios_content_mode: center
   android: true
   # No icon background: 1152px canvas, content inside a 768px circle.
   android_12:
-    color: "#B3433"
-    color_dark: "#B3433"
-    image: assets/brand/kuymo-splash-android12.png
-  # image_dark: assets/brand/kuymo-splash-android12-dark.png
+    color: "#BC4733"
+    color_dark: "#BC4733"
+    image: assets/icons/splash-android12.png
+    image_dark: assets/icons/splash-android12.png
   ios: true
   web: false
   fullscreen: false

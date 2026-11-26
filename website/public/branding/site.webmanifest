@@ -3,7 +3,7 @@
   "short_name": "Kuymo",
   "display": "standalone",
   "background_color": "#F5F1E8",
-  "theme_color": "#283D50",
+  "theme_color": "#BC4733",
   "icons": [
     {
       "src": "./icon-192.png",
