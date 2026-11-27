@@ -11,6 +11,10 @@ internal class SharePresetResolver(private val planner: TargetSizePlanner) {
         SharePreset(PresetId.X, 512, 512, 1080, 60, 8_000_000, true),
         SharePreset(PresetId.YOU_TUBE_SHORTS, 100, 400, 1080, 60, 8_000_000, true),
         SharePreset(PresetId.EMAIL, 25, 25, 720, 30, 4_000_000, false),
+        // Kuymo sharing targets, not the services' maximum upload sizes.
+        SharePreset(PresetId.LINKED_IN, 100, 200, 1080, 30, 6_000_000, true, "2026-11-27"),
+        SharePreset(PresetId.TELEGRAM, 32, 128, 1080, 30, 4_000_000, true, "2026-11-27"),
+        SharePreset(PresetId.SNAPCHAT, 20, 32, 1080, 30, 4_000_000, true, "2026-11-27"),
     )
 
     fun resolve(info: PlanningMetadata, id: PresetId, safety: Double = 0.98): SharePresetPlan {

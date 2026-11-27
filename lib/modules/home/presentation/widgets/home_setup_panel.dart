@@ -137,6 +137,8 @@ final class HomeSetupPanel extends StatelessWidget {
                 style: context.textTheme.bodyMedium,
               ),
               children: [
+                Text(l10n.socialPresetHint, style: context.textTheme.bodySmall),
+                const Gap(AppSpacing.small),
                 CompressionPlanSummary(
                   plan: state.previewPlan,
                   isLoading: state.planning,

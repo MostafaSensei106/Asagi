@@ -105,13 +105,13 @@ class PlanningTest {
 
     @Test fun presetTableIsCompleteAndMatchesEncoderConstraints() {
         assertEquals(PresetId.entries.toSet(), resolver.presets.map { it.id }.toSet())
-        assertEquals(9, resolver.presets.size)
+        assertEquals(12, resolver.presets.size)
         for (preset in resolver.presets) {
             assertTrue(preset.maxFps in listOf(24L, 25L, 30L, 60L, 120L))
             assertTrue(preset.maxShortEdge >= 240 && preset.maxShortEdge % 2 == 0L)
             assertTrue(preset.bitrateCapBps >= 150_000)
             assertTrue(preset.relaxedTargetMb >= preset.targetMb)
-            assertEquals("2026-11-16", preset.verifiedOn)
+            assertEquals(if (preset.id in setOf(PresetId.LINKED_IN, PresetId.TELEGRAM, PresetId.SNAPCHAT)) "2026-11-27" else "2026-11-16", preset.verifiedOn)
             assertTrue(resolver.resolve(source(), preset.id).plan.targetAudioBitrateBps > 0)
         }
     }

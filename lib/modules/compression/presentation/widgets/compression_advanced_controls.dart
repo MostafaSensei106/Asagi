@@ -65,13 +65,14 @@ final class CompressionAdvancedControls extends HookWidget {
           resolution.text.trim().isEmpty ||
           (value != null && value >= 240 && value <= 16384 && value.isEven);
       invalidResolution.value = !valid;
-      if (valid)
+      if (valid) {
         onChanged(
           preferences.copyWith(
             maxShortEdge: value,
             clearMaxShortEdge: value == null,
           ),
         );
+      }
     }
 
     void applyVideoBitrate() {
@@ -80,13 +81,14 @@ final class CompressionAdvancedControls extends HookWidget {
           videoBitrate.text.trim().isEmpty ||
           (value != null && value >= 50 && value <= 500000);
       invalidBitrate.value = !valid;
-      if (valid)
+      if (valid) {
         onChanged(
           preferences.copyWith(
             videoBitrateCeilingKbps: value,
             clearVideoBitrate: value == null,
           ),
         );
+      }
     }
 
     final p = preferences;

@@ -21,7 +21,7 @@ internal data class CompressionPlan(
     val isInfeasible: Boolean = false, val warningMessage: String? = null,
 )
 
-internal enum class PresetId { WHATSAPP, WHATSAPP_HD, DISCORD, INSTAGRAM_REELS, TIK_TOK, FACEBOOK, X, YOU_TUBE_SHORTS, EMAIL }
+internal enum class PresetId { WHATSAPP, WHATSAPP_HD, DISCORD, INSTAGRAM_REELS, TIK_TOK, FACEBOOK, X, YOU_TUBE_SHORTS, EMAIL, LINKED_IN, TELEGRAM, SNAPCHAT }
 internal enum class PresetTier { EXACT, REDUCED_QUALITY, RELAXED_SIZE, UNSATISFIABLE }
 internal data class SharePreset(
     val id: PresetId, val targetMb: Long, val relaxedTargetMb: Long,

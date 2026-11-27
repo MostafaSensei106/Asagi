@@ -69,6 +69,9 @@ enum SharePresetId {
   x,
   youTubeShorts,
   email,
+  linkedIn,
+  telegram,
+  snapchat,
 }
 
 /// How closely a resolved plan matches the preset as written, ordered from best

@@ -150,6 +150,9 @@ final class PlatformCompressionPlanner implements CompressionPlanner {
     wire.NativeSharePresetId.facebook => SharePresetId.facebook,
     wire.NativeSharePresetId.x => SharePresetId.x,
     wire.NativeSharePresetId.youTubeShorts => SharePresetId.youTubeShorts,
+    wire.NativeSharePresetId.linkedIn => SharePresetId.linkedIn,
+    wire.NativeSharePresetId.telegram => SharePresetId.telegram,
+    wire.NativeSharePresetId.snapchat => SharePresetId.snapchat,
     wire.NativeSharePresetId.email => SharePresetId.email,
   };
 
@@ -162,6 +165,9 @@ final class PlatformCompressionPlanner implements CompressionPlanner {
     SharePresetId.facebook => wire.NativeSharePresetId.facebook,
     SharePresetId.x => wire.NativeSharePresetId.x,
     SharePresetId.youTubeShorts => wire.NativeSharePresetId.youTubeShorts,
+    SharePresetId.linkedIn => wire.NativeSharePresetId.linkedIn,
+    SharePresetId.telegram => wire.NativeSharePresetId.telegram,
+    SharePresetId.snapchat => wire.NativeSharePresetId.snapchat,
     SharePresetId.email => wire.NativeSharePresetId.email,
   };
 

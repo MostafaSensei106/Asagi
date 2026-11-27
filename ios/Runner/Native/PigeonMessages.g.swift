@@ -199,6 +199,9 @@ enum NativeSharePresetId: Int, CaseIterable {
   case x = 6
   case youTubeShorts = 7
   case email = 8
+  case linkedIn = 9
+  case telegram = 10
+  case snapchat = 11
 }
 
 enum NativeSharePresetTier: Int, CaseIterable {

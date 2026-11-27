@@ -1,8 +1,4 @@
-import 'dart:async';
-
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:intl/intl.dart';
-import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/compression/domain/models/share_preset.dart';
@@ -11,7 +7,9 @@ import '../../../../core/widgets/design_system/tokens/tokens.dart';
 import '../../../compression/presentation/cubit/compression_state.dart';
 import '../../../compression/presentation/utils/compression_number_input.dart';
 import '../../../compression/presentation/widgets/platform_presets_bar.dart';
+import '../../../compression/presentation/widgets/social_preset_icon.dart';
 
+/// Every platform is visible; names are accessible without occupying the canvas.
 final class HomeDestinationPicker extends HookWidget {
   const HomeDestinationPicker({
     required this.state,
@@ -31,7 +29,6 @@ final class HomeDestinationPicker extends HookWidget {
       text: _targetText(state.targetMb),
     );
     final validInput = useState(true);
-    final mounted = useIsMounted();
     useEffect(() {
       if (double.tryParse(normalizeCompressionNumber(controller.text)) !=
               state.targetMb ||
@@ -47,82 +44,63 @@ final class HomeDestinationPicker extends HookWidget {
       onPreset(id);
     }
 
-    Future<void> allDestinations() async {
-      final result = await context.showBottomSheetComponent<SharePresetId>(
-        title: context.localeKeys.shareDestination,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            for (final preset in state.presets)
-              ListTile(
-                leading: Icon(_descriptor(preset.id).icon),
-                title: Text(_descriptor(preset.id).name),
-                subtitle: Text(_size(context, preset.targetMb)),
-                trailing: state.selectedPresetId == preset.id
-                    ? const Icon(LucideIcons.check)
-                    : null,
-                onTap: () => Navigator.of(context).pop(preset.id),
-              ),
-          ],
-        ),
-      );
-      if (mounted() && result != null) select(result);
-    }
-
+    final available = state.presets.map((p) => p.id).toSet();
     final l10n = context.localeKeys;
-    final visible = state.presets
-        .where(
-          (p) => const {
-            SharePresetId.whatsapp,
-            SharePresetId.discord,
-            SharePresetId.email,
-          }.contains(p.id),
-        )
-        .toList();
-    final selected = state.selectedPresetId;
-    if (selected != null && !visible.any((p) => p.id == selected)) {
-      visible.addAll(state.presets.where((p) => p.id == selected));
-    }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(
-          l10n.shareDestination,
-          style: context.textTheme.titleLarge?.copyWith(
-            fontWeight: FontWeight.w700,
-          ),
-        ),
-        const SizedBox(height: AppSpacing.medium),
         Wrap(
           spacing: AppSpacing.small,
           runSpacing: AppSpacing.small,
           children: [
-            for (final preset in visible)
-              ChoiceChip(
-                avatar: Icon(_descriptor(preset.id).icon, size: 18),
-                label: Text(
-                  '${_descriptor(preset.id).name} · ${_size(context, preset.targetMb)}',
+            for (final descriptor in PresetDescriptor.social)
+              if (available.contains(descriptor.id))
+                Semantics(
+                  selected: state.selectedPresetId == descriptor.id,
+                  child: SizedBox.square(
+                    dimension: 60,
+                    child: IconButton.outlined(
+                      key: ValueKey('destination-${descriptor.id.name}'),
+                      tooltip: descriptor.name,
+                      style: IconButton.styleFrom(
+                        padding: const EdgeInsets.all(AppSpacing.large),
+                        backgroundColor: state.selectedPresetId == descriptor.id
+                            ? context.colorScheme.primaryContainer
+                            : context.colorScheme.surface,
+                        side: BorderSide(
+                          color: state.selectedPresetId == descriptor.id
+                              ? context.colorScheme.primary
+                              : context.colorScheme.outlineVariant,
+                          width: state.selectedPresetId == descriptor.id
+                              ? 2
+                              : 1,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(AppRadii.medium),
+                        ),
+                      ),
+                      icon: SocialPresetIcon(
+                        id: descriptor.id,
+                        color: state.selectedPresetId == descriptor.id
+                            ? context.colorScheme.onPrimaryContainer
+                            : context.colorScheme.onSurface,
+                      ),
+                      onPressed: () => select(descriptor.id),
+                    ),
+                  ),
                 ),
-                selected: selected == preset.id,
-                onSelected: (_) => select(preset.id),
-              ),
-            ChoiceChip(
-              label: Text(l10n.customSize),
-              selected: selected == null,
-              onSelected: (_) => select(null),
-            ),
           ],
         ),
-        if (state.presets.isNotEmpty)
-          Align(
-            alignment: AlignmentDirectional.centerStart,
-            child: TextButton.icon(
-              icon: const Icon(LucideIcons.grid2x2, size: 18),
-              label: Text(l10n.moreDestinations),
-              onPressed: () => unawaited(allDestinations()),
-            ),
+        const SizedBox(height: AppSpacing.medium),
+        Align(
+          alignment: AlignmentDirectional.centerStart,
+          child: ChoiceChip(
+            label: Text(l10n.customSize),
+            selected: state.selectedPresetId == null,
+            onSelected: (_) => select(null),
           ),
-        if (selected == null) ...[
+        ),
+        if (state.selectedPresetId == null) ...[
           const SizedBox(height: AppSpacing.large),
           TextField(
             key: const ValueKey('home-custom-size'),
@@ -149,11 +127,6 @@ final class HomeDestinationPicker extends HookWidget {
     );
   }
 }
-
-PresetDescriptor _descriptor(SharePresetId id) =>
-    PresetDescriptor.catalog.firstWhere((p) => p.id == id);
-String _size(BuildContext context, num size) =>
-    '${NumberFormat('0.#', Localizations.localeOf(context).toString()).format(size)} ${context.localeKeys.megabytesShort}';
 
 String _targetText(double target) =>
     target.toStringAsFixed(target == target.roundToDouble() ? 0 : 1);

@@ -4318,7 +4318,7 @@ abstract class AppLocalizations {
   /// No description provided for @homeVideoWorkspace.
   ///
   /// In en, this message translates to:
-  /// **'Make room for your video'**
+  /// **'Video workspace'**
   String get homeVideoWorkspace;
 
   /// No description provided for @homeImportHint.
@@ -4332,18 +4332,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Change video'**
   String get changeVideo;
-
-  /// No description provided for @shareDestination.
-  ///
-  /// In en, this message translates to:
-  /// **'Where are you sharing?'**
-  String get shareDestination;
-
-  /// No description provided for @moreDestinations.
-  ///
-  /// In en, this message translates to:
-  /// **'All destinations'**
-  String get moreDestinations;
 
   /// No description provided for @expectedOutputSize.
   ///
@@ -4386,6 +4374,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Output details'**
   String get homePlanDetails;
+
+  /// No description provided for @linkedInAlgorithmBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Professional · 1080p'**
+  String get linkedInAlgorithmBadge;
+
+  /// No description provided for @linkedInPresetDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'A compact 1080p target for professional posts. LinkedIn also applies duration and aspect-ratio requirements.'**
+  String get linkedInPresetDescription;
+
+  /// No description provided for @telegramAlgorithmBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Chat · balanced quality'**
+  String get telegramAlgorithmBadge;
+
+  /// No description provided for @telegramPresetDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'A compact sharing target to reduce transfer size. Telegram supports larger files; this is a Kuymo optimization preset.'**
+  String get telegramPresetDescription;
+
+  /// No description provided for @snapchatAlgorithmBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Social · compact'**
+  String get snapchatAlgorithmBadge;
+
+  /// No description provided for @snapchatPresetDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'A compact 1080p target. This preset preserves the source aspect ratio; Snapchat may require a vertical video and a minimum duration.'**
+  String get snapchatPresetDescription;
+
+  /// No description provided for @socialPresetHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Sharing targets tuned by Kuymo, not maximum upload limits. Platform duration and aspect-ratio rules still apply.'**
+  String get socialPresetHint;
 }
 
 class _AppLocalizationsDelegate

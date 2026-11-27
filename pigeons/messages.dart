@@ -64,6 +64,9 @@ enum NativeSharePresetId {
   x,
   youTubeShorts,
   email,
+  linkedIn,
+  telegram,
+  snapchat,
 }
 
 enum NativeSharePresetTier { exact, reducedQuality, relaxedSize, unsatisfiable }

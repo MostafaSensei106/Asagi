@@ -34,6 +34,9 @@ class PresetDescriptor {
     SharePresetId.facebook => l10n.facebookAlgorithmBadge,
     SharePresetId.youTubeShorts => l10n.youTubeShortsAlgorithmBadge,
     SharePresetId.email => l10n.emailAlgorithmBadge,
+    SharePresetId.linkedIn => l10n.linkedInAlgorithmBadge,
+    SharePresetId.telegram => l10n.telegramAlgorithmBadge,
+    SharePresetId.snapchat => l10n.snapchatAlgorithmBadge,
   };
 
   /// Plain-language explanation of why the preset is tuned this way.
@@ -47,9 +50,49 @@ class PresetDescriptor {
     SharePresetId.facebook => l10n.facebookPresetDescription,
     SharePresetId.youTubeShorts => l10n.youTubeShortsPresetDescription,
     SharePresetId.email => l10n.emailPresetDescription,
+    SharePresetId.linkedIn => l10n.linkedInPresetDescription,
+    SharePresetId.telegram => l10n.telegramPresetDescription,
+    SharePresetId.snapchat => l10n.snapchatPresetDescription,
   };
 
+  /// Legacy IDs remain readable, while the picker advertises ten platforms.
+  static List<PresetDescriptor> get social => [
+    for (final id in const [
+      SharePresetId.whatsapp,
+      SharePresetId.facebook,
+      SharePresetId.instagramReels,
+      SharePresetId.tikTok,
+      SharePresetId.youTubeShorts,
+      SharePresetId.discord,
+      SharePresetId.linkedIn,
+      SharePresetId.telegram,
+      SharePresetId.snapchat,
+      SharePresetId.x,
+    ])
+      catalog.firstWhere((p) => p.id == id),
+  ];
+  bool get isSocial =>
+      id != SharePresetId.email && id != SharePresetId.whatsappHd;
+
   static const List<PresetDescriptor> catalog = [
+    PresetDescriptor(
+      id: SharePresetId.linkedIn,
+      name: 'LinkedIn',
+      sizeBadge: '100 MB',
+      icon: LucideIcons.briefcaseBusiness,
+    ),
+    PresetDescriptor(
+      id: SharePresetId.telegram,
+      name: 'Telegram',
+      sizeBadge: '32 MB',
+      icon: LucideIcons.send,
+    ),
+    PresetDescriptor(
+      id: SharePresetId.snapchat,
+      name: 'Snapchat',
+      sizeBadge: '20 MB',
+      icon: LucideIcons.ghost,
+    ),
     PresetDescriptor(
       id: SharePresetId.whatsapp,
       name: 'WhatsApp',
@@ -133,10 +176,10 @@ class PlatformPresetsBar extends StatelessWidget {
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         clipBehavior: Clip.none,
-        itemCount: PresetDescriptor.catalog.length + 1,
+        itemCount: PresetDescriptor.social.length + 1,
         separatorBuilder: (_, _) => const SizedBox(width: AppSpacing.small),
         itemBuilder: (context, index) {
-          if (index == PresetDescriptor.catalog.length) {
+          if (index == PresetDescriptor.social.length) {
             // Custom card
             return _PresetCard(
               title: l10n.customSize,
@@ -149,7 +192,7 @@ class PlatformPresetsBar extends StatelessWidget {
             );
           }
 
-          final descriptor = PresetDescriptor.catalog[index];
+          final descriptor = PresetDescriptor.social[index];
           final isSelected = selectedPresetId == descriptor.id;
 
           return _PresetCard(

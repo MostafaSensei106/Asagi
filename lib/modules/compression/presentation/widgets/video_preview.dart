@@ -17,12 +17,15 @@ final class VideoPreview extends HookWidget {
   // video_player invokes this without awaiting it on first use. Preflight the
   // native channel so an older APK without the plugin cannot throw uncaught.
   static Future<bool>? _nativePlayerReady;
+  static bool? _nativePlayerAvailable;
 
   static Future<bool> _checkNativePlayer() async {
     try {
       await VideoPlayerPlatform.instance.init();
+      _nativePlayerAvailable = true;
       return true;
     } catch (_) {
+      _nativePlayerAvailable = false;
       return false;
     }
   }
@@ -45,7 +48,7 @@ final class VideoPreview extends HookWidget {
       var active = true;
       Future<void> initialize() async {
         try {
-          if (!await (_nativePlayerReady ??= _checkNativePlayer())) {
+          if (!(_nativePlayerAvailable ?? await (_nativePlayerReady ??= _checkNativePlayer()))) {
             if (active) failed.value = true;
             return;
           }

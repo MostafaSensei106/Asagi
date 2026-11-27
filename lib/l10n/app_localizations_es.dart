@@ -2449,7 +2449,7 @@ class AppLocalizationsEs extends AppLocalizations {
       'Fine-tune this video. Changes take effect only when you apply them.';
 
   @override
-  String get homeVideoWorkspace => 'Make room for your video';
+  String get homeVideoWorkspace => 'Video workspace';
 
   @override
   String get homeImportHint =>
@@ -2457,12 +2457,6 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get changeVideo => 'Change video';
-
-  @override
-  String get shareDestination => 'Where are you sharing?';
-
-  @override
-  String get moreDestinations => 'All destinations';
 
   @override
   String get expectedOutputSize => 'Target output size';
@@ -2484,6 +2478,31 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get homePlanDetails => 'Output details';
+
+  @override
+  String get linkedInAlgorithmBadge => 'Professional · 1080p';
+
+  @override
+  String get linkedInPresetDescription =>
+      'A compact 1080p target for professional posts. LinkedIn also applies duration and aspect-ratio requirements.';
+
+  @override
+  String get telegramAlgorithmBadge => 'Chat · balanced quality';
+
+  @override
+  String get telegramPresetDescription =>
+      'A compact sharing target to reduce transfer size. Telegram supports larger files; this is a Kuymo optimization preset.';
+
+  @override
+  String get snapchatAlgorithmBadge => 'Social · compact';
+
+  @override
+  String get snapchatPresetDescription =>
+      'A compact 1080p target. This preset preserves the source aspect ratio; Snapchat may require a vertical video and a minimum duration.';
+
+  @override
+  String get socialPresetHint =>
+      'Sharing targets tuned by Kuymo, not maximum upload limits. Platform duration and aspect-ratio rules still apply.';
 }
 
 /// The translations for Spanish Castilian, as used in Spain (`es_ES`).

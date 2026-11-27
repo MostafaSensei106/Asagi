@@ -2418,7 +2418,7 @@ class AppLocalizationsAr extends AppLocalizations {
       'اضبط هذا الفيديو كما تريد. تُعتمد التغييرات عند الضغط على تطبيق فقط.';
 
   @override
-  String get homeVideoWorkspace => 'مساحة أكبر لفيديوهاتك';
+  String get homeVideoWorkspace => 'مساحة عمل الفيديو';
 
   @override
   String get homeImportHint =>
@@ -2426,12 +2426,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get changeVideo => 'تغيير الفيديو';
-
-  @override
-  String get shareDestination => 'أين ستشارك الفيديو؟';
-
-  @override
-  String get moreDestinations => 'كل المنصات';
 
   @override
   String get expectedOutputSize => 'الحجم المستهدف للناتج';
@@ -2453,6 +2447,31 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get homePlanDetails => 'تفاصيل الناتج';
+
+  @override
+  String get linkedInAlgorithmBadge => 'احترافي · 1080p';
+
+  @override
+  String get linkedInPresetDescription =>
+      'حجم مدمج بدقة 1080p للمنشورات المهنية. لدى LinkedIn شروط إضافية للمدة ونسبة الأبعاد.';
+
+  @override
+  String get telegramAlgorithmBadge => 'محادثات · جودة متوازنة';
+
+  @override
+  String get telegramPresetDescription =>
+      'حجم مشاركة مدمج لتقليل حجم النقل. يدعم تيليجرام ملفات أكبر؛ هذا إعداد تحسين من Kuymo.';
+
+  @override
+  String get snapchatAlgorithmBadge => 'اجتماعي · مدمج';
+
+  @override
+  String get snapchatPresetDescription =>
+      'حجم مدمج بدقة 1080p. يحتفظ هذا الإعداد بأبعاد الأصل؛ قد يتطلب سناب شات فيديو رأسيًا وحدًا أدنى للمدة.';
+
+  @override
+  String get socialPresetHint =>
+      'أحجام مشاركة محسّنة من Kuymo وليست الحدود القصوى للرفع. تظل شروط المنصة للمدة ونسبة الأبعاد سارية.';
 }
 
 /// The translations for Arabic, as used in Egypt (`ar_EG`).

@@ -220,7 +220,10 @@ enum class NativeSharePresetId(val raw: Int) {
   FACEBOOK(5),
   X(6),
   YOU_TUBE_SHORTS(7),
-  EMAIL(8);
+  EMAIL(8),
+  LINKED_IN(9),
+  TELEGRAM(10),
+  SNAPCHAT(11);
 
   companion object {
     private val pigeonValues = values()

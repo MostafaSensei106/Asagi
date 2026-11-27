@@ -401,15 +401,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "de_DE": [
@@ -814,15 +819,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "es": [
@@ -1227,15 +1237,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "es_ES": [
@@ -1640,15 +1655,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "fr": [
@@ -2053,15 +2073,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "id": [
@@ -2466,15 +2491,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "id_ID": [
@@ -2879,15 +2909,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "it": [
@@ -3292,15 +3327,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "it_IT": [
@@ -3705,15 +3745,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "ja": [
@@ -4118,15 +4163,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "ja_JP": [
@@ -4531,15 +4581,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "ko": [
@@ -4944,15 +4999,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "ko_KR": [
@@ -5357,15 +5417,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "nl": [
@@ -5770,15 +5835,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "nl_BE": [
@@ -6183,15 +6253,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "pl": [
@@ -6596,15 +6671,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "pl_PL": [
@@ -7009,15 +7089,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "pt": [
@@ -7422,15 +7507,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "pt_BR": [
@@ -7835,15 +7925,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "ru": [
@@ -8248,15 +8343,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "ru_RU": [
@@ -8661,15 +8761,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "sv": [
@@ -9074,15 +9179,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "sv_SE": [
@@ -9487,15 +9597,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "th": [
@@ -9900,15 +10015,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "th_TH": [
@@ -10313,15 +10433,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "tr": [
@@ -10726,15 +10851,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "tr_TR": [
@@ -11139,15 +11269,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "vi": [
@@ -11552,15 +11687,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "zh": [
@@ -11965,15 +12105,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "zh_CN": [
@@ -12378,15 +12523,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "zh_HK": [
@@ -12791,15 +12941,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "zh_SG": [
@@ -13204,15 +13359,20 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ],
 
   "zh_TW": [
@@ -13617,14 +13777,19 @@
     "homeVideoWorkspace",
     "homeImportHint",
     "changeVideo",
-    "shareDestination",
-    "moreDestinations",
     "expectedOutputSize",
     "homeReadyToShare",
     "homeNewVideo",
     "homeRecoverJobs",
     "homeSaveFailed",
     "homeShareFailed",
-    "homePlanDetails"
+    "homePlanDetails",
+    "linkedInAlgorithmBadge",
+    "linkedInPresetDescription",
+    "telegramAlgorithmBadge",
+    "telegramPresetDescription",
+    "snapchatAlgorithmBadge",
+    "snapchatPresetDescription",
+    "socialPresetHint"
   ]
 }
