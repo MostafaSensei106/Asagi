@@ -71,7 +71,11 @@ void main() {
   final capture = GlobalKey();
   setUpAll(() async {
     final fonts = FontLoader('GoogleSans')
-      ..addFont(rootBundle.load('assets/fonts/Google_Sans/static/GoogleSans-Regular.ttf'));
+      ..addFont(
+        rootBundle.load(
+          'assets/fonts/Google_Sans/static/GoogleSans-Regular.ttf',
+        ),
+      );
     await fonts.load();
     registerFallbackValue(_video);
     registerFallbackValue(const CompressionPreferences());
@@ -198,7 +202,8 @@ void main() {
     await tester.runAsync(() async {
       final image = await boundary.toImage(pixelRatio: 1);
       final data = await image.toByteData(format: ui.ImageByteFormat.png);
-      await File('/tmp/kuymo-home-$name.png').writeAsBytes(data!.buffer.asUint8List());
+      await File('/tmp/kuymo-home-$name.png')
+          .writeAsBytes(data!.buffer.asUint8List());
       image.dispose();
     });
   }

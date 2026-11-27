@@ -10,9 +10,9 @@ import 'package:flutter/services.dart';
 import 'package:meta/meta.dart' show immutable, protected, visibleForTesting;
 
 Object? _extractReplyValueOrThrow(
-    List<Object?>? replyList,
-    String channelName, {
-    required bool isNullValid,
+  List<Object?>? replyList,
+  String channelName, {
+  required bool isNullValid,
 }) {
   if (replyList == null) {
     throw PlatformException(
@@ -46,8 +46,9 @@ bool _deepEquals(Object? a, Object? b) {
   }
   if (a is List && b is List) {
     return a.length == b.length &&
-        a.indexed
-            .every(((int, dynamic) item) => _deepEquals(item.$2, b[item.$1]));
+        a.indexed.every(
+          ((int, dynamic) item) => _deepEquals(item.$2, b[item.$1]),
+        );
   }
   if (a is Map && b is Map) {
     if (a.length != b.length) {
@@ -96,11 +97,7 @@ int _deepHash(Object? value) {
   return value.hashCode;
 }
 
-
-enum NativeHdrMode {
-  preserve,
-  toneMapToSdr;
-}
+enum NativeHdrMode { preserve, toneMapToSdr }
 
 enum NativeSharePresetId {
   whatsapp,
@@ -114,15 +111,10 @@ enum NativeSharePresetId {
   email,
   linkedIn,
   telegram,
-  snapchat;
+  snapchat,
 }
 
-enum NativeSharePresetTier {
-  exact,
-  reducedQuality,
-  relaxedSize,
-  unsatisfiable;
-}
+enum NativeSharePresetTier { exact, reducedQuality, relaxedSize, unsatisfiable }
 
 class NativeVideoMetadata {
   NativeVideoMetadata({
@@ -182,7 +174,8 @@ class NativeVideoMetadata {
   }
 
   Object encode() {
-    return _toList();  }
+    return _toList();
+  }
 
   static NativeVideoMetadata decode(Object result) {
     result as List<Object?>;
@@ -211,7 +204,18 @@ class NativeVideoMetadata {
     if (identical(this, other)) {
       return true;
     }
-    return _deepEquals(path, other.path) && _deepEquals(durationSeconds, other.durationSeconds) && _deepEquals(width, other.width) && _deepEquals(height, other.height) && _deepEquals(rotation, other.rotation) && _deepEquals(bitrateBps, other.bitrateBps) && _deepEquals(frameRate, other.frameRate) && _deepEquals(hasAudio, other.hasAudio) && _deepEquals(fileSizeBytes, other.fileSizeBytes) && _deepEquals(isHdr, other.isHdr) && _deepEquals(colorTransfer, other.colorTransfer) && _deepEquals(pixelAspectRatio, other.pixelAspectRatio);
+    return _deepEquals(path, other.path) &&
+        _deepEquals(durationSeconds, other.durationSeconds) &&
+        _deepEquals(width, other.width) &&
+        _deepEquals(height, other.height) &&
+        _deepEquals(rotation, other.rotation) &&
+        _deepEquals(bitrateBps, other.bitrateBps) &&
+        _deepEquals(frameRate, other.frameRate) &&
+        _deepEquals(hasAudio, other.hasAudio) &&
+        _deepEquals(fileSizeBytes, other.fileSizeBytes) &&
+        _deepEquals(isHdr, other.isHdr) &&
+        _deepEquals(colorTransfer, other.colorTransfer) &&
+        _deepEquals(pixelAspectRatio, other.pixelAspectRatio);
   }
 
   @override
@@ -266,7 +270,8 @@ class NativeCompressRequest {
   }
 
   Object encode() {
-    return _toList();  }
+    return _toList();
+  }
 
   static NativeCompressRequest decode(Object result) {
     result as List<Object?>;
@@ -291,7 +296,14 @@ class NativeCompressRequest {
     if (identical(this, other)) {
       return true;
     }
-    return _deepEquals(inputPath, other.inputPath) && _deepEquals(outputPath, other.outputPath) && _deepEquals(targetVideoBitrateBps, other.targetVideoBitrateBps) && _deepEquals(targetAudioBitrateBps, other.targetAudioBitrateBps) && _deepEquals(targetWidth, other.targetWidth) && _deepEquals(targetHeight, other.targetHeight) && _deepEquals(frameRate, other.frameRate) && _deepEquals(hdrMode, other.hdrMode);
+    return _deepEquals(inputPath, other.inputPath) &&
+        _deepEquals(outputPath, other.outputPath) &&
+        _deepEquals(targetVideoBitrateBps, other.targetVideoBitrateBps) &&
+        _deepEquals(targetAudioBitrateBps, other.targetAudioBitrateBps) &&
+        _deepEquals(targetWidth, other.targetWidth) &&
+        _deepEquals(targetHeight, other.targetHeight) &&
+        _deepEquals(frameRate, other.frameRate) &&
+        _deepEquals(hdrMode, other.hdrMode);
   }
 
   @override
@@ -346,7 +358,8 @@ class NativePlanningMetadata {
   }
 
   Object encode() {
-    return _toList();  }
+    return _toList();
+  }
 
   static NativePlanningMetadata decode(Object result) {
     result as List<Object?>;
@@ -371,7 +384,14 @@ class NativePlanningMetadata {
     if (identical(this, other)) {
       return true;
     }
-    return _deepEquals(durationSecs, other.durationSecs) && _deepEquals(width, other.width) && _deepEquals(height, other.height) && _deepEquals(rotation, other.rotation) && _deepEquals(bitrateBps, other.bitrateBps) && _deepEquals(fileSizeBytes, other.fileSizeBytes) && _deepEquals(hasAudio, other.hasAudio) && _deepEquals(pixelAspectRatio, other.pixelAspectRatio);
+    return _deepEquals(durationSecs, other.durationSecs) &&
+        _deepEquals(width, other.width) &&
+        _deepEquals(height, other.height) &&
+        _deepEquals(rotation, other.rotation) &&
+        _deepEquals(bitrateBps, other.bitrateBps) &&
+        _deepEquals(fileSizeBytes, other.fileSizeBytes) &&
+        _deepEquals(hasAudio, other.hasAudio) &&
+        _deepEquals(pixelAspectRatio, other.pixelAspectRatio);
   }
 
   @override
@@ -410,7 +430,8 @@ class NativePlanningPreferences {
   }
 
   Object encode() {
-    return _toList();  }
+    return _toList();
+  }
 
   static NativePlanningPreferences decode(Object result) {
     result as List<Object?>;
@@ -425,13 +446,17 @@ class NativePlanningPreferences {
   @override
   // ignore: avoid_equals_and_hash_code_on_mutable_classes
   bool operator ==(Object other) {
-    if (other is! NativePlanningPreferences || other.runtimeType != runtimeType) {
+    if (other is! NativePlanningPreferences ||
+        other.runtimeType != runtimeType) {
       return false;
     }
     if (identical(this, other)) {
       return true;
     }
-    return _deepEquals(forceEncode, other.forceEncode) && _deepEquals(maxShortEdge, other.maxShortEdge) && _deepEquals(audioBitrateBps, other.audioBitrateBps) && _deepEquals(videoBitrateCeilingBps, other.videoBitrateCeilingBps);
+    return _deepEquals(forceEncode, other.forceEncode) &&
+        _deepEquals(maxShortEdge, other.maxShortEdge) &&
+        _deepEquals(audioBitrateBps, other.audioBitrateBps) &&
+        _deepEquals(videoBitrateCeilingBps, other.videoBitrateCeilingBps);
   }
 
   @override
@@ -490,7 +515,8 @@ class NativeCompressionPlan {
   }
 
   Object encode() {
-    return _toList();  }
+    return _toList();
+  }
 
   static NativeCompressionPlan decode(Object result) {
     result as List<Object?>;
@@ -516,7 +542,15 @@ class NativeCompressionPlan {
     if (identical(this, other)) {
       return true;
     }
-    return _deepEquals(targetVideoBitrateBps, other.targetVideoBitrateBps) && _deepEquals(targetAudioBitrateBps, other.targetAudioBitrateBps) && _deepEquals(targetWidth, other.targetWidth) && _deepEquals(targetHeight, other.targetHeight) && _deepEquals(hardLimitBytes, other.hardLimitBytes) && _deepEquals(safetyMargin, other.safetyMargin) && _deepEquals(maxAttempts, other.maxAttempts) && _deepEquals(isInfeasible, other.isInfeasible) && _deepEquals(warningMessage, other.warningMessage);
+    return _deepEquals(targetVideoBitrateBps, other.targetVideoBitrateBps) &&
+        _deepEquals(targetAudioBitrateBps, other.targetAudioBitrateBps) &&
+        _deepEquals(targetWidth, other.targetWidth) &&
+        _deepEquals(targetHeight, other.targetHeight) &&
+        _deepEquals(hardLimitBytes, other.hardLimitBytes) &&
+        _deepEquals(safetyMargin, other.safetyMargin) &&
+        _deepEquals(maxAttempts, other.maxAttempts) &&
+        _deepEquals(isInfeasible, other.isInfeasible) &&
+        _deepEquals(warningMessage, other.warningMessage);
   }
 
   @override
@@ -571,7 +605,8 @@ class NativeSharePreset {
   }
 
   Object encode() {
-    return _toList();  }
+    return _toList();
+  }
 
   static NativeSharePreset decode(Object result) {
     result as List<Object?>;
@@ -596,7 +631,14 @@ class NativeSharePreset {
     if (identical(this, other)) {
       return true;
     }
-    return _deepEquals(id, other.id) && _deepEquals(targetMb, other.targetMb) && _deepEquals(relaxedTargetMb, other.relaxedTargetMb) && _deepEquals(maxShortEdge, other.maxShortEdge) && _deepEquals(maxFps, other.maxFps) && _deepEquals(bitrateCapBps, other.bitrateCapBps) && _deepEquals(requireFaststart, other.requireFaststart) && _deepEquals(verifiedOn, other.verifiedOn);
+    return _deepEquals(id, other.id) &&
+        _deepEquals(targetMb, other.targetMb) &&
+        _deepEquals(relaxedTargetMb, other.relaxedTargetMb) &&
+        _deepEquals(maxShortEdge, other.maxShortEdge) &&
+        _deepEquals(maxFps, other.maxFps) &&
+        _deepEquals(bitrateCapBps, other.bitrateCapBps) &&
+        _deepEquals(requireFaststart, other.requireFaststart) &&
+        _deepEquals(verifiedOn, other.verifiedOn);
   }
 
   @override
@@ -623,15 +665,12 @@ class NativeSharePresetPlan {
   NativeCompressionPlan plan;
 
   List<Object?> _toList() {
-    return <Object?>[
-      tier,
-      effectiveTargetMb,
-      plan,
-    ];
+    return <Object?>[tier, effectiveTargetMb, plan];
   }
 
   Object encode() {
-    return _toList();  }
+    return _toList();
+  }
 
   static NativeSharePresetPlan decode(Object result) {
     result as List<Object?>;
@@ -651,7 +690,9 @@ class NativeSharePresetPlan {
     if (identical(this, other)) {
       return true;
     }
-    return _deepEquals(tier, other.tier) && _deepEquals(effectiveTargetMb, other.effectiveTargetMb) && _deepEquals(plan, other.plan);
+    return _deepEquals(tier, other.tier) &&
+        _deepEquals(effectiveTargetMb, other.effectiveTargetMb) &&
+        _deepEquals(plan, other.plan);
   }
 
   @override
@@ -678,15 +719,12 @@ class NativePickedDocument {
   int sizeBytes;
 
   List<Object?> _toList() {
-    return <Object?>[
-      uri,
-      name,
-      sizeBytes,
-    ];
+    return <Object?>[uri, name, sizeBytes];
   }
 
   Object encode() {
-    return _toList();  }
+    return _toList();
+  }
 
   static NativePickedDocument decode(Object result) {
     result as List<Object?>;
@@ -706,7 +744,9 @@ class NativePickedDocument {
     if (identical(this, other)) {
       return true;
     }
-    return _deepEquals(uri, other.uri) && _deepEquals(name, other.name) && _deepEquals(sizeBytes, other.sizeBytes);
+    return _deepEquals(uri, other.uri) &&
+        _deepEquals(name, other.name) &&
+        _deepEquals(sizeBytes, other.sizeBytes);
   }
 
   @override
@@ -730,14 +770,12 @@ class NativeAiResources {
   bool charging;
 
   List<Object?> _toList() {
-    return <Object?>[
-      availableMemoryBytes,
-      charging,
-    ];
+    return <Object?>[availableMemoryBytes, charging];
   }
 
   Object encode() {
-    return _toList();  }
+    return _toList();
+  }
 
   static NativeAiResources decode(Object result) {
     result as List<Object?>;
@@ -756,7 +794,8 @@ class NativeAiResources {
     if (identical(this, other)) {
       return true;
     }
-    return _deepEquals(availableMemoryBytes, other.availableMemoryBytes) && _deepEquals(charging, other.charging);
+    return _deepEquals(availableMemoryBytes, other.availableMemoryBytes) &&
+        _deepEquals(charging, other.charging);
   }
 
   @override
@@ -783,15 +822,12 @@ class NativeAiMediaSamples {
   double durationSeconds;
 
   List<Object?> _toList() {
-    return <Object?>[
-      imagePaths,
-      audioPaths,
-      durationSeconds,
-    ];
+    return <Object?>[imagePaths, audioPaths, durationSeconds];
   }
 
   Object encode() {
-    return _toList();  }
+    return _toList();
+  }
 
   static NativeAiMediaSamples decode(Object result) {
     result as List<Object?>;
@@ -811,7 +847,9 @@ class NativeAiMediaSamples {
     if (identical(this, other)) {
       return true;
     }
-    return _deepEquals(imagePaths, other.imagePaths) && _deepEquals(audioPaths, other.audioPaths) && _deepEquals(durationSeconds, other.durationSeconds);
+    return _deepEquals(imagePaths, other.imagePaths) &&
+        _deepEquals(audioPaths, other.audioPaths) &&
+        _deepEquals(durationSeconds, other.durationSeconds);
   }
 
   @override
@@ -824,7 +862,6 @@ class NativeAiMediaSamples {
   }
 }
 
-
 class _PigeonCodec extends StandardMessageCodec {
   const _PigeonCodec();
   @override
@@ -832,43 +869,43 @@ class _PigeonCodec extends StandardMessageCodec {
     if (value is int) {
       buffer.putUint8(4);
       buffer.putInt64(value);
-    }    else if (value is NativeHdrMode) {
+    } else if (value is NativeHdrMode) {
       buffer.putUint8(129);
       writeValue(buffer, value.index);
-    }    else if (value is NativeSharePresetId) {
+    } else if (value is NativeSharePresetId) {
       buffer.putUint8(130);
       writeValue(buffer, value.index);
-    }    else if (value is NativeSharePresetTier) {
+    } else if (value is NativeSharePresetTier) {
       buffer.putUint8(131);
       writeValue(buffer, value.index);
-    }    else if (value is NativeVideoMetadata) {
+    } else if (value is NativeVideoMetadata) {
       buffer.putUint8(132);
       writeValue(buffer, value.encode());
-    }    else if (value is NativeCompressRequest) {
+    } else if (value is NativeCompressRequest) {
       buffer.putUint8(133);
       writeValue(buffer, value.encode());
-    }    else if (value is NativePlanningMetadata) {
+    } else if (value is NativePlanningMetadata) {
       buffer.putUint8(134);
       writeValue(buffer, value.encode());
-    }    else if (value is NativePlanningPreferences) {
+    } else if (value is NativePlanningPreferences) {
       buffer.putUint8(135);
       writeValue(buffer, value.encode());
-    }    else if (value is NativeCompressionPlan) {
+    } else if (value is NativeCompressionPlan) {
       buffer.putUint8(136);
       writeValue(buffer, value.encode());
-    }    else if (value is NativeSharePreset) {
+    } else if (value is NativeSharePreset) {
       buffer.putUint8(137);
       writeValue(buffer, value.encode());
-    }    else if (value is NativeSharePresetPlan) {
+    } else if (value is NativeSharePresetPlan) {
       buffer.putUint8(138);
       writeValue(buffer, value.encode());
-    }    else if (value is NativePickedDocument) {
+    } else if (value is NativePickedDocument) {
       buffer.putUint8(139);
       writeValue(buffer, value.encode());
-    }    else if (value is NativeAiResources) {
+    } else if (value is NativeAiResources) {
       buffer.putUint8(140);
       writeValue(buffer, value.encode());
-    }    else if (value is NativeAiMediaSamples) {
+    } else if (value is NativeAiMediaSamples) {
       buffer.putUint8(141);
       writeValue(buffer, value.encode());
     } else {
@@ -919,38 +956,41 @@ class NativeMediaApi {
   /// available for dependency injection. If it is left null, the default
   /// BinaryMessenger will be used which routes to the host platform.
   NativeMediaApi({
-      BinaryMessenger? binaryMessenger, 
-      String messageChannelSuffix = '', 
-      })
-      : pigeonVar_binaryMessenger = binaryMessenger,
-        pigeonVar_messageChannelSuffix = messageChannelSuffix.isNotEmpty ? '.$messageChannelSuffix' : '';
+    BinaryMessenger? binaryMessenger,
+    String messageChannelSuffix = '',
+  }) : pigeonVar_binaryMessenger = binaryMessenger,
+       pigeonVar_messageChannelSuffix = messageChannelSuffix.isNotEmpty
+           ? '.$messageChannelSuffix'
+           : '';
 
   final BinaryMessenger? pigeonVar_binaryMessenger;
   static const MessageCodec<Object?> pigeonChannelCodec = _PigeonCodec();
 
   final String pigeonVar_messageChannelSuffix;
 
-
   Future<NativeVideoMetadata> extractVideoMetadata(String inputPath) async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.kuymo.NativeMediaApi.extractVideoMetadata$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeMediaApi.extractVideoMetadata$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
       binaryMessenger: pigeonVar_binaryMessenger,
     );
-    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(<Object?>[inputPath]);
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(
+      <Object?>[inputPath],
+    );
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     final Object? pigeonVar_replyValue = _extractReplyValueOrThrow(
-        pigeonVar_replyList,
-        pigeonVar_channelName,
-        isNullValid: false,
-    )
-    ;
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: false,
+    );
     return pigeonVar_replyValue! as NativeVideoMetadata;
   }
 
   Future<void> cancelEncoding() async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.kuymo.NativeMediaApi.cancelEncoding$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeMediaApi.cancelEncoding$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -959,15 +999,15 @@ class NativeMediaApi {
     final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(null);
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     _extractReplyValueOrThrow(
-        pigeonVar_replyList,
-        pigeonVar_channelName,
-        isNullValid: true,
-    )
-    ;
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: true,
+    );
   }
 
   Future<void> pauseEncoding() async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.kuymo.NativeMediaApi.pauseEncoding$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeMediaApi.pauseEncoding$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -976,15 +1016,15 @@ class NativeMediaApi {
     final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(null);
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     _extractReplyValueOrThrow(
-        pigeonVar_replyList,
-        pigeonVar_channelName,
-        isNullValid: true,
-    )
-    ;
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: true,
+    );
   }
 
   Future<void> resumeEncoding() async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.kuymo.NativeMediaApi.resumeEncoding$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeMediaApi.resumeEncoding$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -993,28 +1033,29 @@ class NativeMediaApi {
     final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(null);
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     _extractReplyValueOrThrow(
-        pigeonVar_replyList,
-        pigeonVar_channelName,
-        isNullValid: true,
-    )
-    ;
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: true,
+    );
   }
 
   Future<bool> startHardwareEncoding(NativeCompressRequest request) async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.kuymo.NativeMediaApi.startHardwareEncoding$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeMediaApi.startHardwareEncoding$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
       binaryMessenger: pigeonVar_binaryMessenger,
     );
-    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(<Object?>[request]);
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(
+      <Object?>[request],
+    );
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     final Object? pigeonVar_replyValue = _extractReplyValueOrThrow(
-        pigeonVar_replyList,
-        pigeonVar_channelName,
-        isNullValid: false,
-    )
-    ;
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: false,
+    );
     return pigeonVar_replyValue! as bool;
   }
 }
@@ -1024,56 +1065,71 @@ class NativeCompressionPlannerApi {
   /// available for dependency injection. If it is left null, the default
   /// BinaryMessenger will be used which routes to the host platform.
   NativeCompressionPlannerApi({
-      BinaryMessenger? binaryMessenger, 
-      String messageChannelSuffix = '', 
-      })
-      : pigeonVar_binaryMessenger = binaryMessenger,
-        pigeonVar_messageChannelSuffix = messageChannelSuffix.isNotEmpty ? '.$messageChannelSuffix' : '';
+    BinaryMessenger? binaryMessenger,
+    String messageChannelSuffix = '',
+  }) : pigeonVar_binaryMessenger = binaryMessenger,
+       pigeonVar_messageChannelSuffix = messageChannelSuffix.isNotEmpty
+           ? '.$messageChannelSuffix'
+           : '';
 
   final BinaryMessenger? pigeonVar_binaryMessenger;
   static const MessageCodec<Object?> pigeonChannelCodec = _PigeonCodec();
 
   final String pigeonVar_messageChannelSuffix;
 
-
-  Future<NativeCompressionPlan> plan(NativePlanningMetadata info, double targetMb, double? safetyMargin, NativePlanningPreferences preferences) async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.kuymo.NativeCompressionPlannerApi.plan$pigeonVar_messageChannelSuffix';
+  Future<NativeCompressionPlan> plan(
+    NativePlanningMetadata info,
+    double targetMb,
+    double? safetyMargin,
+    NativePlanningPreferences preferences,
+  ) async {
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeCompressionPlannerApi.plan$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
       binaryMessenger: pigeonVar_binaryMessenger,
     );
-    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(<Object?>[info, targetMb, safetyMargin, preferences]);
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(
+      <Object?>[info, targetMb, safetyMargin, preferences],
+    );
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     final Object? pigeonVar_replyValue = _extractReplyValueOrThrow(
-        pigeonVar_replyList,
-        pigeonVar_channelName,
-        isNullValid: false,
-    )
-    ;
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: false,
+    );
     return pigeonVar_replyValue! as NativeCompressionPlan;
   }
 
-  Future<int> verify(int bytes, double duration, NativeCompressionPlan plan, int attempt) async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.kuymo.NativeCompressionPlannerApi.verify$pigeonVar_messageChannelSuffix';
+  Future<int> verify(
+    int bytes,
+    double duration,
+    NativeCompressionPlan plan,
+    int attempt,
+  ) async {
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeCompressionPlannerApi.verify$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
       binaryMessenger: pigeonVar_binaryMessenger,
     );
-    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(<Object?>[bytes, duration, plan, attempt]);
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(
+      <Object?>[bytes, duration, plan, attempt],
+    );
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     final Object? pigeonVar_replyValue = _extractReplyValueOrThrow(
-        pigeonVar_replyList,
-        pigeonVar_channelName,
-        isNullValid: false,
-    )
-    ;
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: false,
+    );
     return pigeonVar_replyValue! as int;
   }
 
   Future<List<NativeSharePreset>> presets() async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.kuymo.NativeCompressionPlannerApi.presets$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeCompressionPlannerApi.presets$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -1082,29 +1138,33 @@ class NativeCompressionPlannerApi {
     final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(null);
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     final Object? pigeonVar_replyValue = _extractReplyValueOrThrow(
-        pigeonVar_replyList,
-        pigeonVar_channelName,
-        isNullValid: false,
-    )
-    ;
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: false,
+    );
     return (pigeonVar_replyValue! as List<Object?>).cast<NativeSharePreset>();
   }
 
-  Future<NativeSharePresetPlan> resolvePreset(NativePlanningMetadata info, NativeSharePresetId id) async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.kuymo.NativeCompressionPlannerApi.resolvePreset$pigeonVar_messageChannelSuffix';
+  Future<NativeSharePresetPlan> resolvePreset(
+    NativePlanningMetadata info,
+    NativeSharePresetId id,
+  ) async {
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeCompressionPlannerApi.resolvePreset$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
       binaryMessenger: pigeonVar_binaryMessenger,
     );
-    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(<Object?>[info, id]);
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(
+      <Object?>[info, id],
+    );
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     final Object? pigeonVar_replyValue = _extractReplyValueOrThrow(
-        pigeonVar_replyList,
-        pigeonVar_channelName,
-        isNullValid: false,
-    )
-    ;
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: false,
+    );
     return pigeonVar_replyValue! as NativeSharePresetPlan;
   }
 }
@@ -1114,55 +1174,61 @@ class NativeAiFilesApi {
   /// available for dependency injection. If it is left null, the default
   /// BinaryMessenger will be used which routes to the host platform.
   NativeAiFilesApi({
-      BinaryMessenger? binaryMessenger, 
-      String messageChannelSuffix = '', 
-      })
-      : pigeonVar_binaryMessenger = binaryMessenger,
-        pigeonVar_messageChannelSuffix = messageChannelSuffix.isNotEmpty ? '.$messageChannelSuffix' : '';
+    BinaryMessenger? binaryMessenger,
+    String messageChannelSuffix = '',
+  }) : pigeonVar_binaryMessenger = binaryMessenger,
+       pigeonVar_messageChannelSuffix = messageChannelSuffix.isNotEmpty
+           ? '.$messageChannelSuffix'
+           : '';
 
   final BinaryMessenger? pigeonVar_binaryMessenger;
   static const MessageCodec<Object?> pigeonChannelCodec = _PigeonCodec();
 
   final String pigeonVar_messageChannelSuffix;
 
-
   Future<List<NativePickedDocument>> pickDocuments(bool modelsOnly) async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.kuymo.NativeAiFilesApi.pickDocuments$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeAiFilesApi.pickDocuments$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
       binaryMessenger: pigeonVar_binaryMessenger,
     );
-    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(<Object?>[modelsOnly]);
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(
+      <Object?>[modelsOnly],
+    );
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     final Object? pigeonVar_replyValue = _extractReplyValueOrThrow(
-        pigeonVar_replyList,
-        pigeonVar_channelName,
-        isNullValid: false,
-    )
-    ;
-    return (pigeonVar_replyValue! as List<Object?>).cast<NativePickedDocument>();
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: false,
+    );
+    return (pigeonVar_replyValue! as List<Object?>)
+        .cast<NativePickedDocument>();
   }
 
   Future<void> copyDocument(String uri, String destination) async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.kuymo.NativeAiFilesApi.copyDocument$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeAiFilesApi.copyDocument$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
       binaryMessenger: pigeonVar_binaryMessenger,
     );
-    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(<Object?>[uri, destination]);
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(
+      <Object?>[uri, destination],
+    );
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     _extractReplyValueOrThrow(
-        pigeonVar_replyList,
-        pigeonVar_channelName,
-        isNullValid: true,
-    )
-    ;
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: true,
+    );
   }
 
   Future<NativeAiResources> resources() async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.kuymo.NativeAiFilesApi.resources$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeAiFilesApi.resources$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -1171,29 +1237,30 @@ class NativeAiFilesApi {
     final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(null);
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     final Object? pigeonVar_replyValue = _extractReplyValueOrThrow(
-        pigeonVar_replyList,
-        pigeonVar_channelName,
-        isNullValid: false,
-    )
-    ;
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: false,
+    );
     return pigeonVar_replyValue! as NativeAiResources;
   }
 
   Future<bool> canReadDocument(String uri) async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.kuymo.NativeAiFilesApi.canReadDocument$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeAiFilesApi.canReadDocument$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
       binaryMessenger: pigeonVar_binaryMessenger,
     );
-    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(<Object?>[uri]);
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(
+      <Object?>[uri],
+    );
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     final Object? pigeonVar_replyValue = _extractReplyValueOrThrow(
-        pigeonVar_replyList,
-        pigeonVar_channelName,
-        isNullValid: false,
-    )
-    ;
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: false,
+    );
     return pigeonVar_replyValue! as bool;
   }
 }
@@ -1203,20 +1270,21 @@ class NativeAiMediaApi {
   /// available for dependency injection. If it is left null, the default
   /// BinaryMessenger will be used which routes to the host platform.
   NativeAiMediaApi({
-      BinaryMessenger? binaryMessenger, 
-      String messageChannelSuffix = '', 
-      })
-      : pigeonVar_binaryMessenger = binaryMessenger,
-        pigeonVar_messageChannelSuffix = messageChannelSuffix.isNotEmpty ? '.$messageChannelSuffix' : '';
+    BinaryMessenger? binaryMessenger,
+    String messageChannelSuffix = '',
+  }) : pigeonVar_binaryMessenger = binaryMessenger,
+       pigeonVar_messageChannelSuffix = messageChannelSuffix.isNotEmpty
+           ? '.$messageChannelSuffix'
+           : '';
 
   final BinaryMessenger? pigeonVar_binaryMessenger;
   static const MessageCodec<Object?> pigeonChannelCodec = _PigeonCodec();
 
   final String pigeonVar_messageChannelSuffix;
 
-
   Future<void> cancelSample() async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.kuymo.NativeAiMediaApi.cancelSample$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeAiMediaApi.cancelSample$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -1225,33 +1293,40 @@ class NativeAiMediaApi {
     final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(null);
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     _extractReplyValueOrThrow(
-        pigeonVar_replyList,
-        pigeonVar_channelName,
-        isNullValid: true,
-    )
-    ;
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: true,
+    );
   }
 
-  Future<NativeAiMediaSamples> sample(String uri, String workspace, int intervalSeconds, int maxFrames) async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.kuymo.NativeAiMediaApi.sample$pigeonVar_messageChannelSuffix';
+  Future<NativeAiMediaSamples> sample(
+    String uri,
+    String workspace,
+    int intervalSeconds,
+    int maxFrames,
+  ) async {
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeAiMediaApi.sample$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
       binaryMessenger: pigeonVar_binaryMessenger,
     );
-    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(<Object?>[uri, workspace, intervalSeconds, maxFrames]);
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(
+      <Object?>[uri, workspace, intervalSeconds, maxFrames],
+    );
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     final Object? pigeonVar_replyValue = _extractReplyValueOrThrow(
-        pigeonVar_replyList,
-        pigeonVar_channelName,
-        isNullValid: false,
-    )
-    ;
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: false,
+    );
     return pigeonVar_replyValue! as NativeAiMediaSamples;
   }
 
   Future<void> cancelExport() async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.kuymo.NativeAiMediaApi.cancelExport$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeAiMediaApi.cancelExport$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -1260,28 +1335,45 @@ class NativeAiMediaApi {
     final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(null);
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     _extractReplyValueOrThrow(
-        pigeonVar_replyList,
-        pigeonVar_channelName,
-        isNullValid: true,
-    )
-    ;
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: true,
+    );
   }
 
-  Future<String> exportMedia(String uri, String workspace, String operation, int startMs, int endMs, bool reduceNoise, bool trimSilence) async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.kuymo.NativeAiMediaApi.exportMedia$pigeonVar_messageChannelSuffix';
+  Future<String> exportMedia(
+    String uri,
+    String workspace,
+    String operation,
+    int startMs,
+    int endMs,
+    bool reduceNoise,
+    bool trimSilence,
+  ) async {
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.kuymo.NativeAiMediaApi.exportMedia$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
       binaryMessenger: pigeonVar_binaryMessenger,
     );
-    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(<Object?>[uri, workspace, operation, startMs, endMs, reduceNoise, trimSilence]);
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(
+      <Object?>[
+        uri,
+        workspace,
+        operation,
+        startMs,
+        endMs,
+        reduceNoise,
+        trimSilence,
+      ],
+    );
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     final Object? pigeonVar_replyValue = _extractReplyValueOrThrow(
-        pigeonVar_replyList,
-        pigeonVar_channelName,
-        isNullValid: false,
-    )
-    ;
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: false,
+    );
     return pigeonVar_replyValue! as String;
   }
 }

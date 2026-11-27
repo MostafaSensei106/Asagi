@@ -48,7 +48,8 @@ final class VideoPreview extends HookWidget {
       var active = true;
       Future<void> initialize() async {
         try {
-          if (!(_nativePlayerAvailable ?? await (_nativePlayerReady ??= _checkNativePlayer()))) {
+          if (!(_nativePlayerAvailable ??
+              await (_nativePlayerReady ??= _checkNativePlayer()))) {
             if (active) failed.value = true;
             return;
           }
