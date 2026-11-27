@@ -66,7 +66,7 @@ final class IconButtonComponent extends StatelessWidget {
           icon: widget,
           onPressed: callback,
           tooltip: tooltip,
-          color: foregroundColor ?? colorScheme.primary,
+          color: foregroundColor ?? colorScheme.surface,
         );
       case IconButtonVariant.filled:
         return IconButton.filled(

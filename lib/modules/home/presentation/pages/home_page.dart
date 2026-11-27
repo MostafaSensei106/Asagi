@@ -41,9 +41,14 @@ final class HomePage extends HookWidget {
     return Scaffold(
       appBar: AppBarComponent(
         title: context.localeKeys.kuymo,
-        leading: const Padding(
-          padding: EdgeInsets.all(AppSpacing.small),
-          child: BrandMark(decorative: true),
+        leading: Padding(
+          padding: const EdgeInsets.all(AppSpacing.small),
+          child: IconButtonComponent(
+            icon: KuymoIcons.settings,
+            variant: IconButtonVariant.tonal,
+            tooltip: context.localeKeys.settings,
+            onPressed: () => unawaited(context.push(const SettingsRoute())),
+          ),
         ),
         actions: [
           IconButtonComponent(
@@ -53,12 +58,7 @@ final class HomePage extends HookWidget {
             onPressed: () =>
                 unawaited(context.push(const CompressionHistoryRoute())),
           ),
-          IconButtonComponent(
-            icon: KuymoIcons.settings,
-            variant: IconButtonVariant.tonal,
-            tooltip: context.localeKeys.settings,
-            onPressed: () => unawaited(context.push(const SettingsRoute())),
-          ),
+
           IconButtonComponent(
             icon: KuymoIcons.ai,
             variant: IconButtonVariant.tonal,
@@ -216,6 +216,8 @@ final class HomePage extends HookWidget {
                                 ),
                               ] else if (video == null) ...[
                                 const Gap(AppSpacing.large),
+
+                                /// Remoeve this shit widget
                                 HomeWelcomeCard(
                                   onPickVideo: () =>
                                       unawaited(cubit.pickVideo()),
