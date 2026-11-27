@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -9,102 +10,90 @@ import '../../../../core/extensions/extensions.dart';
 import '../../../../core/services/haptics/haptics_service.dart';
 import '../../../../core/widgets/design_system/tokens/tokens.dart';
 import '../../../../core/widgets/widgets.dart';
+import '../utils/compression_number_input.dart';
 
 /// Controls that the Android compression pipeline can actually honor.
-final class CompressionAdvancedControls extends StatefulWidget {
+final class CompressionAdvancedControls extends HookWidget {
   const CompressionAdvancedControls({
     required this.preferences,
     required this.sourceShortEdge,
     required this.onChanged,
     this.collapsible = true,
+    this.liveEditing = false,
     super.key,
   });
 
   final CompressionPreferences preferences;
   final int? sourceShortEdge;
   final bool collapsible;
+
+  /// Draft forms update their local value on every valid keystroke.
+  final bool liveEditing;
   final ValueChanged<CompressionPreferences> onChanged;
 
   @override
-  State<CompressionAdvancedControls> createState() =>
-      _CompressionAdvancedControlsState();
-}
-
-final class _CompressionAdvancedControlsState
-    extends State<CompressionAdvancedControls> {
-  late final TextEditingController _resolution;
-  late final TextEditingController _videoBitrate;
-  bool _invalidResolution = false;
-  bool _invalidBitrate = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _resolution = TextEditingController(
-      text: widget.preferences.maxShortEdge?.toString() ?? '',
-    );
-    _videoBitrate = TextEditingController(
-      text: widget.preferences.videoBitrateCeilingKbps?.toString() ?? '',
-    );
-  }
-
-  @override
-  void didUpdateWidget(covariant CompressionAdvancedControls oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (oldWidget.preferences.maxShortEdge != widget.preferences.maxShortEdge) {
-      _resolution.text = widget.preferences.maxShortEdge?.toString() ?? '';
-    }
-    if (oldWidget.preferences.videoBitrateCeilingKbps !=
-        widget.preferences.videoBitrateCeilingKbps) {
-      _videoBitrate.text =
-          widget.preferences.videoBitrateCeilingKbps?.toString() ?? '';
-    }
-  }
-
-  @override
-  void dispose() {
-    _resolution.dispose();
-    _videoBitrate.dispose();
-    super.dispose();
-  }
-
-  void _applyResolution() {
-    final value = int.tryParse(_resolution.text.trim());
-    final valid =
-        _resolution.text.trim().isEmpty ||
-        (value != null && value >= 240 && value <= 16384 && value.isEven);
-    setState(() => _invalidResolution = !valid);
-    if (!valid) return;
-    widget.onChanged(
-      widget.preferences.copyWith(
-        maxShortEdge: value,
-        clearMaxShortEdge: value == null,
-      ),
-    );
-  }
-
-  void _applyVideoBitrate() {
-    final value = int.tryParse(_videoBitrate.text.trim());
-    final valid =
-        _videoBitrate.text.trim().isEmpty ||
-        (value != null && value >= 50 && value <= 500000);
-    setState(() => _invalidBitrate = !valid);
-    if (!valid) return;
-    widget.onChanged(
-      widget.preferences.copyWith(
-        videoBitrateCeilingKbps: value,
-        clearVideoBitrate: value == null,
-      ),
-    );
-  }
-
-  @override
   Widget build(BuildContext context) {
-    final p = widget.preferences;
+    final resolution = useTextEditingController(
+      text: preferences.maxShortEdge?.toString() ?? '',
+    );
+    final videoBitrate = useTextEditingController(
+      text: preferences.videoBitrateCeilingKbps?.toString() ?? '',
+    );
+    final invalidResolution = useState(false);
+    final invalidBitrate = useState(false);
+    useEffect(() {
+      if (int.tryParse(normalizeCompressionNumber(resolution.text)) !=
+          preferences.maxShortEdge) {
+        resolution.text = preferences.maxShortEdge?.toString() ?? '';
+        invalidResolution.value = false;
+      }
+      return null;
+    }, [preferences.maxShortEdge]);
+    useEffect(() {
+      if (int.tryParse(normalizeCompressionNumber(videoBitrate.text)) !=
+          preferences.videoBitrateCeilingKbps) {
+        videoBitrate.text =
+            preferences.videoBitrateCeilingKbps?.toString() ?? '';
+        invalidBitrate.value = false;
+      }
+      return null;
+    }, [preferences.videoBitrateCeilingKbps]);
+
+    void applyResolution() {
+      final value = int.tryParse(normalizeCompressionNumber(resolution.text));
+      final valid =
+          resolution.text.trim().isEmpty ||
+          (value != null && value >= 240 && value <= 16384 && value.isEven);
+      invalidResolution.value = !valid;
+      if (valid)
+        onChanged(
+          preferences.copyWith(
+            maxShortEdge: value,
+            clearMaxShortEdge: value == null,
+          ),
+        );
+    }
+
+    void applyVideoBitrate() {
+      final value = int.tryParse(normalizeCompressionNumber(videoBitrate.text));
+      final valid =
+          videoBitrate.text.trim().isEmpty ||
+          (value != null && value >= 50 && value <= 500000);
+      invalidBitrate.value = !valid;
+      if (valid)
+        onChanged(
+          preferences.copyWith(
+            videoBitrateCeilingKbps: value,
+            clearVideoBitrate: value == null,
+          ),
+        );
+    }
+
+    final p = preferences;
     final l10n = context.localeKeys;
     final colorScheme = context.colorScheme;
     final textTheme = context.textTheme;
-    final source = (widget.sourceShortEdge ?? 16384) & ~1;
+    final source = (sourceShortEdge ?? 16384) & ~1;
     final resolutions = <int>{
       480,
       720,
@@ -112,7 +101,7 @@ final class _CompressionAdvancedControlsState
       1440,
       2160,
       4320,
-      if (widget.sourceShortEdge != null) source,
+      if (sourceShortEdge != null) source,
     }.where((value) => value >= 240 && value <= source).toList()..sort();
 
     final sections = [
@@ -129,7 +118,7 @@ final class _CompressionAdvancedControlsState
                 selected: p.maxShortEdge == null,
                 onSelected: (_) {
                   unawaited(AppHaptics.selection());
-                  widget.onChanged(p.copyWith(clearMaxShortEdge: true));
+                  onChanged(p.copyWith(clearMaxShortEdge: true));
                 },
               ),
               for (final value in resolutions.reversed)
@@ -146,19 +135,32 @@ final class _CompressionAdvancedControlsState
                   selected: p.maxShortEdge == value,
                   onSelected: (_) {
                     unawaited(AppHaptics.selection());
-                    widget.onChanged(p.copyWith(maxShortEdge: value));
+                    onChanged(p.copyWith(maxShortEdge: value));
                   },
                 ),
             ],
           ),
           const Gap(AppSpacing.medium),
-          TextField(
-            controller: _resolution,
+          TextFormField(
+            key: const ValueKey('advanced-resolution'),
+            controller: resolution,
+            validator: (_) {
+              final text = normalizeCompressionNumber(resolution.text);
+              final value = int.tryParse(text);
+              return text.isEmpty ||
+                      (value != null &&
+                          value >= 240 &&
+                          value <= 16384 &&
+                          value.isEven)
+                  ? null
+                  : l10n.enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic;
+            },
+            onChanged: liveEditing ? (_) => applyResolution() : null,
             keyboardType: TextInputType.number,
             decoration: InputDecoration(
               labelText: l10n.maximumResolution,
               hintText: l10n.automatic,
-              errorText: _invalidResolution
+              errorText: invalidResolution.value
                   ? l10n.enterAnEvenResolutionFrom240To16384OrLeaveBlankForAutomatic
                   : null,
               contentPadding: const EdgeInsets.symmetric(
@@ -172,8 +174,8 @@ final class _CompressionAdvancedControlsState
                 borderSide: BorderSide.none,
               ),
             ),
-            onSubmitted: (_) => _applyResolution(),
-            onEditingComplete: _applyResolution,
+            onFieldSubmitted: (_) => applyResolution(),
+            onEditingComplete: applyResolution,
           ),
         ],
       ),
@@ -185,13 +187,13 @@ final class _CompressionAdvancedControlsState
             spacing: AppSpacing.small,
             runSpacing: AppSpacing.small,
             children: [
-              for (final fps in const [24, 30, 60, 120])
+              for (final fps in const [24, 25, 30, 60, 120])
                 ChoiceChip(
                   label: Text('$fps fps'),
                   selected: p.maxFrameRate == fps,
                   onSelected: (_) {
                     unawaited(AppHaptics.selection());
-                    widget.onChanged(p.copyWith(maxFrameRate: fps));
+                    onChanged(p.copyWith(maxFrameRate: fps));
                   },
                 ),
             ],
@@ -211,7 +213,7 @@ final class _CompressionAdvancedControlsState
                 selected: p.audioBitrateKbps == null,
                 onSelected: (_) {
                   unawaited(AppHaptics.selection());
-                  widget.onChanged(p.copyWith(clearAudioBitrate: true));
+                  onChanged(p.copyWith(clearAudioBitrate: true));
                 },
               ),
               for (final rate in const [0, 48, 64, 96, 128, 160, 192, 256, 320])
@@ -220,7 +222,7 @@ final class _CompressionAdvancedControlsState
                   selected: p.audioBitrateKbps == rate,
                   onSelected: (_) {
                     unawaited(AppHaptics.selection());
-                    widget.onChanged(p.copyWith(audioBitrateKbps: rate));
+                    onChanged(p.copyWith(audioBitrateKbps: rate));
                   },
                 ),
             ],
@@ -231,13 +233,23 @@ final class _CompressionAdvancedControlsState
         icon: LucideIcons.gauge,
         title: l10n.videoBitrateCeilingKbps,
         controls: <Widget>[
-          TextField(
-            controller: _videoBitrate,
+          TextFormField(
+            key: const ValueKey('advanced-bitrate'),
+            controller: videoBitrate,
+            validator: (_) {
+              final text = normalizeCompressionNumber(videoBitrate.text);
+              final value = int.tryParse(text);
+              return text.isEmpty ||
+                      (value != null && value >= 50 && value <= 500000)
+                  ? null
+                  : l10n.enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic;
+            },
+            onChanged: liveEditing ? (_) => applyVideoBitrate() : null,
             keyboardType: TextInputType.number,
             decoration: InputDecoration(
               labelText: l10n.videoBitrateCeilingKbps,
               hintText: l10n.automatic,
-              errorText: _invalidBitrate
+              errorText: invalidBitrate.value
                   ? l10n.enterABitrateOfAtLeast150KbpsOrLeaveBlankForAutomatic
                   : null,
               contentPadding: const EdgeInsets.symmetric(
@@ -251,8 +263,8 @@ final class _CompressionAdvancedControlsState
                 borderSide: BorderSide.none,
               ),
             ),
-            onSubmitted: (_) => _applyVideoBitrate(),
-            onEditingComplete: _applyVideoBitrate,
+            onFieldSubmitted: (_) => applyVideoBitrate(),
+            onEditingComplete: applyVideoBitrate,
           ),
         ],
       ),
@@ -269,7 +281,7 @@ final class _CompressionAdvancedControlsState
                 selected: p.safetyMargin == null || p.safetyMargin == 0.98,
                 onSelected: (_) {
                   unawaited(AppHaptics.selection());
-                  widget.onChanged(p.copyWith(safetyMargin: 0.98));
+                  onChanged(p.copyWith(safetyMargin: 0.98));
                 },
               ),
               ChoiceChip(
@@ -277,7 +289,7 @@ final class _CompressionAdvancedControlsState
                 selected: p.safetyMargin == 0.90,
                 onSelected: (_) {
                   unawaited(AppHaptics.selection());
-                  widget.onChanged(p.copyWith(safetyMargin: 0.90));
+                  onChanged(p.copyWith(safetyMargin: 0.90));
                 },
               ),
               ChoiceChip(
@@ -285,7 +297,7 @@ final class _CompressionAdvancedControlsState
                 selected: p.safetyMargin == 0.96,
                 onSelected: (_) {
                   unawaited(AppHaptics.selection());
-                  widget.onChanged(p.copyWith(safetyMargin: 0.96));
+                  onChanged(p.copyWith(safetyMargin: 0.96));
                 },
               ),
             ],
@@ -297,7 +309,7 @@ final class _CompressionAdvancedControlsState
         title: l10n.hdrHandling,
         controls: <Widget>[
           SegmentedButton<HdrMode>(
-            direction: widget.collapsible ? Axis.horizontal : Axis.vertical,
+            direction: collapsible ? Axis.horizontal : Axis.vertical,
             segments: [
               ButtonSegment(
                 value: HdrMode.toneMapToSdr,
@@ -311,13 +323,13 @@ final class _CompressionAdvancedControlsState
             selected: {p.hdrMode},
             onSelectionChanged: (selection) {
               unawaited(AppHaptics.selection());
-              widget.onChanged(p.copyWith(hdrMode: selection.first));
+              onChanged(p.copyWith(hdrMode: selection.first));
             },
           ),
         ],
       ),
     ];
-    if (!widget.collapsible) {
+    if (!collapsible) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [

@@ -90,7 +90,10 @@ final class DeviceVideoCompressionRepository
     MediaWorkLease? lease;
     Directory? preparation;
     try {
-      lease = await _scheduler?.acquire(priority: 0, cancelled: cancellation.future);
+      lease = await _scheduler?.acquire(
+        priority: 0,
+        cancelled: cancellation.future,
+      );
       if (generation != _operationGeneration) throw StateError('E_CANCELLED');
       final privacy = await _privacy?.load();
       final features = await _aiFeatures?.load();
@@ -494,7 +497,9 @@ final class DeviceVideoCompressionRepository
   Future<void> cancel() async {
     ++_operationGeneration;
     final cancellation = _operationCancellation;
-    if (cancellation != null && !cancellation.isCompleted) cancellation.complete();
+    if (cancellation != null && !cancellation.isCompleted) {
+      cancellation.complete();
+    }
     if (_preprocessing) await NativeAiMediaApi().cancelExport();
     await _engine.cancel();
   }

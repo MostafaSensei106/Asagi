@@ -5,11 +5,13 @@ import 'package:kuymo/core/di/di.dart';
 import 'package:kuymo/core/preferences/domain/entities/compression_defaults.dart';
 import 'package:kuymo/core/preferences/domain/repositories/settings_repository.dart';
 import 'package:kuymo/core/router/app_router.dart';
+import 'package:kuymo/core/services/share/base_share_service.dart';
 import 'package:kuymo/core/utils/theme/app_theme.dart';
 import 'package:kuymo/l10n/app_localizations.dart';
 import 'package:kuymo/modules/compression/domain/repositories/video_compression_repository.dart';
 import 'package:kuymo/modules/compression/presentation/cubit/compression_cubit.dart';
 import 'package:kuymo/modules/compression/presentation/pages/compression_history_page.dart';
+import 'package:kuymo/modules/home/presentation/cubit/home_result_actions_cubit.dart';
 import 'package:kuymo/modules/home/presentation/pages/home_page.dart';
 import 'package:kuymo/modules/settings/presentation/pages/settings_page.dart';
 import 'package:material_ui/material_ui.dart';
@@ -19,12 +21,17 @@ import 'support/fake_ai_services.dart';
 
 class _Videos extends Mock implements VideoCompressionRepository {}
 
+class _Share extends Mock implements BaseShareService {}
+
 void main() {
   testWidgets(
     'home actions push settings and history and preserve job settings',
     (tester) async {
       await tester.runAsync(registerFakeAiDependencies);
       final repository = _Videos();
+      getIt.registerFactory<HomeResultActionsCubit>(
+        () => HomeResultActionsCubit(repository, _Share()),
+      );
       when(() => repository.presets()).thenAnswer((_) async => []);
       when(() => repository.recoverInterrupted()).thenAnswer((_) async => []);
       when(() => repository.history()).thenAnswer((_) async => []);

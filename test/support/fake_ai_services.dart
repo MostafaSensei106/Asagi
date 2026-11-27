@@ -132,6 +132,7 @@ class NoTelemetry implements TelemetryAdapter {
   @override
   Future<void> recordFailure(String code, {required bool fatal}) async {}
 }
+
 class Scratchpad implements ScratchpadRepository {
   @override
   Future<String> createWorkspace({bool temporary = true}) async =>
@@ -167,7 +168,12 @@ Future<MemoryPreferenceStorage> registerFakeAiDependencies() async {
     CompressionDefaultsRepository(storage),
   );
   getIt.registerSingleton<ScratchpadRepository>(Scratchpad());
-  getIt.registerSingleton<TelemetryConsentCoordinator>(TelemetryConsentCoordinator(getIt<SettingsRepository<PrivacySettings>>(), NoTelemetry()));
+  getIt.registerSingleton<TelemetryConsentCoordinator>(
+    TelemetryConsentCoordinator(
+      getIt<SettingsRepository<PrivacySettings>>(),
+      NoTelemetry(),
+    ),
+  );
   getIt.registerSingleton<SettingsRepository<AiChatSettings>>(
     LocalAiChatSettings(storage),
   );

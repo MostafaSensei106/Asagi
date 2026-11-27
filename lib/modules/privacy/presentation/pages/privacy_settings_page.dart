@@ -41,8 +41,14 @@ final class _PrivacySettingsPageState
     super.initState();
     _consent = getIt<TelemetryConsentCoordinator>();
     _consentChanges = _consent.changes.listen((applied) {
-      if (mounted) { setState(() {});
-        if (!applied) context.toast.showError(context, context.localeKeys.settingsApplyFailed);
+      if (mounted) {
+        setState(() {});
+        if (!applied) {
+          context.toast.showError(
+            context,
+            context.localeKeys.settingsApplyFailed,
+          );
+        }
       }
     });
     _scratchpad = ScratchpadCubit(getIt<ScratchpadRepository>());
@@ -95,9 +101,14 @@ final class _PrivacySettingsPageState
     return Scaffold(
       appBar: SidePageAppBarComponent(
         title: l10n.privacy,
-        actions: [const SettingsResetAction<PrivacySettings>(),
-          if (_consent.applied == false) IconButtonComponent(icon: KuymoIcons.settingsRetry,
-            tooltip: l10n.retry, onPressed: () => unawaited(_consent.retry())),
+        actions: [
+          const SettingsResetAction<PrivacySettings>(),
+          if (_consent.applied == false)
+            IconButtonComponent(
+              icon: KuymoIcons.settingsRetry,
+              tooltip: l10n.retry,
+              onPressed: () => unawaited(_consent.retry()),
+            ),
         ],
       ),
       body: ListView(

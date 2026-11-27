@@ -2434,6 +2434,50 @@ class AppLocalizationsRu extends AppLocalizations {
   String aiEmbeddingStorageUsage(String megabytes) {
     return 'Index storage: $megabytes MB';
   }
+
+  @override
+  String get applyChanges => 'Apply';
+
+  @override
+  String get advancedSettingsDraftHint =>
+      'Fine-tune this video. Changes take effect only when you apply them.';
+
+  @override
+  String get homeVideoWorkspace => 'Make room for your video';
+
+  @override
+  String get homeImportHint =>
+      'Choose a video, pick where to share it, and we’ll handle the size.';
+
+  @override
+  String get changeVideo => 'Change video';
+
+  @override
+  String get shareDestination => 'Where are you sharing?';
+
+  @override
+  String get moreDestinations => 'All destinations';
+
+  @override
+  String get expectedOutputSize => 'Target output size';
+
+  @override
+  String get homeReadyToShare => 'Ready to share';
+
+  @override
+  String get homeNewVideo => 'Another video';
+
+  @override
+  String get homeRecoverJobs => 'Unfinished videos';
+
+  @override
+  String get homeSaveFailed => 'Couldn’t save the video. Try again.';
+
+  @override
+  String get homeShareFailed => 'Couldn’t open sharing. Try again.';
+
+  @override
+  String get homePlanDetails => 'Output details';
 }
 
 /// The translations for Russian, as used in Russian Federation (`ru_RU`).

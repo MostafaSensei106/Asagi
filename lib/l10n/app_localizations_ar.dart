@@ -2409,6 +2409,50 @@ class AppLocalizationsAr extends AppLocalizations {
   String aiEmbeddingStorageUsage(String megabytes) {
     return 'مساحة الفهرس: $megabytes ميجابايت';
   }
+
+  @override
+  String get applyChanges => 'تطبيق';
+
+  @override
+  String get advancedSettingsDraftHint =>
+      'اضبط هذا الفيديو كما تريد. تُعتمد التغييرات عند الضغط على تطبيق فقط.';
+
+  @override
+  String get homeVideoWorkspace => 'مساحة أكبر لفيديوهاتك';
+
+  @override
+  String get homeImportHint =>
+      'اختر فيديو وحدد أين تريد مشاركته، ودع لنا ضبط حجمه.';
+
+  @override
+  String get changeVideo => 'تغيير الفيديو';
+
+  @override
+  String get shareDestination => 'أين ستشارك الفيديو؟';
+
+  @override
+  String get moreDestinations => 'كل المنصات';
+
+  @override
+  String get expectedOutputSize => 'الحجم المستهدف للناتج';
+
+  @override
+  String get homeReadyToShare => 'جاهز للمشاركة';
+
+  @override
+  String get homeNewVideo => 'فيديو آخر';
+
+  @override
+  String get homeRecoverJobs => 'فيديوهات غير مكتملة';
+
+  @override
+  String get homeSaveFailed => 'تعذر حفظ الفيديو. حاول مرة أخرى.';
+
+  @override
+  String get homeShareFailed => 'تعذر فتح المشاركة. حاول مرة أخرى.';
+
+  @override
+  String get homePlanDetails => 'تفاصيل الناتج';
 }
 
 /// The translations for Arabic, as used in Egypt (`ar_EG`).

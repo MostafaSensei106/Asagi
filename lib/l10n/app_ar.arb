@@ -1386,5 +1386,19 @@
         "type": "String"
       }
     }
-  }
+  },
+  "applyChanges": "تطبيق",
+  "advancedSettingsDraftHint": "اضبط هذا الفيديو كما تريد. تُعتمد التغييرات عند الضغط على تطبيق فقط.",
+  "homeVideoWorkspace": "مساحة أكبر لفيديوهاتك",
+  "homeImportHint": "اختر فيديو وحدد أين تريد مشاركته، ودع لنا ضبط حجمه.",
+  "changeVideo": "تغيير الفيديو",
+  "shareDestination": "أين ستشارك الفيديو؟",
+  "moreDestinations": "كل المنصات",
+  "expectedOutputSize": "الحجم المستهدف للناتج",
+  "homeReadyToShare": "جاهز للمشاركة",
+  "homeNewVideo": "فيديو آخر",
+  "homeRecoverJobs": "فيديوهات غير مكتملة",
+  "homeSaveFailed": "تعذر حفظ الفيديو. حاول مرة أخرى.",
+  "homeShareFailed": "تعذر فتح المشاركة. حاول مرة أخرى.",
+  "homePlanDetails": "تفاصيل الناتج"
 }

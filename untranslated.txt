@@ -395,7 +395,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "de_DE": [
@@ -794,7 +808,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "es": [
@@ -1193,7 +1221,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "es_ES": [
@@ -1592,7 +1634,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "fr": [
@@ -1991,7 +2047,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "id": [
@@ -2390,7 +2460,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "id_ID": [
@@ -2789,7 +2873,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "it": [
@@ -3188,7 +3286,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "it_IT": [
@@ -3587,7 +3699,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "ja": [
@@ -3986,7 +4112,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "ja_JP": [
@@ -4385,7 +4525,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "ko": [
@@ -4784,7 +4938,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "ko_KR": [
@@ -5183,7 +5351,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "nl": [
@@ -5582,7 +5764,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "nl_BE": [
@@ -5981,7 +6177,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "pl": [
@@ -6380,7 +6590,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "pl_PL": [
@@ -6779,7 +7003,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "pt": [
@@ -7178,7 +7416,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "pt_BR": [
@@ -7577,7 +7829,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "ru": [
@@ -7976,7 +8242,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "ru_RU": [
@@ -8375,7 +8655,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "sv": [
@@ -8774,7 +9068,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "sv_SE": [
@@ -9173,7 +9481,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "th": [
@@ -9572,7 +9894,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "th_TH": [
@@ -9971,7 +10307,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "tr": [
@@ -10370,7 +10720,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "tr_TR": [
@@ -10769,7 +11133,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "vi": [
@@ -11168,7 +11546,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "zh": [
@@ -11567,7 +11959,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "zh_CN": [
@@ -11966,7 +12372,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "zh_HK": [
@@ -12365,7 +12785,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "zh_SG": [
@@ -12764,7 +13198,21 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ],
 
   "zh_TW": [
@@ -13163,6 +13611,20 @@
     "whyChooseKuymo",
     "projectSupportLink",
     "brandTagline",
-    "kuymoAi"
+    "kuymoAi",
+    "applyChanges",
+    "advancedSettingsDraftHint",
+    "homeVideoWorkspace",
+    "homeImportHint",
+    "changeVideo",
+    "shareDestination",
+    "moreDestinations",
+    "expectedOutputSize",
+    "homeReadyToShare",
+    "homeNewVideo",
+    "homeRecoverJobs",
+    "homeSaveFailed",
+    "homeShareFailed",
+    "homePlanDetails"
   ]
 }

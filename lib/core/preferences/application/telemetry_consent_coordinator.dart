@@ -48,6 +48,7 @@ final class TelemetryConsentCoordinator {
     await initialize();
     if (_applied != true) await apply();
   }
+
   Future<void> apply() {
     final task = _queue.then((_) async {
       final previouslyEnabled = _crashEnabled;

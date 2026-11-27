@@ -148,6 +148,8 @@ import 'package:kuymo/modules/compression/domain/use_cases/has_saved_compression
     as _i378;
 import 'package:kuymo/modules/compression/domain/use_cases/read_notification_insights.dart'
     as _i1004;
+import 'package:kuymo/modules/home/presentation/cubit/home_result_actions_cubit.dart'
+    as _i489;
 import 'package:kuymo/modules/notifications/application/notification_dispatcher.dart'
     as _i648;
 import 'package:kuymo/modules/notifications/application/notification_interactions.dart'
@@ -558,6 +560,12 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i766.SettingsRepository<_i666.AiFeatureSettings>>(),
       ),
     );
+    gh.factory<_i489.HomeResultActionsCubit>(
+      () => _i489.HomeResultActionsCubit(
+        gh<_i859.VideoCompressionRepository>(),
+        gh<_i576.BaseShareService>(),
+      ),
+    );
     gh.lazySingleton<_i378.HasSavedCompressionResultUseCase>(
       () => _i378.HasSavedCompressionResultUseCase(
         gh<_i859.VideoCompressionRepository>(),
@@ -806,6 +814,9 @@ extension GetItInjectableX on _i174.GetIt {
 
   _i919.AiVideoAdviceRepository get aiVideoAdviceRepository =>
       get<_i919.AiVideoAdviceRepository>();
+
+  _i489.HomeResultActionsCubit get homeResultActionsCubit =>
+      get<_i489.HomeResultActionsCubit>();
 
   _i378.HasSavedCompressionResultUseCase get hasSavedCompressionResultUseCase =>
       get<_i378.HasSavedCompressionResultUseCase>();

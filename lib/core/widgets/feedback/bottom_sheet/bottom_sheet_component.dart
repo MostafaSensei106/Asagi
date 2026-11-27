@@ -1,133 +1,152 @@
+import 'dart:math' as math;
+
 import 'package:material_ui/material_ui.dart';
 
-import '../../../constants/app_config.dart';
+import '../../design_system/tokens/tokens.dart';
 
-/// Modal sheet surface used across the app.
-///
-/// Call [BottomSheetComponent.show] to present one, passing the content that
-/// should appear below the optional [title].
-///
-/// The component paints the sheet surface itself instead of letting
-/// [showModalBottomSheet] do it, so the visible surface can move above the
-/// keyboard. The route's own surface is transparent; see [show].
+/// A bounded modal surface with scrollable content and an optional fixed footer.
 final class BottomSheetComponent extends StatelessWidget {
   const BottomSheetComponent({
     required this.child,
     super.key,
     this.title,
+    this.footer,
+    this.onClose,
     this.showHandle = true,
   });
 
   final Widget child;
-
-  /// Optional heading rendered above [child].
   final String? title;
-
-  /// Draws the small grabber at the top of the sheet. Dragging to dismiss is
-  /// handled by the route itself, so this is purely decorative.
+  final Widget? footer;
+  final VoidCallback? onClose;
   final bool showHandle;
 
-  /// Shows [child] in a modal sheet and completes with the value the content
-  /// pops with.
+  /// Supply [builder] when the sheet owns state shared by its body and footer.
+  /// That builder returns a [BottomSheetComponent]; simple sheets use [child].
   static Future<T?> show<T>({
     required BuildContext context,
-    required Widget child,
+    Widget? child,
+    WidgetBuilder? builder,
     String? title,
+    Widget? footer,
     bool isScrollControlled = true,
     bool isDismissible = true,
     bool enableDrag = true,
   }) {
+    assert((child == null) != (builder == null));
     return showModalBottomSheet<T>(
       context: context,
       isScrollControlled: isScrollControlled,
       isDismissible: isDismissible,
       enableDrag: enableDrag,
       useSafeArea: true,
-      // The route's surface must stay out of the way: [BottomSheetComponent]
-      // paints its own rounded surface and lifts it above the keyboard. A
-      // route-painted background would still stretch underneath the keyboard,
-      // which made the sheet look like it was covered by it.
       backgroundColor: Colors.transparent,
       elevation: 0,
       showDragHandle: false,
-      builder: (context) => BottomSheetComponent(title: title, child: child),
+      builder:
+          builder ??
+          (context) => BottomSheetComponent(
+            title: title,
+            footer: footer,
+            onClose: title == null ? null : () => Navigator.of(context).pop(),
+            child: child!,
+          ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    // Sheets normally sit on the bottom edge, so the keyboard would cover the
-    // last fields and the primary action. Lifting the surface by the reported
-    // inset keeps every field (and the submit button) reachable while typing.
     final keyboardInset = MediaQuery.viewInsetsOf(context).bottom;
-
-    return SafeArea(
-      child: AnimatedPadding(
-        duration: const Duration(milliseconds: 150),
-        curve: Curves.easeOut,
-        padding: EdgeInsets.only(bottom: keyboardInset),
-        child: Material(
-          color: theme.colorScheme.surface,
-          clipBehavior: Clip.antiAlias,
-          borderRadius: const BorderRadius.vertical(
-            top: Radius.circular(AppConfig.outBorderRadius),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(AppConfig.padding),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (showHandle)
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      bottom: AppConfig.paddingHalf,
-                    ),
-                    child: _DragHandle(
-                      color: theme.colorScheme.onSurfaceVariant,
-                    ),
-                  ),
-                if (title != null) ...[
-                  Text(
-                    title!,
-                    style: theme.textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  const SizedBox(height: AppConfig.paddingHalf),
-                ],
-                Flexible(
-                  child: SingleChildScrollView(
-                    keyboardDismissBehavior:
-                        ScrollViewKeyboardDismissBehavior.onDrag,
-                    child: child,
+    final reduceMotion = MediaQuery.disableAnimationsOf(context);
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return AnimatedPadding(
+          duration: reduceMotion ? Duration.zero : AppMotion.fast,
+          padding: EdgeInsets.only(bottom: keyboardInset),
+          child: SafeArea(
+            top: false,
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                maxWidth: 640,
+                maxHeight:
+                    math.max(0, constraints.maxHeight - keyboardInset) * .94,
+              ),
+              child: Material(
+                color: theme.colorScheme.surface,
+                clipBehavior: Clip.antiAlias,
+                borderRadius: const BorderRadius.vertical(
+                  top: Radius.circular(AppRadii.xLarge),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(AppSpacing.large),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      if (showHandle)
+                        Center(
+                          child: Container(
+                            margin: const EdgeInsets.only(
+                              bottom: AppSpacing.small,
+                            ),
+                            width: 36,
+                            height: 4,
+                            decoration: BoxDecoration(
+                              color: theme.colorScheme.outlineVariant,
+                              borderRadius: BorderRadius.circular(
+                                AppRadii.pill,
+                              ),
+                            ),
+                          ),
+                        ),
+                      if (title != null)
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            bottom: AppSpacing.medium,
+                          ),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  title!,
+                                  style: theme.textTheme.titleLarge,
+                                ),
+                              ),
+                              if (onClose != null)
+                                IconButton(
+                                  tooltip: MaterialLocalizations.of(context)
+                                      .closeButtonTooltip,
+                                  onPressed: onClose,
+                                  icon: const Icon(Icons.close),
+                                ),
+                            ],
+                          ),
+                        ),
+                      Flexible(
+                        child: SingleChildScrollView(
+                          keyboardDismissBehavior:
+                              ScrollViewKeyboardDismissBehavior.onDrag,
+                          child: child,
+                        ),
+                      ),
+                      if (footer != null) ...[
+                        const Padding(
+                          padding: EdgeInsets.symmetric(
+                            vertical: AppSpacing.medium,
+                          ),
+                          child: Divider(height: 1),
+                        ),
+                        footer!,
+                      ],
+                    ],
                   ),
                 ),
-              ],
+              ),
             ),
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class _DragHandle extends StatelessWidget {
-  const _DragHandle({required this.color});
-
-  final Color color;
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        width: 36,
-        height: 4,
-        decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.35),
-          borderRadius: BorderRadius.circular(2),
-        ),
-      ),
+        );
+      },
     );
   }
 }

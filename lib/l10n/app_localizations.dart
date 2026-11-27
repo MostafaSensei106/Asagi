@@ -4302,6 +4302,90 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Index storage: {megabytes} MB'**
   String aiEmbeddingStorageUsage(String megabytes);
+
+  /// No description provided for @applyChanges.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply'**
+  String get applyChanges;
+
+  /// No description provided for @advancedSettingsDraftHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Fine-tune this video. Changes take effect only when you apply them.'**
+  String get advancedSettingsDraftHint;
+
+  /// No description provided for @homeVideoWorkspace.
+  ///
+  /// In en, this message translates to:
+  /// **'Make room for your video'**
+  String get homeVideoWorkspace;
+
+  /// No description provided for @homeImportHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a video, pick where to share it, and we’ll handle the size.'**
+  String get homeImportHint;
+
+  /// No description provided for @changeVideo.
+  ///
+  /// In en, this message translates to:
+  /// **'Change video'**
+  String get changeVideo;
+
+  /// No description provided for @shareDestination.
+  ///
+  /// In en, this message translates to:
+  /// **'Where are you sharing?'**
+  String get shareDestination;
+
+  /// No description provided for @moreDestinations.
+  ///
+  /// In en, this message translates to:
+  /// **'All destinations'**
+  String get moreDestinations;
+
+  /// No description provided for @expectedOutputSize.
+  ///
+  /// In en, this message translates to:
+  /// **'Target output size'**
+  String get expectedOutputSize;
+
+  /// No description provided for @homeReadyToShare.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready to share'**
+  String get homeReadyToShare;
+
+  /// No description provided for @homeNewVideo.
+  ///
+  /// In en, this message translates to:
+  /// **'Another video'**
+  String get homeNewVideo;
+
+  /// No description provided for @homeRecoverJobs.
+  ///
+  /// In en, this message translates to:
+  /// **'Unfinished videos'**
+  String get homeRecoverJobs;
+
+  /// No description provided for @homeSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn’t save the video. Try again.'**
+  String get homeSaveFailed;
+
+  /// No description provided for @homeShareFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn’t open sharing. Try again.'**
+  String get homeShareFailed;
+
+  /// No description provided for @homePlanDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Output details'**
+  String get homePlanDetails;
 }
 
 class _AppLocalizationsDelegate

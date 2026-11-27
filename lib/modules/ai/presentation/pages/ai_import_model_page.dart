@@ -42,7 +42,10 @@ final class _AiImportModelPageState extends State<AiImportModelPage> {
     if (_cubit.stateValue.failed) {
       context.toast.showError(context, context.localeKeys.aiOperationFailed);
     } else if (_cubit.stateValue.imported != null) {
-      context.toast.showSuccess(context, context.localeKeys.modelImportedVerified);
+      context.toast.showSuccess(
+        context,
+        context.localeKeys.modelImportedVerified,
+      );
     }
   }
 
@@ -51,8 +54,14 @@ final class _AiImportModelPageState extends State<AiImportModelPage> {
     value: _cubit,
     child: BlocSignalListener<AiImportCubit, AiImportState>(
       listenWhen: (previous, current) => !previous.failed && current.failed,
-      listener: (context, _) => context.toast.showError(context, context.localeKeys.aiOperationFailed),
-      child: BlocSignalBuilder<AiImportCubit, AiImportState>(builder: (context, state) => _buildPage(context))),
+      listener: (context, _) => context.toast.showError(
+        context,
+        context.localeKeys.aiOperationFailed,
+      ),
+      child: BlocSignalBuilder<AiImportCubit, AiImportState>(
+        builder: (context, state) => _buildPage(context),
+      ),
+    ),
   );
 
   Widget _buildPage(BuildContext context) {

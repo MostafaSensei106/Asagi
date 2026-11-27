@@ -5,7 +5,6 @@ library;
 
 export 'animation/wave_background.dart';
 export 'animation/wave_painter.dart';
-export 'bottom_sheet/bottom_sheet_component.dart';
 export 'brand/brand_logo.dart';
 export 'brand/brand_mark.dart';
 export 'buttons/filled_button/filled_button_component.dart';

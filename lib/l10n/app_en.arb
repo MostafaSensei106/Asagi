@@ -1624,5 +1624,19 @@
         "type": "String"
       }
     }
-  }
+  },
+  "applyChanges": "Apply",
+  "advancedSettingsDraftHint": "Fine-tune this video. Changes take effect only when you apply them.",
+  "homeVideoWorkspace": "Make room for your video",
+  "homeImportHint": "Choose a video, pick where to share it, and we’ll handle the size.",
+  "changeVideo": "Change video",
+  "shareDestination": "Where are you sharing?",
+  "moreDestinations": "All destinations",
+  "expectedOutputSize": "Target output size",
+  "homeReadyToShare": "Ready to share",
+  "homeNewVideo": "Another video",
+  "homeRecoverJobs": "Unfinished videos",
+  "homeSaveFailed": "Couldn’t save the video. Try again.",
+  "homeShareFailed": "Couldn’t open sharing. Try again.",
+  "homePlanDetails": "Output details"
 }
